@@ -1,0 +1,46 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/mam -->
+<!-- Sitemap-Last-Modified: 2026-05-21 -->
+
+# Microsoft Tunnel for Mobile Application Management
+
+When you use the Microsoft Tunnel VPN Gateway, you can extend Tunnel support by adding Tunnel for Mobile Application Management \(MAM\). Tunnel for MAM extends the Microsoft Tunnel VPN gateway to support devices that run Android or iOS, and that aren't enrolled with Microsoft Intune. With this solution, your users can use a single device that isn't enrolled with Intune to gain secure access to the organizations on-premises apps and resources using modern authentication, single sign-on, and Conditional Access. With Tunnel for MAM, your users can use their own device \(BYOD\) for both work and personal use, without having to grant the organization's IT department control over that device.
+
+Before you begin, you must already have deployed the Microsoft Tunnel gateway. To learn more about Microsoft Tunnel gateway and how to install and configure it, see:
+
+- [Learn about the Microsoft Tunnel VPN solution for Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/overview)
+- [Identify the prerequisites to install and use the Microsoft Tunnel VPN solution for Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/prerequisites)
+- [Install and configure Microsoft Tunnel VPN solution for Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/install)
+
+## Prerequisites
+
+![](https://learn.microsoft.com/en-us/intune/media/icons/16/devices.svg) **Device platform requirements**
+
+> - Android Enterprise
+> - iOS/iPadOS
+
+![](https://learn.microsoft.com/en-us/intune/media/icons/16/licensing.svg) **Licensing requirements**
+
+> This feature requires Microsoft Intune Plan 2 or an additional subscription. For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
+
+The following table identifies key features for the supported platforms:
+
+| Requirements and Features | Tunnel for Android | Tunnel for iOS |
+| --- | --- | --- |
+| Requirements: | - Company Portal app \(sign-in not required\)  <br>  <br>- Defender for Endpoint app | - No Company Portal app or Defender for Endpoint app requirement |
+| Features: | - VPN is provided via the Defender for Endpoint app:  <br>--- Per App VPN  <br>--- Device-wide VPN  <br>  <br>- *Auto-launch*: VPN automatically starts on app launch | - VPN is provided via Tunnel for MAM SDK for iOS integration  <br>  <br>- Per-App VPN. Tunnel connection is restricted to each targeted app  <br>  <br>- *Auto-launch*: VPN automatically starts on app launch  <br>  <br>- No Device-wide VPN  <br>  <br>- Trusted root certificate support for on-premises CA trust  <br>  <br> |
+| Line of Business app requirements | - Intune App SDK for Android  <br>  <br>- Microsoft Authentication Library \(MSAL\) integration | - Intune App SDK for iOS  <br>  <br>- Microsoft Authentication Library \(MSAL\) integration  <br>--- Microsoft Entra App registration  <br>  <br>- Tunnel for MAM SDK for iOS |
+| Microsoft Edge browser support: | - *Strict Tunnel Mode*: When users sign in to Microsoft Edge with an organization account, if the VPN isn't connected, then **Strict Tunnel Mode** blocks internet traffic. When the VPN reconnects, internet browsing is available again.  <br>  <br>- *Identity switch*: VPN connects when using a work or school account and disconnects when switching to a personal account or in-Private browsing.  <br>  <br>- Device-wide and Per-App VPN support | - *Strict Tunnel Mode*: When users sign in to Microsoft Edge with an organization account, if the VPN isn't connected, then **Strict Tunnel Mode** blocks internet traffic. When the VPN reconnects, internet browsing is available again.  <br>  <br>- *Identity switch*: VPN connects when using a work/school account and disconnects when switching to a personal account or in-Private browsing. |
+| Third-party browser support: | - Only with device-wide VPN enabled | - None |
+
+## Try the interactive demos
+
+Try the following interactive demos to discover how Tunnel for MAM extends Microsoft Tunnel VPN Gateway to support Android and iOS devices that aren't enrolled with Intune.
+
+- \[Microsoft Tunnel for Mobile Application Management for Android\]\(/ https:/regale.cloud/Microsoft/viewer/1896/microsoft-tunnel-for-mobile-application-management-for-android/index.html#/0/0\)
+- \[Microsoft Tunnel for Mobile Application Management for iOS/iPadOS\]\(/ https:/regale.cloud/Microsoft/viewer/1976/microsoft-tunnel-for-mobile-application-management-for-ios-ipados/index.html#/0/0\)
+
+## Related content
+
+- [Learn about the Microsoft Tunnel VPN solution for Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/overview)
+- [Use MAM Tunnel for Android](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/mam-android)
+- [MAM Tunnel for iOS](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/mam-ios)

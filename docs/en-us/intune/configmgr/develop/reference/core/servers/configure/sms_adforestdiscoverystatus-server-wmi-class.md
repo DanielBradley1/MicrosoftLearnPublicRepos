@@ -1,0 +1,127 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/configure/sms_adforestdiscoverystatus-server-wmi-class -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# SMS\_ADForestDiscoveryStatus Server WMI Class
+
+The `SMS_ADForestDiscoveryStatus` Windows Management Instrumentation \(WMI\) class is an SMS Provider server class, in Configuration Manager, that represents the status of Configuration Manager Active Directory Forest Discovery.
+
+The following syntax is simplified from Managed Object Format \(MOF\) code and includes all inherited properties.
+
+## Syntax
+
+```
+Class SMS_ADForestDiscoveryStatus : SMS_BaseClass
+{
+    Boolean DiscoveryEnabled;
+    UInt32 DiscoveryStatus;
+    UInt32 ForestID;
+    DateTime LastDiscoveryTime;
+    DateTime LastPublishingTime;
+    Boolean PublishingEnabled;
+    UInt32 PublishingStatus;
+    String SiteCode;
+    String SiteName;
+};
+```
+
+## Methods
+
+The `SMS_ADForestDiscoveryStatus` class does not define any methods.
+
+## Properties
+
+`DiscoveryEnabled` Data type: `Boolean`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+`true` if forest discovery is enabled.
+
+`DiscoveryStatus` Data type: `UInt32`
+
+Access type: Read-only
+
+Qualifiers: \[enumeration, read\]
+
+Discovery status. Possible values are:
+
+| Value | Discovery status |
+| --- | --- |
+| 0 | SUCCEEDED |
+| 1 | COMPLETED |
+| 2 | ACCESS\_DENIED |
+| 3 | FAILED |
+| 4 | STOPPED |
+
+`ForestID` Data type: `UInt32`
+
+Access type: Read/Write
+
+Qualifiers: \[key\]
+
+Identifier of the Active Directory forest.
+
+`LastDiscoveryTime` Data type: `DateTime`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+The last time the forest was discovered.
+
+`LastPublishingTime` Data type: `DateTime`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+The last time the forest was published.
+
+`PublishingEnabled` Data type: `Boolean`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+`true` if Active Directory publishing is enabled.
+
+`PublishingStatus` Data type: `UInt32`
+
+Access type: Read-only
+
+Qualifiers: \[enumeration, read\]
+
+Publishing status. Possible values are:
+
+| Value | Publishing status |
+| --- | --- |
+| 0 | UNKNOWN |
+| 1 | SUCCEEDED |
+| 2 | FAILED |
+
+`SiteCode` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: \[key\]
+
+The site code where the Active Directory forest was discovered.
+
+`SiteName` Data type: `String`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+The site name where the Active Directory forest was discovered.
+
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-runtime-requirements).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-development-requirements).

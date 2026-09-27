@@ -1,0 +1,156 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/sum/sms_updatecategoryinstance-server-wmi-class -->
+<!-- Sitemap-Last-Modified: 2022-10-10 -->
+
+# SMS\_UpdateCategoryInstance Server WMI Class
+
+The `SMS_UpdateCategoryInstance` Windows Management Instrumentation \(WMI\) class is an SMS Provider server class, in Configuration Manager, that represents a software-update-specific `SMS_CategoryInstance Server WMI Class` object available on the site.
+
+The following syntax is simplified from Managed Object Format \(MOF\) code and includes all inherited properties.
+
+## Syntax
+
+```
+Class SMS_UpdateCategoryInstance : SMS_CategoryInstanceBase  
+{  
+      Boolean AllowSubscription;  
+      String CategoryInstance_UniqueID;  
+      UInt32 CategoryInstanceID;  
+      String CategoryTypeName;  
+      Boolean IsSubscribed;  
+      String LocalizedCategoryInstanceName;  
+      SMS_Category_LocalizedProperties LocalizedInformation[];  
+      UInt32 LocalizedPropertyLocaleID;  
+      UInt32 ParentCategoryInstanceID;  
+      String SourceSite;  
+};  
+```
+
+## Methods
+
+The `SMS_UpdateCategoryInstance` class does not define any methods.
+
+Warning
+
+The `ResendObjectToAllSites Method in Class SMS_UpdateCategoryInstance` has been deprecated in Configuration Manager.
+
+## Properties
+
+`AllowSubscription`  
+Data type: `Boolean`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+`true` if the category instance is enabled for subscription to the category metadata from the software update source. The default value is `false`. For more information, see [SMS\_SoftwareUpdateSource Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/sum/sms_softwareupdatesource-server-wmi-class).
+
+Note
+
+Not all categories can be marked for subscription.
+
+`CategoryInstance_UniqueID`  
+Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: \[unique, SizeLimit\("512"\)
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+`CategoryInstanceID`  
+Data type: ```UInt``3``2```
+
+Access type: Read-only
+
+Qualifiers: \[key, read\]
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+`CategoryTypeName`  
+Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: None
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+`IsSubscribed`  
+Data type: `Boolean`
+
+Access type: Read/Write
+
+Qualifiers: \[read\]
+
+`true` if the category instance allows subscription. The default value is `false`. Set this property to `true` only if the `AllowSubscription` property is set to `true`.
+
+`LocalizedCategoryInstanceName`  
+Data type: `String`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+`LocalizedInformation`  
+Data type: `SMS_Category_LocalizedProperties Array` Access type: Read/Write
+
+Qualifiers: \[lazy\]
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+`LocalizedPropertyLocaleID`  
+Data type: `UInt32`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+`ParentCategoryInstanceID`  
+Data type: `UInt32`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+`SourceSite`  
+Data type: `String`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+See [SMS\_CategoryInstanceBase Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/compliance/sms_categoryinstancebase-server-wmi-class).
+
+## Remarks
+
+Class qualifiers for this class include:
+
+- Secured
+- Read \(read-only\)
+
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/misc/class-and-property-qualifiers).
+
+  Your application uses the `SMS_UpdateCategoryInstance` class after creating or modifying a software update deployment using [SMS\_UpdatesAssignment Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/sum/sms_updatesassignment-server-wmi-class). The application can use [SMS\_CIAllCategories Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/sum/sms_ciallcategories-server-wmi-class) to query for all categories associated with the software updates configuration item or for all configuration items associated with a category.
+
+  To use this class, the application obtains an `SMS_SoftwareUpdateSource` object and sets the properties as required for the particular software update and the source.
+
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-runtime-requirements).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-development-requirements).
+
+## See Also
+
+[SMS\_CIAllCategories Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/sum/sms_ciallcategories-server-wmi-class)  
+[About software update deployments](https://learn.microsoft.com/en-us/intune/configmgr/develop/sum/about-software-updates-deployments)

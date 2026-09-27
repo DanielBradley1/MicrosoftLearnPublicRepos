@@ -1,0 +1,17 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/mdm/deploy-use/enroll-devices-on-premises-mdm -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# Enroll devices for on-premises MDM in Configuration Manager
+
+*Applies to: Configuration Manager \(current branch\)*
+
+To manage devices with Configuration Manager on-premises mobile device management \(MDM\), you first need to enroll them. Then Configuration Manager can communicate with the devices for management tasks. Configuration Manager provides two methods to enroll devices:
+
+- **User enrollment**: Users start the enrollment process on their device. For user enrollment to succeed, install the trusted root certificate on the device, and provision the user for enrollment in client settings. To enroll a device, the user only needs to enter their credentials.
+
+  For more information, see [How users enroll devices](https://learn.microsoft.com/en-us/intune/configmgr/mdm/deploy-use/user-enroll-devices-on-premises-mdm).
+- **Bulk enrollment**: The user of the device doesn't start enrollment. You create a bulk enrollment package in Configuration Manager. When you open it on the device, the package provides the information required to enroll the device.
+
+  For more information, see [How to bulk-enroll devices](https://learn.microsoft.com/en-us/intune/configmgr/mdm/deploy-use/bulk-enroll-devices-on-premises-mdm).
+
+For more information on the OS versions that Configuration Manager supports for device enrollment in on-premises MDM, see [Supported configurations](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_OnpremOS).

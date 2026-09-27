@@ -1,0 +1,58 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/osd/runofflineservicingmanager-method-in-class-sms_imagepackage -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# RunOfflineServicingManager Method in Class SMS\_ImagePackage
+
+The `RunOfflineServicingManager` Windows Management Instrumentation \(WMI\) class method, in Configuration Manager, that updates the site control file of the offline servicing manager to run the offline image servicing component as soon as possible on the specified operating system image at the specified site server.
+
+The following syntax is simplified from Managed Object Format \(MOF\) code and defines the method.
+
+## Syntax
+
+```
+uint32 RunOfflineServicingManager
+{
+    [IN]    String SiteCode
+    [IN]    String ServerName
+    [IN]    String PackageID
+    [IN]    UInt32 PackageType
+};
+```
+
+## Parameters
+
+`SiteCode` Data type: `String`
+
+Qualifiers: \[id\("0"\), in\]
+
+Site code of the site where offline servicing of the operating system image is requested.
+
+`ServerName` Data type: `String`
+
+Qualifiers: \[id\("1"\), in\]
+
+Name of the site server where offline servicing of the operating system is requested \(server1.domain1.net\).
+
+`PackageID` Data type: `String`
+
+Qualifiers: \[id\("2"\), in\]
+
+The package identifier of the operating system image to be patched with software updates through offline servicing.
+
+`PackageType` Data type: `UInt32`
+
+Qualifiers: \[id\("3"\), in\]
+
+The package type of the operating system image or operating system upgrade package.
+
+## Remarks
+
+## Requirements
+
+## Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-runtime-requirements).
+
+## Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-development-requirements).

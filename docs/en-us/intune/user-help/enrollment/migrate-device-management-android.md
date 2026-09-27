@@ -1,0 +1,22 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/user-help/enrollment/migrate-device-management-android -->
+<!-- Sitemap-Last-Modified: 2026-04-08 -->
+
+# Move to new device management setup
+
+If your organization requires you to move to a new device management setup, you'll need to follow the onscreen steps to add an Android work profile. A work profile separates the work data on your device from the personal data. Your school or workplace can manage the work profile, which consists of only school or work-related files and data. They can't see or manage the personal data on your device.
+
+Complete the steps in this article to set up your work profile. For a more detailed look at the Android work profile enrollment process, see [Enroll device with Android work profile](https://learn.microsoft.com/en-us/intune/user-help/enrollment/enroll-work-profile-android).
+
+1. On the **Update device settings** screen, you'll see a message titled **Move to new device management setup**. Read over the information for a brief explanation of the required change and then tap **RESOLVE**. If you don't see the resolve button, go to Google Play and install the latest version of the Company Portal app.
+
+   ![The Update device setting screen, highlighting the move to new device management setup message.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/migrate-device-management-android/intune-company-portal-update-settings.png)
+
+2. Read over the checklist of steps you'll take to add the work profile. Then tap **BEGIN**.
+
+   ![The Move to new device management setup screen, highlighting the begin button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/migrate-device-management-android/company-portal-unfinished-checklist-2003.png)
+
+3. Continue through the guided setup until all steps in the checklist are marked as complete.
+
+   ![The Move to new device management setup screen, showing that all steps have been completed.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/migrate-device-management-android/company-portal-checklist-2003.png)
+
+Still need help? Contact your company support. For contact information, check the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).

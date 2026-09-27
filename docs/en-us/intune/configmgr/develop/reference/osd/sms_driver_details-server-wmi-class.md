@@ -1,0 +1,60 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/osd/sms_driver_details-server-wmi-class -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# SMS\_Driver\_Details Server WMI Class
+
+The `SMS_Driver_Details` Windows Management Instrumentation \(WMI\) class is an embedded class, in Configuration Manager, used by the [SMS\_BootImagePackage Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/osd/sms_bootimagepackage-server-wmi-class) class to describe the list of drivers that have been added to the boot image.
+
+The following syntax is simplified from Managed Object Format \(MOF\) code and includes all inherited properties.
+
+## Syntax
+
+```
+Class SMS_Driver_Details
+{
+      UInt32 ID;
+      String SourcePath;
+};
+```
+
+## Methods
+
+The `SMS_Driver_Details` class does not define any methods.
+
+## Properties
+
+`ID` Data type: `UInt32`
+
+Access type: Read/Write
+
+Qualifiers: None
+
+ID of the driver.
+
+`SourcePath` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: \[Not\_null\]
+
+The Universal Naming Convention \(UNC\) path of driver files.
+
+## Remarks
+
+Class qualifiers for this class include:
+
+- Embedded
+
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/misc/class-and-property-qualifiers).
+
+  Your application uses this class to create objects that are embedded by [SMS\_BootImagePackage Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/osd/sms_bootimagepackage-server-wmi-class). For example, the application can add a driver to a boot image package by adding a reference to the required driver in the `ReferencedDrivers` property of an `SMS_BootImagePackage` object. For more information, see How to add a Windows Driver to a Configuration Manager Boot Image Package.
+
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-runtime-requirements).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-development-requirements).

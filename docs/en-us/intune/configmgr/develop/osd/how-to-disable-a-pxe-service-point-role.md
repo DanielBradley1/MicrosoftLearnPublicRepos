@@ -1,0 +1,69 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/osd/how-to-disable-a-pxe-service-point-role -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# How to Disable a PXE Service Point Role
+
+You disable the PXE Service Point role, in Configuration Manager, by getting an instance of a specific distribution point and setting the `IsPXE` value to `0`.
+
+### To disable a PXE service point role
+
+1. Set up a connection to the SMS Provider. For more information see, [SMS Provider fundamentals](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/understand/sms-provider-fundamentals).
+2. Get an instance of a specific distribution point.
+3. Set the `IsPXE` embedded property to `0`.
+4. Save the distribution point instance.
+
+## Example
+
+The following example method disables the PXE service point.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/understand/calling-code-snippets).
+
+```c#
+public void DisablePXE(WqlConnectionManager connection,                                        string siteCode,                                        string serverName){    try    {        //Connect to distribution point instance.                        IResultObject siteRole = connection.GetInstance("SMS_SCI_SysResUse.FileType=2,ItemName=\"[\\\"Display=\\\\\\\\" + serverName + "\\\\\\\"]MSWNET:[\\\"SMS_SITE=" + siteCode + "\\\"]\\\\\\\\" + serverName + "\\\\,SMS Distribution Point\",ItemType=\"System Resource Usage\",SiteCode=" + "\"" + siteCode + "\"");        // Create temporary copy of the embedded properties.        Dictionary<string, IResultObject> embeddedProperties = siteRole.EmbeddedProperties;        // Enumerate through the embedded properties and makes changes as needed.        foreach (KeyValuePair<string, IResultObject> kvp in siteRole.EmbeddedProperties)        {            // Setting: IsPXE            if (kvp.Value.PropertyList["PropertyName"] == "IsPXE")            {                // Get current property value.                Console.WriteLine();                Console.WriteLine("Property: {0}", kvp.Value.PropertyList["PropertyName"]);                Console.WriteLine("Current value: {0} (0 not enabled, 1 enabled)", kvp.Value.PropertyList["Value"]);                // Change value to disable PXE (1 enabled, 0 not enabled).                 embeddedProperties["IsPXE"]["Value"].StringValue = "0";                Console.WriteLine("Setting the {0} value to {1}.", kvp.Value.PropertyList["PropertyName"], "0");            }        }        // Store the settings that have changed.        siteRole.EmbeddedProperties = embeddedProperties;        // Save the settings.         siteRole.Put();    }    catch (SmsException ex)    {        Console.WriteLine();        Console.WriteLine("Failed. Error: " + ex.InnerException.Message);    }}
+```
+
+The example method has the following parameters:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | Managed: `WqlConnectionManager` | A valid connection to the SMS Provider. |
+| `siteCode` | Managed: `String` | The Configuration Manager site code. |
+| `serverName` | Managed: `String` | The server name. For example, `"SERVER1.DOMAIN1.COM"` |
+
+## Compiling the Code
+
+The C# example has the following compilation requirements:
+
+### Namespaces
+
+System
+
+System.Collections.Generic
+
+System.Text
+
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+
+System.Globalization
+
+System.Localization
+
+### Assembly
+
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/understand/about-configuration-manager-errors).
+
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/servers/configure/role-based-administration).
+
+## See Also
+
+[SMS\_SCI\_SysResUse Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class) [About OS deployment site role configuration](https://learn.microsoft.com/en-us/intune/configmgr/develop/osd/about-operating-system-deployment-site-role-configuration) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi)

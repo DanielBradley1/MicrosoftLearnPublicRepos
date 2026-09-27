@@ -1,0 +1,83 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/solutions/azure-virtual-desktop -->
+<!-- Sitemap-Last-Modified: 2026-07-27 -->
+
+# Using Azure Virtual Desktop with Intune
+
+[Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/) is a desktop and app virtualization service that runs on Microsoft Azure. It lets end users connect securely to a full desktop from any device. With Microsoft Intune, you can secure and manage your Azure Virtual Desktop VMs with policy and apps at scale, after they're enrolled.
+
+## Prerequisites
+
+For single-session, Intune supports Azure Virtual Desktop VMs that are:
+
+- Running Windows Enterprise.
+- Set up as [personal remote desktops](https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type) in Azure.
+- [Microsoft Entra hybrid joined](https://learn.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-plan) and enrolled in Intune in one of the following methods:
+
+  - Configure [Active Directory group policy](https://learn.microsoft.com/en-us/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy) to automatically enroll devices that are Microsoft Entra hybrid joined.
+  - [Configuration Manager co-management](https://learn.microsoft.com/en-us/configmgr/comanage/overview).
+  - [User self-enrollment via Microsoft Entra join](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/guide#byod-user-enrollment).
+
+- Microsoft Entra joined and enrolled in Intune by enabling [Enroll the VM with Intune](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#deploy-azure-ad-joined-vms) in the Azure portal.
+- Deployed in an Azure subscription associated with the same Entra ID tenant as Intune
+
+For more information on Azure Virtual Desktop licensing requirements, see [Licensing Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/licensing).
+
+For information about working with multi-session remote desktops, see [Windows Enterprise multi-session remote desktops](https://learn.microsoft.com/en-us/intune/solutions/azure-virtual-desktop-multi-session).
+
+Intune treats Azure Virtual Desktop personal VMs the same as Windows Enterprise physical desktops. This treatment lets you use some of your existing configurations and secure the VMs with compliance policy and Conditional Access. Intune management doesn't depend on or interfere with Azure Virtual Desktop management of the same virtual machine.
+
+## Limitations
+
+There are some limitations to keep in mind when managing Windows Enterprise remote desktops:
+
+### Enrollment
+
+Cross-cloud \(public to sovereign\) enrollments aren't supported, for example an Azure Virtual Desktop created in Azure China Cloud or Azure Government Cloud can't be enrolled in an Intune tenant in the Public Cloud.
+
+### Configuration
+
+All VM limitations listed in [Using Windows virtual machines](https://learn.microsoft.com/en-us/intune/solutions/windows-virtual-machines) also apply to Azure Virtual Desktop VMs.
+
+Also, the following profiles aren't currently supported:
+
+- [Domain Join](https://learn.microsoft.com/en-us/intune/device-configuration/overview#domain-join)
+- [Wi-Fi](https://learn.microsoft.com/en-us/intune/device-configuration/overview#wi-fi)
+
+Make sure that the [RemoteDesktopServices/AllowUsersToConnectRemotely policy](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-remotedesktopservices#remotedesktopservices-allowuserstoconnectremotely) isn't disabled.
+
+### Cloning physical and virtual devices
+
+Intune doesn't support using a cloned image of a computer that is already enrolled. This includes both physical and virtual devices such as Azure Virtual Desktop \(AVD\). When device enrollment or identity tokens are replicated between devices, Intune device enrollment or synchronization failures occur.
+
+- For more information, see [Mobile device enrollment - Windows Client Management](https://learn.microsoft.com/en-us/windows/client-management/mobile-device-enrollment) and [Certificate authentication device enrollment - Windows Client Management](https://learn.microsoft.com/en-us/windows/client-management/certificate-authentication-device-enrollment).
+- For information on disabling token roaming in AVD, see [Using Azure Virtual Desktop multi-session with Microsoft Intune](https://learn.microsoft.com/en-us/intune/solutions/azure-virtual-desktop-multi-session#prerequisites).
+- For information on troubleshooting issues related to image cloning, see [Error hr 0x8007064c: The machine is already enrolled](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-windows-enrollment-errors#error-hr-0x8007064c-the-machine-is-already-enrolled).
+
+### Remote actions
+
+The following Windows desktop device remote actions aren't supported/recommended for Azure Virtual Desktop VMs:
+
+- Windows Autopilot reset
+- BitLocker key rotation
+- Fresh Start
+- Remote lock
+- Reset password
+- Wipe
+
+### Retirement
+
+Deleting VMs from Azure leaves orphaned device records in Intune. They'll be automatically [cleaned up](https://learn.microsoft.com/en-us/intune/governance/configure-cleanup-rules) according to the cleanup rules configured for the tenant.
+
+### Known issues
+
+The following table provides a set of known issues along with more information about each issue.
+
+| Issue | More information |
+| --- | --- |
+| Can't auto-enroll if tenant has more than one MDM provider | This issue will be fixed in the future. |
+| Modern apps, such as Universal Windows Platform \(UWP\) apps, aren't working correctly if [FSLogix](https://learn.microsoft.com/en-us/fslogix/overview) is configured | Using FSLogix and Modern apps could cause compatibility issues. We recommend that you don't configure Modern apps when FSLogix is configured. |
+
+## Next steps
+
+- [Learn more about Azure Virtual Desktops](https://learn.microsoft.com/en-us/azure/virtual-desktop/).
+- [Use Azure Virtual Desktop multi-session with Intune](https://learn.microsoft.com/en-us/intune/solutions/azure-virtual-desktop-multi-session)

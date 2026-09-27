@@ -1,0 +1,69 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/clients/client-classes/idcmsdk--getbaselineinfo-method -->
+<!-- Sitemap-Last-Modified: 2024-01-18 -->
+
+# IDCMSDK::GetBaselineInfo Method
+
+The `IDCMSDK::GetBaselineInfo` method, in Configuration Manager, retrieves information for the specified configuration item baseline.
+
+## Syntax
+
+```
+[IDL]
+HRESULT GetBaselineInfo(
+     LPCWSTR  pszId,
+     LPCWSTR  pszVersion,
+     DWORD  dwFlags,
+     ICIInfo**  ppCIInfo
+);
+```
+
+#### Parameters
+
+`pszId` Data type: `LPCWSTR`
+
+Qualifiers: \[in\]
+
+Pointer to a null-terminated string specifying the baseline configuration item ID. An example ID is "ScopeId\_6CD81FFE-63C4-4AF6-B50A-0847707628A0/Baseline\_780a1633-ba4d-4172-b2b1-583cc733ef56".
+
+`pszVersion` Data type: `LPCWSTR`
+
+Qualifiers: \[in, unique\]
+
+Pointer to a null-terminated string specifying the baseline configuration item version. If this parameter is set to NULL, the method retrieves the latest version of the configuration item that exists in the store. Examples of version strings are "1.00" and "27.00".
+
+`dwFlags` Data type: `DWORD`
+
+Qualifiers: \[in\]
+
+Flags identifying the configuration item. Possible values are:
+
+| Value | dwFlags type and descriptions |
+| --- | --- |
+| 0 | ciinfoAll. Retrieve all properties. Requires administrator privileges. |
+| 1 | ciinfoPublic. Retrieve only public properties. The detailed compliance report isn't a public property. |
+
+`ppCIInfo` Data type: `ICIInfo`
+
+Qualifiers: \[out\]
+
+Pointer to a pointer to an [ICIINFO Interface](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/clients/client-classes/iciinfo-interface) object that represents configuration item information.
+
+## Return Values
+
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S\_OK The method succeeded. All other return values indicate failure.
+
+## Requirements
+
+## Runtime Requirements
+
+For more information, see [Configuration Manager Client Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/client-runtime-requirements).
+
+## Development Requirements
+
+For more information, see [Configuration Manager Client Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/client-development-requirements).
+
+## See Also
+
+[IDCMSDK Interface](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/clients/client-classes/idcmsdk-interface) [ICIINFO Interface](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/clients/client-classes/iciinfo-interface)

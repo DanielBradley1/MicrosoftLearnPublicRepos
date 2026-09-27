@@ -1,0 +1,76 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/osd/sms_osdeploymentkitinstalledversion-server-wmi-class -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# SMS\_OSDeploymentKitInstalledVersion Server WMI Class
+
+The `SMS_OSDeploymentKitInstalledVersion` Windows Management Instrumentation \(WMI\) class is an SMS Provider server class, in Configuration Manager, that represents a mapping of server names to an installed Assessment and Deployment Kit \(ADK\) version.
+
+The following syntax is simplified from Managed Object Format \(MOF\) code and includes all inherited properties.
+
+## Syntax
+
+```
+Class SMS_OSDeploymentKitInstalledVersion : SMS_BaseClass
+{
+    String DeploymentKitVersion;
+    String FQDN;
+    UInt32 MachineID;
+    String NetBiosName;
+};
+```
+
+## Methods
+
+The `SMS_OSDeploymentKitInstalledVersion` class does not define any methods.
+
+## Properties
+
+`DeploymentKitVersion` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: \[not\_null\]
+
+The version of the deployment kit installed on the computer.
+
+`FQDN` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: none
+
+The fully qualified domain name of the computer.
+
+`MachineID` Data type: `UInt32`
+
+Access type: Read/Write
+
+Qualifiers: \[key, not\_null\]
+
+A unique identifier for the computer.
+
+`NetBiosName` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: none
+
+The NetBIOS name of the computer.
+
+## Remarks
+
+Class qualifiers for this class include:
+
+- Dynamic
+
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/misc/class-and-property-qualifiers).
+
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-runtime-requirements).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-development-requirements).

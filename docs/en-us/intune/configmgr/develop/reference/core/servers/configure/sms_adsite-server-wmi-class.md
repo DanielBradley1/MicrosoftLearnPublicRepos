@@ -1,0 +1,95 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/configure/sms_adsite-server-wmi-class -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# SMS\_ADSite Server WMI Class
+
+The `SMS_ADSite` Windows Management Instrumentation \(WMI\) class is an SMS Provider server class, in Configuration Manager, that contains Active Directory sites discovered by Configuration Manager Forest Discovery.
+
+The following syntax is simplified from Managed Object Format \(MOF\) code and includes all inherited properties.
+
+## Syntax
+
+```
+Class SMS_ADSite : SMS_BaseClass
+{
+    String ADSiteDescription;
+    String ADSiteLocation;
+    String ADSiteName;
+    UInt32 Flags;
+    UInt32 ForestID;
+    DateTime LastDiscoveryTime;
+    UInt32 SiteID;
+};
+```
+
+## Methods
+
+The `SMS_ADSite` class does not define any methods.
+
+## Properties
+
+`ADSiteDescription` Data type: `String`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+Description of the Active Directory site.
+
+`ADSiteLocation` Data type: `String`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+Location of the Active Directory site.
+
+`ADSiteName` Data type: `String`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+Name of the Active Directory site.
+
+`Flags` Data type: `UInt32`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+Flags.
+
+`ForestID` Data type: `UInt32`
+
+Access type: Read/Write
+
+Qualifiers: \[key\]
+
+The identifier of Active Directory forest.
+
+`LastDiscoveryTime` Data type: `DateTime`
+
+Access type: Read-only
+
+Qualifiers: \[read\]
+
+The last time this Active Directory site was discovered by Active Directory forest discovery.
+
+`SiteID` Data type: `UInt32`
+
+Access type: Read/Write
+
+Qualifiers: \[key\]
+
+The ID of the site.
+
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-runtime-requirements).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-development-requirements).

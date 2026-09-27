@@ -1,0 +1,51 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/configure/iccmalternatedownloadprovider---modifyjobtimeout-method -->
+<!-- Sitemap-Last-Modified: 2024-01-12 -->
+
+# ICcmAlternateDownloadProvider : ModifyJobTimeout Method
+
+The **ICcmAlternateDownloadProvider::ModifyJobTimeout** method, in Configuration Manager, instructs the provider to modify the timeout for a given job.
+
+## Syntax
+
+```
+HRESULT ModifyJobTimeout(
+            REFGUID JobID,
+            DWORD dwTimeoutSeconds
+    );
+```
+
+#### Parameters
+
+`JobID` Data type: `REFGUID`
+
+Qualifiers: \[in\]
+
+The job on which to take action.
+
+`dwTimeoutSeconds` Data type: `DWORD`
+
+Qualifiers: \[in\]
+
+The new timeout.
+
+## Remarks
+
+Note
+
+An error should be returned if the job is not found or if modification of the timeout failed. If the new timeout results in the job immediately timing out, the call should complete and then the provider should notify Content Transfer Manager of the error using SendNotifyErrorToCTM.
+
+## Return Values
+
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S\_OK Success implies that discovery was triggered successfully. All other return values indicate failure.
+
+## Requirements
+
+## Runtime Requirements
+
+For more information, see [Configuration Manager Client Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/client-runtime-requirements).
+
+## Development Requirements
+
+For more information, see [Configuration Manager Client Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/client-development-requirements).

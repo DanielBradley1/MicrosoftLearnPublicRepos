@@ -1,0 +1,73 @@
+<!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/manage/sms_statinsstr-server-wmi-class -->
+<!-- Sitemap-Last-Modified: 2022-10-04 -->
+
+# SMS\_StatInsStr Server WMI Class
+
+The `SMS_StatInsStr` Windows Management Instrumentation \(WMI\) class is an SMS Provider server class, in Configuration Manager, that represents a high-performance version of [SMS\_StatMsgInsStrings Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/manage/sms_statmsginsstrings-server-wmi-class).
+
+The following syntax is simplified from Managed Object Format \(MOF\) code and includes all inherited properties.
+
+## Syntax
+
+```
+Class SMS_StatInsStr : SMS_BaseClass
+{
+      UInt32 InsStrIndex;
+      String InsStrValue;
+      SInt64 RecordID;
+};
+```
+
+## Methods
+
+The `SMS_StatInsStr` class does not define any methods.
+
+## Properties
+
+`InsStrIndex` Data type: `UInt32`
+
+Access type: Read
+
+Qualifiers: \[key\]
+
+The index defining the order of the insertion strings. The index directly relates to the insertion points in the status message.
+
+`InsStrValue` Data type: `String`
+
+Access type: Read
+
+Qualifiers: none
+
+Text to insert into the insertion point.
+
+`RecordID` Data type: `SInt64`
+
+Access type: Read
+
+Qualifiers: none
+
+Record ID of the status message to which the insertion point belongs.
+
+## Remarks
+
+Class qualifiers for this class include:
+
+- Read \(read-only\)
+
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/misc/class-and-property-qualifiers).
+
+  This class represents insertion strings for Configuration Manager component messages and user-defined messages. The status message is represented by [SMS\_StatusMessage Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class). Your application can use the [RaiseRawStatusMsg Method in Class SMS\_StatusMessage](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/manage/raiserawstatusmsg-method-in-class-sms_statusmessage) to add insertion strings. To delete insertion strings, the application deletes the associated status message.
+
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-runtime-requirements).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](https://learn.microsoft.com/en-us/intune/configmgr/develop/core/reqs/server-development-requirements).
+
+## See Also
+
+[SMS\_StatMsgInsStrings Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/manage/sms_statmsginsstrings-server-wmi-class) [SMS\_StatusMessage Server WMI Class](https://learn.microsoft.com/en-us/intune/configmgr/develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class)
