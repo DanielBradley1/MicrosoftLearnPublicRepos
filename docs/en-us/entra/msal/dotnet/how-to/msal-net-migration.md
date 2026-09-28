@@ -1,0 +1,63 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/msal/dotnet/how-to/msal-net-migration -->
+<!-- Sitemap-Last-Modified: 2026-04-29 -->
+
+# Migrating applications to MSAL.NET or Microsoft.Identity.Web
+
+Warning
+
+Azure Active Directory Authentication Library \(ADAL\) **has been deprecated**. While existing apps that use ADAL will continue to work, Microsoft will no longer release security fixes on ADAL. Use the [Microsoft Authentication Library \(MSAL\)](https://learn.microsoft.com/en-us/entra/msal/) to avoid putting your app's security at risk.
+
+## Why migrate
+
+Azure AD Authentication Library for .NET \(ADAL.NET\) [has been deprecated](https://devblogs.microsoft.com/identity/update-your-applications-from-adal-to-msal/) and no new features or bug fixes, including security bugs will be implemented. Application using ADAL will continue to work.
+
+### Migration guide for apps using ADAL directly
+
+Before digging in the details of MSAL.NET vs ADAL.NET, you might want to check if you want to use MSAL.NET or a higher-level library like [`Microsoft.Identity.Web`](https://learn.microsoft.com/en-us/entra/msidweb/). For details about the decision tree below, read [MSAL.NET or Microsoft.Identity.Web](https://learn.microsoft.com/en-us/entra/msal/dotnet/getting-started/choosing-msal-dotnet).
+
+- You can authenticate a broader set of Microsoft identities: work or school accounts, personal Microsoft accounts, and social or local accounts with Azure AD B2C and Microsoft Entra External ID.
+- Your users get the best single-sign-on \(SSO\) experience.
+- Your application can enable incremental consent, Conditional Access, and other emerging security capabilities.
+- You benefit from continuous innovation in terms of security and resilience,
+
+Important
+
+**MSAL.NET or Microsoft.Identity.Web are now the recommended auth libraries to use with the Microsoft identity platform**. No new features will be implemented in ADAL. For details see the announcement: [Update your applications from ADAL to MSAL](https://devblogs.microsoft.com/identity/update-your-applications-from-adal-to-msal/).
+
+## Should you migrate to MSAL.NET or to Microsoft.Identity.Web
+
+Before digging in the details of MSAL.NET vs ADAL.NET, you might want to check if you want to use MSAL.NET or a higher-level library like [`Microsoft.Identity.Web`](https://learn.microsoft.com/en-us/entra/msidweb/). For details about the decision tree below, read [MSAL.NET or Microsoft.Identity.Web](https://learn.microsoft.com/en-us/entra/msal/dotnet/getting-started/choosing-msal-dotnet).
+
+### Migration guide for apps using ADAL indirectly
+
+You might unknowingly consume ADAL dependencies from other SDKs. In other words, ADAL is a transitive depdendency. This still represents a risk to your application, as your application cannot upgrade ADAL to fix a potential security issue or to benefit from a security improvement.
+
+To migrate, you first have to identify the root dependency that consumes ADAL. In most cases, the root dependency is itself deprecated. To identify the root dependency, you can get use [Visual Studio nuget interface](https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio) or the `dotnet nuget why` [command](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-why)
+
+Below are the most common deprecated packages and their MSAL alternatives. For more detailed migration information, see [AppAuthentication to Azure.Identity Migration Guidance](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/app-auth-migration) and **Migration guide** links in the specific [Azure SDK for .NET](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/) library pages.
+
+| Legacy Package \(ADAL-dependent, deprecated\) | Supported Package \(MSAL-dependent, current\) |
+| --- | --- |
+| `Microsoft.Azure.KeyVault` | `Azure.Security.KeyVault.Secrets, Azure.Security.KeyVault.Keys, Azure.Security.KeyVault.Certificates` |
+| `Microsoft.Azure.Management.Compute` | `Azure.ResourceManager.Compute` |
+| `Microsoft.Azure.Services.AppAuthentication` | `Azure.Identity` |
+| `Microsoft.Azure.Management.StorageSync` | `Azure.ResourceManager.StorageSync` |
+| `Microsoft.Azure.Management.Fluent` | `Azure.ResourceManager` |
+| `Microsoft.Azure.Management.EventGrid` | `Azure.ResourceManager.EventGrid` |
+| `Microsoft.Azure.Management.Automation` | `Azure.ResourceManager.Automation` |
+| `Microsoft.Azure.Management.Compute.Fluent` | `Azure.ResourceManager.Compute` |
+| `Microsoft.Azure.Management.MachineLearning.Fluent` | `Azure.ResourceManager.MachineLearningCompute` |
+| `Microsoft.Azure.Management.Media, windowsazure.mediaservices` | `Azure.ResourceManager.Media` |
+| `Microsoft.Kusto.Client` | `Microsoft.Azure.Kusto.Data` |
+| `Microsoft.Kusto.Ingest` | `Microsoft.Azure.Kusto.Ingest` |
+
+## Next steps
+
+- Learn about [public client and confidential client applications](https://learn.microsoft.com/en-us/entra/identity-platform/msal-client-applications).
+- Learn how to [migrate confidential client applications built on top of ASP.NET MVC or .NET classic from ADAL.NET to MSAL.NET](https://learn.microsoft.com/en-us/entra/msal/dotnet/how-to/migrate-confidential-client).
+- Learn how to [migrate public client applications built on top of .NET or .NET classic from ADAL.NET to MSAL.NET](https://learn.microsoft.com/en-us/entra/msal/dotnet/how-to/migrate-public-client).
+- Learn more about the [Differences between ADAL.NET and MSAL.NET apps](https://learn.microsoft.com/en-us/entra/msal/dotnet/how-to/differences-adal-msal-net).
+- Learn how to migrate confidential client applications built on top of ASP.NET Core from ADAL.NET to Microsoft.Identity.Web:
+
+  - [Web apps](https://github.com/AzureAD/microsoft-identity-web/wiki/web-apps#migrating-from-previous-versions--adding-authentication)
+  - [Web APIs](https://github.com/AzureAD/microsoft-identity-web/wiki/web-apis)

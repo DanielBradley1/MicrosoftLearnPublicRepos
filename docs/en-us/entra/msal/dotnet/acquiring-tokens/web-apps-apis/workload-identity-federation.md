@@ -1,0 +1,53 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/msal/dotnet/acquiring-tokens/web-apps-apis/workload-identity-federation -->
+<!-- Sitemap-Last-Modified: 2025-07-18 -->
+
+# Workload identity federation
+
+[Workload identity federation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation) allows you to access Microsoft Entra protected resources without needing to manage client application secrets. First, set up the workload identity federation in the app registration. In the application code, create a function which will fetch the tokens from the external provider, then pass it into [WithClientAssertion\(Func<AssertionRequestOptions,Task<String>>\)](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder.withclientassertion#microsoft-identity-client-confidentialclientapplicationbuilder-withclientassertion\(system-func\(\(microsoft-identity-client-assertionrequestoptions-system-threading-tasks-task\(\(system-string\)\)\)\)\)). For each token request, MSAL will call this function to get an external token with which to acquire the Microsoft Entra tokens. Make sure this function caches the token to avoid making too many calls to the external provider.
+
+```csharp
+using Microsoft.Identity.Client;
+
+var app = ConfidentialClientApplicationBuilder
+            .Create(clientId)
+            .WithClientAssertion((AssertionRequestOptions options) => FetchExternalTokenAsync())
+            .WithCacheOptions(CacheOptions.EnableSharedCacheOptions) // for more cache options see https://learn.microsoft.com/entra/msal/dotnet/how-to/token-cache-serialization?tabs=msal
+            .Build()
+
+var result = await app.AcquireTokenForClient(scope).ExecuteAsync();
+
+public async Task<string> FetchExternalTokenAsync() 
+{
+    // Logic to get token from cache or other sources, like GitHub, Kubernetes, etc.
+    // Caching is the responsability of the implementer.
+    return token;
+}
+```
+
+[Microsoft.Identity.Web.Certificateless](https://www.nuget.org/packages/Microsoft.Identity.Web.Certificateless) package provides some helper methods to acquire federated tokens. Use [ManagedIdentityClientAssertion](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.web.managedidentityclientassertion) for managed identity federation.
+
+```csharp
+using Microsoft.Identity.Web;
+
+// Reuse this instance so that the assertion is cached and only refreshed once it expires.
+ManagedIdentityClientAssertion managedIdentityClientAssertion = new ManagedIdentityClientAssertion(userAssignedId);
+
+public async Task<string> FetchExternalTokenAsync() 
+{
+    return await managedIdentityClientAssertion.GetSignedAssertion(default);
+}
+```
+
+To acquire a federated token in a Azure Kubernetes cluster, use [AzureIdentityForKubernetesClientAssertion](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.web.azureidentityforkubernetesclientassertion).
+
+```csharp
+using Microsoft.Identity.Web;
+
+// Reuse this instance so that the assertion is cached and only refreshed once it expires.
+AzureIdentityForKubernetesClientAssertion aksClientAssertion = new AzureIdentityForKubernetesClientAssertion();
+
+public async Task<string> FetchExternalTokenAsync() 
+{
+    return await aksClientAssertion.GetSignedAssertion(default);
+}
+```

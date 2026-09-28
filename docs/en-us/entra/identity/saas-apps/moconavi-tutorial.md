@@ -1,0 +1,136 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/moconavi-tutorial -->
+<!-- Sitemap-Last-Modified: 2025-03-25 -->
+
+# Configure moconavi for Single sign-on with Microsoft Entra ID
+
+In this article, you learn how to integrate moconavi with Microsoft Entra ID. When you integrate moconavi with Microsoft Entra ID, you can:
+
+- Control in Microsoft Entra ID who has access to moconavi.
+- Enable your users to be automatically signed-in to moconavi with their Microsoft Entra accounts.
+- Manage your accounts in one central location.
+
+## Prerequisites
+
+The scenario outlined in this article assumes that you already have the following prerequisites:
+
+- A Microsoft Entra user account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- One of the following roles:
+
+  - [Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+  - [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
+  - [Application Owner](https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+
+- moconavi single sign-on \(SSO\) enabled subscription.
+
+## Scenario description
+
+In this article, you configure and test Microsoft Entra single sign-on in a test environment.
+
+- moconavi supports **SP** initiated SSO.
+
+## Add moconavi from the gallery
+
+To configure the integration of moconavi into Microsoft Entra ID, you need to add moconavi from the gallery to your list of managed SaaS apps.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+3. In the **Add from the gallery** section, type **moconavi** in the search box.
+4. Select **moconavi** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/azure-ad-setup-guides)
+
+## Configure and test Microsoft Entra SSO for moconavi
+
+Configure and test Microsoft Entra SSO with moconavi using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in moconavi.
+
+To configure and test Microsoft Entra SSO with moconavi, perform the following steps:
+
+1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
+
+   1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+   2. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
+
+2. **[Configure moconavi SSO](#configure-moconavi-sso)** - to configure the single sign-on settings on application side.
+
+   1. **[Create moconavi test user](#create-moconavi-test-user)** - to have a counterpart of B.Simon in moconavi that's linked to the Microsoft Entra representation of user.
+
+3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
+
+## Configure Microsoft Entra SSO
+
+Follow these steps to enable Microsoft Entra SSO.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **moconavi** > **Single sign-on**.
+3. On the **Select a single sign-on method** page, select **SAML**.
+4. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+
+   ![Edit Basic SAML Configuration](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/edit-urls.png)
+
+5. On the **Basic SAML Configuration** section, perform the following steps:
+
+   a. In the **Identifier** box, type a URL using the following pattern: `https://<yourserverurl>/moconavi-saml2`
+
+   b. In the **Reply URL** text box, type a URL using the following pattern: `https://<yourserverurl>/moconavi-saml2/saml/SSO`
+
+   c. In the **Sign-on URL** text box, type a URL using the following pattern: `https://<yourserverurl>/moconavi-saml2/saml/login`
+
+   Note
+
+   These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [moconavi Client support team](mailto:support@recomot.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+
+   ![The Certificate download link](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/metadataxml.png)
+
+7. On the **Set up moconavi** section, copy the appropriate URL\(s\) as per your requirement.
+
+   ![Copy configuration URLs](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/copy-configuration-urls.png)
+
+### Create and assign Microsoft Entra test user
+
+Follow the guidelines in the [create and assign a user account](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-assign-users) quickstart to create a test user account called B.Simon.
+
+## Configure moconavi SSO
+
+To configure single sign-on on **moconavi** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [moconavi support team](mailto:support@recomot.co.jp). They set this setting to have the SAML SSO connection set properly on both sides.
+
+### Create moconavi test user
+
+In this section, you create a user called Britta Simon in moconavi. Work with [moconavi support team](mailto:support@recomot.co.jp) to add the users in the moconavi platform. Users must be created and activated before you use single sign-on.
+
+## Test SSO
+
+1. Install moconavi from Microsoft store.
+2. Start moconavi.
+3. Select **Connect setting** button.
+
+   ![Screenshot shows moconavi with the Connection setting button.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/moconavi-tutorial/settings.png)
+
+4. Enter `https://mcs-admin.moconavi.biz/gateway` into **Connect to URL** textbox and then select **Done** button.
+
+   ![Screenshot shows the Connect to U R L box and Done button.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/moconavi-tutorial/testing.png)
+
+5. On the following screenshot, perform the following steps:
+
+   ![Screenshot shows the moconavi page where you can enter the values described.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/moconavi-tutorial/values.png)
+
+
+   a. Enter **Input Authentication Key**:`azureAD` into **Input Authentication Key** textbox.
+
+
+   b. Enter **Input User ID**: `your ad account` into **Input User ID** textbox.
+
+
+   c. Select **LOGIN**.
+
+6. Input your Microsoft Entra password to **Password** textbox and then select **Login** button.
+
+   ![Screenshot shows where to enter your Microsoft Entra password.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/moconavi-tutorial/input.png)
+
+7. Microsoft Entra authentication is successful when the menu is displayed.
+
+   ![Screenshot shows the Telephone icon in moconavi.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/moconavi-tutorial/authentication.png)
+
+## Related content
+
+Once you configure moconavi you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/cloud-app-security/proxy-deployment-aad).

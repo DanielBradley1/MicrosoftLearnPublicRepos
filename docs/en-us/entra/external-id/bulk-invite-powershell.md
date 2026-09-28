@@ -1,0 +1,125 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/external-id/bulk-invite-powershell -->
+<!-- Sitemap-Last-Modified: 2025-03-13 -->
+
+# Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users
+
+**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to workforce tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) Workforce tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
+
+If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time via the portal or PowerShell. In this tutorial, you learn how to use PowerShell to send bulk invitations to external users. Specifically, you do the following:
+
+- Prepare a comma-separated value \(.csv\) file with the user information
+- Run a PowerShell script to send invitations
+- Verify the users are added to the directory
+
+If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
+
+## Prerequisites
+
+### Install the latest Microsoft Graph PowerShell module
+
+Make sure you install the latest version of the Microsoft Graph PowerShell module.
+
+First, check which modules you've installed. Open PowerShell as an elevated user \(run as administrator\), and run the following command:
+
+```powershell
+Get-InstalledModule Microsoft.Graph
+```
+
+To install the v1 module of the SDK in PowerShell Core or Windows PowerShell, run this command:
+
+```powershell
+Install-Module Microsoft.Graph -Scope CurrentUser
+```
+
+Optionally, change the scope of the installation using the `-Scope` parameter. This requires admin permissions.
+
+```powershell
+Install-Module Microsoft.Graph -Scope AllUsers
+```
+
+To install the beta module, run this command.
+
+```powershell
+Install-Module Microsoft.Graph.Beta
+```
+
+You might receive a prompt that you're installing the module from an untrusted repository. This occurs if you haven't previously set the PSGallery repository as a trusted repository. Press `Y` to install the module.
+
+### Get test email accounts
+
+You need two or more test email accounts to send the invitations to. The accounts must be from outside your organization. You can use any type of account, including social accounts such as `gmail.com` or `outlook.com` addresses.
+
+## Prepare the CSV file
+
+In Microsoft Excel, create a CSV file with the list of invitee usernames and email addresses. Make sure to include the **Name** and **InvitedUserEmailAddress** column headings.
+
+For example, create a worksheet in the following format:
+
+![Screenshot that shows the csv file columns of Name and InvitedUserEmailAddress.](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/addusersexcel.png)
+
+Save the file as **C:\\BulkInvite\\Invitations.csv**.
+
+If you don't have Excel, create a CSV file in any text editor, such as Notepad. Separate each value with a comma, and each row with a new line.
+
+## Sign in to your tenant
+
+Run the following command to connect to the tenant:
+
+```powershell
+Connect-MgGraph -TenantId "<YOUR_TENANT_ID>"
+```
+
+For example, `Connect-MgGraph -TenantId "aaaabbbb-0000-cccc-1111-dddd2222eeee"`. You can also use the tenant domain, but the parameter remains the `-TenantId`. For example, `Connect-MgGraph -TenantId "contoso.onmicrosoft.com"`.
+
+When prompted, enter your credentials.
+
+## Send bulk invitations
+
+To send the invitations, run the following PowerShell script \(where \* \* *c:\\bulkinvite\\invitations.csv* is the path of the CSV file\):
+
+```powershell
+$invitations = import-csv c:\bulkinvite\invitations.csv
+
+$messageInfo = New-Object Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvitedUserMessageInfo
+
+$messageInfo.customizedMessageBody = "Hello. You are invited to the Contoso organization."
+
+foreach ($email in $invitations) {
+	New-MgInvitation ` 
+      -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
+		-InvitedUserDisplayName $email.Name `
+		-InviteRedirectUrl https://myapplications.microsoft.com/?tenantid=aaaabbbb-0000-cccc-1111-dddd2222eeee `
+		-InvitedUserMessageInfo $messageInfo `
+		-SendInvitationMessage
+}
+```
+
+The script sends an invitation to the email addresses in the *invitations.csv* file. You see output similar to the following for each user:
+
+![Screenshot that shows PowerShell output that includes pending user acceptance.](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/b2bbulkimport.png)
+
+## Verify users exist in the directory
+
+To verify that the invited users were added to Microsoft Entra ID, run the following command:
+
+```powershell
+ Get-MgUser -Filter "UserType eq 'Guest'"
+```
+
+You should see the users that you invited listed, with a user principal name \(UPN\) in the format *emailaddress*#EXT#@*domain*. For example, *msullivan\_fabrikam.com#EXT#@contoso.onmicrosoft.com*, where `contoso.onmicrosoft.com` is the organization from which you sent the invitations.
+
+## Clean up resources
+
+When no longer needed, you can delete the test user accounts in the directory. Run the following command to delete a user account:
+
+```powershell
+ Remove-MgUser -UserId "<String>"
+```
+
+For example: `Remove-MgUser -UserId "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"`
+
+## Related content
+
+In this tutorial, you sent bulk invitations to guest users outside of your organization. Next, learn how to bulk invite guest users on the portal and how to enforce MFA for them.
+
+- [Bulk invite guest users via the portal](https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite)

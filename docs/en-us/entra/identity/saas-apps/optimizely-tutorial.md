@@ -1,0 +1,18 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/optimizely-tutorial -->
+<!-- Sitemap-Last-Modified: 2025-04-16 -->
+
+# Configure Optimizely for Single sign-on with Microsoft Entra ID
+
+An SSO integration between Microsoft Entra ID and Optimizely can be configured in Optimizely's Opti ID Admin Center. Please follow the instructions provided in the Optimizely knowledge base: [Get started with Opti ID](https://support.optimizely.com/hc/en-us/articles/12613241464461-Get-started-with-Opti-ID)
+
+## Test SSO
+
+In this section, you test your Microsoft Entra single sign-on configuration with following options.
+
+- Select **Test this application**, this option redirects to Optimizely Sign-on URL where you can initiate the login flow.
+- Go to Optimizely Sign-on URL directly and initiate the login flow from there.
+- You can use Microsoft My Apps. When you select the Optimizely tile in the My Apps, this option redirects to Optimizely Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+
+## Related content
+
+Once you configure Optimizely you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/cloud-app-security/proxy-deployment-aad).

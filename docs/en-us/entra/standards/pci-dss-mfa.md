@@ -1,0 +1,32 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/standards/pci-dss-mfa -->
+<!-- Sitemap-Last-Modified: 2023-10-23 -->
+
+# Microsoft Entra PCI-DSS Multi-Factor Authentication guidance
+
+**Information Supplement: Multi-Factor Authentication v 1.0**
+
+Use the following table of authentication methods supported by Microsoft Entra ID to meet requirements in the PCI Security Standards Council [Information Supplement, Multi-Factor Authentication v 1.0](https://listings.pcisecuritystandards.org/pdfs/Multi-Factor-Authentication-Guidance-v1.pdf).
+
+| Method | To meet requirements | Protection | MFA element |
+| --- | --- | --- | --- |
+| [Passwordless phone sign in with Microsoft Authenticator](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-phone) | Something you have \(device with a key\), something you know or are \(PIN or biometric\)  <br>In iOS, Authenticator Secure Element \(SE\) stores the key in Keychain. [Apple Platform Security, Keychain data protection](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web)  <br>In Android, Authenticator uses Trusted Execution Engine \(TEE\) by storing the key in Keystore. [Developers, Android Keystore system](https://developer.android.com/training/articles/keystore)  <br>When users authenticate using Microsoft Authenticator, Microsoft Entra ID generates a random number the user enters in the app. This action fulfills the out-of-band authentication requirement. | Customers configure device protection policies to mitigate device compromise risk. For instance, Microsoft Intune compliance policies. | Users unlock the key with the gesture, then Microsoft Entra ID validates the authentication method. |
+| [Windows Hello for Business Deployment Prerequisite Overview](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-identity-verification) | Something you have \(Windows device with a key\), and something you know or are \(PIN or biometric\).  <br>Keys are stored with device Trusted Platform Module \(TPM\). Customers use devices with hardware TPM 2.0 or later to meet the authentication method independence and out-of-band requirements.  <br>[Certified Authenticator Levels](https://fidoalliance.org/certification/authenticator-certification-levels/) | Configure device protection policies to mitigate device compromise risk. For instance, Microsoft Intune compliance policies. | Users unlock the key with the gesture for Windows device sign in. |
+| [Enable passwordless security key sign-in, Enable FIDO2 security key method](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-security-key) | Something that you have \(FIDO2 security key\) and something you know or are \(PIN or biometric\).  <br>Keys are stored with hardware cryptographic features. Customers use FIDO2 keys, at least Authentication Certification Level 2 \(L2\) to meet the authentication method independence and out-of-band requirement. | Procure hardware with protection against tampering and compromise. | Users unlock the key with the gesture, then Microsoft Entra ID validates the credential. |
+| [Overview of Microsoft Entra certificate-based authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication) | Something you have \(smart card\) and something you know \(PIN\).  <br>Physical smart cards or virtual smartcards stored in TPM 2.0 or later, are a Secure Element \(SE\). This action meets the authentication method independence and out-of-band requirement. | Procure smart cards with protection against tampering and compromise. | Users unlock the certificate private key with the gesture, or PIN, then Microsoft Entra ID validates the credential. |
+
+## Next steps
+
+PCI-DSS requirements **3**, **4**, **9**, and **12** aren't applicable to Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://www.pcisecuritystandards.org/document_library/).
+
+To configure Microsoft Entra ID to comply with PCI-DSS, see the following articles.
+
+- [Microsoft Entra PCI-DSS guidance](https://learn.microsoft.com/en-us/entra/standards/pci-dss-guidance)
+- [Requirement 1: Install and Maintain Network Security Controls](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-1)
+- [Requirement 2: Apply Secure Configurations to All System Components](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-2)
+- [Requirement 5: Protect All Systems and Networks from Malicious Software](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-5)
+- [Requirement 6: Develop and Maintain Secure Systems and Software](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-6)
+- [Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-7)
+- [Requirement 8: Identify Users and Authenticate Access to System Components](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-8)
+- [Requirement 10: Log and Monitor All Access to System Components and Cardholder Data](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-10)
+- [Requirement 11: Test Security of Systems and Networks Regularly](https://learn.microsoft.com/en-us/entra/standards/pci-requirement-11)
+- [Microsoft Entra PCI-DSS Multi-Factor Authentication guidance](https://learn.microsoft.com/en-us/entra/standards/pci-dss-mfa) \(You're here\)

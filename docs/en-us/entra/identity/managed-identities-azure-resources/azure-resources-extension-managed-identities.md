@@ -1,0 +1,75 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/azure-resources-extension-managed-identities -->
+<!-- Sitemap-Last-Modified: 2025-07-16 -->
+
+# Use Azure Resources Extension in Visual Studio \(VS\) Code for Managed Identities
+
+The Azure Resources extension for Visual Studio Code provides a powerful interface for managing Azure resources directly from your development environment. The extension offers essential capabilities for developers to inspect, and verify their managed identity configurations. This article focuses on three tasks you can accomplish from within VS Code to ensure your managed identities are properly configured and secure.
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+- Visual Studio Code installed
+- Appropriate permissions to view Azure resources
+- Access to the Azure subscription containing your managed identities
+
+## Install Azure Resources Extension
+
+To work with managed identities in Visual Studio Code, you need the Azure Resources extension. For more information, see [Azure Resources for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureresourcegroups)
+
+## Create a Managed Identity
+
+You need to have a managed identity created in your Azure subscription. For more information, see [create a managed identity](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities).
+
+## Discover managed identity properties \(Client ID, Object ID, etc.\)
+
+The first step in working with managed identities is understanding their key properties and how to access them from VS Code. Every managed identity has several important properties that your application code needs. For example:
+
+- Client ID: The unique identifier used by your application to request tokens
+- Object ID \(Principal ID\): The unique identifier in Microsoft Entra used for role assignments
+- Resource ID: The full Azure resource path for the managed identity
+- Tenant ID: The Microsoft Entra tenant where the identity exists
+
+These properties can't be directly viewed in the Azure Resources extension. Use Copilot with the `/@azure` command to retrieve them. Here’s how you can do it:
+
+1. Open the Azure Resources extension in the VS Code sidebar
+2. Select your subscription
+3. Locate the Managed Identities section. Here. you see all your managed identities that you have access to.
+4. Right click on the managed identity of interest and select \*\*Ask @Azure\*\*. This opens a chat with Copilot. It requires you to sign in to your Azure account if you haven't already. Ensure you're using Copilot in agent mode since this is required to access Azure resources.
+5. Query for any property you're looking for like `Client ID`, `Object ID`, or `Resource ID`. For example, you can type:
+
+   ```
+    /@azure get the Client ID of the managed identity named "myManagedIdentity"
+   ```
+
+## Confirm source resources using a managed identity
+
+Managed identities can be used as an identity for various Azure resources, such as virtual machines, app services, and more. To confirm which resources are using a specific managed identity, you can check the target services associated with that identity.
+
+1. Open the Azure Resources extension in the VS Code sidebar
+2. Select your subscription
+3. Locate the Managed Identities section. Here. you see all your managed identities that you have access to.
+4. Select a managed identity then select **Source Resources**.
+5. All resources using the managed identity are listed here.
+
+## Confirm managed identity assignment to target resource
+
+Managed identities can be assigned to various Azure resources. You can check the resources to which a managed identity is assigned directly from the Azure Resources extension in Visual Studio Code. This is useful for ensuring that your managed identity is correctly configured for the resources it needs to access.
+
+1. Open the Azure Resources extension in the VS Code sidebar
+2. Select your subscription
+3. Locate the Managed Identities section. Here. you see all your managed identities that you have access to.
+4. Select a managed identity then select **Target Services**.
+5. All resources that the managed identity is assigned to are listed here.
+
+## Confirm managed identity permissions for a target resource
+
+Permissions are managed through Azure Role-Based Access Control \(RBAC\), which allows you to assign roles to your managed identity for specific resources.
+
+Follow these steps to confirm the permissions of your managed identity:
+
+1. Open the Azure Resources extension in the VS Code sidebar
+2. Select your subscription
+3. Locate the Managed Identities section. Here, you see all your managed identities that you have access to.
+4. Select a managed identity then select **Target Services**. All resources that the managed identity is assigned to will be listed here.
+5. Select a target resource to view its permissions

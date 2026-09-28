@@ -1,0 +1,89 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/howto-implement-rbac-for-apps -->
+<!-- Sitemap-Last-Modified: 2024-10-29 -->
+
+# Implement role-based access control
+
+Role-based access control \(RBAC\) allows users or groups to have specific permissions to access and manage resources. Typically, implementing RBAC to protect a resource includes protecting either a web application, a single-page application \(SPA\), or an API. This protection could be for the entire application or API, specific areas and features, or API methods. For more information about the basics of authorization, see [Authorization basics](https://learn.microsoft.com/en-us/entra/identity-platform/authorization-basics).
+
+As discussed in [Role-based access control for application developers](https://learn.microsoft.com/en-us/entra/identity-platform/custom-rbac-for-developers), there are three ways to implement RBAC using the Microsoft identity platform:
+
+- **App Roles** – using the [App Roles feature in an application](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps#declare-roles-for-an-application) using logic within the application to interpret incoming app role assignments.
+- **Groups** – using group assignments of an incoming identity using logic within the application to interpret the group assignments.
+- **Custom Data Store** – retrieve and interpret role assignments using logic within the application.
+
+The preferred approach is to use *App Roles* as it is the easiest to implement. This approach is supported directly by the SDKs that are used in building apps utilizing the Microsoft identity platform. For more information on how to choose an approach, see [Choose an approach](https://learn.microsoft.com/en-us/entra/identity-platform/custom-rbac-for-developers#choose-an-approach).
+
+## Define app roles
+
+The first step for implementing RBAC for an application is to define the app roles for it and assign users or groups to it. This process is outlined in [How to: Add app roles to your application and receive them in the token](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps). After defining the app roles and assigning users or groups to them, access the role assignments in the tokens coming into the application and act on them accordingly.
+
+## Implement RBAC in ASP.NET Core
+
+ASP.NET Core supports adding RBAC to an ASP.NET Core web application or web API. Adding RBAC allows for easy implementation by using [role checks](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0&preserve-view=true#adding-role-checks) with the ASP.NET Core *Authorize* attribute. It's also possible to use ASP.NET Core’s support for [policy-based role checks](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0&preserve-view=true#policy-based-role-checks).
+
+### ASP.NET Core MVC web application
+
+Implementing RBAC in an ASP.NET Core MVC web application is straightforward. It mainly involves using the *Authorize* attribute to specify which roles should be allowed to access specific controllers or actions in the controllers. Follow these steps to implement RBAC in an ASP.NET Core MVC application:
+
+1. Create an application registration with app roles and assignments as outlined in *Define app roles* above.
+2. Do one of the following steps:
+
+   - Create a new ASP.NET Core MVC web application project using the **dotnet cli**. Specify the `--auth` flag with either `SingleOrg` for single tenant authentication or `MultiOrg` for multi-tenant authentication, the `--client-id` flag with the client if from the application registration, and the `--tenant-id` flag with the tenant if from the Microsoft Entra tenant:
+
+     ```bash
+     dotnet new mvc --auth SingleOrg --client-id <YOUR-APPLICATION-CLIENT-ID> --tenant-id <TENANT-ID>  
+     ```
+
+   - Add the Microsoft.Identity.Web and Microsoft.Identity.Web.UI libraries to an existing ASP.NET Core MVC project:
+
+     ```bash
+     dotnet add package Microsoft.Identity.Web 
+     dotnet add package Microsoft.Identity.Web.UI 
+     ```
+
+3. Follow the instructions specified in [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-v2-aspnet-core-webapp?view=aspnetcore-5.0&preserve-view=true) to add authentication to the application.
+4. Add role checks on the controller actions as outlined in [Adding role checks](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0&preserve-view=true#adding-role-checks).
+5. Test the application by trying to access one of the protected MVC routes.
+
+### ASP.NET Core web API
+
+Implementing RBAC in an ASP.NET Core web API mainly involves utilizing the *Authorize* attribute to specify which roles should be allowed to access specific controllers or actions in the controllers. Follow these steps to implement RBAC in the ASP.NET Core web API:
+
+1. Create an application registration with app roles and assignments as outlined in *Define app roles* above.
+2. Do one of the following steps:
+
+   - Create a new ASP.NET Core MVC web API project using the **dotnet cli**. Specify the `--auth` flag with either `SingleOrg` for single tenant authentication or `MultiOrg` for multi-tenant authentication, the `--client-id` flag with the client if from the application registration, and the `--tenant-id` flag with the tenant if from the Microsoft Entra tenant:
+
+     ```bash
+     dotnet new webapi --auth SingleOrg --client-id <YOUR-APPLICATION-CLIENT-ID> --tenant-id <TENANT-ID> 
+     ```
+
+   - Add the Microsoft.Identity.Web and Swashbuckle.AspNetCore libraries to an existing ASP.NET Core web API project:
+
+     ```bash
+     dotnet add package Microsoft.Identity.Web
+     dotnet add package Swashbuckle.AspNetCore 
+     ```
+
+3. Follow the instructions specified in [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-v2-aspnet-core-webapp?view=aspnetcore-5.0&preserve-view=true) to add authentication to the application.
+4. Add role checks on the controller actions as outlined in [Adding role checks](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0&preserve-view=true#adding-role-checks).
+5. Call the API from a client application. See [Angular single-page application calling ASP.NET Core web API and using App Roles to implement Role-Based Access Control](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-samples) for an end to end sample.
+
+## Implement RBAC in other platforms
+
+### Angular SPA
+
+Implementing RBAC in an Angular SPA involves the use of the [Microsoft Authentication Library for Angular](https://www.npmjs.com/package/@azure/msal-angular) to authorize access to the Angular routes contained within the application. An example is shown in the [MSAL Angular v3 Samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-samples).
+
+Note
+
+Client-side RBAC implementations should be paired with server-side RBAC to prevent unauthorized applications from accessing sensitive resources.
+
+### Node.js with Express application
+
+Implementing RBAC in a Node.js with express application involves the use of MSAL to authorize access to the Express routes contained within the application. An example is shown in the [Enable your Node.js web app to sign-in users and call APIs with the Microsoft identity platform](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial#chapter-4-control-access-to-your-app-using-app-roles-and-security-groups) sample.
+
+## Next steps
+
+- Read more on [permissions and consent in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview).
+- Read more on [role-based access control for application developers](https://learn.microsoft.com/en-us/entra/identity-platform/custom-rbac-for-developers).

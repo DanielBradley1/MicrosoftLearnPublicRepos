@@ -1,0 +1,165 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/empcenter-tutorial -->
+<!-- Sitemap-Last-Modified: 2025-04-25 -->
+
+# Configure EmpCenter for Single sign-on with Microsoft Entra ID
+
+In this article, you learn how to integrate EmpCenter with Microsoft Entra ID. Integrating EmpCenter with Microsoft Entra ID provides you with the following benefits:
+
+- You can control in Microsoft Entra ID who has access to EmpCenter.
+- You can enable your users to be automatically signed-in to EmpCenter \(Single Sign-On\) with their Microsoft Entra accounts.
+- You can manage your accounts in one central location.
+
+If you want to know more details about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on). If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
+
+## Prerequisites
+
+To configure Microsoft Entra integration with EmpCenter, you need the following items:
+
+- A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
+- EmpCenter single sign-on enabled subscription
+
+## Scenario description
+
+In this article, you configure and test Microsoft Entra single sign-on in a test environment.
+
+- EmpCenter supports **SP** initiated SSO
+
+## Adding EmpCenter from the gallery
+
+To configure the integration of EmpCenter into Microsoft Entra ID, you need to add EmpCenter from the gallery to your list of managed SaaS apps.
+
+**To add EmpCenter from the gallery, perform the following steps:**
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+3. In the search box, type **EmpCenter**, select **EmpCenter** from result panel then select **Add** button to add the application.
+
+   ![EmpCenter in the results list](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/search-new-app.png)
+
+## Configure and test Microsoft Entra single sign-on
+
+In this section, you configure and test Microsoft Entra single sign-on with EmpCenter based on a test user called **Britta Simon**. For single sign-on to work, a link relationship between a Microsoft Entra user and the related user in EmpCenter needs to be established.
+
+To configure and test Microsoft Entra single sign-on with EmpCenter, you need to complete the following building blocks:
+
+1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
+2. **[Configure EmpCenter Single Sign-On](#configure-empcenter-single-sign-on)** - to configure the Single Sign-On settings on application side.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
+5. **[Create EmpCenter test user](#create-empcenter-test-user)** - to have a counterpart of Britta Simon in EmpCenter that's linked to the Microsoft Entra representation of user.
+6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
+
+### Configure Microsoft Entra single sign-on
+
+In this section, you enable Microsoft Entra single sign-on.
+
+To configure Microsoft Entra single sign-on with EmpCenter, perform the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **EmpCenter** application integration page, select **Single sign-on**.
+
+   ![Configure single sign-on link](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/select-sso.png)
+
+3. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
+
+   ![Single sign-on select mode](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/select-saml-option.png)
+
+4. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
+
+   ![Edit Basic SAML Configuration](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/edit-urls.png)
+
+5. On the **Basic SAML Configuration** section, perform the following steps:
+
+   ![EmpCenter Domain and URLs single sign-on information](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/sp-signonurl.png)
+
+
+   In the **Sign-on URL** text box, type a URL using the following pattern:
+
+
+   ```https
+   https://<subdomain>.EmpCenter.com/<instancename>
+   https://<subdomain>.workforcehosting.com/<instancename>
+   ```
+
+
+   Note
+
+
+   The value isn't real. Update the value with the actual Sign-On URL. Contact [EmpCenter Client support team](https://workforcesoftware.com/support-offerings/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+
+   ![The Certificate download link](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/metadataxml.png)
+
+7. On the **Set up EmpCenter** section, copy the appropriate URL\(s\) as per your requirement.
+
+   ![Copy configuration URLs](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/copy-configuration-urls.png)
+
+
+   a. Login URL
+
+
+   b. Microsoft Entra Identifier
+
+
+   c. Logout URL
+
+### Configure EmpCenter Single Sign-On
+
+To configure single sign-on on **EmpCenter** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [EmpCenter support team](https://workforcesoftware.com/support-offerings/). They set this setting to have the SAML SSO connection set properly on both sides.
+
+### Create a Microsoft Entra test user
+
+The objective of this section is to create a test user called Britta Simon.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#user-administrator).
+2. Browse to **Entra ID** > **Users**.
+3. Select **New user** > **Create new user**, at the top of the screen.
+4. In the **User** properties, follow these steps:
+
+   1. In the **Display name** field, enter `B.Simon`.
+   2. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
+   3. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
+   4. Select **Review + create**.
+
+5. Select **Create**.
+
+### Assign the Microsoft Entra test user
+
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to EmpCenter.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **EmpCenter**.
+
+   ![Enterprise applications blade](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/enterprise-applications.png)
+
+3. In the applications list, select **EmpCenter**.
+
+   ![The EmpCenter link in the Applications list](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/all-applications.png)
+
+4. In the app's overview page, select **Users and groups**.
+5. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
+
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   2. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   3. In the **Add Assignment** dialog, select the **Assign** button.
+
+### Create EmpCenter test user
+
+In order to enable Microsoft Entra users to log in to EmpCenter, they must be provisioned into EmpCenter. In the case of EmpCenter, the user accounts need to be created by your [EmpCenter support team](https://workforcesoftware.com/support-offerings/).
+
+Note
+
+You can use any other EmpCenter user account creation tools or APIs provided by EmpCenter to provision Microsoft Entra user accounts.
+
+### Test single sign-on
+
+In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
+
+When you select the EmpCenter tile in the Access Panel, you should be automatically signed in to the EmpCenter for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+
+## Additional Resources
+
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list)
+- [What is application access and single sign-on with Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on)
+- [What is Conditional Access in Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview)

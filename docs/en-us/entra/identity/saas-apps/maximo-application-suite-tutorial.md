@@ -1,0 +1,144 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/maximo-application-suite-tutorial -->
+<!-- Sitemap-Last-Modified: 2025-03-25 -->
+
+# Configure Maximo Application Suite for Single sign-on with Microsoft Entra ID
+
+In this article, you learn how to integrate Maximo Application Suite with Microsoft Entra ID. Customer-Managed - IBM Maximo Application Suite is a CMMS EAM platform, which delivers intelligent asset management, monitoring, predictive maintenance and reliability in a single platform. When you integrate Maximo Application Suite with Microsoft Entra ID, you can:
+
+- Control in Microsoft Entra ID who has access to Maximo Application Suite.
+- Enable your users to be automatically signed-in to Maximo Application Suite with their Microsoft Entra accounts.
+- Manage your accounts in one central location.
+
+You configure and test Microsoft Entra single sign-on for Maximo Application Suite in a test environment. Maximo Application Suite supports **SP** and **IDP** initiated single sign-on.
+
+## Prerequisites
+
+To integrate Microsoft Entra ID with Maximo Application Suite, you need:
+
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- One of the following roles: [Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+- A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- Maximo Application Suite single sign-on \(SSO\) enabled subscription.
+
+## Add application and assign a test user
+
+Before you begin the process of configuring single sign-on, you need to add the Maximo Application Suite application from the Microsoft Entra gallery. You need a test user account to assign to the application and test the single sign-on configuration.
+
+### Add Maximo Application Suite from the Microsoft Entra gallery
+
+Add Maximo Application Suite from the Microsoft Entra application gallery to configure single sign-on with Maximo Application Suite. For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal).
+
+### Create and assign Microsoft Entra test user
+
+Follow the guidelines in the [create and assign a user account](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-assign-users) article to create a test user account called B.Simon.
+
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, and assign roles. The wizard also provides a link to the single sign-on configuration pane. [Learn more about Microsoft 365 wizards.](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/azure-ad-setup-guides).
+
+## Configure Microsoft Entra SSO
+
+Complete the following steps to enable Microsoft Entra single sign-on.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **Maximo Application Suite** > **Single sign-on**.
+3. On the **Select a single sign-on method** page, select **SAML**.
+4. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+
+   ![Screenshot shows how to edit Basic SAML Configuration.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/edit-urls.png "Basic Configuration")
+
+5. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** then perform the following steps:
+
+   a. Select **Upload metadata file**.
+
+   ![Screenshot shows to upload metadata file.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/upload-metadata.png "File")
+
+
+   b. Select **folder logo** to select the metadata file and select **Upload**.
+
+
+   ![Screenshot shows how to choose metadata file.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/browse-upload-metadata.png "Browse")
+
+
+   c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Basic SAML Configuration section.
+
+
+   d. If you wish to configure **SP** initiated mode, then perform the following step:
+
+
+   In the **Sign on URL** textbox, type a URL using the following pattern without `</path>`: `https://<workspace_id>.<mas_application>.<mas_domain>`
+
+
+   Note
+
+
+   You get the **Service Provider metadata file** from the **Configure Maximo Application Suite SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values don't get auto populated, then fill the values manually according to your requirement. Contact [Maximo Application Suite Client support](https://www.ibm.com/mysupport/) to get these values.
+
+6. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+
+   ![Screenshot shows the Certificate download link.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/metadataxml.png "Certificate")
+
+7. On the **Set up Maximo Application Suite** section, copy the appropriate URL\(s\) based on your requirement.
+
+   ![Screenshot shows to copy configuration appropriate URL.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/copy-configuration-urls.png "Metadata")
+
+## Configure Maximo Application Suite SSO
+
+1. Log in to your Maximo Application Suite company site as an administrator.
+2. Go to the Suite administration and select **Configure SAML**.
+
+   ![Screenshot shows the Maximo administration portal.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/maximo-application-suite-tutorial/configure.png "Portal")
+
+3. In the SAML Authentication page, perform the following steps:
+
+   ![Screenshot shows the Authentication page.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/maximo-application-suite-tutorial/authenticate.png "Page")
+
+
+   1. Select emailAddress as the [name-id format](https://learn.microsoft.com/en-us/entra/identity-platform/single-sign-on-saml-protocol).
+   2. Select **Generate file**, wait and then **Download file**. Store this metadata file and upload it in Microsoft Entra ID side.
+
+4. Download the **Federation Metadata XML file** and upload the Microsoft Entra Federation Metadata XML document to Maximo's SAML configuration panel and save it.
+
+   ![Screenshot shows to upload Federation Metadata file.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/maximo-application-suite-tutorial/file.png "Federation")
+
+### Create Maximo Application Suite test user
+
+1. In a different web browser window, sign into your Maximo Application Suite company site as an administrator.
+2. Create a new user in Suite Administration under **Users** and perform the following steps:
+
+   ![Screenshot shows the new user in Suite Administration.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/maximo-application-suite-tutorial/users.png "New user")
+
+
+   1. Select Authentication type as **SAML**.
+   2. In the **Display Name** textbox, enter the UPN used in Microsoft Entra ID as they must match.
+   3. In the **Primary email** textbox, enter the UPN used in Microsoft Entra ID.
+
+      Note
+
+      The rest of the fields can be populated as you like with whatever permissions necessary.
+   4. Select any **Entitlements** required for that user.
+
+## Test SSO
+
+In this section, you test your Microsoft Entra single sign-on configuration with following options.
+
+#### SP initiated:
+
+- Select **Test this application**, this option redirects to Maximo Application Suite Sign-on URL where you can initiate the login flow.
+- Go to Maximo Application Suite Sign-on URL directly and initiate the login flow from there.
+
+#### IDP initiated:
+
+- Select **Test this application**, in Azure portal to be taken to the Maximo login page where you need to enter in your SAML identity as a fully qualified email address. If the user has already authenticated with the IDP the Maximo Application Suite won't have to login again, and the browser is redirected to the home page.
+- You can also use Microsoft My Apps to test the application in any mode. When you select the Maximo Application Suite tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Maximo Application Suite for which you set up the SSO. For more information, see [Microsoft Entra My Apps](https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+
+Note
+
+Screenshots are from MAS Continuous-delivery 8.9 and may differ in future versions.
+
+## Additional resources
+
+- [What is single sign-on with Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on)
+- [Plan a single sign-on deployment](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment).
+
+## Related content
+
+Once you configure Maximo Application Suite you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](https://learn.microsoft.com/en-us/cloud-app-security/proxy-deployment-aad).

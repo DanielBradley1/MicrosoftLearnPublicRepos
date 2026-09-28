@@ -1,0 +1,32 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/architecture/resilience-overview -->
+<!-- Sitemap-Last-Modified: 2026-04-17 -->
+
+# Building resilience into identity and access management with Microsoft Entra ID
+
+Identity and access management \(IAM\) is a framework of processes, policies, and technologies. IAM facilitates the management of identities and what they access. It includes the many components supporting the authentication and authorization of user and other accounts in your system.
+
+IAM resilience is the ability to endure disruption to system components and recover with minimal impact to your business, users, customers, and operations. Reducing dependencies, complexity, and single-points-of-failure, while ensuring comprehensive error handling, increases your resilience.
+
+Disruption can come from any component of your IAM systems. To build a resilient IAM system, assume disruptions will occur and plan for them.
+
+When planning the resilience of your IAM solution, consider the following elements:
+
+- Your applications that rely on your IAM system
+- The public infrastructures your authentication calls use, including telecom companies, Internet service providers, and public key providers
+- Your cloud and on-premises identity providers
+- Other services that rely on your IAM, and the APIs that connect them
+- Any other on-premises components in your system
+
+Whatever the source, recognizing and planning for the contingencies is important. However, adding other identity systems, and their resultant dependencies and complexity, may reduce your resilience rather than increase it.
+
+To build more resilience in your systems, review the following articles:
+
+- [Build resilience in your IAM infrastructure](https://learn.microsoft.com/en-us/entra/architecture/resilience-in-infrastructure)
+- [Build IAM resilience in your applications](https://learn.microsoft.com/en-us/entra/architecture/resilience-app-development-overview)
+- [Build resilience in your Customer Identity and Access Management \(CIAM\) systems](https://learn.microsoft.com/en-us/entra/architecture/resilience-b2c)
+
+## Related resources
+
+- [Microsoft Entra deployment plans](https://learn.microsoft.com/en-us/entra/architecture/deployment-plans) — deployment guidance including hybrid scenarios, authentication, and governance
+- [Build resilience in your hybrid architecture](https://learn.microsoft.com/en-us/entra/architecture/resilience-in-hybrid) — architecture diagrams for PHS, PTA, and Federation topologies
+- [Identity and access management architecture in Azure](https://learn.microsoft.com/en-us/azure/architecture/identity/identity-start-here) — reference architectures and design guidance

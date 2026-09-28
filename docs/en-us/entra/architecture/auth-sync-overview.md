@@ -1,0 +1,29 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/architecture/auth-sync-overview -->
+<!-- Sitemap-Last-Modified: 2024-03-04 -->
+
+# Microsoft Entra integrations with authentication protocols
+
+Microsoft Entra ID enables integration with many authentication protocols. The authentication integrations enable you to use Microsoft Entra ID and its security and management features with little or no changes to your applications that use legacy authentication methods.
+
+## Legacy authentication protocols
+
+The following table presents authentication Microsoft Entra integration with legacy authentication protocols and their capabilities. Select the name of an authentication protocol to see
+
+- A detailed description
+- When to use it
+- Architectural diagram
+- Explanation of system components
+- Links for how to implement the integration
+
+| Authentication protocol | Authentication | Authorization | Multifactor Authentication | Conditional Access |
+| --- | --- | --- | --- | --- |
+| [Header-based authentication](https://learn.microsoft.com/en-us/entra/architecture/auth-header-based) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [LDAP authentication](https://learn.microsoft.com/en-us/entra/architecture/auth-ldap) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |  |  |  |
+| [Open Authorization \(OAuth\) 2.0 authentication](https://learn.microsoft.com/en-us/entra/architecture/auth-oauth2) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [OIDC authentication](https://learn.microsoft.com/en-us/entra/architecture/auth-oidc) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [Password-based single sign-on \(SSO\) authentication](https://learn.microsoft.com/en-us/entra/architecture/auth-password-based-sso) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [RADIUS authentication](https://learn.microsoft.com/en-us/entra/architecture/auth-radius) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |  | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [Remote Desktop Gateway services](https://learn.microsoft.com/en-us/entra/architecture/auth-remote-desktop-gateway) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [Secure Shell \(SSH\)](https://learn.microsoft.com/en-us/entra/architecture/auth-ssh) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |  | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [Security Assertion Markup Language \(SAML\) authentication](https://learn.microsoft.com/en-us/entra/architecture/auth-saml) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |
+| [Windows Authentication - Kerberos Constrained Delegation](https://learn.microsoft.com/en-us/entra/architecture/auth-kcd) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) | ![check mark](https://learn.microsoft.com/en-us/entra/architecture/media/authentication-patterns/check.png) |

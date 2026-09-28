@@ -1,0 +1,121 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/verified-id/vc-network-api -->
+<!-- Sitemap-Last-Modified: 2026-03-25 -->
+
+# Microsoft Entra Verified ID network API
+
+## Overview
+
+The Microsoft Entra Verified ID Network API enables you to search for published credentials in the [Microsoft Entra Verified ID Network](https://learn.microsoft.com/en-us/entra/verified-id/how-use-vcnetwork).
+
+Note
+
+The API is intended for developers comfortable with RESTful APIs.
+
+## Base URL
+
+The Microsoft Entra Verified ID Network API is served over HTTPS. All URLs referenced in the documentation have the following base: `https://verifiedid.did.msidentity.com`.
+
+## Authentication
+
+The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. Grant the app registration the API Permission for `Verifiable Credentials Service Admin` and use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access` when acquiring the access token.
+
+## Search for issuers
+
+Use this API to search for issuers available in the Microsoft Entra Verified ID Network. You can search for issuers by their **linked domain** name. The value supplied for the `filter` parameter is used to find issuers that onboarded to Microsoft Entra Verified ID and have a verified linked domain. Currently you can only filter by `linkeddomainurls` and with operator `like`. There's a maximum of 15 issuers in the response.
+
+#### HTTP request
+
+`GET /v1.0/verifiableCredentialsNetwork/authorities?filter=linkeddomainurls%20like%20Woodgrove`
+
+#### Request headers
+
+| Header | Value |
+| --- | --- |
+| Authorization | Bearer \(token\). Required |
+| Content-Type | application/json |
+
+#### Request parameters
+
+| Parameter | Value |
+| --- | --- |
+| filter | linkeddomainurls like Woodgrove |
+
+#### Return message
+
+```json
+HTTP/1.1 200 OK
+Content-type: application/json
+
+[
+  {
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "did": "did:web:bank.woodgrove.com...<SNIP>...",
+    "name": "WoodgroveBank",
+    "linkedDomainUrls": [
+      "https://bank.woodgrove.com/"
+    ]
+  },
+  {
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "tenantId": "bbbbcccc-1111-dddd-2222-eeee3333ffff",
+    "did": "did:web:woodgrove.com...<SNIP>...",
+    "name": "Woodgrove",
+    "linkedDomainUrls": [
+      "https://woodgrove.com/"
+    ]
+  }
+]
+```
+
+## Search for published credential types by an issuer
+
+This API is used to search for published credential types for a specific issuer. You need to know the issuer's `tenantId` and `issuerId`. The return message is a collection of published credential types and their respective claims. There's a maximum of 100 credential types in the response.
+
+#### HTTP request
+
+`GET /v1.0/tenants/:tenantId/verifiableCredentialsNetwork/authorities/:issuerId/contracts/`
+
+#### Request headers
+
+| Header | Value |
+| --- | --- |
+| Authorization | Bearer \(token\). Required |
+| Content-Type | application/json |
+
+#### Request parameters
+
+| Parameter | Value |
+| --- | --- |
+| tenantId | TenantId obtained from the search by linked domain name |
+| issuerId | IssuerId obtained from the search by linked domain name |
+
+#### Return message
+
+```json
+HTTP/1.1 200 OK
+Content-type: application/json
+
+[
+  {
+    "name": "Verified employee 1",
+    "types": [
+      "VerifiedEmployee"
+    ],
+    "claims": [
+      "displayName",
+      "givenName",
+      "jobTitle",
+      "preferredLanguage",
+      "surname",
+      "mail",
+      "revocationId",
+      "photo"
+    ]
+  }
+]
+```
+
+## Next steps
+
+Learn more about [Microsoft Entra Verified ID Network](https://learn.microsoft.com/en-us/entra/verified-id/how-use-vcnetwork).

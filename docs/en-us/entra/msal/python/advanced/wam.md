@@ -1,0 +1,88 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/msal/python/advanced/wam -->
+<!-- Sitemap-Last-Modified: 2025-05-05 -->
+
+# Using MSAL Python with Web Account Manager
+
+If you are building a Windows application, you might consider simplifying how users authenticate with the help of an *authentication broker*. [Web Account Manager](https://learn.microsoft.com/en-us/windows/uwp/security/web-account-manager) \(WAM\) is an authentication broker that works with MSAL Python. WAM is only available on Windows 10 and above, as well as Windows Server 2019 and above.
+
+For more information on the benefits of using an authentication broker, see [What is a broker](https://learn.microsoft.com/en-us/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam#what-is-a-broker) in the MSAL.NET documentation.
+
+## Usage
+
+To use the broker, you will need to install the broker-related packages in addition to the core MSAL from PyPI:
+
+```bash
+pip install msal[broker]>=1.20,<2
+```
+
+If broker-related packages aren't installed and you try to use the authentication broker, you will get the error *ImportError: You need to install dependency by: pip install "msal\[broker\]>=1.20,<2"*.
+
+Next, instantiate a new [`PublicClientApplication`](https://learn.microsoft.com/en-us/python/api/msal/msal.application.publicclientapplication) and set `enable_broker_on_windows` to `True`. This will ensure that MSAL will try and communicate with WAM instead of popping up a new browser window. If you are writing a cross-platform application, you will also need to use `enable_broker_on_mac`, as outlined in the [Using MSAL Python with an Authentication Broker on macOS](https://learn.microsoft.com/en-us/entra/msal/python/advanced/macos-broker) article.
+
+```python
+from msal import PublicClientApplication
+
+app = PublicClientApplication(
+    "CLIENT_ID",
+    authority="https://login.microsoftonline.com/common",
+    enable_broker_on_windows=True)
+```
+
+You can now acquire a token by calling [`acquire_token_interactive`](https://learn.microsoft.com/en-us/python/api/msal/msal.application.publicclientapplication#msal-application-publicclientapplication-acquire-token-interactive) and specifying a parent window handle through *parent\_window\_handle*:
+
+```python
+result = app.acquire_token_interactive(["User.ReadBasic.All"],
+         parent_window_handle=app.CONSOLE_WINDOW_HANDLE)
+```
+
+A parent window handle is required by WAM to ensure that the dialog is shown correctly on top of the requesting window. MSAL doesn't infer this directly due to the fact that there are many variables that might influence what window WAM needs to bind to, and developers building applications are best suited to decide what window that should be.
+
+For console applications, MSAL makes it easy by offering an out-of-the-box solution to getting the window handle for the terminal - [`CONSOLE_WINDOW_HANDLE`](https://learn.microsoft.com/en-us/python/api/msal/msal.application.publicclientapplication#msal-application-publicclientapplication-console-window-handle). For desktop applications, more work with the Windows API might be required to [get the window handle](https://learn.microsoft.com/en-us/windows/apps/develop/ui-input/retrieve-hwnd). Helper packages, like [pywin32](https://pypi.org/project/pywin32/) can help with API calls.
+
+Before executing your application, make sure that you configure the redirect URL for the desktop app:
+
+To use the Windows broker, your application needs to have the correct redirect URL configured in the Azure Portal, in the shape of:
+
+```bash
+ms-appx-web://microsoft.aad.brokerplugin/YOUR_CLIENT_ID
+```
+
+If the redirect URL isn't configured, you will get a *broker\_error* similar to *\(pii\). Status: Response\_Status.Status\_ApiContractViolation, Error code: 3399614473, Tag: 557973642*.
+
+If configuration and instantiation was correct, once you run the application you should see the authentication broker kick in and allow the user to select the account they want to authenticate with.
+
+![Example of WAM being called from Python](https://learn.microsoft.com/en-us/entra/msal/python/media/wam-python.gif)
+
+Worth noting that if you switch to using broker-based authentication, if the user was previously logged in and the signed-in state is still valid, calling [`acquire_token_interactive`](https://learn.microsoft.com/en-us/python/api/msal/msal.application.publicclientapplication#msal-application-publicclientapplication-acquire-token-interactive) will still result in a silent attempt to acquire a token, and only prompt when necessary. If you prefer to always prompt, you can use this optional parameter `prompt="select_account"`.
+
+## Broker experience differences
+
+Depending on the authority specified when instantiating [`PublicClientApplication`](https://learn.microsoft.com/en-us/python/api/msal/msal.application.publicclientapplication), the broker user interface may be different.
+
+### /consumers
+
+Used for authenticating **only** with personal Microsoft accounts.
+
+![WAM UI for consumers](https://learn.microsoft.com/en-us/entra/msal/python/media/wam-consumers.png)
+
+### /common
+
+Used for authenticating with personal Microsoft accounts as well as work and school accounts.
+
+![WAM UI for personal and work accounts](https://learn.microsoft.com/en-us/entra/msal/python/media/wam-common.png)
+
+### /organizations
+
+Used for authenticating **only** with work and school accounts.
+
+![WAM UI for work accounts only](https://learn.microsoft.com/en-us/entra/msal/python/media/wam-organizations.png)
+
+If *login\_hint* is provided, but the account isn't yet registered in WAM, the hint will be automatically filled in the *Email or phone* field.
+
+### /TENANT\_ID
+
+Used for authenticating **only** with work and school accounts within the specified tenant.
+
+![WAM UI for tenant-specific accounts](https://learn.microsoft.com/en-us/entra/msal/python/media/wam-tenant-specific.png)
+
+If *login\_hint* is provided, but the account isn't yet registered in WAM, the hint will be automatically filled in the *Email or phone* field.

@@ -1,0 +1,103 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/identity-platform-integration-checklist -->
+<!-- Sitemap-Last-Modified: 2023-11-22 -->
+
+# Microsoft identity platform best practices and recommendations
+
+This article highlights best practices, recommendations, and common oversights when integrating with the Microsoft identity platform. This checklist will guide you to a high-quality and secure integration. Review this list on a regular basis to make sure you maintain the quality and security of your app’s integration with the identity platform. The checklist isn't intended to review your entire application. The contents of the checklist are subject to change as we make improvements to the platform.
+
+If you're just getting started, check out the [Microsoft identity platform documentation](https://learn.microsoft.com/en-us/entra/identity-platform/) to learn about authentication basics, application scenarios in the Microsoft identity platform, and more.
+
+Use the following checklist to ensure that your application is effectively integrated with the [Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/).
+
+Tip
+
+The *Integration assistant* can help you apply many of these best practices and recommendations. Select any of your app registrations, and then select the **Integration assistant** menu item to get started with the assistant.
+
+## Basics
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Read and understand the [Microsoft Platform Policies](https://learn.microsoft.com/en-us/legal/microsoft-identity-platform/terms-of-use). Ensure that your application adheres to the terms outlined as they're designed to protect users and the platform.
+
+## Ownership
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Make sure the information associated with the account you used to register and manage apps is up-to-date.
+
+## Branding
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Adhere to the [Branding guidelines for applications](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps).
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Provide a meaningful name and logo for your application. This information appears on your [application's consent prompt](https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience). Make sure your name and logo are representative of your company/product so that users can make informed decisions. Ensure that you're not violating any trademarks.
+
+## Privacy
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Provide links to your app's terms of service and privacy statement.
+
+## Security
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Manage your redirect URIs:
+
+- Maintain ownership of all your redirect URIs and keep the DNS records for them up-to-date.
+- Don't use wildcards \(\*\) in your URIs.
+- For web apps, make sure all URIs are secure and encrypted \(for example, using https schemes\).
+- For public clients, use platform-specific redirect URIs if applicable \(mainly for iOS and Android\). Otherwise, use redirect URIs with a high amount of randomness to prevent collisions when calling back to your app.
+- If your app is being used from an isolated web agent, you may use `https://login.microsoftonline.com/common/oauth2/nativeclient`.
+- Review and trim all unused or unnecessary redirect URIs on a regular basis.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) If your app is registered in a directory, minimize and manually monitor the list of app registration owners.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Don't enable support for the [OAuth2 implicit grant flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-implicit-grant-flow) unless explicitly required.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Move beyond username/password. Don't use [resource owner password credential flow \(ROPC\)](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth-ropc), which directly handles users' passwords. This flow requires a high degree of trust and user exposure and should only be used when other, more secure, flows can't be used. This flow is still needed in some scenarios \(like DevOps\), but beware that using it will impose constraints on your application. For more modern approaches, read [Authentication flows and application scenarios](https://learn.microsoft.com/en-us/entra/identity-platform/authentication-flows-app-scenarios).
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Protect and manage your confidential app credentials for web apps, web APIs and daemon apps. Use [certificate credentials](https://learn.microsoft.com/en-us/entra/identity-platform/certificate-credentials), not password credentials \(client secrets\). If you must use a password credential, don't set it manually. Don't store credentials in code or config, and never allow them to be handled by humans. If possible, use [managed identities for Azure resources](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview) or [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts) to store and regularly rotate your credentials.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Make sure your application requests the least privilege permissions. Only ask for permissions that your application absolutely needs, and only when you need them. Understand the different [types of permissions](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#types-of-permissions). Only use application permissions if necessary; use delegated permissions where possible. For a full list of Microsoft Graph permissions, see this [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) If you're securing an API using the Microsoft identity platform, carefully think through the permissions it should expose. Consider what's the right granularity for your solution and which permission\(s\) require admin consent. Check for expected permissions in the incoming tokens before making any authorization decisions.
+
+## Implementation
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Use modern authentication solutions \(OAuth 2.0, [OpenID Connect](https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc)\) to securely sign in users.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Don't program directly against protocols such as OAuth 2.0 and Open ID. Instead, leverage the [Microsoft Authentication Library \(MSAL\)](https://learn.microsoft.com/en-us/entra/identity-platform/msal-overview). The MSAL libraries securely wrap security protocols in an easy-to-use library, and you get built-in support for [Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview) scenarios, device-wide [single sign-on \(SSO\)](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on), and built-in token caching support. For more info, see the list of Microsoft-supported [client libraries](https://learn.microsoft.com/en-us/entra/identity-platform/reference-v2-libraries). If you must hand-code for the authentication protocols, you should follow the [Microsoft SDL](https://www.microsoft.com/sdl/default.aspx) or similar development methodology. Pay close attention to the security considerations in the standards specifications for each protocol.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) **DO NOT** look at the access token value, or attempt to parse it as a client. They can change values, formats, or even become encrypted without warning - always use the ID token if your client needs to learn something about the user. Only web APIs should parse access tokens \(since they are the ones defining the format and setting the encryption keys\). Sending an access token directly to an API by the client is a security risk, as they are sensitive credentials that grant access to certain resources. Developers should not assume that the client can be trusted to validate the access token.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Migrate existing apps from Azure Active Directory Authentication Library \(ADAL\) to the [Microsoft Authentication Library](https://learn.microsoft.com/en-us/entra/msal/). MSAL is Microsoft's latest identity platform solution and is available on .NET, JavaScript, Android, iOS, macOS, Python, and Java. Read more about migrating [ADAL.NET](https://learn.microsoft.com/en-us/entra/msal/dotnet/how-to/msal-net-migration), [ADAL.js](https://learn.microsoft.com/en-us/entra/identity-platform/msal-compare-msal-js-and-adal-js), and [ADAL.NET and iOS broker](https://learn.microsoft.com/en-us/entra/identity-platform/msal-net-migration-ios-broker) apps.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) For mobile apps, configure each platform using the application registration experience. In order for your application to take advantage of the Microsoft Authenticator or Microsoft Company Portal for single sign-in, your app needs a "broker redirect URI" configured. This allows Microsoft to return control to your application after authentication. When configuring each platform, the app registration experience will guide you through the process. Use the quickstart to download a working example. On iOS, use brokers and system webview whenever possible.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) In web apps or web APIs, keep one token cache per account. For web apps, the token cache should be keyed by the account ID. For web APIs, the account should be keyed by the hash of the token used to call the API. MSAL.NET provides custom token cache serialization in both .NET and .NET Framework. For security and performance reasons, our recommendation is to serialize one cache per user. For more information, read about [token cache serialization](https://learn.microsoft.com/en-us/entra/msal/dotnet/how-to/token-cache-serialization).
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) If the data your app requires is available through [Microsoft Graph](https://developer.microsoft.com/graph), request permissions for this data using the Microsoft Graph endpoint rather than the individual API.
+
+## End-user experience
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) [Understand the consent experience](https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience) and configure the pieces of your app’s consent prompt so that end users and admins have enough information to determine if they trust your app.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Minimize the number of times a user needs to enter login credentials while using your app by attempting silent authentication \(silent token acquisition\) before interactive flows.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Don't use "prompt=consent" for every sign-in. Only use prompt=consent if you've determined that you need to ask for consent for additional permissions \(for example, if you've changed your app's required permissions\).
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Where applicable, enrich your application with user data. Using the [Microsoft Graph API](https://developer.microsoft.com/graph) is an easy way to do this. The [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) tool that can help you get started.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Register the full set of permissions that your app requires so admins can grant consent easily to their tenant. Use [incremental consent](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#consent) at run time to help users understand why your app is requesting permissions that may concern or confuse users when requested on first start.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Implement a [clean single sign-out experience](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-6-SignOut). It's a privacy and a security requirement, and makes for a good user experience.
+
+## Testing
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Test for [Conditional Access policies](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-6-SignOut) that may affect your users' ability to use your application.
+
+![checkbox](https://learn.microsoft.com/en-us/entra/identity-platform/media/integration-checklist/checkbox-two.svg) Test your application with all possible accounts that you plan to support \(for example, work or school accounts, personal Microsoft accounts, child accounts, and sovereign accounts\).
+
+## Additional resources
+
+Explore in-depth information about v2.0:
+
+- [Microsoft identity platform \(overview\)](https://learn.microsoft.com/en-us/entra/identity-platform/v2-overview)
+- [Microsoft identity platform protocols reference](https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols)
+- [Access tokens reference](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
+- [ID tokens reference](https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens)
+- [Authentication libraries reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-v2-libraries)
+- [Permissions and consent in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview)
+- [Microsoft Graph API](https://developer.microsoft.com/graph)

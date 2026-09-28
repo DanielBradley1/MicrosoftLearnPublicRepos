@@ -1,0 +1,124 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/pagedna-tutorial -->
+<!-- Sitemap-Last-Modified: 2025-10-08 -->
+
+# Configure PageDNA for Single sign-on with Microsoft Entra ID
+
+In this article, you learn how to integrate PageDNA with Microsoft Entra ID. When you integrate PageDNA with Microsoft Entra ID, you can:
+
+- Control in Microsoft Entra ID who has access to PageDNA.
+- Enable your users to be automatically signed-in to PageDNA with their Microsoft Entra accounts.
+- Manage your accounts in one central location.
+
+## Prerequisites
+
+To configure Microsoft Entra integration with PageDNA, you need the following items:
+
+- A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
+- A PageDNA subscription with single sign-on enabled.
+- Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID. For more information, see [Azure built-in roles](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference).
+
+## Scenario description
+
+In this article, you configure and test Microsoft Entra single sign-on in a test environment and integrate PageDNA with Microsoft Entra ID.
+
+PageDNA supports the following features:
+
+- SP-initiated single sign-on \(SSO\).
+- Just-in-time user provisioning.
+
+## Add PageDNA from the Azure Marketplace
+
+To configure the integration of PageDNA into Microsoft Entra ID, you need to add PageDNA from the gallery to your list of managed SaaS apps.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+3. In the **Add from the gallery** section, type **PageDNA** in the search box.
+4. Select **PageDNA** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/azure-ad-setup-guides).
+
+## Configure and test Microsoft Entra SSO for PageDNA
+
+Configure and test Microsoft Entra SSO with PageDNA using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in PageDNA.
+
+To configure and test Microsoft Entra SSO with PageDNA, perform the following steps:
+
+1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
+
+   1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+   2. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
+
+2. **[Configure PageDNA SSO](#configure-pagedna-sso)** - to configure the single sign-on settings on application side.
+
+   1. **[Create PageDNA test user](#create-pagedna-test-user)** - to have a counterpart of B.Simon in PageDNA that's linked to the Microsoft Entra representation of user.
+
+3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
+
+## Configure Microsoft Entra SSO
+
+Follow these steps to enable Microsoft Entra SSO.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps** > **PageDNA** > **Single sign-on**.
+3. On the **Select a single sign-on method** page, select **SAML**.
+4. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+
+   ![Screenshot shows to edit Basic S A M L Configuration.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/edit-urls.png "Basic Configuration")
+
+5. In the **Basic SAML Configuration** section, perform the following steps:
+
+   1. In the **Identifier \(Entity ID\)** box, type a URL by using one of the following patterns:
+      | **Identifier** |
+      | --- |
+      | `https://stores.pagedna.com/<your site>/saml2ep.cgi` |
+      | `https://www.nationsprint.com/clients/<your site>/saml2ep.cgi` |
+   2. In the **Reply URL \(Assertion Consumer Service URL\)** box, type a URL by using one of the following patterns:
+      | **Reply URL** |
+      | --- |
+      | `https://stores.pagedna.com/<your site>/saml2ep.cgi` |
+      | `https://www.nationsprint.com/clients/<your site>/saml2ep.cgi` |
+   3. In the **Sign on URL** box, type a URL by using one of the following patterns:
+      | **Sign on URL** |
+      | --- |
+      | `https://stores.pagedna.com/<your site>` |
+      | `https://<your domain>` |
+      | `https://<your domain>/<your site>` |
+      | `https://www.nationsprint.com/clients/<your site>` |
+
+
+   Note
+
+
+   These values aren't real. Update these values with the actual Identifier and Sign on URL. To get these values, contact the [PageDNA support team](mailto:success@pagedna.com). You can also refer to the patterns shown in the **Basic SAML Configuration** pane.
+
+6. In the **Set up Single Sign-On with SAML** pane, in the **SAML Signing Certificate** section, select **Download** to download **Certificate \(Raw\)** from the given options and save it on your computer.
+
+   ![Screenshot shows the Certificate \(Raw\) download option.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/certificateraw.png "Certificate")
+
+7. In the **Set up PageDNA** section, copy the URL or URLs that you need:
+
+   ![Screenshot shows to copy configuration appropriate U R L.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/copy-configuration-urls.png "Metadata")
+
+### Create and assign Microsoft Entra test user
+
+Follow the guidelines in the [create and assign a user account](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-assign-users) quickstart to create a test user account called B.Simon.
+
+## Configure PageDNA SSO
+
+To configure single sign-on on the PageDNA side, send the downloaded Certificate \(Raw\) and the appropriate copied URLs to the [PageDNA support team](mailto:success@pagedna.com). The PageDNA team will make sure the SAML SSO connection is set properly on both sides.
+
+### Create PageDNA test user
+
+A user named Britta Simon is now created in PageDNA. You don't have to do anything to create this user. PageDNA supports just-in-time user provisioning, which is enabled by default. If a user named Britta Simon doesn't already exist in PageDNA, a new one is created after authentication.
+
+## Test SSO
+
+In this section, you test your Microsoft Entra single sign-on configuration with following options.
+
+- Select **Test this application**, this option redirects to PageDNA Sign-on URL where you can initiate the login flow.
+- Go to PageDNA Sign-on URL directly and initiate the login flow from there.
+- You can use Microsoft My Apps. When you select the PageDNA tile in the My Apps, this option redirects to PageDNA Sign-on URL. For more information, see [Microsoft Entra My Apps](https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+
+## Related content
+
+Once you configure PageDNA you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](https://learn.microsoft.com/en-us/cloud-app-security/proxy-deployment-aad).

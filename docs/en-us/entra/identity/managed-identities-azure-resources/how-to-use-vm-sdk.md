@@ -1,0 +1,30 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-sdk -->
+<!-- Sitemap-Last-Modified: 2025-02-28 -->
+
+# How to use managed identities for Azure resources on an Azure VM with Azure SDKs
+
+This article provides a list of SDK samples, which demonstrate use of their respective Azure SDK's support for managed identities for Azure resources.
+
+## Prerequisites
+
+- If you're not familiar with the managed identities for Azure resources feature, see this [overview](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview). If you don't have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you continue.
+
+Important
+
+- All sample code/script in this article assumes the client is running on a VM with managed identities for Azure resources enabled. Use the VM "Connect" feature in the Azure portal, to remotely connect to your VM. For details on enabling managed identities for Azure resources on a VM, see [Configure managed identities for Azure resources on a VM using the Azure portal](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm), or one of the variant articles \(using PowerShell, CLI, a template, or an Azure SDK\).
+
+## SDK code samples
+
+| SDK | Code sample |
+| --- | --- |
+| .NET | [Deploy an Azure Resource Manager template from a Windows VM using managed identities for Azure resources](https://github.com/Azure-Samples/windowsvm-msi-arm-dotnet) |
+| .NET Core | [Call Azure services from a Linux VM using managed identities for Azure resources](https://github.com/Azure-Samples/linuxvm-msi-keyvault-arm-dotnet/) |
+| Go | [Azure identity client module for Go](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#ManagedIdentityCredential) |
+| Node.js | [Manage resources using managed identities for Azure resources](https://github.com/Azure-Samples/resources-node-manage-resources-with-msi) |
+| Python | [Use managed identities for Azure resources to authenticate simply from inside a VM](https://github.com/Azure/azure-sdk-for-python/tree/azure-identity_1.15.0/sdk/identity/azure-identity/) |
+| Ruby | [Manage resources from a VM with managed identities for Azure resources enabled](https://github.com/Azure-Samples/resources-ruby-manage-resources-with-msi/) |
+
+## Next steps
+
+- See [Azure SDKs](https://azure.microsoft.com/downloads/) for the full list of Azure SDK resources, including library downloads, documentation, and more.
+- To enable managed identities for Azure resources on an Azure VM, see [Configure managed identities for Azure resources on a VM using the Azure portal](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm).

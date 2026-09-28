@@ -1,0 +1,69 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/msal/go/packages/errors/ -->
+<!-- Sitemap-Last-Modified: 2026-04-29 -->
+
+# errors Package
+
+```go
+import "github.com/AzureAD/microsoft-authentication-library-for-go/apps/errors"
+```
+
+## func As
+
+```go
+func As(err error, target interface{}) bool
+```
+
+As finds the first error in errors chain that matches target, and if so, sets target to that error value and returns true. Otherwise, it returns false.
+
+## func Is
+
+```go
+func Is(err, target error) bool
+```
+
+Is reports whether any error in errors chain matches target.
+
+## func New
+
+```go
+func New(text string) error
+```
+
+New is equivalent to errors.New\(\).
+
+## func Verbose
+
+```go
+func Verbose(err error) string
+```
+
+Verbose prints the most verbose error that the error message has.
+
+## type CallErr
+
+CallErr represents an HTTP call error. Has a Verbose\(\) method that allows getting the http.Request and Response objects. Implements error.
+
+```go
+type CallErr struct {
+    Req *http.Request
+    // Resp contains response body
+    Resp *http.Response
+    Err  error
+}
+```
+
+### func \(CallErr\) Error
+
+```go
+func (e CallErr) Error() string
+```
+
+Errors implements error.Error\(\).
+
+### func \(CallErr\) Verbose
+
+```go
+func (e CallErr) Verbose() string
+```
+
+Verbose prints a versbose error message with the request or response.

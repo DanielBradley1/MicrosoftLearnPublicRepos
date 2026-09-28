@@ -1,0 +1,96 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-ios-macos-identity-provider-sign-in-sign-up -->
+<!-- Sitemap-Last-Modified: 2026-04-13 -->
+
+# Tutorial: Add federated identity provider sign-in and sign-up web flow to your iOS app
+
+**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
+
+This tutorial demonstrates how to implement federated identity provider \(IdP\) authentication into your iOS app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, Google and custom OIDC providers.
+
+In this tutorial, you learn how to:
+
+- Sign in a user using a federated identity provider via web flow
+- Sign up a user using a federated identity provider via web flow
+
+## Prerequisites
+
+1. Complete the steps in [Tutorial: Prepare your iOS/macOS app for native authentication](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app).
+2. Configure federated identity providers in your Microsoft Entra External ID tenant. Follow the steps in the Microsoft Entra admin center to add and configure your desired identity providers:
+
+   - [Configure Apple as an identity provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-apple-federation-customers)
+   - [Configure Facebook as an identity provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-facebook-federation-customers)
+   - [Configure Google as an identity provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-google-federation-customers)
+   - [Configure a custom OIDC provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-custom-oidc-federation-customers). Use the domain of the Issuer URI configured for custom OIDC as the `domain_hint`.
+
+3. Ensure your app supports web fallback [Tutorial: Support web fallback](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback).
+4. Add/update the Microsoft Authentication Library \(MSAL\) dependency to at least `2.6.0`.
+5. If you'd like to explore our federated IdP Sign in and Sign up implementation, take a look at our [sample iOS application](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample/blob/main/NativeAuthSampleApp/WebFallbackViewController.swift) before getting started.
+
+## Sign in a user with a federated identity provider
+
+To sign in a user with a federated identity provider via web flow, you need to first identify the identity provider to authenticate with, and the corresponding `domain_hint`.
+
+- Use the identity providers defined in the [prerequisite configuration section](#prerequisites).
+- Use the `domain_hint` parameter to direct authentication to a specific identity provider. Choose one of the following values:
+
+  - `"Apple"` for Apple
+  - `"Facebook"` for Facebook
+  - `"Google"` for Google
+
+To sign in a user, you need to:
+
+1. Create a user interface that lets the user sign in with a federated identity provider. This interface should identify a specific identity provider and its corresponding `domain_hint`.
+2. Once `domain_hint` value is identified from the client app, create `MSALInteractiveTokenParameters`, set `domain_hint` and call `acquireToken(with: parameters)` method of `MSALNativeAuthPublicClientApplication` to trigger web authentication with Social IdP like below.
+
+   Use the Prompt type value as `.login` to force interactive authentication, even if user is signed in.
+
+   ```swift
+   let parameters = MSALInteractiveTokenParameters(scopes: ["User.Read"], webviewParameters: webviewParams)
+   parameters.promptType = .login
+   parameters.domainHint = domainHint
+
+   nativeAuth.acquireToken(with: parameters) { [weak self] (result: MSALResult?, error: Error?) in
+       guard let self = self else { return }
+
+       if let error = error {
+           self.showResultText("Error acquiring token: \(error)")
+           return
+       }
+
+       self.msalAccount = result?.account
+
+       guard let msalAccount = self.msalAccount else {
+           self.showResultText("Could not acquire token: No result or account returned")
+           return
+       }
+
+       self.updateUI()
+   }
+   ```
+
+3. You can also retrieve the current cached account after successful authentication by using the `getNativeAuthUserAccount()` from `MSALNativeAuthPublicClientApplication`:
+
+   ```swift
+       if let account = nativeAuth.getNativeAuthUserAccount() {
+           ...
+       }
+   ```
+
+## Sign up a user with a federated identity provider
+
+To sign up a user with a federated identity provider, the process is almost the same as signing in, with a minor change to the Prompt value: use `.create`.
+
+```swift
+    let parameters = MSALInteractiveTokenParameters(scopes: ["User.Read"], webviewParameters: webviewParams)
+    parameters.promptType = .create
+    parameters.domainHint = domainHint
+
+    nativeAuth.acquireToken(with: parameters) { [weak self] (result: MSALResult?, error: Error?) in
+        ...
+    }
+```
+
+## Related content
+
+- For attribute collection, this happens in web sign-up flow UX. Refer to [User profile attributes](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-user-attributes).
+- For SMS and email one-time passcode multifactor authentication \(MFA\), this is handled also in web flow UX. If enabled, after the social IdP authentication completes, the client app prompt the user for MFA as part of the web flow. For more information, see [Multifactor authentication in external tenants](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-multifactor-authentication-customers) and [Add multifactor authentication \(MFA\) to an app](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-multifactor-authentication-customers).

@@ -1,0 +1,115 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite -->
+<!-- Sitemap-Last-Modified: 2026-03-27 -->
+
+# Tutorial: Bulk invite B2B collaboration users in Microsoft Entra External ID
+
+**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to workforce tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) Workforce tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
+
+If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time. In this tutorial, you learn how to use the Microsoft Entra admin center to send bulk invitations to external users. Specifically, you follow these steps:
+
+- Use **Bulk invite users** to prepare a comma-separated value \(.csv\) file with the user information and invitation preferences
+- Upload the .csv file to Microsoft Entra ID
+- Verify the users were added to the directory
+
+## Prerequisites
+
+- If you don’t have Microsoft Entra ID, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
+- You need two or more test email accounts that you can send the invitations to. The accounts must be from outside your organization. You can use any type of account, including social accounts such as gmail.com or outlook.com addresses.
+
+## Invite guest users in bulk
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#user-administrator).
+2. Browse to **Entra ID** > **Users**.
+3. Select **Bulk operations** > **Bulk invite**.
+
+   ![Screenshot of the bulk invite button.](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/bulk-invite-button.png)
+4. On the **Bulk invite users** page, select **Download** to get a [valid .csv template](https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite#understand-the-csv-template) with invitation properties.
+
+   ![Screenshot of the download the csv file button.](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/download-button.png)
+5. Open the .csv template and add a line for each guest user. Required values are:
+
+   - **Email address to invite** - the user to whom you want to send an invitation.
+   - **Redirection url** - the URL to which the invited user is forwarded after accepting the invitation. If you want to forward the user to the My Apps page, you must change this value to [https://myapps.microsoft.com](https://myapps.microsoft.com) or [https://myapplications.microsoft.com](https://myapplications.microsoft.com).
+
+
+   ![Screenshot of the example csv file with guest users entered.](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/bulk-invite-csv.png)
+
+
+   Note
+
+
+   Don't use commas in the **Customized invitation message** because they'll prevent the message from being parsed successfully.
+
+6. Save the file.
+7. On the **Bulk invite users** page, under **Upload your csv file**, browse to the file. When you select the file, validation of the .csv file starts.
+8. When the file contents are validated, **File uploaded successfully** appears. If there are errors, you must fix them before you can submit the job.
+9. When your file passes validation, select **Submit** to start the Azure bulk operation that adds the invitations.
+10. To view the job status, select **Click here to view the status of each operation**. Or, you can select **Bulk operation results** in the **Activity** section. For details about each line item within the bulk operation, select the values under the **# Success**, **# Failure**, or **Total Requests** columns. If failures occurred, the reasons for failure are listed.
+
+    [![Screenshot of the bulk operation results.](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/bulk-operation-results.png)](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/bulk-operation-results.png#lightbox)
+11. When the job completes, a notification appears indicating that the bulk operation succeeded.
+
+## Understand the CSV template
+
+A template is available to help you invite Microsoft Entra guest users in bulk. Download and fill in the bulk upload CSV template, which looks something like this example:
+
+![Screenshot of a spreadsheet with callouts explaining the purpose and values for each row and column.](https://learn.microsoft.com/en-us/entra/external-id/media/tutorial-bulk-invite/understand-template.png)
+
+### CSV template structure
+
+The rows in a downloaded CSV template are as follows:
+
+- **Version number**: The first row containing the version number must be included in the upload CSV.
+- **Column headings**: The format of the column headings is <*Item name*> \[PropertyName\] <*Required or blank*>. For example, `Email address to invite [inviteeEmail] Required`. Some older versions of the template might have slight variations.
+- **Examples row**: The template includes a row of sample values for each column. Remove the examples row and replace it with your own entries.
+
+### Further guidance
+
+- The first two rows of the upload template must not be removed or modified, or the upload can't be processed.
+- The required columns are listed first.
+- We don't recommend adding new columns to the template. Any columns you add are ignored and not processed.
+- We recommend that you download the latest version of the CSV template as often as possible.
+
+## Verify guest users in the directory
+
+Check to see that the guest users you added exist in the directory either in the Microsoft Entra admin center or by using PowerShell.
+
+### View guest users in the Microsoft Entra admin center
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#user-administrator).
+2. Browse to **Entra ID** > **Users**.
+3. Under **Show**, select **Guest users only** and verify the users you added are listed.
+
+### View guest users with PowerShell
+
+To view guest users with PowerShell, you need the [`Microsoft.Graph.Users` PowerShell module](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/?view=graph-powershell-1.0&viewFallbackFrom=graph-powershell-beta&preserve-view=true). Then sign in using the `Connect-MgGraph` command with an admin account to consent to the required scopes:
+
+```powershell
+Connect-MgGraph -Scopes "User.Read.All"
+```
+
+Run the following command:
+
+```powershell
+ Get-MgUser -Filter "UserType eq 'Guest'"
+```
+
+You should see the users that you invited listed, with a user principal name \(UPN\) in the format *emailaddress*#EXT#@*domain*. For example, *lstokes\_fabrikam.com#EXT#@contoso.onmicrosoft.com*, where contoso.onmicrosoft.com is the organization from which you sent the invitations.
+
+## Clean up resources
+
+When no longer needed, you can delete the test user accounts in the directory in the Microsoft Entra admin center on the Users page by selecting the checkbox next to the guest user and then selecting **Delete**.
+
+Or you can run the following PowerShell command to delete a user account:
+
+```powershell
+ Remove-MgUser -UserId "<UPN>"
+```
+
+For example: `Remove-MgUser -UserId "lstokes_fabrikam.com#EXT#@contoso.onmicrosoft.com"`
+
+## Related content
+
+- [Bulk invite guest users via PowerShell](https://learn.microsoft.com/en-us/entra/external-id/bulk-invite-powershell)
+- [Learn about the Microsoft Entra B2B collaboration invitation redemption process](https://learn.microsoft.com/en-us/entra/external-id/redemption-experience)
+- [Enforce multifactor authentication for B2B guest users](https://learn.microsoft.com/en-us/entra/external-id/b2b-tutorial-require-mfa)

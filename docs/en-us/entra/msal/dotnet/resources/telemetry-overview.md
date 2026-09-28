@@ -1,0 +1,40 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/msal/dotnet/resources/telemetry-overview -->
+<!-- Sitemap-Last-Modified: 2025-05-20 -->
+
+# MSAL.NET telemetry overview
+
+MSAL.NET sends basic telemetry about the client side state on requests to the Microsoft Entra token endpoint. Telemetry data will be logged by Microsoft Entra ID. This telemetry will give us visibility into both first and third party app health without introducing an additional telemetry pipeline dependency into the open source SDK.
+
+MSAL.NET collects this telemetry to proactively detect server side failures or library regressions in order to provide a better service.
+
+Basic library telemetry includes:
+
+- Client side state at the time of the request. It shows the reason for the request execution, for example client app requested prompt, no cached tokens, expired access, or others.
+- Errors for preceding requests that failed.
+- SDK API usage metadata, such as which API and parameters were used for the request.
+
+Important
+
+For details on how personally identifiable information \(PII\) or organizational identifiable information \(OII\) is handled, refer to [Handling of personally-identifiable information in MSAL.NET](https://learn.microsoft.com/en-us/entra/msal/dotnet/resources/handling-pii).
+
+## Data
+
+MSAL requests to the token endpoint will have 2 additional headers:
+
+- Current request header: `x-client-current-telemetry`
+
+  - Current request will contain information about the current public API request.
+
+- Last request header: `x-client-last-telemetry`
+
+  - Last request contains information about failures for any previous requests.
+
+Current request and last request are appended to calls to the token endpoint.
+
+### Current request example
+
+Current requests are used in telemetry to help proactively detect server side issues or library regressions with as little impact to the customer as possible. An example of the current request header format is found [here](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/3d9cb46d824820a580b7f826a71ecd5beb8131a8/src/client/Microsoft.Identity.Client/TelemetryCore/Http/HttpTelemetryManager.cs#L108).
+
+### Last request example
+
+Failed requests are used in telemetry to help proactively detect server side issues or library regressions with as little impact to the customer as possible. An example of the last request header format is found [here](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/3d9cb46d824820a580b7f826a71ecd5beb8131a8/src/client/Microsoft.Identity.Client/TelemetryCore/Http/HttpTelemetryManager.cs#L51).

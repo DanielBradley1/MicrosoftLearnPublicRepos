@@ -1,0 +1,151 @@
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/15five-provisioning-tutorial -->
+<!-- Sitemap-Last-Modified: 2026-05-26 -->
+
+# Configure 15Five for automatic user provisioning with Microsoft Entra ID
+
+The objective of this article is to demonstrate the steps to be performed in 15Five and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to [15Five](https://www.15five.com/pricing/). For important details on what this service does, how it works, and frequently asked questions, see Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID.
+
+## Capabilities supported
+
+- Create users in 15Five
+- Remove users in 15Five when they don't require access anymore
+- Keep user attributes synchronized between Microsoft Entra ID and 15Five
+- Provision groups and group memberships in 15Five
+- [Single sign-on](https://learn.microsoft.com/en-us/entra/identity/saas-apps/15five-tutorial) to 15Five \(recommended\)
+- Long lived bearer token authentication supported.
+
+15Five is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+| :---: | :---: | :---: |
+| ✅ | ✅ |  |
+
+## Prerequisites
+
+The scenario outlined in this article assumes that you already have the following prerequisites:
+
+- [A Microsoft Entra tenant](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant) .
+- A user account in Microsoft Entra ID with [permission](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference) to configure provisioning \(like [Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#owned-enterprise-applications)\).
+- [A 15Five tenant](https://www.15five.com/pricing/).
+- A user account in 15Five with Admin permissions.
+
+## Step 1: Plan your provisioning deployment
+
+1. Learn about [how the provisioning service works](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning).
+2. Determine who is in [scope for provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts).
+3. Determine what data to [map between Microsoft Entra ID and 15Five](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/customize-application-attributes).
+
+## Step 2: Configure 15Five to support provisioning with Microsoft Entra ID
+
+Before configuring 15Five for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on 15Five.
+
+1. Sign in to your [15Five Admin Console](https://my.15five.com/). Navigate to **Features > Integrations**.
+
+   ![Screenshot of the 15Five admin console. Integrations appears under Features in a menu, and both Features and Integrations are highlighted.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/15five-provisioning-tutorial/integration.png)
+
+2. Select **SCIM 2.0**.
+
+   ![Screenshot of the Integrations page in the 15Five admin console. Under Tool, S C I M 2.0 is highlighted.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/15five-provisioning-tutorial/image00.png)
+
+3. Navigate to **SCIM integration > Generate OAuth token**.
+
+   ![Screenshot of the S C I M integration page in the 15Five admin console. Generate OAuth token is highlighted.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/15five-provisioning-tutorial/image02.png)
+
+4. Copy the values for **SCIM 2.0 base URL** and **Access Token**. This value is entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your 15Five application.
+
+   ![Screen shot of the S C I M integration page. In the Token table, the values next to S C I M 2.0 base U R L and Access token are highlighted.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/15five-provisioning-tutorial/image03.png)
+
+## Step 3: Add 15Five from the Microsoft Entra application gallery
+
+Add 15Five from the Microsoft Entra application gallery to start managing provisioning to 15Five. If you have previously setup 15Five for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal).
+
+## Step 4: Define who is in scope for provisioning
+
+The Microsoft Entra provisioning service allows you to scope who is provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who is provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal). If you choose to scope who is provisioned based solely on attributes of the user or group, you can [use a scoping filter](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts).
+
+- Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts).
+- If you need extra roles, you can [update the application manifest](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps) to add new roles.
+
+## Step 5: Configure automatic user provisioning to 15Five
+
+This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in 15Five based on user and/or group assignments in Microsoft Entra ID.
+
+### To configure automatic user provisioning for 15Five in Microsoft Entra ID:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Entra ID** > **Enterprise apps**
+
+   ![Enterprise applications blade](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/enterprise-applications.png)
+
+3. In the applications list, select **15Five**.
+
+   ![The 15Five link in the Applications list](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/all-applications.png)
+
+4. Select the **Provisioning** tab.
+
+   ![Screenshot of the Manage options with the Provisioning option called out.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/provisioning.png)
+
+5. Set **+ New configuration**.
+
+   ![Screenshot of Provisioning tab automatic.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/application-provisioning.png)
+
+6. In the **Tenant URL** field, input your 15Five Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to 15Five. If the connection fails, ensure your 15Five account has the required admin permissions and try again.
+
+   ![Screenshot of Provisioning test connection.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/provisioning-test-connection.png)
+
+7. Select **Create** to create your configuration.
+8. Select **Properties** in the **Overview** page.
+9. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+
+   ![Screenshot of Provisioning properties.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/provisioning-properties.png)
+
+10. Select **Attribute Mapping** in the left panel and select **users**.
+11. Review the user attributes that are synchronized from Microsoft Entra ID to 15Five in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 15Five for update operations. Select the **Save** button to commit any changes.
+    | Attribute | Type |
+    | --- | --- |
+    | active | Boolean |
+    | title | String |
+    | emails\[type eq "work"\].value | String |
+    | userName | String |
+    | name.givenName | String |
+    | name.familyName | String |
+    | externalId | String |
+    | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager | Reference |
+    | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber | String |
+    | urn:ietf:params:scim:schemas:extension:15Five:2.0:User:location | String |
+    | urn:ietf:params:scim:schemas:extension:15Five:2.0:User:startDate | String |
+12. Select **groups**.
+13. Review the group attributes that are synchronized from Microsoft Entra ID to 15Five in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in 15Five for update operations. Select the **Save** button to commit any changes.
+    | Attribute | Type |
+    | --- | --- |
+    | externalId | String |
+    | displayName | String |
+    | members | Reference |
+14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts) article.
+15. Use [on-demand provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/provision-on-demand) to validate sync with a small number of users before deploying more broadly in your organization.
+16. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
+
+## Step 6: Monitor your deployment
+
+Once you configure provisioning, use the following resources to monitor your deployment:
+
+1. Use the [provisioning logs](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs) to determine which users are provisioned successfully or unsuccessfully
+2. Check the [progress bar](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) to see the status of the provisioning cycle and how close it's to completion
+3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states the [application provisioning quarantine status](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-quarantine-status) article.
+
+## Connector limitations
+
+- 15Five doesn't support soft deletes for users.
+
+## Change log
+
+- 06/16/2020 - Added support for enterprise extension attribute "Manager" and custom attributes "Location" and "Start Date" for users.
+
+## Additional resources
+
+- [Managing user account provisioning for Enterprise Apps](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/configure-automatic-user-provisioning-portal).
+- [What is application access and single sign-on with Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on)
+
+## Related content
+
+- [Learn how to review logs and get reports on provisioning activity](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/check-status-user-account-provisioning).
