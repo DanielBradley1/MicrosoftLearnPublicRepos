@@ -1,0 +1,138 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/azure-devops-wiki-connector-result-layout -->
+<!-- Sitemap-Last-Modified: 2026-04-03 -->
+
+# Result layout for Azure DevOps Wiki connector
+
+The [Azure DevOps Wiki Microsoft 365 Copilot connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/azure-devops-wiki-overview) enables your organization to index wikis from the Azure DevOps service. After you configure the connector and index content, you need to set up a search result page.
+
+To set up the search result page, you need to:
+
+1. Set up [search vertical](https://learn.microsoft.com/en-us/microsoftsearch/manage-verticals).
+2. Set up [search result type](https://learn.microsoft.com/en-us/microsoftsearch/manage-result-types).
+
+This article provides a result layout JSON example to set up your result layout for the Azure DevOps Wiki Copilot connector.
+
+## Before you get started
+
+You must have configured the Azure DevOps Wiki Copilot connector. To consume the sample result layout JSON, you must select the following properties for indexing.
+
+Note
+
+The **Retrieve** search attribute is required for displaying a property in the search result template. A property can have other search attributes also.
+
+| Property | Search schema attribute required |
+| --- | --- |
+| Title | Retrieve |
+| RemoteURL | Retrieve |
+| LastPublishedAuthorName | Retrieve |
+| LastPublishedDate | Retrieve |
+| Content | Content property |
+| Organization | Retrieve |
+| Project | Retrieve |
+| WikiIdentifier | Retrieve |
+
+## Result layout
+
+The following example shows what search results look like.
+
+[![Example of a layout for Azure DevOps Wiki Copilot connector.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/ado-wiki/azure-devops-wiki-connector-example-layout.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/ado-wiki/azure-devops-wiki-connector-example-layout.png#lightbox)
+
+The following is the associated JSON file.
+
+```json
+{
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://searchuxcdn.blob.core.windows.net/designerapp/images/AzureDevOpsLogo.png",
+                            "horizontalAlignment": "Center",
+                            "altText": "Not available",
+                            "width": "-1px",
+                            "size": "Small"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 8,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "[${Title}](${RemoteURL})",
+                            "color": "Accent",
+                            "size": "Medium",
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "__${LastPublishedAuthorName}__ modified on {{DATE(${LastPublishedDate})}}",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "__Organization:__ ${Organization}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "__Project:__ ${Project}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "__Wiki:__ ${WikiIdentifier}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${ResultSnippet}",
+                            "wrap": true,
+                            "maxLines": 3,
+                            "spacing": "Medium"
+                        }
+                    ],
+                    "horizontalAlignment": "Center",
+                    "spacing": "Medium"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "$data": {
+    }
+}
+```
+
+## Related content
+
+- [Customize search verticals](https://learn.microsoft.com/en-us/microsoftsearch/manage-verticals)
+- [Manage search result layouts](https://learn.microsoft.com/en-us/microsoftsearch/customize-results-layout)

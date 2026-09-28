@@ -1,0 +1,74 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-tickets-overview -->
+<!-- Sitemap-Last-Modified: 2026-08-19 -->
+
+# ServiceNow Tickets connector overview
+
+The ServiceNow Tickets Microsoft 365 Copilot connector allows organizations to index ticket records from ServiceNow, including incidents, change requests, problems, service catalog requests and request items, and catalog and change tasks. It makes them searchable across Microsoft 365 experiences, including Microsoft 365 Copilot and Microsoft Search. After you deploy the connector, users can retrieve ticket information by using natural language queries in Copilot. This capability enhances visibility into IT service management workflows and improves operational efficiency.
+
+## Why use the ServiceNow Tickets connector to index your data?
+
+The ServiceNow Tickets connector helps organizations streamline support operations and improve service delivery by surfacing ticket data directly in Microsoft 365. Common use cases include:
+
+- Empowering support teams to quickly locate and review incident, problem, or change request tickets.
+- Allowing managers to track ticket resolution timelines and identify bottlenecks.
+- Allowing employees to check the status of their submitted requests without leaving Microsoft 365.
+- Enhancing decision-making with access to historical ticket data and trends.
+
+## Build agents with the ServiceNow Tickets connector
+
+Developers can use this connector as a knowledge source in declarative agents they build with the [Copilot Studio full experience](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio), the [Copilot Studio lite experience](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-agent-builder), or the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/developer/overview-m365-agents-toolkit).
+
+### Example prompts
+
+The following examples show prompts that agent builders can use to help their users retrieve information from ServiceNow Tickets.
+
+| Department | Example Prompts |
+| --- | --- |
+| IT Support | - Find the ticket for the network outage reported yesterday.  <br>- What is the status of the high-priority ticket?  <br>- Show all open tickets assigned to me. |
+| Operations | - List all change requests submitted this month.  <br>- Who closed the ticket related to the VPN issue?  <br>- How many tickets were resolved in the last week? |
+| HR/Facilities | - Show tickets related to office equipment requests.  <br>- What is the due date for the onboarding ticket for new hires?  <br>- Find the ticket for the broken badge reader. |
+
+## ServiceNow Tickets connector capabilities and limitations
+
+The ServiceNow Tickets connector enables users to:
+
+- Perform natural language queries to retrieve ticket details.
+- Search across incident, change request, problem, service catalog request \(`sc_request`\), service catalog request item \(`sc_req_item`\), service catalog task \(`sc_task`\), and change task \(`change_task`\) records.
+- Filter results by ticket status, priority, assignment group, and other indexed properties.
+- View ticket metadata such as creation date, assigned user, and resolution notes.
+- Customize URL formats for ticket links to match organizational portal configurations.
+
+The ServiceNow Tickets connector has the following limitations:
+
+- The **Everyone** option on the **Users** tab doesn't process any permissions. Don't select this option unless you want to test the connection between selected team members in an isolated environment.
+- The connector doesn't support reading ACL rules for any ticket items or any table.
+- Incremental crawls don't update permissions or ACLs—only full crawls do.
+- Attachments and comments aren't indexed.
+
+## Data types indexed from ServiceNow Tickets
+
+The connector indexes ticket records from the ServiceNow `task` table and its child tables. The following table lists the most commonly indexed ticket tables.
+
+| ServiceNow table | Record type |
+| --- | --- |
+| `incident` | Incidents |
+| `change_request` | Change requests |
+| `problem` | Problems |
+| `sc_req_item` | Service catalog request items \(RITMs\) |
+| `sc_task` | Service catalog tasks |
+| `change_task` | Change tasks |
+| `sc_request` | Service catalog requests |
+
+You can also index other `task` child tables in your instance.
+
+The connector also indexes user-related data from tables including `sys_user`, `sys_user_group`, and `core_company`. Indexed properties include ticket number, status, priority, assignment group, opened by, closed by, and more.
+
+These indexed properties power search and Copilot experiences, enabling users to retrieve relevant ticket information with contextual prompts.
+
+## Permissions model and access control
+
+The connector supports the **Only people with access to this data source** permission model. Admins can configure access control rules for each indexed table by selecting user fields such as `AssignedTo`, `OpenedBy`, and `ClosedBy`, or based on roles like `itil`. Microsoft Entra ID supports identity mapping, with options for default or custom mapping based on organizational needs.
+
+## Next step
+
+[Deploy the ServiceNow Tickets connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-tickets-deployment)

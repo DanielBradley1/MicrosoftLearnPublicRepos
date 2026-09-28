@@ -1,0 +1,357 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge -->
+<!-- Sitemap-Last-Modified: 2026-07-29 -->
+
+# Add knowledge sources to your declarative agent in Microsoft 365 Copilot
+
+The Agent Builder feature in Microsoft 365 Copilot provides a simple interface for you to integrate knowledge sources to make your declarative agent more intelligent and context-aware. These knowledge sources ground your agent in enterprise data, public content, and user-specific information to enable it to deliver more accurate, relevant, and personalized responses.
+
+You can add:
+
+- Up to four public website URLs.
+- Up to 100 SharePoint files, folders, or sites.
+- Up to 50 OneDrive files.
+- Up to five Teams chat URLs.
+- Embedded files uploaded from your device \(on the **Configure** tab\).
+- Microsoft 365 Copilot connectors \(if enabled by your organization's administrator\).
+- Dynamics 365 and Power Apps data \(if *Business Applications in Work IQ* is enabled by your organization's administrator\).
+
+This article describes the supported knowledge sources and the steps to configure them in Microsoft 365 Copilot. For general information about building agents with Microsoft 365 Copilot, see [Build agents with Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents).
+
+For information about supported knowledge sources and licensing requirements, see [Knowledge sources](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/knowledge-sources).
+
+## Add knowledge sources
+
+If you use natural language to create your agent, Agent Builder adds knowledge sources for you based on your description. You can also add knowledge sources from the chat box:
+
+1. In Microsoft 365 Copilot, choose **New agent** in the left pane, and provide a natural language description for your agent.
+2. Choose the plus icon \(**+**\) in the chat box. Use one of the following methods to add knowledge sources:
+
+   - **Add work content** - Select, search for, or upload files.
+   - **Upload images and files** - Upload directly from your device.
+   - **Attach cloud files** - Attach cloud files that you have access to.
+
+![Screenshot of the option to add knowledge sources to an agent in Agent Builder.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/add-knowledge-agent-builder-describe.png)
+
+If you're configuring your agent manually, to add knowledge sources to your agent:
+
+1. In Microsoft 365 Copilot, choose **New agent** from the left pane, and choose **Skip to configure**.
+2. In the **Knowledge** section, use one of the following methods to add knowledge sources:
+
+   - **Search** - Type keywords to search for items. Use this option to add sources such as email and Teams messages.
+   - **Enter URL** - Add a public website, a SharePoint link that includes the site path \(for example, `.../sites/<site-name>/...`\) and doesn't include query parameters, or a OneDrive shared link.
+   - **Browse** - Use the **Attach cloud files** picker to browse for and select SharePoint or OneDrive files, folders, or lists.
+   - **Upload** - Upload files directly from your device.
+
+![A screenshot of the Knowledge section of the Configure tab.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/agent-builder-knowledge-configure.png)
+
+## Public websites
+
+Add specific public websites as agent knowledge sources to make your agent context-aware. When you reference websites as knowledge sources, the following limits apply:
+
+- Public website URLs must only be two levels. For example, `https://example.org/a/b/c` is an invalid URL because it's more than two levels.
+- URLs can't contain query parameters. For example, `https://example.org?test=1` is invalid.
+- You can add up to four URLs.
+
+To configure your agent to use any web data as knowledge:
+
+- Use natural language to ask Agent Builder to prioritize your knowledge sources.
+- On the **Configure** tab, under **Knowledge**, choose the toggle next to **Search all websites**.
+
+## SharePoint and OneDrive content
+
+Reference specific files, folders, lists, and sites as agent knowledge sources. When you reference sources from SharePoint or OneDrive, consider the following limits:
+
+| Limit or behavior | Detail |
+| --- | --- |
+| SharePoint files | Select up to 100 SharePoint files for each agent. |
+| SharePoint lists | Select up to 1 SharePoint list for each agent. |
+| OneDrive files | Select up to 50 OneDrive files for each agent. |
+| Permissions and sensitivity labels | The agent respects existing permissions and [sensitivity labels](https://learn.microsoft.com/en-us/purview/sensitivity-labels) for files already uploaded to SharePoint or OneDrive. |
+| File size | Although there isn't a direct file size limit on the knowledge files you select, the agent can only reason over specific [file types](#file-types-and-size-limits). |
+
+When you reference a SharePoint list, the following limits apply:
+
+- A list can have a maximum of 20,000 items \(rows\) and 50 MB of raw text. If your list exceeds either limit, the agent truncates it and notes the truncation in its response.
+- The **Attachments** column \(list attachments\) isn't indexed or used for grounding; agents don't answer from attachment contents.
+- Selecting a SharePoint site doesn't include its lists. To use a list as knowledge, select the specific list.
+
+Note
+
+- If [Restricted SharePoint Search](https://learn.microsoft.com/en-us/sharepoint/restricted-sharepoint-search) is enabled, you can't use SharePoint as a knowledge source.
+- Agents respond best to queries based on data in Excel when the data is in one sheet within a workbook.
+- To optimize for Copilot, keep the contents of files that you select concise. For more information, see [Length of documents that you provide to Copilot](https://support.microsoft.com/topic/keep-it-short-and-sweet-a-guide-on-the-length-of-documents-that-you-provide-to-copilot-66de2ffd-deb2-4f0c-8984-098316104389).
+
+### Enter a URL for files, folders, lists, or sites
+
+Enter a URL for a SharePoint site, folder, or file, such as `contoso.sharepoint.com/sites/policies`. The agent searches the URL and subpaths. For example, a URL such as `contoso.sharepoint.com/sites` also includes subpaths like `contoso.sharepoint.com/sites/policies`. The agent uses relevant information to provide a targeted response.
+
+You can also add a SharePoint list by URL. On the list, select **Share** or **Copy link** to get the link, then paste the list URL \(without query parameters\). Use a direct link to the specific list, not a filtered or grouped view. A SharePoint site URL doesn't include the lists in that site, so enter the list's own URL.
+
+For OneDrive, enter a shareable link to a file or folder \(for example, a URL copied from the browser or share options\), not a local or relative path \(for example, `C:\Users\YourName\Documents\File.xlsx`\).
+
+After you provide the URL, press **Enter** to add it as a knowledge source.
+
+### Browse to select files, folders, lists, or sites
+
+Select the **Attach cloud files** cloud icon in the **Knowledge** section to open the file picker. The picker displays your recently accessed SharePoint and OneDrive sites. To view more SharePoint sites, select **More places** at the bottom of the left pane. If you recently created a site, it appears after several minutes.
+
+To browse for a SharePoint list, select **Recent lists** in the left pane of the picker, and then select the list that you want to add.
+
+Note
+
+The SharePoint picker might not show all the [communication sites](https://learn.microsoft.com/en-us/microsoft-365/community/team-site-or-communication-site) that you have access to. Communication sites only show up in the **Quick Access** and **Recent** sections of the SharePoint picker.
+
+### File readiness
+
+When you upload new files to SharePoint or OneDrive, it can take up to several minutes for the agent to include them in its response. You can still test your agent in the test pane if sources aren't ready. However, responses don't include information from the newly uploaded file until it's ready.
+
+You can check the file readiness in the **Knowledge** section in the **Configure** tab; the file has the word "Preparing" next to it. When you rename or delete the underlying file uploaded to SharePoint or OneDrive, the agent picks up the changes. You can also select the refresh button on top of the **Knowledge** section to manually reload the state.
+
+## OneNote pages
+
+You can choose specific OneNote pages from the file picker to upload as knowledge. You can only select individual OneNote pages; the option to select a whole OneNote notebook isn't available. When you select **My SharePoint files, folders, and sites**, OneNote pages are included.
+
+Use the file picker to add OneNote pages. Agent Builder doesn't support entering OneNote page URLs.
+
+## Microsoft Teams data
+
+You can ground your agent in Microsoft Teams data, including Teams chat messages and meeting information. To use all chat messages, meeting transcripts, and calendars that you have access to as knowledge, select **My Teams chats and meetings**.
+
+You can also scope your agents to specific chats, including team channels, group chats, and meeting chats. Scoping knowledge to specific chats improves the accuracy and relevancy of agents' responses. To scope Teams knowledge to specific chats, on the **Configure** tab, in the **Knowledge** section, select the search bar. In the window that opens, choose the **Chats** tab, and select the specific chats to add. You can add up to five chats.
+
+You can also scope your agents to specific meetings. Scoping knowledge to specific meetings improves the accuracy and relevancy of agents' responses. To scope Teams knowledge to specific meetings, on the **Configure** tab, in the **Knowledge** section, select the search bar. In the window that opens, choose the **Meetings** tab, and select the specific meetings to add.
+
+Important
+
+- Teams knowledge is only available to users with a Microsoft 365 Copilot add-on license.
+- When you select **My Teams chats and meetings**, agents search all meeting transcripts and the whole calendar. To limit the scope, add specific meetings instead.
+- Depending on the size of past transcripts, agents might not have access to all meeting transcripts.
+
+## Outlook emails
+
+You can ground your agent in Outlook email. To add email as a knowledge source, on the **Configure** tab, in the **Knowledge** section, select the search bar, and choose **My emails**.
+
+Note
+
+You can't scope email knowledge. When you add email, the agent uses all email in your mailbox as knowledge. Users that you share the agent with don't have access to your email as knowledge. This capability is only available to users with a Microsoft 365 Copilot add-on license.
+
+## Embedded file content
+
+You can upload files directly from your device for your agent to use as knowledge. The files that you upload become embedded content in the agent. To upload files, drag and drop from your device into the **Describe** tab or the **Configure** tab. You can also choose the arrow icon on the **Configure** tab to upload files from your device. You can upload individual files from your device, but not file folders.
+
+You can add up to 20 files as knowledge sources.
+
+Embedded files are stored in the default geography of the tenant, not in the user's preferred data location \(PDL\).
+
+Note
+
+Embedded file content isn't supported in Microsoft 365 Government Community Cloud \(GCC\) environments.
+
+The **Configure** tab displays embedded files under **Uploaded files**. Files can take a few minutes to upload and appear gray until they're fully uploaded. The upload time can vary based on the file size and internet speed. For information about size limits for embedded files, see [File size limits](#file-types-and-size-limits).
+
+Important
+
+[Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers) isn't supported on embedded files. Any user who can access the agent can see responses grounded in the embedded file content.
+
+To remove a file you uploaded, choose the X next to the file, and choose **Remove**.
+
+Files with any of the following characteristics aren't supported:
+
+- Double key encryption.
+- Sensitivity labels that have user-defined permissions. If you upload a file with user-defined permissions, agent creation fails.
+- Sensitivity labels that have extract rights permission disabled. If you upload these files, agent creation fails. If an agent user doesn't have extract rights to an embedded file, the user can't access the agent.
+- Files from another tenant that have encryption enabled.
+- Password protection.
+
+For details, see [Unsupported sensitivity label scenarios](#unsupported-sensitivity-label-scenarios).
+
+Caution
+
+When you upload files as knowledge sources for your agent, any user who has access to the agent also has access to the information in the file. Access to the agent is restricted if a user doesn't have extract rights access permissions to any sensitivity label on the files.
+
+For information about embedded file content indexing and retrieval, see [Optimize content retrieval](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/optimize-content-retrieval).
+
+### Sensitivity labels for agent embedded content
+
+Apply a sensitivity label to the agent embedded content if you upload any files with a sensitivity label or if your tenant has a default [sensitivity labeling](https://learn.microsoft.com/en-us/purview/sensitivity-labels) policy. By applying a sensitivity label to the agent embedded content, you ensure the agent complies with your organization's Microsoft Purview policies.
+
+The sensitivity label applied to the embedded content is the higher priority of the following labels:
+
+- The highest priority sensitivity label applied to any embedded file.
+- The [default sensitivity label policy](https://learn.microsoft.com/en-us/purview/default-sensitivity-labels-policies#default-sensitivity-label-policy) applied by the organization.
+
+For example, if you embed a file with a General label and a file with a Confidential label in the agent, the Confidential sensitivity label is applied to the embedded content.
+
+Note
+
+The sensitivity label applies only to the embedded content; it doesn't apply to other knowledge sources that the agent references, such as SharePoint files or Copilot connector content.
+
+Only users who have extract right permissions to the sensitivity label applied to the embedded content can access and use the agent. The label doesn't appear on the Agent Store listing. Users who don't have extract right permissions to the embedded content can view the agent and the agent description, but they can't install and use the agent.
+
+A sensitivity label is also applied to agent responses. This label is the higher priority of the following labels:
+
+- The sensitivity label of the embedded content
+- The sensitivity label of any other agent knowledge sources, such as SharePoint and OneDrive files.
+
+Currently, you can't set a sensitivity label on an agent.
+
+#### Unsupported sensitivity label scenarios
+
+The following table lists sensitivity label scenarios that aren't currently supported, describes the behavior when a builder uploads the file to the agent, and provides the recommended action for the builder.
+
+| Scenario | Behavior | Action |
+| --- | --- | --- |
+| Sensitivity label with Microsoft Purview Double Key Encryption enabled | The file is embedded but isn't used as knowledge. The builder doesn't see an error message when they upload the file. | Avoid uploading files with DKE because they can't be used as knowledge. |
+| Sensitivity label with user-defined permissions enabled | The file is uploaded but agent creation fails without an error message. | Remove any uploaded files with user-defined permissions. |
+| Sensitivity label with extract rights disabled for the user | The file is uploaded but agent creation fails without an error message. | Remove any uploaded files with extract rights disabled. |
+| Files with sensitivity labels from another tenant that has encryption enabled | The file is embedded in the agent but isn't used as knowledge. | Avoid uploading files with sensitivity labels from tenants with encryption enabled because they can't be used as knowledge. |
+| Files with password protection | The file is uploaded and the builder sees an error message next to the uploaded file. | Remove any uploaded files with password protection. |
+
+### Sharing an agent with embedded files
+
+When you share an agent with embedded files, you share the files with users when they acquire the agent. After users acquire the agent, they can get responses from Copilot based on those knowledge sources. You have the following options for sharing an agent with embedded files as knowledge:
+
+- Anyone in your organization
+- Specific users in your organization
+- Only you
+
+When you [share the agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-agent-builder-publish#share-the-agent), the **Share** screen displays the sensitivity label if sensitivity labels are set on the embedded content.
+
+### File types and size limits
+
+The following table lists the file types that you can add as knowledge to your agent and the embedded file size limits for each file type.
+
+| File type | Embedded file limit |
+| --- | --- |
+| .doc | 512 MB |
+| .docx | 512 MB |
+| .html\* | NA |
+| .pdf | 512 MB |
+| .ppt | 512 MB |
+| .pptx | 512 MB |
+| .txt | 512 MB |
+| .xls | 30 MB |
+| .xlsx | 30 MB |
+
+\* Only supported for SharePoint in Microsoft 365.
+
+Note
+
+- Agents respond best to queries based on data in Excel when the data is in one sheet within a workbook.
+- To optimize for Copilot, keep the contents of files that you upload concise. For more information, see [Length of documents that you provide to Copilot](https://support.microsoft.com/topic/keep-it-short-and-sweet-a-guide-on-the-length-of-documents-that-you-provide-to-copilot-66de2ffd-deb2-4f0c-8984-098316104389).
+
+## People data
+
+If you ground your agent in People data, it can deliver more personalized and context-aware responses. People data provides public information about individuals, such as name, position, skills, and organizational relationships. This information allows agents to look up user and colleague profiles, including reporting structure and contact details.
+
+People data is enabled by default for agents created by users who have a Microsoft 365 Copilot license. You can disable or re-enable this capability in the agent configuration UI. To disable or enable People data:
+
+- On the **Configure** tab in Agent Builder in Microsoft 365 Copilot, select the toggle next to **Reference people in organization** to turn People data off or on.
+
+This feature is available only to users with a Microsoft 365 Copilot add-on license.
+
+Note
+
+People data acts as a personalization layer, enriching agent responses with context from Microsoft 365. It doesn't introduce new privacy risks, but it provides transparency and control for users and administrators.
+
+## Copilot connectors
+
+Copilot connectors allow agents to access and apply knowledge from external systems such as customer accounts, incident tickets, code repositories, and knowledge articles. Use Copilot connectors to integrate enterprise data into your agents, and empower them with domain-specific knowledge.
+
+Note
+
+Admins must enable and configure Copilot connectors in the [Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoftsearch/configure-connector).
+
+For more information about Copilot connectors, see [Microsoft 365 Copilot connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector).
+
+### Scope Copilot connector data sources
+
+To enhance the accuracy and relevance of agent responses, ground agents not only in broad organizational data but also in specific scoped data. To scope connector data in your agent to a specific attribute:
+
+1. On the **Configure** tab, under **Choose other data sources**, select the connector for your data source.
+2. On the card for that connector, add the connections that are relevant to your scenario.
+3. Select the arrow to go back to the **Knowledge** section.
+4. Expand the connector that you added and select the attribute that you want to scope the knowledge to \(for example, project, space, folder\), and search for or type the attribute name.
+
+   Note
+
+   If the attribute doesn't appear in the search results, it might be because:
+
+   - Your administrator didn't configure the scoped content.
+   - You don't have the required permissions to access the content.
+   - The scope isn't valid for the selected connector.
+
+5. Select the attribute from the list to add it.
+6. Your agent's knowledge is now scoped to the data associated with the scoped attribute.
+
+For example, when you use the **Azure DevOps Work Items** connector, you can scope the agent to a particular area path to ensure that the agent focuses only on the most pertinent work items.
+
+To scope the **Azure DevOps Work Items** area path:
+
+1. Under **Choose other data sources**, select **Azure DevOps Work Items**.
+2. Select **Add** next to the connections that are relevant to your tasks.
+3. Select the arrow to return to the **Knowledge** section.
+4. Select **Select an area path** and search for or type the area path name.
+5. Select the area path to add it.
+
+![A screenshot of the Knowledge section of the Configure tab with Choose other data sources highlight and several Copilot connectors shown.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/embedded-authoring-copilot-connectors.png)
+
+The following table lists the Copilot connectors that support scoping and the attributes that you can use to scope the data.
+
+| Connector | Scoping attribute |
+| --- | --- |
+| Azure DevOps Work Items | Area path |
+| Azure DevOps Wiki | Project |
+| Confluence | Space |
+| Google Drive | Folder |
+| GitHub Cloud Pull Requests | Repository |
+| GitHub Cloud Issues | Repository |
+| GitHub Cloud Knowledge | Repository |
+| Jira | Project |
+| ServiceNow Knowledge | Knowledge base |
+| ServiceNow Catalog | Catalog |
+| ServiceNow Tickets | Entity type \(Sys\_class\_name/ Category/ Subcategory\) |
+
+For more information about the available Copilot connectors, see the [Connectors gallery](https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext).
+
+## Dynamics 365 and Power Apps data
+
+[Business Applications in Work IQ](https://learn.microsoft.com/en-us/power-platform/business-applications-work-iq) helps agents understand and use business data and processes from Dynamics 365 and Power Platform. Connect your business applications to give agents the context they need to answer questions, follow business processes, and take action within your existing permissions and controls.
+
+Note
+
+Admins must first enable *Business Applications in Work IQ* in the Microsoft 365 admin center and also enable Work IQ for each Power Platform environment. For more information, see [Set Up Business Applications in Work IQ](https://learn.microsoft.com/en-us/power-platform/admin/copilot/business-applications-work-iq-quickstart).
+
+Adding Dataverse as a knowledge source provides read access to the content and doesn't allow creating, updating, or deleting records.
+
+Using Agent Builder, you can determine which apps are included as data sources, and access to the apps, tables, and data. However, the Dataverse security settings regulate all data. No responses are provided to users who don't already have access to the specified apps or data.
+
+If you don't choose specific apps, queries run across all apps that you have access to. For more information, see [Knowledge sources](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/knowledge-sources#dataverse).
+
+## Prioritize your knowledge sources over general knowledge
+
+You can configure your agent to prioritize the knowledge sources you provide—such as SharePoint content or embedded files—when it responds to queries that require knowledge-based searches. Knowledge-based searches are user requests to look up specific information; for example:
+
+- Who is the current company CEO?
+- When is the next business conference?
+- What's the most recent update related to a feature?
+
+Some user requests don't require knowledge-based searches; the agent can respond based on general AI knowledge. For example:
+
+- Translate this phrase into Spanish: "Hello, how are you?"
+- What is 1+1?
+
+When you enable this feature, the agent answers simple questions that don't require searching by using its general knowledge, and it uses your knowledge sources only to answer search-based questions. If the agent can't find relevant information in the knowledge sources you provide, it responds with a fallback message that states it can't find the information. To restrict your agent to your own knowledge sources, use the **Only use specified sources** setting to have the agent prioritize the sources you designate. This setting prioritizes rather than fully blocks general AI knowledge—Agent Builder can't fully block it—so for stricter control, see the note that follows.
+
+To configure your agent to prioritize your knowledge sources, on the **Configure** tab, select the toggle next to **Only use specified sources**.
+
+Note
+
+Agent Builder in Microsoft 365 Copilot doesn't support blocking general AI knowledge from your agent's responses. For stricter control over knowledge sources, use Copilot Studio. For more information, see [Orchestrate agent behavior with generative AI](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions).
+
+## Related content
+
+- [Overview of Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder)
+- [Build agents with Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents)
+- [Build an agent from a template](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-templates-overview)
+- [Share and manage agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents)

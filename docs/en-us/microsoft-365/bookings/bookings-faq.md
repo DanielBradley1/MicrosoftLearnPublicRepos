@@ -1,0 +1,358 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/bookings/bookings-faq?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-08-24 -->
+
+# Shared Bookings Frequently Asked Questions \(FAQ\)
+
+## General
+
+### What is Microsoft Bookings?
+
+Microsoft Bookings is a Microsoft 365 app that makes scheduling and managing appointments easy. Bookings includes a Web-based booking calendar and integrates with Outlook to optimize your staff's calendar, giving your customers flexibility to book a time that works best for them. Automated notification emails reduce no-shows, and organizations save time with a reduction in repetitive scheduling tasks. Bookings helps you easily conduct virtual appointments via Skype or Microsoft Teams. Bookings also helps you manage day-to-day scheduling via the Bookings web app or in Teams. Bookings is designed to meet the needs of multiple parts of any organization.
+
+### Is Bookings available for my subscription?
+
+Bookings is available with the following subscriptions:
+
+- Office 365:A3, A5, E1, E3, E5, F1, F3, G1, G3, and G5.
+- Microsoft 365: A3, A5, E1, E3, E5, F1, F3, Business Basic, Business Standard, Business Premium, Teams Essentials, Teams Premium. Bookings isn't available as a standalone app. Outlook Web App or Outlook on the web must be enabled to use Bookings.
+
+A Bookings license provides full functionality, including creating and managing calendars. Users can view and edit existing calendars, when those users are added as staff in an Administrator or Viewer role.
+
+### How do I use Microsoft Bookings?
+
+Bookings is an online service, so you don't need to download anything. Just go to the app chooser within the Microsoft 365 Web experience.
+
+### Will my customers see my personal or business calendar?
+
+Your customers will only see the Bookings calendar that you publish online for the services, times, and staff that you choose.
+
+### How do I change a bookable attribute under Manage staff?
+
+When staff members are added, they receive an email to accept or reject the request. They can open the same email and select "Reject" so they aren't bookable.
+
+### How do end users access the Bookings app?
+
+Anyone who is licensed for a supported subscription, or is added as a staff member in either the Administrator or Viewer roles can access Bookings in the app chooser within the Microsoft 365 Web experience.
+
+### Can I use Bookings in my own Web site?
+
+Yes. We provide a way for you to embed your Bookings calendar in your site via an iFrame. Link embedding code is located in the **Bookings page** tab within the Bookings app.
+
+### Can I use Bookings even if I don't have a Web page for my business?
+
+Yes. We provide a link to your booking page within the **Booking page** tab in the Web app. You just need to provide that link to your customers or clients, and they see the latest availability information for your business. Alternatively, you can share the booking page in social media or even use the embed feature to host it in an iFrame. You also have the ability to control who can access the page. You can do this by disabling direct search engine indexing and restricting access to only those in your organization.
+
+### Can our IT department control whether end users can access Bookings?
+
+Administrators can turn off Bookings in the Microsoft 365 admin center if they choose. To do so, [follow these instructions](https://learn.microsoft.com/en-us/microsoft-365/bookings/turn-bookings-on-or-off?view=o365-worldwide).
+
+A customer can also disable access to Bookings for certain eligible licenses in their tenant. They can either use a group policy to restrict licenses or implement an Outlook web app \(OWA\) Mailbox policy that restricts who is able to create new Bookings calendars.
+
+If you use an OWA Mailbox policy to disable access to Bookings, all users will have a Bookings license, however when they attempt to access the app, they'll only be successful if they're part of the policy or if they've been added to an existing Bookings calendar as staff. Details [here](https://learn.microsoft.com/en-us/microsoft-365/bookings/turn-bookings-on-or-off?view=o365-worldwide) in the "Allow only selected users to create Bookings calendars" section.
+
+### Can I link a payment option to my Bookings?
+
+No, there's no payment support in Bookings.
+
+### Is Bookings customizable?
+
+Yes, Bookings is customizable and can be used for various scenarios. When setting up a Bookings calendar, many aspects of the Web-based scheduling page, your business information, staff details, service types, and scheduling policies can be customized.
+
+### Is all the functionality of the original Bookings Web app available in Microsoft Teams?
+
+A lightweight version of Bookings is now available as an app in Teams. More information on it can be found in [Overview of the Bookings app in Teams](https://support.microsoft.com/office/overview-of-the-bookings-app-in-teams-7b8569e1-0c8a-444e-b712-d9968b05110b). There is deep link functionality to pop out in the Web app, and after setup, day-to-day use of Bookings can be done without ever leaving Teams. Information flows across platforms.
+
+### Is Bookings a small business offering or an Enterprise offering or both?
+
+Bookings is an ideal solution for both Enterprise and small business customers, across various industries. Use cases include:
+
+- Financial services
+
+  - consultations
+  - banking and insurance services
+  - tax filings
+
+- Human resources \(HR\)
+
+  - candidate interviews
+  - onboarding
+  - benefits assistance
+  - training and seminars
+
+- Healthcare
+
+  - patient visits
+  - provider-to-provider collaboration
+  - insurance consults
+
+- Government & Public Sector
+
+  - court hearings and trials
+  - public services
+  - department appointments
+
+- Education--K-12
+
+  - parent-teacher conferences
+  - school town hall
+  - student-counselor visits
+
+- Education--Higher Ed
+
+  - office hours
+  - tutoring
+  - student services
+  - exam sign-up
+
+- Retail
+
+  - assisted shopping
+  - contractor scheduling
+  - design services
+
+- General Enterprise and small business needs
+
+  - customer and client meetings
+  - tech support
+  - legal reviews
+  - facilities
+
+## Account information
+
+### Do I need to migrate my email account from my current provider to Microsoft 365?
+
+You can keep your current provider, but Bookings sends all notifications to the email used in your Microsoft 365 account.
+
+### Can my employees use Bookings without a Microsoft 365 account?
+
+Yes. You can add your staff with any email, and they'll still get the email confirmation and the calendar invite when someone books an appointment with them.
+
+### Can I create more than one Bookings calendar under the same Microsoft 365 account and switch between them?
+
+Yes. You can create and manage more than one Bookings calendar with one account. You can switch between them using the caret next to the business name in the Bookings Web app.
+
+### Is Bookings supported in a federated or hybrid environment?
+
+No. Bookings is a cloud-only application. It isn't supported in a federated or hybrid environment.
+
+## Product features
+
+### Where do Bookings calendars show up in my Microsoft 365 tenant?
+
+Each new Bookings calendar creates a corresponding mailbox in Exchange, and a related entry in Microsoft Entra ID, where the entry is listed as an unlicensed user.
+
+### Can I delete a previously created Bookings calendar?
+
+To delete a Bookings calendar, you must delete the associated mailbox in Exchange. See [Delete an Exchange mailbox](https://learn.microsoft.com/en-us/exchange/recipients/disconnected-mailboxes/disable-or-delete-mailboxes?view=exchserver-2019).
+
+### If I create a calendar and someone else has access to Bookings, would they be able to see my calendar?
+
+The only people who have access to Bookings calendars that you create \(through the Web app\) is anyone who has been added as staff, in either an Administrator or Viewer role. Tenant admins will be able to see a list of all Bookings mailboxes in Exchange and Microsoft Entra ID.
+
+### Are video conferencing meetings integrated into the Bookings app?
+
+Online meetings are available within Bookings when using the Skype or Microsoft Teams clients. Online meetings can be enabled at the service-level, and the meeting client you choose \(Skype or Teams\) will be the one set by default for a booked staff member. To join the online meetings, each new appointment has a unique meeting link attached to the appointment. How to join options are included in the event and in confirmation emails to your customer.
+
+### How does scheduling policy work?
+
+A setting called **Maximum lead time** determines the farthest in advance \(measured in days\) that a booking can be made. There must be at least 24 hours between **Minimum lead time** \(the minimum lead time, in hours, for bookings and cancellations\) and Maximum lead time. Maximum lead time can be set to one day if Minimum lead time is set to 0 hours. This means a customer can cancel a booking up until the time that it starts, and customers can only schedule bookings if the appointment is within the next day.
+
+![Scheduling in Bookings.](https://learn.microsoft.com/en-us/microsoft-365/bookings/media/bookings-faq-scheduling.png?view=o365-worldwide)
+
+### How does Bookings work across time zones?
+
+All times are in the business time zone \(your local time zone\) by default. Any setting that you configure for a Bookings calendar, such as working hours, appears in this time zone. The Self-service page has the ability to display all the appointment times in the end user's time zone, which can be turned off if desired. If **Always show time slots in business time zone** remains unchecked on the Bookings page tab, then people visiting the page will see time slots in their own local time zones.
+
+![Bookings region and time zone settings.](https://learn.microsoft.com/en-us/microsoft-365/bookings/media/bookings-faq-region.png?view=o365-worldwide)
+
+There's no provision to set time zone for staff in Bookings. Staff time zone, and business hours are in the business time zone.
+
+### Can email notifications be sent as the tenant domain name?
+
+The email addresses are controlled and managed at the Microsoft 365 settings level and depend on the domain configuration settings there. More information can be found [here](https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-accepteddomain).
+
+### Is the ability to send SMS messages dependent on a different service or specific configuration?
+
+SMS messages are currently available in North America, and a Skype or Twilio account are used for SMS delivery.
+
+### How can Bookings appointments show up on a person's calendar?
+
+The confirmation of the booking is sent to both the service provider's and customer's inboxes. The confirmation email contains an \*.ics file attachment, which can then be added to the user's calendar with all relevant appointment details.
+
+### Can users edit Bookings appointments in their Outlook calendar?
+
+No, currently Bookings appointments can only be edited from the Bookings web portal.
+
+### What triggers service provider or staff and customer emails?
+
+Emails are triggered based on settings in the Services tab in the Bookings Web app. A booking made by the customer on the Self-service page, or on the Calendar tab in the Bookings Web app triggers a confirmation and a reminder email. The same thing happens when someone makes a change to the booking via the **Manage booking** button in the confirmation email or within the Web app. Reminder emails are sent at a specified time period before an appointment, as detailed in the Services tab in the Bookings Web app.
+
+### Can I book classroom-style appointments that are 1: many instead of 1:1?
+
+Yes, we have a group bookings functionality that allows multiple people to book the same appointment at the same time \(such as for a fitness class\). This functionality is described in detail [here](https://learn.microsoft.com/en-us/microsoft-365/bookings/manage-attendees-bookings?view=o365-worldwide).
+
+### Can calendars remain unpublished \(not public-facing\) but still accessible to designated users?
+
+Yes. There's a check box on the Booking page tab in the Web app: **Require a Microsoft 365 or Office 365 account from my organization to book**. Selecting this check box restricts Self-service page access to only users in your tenant. The Bookings calendar that sits within the Web app for creation and management can only be accessed by those individuals added as staff to the page with Administrator or Viewer roles.
+
+![Booking page access control in Bookings.](https://learn.microsoft.com/en-us/microsoft-365/bookings/media/bookings-faq-access-ctrl.png?view=o365-worldwide)
+
+### How frequently does the Home page update?
+
+The latest data linked to your Home page is retrieved whenever the Web app is loaded. For more information on the type of information tracked by Bookings, see this [support article](https://learn.microsoft.com/en-us/microsoft-365/bookings/metrics-and-activity-tracking?view=o365-worldwide).
+
+### Can I turn off the email notifications for Time Off?
+
+Recording Time Off within the Bookings Web app triggers a notification email to staff members. If any staff members are confused about the notification, we recommend you add more detail in the notes or title of the Time-Off notification, to better inform staff about what is occurring on the admin side.
+
+### Can Bookings calendars be cloned or duplicated, and can they be templatized for easy scaling?
+
+The process would be to use the Graph API to get mailbox details, and then use those details to create a new mailbox. API documentation is [here](https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview?view=graph-rest-beta).
+
+### What reporting is available in Bookings?
+
+All Bookings staff assigned to the Administrator role can download a tab-separated values \(.TSV\) file with all bookings made in the past 120 days. Bookings reports can be downloaded in .TSV form from the Home tab of the Bookings page. The Bookings API can also be used to collect this data for more customized and specific purposes. For more information, see, [Reporting info for Bookings](https://learn.microsoft.com/en-us/microsoft-365/bookings/reporting-info?view=o365-worldwide).
+
+### Is it possible to share only one service on the Self-service page at a time?
+
+Yes, you can either create separate Bookings calendars for each service, or you can go to the Services tab and select Service details. You see a URL only for that specific service under the Service booking page. You can then share that URL, which is for that specific service.
+
+### What options are available for embedding a consent form or disclosure for those booking an appointment?
+
+We recommend enabling the **Customer data usage consent** check box in the Booking page and customizing the wording to properly convey your organization's disclosure or consent requirements. Another option is to add a custom field to the service that includes a link to the consent form. Then require customers to confirm the completed form before they can proceed with making an appointment. You can also add the consent form URL as another notes in confirmation and reminder emails.
+
+### What changes can be made to the staff selection capability on the Self-service booking page?
+
+The ability for customers to select specific staff members when booking can be removed completely by de-selecting the **Allow customers to choose a specific person for the booking** option from the Booking page or the Services section. Bookings automatically assigns an available staff member at random to the booking, based on staff availability.
+
+### Can Bookings support many concurrent booking requests and Self-service page visits?
+
+Booking can support a large quantity of visitors and bookings at one time. If the page experiences a large volume of traffic, users will receive a "server busy" error. Appointment availability is updated when the page is loaded, and when a booking is made. If multiple people are trying to book the same appointment at one time, Bookings will only let one person book that time. The other potential customers will get a notification message to find a different time.
+
+## Privacy
+
+### Where is Bookings data stored?
+
+Bookings is a Microsoft 365 app, meaning all data is stored within the Microsoft 365 platform and in Exchange. Bookings follows all data storage policies that are set by Microsoft, which are the same policies that all apps in Microsoft 365 follow. Bookings uses shared mailboxes in Exchange to store customer, staff, service, and appointment details. Compliance policies for shared mailboxes in Exchange also apply for Bookings mailboxes. All customer data \(including information provided by customers when booking\) is captured in Bookings and is stored within the app, thus it's stored within Exchange. Microsoft Bookings uses the same policies used by Microsoft 365, which you can find [here.](https://www.microsoft.com/online/legal/v2/?docid=22&langid=en-us)
+
+### Is there a way to centrally manage Bookings calendars for all users?
+
+Each Bookings calendar is maintained independently. There's no consolidated view, other than the search drop-down after clicking the caret on the home page.
+
+### How are users authenticated?
+
+Access to the Bookings Web app involves authentication through the regular Microsoft Entra authentication. The Self-service booking page can be made available to everyone with the Web page link. However, when the **Require a Microsoft 365 or Office 365 account from my organization** to book setting is selected, the page is restricted for use only within the Microsoft 365 tenant \(using Microsoft Entra authentication\).
+
+![Booking page access control in Bookings.](https://learn.microsoft.com/en-us/microsoft-365/bookings/media/bookings-faq-access-ctrl.png?view=o365-worldwide)
+
+### Does customer data leave the production system for any reason?
+
+Yes, since Bookings is a part of Exchange, we allow Graph APIs and Exchange Web Services \(EWS\) APIs for the customers to download their own data to which they have access.
+
+### Is there the ability to customize email addresses for customer replies?
+
+There's the ability to define which email address customer sends their replies to. This setting is on the **Business information** tab. The Bookings mailbox name itself can also be changed within Exchange, through usual Exchange mailbox-renaming processes.
+
+### We would like for the customer to accept our terms and conditions during the booking process. Is that possible?
+
+This feature already exists for GDPR compliance. The Booking page has a field for custom consent, right under the publishing details section. Just check that box and write your own custom consent message and it shows up as a required field on the Self-service page. The date and time that the customer grants consent gets recorded.
+
+This section doesn't support rich text, but think links can be added under the business information section and would show up just below the consent check box.
+
+### How can Bookings-associated mailboxes in Exchange be identified?
+
+The following command can be used to retrieve information of all Bookings mailboxes and users who have access to them.
+
+`Get-Mailbox -RecipientTypeDetails SchedulingMailbox -ResultSize: Unlimited | Get-MailboxPermission |Select-Object Identity, User, AccessRights | Where-Object {($_.user -like '*@*')}`
+
+## Technical Questions
+
+### If a user schedules an appointment for a service consisting of an online meeting, how do they receive the Microsoft Teams link to the meeting if they leave the optional email address field empty?
+
+If the system doesn't have the customer's email information, there's no way for the confirmation mail to be delivered to the customer. You can set the email address as a required field, which you can do on the Services tab of Bookings. Whenever you create a new service in Bookings, the customer email field is set as a required field by default.
+
+### How is staff assigned to appointments when "Anyone" is selected, or when customers don't have the ability to choose a staff member for the appointment?
+
+Staff are assigned randomly in these scenarios, out of all staff members available at the time of the appointment being booked. Currently there's no way to ensure equal distribution of randomly assigned appointments across all members of the staff, or to cap the number of assigned appointments to each staff member. If there's load-balancing that needs to be done across your staff after many random assignments, it can be done manually in the Calendar tab within the Bookings page.
+
+### How can users opt out of receiving SMS messages if they've already opted in previously?
+
+When booking an appointment with SMS text messages enabled, customers are prompted to check the opt-in box each time they book. Customers can also reply directly to the SMS message \(the SMS provider\) indicating that they would like the messages to cease, and then no further texts are sent to that phone number. If the customer opts out of receiving text messages from the provider, not from Bookings itself, they'll no longer receive SMS messages in the future, even when opting in from the Bookings page.
+
+## Troubleshooting
+
+### This staff member's calendar can't be synced
+
+If you receive the error, "This staff member's calendar can't be synced", this section contains several troubleshooting procedures to help you resolve the error.
+
+If you're looking for information on syncing your staff's calendar, see [Add staff to Bookings](https://learn.microsoft.com/en-us/microsoft-365/bookings/add-staff?view=o365-worldwide). Make sure on the **Staff details** page, **Events on calendar affect availability** is checked.
+
+### The staff member needs to change their calendar permissions
+
+In order for Bookings to properly sync with your staff members' calendars, each staff member must share their calendar. Each staff member must follow these instructions to share their own calendar.
+
+1. Sign in to Microsoft 365, and then select **Outlook** from the app launcher.
+2. At the top of the page, select **Share** > **Calendar**.
+
+   ![Image of Calendar sharing menu.](https://learn.microsoft.com/en-us/microsoft-365/media/bookings-share-calendar.png?view=o365-worldwide)
+3. In the **People inside your organization** section, select the drop-down box next to **My Organization**, and then select **Can view when I'm busy**.
+
+   Note
+
+   This setting shares your free/busy information with Bookings and with other users in your organization. It doesn't include any other information.
+
+   ![Image of calendar-sharing screen with Can view when I'm busy enabled.](https://learn.microsoft.com/en-us/microsoft-365/media/bookings-view-busy.png?view=o365-worldwide)
+4. Select **Done**.
+
+### We can't find a staff member in our organization
+
+If an employee has left your company and you removed them from your Microsoft 365 or Office 365 organization, you still need to remove that user from Bookings. They won't show up in the calendar prevents customers from booking appointments with them.
+
+1. Sign in to Microsoft 365, and then go to **Bookings** > **Staff**.
+2. Hover your mouse cursor over the staff member's name. **Edit** and **delete** icons appear to the right of the **Phone** column.
+3. Select the **Delete** icon.
+4. In the confirmation box, select **OK**.
+
+Note
+
+If you've more than one booking calendar, you must remove the user from all of them.
+
+To check if you've more than one calendar, in the left menu, select the drop-down arrow next to your company name, and then select **Open**. If you only have one calendar, then you'll see only the option to add a booking calendar. This example shows that there's a second calendar named "Contoso CO".
+
+![Image of Choose a calendar screen with a second calendar shown.](https://learn.microsoft.com/en-us/microsoft-365/media/bookings-choose-calendar.png?view=o365-worldwide)
+
+### There's a syncing error we can't identify
+
+This is a transient error and typically occurs because of an unstable internet connection. These problems usually resolve themselves after a few minutes.
+
+If you still see this error after an extended period of time or you're seeing it often, [contact support](https://support.microsoft.com/topic/contact-microsoft-office-support-fd6bb40e-75b7-6f43-d6f9-c13d10850e77).
+
+### When one attendee cancels a group booking, cancellation emails are sent to all the other attendees
+
+This is a known problem, and our product team is currently investigating the root cause. If you encounter this problem, you can follow these steps to mitigate it.
+
+1. Select **Edit service** for the affected service.
+2. Navigate to the **Notifications** tab.
+3. Uncheck the setting "Send a meeting invite to the customer, in addition to the confirmation email."
+
+   ![Screenshot of dialog box for Bookings email confirmation setting.](https://learn.microsoft.com/en-us/microsoft-365/media/email-confirmation-bookings.png?view=o365-worldwide)
+4. Save the changes.
+
+If the issue continues after applying these steps, reach out to the Microsoft Support team for further assistance.
+
+## Additional resources
+
+- [Microsoft Bookings expands availability in the enterprises blog](https://techcommunity.microsoft.com/t5/microsoft-bookings-blog/microsoft-bookings-expands-availability-in-enterprises/ba-p/1214065)
+- [How Microsoft Bookings Works video](https://support.office.com/article/microsoft-bookings-69c45b78-6de4-4f28-9449-cdcc18b7ae45)
+- [Start using Microsoft Bookings](https://learn.microsoft.com/en-us/microsoft-365/bookings/get-access?view=o365-worldwide)
+- [Turn Microsoft Bookings on or off](https://learn.microsoft.com/en-us/microsoft-365/bookings/turn-bookings-on-or-off?view=o365-worldwide)
+- [Add users individually or in bulk](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users?view=o365-worldwide)
+- [Add staff to Bookings](https://learn.microsoft.com/en-us/microsoft-365/bookings/add-staff?view=o365-worldwide)
+- [API components to automate after template has been defined](https://learn.microsoft.com/en-us/graph/api/bookingbusiness-post-bookingbusinesses)
+- [URL to Bookings Calendar for Display](https://outlook.office.com/bookings/calendar)
+- [Bookings compliance policies](https://learn.microsoft.com/en-us/compliance/regulatory/gdpr-dsr-Office365#bookings)
+- [Customize and publish your booking page](https://learn.microsoft.com/en-us/microsoft-365/bookings/customize-booking-page?view=o365-worldwide)
+- [Tenant Mailbox configuration](https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-accepteddomain)
+- [Group Bookings](https://techcommunity.microsoft.com/t5/microsoft-bookings-blog/microsoft-bookings-now-supports-online-meetings-and-group/ba-p/1214120)
+- [Bookings metrics and activity tracking](https://learn.microsoft.com/en-us/microsoft-365/bookings/metrics-and-activity-tracking?view=o365-worldwide)
+- [M365 Public Roadmap](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=bookings)

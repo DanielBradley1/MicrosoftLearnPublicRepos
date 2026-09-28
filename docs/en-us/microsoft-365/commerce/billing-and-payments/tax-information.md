@@ -1,0 +1,146 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/tax-information?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-06-03 -->
+
+# Tax information for Microsoft 365 for business products and services
+
+When you buy Microsoft 365 for business products and services, the tax that you pay is determined by one of two things: your business address, or your shipping address, if it's different. If your organization is in the United States, you must provide a Federal Employer Identification Number \(FEIN\).
+
+Note
+
+If you need to contact support, have your FEIN, VAT number, or local equivalent ready to give to the support agent.
+
+## Before you begin
+
+- [Find out what type of billing account you have](https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts?view=o365-worldwide#view-my-billing-accounts).
+- If you have a Microsoft Customer Agreement \(MCA\) billing account type, you must be a Billing account owner or Billing account contributor to do the tasks in this article. For more information about billing account roles, see [Understand your Microsoft business billing account](https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts?view=o365-worldwide).
+- If you have a Microsoft Online Services Agreement \(MOSA\) billing account type, you must be at least a Billing Administrator to do the tasks in this article. For more information, see [About admin roles](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide).
+
+Note
+
+If you're the person who signed up for the subscription, you're automatically a Billing account owner.
+
+## Europe, the Middle East, and Africa \(EMEA\)
+
+When you buy Microsoft 365 products or services in the EMEA region, the purchase could be subject to Value-Added Tax \(VAT\).
+
+- If you're located in a European Union Member State, Armenia, Belarus, Norway, Türkiye, or United Arab Emirates, and you don't provide your valid local VAT ID, Microsoft Ireland Operations Ltd. applies the current local VAT rate, based on the billing country/region your account is set to.
+- If you're located in Liechtenstein, Russia, Serbia, South Africa, or Switzerland, the VAT is applied, whether you provide your VAT ID or not.
+- For EU customers, before we can validate your VAT ID, it must be available for verification in the VAT Information Exchange System \(VIES\). If your VAT ID can't be verified, contact your local tax authority.
+- If you bought through a Limited Risk Distributor \(LRD\), you might be charged your local VAT rate even if located outside of Ireland.
+
+You might qualify for VAT zero-rating if you meet one of the following criteria:
+
+- **You're in a European Union Member State outside Ireland:** You can provide your valid local VAT ID. Providing the VAT ID lets Microsoft Ireland Operations Ltd. VAT zero-rate the transaction. However, you might have a local VAT accounting obligation. If you have any concerns, check with your tax advisors. For instructions about adding the CAR ID for your organization, see [Add your VAT ID and other tax ID](#add-your-vat-id-and-other-tax-id).
+- **You're in Ireland and have the relevant valid VAT exemption certification:** Microsoft Ireland Operations Ltd. might be entitled to exempt the transaction from VAT. If you don't have a VAT exemption certification, Microsoft Ireland Operations Ltd. applies the current Irish VAT rate, whether you provide a VAT ID or not.
+- **You're in Armenia, Belarus, Norway, Türkiye, or United Arab Emirates:** You can provide your local VAT ID. Providing the VAT ID entitles Microsoft Ireland Operations Ltd. to VAT zero-rate the transaction. However, you might have a local VAT accounting obligation, so check with your tax advisors if you have any concerns. For instructions about adding the VAT ID for your organization, see [Add your VAT ID and other tax ID](#add-your-vat-id-and-other-tax-id)\).
+
+## What is the Limited Risk Distributor model?
+
+A Limited Risk Distributor \(LRD\) is a subsidiary that Microsoft established as buy-sell distributor who sells directly or indirectly. The model affects customers buying directly from Microsoft through the MCA. It also demonstrates the Microsoft commitment to our business in the following countries/regions:
+
+- Australia
+- Austria
+- Belgium
+- Canada
+- Denmark
+- Finland
+- France
+- Germany
+- Italy
+- Netherlands
+- New Zealand
+- Norway
+- Spain
+- Sweden
+- Switzerland
+- United Kingdom
+
+Under the LRD model:
+
+- The selling entity is the local LRD subsidiary \(sales and distribution rights have been extended to the LRDs\).
+- The payment methods won't change for customers.
+- The LRD can only sell to customers located in the LRD country/region and agreed territories as defined by Tax.
+- For LRD sales, the Licensor is either MS Corp or MIOL.
+
+  - For the Americas, the Licensor is MS Corp \(1010\).
+  - For EMEA and APAC, the Licensor is MIOL \(1062\).
+
+## Asia Pacific countries/regions \(APAC\)
+
+If you're billed by the Microsoft Regional Sales office, "Microsoft Regional Sales Pte. Ltd." appears on your invoice, and you might be charged for any applicable value-added, sales, or similar taxes.
+
+If you're billed from one of the following locations, the current local tax is applied. The location is included on your invoice:
+
+- India
+- Japan
+- Korea
+- Singapore
+- Taiwan
+
+## North, Central, and South America
+
+In the United States, Canada, Mexico, Chile, and Colombia, various tax rates apply depending on the nature of the product or service and your location.
+
+If your billing is done by Microsoft Corporation \(see your invoice\), and you signed up for Microsoft 365 outside of the United States, Canada, Puerto Rico, Chile, and Colombia, then tax generally isn't charged.
+
+## Add your VAT ID and other tax ID
+
+You can add your VAT ID or other tax ID in the Microsoft 365 admin center. However, the steps to add a tax ID depend on the type of billing account that you have. [Find out what type of billing account you have](https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts?view=o365-worldwide#view-my-billing-accounts).
+
+### Add your tax ID for your MCA billing account
+
+The tax ID supported depends on the sold-to country. Some regions support more than one type of tax ID. If you already have a tax ID listed, such as a VAT ID, and want to add another, repeat the following steps to add it.
+
+1. Go to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
+2. Select the **Navigation menu**, then select **Billing** > [Billing accounts](https://go.microsoft.com/fwlink/p/?linkid=2084771).
+3. On the **Billing accounts** page, select the billing account.
+4. On the billing account details page, select **Add tax ID**.
+5. Enter your tax ID, then select **Save**.
+
+Note
+
+Not all regions support self-serve tax ID management. For these countries/regions, **Add tax ID** isn't available on the billing account details page.
+
+### Add your VAT ID, GSTIN, or PAN for your MOSA billing account
+
+1. Go to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
+
+   - If you're using the **Simplified view**, select **Billing**.
+   - If you're using the **Dashboard view**, go to the **Billing** > [Your products](https://go.microsoft.com/fwlink/p/?linkid=842054) page.
+
+2. Select the subscription that you want to update.
+3. On the subscription details page, in the **Service usage address** section, select **Edit service usage address**.
+4. In the **Edit service usage address** pane, in the **VAT, GST, or PAN number** box, enter your ID.
+5. Select **Save**.
+
+## How taxes are calculated
+
+Sales taxes are calculated against the unit price, and then aggregated.
+
+For example:
+
+> *\(unit price X tax rate\) X quantity = total sales tax*
+
+-or-
+
+> \($1.29 X 0.095\) X 100 = $12.25
+
+## Apply for tax-exempt status
+
+If you qualify for tax-exempt status in your market, [start a service request](https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support?view=o365-worldwide) to establish tax exempt status for your organization. The following table lists the documentation required to apply for tax-exempt status, based on your country/region.
+
+| Country/region | Documentation |
+| --- | --- |
+| Canada | Certificate of Exemption \(or equivalent letter of authorization\) |
+| Chile | IVA status/RUT \(Registro Unico Tributario\) |
+| Colombia | IVA status/RUT \(Registro Unico Tributario\) |
+| International organizations that hold tax exemption | Certification / letter confirmation from local tax authorities |
+| Ireland | 13B/56A Tax Exemption Certificate |
+| United States | Sales Tax Exemption Certificate |
+| Puerto Rico | Certificado de Compras Exentas |
+
+## Related content
+
+[View your invoice in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/view-your-bill-or-invoice?view=o365-worldwide) \(article\)  
+[Understand your invoice for your Microsoft MCA billing account](https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/understand-your-invoice?view=o365-worldwide) \(article\)  
+[Understand your invoice for your Microsoft MOSA billing account](https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/understand-your-invoice2?view=o365-worldwide) \(article\)

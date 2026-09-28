@@ -1,0 +1,172 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart -->
+<!-- Sitemap-Last-Modified: 2026-08-11 -->
+
+# Quickstart: Use the Agent Evaluations CLI
+
+The Microsoft 365 Copilot Agent Evaluations CLI \(@microsoft/m365-copilot-eval\) helps you test, measure, and improve the quality of your agents through automated prompt evaluation and AI-based scoring. This quickstart walks you through installing the Agent Evaluations tool, configuring your environment, creating your first dataset, and running an evaluation.
+
+## Prerequisites
+
+Before you begin, make sure that you have:
+
+- A Microsoft 365 Copilot agent deployed to your tenant.
+- [Node.js](https://nodejs.org/en/download) 24.12.0 or later \(use `node --version` to check\).
+- Copilot credits available in your tenant. The Agent Evaluations CLI consumes Copilot credits when it sends test prompts to your agent. Your tenant admin turns on usage-based \(metered\) billing in the [Microsoft 365 admin center](https://admin.microsoft.com) by going to the **Copilot** > **Cost Management** node. For more information, see [Manage Copilot credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+- A Microsoft Foundry project with a GPT-5 model deployed to score responses. For more information, see [Get values for environment variables](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-get-env-values).
+- Microsoft Entra admin consent granted for Work IQ in your tenant. If you aren't a tenant admin, ask your admin to grant consent before you run `runevals` for the first time. For more information, see [Grant admin consent](https://github.com/microsoft/work-iq/blob/main/ADMIN-INSTRUCTIONS.md).
+- Your tenant ID and Microsoft Foundry project endpoint. If you don't have these values, see [Get values for environment variables](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-get-env-values).
+
+Note
+
+This quickstart assumes you're using a Windows development environment. Authentication support for other operating systems is coming soon.
+
+## Step 1: Install the CLI
+
+Install the Agent Evaluations CLI globally by using npm:
+
+```bash
+npm install -g @microsoft/m365-copilot-eval
+```
+
+Verify the installation:
+
+```bash
+runevals --version
+```
+
+After installation, the `runevals` command is available globally on your system.
+
+## Step 2: Set up your project structure
+
+Run the evaluation tool from **your Microsoft 365 agent project directory** \(where your agent code lives\), not from the evaluations tool repository.
+
+```bash
+cd /path/to/your-agent-project
+```
+
+Your agent project should include the following files and folders:
+
+```text
+my-agent/
+├── .env.local              # Agent configuration (Agents Toolkit projects)
+├── .env.local.user         # Secrets — never committed
+├── evals/
+│   └── evals.json          # Your test dataset (auto-discovered)
+└── .evals/
+    └── <generated reports> # Results written here (YYYY-MM-DD_HH-MM-SS.html)
+```
+
+You create the `evals/evals.json` dataset in Step 4. The `.evals/` report folder is created automatically on first run.
+
+## Step 3: Configure environment variables
+
+Choose the option that matches your project type.
+
+Tip
+
+If you built your agent by using Microsoft 365 Agents Toolkit, you already have `.env.local` with your agent configuration. Create `.env.local.user` in your project root for secrets.
+
+### Microsoft 365 Agents Toolkit projects
+
+You don't set `M365_AGENT_ID` directly — the CLI auto-detects it from `M365_TITLE_ID` in `.env.local`. For details, see [Get your agent ID](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-get-env-values#get-your-agent-id-m365_agent_id).
+
+Add secrets to `.env.local.user`:
+
+```ini
+# .env.local.user (NOT checked in — secrets go here)
+TENANT_ID="your-tenant-id-here"
+AZURE_AI_PROJECT_ENDPOINT="https://<account>.services.ai.azure.com/api/projects/<project>"
+AZURE_AI_MODEL_NAME="gpt-5-mini" # default
+```
+
+The Agent Evaluations CLI scores responses by using Microsoft Foundry cloud evaluation, which authenticates with Microsoft Entra. Sign in with the Azure CLI \(`az login`\) before you run `runevals`. For details about these values, see [Get values for environment variables](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-get-env-values).
+
+Add `.env.local.user` to your `.gitignore`:
+
+```gitignore
+# User-specific secrets — never commit
+.env.local.user
+env/.env.local.user
+```
+
+## Step 4: Create your first dataset
+
+Create `evals/evals.json` with a small set of prompts and expected responses. This example uses the simplest valid schema for single-turn evaluations.
+
+```json
+{
+  "schemaVersion": "1.0.0",
+  "items": [
+    {
+      "prompt": "What is Microsoft 365?",
+      "expected_response": "Microsoft 365 is a cloud-based productivity suite that includes Office apps, cloud services, and device management."
+    },
+    {
+      "prompt": "How do I share a file in Microsoft Teams?",
+      "expected_response": "To share a file in Teams, you can upload it to a channel or chat, or share it from OneDrive with specific permissions."
+    }
+  ]
+}
+```
+
+Tip
+
+If you skip this step, the tool offers to generate a starter file with sample prompts the first time you run `runevals`.
+
+For full dataset schema, categories, and advanced patterns, see [Create evaluation test suites](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-create-tests).
+
+## Step 5: Run your first evaluation
+
+For Agents Toolkit projects \(automatically uses `.env.local` and `.env.local.user`\):
+
+```bash
+runevals
+```
+
+For non-Agents Toolkit projects:
+
+```bash
+runevals --env dev
+```
+
+## Step 6: Confirm successful setup
+
+A successful run produces:
+
+- A completion message in the terminal similar to the following message.
+
+  ```text
+  M365 Copilot Agent Evaluations CLI
+
+  Loading environment: dev
+  Agent ID: T_my-agent.declarativeAgent
+  Using prompts file: ./evals/evals.json
+
+  Running evaluations...
+
+  Evals completed successfully!
+  Results saved to: ./.evals/2026-04-22_14-30-45.html
+  ```
+
+- An HTML report saved to `./.evals/YYYY-MM-DD_HH-MM-SS.html` that opens automatically in your browser.
+
+The report includes scores for each prompt.
+
+| Evaluator | Type | Scale | Default Threshold | Default |
+| --- | --- | --- | --- | --- |
+| Relevance | LLM-based | 1-5 | 3 | Yes |
+| Coherence | LLM-based | 1-5 | 3 | Yes |
+| Groundedness | LLM-based | 1-5 | 3 | No |
+| Similarity | LLM-based | 1-5 | 3 | No |
+| Citations | Count-based | >= 0 | 1 | No |
+| ExactMatch | String match | boolean | N/A | No |
+| PartialMatch | String match | 0.0-1.0 | 0.5 | No |
+
+If you don't see these results, see [Troubleshooting](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-troubleshooting).
+
+## Related content
+
+- [Agent Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
+- [Dataset schema and test design](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-create-tests)
+- [CLI reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-reference)
+- [Troubleshooting and support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-troubleshooting)

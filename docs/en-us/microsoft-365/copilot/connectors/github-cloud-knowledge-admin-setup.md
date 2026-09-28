@@ -1,0 +1,157 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/github-cloud-knowledge-admin-setup -->
+<!-- Sitemap-Last-Modified: 2026-06-18 -->
+
+# Set up the GitHub service for GitHub Cloud Knowledge connector ingestion
+
+The GitHub Knowledge Microsoft 365 Copilot connector enables organizations to index markdown and text files in your GitHub repositories into Microsoft 365 Copilot and search experiences. This article provides information about the configuration steps that GitHub admins must complete before your organization deploys the GitHub Cloud Knowledge connector.
+
+For information about how to deploy the connector, see [Deploy the GitHub Knowledge connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/github-cloud-knowledge-deployment).
+
+## Setup checklist
+
+The following checklist lists the steps involved in configuring the environment and setting up the connector prerequisites.
+
+| **Task** | **Role** |
+| --- | --- |
+| [Identify the GitHub organization name](#identify-the-github-organization-name) | GitHub admin |
+| [Ensure API access to the target GitHub instance](#ensure-api-access-to-the-target-github-instance) | GitHub admin |
+| [Identify Microsoft Entra ID mapping rules](#identify-microsoft-entra-id-mapping-rules) | GitHub admin |
+| [Sign in to the GitHub account](#sign-in-to-the-github-account) | GitHub admin |
+| [Use a custom GitHub app for authentication](#use-a-custom-github-app-for-authentication-optional) | GitHub admin |
+| [Configure firewall settings](#configure-firewall-settings) | Network admin |
+
+## Identify the GitHub organization name
+
+Determine which GitHub organization you want to index when you set up the connector.
+
+## Ensure API access to the target GitHub instance
+
+Confirm that your GitHub instance is accessible via API.
+
+## Identify Microsoft Entra ID mapping rules
+
+Define the Microsoft Entra ID mapping rules. Make sure that users who access the indexed GitHub data have corresponding Microsoft Entra ID identities to enable accurate permission mapping.
+
+## Sign in to the GitHub account
+
+Important
+
+Before you start the GitHub authentication flow, make sure your browser session is signed in to the **correct** GitHub account—the one that has access to the organizations and repositories you intend to index. OAuth \(the recommended authentication method\) authorizes whichever GitHub account is currently active in your browser, so signing in with the wrong account can grant the connector access to the wrong set of repositories.
+
+If you have multiple GitHub accounts, sign out of the others first, or use a separate browser profile or an InPrivate/incognito window to start the OAuth flow with the intended account.
+
+For enterprise-managed users who authenticate through single sign-on \(SSO\), make sure the account is signed in before you perform any setup actions. Currently, the GitHub authentication flow doesn't support SSO-based sign-in during configuration.
+
+## Use a custom GitHub app for authentication \(optional\)
+
+For the most streamlined setup experience, use the GitHub app managed by Microsoft.
+
+You can also choose to use your own GitHub app for authentication. If you choose this option, follow the steps in the following checklist to complete the setup.
+
+| **Task** | **Role** |
+| --- | --- |
+| [Create and configure the GitHub app](#create-and-configure-the-github-app) | GitHub admin |
+| [Create credentials for the GitHub app](#create-credentials-for-the-github-app) | GitHub admin |
+| [Install the GitHub app](#install-the-github-app) | GitHub admin |
+
+### Create and configure the GitHub app
+
+Verify that you have the right permissions assigned to configure the GitHub service. For more information, see [Roles in an organization](https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permissions-for-organization-roles).
+
+To create a GitHub app for use with the GitHub Cloud Knowledge connector:
+
+1. In GitHub, select your profile photo on the top right, select **Your organizations**, and choose the organization the connector should pull data from.
+
+   ![Screenshot of GitHub profile menu showing Your organizations option.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/github-your-organization.png)
+2. On the organization overview page, select **Settings**.
+
+   ![Screenshot of GitHub organization overview page with Settings button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/github-settings.png)
+3. In the left sidebar, scroll down to **Developer settings** and select **GitHub Apps**.
+
+   ![Screenshot of GitHub organization settings sidebar showing Developer settings and GitHub Apps option.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/github-apps.png)
+4. Select **New GitHub App**.
+
+   ![Screenshot of GitHub Apps page with New GitHub App button.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/new-github-app.png)
+5. Configure the app:
+
+   - **GitHub App name**: Enter the name of your choice.
+   - **Homepage URL**: Copy the URL from your browser's address bar.
+   - **Callback URL**:
+
+     - For Microsoft 365 for enterprise: `https://gcs.office.com/v1.0/admin/oauth/callback`
+     - For Microsoft 365 Government: `https://gcsgcc.office.com/v1.0/admin/oauth/callback`
+
+
+   ![Screenshot of GitHub App configuration form showing app name, homepage URL, and callback URL fields.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/callback-url.png)
+
+6. Uncheck the **Webhook** option.
+7. Set the following permissions:
+
+   **Repository permissions**
+
+   - Contents - **Read-only**
+   - Metadata - **Read-only**
+   - Administration - **Read-only**
+   - Webhooks - **Read and Write**
+
+
+   **Organization permissions**
+
+
+   - Members - **Read-only**
+   - Administration - **Read-only**
+   - Webhooks - **Read and Write**
+
+
+   **Account permissions**
+
+
+   - Email addresses - **Read-only**
+
+
+   Note
+
+
+   Webhook support is currently available in preview. Be sure to set the Webhooks \(Read and Write\) permissions at both the Repository and Organization levels. Webhooks allow you to take advantage of enhanced automation and real-time updates to ensure a more seamless and responsive integration experience.
+
+8. Under **Where can this GitHub App be installed**, select **Any account**, and then select **Create GitHub App**.
+
+   ![Screenshot of GitHub App permissions and installation settings section.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/create-github-app.png)
+
+### Create credentials for the GitHub app
+
+Depending on the authentication method you plan to use, generate either a client secret or a private key. You don't need both.
+
+- **For custom GitHub app \(installation\) authentication:** On the **General** page of the GitHub app, scroll down to the **Private keys** section and select **Generate a private key**. Save the downloaded `.pem` file securely.
+
+  [![Screenshot of the GitHub App Private keys section with Generate a private key button.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/generate-private-key.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/generate-private-key.png#lightbox)
+- **For custom GitHub app \(on behalf of user\) authentication \(deprecated\):** On the **General** page of the GitHub app, select **Generate a new client secret** to generate and copy the **client secret**.
+
+  [![Screenshot of GitHub with Generate a new client secret highlighted.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/github-app-credentials.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/github-app-credentials.png#lightbox)
+
+### Install the GitHub app
+
+1. On the **General** page of the GitHub app, select **Install App**.
+
+   ![Screenshot of GitHub App General page with Install App button.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/install-app.png)
+2. Select the organization where you want the app to be installed.
+
+   ![Screenshot of GitHub App installation page showing organization selection.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/github-cloud-knowledge-admin-setup/install-authorize.png)
+
+## Configure firewall settings
+
+For added security, you can configure IP firewall rules for your Azure SQL Server or database. For more information, see [IP firewall rules](https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-configure).
+
+Add the following client IP ranges in the firewall settings.
+
+| Region | Microsoft 365 Enterprise | Microsoft 365 Government |
+| --- | --- | --- |
+| NAM | 52.250.92.252/30, 52.224.250.216/30 | 52.245.230.216/30, 20.141.117.64/30 |
+| EUR | 20.54.41.208/30, 51.105.159.88/30 | NA |
+| APC | 52.139.188.212/30, 20.43.146.44/30 | NA |
+
+IP restrictions can cause the connector to stop working and lead to crawl failures. To resolve this issue, add the connector's IP address to the allowlist.
+
+## Next step
+
+[Deploy the GitHub Knowledge connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/github-cloud-knowledge-deployment)

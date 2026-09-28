@@ -1,0 +1,443 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-admin-setup -->
+<!-- Sitemap-Last-Modified: 2026-08-25 -->
+
+# Set up the ServiceNow service for ServiceNow Catalog connector ingestion
+
+This article provides information about the configuration steps that ServiceNow admins need to complete in order for your organization to deploy the ServiceNow Catalog connector. For information about how to deploy the connector, see [Deploy the ServiceNow Catalog connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-deployment).
+
+## Setup checklist
+
+The following checklists list the steps involved in configuring the environment and setting up the connector prerequisites.
+
+#### Configure the environment
+
+| Task | Role |
+| --- | --- |
+| [Identify the instance URL](#identify-the-servicenow-instance-url) | ServiceNow admin |
+| [Identify the portal configuration](#identify-the-servicenow-portal-configuration) | ServiceNow admin |
+| [Define attribute mapping](#define-servicenow-attribute-mapping) | ServiceNow admin |
+| [Check for advanced scripts and hierarchical permissions](#check-for-advanced-scripts-and-hierarchical-permissions-in-servicenow) | ServiceNow admin |
+| [Verify that descriptions and short descriptions are populated](#verify-that-description-and-short-description-fields-for-all-catalog-items-are-populated) | ServiceNow admin |
+| [Identify custom widget-based forms](#identify-custom-widget-based-catalog-forms) |  |
+
+### Set up connector prerequisites
+
+| Task | Role |
+| --- | --- |
+| [Create service account and set up permissions](#create-service-account-and-set-up-permissions-to-index-items) | ServiceNow admin |
+| [Identify item count for ingestion](#identify-item-count-for-ingestion) | ServiceNow admin |
+| [Set up REST API](#set-up-rest-api) | ServiceNow admin |
+| [Set up REST API to evaluate only user criteria applied to catalog items](#set-up-rest-api-to-evaluate-only-user-criteria-applied-to-catalog-items) | ServiceNow admin |
+| [Set up hierarchical permissions](#set-up-hierarchical-permissions) | ServiceNow admin |
+| [Add Microsoft 365 IP address to allowlist](#add-microsoft-365-ip-address-to-the-allowlist) | ServiceNow admin/Network admin |
+| [Resolve issues with SSO configuration](#resolve-connector-setup-issues-with-servicenow-sso-configuration) | ServiceNow admin |
+
+## Configure the ServiceNow environment
+
+The following sections describe the admin tasks to configure the ServiceNow environment to enable and optimize the connection.
+
+### Identify the ServiceNow instance URL
+
+To connect the ServiceNow Catalog connector to your ServiceNow data, the Microsoft 365 admin needs your organization's ServiceNow instance URL. The URL typically follows the format:
+
+`https://<your-organization-name>.service-now.com`
+
+To verify the URL for your ServiceNow instance, check the ServiceNow admin dashboard or the sign in URL used by your organization.
+
+If you have a custom URL:
+
+- In your ServiceNow instance, go to **All** > **Custom URL** > **Custom URLs**.
+
+### Identify the ServiceNow portal configuration
+
+By default, Copilot-generated links for ServiceNow Catalog items follow the standard format:
+
+`https://<your-organization-name>.service-now.com/sp?id=sc_cat_item&sys_id=<sysid>`
+
+If your organization uses a different URL, you can customize the URL when you deploy the connector. For more information, see [Customize connector settings](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview#customize-connector-settings-optional).
+
+### Define ServiceNow attribute mapping
+
+By default, Microsoft Entra ID maps identities from your data source by checking whether the email ID of ServiceNow users matches the user principal name \(UPN\) or **Mail** attribute in Microsoft Entra ID.
+
+If this default mapping doesn’t meet your organization’s needs, you can define a custom mapping formula. For more information, see [Map your non-Entra ID identities](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/map-non-entra-id).
+
+### Check for advanced scripts and hierarchical permissions in ServiceNow
+
+Determine whether catalog items in your ServiceNow environment have Advanced scripts enabled in **User Criteria**.
+
+This setting can affect indexing behavior and access control when content is surfaced in Microsoft 365 experiences like Copilot.
+
+To determine whether any **User Criteria** has advanced scripts enabled, run the following API call:
+
+`<ServiceNowURL>/api/now/table/user_criteria?advanced=true&sysparm_limit=1`
+
+If your instance uses advanced script-based user criteria, select **Advanced flow** when you deploy the connector.
+
+#### What are hierarchical permissions?
+
+ServiceNow Catalog supports setting permissions at both the Catalog Category \(parent\) level and the individual catalog item \(child\) level. These permissions are evaluated together to determine whether a user has access to a catalog item. This model is referred to as hierarchical permissions.
+
+Hierarchical permissions are supported for the ServiceNow Catalog connector. This feature isn't available in government or sovereign clouds or dedicated forests in multi-tenant environments. For more information, see [Set up hierarchical permissions](#set-up-hierarchical-permissions).
+
+### Verify that description and short description fields for all catalog items are populated
+
+Copilot uses descriptions and short descriptions to semantically match catalogs based on user prompts. Missing descriptions affect the relevance of Copilot responses. Be sure to populate both description and short description fields for all catalog items that you want to index.
+
+### Identify custom widget-based catalog forms
+
+Some ServiceNow environments use custom widget-based catalog forms to enhance the UI. Copilot connectors don't currently support indexing catalog items rendered through custom widget-based forms. As a workaround, create Knowledge Base articles with clear descriptions of the service and the custom catalog form URLs.
+
+## Set up connector prerequisites
+
+The following sections describe the prerequisite steps to complete before deploying the ServiceNow Catalog connector.
+
+### Create service account and set up permissions to index items
+
+To connect to ServiceNow and allow the ServiceNow Catalog connector to update items regularly, you need a service account with read access to specific ServiceNow table records. The following table lists the required table records.
+
+| Feature | Read access required tables | Description |
+| :--- | --- | --- |
+| Index catalog items available to *Everyone* | sc\_cat\_item | For crawling catalog items. |
+| Index catalog categories | sc\_category | Read Catalog category information. |
+| Index catalog item form fields \(variables\) | item\_option\_new | Stores catalog item variables \(form fields\) such as dropdowns, checkboxes, text fields, and so on. |
+| Index variable choices | question\_choice | Stores selectable options for catalog variables \(for example, dropdown values\). |
+| Index variable sets \(if used\) | item\_option\_set | Contains reusable variable sets linked to multiple catalog items. |
+| Index item-variable relationships | sc\_item\_option\_mtom | Defines many-to-many relationships between catalog items and variables. |
+| Index and support user criteria permissions | sc\_cat\_item\_user\_criteria\_mtom | Who can access this catalog item. |
+|  | sc\_cat\_item\_user\_criteria\_no\_mtom | Who can't access this catalog item. |
+|  | sc\_category\_user\_criteria\_mtom | Who can access this catalog category. |
+|  | sc\_category\_user\_criteria\_no\_mtom | Who can't access this catalog category. |
+|  | user\_criteria | Read user criteria permissions. |
+| Index user related information | sys\_user | Read user information. |
+|  | sys\_user\_has\_role | Read role information of users. |
+|  | sys\_user\_grmember\*\* | Read group membership of users. |
+|  | sys\_user\_group | Read user group segments |
+|  | sys\_user\_role | Read user roles. |
+|  | cmn\_location\*\* | Read user location information. |
+|  | cmn\_department\*\* | Read user department information. |
+|  | core\_company\*\* | Read user company attributes. |
+| Index extended table properties \(optional\)\*\*\* | sys\_db\_object | Read extended table details. |
+|  | sys\_dictionary | Read extended table properties. |
+
+\*\* Access to these tables are only required if simple flow is selected. If you select advanced flow for reading user criteria, you don't need to provide access to these tables.
+
+\*\*\* If you want to index properties from extended tables of `sc_cat_item`, provide read access to `sys_dictionary` and `sys_db_object`. Access to these tables is optional. You can index `sc_cat_item` table properties without access to these two tables.
+
+You can create and assign a role for the service account you use to connect with Microsoft Search. For more information, see [Assign a role to a user](https://www.servicenow.com/docs/bundle/xanadu-platform-administration/page/administer/users-and-groups/task/t_AssignARoleToAUser.html). Read access to the tables can be assigned on the created role.
+
+You can also assign the following roles to the service account to ensure that catalog items get indexed without any blocking ACL issues. Assigning these roles is optional.
+
+- `catalog_admin`
+- `user_criteria_admin`
+- `user_admin`
+
+For information about how to create a user, assign a role, and grant read permissions to all the applicable table records, see [Grant table access to a user in ServiceNow](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/granting-table-access-servicenow-catalog).
+
+If the service account doesn't have the required permissions - or if row or field-level permissions are restricted - specific items are excluded from indexing on the Microsoft side.
+
+Note
+
+Don't explicitly apply `snc_read_only` to the service account. This role denies any write action to any table the user has access to. The account needs to write token and other authentication-related information into some tables. Because tokens are refreshed on a regular basis, this account can't be made read-only after initial authentication. The service account needs write access to the `oauth_credential` table for authentication.
+
+If the service account doesn’t have access to the full User Criteria table, inconsistent behavior related to user permissions, including unintended content oversharing, can occur.
+
+### Identify item count for ingestion
+
+The following default filter is applied during indexing. If you need to make changes, edit the query string during connector setup. For more information, see [Customize query string](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-knowledge-deployment#query-string).
+
+`type!=bundle^sys_class_name!=sc_cat_item_guide^type!=package^active=true`
+
+To verify the item count expected for ingestion:
+
+1. Go to the following URL: `https://<instance-name>.service-now.com/api/now/table/sc_cat_item? sysparm_fields=sys_id&sysparm_query=type!=bundle^sys_class_name!=sc_cat_item_guide^type!=package^active=true`. This link opens a list of `sys_ids`.
+
+   Note
+
+   If you edit the default query string for indexing selected articles, use the corresponding URL to reflect those query conditions.
+2. Open Developer Tools in the same window and type the following code in the console window:
+
+   ```dotnetcli
+       fetch('<<same URL as in 1>>')
+       .then(res => res.json())
+       .then(data => console.log("Count of sys_ids:", data.result.length))
+       .catch(err => console.error(err));
+   ```
+
+3. Note the item count.
+
+When the connector is set up and item sync is completed, you can check the indexed item count against this expected count to verify that all articles are indexed. For more information, see [View connection statistics](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/view-details#view-connection-statistics).
+
+### Set up REST API
+
+To allow the connector to fetch advanced user criteria, create a scripted REST API in your ServiceNow instance.
+
+Note
+
+The `GetAllUserCriteria` resource described in this section evaluates each user against **all** active user criteria in your ServiceNow instance. If you want the connector to evaluate only the user criteria that are applied to catalog items—which reduces the number of calls and the time required for the first full identity crawl—set up the [`GetAllUserCriteriaV2` resource](#set-up-rest-api-to-evaluate-only-user-criteria-applied-to-catalog-items) instead. `GetAllUserCriteria` is scheduled for deprecation.
+
+Elevate your role in ServiceNow to `security_admin`.
+
+To set up access control:
+
+1. In ServiceNow, go to **All** > **System Security** > **Access Control \(ACL\)**.
+2. Choose **New** to create a new ACL.
+3. Set the following values:
+
+   **Type**: REST\_Endpoint **Operation**: Execute **Name**: Microsoft Copilot **Role**: admin *\(or the same role assigned to the crawling account\)*
+4. Choose **Submit**.
+
+Create the scripted REST API:
+
+1. Go to **All** > **System Web Services** > **Scripted Web Services** > **Scripted REST APIs**.
+2. Choose **New**.
+3. Enter the following information:
+
+   **Name**: Microsoft Copilot **API ID**: microsoft\_copilot
+4. Choose **Submit**.
+5. From the **Scripted REST API** list page, choose **Microsoft Copilot**.
+6. Set **Default ACLs** to **Microsoft Copilot**. To avoid any issues with authorization, also add the **Scripted REST External Default** ACL.
+
+Add a resource to the API:
+
+1. On the **Resources** tab, choose **New**.
+2. Provide the following details:
+
+   **Name**: GetAllUserCriteria **Relative Path**: /user\_criteria **Script**: Paste the following code:
+
+   ```javascript
+   (function execute (/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+      // Get query parameters from the request
+      var queryParams = request.queryParams;
+      // Extract the 'user' sys_id, ensure it's a string or null if not provided
+      var userSysId = queryParams.user ? String(queryParams.user) : null;
+      var result = []; // Initialize an empty array for the results
+      // Check if userSysId was provided
+      if (!userSysId) {
+          gs.warn("UserCriteriaLoader API: 'user' parameter was not provided in the request.");
+          response.setStatus(400);
+          return { "error": "User sys_id is required." };
+      }
+      try {
+          // Instantiate the UserCriteriaLoader
+          var userCriteriaLoader = new sn_uc.UserCriteriaLoader();
+          var userCriterias = [];
+          var userCriteriaGr = new GlideRecord('user_criteria');
+          userCriteriaGr.addQuery('active', true); // Select active records. You can also add any connection scope filter if required
+          userCriteriaGr.query();
+          while (userCriteriaGr.next()) {
+              userCriterias.push(userCriteriaGr.getUniqueValue());
+          }
+          // Call the recommended API to get only matching criteria sys_ids
+          var matchingCriteriaIds = sn_uc.UserCriteriaLoader.getMatchingCriteria(userSysId, userCriterias);
+          // Return the array of matching criteria objects
+          return matchingCriteriaIds;
+      } catch (e) {
+          // Log any errors that occur during the process
+          gs.error("UserCriteriaLoader API: Error processing user criteria for user " + userSysId + ". Error: " + e.message);
+          response.setStatus(500); // Internal Server Error
+          return {
+              error_message: "Error processing user criteria for user " + userSysId,
+              error_details: e.message
+          };
+      }
+   })(request, response);
+   ```
+
+3. Make sure both of the following are checked:
+
+   **Requires authentication** **Requires ACL authorization**
+4. Make sure that **ACLs** is set to **Microsoft Copilot**. To avoid any issues with authorization, also add the **Scripted REST External Default** ACL.
+5. Choose **Update**.
+
+To verify the setup:
+
+1. Confirm that the following is the **Resource Path**: `/api/<API Namespace>/microsoft_copilot/user_criteria`.
+2. Choose **Update** to save the configuration.
+
+The Microsoft 365 admin enters the **API Namespace** when they [deploy the ServiceNow Catalog connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-deployment). In the following example, the API namespace is abcdef.
+
+`/api/abcdef/microsoft_copilot/user_criteria`
+
+### Set up REST API to evaluate only user criteria applied to catalog items
+
+The [Set up REST API](#set-up-rest-api) step creates the `GetAllUserCriteria` resource, which evaluates each user against **all** active user criteria in your ServiceNow instance. On instances that define many user criteria, this approach increases the number of API calls and the time required to complete the first full identity crawl.
+
+To reduce this overhead, create the `GetAllUserCriteriaV2` resource on the **Microsoft Copilot** scripted REST API. This resource evaluates each user against **only the user criteria applied to catalog items**—the set that the connector sends in the request—and lets the connector evaluate **multiple users in a single request**. Together, these changes reduce the number of calls and the time required for the first full identity crawl.
+
+Note
+
+- This resource coexists with `GetAllUserCriteria`; it doesn't replace it. You can set up either resource or both. If both resources are present, the connector uses `GetAllUserCriteriaV2` first. `GetAllUserCriteriaV2` will become the recommended default and, after `GetAllUserCriteria` is deprecated, the only option.
+- `GetAllUserCriteriaV2` uses the same **Microsoft Copilot** scripted REST API and API namespace as `GetAllUserCriteria`—it isn't a separate API. If you already completed [Set up REST API](#set-up-rest-api), the access control and scripted REST API already exist, so skip ahead to **Add the resource to the API**.
+
+- Elevate your role in ServiceNow to `security_admin`.
+
+Create access control:
+
+1. In ServiceNow, go to **All** > **System Security** > **Access Control \(ACL\)**.
+2. Choose **New** to create a new ACL.
+3. Set the following values:
+
+   - **Type**: `REST_Endpoint`
+   - **Operation**: `Execute`
+   - **Name**: `Microsoft Copilot`
+   - **Role**: `admin` *\(or the same role assigned to the crawling account\)*
+
+4. Choose **Submit**.
+
+Create the scripted REST API:
+
+1. Go to **All** > **System Web Services** > **Scripted Web Services** > **Scripted REST APIs**.
+2. Choose **New**.
+3. Enter the following information:
+
+   - **Name**: `Microsoft Copilot`
+   - **API ID**: `microsoft_copilot`
+
+4. Choose **Submit**.
+5. From the **Scripted REST API** list page, choose **Microsoft Copilot**.
+6. Set **Default ACLs** to **Microsoft Copilot**. To avoid any problems with authorization, also add the **Scripted REST External Default** ACL.
+
+Add the resource to the API:
+
+1. Go to **All** > **System Web Services** > **Scripted Web Services** > **Scripted REST APIs**, and then open **Microsoft Copilot**.
+2. On the **Resources** tab, choose **New**.
+3. Enter the following information:
+
+   - **Name**: `GetAllUserCriteriaV2`
+   - **HTTP method**: `POST`
+   - **Relative Path**: `/user_criteria_v2`
+   - **Script**: Paste the following code:
+
+
+   ```js
+   (function execute(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+       try {
+           var requestBody = request.body.data;
+           var users = requestBody.users || [];
+           var userCriterias = requestBody.user_criteria || [];
+
+           if (users.length === 0) {
+               response.setStatus(400);
+               return {
+                   error: "At least one user sys_id is required."
+               };
+           }
+
+           if (userCriterias.length === 0) {
+               response.setStatus(400);
+               return {
+                   error: "At least one user_criteria sys_id is required."
+               };
+           }
+           var result = [];
+           for (var i = 0; i < users.length; i++) {
+               var userSysId = String(users[i]);
+               try {
+                   var matchingCriteriaIds =
+                       sn_uc.UserCriteriaLoader.getMatchingCriteria(
+                           userSysId,
+                           userCriterias
+                       );
+                   result.push({
+                       user: userSysId,
+                       user_criteria: matchingCriteriaIds
+                   });
+               } catch (userError) {
+                   result.push({
+                       user: userSysId,
+                       error: userError.message
+                   });
+                   gs.error(
+                       "Error evaluating user criteria for user " +
+                       userSysId + ": " +
+                       userError.message
+                   );
+               }
+           }
+           return result;
+       } catch (e) {
+           gs.error(
+               "UserCriteriaLoader API Error: " +
+               e.message
+           );
+           response.setStatus(500);
+           return {
+               error_message: "Error processing request",
+               error_details: e.message
+           };
+       }
+
+   })(request, response);
+   ```
+
+4. Make sure both of the following options are checked:
+
+   - **Requires authentication**
+   - **Requires ACL authorization**
+
+5. Make sure that **ACLs** is set to **Microsoft Copilot**. To avoid any problems with authorization, also add the **Scripted REST External Default** ACL.
+6. Choose **Submit**.
+
+To verify the setup:
+
+1. Confirm that the **Resource Path** is: `/api/<API Namespace>/microsoft_copilot/user_criteria_v2`.
+
+The Microsoft 365 admin enters the **API Namespace** when they [deploy the ServiceNow Catalog connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-deployment). In the following example, the API namespace is `abcdef`:
+
+`POST /api/abcdef/microsoft_copilot/user_criteria_v2`
+
+The connector sends a POST request whose body specifies the users to evaluate \(`users`\) and the user criteria applied to the catalog items being indexed \(`user_criteria`\), both as arrays of sys\_ids:
+
+```json
+{
+    "users": ["<user_sys_id_1>", "<user_sys_id_2>"],
+    "user_criteria": ["<user_criteria_sys_id_1>", "<user_criteria_sys_id_2>"]
+}
+```
+
+### Set up hierarchical permissions
+
+Hierarchical permissions allow the ServiceNow Catalog connector to evaluate user permissions for any ServiceNow catalog item. The connector evaluates the user criteria applied at the catalog category \(parent\) and the catalog item \(child\) level according to the rules that ServiceNow uses. For more information about how ServiceNow evaluates article permission, see [Managing access to catalog category & catalog items](https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/service-catalog-management/task/t_AppUserCritItemsCat.html).
+
+To set up hierarchical permissions, the service account used for ServiceNow Catalog connector setup needs read access to all the following tables to successfully evaluate the hierarchical ACLs:
+
+- `sc_cat_item_user_criteria_mtom` - Who can access this catalog item.
+- `sc_cat_item_user_criteria_no_mtom` - Who can't access this catalog item.
+- `sc_category_user_criteria_mtom` - Who can access this catalog category.
+- `sc_category_user_criteria_no_mtom` - Who can't access this catalog category.
+- `user_criteria` - Read user criteria permissions.
+- `sc_category` - Read Catalog category information.
+
+Note
+
+This access applies to both Simple and Advanced flows.
+
+### Add Microsoft 365 IP address to the allowlist
+
+If any network configurations—such as firewall or proxy settings—block access to ServiceNow, make sure to add the IP addresses listed in [IP firewall rules](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview#ip-firewall-rules) to the allowlist.
+
+For information about ServiceNow-specific controls, see [IP Address Access Control](https://www.servicenow.com/docs/bundle/washingtondc-platform-security/page/administer/login/task/t_AccessControl.html).
+
+### Resolve connector setup issues with ServiceNow SSO configuration
+
+If your ServiceNow instance is configured with single sign-on \(SSO\), you might encounter the following issues during connector deployment:
+
+- During the OAuth process, a **Logout successfully** window might appear without prompting for ServiceNow credentials.
+- Microsoft 365 admin credentials might be used to authorize the ServiceNow connection instead of the intended service account.
+
+By default, ServiceNow attempts to connect using Microsoft 365 admin credentials through SSO from a browser sign in. This behavior can cause the connection to fail and result in the **Logout successfully** message.
+
+To resolve these issues:
+
+1. Open a private browser window and sign in using the ServiceNow service account credentials.
+2. In a new tab, sign in to the Microsoft 365 admin center using Microsoft 365 admin credentials.
+
+   Note
+
+   The initial sign in might default to ServiceNow SSO. If that happens, switch to the correct credentials.
+3. Retry the OAuth configuration. You should now see a window prompting you to authorize the connection using the service account credentials.
+
+## Next step
+
+[Deploy the ServiceNow Catalog connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-deployment)

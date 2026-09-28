@@ -1,0 +1,337 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connector-agent -->
+<!-- Sitemap-Last-Modified: 2026-09-21 -->
+
+# Microsoft Graph connector agent
+
+To use on-premises Microsoft 365 Copilot connectors, you must install the Microsoft Graph connector agent. The agent enables secure data transfer between on-premises data and the Copilot connector APIs. This article describes how to install and configure the Microsoft Graph connector agent.
+
+## Install the agent
+
+[Download](https://aka.ms/gca) the latest version of the Microsoft Graph connector agent and use the installation configuration assistant to install it. For information about the latest connector agent release, see the [Connector agent release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connector-agent-releases).
+
+Note
+
+To ensure feature completeness, use the latest version of the connector agent.
+
+### Check execution policy
+
+Set the execution policy to allow remote signed scripts to run. If any computer or group-level policy restricts remote signed scripts, the installation fails. Run the following command to get the execution policy:
+
+```powershell
+Get-ExecutionPolicy -List
+```
+
+For more information, see [Execution policy](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+
+### Prerequisites
+
+Before you install the agent, ensure that you have the required role-based access control \(RBAC\) roles for each step.
+
+| Step | RBAC role |
+| :--- | :--- |
+| Install agent on-premises | AI administrator, Copilot admin. |
+| Register the app in Entra ID | Azure App admin, Azure admin. |
+| Create the service account on the target servers | See the deployment guide for the connector. |
+
+Note
+
+If you're installing the Microsoft Graph connector agent in a Microsoft Government cloud environment, update the configuration in: `%ProgramFiles%\Graph connector agent\ConfigApp\appsettings.json.`
+
+Configure the following settings under `AppSettings`.
+
+| Environment | Authority.CloudInstanceUrl | Scopes | GcsBaseUrl |
+| :--- | :--- | :--- | :--- |
+| GCC | `https://login.microsoftonline.com` | `https://gcs.office.com/ExternalConnection.ReadWrite.All` | `https://gcsgcc.office.com` |
+| GCC High | `https://login.microsoftonline.us` | `https://gcs.office365.us/ExternalConnection.ReadWrite.All` | `https://gcs.office365.us` |
+| DoD | `https://login.microsoftonline.us` | `https://gcs-dod.office365.us/ExternalConnection.ReadWrite.All` | `https://gcs-dod.office365.us` |
+
+Important
+
+- Use all values from the same environment row.
+- GCC intentionally uses a commercial token scope together with a GCC service endpoint.
+- Changing only `GcsBaseUrl` doesn't change the token audience requested by ConfigApp.
+- The `Scopes` value determines the audience of the authentication token requested by ConfigApp.
+- After saving changes, close and reopen `ConfigApp` before retrying registration.
+
+### Recommended configuration
+
+When you use the recommended configuration, the connector agent instance can handle up to three connections. Any connections beyond that might degrade the performance of all connections on the agent. Use the following configuration:
+
+- Windows 10, Windows Server 2016 R2, and higher versions
+- [.NET Framework 4.7.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472)
+- [.NET Core Desktop Runtime 10.0 \(x64\)](https://dotnet.microsoft.com/download/dotnet/10.0)
+- 8 cores, 3 GHz
+- 16-GB RAM
+- 40-GB disk space for 5 million items and 9 GB per million items after 5 million items
+- Network access to the data source and internet through port 443
+
+If your organization's proxy servers or firewalls block communication to unknown domains, add the following rules to the allow list.
+
+| **Microsoft 365 Enterprise** | **Microsoft 365 GCC** | **Microsoft 365 GCCH** | **Microsoft 365 DoD** |
+| --- | --- | --- | --- |
+| 1. `*.events.data.microsoft.com` | 1. `*.events.data.microsoft.com` | 1. `*.events.data.microsoft.com` | 1. `*.events.data.microsoft.com` |
+| 2. `*.office.com` | 2. `*.office.com` | 2. `*.office.com`, `*.office365.us` | 2. `*.office.com`, `*.office365.us` |
+| 3. `https://login.microsoftonline.com` | 3. `https://login.microsoftonline.com` | 3. `https://login.microsoftonline.com`, `https://login.microsoftonline.us` | 3. `https://login.microsoftonline.com`, `https://login.microsoftonline.us` |
+| 4. `https://gcs.office.com/` | 4. `https://gcsgcc.office.com` | 4. `https://gcs.office365.us/` | 4. `https://gcs-dod.office365.us/` |
+| 5. `https://graph.microsoft.com/` | 5. `https://graph.microsoft.com` | 5. `https://graph.microsoft.com/`, `https://graph.microsoft.us/` | 5. `https://graph.microsoft.com/`, `https://dod-graph.microsoft.us/` |
+
+Note
+
+- Proxy authentication isn't supported. If your environment has a proxy that requires authentication, allow the connector agent to bypass the proxy.
+- If your data source requires interactive Entra ID sign in, add the sign-in URLs to the allow list. For more information, see [Microsoft 365 URLs and IP address ranges](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges).
+
+If your organization uses an outbound proxy, the agent's crawl requests to your data source also route through that proxy by default, which can cause crawl failures. Configure proxy bypass for your data source hostnames by using whichever method matches your proxy setup:
+
+- `NO_PROXY` system environment variable
+- Windows system proxy bypass settings
+- Your PAC file
+
+For example, if you use `HTTP_PROXY`/`HTTPS_PROXY` environment variables, set `NO_PROXY=sharepoint.contoso.com`. If `NO_PROXY` already exists, add your hostnames to it. After you change system environment variables, restart the **GcaHostService** Windows service.
+
+## Upgrade the agent
+
+To upgrade the agent to the latest version:
+
+1. [Download](https://aka.ms/gca) and install the Microsoft Graph connector agent.
+2. On the connection pane, choose **Upgrade**.
+
+   [![Upgrade button on the agent connection pane.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/one-click-upgrade.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/one-click-upgrade.png#lightbox)
+
+If you're upgrading the agent from version 1.x to version 2.x:
+
+1. [Download](https://aka.ms/gca) the installer.
+2. The installer prompts you to install .NET Core Desktop Runtime 10.0 \(x64\) if it isn't already installed.
+3. Allow communication to the endpoint \*.office.com.
+4. The configuration app restarts. If the agent isn't registered, sign in and proceed with the registration.
+5. If the agent is already registered, the configuration app shows the following success message.
+
+   [![Health check success on connector agent sign-in page.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/health-check-sign-in.jpg)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/health-check-sign-in.jpg#lightbox)
+6. If any errors occur, follow the suggested mitigation steps in the error message and close and reopen the configuration app.
+7. If the error message says, "Can't determine the health of the agent. If the error persists, contact support, restart GcaHostService, and open the configuration app again.
+8. You can run the checks anytime by closing and opening the GCA Config app or by using the **Health Check** button next to the **Edit** button in the registration details screen.
+
+   [![Health check success on the connector registration page.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/health-check-registration.jpg)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/health-check-registration.jpg#lightbox)
+
+Note
+
+If you uninstall and reinstall the Microsoft Graph connector agent, you must restart all existing connections. After you reinstall the agent, delete your connections and create new ones.
+
+## Create and configure an app for the agent
+
+First, sign in and note that the minimum required privilege on the account is AI administrator. The agent asks you to provide authentication details.
+
+To create an app and generate the required authentication details:
+
+1. Go to the [Azure portal](https://portal.azure.com) and sign in by using admin credentials for the tenant.
+2. Go to **Microsoft Entra ID** > **App registrations** and select **New registration**.
+3. Provide a name for the app and select **Register**.
+4. Make a note of the application \(client\) ID.
+5. Open **API permissions** and select **Add a permission**.
+6. Select **Microsoft Graph** and then **Application permissions**.
+7. Search for the following permissions and select **Add permissions**.
+   | **Permission** | **When is the permission required** |
+   | --- | --- |
+   | [ExternalItem.ReadWrite.OwnedBy](https://learn.microsoft.com/en-us/graph/permissions-reference#application-permissions-52) or [ExternalItem.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#application-permissions-52) | Always |
+   | [ExternalConnection.ReadWrite.OwnedBy](https://learn.microsoft.com/en-us/graph/permissions-reference#application-permissions-58) | Always |
+   | [Directory.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#application-permissions-23) | Required for Confluence DC, GitHub server, File share, MS SQL, and Oracle SQL connectors |
+8. Select **Grant admin consent for \[TenantName\]** and select **Yes**.
+9. Verify that the permissions status is **Granted**.
+
+   [![Configured permissions with a status of Granted.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/granted-state.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/granted-state.png#lightbox)
+
+### Configure authentication
+
+Provide authentication details by using a client secret or a certificate.
+
+#### Configure the client secret for authentication
+
+1. Go to the [Azure portal](https://portal.azure.com) and sign in by using admin credentials for the tenant.
+2. Open **App registration** and go to the appropriate app. Under **Manage**, select **Certificates and secrets**.
+3. Select **New Client secret** and select an expiry period for the secret. Copy and save the generated secret.
+4. Use the client secret and the application ID to configure the agent. The **Name** field of the agent accepts alphanumeric characters. You can't use blank spaces in the **Name** field of the agent.
+
+#### Use a certificate for authentication
+
+To use certificate-based authentication:
+
+1. Create or obtain a certificate.
+2. Upload the certificate to the Azure portal.
+3. Assign the certificate to the agent.
+
+##### Get a certificate
+
+Use the following script to generate a self-signed certificate. If your organization doesn't allow self-signed certificates, acquire a certificate according to your organization's policies.
+
+```powershell
+$dnsName = "<TenantDomain like agent.onmicrosoft.com>" # Your DNS name
+$password = "<password>" # Certificate password
+$folderPath = "D:\New folder\" # Where do you want the files to get saved to? The folder needs to exist.
+$fileName = "agentcert" # What do you want to call the cert files? without the file extension
+$yearsValid = 10 # Number of years until you need to renew the certificate
+$certStoreLocation = "cert:\LocalMachine\My"
+$expirationDate = (Get-Date).AddYears($yearsValid)
+$certificate = New-SelfSignedCertificate -DnsName $dnsName -CertStoreLocation $certStoreLocation -NotAfter $expirationDate -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 -KeyAlgorithm RSA -HashAlgorithm SHA256
+$certificatePath = $certStoreLocation + '\' + $certificate.Thumbprint
+$filePath = $folderPath + '\' + $fileName
+$securePassword = ConvertTo-SecureString -String $password -Force -AsPlainText
+Export-Certificate -Cert $certificatePath -FilePath ($filePath + '.cer')
+Export-PfxCertificate -Cert $certificatePath -FilePath ($filePath + '.pfx') -Password $securePassword
+```
+
+##### Upload the certificate to the Azure portal
+
+1. Open the application and go to **Certificates and secrets**.
+2. Select **Upload certificate** and upload the .cer file.
+3. Open **App registration** and select **Certificates and secrets**. Copy the certificate thumbprint.
+
+   [![List of thumbprint certificates when Certificates and secrets are selected in the left pane.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/certificates.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/certificates.png#lightbox)
+
+##### Assign the certificate to the agent
+
+If you use the script to generate a certificate, the .pfx file is saved in the location identified in the script.
+
+1. Download the certificate .pfx file to the agent computer.
+2. Select the .pfx file to launch the certificate installation dialog box.
+3. Select **Local machine** for the store location.
+4. After the certificate is installed, open **Manage computer certificates** from the **Start** menu.
+5. Select the installed certificate from **Personal** > **Certificates**.
+6. Select and hold \(or right-click\) on the certificate and select **All tasks** > **Manage private keys**.
+7. In the permissions dialog box, select **Add**. It opens a new window. Select **Locations**. Select the computer on which the agent is installed and select **Ok**.
+8. In the user selection dialog box, enter **NT Service\\GcaHostService** and select **OK**. Don't select **Check Names**.
+9. Select **OK** on the permissions dialog box. The agent computer is now configured for the agent to generate tokens by using the certificate.
+
+## Troubleshooting the connector agent
+
+### Installation failure
+
+If the installation fails, check the installation logs by running: `msiexec /i "< path to msi >\GcaInstaller.msi" /L*V "< destination path >\install.log"`. Ensure you don't get any security exceptions. Generally, these exceptions occur due to incorrect policy settings. The execution policy needs to be remotely signed.
+
+If the errors aren't resolvable, contact Microsoft Support with the error logs.
+
+### Registration failure
+
+If signing in to configure the application fails and shows the error **Sign-in failed, please select the sign-in button to try again** after browser authentication succeeds, open services.msc, and verify that GcaHostService is running. If it doesn't start, start it manually. In the Task Manager, go to **Services**, select and hold \(right-click\) GcaHostService, and start the service.
+
+When the service fails to start with the error **The service didn't start due to a logon failure**, check whether the virtual account `NT Service\GcaHostService` has permission to sign in as a service on the machine. For more information, see [Log on as a service](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/log-on-as-a-service). If the option to add a user or group is grayed out in the Local Policies\\User Rights Assignment, the user adding this account doesn't have admin privileges, or a group policy overrides it. Update the group policy to allow the host service to sign in as a service.
+
+#### Browser authentication succeeds but ConfigApp sign-in fails
+
+If browser authentication succeeds but ConfigApp still reports a sign-in failure:
+
+1. Verify that `GcaHostService` is running.
+2. Review the Government cloud configuration values in `appsettings.json`.
+3. Verify that `Authority.CloudInstanceUrl`, `Scopes`, and `GcsBaseUrl` correspond to the same cloud environment.
+4. Save the configuration and restart `ConfigApp`.
+5. Review `ConfigApp` logs for authentication or token audience mismatch errors.
+
+A mismatch between cloud authority, requested token audience, and service endpoint configuration can prevent successful registration.
+
+### Agent is offline
+
+The agent is offline if it can't contact the Copilot connector services. To troubleshoot the issue, follow these steps:
+
+1. Check whether the agent is running. In the Task Manager, go to **Services**, and verify that the **GcaHostService** is running. If not, select and hold \(right-click\) the service and start it.
+
+   [![Screenshot of the connector service in Task Manager.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/gcahostservice-gcaupdateservice.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/gcahostservice-gcaupdateservice.png#lightbox)
+2. Verify that the domain gcs.office.com is reachable. For a GCC tenant, substitute gcsgcc.office.com. For a GCCHigh tenant, substitute gcs.office365.us.
+
+- From PowerShell, run the following command:
+
+  ```powershell
+  tnc gcs.office.com -Port 443
+  ```
+
+
+  The response should contain the output `TcpTestSucceeded: True`.
+
+
+  [![Screenshot showing that Tcp test succeeded.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/tnc-gcs-1.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/tnc-gcs-1.png#lightbox)
+
+
+  If it's false, verify that your proxy or firewall allows the domain and that requests go through the proxy.
+
+
+  - For a more specific test, or if you can't run tnc because ICMP ping is blocked in your network, run the following command:
+
+    ```powershell
+    wget https://gcs.office.com/v1.0/admin/AdminDataSetCrawl/healthcheck
+    ```
+
+
+    The output should contain `StatusCode: 200`.
+
+
+    If it isn't 200, verify that your proxy or firewall allows the domain and that requests go through the proxy.
+
+3. If the preceding steps succeed and the agent is still offline, check the agent logs for any network proxy issues.
+
+   - Find GcaHostService logs in the following locations:
+
+     1. For Windows Server 2016: `C:\Users\GcaHostService\AppData\Local\Microsoft\GraphConnectorAgent\HostService\logs`
+     2. For all other supported Windows versions: `C:\Windows\ServiceProfiles\GcaHostService\AppData\Local\Microsoft\GraphConnectorAgent\HostService\logs`
+
+   - Sort the log files in the folder in reverse order of **Modified Time** and open the latest two files.
+   - Check for any error messages with the following text: **No connection could be made because the target machine actively refused it.** 1. This error message indicates that there's an issue with the network settings that prevent the GcaHostService virtual account from contacting the `https://gcs.office.com` endpoint. 2. Check with your network or proxy team to allow the virtual account \(NT Service\\GcaHostService\) to send traffic to this domain. 3. The issue is resolved when the log file no longer contains these errors.
+
+4. If none of these steps fix your issue, contact Microsoft Support and provide the two latest log files.
+
+### Agent is unreachable
+
+If the agent is unreachable when you set up a connection, the following error screen appears.
+
+[![Screenshot of the agent unreachable screen.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/agentunreachableerror-adminux.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/agentunreachableerror-adminux.png#lightbox)
+
+Use the service bus namespace provided in the error details to troubleshoot:
+
+1. From PowerShell, run the following command:
+
+   ```powershell
+   tnc `<yournamespacename>.servicebus.windows.net` -port 443
+   ```
+
+
+   The response should contain the output `TcpTestSucceeded: True:`
+
+
+   [![Screenshot of tnc 2.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/tnc-gcs-namespace.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/tnc-gcs-namespace.png#lightbox)
+
+
+   If it's false, verify that your proxy or firewall allows the domain and that requests go through the proxy.
+
+2. If you can't run `tnc` because ICMP Ping is blocked in your network, run the following command in PowerShell:
+
+   ```powershell
+   wget https://`<yournamespacename>`.servicebus.windows.net/
+   ```
+
+
+   The output should contain `StatusCode: 200`:
+
+
+   [![Screenshot of wget 2.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/wget-gcs-namespace.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/wget-gcs-namespace.png#lightbox)
+
+
+   If it's false, verify that your proxy or firewall allows the domain and that requests go through the proxy.
+
+3. If none of the preceding steps fix your issue, contact Microsoft Support and provide the two latest log files.
+
+#### Update in progress
+
+This error occurs when an update is already in progress and should resolve after a maximum of 30 minutes.
+
+[![Screenshot of connector agent update in progress.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/agentupgradingerror-adminux.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/agentupgradingerror-adminux.png#lightbox)
+
+If the error persists after 30 minutes, follow these steps:
+
+1. Sign in to the computer where the agent is installed and verify that it's running. In Task Manager, go to **Services**, and check whether `GcaHostService` is in a running state. If not, select and hold \(right-click\) and start the service.
+
+   [![Screenshot of the connector service in Task Manager.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/gcahostservice-gcaupdateservice.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/connector-agent/gcahostservice-gcaupdateservice.png#lightbox)
+2. If the issue persists, contact Microsoft Support and provide the two latest log files. You can find the log files in `C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\GraphConnectorAgent\AgentUpdateApp\logs+`.
+
+### Connection failure
+
+If the `Test connection` action fails when you create a connection with the error **Please check username/password and the data source path** and the username and password you provide are correct, ensure that the user account has interactive sign-in rights to the computer where the connector agent is installed. For details, see [logon policy management](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/allow-log-on-locally#policy-management). Also, ensure that the data source and the agent computer are on the same network.
+
+## Related content
+
+- [Connector agent release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connector-agent-releases)

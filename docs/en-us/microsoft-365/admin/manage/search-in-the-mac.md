@@ -1,0 +1,81 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/search-in-the-mac?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-08-18 -->
+
+# Search in the Microsoft 365 admin center
+
+As the administrator of a Microsoft 365 organization, you can use search to find users, perform actions, navigate to different settings, and read documentation. You can use search from every page in the admin center. The search box is located in the banner area at the top of the admin center. You can use the **Alt+S shortcut** to use search from any page.
+
+![Screenshot: Search bar in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-bar.png?view=o365-worldwide)
+
+Search results are organized into different categories. Most of the categories are items in the admin center. For example, users, groups, shared mailboxes, or domains. Other categories show you places you can navigate to, actions you can take or app level settings that you can change. And there's also a category related to documentation.
+
+The following sections describe the different areas and categories in the admin center that are searchable.
+
+## Before you begin
+
+You need to be an administrator to search in the admin center. Search results are scoped to administrator permissions the logged in user has. For example, if SharePoint admin doesn't see an area or category in the admin center, they can't see it in search.
+
+## Users
+
+You can find users by display name, last name, first name, username, primary email address, or email aliases. Select the user's name edit to edit the user's details.
+
+![Screenshot: Search for a user Felix Henderson.](https://learn.microsoft.com/en-us/microsoft-365/media/user-search-stock-picture-domain-blanked.png?view=o365-worldwide)
+
+If you select the three dots \(more actions\) menu next to their name, you can reset their password.
+
+![Screenshot: User search with the option to reset password from search result.](https://learn.microsoft.com/en-us/microsoft-365/media/user-search-stock-picture-reset-password-domain-blanked.png?view=o365-worldwide)
+
+**Tips to improve user search results**
+
+- Make sure you spell the users' names correctly as user searches are matched exactly against the earlier mentioned properties. For example, in the above example, Jus or Malz will work but a misspelling, like, Jostin instead of Justin won't find this user.
+- To get an exact match, search by primary email address or username.
+
+## Copilot
+
+Search now includes Microsoft Copilot admin settings. You can search for Copilot usage info and service management.
+
+## Groups
+
+You can search for Groups by group name or group email address. You can select the Group and edit the group from any page.
+
+![Screenshot: Search results for groups in the admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-for-groups-mac.png?view=o365-worldwide)
+
+**Tips to improve Group search results**
+
+Make sure you spell the group name correctly.
+
+## Actions
+
+You can search for Actions category, which contains frequently used actions in Microsoft 365 Admin Center. Think of actions as verb in the system. For example, you can also search "reset password" from any page and then reset one or more passwords for users. You can search for "delete a user" and delete the user from the Delete user page.
+
+![Screenshot: Search results showing actions you can perform in the admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-for-actions-mac.png?view=o365-worldwide)
+
+## Navigation
+
+Results provides a way to quickly navigate to a specific page in the admin center. For example, searching for RBAC takes you to the Roles page for Microsoft Entra roles.
+
+![Screenshot: Search results showing navigation path in the admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-for-navigation-mac.png?view=o365-worldwide)
+
+## Settings
+
+Search for supported app level settings related to your organization, the services you subscribe to, and security and privacy settings.
+
+![Screenshot: Search results showing settings in the admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-for-settings-mac.png?view=o365-worldwide)
+
+## Domain
+
+You can find quick links to your domains, and then the link takes you to that domain's overview page.
+
+![Search results showing domains owned in the admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-for-domains-mac.png?view=o365-worldwide)
+
+## Documentation
+
+A documentation search provides relevant help documentation based on your search phrase. Select the article to learn more.
+
+![Screenshot: Search showing documentation results in the admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-for-docs-mac.png?view=o365-worldwide)
+
+## Send us feedback
+
+Use this section to submit feedback on the search experience. We can't respond to all feedback, but we read all of it, and use your feedback to improve the search experience. Make sure to provide as much detail as you can in your feedback.
+
+![Screenshot: Send feedback on search in the admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/search-feedback-mac.png?view=o365-worldwide)

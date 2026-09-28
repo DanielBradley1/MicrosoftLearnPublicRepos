@@ -1,0 +1,56 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/samples -->
+<!-- Sitemap-Last-Modified: 2026-07-02 -->
+
+# Microsoft 365 Copilot extensibility samples
+
+This article provides links to code samples to help you develop Copilot extensibility solutions, including agents, Microsoft 365 Copilot connectors, and plugins.
+
+## Declarative agent samples
+
+The following declarative agent samples are available from the PNP community.
+
+| Sample | Description |
+| --- | --- |
+| [Career Coach](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CareerCoach) | Provides personalized career development suggestions, including role understanding, skill gap analysis, learning opportunities, and career transition plans. It aims to understand the user's current role, identify career goals, assess skills and gaps, suggest learning opportunities and create a detailed action plan for future growth. |
+| [Idea Coach](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-IdeaCoach) | Facilitates brainstorming sessions and planning, offering creative exercises, idea organization techniques, and feedback for improvement. It uses a fun, collaborative tone, asks iterative questions and provides detailed agendas and creative suggestions for running effective brainstorming sessions. |
+| [Learning Coach](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-LearningCoach) | Helps users understand complex topics by breaking them down into simple, intermediate, and advanced summaries, and also provides guided practice and learning plans. It employs various techniques for learning complex topics, including glossaries, analogies, practice exercises and structured study plans. |
+| [Prompt Coach](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PromptCoach) | Assists users in creating effective and well-structured prompts for Copilot. Offering analysis, compliance checks and improvement suggestions. It asks for information on the goal, context, source, and expectations to generate effective prompts and provides detailed analyses for to help elevate your prompt writing prowess. |
+| [Writing Coach](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-WritingCoach) | Provides detailed feedback on writing, helps change the tone of messages, translates text, and helps writing instructions, stories, blog posts, and whitepapers. It focuses on clarity, coherence, grammar, and overall impact, offering specific improvements and alternatives for various types of document authoring. |
+
+### Add capabilities to declarative agents
+
+The PnP community samples listed above demonstrate declarative agents that you can use as starting points. You can enhance these agents by adding built-in capabilities such as code interpreter and image generator through the declarative agent manifest. These capabilities were introduced in [version 1.2 of the declarative agent manifest schema](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.2) and can be enabled by using the [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) or the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents).
+
+For details on how to enable each capability, see:
+
+- [Add the code interpreter capability to your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter)
+- [Add the image generator capability to your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator)
+
+## Declarative agent with API plugin samples
+
+The following samples implement custom agents using Microsoft's orchestration and models.
+
+| Sample | Description |
+| --- | --- |
+| [Trey Research Copilot extension \(OAuth version\)](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth) | This example demonstrates how to build your own declarative agent using Microsoft's orchestrator and LLMs, that's also capable of interacting with an API through an API plugin. This sample includes authentication. |
+| [Trey Research Copilot extension \(anonymous version\)](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research) | This example demonstrates how to build your own declarative agent using Microsoft's orchestrator and LLMs, that's also capable of interacting with an API through an API plugin. This version of the Trey Research sample doesn't do authentication, but might be useful for demos and experimentation. |
+
+## Custom engine agent samples
+
+The following samples implement custom engine agents using custom orchestration and models.
+
+| Sample | Description |
+| --- | --- |
+| [Meeting Helper with Azure OpenAI](https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-ai-meeting-helper) | This example demonstrates how Azure OpenAI extracts action items from meeting transcriptions for all participants who subscribed to a meeting. It then sends these action items to each individual user in a 1:1 chat after the meeting concludes. |
+| [Virtual assistant bot](https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-virtual-assistant) | This sample application demonstrates a root bot that routes inputs to skill bots for tailored responses. |
+
+## Community samples
+
+You can find the latest list of samples from the community in the [Microsoft Adoption center sample solution gallery](https://adoption.microsoft.com/sample-solution-gallery/?keyword=&sort-by=updateDateTime-true&page=1):
+
+- [Microsoft 365 Copilot samples](https://adoption.microsoft.com/sample-solution-gallery/?keyword=&sort-by=updateDateTime-true&page=1&product=Microsoft+365+Copilot)
+
+## Related content
+
+- [Microsoft 365 Copilot developer videos](https://www.youtube.com/@Microsoft365Developer)
+- [Learn samples gallery](https://learn.microsoft.com/en-us/samples/browse/)

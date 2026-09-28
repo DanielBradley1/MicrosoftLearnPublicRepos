@@ -1,0 +1,196 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/confluence-onpremises-deployment -->
+<!-- Sitemap-Last-Modified: 2026-09-21 -->
+
+# Deploy the Confluence On-premises Copilot connector
+
+The Confluence On-premises connector enables Microsoft 365 to index and retrieve content from self-hosted Confluence Data Center or Server instances. It brings enterprise wiki content into Microsoft Search and Copilot, enhancing visibility and usability within the Microsoft 365 ecosystem.
+
+This article describes the steps to deploy, customize, and troubleshoot the Confluence On-premises connector. For general information about Copilot connector deployment, see [Set up Copilot connectors in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview).
+
+For advanced Confluence On-premises configuration information, see [Set up the Confluence On-premises service for connector ingestion](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/confluence-onpremises-admin-setup).
+
+## Prerequisites
+
+Before you deploy the Confluence On-premises connector, make sure that the Confluence environment is configured in your organization. The following table summarizes the steps to configure the Confluence environment and deploy the connector.
+
+| Role | Task |
+| --- | --- |
+| Confluence admin | [Configure the environment](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/confluence-onpremises-admin-setup#configure-the-confluence-environment) |
+| Confluence admin/Network admin | [Set up prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/confluence-onpremises-admin-setup#set-up-prerequisites) |
+| Microsoft 365 admin | [Deploy the connector in the Microsoft 365 admin center](#deploy-the-connector) |
+| Microsoft 365 admin | [Customize connector settings](#customize-settings) \(optional\) |
+
+Before you deploy the connector, make sure that the following prerequisites are met:
+
+- You must be a Microsoft 365 admin.
+- Install the [Microsoft Graph connector agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connector-agent) on a Windows computer on the same network as the Confluence server.
+- Install the Confluence On-prem plugin from the [Atlassian Marketplace](https://marketplace.atlassian.com/apps/1234846?tab=reviews&hosting=datacenter).
+- In Confluence, go to **Settings** > **Manage apps**, and verify that the **Confluence Mobile Web Plugin** is enabled. The plugin is active by default; re-enable it if it's deactivated.
+- Validate that the **User Email Visibility** parameter is configured as **public** in Confluence Security Configuration.
+- Ensure authentication credentials are available with Confluence admin permissions.
+- Confirm that your Confluence version is 8.0 or higher.
+
+## Deploy the connector
+
+To add the Confluence On-premises connector for your organization:
+
+1. In the Microsoft 365 admin center, in the left pane, select **Copilot** > **Connectors**.
+2. Select the **Gallery** tab.
+3. From the list of available connectors, select **Confluence On-premises**.
+
+### Set display name
+
+The display name identifies references in Copilot responses and helps users recognize the associated file or item. The display name also signifies trusted content and is used as a content source filter.
+
+You can accept the default **Confluence On-premises** display name, or customize the value to use a name that users in your organization recognize.
+
+For more information, see [Enhance Copilot discovery with Microsoft 365 Copilot connectors content](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/enhance-copilot-discovery).
+
+### Set instance URL
+
+To connect to your Confluence site, use your organization's site instance URL. The typical format is:
+
+- `https://<your-company-domain>/confluence`
+
+To find your instance URL:
+
+- In the Confluence Admin Console, go to **General Configuration** > **Server Base URL**.
+
+### Choose authentication type
+
+The connector supports the following authentication methods:
+
+- **Basic authentication**: Use Confluence username and password.
+- **OAuth 1.0a**: Generate a public/private key pair and create an application link. For more information, see [OAuth](https://developer.atlassian.com/server/jira/platform/oauth/#step-1--configure-jira).
+- **OAuth 2.0 \(recommended\)**: Register an incoming application link with admin scope.
+
+For OAuth 2.0 setup:
+
+1. Go to **Administration** > **General configuration** > **Application links**.
+2. Select **Create link** > **External application** > **Incoming**.
+3. Set scope to **Admin**.
+4. Use the redirect URL that matches your Microsoft 365 cloud environment:
+
+| Microsoft 365 cloud | Redirect URL |
+| --- | --- |
+| Microsoft 365 Enterprise | `https://gcs.office.com/v1.0/admin/oauth/callback` |
+| Microsoft 365 Government \(GCC\) | `https://gcsgcc.office.com/v1.0/admin/oauth/callback` |
+| Microsoft 365 GCC High \(Government Community Cloud High\) | `https://gcs.office365.us/v1.0/admin/oauth/callback` |
+| Microsoft 365 DoD \(Department of Defense\) | `https://gcs-dod.office365.us/v1.0/admin/oauth/callback` |
+
+Important
+
+Select the redirect URL that matches your Microsoft 365 cloud environment. Using a callback URL from a different cloud can cause OAuth authentication and connector setup failures.
+
+### Roll out
+
+To roll out to a limited audience, select the toggle next to **Rollout to limited audience** and specify the users and groups to roll the connector out to. For more information, see [Staged rollout for Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/staged-rollout).
+
+Select **Create** to deploy the connection. The Confluence On-premises Copilot connector starts indexing content right away.
+
+The following table lists the default values that are set.
+
+| Category | Setting | Default Value |
+| --- | --- | --- |
+| Users | Access permissions | Only people with access to content in the data source. |
+| Users | Map identities | Microsoft Entra IDs map data source identities. |
+| Content | Include/exclude space | All spaces included. |
+| Content | Manage properties | For default properties and schemas, see [Manage properties](#customize-content-settings). |
+| Sync | Incremental crawl | Every 15 minutes. |
+| Sync | Full crawl | Daily. |
+
+To customize these values, see [Customize settings](#customize-settings).
+
+After you create your connection, you can review the status in the **Connectors** section of the [Microsoft 365 admin center](https://admin.microsoft.com/).
+
+## Customize settings
+
+You can customize the default values for the Confluence On-premises connector settings. To customize settings, on the connector page in the admin center, select **Custom setup**.
+
+### Customize user settings
+
+The Confluence Cloud connector supports the following user search permissions:
+
+- **Everyone**: All users can see indexed data.
+- **Only people with access**: Only users with access in Confluence can see indexed data.
+
+In Confluence On-premises, you define security permissions for users and groups through space permissions and page restrictions. The system evaluates permissions as follows:
+
+- Retrieve the permission configuration from the page-level restrictions.
+- Retrieve the permission configuration from the parent page restrictions.
+- Retrieve the permission configuration from the space permissions.
+- Compute the intersection of the previous three configurations to determine the effective permission on the page. This final permission set is synchronized to Microsoft 365 Copilot.
+
+Important
+
+- For Microsoft Graph Connector Agent versions earlier than 3.1.14, the system doesn't consider anonymous access settings defined at the space level.
+- For versions of the Microsoft Graph Connector Agent starting with version 3.1.14, the system considers anonymous access settings defined at the space level.
+
+If you choose **Only people with access to this data source**, choose whether your Confluence site has Microsoft Entra ID provisioned users or non-Microsoft Entra ID users:
+
+- **Microsoft Entra ID**: Choose this option if Confluence email IDs match user principal names \(UPNs\) in Microsoft Entra ID.
+- **Non-Microsoft Entra ID**: Choose this option if Confluence email IDs don't match UPNs. Use regex to map email IDs to UPNs.
+
+Updates to permissions sync only during full crawls.
+
+### Customize content settings
+
+Customize content settings in the following ways:
+
+- Include or exclude specific spaces by using the space filter option. Each space has a space key identifier that forms part of the URL for that space. For more information, see [Space keys](https://confluence.atlassian.com/doc/space-keys-829076188.html).
+- Specify a date range for document indexing. You can filter pages by **Last Created Date** or **Last Modified Date**.
+- For advanced scenarios, use a Confluence Query Language \(CQL\) string to specify conditions for syncing pages. For more information, see [Advanced Searching using CQL](https://developer.atlassian.com/server/confluence/advanced-searching-using-cql/). You need Microsoft Graph Connector Agent version 3.1.22 or later to use this feature.
+- Add or remove properties from the data source, assign a schema to properties \(searchable, queryable, retrievable, refinable\), and change semantic labels associated with properties. The following table lists the default properties.
+
+| Source property | Label | Schema |
+| --- | --- | --- |
+| Author | authors | Query, Retrieve |
+| Content |  | Search |
+| CreatedByName | Created by | Search, Query, Retrieve |
+| CreatedOn | Created date time | Query, Retrieve |
+| Id |  | Query, Retrieve |
+| PageTree |  | Retrieve |
+| SpaceName |  | Search, Query, Retrieve |
+| Title | title | Search, Retrieve |
+| UpdatedByName | lastModifiedBy | Retrieve |
+| UpdatedOn | lastModifiedDateTime | Query, Retrieve, Refine |
+| URL | url | Retrieve |
+
+### Customize sync intervals
+
+You can adjust the synchronization frequency:
+
+- **Incremental crawl**: Syncs new and modified content. Incremental crawls don't pick up access control list \(ACL\) changes or deleted items. The default is every 15 minutes.
+- **Full crawl**: Performs a complete synchronization of all content. Full crawls detect deleted items and sync ACL changes. The default is daily.
+
+For more information, see [Guidelines for crawl settings](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview#guidelines-for-crawl-settings).
+
+## API endpoints
+
+The following table lists the API endpoints that the connector calls to crawl data and the minimum permissions required for each endpoint.
+
+| Endpoint | Auth application permission | User permission |
+| --- | --- | --- |
+| GET /rest/api/content/search | Read | User |
+| GET /rest/api/space | Read | User |
+| GET /rest/api/content/{id} | Read | User |
+| GET /rest/api/content/{id}/child/comment | Read | User |
+| GET /rest/api/content/{id}/child/page | Read | User |
+| GET /rest/api/content/{id}/restriction/byOperation/{op} | Read | User |
+| GET /rest/api/group | Read | User |
+| GET /rest/api/group/{groupName}/member\* | Admin | Admin |
+| GET /rest/mobile/1.0/profile/{username}\*\* | Admin | Admin |
+| GET /rest/api/msplugin/1.0/content/service/space/{key}/toplevelpages | Read | User |
+| GET /rest/api/msplugin/1.0/content/service/space/{key}/restrictedpages | Read | User |
+| GET /rest/api/msplugin/1.0/content/service/space/{key}/restrictedpagesV2 | Read | User |
+| GET /rest/api/msplugin/1.0/content/service/space/{key}/permissions | Read | User |
+| GET /rest/api/msplugin/1.0/healthcheck/version | Read | User |
+
+\* Requires both admin permissions.
+
+\*\* Requires either admin permission.
+
+## Related content
+
+- [Confluence On-premises connector overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/confluence-onpremises-overview)
+- [Troubleshoot issues with the Confluence On-premises connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/confluence-onpremises-troubleshooting)
