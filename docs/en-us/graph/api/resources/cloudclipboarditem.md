@@ -1,0 +1,52 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditem?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2024-05-24 -->
+
+# cloudClipboardItem resource type
+
+Namespace: microsoft.graph
+
+Represents the information and properties of a [cloudClipboardItem](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditem?view=graph-rest-1.0) object. Cloud clipboard is a feature that allows a user to copy and paste content across devices and platforms. It also provides users with a history of the items they recently copied across all their apps and devices.
+
+Currently, the feature is supported between Windows devices and [swiftKey app](https://support.microsoft.com/topic/how-to-use-microsoft-swiftkey-keyboard-to-copy-and-paste-text-between-swiftkey-and-windows-85c8ca64-7091-477f-91d1-99c3b1f75138) on Android devices.
+
+## Methods
+
+| Method | Return type | Description |
+| :--- | :--- | :--- |
+| [List](https://learn.microsoft.com/en-us/graph/api/cloudclipboardroot-list-items?view=graph-rest-1.0) | Collection of [cloudClipboardItem](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditem?view=graph-rest-1.0) | Retrieve a list of [cloudClipboardItem](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditem?view=graph-rest-1.0) objects of a given user. |
+| [Get](https://learn.microsoft.com/en-us/graph/api/cloudclipboarditem-get?view=graph-rest-1.0) | [cloudClipboardItem](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditem?view=graph-rest-1.0) | Read the properties and relationships of a [cloudClipboardItem](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditem?view=graph-rest-1.0) object. |
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| createdDateTime | DateTimeOffset | Set by the server. DateTime in UTC when the object was created on the server. |
+| expirationDateTime | DateTimeOffset | Set by the server. DateTime in UTC when the object expires and after that the object is no longer available. The default and also maximum TTL is **12 hours** after the creation, but it might change for performance optimization. |
+| id | Guid | The unique identifier of the object. |
+| lastModifiedDateTime | DateTimeOffset | Set by the server if not provided in the client's request. DateTime in UTC when the object was modified by the client. |
+| payloads | [cloudClipboardItemPayload](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditempayload?view=graph-rest-1.0) collection | A [cloudClipboardItem](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditem?view=graph-rest-1.0) can have multiple [cloudClipboardItemPayload](https://learn.microsoft.com/en-us/graph/api/resources/cloudclipboarditempayload?view=graph-rest-1.0) objects in the `payloads`. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format. |
+
+## Relationships
+
+None.
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.cloudClipboardItem",
+  "id": "String (identifier)",
+  "payloads": [
+    {
+      "@odata.type": "microsoft.graph.cloudClipboardItemPayload",
+      "content": "String",
+      "formatName": "String"
+    }
+  ],
+  "createdDateTime": "String (timestamp)",
+  "lastModifiedDateTime": "String (timestamp)",
+  "expirationDateTime": "String (timestamp)"
+}
+```

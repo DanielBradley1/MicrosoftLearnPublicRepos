@@ -1,0 +1,30 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/defaultcolumnvalue?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2024-12-26 -->
+
+# defaultColumnValue resource type
+
+Namespace: microsoft.graph
+
+Represents the default value for a [columnDefinition](https://learn.microsoft.com/en-us/graph/api/resources/columndefinition?view=graph-rest-1.0). The default value can either be specified directly or as a formula.
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| formula | String | The formula used to compute the default value for the column. |
+| value | String | The direct value to use as the default value for the column. |
+
+You can specify either a **formula** or **value** at a time.
+
+SharePoint formulas use a syntax similar to Excel formulas. For more information, see [Examples of common formulas in SharePoint Lists](https://support.microsoft.com/office/examples-of-common-formulas-in-lists-d81f5f21-2b4e-45ce-b170-bf7ebf6988b3).
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "formula": "String",
+  "value": "String"
+}
+```

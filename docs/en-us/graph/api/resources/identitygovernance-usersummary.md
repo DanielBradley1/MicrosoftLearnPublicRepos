@@ -1,0 +1,37 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-usersummary?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2024-07-23 -->
+
+# userSummary resource type
+
+Namespace: microsoft.graph.identityGovernance
+
+A summary of user processing results for a specified time period. This summary allows the administrator to get a quick overview based on counts.
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| failedTasks | Int32 | The number of failed tasks for users in a user summary. |
+| failedUsers | Int32 | The number of failed users in a user summary. |
+| successfulUsers | Int32 | The number of successful users in a user summary. |
+| totalTasks | Int32 | The total tasks of users in a user summary. |
+| totalUsers | Int32 | The total number of users in a user summary |
+
+## Relationships
+
+None.
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.identityGovernance.userSummary",
+  "failedTasks": "Integer",
+  "failedUsers": "Integer",
+  "successfulUsers": "Integer",
+  "totalTasks": "Integer",
+  "totalUsers": "Integer"
+}
+```

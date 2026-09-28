@@ -1,0 +1,111 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-onboarding-devicemanagementexchangeconnector-update?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-01-08 -->
+
+# Update deviceManagementExchangeConnector
+
+Namespace: microsoft.graph
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Update the properties of a [deviceManagementExchangeConnector](https://learn.microsoft.com/en-us/graph/api/resources/intune-onboarding-devicemanagementexchangeconnector?view=graph-rest-1.0) object.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All |
+
+## HTTP Request
+
+```http
+PATCH /deviceManagement/exchangeConnectors/{deviceManagementExchangeConnectorId}
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+In the request body, supply a JSON representation for the [deviceManagementExchangeConnector](https://learn.microsoft.com/en-us/graph/api/resources/intune-onboarding-devicemanagementexchangeconnector?view=graph-rest-1.0) object.
+
+The following table shows the properties that are required when you create the [deviceManagementExchangeConnector](https://learn.microsoft.com/en-us/graph/api/resources/intune-onboarding-devicemanagementexchangeconnector?view=graph-rest-1.0).
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String |  |
+| lastSyncDateTime | DateTimeOffset | Last sync time for the Exchange Connector |
+| status | [deviceManagementExchangeConnectorStatus](https://learn.microsoft.com/en-us/graph/api/resources/intune-onboarding-devicemanagementexchangeconnectorstatus?view=graph-rest-1.0) | Exchange Connector Status. The possible values are: `none`, `connectionPending`, `connected`, `disconnected`, `unknownFutureValue`. |
+| primarySmtpAddress | String | Email address used to configure the Service To Service Exchange Connector. |
+| serverName | String | The name of the Exchange server. |
+| connectorServerName | String | The name of the server hosting the Exchange Connector. |
+| exchangeConnectorType | [deviceManagementExchangeConnectorType](https://learn.microsoft.com/en-us/graph/api/resources/intune-onboarding-devicemanagementexchangeconnectortype?view=graph-rest-1.0) | The type of Exchange Connector Configured. The possible values are: `onPremises`, `hosted`, `serviceToService`, `dedicated`, `unknownFutureValue`. |
+| version | String | The version of the ExchangeConnectorAgent |
+| exchangeAlias | String | An alias assigned to the Exchange server |
+| exchangeOrganization | String | Exchange Organization to the Exchange server |
+
+## Response
+
+If successful, this method returns a `200 OK` response code and an updated [deviceManagementExchangeConnector](https://learn.microsoft.com/en-us/graph/api/resources/intune-onboarding-devicemanagementexchangeconnector?view=graph-rest-1.0) object in the response body.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+PATCH https://graph.microsoft.com/v1.0/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnectorId}
+Content-type: application/json
+Content-length: 490
+
+{
+  "@odata.type": "#microsoft.graph.deviceManagementExchangeConnector",
+  "lastSyncDateTime": "2017-01-01T00:02:49.3205976-08:00",
+  "status": "connectionPending",
+  "primarySmtpAddress": "Primary Smtp Address value",
+  "serverName": "Server Name value",
+  "connectorServerName": "Connector Server Name value",
+  "exchangeConnectorType": "hosted",
+  "version": "Version value",
+  "exchangeAlias": "Exchange Alias value",
+  "exchangeOrganization": "Exchange Organization value"
+}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 539
+
+{
+  "@odata.type": "#microsoft.graph.deviceManagementExchangeConnector",
+  "id": "e11c1de8-1de8-e11c-e81d-1ce1e81d1ce1",
+  "lastSyncDateTime": "2017-01-01T00:02:49.3205976-08:00",
+  "status": "connectionPending",
+  "primarySmtpAddress": "Primary Smtp Address value",
+  "serverName": "Server Name value",
+  "connectorServerName": "Connector Server Name value",
+  "exchangeConnectorType": "hosted",
+  "version": "Version value",
+  "exchangeAlias": "Exchange Alias value",
+  "exchangeOrganization": "Exchange Organization value"
+}
+```

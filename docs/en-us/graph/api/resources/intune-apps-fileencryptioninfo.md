@@ -1,0 +1,43 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-fileencryptioninfo?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# fileEncryptionInfo resource type
+
+Namespace: microsoft.graph
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Contains properties for file encryption information for the content version of a line of business app.
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| encryptionKey | Binary | The key used to encrypt the file content. |
+| initializationVector | Binary | The initialization vector \(IV\) used for the encryption algorithm. Must be 16 bytes. |
+| mac | Binary | The hash of the concatenation of the IV and encrypted file content. Must be 32 bytes. |
+| macKey | Binary | The key used to compute the message authentication code of the concatenation of the IV and encrypted file content. Must be 32 bytes. |
+| profileIdentifier | String | The profile identifier. Maps to the strategy used to encrypt the file. Currently, only ProfileVersion1 is supported. |
+| fileDigest | Binary | The file digest prior to encryption. ProfileVersion1 requires a non-null FileDigest. |
+| fileDigestAlgorithm | String | The file digest algorithm. ProfileVersion1 currently only supports SHA256 for the FileDigestAlgorithm. |
+
+## Relationships
+
+None
+
+## JSON Representation
+
+Here is a JSON representation of the resource.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.fileEncryptionInfo",
+  "encryptionKey": "binary",
+  "initializationVector": "binary",
+  "mac": "binary",
+  "macKey": "binary",
+  "profileIdentifier": "String",
+  "fileDigest": "binary",
+  "fileDigestAlgorithm": "String"
+}
+```

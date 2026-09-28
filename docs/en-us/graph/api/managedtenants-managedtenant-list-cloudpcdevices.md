@@ -1,0 +1,228 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2024-04-05 -->
+
+# List cloudPcDevices
+
+Namespace: microsoft.graph.managedTenants
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get a list of the [cloudPcDevice](https://learn.microsoft.com/en-us/graph/api/resources/managedtenants-cloudpcdevice?view=graph-rest-beta) objects and their properties.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | CloudPC.Read.All | CloudPC.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | Not supported. | Not supported. |
+
+## HTTP request
+
+```http
+GET /tenantRelationships/managedTenants/cloudPcDevices
+```
+
+## Optional query parameters
+
+This method supports the [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters) to help customize the response, including `$apply`, `$count`, `$filter`, `$orderby`, `$select`, `$skip`, and `$top`.
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+
+## Request body
+
+Don't supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [cloudPcDevice](https://learn.microsoft.com/en-us/graph/api/resources/managedtenants-cloudpcdevice?view=graph-rest-beta) objects in the response body.
+
+## Examples
+
+### Request
+
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [PowerShell](#tabpanel_1_powershell)
+- [Python](#tabpanel_1_python)
+
+```msgraph
+GET https://graph.microsoft.com/beta/tenantRelationships/managedTenants/cloudPcDevices
+```
+
+```csharp
+
+// Code snippets are only available for the latest version. Current version is 5.x
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
+var result = await graphClient.TenantRelationships.ManagedTenants.CloudPcDevices.GetAsync();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```go
+
+
+// Code snippets are only available for the latest major version. Current major version is $v0.*
+
+// Dependencies
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
+	  //other-imports
+)
+
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
+cloudPcDevices, err := graphClient.TenantRelationships().ManagedTenants().CloudPcDevices().Get(context.Background(), nil)
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```java
+
+// Code snippets are only available for the latest version. Current version is 6.x
+
+GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
+
+com.microsoft.graph.models.managedtenants.CloudPcDeviceCollectionResponse result = graphClient.tenantRelationships().managedTenants().cloudPcDevices().get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+let cloudPcDevices = await client.api('/tenantRelationships/managedTenants/cloudPcDevices')
+	.version('beta')
+	.get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```php
+
+<?php
+use Microsoft\Graph\Beta\GraphServiceClient;
+
+
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
+
+
+$result = $graphServiceClient->tenantRelationships()->managedTenants()->cloudPcDevices()->get()->wait();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+
+Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```python
+
+# Code snippets are only available for the latest version. Current version is 1.x
+from msgraph_beta import GraphServiceClient
+# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
+
+result = await graph_client.tenant_relationships.managed_tenants.cloud_pc_devices.get()
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "value": [
+        {
+            "id": "2fd04a0b-ed49-46c0-a62d-e7980d829058",
+            "organizationId": "8fd04a0b-ed49-46c0-a62d-e7980d829118",
+            "organizationDisplayName": "Fabrikam",
+            "displayName": "Test Cloud PC Device - Deprovisioning",
+            "managedDeviceId": "618f7b25-b146-4c0e-a21b-2f1c67e78648",
+            "managedDeviceName": "device01",
+            "userPrincipalName": "lisa@fabrikam.com",
+            "servicePlanName": "Cloud PC Business 2vCPU/8GB/128GB",
+            "servicePlanType": "Business",
+            "deviceSpecification": "2vCPU/8GB/128GB",
+            "status": "deprovisioning",
+            "lastRefreshedDateTime": "2022-02-16T11:32:37.5389729Z"
+        },
+        {
+            "id": "1fd04a0b-ed49-46c0-a62d-e7980d829058",
+            "organizationId": "4fd04a0b-ed49-46c0-a62d-e7980d829118",
+            "organizationDisplayName": "Fabrikam",
+            "displayName": "Test Cloud PC Device - Not Provisioned",
+            "managedDeviceId": "318f7b25-b146-4c0e-a21b-2f1c67e78648",
+            "managedDeviceName": "device02",
+            "userPrincipalName": "john@fabrikam.com",
+            "servicePlanName": "Cloud PC Enterprise 2vCPU/4GB/64GB",
+            "servicePlanType": "Enterprise",
+            "deviceSpecification": "2vCPU/4GB/64GB",
+            "status": "notProvisioned",
+            "lastRefreshedDateTime": "2022-01-16T11:32:33.5382129Z"
+        }
+    ]
+}
+```

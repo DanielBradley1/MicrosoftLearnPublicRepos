@@ -1,0 +1,209 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/chart-update?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2024-05-10 -->
+
+# Update chart
+
+Namespace: microsoft.graph
+
+Update the properties of chart object.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ❌ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | Files.ReadWrite | Not available. |
+| Delegated \(personal Microsoft account\) | Files.ReadWrite | Not available. |
+| Application | Not supported. | Not supported. |
+
+## HTTP request
+
+```http
+PATCH /me/drive/items/{id}/workbook/worksheets/{id|name}/charts/{name}
+PATCH /me/drive/root:/{item-path}:/workbook/worksheets/{id|name}/charts/{name}
+```
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {code}. Required. |
+| Content-Type | application/json. Required. |
+| Workbook-Session-Id | Workbook session Id that determines if changes are persisted or not. Optional. |
+
+## Request body
+
+In the request body, supply *only* the values for properties to update. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
+
+The following table specifies the properties that can be updated.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| height | double | Represents the height, in points, of the chart object. |
+| left | double | The distance, in points, from the left side of the chart to the worksheet origin. |
+| name | string | Represents the name of a chart object. |
+| top | double | Represents the distance, in points, from the top edge of the object to the top of row 1 \(on a worksheet\) or the top of the chart area \(on a chart\). |
+| width | double | Represents the width, in points, of the chart object. |
+
+## Response
+
+If successful, this method returns a `200 OK` response code and updated [workbookChart](https://learn.microsoft.com/en-us/graph/api/resources/workbookchart?view=graph-rest-1.0) object in the response body.
+
+## Example
+
+### Request
+
+The following example shows the request.
+
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [Python](#tabpanel_1_python)
+
+```http
+PATCH https://graph.microsoft.com/v1.0/me/drive/items/{id}/workbook/worksheets/{id|name}/charts/{name}
+Content-type: application/json
+
+{
+  "height": 99,
+  "left": 99
+}
+```
+
+```csharp
+
+// Code snippets are only available for the latest version. Current version is 5.x
+
+// Dependencies
+using Microsoft.Graph.Models;
+
+var requestBody = new WorkbookChart
+{
+	Height = 99d,
+	Left = 99d,
+};
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
+var result = await graphClient.Drives["{drive-id}"].Items["{driveItem-id}"].Workbook.Worksheets["{workbookWorksheet-id}"].Charts["{workbookChart-id}"].PatchAsync(requestBody);
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```go
+
+
+// Code snippets are only available for the latest major version. Current major version is $v1.*
+
+// Dependencies
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
+	  graphmodels "github.com/microsoftgraph/msgraph-sdk-go/models"
+	  //other-imports
+)
+
+requestBody := graphmodels.NewWorkbookChart()
+height := float64(99)
+requestBody.SetHeight(&height) 
+left := float64(99)
+requestBody.SetLeft(&left) 
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
+charts, err := graphClient.Drives().ByDriveId("drive-id").Items().ByDriveItemId("driveItem-id").Workbook().Worksheets().ByWorkbookWorksheetId("workbookWorksheet-id").Charts().ByWorkbookChartId("workbookChart-id").Patch(context.Background(), requestBody, nil)
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```java
+
+// Code snippets are only available for the latest version. Current version is 6.x
+
+GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
+
+WorkbookChart workbookChart = new WorkbookChart();
+workbookChart.setHeight(99d);
+workbookChart.setLeft(99d);
+WorkbookChart result = graphClient.drives().byDriveId("{drive-id}").items().byDriveItemId("{driveItem-id}").workbook().worksheets().byWorkbookWorksheetId("{workbookWorksheet-id}").charts().byWorkbookChartId("{workbookChart-id}").patch(workbookChart);
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+const workbookChart = {
+  height: 99,
+  left: 99
+};
+
+await client.api('/me/drive/items/{id}/workbook/worksheets/{id|name}/charts/{name}')
+	.update(workbookChart);
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```php
+
+<?php
+use Microsoft\Graph\GraphServiceClient;
+use Microsoft\Graph\Generated\Models\WorkbookChart;
+
+
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
+
+$requestBody = new WorkbookChart();
+$requestBody->setHeight(99);
+$requestBody->setLeft(99);
+
+$result = $graphServiceClient->drives()->byDriveId('drive-id')->items()->byDriveItemId('driveItem-id')->workbook()->worksheets()->byWorkbookWorksheetId('workbookWorksheet-id')->charts()->byWorkbookChartId('workbookChart-id')->patch($requestBody)->wait();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```python
+
+# Code snippets are only available for the latest version. Current version is 1.x
+from msgraph import GraphServiceClient
+from msgraph.generated.models.workbook_chart import WorkbookChart
+# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
+request_body = WorkbookChart(
+	height = 99,
+	left = 99,
+)
+
+result = await graph_client.drives.by_drive_id('drive-id').items.by_drive_item_id('driveItem-id').workbook.worksheets.by_workbook_worksheet_id('workbookWorksheet-id').charts.by_workbook_chart_id('workbookChart-id').patch(request_body)
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "id": "id-value",
+  "height": 99,
+  "left": 99
+}
+```

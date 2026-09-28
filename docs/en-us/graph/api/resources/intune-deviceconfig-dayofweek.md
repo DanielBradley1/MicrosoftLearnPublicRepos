@@ -1,0 +1,22 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-dayofweek?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# dayOfWeek enum type
+
+Namespace: microsoft.graph
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Possible values for a weekday
+
+## Members
+
+| Member | Value | Description |
+| :--- | :--- | :--- |
+| sunday | 0 | Sunday. |
+| monday | 1 | Monday. |
+| tuesday | 2 | Tuesday. |
+| wednesday | 3 | Wednesday. |
+| thursday | 4 | Thursday. |
+| friday | 5 | Friday. |
+| saturday | 6 | Saturday. |

@@ -1,0 +1,55 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# cloudPCConnectivityIssue resource type
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+The user experience analyte connectivity issue entity.
+
+## Methods
+
+| Method | Return Type | Description |
+| :--- | :--- | :--- |
+| [List cloudPCConnectivityIssues](https://learn.microsoft.com/en-us/graph/api/intune-devices-cloudpcconnectivityissue-list?view=graph-rest-beta) | [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) collection | List properties and relationships of the [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) objects. |
+| [Get cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/intune-devices-cloudpcconnectivityissue-get?view=graph-rest-beta) | [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) | Read properties and relationships of the [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) object. |
+| [Create cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/intune-devices-cloudpcconnectivityissue-create?view=graph-rest-beta) | [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) | Create a new [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) object. |
+| [Delete cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/intune-devices-cloudpcconnectivityissue-delete?view=graph-rest-beta) | None | Deletes a [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta). |
+| [Update cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/intune-devices-cloudpcconnectivityissue-update?view=graph-rest-beta) | [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) | Update the properties of a [cloudPCConnectivityIssue](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-cloudpcconnectivityissue?view=graph-rest-beta) object. |
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | The unique identifier of the user experience analytics connectivity issue event entity. |
+| deviceId | String | The Intune DeviceId of the device the connection is associated with. |
+| errorCode | String | The error code of the connectivity issue. |
+| errorDateTime | DateTimeOffset | The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time \(UTC\) time. |
+| userId | String | The unique id of user who initialize the connection. |
+| errorDescription | String | The detailed description of what went wrong. |
+| recommendedAction | String | The recommended action to fix the corresponding error. |
+
+## Relationships
+
+None
+
+## JSON Representation
+
+Here is a JSON representation of the resource.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.cloudPCConnectivityIssue",
+  "id": "String (identifier)",
+  "deviceId": "String",
+  "errorCode": "String",
+  "errorDateTime": "String (timestamp)",
+  "userId": "String",
+  "errorDescription": "String",
+  "recommendedAction": "String"
+}
+```

@@ -1,0 +1,261 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/recommendation-list-impactedresources?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2024-04-05 -->
+
+# List impactedResources
+
+Namespace: microsoft.graph
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get the [impactedResource](https://learn.microsoft.com/en-us/graph/api/resources/impactedresource?view=graph-rest-beta) objects for a [recommendation](https://learn.microsoft.com/en-us/graph/api/resources/recommendation?view=graph-rest-beta).
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | DirectoryRecommendations.Read.All | DirectoryRecommendations.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | DirectoryRecommendations.Read.All | DirectoryRecommendations.ReadWrite.All |
+
+Important
+
+For delegated access using work or school accounts, the signed-in user must be assigned a supported [Microsoft Entra role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference?toc=%2Fgraph%2Ftoc.json) or a custom role that grants the permissions required for this operation. This operation supports the following built-in roles, which provide only the least privilege necessary:
+
+- Reports Reader
+- Security Reader
+- Global Reader
+- Security Operator
+- Application Administrator
+- Security Administrator
+- Cloud Application Administrator
+
+## HTTP request
+
+```http
+GET /directory/recommendations/{recommendationId}/impactedResources
+```
+
+## Optional query parameters
+
+This method supports the `$select` OData query parameter to help customize the response. It also supports `$count` as a URL segment to retrieve the raw count of impacted resources. That is, `.../impactedResources/$count`. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+
+## Request body
+
+Don't supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [impactedResource](https://learn.microsoft.com/en-us/graph/api/resources/impactedresource?view=graph-rest-beta) objects in the response body.
+
+## Examples
+
+### Request
+
+The following example shows a request.
+
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [PowerShell](#tabpanel_1_powershell)
+- [Python](#tabpanel_1_python)
+
+```msgraph
+GET https://graph.microsoft.com/beta/directory/recommendations/0cb31920-84b9-471f-a6fb-468c1a847088_Microsoft.Identity.IAM.Insights.TurnOffPerUserMFA/impactedResources
+```
+
+```csharp
+
+// Code snippets are only available for the latest version. Current version is 5.x
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
+var result = await graphClient.Directory.Recommendations["{recommendation-id}"].ImpactedResources.GetAsync();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```go
+
+
+// Code snippets are only available for the latest major version. Current major version is $v0.*
+
+// Dependencies
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
+	  //other-imports
+)
+
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
+impactedResources, err := graphClient.Directory().Recommendations().ByRecommendationId("recommendation-id").ImpactedResources().Get(context.Background(), nil)
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```java
+
+// Code snippets are only available for the latest version. Current version is 6.x
+
+GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
+
+ImpactedResourceCollectionResponse result = graphClient.directory().recommendations().byRecommendationId("{recommendation-id}").impactedResources().get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+let impactedResources = await client.api('/directory/recommendations/0cb31920-84b9-471f-a6fb-468c1a847088_Microsoft.Identity.IAM.Insights.TurnOffPerUserMFA/impactedResources')
+	.version('beta')
+	.get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```php
+
+<?php
+use Microsoft\Graph\Beta\GraphServiceClient;
+
+
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
+
+
+$result = $graphServiceClient->directory()->recommendations()->byRecommendationId('recommendation-id')->impactedResources()->get()->wait();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaDirectoryRecommendationImpactedResource -RecommendationId $recommendationId
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```python
+
+# Code snippets are only available for the latest version. Current version is 1.x
+from msgraph_beta import GraphServiceClient
+# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
+
+result = await graph_client.directory.recommendations.by_recommendation_id('recommendation-id').impacted_resources.get()
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#directory/recommendations('0cb31920-84b9-471f-a6fb-468c1a847088_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry')/impactedResources",
+    "value": [
+        {
+          "id": "e97adb14-7c12-4363-8a80-d6ac86a51e2f",
+          "subjectId": "1d9d9eb9-e956-4dab-881a-b4f4f35293ef",
+          "recommendationId": "0cb31920-84b9-471f-a6fb-468c1a847088_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry",
+          "resourceType": "app",
+          "addedDateTime": "2022-03-19T09:40:39.0420371Z",
+          "postponeUntilDateTime": null,
+          "lastModifiedDateTime": "2022-04-04T20:43:28.9687029Z",
+          "lastModifiedBy": "bc7fae74-90dd-4054-b38e-f2ccc8b7b904",
+          "displayName": "Contoso IWA App Tutorial",
+          "owner": null,
+          "rank": 1,
+          "portalUrl": "https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/Credentials/appId/1d9d9eb9-e956-4dab-881a-b4f4f35293ef",
+          "apiUrl": null,
+          "status": "completedBySystem",
+          "additionalDetails": [
+            {
+              "key": "ExpiringCredentialsCount",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "id": "fd1482c2-3aab-4cad-8182-fc6adecf40ef",
+          "subjectId": "ccec02c6-e69b-47d8-b6a0-c6cf9d491a4f",
+          "recommendationId": "0cb31920-84b9-471f-a6fb-468c1a847088_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry",
+          "resourceType": "app",
+          "addedDateTime": "2022-03-19T09:40:39.0413974Z",
+          "postponeUntilDateTime": null,
+          "lastModifiedDateTime": "2022-04-15T04:24:09.7862983Z",
+          "lastModifiedBy": "0ffbbb05-658e-4f32-ae3e-7e717d7d9c91",
+          "displayName": "Contoso",
+          "owner": null,
+          "rank": 1,
+          "portalUrl": "https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/Credentials/appId/ccec02c6-e69b-47d8-b6a0-c6cf9d491a4f",
+          "apiUrl": null,
+          "status": "completedBySystem",
+          "additionalDetails": [
+            {
+              "key": "ExpiringCredentialsCount",
+              "value": "1"
+            }
+          ]
+        }
+    ]
+}
+```

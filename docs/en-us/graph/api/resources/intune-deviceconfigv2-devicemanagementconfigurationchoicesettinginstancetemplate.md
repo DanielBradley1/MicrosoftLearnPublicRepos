@@ -1,0 +1,114 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationchoicesettinginstancetemplate?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# deviceManagementConfigurationChoiceSettingInstanceTemplate resource type
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Choice Setting Instance Template
+
+Inherits from [deviceManagementConfigurationSettingInstanceTemplate](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettinginstancetemplate?view=graph-rest-beta)
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| settingInstanceTemplateId | String | Setting Instance Template Id Inherited from [deviceManagementConfigurationSettingInstanceTemplate](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettinginstancetemplate?view=graph-rest-beta) |
+| settingDefinitionId | String | Setting Definition Id Inherited from [deviceManagementConfigurationSettingInstanceTemplate](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettinginstancetemplate?view=graph-rest-beta) |
+| isRequired | Boolean | Indicates if a policy must specify this setting. Inherited from [deviceManagementConfigurationSettingInstanceTemplate](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettinginstancetemplate?view=graph-rest-beta) |
+| choiceSettingValueTemplate | [deviceManagementConfigurationChoiceSettingValueTemplate](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationchoicesettingvaluetemplate?view=graph-rest-beta) | Choice Setting Value Template |
+
+## Relationships
+
+None
+
+## JSON Representation
+
+Here is a JSON representation of the resource.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstanceTemplate",
+  "settingInstanceTemplateId": "String",
+  "settingDefinitionId": "String",
+  "isRequired": true,
+  "choiceSettingValueTemplate": {
+    "@odata.type": "microsoft.graph.deviceManagementConfigurationChoiceSettingValueTemplate",
+    "defaultValue": {
+      "@odata.type": "microsoft.graph.deviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate",
+      "settingDefinitionOptionId": "String",
+      "children": [
+        {
+          "@odata.type": "microsoft.graph.deviceManagementConfigurationSimpleSettingInstanceTemplate",
+          "settingInstanceTemplateId": "String",
+          "settingDefinitionId": "String",
+          "isRequired": true,
+          "simpleSettingValueTemplate": {
+            "@odata.type": "microsoft.graph.deviceManagementConfigurationStringSettingValueTemplate",
+            "settingValueTemplateId": "String",
+            "defaultValue": {
+              "@odata.type": "microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate",
+              "constantValue": "String"
+            }
+          }
+        }
+      ]
+    },
+    "recommendedValueDefinition": {
+      "@odata.type": "microsoft.graph.deviceManagementConfigurationChoiceSettingValueDefinitionTemplate",
+      "allowedOptions": [
+        {
+          "@odata.type": "microsoft.graph.deviceManagementConfigurationOptionDefinitionTemplate",
+          "itemId": "String",
+          "children": [
+            {
+              "@odata.type": "microsoft.graph.deviceManagementConfigurationSimpleSettingInstanceTemplate",
+              "settingInstanceTemplateId": "String",
+              "settingDefinitionId": "String",
+              "isRequired": true,
+              "simpleSettingValueTemplate": {
+                "@odata.type": "microsoft.graph.deviceManagementConfigurationStringSettingValueTemplate",
+                "settingValueTemplateId": "String",
+                "defaultValue": {
+                  "@odata.type": "microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate",
+                  "constantValue": "String"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "requiredValueDefinition": {
+      "@odata.type": "microsoft.graph.deviceManagementConfigurationChoiceSettingValueDefinitionTemplate",
+      "allowedOptions": [
+        {
+          "@odata.type": "microsoft.graph.deviceManagementConfigurationOptionDefinitionTemplate",
+          "itemId": "String",
+          "children": [
+            {
+              "@odata.type": "microsoft.graph.deviceManagementConfigurationSimpleSettingInstanceTemplate",
+              "settingInstanceTemplateId": "String",
+              "settingDefinitionId": "String",
+              "isRequired": true,
+              "simpleSettingValueTemplate": {
+                "@odata.type": "microsoft.graph.deviceManagementConfigurationStringSettingValueTemplate",
+                "settingValueTemplateId": "String",
+                "defaultValue": {
+                  "@odata.type": "microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate",
+                  "constantValue": "String"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "settingValueTemplateId": "String"
+  }
+}
+```

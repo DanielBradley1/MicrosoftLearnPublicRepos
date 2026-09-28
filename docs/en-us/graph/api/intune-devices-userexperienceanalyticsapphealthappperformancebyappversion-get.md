@@ -1,0 +1,87 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-devices-userexperienceanalyticsapphealthappperformancebyappversion-get?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# Get userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Read properties and relationships of the [userExperienceAnalyticsAppHealthAppPerformanceByAppVersion](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-userexperienceanalyticsapphealthappperformancebyappversion?view=graph-rest-beta) object.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementConfiguration.Read.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementConfiguration.Read.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All |
+
+## HTTP Request
+
+```http
+GET /deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion/{userExperienceAnalyticsAppHealthAppPerformanceByAppVersionId}
+```
+
+## Optional query parameters
+
+This method supports the [OData Query Parameters](https://learn.microsoft.com/en-us/graph/query-parameters) to help customize the response.
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and [userExperienceAnalyticsAppHealthAppPerformanceByAppVersion](https://learn.microsoft.com/en-us/graph/api/resources/intune-devices-userexperienceanalyticsapphealthappperformancebyappversion?view=graph-rest-beta) object in the response body.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+GET https://graph.microsoft.com/beta/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion/{userExperienceAnalyticsAppHealthAppPerformanceByAppVersionId}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 432
+
+{
+  "value": {
+    "@odata.type": "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion",
+    "id": "257804c8-04c8-2578-c804-7825c8047825",
+    "appVersion": "App Version value",
+    "appName": "App Name value",
+    "appDisplayName": "App Display Name value",
+    "appPublisher": "App Publisher value",
+    "appUsageDuration": 0,
+    "appCrashCount": 13,
+    "meanTimeToFailureInMinutes": 10
+  }
+}
+```

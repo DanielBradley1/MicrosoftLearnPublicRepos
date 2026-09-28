@@ -1,0 +1,117 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/organizationalbranding?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2025-12-01 -->
+
+# organizationalBranding resource type
+
+Namespace: microsoft.graph
+
+Contains details about the organization's default branding. Inherits from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0).
+
+Organizations can customize their Microsoft Entra sign-in pages which appear when users sign in to their organization's tenant-specific apps, or when Microsoft Entra ID identifies the user's tenant from their username. A developer can also read the company's branding information and customize their app experience to tailor it specifically for the signed-in user using their company's branding.
+
+You can't change your original configuration's language. However, companies can add different branding based on locale. For language-specific branding, see the [organizationalBrandingLocalization](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0) object.
+
+Note
+
+Adding custom branding requires you to have either Microsoft Entra ID P1 or P2, Premium 2, or Office 365 \(for Office 365 apps\) licenses. For more information about licensing and editions, see [Sign up for Microsoft Entra ID P1 or P2](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-get-started-premium).
+
+Microsoft Entra ID P1 or P2 editions are available for customers in China using the worldwide instance of Microsoft Entra ID. Microsoft Entra ID P1 or P2 editions aren't currently supported in the Azure service operated by 21Vianet in China. For more information, talk to us using the [Microsoft Entra Forum](https://feedback.azure.com/forums/169401-azure-active-directory/).
+
+## Methods
+
+| Method | Return type | Description |
+| :--- | :--- | :--- |
+| [Get](https://learn.microsoft.com/en-us/graph/api/organizationalbranding-get?view=graph-rest-1.0) | [organizationalBranding](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbranding?view=graph-rest-1.0) | Read the properties and relationships of an [organizationalBranding](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbranding?view=graph-rest-1.0) object. |
+| [Update](https://learn.microsoft.com/en-us/graph/api/organizationalbranding-update?view=graph-rest-1.0) | None | Update the properties of an [organizationalBranding](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbranding?view=graph-rest-1.0) object. |
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| backgroundColor | String | Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is `#FFFFFF`. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| backgroundImage | Stream | Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). Requires `$select` to retrieve. |
+| backgroundImageRelativeUrl | String | A relative URL for the **backgroundImage** property that is combined with a CDN base URL from the **cdnList** to provide the version served by a CDN. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| bannerLogo | Stream | A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 245 x 36 pixels. We recommend using a transparent image with no padding around the logo. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). Requires `$select` to retrieve. |
+| bannerLogoRelativeUrl | String | A relative url for the **bannerLogo** property that is combined with a CDN base URL from the **cdnList** to provide the read-only version served by a CDN. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| cdnList | String collection | A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| contentCustomization | [contentCustomization](https://learn.microsoft.com/en-us/graph/api/resources/contentcustomization?view=graph-rest-1.0) | Represents the content options to be customized throughout the authentication flow for a tenant.  <br>  <br>**NOTE:** Supported by Microsoft Entra External ID in external tenants only. |
+| customAccountResetCredentialsUrl | String | A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customCannotAccessYourAccountText | String | A string to replace the default "Can't access your account?" self-service password reset \(SSPR\) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customCannotAccessYourAccountUrl | String | A custom URL to replace the default URL of the self-service password reset \(SSPR\) "Can't access your account?" hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.  <br>  <br>**DO NOT USE.** Use **customAccountResetCredentialsUrl** instead. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customCSS | Stream | CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25KB. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customCSSRelativeUrl | String | A relative URL for the **customCSS** property that is combined with a CDN base URL from the **cdnList** to provide the version served by a CDN. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customForgotMyPasswordText | String | A string to replace the default "Forgot my password" hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customPrivacyAndCookiesText | String | A string to replace the default "Privacy and Cookies" hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customPrivacyAndCookiesUrl | String | A custom URL to replace the default URL of the "Privacy and Cookies" hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customResetItNowText | String | A string to replace the default "reset it now" hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.  <br>  <br>**DO NOT USE:** Customization of the "reset it now" hyperlink text is currently not supported. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customTermsOfUseText | String | A string to replace the the default "Terms of Use" hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| customTermsOfUseUrl | String | A custom URL to replace the default URL of the "Terms of Use" hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| favicon | Stream | A custom icon \(favicon\) to replace a default Microsoft product favicon on a Microsoft Entra tenant. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| faviconRelativeUrl | String | A relative url for the favicon above that is combined with a CDN base URL from the **cdnList** to provide the version served by a CDN. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| headerBackgroundColor | String | The RGB color to apply to customize the color of the header. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| headerLogo | Stream | A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 245 x 36 pixels. We recommend using a transparent image with no padding around the logo. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| headerLogoRelativeUrl | String | A relative URL for the **headerLogo** property that is combined with a CDN base URL from the **cdnList** to provide the read-only version served by a CDN. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| id | String | An identifier that represents the locale specified using culture names. Culture names follow the RFC 1766 standard in the format "languagecode2-country/regioncode2", where "languagecode2" is a lowercase two-letter code derived from ISO 639-1 and "country/regioncode2" is an uppercase two-letter code derived from ISO 3166. For example, U.S. English is `en-US`. The **id** for the default /branding is always the String types `0` or `default`. Read-only.  <br>  <br>**NOTE:** Multiple branding for a single locale are currently not supported. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| loginPageLayoutConfiguration | [loginPageLayoutConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/loginpagelayoutconfiguration?view=graph-rest-1.0) | Represents the layout configuration to be displayed on the login page for a tenant. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| loginPageTextVisibilitySettings | [loginPageTextVisibilitySettings](https://learn.microsoft.com/en-us/graph/api/resources/loginpagetextvisibilitysettings?view=graph-rest-1.0) | Represents the various texts that can be hidden on the login page for a tenant. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| signInPageText | String | Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| squareLogo | Stream | A square version of your company logo that appears in Windows 10 out-of-box experiences \(OOBE\) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). Requires `$select` to retrieve. |
+| squareLogoRelativeUrl | String | A relative url for the **squareLogo** property that is combined with a CDN base URL from the **cdnList** to provide the version served by a CDN. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| squareLogoDark | Stream | A square dark version of your company logo that appears in Windows 10 out-of-box experiences \(OOBE\) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| squareLogoDarkRelativeUrl | String | A relative URL for the **squareLogoDark** property that is combined with a CDN base URL from the **cdnList** to provide the version served by a CDN. Read-only. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+| usernameHintText | String | String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters. Inherited from [organizationalBrandingProperties](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandingproperties?view=graph-rest-1.0). |
+
+## Relationships
+
+| Relationship | Type | Description |
+| :--- | :--- | :--- |
+| localizations | [organizationalBrandingLocalization](https://learn.microsoft.com/en-us/graph/api/resources/organizationalbrandinglocalization?view=graph-rest-1.0) collection | Add different branding based on a locale. |
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.organizationalBranding",
+  "id": "String (identifier)",
+  "backgroundColor": "String",
+  "backgroundImage": "Stream",
+  "backgroundImageRelativeUrl": "String",
+  "bannerLogo": "Stream",
+  "bannerLogoRelativeUrl": "String",
+  "cdnList": [
+    "String"
+  ],
+  "contentCustomization": {
+    "@odata.type": "microsoft.graph.contentCustomization"
+  }, 
+  "signInPageText": "String",
+  "squareLogo": "Stream",
+  "squareLogoRelativeUrl": "String",
+  "squareLogoDark": "Stream",
+  "squareLogoDarkRelativeUrl": "String",
+  "usernameHintText": "String",
+  "customAccountResetCredentialsUrl": "String",
+  "customCannotAccessYourAccountText": "String",
+  "customCannotAccessYourAccountUrl": "String",
+  "customCSS": "Stream",
+  "customCSSRelativeUrl": "String",
+  "customForgotMyPasswordText": "String",
+  "customPrivacyAndCookiesText": "String",
+  "customPrivacyAndCookiesUrl": "String",
+  "customResetItNowText": "String",
+  "customTermsOfUseText": "String",
+  "customTermsOfUseUrl": "String",
+  "favicon": "Stream",
+  "faviconRelativeUrl": "String",
+  "headerBackgroundColor": "String",
+  "headerLogo": "Stream",
+  "headerLogoRelativeUrl": "String",
+  "loginPageLayoutConfiguration": {
+    "@odata.type": "microsoft.graph.loginPageLayoutConfiguration"
+  },
+  "loginPageTextVisibilitySettings": {
+    "@odata.type": "microsoft.graph.loginPageTextVisibilitySettings"
+  }}
+```

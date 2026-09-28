@@ -1,0 +1,63 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-threatsubmission?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2024-05-29 -->
+
+# threatSubmission resource type
+
+Namespace: microsoft.graph.security
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Represents a report of an item to Microsoft Defender for Office 365 for analysis, to confirm whether the item is malicious or safe. Items can include an email, email file attachment, or URL. Users can submit a report at the Microsoft 365 Defender portal \([https://security.microsoft.com](https://security.microsoft.com)\).
+
+This resource can represent a threat - a false negative case of an email that can be malware, phish, or spam, or a malicious file attachment to an email, or a malicious URL. Or it can represent a false positive case where an email, attachment, or URL is legitimate but blocked by Microsoft Defender for Office 365, for example, an email that's not junk, or an email file attachment or URL that is safe. False negative and false positive cases could have been respectively allowed or blocked by tenant policies overriding Microsoft Defender for Office 365.
+
+This resource is an abstract type. It's the base type for [emailThreatSubmission](https://learn.microsoft.com/en-us/graph/api/resources/security-emailthreatsubmission?view=graph-rest-beta), [fileThreatSubmission](https://learn.microsoft.com/en-us/graph/api/resources/security-filethreatsubmission?view=graph-rest-beta), and [urlThreatSubmission](https://learn.microsoft.com/en-us/graph/api/resources/security-urlthreatsubmission?view=graph-rest-beta).
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| adminReview | [security.submissionAdminReview](https://learn.microsoft.com/en-us/graph/api/resources/security-submissionadminreview?view=graph-rest-beta) | Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as. |
+| category | submissionCategory | Specifies the category of the submission. Supports `$filter = category eq 'value'`. The possible values are: `notJunk`, `spam`, `phishing`, `malware`, and `unkownFutureValue`. |
+| clientSource | submissionClientSource | Specifies the source of the submission. The possible values are: `microsoft`, `other`, and `unkownFutureValue`. |
+| contentType | submissionContentType | Specifies the type of content being submitted. The possible values are: `email`, `url`, `file`, `app`, and `unkownFutureValue`. |
+| createdBy | [security.submissionUserIdentity](https://learn.microsoft.com/en-us/graph/api/resources/security-submissionuseridentity?view=graph-rest-beta) | Specifies who submitted the email as a threat. Supports `$filter = createdBy/email eq 'value'`. |
+| createdDateTime | DateTimeOffset | Specifies when the threat submission was created. Supports `$filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z`. |
+| id | String | Specifies the ID of threat submission. |
+| result | [security.submissionResult](https://learn.microsoft.com/en-us/graph/api/resources/security-submissionresult?view=graph-rest-beta) | Specifies the result of the analysis performed by Microsoft. |
+| source | submissionSource | Specifies the role of the submitter. Supports `$filter = source eq 'value'`. The possible values are: `administrator`, `user`, and `unkownFutureValue`. |
+| status | longRunningOperationStatus | Indicates whether the threat submission has been analyzed by Microsoft. Supports `$filter = status eq 'value'`. The possible values are: `notStarted`, `running`, `succeeded`, `failed`, `skipped`, and `unkownFutureValue`. |
+| tenantId | String | Indicates the tenant id of the submitter. Not required when created using a `POST` operation. It's extracted from the token of the post API call. |
+
+## Relationships
+
+None.
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.security.threatSubmission",
+  "id": "String (identifier)",
+  "tenantId": "String",
+  "createdDateTime": "String (timestamp)",
+  "contentType": "String",
+  "category": "String",
+  "source": "String",
+  "createdBy": {
+    "@odata.type": "microsoft.graph.security.submissionUserIdentity"
+  },
+  "status": "String",
+  "result": {
+    "@odata.type": "microsoft.graph.security.submissionResult"
+  },
+  "adminReview": {
+    "@odata.type": "microsoft.graph.security.submissionAdminReview"
+  },
+  "clientSource": "String"
+}
+```

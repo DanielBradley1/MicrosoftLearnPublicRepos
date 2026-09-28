@@ -1,0 +1,67 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/onpremisesdirectorysynchronizationfeature?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-07-02 -->
+
+# onPremisesDirectorySynchronizationFeature resource type
+
+Namespace: microsoft.graph
+
+Consists of directory synchronization features that can be enabled or disabled. The naming pattern used is `<featureName>Enabled`. `true` indicates that the feature is enabled and `false` indicates that the feature disabled.
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled | Boolean | When `true`, allows on-premises directory sync clients to update the `onPremisesObjectIdentifier` property. |
+| blockCloudObjectTakeoverThroughHardMatchEnabled | Boolean | Used to block cloud object takeover via source anchor hard match if enabled. |
+| blockSoftMatchEnabled | Boolean | Use to block soft match for all objects if enabled for the tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed. |
+| bypassDirSyncOverridesEnabled | Boolean | When `true`, persists the values of *Mobile* and *OtherMobile* in on-premises AD during sync cycles instead of values of *MobilePhone* or *AlternateMobilePhones* in Microsoft Entra ID. |
+| cloudPasswordPolicyForPasswordSyncedUsersEnabled | Boolean | Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises. |
+| concurrentCredentialUpdateEnabled | Boolean | Used to enable concurrent user credentials update in OrgId. |
+| concurrentOrgIdProvisioningEnabled | Boolean | Used to enable concurrent user creation in OrgId. |
+| deviceWritebackEnabled | Boolean | Used to indicate that device write-back is enabled. |
+| directoryExtensionsEnabled | Boolean | Used to indicate that [directory extensions](https://learn.microsoft.com/en-us/graph/api/resources/extensionProperty) are being synced from on-premises AD to Microsoft Entra ID. |
+| fopeConflictResolutionEnabled | Boolean | Used to indicate that for a Microsoft Forefront Online Protection for Exchange \(FOPE\) migrated tenant, the conflicting proxy address should be migrated over. |
+| groupWriteBackEnabled | Boolean | Used to enable object-level group writeback feature for additional group types. |
+| passwordSyncEnabled | Boolean | Used to indicate on-premise password synchronization is enabled. |
+| passwordWritebackEnabled | Boolean | Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled. **This property isn't in use and updating it isn't supported.** |
+| quarantineUponProxyAddressesConflictEnabled | Boolean | Used to indicate that we should quarantine objects with conflicting proxy address. |
+| quarantineUponUpnConflictEnabled | Boolean | Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName. |
+| softMatchOnUpnEnabled | Boolean | Used to indicate that we should soft match objects based on userPrincipalName. |
+| synchronizeUpnForManagedUsersEnabled | Boolean | Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses. |
+| unifiedGroupWritebackEnabled | Boolean | Used to indicate that Microsoft 365 Group write-back is enabled. |
+| userForcePasswordChangeOnLogonEnabled | Boolean | Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials. |
+| userWritebackEnabled | Boolean | Used to indicate that user writeback is enabled. |
+
+## Relationships
+
+None.
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.onPremisesDirectorySynchronizationFeature",
+  "passwordSyncEnabled": "Boolean",
+  "passwordWritebackEnabled": "Boolean",
+  "directoryExtensionsEnabled": "Boolean",
+  "quarantineUponUpnConflictEnabled": "Boolean",
+  "quarantineUponProxyAddressesConflictEnabled": "Boolean",
+  "softMatchOnUpnEnabled": "Boolean",
+  "cloudPasswordPolicyForPasswordSyncedUsersEnabled": "Boolean",
+  "fopeConflictResolutionEnabled": "Boolean",
+  "unifiedGroupWritebackEnabled": "Boolean",
+  "userWritebackEnabled": "Boolean",
+  "deviceWritebackEnabled": "Boolean",
+  "synchronizeUpnForManagedUsersEnabled": "Boolean",
+  "userForcePasswordChangeOnLogonEnabled": "Boolean",
+  "concurrentOrgIdProvisioningEnabled": "Boolean",
+  "concurrentCredentialUpdateEnabled": "Boolean",
+  "groupWriteBackEnabled": "Boolean",
+  "blockSoftMatchEnabled": "Boolean",
+  "blockCloudObjectTakeoverThroughHardMatchEnabled": "Boolean",
+  "bypassDirSyncOverridesEnabled": "Boolean",
+  "allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled": "Boolean"
+}
+```

@@ -1,0 +1,80 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-deleteuserfromsharedappledevice?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2025-10-11 -->
+
+# deleteUserFromSharedAppleDevice action
+
+Namespace: microsoft.graph
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Delete user from shared Apple device
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementManagedDevices.PrivilegedOperations.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementManagedDevices.PrivilegedOperations.All |
+
+## HTTP Request
+
+```http
+POST /deviceManagement/managedDevices/{managedDeviceId}/deleteUserFromSharedAppleDevice
+POST /deviceManagement/detectedApps/{detectedAppId}/managedDevices/{managedDeviceId}/deleteUserFromSharedAppleDevice
+POST /deviceManagement/detectedApps/{detectedAppId}/managedDevices/{managedDeviceId}/users/{userId}/managedDevices/{managedDeviceId}/deleteUserFromSharedAppleDevice
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+In the request body, supply JSON representation of the parameters.
+
+The following table shows the parameters that can be used with this action.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| userPrincipalName | String |  |
+
+## Response
+
+If successful, this action returns a `204 No Content` response code.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+POST https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/{managedDeviceId}/deleteUserFromSharedAppleDevice
+
+Content-type: application/json
+Content-length: 56
+
+{
+  "userPrincipalName": "User Principal Name value"
+}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 204 No Content
+```

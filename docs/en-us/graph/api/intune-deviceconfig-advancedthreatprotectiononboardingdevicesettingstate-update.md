@@ -1,0 +1,122 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-deviceconfig-advancedthreatprotectiononboardingdevicesettingstate-update?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# Update advancedThreatProtectionOnboardingDeviceSettingState
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Update the properties of a [advancedThreatProtectionOnboardingDeviceSettingState](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-advancedthreatprotectiononboardingdevicesettingstate?view=graph-rest-beta) object.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementConfiguration.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementConfiguration.ReadWrite.All |
+
+## HTTP Request
+
+```http
+PATCH /deviceManagement/advancedThreatProtectionOnboardingStateSummary/advancedThreatProtectionOnboardingDeviceSettingStates/{advancedThreatProtectionOnboardingDeviceSettingStateId}
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+In the request body, supply a JSON representation for the [advancedThreatProtectionOnboardingDeviceSettingState](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-advancedthreatprotectiononboardingdevicesettingstate?view=graph-rest-beta) object.
+
+The following table shows the properties that are required when you create the [advancedThreatProtectionOnboardingDeviceSettingState](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-advancedthreatprotectiononboardingdevicesettingstate?view=graph-rest-beta).
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | Key of the entity |
+| platformType | [deviceType](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-devicetype?view=graph-rest-beta) | Device platform type. Possible values are: `desktop`, `windowsRT`, `winMO6`, `nokia`, `windowsPhone`, `mac`, `winCE`, `winEmbedded`, `iPhone`, `iPad`, `iPod`, `android`, `iSocConsumer`, `unix`, `macMDM`, `holoLens`, `surfaceHub`, `androidForWork`, `androidEnterprise`, `windows10x`, `androidnGMS`, `chromeOS`, `linux`, `visionOS`, `tvOS`, `blackberry`, `palm`, `unknown`, `cloudPC`. |
+| setting | String | The setting class name and property name. |
+| settingName | String | The Setting Name that is being reported |
+| deviceId | String | The Device Id that is being reported |
+| deviceName | String | The Device Name that is being reported |
+| userId | String | The user Id that is being reported |
+| userEmail | String | The User email address that is being reported |
+| userName | String | The User Name that is being reported |
+| userPrincipalName | String | The User PrincipalName that is being reported |
+| deviceModel | String | The device model that is being reported |
+| state | [complianceStatus](https://learn.microsoft.com/en-us/graph/api/resources/intune-shared-compliancestatus?view=graph-rest-beta) | The compliance state of the setting. Possible values are: `unknown`, `notApplicable`, `compliant`, `remediated`, `nonCompliant`, `error`, `conflict`, `notAssigned`. |
+| complianceGracePeriodExpirationDateTime | DateTimeOffset | The DateTime when device compliance grace period expires |
+
+## Response
+
+If successful, this method returns a `200 OK` response code and an updated [advancedThreatProtectionOnboardingDeviceSettingState](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-advancedthreatprotectiononboardingdevicesettingstate?view=graph-rest-beta) object in the response body.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+PATCH https://graph.microsoft.com/beta/deviceManagement/advancedThreatProtectionOnboardingStateSummary/advancedThreatProtectionOnboardingDeviceSettingStates/{advancedThreatProtectionOnboardingDeviceSettingStateId}
+Content-type: application/json
+Content-length: 573
+
+{
+  "@odata.type": "#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState",
+  "platformType": "windowsRT",
+  "setting": "Setting value",
+  "settingName": "Setting Name value",
+  "deviceId": "Device Id value",
+  "deviceName": "Device Name value",
+  "userId": "User Id value",
+  "userEmail": "User Email value",
+  "userName": "User Name value",
+  "userPrincipalName": "User Principal Name value",
+  "deviceModel": "Device Model value",
+  "state": "notApplicable",
+  "complianceGracePeriodExpirationDateTime": "2016-12-31T23:56:44.951111-08:00"
+}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 622
+
+{
+  "@odata.type": "#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState",
+  "id": "63593fc6-3fc6-6359-c63f-5963c63f5963",
+  "platformType": "windowsRT",
+  "setting": "Setting value",
+  "settingName": "Setting Name value",
+  "deviceId": "Device Id value",
+  "deviceName": "Device Name value",
+  "userId": "User Id value",
+  "userEmail": "User Email value",
+  "userName": "User Name value",
+  "userPrincipalName": "User Principal Name value",
+  "deviceModel": "Device Model value",
+  "state": "notApplicable",
+  "complianceGracePeriodExpirationDateTime": "2016-12-31T23:56:44.951111-08:00"
+}
+```

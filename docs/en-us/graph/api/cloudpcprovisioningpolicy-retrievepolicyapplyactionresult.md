@@ -1,0 +1,192 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/cloudpcprovisioningpolicy-retrievepolicyapplyactionresult?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-02-11 -->
+
+# cloudpcprovisioningpolicy: retrievePolicyApplyActionResult
+
+Namespace: microsoft.graph
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get the result of the latest apply operation of a provision policy. `Frontline shared` only. Administrators only.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ❌ | ❌ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | CloudPC.ReadWrite.All | Not available. |
+| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | CloudPC.ReadWrite.All | Not available. |
+
+## HTTP request
+
+```http
+GET /deviceManagement/virtualEndpoint/provisioningPolicies/{id}/retrievePolicyApplyActionResult
+```
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Content-Type | application/json. Required. |
+
+## Request body
+
+Don't supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a status, startDateTime, and finishDateTime in the response body.
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| status | string | The status of the applied operation. Possible values are, `succeeded`, `pending`, `failed` and `unknownFutureValue`. |
+| startDateTime | DateTime | The date and time when the operation was applied. |
+| finishDateTime | DateTime | The date and time when the operation finished. |
+
+## Examples
+
+### Request
+
+The following example shows a request.
+
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [Python](#tabpanel_1_python)
+
+```http
+GET https://graph.microsoft.com/beta/deviceManagement/virtualEndpoint/provisioningPolicies/b0c2d35f-3385-46c8-a6f5-6c3dfad7708b/retrievePolicyApplyActionResult
+```
+
+```csharp
+
+// Code snippets are only available for the latest version. Current version is 5.x
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
+var result = await graphClient.DeviceManagement.VirtualEndpoint.ProvisioningPolicies["{cloudPcProvisioningPolicy-id}"].RetrievePolicyApplyActionResult.GetAsync();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```go
+
+
+// Code snippets are only available for the latest major version. Current major version is $v0.*
+
+// Dependencies
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
+	  //other-imports
+)
+
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
+retrievePolicyApplyActionResult, err := graphClient.DeviceManagement().VirtualEndpoint().ProvisioningPolicies().ByCloudPcProvisioningPolicyId("cloudPcProvisioningPolicy-id").RetrievePolicyApplyActionResult().Get(context.Background(), nil)
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```java
+
+// Code snippets are only available for the latest version. Current version is 6.x
+
+GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
+
+var result = graphClient.deviceManagement().virtualEndpoint().provisioningPolicies().byCloudPcProvisioningPolicyId("{cloudPcProvisioningPolicy-id}").retrievePolicyApplyActionResult().get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+let cloudPcPolicyApplyActionResult = await client.api('/deviceManagement/virtualEndpoint/provisioningPolicies/b0c2d35f-3385-46c8-a6f5-6c3dfad7708b/retrievePolicyApplyActionResult')
+	.version('beta')
+	.get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```php
+
+<?php
+use Microsoft\Graph\Beta\GraphServiceClient;
+
+
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
+
+
+$result = $graphServiceClient->deviceManagement()->virtualEndpoint()->provisioningPolicies()->byCloudPcProvisioningPolicyId('cloudPcProvisioningPolicy-id')->retrievePolicyApplyActionResult()->get()->wait();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```python
+
+# Code snippets are only available for the latest version. Current version is 1.x
+from msgraph_beta import GraphServiceClient
+# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
+
+result = await graph_client.device_management.virtual_endpoint.provisioning_policies.by_cloud_pc_provisioning_policy_id('cloudPcProvisioningPolicy-id').retrieve_policy_apply_action_result.get()
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+The following example shows the response.
+
+```http
+HTTP/1.1 200 OK
+
+{
+    "@odata.type": "https://graph.microsoft.com/beta/$metadata#cloudPcPolicyApplyActionResult",
+    "status": "succeeded",
+    "startDateTime": "2024-10-10T00:00:00",
+    "finishDateTime": "2024-10-11T00:00:00"
+}
+```

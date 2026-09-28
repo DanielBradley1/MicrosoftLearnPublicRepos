@@ -1,0 +1,113 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-deviceconfig-carttoclassassociation-create?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# Create cartToClassAssociation
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Create a new [cartToClassAssociation](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-carttoclassassociation?view=graph-rest-beta) object.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementServiceConfig.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementServiceConfig.ReadWrite.All |
+
+## HTTP Request
+
+```http
+POST /deviceManagement/cartToClassAssociations
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+In the request body, supply a JSON representation for the cartToClassAssociation object.
+
+The following table shows the properties that are required when you create the cartToClassAssociation.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | Key of the entity. |
+| createdDateTime | DateTimeOffset | DateTime the object was created. |
+| lastModifiedDateTime | DateTimeOffset | DateTime the object was last modified. |
+| version | Int32 | Version of the CartToClassAssociation. |
+| displayName | String | Admin provided name of the device configuration. |
+| description | String | Admin provided description of the CartToClassAssociation. |
+| deviceCartIds | String collection | Identifiers of device carts to be associated with classes. |
+| classroomIds | String collection | Identifiers of classrooms to be associated with device carts. |
+
+## Response
+
+If successful, this method returns a `201 Created` response code and a [cartToClassAssociation](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-carttoclassassociation?view=graph-rest-beta) object in the response body.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+POST https://graph.microsoft.com/beta/deviceManagement/cartToClassAssociations
+Content-type: application/json
+Content-length: 271
+
+{
+  "@odata.type": "#microsoft.graph.cartToClassAssociation",
+  "version": 7,
+  "displayName": "Display Name value",
+  "description": "Description value",
+  "deviceCartIds": [
+    "Device Cart Ids value"
+  ],
+  "classroomIds": [
+    "Classroom Ids value"
+  ]
+}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+Content-Length: 443
+
+{
+  "@odata.type": "#microsoft.graph.cartToClassAssociation",
+  "id": "9bdc58dd-58dd-9bdc-dd58-dc9bdd58dc9b",
+  "createdDateTime": "2017-01-01T00:02:43.5775965-08:00",
+  "lastModifiedDateTime": "2017-01-01T00:00:35.1329464-08:00",
+  "version": 7,
+  "displayName": "Display Name value",
+  "description": "Description value",
+  "deviceCartIds": [
+    "Device Cart Ids value"
+  ],
+  "classroomIds": [
+    "Classroom Ids value"
+  ]
+}
+```

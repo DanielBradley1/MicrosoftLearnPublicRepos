@@ -1,0 +1,19 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-internetsitesecuritylevel?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# internetSiteSecurityLevel enum type
+
+Namespace: microsoft.graph
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Possible values for internet site security level.
+
+## Members
+
+| Member | Value | Description |
+| :--- | :--- | :--- |
+| userDefined | 0 | User Defined, default value, no intent. |
+| medium | 1 | Medium. |
+| mediumHigh | 2 | Medium-High. |
+| high | 3 | High. |

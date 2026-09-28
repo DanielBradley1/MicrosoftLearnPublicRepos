@@ -1,0 +1,136 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-wip-intunebrandingprofile-list?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-03-14 -->
+
+# List intuneBrandingProfiles
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+List properties and relationships of the [intuneBrandingProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-wip-intunebrandingprofile?view=graph-rest-beta) objects.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementServiceConfig.Read.All, DeviceManagementServiceConfig.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementServiceConfig.Read.All, DeviceManagementServiceConfig.ReadWrite.All |
+
+## HTTP Request
+
+```http
+GET /deviceManagement/intuneBrandingProfiles
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [intuneBrandingProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-wip-intunebrandingprofile?view=graph-rest-beta) objects in the response body.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+GET https://graph.microsoft.com/beta/deviceManagement/intuneBrandingProfiles
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 2450
+
+{
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.intuneBrandingProfile",
+      "id": "fcd6136c-136c-fcd6-6c13-d6fc6c13d6fc",
+      "profileName": "Profile Name value",
+      "profileDescription": "Profile Description value",
+      "isDefaultProfile": true,
+      "createdDateTime": "2017-01-01T00:02:43.5775965-08:00",
+      "lastModifiedDateTime": "2017-01-01T00:00:35.1329464-08:00",
+      "displayName": "Display Name value",
+      "themeColor": {
+        "@odata.type": "microsoft.graph.rgbColor",
+        "r": 1,
+        "g": 1,
+        "b": 1
+      },
+      "showLogo": true,
+      "showDisplayNameNextToLogo": true,
+      "themeColorLogo": {
+        "@odata.type": "microsoft.graph.mimeContent",
+        "type": "Type value",
+        "value": "dmFsdWU="
+      },
+      "lightBackgroundLogo": {
+        "@odata.type": "microsoft.graph.mimeContent",
+        "type": "Type value",
+        "value": "dmFsdWU="
+      },
+      "landingPageCustomizedImage": {
+        "@odata.type": "microsoft.graph.mimeContent",
+        "type": "Type value",
+        "value": "dmFsdWU="
+      },
+      "contactITName": "Contact ITName value",
+      "contactITPhoneNumber": "Contact ITPhone Number value",
+      "contactITEmailAddress": "Contact ITEmail Address value",
+      "contactITNotes": "Contact ITNotes value",
+      "onlineSupportSiteUrl": "https://example.com/onlineSupportSiteUrl/",
+      "onlineSupportSiteName": "Online Support Site Name value",
+      "privacyUrl": "https://example.com/privacyUrl/",
+      "customPrivacyMessage": "Custom Privacy Message value",
+      "customCanSeePrivacyMessage": "Custom Can See Privacy Message value",
+      "customCantSeePrivacyMessage": "Custom Cant See Privacy Message value",
+      "isRemoveDeviceDisabled": true,
+      "isFactoryResetDisabled": true,
+      "companyPortalBlockedActions": [
+        {
+          "@odata.type": "microsoft.graph.companyPortalBlockedAction",
+          "platform": "androidForWork",
+          "ownerType": "company",
+          "action": "remove"
+        }
+      ],
+      "disableDeviceCategorySelection": true,
+      "showAzureADEnterpriseApps": true,
+      "showOfficeWebApps": true,
+      "showConfigurationManagerApps": true,
+      "enrollmentAvailability": "availableWithoutPrompts",
+      "disableClientTelemetry": true,
+      "roleScopeTagIds": [
+        "Role Scope Tag Ids value"
+      ]
+    }
+  ]
+}
+```

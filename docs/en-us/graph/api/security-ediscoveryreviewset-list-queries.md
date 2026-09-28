@@ -1,0 +1,231 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-02-26 -->
+
+# List queries
+
+Namespace: microsoft.graph.security
+
+Get the list of [queries](https://learn.microsoft.com/en-us/graph/api/resources/security-ediscoveryreviewsetquery?view=graph-rest-1.0) associated with an eDiscovery review set.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ❌ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | eDiscovery.Read.All | eDiscovery.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | eDiscovery.Read.All | eDiscovery.ReadWrite.All |
+
+Important
+
+For delegated access using work or school accounts, the signed-in user must be assigned a supported [Microsoft Purview role](https://learn.microsoft.com/en-us/purview/edisc-permissions) through one of the following options:
+
+- **eDiscovery Manager**. Allows members to view and access eDiscovery cases they create, including searching and accessing case data. However, eDiscovery Managers can only access and manage the cases they create. **This is the least privileged option for managing their own cases**.
+- **eDiscovery Administrator**. Provides all the permissions of eDiscovery Manager, plus the ability to view and access all eDiscovery cases in the organization.
+
+Additional roles that provide read access to eDiscovery cases:
+
+- **Compliance Administrator**. Includes Case Management and Compliance Search permissions.
+- **Organization Management**. Includes Case Management and Compliance Search permissions.
+- **Reviewer**. Provides read-only access to review sets within eDiscovery cases where the user is a member.
+
+The eDiscovery Manager and eDiscovery Administrator roles are part of the Microsoft Purview role groups and provide access to eDiscovery features through [role-based access control \(RBAC\)](https://learn.microsoft.com/en-us/purview/edisc-permissions#rbac-roles-related-to-ediscovery).
+
+For more information about eDiscovery permissions and roles, see [Assign permissions in eDiscovery](https://learn.microsoft.com/en-us/purview/edisc-permissions).
+
+## HTTP request
+
+```http
+GET /security/cases/ediscoveryCases/{ediscoveryCaseId}/reviewSets/{ediscoveryReviewSetId}/queries
+```
+
+## Optional query parameters
+
+This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+
+## Request body
+
+Don't supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [microsoft.graph.security.ediscoveryReviewSetQuery](https://learn.microsoft.com/en-us/graph/api/resources/security-ediscoveryreviewsetquery?view=graph-rest-1.0) objects in the response body.
+
+## Examples
+
+### Request
+
+The following example shows a request.
+
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [PowerShell](#tabpanel_1_powershell)
+- [Python](#tabpanel_1_python)
+
+```msgraph
+GET https://graph.microsoft.com/v1.0/security/cases/ediscoveryCases/58399dff-cebe-478f-b1af-d3227f1fd645/reviewSets/273f11a1-17aa-419c-981d-ff10d33e420f/queries
+```
+
+```csharp
+
+// Code snippets are only available for the latest version. Current version is 5.x
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
+var result = await graphClient.Security.Cases.EdiscoveryCases["{ediscoveryCase-id}"].ReviewSets["{ediscoveryReviewSet-id}"].Queries.GetAsync();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```go
+
+
+// Code snippets are only available for the latest major version. Current major version is $v1.*
+
+// Dependencies
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
+	  //other-imports
+)
+
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
+queries, err := graphClient.Security().Cases().EdiscoveryCases().ByEdiscoveryCaseId("ediscoveryCase-id").ReviewSets().ByEdiscoveryReviewSetId("ediscoveryReviewSet-id").Queries().Get(context.Background(), nil)
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```java
+
+// Code snippets are only available for the latest version. Current version is 6.x
+
+GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
+
+com.microsoft.graph.models.security.EdiscoveryReviewSetQueryCollectionResponse result = graphClient.security().cases().ediscoveryCases().byEdiscoveryCaseId("{ediscoveryCase-id}").reviewSets().byEdiscoveryReviewSetId("{ediscoveryReviewSet-id}").queries().get();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+let queries = await client.api('/security/cases/ediscoveryCases/58399dff-cebe-478f-b1af-d3227f1fd645/reviewSets/273f11a1-17aa-419c-981d-ff10d33e420f/queries')
+	.get();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```php
+
+<?php
+use Microsoft\Graph\GraphServiceClient;
+
+
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
+
+
+$result = $graphServiceClient->security()->cases()->ediscoveryCases()->byEdiscoveryCaseId('ediscoveryCase-id')->reviewSets()->byEdiscoveryReviewSetId('ediscoveryReviewSet-id')->queries()->get()->wait();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```powershell
+
+Import-Module Microsoft.Graph.Security
+
+Get-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```python
+
+# Code snippets are only available for the latest version. Current version is 1.x
+from msgraph import GraphServiceClient
+# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
+
+result = await graph_client.security.cases.ediscovery_cases.by_ediscovery_case_id('ediscoveryCase-id').review_sets.by_ediscovery_review_set_id('ediscoveryReviewSet-id').queries.get()
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#security/cases/ediscoveryCases('58399dff-cebe-478f-b1af-d3227f1fd645')/reviewSets('273f11a1-17aa-419c-981d-ff10d33e420f')/queries",
+    "value": [
+        {
+            "lastModifiedDateTime": "2022-05-29T20:49:47.9289317Z",
+            "contentQuery": "((((FileClass=\"Email\") AND (InclusiveType=\"InclusiveMinus\" OR InclusiveType=\"Inclusive\")) OR ((FileClass=\"Attachment\") AND (UniqueInEmailSet=\"true\")) OR ((FileClass=\"Document\") AND (MarkAsRepresentative=\"Unique\")) OR ((FileClass=\"Conversation\"))))",
+            "id": "837335b0-1943-444d-a3d1-5522cc21c5a4",
+            "displayName": "[AutoGen] For Review",
+            "createdDateTime": "2022-05-29T20:49:47.9289317Z",
+            "createdBy": {
+                "user": {
+                    "id": "c25c3914-f9f7-43ee-9cba-a25377e0cec6",
+                    "displayName": "MOD Administrator",
+                    "userPrincipalName": "admin@contoso.com"
+                }
+            },
+            "lastModifiedBy": {
+                "user": {
+                    "id": "c25c3914-f9f7-43ee-9cba-a25377e0cec6",
+                    "displayName": "MOD Administrator",
+                    "userPrincipalName": "admin@contoso.com"
+                }
+            }
+        },
+        {
+            "lastModifiedDateTime": "2022-05-29T20:49:48.0539099Z",
+            "contentQuery": "((FileType:gz OR FileType:gzip OR FileType:bz2 OR FileType:zip OR FileType:7z OR FileType:rar OR FileType:vhd OR FileType:mbox OR FileType:pst OR FileType:sfx) OR (Size<\"3072B\" AND (FileType:gif OR FileType:bmp OR FileType:png OR FileType:jpg OR FileType:jpeg OR FileType:tif OR FileType:tiff OR FileType:emf OR FileType:pct OR FileType:pic)))",
+            "id": "977ad4d5-3e5c-4594-8cb6-7d09dbcddf21",
+            "displayName": "[AutoGen] Potentially Immaterial Items",
+            "createdDateTime": "2022-05-29T20:49:48.0539099Z",
+            "createdBy": {
+                "user": {
+                    "id": "c25c3914-f9f7-43ee-9cba-a25377e0cec6",
+                    "displayName": "MOD Administrator",
+                    "userPrincipalName": "admin@contoso.com"
+                }
+            },
+            "lastModifiedBy": {
+                "user": {
+                    "id": "c25c3914-f9f7-43ee-9cba-a25377e0cec6",
+                    "displayName": "MOD Administrator",
+                    "userPrincipalName": "admin@contoso.com"
+                }
+            }
+        }
+    ]
+}
+```

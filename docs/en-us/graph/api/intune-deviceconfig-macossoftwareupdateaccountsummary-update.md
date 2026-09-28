@@ -1,0 +1,116 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-deviceconfig-macossoftwareupdateaccountsummary-update?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# Update macOSSoftwareUpdateAccountSummary
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Update the properties of a [macOSSoftwareUpdateAccountSummary](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-macossoftwareupdateaccountsummary?view=graph-rest-beta) object.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementConfiguration.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementConfiguration.ReadWrite.All |
+
+## HTTP Request
+
+```http
+PATCH /deviceManagement/macOSSoftwareUpdateAccountSummaries/{macOSSoftwareUpdateAccountSummaryId}
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+In the request body, supply a JSON representation for the [macOSSoftwareUpdateAccountSummary](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-macossoftwareupdateaccountsummary?view=graph-rest-beta) object.
+
+The following table shows the properties that are required when you create the [macOSSoftwareUpdateAccountSummary](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-macossoftwareupdateaccountsummary?view=graph-rest-beta).
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | Key of the entity. |
+| displayName | String | The name of the report |
+| deviceId | String | The device ID. |
+| userId | String | The user ID. |
+| deviceName | String | The device name. |
+| userPrincipalName | String | The user principal name |
+| osVersion | String | The OS version. |
+| successfulUpdateCount | Int32 | Number of successful updates on the device. |
+| failedUpdateCount | Int32 | Number of failed updates on the device. |
+| totalUpdateCount | Int32 | Number of total updates on the device. |
+| lastUpdatedDateTime | DateTimeOffset | Last date time the report for this device was updated. |
+
+## Response
+
+If successful, this method returns a `200 OK` response code and an updated [macOSSoftwareUpdateAccountSummary](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-macossoftwareupdateaccountsummary?view=graph-rest-beta) object in the response body.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+PATCH https://graph.microsoft.com/beta/deviceManagement/macOSSoftwareUpdateAccountSummaries/{macOSSoftwareUpdateAccountSummaryId}
+Content-type: application/json
+Content-length: 453
+
+{
+  "@odata.type": "#microsoft.graph.macOSSoftwareUpdateAccountSummary",
+  "displayName": "Display Name value",
+  "deviceId": "Device Id value",
+  "userId": "User Id value",
+  "deviceName": "Device Name value",
+  "userPrincipalName": "User Principal Name value",
+  "osVersion": "Os Version value",
+  "successfulUpdateCount": 5,
+  "failedUpdateCount": 1,
+  "totalUpdateCount": 0,
+  "lastUpdatedDateTime": "2017-01-01T00:00:56.8321556-08:00"
+}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 502
+
+{
+  "@odata.type": "#microsoft.graph.macOSSoftwareUpdateAccountSummary",
+  "id": "64687d05-7d05-6468-057d-6864057d6864",
+  "displayName": "Display Name value",
+  "deviceId": "Device Id value",
+  "userId": "User Id value",
+  "deviceName": "Device Name value",
+  "userPrincipalName": "User Principal Name value",
+  "osVersion": "Os Version value",
+  "successfulUpdateCount": 5,
+  "failedUpdateCount": 1,
+  "totalUpdateCount": 0,
+  "lastUpdatedDateTime": "2017-01-01T00:00:56.8321556-08:00"
+}
+```

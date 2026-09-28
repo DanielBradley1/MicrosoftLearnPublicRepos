@@ -1,0 +1,93 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-onboarding-deviceenrollmentconfiguration-createenrollmentnotificationconfiguration?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-03-14 -->
+
+# createEnrollmentNotificationConfiguration action
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementServiceConfig.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementServiceConfig.ReadWrite.All |
+
+## HTTP Request
+
+```http
+POST /deviceManagement/deviceEnrollmentConfigurations/createEnrollmentNotificationConfiguration
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+In the request body, supply JSON representation of the parameters.
+
+The following table shows the parameters that can be used with this action.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| deviceEnrollmentNotificationConfigurations | [deviceEnrollmentConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/intune-shared-deviceenrollmentconfiguration?view=graph-rest-beta) collection |  |
+
+## Response
+
+If successful, this action returns a `204 No Content` response code.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+POST https://graph.microsoft.com/beta/deviceManagement/deviceEnrollmentConfigurations/createEnrollmentNotificationConfiguration
+
+Content-type: application/json
+Content-length: 586
+
+{
+  "deviceEnrollmentNotificationConfigurations": [
+    {
+      "@odata.type": "#microsoft.graph.deviceEnrollmentConfiguration",
+      "id": "df13d8b9-d8b9-df13-b9d8-13dfb9d813df",
+      "displayName": "Display Name value",
+      "description": "Description value",
+      "priority": 8,
+      "createdDateTime": "2017-01-01T00:02:43.5775965-08:00",
+      "lastModifiedDateTime": "2017-01-01T00:00:35.1329464-08:00",
+      "version": 7,
+      "roleScopeTagIds": [
+        "Role Scope Tag Ids value"
+      ],
+      "deviceEnrollmentConfigurationType": "limit"
+    }
+  ]
+}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 204 No Content
+```

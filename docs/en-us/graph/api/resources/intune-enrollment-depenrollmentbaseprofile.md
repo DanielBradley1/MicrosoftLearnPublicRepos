@@ -1,0 +1,102 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-depenrollmentbaseprofile?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-07-11 -->
+
+# depEnrollmentBaseProfile resource type
+
+Namespace: microsoft.graph
+
+> **Important:** Microsoft supports Intune /beta APIs, but they are subject to more frequent change. Microsoft recommends using version v1.0 when possible. Check an API's availability in version v1.0 using the Version selector.
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+The DepEnrollmentBaseProfile resource represents an Apple Device Enrollment Program \(DEP\) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
+
+Inherits from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta)
+
+## Methods
+
+| Method | Return Type | Description |
+| :--- | :--- | :--- |
+| [List depEnrollmentBaseProfiles](https://learn.microsoft.com/en-us/graph/api/intune-enrollment-depenrollmentbaseprofile-list?view=graph-rest-beta) | [depEnrollmentBaseProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-depenrollmentbaseprofile?view=graph-rest-beta) collection | List properties and relationships of the [depEnrollmentBaseProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-depenrollmentbaseprofile?view=graph-rest-beta) objects. |
+| [Get depEnrollmentBaseProfile](https://learn.microsoft.com/en-us/graph/api/intune-enrollment-depenrollmentbaseprofile-get?view=graph-rest-beta) | [depEnrollmentBaseProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-depenrollmentbaseprofile?view=graph-rest-beta) | Read properties and relationships of the [depEnrollmentBaseProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-depenrollmentbaseprofile?view=graph-rest-beta) object. |
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | The GUID for the object Inherited from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta) |
+| displayName | String | Name of the profile Inherited from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta) |
+| description | String | Description of the profile Inherited from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta) |
+| requiresUserAuthentication | Boolean | Indicates if the profile requires user authentication Inherited from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta) |
+| configurationEndpointUrl | String | Configuration endpoint url to use for Enrollment Inherited from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta) |
+| enableAuthenticationViaCompanyPortal | Boolean | Indicates to authenticate with Apple Setup Assistant instead of Company Portal. Inherited from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta) |
+| requireCompanyPortalOnSetupAssistantEnrolledDevices | Boolean | Indicates that Company Portal is required on setup assistant enrolled devices Inherited from [enrollmentProfile](https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-enrollmentprofile?view=graph-rest-beta) |
+| isDefault | Boolean | Indicates if this is the default profile |
+| supervisedModeEnabled | Boolean | Supervised mode, True to enable, false otherwise. See [https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune](https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune) for additional information. |
+| supportDepartment | String | Support department information |
+| isMandatory | Boolean | Indicates if the profile is mandatory |
+| locationDisabled | Boolean | Indicates if Location service setup pane is disabled |
+| supportPhoneNumber | String | Support phone number |
+| profileRemovalDisabled | Boolean | Indicates if the profile removal option is disabled |
+| restoreBlocked | Boolean | Indicates if Restore setup pane is blocked |
+| appleIdDisabled | Boolean | Indicates if Apple id setup pane is disabled |
+| termsAndConditionsDisabled | Boolean | Indicates if 'Terms and Conditions' setup pane is disabled |
+| touchIdDisabled | Boolean | Indicates if touch id setup pane is disabled |
+| applePayDisabled | Boolean | Indicates if Apple pay setup pane is disabled |
+| siriDisabled | Boolean | Indicates if siri setup pane is disabled |
+| diagnosticsDisabled | Boolean | Indicates if diagnostics setup pane is disabled |
+| displayToneSetupDisabled | Boolean | Indicates if displaytone setup screen is disabled |
+| privacyPaneDisabled | Boolean | Indicates if privacy screen is disabled |
+| screenTimeScreenDisabled | Boolean | Indicates if screen timeout setup is disabled |
+| deviceNameTemplate | String | Sets a literal or name pattern. |
+| configurationWebUrl | Boolean | URL for setup assistant login |
+| enabledSkipKeys | String collection | enabledSkipKeys contains all the enabled skip keys as strings |
+| enrollmentTimeAzureAdGroupIds | Guid collection | EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile |
+| waitForDeviceConfiguredConfirmation | Boolean | Indicates if the device will need to wait for configured confirmation |
+
+## Relationships
+
+None
+
+## JSON Representation
+
+Here is a JSON representation of the resource.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.depEnrollmentBaseProfile",
+  "id": "String (identifier)",
+  "displayName": "String",
+  "description": "String",
+  "requiresUserAuthentication": true,
+  "configurationEndpointUrl": "String",
+  "enableAuthenticationViaCompanyPortal": true,
+  "requireCompanyPortalOnSetupAssistantEnrolledDevices": true,
+  "isDefault": true,
+  "supervisedModeEnabled": true,
+  "supportDepartment": "String",
+  "isMandatory": true,
+  "locationDisabled": true,
+  "supportPhoneNumber": "String",
+  "profileRemovalDisabled": true,
+  "restoreBlocked": true,
+  "appleIdDisabled": true,
+  "termsAndConditionsDisabled": true,
+  "touchIdDisabled": true,
+  "applePayDisabled": true,
+  "siriDisabled": true,
+  "diagnosticsDisabled": true,
+  "displayToneSetupDisabled": true,
+  "privacyPaneDisabled": true,
+  "screenTimeScreenDisabled": true,
+  "deviceNameTemplate": "String",
+  "configurationWebUrl": true,
+  "enabledSkipKeys": [
+    "String"
+  ],
+  "enrollmentTimeAzureAdGroupIds": [
+    "Guid"
+  ],
+  "waitForDeviceConfiguredConfirmation": true
+}
+```

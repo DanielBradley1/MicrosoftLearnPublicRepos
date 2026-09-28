@@ -1,0 +1,54 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/domaindnssrvrecord?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2024-05-15 -->
+
+# domainDnsSrvRecord resource type
+
+Namespace: microsoft.graph
+
+Represents a SRV record added to the DNS zone file of a particular domain in the tenant. Inherited from [DomainDnsRecord](https://learn.microsoft.com/en-us/graph/api/resources/domaindnsrecord?view=graph-rest-1.0) entity.
+
+## Methods
+
+Direct queries to this resource aren't supported. See the [domain](https://learn.microsoft.com/en-us/graph/api/resources/domain?view=graph-rest-1.0) article for information on how to query for domain service records.
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | Unique identifier assigned to this entity. Not nullable, Read-only. |
+| isOptional | Boolean | If false, the SRV record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain. |
+| label | String | Value used when configuring the *name* property of the SRV record at the DNS host. |
+| nameTarget | String | Value to use when configuring the *Target* property of the SRV record at the DNS host. |
+| port | Int32 | Value to use when configuring the *port* property of the SRV record at the DNS host. |
+| priority | Int32 | Value to use when configuring the *priority* property of the SRV record at the DNS host. |
+| protocol | String | Value to use when configuring the *protocol* property of the SRV record at the DNS host. |
+| recordType | String | Type of DNS record. The value is always *Srv*. Key |
+| service | String | Value to use when configuring the *service* property of the SRV record at the DNS host. |
+| supportedService | String | Microsoft Online Service or feature that has a dependency on this SRV record. Can be one of the following values: **null**, *Email*, *Sharepoint*, *EmailInternalRelayOnly*, *OfficeCommunicationsOnline*, *SharePointDefaultDomain*, *FullRedelegation*, *SharePointPublic*, *OrgIdAuthentication*, *Yammer*, *Intune* |
+| ttl | Int32 | Value to use when configuring the *time-to-live \(ttl\)* property of the SRV record at the DNS host. Not nullable |
+| weight | Int32 | Value to use when configuring the *weight* property of the SRV record at the DNS host. |
+
+## Relationships
+
+None
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "id": "String (identifier)",
+  "isOptional": true,
+  "label": "String",
+  "nameTarget": "String",
+  "port": 1024,
+  "priority": 1024,
+  "protocol": "String",
+  "recordType": "String",
+  "service": "String",
+  "supportedService": "String",
+  "ttl": 1024,
+  "weight": 1024
+}
+```

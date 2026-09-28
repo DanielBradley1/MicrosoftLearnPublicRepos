@@ -1,0 +1,43 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/resourceaccessdetail?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-02-06 -->
+
+# resourceAccessDetail resource type
+
+Namespace: microsoft.graph
+
+Represents details about resources accessed by AI agents, including identifiers, access type, and status, recorded in the [processConversationMetadata](https://learn.microsoft.com/en-us/graph/api/resources/processconversationmetadata?view=graph-rest-1.0) object.
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| accessType | resourceAccessType | Indicates the type of access performed on the resource. The possible values are: `none`, `read`, `write`, `create`, `unknownFutureValue`. This flagged enumeration allows multiple members to be selected simultaneously. |
+| identifier | String | Unique identifier of the resource accessed. |
+| isCrossPromptInjectionDetected | Boolean | Indicates whether cross-prompt injection was detected during the access attempt. |
+| labelId | String | Identifier for the sensitivity label applied to the resource, if any. |
+| name | String | Name of the resource accessed. |
+| status | resourceAccessStatus | Indicates the status of the access attempt. The possible values are: `none`, `failure`, `success`, `unknownFutureValue`. |
+| storageId | String | Identifier for the resource in its native storage format. For SharePoint resources, this is the unique identifier of the list item. For other resources, this is the name of the location, such as Box, Dropbox, Exchange, or Google Drive. |
+| url | String | URL of the resource accessed. |
+
+## Relationships
+
+None.
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.resourceAccessDetail",
+  "accessType": "String",
+  "identifier": "String",
+  "isCrossPromptInjectionDetected": "Boolean",
+  "labelId": "String",
+  "name": "String",
+  "status": "String",
+  "url": "String",
+  "storageId": "String"
+}
+```

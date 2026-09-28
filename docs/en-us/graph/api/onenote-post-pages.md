@@ -1,0 +1,180 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/onenote-post-pages?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2025-07-23 -->
+
+# Create onenotePage
+
+Namespace: microsoft.graph
+
+Create a new OneNote page in the default section of the default notebook.
+
+To create a page in a different section in the default notebook, you can use the `sectionName` query parameter. Example: `../onenote/pages?sectionName=My%20section`
+
+The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook. If you're targeting other notebooks, you can [create pages in a specified section](https://learn.microsoft.com/en-us/graph/api/section-post-pages?view=graph-rest-1.0).
+
+> **Note:** There is a limit to the number of pages that can be added to a section using this API. For details, see [Create OneNote pages](https://learn.microsoft.com/en-us/graph/onenote-create-page) for all limitations with this API.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | Notes.Create | Notes.ReadWrite, Notes.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Notes.Create | Notes.ReadWrite |
+| Application | Notes.ReadWrite.All | Not available. |
+
+## HTTP request
+
+```http
+POST /me/onenote/pages
+POST /users/{id | userPrincipalName}/onenote/pages
+POST /groups/{id}/onenote/pages
+POST /sites/{id}/onenote/pages
+```
+
+## Request headers
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Authorization | string | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Content-Type | string | `text/html` or `application/xhtml+xml` for the HTML content, including for the required "Presentation" part of multipart requests. Multipart requests use the `multipart/form-data; boundary=your-boundary` content type. |
+
+## Request body
+
+In the request body, supply the HTML content for the page.
+
+The body can contain HTML placed directly in the request body, or it can contain a multipart message format as shown in the example. If you're sending binary data, then you must send a multipart request.
+
+## Response
+
+If successful, this method returns a `201 Created` response code and the new [page](https://learn.microsoft.com/en-us/graph/api/resources/page?view=graph-rest-1.0) object in the response body.
+
+## Example
+
+### Request
+
+The following example shows a request.
+
+In the `../onenote/pages` path, you can use the `sectionName` query parameter to create a page in a specific section in the default notebook. Example: `../onenote/pages?sectionName=My%20section`. If the section doesn't exist \(or was renamed\), the API will create a new section.
+
+- [HTTP](#tabpanel_1_http)
+- [JavaScript](#tabpanel_1_javascript)
+
+```http
+POST https://graph.microsoft.com/v1.0/me/onenote/pages
+Content-type: multipart/form-data; boundary=MyPartBoundary198374
+
+--MyPartBoundary198374
+Content-Disposition:form-data; name="Presentation"
+Content-Type:text/html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A page with <i>rendered</i> images and an <b>attached</b> file</title>
+    <meta name="created" content="2015-07-22T09:00:00-08:00" />
+  </head>
+  <body>
+    <p>Here's an image from an online source:</p>
+    <img src="https://..." alt="an image on the page" width="500" />
+    <p>Here's an image uploaded as binary data:</p>
+    <img src="name:imageBlock1" alt="an image on the page" width="300" />
+    <p>Here's a file attachment:</p>
+    <object data-attachment="FileName.pdf" data="name:fileBlock1" type="application/pdf" />
+  </body>
+</html>
+
+--MyPartBoundary198374
+Content-Disposition:form-data; name="imageBlock1"
+Content-Type:image/jpeg
+
+... binary image data ...
+
+--MyPartBoundary198374
+Content-Disposition:form-data; name="fileBlock1"
+Content-Type:application/pdf
+
+... binary file data ...
+
+--MyPartBoundary198374--
+```
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+const onenotePage = --MyPartBoundary198374
+Content-Disposition:form-data; name='Presentation'
+Content-Type:text/html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A page with <i>rendered</i> images and an <b>attached</b> file</title>
+    <meta name='created' content='2015-07-22T09:00:00-08:00' />
+  </head>
+  <body>
+    <p>Here\'s an image from an online source:</p>
+    <img src='https://...' alt='an image on the page' width='500' />
+    <p>Here\'s an image uploaded as binary data:</p>
+    <img src='name:imageBlock1' alt='an image on the page' width='300' />
+    <p>Here\'s a file attachment:</p>
+    <object data-attachment='FileName.pdf' data='name:fileBlock1' type='application/pdf' />
+  </body>
+</html>
+
+--MyPartBoundary198374
+Content-Disposition:form-data; name='imageBlock1'
+Content-Type:image/jpeg
+
+... binary image data ...
+
+--MyPartBoundary198374
+Content-Disposition:form-data; name='fileBlock1'
+Content-Type:application/pdf
+
+... binary file data ...
+
+--MyPartBoundary198374--;
+
+await client.api('/me/onenote/pages')
+	.post(onenotePage);
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here is shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "title": "title-value",
+  "createdByAppId": "createdByAppId-value",
+  "links": {
+    "oneNoteClientUrl": {
+      "href": "href-value"
+    },
+    "oneNoteWebUrl": {
+      "href": "href-value"
+    }
+  },
+  "contentUrl": "contentUrl-value",
+  "lastModifiedDateTime": "2016-10-19T10:37:00Z"
+}
+```

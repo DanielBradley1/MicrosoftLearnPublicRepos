@@ -1,0 +1,69 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/onenoteresource?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2024-05-24 -->
+
+# onenoteResource resource type
+
+Namespace: microsoft.graph
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+An image or other file resource on a OneNote page.
+
+You can get the binary data of a resource, but getting a JSON representation of a resource object or a resource collection is not supported.
+
+```json
+{
+  "content": "String (Stream)",
+  "contentUrl": "String"
+}
+```
+
+Get the binary data of a specific resource by sending a GET request to the resource's `content` endpoint:
+
+```http
+GET ../onenote/resources/{id}/content
+```
+
+The file's resource URI is returned when you get a page's HTML content using the following request:
+
+```http
+GET ../onenote/pages/{id}/content
+```
+
+In the page HTML, an `img` tag includes endpoints for the original image resource in the `data-fullres-src` attribute and the optimized image in the `src` attribute:
+
+```html
+<img
+    src="image-resource-url"
+    data-src-type="media-type"
+    data-fullres-src="image-resource-url"
+    data-fullres-src-type="media-type" ... />
+```
+
+An `object` tag \(which represents files such as PDF, DOCX, and PNG\) includes the endpoint for the file resource in the `data` attribute:
+
+```html
+<object
+    data="file-resource-url"
+    data-attachment="file-name.file-type"
+    type="media-type" ... />
+```
+
+## Methods
+
+| Method | Return Type | Description |
+| :--- | :--- | :--- |
+| [Get resource](https://learn.microsoft.com/en-us/graph/api/resource-get?view=graph-rest-beta) | Stream | Retrieve the binary data of a file or image resource. |
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| content | Edm.Stream | The content of the resource. |
+| contentUrl | String | The URL for the content stream. |
+
+## Relationships
+
+None.

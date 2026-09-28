@@ -1,0 +1,172 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/intune-apps-windowsuniversalappx-update?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-03-14 -->
+
+# Update windowsUniversalAppX
+
+Namespace: microsoft.graph
+
+> **Note:** The Microsoft Graph API for Intune requires an [active Intune license](https://go.microsoft.com/fwlink/?linkid=839381) for the tenant.
+
+Update the properties of a [windowsUniversalAppX](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-windowsuniversalappx?view=graph-rest-1.0) object.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Permissions \(from least to most privileged\) |
+| :--- | :--- |
+| Delegated \(work or school account\) | DeviceManagementConfiguration.ReadWrite.All, DeviceManagementApps.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. |
+| Application | DeviceManagementConfiguration.ReadWrite.All, DeviceManagementApps.ReadWrite.All |
+
+## HTTP Request
+
+```http
+PATCH /deviceAppManagement/mobileApps/{mobileAppId}
+```
+
+## Request headers
+
+| Header | Value |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Accept | application/json |
+
+## Request body
+
+In the request body, supply a JSON representation for the [windowsUniversalAppX](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-windowsuniversalappx?view=graph-rest-1.0) object.
+
+The following table shows the properties that are required when you create the [windowsUniversalAppX](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-windowsuniversalappx?view=graph-rest-1.0).
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | Key of the entity. This property is read-only. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| displayName | String | The admin provided or imported title of the app. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| description | String | The description of the app. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| publisher | String | The publisher of the app. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| largeIcon | [mimeContent](https://learn.microsoft.com/en-us/graph/api/resources/intune-shared-mimecontent?view=graph-rest-1.0) | The large icon, to be displayed in the app details and used for upload of the icon. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| createdDateTime | DateTimeOffset | The date and time the app was created. This property is read-only. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| lastModifiedDateTime | DateTimeOffset | The date and time the app was last modified. This property is read-only. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| isFeatured | Boolean | The value indicating whether the app is marked as featured by the admin. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| privacyInformationUrl | String | The privacy statement Url. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| informationUrl | String | The more information Url. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| owner | String | The owner of the app. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| developer | String | The developer of the app. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| notes | String | Notes for the app. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0) |
+| publishingState | [mobileAppPublishingState](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapppublishingstate?view=graph-rest-1.0) | The publishing state for the app. The app cannot be assigned unless the app is published. This property is read-only. Inherited from [mobileApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0). The possible values are: `notPublished`, `processing`, `published`. |
+| committedContentVersion | String | The internal committed content version. Inherited from [mobileLobApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobilelobapp?view=graph-rest-1.0) |
+| fileName | String | The name of the main Lob application file. Inherited from [mobileLobApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobilelobapp?view=graph-rest-1.0) |
+| size | Int64 | The total size, including all uploaded files. This property is read-only. Inherited from [mobileLobApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-mobilelobapp?view=graph-rest-1.0) |
+| applicableArchitectures | [windowsArchitecture](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-windowsarchitecture?view=graph-rest-1.0) | The Windows architecture\(s\) for which this app can run on. The possible values are: `none`, `x86`, `x64`, `arm`, `neutral`; default value is `none`. The possible values are: `none`, `x86`, `x64`, `arm`, `neutral`. |
+| applicableDeviceTypes | [windowsDeviceType](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-windowsdevicetype?view=graph-rest-1.0) | The Windows device type\(s\) for which this app can run on. The possible values are: `none`, `desktop`, `mobile`, `holographic`, `team`; default value is `none`. The possible values are: `none`, `desktop`, `mobile`, `holographic`, `team`, `unknownFutureValue`. |
+| identityName | String | The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: "Contoso.DemoApp". |
+| identityPublisherHash | String | The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: "AB82CD0XYZ". |
+| identityResourceIdentifier | String | The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: "TestResourceId". |
+| isBundle | Boolean | Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle. |
+| minimumSupportedOperatingSystem | [windowsMinimumOperatingSystem](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-windowsminimumoperatingsystem?view=graph-rest-1.0) | The value for the minimum applicable Windows operating system. |
+| identityVersion | String | The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: "1.0.0.0". |
+
+## Response
+
+If successful, this method returns a `200 OK` response code and an updated [windowsUniversalAppX](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-windowsuniversalappx?view=graph-rest-1.0) object in the response body.
+
+## Example
+
+### Request
+
+Here is an example of the request.
+
+```http
+PATCH https://graph.microsoft.com/v1.0/deviceAppManagement/mobileApps/{mobileAppId}
+Content-type: application/json
+Content-length: 1189
+
+{
+  "@odata.type": "#microsoft.graph.windowsUniversalAppX",
+  "displayName": "Display Name value",
+  "description": "Description value",
+  "publisher": "Publisher value",
+  "largeIcon": {
+    "@odata.type": "microsoft.graph.mimeContent",
+    "type": "Type value",
+    "value": "dmFsdWU="
+  },
+  "isFeatured": true,
+  "privacyInformationUrl": "https://example.com/privacyInformationUrl/",
+  "informationUrl": "https://example.com/informationUrl/",
+  "owner": "Owner value",
+  "developer": "Developer value",
+  "notes": "Notes value",
+  "publishingState": "processing",
+  "committedContentVersion": "Committed Content Version value",
+  "fileName": "File Name value",
+  "size": 4,
+  "applicableArchitectures": "x86",
+  "applicableDeviceTypes": "desktop",
+  "identityName": "Identity Name value",
+  "identityPublisherHash": "Identity Publisher Hash value",
+  "identityResourceIdentifier": "Identity Resource Identifier value",
+  "isBundle": true,
+  "minimumSupportedOperatingSystem": {
+    "@odata.type": "microsoft.graph.windowsMinimumOperatingSystem",
+    "v8_0": true,
+    "v8_1": true,
+    "v10_0": true
+  },
+  "identityVersion": "Identity Version value"
+}
+```
+
+### Response
+
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 1361
+
+{
+  "@odata.type": "#microsoft.graph.windowsUniversalAppX",
+  "id": "4bc47eba-7eba-4bc4-ba7e-c44bba7ec44b",
+  "displayName": "Display Name value",
+  "description": "Description value",
+  "publisher": "Publisher value",
+  "largeIcon": {
+    "@odata.type": "microsoft.graph.mimeContent",
+    "type": "Type value",
+    "value": "dmFsdWU="
+  },
+  "createdDateTime": "2017-01-01T00:02:43.5775965-08:00",
+  "lastModifiedDateTime": "2017-01-01T00:00:35.1329464-08:00",
+  "isFeatured": true,
+  "privacyInformationUrl": "https://example.com/privacyInformationUrl/",
+  "informationUrl": "https://example.com/informationUrl/",
+  "owner": "Owner value",
+  "developer": "Developer value",
+  "notes": "Notes value",
+  "publishingState": "processing",
+  "committedContentVersion": "Committed Content Version value",
+  "fileName": "File Name value",
+  "size": 4,
+  "applicableArchitectures": "x86",
+  "applicableDeviceTypes": "desktop",
+  "identityName": "Identity Name value",
+  "identityPublisherHash": "Identity Publisher Hash value",
+  "identityResourceIdentifier": "Identity Resource Identifier value",
+  "isBundle": true,
+  "minimumSupportedOperatingSystem": {
+    "@odata.type": "microsoft.graph.windowsMinimumOperatingSystem",
+    "v8_0": true,
+    "v8_1": true,
+    "v10_0": true
+  },
+  "identityVersion": "Identity Version value"
+}
+```

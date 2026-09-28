@@ -1,0 +1,47 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/accesspackageassignmentrequestorsettings?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-07-04 -->
+
+# accessPackageAssignmentRequestorSettings resource type
+
+Namespace: microsoft.graph
+
+Provides additional settings to select who can create a request for an access package on that policy, and what they can include in their request. This object is configured in the **requestorSettings** property of an [accessPackageAssignmentPolicy](https://learn.microsoft.com/en-us/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0).
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| allowCustomAssignmentSchedule | Boolean | `False` indicates that the requestor isn't permitted to include a schedule in their request. |
+| enableOnBehalfRequestorsToAddAccess | Boolean | `True` allows on-behalf-of requestors to create a request to add access for another principal. |
+| enableOnBehalfRequestorsToRemoveAccess | Boolean | `True` allows on-behalf-of requestors to create a request to remove access for another principal. |
+| enableOnBehalfRequestorsToUpdateAccess | Boolean | `True` allows on-behalf-of requestors to create a request to update access for another principal. |
+| enableTargetsToSelfAddAccess | Boolean | `True` allows requestors to create a request to add access for themselves. |
+| enableTargetsToSelfRemoveAccess | Boolean | `True` allows requestors to create a request to remove their access. |
+| enableTargetsToSelfUpdateAccess | Boolean | `True` allows requestors to create a request to update their access. |
+| onBehalfRequestors | [subjectSet](https://learn.microsoft.com/en-us/graph/api/resources/subjectset?view=graph-rest-1.0) collection | The principals who can request on-behalf-of others. |
+
+## Relationships
+
+None.
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.accessPackageAssignmentRequestorSettings",
+  "allowCustomAssignmentSchedule": "Boolean",
+  "enableOnBehalfRequestorsToAddAccess": "Boolean",
+  "enableOnBehalfRequestorsToRemoveAccess": "Boolean",
+  "enableOnBehalfRequestorsToUpdateAccess": "Boolean",
+  "enableTargetsToSelfAddAccess": "Boolean",
+  "enableTargetsToSelfRemoveAccess": "Boolean",
+  "enableTargetsToSelfUpdateAccess": "Boolean",
+  "onBehalfRequestors": [
+    {
+      "@odata.type": "microsoft.graph.singleUser"
+    }
+  ]
+}
+```

@@ -1,0 +1,222 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/virtualeventregistration-list-sessions?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-07-29 -->
+
+# List sessions for a virtual event registration
+
+Namespace: microsoft.graph
+
+Get a list of [sessions](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventsession?view=graph-rest-1.0) summaries that a registrant registered for in a [webinar](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0) or [town hall](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventtownhall?view=graph-rest-1.0). A session summary contains only the **endDateTime**, **id**, **joinWebUrl**, **startDateTime**, and **subject** of a virtual event session. The remaining session properties are `null`.
+
+To get all the properties of a **virtualEventSession**, use the [Get virtualEventSession](https://learn.microsoft.com/en-us/graph/api/virtualeventsession-get?view=graph-rest-1.0) method.
+
+Note
+
+Virtual event webinars and town halls can only have a singular virtual event session. A single session summary will be returned in the collection.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | Not supported. | Not supported. |
+| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | VirtualEvent.Read.Chat | Not available. |
+
+Note
+
+The `VirtualEvent.Read.Chat` permission uses [resource-specific consent](https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
+
+## HTTP request
+
+To list the session registrations of a webinar:
+
+```http
+GET /solutions/virtualEvents/webinars/{webinarId}/registrations/{registrationId}/sessions
+```
+
+To list the session registrations of a town hall:
+
+```http
+GET /solutions/virtualEvents/townhalls/{townhallId}/registrations/{registrationId}/sessions
+```
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+
+## Request body
+
+Don't supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [virtualEventSession](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventsession?view=graph-rest-1.0) objects in the response body.
+
+Currently, only the following properties of a **virtualEventSession** object contain data when the object is returned by this method. All other properties are null. To get all the properties of a **virtualEventSession**, use the [Get virtualEventSession](https://learn.microsoft.com/en-us/graph/api/virtualeventsession-get?view=graph-rest-1.0) method.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| endDateTime | [DateTimeTimeZone](https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0) | The virtual event session end time. |
+| id | String | The unique identifier of the virtual event session. Read-only. Inherited from [onlineMeetingBase](https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetingbase?view=graph-rest-1.0). |
+| joinWebUrl | String | The join URL of the virtual event session. Read-only. Inherited from [onlineMeetingBase](https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetingbase?view=graph-rest-1.0). |
+| startDateTime | [DateTimeTimeZone](https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0) | The virtual event session start time. |
+| subject | String | The subject of the virtual event session. Inherited from [onlineMeetingBase](https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetingbase?view=graph-rest-1.0). |
+
+## Examples
+
+### Request
+
+The following example shows a request.
+
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [PowerShell](#tabpanel_1_powershell)
+- [Python](#tabpanel_1_python)
+
+```msgraph
+GET https://graph.microsoft.com/v1.0/solutions/virtualEvents/webinars/f4b39f1c-520e-4e75-805a-4b0f2016a0c6@a1a56d21-a8a6-4a6b-97f8-ced53d30f143/registrations/127962bb-84e1-7b62-fd98-1c9d39def7b6/sessions
+```
+
+```csharp
+
+// Code snippets are only available for the latest version. Current version is 5.x
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
+var result = await graphClient.Solutions.VirtualEvents.Webinars["{virtualEventWebinar-id}"].Registrations["{virtualEventRegistration-id}"].Sessions.GetAsync();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```go
+
+
+// Code snippets are only available for the latest major version. Current major version is $v1.*
+
+// Dependencies
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
+	  //other-imports
+)
+
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
+sessions, err := graphClient.Solutions().VirtualEvents().Webinars().ByVirtualEventWebinarId("virtualEventWebinar-id").Registrations().ByVirtualEventRegistrationId("virtualEventRegistration-id").Sessions().Get(context.Background(), nil)
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```java
+
+// Code snippets are only available for the latest version. Current version is 6.x
+
+GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
+
+VirtualEventSessionCollectionResponse result = graphClient.solutions().virtualEvents().webinars().byVirtualEventWebinarId("{virtualEventWebinar-id}").registrations().byVirtualEventRegistrationId("{virtualEventRegistration-id}").sessions().get();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+let sessions = await client.api('/solutions/virtualEvents/webinars/f4b39f1c-520e-4e75-805a-4b0f2016a0c6@a1a56d21-a8a6-4a6b-97f8-ced53d30f143/registrations/127962bb-84e1-7b62-fd98-1c9d39def7b6/sessions')
+	.get();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```php
+
+<?php
+use Microsoft\Graph\GraphServiceClient;
+
+
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
+
+
+$result = $graphServiceClient->solutions()->virtualEvents()->webinars()->byVirtualEventWebinarId('virtualEventWebinar-id')->registrations()->byVirtualEventRegistrationId('virtualEventRegistration-id')->sessions()->get()->wait();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```powershell
+
+Import-Module Microsoft.Graph.Bookings
+
+Get-MgVirtualEventWebinarRegistrationSession -VirtualEventWebinarId $virtualEventWebinarId -VirtualEventRegistrationId $virtualEventRegistrationId
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```python
+
+# Code snippets are only available for the latest version. Current version is 1.x
+from msgraph import GraphServiceClient
+# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
+
+result = await graph_client.solutions.virtual_events.webinars.by_virtual_event_webinar_id('virtualEventWebinar-id').registrations.by_virtual_event_registration_id('virtualEventRegistration-id').sessions.get()
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.virtualEventSession",
+      "id": "8d62dd52-4dff-4c75-96a9-f905cc3ff942",
+      "startDateTime": "2023-08-08T12:30:00Z",
+      "endDateTime": "2023-08-09T22:00:00Z",
+      "joinWebUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDVjNzk3OWEtYjc2NS00NTA1LTkyMzQtYTYzMGI5YmFmMjM5%40thread.v2/0?context=%7b%22Tid%22%3a%2272f988bf-86f1-41af-91ab-2d7cd011db47%22%2c%22Oid%22%3a%221cd068e4-5b08-4e75-a7f9-7b4e067a0820%22%7d",
+      "subject": "Session one",
+      "isBroadcast": null,
+      "broadcastSettings": null,
+      "capabilities": [],
+      "audioConferencing": null,
+      "chatInfo": null,
+      "videoTeleconferenceId": null,
+      "externalId": null,
+      "joinMeetingIdSettings": null,
+      "lobbyBypassSettings": null,
+      "isEntryExitAnnounced": null,
+      "allowedPresenters": null,
+      "allowAttendeeToEnableMic": null,
+      "allowAttendeeToEnableCamera": null,
+      "allowMeetingChat": null,
+      "shareMeetingChatHistoryDefault": null,
+      "allowTeamworkReactions": null,
+      "recordAutomatically": null,
+      "watermarkProtection": null,
+      "allowParticipantsToChangeName": null
+    }
+  ]
+}
+```

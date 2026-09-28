@@ -1,0 +1,33 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-quarantinedetails?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-07-02 -->
+
+# quarantineDetails resource type
+
+Namespace: microsoft.graph.identityGovernance
+
+Represents the read-only quarantine state of a [workflow](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflow?view=graph-rest-1.0). This object is returned in the **quarantineDetails** property of a workflow when the workflow is automatically quarantined because a run exceeded the threshold conditions defined in its [quarantineConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-quarantineconfiguration?view=graph-rest-1.0).
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| quarantinedDateTime | DateTimeOffset | The date and time when the workflow was quarantined. |
+| quarantineReason | String | The reason the workflow was quarantined. |
+| quarantineType | microsoft.graph.identityGovernance.quarantineType | The type of threshold condition that caused the workflow to be quarantined. The possible values are: `notQuarantined`, `countBasedThresholdExceeded`, `percentageBasedThresholdExceeded`, `multipleConditionsExceeded`, `unknownFutureValue`. |
+
+## Relationships
+
+None.
+
+## JSON representation
+
+The following JSON representation shows the resource type.
+
+```json
+{
+  "@odata.type": "#microsoft.graph.identityGovernance.quarantineDetails",
+  "quarantinedDateTime": "String (timestamp)",
+  "quarantineType": "String",
+  "quarantineReason": "String"
+}
+```

@@ -1,0 +1,247 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/teamworkdeviceoperation-list?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2025-09-03 -->
+
+# List teamworkDeviceOperations
+
+Namespace: microsoft.graph
+
+Note
+
+The Microsoft Graph beta APIs related to device management under the `teamworkDevice` resource type will be deprecated by November 2025 and will no longer be supported after that date.
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get a list of the [operations](https://learn.microsoft.com/en-us/graph/api/resources/teamworkdeviceoperation?view=graph-rest-beta) that are running on a Microsoft Teams-enabled [device](https://learn.microsoft.com/en-us/graph/api/resources/teamworkdevice?view=graph-rest-beta).
+
+> **Note**: Microsoft is temporarily offering usage of the APIs for managing Microsoft Teams-enabled devices at no charge. Microsoft expects to charge for the use of some or all of these APIs in the future. Microsoft will provide advanced notice of pricing changes. For details about the current licensing model, see [Licensing and payment requirements](https://learn.microsoft.com/en-us/graph/teams-licenses).
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | TeamworkDevice.Read.All | TeamworkDevice.ReadWrite.All |
+| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | TeamworkDevice.Read.All | TeamworkDevice.ReadWrite.All |
+
+## HTTP request
+
+```http
+GET /teamwork/devices/{teamworkDeviceId}/operations
+```
+
+## Optional query parameters
+
+This method supports the `$top`, `$select`, and `$skipToken` [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters) to help customize the response.
+
+### Supported query patterns
+
+| Pattern | Syntax | Notes |
+| --- | --- | --- |
+| Server-side pagination | `@odata.nextLink` | You will get a continuation token in the response, when a result set spans multiple pages. |
+| Page limit | `/devices({deviceId})/operations?$top=10` | Get operations for a device with a page size of 10. Default page limit is 20. Max page limit is 50. |
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+
+## Request body
+
+Don't supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [teamworkDeviceOperation](https://learn.microsoft.com/en-us/graph/api/resources/teamworkdeviceoperation?view=graph-rest-beta) objects in the response body.
+
+## Examples
+
+### Request
+
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [PowerShell](#tabpanel_1_powershell)
+- [Python](#tabpanel_1_python)
+
+```msgraph
+GET https://graph.microsoft.com/beta/teamwork/devices/0f3ce432-e432-0f3c-32e4-3c0f32e43c0f/operations
+```
+
+```csharp
+
+// Code snippets are only available for the latest version. Current version is 5.x
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
+var result = await graphClient.Teamwork.Devices["{teamworkDevice-id}"].Operations.GetAsync();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```go
+
+
+// Code snippets are only available for the latest major version. Current major version is $v0.*
+
+// Dependencies
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
+	  //other-imports
+)
+
+
+// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
+operations, err := graphClient.Teamwork().Devices().ByTeamworkDeviceId("teamworkDevice-id").Operations().Get(context.Background(), nil)
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```java
+
+// Code snippets are only available for the latest version. Current version is 6.x
+
+GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
+
+TeamworkDeviceOperationCollectionResponse result = graphClient.teamwork().devices().byTeamworkDeviceId("{teamworkDevice-id}").operations().get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+let operations = await client.api('/teamwork/devices/0f3ce432-e432-0f3c-32e4-3c0f32e43c0f/operations')
+	.version('beta')
+	.get();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```php
+
+<?php
+use Microsoft\Graph\Beta\GraphServiceClient;
+
+
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
+
+
+$result = $graphServiceClient->teamwork()->devices()->byTeamworkDeviceId('teamworkDevice-id')->operations()->get()->wait();
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
+
+Get-MgBetaTeamworkDeviceOperation -TeamworkDeviceId $teamworkDeviceId
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+```python
+
+# Code snippets are only available for the latest version. Current version is 1.x
+from msgraph_beta import GraphServiceClient
+# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
+
+result = await graph_client.teamwork.devices.by_teamwork_device_id('teamworkDevice-id').operations.get()
+```
+
+Important
+
+Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
+
+For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#teamwork/devices('18129e1f')/operations",
+  "@odata.count": 1,
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.teamworkDeviceOperation",
+      "id": "eab261f8-61f8-eab2-f861-b2eaf861b2ea",
+      "status": "successful",
+      "operationType": "deviceDiagnostics",
+      "error": {
+        "code": null,
+        "message": "Unknown"
+      },
+      "startedDateTime": "2021-06-19T12-01-03.45Z",
+      "completedDateTime": "2021-06-19T12-01-03.45Z",
+      "createdDateTime": "2021-06-19T12-01-03.45Z",
+      "lastActionDateTime": "2021-06-19T12-01-03.45Z",
+      "createdBy": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "2a610f6f-adf6-4205",
+          "displayName": "Evan Lewis",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "lastActionBy": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "2a610f6f-adf6-4205",
+          "displayName": "Evan Lewis",
+          "userIdentityType": "aadUser"
+        }
+      }
+    }
+  ]
+}
+```
