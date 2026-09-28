@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/developer/app-sdk/quickstart-integration -->
-<!-- Sitemap-Last-Modified: 2026-04-08 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Get Started With the Microsoft Intune App SDK
 

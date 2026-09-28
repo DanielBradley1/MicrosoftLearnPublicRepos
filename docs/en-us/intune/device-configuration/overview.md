@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-configuration/overview -->
-<!-- Sitemap-Last-Modified: 2026-06-03 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Apply features and settings on your devices using device profiles in Microsoft Intune
 

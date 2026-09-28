@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-security/compliance/third-party-partners -->
-<!-- Sitemap-Last-Modified: 2026-06-24 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Support third-party device compliance partners in Intune
 
