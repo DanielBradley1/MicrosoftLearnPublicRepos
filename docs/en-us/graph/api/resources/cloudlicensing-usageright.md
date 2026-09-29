@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/cloudlicensing-usageright?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-02-06 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # cloudLicensing usageRight resource type
 

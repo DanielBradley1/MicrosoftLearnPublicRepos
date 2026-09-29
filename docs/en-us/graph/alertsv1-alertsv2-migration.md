@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/alertsv1-alertsv2-migration -->
-<!-- Sitemap-Last-Modified: 2026-05-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-26 -->
 
 # Migrate from legacy alerts to the alerts and incidents API
 

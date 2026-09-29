@@ -1,26 +1,20 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-23 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # governanceRequest resource type
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents a request from a governing tenant to establish a governance relationship with a governed tenant. The governed tenant can accept or reject the request. When accepted, a [governanceRelationship](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerelationship?view=graph-rest-beta) is created.
-
-Inherits from [microsoft.graph.entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-beta).
+Represents a request from a governing tenant to establish a governance relationship with a governed tenant. The governed tenant can accept or reject the request. When accepted, a [governanceRelationship](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerelationship?view=graph-rest-1.0) is created.
 
 ## Methods
 
 | Method | Return type | Description |
 | :--- | :--- | :--- |
-| [List](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-list-governancerequests?view=graph-rest-beta) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta) collection | Get a list of the [governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta) objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-post-governancerequests?view=graph-rest-beta) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta) | Create a new governance request to establish a relationship with a governed tenant. |
-| [Get](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-governancerequest-get?view=graph-rest-beta) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta) | Read the properties of a [governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-governancerequest-update?view=graph-rest-beta) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta) | Update the **status** property to accept or reject the governance request. |
+| [List](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-list-governancerequests?view=graph-rest-1.0) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) collection | Get a list of the [governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) objects and their properties. |
+| [Create](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-post-governancerequests?view=graph-rest-1.0) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) | Create a new governance request to establish a relationship with a governed tenant. |
+| [Get](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-governancerequest-get?view=graph-rest-1.0) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) | Read the properties of a [governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) object. |
+| [Update](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-governancerequest-update?view=graph-rest-1.0) | [microsoft.graph.governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) | Update the **status** property to accept or reject the governance request. |
 
 ## Properties
 
@@ -31,8 +25,8 @@ Inherits from [microsoft.graph.entity](https://learn.microsoft.com/en-us/graph/a
 | governedTenantName | String | The display name of the governed tenant.  <br>  <br>Supports `$filter` \(`eq`, `ne`\) and `$orderBy`. |
 | governingTenantId | String | The Microsoft Entra tenant ID of the governing tenant.  <br>  <br>Supports `$filter` \(`eq`, `ne`\) and `$orderBy`. |
 | governingTenantName | String | The display name of the governing tenant.  <br>  <br>Supports `$filter` \(`eq`, `ne`\) and `$orderBy`. |
-| id | String | The unique identifier for the governance request. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-beta).  <br>  <br>Supports `$filter` \(`eq`, `ne`\) and `$orderBy`. |
-| policySnapshot | [microsoft.graph.relationshipPolicy](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relationshippolicy?view=graph-rest-beta) | A snapshot of the governance policy to be applied if the request is accepted, including delegated administration role assignments and multi-tenant applications to provision. |
+| id | String | The unique identifier for the governance request.  <br>  <br>Supports `$filter` \(`eq`, `ne`\) and `$orderBy`. |
+| policySnapshot | [microsoft.graph.relationshipPolicy](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relationshippolicy?view=graph-rest-1.0) | A snapshot of the governance policy to be applied if the request is accepted, including delegated administration role assignments and multi-tenant applications to provision. |
 | requestDateTime | DateTimeOffset | The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.  <br>  <br>Supports `$filter` \(`lt`, `le`, `gt`, `ge`, `eq`, `ne`\) and `$orderBy`. |
 | status | microsoft.graph.requestStatus | The current status of the governance request. The possible values are: `pending`, `accepted`, `rejected`, `unknownFutureValue`.  <br>  <br>Supports `$filter` \(`eq`, `ne`\) and `$orderBy`. |
 
@@ -40,7 +34,7 @@ Inherits from [microsoft.graph.entity](https://learn.microsoft.com/en-us/graph/a
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
-| governancePolicyTemplate | [microsoft.graph.tenantGovernancePolicyTemplate](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-beta) | The governance policy template associated with this request. |
+| governancePolicyTemplate | [microsoft.graph.tenantGovernancePolicyTemplate](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-1.0) | The governance policy template associated with this request. |
 
 ## JSON representation
 

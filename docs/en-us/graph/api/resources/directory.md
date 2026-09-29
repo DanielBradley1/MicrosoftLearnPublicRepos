@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/directory?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-07-28 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # directory resource type
 
