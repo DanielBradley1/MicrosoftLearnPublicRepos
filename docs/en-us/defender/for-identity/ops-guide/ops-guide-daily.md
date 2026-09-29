@@ -1,0 +1,92 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/ops-guide/ops-guide-daily -->
+<!-- Sitemap-Last-Modified: 2026-08-19 -->
+
+# Daily operational guide - Microsoft Defender for Identity
+
+This article reviews the Microsoft Defender for Identity activities we recommend for your team on a daily basis. It covers key tasks such as reviewing identity security dashboards, triaging incidents, tuning alerts, proactive threat hunting, and monitoring deployment health. These daily activities are intended for SOC analysts, security administrators, and identity management teams to help maintain a strong security posture and quickly detect identity-based threats.
+
+## Review the Identity Security dashboard
+
+**Where**: In Microsoft Defender, under select **Identities** > **Dashboard**.
+
+**Persona**: SOC analysts, security administrators, identity, and access management administrators
+
+Use Defender for Identity's **Dashboard** page to view critical insights and real-time data about identity security. On a daily basis, we recommend that you focus on the **Top insights**, **Identity related incidents**, and **Entra ID users at risk** widgets.
+
+For more information, see [Work with Defender for Identity's Identity Security dashboard \(Preview\)](https://learn.microsoft.com/en-us/defender-for-identity/dashboard).
+
+## Triage incidents by priority
+
+**Where**: In Microsoft Defender, select **Incidents & alerts**
+
+**Persona**: SOC analysts
+
+When triaging incidents:
+
+1. In the incident dashboard, filter for the following items:
+   | Filter | Values |
+   | --- | --- |
+   | **Status** | New, In progress |
+   | **Severity** | High, Medium, Low |
+   | **Service source** | Keep all service sources checked. This selection should list alerts with the most fidelity, with correlation across other Microsoft XDR workloads. Select **Defender for Identity** to view items that come specifically from Defender for Identity. |
+2. Select each incident to review all details. Review all tabs in the incident, the activity log, and advanced hunting.
+3. In the incident's **Evidence and response** tab, select each evidence item. Select the options menu > **Investigate** and then select **Activity log** or **Go hunt** as needed.
+4. Triage your incidents. For each incident, select **Manage incident** and then select one of the following options:
+
+   - True positive
+   - False positive
+   - Informational, expected activity
+
+
+   For true alerts, specify the threat type to help your security team see threat patterns and defend your organization from risk.
+
+5. When you're ready to start your active investigation, assign the incident to a user and update the incident status to **In progress**.
+6. When the incident is remediated, resolve it to resolve all linked and related active alerts and set a classification.
+
+## Configure tuning rules for benign true positives / false positive alerts
+
+**Where**: In Microsoft Defender, select **Hunting > Advanced hunting**
+
+**Persona**: Security and compliance administrators, SOC analysts
+
+If you find either benign true positives or outright false positives, we recommend that you tune your alerts to reduce the number of alerts you need to triage to match your risk appetite. Tuning alerts resolves alerts automatically based on your configurations and rule conditions.
+
+We recommend creating new rules as needed as your network grows to make sure that your alert tuning remains relevant and effective.
+
+For more information, see [Tune an alert](https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-alerts#tune-an-alert).
+
+## Proactively hunt
+
+**Where**: In Microsoft Defender, select **Hunting > Advanced hunting**.
+
+**Persona**: SOC analysts
+
+You might want to proactively hunt on a daily or weekly basis, depending on your level as a SOC analyst.
+
+Use Microsoft Defender advanced hunting to proactively explore through the last 30 days of raw data, including Defender for Identity data correlated with data streaming from other Microsoft Defender services.
+
+Inspect events in your network to locate threat indicators and entities, including both known and potential threats.
+
+We recommend that beginners use guided advanced hunting, which provides a query builder. If you're comfortable using Kusto Query Language \(KQL\), build queries from scratch as needed for your investigations.
+
+For more information, see [Proactively hunt for threats with advanced hunting in Microsoft Defender](https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview).
+
+## Review Defender for Identity health issues
+
+**Where**: In Microsoft Defender, select **Identities > Health issues**.
+
+**Persona**: Security administrators, Active Directory administrators
+
+Check the **Health Issues** page regularly for problems in your Defender for Identity deployment, such as connectivity or sensor issues. Review both the **Global** and **Sensor** tabs.
+
+We also recommend setting up email notifications for service issues. Notifications help you catch problems as they happen.
+
+For more information, see [Microsoft Defender for Identity health issues](https://learn.microsoft.com/en-us/defender-for-identity/health-alerts) and [Configure email notifications](https://learn.microsoft.com/en-us/defender-for-identity/notifications#configure-email-notifications).
+
+## Related content
+
+- [Microsoft Defender Security operations overview](https://learn.microsoft.com/en-us/security/operations/overview)
+- [Microsoft Defender for Identity operational guide](https://learn.microsoft.com/en-us/defender-for-identity/ops-guide/ops-guide)
+- [Weekly operational guide - Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/ops-guide/ops-guide-weekly)
+- [Monthly operational guide - Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/ops-guide/ops-guide-monthly)
+- [Quarterly / Ad hoc operational guide - Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/ops-guide/ops-guide-quarterly)

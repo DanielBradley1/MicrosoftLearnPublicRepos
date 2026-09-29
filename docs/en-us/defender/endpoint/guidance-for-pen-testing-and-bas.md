@@ -1,0 +1,103 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/guidance-for-pen-testing-and-bas -->
+<!-- Sitemap-Last-Modified: 2026-07-02 -->
+
+# Guidance for penetration testing and breach-and-attack-simulation scenarios with Microsoft Defender for Endpoint
+
+This article describes common challenges and potential misconfigurations that might arise during penetration testing \(pen testing\) or using breach and attack simulation \(BAS\) tools. This article also describes how to submit potential false negatives for investigation.
+
+## Common challenges during pen testing
+
+Common challenges during pen testing include:
+
+- Testing the current configuration of the environment, which might not be the optimal configuration for Microsoft Defender for Endpoint or Microsoft Defender Antivirus.
+- Concerns about enabling [cloud protection](https://learn.microsoft.com/en-us/defender-endpoint/cloud-protection-microsoft-defender-antivirus), as it might proceed to cloud protection detonation if it doesn't find metadata. For more information about Microsoft Defender Antivirus and cloud protection, see [hybrid detection and protection](https://learn.microsoft.com/en-us/defender-endpoint/adv-tech-of-mdav).
+
+Note
+
+If you're downloading multiple payloads and notice that Microsoft Defender Antivirus doesn't remediate some of the payloads, keep in mind that the missed remediation might not be a true positive, and a non-Microsoft vendor might be showing a false positive. See [How to submit possible false negatives for investigation](#how-to-submit-possible-false-negatives-for-investigation) for guidance on reporting undetected payloads to Microsoft.
+
+## Common misconfigurations of Microsoft Defender Antivirus during pen testing
+
+It's common for penetration testers to disable features of Microsoft Defender Antivirus while executing their attack. Before doing so, confirm that the following settings are configured:
+
+- [Tamper protection](https://learn.microsoft.com/en-us/defender-endpoint/tamper-protection-overview) is enabled in block mode.
+- Microsoft Defender Antivirus is running as the primary antivirus, and not in [passive mode](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-compatibility). If you're using non-Microsoft antivirus, we recommend uninstalling it during pen testing.
+- [Platform update, engine update, and/or Security intelligence updates](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-updates) are up to date.
+- [Real-time protection](https://learn.microsoft.com/en-us/defender-endpoint/configure-protection-features-microsoft-defender-antivirus) is enabled.
+- [Behavior monitoring](https://learn.microsoft.com/en-us/defender-endpoint/behavior-monitor) is enabled.
+- Adding [antivirus exclusions](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-exclusions-configure) for the folder where you copied the payload. After you copy the payload to the device, remove the antivirus exclusion so that Microsoft Defender Antivirus can block detections during pen testing.
+- Make sure that you don't have antivirus exclusions for your BAS tools, such as AttackIQ, Cymulate, SafeBreach, and others.
+- [Cloud-delivered protection](https://learn.microsoft.com/en-us/defender-endpoint/cloud-protection-configure) is enabled.
+- [Cloud protection sample submission](https://learn.microsoft.com/en-us/defender-endpoint/cloud-protection-microsoft-antivirus-sample-submission#sample-submission-settings) is enabled.
+- [Cloud protection network connection](https://learn.microsoft.com/en-us/defender-endpoint/configure-network-connections-microsoft-defender-antivirus) is working.
+- [Protection from potentially unwanted apps](https://learn.microsoft.com/en-us/defender-endpoint/detect-block-potentially-unwanted-apps-microsoft-defender-antivirus) \(PUA\) is enabled.
+- [Attack surface reduction rules](https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-overview) \(ASR rules\) are set to block mode.
+- [Network Protection](https://learn.microsoft.com/en-us/defender-endpoint/enable-network-protection) is set to block mode.
+- [Controlled Folder Access](https://learn.microsoft.com/en-us/defender-endpoint/controlled-folder-access-configure) \(CFA\) is set to block mode.
+
+It's important to get the settings correct. To resolve misconfiguration issues, use the following articles:
+
+| OS | Management tool | Article |
+| --- | --- | --- |
+| Windows | Microsoft Defender for Endpoint security settings management  <br>\(*Recommended*\) | [Evaluate Microsoft Defender Antivirus using Microsoft Defender Endpoint Security Settings Management \(Endpoint security policies\)](https://learn.microsoft.com/en-us/defender-endpoint/evaluate-mda-using-mde-security-settings-management) |
+| Windows | Group Policy | [Evaluate Microsoft Defender Antivirus using Group Policy](https://learn.microsoft.com/en-us/defender-endpoint/evaluate-mdav-using-gp) |
+| Windows | PowerShell | [Evaluate Microsoft Defender Antivirus using PowerShell](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-using-powershell) |
+| Mac | Microsoft Defender for Endpoint security settings management or Intune or Jamf or another tool | [Set preferences for Microsoft Defender for Endpoint on macOS](https://learn.microsoft.com/en-us/defender-endpoint/mac-preferences) |
+| Linux | Microsoft Defender for Endpoint security settings management or another tool. | [Set preferences for Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/linux-preferences) |
+
+## How to submit possible false negatives for investigation
+
+Use the following steps to submit possible false negatives to Microsoft for investigation.
+
+### Step 1: Gather the Microsoft Defender for Endpoint diagnostic logs
+
+Gather Microsoft Defender for Endpoint diagnostic logs by using either the MDE Client Analyzer log or the Microsoft Defender Antivirus diagnostic package \(MpSupport.cab\).
+
+#### Use the Microsoft Defender for Endpoint \(MDE\) Client Analyzer log
+
+The following table shows how to collect Client Analyzer logs on each supported operating system.
+
+| Operating system | What to do |
+| --- | --- |
+| Windows | You can collect diagnostics logs by using [Live Response](https://learn.microsoft.com/en-us/defender-endpoint/run-analyzer-windows) or [by running the analyzer locally on Windows](https://learn.microsoft.com/en-us/defender-endpoint/run-analyzer-windows). |
+| Mac | You can collect diagnostics logs by [running the analyzer locally on macOS](https://learn.microsoft.com/en-us/defender-endpoint/run-analyzer-macos). |
+| Linux | You can collect diagnostics logs by using [Live Response](https://learn.microsoft.com/en-us/defender-endpoint/run-analyzer-linux) or [by running the analyzer locally on Linux](https://learn.microsoft.com/en-us/defender-endpoint/run-analyzer-linux). |
+
+#### Microsoft Defender Antivirus diagnostic data \(MpSupport.cab\)
+
+MpSupport.cab is the diagnostic package generated by Microsoft Defender Antivirus that contains log files and configuration data useful for troubleshooting. The following table describes how to collect this data on each operating system.
+
+| Operating system | What to do |
+| --- | --- |
+| Windows | 1. On the device, open Command Prompt as an administrator.  <br>2. Run the following command: [MpCmdRun.exe -GetFiles](https://learn.microsoft.com/en-us/defender-endpoint/collect-diagnostic-data).  <br>  <br>You can also [collect the investigation package](https://learn.microsoft.com/en-us/defender-endpoint/respond-machine-alerts#collect-investigation-package-from-devices) in the Microsoft Defender portal. |
+| Mac | 1. On the device, open Terminal \(shell session\).  <br>2. Run the following command: `mdatp log level set--level debug`.  <br>3. Run the following command: `sudo mdatp diagnostic create`.  <br>  <br>For more information, see [Resources for Microsoft Defender for Endpoint on Mac](https://learn.microsoft.com/en-us/defender-endpoint/mac-resources). |
+| Linux | 1. On the device, open Terminal \(shell session\).  <br>2. Run the following command: `mdatp log level set--level debug`.  <br>`sudo mdatp diagnostic create`.  <br>  <br>For more information, see [Microsoft Defender for Endpoint on Linux resources](https://learn.microsoft.com/en-us/defender-endpoint/linux-resources). |
+
+### Step 2: Gather information
+
+Gather your Microsoft Defender OrgID, Device ID, binary names, testing start and end times, and reproduction steps:
+
+- **Microsoft Defender OrgID**. In the [Microsoft Defender portal](https://security.microsoft.com), go to **Settings** > **Microsoft Defender XDR** > **Account** > **Org ID**.
+- **Device ID**. In the [Microsoft Defender portal](https://security.microsoft.com), open the device page.
+- Binary names.
+- Start and end of when testing was done in `HH:MM:SS UTC` format.
+- It would be highly beneficial if you could provide the steps to reproduce the issue, along with a sample of the payload.
+
+### Step 3: Submit data to Microsoft as soon as possible
+
+It's crucial to report to Microsoft as soon as possible. The advanced hunting telemetry data wraps around and overwrites itself after 30 days. You can use either the Microsoft Defender Security Intelligence \(MDSI\) portal or the Microsoft Defender portal to submit your files.
+
+| Portal | Description |
+| --- | --- |
+| MDSI portal | The MDSI portal is a service provided by Microsoft Defender Security Intelligence. It allows users to submit files for malware analysis. Microsoft Defender security researchers analyze these files to determine if they're threats, unwanted applications, or normal files. The portal is used to report detection concerns to Microsoft Defender Research, submit files for analysis, and track the results of submissions.  <br>  <br> |
+| Microsoft Defender portal | If you have a subscription to Microsoft Defender, or your subscription includes Defender for Endpoint Plan 2, you can use the **Submissions** page in the Microsoft Defender portal. |
+
+1. Submit the diagnostic logs and device information \(OrgID, Device ID, binary names, testing times, and reproduction steps\) by using either the MDSI portal or the Microsoft Defender portal.
+
+   - **MDSI portal**: Go to the [MDSI portal](https://www.microsoft.com/en-us/wdsi), and then select **Submit files**. Follow the guidance on the page.
+   - **The Microsoft Defender portal**: See [Use admin submission for submitting files in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/admin-submissions-mde).
+
+2. After you upload the files, note the `Submission ID` for your sample submission \(for example, `7c6c214b-17d4-4703-860b-7f1e9da03f7f`\).
+3. Wait for an update. After Microsoft receives the sample, the file is investigated, and a determination is made. If Microsoft determines that the sample file is malicious, we take corrective action to prevent the malware from going undetected.
+
+   If you have questions, [contact Microsoft Defender for Endpoint support](https://learn.microsoft.com/en-us/defender-endpoint/contact-support).

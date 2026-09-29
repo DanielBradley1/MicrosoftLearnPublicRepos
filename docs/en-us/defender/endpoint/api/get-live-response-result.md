@@ -1,0 +1,115 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/api/get-live-response-result -->
+<!-- Sitemap-Last-Modified: 2025-11-24 -->
+
+# Get live response results
+
+Important
+
+Some information in this article relates to a prereleased product which may be substantially modified before it's commercially released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+## Prerequisites
+
+Devices must be running one of the following versions of Windows:
+
+### Supported operating systems
+
+- Windows 11
+- Windows 10
+
+  - [Version 1909](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1909) or later
+  - [Version 1903](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1903) with [KB4515384](https://support.microsoft.com/servicing/os/windows-10/2019/09/september-10-2019-kb4515384-os-build-18362-356)
+  - [Version 1809 \(RS 5\)](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1809) with [KB4537818](https://support.microsoft.com/servicing/os/windows-10/2020/02/february-25-2020-kb4537818-os-build-17763-1075)
+  - [Version 1803 \(RS 4\)](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1803) with [KB4537795](https://support.microsoft.com/topic/february-25-2020-kb4537795-os-build-17134-1345-36b35e62-d897-2dc3-289c-44a1327c2d8e)
+  - [Version 1709 \(RS 3\)](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1709) with [KB4537816](https://support.microsoft.com/servicing/os/windows-10/2020/02/february-25-2020-kb4537816-os-build-16299-1717)
+
+- Windows Server 2019 - Only applicable for Public preview
+
+  - Version 1903 or \(with [KB4515384](https://support.microsoft.com/servicing/os/windows-10/2019/09/september-10-2019-kb4515384-os-build-18362-356)\) later
+  - Version 1809 \(with [KB4537818](https://support.microsoft.com/servicing/os/windows-10/2020/02/february-25-2020-kb4537818-os-build-17763-1075)\)
+
+- Windows Server 2022 and later
+- Azure Stack HCI OS, version 23H2 and later
+
+## API description
+
+Retrieves a specific live response command result by its index.
+
+## Limitations
+
+Rate limitations for this API are 100 calls per minute and 1500 calls per hour.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Get started](https://learn.microsoft.com/en-us/defender-endpoint/api/apis-intro).
+
+| Permission type | Permission | Permission display name |
+| --- | --- | --- |
+| Application | Machine.ReadWrite.All | Read and write all machine information |
+| Delegated \(work or school account\) | Machine.LiveResponse | Run live response on a specific machine |
+
+## HTTP request
+
+```HTTP
+GET https://api.security.microsoft.com/api/machineactions/{machine action
+id}/GetLiveResponseResultDownloadLink(index={command-index})
+```
+
+## Request headers
+
+| Name | Type | Description |
+| --- | --- | --- |
+| Authorization | String | Bearer {token}. Required. |
+
+## Request body
+
+Empty
+
+## Response
+
+If successful, this method returns 200, Ok response code with object that holds the link to the command result in the *value* property. This link is valid for 30 minutes and should be used immediately for downloading the package to a local storage. An expired link can be re-created by another call, and there's no need to run live response again.
+
+*Runscript transcript properties:*
+
+| Property | Description |
+| --- | --- |
+| script\_name | Executed script name |
+| exit\_code | Executed script exit code |
+| script\_output | Executed script standard output |
+| script\_errors | Executed script standard error output |
+
+## Example
+
+### Request example
+
+Here's an example of the request.
+
+```HTTP
+GET https://api.security.microsoft.com/api/machineactions/aaaabbbb-0000-cccc-1111-dddd2222eeee/GetLiveResponseResultDownloadLink(index=0)
+```
+
+### Response example
+
+Here's an example of the response.
+
+HTTP/1.1 200 Ok
+
+Content-type: application/json
+
+```JSON
+{
+    "@odata.context": "https://api.security.microsoft.com/api/$metadata#Edm.String",
+    "value": "https://core.windows.net/investigation-actions-data/ID/CustomPlaybookCommandOutput/4ed5e7807ad1fe59b00b664fe06a0f07?se=2021-02-04T16%3A13%3A50Z&sp=r&sv=2019-07-07&sr=b&sig=1dYGe9rPvUlXBPvYSmr6/OLXPY98m8qWqfIQCBbyZTY%3D"
+}
+```
+
+*File content:*
+
+```JSON
+{
+    "script_name": "minidump.ps1",
+    "exit_code": 0,
+    "script_output": "Transcript started, output file is C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\Temp\\PSScriptOutputs\\PSScript_Transcript_{TRANSCRIPT_ID}.txt
+C:\\windows\\TEMP\\OfficeClickToRun.dmp.zip\n51 MB\n\u0000\u0000\u0000",
+    "script_errors":""
+}
+```
