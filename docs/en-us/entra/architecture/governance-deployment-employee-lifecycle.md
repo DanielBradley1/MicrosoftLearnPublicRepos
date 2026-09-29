@@ -158,7 +158,6 @@ The [Microsoft Entra ID application gallery](https://learn.microsoft.com/en-us/e
 - [Salesforce](https://learn.microsoft.com/en-us/azure/active-directory/saas-apps/salesforce-provisioning-tutorial)
 - [Box](https://learn.microsoft.com/en-us/azure/active-directory/saas-apps/box-userprovisioning-tutorial)
 - [Cisco Webex](https://learn.microsoft.com/en-us/azure/active-directory/saas-apps/cisco-webex-provisioning-tutorial)
-- [Workplace by Facebook](https://learn.microsoft.com/en-us/azure/active-directory/saas-apps/workplace-by-facebook-provisioning-tutorial)
 - [Zoom](https://learn.microsoft.com/en-us/azure/active-directory/saas-apps/zoom-provisioning-tutorial)
 
 ### \(Optional\) Provision to on-premises apps
