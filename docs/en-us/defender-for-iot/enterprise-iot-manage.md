@@ -1,0 +1,71 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot-manage -->
+<!-- Sitemap-Last-Modified: 2026-07-02 -->
+
+# Manage enterprise IoT security
+
+Enterprise IoT security improves the monitoring and protection of the IoT devices in your network, such as printers, smart TVs, Voice over Internet Protocol \(VoIP\) devices, conferencing systems and purpose-built, proprietary devices.
+
+When enterprise IoT is activated, the data for recommendations and vulnerabilities is shown in the Microsoft Defender portal.
+
+This article describes how to view alerts, security recommendations, and vulnerabilities for your IoT devices, use advanced hunting queries to identify threats, and turn off enterprise IoT security when you no longer need it.
+
+This article explains how to view enterprise IoT security data, hunt for threats, use advanced hunting queries to monitor your IoT devices, and turn off enterprise IoT security in the Defender portal.
+
+## View enterprise IoT data in the Defender portal
+
+To view enterprise IoT security data:
+
+1. In [Microsoft Defender portal](https://security.microsoft.com/), select **Assets** > **Devices** to open the **Device inventory** page.
+2. Select the **IoT devices** tab and select a specific device **IP** to drill down for more details. For example:
+
+   [![Screenshot of the IoT devices tab in Microsoft Defender portal.](https://learn.microsoft.com/en-us/defender-for-iot/media/enterprise-iot-manage/select-a-device.png)](https://learn.microsoft.com/en-us/defender-for-iot/media/enterprise-iot-manage/select-a-device.png#lightbox)
+3. When you select a specific device, the device details page opens. Explore the following tabs to view data added by enterprise IoT security for your device:
+
+   - On the **Alerts** tab, check for any alerts triggered by the device. Simulate alerts in Microsoft Defender for Enterprise IoT using the Raspberry Pi scenario available in the Microsoft Defender [Evaluation & Tutorials](https://security.microsoft.com/tutorials/all) page.
+
+     You can also set up advanced hunting queries to create custom alert rules. For more information, see [advanced hunting queries for enterprise IoT security](#advanced-hunting-queries-for-enterprise-iot).
+   - On the **Security recommendations** tab, check for any recommendations available for the device to reduce risk and maintain a smaller attack surface.
+   - On the **Discovered vulnerabilities** tab, check for any known CVEs associated with the device. Known CVEs can help decide whether to patch, remove, or contain the device and mitigate risk to your network. Alternatively, use [advanced hunting queries](#advanced-hunting-queries-for-enterprise-iot) to collect vulnerabilities across all your devices.
+
+## Hunt for threats on the Device inventory page
+
+On the **Device inventory** page, select **Go hunt** to query devices using tables like the *[DeviceInfo](https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-deviceinfo-table)* table. On the **Advanced hunting** page, query data using other schemas.
+
+## Advanced hunting queries for enterprise IoT
+
+The following sample advanced hunting queries can help you monitor and secure your IoT devices with enterprise IoT security in Microsoft Defender.
+
+### Find devices by specific type or subtype
+
+Use the following query to identify devices that exist in your corporate network by type of device, such as routers:
+
+```kusto
+DeviceInfo
+| summarize arg_max(Timestamp, *) by DeviceId
+| where DeviceType == "NetworkDevice" and DeviceSubtype == "Router"  
+```
+
+### Find and export vulnerabilities for your IoT devices
+
+Use the following query to list all vulnerabilities on your IoT devices:
+
+```kusto
+DeviceInfo
+| where DeviceCategory =~ "iot"
+| join kind=inner DeviceTvmSoftwareVulnerabilities on DeviceId
+```
+
+For more information, see [Advanced hunting](https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview) and [Understand the advanced hunting schema](https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables).
+
+## Turn off enterprise IoT security
+
+Customers with Microsoft 365 E5 or E5 Security plans who no longer need the **enterprise IoT security** service can turn off the feature.
+
+**To turn off enterprise IoT security**:
+
+1. In [Microsoft Defender portal](https://security.microsoft.com/), select **Settings** > **Device discovery** > **Enterprise IoT**.
+2. Toggle the option to **Off**.
+
+When enterprise IoT security is turned off, you lose access to purpose-built alerts, vulnerabilities, and recommendations in the Defender portal.
+
+Customers with a Microsoft Defender for Endpoint P2 license who don't add a standalone license by the time the trial ends, have the trial automatically canceled, and lose access to enterprise IoT security features. For more information, see [Purchase the standalone enterprise IoT security license](https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot-get-started#purchase-the-standalone-license).

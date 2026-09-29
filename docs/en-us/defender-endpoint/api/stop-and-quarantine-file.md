@@ -1,0 +1,76 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/api/stop-and-quarantine-file -->
+<!-- Sitemap-Last-Modified: 2025-11-24 -->
+
+# Stop and quarantine file API
+
+## API description
+
+Stop execution of a file on a device and delete it.
+
+## Limitations
+
+- Rate limitations for this API are 100 calls per minute and 1500 calls per hour.
+
+You can only take this action if:
+
+- The device you're taking the action on is running Windows 10, version 1703 or later, or Windows 11
+- The file does not belong to trusted third-party publishers or is not signed by Microsoft
+- Microsoft Defender Antivirus must at least be running on Passive mode. For more information, see: [Microsoft Defender Antivirus compatibility](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-compatibility).
+
+## Permissions
+
+When obtaining a token using user credentials:
+
+- The user needs to have at least the following role permission: 'Active remediation actions'. For more information, see: [Create and manage roles](https://learn.microsoft.com/en-us/defender-endpoint/user-roles).
+- The user needs to have access to the device, based on device group settings. For more information, see: [Create and manage device groups](https://learn.microsoft.com/en-us/defender-endpoint/machine-groups).
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Use Microsoft Defender for Endpoint APIs](https://learn.microsoft.com/en-us/defender-endpoint/api/apis-intro)
+
+| Permission type | Permission | Permission display name |
+| --- | --- | --- |
+| Application | Machine.StopAndQuarantine | 'Stop And Quarantine' |
+| Application | Machine.ReadWrite.All | 'Read and write all machine information' |
+| Delegated \(work or school account\) | Machine.StopAndQuarantine | 'Stop And Quarantine' |
+
+## HTTP request
+
+```http
+POST https://api.security.microsoft.com/api/machines/{id}/StopAndQuarantineFile
+```
+
+## Request headers
+
+| Name | Type | Description |
+| --- | --- | --- |
+| Authorization | String | Bearer {token}. **Required**. |
+| Content-Type | string | application/json. **Required**. |
+
+## Request body
+
+In the request body, supply a JSON object with the following parameters:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| Comment | String | Comment to associate with the action. **Required**. |
+| Sha1 | String | Sha1 of the file to stop and quarantine on the device. **Required**. |
+
+## Response
+
+If successful, this method returns 201 - Created response code and [Machine Action](https://learn.microsoft.com/en-us/defender-endpoint/api/machineaction) in the response body.
+
+## Example
+
+### Request
+
+Here's an example of the request.
+
+```http
+POST https://api.security.microsoft.com/api/machines/1e5bc9d7e413ddd7902c2932e418702b84d0cc07/StopAndQuarantineFile
+```
+
+```json
+{
+  "Comment": "Stop and quarantine file on machine due to alert 441688558380765161_2136280442",
+  "Sha1": "87662bc3d60e4200ceaf7aae249d1c343f4b83c9"
+}
+```

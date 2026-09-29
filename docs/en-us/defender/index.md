@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender/ -->
-<!-- Sitemap-Last-Modified: 2026-09-10 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 ![](https://learn.microsoft.com/en-us/media/hubs/shared/icon-overview.svg?branch=main)
 

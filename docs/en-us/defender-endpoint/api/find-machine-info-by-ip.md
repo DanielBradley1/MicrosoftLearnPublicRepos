@@ -1,0 +1,68 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/api/find-machine-info-by-ip -->
+<!-- Sitemap-Last-Modified: 2025-12-11 -->
+
+# Find device information by internal IP API
+
+Find a device by internal IP.
+
+The timestamp must be within the last 30 days.
+
+## Permissions
+
+The following permission is required to call this API. To learn more, including how to choose permissions, see [Use Microsoft Defender for Endpoint APIs](https://learn.microsoft.com/en-us/defender-endpoint/api/apis-intro)
+
+| Permission type | Permission | Permission display name |
+| --- | --- | --- |
+| Application | Machine.ReadWrite.All | 'Read and write all machine information' |
+
+## HTTP request
+
+```http
+GET /api/machines/find(timestamp={time},key={IP})
+```
+
+## Request headers
+
+| Name | Type | Description |
+| --- | --- | --- |
+| Authorization | String | Bearer {token}. **Required**. |
+
+## Request body
+
+Empty
+
+## Response
+
+If successful and machine exists - 200 OK. If no machine found - 404 Not Found.
+
+## Example
+
+### Request example
+
+Here's an example of the request.
+
+```http
+GET https://graph.microsoft.com/testwdatppreview/machines/find(timestamp=2018-06-19T10:00:00Z,key='10.166.93.61')
+Content-type: application/json
+```
+
+### Response example
+
+Here's an example of the response.
+
+The response will return a list of all devices that reported this IP address within 16 minutes prior and after the timestamp.
+
+```json
+HTTP/1.1 200 OK
+Content-type: application/json
+{
+    "@odata.context": "https://graph.microsoft.com/testwdatppreview/$metadata#Machines",
+    "value": [
+        {
+            "id": "04c99d46599f078f1c3da3783cf5b95f01ac61bb",
+            "computerDnsName": "",
+            "firstSeen": "2017-07-06T01:25:04.9480498Z",
+            "osPlatform": "Windows10",
+...
+}
+```

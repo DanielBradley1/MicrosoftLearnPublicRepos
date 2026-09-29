@@ -1,0 +1,68 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/restore-quarantined-files-microsoft-defender-antivirus -->
+<!-- Sitemap-Last-Modified: 2026-07-17 -->
+
+# Restore quarantined files in Microsoft Defender Antivirus
+
+Depending on how Microsoft Defender Antivirus is configured, it quarantines suspicious files. If you're certain a quarantined file isn't a threat, you can restore it on your Windows device. This article describes how to restore quarantined files by using the Windows Security app, the MpCmdRun command-line utility, or the Microsoft Defender for Endpoint portal.
+
+## Prerequisites
+
+Before you restore quarantined files, verify that your environment meets the following requirements.
+
+### Supported operating systems
+
+The following operating systems support restoring quarantined files:
+
+- Windows
+
+## Restore quarantined files using the Windows Security app
+
+To restore a quarantined file by using the Windows Security app, perform the following steps:
+
+1. On your Windows device, open **Windows Security**.
+2. Select **Virus & threat protection** and then, under **Current threats**, select **Protection history**.
+3. If you have a list of items, you can filter on **Quarantined Items**.
+4. Select an item you want to keep, and choose an action, such as **Restore**.
+
+## Restore quarantined files using MpCmdRun
+
+Use the following steps to restore quarantined files from the command line using the MpCmdRun utility:
+
+1. **Show all quarantined files**:
+
+   In an elevated Command Prompt \(a Command Prompt window you opened by selecting **Run as administrator**\), run the following commands:
+
+   Tip
+
+   The first command changes the directory to the latest version of <antimalware platform version> in `%ProgramData%\Microsoft\Windows Defender\Platform\<antimalware platform version>`. If that path doesn't exist, the command changes the directory to `%ProgramFiles%\Windows Defender`.
+
+   ```dos
+   (set "_done=" & if exist "%ProgramData%\Microsoft\Windows Defender\Platform\" (for /f "delims=" %d in ('dir "%ProgramData%\Microsoft\Windows Defender\Platform" /ad /b /o:-n 2^>nul') do if not defined _done (cd /d "%ProgramData%\Microsoft\Windows Defender\Platform\%d" & set _done=1)) else (cd /d "%ProgramFiles%\Windows Defender")) >nul 2>&1
+
+   MpCmdRun.exe -Restore -ListAll
+   ```
+
+2. **Restore a quarantined file**: After identifying the quarantined item from the list, you can restore a specific file by name. Replace <filename> with the name of the quarantined file you want to restore \(as shown in the previous command's output\), and then run the following command:
+
+   ```dos
+   MpCmdRun.exe -Restore -Name <filename>
+   ```
+
+For more information about MpCmdRun, see [Configure and manage Microsoft Defender Antivirus with the MpCmdRun command-line tool](https://learn.microsoft.com/en-us/defender-endpoint/command-line-arguments-microsoft-defender-antivirus).
+
+## Download or collect the file
+
+In the Microsoft Defender for Endpoint portal, you can download or collect a quarantined file from a device's file page. Selecting **Download file** from the response actions allows you to download a local, password-protected .zip archive containing your file. A flyout appears where you can record a reason for downloading the file, and set a password. By default, you should be able to download quarantined files using this response action.
+
+The **Download file** button can have the following states:
+
+- **Active** - You're able to collect the file.
+- **Disabled** - If the button is grayed out or disabled during an active collection attempt, you might not have appropriate permissions to collect files.
+
+For more information, see [Download or collect file](https://learn.microsoft.com/en-us/defender-endpoint/respond-file-alerts#download-or-collect-file).
+
+## Related content
+
+- [Configure remediation for scans](https://learn.microsoft.com/en-us/defender-endpoint/configure-remediation-microsoft-defender-antivirus)
+- [Review scan results](https://learn.microsoft.com/en-us/defender-endpoint/review-scan-results-microsoft-defender-antivirus)
+- [Address false positives/negatives in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/defender-endpoint-false-positives-negatives)
