@@ -5,6 +5,10 @@
 
 ## Overview
 
+Note
+
+**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [recommended network configurations for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
+
 Session and response sharing in Microsoft Copilot lets users share Copilot work with others through a link. Users can share either a full Copilot conversation or a single Copilot response.
 
 As an admin, you can manage whether users in your organization can share Copilot sessions and responses.

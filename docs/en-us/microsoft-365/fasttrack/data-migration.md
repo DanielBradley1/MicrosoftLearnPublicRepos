@@ -5,11 +5,11 @@
 
 ## Access FastTrack Portal
 
-To explore FastTrack migrations, advanced migration guides, migration prerequisites, and to perform migration, visit the [Microsoft Admin Center](https://aka.ms/FTMAC) \(*MAC*\) and select the FastTrack migration assistance tab.
+To explore FastTrack migrations, advanced migration guides, migration prerequisites, and to perform migration, visit the [Microsoft Admin Center](https://aka.ms/FastTrack-Migration) \(*MAC*\) and select the FastTrack migration assistance tab.
 
 Important
 
-Some Migration Learning Center links require authentication. If you are redirected to a registration page, sign in and then open the link again.
+The Microsoft 365 admin center requires you to sign in before you can view the migration guides and prerequisites.
 
 FastTrack can help you migrate mail and file data in your source environments to Office 365 \(Exchange Online, SharePoint, and OneDrive\).
 
@@ -21,7 +21,7 @@ Note
 
 To request guidance from FastTrack specialists with your Microsoft 365 deployment and migration efforts, visit [Raise RFA](https://learn.microsoft.com/en-us/microsoft-365/enterprise/request-fasttrack-assistance-microsoft-365).
 
-GCC environments are currently being supported through the GCC FastTrack instance. GCC customers should visit the [GCC FastTrack portal](https://gcc.fasttrack.microsoft.com/signin).
+GCC environments are currently being supported through the GCC FastTrack instance. GCC customers should contact their FastTrack representative for access details.
 
 Note
 
@@ -51,7 +51,7 @@ When you choose to use FastTrack to migrate your email to Exchange Online, we pr
 
 ### Considerations
 
-- Before migration, you must complete the set up and configuration of Exchange Online for your migration, and meet the [FastTrack Exchange migration prerequisites](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/Exchange/getting-started/prerequisites). \(***Important:** FastTrack requires authentication to access the FastTrack Migration Learning Center Migration page. If you land on a registration page after clicking the Learning Center link, come back and click the link again, to access the page after you authenticate.*\)
+- Before migration, you must complete the set up and configuration of Exchange Online for your migration, and meet the [FastTrack Exchange migration prerequisites](https://learn.microsoft.com/en-us/exchange/mailbox-migration/mailbox-migration).
 
   - If you performed onboarding yourself, you must pass the required checks and prerequisites. Refer to [Exchange Online](https://learn.microsoft.com/en-us/microsoft-365/fasttrack/office-365#exchange-online) for details.
 
@@ -82,11 +82,11 @@ FastTrack Specialists also provide guidance to help you enable Simple Mail Trans
 
 ### Your responsibilities
 
-You perform standard activities during the migration project. Refer to the data migration scope and responsibilities information in the [FastTrack Migration Learning Center](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/Exchange/migration/migration-scope-and-responsibility) for details. \(***Important:** FastTrack requires authentication to access the FastTrack Migration Learning Center Migration page. If you land on a registration page after clicking the Learning Center link, come back and click the link again to access the page after you authenticate.*\)
+You perform standard activities during the migration project. For details about the data migration scope and responsibilities, see the Migration section of the **Exchange migration guide** in the [Microsoft 365 admin center](https://admin.cloud.microsoft/?Q=RecommendationsADGDashboard#/modernonboarding/exchangemigrationguide).
 
 You also perform the following activities, specific to Exchange migrations:
 
-- Complete FastTrack core onboarding for Exchange Online. If you performed onboarding yourself, you must pass the required checks and prerequisites. Before migration, you must complete the set up and configuration of Exchange Online for your migration and meet the [FastTrack Exchange migration](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/Exchange/getting-started/prerequisites) prerequisites. \(***Important:** FastTrack requires authentication to access the FastTrack Migration Learning Center Migration page. If you land on a registration page after clicking the Learning Center link, come back and click the link again, to access the page after you authenticate.*\)
+- Complete FastTrack core onboarding for Exchange Online. If you performed onboarding yourself, you must pass the required checks and prerequisites. Before migration, you must complete the set up and configuration of Exchange Online for your migration and meet the [FastTrack Exchange migration](https://learn.microsoft.com/en-us/exchange/mailbox-migration/mailbox-migration) prerequisites.
 - Install the appropriate level of client software as per Office 365 guidelines.
 - Satisfy specific requirements if you intend to migrate from an on-premises Exchange environment. Refer to [Hybrid deployment prerequisites](https://go.microsoft.com/fwlink/?LinkId=787528) for details.
 - Ensure each source environment is on the latest service pack \(SP\) and rollup \(RU\)/cumulative update \(CU\) level, if applicable.
@@ -124,19 +124,19 @@ The following table presents migration details specific to each source environme
 
 ## FastTrack responsibilities for SharePoint migrations
 
-Our FastTrack Specialists perform standard activities during the migration project. Before migration, you must complete the set up and configuration of Exchange Online for your migration and meet the [FastTrack SharePoint migration](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/file%20share/getting-started/prerequisites) prerequisites.
+Our FastTrack Specialists perform standard activities during the migration project. Before migration, you must complete the set up and configuration of Exchange Online for your migration and meet the [FastTrack SharePoint migration](https://aka.ms/FastTrack-Migration) prerequisites.
 
 Important
 
-FastTrack requires authentication to access the FastTrack SharePoint migration prerequisites page. If you land on a registration page after clicking the migration link, come back and click the link again to access the page after you authenticate.
+The [SharePoint migration prerequisites](https://aka.ms/FastTrack-Migration) are in the Microsoft 365 admin center, which requires you to sign in.
 
 ### Your responsibilities
 
-You perform standard activities during the migration project. Refer to the data migration scope and responsibilities information in the [FastTrack Migration Learning Center](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/Exchange/migration/migration-scope-and-responsibility).
+You perform standard activities during the migration project. For details about the data migration scope and responsibilities, see the Migration section of the migration guide for this workload in the [Microsoft 365 admin center](https://aka.ms/FastTrack-Migration).
 
 Important
 
-FastTrack requires authentication to access the FastTrack Migration Learning Center Migration page. If you land on a registration page after clicking the Learning Center link, come back and click the link again, to access the page after you authenticate.
+The [migration guide](https://aka.ms/FastTrack-Migration) is in the Microsoft 365 admin center, which requires you to sign in.
 
 You also perform the following activities, specific to SharePoint migrations:
 
@@ -172,19 +172,19 @@ The following table presents migration details specific to each source environme
 
 ## FastTrack responsibilities for OneDrive migrations
 
-Our FastTrack Specialists perform standard activities during the migration project. Before migration, you must complete the set up and configuration of Exchange Online for your migration, and meet the [FastTrack OneDrive migration prerequisites](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/file%20share/getting-started/prerequisites).
+Our FastTrack Specialists perform standard activities during the migration project. Before migration, you must complete the set up and configuration of Exchange Online for your migration, and meet the [FastTrack OneDrive migration prerequisites](https://aka.ms/FastTrack-Migration).
 
 Important
 
-FastTrack requires authentication to access the FastTrack OneDrive migration prerequisites page. If you land on a registration page after clicking the migration link, come back and click the link again to access the page after you authenticate.
+The [OneDrive migration prerequisites](https://aka.ms/FastTrack-Migration) are in the Microsoft 365 admin center, which requires you to sign in.
 
 ### Your responsibilities
 
-You perform standard activities during the migration project. Refer to the data migration scope and responsibilities information in the [FastTrack Migration Learning Center](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/Exchange/migration/migration-scope-and-responsibility).
+You perform standard activities during the migration project. For details about the data migration scope and responsibilities, see the Migration section of the migration guide for this workload in the [Microsoft 365 admin center](https://aka.ms/FastTrack-Migration).
 
 Important
 
-FastTrack requires authentication to access the FastTrack Migration Learning Center Migration page. If you land on a registration page after clicking the Learning Center link, come back and click the link again, to access the page after you authenticate.
+The [migration guide](https://aka.ms/FastTrack-Migration) is in the Microsoft 365 admin center, which requires you to sign in.
 
 You also perform the following activities, specific to OneDrive migrations:
 
@@ -219,19 +219,19 @@ The following table presents migration details specific to each source environme
 
 ## FastTrack responsibilities for Microsoft Teams and Microsoft 365 Groups migrations
 
-Our FastTrack Specialists perform standard activities during the migration project. Before migration, you must complete the set up and configuration of Exchange Online for your migration, and meet the [FastTrack Microsoft Teams and Microsoft 365 Groups migration prerequisites](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/file%20share/getting-started/prerequisites).
+Our FastTrack Specialists perform standard activities during the migration project. Before migration, you must complete the set up and configuration of Exchange Online for your migration, and meet the [FastTrack Microsoft Teams and Microsoft 365 Groups migration prerequisites](https://aka.ms/FastTrack-Migration).
 
 Important
 
-FastTrack requires authentication to access the FastTrack Microsoft Teams and Microsoft 365 Groups prerequisites page. If you land on a registration page after clicking the migration link, come back and click the link again to access the page after you authenticate.
+The [Microsoft Teams and Microsoft 365 Groups migration prerequisites](https://aka.ms/FastTrack-Migration) are in the Microsoft 365 admin center, which requires you to sign in.
 
 ### Your responsibilities
 
-You perform standard activities during the migration project. Refer to the data migration scope and responsibilities information in the [FastTrack Migration Learning Center](https://fasttrack.microsoft.com/v2/en-us/migration/learning-center/Exchange/migration/migration-scope-and-responsibility).
+You perform standard activities during the migration project. For details about the data migration scope and responsibilities, see the Migration section of the migration guide for this workload in the [Microsoft 365 admin center](https://aka.ms/FastTrack-Migration).
 
 Important
 
-FastTrack requires authentication to access the FastTrack Migration Learning Center Migration page. If you land on a registration page after clicking the Learning Center link, come back and click the link again, to access the page after you authenticate.
+The [migration guide](https://aka.ms/FastTrack-Migration) is in the Microsoft 365 admin center, which requires you to sign in.
 
 You also perform the following activities, specific to Microsoft Teams and Microsoft 365 Groups migrations:
 

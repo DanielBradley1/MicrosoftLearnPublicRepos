@@ -29,10 +29,6 @@ To learn more about the Microsoft Frontier program, what's new, and how to try w
 
 ## Prerequisites
 
-Important
-
-If you want to use Microsoft Copilot Cowork, you need to make sure Anthropic is turned on in your tenant. For more information, see [Get started with Cowork](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier).
-
 Review the following requirements and recommendations:
 
 - Verify your admin role. You need an account that includes one of the following roles: **AI Admin**, **Security Admin**, **Office Apps Admin**.

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview -->
-<!-- Sitemap-Last-Modified: 2026-09-22 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Federated connectors overview
 
@@ -91,9 +91,37 @@ Admins can:
 - Bulk disable all federated connectors by using [Allowed Agent Type](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#allowed-agent-types), and selectively enable specific federated connectors in the Microsoft 365 admin center based on organizational policies and readiness. For more information, see [Manage federated connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/manage-federated-connectors).
 - Manage federated connectors from the Agent tab in the Microsoft 365 admin center portal apart from the **Copilot connectors** > **Your connections** section.
 
+Write, update, and delete tools are part of the connector and aren't enabled separately.
+
 The following image shows the connector pane for the HubSpot federated connector.
 
 [![Screenshot of the HubSpot connector in the admin center with Staged rollout and Enable/disable data source highlighted.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/hubspot-connector.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/hubspot-connector.png#lightbox)
+
+### View a connector's tools in the admin center \(Coming soon\)
+
+Note
+
+Viewing tools in the admin center isn't available for all connectors. If you encounter issues, sign in to Microsoft 365 Copilot with your user account, go to **Settings** > **Sources**, and select the connector. Then [expand **Write/Delete tools** to review individual tools and their approval settings](#review-individual-tool-permissions).
+
+For connectors that support this feature, the details page in the Microsoft 365 admin center includes a **Tools** section that lists the tools available to users in the organization, including tools that can modify or delete data. To view the tools:
+
+1. In the Microsoft 365 admin center, go to **Copilot connectors** > **Your connections** and select the federated connector.
+
+   [![Screenshot of the Zava connector details pane in the Microsoft 365 admin center, showing the Tools section and Sign in button.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-connector-details.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-connector-details.png#lightbox)
+2. On the connector's details page, go to the **Tools** section and sign in to the third-party service.
+
+   Signing in to view a connector's tools in the Microsoft 365 admin center might also sign you in to that connector in Microsoft 365 Copilot.
+
+   [![Screenshot of a successful sign-in to Zava, with Read/Search and Write/Delete tool counts and the All tools button.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-tools-signed-in.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-tools-signed-in.png#lightbox)
+3. Select **All tools**, and then review the list to identify tools that can create, update, or delete data.
+
+   [![Screenshot of the Zava Available tools list in the Microsoft 365 admin center, showing tools labeled Read, Write, or Delete.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-available-tools.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-available-tools.png#lightbox)
+
+Note
+
+The tool list reflects the permissions of the account used to sign in. Sign in by using an account that has a high level of access to the connector so you see the comprehensive list of tools.
+
+Before enabling or continuing to use a connector that exposes write, update, or delete tools, review the connector's capabilities, privacy terms, and third-party agreements against your organization's security, compliance, and acceptable-use requirements. Update user and help-desk guidance so users understand that actions are performed using their own permissions in the third-party service.
 
 ## How to connect and use federated Copilot connectors
 
@@ -168,15 +196,15 @@ These actions export Customer Data to the connected system to create, update, de
 
 The following image shows a collapsed confirmation card for a write action.
 
-[![Screenshot of a collapsed confirmation card in Copilot Chat showing a request to create an issue in Zava.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-collapsed.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-collapsed.png#lightbox)
+[![Screenshot of a collapsed confirmation card in Copilot Chat showing a request to create an issue in Zava.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-collapsed.jpg)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-collapsed.jpg#lightbox)
 
 Users can expand the card to review the action parameters before approving it.
 
-[![Screenshot of an expanded confirmation card in Copilot Chat showing the parameters to be sent to Zava.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-expanded.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-expanded.png#lightbox)
+[![Screenshot of an expanded confirmation card in Copilot Chat showing the parameters to be sent to Zava.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-expanded.jpg)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-confirmation-expanded.jpg#lightbox)
 
-Open the approval menu to choose how long to allow the tool.
+Open the menu next to **Allow once** to choose **Allow for conversation** or **Always allow**.
 
-[![Screenshot of the confirmation card with Allow once, Allow for conversation, Always allow, and Cancel options.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-approval-options.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-approval-options.png#lightbox)
+[![Screenshot of the Zava confirmation card with Allow once and Cancel buttons and an open menu offering Allow for conversation and Always allow.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-approval-options.jpg)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-action-approval-options.jpg#lightbox)
 
 The user chooses one of the following options:
 
@@ -203,6 +231,8 @@ Write, update, and delete tools default to **Needs approval**, which means Copil
 
 [![Screenshot of the approval settings menu for the entire Write/Delete tools group.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-delete-group-permissions.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-delete-group-permissions.png#lightbox)
 
+#### Review individual tool permissions
+
 Expand **Write/Delete tools** to review individual tools and their approval settings.
 
 [![Screenshot of the expanded Write/Delete tools group showing individual tools set to Needs approval.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-delete-tools-expanded.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-delete-tools-expanded.png#lightbox)
@@ -216,28 +246,6 @@ Users can also change approval settings for an individual tool.
 [![Screenshot of an individual tool's approval menu with Needs approval and Always allow options.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-tool-permission-options.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/write-tool-permission-options.png#lightbox)
 
 If a connector publisher adds a new write-capable tool or changes an existing one, the tool is set to **Needs approval** by default. Thus, Copilot will ask for confirmation the next time it wants to use that tool.
-
-### View a connector's tools in the admin center \(Coming soon\)
-
-Write, update, and delete tools are part of the connector and aren't enabled separately. The availability controls in [Admin experience and controls](#admin-experience-and-controls) continue to apply.
-
-Each federated connector's details page in the Microsoft 365 admin center includes a **Tools** section that lists the tools available to users in the organization, including tools that can modify or delete data. To view the tools:
-
-1. In the Microsoft 365 admin center, go to **Copilot connectors** > **Your connections** and select the federated connector.
-
-   [![Screenshot of the Zava connector details pane in the Microsoft 365 admin center, showing the Tools section and Sign in button.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-connector-details.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-connector-details.png#lightbox)
-2. On the connector's details page, go to the **Tools** section and sign in to the third-party service.
-
-   [![Screenshot of the Tools section after signing in, showing Read/Search and Write/Delete tool counts and the View tools button.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-tools-signed-in.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-tools-signed-in.png#lightbox)
-3. Review the list of tools and note which tools can create, update, or delete data.
-
-   [![Screenshot of the Available tools list in the Microsoft 365 admin center, showing tools labeled Read, Write, or Delete.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-available-tools.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/admin-center-available-tools.png#lightbox)
-
-Note
-
-The tool list reflects the permissions of the account used to sign in. Sign in by using an account that has a high level of access to the connector so you see the comprehensive list of tools.
-
-Before enabling or continuing to use a connector that exposes write, update, or delete tools, review the connector's capabilities, privacy terms, and third-party agreements against your organization's security, compliance, and acceptable-use requirements. Update user and help-desk guidance so users understand that actions are performed using their own permissions in the third-party service.
 
 ## Security and compliance
 

@@ -54,6 +54,10 @@ You can access Copilot Chat \(Basic\) through:
 - copilot.com
 - copilot.ai
 
+Note
+
+**The Microsoft 365 Copilot Chat app is now called Microsoft Copilot Chat**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [recommended network configurations for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
+
 Declarative agents that are grounded in instructions and public websites are included with Copilot Chat. Access to custom or other agents is pay-as-you-go only.
 
 To use organizational content with Copilot Chat:
@@ -69,6 +73,10 @@ You can access Microsoft 365 Copilot \(Basic\) through:
 - [https://m365copilot.com/](https://m365copilot.com/)
 - Microsoft 365 desktop app
 - Microsoft 365 apps \(Word, Excel, PowerPoint, and OneNote\)
+
+Note
+
+**The Microsoft 365 Copilot Chat app is now called Microsoft Copilot Chat**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [recommended network configurations for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
 
 In-app features you can use:
 
@@ -112,6 +120,10 @@ You can access Microsoft 365 Copilot \(Premium\) through:
 - [https://m365copilot.com/](https://m365copilot.com/)
 - [Microsoft 365 desktop app](https://www.microsoft.com/microsoft-365-copilot/download-copilot-app?msockid=3fbdc68005c06723095dd00004ef664d)
 - Microsoft 365 apps \(Word, Excel, PowerPoint, and OneNote\)
+
+Note
+
+**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [recommended network configurations for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
 
 Other resources:
 

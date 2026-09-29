@@ -3,6 +3,10 @@
 
 # Security for Microsoft Copilot
 
+Note
+
+**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [recommended network configurations for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
+
 Security is foundational to Microsoft's approach to Microsoft Copilot. This article explains how Microsoft secures Copilot and how it inherits Microsoft 365 security, compliance, and privacy protections.
 
 [![Diagram depicting ways Microsoft secures Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/security-microsoft-365-copilot/microsoft-secures-copilot.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/security-microsoft-365-copilot/microsoft-secures-copilot.png#lightbox)

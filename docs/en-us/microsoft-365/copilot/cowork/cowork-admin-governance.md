@@ -90,6 +90,7 @@ Learn more about usage-based billing in the following links:
 - [Set up Copilot Credits](https://go.microsoft.com/fwlink/?LinkId=2368211)
 - [Estimate costs in the Cowork cost estimator](https://aka.ms/CustomerCoworkEstimator)
 - [Gain visibility into how users engage with Cowork in the Cowork Usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/cowork-usage-report)
+- [Understand how Cowork is being used and where it provides value](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/cowork-usage-report#value-tab)
 - [How to use the Consumption Dashboard in Insights—Cowork page](https://learn.microsoft.com/en-us/viva/insights/org-team-insights/ai-cost-dashboard#cowork-page)
 
 ## Automated tasks
@@ -103,7 +104,7 @@ Users can create automated tasks that run without a person present: scheduled pr
 
 ## Security and compliance
 
-Microsoft Purview is available to secure and govern Cowork. Learn more in [Use Microsoft Purview to manage data security & compliance for Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork).
+Microsoft Purview is available to secure and govern Cowork. Learn more in [Use Microsoft Purview to manage data security & compliance for Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork) and [What is Copilot Managed Runtime \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/index).
 
 ### Data residency
 

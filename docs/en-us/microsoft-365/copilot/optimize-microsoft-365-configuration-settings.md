@@ -3,6 +3,10 @@
 
 # Optimize Microsoft Copilot configuration settings
 
+Note
+
+**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [recommended network configurations for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
+
 Configure your tenant for the best Microsoft Copilot experience. This article describes ten priority configuration settings that improve adoption, satisfaction, and retention, and explains where to find them in the Microsoft 365 admin center.
 
 This video provides an overview of how the recommended configuration settings can help to optimize Microsoft Copilot in your business.
@@ -35,7 +39,7 @@ For more information about this setting, see [Data, privacy, and security for we
 
 ### Microsoft Copilot app pinned to Windows taskbar
 
-The *Microsoft Copilot app pinned to Windows taskbar* setting places the Microsoft Copilot app on the Windows taskbar. This setting makes Copilot more visible and accessible on users’ desktops.
+The *Microsoft Copilot app pinned to Windows taskbar* setting places the Microsoft Copilot app on the Windows taskbar. This setting makes Copilot more visible and accessible on users' desktops.
 
 **Why this setting matters**:
 
@@ -103,13 +107,13 @@ For more information, see [Manage Microsoft feedback for your organization](http
 
 ### Anthropic as a sub‑processor
 
-The *Anthropic as a sub‑processor* setting allows Microsoft Copilot to use additional AI models \(such as Claude\) from Anthropic alongside Microsoft models, expanding flexibility, reasoning capabilities, and output quality while remaining within Microsoft’s compliance framework.
+The *Anthropic as a sub‑processor* setting allows Microsoft Copilot to use additional AI models \(such as Claude\) from Anthropic alongside Microsoft models, expanding flexibility, reasoning capabilities, and output quality while remaining within Microsoft's compliance framework.
 
 This setting lets admins control whether these external models are available in Copilot, enabling more advanced scenarios like deep analysis and multi-step workflows while maintaining governance, security, and policy enforcement across the tenant.
 
 **Why this setting matters**:
 
-- Enables use of multiple AI models within Copilot while remaining within Microsoft’s compliance framework
+- Enables use of multiple AI models within Copilot while remaining within Microsoft's compliance framework
 - Improves output quality for complex and advanced scenarios
 - Future‑proofs deployments with multi‑model innovation under enterprise governance
 

@@ -458,6 +458,8 @@ Your app saves automatically as you work. Publishing makes your app, and your la
 
 Share apps you create with a share link, like you do with Word documents or PowerPoint decks. Open the app for editing, select **Share** to generate a link, and send it to anyone in your organization who can use Microsoft 365 Copilot. Anyone with the link can open and use the app, including all its data, so share responsibly and only with users who should have access.
 
+Learn more in [What is Copilot Managed Runtime \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/index).
+
 ## Schedule prompts
 
 You can schedule a prompt to run automatically on a recurring basis. To create a scheduled prompt, describe what you want and when in your message. For example, "Send me a daily briefing every morning at 9 AM" or "Create a weekly status report every Friday."

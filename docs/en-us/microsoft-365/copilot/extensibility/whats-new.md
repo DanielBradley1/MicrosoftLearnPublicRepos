@@ -7,6 +7,12 @@ As a developer, you can extend, enrich, and customize [Microsoft 365 Copilot](ht
 
 For the latest information, announcements, and news about preview and generally available \(GA\) features, follow the [Microsoft 365 Copilot developer blog](https://devblogs.microsoft.com/microsoft365dev/category/microsoft-365-copilot/).
 
+## August 2026
+
+### Review requested packages in the Package Management API
+
+Administrators can review the agents that users in the organization requested by filtering [List packages](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackages-list) on the `requestStatus` or `requestType` property.
+
 ## July 2026
 
 ### Declarative agent manifest version 1.8

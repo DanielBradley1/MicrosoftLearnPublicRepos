@@ -5,7 +5,7 @@
 
 ## Access FastTrack Portal
 
-To explore the FastTrack Migration Learning Center and review the migration prerequisites, please sign in using this link: [https://fasttrack.microsoft.com/signin](https://fasttrack.microsoft.com/signin)
+To explore the FastTrack Migration Learning Center and review the migration prerequisites, please sign in using this link: [https://aka.ms/FastTrack-Migration](https://aka.ms/FastTrack-Migration)
 
 Important
 

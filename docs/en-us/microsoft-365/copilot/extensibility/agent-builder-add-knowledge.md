@@ -5,15 +5,18 @@
 
 The Agent Builder feature in Microsoft 365 Copilot provides a simple interface for you to integrate knowledge sources to make your declarative agent more intelligent and context-aware. These knowledge sources ground your agent in enterprise data, public content, and user-specific information to enable it to deliver more accurate, relevant, and personalized responses.
 
-You can add:
+Agent Builder supports public websites, SharePoint and OneDrive content, Teams chats and meetings, Outlook email, embedded files, and Microsoft 365 Copilot connectors. Limits vary by source type.
 
-- Up to four public website URLs.
-- Up to 100 SharePoint files, folders, or sites.
-- Up to 50 OneDrive files.
-- Up to five Teams chat URLs.
-- Embedded files uploaded from your device \(on the **Configure** tab\).
-- Microsoft 365 Copilot connectors \(if enabled by your organization's administrator\).
-- Dynamics 365 and Power Apps data \(if *Business Applications in Work IQ* is enabled by your organization's administrator\).
+| Knowledge source | Limit for each agent |
+| --- | --- |
+| Public website URLs | Four URLs |
+| SharePoint files, folders, or sites | 100 files |
+| SharePoint lists | One list |
+| OneDrive files | 50 files |
+| Teams chats and meetings | Five chats and five meetings |
+| Embedded files uploaded from your device | 20 files |
+| Microsoft 365 Copilot connectors | No documented numerical limit. Your organization's administrator must enable the connectors. |
+| Dynamics 365 and Power Apps data | No documented numerical limit. Your organization's administrator must enable **Business Applications in Work IQ**. |
 
 This article describes the supported knowledge sources and the steps to configure them in Microsoft 365 Copilot. For general information about building agents with Microsoft 365 Copilot, see [Build agents with Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents).
 
@@ -44,6 +47,12 @@ If you're configuring your agent manually, to add knowledge sources to your agen
 
 ![A screenshot of the Knowledge section of the Configure tab.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/agent-builder-knowledge-configure.png)
 
+## Verify your knowledge sources
+
+After you add knowledge sources, verify that they appear in the **Knowledge** section on the **Configure** tab. Then, on the **Try it** tab, ask a question whose answer is available in one of the sources and confirm that the response uses the expected information.
+
+Newly uploaded SharePoint and OneDrive content might display a **Preparing** status. You can test the agent while a source is preparing, but the agent doesn't use that source in its responses until the source is ready.
+
 ## Public websites
 
 Add specific public websites as agent knowledge sources to make your agent context-aware. When you reference websites as knowledge sources, the following limits apply:
@@ -51,6 +60,8 @@ Add specific public websites as agent knowledge sources to make your agent conte
 - Public website URLs must only be two levels. For example, `https://example.org/a/b/c` is an invalid URL because it's more than two levels.
 - URLs can't contain query parameters. For example, `https://example.org?test=1` is invalid.
 - You can add up to four URLs.
+
+![A screenshot of the Knowledge section web search enter link.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/web-search-enter-link.png)
 
 To configure your agent to use any web data as knowledge:
 
@@ -95,6 +106,8 @@ After you provide the URL, press **Enter** to add it as a knowledge source.
 
 Select the **Attach cloud files** cloud icon in the **Knowledge** section to open the file picker. The picker displays your recently accessed SharePoint and OneDrive sites. To view more SharePoint sites, select **More places** at the bottom of the left pane. If you recently created a site, it appears after several minutes.
 
+![A screenshot of the Knowledge section of the cloud files.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/cloud-files-all-new.png)
+
 To browse for a SharePoint list, select **Recent lists** in the left pane of the picker, and then select the list that you want to add.
 
 Note
@@ -119,6 +132,8 @@ You can ground your agent in Microsoft Teams data, including Teams chat messages
 
 You can also scope your agents to specific chats, including team channels, group chats, and meeting chats. Scoping knowledge to specific chats improves the accuracy and relevancy of agents' responses. To scope Teams knowledge to specific chats, on the **Configure** tab, in the **Knowledge** section, select the search bar. In the window that opens, choose the **Chats** tab, and select the specific chats to add. You can add up to five chats.
 
+![A screenshot of the Knowledge section of the Teams add groups.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/teams-add.png)
+
 You can also scope your agents to specific meetings. Scoping knowledge to specific meetings improves the accuracy and relevancy of agents' responses. To scope Teams knowledge to specific meetings, on the **Configure** tab, in the **Knowledge** section, select the search bar. In the window that opens, choose the **Meetings** tab, and select the specific meetings to add.
 
 Important
@@ -131,13 +146,15 @@ Important
 
 You can ground your agent in Outlook email. To add email as a knowledge source, on the **Configure** tab, in the **Knowledge** section, select the search bar, and choose **My emails**.
 
+![A screenshot of the Knowledge section of Outlook.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/outlook-group-mailbox.png)
+
 Note
 
 You can't scope email knowledge. When you add email, the agent uses all email in your mailbox as knowledge. Users that you share the agent with don't have access to your email as knowledge. This capability is only available to users with a Microsoft 365 Copilot add-on license.
 
 ## Embedded file content
 
-You can upload files directly from your device for your agent to use as knowledge. The files that you upload become embedded content in the agent. To upload files, drag and drop from your device into the **Describe** tab or the **Configure** tab. You can also choose the arrow icon on the **Configure** tab to upload files from your device. You can upload individual files from your device, but not file folders.
+You can upload files directly from your device for your agent to use as knowledge from either the **Describe** or **Configure** tab. The files that you upload become embedded content in the agent. To upload files, drag and drop them from your device into either tab. You can also choose the arrow icon on the **Configure** tab to upload files from your device. You can upload individual files from your device, but not file folders.
 
 You can add up to 20 files as knowledge sources.
 
@@ -320,7 +337,7 @@ For more information about the available Copilot connectors, see the [Connectors
 
 Note
 
-Admins must first enable *Business Applications in Work IQ* in the Microsoft 365 admin center and also enable Work IQ for each Power Platform environment. For more information, see [Set Up Business Applications in Work IQ](https://learn.microsoft.com/en-us/power-platform/admin/copilot/business-applications-work-iq-quickstart).
+Admins must first enable **Business Applications in Work IQ** in the Microsoft 365 admin center and also enable Work IQ for each Power Platform environment. For more information, see [Set Up Business Applications in Work IQ](https://learn.microsoft.com/en-us/power-platform/admin/business-applications-work-iq/quickstart).
 
 Adding Dataverse as a knowledge source provides read access to the content and doesn't allow creating, updating, or deleting records.
 

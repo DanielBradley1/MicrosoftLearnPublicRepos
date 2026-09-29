@@ -3,6 +3,10 @@
 
 # Drive adoption with Microsoft Copilot Usage report Organizational Messaging
 
+Note
+
+**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [recommended network configurations for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
+
 You can identify and address Copilot adoption gaps in your organization by using the Organizational Messages feature that's built into the [Microsoft Copilot usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage). This feature sends notifications directly to the users you need to reach to increase usage and adoption. The built-in feature is easy to use and implement. It targets two common usage scenarios and uses preset message templates.
 
 This video provides an overview of the Microsoft Copilot usage report and the built-in Organizational Messages feature. It's 2 minutes and 26 seconds long.

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-app-windows-taskbar-group-policy -->
-<!-- Sitemap-Last-Modified: 2026-09-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Pin Microsoft Copilot to the Windows taskbar using Group Policy
 
