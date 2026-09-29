@@ -5,6 +5,10 @@
 
 *Applies to: Configuration Manager \(current branch\)*
 
+Important
+
+The legacy System Center Endpoint Protection installer \(`scepinstall.exe`\) is deprecated. Starting in Configuration Manager version 2609, it is no longer included with Configuration Manager.
+
 Your organization may have a number of standalone clients that you cannot manage or protect with Microsoft Configuration Manager. Without any endpoint protection in place, these standalone clients are vulnerable to potential malware attacks. To protect such standalone clients, you can manually configure them with Endpoint Protection, as described in this topic.
 
 Note

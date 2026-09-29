@@ -73,7 +73,7 @@ Before you can manage security tasks in the Intune admin center, a security admi
 
 Tip
 
-You can also manage these tasks from the centralized [**Admin tasks**](https://learn.microsoft.com/en-us/intune/device-management/admin-tasks) pane in the Intune admin center.
+You can also manage these tasks from the centralized [**Admin tasks**](https://learn.microsoft.com/en-us/intune/governance/admin-tasks) pane in the Intune admin center.
 
 To manage security tasks:
 

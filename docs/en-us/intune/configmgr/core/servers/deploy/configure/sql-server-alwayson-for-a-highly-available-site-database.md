@@ -95,14 +95,14 @@ Configure the database of each replica with the following settings:
   ```
 
 - Set the database owner to the *SA account*. You don't need to enable this account.
-- Turn **ON** the **TRUSTWORTHY** setting:
+- For Configuration Manager version 2603 and earlier, turn **ON** the **TRUSTWORTHY** setting:
 
   ```SQL
   ALTER DATABASE [CM_xxx] SET TRUSTWORTHY ON;
   ```
 
 
-  For more information, see the [TRUSTWORTHY database property](https://learn.microsoft.com/en-us/sql/relational-databases/security/trustworthy-database-property).
+  For version 2609 and later, you don't need to enable **TRUSTWORTHY** to load Configuration Manager SQLCLR assemblies. Skip this command when configuring the site database for these versions. For more information, see [SQLCLR assembly trust](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/supported-configurations-for-sql-server#sqlclr-assembly-trust).
 
 - Enable the **Service Broker**:
 

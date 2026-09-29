@@ -23,16 +23,17 @@ Perform operational actions on managed devices, run scripts and remediations, vi
 
 ## Get started with device management
 
+### Overview
+
+- [Device management overview](https://learn.microsoft.com/en-us/intune/device-management/overview)
+
 ### Concept
 
-- [Manage devices with endpoint security](https://learn.microsoft.com/en-us/intune/device-management/manage-endpoint-security-devices)
-- [Centrally manage admin tasks](https://learn.microsoft.com/en-us/intune/device-management/admin-tasks)
 - [Manage specialty devices](https://learn.microsoft.com/en-us/intune/device-management/specialty-devices)
 
 ### How-To Guide
 
-- [Categorize devices into groups](https://learn.microsoft.com/en-us/intune/device-management/create-device-categories)
-- [View encryption status report details](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption)
+- [Create and assign device categories](https://learn.microsoft.com/en-us/intune/device-management/create-device-categories)
 
 ## Run device actions
 
@@ -78,7 +79,7 @@ Perform operational actions on managed devices, run scripts and remediations, vi
 
 ### How-To Guide
 
-- [Find the primary user of a device](https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/find-primary-user)
+- [Change a device's primary user](https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/find-primary-user)
 - [View device details](https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/device-details)
 - [View ChromeOS device information](https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/chrome-enterprise-details)
 

@@ -47,9 +47,9 @@ These device actions are especially useful in environments where devices are sha
 1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) > [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
 2. From the devices list, select a device.
 
-3. At the top of the device overview pane, locate the row of action icons. Select **Play Lost Mode sound \(supervised only\)**.
+3. At the top of the device overview pane, locate the row of action icons. Select **Locate** > **Play Lost Mode sound \(supervised only\)**.
 
-3. At the top of the device overview pane, locate the row of action icons. Select **Play lost device sound**.
+3. At the top of the device overview pane, locate the row of action icons. Select **Locate** > **Play lost device sound**.
 
 4. Select the duration for the sound to play on the device, and then select **Yes**.
 

@@ -141,11 +141,10 @@ If you use [BitLocker management](https://learn.microsoft.com/en-us/intune/confi
 
 Configuration Manager supports the in-place upgrade of SQL Server to the following versions:
 
+- SQL Server 2025
 - SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
-- SQL Server 2016
-- SQL Server 2014
 
 This support includes the upgrade of SQL Server Express to a newer version of SQL Server Express at secondary sites.
 
@@ -162,7 +161,6 @@ For more information about upgrading SQL Server, see the following SQL Server ar
 - [Upgrade to SQL Server 2022](https://learn.microsoft.com/en-us/sql/database-engine/install-windows/supported-version-and-edition-upgrades-2022)
 - [Upgrade to SQL Server 2019](https://learn.microsoft.com/en-us/sql/database-engine/install-windows/supported-version-and-edition-upgrades-version-15)
 - [Upgrade to SQL Server 2017](https://learn.microsoft.com/en-us/sql/database-engine/install-windows/supported-version-and-edition-upgrades-2017)
-- [Upgrade to SQL Server 2016](https://learn.microsoft.com/en-us/sql/database-engine/install-windows/supported-version-and-edition-upgrades)
 
 ### To upgrade SQL Server on the site database server
 

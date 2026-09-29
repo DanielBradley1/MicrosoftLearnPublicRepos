@@ -36,6 +36,11 @@ For more information about app installation types, see [How to add an app to Mic
 
 4. Select **iOS/iPadOS** as the **Platform**.
 5. Click **Select app** next to **Targeted app**. The **Associated app** pane is displayed.
+
+Note
+
+App configuration policies are only supported for MDM-managed apps and cannot be used to configure DDM apps.
+
 6. On the **Targeted app** pane, choose the managed app to associate with the configuration policy and click **OK**.
 7. Click **Next** to display the **Settings** page.
 8. In the dropdown box, select the **Configuration settings format**. Select one of the following methods to add configuration information:

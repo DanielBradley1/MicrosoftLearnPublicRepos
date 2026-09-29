@@ -154,7 +154,7 @@ You can cancel a request before it's approved by selecting it from the **My requ
 
 Tip
 
-You can also manage these tasks from the centralized [**Admin tasks**](https://learn.microsoft.com/en-us/intune/device-management/admin-tasks) pane in the Intune admin center.
+You can also manage these tasks from the centralized [**Admin tasks**](https://learn.microsoft.com/en-us/intune/governance/admin-tasks) pane in the Intune admin center.
 
 ## More considerations
 

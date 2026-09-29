@@ -8,7 +8,7 @@ As a security administrator, use the *All devices* view in the Microsoft Intune 
 - Intune
 - Configuration Manager
 - [Co-management](https://learn.microsoft.com/en-us/configmgr/comanage/overview) *\(by both Intune and Configuration Manager\)*
-- [Defender for Endpoint security settings management](https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/security-settings-management) *\(for devices that aren't enrolled with Intune\)*
+- [Defender for Endpoint security settings management](https://learn.microsoft.com/en-us/intune/device-management/microsoft-defender/security-settings-management) *\(for devices that aren't enrolled with Intune\)*
 
 Devices can be in the cloud and from your on-premises infrastructure when integrated with your Microsoft Entra ID.
 
@@ -22,7 +22,7 @@ The initial *All devices* view displays your devices and includes key informatio
 - When the device last checked in
 - And more
 
-[![The all device view in the admin center.](https://learn.microsoft.com/en-us/intune/device-management/media/manage-endpoint-security-devices/all-device-view.png)](https://learn.microsoft.com/en-us/intune/device-management/media/manage-endpoint-security-devices/all-device-view.png#lightbox)
+[![The all device view in the admin center.](https://learn.microsoft.com/en-us/intune/device-management/media/endpoint-security-devices/all-device-view.png)](https://learn.microsoft.com/en-us/intune/device-management/media/endpoint-security-devices/all-device-view.png#lightbox)
 
 While viewing device details, you can select a device to drill-in for more information.
 
@@ -52,7 +52,7 @@ Consider the following fields:
     With co-management, you [choose different co-management workloads](https://learn.microsoft.com/en-us/configmgr/comanage/how-to-switch-workloads) to determine which aspects are managed by Configuration Manager or by Intune. These choices affect which policies the device applies, and how compliance data is reported to the admin center.
 
     For example, you can use Intune to configure policies for Antivirus, Firewall, and Encryption. These policies are all considered policy for *Endpoint Protection*. To have a co-managed device use the Intune policies and not the Configuration Manager policies, set the co-management slider for Endpoint Protection to either *Intune* or *Pilot Intune*. If the slider is set to Configuration Manager, the device uses the policies and settings from Configuration Manager instead.
-  - **MDE** – These devices aren't enrolled with Intune. Instead, they onboard to Defender for Endpoint and can process many of the [Intune endpoint security policies](https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/security-settings-management#which-solution-should-i-use). Devices enrolled with security settings management appear both in the Intune admin center and in the Defender portal. In the admin center, the *Managed by* field displays MDE for these devices.
+  - **MDE** – These devices aren't enrolled with Intune. Instead, they onboard to Defender for Endpoint and can process many of the [Intune endpoint security policies](https://learn.microsoft.com/en-us/intune/device-management/microsoft-defender/security-settings-management#which-solution-should-i-use). Devices enrolled with security settings management appear both in the Intune admin center and in the Defender portal. In the admin center, the *Managed by* field displays MDE for these devices.
 
 - **Compliance**: Compliance is evaluated against the compliance policies that are assigned to the device. The source of these policies and what information is in the console depends on how the device is managed; Intune, Configuration Manager, or co-management. For co-managed devices to report compliance, set the co-management slider for Device Compliance to *Intune* or to *Pilot Intune*.
 
@@ -65,7 +65,7 @@ To view information about the device configuration policies that apply to a devi
 
 To view the report, select a device and then select **Device configuration**, which is found below the *Monitor* category.
 
-![View endpoint security policy details](https://learn.microsoft.com/en-us/intune/device-management/media/manage-endpoint-security-devices/view-policy-details.png)
+![View endpoint security policy details](https://learn.microsoft.com/en-us/intune/device-management/media/endpoint-security-devices/view-policy-details.png)
 
 Devices that are managed by Configuration Manager don't display policy details in the report. To view additional information for these devices, use the Configuration Manager console.
 
@@ -84,7 +84,7 @@ Remote actions are actions you can start or apply to a device from the Microsoft
 
 Remote actions display across the top of the devices *Overview* page. Actions that can't display because of limited space on your screen are available by selecting the ellipsis on the right side:
 
-![View additional actions](https://learn.microsoft.com/en-us/intune/device-management/media/manage-endpoint-security-devices/view-additional-actions.png)
+![View additional actions](https://learn.microsoft.com/en-us/intune/device-management/media/endpoint-security-devices/view-additional-actions.png)
 
 The remote actions that are available depend on how the device is managed:
 
@@ -106,7 +106,7 @@ Some of the Intune remote actions can help secure devices or safeguard data that
 - Scan for malware outside of a scheduled run
 - Rotate BitLocker keys
 
-The following Intune remote actions are of interest to the security admin, and are a subset of the [full list](https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/device-details#view-the-device-details). Not all actions are available for all device platforms. The links go to content that provides in-depth details for each action.
+The following Intune remote actions are of interest to the security admin, and are a subset of the [full list](https://learn.microsoft.com/en-us/intune/device-management/actions/#available-device-actions). Not all actions are available for all device platforms. The links go to content that provides in-depth details for each action.
 
 - [Synchronize device](https://learn.microsoft.com/en-us/intune/device-management/actions/sync) – Have the device immediately check-in with Intune. When a device checks in, it receives any pending actions or policies that are assigned to it.
 - [Restart](https://learn.microsoft.com/en-us/intune/device-management/actions/restart) – Force a Windows device to restart, within five minutes. The device owners aren't automatically notified of the restart and might lose work.
@@ -121,10 +121,10 @@ The following Intune remote actions are of interest to the security admin, and a
 
 You can also use *bulk device actions* to manage some actions like *Retire* and *Wipe* for multiple devices at the same time. To learn more, see [bulk device actions](https://learn.microsoft.com/en-us/intune/device-management/actions/#bulk-device-actions).
 
-![Select bulk actions](https://learn.microsoft.com/en-us/intune/device-management/media/manage-endpoint-security-devices/select-bulk-actions.png)
+![Select bulk actions](https://learn.microsoft.com/en-us/intune/device-management/media/endpoint-security-devices/select-bulk-actions.png)
 
 Options you manage for devices don't take effect until the device checks in with Intune.
 
 ## Next steps
 
-[Manage endpoint security in Intune](https://learn.microsoft.com/en-us/intune/device-security/endpoint-security-policies)
+[Manage endpoint security in Intune](https://learn.microsoft.com/en-us/intune/device-management/endpoint-security-policies)

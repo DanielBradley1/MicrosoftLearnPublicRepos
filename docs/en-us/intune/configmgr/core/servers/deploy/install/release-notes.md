@@ -13,9 +13,9 @@ This article contains release notes for the current branch of Configuration Mana
 
 For information about the new features introduced with different versions, see the following articles:
 
+- [What's new in version 2609](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-version-2609)
 - [What's new in version 2603](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2603)
 - [What's new in version 2509](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2509)
-- [What's new in version 2503](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2503)
 
 Tip
 

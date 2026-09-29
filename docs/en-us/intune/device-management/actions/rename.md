@@ -1,95 +1,61 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/rename -->
 <!-- Sitemap-Last-Modified: 2026-04-21 -->
 
-# Device action: rename
+# Rename a device in Microsoft Intune
 
-The *rename device* action in Microsoft Intune allows IT administrators to change the *Device name* displayed in the Intune admin center for a managed device. This action does not affect the *Management name* in Intune or the *Device name* shown in the Company Portal.
+Renaming a device changes the **Device name** displayed in the Microsoft Intune admin center. It doesn't affect the *Management name* in Intune or the *Device name* shown in the Company Portal. Renaming helps you keep names consistent across your inventory—for example, aligning names with asset tags, user roles, or location-based identifiers.
 
-Renaming a device can help improve clarity and consistency across your device inventory—especially in environments with shared devices, standardized naming conventions, or large-scale deployments. It's useful for aligning device names with asset tags, user roles, or location-based identifiers, making it easier to manage and troubleshoot devices at scale.
+You rename a single device from its **Properties** tab, or rename multiple devices at once by using **Bulk Device Actions**.
+
+## Supported platforms
+
+Rename is supported on:
+
+- Android Enterprise corporate-owned Fully Managed \(COBO\), Dedicated \(COSU\), and Corporate-Owned Work Profile \(COPE\)
+- iOS/iPadOS in [Supervised mode](https://learn.microsoft.com/en-us/intune/intune-service/remote-actions/device-supervised-mode)
+- macOS \(corporate-owned\)
+- Windows \(corporate-owned\)
 
 Note
 
-Renaming Android Enterprise devices only changes the **Device name** in the Intune admin center and not on the device itself. The Device name in Intune is a friendly name that users can change.
+- **Android Enterprise**: Renaming changes only the **Device name** in the admin center, not the name on the device. This friendly name is one that users can change. It can take 10 minutes or more for a renamed device to update in the **Devices** list.
+- **Windows**: Renaming Microsoft Entra hybrid joined devices from Intune isn't supported. To rename hybrid joined devices, use domain-based methods outside Intune.
+- **iOS/iPadOS**: If you use an enrollment profile with a Device Name Template, the device is renamed but reverts to the template after the next sync with Intune.
 
-Note
+## Rename a single device
 
-Renaming Microsoft Entra hybrid joined devices from Intune is not supported. To rename hybrid joined devices, use domain-based methods outside of Intune.
-
-## Prerequisites
-
-![](https://learn.microsoft.com/en-us/intune/media/icons/16/devices.svg) **Device platform requirements**
-
-> This action supports the following platforms:
-> 
-> - Android Enterprise corporate-owned Fully Managed \(COBO\)
-> - Android Enterprise corporate-owned Dedicated \(COSU\)
-> - Android Enterprise corporate-owned Work Profile \(COPE\)
-> - iOS/iPadOS in [Supervised Mode](https://learn.microsoft.com/en-us/intune/intune-service/remote-actions/device-supervised-mode)
-> - macOS \(corporate-owned\)
-> - Windows \(corporate-owned\)
-
-![](https://learn.microsoft.com/en-us/intune/media/icons/16/rbac.svg) **Roles requirements**
-
-> To run this action, use an account with at least one of the following roles:
-> 
-> - [Help Desk Operator](https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator)
-> - [School Administrator](https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator)
-> - [Custom role](https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role) that includes:
-> 
->   - The permission **Remote tasks/Set device name**
->   - Permissions that provide visibility into and access to managed devices in Intune \(for example, Organization/Read, Managed devices/Read\)
-
-## How to rename a device from the Intune admin center
-
-1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) > [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) > [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
 2. From the devices list, select a device.
-3. At the top of the device overview pane, find the row of action icons. Select **Rename device**.
+3. Select the **Properties** tab, and then select **Edit**.
+4. Update the device name. The allowed characters depend on the platform:
 
-4. In the **Rename device** pane, type the new name in the text box. The new name must follow these rules:
+   - **Windows**: 63 characters or fewer \(excluding trailing NULL\); not null or empty; letters \(a–z, A–Z\), numbers \(0–9\), and hyphens; Unicode characters ≥ 0x80 must be valid UTF-8 and IDN-mappable; names can't be only numbers; no spaces; and these characters aren't allowed: `{ | } ~ [ \ ] ^ ' : ; < = > ? & @ ! " # $ % ( ) + / , . _ *`
+   - **iOS/iPadOS and macOS**: Letters, numbers, and hyphens. The name must contain at least one letter or hyphen.
+   - **Android**: Letters, numbers, and hyphens.
 
-   - Less than or equal to 63 characters, not including trailing NULL
-   - Not null or an empty string
-   - Allowed ASCII: Letters \(a-z, A-Z\), numbers \(0-9\), and hyphens
-   - Allowed Unicode: characters >= 0x80, must be valid UTF8, must be IDN-mappable \(that is, RtlIdnToNameprepUnicode succeeds; see RFC 3492\)
-   - Names must not contain only numbers
-   - No spaces in the name
-   - Disallowed characters: ```{ | } ~ [ \ ] ^ ' : ; < = > ? & @ ! " # $ % `` ( ) + / , . _ *)```
+5. For Windows, to restart the device after renaming, set **Restart after rename** to **Yes**.
+6. Save your changes.
 
-4. In the **Rename device** pane, type the new name in the text box. You can use letters, numbers, and hyphens. The name must contain at least one letter or hyphen.
+## Bulk rename devices
 
-4. In the **Rename device** pane, type the new name in the text box. You can use letters, numbers, and hyphens.
+You can rename devices in bulk by platform, using **Bulk Device Actions**. Bulk rename follows the same naming rules as a single rename, but you must include one of the following variables in the name:
 
-5. If you want to restart the device after renaming it, Select **Yes** next to **Restart after rename**.
-6. Select **Rename**.
+- `{{serialnumber}}` — adds the device's serial number to the name.
+- `{{rand:x}}` — adds a random string of numbers, where *x* is the number of digits.
 
-Note
-
-If you have an iOS enrollment profile with a Device Name Template, the device will be renamed but will revert to the template after the next sync with Intune.
-
-Note
-
-It could take 10 minutes or more for a renamed Android Enterprise device to update in the **Devices** list.
-
-## How to bulk rename devices from the Intune admin center
-
-You can choose to rename devices in bulk, based on the device platform. The bulk rename option uses the same rules as renaming a single device. However, you must also include one of the following variables as part of the device name:
-
-- `{{serialnumber}}` - Add the device's serial number to the name.
-- `{{rand:x}}` - Add a random string of numbers, where x equals the number of digits to add.
-
-To use the bulk rename action:
+To bulk rename devices:
 
 1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) > [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
 2. Select **Bulk Device Actions**.
-3. On the Basics page, for **OS** select the platform of the devices you want to rename, and then for **Device action** select **Rename**.
+3. On the **Basics** page, select the **OS** of the devices you want to rename, and for **Device action** select **Rename**.
 4. Complete the configuration wizard.
 
 ## Reference links
 
 - Microsoft Graph API: [setDeviceName action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-setdevicename)
-
-- Configuration service provider \(CSP\) used to initiate the action: [Accounts CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp)
+- Configuration service provider \(CSP\) used to initiate the rename action on Windows: [Accounts CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp)
 
 ## Next steps
 
-To learn how to change the Device name shown in the Company Portal, see [Rename device from the Company Portal](https://learn.microsoft.com/en-us/intune/user-help/device-actions/update-device-name-company-portal-app).
+- [Edit other device properties](https://learn.microsoft.com/en-us/intune/device-management/actions/edit-device-properties) \(ownership, primary user, notes, and scope tags\).
+- To change the device name shown in the Company Portal, see [Rename a device from the Company Portal](https://learn.microsoft.com/en-us/intune/user-help/device-actions/update-device-name-company-portal-app).

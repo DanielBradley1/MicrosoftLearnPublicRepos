@@ -1,9 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/find-primary-user -->
 <!-- Sitemap-Last-Modified: 2026-04-16 -->
 
-# Primary users on Microsoft Intune devices
+# Change a device's primary user in Microsoft Intune
 
-A primary user is the user who is primarily associated with a specific Intune device. When a device enrolls in Intune, the signed-in user typically becomes the primary user. When the primary user is assigned, the primary user also shows as a device property that you can view and possibly update.
+A primary user is the user who is primarily associated with a specific Intune device. When a device enrolls in Intune, the signed-in user typically becomes the primary user. The primary user also shows as a device property that you can view and update.
+
+You change or remove a device's primary user from the device's **Properties** tab. This article explains how, and describes how Intune assigns the primary user and where it's used.
 
 When a device is associated with a user, then that association is known as **Device Affinity**.
 
@@ -61,7 +63,7 @@ Use the following steps to find the primary user of a device:
 2. Choose **Devices** > choose a device.
 3. On the **Overview** page, you can see the primary user listed.
 
-## Change a device's primary user
+## Change the primary user
 
 For Windows devices that are Microsoft Entra joined or Microsoft Entra hybrid joined, the primary user of a device can be updated.
 

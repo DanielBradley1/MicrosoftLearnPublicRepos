@@ -39,9 +39,9 @@ The following supported versions<sup>`*`</sup>, of Configuration Manager are cur
 
 | Version | Availability date | [Support end date](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/current-branch-versions-supported) | Baseline | In-console update |
 | --- | --- | --- | --- | --- |
+| [**2609**](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-version-2609)  <br>\(5.00.9152.1000\) | September 28, 2026 | March 28, 2028 | Yes | Yes |
 | [**2603**](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2603)  <br>\(5.00.9146.1000\) | May 5, 2026 | November 5, 2027 | No | Yes |
 | [**2509**](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2509)  <br>\(5.00.9141\) | November 12, 2025 | May 12, 2027 | Yes | Yes |
-| [**2503**](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2503)  <br>\(5.00.9135\) | March 31, 2025 | September 30, 2026 | No | Yes |
 
 Note
 
@@ -71,6 +71,7 @@ The following table lists historical versions of Configuration Manager current b
 
 | Version | Availability date | Support end date | Baseline | In-console update |
 | --- | --- | --- | --- | --- |
+| **2503**  <br>\(5.00.9135\) | March 31, 2025 | September 30, 2026 | No | Yes |
 | **2409**  <br>\(5.00.9132\) | December 4, 2024 | June 4, 2026 | No | Yes |
 | **2403**  <br>\(5.00.9128\) | April 22, 2024 | October 22, 2025 | Yes | Yes |
 | **2309**  <br>\(5.00.9122\) | October 9, 2023 | April 9, 2025 | No | Yes |

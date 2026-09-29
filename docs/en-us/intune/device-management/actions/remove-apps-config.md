@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/remove-apps-config -->
 <!-- Sitemap-Last-Modified: 2026-04-06 -->
 
-# Device action: remove apps and configuration
+# Device action: remove apps and configurations
 
-Use the *remove apps and configuration* action in Intune to uninstall apps and remove configuration profiles from a device. This action is useful for troubleshooting or temporarily removing settings that might be causing issues.
+Use the *remove apps and configurations* action in Intune to uninstall apps and remove configuration profiles from a device. This action is useful for troubleshooting or temporarily removing settings that might be causing issues.
 
 ## Prerequisites
 
@@ -27,9 +27,9 @@ Use the *remove apps and configuration* action in Intune to uninstall apps and r
 >   - The permission **Remote tasks/Change assignments**
 >   - Permissions that provide visibility into and access to managed devices in Intune \(for example, Organization/Read, Managed devices/Read\)
 
-#### Admin permissions and scope tags for Remove apps and configuration
+#### Admin permissions and scope tags for Remove apps and configurations
 
-Admins can use the **Remove apps and configuration** action to:
+Admins can use the **Remove apps and configurations** action to:
 
 - Select and remove assigned apps and configuration profiles from a device.
 - Restore previously removed apps and configuration profiles.
@@ -76,7 +76,7 @@ DDM-based policies are not supported for this device action.
 
 1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) > [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
 2. From the devices list, select a device.
-3. At the top of the device overview pane, find the row of action icons. Select **Remove apps and configuration**.
+3. At the top of the device overview pane, find the row of action icons. Select **Remove data** > **Remove apps and configurations**.
 
 [![Remove apps and configuration](https://learn.microsoft.com/en-us/intune/device-management/actions/media/remove-apps-config/remove-apps-config.png)](https://learn.microsoft.com/en-us/intune/device-management/actions/media/remove-apps-config/remove-apps-config.png#lightbox)
 
@@ -88,11 +88,11 @@ DDM-based policies are not supported for this device action.
 
 Important
 
-Removal of items such as Wi-Fi, VPN, and Certificates could impact device connectivity, if the items are ultimately used for connectivity to the Intune service. **Remove apps and configuration** is intended to be used interactively by Intune admins working with impacted users. If connectivity is lost, users might need to take actions on devices to restore connectivity; connect the device to a guest or alternate Wi-Fi or cellular network.
+Removal of items such as Wi-Fi, VPN, and Certificates could impact device connectivity, if the items are ultimately used for connectivity to the Intune service. **Remove apps and configurations** is intended to be used interactively by Intune admins working with impacted users. If connectivity is lost, users might need to take actions on devices to restore connectivity; connect the device to a guest or alternate Wi-Fi or cellular network.
 
 ## Monitoring the device action remove apps and configuration
 
-After you initiate the **Remove apps and configuration** action on a device, the **Status** column of the **Overview** page displays the status of the action. The status is updated as the action progresses.
+After you initiate the *Remove apps and configurations* action on a device, the **Status** column of the **Overview** page displays the status of the action. The status is updated as the action progresses.
 
 You can manually restore the removed items using the **Restore** action. If no restore is initiated, Intune automatically reapplies the apps and configurations within 8-24 hours to ensure the device remains aligned with assignment intent.
 

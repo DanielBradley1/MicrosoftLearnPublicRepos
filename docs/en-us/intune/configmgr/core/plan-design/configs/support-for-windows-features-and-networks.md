@@ -51,7 +51,7 @@ Although clients in workgroups are supported, all site systems must be members o
 
 ## Data deduplication
 
-Configuration Manager supports the use of data deduplication with distribution points on Windows Server 2012 or later.
+Configuration Manager supports the use of data deduplication with distribution points on supported Windows Server versions.
 
 Important
 

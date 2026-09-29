@@ -64,10 +64,6 @@ For more information, see the following articles:
 
 - **Windows Server 2016**: Standard, Datacenter
 - **Windows Storage Server 2016**: Workgroup, Standard, IoT
-- **Windows Server 2012 R2** \(x64\): Standard, Datacenter <sup>[Extended Security Updates](#bkmk_ESU)</sup>
-- **Windows Storage Server 2012 R2** \(x64\) <sup>[Extended Security Updates](#bkmk_ESU)</sup>
-- **Windows Server 2012** \(x64\): Standard, Datacenter <sup>[Extended Security Updates](#bkmk_ESU)</sup>
-- **Windows Storage Server 2012** \(x64\) <sup>[Extended Security Updates](#bkmk_ESU)</sup>
 
 #### Server Core
 
@@ -79,8 +75,6 @@ Windows Server semi-annual channel versions are Server Core installations, such 
 - **Windows Server 2022** \(x64\) <sup>[Note 1](#bkmk_note1)</sup> \(*starting in version 2107*\)
 - **Windows Server 2019** \(x64\) <sup>[Note 1](#bkmk_note1)</sup>
 - **Windows Server 2016** \(x64\) <sup>[Note 1](#bkmk_note1)</sup>
-- **Windows Server 2012 R2** \(x64\) <sup>[Note 1](#bkmk_note1)</sup> <sup>[Extended Security Updates](#bkmk_ESU)</sup>
-- **Windows Server 2012** \(x64\) <sup>[Note 1](#bkmk_note1)</sup> <sup>[Extended Security Updates](#bkmk_ESU)</sup>
 
 #### Note 1
 
@@ -118,7 +112,9 @@ This version includes the long-term servicing channel \(LTSC\). For more informa
 
 The [Extended Security Updates \(ESU\)](https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates) program is a last resort option for customers who need to run certain legacy Microsoft products past the end of support. For example, Windows 10. It includes Critical and/or Important security updates \(as defined by the [Microsoft Security Response Center \(MSRC\)](https://www.microsoft.com/msrc)\) for a maximum of three years after the product's End of Extended Support date.
 
-Products that are beyond their support lifecycle aren't supported for use with Configuration Manager. This includes any products that are covered under the ESU program. Security updates released under the ESU program will be published to Windows Server Update Services \(WSUS\). These updates will appear in the Configuration Manager console. While ESU-covered products are not supported operating systems in Configuration Manager<sup>[1](#clarification1)</sup>, any [supported version of Configuration Manager current branch](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/updates#version-details) can be used to deploy and install ESU security updates for **Windows Server 2012, Windows Server 2012 R2**, and **Windows 10**<sup>[2](#clarification2)</sup>. For details on supported Windows 10 editions under the ESU program, see the [Extended Security Updates FAQ](https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates). No further support is offered for computers running Windows 7 or Windows Server 2008/ 2008 R2, including customers with an additional further year of ESU support as noted in [KB4522133](https://support.microsoft.com/en-us/topic/kb4522133-procedure-to-continue-receiving-security-updates-after-extended-support-ended-on-january-10-2023-48c59204-fe67-3f42-84fc-c3c3145ff28e)
+Products that are beyond their support lifecycle aren't supported for use with Configuration Manager. This includes any products that are covered under the ESU program. Security updates released under the ESU program will be published to Windows Server Update Services \(WSUS\). These updates will appear in the Configuration Manager console. While ESU-covered products are not supported operating systems in Configuration Manager<sup>[1](#clarification1)</sup>, a [supported version of Configuration Manager current branch](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/updates#version-details) can be used to deploy and install ESU security updates for supported **Windows 10** editions<sup>[2](#clarification2)</sup>. For details, see the [Extended Security Updates FAQ](https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates). No further support is offered for computers running Windows 7 or Windows Server 2008/2008 R2, including customers with an additional year of ESU support as noted in [KB4522133](https://support.microsoft.com/en-us/topic/kb4522133-procedure-to-continue-receiving-security-updates-after-extended-support-ended-on-january-10-2023-48c59204-fe67-3f42-84fc-c3c3145ff28e).
+
+Starting in Configuration Manager version 2609, Windows Server 2012, Windows Server 2012 R2, and their Windows Storage Server editions are no longer supported as client operating systems.
 
 Client management features not related to Windows software update management or OS deployment will no longer be tested on the operating systems covered under the ESU program and we don't guarantee that they'll continue to function. It's highly recommended to upgrade or migrate to a current version of the operating systems as soon as possible to receive client management support.
 

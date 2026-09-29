@@ -34,7 +34,7 @@ For more information, see [Windows Autopilot Reset](https://learn.microsoft.com/
 
 1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) > [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
 2. From the devices list, select a device.
-3. At the top of the device overview pane, find the row of action icons. Select **Autopilot reset**.
+3. At the top of the device overview pane, find the row of action icons. Select **Remove data** > **Autopilot reset**.
 4. To confirm, select **Yes**.
 
 ## Reference links

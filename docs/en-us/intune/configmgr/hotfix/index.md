@@ -5,6 +5,12 @@
 
 Knowledge Base articles for Microsoft Configuration Manager hotfixes, update rollups, and summary articles for new releases.
 
+## Configuration Manager 2609
+
+### Overview
+
+- [KB 2377842 Summary of changes in 2609](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2609/2377842)
+
 ## Configuration Manager 2603
 
 ### Overview
@@ -88,43 +94,3 @@ Knowledge Base articles for Microsoft Configuration Manager hotfixes, update rol
 - [24721208 Data processing update Configuration Manager version 2303](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2303/24721208)
 - [25073607 Client update for Configuration Manager version 2303](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2303/25073607)
 - [KB 29166583 MP security update for 2303](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2303/29166583)
-
-## Configuration Manager 2211
-
-### Overview
-
-- [KB 15582417 Summary of changes in 2211](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2211/15582417)
-- [16643863 Update rollup for Configuration Manager version 2211](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2211/16643863)
-
-## Configuration Manager 2207
-
-### Overview
-
-- [KB 14840616 Summary of changes in 2207](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2207/14840616)
-- [KB 14959905 Early update ring](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2207/14959905)
-- [KB 15599094 NTLM client installation update](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2207/15599094)
-- [15152495 Update rollup for Configuration Manager version 2207](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2207/15152495)
-
-## Configuration Manager 2203
-
-### Overview
-
-- [KB 13174460 Summary of changes in 2203](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2203/13174460)
-- [KB 13953025 Early update ring](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2203/13953025)
-- [14244456 Update rollup for Configuration Manager version 2203](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2203/14244456)
-
-## Configuration Manager 2111
-
-### Overview
-
-- [KB 11052354 Summary of changes in 2111](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2111/11052354)
-- [KB 12709700 Update for Configuration Manager 2111](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2111/12709700)
-- [KB 12896009 Update rollup for Configuration Manager 2111](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2111/12896009)
-
-## Configuration Manager 2107
-
-### Overview
-
-- [KB 10096997 Summary of changes in 2107](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2107/10096997)
-- [KB 10503003 Early update ring](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2107/10503003)
-- [KB 11121541 Update rollup for 2107](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2107/11121541)

@@ -13,7 +13,7 @@ FileVault uses XTS-AES 128-bit encryption as implemented by Apple's macOS. This 
 
 Tip
 
-Intune provides a built-in [encryption report](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption) that presents details about the encryption status of devices across all your managed devices. After Intune encrypts a macOS device with FileVault, you can view and manage FileVault recovery keys through the encryption report.
+Intune provides a built-in [encryption report](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption) that presents details about the encryption status of devices across all your managed devices. After Intune encrypts a macOS device with FileVault, you can view and manage FileVault recovery keys through the encryption report.
 
 ## FileVault encryption scenarios
 
@@ -260,7 +260,7 @@ FileVault deployment occurs in two distinct phases:
 
 ### View encryption status
 
-To view information about devices that receive FileVault policy, see [Monitor disk encryption](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption).
+To view information about devices that receive FileVault policy, see [Monitor disk encryption](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption).
 
 Monitor FileVault deployment through multiple Intune interfaces:
 
@@ -360,8 +360,8 @@ Administrators can manually rotate recovery keys:
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431)
 2. Select **Devices** > **All devices**
 3. Select the encrypted device
-4. Under **Monitor**, select **Recovery keys**
-5. Select **Rotate FileVault recovery key**
+4. At the top of the device overview pane, find the row of action icons. Select **Secure** > **Rotate FileVault recovery key**.
+5. Select **Yes** to confirm the action.
 
 Note
 
@@ -500,7 +500,7 @@ FileVault encryption integrates with Intune compliance policies:
 
 ## Next steps
 
-- [Monitor disk encryption across your environment](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption)
+- [Monitor disk encryption across your environment](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption)
 - [Configure BitLocker encryption for Windows devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/encrypt-bitlocker-windows)
 - [FileVault settings reference for endpoint security policies](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-disk-encryption-settings#filevault)
 - [Apple FileVault deployment guide](https://support.apple.com/guide/deployment/dep32bf53500/web) *\(opens Apple's website\)*

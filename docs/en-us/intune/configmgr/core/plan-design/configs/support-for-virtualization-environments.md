@@ -15,9 +15,6 @@ For example, you use Microsoft Hyper-V Server 2016 to host a VM that runs Window
 - Windows Server 2019
 - Windows Server 2016 <sup>[Note 1](#bkmk_note1)</sup>
 - Microsoft Hyper-V Server 2016 <sup>[Note 1](#bkmk_note1)</sup>
-- Windows Server 2012 R2
-- Microsoft Hyper-V Server 2012
-- Windows Server 2012
 
 Note
 

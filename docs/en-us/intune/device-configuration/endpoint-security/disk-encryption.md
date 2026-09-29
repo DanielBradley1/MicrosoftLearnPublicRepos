@@ -55,7 +55,7 @@ After you deploy policy to encrypt a device disk, see the following articles for
 
 - [Manage encryption on Windows](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/encrypt-bitlocker-windows)
 - [Manage encryption on macOS](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/encrypt-filevault-macos#monitor-and-manage-filevault)
-- [Monitor device encryption](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption)
+- [Monitor device encryption](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption)
 
 ## Next steps
 

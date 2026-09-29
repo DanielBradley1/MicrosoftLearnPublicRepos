@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/tools/management-extension-windows -->
-<!-- Sitemap-Last-Modified: 2026-04-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Intune Management Extension for Windows
 

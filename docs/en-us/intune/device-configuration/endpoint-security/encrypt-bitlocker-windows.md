@@ -22,7 +22,7 @@ Intune supports two primary BitLocker encryption approaches:
 
 Tip
 
-Intune provides a built-in [encryption report](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption) that presents details about the encryption status of devices across all your managed devices. After Intune encrypts a Windows device with BitLocker, you can view and manage BitLocker recovery keys when you view the encryption report.
+Intune provides a built-in [encryption report](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption) that presents details about the encryption status of devices across all your managed devices. After Intune encrypts a Windows device with BitLocker, you can view and manage BitLocker recovery keys when you view the encryption report.
 
 ## Prerequisites
 
@@ -280,7 +280,7 @@ The 'Conversion Status' field shows either *Used Space Only Encrypted* or *Fully
 
 ![Screenshot of administrative command prompt showing output of manage-bde with conversion status reflecting used space only encryption.](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/media/encrypt-bitlocker-windows/docs_bl_fullyencrypted.png)
 
-To view information about devices that receive BitLocker policy, see [Monitor disk encryption](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption).
+To view information about devices that receive BitLocker policy, see [Monitor disk encryption](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption).
 
 ### Control encryption type with Settings Catalog
 
@@ -456,7 +456,7 @@ For silent BitLocker enablement, recovery keys are automatically backed up to Mi
 ## Next steps
 
 - [Manage FileVault policy for macOS devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/encrypt-filevault-macos)
-- [Monitor disk encryption](https://learn.microsoft.com/en-us/intune/device-management/monitor-encryption)
+- [Monitor disk encryption](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption)
 - [Troubleshooting BitLocker policy](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-bitlocker-policies)
 - [Known issues for BitLocker policies](https://learn.microsoft.com/en-us/windows/security/information-protection/bitlocker/ts-bitlocker-intune-issues)
 - [BitLocker deployment comparison chart](https://learn.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-deployment-comparison)

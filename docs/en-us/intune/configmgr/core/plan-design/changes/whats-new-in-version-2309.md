@@ -21,7 +21,7 @@ Important
 
 Microsoft ODBC Driver for SQL Server 18.1.0 or later needs to be installed on Site Servers and site system roles before upgrading to 2309 version. Do not uninstall SQL native client 11 until we call out in further communications. Configuration Manager doesn't manage the updates for the ODBC driver, ensure that this component is up to date.
 
-For more information, see [SQL ODBC driver for the site server](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/site-and-site-system-prerequisites#sql-odbc-driver-for-the-site-server)
+For minimum required versions, validated versions, and versions with known blocking issues, see [Prerequisite checks - ODBC driver for SQL Server](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/install/list-of-prerequisite-checks#odbc-driver-for-sql-server).
 
 ### Option to schedule scripts' runtime
 
