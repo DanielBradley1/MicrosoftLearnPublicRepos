@@ -1,0 +1,200 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/api/run-live-response -->
+<!-- Sitemap-Last-Modified: 2025-12-31 -->
+
+# Run live response commands on a device
+
+Important
+
+Some information in this article relates to a prereleased product which may be substantially modified before it's commercially released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+## Prerequisites
+
+Before you can initiate a session on a device, make sure you fulfill the following requirements:
+
+### Supported operating systems
+
+- Windows 11
+- Windows 10
+- [Version 1909](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1909) or later
+
+  - [Version 1903](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1903) with [KB4515384](https://support.microsoft.com/servicing/os/windows-10/2019/09/september-10-2019-kb4515384-os-build-18362-356)
+  - [Version 1809 \(RS 5\)](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1809) with [KB4537818](https://support.microsoft.com/servicing/os/windows-10/2020/02/february-25-2020-kb4537818-os-build-17763-1075)
+  - [Version 1803 \(RS 4\)](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1803) with [KB4537795](https://support.microsoft.com/topic/february-25-2020-kb4537795-os-build-17134-1345-36b35e62-d897-2dc3-289c-44a1327c2d8e)
+  - [Version 1709 \(RS 3\)](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1709) with [KB4537816](https://support.microsoft.com/servicing/os/windows-10/2020/02/february-25-2020-kb4537816-os-build-16299-1717)
+
+- Windows Server 2019 - Only applicable for Public preview
+
+  - Version 1903 or \(with [KB4515384](https://support.microsoft.com/servicing/os/windows-10/2019/09/september-10-2019-kb4515384-os-build-18362-356)\) later
+  - Version 1809 \(with [KB4537818](https://support.microsoft.com/servicing/os/windows-10/2020/02/february-25-2020-kb4537818-os-build-17763-1075)\)
+
+- Windows Server 2022 and later
+- Azure Stack HCI OS, version 23H2 and later
+- macOS [\(requires other configuration profiles\)](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-mac)
+
+  - 13 \(Ventura\)
+  - 12 \(Monterey\)
+  - 11 \(Big Sur\)
+
+- Linux servers
+
+  - [Supported Linux distributions](https://learn.microsoft.com/en-us/defender-endpoint/mde-linux-prerequisites#supported-linux-distributions)
+
+## API description
+
+Runs a sequence of live response commands on a device
+
+## Limitations
+
+- Rate limitations for this API are 10 calls per minute \(more requests are responded with HTTP 429\).
+- 50 concurrently running sessions \(requests exceeding the throttling limit receives a "429 - Too many requests" response\).
+- If the machine isn't available, the session is queued for up to 2 hours.
+- RunScript command time-outs after 10 minutes.
+- Live response commands can't be queued up and can only be executed one at a time.
+- If the machine that you're trying to run this API call is in an RBAC device group that doesn't have an automated remediation level assigned to it, you need to at least enable the minimum Remediation Level for a given Device Group.
+- Multiple live response commands can be run on a single API call. However, when a live response command fails all the subsequent actions won't be executed.
+- Multiple live response sessions can't be executed on the same machine \(if live response action is already running, subsequent requests are responded to with HTTP 400 - ActiveRequestAlreadyExists\).
+- Live response actions initiated from the Device page aren't available in the `machineactions` API.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Get started](https://learn.microsoft.com/en-us/defender-endpoint/api/apis-intro).
+
+| Permission type | Permission | Permission display name |
+| --- | --- | --- |
+| Application | Machine.LiveResponse | Run live response on a specific machine |
+| Delegated \(work or school account\) | Machine.LiveResponse | Run live response on a specific machine |
+
+## HTTP request
+
+```HTTP
+POST https://api.security.microsoft.com/API/machines/{machine_id}/runliveresponse
+```
+
+## Request headers
+
+| Name | Type | Description |
+| --- | --- | --- |
+| Authorization | String | Bearer<token>. Required. |
+| Content-Type | string | application/json. Required. |
+
+## Request body
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| Comment | String | Comment to associate with the action. |
+| Commands | Array | Commands to run. Allowed values are PutFile, RunScript, GetFile \(must be in this order with no limit on repetitions\). |
+
+## Commands
+
+| Command Type | Parameters | Description |
+| --- | --- | --- |
+| PutFile | Key: FileName  <br>Value: <file name> | Puts a file from the library to the device. Files are saved in a working folder and are deleted when the device restarts by default. NOTE: Doesn't have a response result. |
+| RunScript | Key: ScriptName  <br>Value: <Script from library>  <br>Key: Args  <br>Value: <Script arguments> | Runs a script from the library on a device.  <br>The Args parameter is passed to your script.  <br>Time-outs after 10 minutes. |
+| GetFile | Key: Path  <br>Value: <File path> | Collect file from a device. NOTE: Backslashes in path must be escaped. |
+
+## Response
+
+- If successful, this method returns `201 Created`.
+- Action entity. If machine with the specified ID wasn't found, you see `404 Not Found`.
+
+## Example
+
+### Request example
+
+Here's an example of the request.
+
+~~~HTTP
+POST https://api.security.microsoft.com/api/machines/1e5bc9d7e413ddd7902c2932e418702b84d0cc07/runliveresponse
+
+```JSON
+{
+   "Commands":[
+      {
+         "type":"RunScript",
+         "params":[
+            {
+               "key":"ScriptName",
+               "value":"minidump.ps1"
+            },
+            {
+               "key":"Args",
+               "value":"OfficeClickToRun"
+            }
+
+         ]
+      },
+      {
+         "type":"GetFile",
+         "params":[
+            {
+               "key":"Path",
+               "value":"C:\\windows\\TEMP\\OfficeClickToRun.dmp.zip"
+            }
+         ]
+      }
+   ],
+   "Comment":"Testing Live Response API"
+}
+~~~
+
+### Response example
+
+Here's an example of the response.
+
+Possible values for each command status are "Created", "Completed", and "Failed".
+
+```HTTP
+HTTP/1.1 201 Created
+```
+
+Content-type: application/json
+
+```JSON
+{
+    "@odata.context": "https://api.security.microsoft.com/api/$metadata#MachineActions/$entity",
+    "id": "{machine_action_id}",
+    "type": "LiveResponse",
+    "requestor": "analyst@microsoft.com",
+    "requestorComment": "Testing Live Response API",
+    "status": "Pending",
+    "machineId": "{machine_id}",
+    "computerDnsName": "hostname",
+    "creationDateTimeUtc": "2021-02-04T15:36:52.7788848Z",
+    "lastUpdateDateTimeUtc": "2021-02-04T15:36:52.7788848Z",
+    "errorHResult": 0,
+    "commands": [
+        {
+            "index": 0,
+            "startTime": null,
+            "endTime": null,
+            "commandStatus": "Created",
+            "errors": [],
+            "command": {
+                "type": "RunScript",
+                "params": [
+                    {
+                        "key": "ScriptName",
+                        "value": "minidump.ps1"
+                    },{
+                        "key": "Args",
+                        "value": "OfficeClickToRun"
+                    }
+                ]
+            }
+        }, {
+            "index": 1,
+            "startTime": null,
+            "endTime": null,
+            "commandStatus": "Created",
+            "errors": [],
+            "command": {
+                "type": "GetFile",
+                "params": [{
+                        "key": "Path", "value": "C:\\windows\\TEMP\\OfficeClickToRun.dmp.zip"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```

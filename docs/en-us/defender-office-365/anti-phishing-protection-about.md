@@ -1,0 +1,46 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-protection-about -->
+<!-- Sitemap-Last-Modified: 2025-07-28 -->
+
+# Anti-phishing protection in cloud organizations
+
+Tip
+
+*Did you know you can try the features in Microsoft Defender for Office 365 Plan 2 for free?* Use the 90-day Defender for Office 365 trial at the [Microsoft Defender portal trials hub](https://security.microsoft.com/trialHorizontalHub?sku=MDO&ref=DocsRef). Learn about who can sign up and trial terms on [Try Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/try-microsoft-defender-for-office-365).
+
+*Phishing* is an email attack that tries to steal sensitive information in messages that appear to be from legitimate or trusted senders. There are specific categories of phishing. For example:
+
+- **Spear phishing** uses focused, customized content that's specifically tailored to the targeted recipients \(typically, after reconnaissance on the recipients by the attacker\).
+- **Whaling** is directed at executives or other high value targets within an organization for maximum effect.
+- **Business email compromise \(BEC\)** uses forged trusted senders \(financial officers, customers, trusted partners, etc.\) to trick recipients into approving payments, transferring funds, or revealing customer data. Learn more by watching [this video](https://www.youtube.com/watch?v=8Kn31h9HwIQ&list=PL3ZTgFEc7LystRja2GnDeUFqk44k7-KXf&index=2).
+- **Ransomware** that encrypts your data and demands payment to decrypt it almost always starts in phishing messages. Anti-phishing protection can't help you decrypt encrypted files, but it can help detect the initial phishing messages that are associated with the ransomware campaign. For more information about recovering from a ransomware attack, see [Ransomware incident response playbooks](https://learn.microsoft.com/en-us/security/ransomware/).
+
+With the growing complexity of attacks, it's even difficult for trained users to identify sophisticated phishing messages. Fortunately, [the built-in security features for all cloud mailboxes](https://learn.microsoft.com/en-us/defender-office-365/eop-about) and [the additional features in Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/mdo-about#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet) can help.
+
+## Anti-phishing protection for all cloud mailboxes
+
+All organizations with cloud mailboxes contain the following features that help protect your organization from phishing threats:
+
+- **Spoof intelligence**: Use the spoof intelligence insight to review detected spoofed senders in messages from external and internal domains, and manually allow or block those detected senders. For more information, see [Spoof intelligence insight](https://learn.microsoft.com/en-us/defender-office-365/anti-spoofing-spoof-intelligence).
+- **Anti-phishing policies for all cloud mailboxes**: Turn spoof intelligence on or off, turn unauthenticated sender indicators in Outlook on or off, and specify the action for blocked spoofed senders. For more information, see [Configure anti-phishing policies for all cloud mailboxes](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-policies-eop-configure).
+
+  **Honor the sender's DMARC policy when the message is detected as spoof**: Control what happens to messages where the sender fails explicit [DMARC](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure) checks and the DMARC policy is set to `p=quarantine` or `p=reject`. For more information, see [Spoof protection and sender DMARC policies](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-policies-about#spoof-protection-and-sender-dmarc-policies).
+- **Allow or block spoofed senders in the Tenant Allow/Block List**: When you override the verdict in the spoof intelligence insight, the spoofed sender becomes a manual allow or block entry that only appears on the **Spoofed senders** tab on the **Tenant Allow/Block Lists** page at [https://security.microsoft.com/tenantAllowBlockList?viewid=SpoofItem](https://security.microsoft.com/tenantAllowBlockList?viewid=SpoofItem). You can also manually create allow or block entries for spoofed senders before spoof intelligence detects them. For more information, see [Spoofed senders in the Tenant Allow/Block List](https://learn.microsoft.com/en-us/defender-office-365/tenant-allow-block-list-email-spoof-configure#spoofed-senders-in-the-tenant-allowblock-list).
+- **Implicit email authentication**: Microsoft 365 enhances standard email authentication checks for inbound email \([SPF](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure), [DKIM](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure), and [DMARC](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure) with sender reputation, sender history, recipient history, behavioral analysis, and other advanced techniques to help identify forged senders. For more information, see [Email authentication](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-about).
+
+## Additional anti-phishing protection in Microsoft Defender for Office 365
+
+Microsoft Defender for Office 365 contains additional and more advanced anti-phishing features:
+
+- **Anti-phishing policies in Microsoft Defender for Office 365**:
+
+  - Configure impersonation protection settings for specific message senders and sender domains, mailbox intelligence settings, and adjustable phishing email thresholds. For more information, see [Configure anti-phishing policies in Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-policies-mdo-configure).
+  - Details about detected impersonation attempts are available in the impersonation insight. For more information, see [Impersonation insight in Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-mdo-impersonation-insight).
+  - For more information about the differences between anti-phishing policies for all cloud mailboxes vs. anti-phishing policies in Defender for Office 365, see [Anti-phishing policies](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-policies-about).
+
+- **Campaign Views**: Machine learning and other heuristics identify and analyze messages that are involved in coordinated phishing attacks against the entire service and your organization. For more information, see [Campaign Views in Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/campaigns).
+- **Attack simulation training**: Admins can create fake phishing messages and send them to internal users as an education tool. For more information, see [Get started using Attack simulation training](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-get-started).
+
+## Other anti-phishing resources
+
+- For end users: [Protect yourself from phishing schemes and other forms of online fraud](https://support.microsoft.com/office/be0de46a-29cd-4c59-aaaf-136cf177d593).
+- [How Microsoft 365 validates the From address to prevent phishing](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-from-email-address-validation).

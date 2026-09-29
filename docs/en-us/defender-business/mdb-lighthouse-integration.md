@@ -1,0 +1,30 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-lighthouse-integration -->
+<!-- Sitemap-Last-Modified: 2025-09-05 -->
+
+# Microsoft 365 Lighthouse and Microsoft Defender for Business
+
+## Microsoft Defender for Business integrates with Microsoft 365 Lighthouse
+
+If you're a Microsoft Cloud Solution Provider \(CSP\) or Managed Service Provider \(MSP\), you can use [Microsoft 365 Lighthouse](https://learn.microsoft.com/en-us/microsoft-365/lighthouse/m365-lighthouse-overview) to manage security for your customers. Microsoft Defender for Business and Defender for Endpoint integrate with Microsoft 365 Lighthouse, an admin portal that CSPs and MSPs can use to secure and manage their customers' data and devices.
+
+![screenshot of incidents list in Microsoft 365 Lighthouse](https://learn.microsoft.com/en-us/defender-business/media/lighthouse-incidents.png)
+
+You can use the Microsoft 365 Lighthouse portal \([https://lighthouse.microsoft.com](https://lighthouse.microsoft.com)\) to:
+
+- Manage your customers' security settings and capabilities.
+- View and manage detected threats across your customer organizations.
+- Initiate antivirus scans on customers' devices to keep them up to date and protected.
+
+## Learn more about Microsoft 365 Lighthouse
+
+Microsoft 365 Lighthouse enables Microsoft CSPs and MSPs to secure and manage devices, data, and users for customers.
+
+To learn more, see:
+
+- [Overview of Microsoft 365 Lighthouse](https://learn.microsoft.com/en-us/microsoft-365/lighthouse/m365-lighthouse-overview)
+- [Requirements for Microsoft 365 Lighthouse](https://learn.microsoft.com/en-us/microsoft-365/lighthouse/m365-lighthouse-requirements)
+- [Sign up for Microsoft 365 Lighthouse](https://learn.microsoft.com/en-us/microsoft-365/lighthouse/m365-lighthouse-sign-up)
+
+## See also
+
+[Microsoft Defender for Business and managed service provider resources](https://learn.microsoft.com/en-us/defender-business/mdb-partners) \(provides information about RMM and PSA integration for MSPs\)

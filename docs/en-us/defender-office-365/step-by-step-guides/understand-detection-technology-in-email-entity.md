@@ -1,0 +1,49 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-office-365/step-by-step-guides/understand-detection-technology-in-email-entity -->
+<!-- Sitemap-Last-Modified: 2026-07-14 -->
+
+# Understand detection technology in the email entity page of Microsoft Defender for Office 365
+
+If a threat is detected on the Microsoft Defender for Office 365 [*email entity page in Microsoft Defender for Office 365*](https://learn.microsoft.com/en-us/defender-office-365/mdo-email-entity-page), threat information displays on the left-hand flyout. The threat-information flyout also shows you the **detection technology** that produced the threat verdict.
+
+This article helps you **understand the different detection technologies**, how the detection technologies work, and how to avoid any false alarms. It also includes an Admin Submissions video.
+
+## Detection technology details table
+
+To resolve false positives like the ones listed in the following table, you should always start with an **admin submission**, which also prompts you to add an entry into the Tenant Allow/Block List. This entry adds a temporary override signal to the filters that determined the message was *malicious*, while filters are updated \(if that's appropriate\). See the following articles for more information on admin submissions and the Tenant Allow/Block List.
+
+- [Submissions: Report good email to Microsoft](https://learn.microsoft.com/en-us/defender-office-365/submissions-admin)
+- [Tenant Allow/Block List](https://learn.microsoft.com/en-us/defender-office-365/tenant-allow-block-list-about)
+
+| The Detection technology | How it reaches a verdict | Notes |
+| --- | --- | --- |
+| Advanced filter | Machine learning models to detect phishing and spam. |  |
+| Antimalware protection | Detection from signature based anti-malware. |  |
+| Bulk | Detection for advertising/marketing and similar message types with their relative bulk complaint levels \(BCL\). | [Step-by-Step guide on how to tune bulk thresholds](https://learn.microsoft.com/en-us/defender-office-365/step-by-step-guides/tune-bulk-mail-filtering-walkthrough) |
+| Campaign | Messages identified and grouped as part of a malware or phishing campaign. | [Campaigns in Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/step-by-step-guides/track-and-respond-to-emerging-threats-with-campaigns) |
+| Domain reputation | The message was sent from a domain that was identified as spam or phishing domain, based on internal or external signals. |  |
+| File detonation | Safe Attachments detected a malicious attachment during detonation within a sandbox. |  |
+| File detonation reputation | File attachments previously detected by Safe Attachments during detonation. |  |
+| File reputation | The message contains a file that was previously identified as malicious by other sources. |  |
+| Fingerprint matching | The message resembles a previously detected malicious or spam message. |  |
+| General filter | Phishing or spam signals based on analyst heuristics. |  |
+| Impersonation brand | Sender impersonation of well-known brands. |  |
+| Impersonation domain | Impersonation of sender domains that you own or specified for protection in anti-phishing policies. | [Impersonation insight overview](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-mdo-impersonation-insight) |
+| Impersonation user | Impersonation of protected senders that you specified in anti-phishing policies. | [Impersonation insight overview](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-mdo-impersonation-insight) |
+| IP reputation | The message was sent from an IP that was identified as potentially malicious. |  |
+| LLM content analysis | Analysis by Microsoft's purpose-built large language models to detect harmful email. |  |
+| Mail bombing | A distributed denial of service \(DDoS\) attack that typically subscribes recipients to a large number of legitimate newsletters and services. The resulting volume of incoming email within minutes intends to overwhelm the recipient's mailbox and email security systems, and acts as a precursor to malware, ransomware, or data exfiltration. |  |
+| Mailbox intelligence impersonation | Sender detected as impersonating an address in the user's personal sender map. | [Mailbox intelligence impersonation protection](https://learn.microsoft.com/en-us/defender-office-365/anti-phishing-policies-about) |
+| Mixed analysis detection | Multiple filters contributed to the verdict for this message. |  |
+| Prompt injection protection | Detection of prompt injection instructions hidden in inbound email that target an AI assistant. | [Prompt injection protection in Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/step-by-step-guides/prompt-injection-protection-defender-for-office-365) |
+| Spoof DMARC | The message failed DMARC authentication. | [Set up DMARC to validate the From address domain for cloud senders](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure) |
+| Spoof external domain | Spoof intelligence detected email spoofing of a domain that is external to your organization. |  |
+| Spoof intra-org | Spoof intelligence detected email spoofing of a user or domain that is internal to your organization. |  |
+| URL detonation | Safe Links detected a malicious URL in the message during detonation within a sandbox. |  |
+| URL detonation reputation | URLs previously detected by Safe Links during detonation. |  |
+| URL malicious reputation | The message contains a URL that was previously identified as malicious or spam by other sources. |  |
+
+## Watch a video on submitting messages to Microsoft to learn more
+
+Watch the Admin Submissions video for an overview of how to submit messages to Microsoft.
+
+<iframe src="https://www.youtube-nocookie.com/embed/ta5S09Yz6Ks" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>

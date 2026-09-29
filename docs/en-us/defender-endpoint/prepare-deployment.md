@@ -1,0 +1,41 @@
+<!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/prepare-deployment -->
+<!-- Sitemap-Last-Modified: 2026-01-15 -->
+
+# Assign roles and permissions for Microsoft Defender for Endpoint deployment
+
+The next step when deploying Defender for Endpoint is to assign roles and permissions for the Defender for Endpoint deployment.
+
+Important
+
+Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
+
+## Role-based access control
+
+Microsoft recommends using the concept of least privileges. Defender for Endpoint applies built-in roles within Microsoft Entra ID. [Review the different roles available](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference) and choose the right one to solve your needs for each persona for this application. Some roles may need to be applied temporarily and removed after the deployment has been completed.
+
+Microsoft recommends using [Privileged Identity Management](https://learn.microsoft.com/en-us/azure/active-directory/active-directory-privileged-identity-management-configure) to manage your roles to provide more auditing, control, and access review for users with directory permissions.
+
+Defender for Endpoint supports two ways to manage permissions:
+
+- **Basic permissions management**: Set permissions to either full access or read-only. Users with a role, such as Security Administrator in Microsoft Entra ID have full access. The Security reader role has read-only access and doesn't grant access to view machines/device inventory.
+- **Role-based access control \(RBAC\)**: Set granular permissions by defining roles, assigning Microsoft Entra user groups to the roles, and granting the user groups access to device groups. For more information. see [Manage portal access using role-based access control](https://learn.microsoft.com/en-us/defender-endpoint/rbac).
+
+Microsoft recommends applying RBAC to ensure that only users that have a business justification can access Defender for Endpoint.
+
+You can find details on permission guidelines here: [Create roles and assign the role to a Microsoft Entra group](https://learn.microsoft.com/en-us/defender-endpoint/user-roles#create-roles-and-assign-the-role-to-an-azure-active-directory-group).
+
+Important
+
+Starting February 16, 2025, new Microsoft Defender for Endpoint customers will only have access to the Unified Role-Based Access Control \(URBAC\). Existing customers keep their current roles and permissions. For more information, see URBAC [Unified Role-Based Access Control \(URBAC\) for Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-xdr/manage-rbac)
+
+The following example table serves to identify the Cyber Defense Operations Center structure in your environment that will help you determine the RBAC structure required for your environment.
+
+| Tier | Description | Permissions required |
+| --- | --- | --- |
+| Tier 1 | **Local security operations team / IT team**  <br>  <br>This team usually triages and investigates alerts contained within their geolocation and escalates to Tier 2 in cases where an active remediation is required. | View data |
+| Tier 2 | **Regional security operations team**  <br>  <br>This team can see all the devices for their region and perform remediation actions. | View data  <br>  <br>Alerts investigation  <br>  <br>Active remediation actions  <br>  <br> |
+| Tier 3 | **Global security operations team**  <br>  <br>This team consists of security experts and is authorized to see and perform all actions from the portal. | View data  <br>  <br>Alerts investigation  <br>  <br>Active remediation actions  <br>  <br>Manage portal system settings  <br>  <br>Manage security settings |
+
+## Next step
+
+After assigning roles and permissions to view and manage Defender for Endpoint it's time for [Step 3 - Identify your architecture and choose your deployment method](https://learn.microsoft.com/en-us/defender-endpoint/deployment-strategy).
