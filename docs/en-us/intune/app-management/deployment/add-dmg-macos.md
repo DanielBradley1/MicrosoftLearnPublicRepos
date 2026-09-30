@@ -145,7 +145,7 @@ When you upload a new version of an available app to Intune, users must select *
 
 ## Troubleshooting
 
-macOS app installation may not be successful due to any of the following reasons provided in the table below. To resolve these errors, follow the remediation steps. If the app remains assigned, failed installations are retried at the next agent check-in.
+macOS app installation may not be successful due to any of the following reasons provided in the table below. To resolve these errors, follow the remediation steps. If the app remains assigned, failed installations are retried at the next agent check-in for up to three times.
 
 | Error code | Error message | Remediation steps |
 | --- | --- | --- |

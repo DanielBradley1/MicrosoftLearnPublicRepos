@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/whats-new/ -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-09-21 -->
 
 # What's new in Microsoft Intune
 
