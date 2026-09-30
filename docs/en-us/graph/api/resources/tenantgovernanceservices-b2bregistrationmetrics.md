@@ -1,22 +1,31 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-b2bregistrationmetrics?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-b2bregistrationmetrics?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-07-29 -->
 
 # b2bRegistrationMetrics resource type
 
 Namespace: microsoft.graph
 
-Represents B2B collaboration metrics that track guest registrations between the calling tenant and a [related tenant](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenant?view=graph-rest-1.0). Includes both initial and recent snapshots showing inbound and outbound guest counts.
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Represents B2B collaboration metrics that track guest registrations between the calling tenant and a [related tenant](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenant?view=graph-rest-beta). Includes both initial and recent snapshots showing inbound and outbound guest counts.
+
+Inherits from [microsoft.graph.entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-beta).
 
 ## Properties
 
-None.
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | Unique identifier for the metrics snapshot. Inherited from [microsoft.graph.entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-beta). |
 
 ## Relationships
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
-| initial | [microsoft.graph.b2BRegistrationMetricsInitial](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-b2bregistrationmetricsinitial?view=graph-rest-1.0) | B2B registration metrics corresponding to initial snapshots where metrics were aggregated for the first time. |
-| recent | [microsoft.graph.b2BRegistrationMetricsRecent](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-b2bregistrationmetricsrecent?view=graph-rest-1.0) | B2B registration metrics corresponding to recent snapshots where metrics were found to have sufficiently changed. |
+| initial | [microsoft.graph.b2BRegistrationMetricsInitial](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-b2bregistrationmetricsinitial?view=graph-rest-beta) | B2B registration metrics corresponding to initial snapshots where metrics were aggregated for the first time. |
+| investigationHints | [microsoft.graph.investigationActionStep](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-investigationactionstep?view=graph-rest-beta) collection | Ordered drill-in guidance for investigating B2B registration metrics. This collection is returned only when explicitly requested by using a nested `$expand` query parameter, for example `$expand=b2BRegistrationMetrics($expand=investigationHints)`. |
+| recent | [microsoft.graph.b2BRegistrationMetricsRecent](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-b2bregistrationmetricsrecent?view=graph-rest-beta) | B2B registration metrics corresponding to recent snapshots where metrics were found to have sufficiently changed. |
 
 ## JSON representation
 
@@ -24,6 +33,7 @@ The following JSON representation shows the resource type.
 
 ```json
 {
-  "@odata.type": "#microsoft.graph.b2bRegistrationMetrics"
+  "@odata.type": "#microsoft.graph.b2bRegistrationMetrics",
+  "id": "String (identifier)"
 }
 ```
