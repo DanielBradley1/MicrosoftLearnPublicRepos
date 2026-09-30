@@ -5,6 +5,10 @@
 
 This article describes how to troubleshoot known issues in Microsoft Defender for Identity.
 
+## Sensor migration isn't supported between different Microsoft tenants
+
+Migration from sensor v2.x to sensor v3.x isn't supported when the Defender for Identity workspace and Defender for Endpoint onboarding for the same server are associated with different Microsoft tenants. The server might appear **Ready for migration**, but sensor v3.x activation fails. Sensor v2.x continues reporting, and the unsuccessful migration eventually rolls back.
+
 ## Sensor service fails to start
 
 **Sensor log entries:**

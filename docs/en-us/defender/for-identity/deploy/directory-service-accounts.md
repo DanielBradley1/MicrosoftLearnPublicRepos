@@ -17,7 +17,7 @@ While a DSA is optional in some scenarios, we recommend that you configure a DSA
 
 For example, when you have a DSA configured, the DSA is used to connect to the domain controller at startup. A DSA can also be used to query the domain controller for data on entities seen in network traffic, monitored events, and monitored ETW activities
 
-A DSA is required for the following features and functionality:
+For sensor v2.x, a DSA is required for the following features and functionality:
 
 - When working with a sensor installed on an [AD FS, AD CS, or Microsoft Entra Connect server](https://learn.microsoft.com/en-us/defender-for-identity/deploy/active-directory-federation-services).
 - Requesting member lists for local administrator groups from devices seen in network traffic, events and ETW activities via a [SAM-R call](https://learn.microsoft.com/en-us/defender-for-identity/deploy/remote-calls-sam) made to the device.

@@ -5,7 +5,7 @@
 
 App governance solutions require a deep understanding of app behavior within an environment to identify and address activities that fall within a tolerance level that requires more review to assess malicious intent. When layered over Defender for Cloud Apps, app governance gives you in-depth governance against risky app behavior in your environment.
 
-This article describes how to get started using app governance features in Microsoft Defender for Cloud Apps.
+Use this quickstart to begin using app governance features in Microsoft Defender for Cloud Apps.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ This article describes how to get started using app governance features in Micro
 Start by using the following steps to get visibility and insights about your apps:
 
 1. **Sign in**: In your browser, go to the **Microsoft Defender XDR > Cloud Apps > [App governance](https://aka.ms/appgovernance)** page.
-2. **[Determine compliance posture](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-compliance-posture)**: Use the data on the **App governance > Overview** tab to assess the compliance posture of your apps and incidents in your tenant. View details like how many overprivileged apps are in your tenant, the number of active incidents, the total Graph API data access, and more.
+2. **[Determine security posture](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-security-posture)**: Use the data on the **App governance > Overview** tab to assess the security posture of your apps and incidents in your tenant. View details like how many overprivileged apps are in your tenant, the number of active incidents, the total Graph API data access, and more.
 
    Tip
 

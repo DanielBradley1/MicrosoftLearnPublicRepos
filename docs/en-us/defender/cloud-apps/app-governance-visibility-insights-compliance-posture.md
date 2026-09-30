@@ -1,15 +1,15 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-compliance-posture -->
 <!-- Sitemap-Last-Modified: 2025-12-09 -->
 
-# Determine your OAuth app compliance posture
+# Determine your OAuth app security posture
 
-This article describes the cards shown on the **App governance > Overview** page with compliance posture data.
+The cards on the **App governance > Overview** page show security posture data.
 
 The **Overview** page shows the following details:
 
 | Apps / incidents | Details shown | Use this data to... |
 | --- | --- | --- |
-| **OAuth-enabled apps that use the Microsoft Graph API** | - How many apps are in your tenant  <br>- How many apps are unused in the last 90 days  <br>- How many apps might be overprivileged  <br>- How many apps are highly privileged | Determine the level of risk to your organization by unused, overprivileged and highly privileged apps. |
+| **Microsoft Entra ID connected OAuth apps** | - How many apps are in your tenant  <br>- How many apps are unused in the last 90 days  <br>- How many apps might be overprivileged  <br>- How many apps are highly privileged  <br>- How many apps have a high risk score | Determine the level of risk to your organization from unused, overprivileged, highly privileged, and high-risk apps. |
 | **For incidents** | - How many active incidents your tenant has  <br>- How many are based on app governance detections \(**Threat incidents**\)  <br>- How many are based on app policies you have in place \(**Policy incidents**\)  <br>- The 10 latest incidents | Determine how quickly incidents are being generated and the relative number of detected and policy-based incidents. |
 
 For example:

@@ -20,7 +20,11 @@ If you configure auditing properly, Windows event auditing has minimal effect on
 
 If you're deploying the Defender for Identity sensor v3.x, use automatic Windows auditing. This approach requires no manual configuration and handles all auditing settings for you.
 
-### Turn on automatic Windows auditing
+### Control automatic Windows auditing
+
+Note
+
+When **Automatic sensor v3.x activation** and **Automatic Windows auditing configuration** are enabled, Defender for Identity automatically activates sensor v3.x and configures Windows auditing on eligible domain controllers, AD FS, AD CS, or Microsoft Entra Connect servers that you onboard to Defender for Endpoint. The servers must run Windows Server 2019 or later.
 
 To enable automatic Windows auditing in the Defender portal, complete the following steps:
 

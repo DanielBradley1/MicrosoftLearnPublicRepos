@@ -15,22 +15,24 @@ Your sign-in account must have one of the [required app governance roles](https:
 
 For a summary of apps in your tenant, in Microsoft 365, go to **Cloud app > App governance** and select any of the apps tabs.
 
-By default, the app governance page sorts the grid alphabetically, by **App name**. To sort the list by another attribute, select the column name. You can also select **Search** to search for an app by name.
+By default, the app governance page sorts the grid alphabetically, by **Display name**. To sort the list by another attribute, select the column name. You can also select **Search** to search for an app by name.
 
-[![Screenshot of the Azure AD apps tab on the App governance page.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-view-apps/app-governance-app-list-view.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-view-apps/app-governance-app-list-view.png#lightbox)
+[![Screenshot of the Microsoft 365 apps tab on the App governance page.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-view-apps/app-governance-app-list-view.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-view-apps/app-governance-app-list-view.png#lightbox)
 
 On the **Microsoft 365** tab, the apps in your tenant are listed with the following details:
 
 | Column name | Description |
 | --- | --- |
-| **App name** | The display name of the app as registered on Microsoft Entra ID |
-| **App status** | Shows whether the app is enabled or disabled, and if disabled by whom |
+| **Display name** | The display name of the app as registered on Microsoft Entra ID |
+| **Status** | Shows whether the app is enabled or disabled, and if disabled by whom |
+| **Risk score** | Shows the identity risk score \(1-100\). Higher values indicate greater risk. |
 | **Graph API access** | Shows whether the app has at least one Graph API permission |
 | **Permission type** | Shows the app's permission type:<br><br>- **Delegated**: Delegated API permissions only, no roles.<br>- **Application**: Application API permissions only, no roles.<br>- **Microsoft Entra roles**: Microsoft Entra roles only, no API permissions.<br>- **Mixed**: A combination of any two or more of the above.<br>- **None**: No API permissions or Entra roles assigned. |
-| **App origin** | Shows whether the app originated within the tenant or was registered in an external tenant |
+| **Origin** | Shows whether the app originated within the tenant or was registered in an external tenant |
 | **Consent type** | Shows whether the app consent is given at the user or the admin level, and the number of users whose data is accessible to the app |
 | **Publisher** | Publisher of the app and their verification status |
 | **Last used** | Shows the last time when the app signed in. Tracking of this data goes back to June, 2022. |
+| **Used by AI Agents \(Preview\)** | Shows the AI agents that use this identity to authenticate and access Microsoft 365 resources. If the value is **N/A**, agent details are unavailable, but the identity might still be used by AI agents. |
 | **Last modified** | Date and time when registration information was last updated on Microsoft Entra ID |
 | **Added on** | Shows the date and time when the app was registered to Microsoft Entra ID and assigned a service principal |
 | **Permission usage** | Shows whether the app has any unused Graph API permissions in the last 90 days |
@@ -40,7 +42,7 @@ On the **Microsoft 365** tab, the apps in your tenant are listed with the follow
 | **App ID** | The app ID |
 | **Sensitivity label accessed** | Sensitivity labels on content accessed by the app |
 | **Service accessed** | Microsoft 365 services accessed by the app |
-| **Community use** | Shows how popular the app is across all your users \(*common*, *uncommon*, *rare*\) |
+| **Community use** | Shows how popular the app is among all your users \(*common*, *uncommon*, *rare*\) |
 | **Consent grants** | Shows all app consent grants in the last 30 days |
 | **App activities** | Shows all app activities in the last 30 days |
 
@@ -59,10 +61,6 @@ The **Summary** tab shows more data about the app, such as the date first consen
 ### Review risk details on the Risk score tab
 
 The **Risk score** tab shows a 1-100 risk score for the app, where higher values mean greater risk. The risk score helps you quickly prioritize which apps need attention first. The **Risk score** tab also shows the risk summary, including the factors behind the app's risk score.
-
-Note
-
-The Risk score tab is available only for OAuth apps registered in Microsoft Entra ID.
 
 [![Screenshot of an app details pane with the Risk score tab showing.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-view-apps/app-governance-app-risk-score.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-view-apps/app-governance-app-risk-score.png#lightbox)
 
@@ -112,7 +110,7 @@ The **Sensitivity labels** tab shows how frequently items with certain sensitivi
 
 ## Manage Google Workspace and Salesforce OAuth apps
 
-If you enable the [Google Workspace](https://learn.microsoft.com/en-us/defender-cloud-apps/connect-google-workspace) or [Salesforce](https://learn.microsoft.com/en-us/defender-cloud-apps/connect-salesforce) connector, you can use the **App governance** page to view information about app permissions in apps connected to Google Workspace and Salesforce. You can view the permissions granted to each app and revoke or block apps as needed.
+Enable the [Google Workspace](https://learn.microsoft.com/en-us/defender-cloud-apps/connect-google-workspace) or [Salesforce](https://learn.microsoft.com/en-us/defender-cloud-apps/connect-salesforce) connector to view connected app permissions on the **App governance** page. For Salesforce, the inventory includes both Connected Apps and External Client Apps \(ECAs\). You can view the permissions granted to each app and revoke or block apps as needed.
 
 On the **App governance** page, select the **Google apps** or **Salesforce apps** tabs to view your apps. For example:
 
@@ -127,7 +125,7 @@ To manage your Google Workspace or Salesforce apps on the **App governance** pag
 | **New policy from search** | Select to create a new OAuth app policy based on the current query results, For more information, see [Create app policies in app governance](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-app-policies-create). |
 | **Export** | Select to export the currently listed apps to a CSV file. |
 
-### View Google Workforce and Salesforce OAuth app details
+### View Google Workspace and Salesforce OAuth app details
 
 The **Google** and **Salesforce** pages provide the following information about each OAuth app that users grant permissions to:
 
@@ -136,19 +134,20 @@ The **Google** and **Salesforce** pages provide the following information about 
 | **Name** | The app's name. Select to show or hide more details about the app. |
 | **Authorized by** | The number of users who authorized this app to access their app's account, and granted the app permissions.  <br>  <br>Select to view more information, including a list of user emails and whether an admin previously consented to the app.  <br>  <br>On the **Users who added...** pane, select **Export** to export the listed users to a CSV file. |
 | **Permission level** | *High*, *Medium*, or *Low*.  <br>  <br>The level indicates how much access this app has to the app's data. For example, *Low* might indicate that the app only accesses user profile and name.  <br>  <br>Select the level to view more information, including permissions granted to the app, community use, or related activity in the [Governance log](https://learn.microsoft.com/en-us/defender-cloud-apps/governance-actions). |
-| **Last authorized** | The most recent date on which a user granted permissions to this app. This information is available for Salesforce only. |
+| **Last used** | The most recent date on which this app was used by anyone in your organization. |
+| **Risk score** | The app's risk score from 1 through 100. Higher values indicate greater risk. |
 | **Actions** | Select an option to mark an app as approved or banned. |
 
 Select **Show details** at the top right to view more information about all of the apps displayed, including:
 
 | Column name | Description |
 | --- | --- |
-| **Permissions** | A list of all permissions currently granted to the app. Available for Google Workspace and Salesforce \(Preview\). |
-| **Community use** | Common, Uncommon, Rare. Indicates how popular the app is across all your users. |
+| **Permissions** | A list of all permissions currently granted to the app. |
+| **Community use** | *Common*, *Uncommon*, or *Rare*. Indicates how popular the app is among all your users. |
 | **App ID** | The app's ID |
 | **App activities** | A link to the app's activity log, which you can use to understand the app's recent usage. |
-| **Last used** | The most recent date on which this app was used by anyone in your organization. This information is available for Salesforce only. |
+| **Last used** | The most recent date on which this app was used by anyone in your organization. |
 
 ## Next steps
 
-[Determine your overall app compliance posture](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-compliance-posture)
+[Determine your overall app security posture](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-security-posture)

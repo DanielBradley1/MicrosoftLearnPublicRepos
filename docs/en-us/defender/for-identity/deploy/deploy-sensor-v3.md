@@ -36,7 +36,7 @@ The v3.x sensor supports domain controllers. It also supports servers that aren'
 
 Note
 
-Activating the Defender for Identity sensor v3.x on AD FS, AD CS, and Microsoft Entra Connect servers that aren't domain controllers is in preview. Manual activation and automatic Windows event auditing are supported. Automatic activation and migration aren't currently supported for these servers.
+Manual activation of Defender for Identity sensor v3.x on eligible AD FS, AD CS, and Microsoft Entra Connect servers is in preview. This preview applies only to servers that aren't domain controllers and don't have an existing Defender for Identity sensor.
 
 Important
 
@@ -129,7 +129,7 @@ If automatic auditing isn't available or you opted out, [configure auditing manu
 
 ### Configure RPC auditing
 
-Starting with the July 2026 Defender for Identity sensor release \(sensor version 3.0.8\), RPC auditing is automatically enabled on domain controllers when you upgrade the sensor to the latest version. You no longer need to apply a tag manually to enable RPC auditing, and the related health alert clears shortly after the upgrade.
+Install the July 2026 or later Windows Server cumulative update before you install or upgrade to Defender for Identity sensor version 3.0.8 or later. Starting with sensor version 3.0.8, RPC auditing is enabled automatically on domain controllers, so you no longer need to apply an RPC configuration tag. The related health alert clears shortly after the upgrade.
 
 Note
 
