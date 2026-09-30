@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/ -->
-<!-- Sitemap-Last-Modified: 2026-09-17 -->
+<!-- Sitemap-Last-Modified: 2026-04-30 -->
 
 # Use the Intune settings catalog to configure settings
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/fundamentals/filters/ref-supported-workloads -->
-<!-- Sitemap-Last-Modified: 2026-09-17 -->
+<!-- Sitemap-Last-Modified: 2026-06-23 -->
 
 # List of platforms, policies, and app types supported by assignment filters in Microsoft Intune
 
