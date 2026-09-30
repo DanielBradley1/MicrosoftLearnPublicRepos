@@ -86,3 +86,4 @@ Learn how to buy and manage business subscriptions, perform license management t
 - [Find and use product keys for volume licensing](https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/product-keys-for-vl?view=o365-worldwide)
 - [Manage License Reservations for volume licensing](https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/manage-license-reservations-vl?view=o365-worldwide)
 - [Contact volume licensing support](https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/contact-vl-support?view=o365-worldwide)
+- [MsEDS Customer User Guider for Contracts Customer Self-Serve functionality](https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/mseds-customer-contracts-self-serve-functionality?view=o365-worldwide)

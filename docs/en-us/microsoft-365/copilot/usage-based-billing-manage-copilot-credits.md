@@ -65,7 +65,7 @@ This section covers the initial setup to guide administrators through enabling u
 2. In the Microsoft 365 admin center, go to **Copilot** and then the **Cost Management** node.
 
    [![Screenshot of the Cost management dashboard in Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/copilot-cost-management-dashboard.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/copilot-cost-management-dashboard.png#lightbox)
-3. To unlock AI experiences enabled by usage-based billing, select **Get Started**. This feature is currently available for Cowork and Work IQ API.
+3. To unlock AI experiences enabled by usage-based billing, select **Get Started**.
 4. A side-panel with the title **Activate the default spending policy for your organization** opens.
 5. In the **Billing method** section, select how your organization is billed for Copilot credit usage. Select the default subscription for your organization. This subscription is selected by default for other policies that you create. For more detailed information on how the billing method is populated, see [Configure billing method](#configure-billing-method).
 6. In the **Set the monthly spending limit** for this policy section, select one of the options.
@@ -74,7 +74,7 @@ This section covers the initial setup to guide administrators through enabling u
    - **Limit monthly spending** - Limits the number of credits the default policy can spend each month.
 
 7. In the **Select the monthly spending limit for users \(optional\)** section, set a monthly limit for users to prevent a single person from spending all available credits. Although this selection is optional, review and set this option for your organization to prevent runaway spending of Copilot Credits by one individual user.
-8. In the **Define alerts** section, select the people who receive email notifications when policy usage reaches the threshold that you specify. You can set the threshold as a credit amount or a percentage. Alert emails begin when usage reaches the specified threshold and continue weekly until the monthly usage period resets or you adjust the spending policy. If you set a monthly credit limit per user, you can also configure a user monthly spend alert. This option appears only when a monthly per-user limit is configured.
+8. In the **Define alerts** section, select the people who receive email notifications when policy usage reaches the threshold that you specify. You can set the threshold as a credit amount or a percentage. Alert emails begin when usage reaches the specified threshold and continue daily until the monthly usage period resets or you adjust the spending policy. If you set a monthly credit limit per user, you can also configure a user monthly spend alert. This option appears only when a monthly per-user limit is configured.
 
    Note
 
@@ -107,7 +107,7 @@ Give the policy a name and select the specific groups that the policy applies to
 
 1. Create and name the policy.
 2. Select the users or groups to which the policy applies. By default, **All users** is selected. To target this rule to a subset of users, switch to **Specific groups** and select the directory group. You can also select multiple groups.
-3. At this time, you can only support specific users through security groups. To add specific users to a spending policy, ensure they're in a security group first and then select specific groups from the policy setup.
+3. At this time, you can only support specific users and resource accounts through security groups. To add specific users or resource accounts to a spending policy, ensure they're in a security group first and then select specific groups from the policy setup. For more details on resource accounts, see [⁠Manage - Resource accounts for voice applications](https://learn.microsoft.com/en-us/microsoftteams/aa-cq-manage-resource-accounts).
 4. Select **Next**.
 
 **Users in multiple policies**
@@ -187,6 +187,37 @@ Microsoft continuously evaluates customer usage patterns and industry trends to 
 
 6. Select **Next**.
 
+### Model profiles
+
+Model profiles are reusable sets of model providers and models that you can apply to spending policies. Use model profiles to control which models are available for supported experiences.
+
+You can also add model profiles directly from **Cost Management > Configuration** tab. For more information, see [Configure Model profiles](#configure-model-profiles).
+
+To understand more about model profile considerations, see [Model profile considerations](#model-profile-considerations).
+
+Note
+
+Model profiles are currently available only for **Copilot Cowork**. The **Model profiles** step appears only when you select **Cowork** in a spending policy.
+
+To create and assign a model profile while creating a spending policy:
+
+1. By default, supported models and providers that are available in your organization can be used. You can keep the default model selection or customize model access by applying a model profile. In **Model profiles**, select from one of the following options:
+
+   - **Use default model selection** to allow Cowork to use all supported models and providers available in your tenant.
+   - **Customize model selection** to apply an existing model profile or create a new one.
+
+2. If you choose **Customize model selection**, select an existing profile or select **Create new model profile**.
+3. When creating a model profile:
+
+   1. Enter a name for the profile.
+   2. Select the model providers and models to include in the profile. You must select at least two models.
+   3. Choose whether Microsoft can select the most comparable model to maintain availability during a model-specific service interruption. If you don't allow Microsoft to select the most comparable model, users might experience a service interruption when a selected model becomes unavailable.
+   4. Save the model profile.
+
+4. Select **Next**.
+
+After you create a model profile, you can reuse it across applicable spending policies.
+
 ### Select billing method
 
 By default, the field selects the billing method tied to the default spending policy.
@@ -207,6 +238,7 @@ If you're a Global administrator or a Billing administrator, you can override th
    - Its policy-level and per-user limits.
    - Its policy and user notification thresholds.
    - Its selected services and agents.
+   - Its selected model profile.
    - The Auto-apply new services setting.
    - Its billing method.
 
@@ -218,7 +250,7 @@ If you're a Global administrator or a Billing administrator, you can override th
 To edit a spending policy, follow these steps:
 
 1. In the **Configuration** tab, select the spending policy you want to edit.
-2. The spending policy details fly-out opens, where you can modify its settings, such as scoped users and groups, spending limits, alerts, enabled services, and billing method.
+2. The spending policy details fly-out opens, where you can modify its settings, such as scoped users and groups, spending limits, alerts, enabled services, Model profile, and billing method.
 3. After making the necessary changes, select **Save** to apply the updates to the spending policy.
 
 ## Delete spending policy
@@ -232,6 +264,36 @@ If another spending policy applies to a user through group membership, the user 
 Note
 
 Spending policies are limit-based controls and don't reserve or allocate Copilot Credits to users or groups.
+
+## Configure model profiles
+
+You can create and manage model profiles directly from **Cost Management**, or create and assign a model profile while creating a spending policy.
+
+For more information on how to add a model profile while creating a spending policy, see [Model profile](#model-profiles).
+
+Note
+
+Model profiles are currently available only for Copilot Cowork. The Model profiles step appears in a spending policy only when you select Cowork in Agents and services.
+
+### Create a model profile from Cost management
+
+1. In the Microsoft 365 admin center, go to **Copilot > Cost management > Configuration**.
+2. Select **Model profiles**.
+3. Select **Add model profile**.
+4. Enter a name for the model profile.
+5. Select the model providers and models to include in the profile.
+6. Select at least two models. The models can be from the same provider or from different providers.
+7. Optional: Select **Microsoft can select the most comparable model to maintain availability**.
+8. Save the model profile.
+
+After you create a model profile, you can apply it to supported spending policies. Model profiles are reusable and can be assigned to multiple spending policies.
+
+### Model profile considerations
+
+- You must select at least two models when creating a model profile.
+- If a model provider is disabled for your organization, its models aren't available for selection in a model profile. In the Microsoft 365 admin center, go to **Copilot > Settings > AI providers operating as independent processors** to manage provider settings.
+- The **Microsoft can select the most comparable model to maintain availability** option allows Microsoft to use a comparable model if a selected model becomes unavailable because of a model-specific service interruption. If you don't enable this option, users might experience service interruptions when a selected model becomes unavailable.
+- When creating a model profile, choose the models that best meet your organization's requirements. Review the capabilities and requirements of each model and make selections based on your organization's needs.
 
 ## Configure billing method
 
@@ -260,7 +322,7 @@ If you already have Azure subscriptions, the system shows the subscriptions link
 
 To learn more about your subscriptions or decide which one to use for usage-based billing, review and manage them in the Azure portal: [View Azure subscriptions](https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade).
 
-Some subscriptions show an **X prepaid credits available** label. This label indicates that a Copilot Credit Pre-purchase plan \(P3\) is attached. The process uses available prepaid credits first, and once they're exhausted, usage automatically continues on a pay-as-you-go basis.
+Some subscriptions show an **X pre-purchase credits available** label. This label indicates that a Copilot Credit Pre-purchase plan \(P3\) is attached. The process uses available pre-purchase credits first, and once they're exhausted, usage automatically continues on a pay-as-you-go basis.
 
 [![Drop-down list showing a subscription with P3 credits.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/select-subscription-copilot-credits.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/select-subscription-copilot-credits.png#lightbox)
 
@@ -296,7 +358,7 @@ If you purchased capacity packs, you can use them with the services in this expe
 - In the **Billing Method** page, when setting up a spending policy, the number of credits available from Prepaid Capacity packs reflects the credits that are available for use, instead of the total number of credits purchased. \(where Available credits = Total purchased credits - Credits pre-allocated to environments in Power Platform admin center\)
 - You can choose to apply Prepaid Capacity packs at the individual spending policy level in the **Review billing method** step.
 - You must be a Global administrator or Billing administrator to override or set the billing method.
-- Copilot Credits from Prepaid Capacity packs can be consumed by multiple services managed by both Microsoft 365 admin center and Power Platform admin center. However, capacity that is assigned or used in Power Platform admin center \(for example, allocated to specific environments or consumed by agents\) reduces the Copilot credits available for Cowork and Work IQ API services managed by Microsoft 365 admin center. Therefore, it's important to leverage the **Copilot > Cost management** dashboard in Microsoft 365 admin center to properly identify what is available for Cowork and Work IQ API consumption.
+- Copilot Credits from Prepaid Capacity packs can be consumed by multiple services managed by both Microsoft 365 admin center and Power Platform admin center. However, capacity that is assigned or used in Power Platform admin center \(for example, allocated to specific environments or consumed by agents\) reduces the Copilot credits available for services managed by Microsoft 365 admin center. Therefore, it's important to leverage the **Copilot > Cost management** dashboard in Microsoft 365 admin center to properly identify what is available for these services.
 
   - Check the Power Platform admin center for additional credit allocation and usage details: [Power Platform admin center](https://admin.powerplatform.microsoft.com/licenses).
   - For more information on how to manage capacity allocation or reallocation, see [Manage Copilot Studio credits and capacity](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity#manage-capacity).
@@ -528,7 +590,7 @@ Exported reports are generated as a point-in-time snapshot, while dashboard view
    - When a user moves from one Entra ID group to another during a billing period, the new group's spending policy becomes effective for that user. Credits consumed before the move are retained for billing at a policy level but aren't tracked at a user level in the Consumption tab view. Only the current usage against the current spending policy is displayed at a user level in the Consumption tab view.
 
 5. In the **Groups** view, review groups included in spending policies. Select a group to open the details panel and view daily usage, assigned policy, and monthly credit limit.
-6. In the **Agents and services** view, review usage for supported services, including Cowork and Work IQ API. This view shows active users, credits used, and session count for each supported service.
+6. In the **Agents and services** view, review usage for supported services. For example, Cowork and Work IQ API. This view shows active users, credits used, and session count for each supported service.
 7. Compare usage across users, groups, agents, and services to help adjust policies or redistribute credit budgets.
 
 ## Related articles

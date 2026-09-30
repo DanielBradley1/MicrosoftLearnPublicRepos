@@ -29,12 +29,12 @@ Services managed by usage-based billing in the Microsoft admin center, now inclu
 
 Microsoft 365 Copilot
 
-- Cowork
-- Apps built with Copilot Cowork
-
-Additional services
-
-- Work IQ API \(for third-party agents\)
+- Cowork \(Copilot license required\)
+- Advanced work in SharePoint \(Copilot license required\)
+- Advanced work in Onedrive \(Copilot license required\)
+- Work IQ API for custom apps and agents
+- Copilot Managed Runtime
+- Teams Phone Agent
 
 Spending policies can automatically apply to future supported Microsoft Copilot services and agents. The Auto-apply new services setting is enabled by default for spending policies. Administrators can turn off the setting for policies where future services and agents should be reviewed before they are added. For more information, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#select-agents-and-services).
 
@@ -42,16 +42,18 @@ Important
 
 Review existing spending policies to determine whether automatic coverage is appropriate. No action is required when you want future supported services and agents to inherit the policy.
 
-In the Microsoft admin center **Copilot > Cost management**, admins can monitor Copilot Credit consumption and manage spending associated with the supported services such as Cowork, building and using Cowork apps, and Work IQ API. Enabling or disabling Cowork also enables or disables the app-building capability by default.
+In the Microsoft admin center **Copilot > Cost management**, admins can monitor Copilot Credit consumption and manage spending associated with the supported services such as **Cowork**, running apps hosted on the **Copilot Managed Runtime**, and **Work IQ API**.
 
-Apps built with Cowork are available under **Apps** in the Microsoft 365 admin center. This experience provides a centralized inventory and operational health monitoring. Admins can also apply policies that govern content security, data access, and app usage across the organization.
+Building apps hosted on the Copilot Managed Runtime apps consumes Copilot Credits and follows the spending policies and credit allocations you configure in the product where you create the apps. For running apps, administrators can configure separate spending policies and credit allocations in the Microsoft 365 admin center using the **Copilot Managed Runtime** service.
 
 For more information, see:
 
 - [Copilot Cowork Overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/index)
 - [Work IQ API overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview)
-- [Manage apps in the Microsoft 365 admin center](https://go.microsoft.com/fwlink/?LinkId=2371660)
+- [Manage apps in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/managed-apps)
 - [Manage Copilot Cowork for your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance)
+- [Planning Teams Phone Agent](https://learn.microsoft.com/en-us/microsoftteams/aa-cq-plan-overview#teams-phone-agent)
+- [Copilot in SharePoint](https://learn.microsoft.com/en-us/SharePoint/copilot-in-sharepoint-get-started)
 
 Estimate Cowork usage: Use the [Copilot Credit Estimator](https://aka.ms/CopilotCreditPlanningModel) to model potential credit usage for your organization.
 

@@ -3,11 +3,11 @@
 
 # Activate online services in volume licensing
 
-This article describes how to activate non-Azure Microsoft online services obtained via the following volume licensing \(VL\) agreement types: Enterprise, Enterprise Subscription, Enterprise Agreement \(EA\) for Government Partners \(USG\), and Campus and Schools.
+This article describes how to activate non-Azure Microsoft online services you get through the following volume licensing \(VL\) agreement types: Enterprise, Enterprise Subscription, Enterprise Agreement \(EA\) for Government Partners \(USG\), and Campus and Schools.
 
 ## Before you begin
 
-To view or activate Microsoft online services obtained via VL you must have one of the following VL roles:
+To view or activate Microsoft online services you get through VL, you must have one of the following VL roles:
 
 - VL Administrator, also known as online admin \(OLA\)
 - Online Services Manager \(OSM\)
@@ -32,7 +32,7 @@ By default, the person who sets up the Microsoft Entra tenant becomes the Global
 
 Caution
 
-Global Administrators have almost unlimited access to your organization's settings and most of its data. To help keep your organization secure, we recommend that you limit the number of Global Administrators as much as possible.
+Global Administrators have almost unlimited access to your organization's settings and most of its data. To help keep your organization secure, limit the number of Global Administrators as much as possible.
 
 ### Online Services Manager
 
@@ -48,7 +48,7 @@ Microsoft Entra tenant roles are separate from VL roles in the Microsoft 365 adm
 
 Every organization with a VL agreement with Microsoft has at least one Public Customer Number \(PCN\). Some organizations have multiple unique PCNs for different VL agreements. Your Microsoft seller or partner sees the PCN when they submit a new agreement package, but only Select Plus licenses display a PCN in the admin center.
 
-## Subscribe to Microsoft online services via volume licensing
+## Subscribe to Microsoft online services through volume licensing
 
 If there are no licenses for any Microsoft online services under your License ID, ask your Microsoft seller or partner to order the services for you.
 
@@ -56,56 +56,56 @@ Alternatively, Enterprise, Enterprise Subscription, and US Government \(USG\) cu
 
 After the first online services order or a reservation is processed for a License ID, Microsoft either automatically assigns the services to your organization's tenant or invites the OSM to sign up for an online services account profile.
 
-## Automatic assignment of online services via volume licensing
+## Automatic assignment of online services through volume licensing
 
-Online services ordered via VL are automatically provisioned to an organization's Microsoft Entra tenant if one or more of the following conditions are met:
+When you order online services through VL, you automatically provision those services to your organization's Microsoft Entra tenant if one or more of the following conditions are true:
 
 - The OSM email address associated with the License ID is either a Global Administrator or Billing Administrator of an existing tenant.
-- Online services previously ordered on the License ID are already activated.
-- The PCN provided on a renewal contract previously had online services assigned.
+- You activate online services that you previously ordered on the License ID.
+- The PCN you provide on a renewal contract previously had online services assigned.
 
-## Find the Microsoft Entra tenant your services are activated
+## Find the Microsoft Entra tenant where your services are activated
 
-VL users can see what tenant their License ID contains activated online services for by going to the admin center.
+VL users can see what tenant their License ID activates online services for by going to the admin center.
 
-1. In the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339) go to the **Billing** > [Your products](https://go.microsoft.com/fwlink/p/?linkid=842054) page, then select the [Volume licensing](https://go.microsoft.com/fwlink/p/?linkid=2244144) tab.
+1. In the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339), go to **Billing** > [Your products](https://go.microsoft.com/fwlink/p/?linkid=842054), and select the [Volume licensing](https://go.microsoft.com/fwlink/p/?linkid=2244144) tab.
 2. In the **Contracts** section, select **View contracts**.
-3. On the **Contracts** page, find a License ID, select the three dots \(**More actions** button\), then select **View contract details**.
-4. On the **Contract details** page, select the **Tenants** tab.
+3. On **Contracts**, find a License ID, select the three dots \(**More actions**\), and then select **View contract details**.
+4. On **Contract details**, select the **Tenants** tab.
 
    - If the License ID is activated on a tenant, the tenant domain is displayed.
    - If the License ID isn't activated on a tenant, a message indicates that online services aren't activated.
 
 ## Invitation to activate an online service profile
 
-If no Microsoft Entra tenant is detected and automatic assignment isn't possible, Microsoft sends an online service activation email to ask you to complete an online services account profile. The email contains the subject line "Complete your profile to set up your services." The email is sent to the OSM on the License ID when the first order or reservation for an online service is placed. For contracts without an OSM, the invitation is sent to the Notice Contact or Online Administrator.
+If the system doesn't detect a Microsoft Entra tenant and can't automatically assign one, Microsoft sends an online service activation email. The email asks you to complete an online services account profile. The email's subject line is "Complete your profile to set up your services." Microsoft sends the email to the OSM on the License ID when you place the first order or reservation for an online service. For contracts without an OSM, Microsoft sends the invitation to the Notice Contact or Online Administrator.
 
-You're presented with two options:
+You have two options:
 
 1. Create a new online services profile \(Microsoft Entra tenant\) to assign the services to.  
    OR
-2. Sign into an existing tenant and assign the services there.
+2. Sign in to an existing tenant and assign the services there.
 
 For troubleshooting help, see [Common reasons why you might not receive an activation email](#common-reasons-why-you-might-not-receive-an-activation-email).
 
 ## Sign up to create an online services account for your organization
 
-If your organization has no Microsoft online service subscriptions, or if you need to associate the subscriptions to a new Microsoft Entra ID, use the following steps:
+If your organization doesn't have any Microsoft online service subscriptions, or if you need to associate the subscriptions to a new Microsoft Entra ID, use the following steps:
 
 1. Have the OSM locate the online services activation email from Microsoft that contains the subject line "Action required: Complete your profile to set up your services."
 
    Note
 
    OSMs might prefer to forward the online services activation email to their IT administrator to complete the sign-up process and become the organization's online services Global Administrator.
-2. To avoid unintentionally assigning services to a Microsoft online service account that's already in use, we recommend that you take the following steps before selecting any links in the email:
+2. To avoid unintentionally assigning services to a Microsoft online service account that's already in use, take the following steps before selecting any links in the email:
 
    - Sign out of other Microsoft services \(like Microsoft 365 email\) that you use.
    - Close all your open browser windows.
    - Copy and paste the link from the email into a private browser window.
 
-3. In the activation email, go to the option "My organization does not use any Microsoft services" and select **Register for a new work or school account**.
+3. In the activation email, go to the option "My organization doesn't use any Microsoft services" and select **Register for a new work or school account**.
 4. Provide the information required to create a new account profile \(Microsoft Entra tenant\) for your organization.
-5. After you save the new account profile, all online services ordered under this License ID are automatically assigned to the tenant \(see assignment section\). For more information, see [Assign online services to volume licensing users](#assign-online-services-to-volume-licensing-users).
+5. After you save the new account profile, you automatically assign all online services ordered under this License ID to the tenant \(see assignment section\). For more information, see [Assign online services to volume licensing users](#assign-online-services-to-volume-licensing-users).
 
 ## Your organization already uses Microsoft online services
 
@@ -116,7 +116,7 @@ Note
 OSMs without Global Administrator permissions must forward the online services activation email to their Global Administrator.
 
 1. Read the instructions in the activation email for option 1, "My organization already uses Microsoft services."
-2. To avoid unintentionally assigning services to a Microsoft online service account that's already in use, we recommend that you take the following steps before selecting any links in the email:
+2. To avoid unintentionally assigning services to a Microsoft online service account that's already in use, take the following steps before selecting any links in the email:
 
    - Sign out of other Microsoft services \(like Microsoft 365 email\) that you use.
    - Close all your open browser windows.
@@ -131,7 +131,7 @@ This section contains information about why you might not receive an activation 
 ### The service activation email was sent, but not received
 
 - You aren't the OSM for the License ID.
-- The email was blocked by your inbox settings or went to your junk mail folder.
+- Your inbox settings blocked the email or it went to your junk mail folder.
 
 ### No service activation email could be sent
 
@@ -212,11 +212,11 @@ For example, you can assign License ID 1234 and License ID 56789 to tenant conto
 
 To determine if the necessary VL agreement structure is in place, contact your Microsoft partner or seller.
 
-### Licenses were activated on the wrong online services account \(tenant\)
+### Licenses activated on the wrong online services account \(tenant\)
 
-If you clicked an activation link in the service activation email while signed in to an existing Microsoft service, the licenses might be activated on the wrong tenant. This activation can also happen if you didn't realize the licenses would meet the criteria for automatic licenses assignment.
+If you click an activation link in the service activation email while signed in to an existing Microsoft service, you might activate the licenses on the wrong tenant. This activation can also happen if you don't realize the licenses meet the criteria for automatic license assignment.
 
-Global Administrators can't move licenses from one Microsoft Entra tenant to another. [Contact volume licensing support](https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/contact-vl-support?view=o365-worldwide) to get help with a *tenant remap*. A tenant remap involves moving all subscriptions and License IDs associated with a PCN to a new organizational account that you provide. When a tenant remap occurs, no user data is migrated. Global Administrators might have to complete subscription management tasks after the licenses become available on the correct tenant.
+Global Administrators can't move licenses from one Microsoft Entra tenant to another. [Contact volume licensing support](https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/contact-vl-support?view=o365-worldwide) to get help with a *tenant remap*. A tenant remap involves moving all subscriptions and License IDs associated with a PCN to a new organizational account that you provide. When a tenant remap occurs, no user data migrates. Global Administrators might need to complete subscription management tasks after the licenses become available on the correct tenant.
 
 To ensure that support can quickly solve the incorrect activation issue, when you open the case, you must provide the following information:
 

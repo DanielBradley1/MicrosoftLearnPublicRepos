@@ -67,10 +67,8 @@ After enabled in the Microsoft 365 admin center, additional admin controls are a
 
 The following exclusions apply:
 
+- Certifications for OpenAI operated models in Microsoft Online Services are maintained and managed by OpenAI. You should refer to [OpenAI’s own certification landing page](https://trust.openai.com/) to understand the availability of their certifications, additional exclusions, and audit reports.
 - OpenAI operated models available through Microsoft aren't FedRAMP High authorized. If your organization requires FedRAMP High prior to use, consult with your authorization official to determine whether use of OpenAI operated models is permitted within your environment.
-- A Payment Card Industry \(PCI\) Data Security Standard \(DSS\) Attestation of Compliance \(AOC\) isn't available for OpenAI operated models.
-- A Health Information Trust Alliance \(HITRUST\) Common Security Framework \(CSF\) Certification Letter isn't available for OpenAI operated models.
-- A System and Organization Controls \(SOC\) 1 Type 2 report isn't available for OpenAI operated models.
 - Microsoft incorporates OpenAI's Responses API into certain Copilot experiences. OpenAI offers Zero Data Retention for the Responses API used by Microsoft, subject to the limitations and feature-specific data handling practices for Responses API described in OpenAI's [Data controls in the OpenAI platform](https://developers.openai.com/api/docs/guides/your-data) documentation.
 
 ## Related articles
