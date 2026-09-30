@@ -8,7 +8,7 @@ Flex routing lets customers in the European Union \(EU\) and the European Free T
 Note
 
 - Flex routing is on by default for [eligible tenants](#eligibility) that were created after March 25, 2026.
-- For [eligible tenants](#eligibility) that existed before March 25, 2026, please check the Message Center for more details on your tenant's default flex routing setting.
+- For [eligible tenants](#eligibility) that existed on or before March 25, 2026, tenant administrators are encouraged to check their tenant's setting in the Microsoft 365 admin center.
 
 No matter where LLM inferencing occurs, data will be encrypted in transit and at rest. Data at rest will continue to be stored inside the EU Data Boundary, except for limited pseudonymized data which may be stored outside the EU Data Boundary for security and operational purposes. For more information, see [Ongoing partial data transfers](https://learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-ongoing-partial-transfers).
 

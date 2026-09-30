@@ -47,7 +47,7 @@ If an admin makes Cowork discoverable to end users but doesn't enable usage-base
 
 Cowork supports plugins from the Microsoft 365 App Store that add skills and connectors to extend what Cowork can do. As an admin, you control which plugins are available, how they're deployed, and who can use them.
 
-Get the admin guide on plugin deployment, availability controls, connector authentication, and monitoring in [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins) and [Manage plugins in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-for-agent?view=o365-worldwide&preserve-view=true#developer-prerequisites).
+Get the admin guide on plugin deployment, availability controls, connector authentication, and monitoring in [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins) and [Manage plugins in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers).
 
 ## Manage models
 

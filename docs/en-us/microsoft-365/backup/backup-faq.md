@@ -89,6 +89,14 @@ Currently, you can only transfer control from the first-party Microsoft 365 appl
 
 Yes, you can. Microsoft 365 Backup supports PowerShell cmdlets. You can find the associated PowerShell cmdlets in the [Microsoft 365 Backup Storage Graph APIs](https://learn.microsoft.com/en-us/graph/api/resources/backuprestoreroot) reference guide.
 
+#### How do Microsoft 365 Backup restores interact with site-level and file-level archiving?
+
+Microsoft 365 Archive and Microsoft 365 Backup are orthogonal features. A restore through the Backup tool does not change a SharePoint site’s current site-level tier state. However, when a site is restored to a prior point in time, an individual file’s tier state is restored to the state it had at that point in time.
+
+**Example: Site-level tier state** A site is currently archived, but you restore it to a backup from when it was active. The site remains archived after the restore. Conversely, if the site is currently active, restoring it to a point when it was archived does not archive the site; it remains active.
+
+**Example: File-level tier state** A site is currently active, and a file in it is archived. You restore the site to a point in time when that file was active. After the restore, the file is active. Conversely, if the file is currently active but was archived at the restore point, the restored file is archived.
+
 #### Can I back up every type of SharePoint site?
 
 No, there are some SharePoint sites that are unsupported. While most SharePoint templates are supported, there are a handful of legacy template types which are not. These unsupported templates are:

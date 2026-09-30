@@ -21,6 +21,7 @@ Cowork carries out tasks across your Microsoft 365 environment. Rather than desc
 - **Prepares briefings and summaries**: Prepares daily briefings and meeting intelligence summaries.
 - **Drafts communications**: Drafts stakeholder communications such as status updates and announcements.
 - **Schedules prompts**: Runs prompts on a schedule so recurring tasks happen automatically.
+- **Allows faculty and staff in the education industry to complete multi-step work across Microsoft 365**: Prepares course materials, coordinates research and grant work, prepares materials for department or curriculum meetings, and other tasks.
 - **Create apps \(Frontier\)**: Use the App skill to build lightweight, interactive apps from a description. There's no coding required. You can refine the app in chat, open, publish, and share it with your stakeholders.
 
 Cowork shows each step in your session, so you can follow along as it works.
@@ -86,7 +87,7 @@ As Cowork loads skills during a session, the side panel updates to show which sk
 
 ### Extend with plugins
 
-Cowork supports plugins from the Microsoft 365 App Store that add new skills and connectors. Plugins can give Cowork specialized expertise-such as financial analysis or legal research-or connect it to external data sources and services. Your organization's admin can also deploy plugins for everyone in your organization.
+Cowork supports plugins from the Microsoft 365 App Store that add new skills and connectors. Plugins can give Cowork specialized expertise—such as financial analysis or legal research—or connect it to external data sources and services. Your organization's admin can also deploy plugins for everyone in your organization.
 
 Learn more about browsing, installing, and managing plugins in [Use plugins with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugins).
 
@@ -113,7 +114,7 @@ Here's how a typical interaction works:
 
 1. **Describe your task**: Tell Cowork what you need. For example, "Send a meeting recap to my team" or "Create a slide deck summarizing Q3 results." You can also attach files by dragging them into the chat.
 2. **Watch Cowork work**: Cowork breaks your request into steps and works through them one by one. You can follow along as each step appears in the session.
-3. **Interrupt, steer, or pause the session**: At any point, you can interrupt Cowork to give it additional context or clarify your request.
+3. **Interrupt, steer, or pause the session**: At any point, you can interrupt Cowork to give it more context or clarify your request.
 4. **Approve actions when asked**: Before Cowork takes an important action, like sending an email or scheduling a meeting, it pauses and asks for your go-ahead. You decide whether to proceed.
 5. **Review the results**: When Cowork finishes, review what it produced. Download documents, check sent messages, or ask Cowork to make changes.
 

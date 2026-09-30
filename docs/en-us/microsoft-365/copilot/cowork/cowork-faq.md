@@ -7,7 +7,7 @@ Find answers to common questions about Microsoft Copilot Cowork.
 
 ## What is Cowork?
 
-Cowork is available in Microsoft Copilot. It carries out tasks on your behalf. For example, it can send emails, schedule meetings, create documents, post in Teams, and handle multi-step tasks across your Microsoft 365 environment.
+Cowork is available in Microsoft Copilot. It carries out tasks on your behalf. For example, it can send emails, schedule meetings, create documents, post in Teams, and handle multistep tasks across your Microsoft 365 environment.
 
 ## What can Cowork do for me?
 
@@ -17,14 +17,14 @@ Get a full breakdown by category in [What can Cowork do for you?](https://learn.
 
 ## How is Cowork different from Copilot Chat?
 
-Cowork completes multi-step work across Microsoft 365 by taking action on your behalf, while Copilot Chat helps you generate content and insights within a single session.
+Cowork completes multistep work across Microsoft 365 by taking action on your behalf, while Copilot Chat helps you generate content and insights within a single session.
 
 | Feature | Copilot Chat | Cowork |
 | --- | --- | --- |
-| What it is | Always-on AI for drafting, summarizing, answering questions | Agentic AI that completes multi-step work across Microsoft 365 |
+| What it is | Always-on AI for drafting, summarizing, answering questions | Agentic AI that completes multistep work across Microsoft 365 |
 | Best for | Fast, focused, single-task support | End-to-end work across multiple apps |
 | Speed | Seconds to minutes | Minutes to hours \(autonomous execution\) |
-| Task complexity | Single-step, single-session | Multi-step workflows across tasks and sources |
+| Task complexity | Single-step, single-session | Multistep workflows across tasks and sources |
 | Use when... | You need a quick draft, answer, or insight | You need Copilot to take action across apps, files, or systems |
 | Top scenarios | Quick daily catch-up, project status, Q&A, or drafting content | Inbox and calendar clean-up, project launches, or meeting preparation. |
 
@@ -201,7 +201,7 @@ Yes. Cowork can edit existing Word, Excel, and PowerPoint files stored in OneDri
 
 ## Can I download all output files at once?
 
-Yes. When Cowork produces multiple files, select **Download All** at the top of the output file list to download everything as a single zip archive.
+Yes. When Cowork produces multiple files, select **Download All** at the top of the output file list to download everything as a single ZIP archive.
 
 ## Can an administrator disable Cowork?
 
@@ -213,6 +213,10 @@ Yes. Administrators can manage access to Cowork through the Microsoft 365 admin 
 - **Turn off individual models**: Administrators can disable models, including [Anthropic models](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor#disable-connection-to-anthropics-models), for their organization in the Microsoft 365 admin center under Copilot settings.
 
 Learn more in [Microsoft Copilot admin settings](https://learn.microsoft.com/en-us/microsoft-365-copilot/copilot-for-microsoft-365-admin).
+
+## Can customers use Cowork in the education industry?
+
+Yes, faculty and staff users in the education industry can access Cowork. Students aren't eligible for access at this time.
 
 ## How is Cowork billed?
 
@@ -249,7 +253,7 @@ Yes. Sometimes Cowork needs more information to complete your request. When this
 
 Cowork can use Anthropic Claude models as a subprocessor for most reasoning, drafting, and tool-using work. It also uses ChatGPT Images 2.0 for image generation. Learn more about the Anthropic integration in [Anthropic as a subprocessor for Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor).
 
-We might deploy other AI models for Microsoft Copilot to use that are hosted and operated by Microsoft. These models are governed by the same contractual and data protection commitments already in place, including that no data leaves Microsoft. Learn more in [Understanding AI functionality and models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/ai-models-overview).
+Microsoft might deploy other AI models for Microsoft Copilot to use that are hosted and operated by Microsoft. These models are governed by the same contractual and data protection commitments already in place, including that no data leaves Microsoft. Learn more in [Understanding AI functionality and models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/ai-models-overview).
 
 ## Are there unsupported regions?
 
