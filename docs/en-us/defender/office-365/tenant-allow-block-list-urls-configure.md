@@ -347,7 +347,7 @@ For detailed syntax and parameter information, see [Remove-TenantAllowBlockListI
 
 - IPv4 and IPv6 addresses are allowed, but TCP/UDP ports aren't.
 - Filename extensions aren't allowed \(for example, test.pdf\).
-- Unicode isn't supported, but Punycode is.
+- Unicode isn't supported. Punycode is only allowed in hostname labels before a normal ASCII TLD.
 - Hostnames are allowed if all of the following statements are true:
 
   - The hostname contains a period.
