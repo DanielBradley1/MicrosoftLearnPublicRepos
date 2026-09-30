@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/wipe -->
-<!-- Sitemap-Last-Modified: 2026-08-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Wipe devices with Microsoft Intune
 
