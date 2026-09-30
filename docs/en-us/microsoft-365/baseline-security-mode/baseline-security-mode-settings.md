@@ -29,7 +29,7 @@ This article provides information about the Baseline security mode settings that
 
 ## Before you begin
 
-Workload-specific administrators can manage only their own settings. To manage the settings you want to configure, make sure to sign in with an account that has the appropriate role. For example, to manage settings related to Microsoft 365 apps, sign in with an account that has the Security administrator role.
+Workload-specific administrators can manage only their own settings. To manage the settings you want to configure, make sure to sign in with an account that has the appropriate role. For example, to manage settings related to Microsoft Entra ID, sign in with an account that has the Security administrator role.
 
 Baseline security mode settings support role-based access control \(RBAC\), so the following roles can also see these settings:
 

@@ -1,13 +1,27 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector -->
 <!-- Sitemap-Last-Modified: 2026-07-02 -->
 
-# Build your first custom Copilot connector using Microsoft 365 Agents Toolkit
+# Build your first synced Copilot connector with Microsoft 365 Agents Toolkit
 
 [Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector) enable you to ingest your line-of-business data into Microsoft Graph to make it available to Microsoft 365 Copilot. When your data is ingested, Copilot can reason over the data and use it to respond to user prompts.
+
+This walkthrough creates a synced Copilot connector that can provide external data access as a component of a Microsoft 365 Copilot plugin. It doesn't create or package a complete plugin.
 
 The [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) includes a template that you can use to build Copilot connectors. The Copilot connector template is designed to help you build connectors quickly by using the Copilot connector API in Microsoft Graph. The template scaffolds a connector that pulls data from the GitHub API into Microsoft Graph. After you build your connector, you can run it locally via the F5 experience or deploy it via Azure Functions.
 
 This article provides a walkthrough of the steps to build your first Copilot connector by using the Microsoft 365 Agents Toolkit in Visual Studio Code.
+
+Before you begin, confirm that your component plan identifies a synced connector as the appropriate model and that Microsoft 365 Agents Toolkit supports your target experience. For planning guidance, see [Connectors as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors).
+
+Note
+
+This walkthrough builds a synced connector. It doesn't build a federated connector, an MCP plugin, an MCP server, or an agent connector.
+
+## What you build
+
+In this walkthrough, Agents Toolkit scaffolds a synced connector implementation that retrieves GitHub issues. When you run the project, the toolkit provisions a Microsoft Entra application, creates an external connection and schema in Microsoft Graph, and ingests external items from the configured GitHub repository.
+
+The connector is one component of your solution. Complete any additional plugin components separately, and then integrate and test the components together.
 
 ## Prerequisites
 
@@ -70,7 +84,7 @@ Use the following steps to build your first connector.
     Tip
 
 
-    If you need to look up the Connection ID programmatically instead of in the admin center, you can [query your existing connectors in Graph Explorer](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#microsoft-365-copilot-connectors) by using the `ExternalConnection.Read.All` scope.
+    If you need to look up the Connection ID programmatically instead of in the admin center, you can [query your existing connectors in Graph Explorer](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#copilot-connectors) by using the `ExternalConnection.Read.All` scope.
 
 11. To verify that the items were indexed, choose the relevant connector name. Check the **Items indexed** field to see how many issues were indexed.
 
@@ -78,6 +92,8 @@ Use the following steps to build your first connector.
 12. Open Microsoft 365 Copilot Chat and test a sample prompt such as "What are the two latest GitHub Issues?". Notice the external item citations at the bottom of the page. These citations are the data from your Copilot connector.
 
     ![M365 Copilot Output with Github issues](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/atk-copilot-connectors/copilot-output.png)
+
+This test confirms that the connector works independently. It doesn't validate a complete plugin package or confirm that the connector works with other plugin components.
 
 ## Customize the template for your data source
 
@@ -89,11 +105,18 @@ To customize this template for your custom data, you can update the content of t
 
 In addition to these folders, you can customize other parts of the code, depending on the scenario. You can search the code for comments starting with the `[Customization point]` string. These comments indicate areas for potential customization.
 
+## Next step
+
+Record the connection ID, schema, environment, permissions, test evidence, and connector owner in your implementation record. If your plugin includes other components, build them before you [integrate and test your plugin components](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components).
+
 ## Related content
 
+- [Connectors as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors)
+- [Build or reuse connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-connectors)
+- [Integrate and test your plugin components](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components)
+- [Package a plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin)
 - [Copilot connectors API](https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext)
 - [Microsoft 365 Agents Toolkit overview](https://aka.ms/M365AgentsToolkit)
-- [Create declarative agents using Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents)
 - [Copilot connector samples](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector#microsoft-365-copilot-connector-samples)
 - [Community samples](https://github.com/pnp/graph-connectors-samples)
-- [Find your connector's ID by querying connectors in Graph Explorer \(ExternalConnection.Read.All\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#microsoft-365-copilot-connectors)
+- [Find your connector's ID by querying connectors in Graph Explorer \(ExternalConnection.Read.All\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#copilot-connectors)

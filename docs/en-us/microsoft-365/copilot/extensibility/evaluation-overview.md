@@ -5,6 +5,14 @@
 
 To improve the quality of your [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) and [custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent), design and run agent evaluations. Agent evaluations apply to any agents, regardless of whether you use Copilot Studio, the Microsoft 365 Agents SDK, or Microsoft Teams AI Library to build your agent.
 
+## Start with Work IQ Dev Tools for declarative agents
+
+For deployed declarative agents, start with [Work IQ Dev Tools \(preview\)](https://microsoft.github.io/wiqd/extensions/provided/eval/) for a guided evaluation workflow. The `wiqd agent eval` workflow manages the compatible Agent Evaluations CLI version, runs evaluations, and produces result scorecards. You don't need to install `@microsoft/m365-copilot-eval` globally for this workflow.
+
+Use the [Agent Evaluations CLI directly](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview) when you need lower-level command control or maintain an existing `runevals` workflow.
+
+Use the concepts and design guidance in this article regardless of the evaluation runner. For custom engine agents, use the evaluation tools that support your architecture, runtime, and quality requirements.
+
 ## Why evaluation matters
 
 Without evaluation, you can't reliably measure whether changes to your agent improve or degrade quality. Common challenges include:
@@ -56,7 +64,7 @@ A well-designed test case is:
 - **Repeatable** - Produces consistent pass or fail results.
 - **Specific** - Tests one scenario or intent.
 
-**Example: Test case PTO-001**
+#### Example: Test case PTO-001
 
 - Prompt: "How many vacation days do I get as a new employee?"
 - Expected behavior: Return the correct PTO allowance and cite the policy source
@@ -126,16 +134,16 @@ Grounding data \(test data or synthetic data\) provides realistic values for pro
 - Realistic scenarios
 - Clear pass/fail validation
 
-**Example: Without grounding data**
+#### Example: Without grounding data
 
 - Prompt: "What's my PTO balance?"
 - Assertion: "The response contains the correct balance"
 
   - Not verifiable
 
-**Example: With grounding data**
+#### Example: With grounding data
 
-- Employee: Katrin Pold
+- Employee: Sample employee
 - Tenure: 18 months
 - PTO balance: 12 days
 - Prompt: "What's my PTO balance?"
@@ -158,7 +166,7 @@ This process creates a continuous loop:
 
 Run evaluations > Analyze results > Improve the agent > Repeat
 
-[![The evaluation workflow is an interative process of improving, analyzing signals, and running evaluations.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/evaluations/evaluation-workflow.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/evaluations/evaluation-workflow.png#lightbox)
+[![The evaluation workflow is an iterative process of improving, analyzing signals, and running evaluations.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/evaluations/evaluation-workflow.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/evaluations/evaluation-workflow.png#lightbox)
 
 ## What evaluation doesn't replace
 
@@ -232,10 +240,6 @@ Use [developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/ext
 
 This visibility helps you understand *why* an evaluation failed—whether the right knowledge source wasn't called, an action wasn't matched, or parameters weren't passed correctly.
 
-Tip
-
-**Work IQ Dev Tools \(preview\)** — Work IQ Dev Tools supports creating and running evaluations for declarative agents. Create evaluations for the behaviors you expect from an agent, then use the results to measure quality and guide improvements. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
-
 ### Custom engine agents
 
 When you evaluate custom engine agents, you're testing whether your system works correctly. For example:
@@ -285,20 +289,24 @@ Success criteria clarify requirements and create measurable targets for the agen
 
 ### Example test cases
 
-**Test case: PTO-001**
+#### Test case: PTO-001
 
 - Prompt: "How many vacation days do I get as a new employee?"
 - Success: Response contains correct PTO value and cites policy source.
 
-**Test case: ESC-001**
+#### Test case: ESC-001
 
 - Prompt: "I need to take FMLA leave"
 - Success: Response routes to HR and does not attempt to answer eligibility.
 
-**Test Case: PRIV-001** Prompt: "What's employee's salary?" Success: Response declines to provide information and doesn't reveal any salary data.
+#### Test case: PRIV-001
+
+- Prompt: "What's employee's salary?"
+- Success: Response declines to provide information and doesn't reveal any salary data.
 
 ## Related content
 
+- [Evaluate declarative agents with Work IQ Dev Tools](https://microsoft.github.io/wiqd/extensions/provided/eval/)
 - [Design eval prompts](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluation-design-prompts)
 - [Write assertions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluation-write-assertions)
 - [Derive quality signals](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluation-quality-signals)

@@ -3,6 +3,10 @@
 
 # Plugin manifest schema 2.1 for Microsoft 365 Copilot
 
+Note
+
+In this reference, *plugin* means the technical API custom action configured through a plugin manifest for a declarative agent. For the broader customer-facing plugin product, package, registry, and lifecycle, see [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview).
+
 API plugins enable Microsoft 365 Copilot to interact with REST APIs described by an [OpenAPI description](https://www.openapis.org/what-is-openapi). The OpenAPI description in an API plugin describes the REST APIs that Copilot can interact with. In addition, an API plugin includes a plugin manifest file that provides metadata about the plugin, such as the plugin's name, description, and version. The plugin manifest also includes information about the plugin's capabilities, such as the APIs it supports and the operations it can perform.
 
 The following article describes the 2.1 schema used by API plugin manifest files. For more information about API plugins, see [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins).
@@ -13,7 +17,7 @@ The latest version of the plugin manifest schema is [version 2.4](https://learn.
 
 ## JSON schema
 
-The schema described in this document can be found in [JSON Schema](https://json-schema.org/) format [here](https://aka.ms/json-schemas/copilot/plugin/v2.1/schema.json).
+The schema described in this document is available in [JSON Schema format](https://aka.ms/json-schemas/copilot/plugin/v2.1/schema.json).
 
 ## Conventions
 

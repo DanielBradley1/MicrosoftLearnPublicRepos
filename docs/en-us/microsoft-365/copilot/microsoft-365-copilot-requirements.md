@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-09-08 -->
 
 # Microsoft 365 app and network requirements for Microsoft Copilot
 

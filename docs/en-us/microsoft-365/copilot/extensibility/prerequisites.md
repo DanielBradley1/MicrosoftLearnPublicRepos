@@ -1,17 +1,29 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites -->
 <!-- Sitemap-Last-Modified: 2026-07-09 -->
 
-# Set up your development environment for Microsoft 365 Copilot
+# Set up your development environment for your plugin
 
-You can build agents to extend, enrich, and customize Microsoft 365 Copilot for the unique way your customers work. This article describes how to set up your development environment to extend Microsoft 365 Copilot.
+Use the development plan from [Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) to prepare the environments, accounts, tools, identities, permissions, connections, and services required by your plugin components.
+
+Complete this setup before you build, configure, extend, or reuse the components. You might need more than one environment or tool when the plugin combines agents, skills, connectors, and MCP-based capabilities.
+
+## Start with the development plan
+
+For every component, confirm:
+
+- The development tool and source-of-truth repository or managed environment.
+- The development or test tenant, environment, region, and target Microsoft experiences.
+- Required product licenses, usage-based billing, subscriptions, and service plans.
+- Required administrator roles, application registrations, identities, permissions, and consent.
+- Required data sources, APIs, remote services, hosting, network access, and secrets.
+- Test users and representative nonproduction data.
+- The owner responsible for providing each dependency.
+
+Don't begin implementation with missing access or silently substitute a different environment. Record unresolved prerequisites as blockers in the development plan.
 
 Microsoft 365 Copilot Chat is a broadly accessible AI chat interface that is available to all Microsoft 365 users. Copilot Chat users have access to agents that extend its capabilities and can be grounded on instructions or the web. Users in tenants that have Copilot Studio pay-as-you-go billing enabled \(consumed as Copilot Credits\) and users with Microsoft 365 Copilot licenses have access to agents with enhanced capabilities, such as grounding with SharePoint data and Microsoft 365 Copilot connectors.
 
 For Microsoft 365 Copilot license information, see [License options](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing).
-
-Note
-
-Beyond declarative and custom engine agents, the broader Copilot extensibility stack also includes **Work IQ** and **Agent 365** as platform pillars for agent identity, governance, and orchestration. For more information, see [Agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview).
 
 ## Copilot development environment
 
@@ -50,7 +62,7 @@ You can develop Copilot extensibility solutions for users in organizations witho
 You can extend Microsoft 365 Copilot with the intelligence of external services and data in several ways:
 
 - By building agents to customize Copilot.
-- By adding skills with [Teams message extension plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-message-extension-bot) and [Copilot Studio actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-business-applications).
+- By adding [Teams message extensions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-message-extension-bot) and [Copilot Studio actions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=/microsoft-365/copilot/extensibility/context).
 - By extending the knowledge in Copilot with [Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector).
 
 To learn more and choose the best extensibility path for your users, see [Copilot extensibility planning guide](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide) and [Agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview).
@@ -62,6 +74,20 @@ To build agents, you need to complete prerequisites depending on the tool that y
 Note
 
 Some agent capabilities are only available to users in tenants with Copilot Studio pay-as-you-go billing enabled \(consumed as Copilot Credits\) or users with Microsoft 365 Copilot licenses. For example, if you want to build agents that are grounded in organizational data, you need to enable pay-as-you-go billing or purchase a Microsoft 365 Copilot license.
+
+#### Work IQ Dev Tools requirements
+
+[Work IQ Dev Tools](https://aka.ms/wiqd/docs) is a preview pro-code route for supported declarative-agent and plugin-package scenarios. Before you install it, confirm:
+
+- Node.js 24 or later. The supported installer can install Node.js when required.
+- PowerShell 7 or later on Windows.
+- A Microsoft 365 account with access to Copilot.
+- An Azure subscription when you provision agents.
+- A development or test tenant that permits the required custom-app installation, sharing, or catalog actions.
+
+The default installer installs the WIQD CLI, its Visual Studio Code extension, and the `wiqd:wiqd` Copilot CLI agent. After installation, sign in interactively for local development and run `wiqd doctor` to verify the environment. See [Install Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/installation/) and [Work IQ Dev Tools authentication](https://microsoft.github.io/wiqd/getting-started/authentication/).
+
+For continuous integration, use the documented trusted-pipeline authentication for supported core lifecycle commands. Don't run `wiqd auth login` in a pipeline or expose credentials to untrusted pull-request jobs. Work IQ monitoring, evaluation, and other extensions have separate authentication requirements. See [CI/CD authentication](https://microsoft.github.io/wiqd/getting-started/ci-cd-authentication/).
 
 #### Microsoft 365 Agents Toolkit requirements
 
@@ -92,7 +118,7 @@ To enable developer mode, in Copilot Chat, type `-developer on`. To disable deve
 
 ![Screenshot of `Microsoft 365 Copilot` session where user has typed `-developer on` to successfully enable developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-on.png)
 
-Developer mode is only available within the licensed Microsoft 365 Copilot experience. For more information, see [Debugging agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio).
+Developer mode is only available within the licensed Microsoft 365 Copilot experience. Use it during [component integration testing](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components). For more information, see [Debugging agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio).
 
 ## Microsoft 365 Copilot developer licenses
 
@@ -166,12 +192,29 @@ Yes, you can use your Microsoft 365 Developer Program subscription to build agen
 
 If you have a Microsoft 365 subscription, you can build and test agents in Microsoft 365 Copilot Chat, with limited capabilities. You need to enable pay-as-you-go billing in your tenant or purchase a Microsoft 365 Copilot license if you want to build agents that are grounded in organizational data.
 
+## Confirm environment readiness
+
+Your environment is ready when:
+
+- Every selected development tool is available to the intended contributor.
+- The development or test tenant and target Microsoft experiences are accessible.
+- Required licenses, billing, subscriptions, environments, and regions are configured.
+- Application identities, roles, permissions, consent, connections, and secrets are available.
+- Required data sources, APIs, remote services, and hosting environments are reachable.
+- Test users and representative nonproduction data are available.
+- Each dependency has an owner and unresolved blockers are documented.
+
+Continue to [build or reuse your plugin components](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin).
+
 ## Security and privacy
 
 Copilot uses existing permissions and policies to deliver the most relevant information, building on our existing commitments to data security and data privacy in the enterprise. For information about how Copilot uses and protects organizational data, see [Data, Privacy, and Security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy). For data privacy and security considerations for developing different Copilot extensibility solutions, see [Data, Privacy, and Security considerations of extending Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/data-privacy-security).
 
 ## Related content
 
+- [Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
+- [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)
+- [Integrate and test your plugin components](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components)
 - [Microsoft 365 Copilot extensibility overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview)
 - [Cost considerations](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/cost-considerations)
 - [Microsoft 365 Copilot APIs client libraries](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/sdks/api-libraries)

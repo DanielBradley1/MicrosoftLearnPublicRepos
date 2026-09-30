@@ -11,7 +11,7 @@ To try Prompt Coach, [Install the Prompt Coach agent](https://teams.microsoft.co
 
 Before you work with the template, make sure that you have:
 
-- A working knowledge of how to [build agents with Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents).
+- A working knowledge of how to [build agents in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents).
 - An understanding of how to [write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions).
 
 ## Capabilities

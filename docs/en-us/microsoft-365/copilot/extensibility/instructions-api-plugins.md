@@ -22,7 +22,7 @@ Together, these files define the agent's behavior and how it interacts with the 
 
 For more information about API plugins, see:
 
-- [API plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-api-plugins)
+- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
 - [How to make an OpenAPI document effective in extending Copilot capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/openapi-document-guidance)
 
 ### Function mapping in the plugin manifest
@@ -125,4 +125,4 @@ When code interpreter generates a file \(such as a chart image or a spreadsheet\
 ## Related content
 
 - [Build a declarative agent with Visual Studio Code](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents?tabs=ttk)
-- [API plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-api-plugins)
+- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)

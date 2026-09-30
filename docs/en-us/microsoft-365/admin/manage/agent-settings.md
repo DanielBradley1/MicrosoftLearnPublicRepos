@@ -10,10 +10,10 @@ The **Agent** settings page in [Microsoft 365 admin center](https://admin.micros
 The **Agent settings** page includes the following configuration options:
 
 - **Agent management rules** - Set and run rules to manage or perform actions on agents.
-- **Allowed agent types** - Specify which categories of AI agents are permitted for use within the organization.
+- **Agent and plugin access** - Specify which categories of AI agents and plugins are permitted for use within the organization.
 - **Security templates** - Create preset policies, rules, and allow lists for new AI agents to ensure consistency and compliance.
 - **Sharing** - Manage who can share AI agents within your organization and define the methods they can use to share them.
-- **User access** - Control which users or groups can interact with AI agents, aligning access with organizational roles and permissions.
+- **User access** - Control which users or groups can interact with AI agents and plugins, aligning access with organizational roles and permissions.
 - **Agent feedback sharing** - Control whether agent usage feedback is shared with agent developers to help improve agent quality and reliability.
 - **Tags** - Manage the labels that admins and users apply to agents to organize and find them.
 
@@ -98,20 +98,20 @@ Admins can create a custom rule to reject multiple agent publish requests that a
 
 [![Screenshot of rule details for rejecting agent publish requests older than 30 days in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/reject-old-agent-publish-requests.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/reject-old-agent-publish-requests.png?view=o365-worldwide#lightbox)
 
-## Allowed agent types
+## Agent and plugin access
 
-The **Allowed agent types** setting controls which types of agents users can view and install from the agent catalog. Select from the following options:
+The **Agent and plugin access** setting controls which types of agents and plugins users can view and install from the agent catalog. Plugins include tools, MCP servers, connectors, skills, and other AI artifacts that extend agents. Select from the following options:
 
-- **Allow apps and agents built by Microsoft** - Enables users to install agents created by Microsoft.
-- **Allow apps and agents built by your organization** - Enables users to install custom agents developed within your tenant.
-- **Allow apps and agents built by external publishers** - Enables users to install non-Microsoft agents built by external developers.
+- **Allow agents and plugins built by Microsoft** - Enables users to install agents and plugins created by Microsoft.
+- **Allow agents and plugins built by your organization** - Enables users to install custom agents and plugins developed within your tenant.
+- **Allow agents and plugins built by external publishers** - Enables users to install non-Microsoft agents and plugins built by external developers.
 
-[![Screenshot of the Allowed agent types page.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/allowed-agent-types.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/allowed-agent-types.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Agent and plugin access page.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/allowed-agent-types.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/allowed-agent-types.png?view=o365-worldwide#lightbox)
 
 Tip
 
-- If you disable an option, agents of that type don't appear for users in the Agent store.
-- Users see agents built by Microsoft even if you disable the setting, but they can't install those agents.
+- If you disable an option, agents and plugins of that type don't appear for users in the Agent store.
+- Users see agents and plugins built by Microsoft even if you disable the setting, but they can't install those agents and plugins.
 
 ## Policy templates
 
@@ -135,34 +135,34 @@ Sharing control only applies to agents built with **Microsoft Copilot Agent Buil
 
 ## User access
 
-Use **User access** to control how members of your organization access and install agents.
+Use **User access** to control how members of your organization access and install agents and plugins. Plugins include tools, MCP servers, connectors, skills, and other AI artifacts.
 
 Note
 
-As the administrator, use discretion when managing individual agent distribution and costs.
+As the administrator, use discretion when managing individual agent and plugin distribution and costs.
 
-To manage access to Copilot agents, follow these steps:
+To manage access to Copilot agents and plugins, follow these steps:
 
 1. Open the [Microsoft 365 admin center](https://admin.microsoft.com/) in your browser.
-2. Select **Agents** > **Settings** > **User access** to manage your organization's agents.
-3. Select who can access agents within your organization.
+2. Select **Agents** > **Settings** > **User access** to manage your organization's agents and plugins.
+3. Select who can access agents and plugins within your organization.
 
    The setting has three options:
 
-   - **All users** - This option is the default. It means that all users in the organization can access agents, subject to the existing app policies and user assignments.
-   - **No users** - This option means that no users in the organization can access agents.
-   - **Specific users/groups** - This option lets you select specific users or groups in your organization to have access to agents. While some users in your organization might have permission to install and use agents from the **Agent Registry** list, only the users or groups you select in this setting can use agents.
+   - **All users** - This option is the default. It means that all users in the organization can access agents and plugins, subject to the existing app policies and user assignments.
+   - **No users** - This option means that no users in the organization can access agents and plugins.
+   - **Specific users or groups** - This option lets you select specific users or groups in your organization to have access to agents and plugins. While some users in your organization might have permission to install and use agents and plugins from the **Agent Registry** list, only the users or groups you select in this setting can use agents and plugins.
 
 
    Important
 
 
-   Data processed by non-Microsoft services isn't subject to Microsoft agreements. Review the terms provided by non-Microsoft agent publishers to make sure that you're familiar with the agent's data handling and privacy practices. In addition, consult your internal policies before allowing access.
+   Data processed by non-Microsoft services isn't subject to Microsoft agreements. Review the terms provided by non-Microsoft agent and plugin publishers to make sure that you're familiar with the data handling and privacy practices of the agent or plugin. In addition, consult your internal policies before allowing access.
 
 
    [![Screenshot of User access page.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/user-access.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/user-access.png?view=o365-worldwide#lightbox)
 
-4. Select **Save** to update your Copilot agent settings for your tenant.
+4. Select **Save** to update your Copilot agent and plugin settings for your tenant.
 
 ## Agent feedback sharing
 

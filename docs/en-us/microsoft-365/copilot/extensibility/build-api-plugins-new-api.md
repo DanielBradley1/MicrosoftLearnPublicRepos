@@ -5,7 +5,7 @@
 
 Important
 
-Plugins are only supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They are not enabled in Microsoft 365 Copilot.
+MCP and API plugins are supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They aren't enabled as standalone experiences in Microsoft 365 Copilot.
 
 [API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) connect a REST API to Microsoft 365 Copilot. You can use the [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) to quickly generate a plugin and a corresponding REST API that you can use as a starting point for your plugin development.
 
@@ -18,7 +18,7 @@ Plugins are only supported as actions within [declarative agents](https://learn.
 
 Note
 
-The screenshots and references to user interface of the [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) in this document were generated using the latest **Release** version, 6.0. Pre-Release versions of Agents Toolkit may differ from the user interface in this document.
+The screenshots and user-interface references in this article use a release version of [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit). Prerelease versions might differ from the user interface shown.
 
 1. Open Visual Studio Code. If Agents Toolkit isn't already installed, see [Install Agents Toolkit](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/install-teams-toolkit) for installation instructions.
 2. Select the **Microsoft 365 Agents Toolkit** icon in the left-hand Activity Bar.

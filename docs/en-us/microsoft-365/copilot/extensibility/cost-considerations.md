@@ -1,11 +1,23 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/cost-considerations -->
 <!-- Sitemap-Last-Modified: 2026-06-18 -->
 
-# Licensing and cost considerations for Copilot extensibility options
+# Plan licensing and cost
 
-Before you extend Microsoft 365 Copilot with custom capabilities—such as integrating external data sources or building intelligent agents—it's important to understand the associated licensing and consumption costs.
+Use this article while you [plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide) or another Microsoft 365 Copilot extensibility solution. Record the cost categories that can affect the design now, and confirm the final licenses, meters, and service prices after you choose the capabilities and development tools.
 
-Your Microsoft 365 Copilot license type determines access to extensibility features and whether additional usage-based billing charges apply. This article outlines the available Copilot licensing options, and breaks down cost considerations for each extensibility path.
+## Identify cost categories
+
+Account for:
+
+- User and administrator licenses for the target Microsoft experiences.
+- Usage-based consumption for agents, Copilot connectors, APIs, models, or other metered services.
+- Development tools, test environments, and developer subscriptions.
+- Hosting for APIs, applications, databases, remote MCP servers, and other external services.
+- Identity, secrets, certificates, networking, storage, monitoring, and audit services.
+- Marketplace, certification, publishing, and customer-onboarding requirements.
+- Support, incident response, evaluation, servicing, deprecation, and retirement.
+
+A plugin can bring together components that use different licensing and billing models. Record costs for the plugin experience and for each independently operated component or service.
 
 ## Licensing options for Microsoft 365 Copilot
 
@@ -67,7 +79,9 @@ Custom engine agents are hosted outside of Microsoft 365 Copilot using your own 
 - **Azure App Service** – For hosting services and APIs that support your agent. See [App Service pricing](https://azure.microsoft.com/pricing/details/app-service/).
 - **Azure Bot Service** – For publishing agents across multiple channels. See [Azure AI Bot Service pricing](https://azure.microsoft.com/pricing/details/bot-services/).
 
-> **Note:** Your total cost will vary based on the AI models, orchestration complexity, and cloud services you use to deploy and maintain your agent.
+Note
+
+Your total cost varies based on the AI models, orchestration complexity, and cloud services you use to deploy and maintain your agent.
 
 ### Cost comparison: declarative agent vs custom engine agent
 
@@ -75,11 +89,11 @@ Custom engine agents are hosted outside of Microsoft 365 Copilot using your own 
 | --- | --- | --- |
 | **License requirements** | Requires Microsoft 365 Copilot add-on license, or Copilot Chat access through an eligible Microsoft 365 license. | No additional license required. |
 | **Hosting** | Hosted by Microsoft 365 Copilot \(no additional hosting costs\). | Hosted externally \(incurs hosting costs, such as Azure AI Foundry\). |
-| **Usage cost** | For users with Microsoft 365 Copilot add-on licenses, no extra charges.  <br>  <br>For users without licenses:  <br>- No charges for agents with instructions only or grounded only in public data.  <br>- Usage-based billing charges \(Copilot Credits\) for shared tenant data usage \(for example, SharePoint, Copilot connectors\). | Varies based on license:<br><br>- No charges with Copilot license.<br>- Usage-based billing charges \(Copilot Credits\) without license if shared data is used. |
+| **Usage cost** | For users with Microsoft 365 Copilot add-on licenses, no extra charges.  <br>  <br>For users without licenses:  <br>- No charges for agents with instructions only or grounded only in public data.  <br>- Usage-based billing charges \(Copilot Credits\) for shared tenant data usage \(for example, SharePoint, Copilot connectors\). | Varies based on license.  <br>  <br>Users with a Copilot license don't incur additional charges. Users without a Copilot license might incur usage-based billing charges \(Copilot Credits\) when shared data is used. |
 
 ## Work IQ API
 
-The [Work IQ API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq-api-overview) provides an AI-native interface to Microsoft 365 work intelligence. With this API, you can build applications that query emails, meetings, files, and organizational knowledge by using natural language grounded in Microsoft 365 data.
+The [Work IQ API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview) provides an AI-native interface to Microsoft 365 work intelligence. By using this API, you can build applications that query emails, meetings, files, and organizational knowledge by using natural language grounded in Microsoft 365 data.
 
 You pay for use of the Work IQ API through a consumption-based model that uses Copilot Credits.
 
@@ -91,7 +105,9 @@ The [Microsoft 365 Copilot APIs](https://learn.microsoft.com/en-us/microsoft-365
 
 ## Related content
 
-- [Copilot extensibility planning guide](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide)
+- [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide)
+- [Choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components)
+- [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)
 - [Agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)
 - [Microsoft 365 Copilot connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector)
 - [Microsoft 365 Copilot APIs overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview)

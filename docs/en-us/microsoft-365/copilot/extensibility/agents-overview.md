@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview -->
 <!-- Sitemap-Last-Modified: 2026-08-05 -->
 
-# Agents for Microsoft 365 Copilot
+# Compare declarative and custom engine agents
 
 Microsoft 365 Copilot is an AI-powered productivity tool that enhances workflows across Microsoft 365 applications like Copilot Chat, Outlook, Teams, and Word, using enterprise data from Microsoft Graph. Although Copilot provides powerful built-in capabilities, organizations often need to integrate additional knowledge, data sources, or applications to address specific use cases.
 

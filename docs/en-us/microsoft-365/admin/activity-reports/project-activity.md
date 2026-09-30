@@ -35,9 +35,9 @@ Use the report timeline to analyze usage over **7, 30, 90, or 180 days**.
 
 The Project activity report contains four summary charts. Start with **Active users** for adoption trends, then use **Project Activity** and **Task activity** for deeper engagement signals:
 
-- **Active users** - Shows the daily active users on each day over time. Currently, this chart includes only Project for the Web and Project Online desktop client.
-- **Active users \(by client\)** - Shows the daily active users on each day over time, broken out by client \(Project for the Web vs. Project Online desktop client\).
-- **Project Activity** - Shows the number of daily sessions of Project over time, for each client \(Project for the Web and Project Online desktop client\).
+- **Active users** - Shows the daily active users on each day over time. Currently, this chart includes only Project for the Web and Microsoft Project desktop client.
+- **Active users \(by client\)** - Shows the daily active users on each day over time, broken out by client \(Project for the Web vs. Project\).
+- **Project Activity** - Shows the number of daily sessions of Project over time, for each client \(Project for the Web and Project\).
 - **Task activity** - Shows the daily number of tasks created or edited over time in Project for the Web
 
 The report also has a table that shows activity for each Project user in your environment.
@@ -50,7 +50,7 @@ To export the report data into an Excel .csv file, select **Export**. This actio
 
 ### Privacy settings affect on the dashboard
 
-If users or admins set their privacy settings to **Neither**, the **Project activity** chart for the Project Online desktop client doesn't show accurate metrics. The numbers are undercounted. For more information on privacy settings, see [Use policy settings to manage privacy controls for Microsoft 365 Apps for enterprise](https://learn.microsoft.com/en-us/deployoffice/privacy/manage-privacy-controls).
+If users or admins set their privacy settings to **Neither**, the **Project activity** chart for Project doesn't show accurate metrics. The numbers are undercounted. For more information on privacy settings, see [Use policy settings to manage privacy controls for Microsoft 365 Apps for enterprise](https://learn.microsoft.com/en-us/deployoffice/privacy/manage-privacy-controls).
 
 ### User activity table
 
@@ -61,11 +61,11 @@ The following table contains definitions of the metrics available in the report.
 | User name | The user's principal name. |
 | Display name | The full name of the user. |
 | Last activity date | The latest date the user in that row had activity in Project, including any of the activities in the summary reports. |
-| Projects visited \(Desktop\) | The number of projects opened by the user in the Project Online desktop client during the time range selected in the top right of the page. |
+| Projects visited \(Desktop\) | The number of projects opened by the user in Project during the time range selected in the top right of the page. |
 | Projects visited \(Web\) | The number of projects visited by the user in Project for the Web during the time range selected in the top right of the page. |
 | Tasks created \(Web\) | The number of tasks created by the user in Project for the Web during the time range selected in the top right of the page. |
 | Tasks edited \(Web\) | The number of tasks edited by the user in Project for the Web during the time range selected in the top right of the page. |
-| Other | This value is true if the user performed an activity in Project Online desktop client or in Project for the Web \(that isn't covered by the other columns\) during the time range selected at the top of the page. If the user didn't perform any activity during this time, this value is false. |
+| Other | This value is true if the user performed an activity in Project or in Project for the Web \(that isn't covered by the other columns\) during the time range selected at the top of the page. If the user didn't perform any activity during this time, this value is false. |
 
 Note
 

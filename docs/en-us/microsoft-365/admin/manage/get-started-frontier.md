@@ -70,8 +70,8 @@ Some Microsoft 365 AI features across platforms \(Windows, Mac, iOS, and Android
 
 Before your users can access Frontier agents, make sure that agent types are approved for use.
 
-1. In the [Microsoft 365 admin center](https://admin.microsoft.com), go to **Agent** > **Settings** > **Allowed agent types**.
-2. Verify that **Allow apps and agents built by Microsoft** is checked. This setting allows the use of Microsoft Frontier agents.
+1. In the [Microsoft 365 admin center](https://admin.microsoft.com), go to **Agent** > **Settings** > **Agent and plugin access**.
+2. Verify that **Allow agents and plugins built by Microsoft** is checked. This setting allows the use of Microsoft Frontier agents.
 
 For more information about managing access to specific agents for specific users or groups, see [Agent settings in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings).
 

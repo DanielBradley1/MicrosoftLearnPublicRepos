@@ -3,11 +3,11 @@
 
 # Add capabilities and custom actions to a declarative agent created with Microsoft 365 Agents Toolkit
 
-You can enhance the abilities of your agent by adding capabilities or custom actions. You can enhance your agent by enabling built-in capabilities like [image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator) or [code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter), or by adding [MCP or API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) as custom actions.
+You can enhance the abilities of your agent by adding capabilities or custom actions. You can enhance your agent by enabling built-in capabilities like [image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator) or [code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter), or by adding [MCP or API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) as custom actions. This tutorial adds an API plugin. To add an MCP server, see [Build or reuse MCP servers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-mcp-servers) and [Build a plugin for a declarative agent from an MCP server](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins).
 
 Important
 
-This guide assumes you have completed the [Create declarative agents using Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents) tutorial.
+This guide assumes you have completed the [Create declarative agents by using Microsoft 365 Agents Toolkit and JSON](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents) tutorial.
 
 ## Add image generator to the agent
 
@@ -21,9 +21,9 @@ The image generator capability enables agents to generate images based on user p
    }
    ```
 
-2. In the **Lifecycle** pane of the Agents Toolkit, select **Provision**.
+2. In the **Lifecycle** pane of Microsoft 365 Agents Toolkit, select **Provision**.
 
-The declarative agent will have the ability to generate images after you reload the page.
+The declarative agent can generate images after you reload the page.
 
 Note
 
@@ -47,11 +47,12 @@ In GCCH environments, code interpreter is only available to users with a Microso
    }
    ```
 
-For more information, see [Code interpreter object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#code-interpreter-object).
 
-1. Select **Provision** in the **Lifecycle** pane of the Agents Toolkit.
+   For more information, see [Code interpreter object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#code-interpreter-object).
 
-The declarative agent will have the code interpreter capability after you reload the page.
+2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
+
+The declarative agent has the code interpreter capability after you reload the page.
 
 ![A screenshot showing a response from the declarative agent that contains a generated graph](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/build-da/ttk/code-interpreter-graph-content.png)
 
@@ -72,12 +73,12 @@ Before you begin, create a file named `posts-api.yml` and add the code from the 
 3. Select **Browse** and browse to the `posts-api.yml` file.
 4. Select all available APIs, then select **OK**.
 
-   ![A screenshot of the API selection dialog in Visual Studio code](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/build-da/ttk/select-apis.png)
+   ![A screenshot of the API selection dialog in Visual Studio Code](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/build-da/ttk/select-apis.png)
 5. Select **manifest.json**.
 6. Review the warning in the dialog. When you're ready to proceed, select **Add**.
-7. Select **Provision** in the **Lifecycle** pane of the Agents Toolkit.
+7. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 
-The declarative agent will have access to your plugin content to generate its answers after you reload the page.
+The declarative agent has access to your plugin content to generate its answers after you reload the page.
 
 ![A screenshot showing a response from the declarative agent that contains API plugin content](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/build-da/ttk/plugin-response.png)
 
@@ -305,8 +306,8 @@ paths:
 
 You've completed the declarative agent guide for Microsoft 365 Copilot. Now that you're familiar with the capabilities of a declarative agent, you can learn more about declarative agents in the following articles.
 
-- Learn how to [build declarative agents with TypeSpec](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-typespec).
+- [Create declarative agents by using Microsoft 365 Agents Toolkit and TypeSpec](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-typespec)
 - Learn how to [write effective instructions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions) for your agent.
-- Test your agent with [Copilot developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio) to verify if and how the copilot orchestrator selects your knowledge sources for use in response to given prompts.
+- Test your agent with developer mode to verify if and how the Copilot orchestrator selects your knowledge sources for use in response to given prompts. For more information, see [Test and debug agents in Microsoft 365 Agents Toolkit by using developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-vscode).
 - Get answers to [frequently asked questions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/transparency-faq-declarative-agent).
-- Learn about an alternative method of building declarative agents with [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder).
+- Learn about other ways to build declarative agents: no-code in [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder), or low-code in [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=/microsoft-365/copilot/extensibility/context).

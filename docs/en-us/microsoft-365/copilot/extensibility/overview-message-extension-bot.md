@@ -3,6 +3,10 @@
 
 # Message extensions for Microsoft 365 Copilot
 
+Important
+
+This article describes an existing message extension integration. Support, availability, and publishing guidance can vary by Microsoft experience and rollout. Verify the current requirements for your target experience before choosing this route.
+
 Message extensions are a powerful feature in Microsoft Teams and Outlook that are designed to facilitate user engagement with your web service. Additionally, they allow users to interact with your app directly from the chat interface.
 
 These interactions are typically triggered via buttons and forms within Microsoft Teams and Outlook clients. This mechanism allows users to search or initiate actions in an external system, right from the compose message area, or even directly from a message. The outcomes of these interactions are delivered back to the client in the form of a richly formatted card.

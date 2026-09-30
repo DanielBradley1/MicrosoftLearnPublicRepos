@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents -->
 <!-- Sitemap-Last-Modified: 2026-08-07 -->
 
-# Share and manage agents
+# Share and manage agents built in Agent Builder
 
-You can share the agents you create by using Microsoft 365 Copilot with users in your organization. Agents support multiple owners, so you can share ownership across your team. Any owner can edit, manage, and maintain the agent. Sharing an agent provides direct access to it for a specified set of users. While ideal for team collaboration, sharing an agent doesn't allow for deployment across the organization or integration with other channels.
+You can share the agents you build in Agent Builder with users in your organization. Agents support multiple owners, so you can share ownership across your team. Any owner can edit, manage, and maintain the agent. Sharing an agent provides direct access to it for a specified set of users. While ideal for team collaboration, sharing an agent doesn't allow for deployment across the organization or integration with other channels.
 
-This article describes how to share and manage the agents you build using the Agent Builder feature in Microsoft 365 Copilot. To publish an agent across multiple channels, you need to use Copilot Studio. For more information, see [Publish and deploy your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels).
+This article describes how to share and manage the agents you build in Agent Builder. To publish an agent across multiple channels, you need to use Copilot Studio. For more information, see [Publish and deploy your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels).
 
 ## Share an agent
 
@@ -104,11 +104,11 @@ Changes to admin controls apply only to new sharing actions. Existing shared age
 
 When org-wide sharing is disabled, the **Org-wide sharing for chat access** toggle appears grayed out with a tooltip that explains the restriction.
 
-### Deploy an agent via ZIP package
+### Download a ZIP package to sideload your agent
 
-Microsoft 365 Copilot provides an option to download a ZIP package for manual deployment. This ZIP package contains the files you need to [sideload your agent into Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload).
+Microsoft 365 Copilot provides an option to download a ZIP package for manual sideloading. This ZIP package contains the files you need to [sideload your agent into Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload).
 
-To deploy an agent manually:
+To download the ZIP package and sideload your agent manually:
 
 1. In Microsoft 365 Copilot, on the left pane, select **New agent**.
 2. On the New agent page, under **My agents**, choose **View all agents**.  ![Screenshot of the View all agents option on the New agent page.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/agent-builder-view-agents.png)
@@ -135,7 +135,7 @@ When a user's access to the agent is removed, it doesn't affect their access to 
 
 ## Update your agent's About information
 
-Use the **About this agent** dialog to update the metadata that's visible in the Agent Store and in your agent's About information in Microsoft 365 Copilot. You can open this dialog for any agent you own, whether or not it's shared or submitted to your org catalog.
+Use the **About this agent** dialog to update the metadata that's visible in the Agent Store and in your agent's About information in Microsoft 365 Copilot. You can open this dialog for any agent you own, whether or not it's shared or published to your org catalog.
 
 To open the dialog, select the **More** ellipses \(**...**\) in the agent authoring header, and then select **About this agent**.
 
@@ -152,15 +152,15 @@ A default placeholder URL is provided for **Creator website**, **Privacy stateme
 
 Note
 
-Values you save in **About this agent** prepopulate the corresponding fields in the submission dialog when you submit your agent to your org catalog. For more information, see [Privacy statement and terms of use](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-publication-privacy-terms-of-use).
+Values you save in **About this agent** prepopulate the corresponding fields in the **Submit to your org catalog** dialog when you submit your agent to your org catalog. For more information, see [Privacy statement and terms of use for agents in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-publication-privacy-terms-of-use).
 
 ## Submit an agent to your org catalog
 
-The shared version of your agent and the Agent Store version are managed separately. You manage the shared version and can continue iterating on it, changing who it's shared with, or keeping it private for testing, at any time. Your admin manages the Agent Store version after you submit the agent for review.
+The shared version of your agent and the Agent Store version are managed separately. You manage the shared version and can continue iterating on it, changing who it's shared with, or keeping it private for testing, at any time. Your admin manages the Agent Store version after you publish the agent.
 
-To make your agent broadly discoverable in your organization, submit it to your org catalog. An admin reviews the submission in the [Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry#publish-agents) and, if approved, publishes the agent in the **Built by your org** section of the Agent Store.
+To make your agent broadly discoverable in your organization, publish it to your org catalog. An admin reviews the agent in the [Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry#publish-agents) and, if approved, deploys the agent to the **Built by your org** section of the Agent Store.
 
-For the submission flow, required fields, approval status tracking, and post-approval updates, see [Submit agents from Agent Builder to your org catalog](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog).
+For the submission steps, required fields, approval status tracking, and post-approval updates, see [Submit agents from Agent Builder to your org catalog](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog).
 
 ## Manage agents
 
@@ -228,15 +228,15 @@ When sharing an agent and its knowledge sources, you might encounter the errors 
 | Couldn't share | The user has insufficient privileges to update the sharing permissions on certain files. The error lists the files that were unable to be shared. The agent owner should go into SharePoint to try updating these permissions manually. For more information, see:<br><br>- [Share a document](https://support.microsoft.com/office/share-a-document-using-sharepoint-or-onedrive-807de6cf-1ece-41b9-a2b3-250d9a48f1e8) to learn how to share files.<br>- [Sharing errors in SharePoint and OneDrive](https://learn.microsoft.com/en-us/sharepoint/sharepoint-onedrive-error-message) for an error code reference. |
 | Agent sharing failed, knowledge access not granted | If agent sharing fails, the underlying knowledge sources might not be shared with the intended users or groups. As a result, users without access to those files don’t receive generated responses based on them. To resolve this issue, ensure all individuals and groups you're sharing your agent with exist in your organization, then reshare the knowledge sources by selecting them in the sharing settings to grant user access to them. |
 | Can no longer update agent | This error occurs when your agent's current sharing settings are no longer compliant with new admin policies. Agent owners must change the sharing settings to a compliant option before updating the agent further. A banner guides you to make this change. |
-| We're unable to create this agent due to an error. | Occurs when the system is having trouble publishing an agent. Try again in a few minutes. |
-| This agent includes at least one file with an unsupported sensitivity label. Check your uploaded files and remove them. | Occurs when you upload a file with a sensitivity label that isn't supported. Check the shield icon next to your uploaded files and remove the ones that have a red error icon. For more information, see [Unsupported sensitivity label scenarios](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-lite-knowledge#unsupported-sensitivity-label-scenarios). |
+| We're unable to create this agent due to an error. | Occurs when the system has trouble creating the agent. Try again in a few minutes. |
+| This agent includes at least one file with an unsupported sensitivity label. Check your uploaded files and remove them. | Occurs when you upload a file with a sensitivity label that isn't supported. Check the shield icon next to your uploaded files and remove the ones that have a red error icon. For more information, see [Unsupported sensitivity label scenarios](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge#unsupported-sensitivity-label-scenarios). |
 | Your agent can't be updated because it might encourage harmful actions. | Occurs when the system detects harmful content. Review your agent's name, description, and instructions and remove any harmful content, and try to update your agent again. For more information. see [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation). |
 
 ## Related content
 
 - [Submit agents from Agent Builder to your org catalog](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog)
-- [Privacy statement and terms of use](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-publication-privacy-terms-of-use)
-- [Publish agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
+- [Privacy statement and terms of use for agents in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-publication-privacy-terms-of-use)
+- [Publish and distribute plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
 - [Manage agent requests in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests)
 - [Publish and deploy your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels)
 - [Upload into Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)

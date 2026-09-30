@@ -1,13 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-regional-availability -->
 <!-- Sitemap-Last-Modified: 2026-07-02 -->
 
-# Agent Builder in Microsoft 365 Copilot regional availability and language support
+# Agent Builder regional availability and language support
 
-This article provides information about the regional availability of Agent Builder in Microsoft 365 Copilot and the agent and authoring languages supported.
+Agent Builder availability varies by geographic location and national cloud environment. This article also lists the languages supported by the Agent Builder UI and **Describe** tab.
 
 ## Regional availability
 
-Agent Builder in Microsoft 365 Copilot is available if your [Power Platform default environment](https://learn.microsoft.com/en-us/power-platform/admin/environments-overview#default-environment) is in any of the following countries or regions:
+Agent Builder is available if your [Power Platform default environment](https://learn.microsoft.com/en-us/power-platform/admin/environments-overview#default-environment) is in any of the following countries or regions:
 
 - Asia Pacific
 - Australia
@@ -32,20 +32,26 @@ The Power Platform default environment location is automatically set to the loca
 
 ## National cloud availability
 
-Agent Builder in Microsoft 365 Copilot is available in the Microsoft 365 Government Community Cloud \(GCC\) and Government Community Cloud High \(GCCH\) national cloud environments.
+Agent Builder is available in the Microsoft 365 Government Community Cloud \(GCC\) and Government Community Cloud High \(GCCH\) national cloud environments.
 
 Note
 
-- The tenant admin must give users access to Agent Builder in GCCH environments. For more information, see [User access](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings).
-- Sharing agents with others isn't currently available in Agent Builder in GCCH environments.
+- The tenant admin must give users access to Agent Builder in GCCH environments. For more information, see [Agent settings in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#user-access).
+- Sharing agents with others isn't available in Agent Builder in GCCH environments.
+
+Some Agent Builder features aren't available in every national cloud environment:
+
+- Embedded file content isn't supported as a knowledge source in GCC. For more information, see [Embedded file content](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge#embedded-file-content).
+
+Skills are available only to organizations enrolled in the Microsoft Frontier Program in supported environments. For more information, see [Add custom skills to your declarative agent in Agent Builder \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 
 ## Language support
 
-### Authoring canvas languages
+### Agent Builder UI languages
 
-The authoring canvas language is the one in which the authoring UI is presented. By default, this language is your Microsoft 365 language setting. You can change the authoring language by [changing your Microsoft 365 language setting](https://support.microsoft.com/topic/change-your-display-language-and-time-zone-in-microsoft-365-for-business-6f238bff-5252-441e-b32b-655d5d85d15b).
+By default, the Agent Builder UI is presented in the language that you set in Microsoft 365. You can change it by [changing your Microsoft 365 language setting](https://support.microsoft.com/topic/change-your-display-language-and-time-zone-in-microsoft-365-for-business-6f238bff-5252-441e-b32b-655d5d85d15b).
 
-The following authoring languages are supported:
+The following languages are supported:
 
 - Arabic
 - Chinese \(Simplified\) \(zh-CN\)
@@ -76,4 +82,4 @@ The following authoring languages are supported:
 
 ### Describe tab languages
 
-The **Describe** tab supports all the languages that [Microsoft 365 Copilot supports](https://support.microsoft.com/en-us/office/supported-languages-for-microsoft-365-copilot-94518d61-644b-4118-9492-617eea4801d8).
+The **Describe** tab supports all the languages that [Microsoft 365 Copilot supports](https://support.microsoft.com/office/supported-languages-for-microsoft-365-copilot-94518d61-644b-4118-9492-617eea4801d8).

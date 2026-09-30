@@ -1,166 +1,86 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-are-apps -->
 <!-- Sitemap-Last-Modified: 2026-06-18 -->
 
-# Agents are apps for Microsoft 365
+# What is a Microsoft 365 Copilot plugin?
 
-When you build an agent, you're also building an app for Microsoft 365. Apps for Microsoft 365 share a common manifest schema and packaging format, and unified distribution and management processes and tools. The end result is that your apps and agents reach the widest possible audience and appear contextually within the workflow of your users.
+A plugin brings supported capabilities together for use in Microsoft 365 Copilot experiences. For example, a solution might use a skill to guide a task, a Copilot connector to access organizational content, and an MCP server to provide tools. The plugin gives that solution a way to be packaged, published, and made available through supported Microsoft routes.
 
-This article describes the key parts of the Microsoft 365 app model that apply to agent development.
+You build each capability with the tools and guidance that apply to it. The plugin model connects those capabilities to a publishing and management lifecycle; it doesn't change how each capability runs.
 
 Important
 
-- API plugins are currently only supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They aren't enabled in Microsoft 365 Copilot. For an example that shows how to add an API plugin to a declarative agent, see [Add an API plugin as a custom action to the agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-add-skills#add-an-api-plugin-as-a-custom-action-to-the-agent).
-- The capability is enabled by default in all Microsoft 365 Copilot-licensed tenants. Admins can disable this functionality on a user and group basis and control how individual plugins are approved for use, and which plugins are enabled. For more information, see [Manage Agents in Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-for-copilot-in-integrated-apps?context=/microsoft-365/copilot/extensibility/context).
+Supported components, packages, publishing routes, administration steps, and Microsoft experiences vary by product and rollout. Use the linked guidance for the capabilities and route you choose.
 
-## App package
+## Choose your path
 
-The app package for Microsoft 365, including agents, is a zip file that contains one or more configuration \(manifest\) files and your app icons. Your app logic and data storage are hosted elsewhere and accessed by the Microsoft 365 host application via HTTPS. You'll submit the app package to your admin to publish to your organization or to Partner Center to publish to Microsoft AppSource.
+Choose the route that matches what you need to do:
 
-At minimum, an app package contains:
+- **Package and share an existing agent:** If you have the local source project for a supported declarative agent, follow the [Work IQ Dev Tools quickstart](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/quickstart-plugin) to validate, provision, package, share, and test it without rebuilding the agent.
+- **Build new capabilities:** If you need to build a new agent, skill, Copilot connector, or MCP server, [plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide) and follow the complete lifecycle.
+- **Administer plugins and agents:** Follow the [administrator guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/administrator-guide) to review, make available, govern, monitor, update, or retire them.
+- **Publish for customers:** Follow the [ISV and software publisher guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/isv-publisher-guide) for public distribution, certification, servicing, and support.
 
-- The **app manifest** \(`manifest.json`\), which describes app configuration, capabilities, required resources, and important attributes
-- A **large color icon** \(`color.png`\), a full-color 192x192 icon to display your agent in the Microsoft 365 Copilot UI and store
-- A **small outline icon** \(`outline.png`\), a 32x32 icon with transparent background \(not currently used in Copilot, but required to pass validation\)
+## Decide what your solution needs
 
-The app package can also contain declarative agent and API plugin definitions, as well as localization files for other supported languages.
+Start with the job the solution should help someone do, who will use it, and where they will use it. Then choose the capabilities that support that job.
 
-![Diagram showing the anatomy of a Microsoft 365 app package: app manifest \(.json file\) + icons \(color and outline .png files\) wrapped in a .zip file](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/app-package.png)
+| Capability | Use it to | Learn more |
+| --- | --- | --- |
+| Declarative agent | Create a goal-directed experience by using instructions, knowledge, and tools | [Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) |
+| Skill | Provide reusable instructions or a workflow for a specific job | [Skills as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-skills) |
+| Copilot connector | Make approved external organizational content available | [Copilot connectors as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors) |
+| MCP server | Provide tools and resources from a remote server | [MCP servers and plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
 
-## App icons
+A plugin can bring together one supported capability or several. You can build new components or reuse existing ones. A component can also exist outside a plugin and have its own administration requirements.
 
-Your app package must include both a color and outline version of your app icon, as .png files. These icons have specific size requirements in order to pass store validation.
+A plugin doesn't necessarily contain the service it uses. For example, its package can include the configuration for a remote MCP server while that server runs separately.
 
-Note
+## Take your plugin from idea to use
 
-Currently only the color icon is used to represent agents to users \(both as its store listing and within the Microsoft 365 Copilot UI\), but an outline icon is still required when you submit the app package to Microsoft AppSource.
+1. **Prepare to build your plugin.** Define the intended users, outcome, target experiences, capabilities, and requirements.
+2. **Build or reuse capabilities.** Build or reuse each required component by using its supported development guidance, and confirm that each component works independently.
+3. **Package and test.** Integrate the capabilities, create and validate the required package, test the resulting experience, and evaluate agent quality when appropriate.
+4. **Publish and distribute.** Submit the validated artifact through a supported distribution route.
+5. **Make available and govern.** Complete the review, acquisition, assignment, enablement, connection, access, and control actions that apply to the route and capability.
+6. **Monitor, update, and retire.** Monitor available signals, evaluate behavior when appropriate, release validated updates, manage ownership and access, and retire the solution when needed.
 
-For detailed design guidance for color and outline icons for the Microsoft 365 app package, see [Design icons for agent acquisition and management](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-icon-management).
+**Publishing doesn't by itself make a plugin usable.** The actions after publishing depend on the distribution route and components. Follow the procedure for your route rather than assuming that review, acquisition, assignment, enablement, and connection happen as one step.
 
-### Color icon
+Governance applies throughout the lifecycle. Define requirements during planning, validate identity and dependencies before publishing, apply availability and connection controls when you make the solution available, and manage updates, restrictions, and retirement during operation.
 
-The color icon represents your agent within the Microsoft 365 Copilot UI and in-product \(Teams, Office, Outlook, Microsoft 365\) app stores.
+## Understand the package and registry
 
-![Sample image of an app color icon, showing 192x192 pixels as total icon size with background included, with a central 120x120 pixel space showing the 'Safe region' for the app symbol](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/color-icon.png)
-
-Your color icon:
-
-- Can be any color
-- Must be 192 x 192 pixels in size
-- Should contain a symbol within 120 x 120 pixels \(to allow 36 pixels of padding for [host scenarios where it is cropped](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/apps-package#color-icon)\)
-- Must sit atop a fully solid or fully transparent square background
-
-### Outline icon
-
-The outline icon is used to represent pinned and/or active apps on the Teams app bar. It's not currently used for agents, but still required in order for the app package to pass validation.
-
-![Sample image of an app outline icon, showing 32x32 pixel size and white icon outline with transparent background](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/outline-icon.png)
-
-Your outline icon:
-
-- Must be 32 x 32 pixels
-- Must be either white with a transparent background, or transparent with a white background
-- Must not contain additional padding around the symbol
-
-## App manifest
-
-[The app manifest for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema) is a JSON file that describes the functionality and characteristics of your app. At its core, the app manifest for Microsoft 365 is the schema for building [Teams apps](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/apps-package); however, starting with version 1.13, it supports apps that run across Microsoft 365 hosts, in addition to Teams.
-
-If you're using Copilot Studio to build a declarative agent, the app manifest is generated for you based on the information you provide during the creation process.
-
-Every app manifest must include the following fields.
-
-| Manifest field | Description |
+| Term | Meaning |
 | --- | --- |
-| [version](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#version) | The version number of the app, in the format of MAJOR.MINOR.PATCH \([semver](http://semver.org/) standard\). |
-| [id](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#id) | The unique identifier for this app, in GUID form. |
-| [developer](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#developer) | Information about the developer, including name, website, and links to privacy policy and terms of use. For apps submitted to AppSource, values must match the value provided in the Partner Center app submission form. |
-| [name](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#name) | The name of your app, as displayed to end-users within the application host. |
-| [description](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#description) | Short and long descriptions of your app for users. For apps submitted to AppSource, these values must match the information in your AppSource entry. |
-| [icons](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#icons) | Relative paths to color and outline icon files. |
-| [accentColor](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#accentcolor) | A color to use with and as a background for your outline icons, in [RGB hex value](https://developer.mozilla.org/docs/Web/CSS/CSS_colors/Color_picker_tool), for example `#4464ee`. |
-| *Definitions for specific app capabilities* | A definition for each app capability, such as personal tabs \([staticTabs](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#statictabs)\), message extensions \([composeExtensions](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#composeextensions)\), or [bots](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root#bots). Declarative agents and API plugins are defined under the [copilotAgents](#copilotagents-definitions) node. |
+| **Plugin** | The solution that brings together supported capabilities for a particular use |
+| **Plugin package** | The versioned artifact used for validation, publishing, and updates |
+| **Component** | A supported capability used by the plugin |
+| **Plugin registry** | Shared infrastructure for registering and distributing plugins |
 
-The following example shows an app manifest with placeholder sections at the end for message extension and declarative agent app capabilities.
+The package can describe and connect components without containing their runtime services. Components can also appear in administrative inventories independently of a plugin.
 
-```json
-{
-    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.18/MicrosoftTeams.schema.json",
-    "manifestVersion": "1.18",
-    "version": "1.0.0",
-    "id": "00000000-0000-0000-0000-000000000000",
-    "developer": {
-        "name": "Northwind Traders",
-        "websiteUrl": "https://www.example.com",
-        "privacyUrl": "https://www.example.com/privacy",
-        "termsOfUseUrl": "https://www.example.com/termsofuse"
-    },
-    "icons": {
-        "color": "Northwind-Logo-196.png",
-        "outline": "Northwind-Logo-32.png"
-    },
-    "name": {
-        "short": "Northwind Inventory",
-        "full": "Northwind Inventory App"
-    },
-    "description": {
-        "short": "App allows you to find and update product inventory information",
-        "full": "Northwind Inventory is the ultimate tool for managing your product inventory. With its intuitive interface and powerful features, you'll be able to easily find your products by name, category, inventory status, and supplier city. You can also update inventory information with the app."
-    },
-    "accentColor": "#3690E9",
-    "composeExtensions": {
-        ...
-    },
-    "copilotAgents": {
-        ...
-    }
-}
-```
+Registration and distribution don't replace product-specific administration. Availability, access, tools, connections, external services, data, and runtime behavior can use separate control surfaces.
 
-To learn more, see the [Microsoft 365 app manifest reference](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema).
+## Follow the guidance for your role
 
-### `copilotAgents` definitions
+- **[Build plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/builder-guide):** Plan the solution, select tools and components, then build, package, and test it.
+- **[Administer plugins and agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/administrator-guide):** Review requirements early, then manage the applicable availability, access, connections, and operational controls.
+- **[Publish plugins for customers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/isv-publisher-guide):** Follow the full lifecycle, including the requirements for public distribution, certification, servicing, and customer support.
+- **Users:** Find and use plugins made available in their Microsoft experience.
 
-Declarative agents and API plugins each have their own definition schemas. The definition file for a declarative agent is referenced from the [copilotAgents](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-copilot-agents) object of the app manifest.
+## Check product-specific requirements
 
-The following example shows how to reference a declarative agent:
+The plugin model doesn't replace the development tools, manifests, certification, runtime behavior, or administration procedures for each capability.
 
-```json
-    "copilotAgents": {
-        "declarativeAgents": [
-            {
-                "id": "agent1",
-                "file": "declarativeAgent1.json"
-            }
-        ]
-    },
-```
+Agents can participate in the broader plugin model in different ways depending on the agent type, package, publishing route, and Microsoft experience. Follow the publishing guidance for the agent and authoring tool you use.
 
-The definition of an API plugin is referenced \(under [`actions`](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest#actions-object)\) from the declarative agent definition.
+Existing API plugins remain supported as actions for declarative agents. See [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) for their packaging and lifecycle guidance.
 
-![Diagram showing app manifest referencing a declarative agent manifest and API plugin manifest. The declarative agent manifest references another API plugin manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/app-manifest-agents.png)
+## Next steps
 
-Note the following:
-
-- Currently only one declarative agent definition is supported per app manifest.
-- When you use Copilot Studio to build agents, a unique `id` is generated for each, as part of the overall app manifest generation. When building agents with [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) or your own IDE, you assign the `id` yourself, according to your own conventions or friendly name.
-
-## Declarative agent manifest
-
-The declarative agent manifest includes instructions for Copilot responses, conversation starter sample prompts, data sources used for grounding, and a list of actions \(API plugin skills\) the agent is able to perform.
-
-To learn more, see [Declarative agent manifest schema for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8).
-
-## API plugin manifest
-
-The API plugin manifest describes the plugin's capabilities, including the APIs it supports and the operations it can perform. It also includes metadata such as name, description, version, and a reference to the OpenAPI definition of the REST APIs with which it interacts. API plugins can be referenced from a declarative agent manifest to be used within the declarative agent experience.
-
-To learn more, see [Plugin manifest schema for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4).
-
-## Related content
-
-- [Localize your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/localize-agents)
-- [Manage extensibility for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage)
-- [Publish agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
-- [Microsoft 365 app manifest reference](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema)
-- [Data, Privacy, and Security considerations for extending Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/data-privacy-security)
-- [Microsoft 365 Copilot APIs overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview#from-app-registration-to-api-client)
+- [Quickstart: Package and share an existing declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/quickstart-plugin)
+- [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide)
+- [Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
+- [Choose how to publish and distribute your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
+- [Make your plugin or agent available and govern access](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins)
+- [Monitor, update, and retire](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin)

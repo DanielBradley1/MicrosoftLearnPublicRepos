@@ -65,7 +65,7 @@ When you share an agent via the Microsoft 365 Copilot by using the **Specific us
 
 The following features aren't currently supported in [Microsoft 365 Government](https://www.microsoft.com/microsoft-365/government) tenants:
 
-- [Authenticated custom actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-api-plugins).
+- [Authenticated custom actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins).
 - Support for usage billing for extensibility features. For details about features that require usage billing, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
 - Support for publishing agents via the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents).
 
@@ -93,7 +93,7 @@ The following OpenAPI features aren't supported for API plugins:
 - Settings UI to reset always allow states. As a workaround, uninstall the app to reset the allow state.
 - Settings UI to sign out. As a workaround, uninstall the app to reset the allow state or implement a function that the user can invoke by using natural language.
 - Multiple response semantics for a single function.
-- **OpenURL** and **ToggleVisbility** adaptive card actions in response semantics.
+- **OpenURL** and **ToggleVisibility** adaptive card actions in response semantics.
 - Task modules and stage views in response semantics.
 
 ## Custom engine agents

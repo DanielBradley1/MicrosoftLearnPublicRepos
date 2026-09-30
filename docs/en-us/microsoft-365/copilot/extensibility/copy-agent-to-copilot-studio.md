@@ -1,20 +1,20 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio -->
 <!-- Sitemap-Last-Modified: 2026-01-26 -->
 
-# Copy an agent to Copilot Studio
+# Copy an agent from Agent Builder to Copilot Studio
 
-This article explains how to use the **Copy to Copilot Studio** feature in Microsoft 365 Copilot to copy an agent to Copilot Studio. When you copy your agent to Copilot Studio, you can take advantage of advanced lifecycle management, analytics, and governance controls.
+This article explains how to use the **Copy to Copilot Studio** feature in Agent Builder to copy an agent to Copilot Studio. When you copy your agent to Copilot Studio, you can take advantage of advanced lifecycle management, analytics, and governance controls.
 
 ## Why use Copilot Studio?
 
 Users can build AI agents for Microsoft 365 by using the following tools:
 
-- **Microsoft 365 Copilot:** The Agent Builder feature in the Microsoft 365 Copilot app is ideal for quick, lightweight agent creation within the Microsoft 365 environment. Agent Builder is designed for users who want to add conversational capabilities to enhance productivity.
+- **Agent Builder:** Agent Builder is ideal for quick, lightweight agent creation within the Microsoft 365 environment. It's designed for users who want to add conversational capabilities to enhance productivity.
 - **Copilot Studio:** A dedicated, standalone application that offers advanced capabilities for building, customizing, and managing agents at scale. Copilot Studio provides richer configuration options, integration with enterprise systems, and governance features that are suitable for complex scenarios or organizational deployments.
 
-For more information and a comparison of each tool, see [Choose between Microsoft 365 Copilot and Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience).
+For more information and a comparison of each tool, see [Choose between Agent Builder and Copilot Studio to build your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience).
 
-Copying an agent to Copilot Studio unlocks advanced capabilities beyond what's available in Microsoft 365 Copilot, including:
+Copying an agent to Copilot Studio unlocks advanced capabilities beyond what's available in Agent Builder, including:
 
 - **Enhanced lifecycle management:** Gain full control over the agent's lifecycle, including versioning, staged deployments, rollback options, and structured release processes. This control ensures better stability and predictability as your agent evolves.
 - **Usage monitoring and analytics:** Access detailed insights into agent performance, user engagement, and query trends. Built-in dashboards and reporting tools help you identify optimization opportunities and measure return on investment.
@@ -31,7 +31,7 @@ For example, agents copied to Copilot Studio can be published to the Teams app s
 
 ## Copy your agent
 
-If you start building an agent in Microsoft 365 Copilot and want to add more capabilities that are only available in Copilot Studio, use the **Copy to Copilot Studio** button in the **More options \(…\)** menu. This option copies your agent to Copilot Studio so you don't need to recreate it.
+If you start building an agent in Agent Builder and want to add more capabilities that are only available in Copilot Studio, use the **Copy to Copilot Studio** button in the **More options \(…\)** menu. This option copies your agent to Copilot Studio so you don't need to recreate it.
 
 The following agent configurations are copied to Copilot Studio:
 
@@ -58,19 +58,17 @@ The following table lists the configurations that aren't copied and how to handl
 
 After you copy your agent:
 
-- The original agent built in Microsoft 365 Copilot remains available.
+- The original agent built in Agent Builder remains available.
 - Copilot Studio creates a snapshot of the agent and uses it to define the agent in Copilot Studio. Save the agent to ensure that the data is stored.
 - Updates to the original agent don't affect the copied version.
 - If another copy operation is underway, wait a few seconds before you start a new copy for the same agent. Every copy operation creates a new agent in Copilot Studio.
 - If this is the first time you created an agent in Copilot Studio, the **Create Agents** screen appears after the first-run experience.
-- The original agent remains accessible through Microsoft 365, while the copy becomes a Copilot Studio agent that you can publish to multiple channels.
+- The original agent remains accessible through Microsoft 365 Copilot, while the copy becomes a Copilot Studio agent that you can publish to multiple channels.
 - Test your agent in Copilot Studio before you publish it. After you publish, decide whether to delete the original agent and communicate migration steps to users you shared the agent with.
 
 ## Licensing requirements
 
-To copy an agent to Copilot Studio, you must have a [Copilot Studio license](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing) or [Microsoft 365 Copilot license](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing#microsoft-365-copilot). Check your eligibility in [Copilot Studio](https://copilotstudio.microsoft.com) or ask your admin.
-
-If you don't have a Copilot Studio license, you might be eligible for a [Copilot Studio trial](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions#sign-up-for-a-copilot-studio-trial), depending on the admin settings in your organization. Admins can [block unauthorized sign-ups](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-block-viral-signups). Trial licenses allow for testing agents but not publishing agents outside personal use.
+Copying an agent to Copilot Studio requires a Copilot Studio license or a Microsoft 365 Copilot license, and trial availability depends on your admin settings. For details, see [Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing) and [Sign up for a Copilot Studio trial](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions#sign-up-for-a-copilot-studio-trial). Check your eligibility in [Copilot Studio](https://copilotstudio.microsoft.com) or ask your admin. Admins can [block unauthorized sign-ups](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-block-viral-signups).
 
 Important
 
@@ -118,12 +116,12 @@ The following table lists common errors that can occur when you select an enviro
 
 ## Admin management and data storage
 
-Admins manage Agent Builder in Microsoft 365 Copilot through the Microsoft 365 admin center. Copilot Studio is managed through the [Power Platform admin center](https://learn.microsoft.com/en-us/power-platform/admin/admin-documentation).
+Admins manage Agent Builder through the Microsoft 365 admin center. Copilot Studio is managed through the [Power Platform admin center](https://learn.microsoft.com/en-us/power-platform/admin/admin-documentation).
 
 Agents copied to Copilot Studio are stored in [Microsoft Dataverse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-intro) and managed via a [Power Platform solution](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-overview). Admins can set up [security roles](https://learn.microsoft.com/en-us/power-platform/admin/database-security) for custom environments.
 
 ## Related content
 
-- [Choose between Microsoft 365 Copilot and Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience)
-- [Build agents with Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-lite)
-- [Build agents with Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext)
+- [Choose between Agent Builder and Copilot Studio to build your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience)
+- [Agent Builder overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder)
+- [Build agents with Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=/microsoft-365/copilot/extensibility/context)

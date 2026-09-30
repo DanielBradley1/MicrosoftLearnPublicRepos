@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents -->
 <!-- Sitemap-Last-Modified: 2026-08-19 -->
 
-# Build agents by using Agent Builder in Microsoft 365 Copilot
+# Build agents in Agent Builder
 
-The Agent Builder feature in Microsoft 365 Copilot provides a simple interface that you can use to quickly build declarative agents by using natural language. This article describes how to use Agent Builder to build an agent for Copilot.
+Agent Builder provides a simple interface that you can use to quickly build declarative agents by using natural language. This article describes how to use Agent Builder to build an agent for Microsoft 365 Copilot.
 
 When you choose **New agent** in Microsoft 365 Copilot, you can:
 
@@ -13,7 +13,7 @@ When you choose **New agent** in Microsoft 365 Copilot, you can:
 
 ## Use natural language to describe your agent \(recommended\)
 
-You can use Agent Builder in Microsoft 365 Copilot to create an agent by using natural language. As you provide information conversationally, the agent’s name, description, and instructions update automatically to refine its behavior. This approach:
+You can use Agent Builder to create an agent by using natural language. As you provide information conversationally, the agent's name, description, and instructions update automatically to refine its behavior. This approach:
 
 - Understands a user's intent through natural language.
 - Provides suggestions, guidance, and next-best prompts.
@@ -42,7 +42,7 @@ When you finish describing your agent and adding knowledge sources, view the con
 
 ![Screenshot of the Configure tab showing the agent configuration when created using natural language](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/agent-configuration.png)
 
-After you create your agent, [test it](#test-your-agent) on the **Try it** tab. You can continue to refine it by using natural language. If you want to change the starter prompts or intent, just say it in natural language - for example: "Update the agent to summarize Teams chats instead of emails."
+After you create your agent, [test it](#test-your-agent) on the **Try it** tab. You can continue to refine it by using natural language. If you want to change the suggested prompts or intent, just say it in natural language - for example: "Update the agent to summarize Teams chats instead of emails."
 
 Note
 
@@ -56,21 +56,21 @@ To configure your agent manually:
 
 1. In Microsoft 365 Copilot, select **New agent**.
 2. On **New agent**, select **Skip to configure**.
-3. Agent Builder opens the **Configure** tab, where you can specify your agent's name, description, instructions, knowledge, and prompts.
+3. Agent Builder opens the **Configure** tab, where you can specify your agent's name, description, instructions, knowledge, and suggested prompts.
 
 The following table describes the fields that make up the agent.
 
 | Field | Description |
 | --- | --- |
 | **Name** | The name of your agent. Use something that's descriptive and unique. Character limit of 30 characters. |
-| **Icon** | You can use AI to generate an icon, choose an icon from the icon library, or manually upload an image to represent your agent and give it a unique personality. To update the icon for your agent, select the pencil icon and choose **Generate**, **Browse**, or **Upload** to add a new icon.  <br>  <br>If you upload an icon, a PNG file with a transparent background works best due to the extra padding that is applied by default around your icon.<br><br>- Supported file type: PNG<br>- Color icon resolution limit: 192x192 pixels<br>- File size limit: 1 MB<br><br>For more information about icons, see [Design icons for agent acquisition and management](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-icon-management). |
+| **Icon** | You can use AI to generate an icon, choose an icon from the icon library, or manually upload an image to represent your agent and give it a unique personality. To update the icon for your agent, select the pencil icon and choose **Generate**, **Browse**, or **Upload** to add a new icon.  <br>  <br>If you upload an icon, a PNG file with a transparent background works best due to the extra padding that is applied by default around your icon.<br><br>- Supported file type: PNG<br>- Color icon resolution limit: 192x192 pixels<br>- File size limit: 1 MB<br><br>For more information about icons, see [Design agent icons](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-icon-management). |
 | **Model** | You can specify the default response mode for your agent. Users can always override this when using the agent. For details, see [Set the default response mode](#set-the-default-response-mode). |
-| **Description** | The description helps the Large Language Model \(LLM\) identify and use your agent for a specific task or situation. Make it as short, precise, and simple as possible. It's also displayed in the app file for use in the app catalog. Character limit of 1,000 characters. |
+| **Description** | The description helps the large language model \(LLM\) identify and use your agent for a specific task or situation. Make it as short, precise, and simple as possible. It's also shown to users when they find your agent. Character limit of 1,000 characters. |
 | **Instructions** | Specific instructions to the LLM that you want to use to extend the capabilities of Microsoft 365 Copilot. They direct the behavior of the agent, including its tasks and how it completes them. If you're using the **Describe** tab, they're autogenerated for you. Character limit of 8,000 characters. For more information, see [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions). |
 | **Knowledge** | Add public websites, organizational and personal work content, embedded files, and Microsoft 365 Copilot connectors as knowledge sources. Availability and limits vary by source type. For details, see [Add knowledge sources](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge). |
 | **Starter Prompts** | Starter prompts help other users understand commonly supported scenarios by your agent. Each starter prompt comes with a name and description. There's no minimum number of starter prompts. |
 
-After you create your agent, [test it](#test-your-agent) on the **Try it** tab. You can continue to refine your agent's instructions, knowledge, and starter prompts.
+After you create your agent, [test it](#test-your-agent) on the **Try it** tab. You can continue to refine your agent's instructions, knowledge, and suggested prompts.
 
 ## Build from a template
 
@@ -84,20 +84,17 @@ To use a template to build your agent:
 
 ![Screenshot of the Configure tab where users can manually update agent based on a template](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/agent-builder-template.png)
 
-For more information, see [Agent templates](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-templates-overview).
+For more information, see [Agent Builder templates](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-templates-overview).
 
-After you create your agent, [test it](#test-your-agent) on the **Try it** tab. You can continue to refine your agent's instructions, knowledge, and starter prompts.
+After you create your agent, [test it](#test-your-agent) on the **Try it** tab. You can continue to refine your agent's instructions, knowledge, and suggested prompts.
 
 ## Add knowledge sources
 
-To build context-aware agents, reference SharePoint items or any public websites. If your users have a Microsoft 365 Copilot add-on license, you can also:
-
-- Ground your agents in personal work information, such as Teams chat messages and Outlook emails.
-- Use prebuilt [Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-overview) that are enabled in your tenant.
+To build context-aware agents, reference sources such as SharePoint items, public websites, personal work information like Teams chat messages and Outlook emails, and [Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector) that are enabled in your tenant.
 
 Choose knowledge sources to add to your agent in the chat box on the **Describe** tab if you're using natural language to create your agent, or select knowledge sources on the **Configure** tab.
 
-For more information, see [Add knowledge sources](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge).
+For the supported sources and their limits, see [Add knowledge sources to an agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge).
 
 Note
 
@@ -111,6 +108,14 @@ You can use the following capabilities with your agent:
 - [Image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator) - Generates images based on user prompts. To add this capability, select the toggle next to **Create images**.
 
 You automatically get these capabilities whether you use natural language on the **Describe** tab or manual configuration on the **Configure** tab.
+
+Note
+
+Agent Builder doesn't support authoring actions that integrate external services. To add low-code actions, connectors, or workflows, [copy the agent to Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio). If your scenario requires a separate pro-code implementation, see [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools).
+
+### Skills \(preview\)
+
+You can add skills to an agent built in Agent Builder, either by providing a skill package or by describing the skill in natural language. Skills in Agent Builder are in preview and are available only to organizations enrolled in the Microsoft Frontier Program. For more information, see [Add custom skills to your declarative agent in Agent Builder \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 
 ## Set the default response mode
 
@@ -126,12 +131,12 @@ The following response modes are available:
 
 ## Test your agent
 
-The **Try it** tab provides an instance of the agent that you can use to test and refine your agent within the authoring experience. Use it to test the agent while you're creating or making updates to it. The **Try it** experience is enabled after the agent has a name, description, and instructions. It behaves according to those instructions like a published agent, including the ability to respond to complex queries within its realm of specified knowledge. The agent updates during each turn of the conversation as you add new information by using natural language or manually on the **Configure** tab in Agent Builder.
+The **Try it** tab provides an instance of the agent that you can use to test and refine your agent within the authoring experience. Use it to test the agent while you're creating or making updates to it. The **Try it** experience is enabled after the agent has a name, description, and instructions. The agent follows those instructions the same way it does after you create it, including the ability to respond to complex queries within its realm of specified knowledge. The agent updates during each turn of the conversation as you add new information by using natural language or manually on the **Configure** tab in Agent Builder.
 
 Some agent features aren't available in the **Try it** experience. For example, you can't use it to share prompts, provide feedback, or @mention other agents in the Microsoft 365 Copilot app. You can use these features after you create the agent.
 
-The **Try it** experience includes suggested starter prompts, which when selected invoke the prompt and start the conversation. You can select **New chat** to start a new conversation with the agent to view the starter prompts again.
+The **Try it** experience includes suggested prompts, which when selected invoke the prompt and start the conversation. You can select **New chat** to start a new conversation with the agent to view the suggested prompts again.
 
 ## Next step
 
-[Publish and manage agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents)
+[Share and manage agents built in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents)

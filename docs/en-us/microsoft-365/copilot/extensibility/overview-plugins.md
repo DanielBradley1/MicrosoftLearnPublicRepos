@@ -1,13 +1,19 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins -->
 <!-- Sitemap-Last-Modified: 2026-08-12 -->
 
-# Plugins for Microsoft 365 Copilot
+# MCP and API plugins for declarative agents
 
-Plugins enable declarative agents in Microsoft 365 Copilot to interact with [Model Context Protocol \(MCP\)](https://modelcontextprotocol.io/) servers or REST APIs that have an [OpenAPI description](https://www.openapis.org/what-is-openapi). By using a plugin, users can ask a declarative agent to not only query an MCP server or REST API for information, but also to create, update, and delete data and objects. Anything the MCP server or REST API can do is accessible through natural language prompts.
+MCP and API plugins are custom actions that enable declarative agents in Microsoft 365 Copilot to interact with [Model Context Protocol \(MCP\)](https://modelcontextprotocol.io/) servers or REST APIs that have an [OpenAPI description](https://www.openapis.org/what-is-openapi). By using one of these plugins, users can ask a declarative agent to query an MCP server or REST API for information and, when supported, create, update, and delete data and objects through natural language prompts.
+
+This article uses *plugin* for the technical MCP or API custom action used by a declarative agent. For the customer-facing plugin product, package, registry, and lifecycle, see [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview).
 
 Important
 
-Plugins are only supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They are not enabled in Microsoft 365 Copilot.
+This article uses *plugin* only for MCP and API actions in declarative agents. Package, publishing, and governance requirements vary by route.
+
+Important
+
+MCP and API plugins are supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They aren't enabled as standalone experiences in Microsoft 365 Copilot.
 
 A plugin provides a plugin manifest that Copilot uses to learn the capabilities of the plugin's MCP server or API. Copilot can then decide when an installed and enabled plugin is suited to answer any given prompt. To learn more about the manifest file that a plugin requires, see [Plugin manifest schema for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4).
 
@@ -94,7 +100,7 @@ Copilot responds to the user by using the information returned: "The charge of $
 3. The agent identifies a budget-related plugin from its available plugins that has an MCP server tool or API `GetBudget` to get budget details. It maps parts of the user's question to the parameters of the function: `budgetName=""`.
 4. The agent [asks the user](#confirming-actions) to allow it to send `Fourth Coffee lobby renovation` to the plugin.
 5. The user chooses to allow data to be shared with the plugin once, or chooses to always allow data to be shared for this function.
-6. If the plugin's MCP server or API requires [authentication](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api-plugin-authentication), the plugin requests a token or API key from the token store.
+6. If the plugin's MCP server or API requires [authentication](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication), the plugin requests a token or API key from the token store.
 7. The token store returns a token or key. If needed, the token store causes the agent to prompt the user to sign in.
 8. The agent sends a request to the plugin's MCP server or API, which is hosted outside of Microsoft 365.
 9. The MCP server or API returns a response.

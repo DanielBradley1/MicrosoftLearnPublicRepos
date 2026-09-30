@@ -8,7 +8,7 @@ TypeSpec for Microsoft 365 Copilot supports multiple authentication methods to s
 - [No authentication](#no-authentication-anonymous) for public endpoints
 - [API key authentication](#api-key-authentication) for simple token-based access
 - [OAuth2 authorization code flow](#oauth2-authorization-code-flow) for secure non-Microsoft integrations
-- [Microsoft Entra single sign-on \(SSO\) authentication](#microsoft-entra-sso-authentication) for seamless Microsoft 365 identity integration
+- [Microsoft Entra single sign-on \(SSO\) authentication](#microsoft-entra-sso-authentication) for Microsoft 365 identity integration
 
 Note
 
@@ -45,7 +45,7 @@ namespace API {
 }
 ```
 
-Microsoft 365 Agents Toolkit can automatically register your API key and will also add the `apiKey/register` action to **m365agents.yml** in your Agents Toolkit project.
+Microsoft 365 Agents Toolkit can automatically register your API key and also adds the `apiKey/register` action to **m365agents.yml** in your Agents Toolkit project.
 
 ```yaml
 # m365agents.yml
@@ -63,9 +63,9 @@ The [Manage repairs using Microsoft 365 Copilot sample](https://adoption.microso
 
 ## OAuth2 authorization code flow
 
-User-delegated permissions for accessing user data an OAuth2 protected service. Use the native [`OAuth2Auth`](https://typespec.io/docs/libraries/http/authentication/#oauth2authtflows-extends-oauth2flow) from TypeSpec. Update the `authorizationUrl`, `tokenUrl`, `refreshUrl`, and `scopes` based on the specific API you're integrating with.
+User-delegated permissions for accessing user data from an OAuth 2.0-protected service. Use the native [`OAuth2Auth`](https://typespec.io/docs/libraries/http/authentication/#oauth2authtflows-extends-oauth2flow) from TypeSpec. Update the `authorizationUrl`, `tokenUrl`, `refreshUrl`, and `scopes` based on the specific API you're integrating with.
 
-Learn how to automatically [create the Entra ID app using Agents Toolkit](https://github.com/OfficeDev/microsoft-365-agents-toolkit/wiki/Available-actions-in-Microsoft-365-Agents-Toolkit#aadappcreate) and [update the Entra ID app](https://github.com/OfficeDev/microsoft-365-agents-toolkit/wiki/Available-actions-in-Microsoft-365-Agents-Toolkit#aadappupdate) once the registration is completed.
+Learn how to automatically [create the Microsoft Entra app registration using Agents Toolkit](https://github.com/OfficeDev/microsoft-365-agents-toolkit/wiki/Available-actions-in-Microsoft-365-Agents-Toolkit#aadappcreate) and [update the Microsoft Entra app registration](https://github.com/OfficeDev/microsoft-365-agents-toolkit/wiki/Available-actions-in-Microsoft-365-Agents-Toolkit#aadappupdate) once the registration is completed.
 
 ### Example
 
@@ -85,7 +85,7 @@ namespace API {
 }
 ```
 
-Microsoft 365 Agents Toolkit can automatically register your OAuth2 configuration and will also add the `oauth/register` action to **m365agents.yml** in your Agents Toolkit project.
+Agents Toolkit can automatically register your OAuth2 configuration and also adds the `oauth/register` action to **m365agents.yml** in your Agents Toolkit project.
 
 ```yaml
 # m365agents.yml
@@ -106,7 +106,7 @@ The [Tasks Agent using TypeSpec for Microsoft 365 Copilot that connects to the M
 
 ## Microsoft Entra SSO authentication
 
-Seamless authentication applying the user's existing Microsoft 365 session for native integration scenarios. To complete the SSO registration, use the regular [`OAuth2Auth`](#oauth2-authorization-code-flow) flow and perform the [manual steps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-entra-sso#step-3-update-the-entra-app-registration).
+Authentication that applies the user's existing Microsoft 365 session for native integration scenarios. To complete the SSO registration, use the regular [`OAuth2Auth`](#oauth2-authorization-code-flow) flow and perform the [manual steps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-entra-sso#step-3-update-the-entra-app-registration).
 
 ## Using registered authentication configurations
 

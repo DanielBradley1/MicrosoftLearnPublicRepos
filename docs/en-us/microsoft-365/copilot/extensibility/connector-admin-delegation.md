@@ -69,7 +69,7 @@ To ensure that administrative rights were granted successfully:
 
 Note
 
-This article covers the create and ingest scopes `ExternalItem.ReadWrite.OwnedBy` and `ExternalConnection.ReadWrite.OwnedBy`, which let AI Administrators create connections and ingest items. To instead query or list existing connections, an admin uses the distinct `ExternalConnection.Read.All` scope. For those steps, see [find your connector's ID by querying connectors in Graph Explorer](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#microsoft-365-copilot-connectors).
+This article covers the create and ingest scopes `ExternalItem.ReadWrite.OwnedBy` and `ExternalConnection.ReadWrite.OwnedBy`, which let AI Administrators create connections and ingest items. To instead query or list existing connections, an admin uses the distinct `ExternalConnection.Read.All` scope. For those steps, see [find your connector's ID by querying connectors in Graph Explorer](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#copilot-connectors).
 
 1. Sign in to the Microsoft Entra admin center as an AI Administrator.
 2. Go to the **App registrations** section and create a new application.
@@ -112,4 +112,4 @@ No, granting these privileges is optional. Organizations can choose whether to d
 
 - [Delegate app registration permissions in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles)
 - [Application registration permissions for custom roles in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-available-permissions)
-- [Query existing Copilot connectors in Graph Explorer \(ExternalConnection.Read.All\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#microsoft-365-copilot-connectors)
+- [Query existing Copilot connectors in Graph Explorer \(ExternalConnection.Read.All\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids#copilot-connectors)

@@ -5,7 +5,7 @@
 
 Important
 
-Plugins are only supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They are not enabled in Microsoft 365 Copilot.
+MCP and API plugins are supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They aren't enabled as standalone experiences in Microsoft 365 Copilot.
 
 API plugins can use Adaptive Card response templates to enhance the response that Microsoft 365 Copilot generates based on the response it receives from the API. The Adaptive Card renders citations within the generated response.
 
