@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/user-source-of-authority-overview -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2025-11-03 -->
 
 # Transfer user Source of Authority \(SOA\) to Microsoft Entra ID
 

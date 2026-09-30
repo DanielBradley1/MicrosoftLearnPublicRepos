@@ -11,7 +11,7 @@ Use on-demand provisioning to provision a user or group in seconds. Among other 
 
 ## How to use on-demand provisioning
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as the [Application Owner](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/overview-assign-app-owners) or an [Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 2. Browse to **Entra ID** > **Enterprise apps** > select your application.
 3. Select **Provisioning**.

@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    b. In the **Reply URL** text box, type the URL: `https://central.samsungknox.com/ams/ad/saml/acs`
 
-   c. In the **Sign on URL** text box, type the URL: `https://accounts.samsung.com/`
+   c. In the **Sign on URL** text box, type the URL: `https://account.samsung.com/`
 6. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
    ![Screenshot shows the Certificate download link.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/copy-metadataurl.png "Certificate")

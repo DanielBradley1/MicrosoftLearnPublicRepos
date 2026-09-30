@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2024-11-13 -->
 
 # Add app roles to your application and receive them in the token
 

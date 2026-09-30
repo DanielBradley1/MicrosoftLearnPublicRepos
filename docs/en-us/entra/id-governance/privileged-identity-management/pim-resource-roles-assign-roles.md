@@ -114,6 +114,10 @@ PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/
 }
 ```
 
+Note
+
+The `duration` field \(value `P365D` in this example\) sets the eligible assignment to expire after 365 days. To create permanent eligibility, configure the role management policy at the target scope to allow it.
+
 ### Response
 
 Status code: 201

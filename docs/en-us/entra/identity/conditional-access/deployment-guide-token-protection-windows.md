@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/conditional-access/deployment-guide-token-protection-windows -->
-<!-- Sitemap-Last-Modified: 2026-09-21 -->
+<!-- Sitemap-Last-Modified: 2026-03-24 -->
 
 # Token Protection Deployment Guide - Windows
 

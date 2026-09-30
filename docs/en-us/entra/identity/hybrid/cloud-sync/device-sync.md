@@ -1,15 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync -->
 <!-- Sitemap-Last-Modified: 2026-07-27 -->
 
-# Configure device sync with Microsoft Entra Cloud Sync \(preview\)
+# Configure device sync with Microsoft Entra Cloud Sync
 
 Device sync lets you synchronize computer objects from Active Directory \(AD\) to Microsoft Entra ID by using the `AD2AADDeviceSync` job in an **AD to Microsoft Entra ID** Cloud Sync configuration. After synchronization, the devices can become Microsoft Entra hybrid joined.
 
 Device sync is disabled by default. Before you begin, make sure your environment meets the prerequisites. Then configure a service connection point \(SCP\), enable device sync, provision a device on demand, manage device sync with Microsoft Graph, and recover deleted devices.
-
-Important
-
-Device sync with Microsoft Entra Cloud Sync is in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 ## Prerequisites
 
