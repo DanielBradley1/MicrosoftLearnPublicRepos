@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/plan-cloud-sync-topologies -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-08-31 -->
 
 # Microsoft Entra Cloud Sync supported topologies and scenarios
 
