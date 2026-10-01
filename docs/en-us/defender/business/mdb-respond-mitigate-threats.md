@@ -7,7 +7,7 @@ The Microsoft Defender portal enables your security team to respond to and mitig
 
 ## View detected threats
 
-Use the following steps to view detected threats in the Microsoft Defender portal and take response actions.
+Use the following steps to view detected threats in the Defender portal and take response actions.
 
 1. Go to the [Microsoft Defender portal](https://security.microsoft.com) and sign in.
 2. Notice the cards on the Home page. These cards show how many threats were found, how many user accounts were affected, and which devices or other assets are at risk. The following image is an example:
@@ -21,14 +21,12 @@ Use the following steps to view detected threats in the Microsoft Defender porta
 4. Select an item, such as a device. A flyout pane opens with more details about alerts and incidents for the selected device, as shown in the following image:
 
    ![Screenshot of the flyout pane for a selected device](https://learn.microsoft.com/en-us/defender-business/media/mdb-deviceinventory-selecteddeviceflyout.png)
-5. On the flyout, review the details. Select the ellipsis \(...\) to open a menu of available actions, as shown in the following image:
+5. On the flyout pane, review the details. Select the ellipsis \(...\) to open a menu of available actions, as shown in the following image:
 
    ![Screenshot of available actions for a selected device](https://learn.microsoft.com/en-us/defender-business/media/mdb-deviceinventory-selecteddeviceflyout-menu.png)
 6. Select an available action. For example, you might choose **Run antivirus scan**, which starts a quick scan with Microsoft Defender Antivirus on the device. Or, you could select **Initiate Automated Investigation** to trigger an automated investigation on the device.
 
-## Next steps
-
-Learn more about related Defender for Business tasks:
+## Related content
 
 - [Learn about automatic attack disruption](https://learn.microsoft.com/en-us/defender-business/mdb-attack-disruption)
 - [Review remediation actions in the Action center](https://learn.microsoft.com/en-us/defender-business/mdb-review-remediation-actions)

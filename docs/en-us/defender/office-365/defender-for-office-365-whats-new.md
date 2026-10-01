@@ -22,6 +22,7 @@ For more information on what's new with other Microsoft Defender security produc
 
 ## September 2026
 
+- **Separating Teams user reporting settings from email settings**: Customers in Worldwide \(WW\) environments with Defender for Office 365 Plan 1, Defender for Office 365 Plan 2, Microsoft 365 E5, or Office 365 E5 can now manage Teams user reporting settings on a separate page at [https://security.microsoft.com/securitysettings/teamsUserSubmission](https://security.microsoft.com/securitysettings/teamsUserSubmission). This separation lets you configure different reporting destinations for Teams and Outlook user reports. For more information, see [MC1478463](https://admin.cloud.microsoft/?ref=MessageCenter/:/messages/MC1478463).
 - **Expanding user reporting in Teams to include group calls**: Users can report completed or missed group [Microsoft Teams calls](https://learn.microsoft.com/en-us/defender-office-365/submissions-teams) from the call history as malicious \(scam\) or nonmalicious \(non-scam\). Depending on [user reported settings](https://learn.microsoft.com/en-us/defender-office-365/submissions-user-reported-messages-custom-mailbox), reported calls are sent to the specified reporting mailbox, to Microsoft, or both.
 
 ## July 2026

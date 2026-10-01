@@ -15,9 +15,9 @@ Use this guidance to:
 
 - Adopt a formal, vendor-agnostic cybersecurity framework.
 - Create a plan that includes identity management, admin accounts, device management, licensing, and more.
-- Set up, configure, use, and maintain Microsoft 365 Business Premium, step by step.
+- Set up, configure, use, and maintain Microsoft 365 Business Premium.
 - Implement and use data protection capabilities, such as sensitivity labels and data loss prevention \(DLP\) policies.
-- Work with advanced capabilities, such as increased security, identity protection, and email & apps protection.
+- Work with advanced capabilities, such as increased security, identity protection, and email and apps protection.
 
 To access the guide and summary checklist, use the links in the following table:
 
@@ -28,18 +28,18 @@ To access the guide and summary checklist, use the links in the following table:
 
 Tip
 
-The information is also available in the following videos: [https://aka.ms/M365GettingStarted](https://aka.ms/M365GettingStarted).
+The information is also available in these videos: [https://aka.ms/M365GettingStarted](https://aka.ms/M365GettingStarted).
 
 ## Integrate Microsoft endpoint security with your RMM tools and PSA software
 
 If you're a Microsoft Managed Service Provider \(MSP\), you can integrate Microsoft endpoint security with your remote monitoring and management \(RMM\) tools and your professional service automation \(PSA\) software to:
 
-- Get access to your customers' Microsoft Defender portal to [address detected threats and incidents](https://learn.microsoft.com/en-us/defender-business/mdb-respond-mitigate-threats).
+- Access your customers' Microsoft Defender portal to [address detected threats and incidents](https://learn.microsoft.com/en-us/defender-business/mdb-respond-mitigate-threats).
 - Get [email notifications](https://learn.microsoft.com/en-us/defender-business/mdb-email-notifications) about new alerts or vulnerabilities across your customer organization.
 - Fetch and view [incidents and alerts](https://learn.microsoft.com/en-us/defender-business/mdb-view-manage-incidents) with your security information and event management \(SIEM\) tools.
 - Orchestrate [remediation actions](https://learn.microsoft.com/en-us/defender-business/mdb-review-remediation-actions), such as approving actions following automated investigations, or taking manual response actions on a device.
 
-Integration can be done by using the [Defender for Endpoint APIs](https://learn.microsoft.com/en-us/defender-endpoint/api/management-apis). Use the following resources to learn more:
+Use the [Defender for Endpoint APIs](https://learn.microsoft.com/en-us/defender-endpoint/api/management-apis) to set up the integration. Use the following resources to learn more:
 
 | Resource | Description |
 | --- | --- |

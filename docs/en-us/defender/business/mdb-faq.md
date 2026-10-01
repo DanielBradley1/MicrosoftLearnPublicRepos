@@ -7,7 +7,7 @@ Use this article to get answers to questions you might have about Defender for B
 
 ## How do I try or buy Defender for Business?
 
-We recommend working with a [Microsoft partner](https://www.microsoft.com/security/business/find-a-partner)
+We recommend working with a [Microsoft partner](https://www.microsoft.com/security/business/find-a-partner).
 
 If you prefer to try or buy Defender for Business on your own, go to the [Defender for Business](https://www.microsoft.com/security/business/endpoint-security/microsoft-defender-business) product page, and select the option to try or buy Defender for Business.
 
@@ -100,7 +100,7 @@ See [Attack surface reduction in Microsoft Defender for Business](https://learn.
 
 ## How do I run custom reports with Defender for Business?
 
-Defender for Business uses Defender for Endpoint APIs for all available capabilities. You can use the APIs with a reporting tool. As an example scenario, you can use a Power BI connector and schedule a PowerShell script to generate executive summaries formatted in HTML, and send those summaries via email
+Defender for Business uses Defender for Endpoint APIs for all available capabilities. You can use the APIs with a reporting tool. As an example scenario, you can use a Power BI connector and schedule a PowerShell script to generate executive summaries formatted in HTML, and send those summaries by email.
 
 For more information, see the following resources:
 
@@ -140,7 +140,7 @@ For more information, see [Microsoft 365 User Subscription Suites for Small and 
 
 [Defender for Business](https://learn.microsoft.com/en-us/defender-business/mdb-overview) is designed for small and medium-sized businesses who have up to 300 users. Capabilities in Defender for Business include next-generation protection, attack surface reduction, endpoint detection & response \(EDR\), and automated investigation and remediation. Defender for Business also features [simplified configuration](https://learn.microsoft.com/en-us/defender-business/mdb-setup-configuration) and [device onboarding options](https://learn.microsoft.com/en-us/defender-business/mdb-onboard-devices) that streamline the overall setup and configuration process.
 
-[Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint) is an enterprise endpoint security platform designed to help organizations prevent, detect, investigate, and respond to advanced threats
+[Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint) is an enterprise endpoint security platform designed to help organizations prevent, detect, investigate, and respond to advanced threats.
 
 - Defender for Endpoint Plan 1 includes next-generation protection and attack surface reduction capabilities
 - Defender for Endpoint Plan 2 extends Plan 1 capabilities with core vulnerability management capabilities, EDR, automated investigation & remediation, threat hunting, and six months of data retention
@@ -184,7 +184,7 @@ You can view your current subscriptions and licenses on the **Licenses** page of
 
 Also see [Understand subscriptions and licenses in Microsoft 365 for business](https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/subscriptions-and-licenses).
 
-## See also
+## Related content
 
 - [Overview of Microsoft 365 Business Premium](https://learn.microsoft.com/en-us/microsoft-365/business-premium/)
 - [Overview of Defender for Business](https://learn.microsoft.com/en-us/defender-business/mdb-overview)

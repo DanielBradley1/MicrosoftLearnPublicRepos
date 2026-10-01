@@ -11,7 +11,7 @@ Another important step is to ensure SecOps team members have the appropriate per
 
 ## Integrate user reported Teams items into SecOps incident response
 
-When users report Teams messages or calls as malicious or non malicious, the reported items are sent to Microsoft and/or the reporting mailbox as defined by the [user reported settings in Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/submissions-user-reported-messages-custom-mailbox).
+When users report Teams messages or calls as malicious or non malicious, the reported items are sent to Microsoft and/or the reporting mailbox as defined by the [Teams user reported settings in Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/submissions-teams#user-reporting-settings-for-teams-items).
 
 The following alerts are automatically generated and correlated to Defender Incidents for malicious and non malicious user reported items in Teams:
 

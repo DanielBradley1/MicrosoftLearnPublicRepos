@@ -3,7 +3,7 @@
 
 # Attack surface reduction in Microsoft Defender for Business
 
-*Attack surfaces* are all the places and ways the network and devices in your organization are vulnerable to attacks. For example:
+*Attack surfaces* are all the places and ways the network and devices in your organization are vulnerable to cyberattack. For example:
 
 - Unsecured devices.
 - Unrestricted access to URLs on company devices.
@@ -23,7 +23,7 @@ To help protect your network and devices, Microsoft Defender for Business includ
 
 Note
 
-Microsoft 365 Business Premium includes Microsoft Intune Plan 1, which is the recommended method to configure and deploy security features on devices. Standalone Defender for Business doesn't include Intune, so you need to use another configuration method \(for example, Group Policy or PowerShell locally on devices\).
+Microsoft 365 Business Premium includes Microsoft Intune Plan 1, which is the recommended method to configure and deploy security features on devices. Standalone Defender for Business doesn't include Intune, so you need to use another configuration method, for example, Group Policy or PowerShell locally on devices.
 
 - **Attack surface reduction \(ASR\) rules**: For more information, see [Deployment and configuration methods for ASR rules](https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-overview#deployment-and-configuration-methods-for-asr-rules) and [ASR rules deployment guide](https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-deployment).
 - **Controlled folder access \(CFA\)**: For more information, see [Deployment and configuration methods for CFA](https://learn.microsoft.com/en-us/defender-endpoint/controlled-folder-access-overview#deployment-and-configuration-methods-for-cfa).

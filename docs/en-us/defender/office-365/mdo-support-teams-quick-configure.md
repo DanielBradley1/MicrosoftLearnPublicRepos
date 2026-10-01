@@ -103,7 +103,7 @@ For complete instructions, see [User reported settings in Microsoft Teams](https
    If the value is ![](https://learn.microsoft.com/en-us/defender-office-365/media/scc-toggle-off.png) **Off**, move the toggle to ![](https://learn.microsoft.com/en-us/defender-office-365/media/scc-toggle-on.png) **On**, and then select **Save**.
 
    [![Screenshot of the 'Report a call toggle on the Call settings page in the Microsoft Teams admin center.](https://learn.microsoft.com/en-us/defender-office-365/media/submissions-teams-turn-on-off-tac-security-risk-call.png)](https://learn.microsoft.com/en-us/defender-office-365/media/submissions-teams-turn-on-off-tac-security-risk-call.png#lightbox)
-9. In the Microsoft Defender portal, go to the **User reported settings** page at [https://security.microsoft.com/securitysettings/userSubmission](https://security.microsoft.com/securitysettings/userSubmission).
-10. On the **User reported settings** page, go to the **Microsoft Teams** section, and verify **Monitor reported items in Microsoft Teams** is selected.
+9. In the Microsoft Defender portal, go to the **Teams user reported settings** page at [https://security.microsoft.com/securitysettings/teamsUserSubmission](https://security.microsoft.com/securitysettings/teamsUserSubmission).
+10. On the **Teams user reported settings** page, go to the **Microsoft Teams** section, and verify **Monitor reported items in Microsoft Teams** is selected.
 
 If it's not selected, select the check box, and then select **Save**.
