@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/chatwork-provisioning-tutorial -->
-<!-- Sitemap-Last-Modified: 2026-04-13 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Configure Chatwork for automatic user provisioning with Microsoft Entra ID
 

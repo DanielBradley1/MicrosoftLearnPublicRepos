@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/guidance-it-architects-source-of-authority -->
-<!-- Sitemap-Last-Modified: 2025-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Microsoft Entra cloud-first identity guidance for IT architects
 
