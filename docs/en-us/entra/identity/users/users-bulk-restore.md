@@ -3,35 +3,32 @@
 
 # Bulk restore deleted users in Microsoft Entra ID
 
-## Overview
-
 Microsoft Entra ID supports bulk user restore operations and downloading lists of users, groups, and group members.
+
+## Prerequisites
+
+To bulk restore users in the Microsoft Entra admin center, sign in as at least a User Administrator.
 
 ## Understand the CSV template
 
 Download and fill in the CSV template to help you successfully restore Microsoft Entra users in bulk. The CSV template you download might look like this example:
 
-![Screenshot of spreadsheet for uploading and call-outs explaining the purpose and values for each row and column.](https://learn.microsoft.com/en-us/entra/identity/users/media/users-bulk-restore/understand-template.png)
+![Screenshot of a bulk restore CSV template with the required Object ID column.](https://learn.microsoft.com/en-us/entra/identity/users/media/users-bulk-restore/understand-template.png)
 
 ### CSV template structure
 
 The rows in a downloaded CSV template are as follows:
 
-- **Version number**: The first row containing the version number \(for example, `version:v1.0`\) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
-- **Column headings**: The format of the column headings is <*Item name*> \[PropertyName\] <*Required or blank*>. For example, `Object ID [objectId] Required`. Some older versions of the template might have slight variations.
-- **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
-
-Note
-
-CSV template formats vary by operation. Some templates, such as bulk create or delete users, include `version:v1.0` as the first row. Other templates, such as group member operations, start with column headers. Download the template for your specific operation from the portal. Don't add a version row or any other row that isn't in the downloaded template. Keep any version row and column header row unchanged.
+- **Column headings**: Preserve `Object ID [objectId] Required` exactly as downloaded.
+- **Examples row**: You can keep the examples row in the CSV file. Add the object IDs for the users that you want to restore on the following rows.
 
 ### Example CSV file
 
 Here's an example of a completed CSV file ready for upload:
 
 ```csv
-version:v1.0
 Object ID [objectId] Required
+aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 11bb11bb-cc22-dd33-ee44-55ff55ff55ff
 22cc22cc-dd33-ee44-ff55-66aa66aa66aa
@@ -39,12 +36,12 @@ Object ID [objectId] Required
 
 ### Additional guidance
 
-- Keep any version row and column header row in the upload template exactly as downloaded, or the upload can't be processed.
+- Preserve the column headers exactly as downloaded. If the template includes a version row, preserve it.
 - The required columns are listed first.
 - We don't recommend adding new columns to the template. Any additional columns you add are ignored and not processed.
 - We recommend that you download the latest version of the CSV template as often as possible.
 
-## To bulk restore users
+## Bulk restore users
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 2. Select Microsoft Entra ID.
@@ -52,9 +49,7 @@ Object ID [objectId] Required
 4. On the **Deleted users** page, select **Bulk restore** to upload a valid CSV file of properties of the users to restore.
 
    ![Screenshot of selecting the bulk restore command on the Deleted users page.](https://learn.microsoft.com/en-us/entra/identity/users/media/users-bulk-restore/bulk-restore.png)
-5. Open the CSV template and add a line for each user you want to restore. The only required value is **ObjectID**. Then save the file.
-
-   ![Screenshot of selecting a local CSV file in which you list the users you want to add](https://learn.microsoft.com/en-us/entra/identity/users/media/users-bulk-restore/upload-button.png)
+5. Open the CSV template, preserve the column header exactly as downloaded, and add a line for each user you want to restore. The only required value is **Object ID**. Then save the file.
 6. On the **Bulk restore** page, under **Upload your csv file**, browse to the file. When you select the file and select **Submit**, validation of the CSV file starts.
 7. When the file contents are validated, you see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
 8. When your file passes validation, select **Submit** to start the bulk operation that restores the users.
@@ -101,7 +96,7 @@ Note
 
 When performing bulk operations, such as import or create, you can encounter a problem if the bulk operation doesn't complete within the hour. To work around this issue, we recommend splitting the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, essentially you limit the data returned by the bulk operation. For more information, see [Bulk operations service limitations](https://learn.microsoft.com/en-us/entra/fundamentals/bulk-operations-service-limitations).
 
-## Next steps
+## Related content
 
 - [Bulk import users](https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-add)
 - [Bulk delete users](https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-delete)

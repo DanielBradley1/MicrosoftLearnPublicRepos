@@ -20,11 +20,11 @@ The rows in a downloaded CSV template are:
 
 Note
 
-CSV template formats vary by operation. Some templates, such as bulk create or delete users, include `version:v1.0` as the first row. Other templates, such as group member operations, start with column headers. Download the template for your specific operation from the portal. Don't add a version row or any other row that isn't in the downloaded template. Keep any version row and column header row unchanged.
+CSV template formats vary by operation and can change. Download the latest template for your operation from the Microsoft Entra admin center. Preserve the column headers exactly as downloaded. If the template includes a version row, preserve it. If the template doesn't include a version row, don't add one. Follow the operation-specific instructions for handling the examples row.
 
 ### More guidance
 
-- Keep any version row and column header row in the upload template exactly as downloaded, or the upload can't be processed.
+- Preserve the column headers exactly as downloaded. If the template includes a version row, preserve it.
 - The required columns are listed first.
 - We don't recommend adding new columns to the template. Any additional columns you add are ignored and not processed.
 - We recommend that you download the latest version of the CSV template as often as possible.

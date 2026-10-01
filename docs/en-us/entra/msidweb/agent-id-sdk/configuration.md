@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/configuration -->
-<!-- Sitemap-Last-Modified: 2026-08-13 -->
+<!-- Sitemap-Last-Modified: 2026-09-15 -->
 
 # Configuration reference: Microsoft Entra ID Auth SDK \(sidecar\) settings
 

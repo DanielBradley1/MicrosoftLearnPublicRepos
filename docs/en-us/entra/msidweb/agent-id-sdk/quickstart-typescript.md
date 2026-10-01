@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/quickstart-typescript -->
-<!-- Sitemap-Last-Modified: 2026-06-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-15 -->
 
 # Sign in users and call downstream APIs with the Microsoft Entra ID Auth SDK \(sidecar\) in TypeScript
 
