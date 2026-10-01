@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2025-08-12 -->
 
 # App governance in Microsoft Defender for Cloud Apps
 
