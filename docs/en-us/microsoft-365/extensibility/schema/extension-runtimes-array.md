@@ -44,7 +44,10 @@ Properties that reference this object type:
       "pinnable": {boolean},
       "view": "{string}",
       "multiselect": {boolean},
-      "supportsNoItemContext": {boolean}
+      "supportsNoItemContext": {boolean},
+      "taskpane": {
+        taskpane object
+      }
     }
   ],
   "customFunctions": {

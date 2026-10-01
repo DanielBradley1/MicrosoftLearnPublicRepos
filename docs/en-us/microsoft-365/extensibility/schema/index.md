@@ -4319,12 +4319,9 @@ Commit history: [https://github.com/microsoft/json-schemas/commits/live/teams/vD
 https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json
 ```
 
-### June 2026
+### September 2026
 
-- Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) property.
-- Added the new [`supportsSessions`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-bots?view=m365-app-1.30#supportssessions) property to enable bots in Teams to have topic-based conversations with users.
-- Added support for abbreviated application name in app bar using the new [`abbreviated`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-name?view=m365-app-1.30#abbreviated) property.
-- Increased `maxLength` in [`validDomains`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root?view=m365-app-1.30#validdomains) array from 16 to 100 to enable legacy Office Add-in migration to new unified manifest.
+Added [nestedAppAuthInfo](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-web-application-info-nested-app-auth-info?view=m365-app-1.30) field to enable prefetching the [Nested App Authentication](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/authentication/nested-authentication) token.
 
 ## Previous preview releases
 
@@ -4333,6 +4330,13 @@ https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.sc
 
 <details>
 <summary>**2026**</summary>
+
+### June 2026
+
+- Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) property.
+- Added the new [`supportsSessions`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-bots?view=m365-app-1.30#supportssessions) property to enable bots in Teams to have topic-based conversations with users.
+- Added support for abbreviated application name in app bar using the new [`abbreviated`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-name?view=m365-app-1.30#abbreviated) property.
+- Increased `maxLength` in [`validDomains`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root?view=m365-app-1.30#validdomains) array from 16 to 100 to enable legacy Office Add-in migration to new unified manifest.
 
 ### May 2026
 

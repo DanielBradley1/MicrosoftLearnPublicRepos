@@ -94,7 +94,7 @@ Properties that reference this object type:
     },
     "botId": {
       "$ref": "#/definitions/guid",
-      "description": "The Microsoft App ID specified for the bot powering the compose extension in the Bot Framework portal (https://dev.botframework.com/bots)."
+      "description": "The Microsoft App ID specified for the bot powering the compose extension in the Bot Framework portal (https://dev.botframework.com/bots)"
     },
     "composeExtensionType": {
       "type": "string",

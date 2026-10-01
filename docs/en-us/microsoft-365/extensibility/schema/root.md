@@ -737,7 +737,7 @@
           },
           "contentBotId": {
             "$ref": "#/definitions/guid",
-            "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)."
+            "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)"
           },
           "websiteUrl": {
             "$ref": "#/definitions/anyHttpUrl",
@@ -809,7 +809,7 @@
         "properties": {
           "botId": {
             "$ref": "#/definitions/guid",
-            "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)."
+            "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)"
           },
           "configuration": {
             "type": "object",
@@ -1519,6 +1519,11 @@
               "claims": {
                 "type": "string",
                 "description": "An optional JSON formatted object of client capabilities that represents if the resource server is CAE capable. Do not use an empty string for this value. If unsupported, keep the field undefined. If supported, use the following string exactly: \u0027{\u0022access_token\u0022:{\u0022xms_cc\u0022:{\u0022values\u0022:[\u0022CP1\u0022]}}}\u0027. More info on client capabilities here: https://learn.microsoft.com/en-us/entra/identity-platform/claims-challenge?tabs=dotnet#how-to-communicate-client-capabilities-to-microsoft-entra-id ",
+                "minLength": 1
+              },
+              "clientId": {
+                "type": "string",
+                "description": "Optional Microsoft Entra ID application (client) ID to use for Nested App Authentication (NAA) for this specific manifest entry. If specified, this value overrides the client ID defined in webApplicationInfo.id. If omitted, webApplicationInfo.id is used as the default client ID.",
                 "minLength": 1
               }
             },
@@ -2535,6 +2540,19 @@
           "type": "boolean",
           "description": "Whether allows task pane add-ins to activate without the Reading Pane enabled or a message selected. ",
           "default": false
+        },
+        "taskpane": {
+          "type": "object",
+          "description": "Configuration for the task pane opened by this action.",
+          "properties": {
+            "preferredWidth": {
+              "type": "number",
+              "description": "Specifies the preferred initial width of the task pane in CSS pixels. This value is treated as a hint and may be adjusted or ignored by the host. User-resized widths always take precedence. Must be a positive number.",
+              "minimum": 0,
+              "exclusiveMinimum": true
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false,
@@ -4185,7 +4203,7 @@
           "properties": {
             "botId": {
               "$ref": "#/definitions/guid",
-              "description": "The unique Microsoft app ID for the bot as registered with Bot Framework portal (https://dev.botframework.com/bots)."
+              "description": "The unique Microsoft app ID for the bot as registered with the Bot Framework."
             }
           },
           "additionalProperties": false

@@ -4102,6 +4102,22 @@ string
 ✅
 
 **Constraints**  
+
+
+**Supported values**  
+The string value must not be 'null' \(case insensitive\) and must not be empty or whitespace only.
+
+#### description.short
+
+This property specifies a localized value for the [description.short](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-description?view=m365-app-1.30#short) property. A short description of the app, used when space is limited. It replaces the corresponding string from the app manifest with the value provided here.
+
+**Type**  
+string
+
+**Required**  
+✅
+
+**Constraints**  
 Maximum string length: 80
 
 **Supported values**  

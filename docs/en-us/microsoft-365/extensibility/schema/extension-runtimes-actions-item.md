@@ -22,6 +22,88 @@ Properties that reference this object type:
   "pinnable": {boolean},
   "view": "{string}",
   "multiselect": {boolean},
+  "supportsNoItemContext": {boolean},
+  "taskpane": {
+    "preferredWidth": {number}
+  }
+}
+```
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifier for this action. Maximum length is 64 characters. This value is passed to the code file.",
+      "maxLength": 64
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "executeFunction",
+        "openPage",
+        "executeDataFunction"
+      ],
+      "description": "executeFunction: Run a script function without waiting for it to finish. openPage: Open a page in a view. executeDataFunction: invoke command and retrieve data."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Display name of the action. Maximum length is 64 characters.",
+      "maxLength": 64
+    },
+    "pinnable": {
+      "type": "boolean",
+      "description": "Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection."
+    },
+    "view": {
+      "type": "string",
+      "description": "View where the page should be opened. Maximum length is 64 characters.  ",
+      "maxLength": 64
+    },
+    "multiselect": {
+      "type": "boolean",
+      "description": "Whether allows the action to have multiple selection.",
+      "default": false
+    },
+    "supportsNoItemContext": {
+      "type": "boolean",
+      "description": "Whether allows task pane add-ins to activate without the Reading Pane enabled or a message selected. ",
+      "default": false
+    },
+    "taskpane": {
+      "type": "object",
+      "description": "Configuration for the task pane opened by this action.",
+      "properties": {
+        "preferredWidth": {
+          "type": "number",
+          "description": "Specifies the preferred initial width of the task pane in CSS pixels. This value is treated as a hint and may be adjusted or ignored by the host. User-resized widths always take precedence. Must be a positive number.",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type"
+  ]
+}
+```
+
+- [Syntax](#tabpanel_2_syntax)
+- [Schema](#tabpanel_2_schema)
+
+```json
+{
+  "id": "{string}",
+  "type": "executeFunction | openPage | executeDataFunction",
+  "displayName": "{string}",
+  "pinnable": {boolean},
+  "view": "{string}",
+  "multiselect": {boolean},
   "supportsNoItemContext": {boolean}
 }
 ```
@@ -77,8 +159,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_2_syntax)
-- [Schema](#tabpanel_2_schema)
+- [Syntax](#tabpanel_3_syntax)
+- [Schema](#tabpanel_3_schema)
 
 ```json
 {
@@ -346,6 +428,22 @@ boolean
 
 **Supported values**  
 Default value: `False`.
+
+#### taskpane
+
+Configuration for the task pane opened by this action.
+
+**Type**  
+[taskpane](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-runtimes-actions-item-taskpane?view=m365-app-1.30)
+
+**Required**  
+—
+
+**Constraints**  
+
+
+**Supported values**  
+
 
 ## Examples
 

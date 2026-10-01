@@ -74,7 +74,7 @@ Properties that reference this object type:
   "properties": {
     "botId": {
       "$ref": "#/definitions/guid",
-      "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)."
+      "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)"
     },
     "configuration": {
       "type": "object",
