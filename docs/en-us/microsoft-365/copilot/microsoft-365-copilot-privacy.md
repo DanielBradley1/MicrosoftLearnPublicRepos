@@ -204,6 +204,6 @@ We aim to help our customers use our AI products responsibly, sharing our learni
 
 ## Related articles
 
-- [Microsoft Copilot requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements)
+- [Microsoft Copilot requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements)
 - [Get started with Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup)
 - [Microsoft Copilot adoption site](https://adoption.microsoft.com/copilot/)

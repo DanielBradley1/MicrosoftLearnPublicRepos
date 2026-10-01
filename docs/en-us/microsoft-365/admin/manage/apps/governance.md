@@ -216,13 +216,9 @@ You can always directly edit sharing rules and content security settings, regard
 
 ## Configure source and deployment controls
 
-The Copilot Managed Runtime platform provides separate controls for public GitHub repositories and externally built artifacts. Both settings are disabled by default and can be configured for an environment or environment group.
+Copilot Managed Runtime supports external repositories owned by GitHub Enterprise Cloud organizations. Configure repository visibility and other repository management policies in GitHub Enterprise Cloud. For more information, see [Enforcing repository management policies in your enterprise](https://docs.github.com/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#about-policies-for-repository-management-in-your-enterprise).
 
-When an environment group has a published rule, it supersedes and locks the corresponding environment setting. Per-environment exceptions aren't supported. For more information, see [Environment groups](https://learn.microsoft.com/en-us/power-platform/admin/environment-groups#rules).
-
-### Allow public GitHub repositories
-
-The **Allow public GitHub repository** setting controls whether Copilot Managed Runtime can connect to public GitHub repositories. When it's off, developers must use private repositories. Before you turn it on, review your organization's source-code governance, security, privacy, and compliance requirements. For details, see [Setting repository visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility).
+Copilot Managed Runtime provides a separate control for externally built artifacts. This setting is disabled by default and can be configured for an environment or environment group. When an environment group has a published rule, it supersedes and locks the corresponding environment setting. Per-environment exceptions aren't supported. For more information, see [Environment groups](https://learn.microsoft.com/en-us/power-platform/admin/environment-groups#rules).
 
 ### External artifact deployment
 
@@ -232,20 +228,20 @@ Important
 
 Your organization is responsible for validating externally built artifacts, securing the build pipeline, and confirming that artifacts meet its security, compliance, and software supply-chain requirements.
 
-### Configure the settings
+### Configure external artifact deployment
 
-To configure either setting:
+To configure the setting:
 
 1. Sign in to the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
 2. Go to **Copilot** > **Settings** > **Managed apps**.
-3. Select **GitHub settings** or **External artifacts in managed apps**.
+3. Select **External artifacts in managed apps**.
 4. Select **Environment groups** or **Environments**, select the applicable group or environment, and then enable the setting.
 
 For environment groups, you can instead use the group-management experience:
 
 1. In the Power Platform admin center, go to **Manage** > **Environment groups**.
 2. Select the environment group, and then open **Rules**.
-3. Open the applicable Copilot Managed Runtime rule, enable the setting, and then save the change.
+3. Open **External artifacts in managed apps**, enable the setting, and then save the change.
 
 Note
 

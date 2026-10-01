@@ -121,4 +121,3 @@ Microsoft provides controls to help protect against both types of prompt injecti
 
 - [Understand AI functionality and models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/ai-models-overview).
 - See [Secure and govern Microsoft Copilot: Foundational deployment guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance) \(deployment blueprint\).
-- See [Microsoft Copilot data and compliance readiness](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements-data-compliance).

@@ -77,5 +77,5 @@ This list of endpoints isn't exhaustive and might be updated over time. For the 
 ## Additional resources
 
 - [Microsoft Copilot app overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-overview)
-- [Microsoft Copilot requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements)
+- [Microsoft Copilot requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements)
 - [Manage connection endpoints for Windows 10 Enterprise, version 1903](https://learn.microsoft.com/en-us/windows/privacy/manage-windows-1903-endpoints)

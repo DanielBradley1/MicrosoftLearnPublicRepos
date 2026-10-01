@@ -36,7 +36,7 @@ To ensure a smooth transition to Microsoft Copilot, use the following readiness 
 - **Review SharePoint Search and Advanced Management Policies**: Use SharePoint Advanced Management to control access to content, prevent oversharing, and manage content lifecycle. For more information, see [Get ready for Microsoft Copilot with SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/get-ready-copilot-sharepoint-advanced-management).
 
   Additionally, consider implementing restricted SharePoint search to limit the discoverability of sensitive content. For more information, see [Secure & governed data foundation for Microsoft Copilot: A deployment blueprint](https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance).
-- **Ensure network compliance**: Make sure that your network meets the requirements for Microsoft Copilot services. For more information, see [Microsoft Copilot network requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements#network-requirements).
+- **Ensure network compliance**: Make sure that your network meets the requirements for Microsoft Copilot services. For more information, see [Microsoft Copilot network requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#network-requirements).
 
 ## Security measures
 

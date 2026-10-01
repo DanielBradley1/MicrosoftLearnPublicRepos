@@ -50,7 +50,7 @@ To learn more, see [Microsoft Copilot license plans](https://learn.microsoft.com
 
 Microsoft Copilot integrates with your Microsoft 365 apps, including Microsoft Teams. To use Microsoft Copilot with your apps, make sure that your Microsoft 365 apps and network meet the requirements, and that your app privacy settings allow Copilot.
 
-To learn more, see [Microsoft 365 app and network requirements for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements).
+To learn more, see [Microsoft 365 app and service requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#microsoft-365-app-and-service-requirements).
 
 ## Step 4 - Set up Copilot and assign licenses
 

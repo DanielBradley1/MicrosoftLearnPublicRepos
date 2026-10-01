@@ -95,12 +95,11 @@ By default, all eligible users can use an enabled Copilot Studio app creation pa
 
 ## Control source and deployment options
 
-Administrators can configure these independent controls for an individual environment or an environment group:
+Copilot Managed Runtime supports external repositories owned by GitHub Enterprise Cloud organizations. Configure repository visibility and other repository management policies in GitHub Enterprise Cloud. For more information, see [Enforcing repository management policies in your enterprise](https://docs.github.com/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#about-policies-for-repository-management-in-your-enterprise).
 
-- **Allow public GitHub repository** controls whether Copilot Managed Runtime can connect to public GitHub repositories.
-- **External artifacts in Copilot Managed Runtime** controls whether developers can deploy prebuilt artifacts produced outside the Microsoft-managed build system.
+Administrators can use **External artifacts in managed apps** to control whether developers can deploy prebuilt artifacts produced outside the Microsoft-managed build system. The setting is disabled by default and can be configured for an individual environment or an environment group.
 
-Both settings are disabled by default. See [Configure source and deployment controls](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#configure-source-and-deployment-controls).
+See [Configure source and deployment controls](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#configure-source-and-deployment-controls).
 
 ## Govern apps
 
