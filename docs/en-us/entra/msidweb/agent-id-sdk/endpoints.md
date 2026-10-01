@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/endpoints -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-06-16 -->
 
 # Endpoints reference: Microsoft Entra ID Auth SDK \(sidecar\) HTTP API
 

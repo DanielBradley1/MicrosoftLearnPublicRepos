@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-08-05 -->
 
 # Choose a telephony provider for SMS and voice authentication
 
