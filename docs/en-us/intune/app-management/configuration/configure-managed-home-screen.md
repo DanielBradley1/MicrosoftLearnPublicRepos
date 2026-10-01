@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-home-screen -->
-<!-- Sitemap-Last-Modified: 2026-04-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Configure the Microsoft Managed Home Screen App for Android Enterprise
 
