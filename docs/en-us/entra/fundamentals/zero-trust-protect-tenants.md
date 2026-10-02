@@ -81,11 +81,11 @@ External accounts with permissions to read directory object permissions provide 
 
 - [Restrict guest access to their own directory objects](https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure#to-configure-guest-user-access)
 
-### App instance property lock is configured for all multitenant applications
+### App instance property lock is configured for all applications
 
-App instance property lock prevents changes to sensitive properties of a multitenant application after the application is provisioned in another tenant. Without a lock, critical properties such as application credentials can be maliciously or unintentionally modified, causing disruptions, increased risk, unauthorized access, or privilege escalations.
+App instance property lock prevents changes to sensitive properties of an application's service principal. The lock applies to both single-tenant and multitenant applications. Without a lock, critical properties such as application credentials can be maliciously or unintentionally modified, causing disruptions, increased risk, unauthorized access, or privilege escalations.
 
-**Remediation action** Enable the app instance property lock for all multitenant applications and specify the properties to lock.
+**Remediation action** Enable the app instance property lock for all applications, including single-tenant and multitenant applications, and specify the properties to lock.
 
 - [Configure an app instance lock](https://learn.microsoft.com/en-us/entra/identity-platform/howto-configure-app-instance-property-locks#configure-an-app-instance-lock)
 

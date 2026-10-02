@@ -3,7 +3,7 @@
 
 # How to configure app instance property lock for your applications
 
-Application instance lock is a feature in Microsoft Entra ID that allows sensitive properties of a multitenant application object to be locked for modification after the application is provisioned in another tenant. This feature provides application developers with the ability to lock certain properties if the application doesn't support scenarios that require configuring those properties.
+Application instance lock is a feature in Microsoft Entra ID that allows sensitive properties of an application's service principal to be locked for modification. It applies to both single-tenant and multitenant applications. This feature provides application developers with the ability to lock certain properties if the application doesn't support scenarios that require configuring those properties.
 
 ## What are sensitive properties?
 
@@ -15,7 +15,7 @@ The following property usage scenarios are considered as sensitive:
 
 Note
 
-App instance lock is enabled by default for all new applications created using the Microsoft Entra admin center.
+Since June 2026, the **Enable property lock** setting is **Enabled** by default for new applications. Review the lock settings to ensure they protect the sensitive properties your application uses.
 
 ## Configure an app instance lock
 
@@ -44,4 +44,4 @@ To configure an app instance lock:
 
 ## Configure app instance lock using Microsoft Graph
 
-You manage the app instance lock feature through the **servicePrincipalLockConfiguration** property of the [application](https://learn.microsoft.com/en-us/graph/api/resources/application) object of the multitenant app. For more information, see [Lock sensitive properties for service principals](https://learn.microsoft.com/en-us/graph/tutorial-applications-basics#lock-sensitive-properties-for-service-principals).
+You manage the app instance lock feature through the **servicePrincipalLockConfiguration** property of the [application](https://learn.microsoft.com/en-us/graph/api/resources/application) object. For more information, see [Lock sensitive properties for service principals](https://learn.microsoft.com/en-us/graph/tutorial-applications-basics#lock-sensitive-properties-for-service-principals).

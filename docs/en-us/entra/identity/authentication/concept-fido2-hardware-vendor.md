@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-fido2-hardware-vendor -->
-<!-- Sitemap-Last-Modified: 2026-09-17 -->
+<!-- Sitemap-Last-Modified: 2026-08-20 -->
 
 # Microsoft Entra ID attestation for passkey \(FIDO2\) vendors
 

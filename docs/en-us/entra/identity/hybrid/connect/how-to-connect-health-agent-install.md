@@ -122,7 +122,7 @@ To start the agent installation, double-click the *.exe* file that you downloade
 
 ![Screenshot that shows the Microsoft Entra Connect Health agent for AD DS installation window.](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install1.png)
 
-When you're prompted, sign in by using a Microsoft Entra account that has permissions to register the agent. By default, the Hybrid Identity Administrator account has permissions.
+When you're prompted, sign in by using a Microsoft Entra account that has permissions to register the agent. By default, the Global Administrator account has permissions.
 
 ![Screenshot that shows the sign-in window for Microsoft Entra Connect Health AD DS.](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/how-to-connect-health-agent-install/install3.png)
 

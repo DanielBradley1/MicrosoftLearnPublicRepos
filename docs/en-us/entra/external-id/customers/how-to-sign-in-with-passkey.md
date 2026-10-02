@@ -57,7 +57,7 @@ To configure a profile:
 
 ## Step 3: Build a passkey management experience for your application
 
-Your application needs a credential management experience so customers can register and manage their passkeys. Use the [FIDO2 provisioning APIs](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod) to build this into your app.
+Your application needs a credential management experience so signed-in customers can register and manage their own passkeys. Use the [credential management API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api) to build this experience with low-privilege delegated permissions.
 
 The credential management experience should enable customers to:
 
@@ -196,7 +196,7 @@ No. Registration requires the customer's physical presence and local biometric o
 
 ### Are there low-privilege APIs for building a credential management experience?
 
-Not yet. Low-privilege credential management APIs for passkeys are on the roadmap. Currently, use the [FIDO2 provisioning APIs](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod) to build your credential management experience.
+Yes. Use the [credential management API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api) to let signed-in customers list and register their own passkeys with delegated permissions.
 
 ### Can I use the same passkey across multiple domains \(related origins\)?
 
@@ -208,11 +208,11 @@ No. Passkeys aren't currently supported through native authentication APIs. Supp
 
 ### Is there an out-of-box passkey registration experience?
 
-No. Microsoft doesn't currently provide a built-in passkey registration experience for external tenants. Build a credential management experience in your application by using the [FIDO2 provisioning APIs](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod).
+No. Microsoft doesn't currently provide a built-in passkey registration experience for external tenants. Build a credential management experience in your application by using the [credential management API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api).
 
 ## Related content
 
-- [FIDO2 authentication method API reference](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod)
+- [Credential management API for Microsoft Entra External ID](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api)
 - [Create a sign-up and sign-in user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers)
 - [Add multifactor authentication \(MFA\) to an app](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-multifactor-authentication-customers)
 - [Authentication methods in external tenants](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-authentication-methods-customers)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/reference-provision-to-active-directory-faq -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-08-31 -->
 
 # Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ
 
