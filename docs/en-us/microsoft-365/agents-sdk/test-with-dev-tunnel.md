@@ -3,7 +3,7 @@
 
 # Test a local agent with a dev tunnel
 
-A dev tunnel gives Azure Bot Service a public HTTPS endpoint that forwards requests to your locally running agent. Use a tunnel when you need to test through Microsoft Teams, Microsoft 365 Copilot, or another channel that can't connect directly to `localhost`.
+A dev tunnel gives Azure Bot Service a public HTTPS endpoint that forwards requests to your locally running agent. Use a tunnel when you need to test through Microsoft Teams, Microsoft Copilot, or another channel that can't connect directly to `localhost`.
 
 For tests that don't require a hosted channel, use [Microsoft 365 Agents Playground](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/test-with-toolkit-project) instead.
 

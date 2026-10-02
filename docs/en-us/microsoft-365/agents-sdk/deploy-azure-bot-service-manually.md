@@ -8,9 +8,9 @@ Running a Microsoft 365 Agents SDK agent on Azure requires the following steps:
 - [Create and configure an Agent](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/quickstart)
 - [Provision an Azure Bot resource and configure authentication for the resource](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/provision-azure-bot-service-manually)
 - Deploy your agent to Azure
-- Optionally, deploy your agent to Teams or Microsoft 365 Copilot
+- Optionally, deploy your agent to Teams or Microsoft Copilot
 
-This document covers deploying an agent you created to Azure and Teams or Microsoft 365 Copilot.
+This document covers deploying an agent you created to Azure and Teams or Microsoft Copilot.
 
 If you didn't create an agent yet, start with [Quickstart: Create and test a basic agent using C#](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/quickstart-dotnet).
 
@@ -35,9 +35,9 @@ Once your agent code is deployed, it has a *base URL*, such as `example.azureweb
 
 To see your message in web chat, select **Test in Web Chat** in your Azure Bot resource and send messages to your agent.
 
-## Prepare your Teams and Microsoft 365 Copilot manifest
+## Prepare your Teams and Microsoft Copilot manifest
 
-For Microsoft Teams and Microsoft 365 Copilot, you need to create and upload a *manifest*. It isn't possible to provide a manifest example that covers all Teams or Microsoft 365 Copilot needs. Teams features require specific manifest content.
+For Microsoft Teams and Microsoft Copilot, you need to create and upload a *manifest*. It isn't possible to provide a manifest example that covers all Teams or Microsoft Copilot needs. Teams features require specific manifest content.
 
 These steps provide an overview of a basic "chat" style Teams agent.
 
@@ -60,4 +60,4 @@ These steps provide an overview of a basic "chat" style Teams agent.
 3. Under **Settings** and **Integrated Apps,** select **Upload Custom App**.
 4. Select the `manifest.zip` created in the previous section, and upload the file.
 
-After a short period of time, the agent shows up in Microsoft Teams and Microsoft 365 Copilot.
+After a short period of time, the agent shows up in Microsoft Teams and Microsoft Copilot.

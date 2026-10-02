@@ -3,7 +3,7 @@
 
 # Understanding Activity Protocol
 
-Activity Protocol is a [standard communication protocol](https://github.com/microsoft/Agents/blob/main/specs/activity/protocol-activity.md) used across Microsoft in many Microsoft SDKs, services, and clients. Activity Protocol is used by Microsoft 365 Copilot, Microsoft Copilot Studio, Microsoft Teams, and the Microsoft 365 Agents SDK. Activity Protocol defines the structure of an `Activity` and how messages, events, and interactions flow from a channel to your code and everywhere else in between. Agents can connect to one or more channels to interact with users and work with other agents. Activity Protocol standardizes the communication protocol with any client you're working with, including Microsoft and non-Microsoft clients, so that you don't have to create custom logic for each channel.
+Activity Protocol is a [standard communication protocol](https://github.com/microsoft/Agents/blob/main/specs/activity/protocol-activity.md) used across Microsoft in many Microsoft SDKs, services, and clients. Activity Protocol is used by Microsoft Copilot, Microsoft Copilot Studio, Microsoft Teams, and the Microsoft 365 Agents SDK. Activity Protocol defines the structure of an `Activity` and how messages, events, and interactions flow from a channel to your code and everywhere else in between. Agents can connect to one or more channels to interact with users and work with other agents. Activity Protocol standardizes the communication protocol with any client you're working with, including Microsoft and non-Microsoft clients, so that you don't have to create custom logic for each channel.
 
 ## What is an Activity?
 
@@ -152,7 +152,7 @@ An [Invoke](https://learn.microsoft.com/en-us/dotnet/api/microsoft.agents.core.m
 
 ### Typing
 
-A [Typing](https://learn.microsoft.com/en-us/dotnet/api/microsoft.agents.core.models.activitytypes.typing) type of `Activity` is a classification of activity to indicate someone is typing in a conversation. This activity is commonly seen between human to human conversations in Microsoft Teams client, for example. Typing activities aren't supported in every client. Notably, Microsoft 365 Copilot doesn't support typing activities.
+A [Typing](https://learn.microsoft.com/en-us/dotnet/api/microsoft.agents.core.models.activitytypes.typing) type of `Activity` is a classification of activity to indicate someone is typing in a conversation. This activity is commonly seen between human to human conversations in Microsoft Teams client, for example. Typing activities aren't supported in every client. Notably, Microsoft Copilot doesn't support typing activities.
 
 ```csharp
 await turnContext.SendActivityAsync(new Activity { Type = ActivityTypes.Typing }, cancellationToken); 
@@ -221,7 +221,7 @@ The following sections summarize considerations when working with common clients
 - Has specific channel data for Teams features, such as mentions and meeting info.
 - Supports invoke activities for task modules.
 
-### Microsoft 365 Copilot
+### Microsoft Copilot
 
 - Primarily focused on message activities.
 - Supports citations and references in responses.

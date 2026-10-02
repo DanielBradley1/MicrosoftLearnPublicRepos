@@ -60,9 +60,9 @@ To start testing, set the debug target in your project to be **Microsoft 365 Age
 
 The playground opens for you to test in a new browser window with your local host and shows the playground with it ready to test. Start sending messages to your agent to test its behavior.
 
-## Debug and test your agent in Microsoft Teams or Microsoft 365 Copilot
+## Debug and test your agent in Microsoft Teams or Microsoft Copilot
 
-You can also set the debug target to be directly in Microsoft Teams or Microsoft 365 Copilot.
+You can also set the debug target to be directly in Microsoft Teams or Microsoft Copilot.
 
 1. Select one of the debugging options as the debug target from the list of targets.
 
@@ -76,7 +76,7 @@ You can also set the debug target to be directly in Microsoft Teams or Microsoft
    ![Agent added successfully to Teams, prompt to open](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/media/toolkit-project-vs/vs-toolkit-agent-added-successfully-teams.png)
 3. Select **Open** on your new agent to open in Teams. You can ask your agent questions, directly in Teams. You can set breakpoints to work through debugging your experience when required.
 
-   ![Agent running in M365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/media/toolkit-project-vs/vs-toolkit-agent-m365-copilot.png)
+   ![Agent running in Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/media/toolkit-project-vs/vs-toolkit-agent-m365-copilot.png)
 
 ## Summary
 

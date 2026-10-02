@@ -145,7 +145,7 @@ For more information, see [Set up pay-as-you-go billing](https://learn.microsoft
 
 Administrators can permanently delete backups for selected sites, mailboxes, or users from **Removed Items** and can undo the request during the grace period. Automation can use the workload-specific Microsoft 365 Backup Storage commands.
 
-For more information, see [Offboard specific sites, mailboxes, or users](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding?view=o365-worldwide#offboarding-specific-sites-mailboxes-or-users).
+For more information, see [Offboard specific sites, mailboxes, or users](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding?view=o365-worldwide#offboard-specific-sites-mailboxes-or-users).
 </details>
 </details>
 

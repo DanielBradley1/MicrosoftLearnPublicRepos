@@ -17,7 +17,7 @@ The Agents SDK supports:
 
 ## Three problems the Agents SDK solves
 
-- **Your agent needs to work in more than one place.** Users don't all communicate through the same channel. Some use Microsoft Teams, some use Microsoft 365 Copilot, some use a company website, and some use non-Microsoft tools like Slack or Facebook Messenger. Without a framework, a developer needs to write separate integration code for each of those surfaces, each with its own message format, authentication scheme, and connection protocol.
+- **Your agent needs to work in more than one place.** Users don't all communicate through the same channel. Some use Microsoft Teams, some use Microsoft Copilot, some use a company website, and some use non-Microsoft tools like Slack or Facebook Messenger. Without a framework, a developer needs to write separate integration code for each of those surfaces, each with its own message format, authentication scheme, and connection protocol.
 
   The SDK provides a channel abstraction layer. You write your agent logic once, and the SDK translates incoming and outgoing messages to and from the format each channel expects. Adding a new channel doesn't require rewriting the agent's core behavior.
 - **You don't want to be locked into one AI service.** The choice of which AI service powers an agent, whether that's Azure AI Foundry, OpenAI, Semantic Kernel, or something else entirely, changes frequently as the landscape evolves and as different use cases emerge. An agent framework that bakes in a specific AI provider forces developers to rewrite large portions of their code when that choice changes.

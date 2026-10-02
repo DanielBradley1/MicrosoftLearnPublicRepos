@@ -9,7 +9,7 @@ The Microsoft 365 Agents SDK creates an agent that provides a container for deve
 - Store state or data persistently in the storage of your choice \(with built-in options for `Blobs` and `CosmosDb`\)
 - Manage activities and events
 
-The agent can be deployed in any channel, including Microsoft 365 Copilot and Microsoft Teams.
+The agent can be deployed in any channel, including Microsoft Copilot and Microsoft Teams.
 
 AI services typically contain chat endpoints, but can also include assistants or hosted agents, such as agents built in Copilot Studio. Orchestration can be added based on the business logic and how developers want to manage state and invoke tools/plugins. Developers can choose to implement multi-agent scenarios and patterns depending on their requirements, different tech platforms as required based on their defined business logic.
 

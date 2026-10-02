@@ -34,7 +34,7 @@ In-product labels are displayed in Microsoft 365 apps like Word, Excel, PowerPoi
 
 Important
 
-**Chat experiences in Microsoft 365 apps vary depending on your tenant configuration and license**. For more information, see [licensing prerequisites](https://www.microsoft.com/licensing/terms/productoffering/Microsoft365/EAEAS#clause-2213-h3-1), [Microsoft Copilot service descriptions](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot?context=/microsoft-365/copilot/context/copilot) and [Copilot license options](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing).  
+**Chat experiences in Microsoft 365 apps vary depending on your tenant configuration and license**. For more information, see [licensing prerequisites](https://www.microsoft.com/licensing/terms/productoffering/Microsoft365/EAEAS#clause-2213-h3-1), [Microsoft Copilot service descriptions](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot?context=/microsoft-365/copilot/context/copilot), [Copilot license options](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing), and [Microsoft Copilot requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements).  
   
 For more information about US government cloud, see [Understand Microsoft US government cloud environments for Microsoft 365 and Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/gov-overview).
 
@@ -46,13 +46,10 @@ For more information about US government cloud, see [Understand Microsoft US gov
 
 You can access Copilot Chat \(Basic\) through:
 
-- [https://m365copilot.com/](https://m365copilot.com/) \([Pin Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-chat-navbar)\)
-- Copilot Chat in Microsoft Edge \(select the Copilot icon in the upper-right corner of the Edge browser\). Use Copilot Chat to summarize website content and [some document types](https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-copilot-page-summary-results) displayed in Edge.
+- `copilot.cloud.microsoft`
+- Microsoft Copilot app \(web, desktop, mobile\)
+- Copilot Chat in Edge \(select the Copilot icon in the upper-right corner of the Edge browser\). Use Copilot Chat to summarize website content and [some document types](https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-copilot-page-summary-results) displayed in Edge.
 - Copilot Chat in Outlook and Teams
-- bing.com/chat
-- bing.com/copilotsearch
-- copilot.com
-- copilot.ai
 
 Note
 
@@ -70,8 +67,8 @@ To use organizational content with Copilot Chat:
 
 You can access Microsoft 365 Copilot \(Basic\) through:
 
-- [https://m365copilot.com/](https://m365copilot.com/)
-- Microsoft 365 desktop app
+- `copilot.cloud.microsoft`
+- [Microsoft Copilot app \(web, desktop, mobile\)](https://www.microsoft.com/microsoft-365-copilot/download-copilot-app?msockid=3fbdc68005c06723095dd00004ef664d)
 - Microsoft 365 apps \(Word, Excel, PowerPoint, and OneNote\)
 
 Note
@@ -117,8 +114,8 @@ Pay-as-you-go access to agents that use work data.
 
 You can access Microsoft 365 Copilot \(Premium\) through:
 
-- [https://m365copilot.com/](https://m365copilot.com/)
-- [Microsoft 365 desktop app](https://www.microsoft.com/microsoft-365-copilot/download-copilot-app?msockid=3fbdc68005c06723095dd00004ef664d)
+- `copilot.cloud.microsoft`
+- [Microsoft Copilot app \(web, desktop, mobile\)](https://www.microsoft.com/microsoft-365-copilot/download-copilot-app?msockid=3fbdc68005c06723095dd00004ef664d)
 - Microsoft 365 apps \(Word, Excel, PowerPoint, and OneNote\)
 
 Note
@@ -139,11 +136,10 @@ Note
 To ensure your users access Copilot Chat for work and education, instruct them to sign in with their Microsoft Entra account before accessing Copilot via the Microsoft Copilot app, copilot.cloud.microsoft, Copilot Chat in Edge, or productivity apps. Entry points for users signed in with a personal account \(MSA\):
 
 - Microsoft Copilot app \(web, desktop, mobile\)
-- copilot.microsoft.com
-- bing.com/chat
-- bing.com/copilotsearch
-- copilot.com
-- copilot.ai
+- Copilot Chat in Edge
+- Copilot Chat in Outlook and Teams
+- Copilot Chat agents for Word, Excel, and PowerPoint
+- Integrations within other Microsoft 365 apps and products
 
 You can manage whether your users can sign in to Microsoft 365 apps using a personal account \(MSA\). For more information, see [use tenant restrictions V2](https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2).
 

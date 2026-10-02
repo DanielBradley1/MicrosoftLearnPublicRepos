@@ -3,13 +3,13 @@
 
 # Azure Bot Framework SDK to Agents SDK migration guidance
 
-The Microsoft 365 Agents SDK enables developers to create and customize agents using the AI stack of their choice. Developers can create a custom engine agent \(CEA\) and deploy it to Microsoft 365 Copilot. To get started quickly with scaffolding and templates, use the Microsoft 365 Agents Toolkit for Visual Studio and Visual Studio Code. Developers can add their chosen models and orchestrator from Azure Foundry and Semantic Kernel, OpenAI Agents, LangChain, or even a custom built orchestrator. Developers can even choose to bring multiple agents built with different technologies, and surface the agents through Microsoft 365 Copilot.
+The Microsoft 365 Agents SDK enables developers to create and customize agents using the AI stack of their choice. Developers can create a custom engine agent \(CEA\) and deploy it to Microsoft Copilot. To get started quickly with scaffolding and templates, use the Microsoft 365 Agents Toolkit for Visual Studio and Visual Studio Code. Developers can add their chosen models and orchestrator from Azure Foundry and Semantic Kernel, OpenAI Agents, LangChain, or even a custom built orchestrator. Developers can even choose to bring multiple agents built with different technologies, and surface the agents through Microsoft Copilot.
 
-By using the Microsoft 365 Agents SDK, you can build an agent quickly and surface it on any channel, including Microsoft 365 Copilot and Microsoft Teams.
+By using the Microsoft 365 Agents SDK, you can build an agent quickly and surface it on any channel, including Microsoft Copilot and Microsoft Teams.
 
 The Agents SDK is designed to be unopinionated about the AI you use. You can implement agentic patterns without being locked into a tech stack.
 
-The Agents SDK takes advantage of specific client channel behavior, such as Microsoft 365 Copilot, Teams, and other non-Microsoft channels. It allows you to tailor your agent to client channels, including specific events or actions.
+The Agents SDK takes advantage of specific client channel behavior, such as Microsoft Copilot, Teams, and other non-Microsoft channels. It allows you to tailor your agent to client channels, including specific events or actions.
 
 ## Unsupported and deprecated packages
 

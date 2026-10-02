@@ -13,7 +13,7 @@ You can create an agent using the Microsoft 365 Agents SDK in three ways:
 
 ## Start your project with the toolkit
 
-If you start with the Agents Toolkit, you have everything set up to test by using the Agents Playground straight away. You can test in the Agents Playground either locally, or in Microsoft 365 Copilot or Microsoft Teams. This scenario is covered in:
+If you start with the Agents Toolkit, you have everything set up to test by using the Agents Playground straight away. You can test in the Agents Playground either locally, or in Microsoft Copilot or Microsoft Teams. This scenario is covered in:
 
 - [Visual Studio Code walkthrough](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/create-new-toolkit-project-vsc)
 - [Visual Studio walkthrough](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/create-new-toolkit-project-vs)

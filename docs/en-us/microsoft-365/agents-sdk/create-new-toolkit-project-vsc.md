@@ -86,16 +86,16 @@ You can debug and test your code with the new Microsoft 365 Agent Playground ava
 
    ![Teams App Test Tool with adaptive card in chat](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/media/toolkit-project-vsc/vsc-toolkit-teams-app-test-tool-adaptive-card.png)
 
-## Debug and test your agent in Microsoft 365 Copilot
+## Debug and test your agent in Microsoft Copilot
 
-When you finish testing locally in the Agents Playground, you can deploy to Azure Bot Service and configure for the Microsoft 365 Copilot channel. Ensure you're logged into a tenant that has access to Microsoft 365 Copilot.
+When you finish testing locally in the Agents Playground, you can deploy to Azure Bot Service and configure for the Microsoft Copilot channel. Ensure you're logged into a tenant that has access to Microsoft Copilot.
 
-1. Change the debug target to Copilot, so that you can debug using Microsoft 365 Copilot. Select **F5** on the keyboard or **Debug** to test. It takes a few minutes of preparation to make the agent available to Microsoft 365. Behind the scenes, the toolkit creates an app registration and Azure Bot Service record in Azure Bot Service, and deploys your project to your tenant along with a manifest.
+1. Change the debug target to Copilot, so that you can debug using Microsoft Copilot. Select **F5** on the keyboard or **Debug** to test. It takes a few minutes of preparation to make the agent available to Microsoft 365. Behind the scenes, the toolkit creates an app registration and Azure Bot Service record in Azure Bot Service, and deploys your project to your tenant along with a manifest.
 
    ![Select to debug in Copilot \(Edge\)](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/media/toolkit-project-vsc/vsc-toolkit-select-debug-m365-copilot-edge.png)
-2. Once your project is deployed, you should see Microsoft 365 Copilot load and be able to ask questions, add breakpoints, and debug, as required, directly in Microsoft 365 Copilot:
+2. Once your project is deployed, you should see Microsoft Copilot load and be able to ask questions, add breakpoints, and debug, as required, directly in Microsoft Copilot:
 
-   ![Test and debug in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/media/toolkit-project-vsc/vsc-toolkit-test-debug-m365-copilot.png)
+   ![Test and debug in Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/media/toolkit-project-vsc/vsc-toolkit-test-debug-m365-copilot.png)
 
 ## Summary
 

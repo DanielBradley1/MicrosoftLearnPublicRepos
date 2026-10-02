@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-06-23 -->
 
 # Manage Microsoft 365 Archive
 
