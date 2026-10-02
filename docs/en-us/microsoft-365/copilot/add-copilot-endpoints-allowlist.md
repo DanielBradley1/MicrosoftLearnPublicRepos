@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/add-copilot-endpoints-allowlist -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Add Microsoft Copilot endpoints to your allow list
 
