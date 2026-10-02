@@ -16,7 +16,7 @@ In short, this setting controls visibility, while Cost Management under the Copi
 When enabled:
 
 - Users can discover AI experiences \(for example, Copilot-powered agents and services like Copilot Cowork\) across Microsoft 365.
-- To use these experiences, administrators must complete setup in **Copilot > Cost management**, including configuring billing and spending policies. For more information, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+- To use these experiences, administrators must complete setup in **Copilot > Cost management**, including configuring billing and spending policies. For more information, see [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup).
 
 After the setting is not selected:
 
@@ -38,6 +38,6 @@ Use roles with the fewest permissions. Lower permissioned accounts help improve 
 
 ## Related articles
 
-- [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)
+- [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup)
 - [Usage-Based Billing and Cost Management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
 - [Cowork Usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/cowork-usage-report)

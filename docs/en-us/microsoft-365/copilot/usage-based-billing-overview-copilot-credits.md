@@ -3,13 +3,13 @@
 
 # Understand usage-based billing and cost management for Copilot Credits
 
-Microsoft's usage-based billing model charges customers based on actual usage, measured in Copilot Credits. This model complements fixed subscription licensing with a flexible payment option aligned to actual usage.
+Microsoft's usage-based billing model charges customers based on actual usage, measured in Copilot Credits. This model complements fixed subscription licensing with a flexible payment option that aligns to actual usage.
 
-Depending on the service, organizations can use fixed licensing, Copilot Credit Pre-purchase Plan \(P3\), pay-as-you-go billing, Prepaid Capacity packs or supported combinations of these billing methods. Administrators use the Cost management dashboard in the Microsoft 365 admin center to govern access, establish spending controls, manage credit requests, and monitor consumption.
+Depending on the service, organizations can use fixed licensing, the Copilot Credit Pre-purchase Plan \(P3\), pay-as-you-go billing, prepaid capacity packs, or supported combinations of these billing methods. Administrators use the Cost management dashboard in the Microsoft 365 admin center to govern access, establish spending controls, manage credit requests, and monitor consumption.
 
 Note
 
-To learn more about how to set up, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+To learn more about how to set up, see [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup).
 
 ## Watch: Microsoft Copilot Cost management
 
@@ -19,32 +19,32 @@ Check out this and other videos on our [YouTube channel](https://go.microsoft.co
 
 ## Understand Copilot Credits
 
-Copilot Credits are a common currency for eligible Microsoft services with usage-based billing. For more information on licensing details about Copilot Credits and services, see [Copilot Credits Guide](https://aka.ms/CopilotCredits/LicensingGuide).
+Copilot Credits are a common currency for eligible Microsoft services with usage-based billing. For more information about licensing details for Copilot Credits and services, see the [Copilot Credits Guide](https://aka.ms/CopilotCredits/LicensingGuide).
 
 ## Services managed by usage-based billing
 
 Microsoft will add more agents and services over time and provide notifications and updated content as they become available.
 
-Services managed by usage-based billing in the Microsoft admin center, now include:
+Services managed by usage-based billing in the Microsoft admin center now include:
 
 Microsoft 365 Copilot
 
 - Cowork \(Copilot license required\)
 - Advanced work in SharePoint \(Copilot license required\)
-- Advanced work in Onedrive \(Copilot license required\)
+- Advanced work in OneDrive \(Copilot license required\)
 - Work IQ API for custom apps and agents
 - Copilot Managed Runtime
 - Teams Phone Agent
 
-Spending policies can automatically apply to future supported Microsoft Copilot services and agents. The Auto-apply new services setting is enabled by default for spending policies. Administrators can turn off the setting for policies where future services and agents should be reviewed before they are added. For more information, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#select-agents-and-services).
+Spending policies can automatically apply to future supported Microsoft Copilot services and agents. The **Auto-apply new services** setting is enabled by default for spending policies. Administrators can turn off the setting for policies where future services and agents should be reviewed before they're added. For more information, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#select-agents-and-services).
 
 Important
 
 Review existing spending policies to determine whether automatic coverage is appropriate. No action is required when you want future supported services and agents to inherit the policy.
 
-In the Microsoft admin center **Copilot > Cost management**, admins can monitor Copilot Credit consumption and manage spending associated with the supported services such as **Cowork**, running apps hosted on the **Copilot Managed Runtime**, and **Work IQ API**.
+In the Microsoft admin center, **Copilot > Cost management**, admins can monitor Copilot Credit consumption and manage spending associated with the supported services such as **Cowork**, running apps hosted on the **Copilot Managed Runtime**, and **Work IQ API**.
 
-Building apps hosted on the Copilot Managed Runtime apps consumes Copilot Credits and follows the spending policies and credit allocations you configure in the product where you create the apps. For running apps, administrators can configure separate spending policies and credit allocations in the Microsoft 365 admin center using the **Copilot Managed Runtime** service.
+Building apps hosted on the Copilot Managed Runtime apps consumes Copilot Credits and follows the spending policies and credit allocations you configure in the product where you create the apps. For running apps, administrators can configure separate spending policies and credit allocations in the Microsoft 365 admin center by using the **Copilot Managed Runtime** service.
 
 For more information, see:
 
@@ -59,11 +59,11 @@ Estimate Cowork usage: Use the [Copilot Credit Estimator](https://aka.ms/Copilot
 
 Note
 
-If you are looking for information on other usage-based billing products, use the following articles:
+If you're looking for information about other usage-based billing products, use the following articles:
 
-- For Copilot Chat, SharePoint Agents, or Microsoft Copilot Retrieval API \(Preview\), see [Microsoft Copilot pay-as-you-go service overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview) .
+- For Copilot Chat, SharePoint Agents, or Microsoft Copilot Retrieval API \(Preview\), see [Microsoft Copilot pay-as-you-go service overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview).
 - For Copilot Studio, see [Copilot Studio pay-as-you-go](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing#copilot-studio-pay-as-you-go).
-- For non-Copilot services; Microsoft 365 Backup, Microsoft 365 SharePoint Storage, and High Volume Email, see [Set up and manage pay-as-you-go billing in the Billing node of the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-setup-billing-node).
+- For non-Copilot services such as Microsoft 365 Backup, Microsoft 365 SharePoint Storage, and High Volume Email, see [Set up and manage pay-as-you-go billing in the Billing node of the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-setup-billing-node).
 
 ## Manage usage-based billing in the Microsoft 365 admin center
 
@@ -82,7 +82,7 @@ Administrators can use the dashboard to:
 - Configure custom routing for credit requests.
 - Review consumption by spending policy, user, group, agent, service, and funding source.
 
-Supported reader-based roles can review consumption dashboards and reports without receiving permissions to change spending policies or billing configurations. This separation enables finance, operations, licensing, and governance stakeholders to review consumption information with read-only access. For more information, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#role-requirements).
+Supported reader-based roles can review consumption dashboards and reports without receiving permissions to change spending policies or billing configurations. This separation enables finance, operations, licensing, and governance stakeholders to review consumption information with read-only access. For more information, see [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup#roles-and-requirements).
 
 Note
 
@@ -96,18 +96,18 @@ The Configuration experience gives you a centralized place to enable usage-based
 
 Use the Configuration experience to:
 
-- Enable usage-based billing with flexible options including Copilot Credit Pre-purchase plan \(P3\), pay-as-you-go or existing Prepaid capacity packs.
+- Enable usage-based billing with flexible options including Copilot Credit Pre-purchase plan \(P3\), pay-as-you-go, or existing prepaid capacity packs.
 - Connect an Azure subscription to support billing.
 - Create spending policies that control who can consume Copilot Credits.
 - Select the agents and services covered by each policy.
 - Automatically apply a policy to future supported services and agents.
 - Configure policy-level and user-level spending limits.
 - Configure administrator alerts and user-level threshold notifications.
-- Manage your Copilot Credit balance by purchasing Copilot Credit Pre-Purchase Plan \(P3\) or using existing credits.
+- Manage your Copilot Credit balance by purchasing a Copilot Credit Pre-purchase plan \(P3\) or using existing credits.
 - Select the billing method for a policy.
 - Configure request-routing policies for supported credit requests.
 
-To learn more about how to set up, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+To learn more, see [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup).
 
 ### Monitor spending of Copilot Credits
 
@@ -138,16 +138,18 @@ In the **Users** view, administrators can review daily credit usage and credits 
 
 This feature allows organizations to understand, monitor, and optimize spending of Copilot Credits.
 
-To learn more about how you can monitor where Copilot is used, and how to optimize it, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+To learn more, see [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending).
 
 ### Next steps
 
-- For more information about setup, configuration, and monitoring, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+- For setup and configuration guidance, see [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup).
+- For monitoring guidance, see [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending).
 - For more information about discovery settings for AI experiences enabled by usage-based billing, see [Discovery setting for AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/discovery-setting-ai-experiences).
 
 ## Related articles
 
-- [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)
-- [Cowork Usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/cowork-usage-report)
-- [View Copilot Credit consumption in the Microsoft 365 admin center and on your Azure bill](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-compare-dashboard-views)
+- [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup)
+- [Manage AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)
+- [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending)
+- [Usage-based-billing guidance for CSPs, partner-managed customers, and MACC](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-csp-partner-macc)
 - [Understanding the user subscription license \(USL\) and usage-based billing \(UBB\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/user-subscription-license-usage-based-billing)

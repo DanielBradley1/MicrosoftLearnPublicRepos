@@ -44,7 +44,7 @@ Use **Copilot > Cost Management** in the Microsoft 365 admin center when you wan
 
 Navigate to **Copilot > Cost Management** to unlock AI experiences enabled by usage-based billing, to set up spending policies, and monitor how Copilot Credits are consumed across supported services. Everything in this view is expressed in Copilot Credits, not currency.
 
-For more information on how to monitor usage in the Microsoft 365 admin center, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits).
+For more information on how to monitor usage in the Microsoft 365 admin center, see [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending).
 
 Note
 
@@ -95,6 +95,6 @@ Copilot Credit pre-purchase plans \(P3\) provide discounted commit units that au
 ## Related articles
 
 - [Understand usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
-- [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)
+- [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending)
 - [View usage and billing information - Power Platform](https://learn.microsoft.com/en-us/power-platform/admin/pay-as-you-go-usage-costs)
 - [Understanding the user subscription license \(USL\) and usage-based billing \(UBB\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/user-subscription-license-usage-based-billing)

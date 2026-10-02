@@ -3,25 +3,29 @@
 
 # Set up Microsoft 365 for Google Workspace migration
 
-Check out [Microsoft 365 small business help](https://go.microsoft.com/fwlink/?linkid=2197659) on YouTube.
+This article helps you get started with Google Workspace migration after signing up for Microsoft 365 Business Premium.
 
-## Watch: Set up Microsoft 365 for Google Workspace migration
+## Open the Google Workspace migration tools
 
-Check out this video and others on our [YouTube channel](https://go.microsoft.com/fwlink/?linkid=2198101).
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com).
+2. Select **Setup** > **Migration resources**.
+3. Under **Self-service migration and import tools**, select **Explore migration & imports tools**.
+4. Select **Google Workspace** to open its migration page.
+
+## Prepare your organization
+
+Before starting migration:
+
+1. [Add and verify your business domain](https://learn.microsoft.com/en-us/microsoft-365/admin/moveto-microsoft-365/add-google-domain?view=o365-worldwide).
+2. For email migration, complete the [email migration prerequisites](https://learn.microsoft.com/en-us/microsoft-365/admin/moveto-microsoft-365/migrate-email?view=o365-worldwide#prerequisites-for-automated-batch-migration-from-google-workspace).
+3. [Set up device protection](https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/m365bp-devices-enrollment?view=o365-worldwide) when users' accounts and licenses are ready.
+
+Continue with [email migration](https://learn.microsoft.com/en-us/microsoft-365/admin/moveto-microsoft-365/migrate-email?view=o365-worldwide) or [Google Drive migration](https://learn.microsoft.com/en-us/microsoft-365/admin/moveto-microsoft-365/migrate-files-migration-manager?view=o365-worldwide).
+
+## Video overview
+
+Watch this video and find more on the [Microsoft 365 small business YouTube channel](https://go.microsoft.com/fwlink/?linkid=2198101).
 
 <iframe src="https://learn-video.azurefd.net/vod/player?id=fb358a9f-84fa-4911-a211-b8dd141fd5fc" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
-To migrate email, calendar, and contacts from Google Workspace, you need to set up Microsoft 365 Business Premium with a temporary domain until your business domain is ready to be used with your subscription.
-
-1. Sign in to [office.com](https://office.com), and choose **Admin**.
-2. In the Microsoft 365 admin center, choose **Go to guided setup**.
-3. Optionally, install Microsoft 365 productivity apps, then select **Continue**.
-4. Since you are migrating from Google Workspace, choose the default domain, and select **Use this domain**.
-5. Enter your user's names and desired usernames, verify your email address so you can receive your user's passwords, then select **Add users and assign licenses**.
-6. Enter the email addresses where your users will receive their new credentials, then select **Send email and continue**.
-7. Then **Continue** again to connect your temporary domain.
-8. Optionally choose to inform users in your organization about Teams, then select **Continue**.
-9. Expand and review your **Android and iOS settings**, then select **Create mobile app management policy**.
-10. Provide feedback, if desired, and choose **Go to admin center**.
-
-The next step in the process will be to set up protections for your organization.
+The video shows an earlier setup experience. Follow the written steps in this article for the migration entry route.

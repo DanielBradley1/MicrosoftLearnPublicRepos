@@ -57,6 +57,6 @@ No. Currently, you can only use `/cost` to check how many credits a task has alr
 
 - [Copilot Credits licensing guide](https://aka.ms/CopilotCredits/LicensingGuide)
 - [Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/index)
-- [Usage-based billing setup guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#get-started-with-usage-based-billing)
+- [Usage-based billing setup guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup#getting-started-with-usage-based-billing)
 - [Cost management in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits#understand-usage-based-billing-and-cost-management-for-copilot-credits)
 - [Understanding the user subscription license \(USL\) and usage-based billing \(UBB\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/user-subscription-license-usage-based-billing)

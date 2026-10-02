@@ -3,18 +3,19 @@
 
 # Cancel Google Workspace subscription
 
-Check out all of our small business content on [Small business help & learning](https://go.microsoft.com/fwlink/?linkid=2224585).
+This procedure is for a domain-verified Google Workspace organization that uses Gmail. Review Google's [cancellation guidance](https://knowledge.workspace.google.com/admin/billing/cancel-google-workspace) for your subscription's data and billing requirements, including any Cloud Identity exceptions.
 
-1. Sign in to [Google Admin](https://admin.google.com/) and go to **Billing**.
-2. In the **Subscriptions** list, choose your G Suite subscription, select **More**, and then select **Cancel subscription**.
-3. On the next page, select **Cancel subscription** again to confirm.
+Important
 
-   Important
+When you cancel your subscription, it's canceled immediately and you can't undo this action. Download the data you need before canceling; deleted Google Workspace data can't be restored.
 
-   When you cancel your subcription, it's canceled immediately and you can't undo this action.
+If you purchased Google Workspace through a reseller, follow the reseller's cancellation process instead of the Google Admin procedure below.
 
-   ![Screen shot of the Google Admin Billing page.](https://learn.microsoft.com/en-us/microsoft-365/media/cancelgoogleworspace.png?view=o365-worldwide)
+1. Sign in to [Google Admin](https://admin.google.com/) and go to **Billing** > **Subscriptions**.
+2. Choose your Google Workspace subscription and select **Cancel subscription**. If that option isn't shown, select **More** first.
+3. Review the cancellation terms for your subscription, and confirm cancellation.
 
 Note
 
-You might not see **Domain Registration** in your **Subscriptions** list if your DNS host provider isn't Google domains.
+- Canceling Google Workspace doesn't cancel a domain registration managed by a separate registrar or DNS host. Continue paying the registrar and preserve access to the registrar account.
+- Deleting your organization's Google Account is a separate, optional action. Before deleting it, make sure you can sign in to your registrar, including Squarespace if applicable, without the Google Workspace identity.
