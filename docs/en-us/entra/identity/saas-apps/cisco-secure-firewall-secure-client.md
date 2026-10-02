@@ -70,9 +70,15 @@ Follow these steps to enable Microsoft Entra SSO.
 5. On the **Set up single sign-on with SAML** page, enter the values for the following fields:
 
    1. In the **Identifier** text box, type a URL using the following pattern:  
-      `https://<SUBDOMAIN>.YourCiscoServer.com/saml/sp/metadata/<Tunnel_Group_Name>`
+      `https://<YOUR_CISCO_FQDN>/saml/sp/metadata/<Tunnel_Group_Name>`
    2. In the **Reply URL** text box, type a URL using the following pattern:  
       `https://<YOUR_CISCO_ANYCONNECT_FQDN>/+CSCOE+/saml/sp/acs?tgname=<Tunnel_Group_Name>`
+
+
+   Important
+
+
+   The **Identifier** and **Reply URL** values shown in this article are examples only. Before you configure SSO, verify that these values reference the correct endpoints for your Cisco Secure Firewall environment. Don't use example or placeholder domains in production. Contact Cisco TAC or the [Cisco Secure Firewall - Secure Client support team](https://www.cisco.com/c/en/us/support/index.html) for the appropriate values.
 
 
    Note
@@ -85,6 +91,12 @@ Follow these steps to enable Microsoft Entra SSO.
 
 
    For clarification about these values, contact Cisco TAC support. Update these values with the actual Identifier and Reply URL provided by Cisco TAC. Contact the [Cisco Secure Firewall - Secure Client support team](https://www.cisco.com/c/en/us/support/index.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+
+
+   Important
+
+
+   **Security best practice:** For new and existing deployments, verify that all configured **Identifier** and **Reply URL** values reference the intended endpoints and trusted domains before you enable SAML SSO. Example or placeholder domains are for documentation purposes only and must not be used in production.
 
 6. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate \(Base64\)** and select **Download** to download the certificate file and save it on your computer.
 
