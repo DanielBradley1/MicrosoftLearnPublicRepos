@@ -61,7 +61,7 @@ Creating apps with Copilot Managed Runtime by using the Cowork skill is governed
 | Creation path | Public preview | Frontier public preview |
 | --- | --- | --- |
 | **Cowork** | Not available. Admins are guided to sign up for Frontier. | On by default through [Frontier program](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork#build-apps-with-app-builder-frontier). |
-| **CLI** | Off by default. Admins can enable using environment settings and the environment group rule. | Off by default. Admins can enable using environment settings and the environment group rule. See [Copilot Managed Runtime SDK overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/?view=o365-worldwide). |
+| **CLI** | Off by default. Admins can enable using environment settings and the environment group rule. | Off by default. Admins can enable using environment settings and the environment group rule. See [Control whether apps can be created using the CLI](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#control-whether-apps-can-be-created-using-the-cli). |
 | **Copilot Studio** | On by default. Admins can manage it in the Microsoft 365 admin center. | On by default. Admins can manage it in the Microsoft 365 admin center. See [Create an app in Microsoft Copilot Studio \(preview\)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/create-app). |
 
 ### Permissions

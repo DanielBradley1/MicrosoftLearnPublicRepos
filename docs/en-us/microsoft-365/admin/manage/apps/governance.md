@@ -214,6 +214,17 @@ Configure CSP settings to control what apps built with Copilot Managed Runtime c
 
 You can always directly edit sharing rules and content security settings, regardless of whether the connector policy is Microsoft-curated or under your full control.
 
+## Control whether apps can be created using the CLI
+
+The **Allow app creation with the Copilot Managed Runtime command line interface \(CLI\)** setting controls whether users in an environment can create apps using the CLI.
+
+To configure the setting:
+
+1. Sign in to the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
+2. In the Power Platform admin center, go to **Manage** > **Environment groups**.
+3. Select the environment group, and then open **Rules**.
+4. Open **Allow app creation with the Copilot Managed Runtime command line interface \(CLI\)** rule, enable the setting, and then save the change.
+
 ## Configure source and deployment controls
 
 Copilot Managed Runtime supports external repositories owned by GitHub Enterprise Cloud organizations. Configure repository visibility and other repository management policies in GitHub Enterprise Cloud. For more information, see [Enforcing repository management policies in your enterprise](https://docs.github.com/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#about-policies-for-repository-management-in-your-enterprise).
