@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping -->
-<!-- Sitemap-Last-Modified: 2025-04-09 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Attribute mapping - Active Directory to Microsoft Entra ID
 

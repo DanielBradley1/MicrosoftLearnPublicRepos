@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-set-up-flexible-federated-identity-credential -->
-<!-- Sitemap-Last-Modified: 2026-08-17 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Set up a Flexible Federated identity credential \(preview\)
 

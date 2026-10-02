@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement -->
-<!-- Sitemap-Last-Modified: 2026-09-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Passkeys by default and retirement of Microsoft-provided SMS and voice authentication
 

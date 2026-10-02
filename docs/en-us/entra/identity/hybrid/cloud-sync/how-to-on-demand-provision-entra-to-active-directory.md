@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-on-demand-provision-entra-to-active-directory -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # On-demand provisioning - Microsoft Entra ID to Active Directory
 

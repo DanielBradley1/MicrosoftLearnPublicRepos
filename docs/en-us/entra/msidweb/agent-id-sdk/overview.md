@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/overview -->
-<!-- Sitemap-Last-Modified: 2026-06-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Overview of the Microsoft Entra ID Auth SDK \(sidecar\)
 
