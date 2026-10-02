@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/scenarios/signed-http-request -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-06-16 -->
 
 # Scenario: Signed HTTP requests \(SHR\)
 
