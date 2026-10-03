@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts -->
-<!-- Sitemap-Last-Modified: 2026-07-03 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Investigate OAuth app threat detection alerts
 

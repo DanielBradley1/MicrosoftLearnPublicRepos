@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/mde-plugin-wsl -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-09-15 -->
 
 # Microsoft Defender for Endpoint plug-in for Windows Subsystem for Linux \(WSL\)
 
