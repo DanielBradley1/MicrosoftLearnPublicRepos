@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/security-testing-best-practices -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-01-26 -->
 
 # Best Practices before Offensive Security Testing for Microsoft Defender for Identity
 

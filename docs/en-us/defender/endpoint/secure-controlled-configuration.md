@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/secure-controlled-configuration -->
-<!-- Sitemap-Last-Modified: 2026-09-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Configuration protection in Microsoft Defender for Endpoint
 
