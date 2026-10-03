@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/directory-service-accounts -->
-<!-- Sitemap-Last-Modified: 2026-05-28 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Directory Service Accounts for Microsoft Defender for Identity
 
