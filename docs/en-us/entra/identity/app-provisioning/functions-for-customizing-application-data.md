@@ -26,7 +26,7 @@ The maximum supported length for a single attribute mapping expression is **10,0
 
 ## List of Functions
 
-[Append](#append) [AppRoleAssignmentsComplex](#approleassignmentscomplex) [BitAnd](#bitand) [CBool](#cbool) [CDate](#cdate) [Coalesce](#coalesce) [ConvertToBase64](#converttobase64) [ConvertToUTF8Hex](#converttoutf8hex) [Count](#count) [CStr](#cstr) [DateAdd](#dateadd) [DateDiff](#datediff) [DateFromNum](#datefromnum) [DefaultDomain](#defaultdomain) [FormatDateTime](#formatdatetime) [Guid](#guid) [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) [IIF](#iif) [InStr](#instr) [IsNull](#isnull) [IsNullOrEmpty](#isnullorempty) [IsPresent](#ispresent) [IsString](#isstring) [Item](#item) [Join](#join) [Left](#left) [Len](#len) [Mid](#mid) [NormalizeDiacritics](#normalizediacritics) [Not](#not) [Now](#now) [NumFromDate](#numfromdate) [PCase](#pcase) [RandomString](#randomstring) [Redact](#redact) [RemoveDuplicates](#removeduplicates) [Replace](#replace) [SelectUniqueValue](#selectuniquevalue) [SingleAppRoleAssignment](#singleapproleassignment) [Split](#split) [StripSpaces](#stripspaces) [Switch](#switch) [ToLower](#tolower) [ToUpper](#toupper) [Word](#word)
+[Append](#append) [AppRoleAssignmentsComplex](#approleassignmentscomplex) [BitAnd](#bitand) [CBool](#cbool) [CDate](#cdate) [Coalesce](#coalesce) [ConvertToBase64](#converttobase64) [ConvertToUTF8Hex](#converttoutf8hex) [Count](#count) [CStr](#cstr) [DateAdd](#dateadd) [DateDiff](#datediff) [DateFromNum](#datefromnum) [DefaultDomain](#defaultdomain) [FormatDateTime](#formatdatetime) [Guid](#guid) [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) [IIF](#iif) [InStr](#instr) [IsNull](#isnull) [IsNullOrEmpty](#isnullorempty) [IsPresent](#ispresent) [IsString](#isstring) [Item](#item) [Join](#join) [Left](#left) [Len](#len) [Mid](#mid) [NormalizeDiacritics](#normalizediacritics) [NormalizeDiacriticsByCulture](#normalizediacriticsbyculture) [Not](#not) [Now](#now) [NumFromDate](#numfromdate) [PCase](#pcase) [RandomString](#randomstring) [Redact](#redact) [RemoveDuplicates](#removeduplicates) [Replace](#replace) [SelectUniqueValue](#selectuniquevalue) [SingleAppRoleAssignment](#singleapproleassignment) [Split](#split) [StripSpaces](#stripspaces) [Switch](#switch) [ToLower](#tolower) [ToUpper](#toupper) [Word](#word)
 
 ---
 
@@ -764,6 +764,42 @@ Example: Replace characters containing accent marks with equivalent characters t
 
 - **INPUT** \(givenName\): "Zoë"
 - **OUTPUT**: "Zoe"
+
+---
+
+### NormalizeDiacriticsByCulture
+
+**Function:** NormalizeDiacriticsByCulture\(source, culture\)
+
+**Description:** Requires two string arguments. When **culture** is `"de"`, returns the source string with German diacritical characters transliterated according to the following table. `"de"` is the only supported culture value. For any other culture value, the function uses the same normalization behavior as [NormalizeDiacritics](#normalizediacritics).
+
+**Parameters:**
+
+| Name | Required/ Repeating | Type | Notes |
+| --- | --- | --- | --- |
+| **source** | Required | String | The string to normalize. |
+| **culture** | Required | String | The culture to use for normalization. The only supported value is `"de"`. |
+
+| Character | Transliterated value |
+| --- | --- |
+| ä | ae |
+| Ä | Ae |
+| ö | oe |
+| Ö | Oe |
+| ü | ue |
+| Ü | Ue |
+| ß | ss |
+
+#### Normalize German diacritics in a string
+
+Example: Transliterate German diacritical characters by using the `"de"` culture.
+
+**Expression:** `NormalizeDiacriticsByCulture("Müller", "de")`
+
+**Sample input/output:**
+
+- **INPUT**: "Müller", "de"
+- **OUTPUT**: "Mueller"
 
 ---
 
