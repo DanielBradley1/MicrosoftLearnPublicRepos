@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/supported-accounts-validation -->
-<!-- Sitemap-Last-Modified: 2025-01-07 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Validation differences by supported account types \(signInAudience\)
 

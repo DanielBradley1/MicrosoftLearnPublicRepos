@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/ -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Hybrid identity documentation
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-users-groups-provisioning-walkthrough -->
+<!-- Sitemap-Last-Modified: 2026-08-28 -->
 
 # Tutorial: Govern access to an on-premises app from Microsoft Entra ID \(preview\)
 
