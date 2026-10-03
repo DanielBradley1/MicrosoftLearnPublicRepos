@@ -20,12 +20,12 @@ Access to the Package Management API requires a [Microsoft Agent 365](https://ww
 | `agentIdentityId` | String | The Microsoft Entra Agent ID of the agent. |
 | `appId` | String | Associated Microsoft Entra AD application registration ID for this package. |
 | `assetId` | String | Identifier used to reference this package in the asset store. |
-| `availableTo` | [packageStatus](#packagestatus-enumeration) | Enum value specifying which users or groups within the tenant can access this package \(`all`, `some`, `none`\). |
+| `availableTo` | [packageAllowStatus](#packageallowstatus-enumeration) | Enum value specifying which users or groups within the tenant can access this package \(`allowedForAll`, `allowedForSome`, `allowedForNone`\). |
 | `createdDateTime` | DateTimeOffset | The date and time that the agent package was created. |
-| `deployedTo` | [packageStatus](#packagestatus-enumeration) | Enum value indicating the current deployment scope of the package within the tenant \(`all`, `some`, `none`\). |
+| `deployedTo` | [packageAcquireStatus](#packageacquirestatus-enumeration) | Enum value indicating the current deployment scope of the package within the tenant \(`acquiredForAll`, `acquiredForSome`, `acquiredForNone`\). |
 | `displayName` | String | Human-readable name of the package shown to users and administrators. |
 | `elementTypes` | String collection | Collection of element types contained within this package \(for example, `bot`, `declarativeAgent`\). |
-| `governanceMetadata` | String |  |
+| `governanceMetadata` | String | The agentic classification of the agent. Possible values are: `PromptAgent`, `HostedAgent`, `WorkflowAgent`, `ManagedAgent`, `Unmanaged`, and `AIApp`. |
 | `id` | String | Unique identifier for the Copilot package within the tenant. |
 | `isBlocked` | Boolean | Boolean flag indicating whether the package is administratively blocked from use within the tenant. |
 | `lastModifiedDateTime` | DateTimeOffset | Timestamp of the last modification made to the package configuration or metadata. |
@@ -60,13 +60,22 @@ Access to the Package Management API requires a [Microsoft Agent 365](https://ww
 | `update` | A user asked for an already published package to be updated to a newer version. |
 | `unknownFutureValue` | [Evolvable sentinel value](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations). |
 
-### packageStatus enumeration
+### packageAllowStatus enumeration
 
 | Value | Description |
 | :--- | :--- |
-| `none` | Not available or deployed to any users. |
-| `some` | Available or deployed to some users/groups. |
-| `all` | Available or deployed to all users. |
+| `allowedForNone` | Not available to any users. |
+| `allowedForSome` | Available to some users/groups. |
+| `allowedForAll` | Available to all users. |
+| `unknownFutureValue` | [Evolvable sentinel value](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations). |
+
+### packageAcquireStatus enumeration
+
+| Value | Description |
+| :--- | :--- |
+| `acquiredForNone` | Not deployed to any users. |
+| `acquiredForSome` | Deployed to some users/groups. |
+| `acquiredForAll` | Deployed to all users. |
 | `unknownFutureValue` | [Evolvable sentinel value](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations). |
 
 ### packageType enumeration

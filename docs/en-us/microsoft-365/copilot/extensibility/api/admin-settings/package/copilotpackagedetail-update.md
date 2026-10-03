@@ -52,6 +52,8 @@ The following properties can be updated.
 | :--- | :--- | :--- |
 | `allowedUsersAndGroups` | [packageAccessEntity](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/packageaccessentity) collection | Users/groups for whom the package is available. |
 | `acquireUsersAndGroups` | [packageAccessEntity](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/packageaccessentity) collection | Users/groups for whom the package is deployed. |
+| `availableTo` | [packageAllowStatus](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/copilotpackage#packageallowstatus-enumeration) | Enum value specifying which users or groups within the tenant can access this package. Required if updating `allowedUsersAndGroups`. |
+| `deployedTo` | [packageAcquireStatus](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/copilotpackage#packageacquirestatus-enumeration) | Enum value indicating the deployment scope of the package. Required if updating `acquireUsersAndGroups`. |
 
 ## Response
 
@@ -87,7 +89,9 @@ Content-Type: application/json
       "resourceType": "group",
       "resourceId": "65d7d8fb-1e24-4ba8-92cd-8c502d830113"
     }
-  ]
+  ],
+  "availableTo": "allowedForSome",
+  "deployedTo" : "acquiredForSome"
 }
 ```
 

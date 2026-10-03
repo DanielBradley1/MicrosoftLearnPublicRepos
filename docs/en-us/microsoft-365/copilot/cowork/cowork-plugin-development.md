@@ -14,7 +14,7 @@ Important
 
 [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers) aren't currently supported for plugin or skill management and sharing. In tenants where IB is enabled, embedded knowledge file uploads are blocked at the tenant level. This prevents affected plugins and skills from being uploaded or published.
 
-Microsoft will not create or maintain any persistent index, knowledge graph \(including the Microsoft Graph\), or database that includes ISV Content, whether by crawling, scraping, harvesting, bulk export, ingestion, or any other method \(via API, MCP server, or otherwise\). Microsoft may temporarily process ISV Content as necessary to respond to a user’s real-time query, but may not retain ISV Content beyond the duration of that session. Upon ISV's written request, Microsoft will delete any ISV Content in its possession or control within 10 business days and certify such deletion in writing. Learn more in [Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection).
+Microsoft doesn't create or maintain any persistent index, knowledge graph \(including the Microsoft Graph\), or database that includes ISV Content, whether by crawling, scraping, harvesting, bulk export, ingestion, or any other method \(via API, MCP server, or otherwise\). Microsoft might temporarily process ISV Content as necessary to respond to a user’s real-time query, but doesn't retain ISV Content beyond the duration of that session. Upon ISV's written request, Microsoft deletes any ISV Content in its possession or control within 10 business days and certifies such deletion in writing. Learn more in [Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection).
 
 ## What you'll build
 
@@ -33,18 +33,113 @@ my-extension.zip
         └── SKILL.md
 ```
 
-Skills use the Agent Skills open standard-the same format supported by Claude Code, Visual Studio Code Copilot, Gemini CLI, Cursor, JetBrains Junie, and 30+ other AI tools.
+Skills use the Agent Skills open standard—the same format supported by Claude Code, Visual Studio Code Copilot, Gemini CLI, Cursor, JetBrains Junie, and 30+ other AI tools.
 
 ## Choose your starting point
 
-| Starting point | Path | Time to first package |
+Build your plugin with the [wiqd CLI](https://microsoft.github.io/wiqd/). The CLI scaffolds the package and keeps `manifest.json` and your skill folders in sync. It also runs the platform's own validation rules before you upload, then provisions and shares the result. The CLI is in preview, so its commands and generated output can change before general availability. Everything it generates is a plain Microsoft 365 app package, so you can still open, edit, and version the files directly.
+
+Assemble the package manually only when you can't install tooling, or when you're building your own packaging pipeline. In that case, the [package format reference](#assemble-a-package-by-hand) in this article is what you need—it describes exactly what `wiqd` produces.
+
+| Starting point | Do this | Time to first package |
 | --- | --- | --- |
-| I have an existing Claude Code or Cursor plugin | [Import it](#import-an-existing-plugin) | ~5 minutes |
-| I'm starting from scratch | [Build from scratch](#build-a-plugin-from-scratch) | ~30 minutes |
+| I'm starting from scratch | [Build a plugin with wiqd](#build-a-plugin-with-wiqd) | about 10 minutes |
+| I have an existing Claude Code plugin | [Convert it](#import-an-existing-plugin) | about 5 minutes |
+| I can't install tooling, or I'm scripting my own packaging | [Assemble a package by hand](#assemble-a-package-by-hand) | about 30 minutes |
+
+## Build a plugin with wiqd
+
+The wiqd CLI runs the same lifecycle you otherwise do manually—create, add capabilities, validate, provision, package, and share. The package it produces already satisfies the [validation rules](#validation-rules) in this article.
+
+### Step 1: Install wiqd and sign in
+
+Install the wiqd CLI by following the [wiqd installation guide](https://microsoft.github.io/wiqd/getting-started/installation/), which covers Windows, macOS, and Linux. Then sign in to the Microsoft 365 tenant you're developing against, because provisioning and sharing both touch your tenant:
+
+```console
+wiqd auth login --interactive
+```
+
+The installer also registers a GitHub Copilot CLI plugin, so you can drive the same lifecycle conversationally. For example, you can say, *Create a standalone plugin called Triage Helper* or *Validate my plugin.* The conversational path runs the same commands as this section. Use the commands directly when you're scripting a pipeline or want reproducible, non-interactive automation.
+
+### Step 2: Scaffold the plugin and add capabilities
+
+Create the plugin container, then add whatever capabilities you need, in any combination:
+
+```console
+wiqd plugin create --name my-plugin
+wiqd plugin add skill --name "Contract Analysis"
+wiqd plugin add connector --name "Contoso Legal" --description "Case law and statutes over MCP" --url https://api.contoso.com/legal/mcp
+```
+
+`add skill` scaffolds `appPackage/skills/contract-analysis/SKILL.md` and registers it in `agentSkills[]`. `add connector` writes the `agentConnectors[]` entry. Both commands enforce the platform's naming and size caps before writing, so a folder-name mismatch or an over-length `id` never reaches the manifest.
+
+Write your skill logic in the generated `SKILL.md`. The frontmatter fields, progressive-loading model, and companion-file limits are the same ones described in [Step 1: Create your first skill](#step-1-create-your-first-skill) and [Step 2: Add reference materials \(optional\)](#step-2-add-reference-materials-optional).
+
+Important
+
+`wiqd plugin create` pins the package to `manifestVersion: "1.29"`, while the hand-authored examples in this article use `1.28`. The difference matters for connectors. At 1.28, `mcpToolDescription` is required, and the file it names must be in the ZIP. At 1.29, `agentConnectors[]` entries are URL-only and `mcpToolDescription` is optional, so a wiqd-generated package never hits that upload failure. wiqd doesn't scaffold connector authentication yet—configure it directly as described in [Supported auth types](#supported-auth-types).
+
+### Step 3: Validate as you build
+
+Validate continuously instead of assembling a package and hoping the upload passes:
+
+```console
+wiqd plugin validate
+wiqd plugin validate --mode deep
+```
+
+`validate` is the offline static check over the declarative-agent surface. A skills-only or connector-only plugin passes it with nothing to check, which is expected—it's a check for your build loop, not full coverage. `validate --mode deep` packages the plugin first, then validates the built `.zip` against the same App Validation Library the upload uses. That's where the [ASKILL codes](#validation-rules) and connector rules surface.
+
+### Step 4: Provision, package, and share
+
+Run these three commands in order:
+
+```console
+wiqd plugin provision
+wiqd plugin package
+wiqd plugin share --scope users --email you@contoso.com
+```
+
+Run `provision` first because it writes the environment file that `package` and `share` both depend on. Use `--scope users` to share with the people you list, or `--scope tenant` to share with everyone in your organization. Either way, the plugin appears in **Shared with me** under **Cowork** > **Sources & Skills** > **Plugins**. To list it in the **Discover** section instead, an admin uploads the package. Learn more in [Step 8: Publish to your tenant](#step-8-publish-to-your-tenant). To remove what `provision` created, run `wiqd plugin delete --env local --yes`.
+
+Public store submission is still a manual process in Partner Center. Learn more in [Step 9: Publish to the public](#step-9-publish-to-the-public).
+
+### Take a plugin to another host
+
+To use your skills in Claude Code, Cursor, or any other Agent Skills host, export the project rather than copying folders by hand:
+
+```console
+wiqd plugin export --format claude-plugin
+```
+
+`export` defaults to `--format open-plugin` and also accepts `cursor-plugin`. It writes an uncompressed directory under `<path>/export/<format>`.
 
 ## Import an existing plugin
 
-If you already have a Claude Code or Cursor plugin with skills and MCP servers, the Microsoft 365 Agents Toolkit CLI \(`atk`\) imports it directly. The CLI runs on Windows, macOS, and Linux.
+If you already have a Claude Code plugin with skills and MCP servers, you have two conversion routes. The route you choose depends on whether you plan to keep developing the plugin or just ship what you have.
+
+| Goal | Use |
+| --- | --- |
+| Keep developing, validating, and shipping the plugin from Microsoft 365 | [`wiqd plugin import`](#import-with-wiqd) |
+| Produce a publishable `.zip` from an existing Claude plugin right now | [The conversion script](#convert-with-the-conversion-script) |
+
+### Import with wiqd
+
+`wiqd plugin import` recognizes an Open Plugin, Claude plugin, or Cursor plugin source and produces a wiqd plugin project from it. The imported plugin joins the same lifecycle as one you created with `wiqd plugin create`:
+
+```console
+wiqd plugin import --path ./my-claude-plugin --privacy-url https://contoso.com/privacy --terms-url https://contoso.com/terms
+```
+
+`--privacy-url` and `--terms-url` are required only on a plugin's first import. If the source came from a previous `wiqd plugin export`, the round-trip metadata already carries them.
+
+Important
+
+An imported project supports only the read-only part of the lifecycle—`wiqd plugin validate`, `show`, and `list`. It can't yet be packaged, provisioned, or shared, because the import doesn't scaffold the local deploy files those steps need. This is a tracked gap. For current status, check the [wiqd CLI reference](https://microsoft.github.io/wiqd/cli/reference/). If you need a publishable package today, use the conversion script.
+
+### Convert with the conversion script
+
+The [conversion script](https://aka.ms/copilot-cowork-plugin-conversion-script) translates a Claude plugin directly into a publishable M365 package:
 
 1. Install the CLI \(requires version 1.1.12 or later\):
 
@@ -164,9 +259,9 @@ Before `atk` supported plugin import, conversion used a Windows-only PowerShell 
 
 Use `atk import openplugin` instead. It's cross-platform, supports Cursor as well as Claude Code sources, and can export back to a plugin directory.
 
-## Build a plugin from scratch
+## Assemble a package by hand
 
-Follow these steps to create a plugin package from the ground up, starting with your first skill and building up to a complete, publishable package.
+This section is the package-format reference: it describes exactly what [Build a plugin with wiqd](#build-a-plugin-with-wiqd) generates, field by field. Follow it end to end when you can't install tooling or you're building your own packaging pipeline. Use it as a reference when you need to understand or debug a generated package.
 
 ### Step 1: Create your first skill
 
@@ -254,7 +349,7 @@ Important
 
 ### Step 2: Add reference materials \(optional\)
 
-For complex skills, keep the main `SKILL.md` lean and move detailed content to subdirectories. These additional files are **companion files**. The skill loads them when needed.
+For complex skills, keep the main `SKILL.md` lean and move detailed content to subdirectories. These extra files are **companion files**. The skill loads them when needed.
 
 ```
 skills/
@@ -282,13 +377,13 @@ Each skill can include up to 20 companion files \(any file other than `SKILL.md`
 
 Companion file paths must follow these rules:
 
-- Use relative paths only \(no absolute paths\)
-- No path traversal \(`..` segments\)
-- No backslashes or null bytes in file names
-- No hidden files \(names starting with `.`\)
-- No Windows reserved names \(`CON`, `PRN`, `AUX`, `NUL`, `COM1`–`COM9`, `LPT1`–`LPT9`\)
-- The file `SKILL.md` itself doesn't count as a companion file
-- File names must use safe characters: alphanumeric, hyphens, underscores, dots, spaces, and `!`
+- Use relative paths only \(no absolute paths\).
+- No path traversal \(`..` segments\).
+- No backslashes or null bytes in file names.
+- No hidden files \(names starting with `.`\).
+- No Windows reserved names \(`CON`, `PRN`, `AUX`, `NUL`, `COM1`–`COM9`, `LPT1`–`LPT9`\).
+- The file `SKILL.md` itself doesn't count as a companion file.
+- File names must use safe characters: alphanumeric, hyphens, underscores, dots, spaces, and `!`.
 
 To keep the context window efficient, the system loads skills in three layers:
 
@@ -360,6 +455,10 @@ A `remoteMcpServer` connector can optionally include an `mcpToolDescription` obj
 
 If you include `mcpToolDescription`, the referenced file \(for example, `tools/contoso-legal-tools.json`\) describes the tools the connector exposes and **must be present in the ZIP package**. Include it alongside your `manifest.json` and `skills/` folder when you package the plugin.
 
+Tip
+
+This requirement applies to manifest version 1.28. Packages that `wiqd plugin create` generates target 1.29, where `agentConnectors[]` entries are URL-only, `mcpToolDescription` is optional, and there's no tool-description file to forget.
+
 #### Supported auth types
 
 | Auth type | When to use | User experience |
@@ -401,7 +500,7 @@ You can omit the `authorization` object entirely. Configure your MCP server URL,
 
 ### Step 4: Create the manifest
 
-Create `manifest.json` in your package root:
+Create `manifest.json` in your package root. The example uses manifest version 1.28; `wiqd plugin create` pins 1.29 instead, where connector entries are URL-only.
 
 ```json
 {
@@ -479,7 +578,7 @@ If you don't have icons yet, `atk import openplugin` generates solid-color place
 
 ### Step 6: Package
 
-Create a ZIP file with all contents at the root level:
+Create a ZIP file with all contents at the root level. \(`wiqd plugin package` produces this same structure after `wiqd plugin provision`.\)
 
 ```
 contoso-legal-tools.zip
@@ -521,7 +620,7 @@ zip -r contoso-legal-tools.zip manifest.json color.png outline.png tools/ skills
 
 To test your app, upload your app package to Teams as described in [Upload your app to Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload).
 
-For personal testing, sideload the app by using the Microsoft 365 Agents Toolkit command line interface:
+If you built the plugin with wiqd, run `wiqd plugin provision` instead—it registers the plugin with your tenant for you. For personal testing of a hand-assembled package, sideload the app by using the Microsoft 365 Agents Toolkit command line interface:
 
 1. Install `@microsoft/m365agentstoolkit-cli` from `npm`:
 
@@ -556,10 +655,14 @@ Learn more in [Microsoft 365 Agents Toolkit command line interface](https://lear
 
 ### Step 8: Publish to your tenant
 
+Upload the package in the admin center to list your plugin in the **Discover** section, where anyone in your organization can find it:
+
 1. Open **M365 admin center** > **Manage apps** > **Upload custom app**.
 2. Select the ellipsis button \(**...**\) > **Add agent**.
 3. Upload your `.zip` package.
 4. Open **Cowork** > **Sources & Skills** > **Plugins**. Your plugin appears in the **Discover** section.
+
+`wiqd plugin share` places the plugin in **Shared with me** rather than **Discover**. Use it for testing and for targeted rollout to specific people. Admin center upload is what lists a plugin for discovery.
 
 ### Step 9: Publish to the public
 
@@ -567,7 +670,7 @@ For plugins intended for public distribution, submit your plugin to the Microsof
 
 ## Test a connector against a local MCP server
 
-Connectors require an HTTPS `mcpServerUrl`, so to test a server running on your machine you need to expose it over a public HTTPS URL. [Dev tunnels](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview) provide a relay that terminates TLS for you.
+Connectors require an HTTPS `mcpServerUrl`. To test a server running on your machine, you need to expose it over a public HTTPS URL. [Dev tunnels](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview) provide a relay that terminates TLS for you.
 
 ```bash
 devtunnel port create <tunnel> -p <port> --protocol http
@@ -634,7 +737,13 @@ my-connector.zip
 
 ### Imported Claude Code or Cursor plugin
 
-Use this option for existing plugins from other AI tools that target Cowork.
+Use this option for existing Claude ecosystem plugins that target Cowork. To keep developing the plugin in Microsoft 365, import it:
+
+```console
+wiqd plugin import --path ./claude-plugin --privacy-url https://contoso.com/privacy --terms-url https://contoso.com/terms
+```
+
+To produce a publishable `.zip` from the plugin as it stands today, use the conversion script:
 
 ```bash
 atk import openplugin --path ./claude-plugin --output ./my-plugin-project \
@@ -671,7 +780,7 @@ description: Provides bond analytics capabilities.
 
 ### Avoid common mistakes
 
-- **Don't embed secrets** in `SKILL.md` files. Use `agentConnectors` with auth for API credentials.
+- **Don't embed secrets** in `SKILL.md` files. Use `agentConnectors` with authentication for API credentials.
 - **Don't duplicate built-in skills**. Check the [built-in skills list](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork#cowork-skills) before building.
 - **Don't make skills too broad**. "Do everything with legal documents" is worse than specific skills for "contract analysis", "clause extraction", and "legal research".
 - **Don't hardcode file paths** or system commands. Skills should be portable across environments.
@@ -680,6 +789,8 @@ description: Provides bond analytics capabilities.
 ## Validation rules
 
 When you submit your package, the platform validates it at multiple levels. Fix these errors before submission to avoid rejection.
+
+To catch them as you build instead of at upload time, run `wiqd plugin validate --mode deep`. This command packages the plugin and runs these same rules locally. Learn more in [Step 3: Validate as you build](#step-3-validate-as-you-build).
 
 ### Manifest-level validation
 
@@ -744,7 +855,7 @@ Skills use the Agent Skills open standard. The same `SKILL.md` files work across
 | OpenAI Codex | Full-Agent Skills supported |
 | Cursor | Full-Agent Skills supported |
 
-If you're developing skills for both Claude Code and Cowork, start with the Claude Code plugin structure - it's the superset:
+If you're developing skills for both Claude Code and Copilot Cowork, author the plugin with wiqd. Then run `wiqd plugin export --format claude-plugin` to produce the Claude Code layout. If you'd rather start from the Claude Code plugin structure—it's the superset—the layout is:
 
 ```
 my-plugin/
@@ -759,7 +870,7 @@ my-plugin/
 └── .mcp.json              # MCP server config (optional)
 ```
 
-Then import it into an M365 project when you're ready to publish to the Microsoft 365 App Store:
+Then bring it into Microsoft 365 when you're ready to publish to the Microsoft 365 App Store, either with `wiqd plugin import` or with the conversion script:
 
 ```bash
 atk import openplugin --path ./my-plugin --output ./my-plugin-project \
@@ -826,7 +937,7 @@ Cowork resolves the workspace file and base64-encodes it *before* calling your s
 
 Note
 
-Don't instruct the agent to base64-encode a file itself and paste the blob into a tool call. That loads the whole file into the model's context and depends on the model reproducing the blob exactly. It appears to work on small test files and fails on real ones.
+Don't instruct the agent to base64-encode a file itself and paste the blob into a tool call. That approach loads the whole file into the model's context and depends on the model reproducing the blob exactly. It appears to work on small test files and fails on real ones.
 
 ### Declare a file parameter
 
@@ -890,7 +1001,7 @@ If your tool declares more than one top-level file parameter, all of them collap
 
 ### Nested file parameters
 
-A file parameter nested inside an object or an array of objects is also supported, and is handled differently: instead of being collapsed, it's rewritten *in place* into a path string at its own location. This preserves the association between a file and its sibling fields—for example, one receipt per expense line:
+The agent supports a file parameter nested inside an object or an array of objects. The agent handles this parameter differently: instead of collapsing it, the agent rewrites it *in place* into a path string at its own location. This approach preserves the association between a file and its sibling fields. For example, you get one receipt per expense line:
 
 ```json
 "line_items": {
@@ -996,7 +1107,7 @@ Because there's no per-connector qualifier, you can't currently use this identit
 
 **Can I use skills from the M365 package in Claude Code?**
 
-Yes. The skill folders contain standard Agent Skills. Copy them to `.claude/skills/` in any Claude Code project, or run `atk export openplugin` to convert the whole project back to a Claude Code plugin.
+Yes. The skill folders contain standard Agent Skills. Run `wiqd plugin export --format claude-plugin` to produce the Claude Code layout, or copy the skill folders to `.claude/skills/` in any Claude Code project.
 
 **Do I need a remote connector?**
 
@@ -1028,7 +1139,11 @@ Yes. Declare the tool parameter with `contentEncoding: base64`, and Cowork resol
 
 **How do I generate a deterministic GUID for my package?**
 
-`atk import openplugin` uses UUID v5 \(SHA-1 based\) from your plugin name. Running the import twice produces the same GUID. To set your own, pass `--app-id`. For manual packaging, use any GUID generator. Be sure to keep it stable across versions.
+`wiqd plugin create` generates and pins the app ID for you. The conversion script uses UUID v5 \(SHA-1 based\) from your plugin name, so running the conversion twice produces the same GUID. For manual packaging, use any GUID generator. Be sure to keep it stable across versions.
+
+**Which manifest version should I target?**
+
+Target 1.29 if you're building with wiqd, which pins it for you. At 1.29, `agentConnectors[]` entries are URL-only and `mcpToolDescription` is optional. The hand-authored examples in this article use 1.28, where `mcpToolDescription` is required and the file it names must be in the ZIP. `atk import openplugin` uses UUID v5 \(SHA-1 based\) from your plugin name. Running the import twice produces the same GUID. To set your own, pass `--app-id`. For manual packaging, use any GUID generator. Be sure to keep it stable across versions.
 
 ## Related content
 
@@ -1036,3 +1151,4 @@ Yes. Declare the tool parameter with `contentEncoding: base64`, and Cowork resol
 - [Use Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork)
 - [Manage Cowork for your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance)
 - [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins)
+- [wiqd plugin CLI reference](https://microsoft.github.io/wiqd/cli/reference/)
