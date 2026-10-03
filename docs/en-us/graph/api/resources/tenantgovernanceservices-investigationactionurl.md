@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-actionurl?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-29 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-investigationactionurl?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # investigationActionUrl resource type
 
