@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-android-enterprise -->
-<!-- Sitemap-Last-Modified: 2026-04-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Android template device settings list to restrict features using Intune
 
@@ -108,9 +108,12 @@ For corporate-owned devices with a work profile, some settings only apply in the
 
   | Enrollment method | Settings > Factory data reset | Settings > Recovery/bootloader | Intune [wipe](https://learn.microsoft.com/en-us/intune/device-management/actions/wipe) |
   | --- | --- | --- | --- |
-  | **Corporate-owned devices with work profile** \(COPE\) | ![error-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/error.svg) no factory reset protection | ![check-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/check.svg) factory reset protection | ![error-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/error.svg) no factory reset protection |
+  | **Corporate-owned devices with work profile** \(COPE\) | ![check-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/check.svg) factory reset protection | ![check-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/check.svg) factory reset protection | ![error-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/error.svg) no factory reset protection |
   | **Fully managed** \(COBO\) | ![error-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/error.svg) no factory reset protection | ![check-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/check.svg) factory reset protection | ![error-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/error.svg) no factory reset protection |
   | **Dedicate** \(COSU\) | ![error-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/error.svg) no factory reset protection | ![check-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/check.svg) factory reset protection | ![error-icon](https://learn.microsoft.com/en-us/intune/media/icons/16/error.svg) no factory reset protection |
+
+
+  For COPE devices, a Settings reset doesn't enforce FRP when **Factory reset protection emails** is **Not configured**.
 
 
   For background and guidance, see **[Factory reset protection \(FRP\) enforcement behavior for Android Enterprise](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-configuration/factory-reset-protection-emails-not-enforced)**.
