@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-tickets-deployment -->
-<!-- Sitemap-Last-Modified: 2026-08-23 -->
+<!-- Sitemap-Last-Modified: 2026-09-19 -->
 
 # Deploy the ServiceNow Tickets Copilot connector
 
