@@ -13,7 +13,7 @@ Excluding assets from automated responses isn't recommended. It can reduce the e
 
 ## Prerequisites
 
-The permissions required to manage attack disruption exclusions depend on whether [Microsoft Defender XDR Unified role-based access control \(RBAC\)](https://learn.microsoft.com/en-us/defender-xdr/manage-rbac) is enabled for the relevant workload.
+The permissions required to manage attack disruption exclusions depend on whether [Microsoft Defender XDR Unified role-based access control \(RBAC\)](https://learn.microsoft.com/en-us/defender-xdr/manage-rbac) is enabled for the relevant product.
 
 ### Device exclusions
 
@@ -28,12 +28,14 @@ For information about enabling Unified RBAC, see [Activate Microsoft Defender XD
 
 ### Identity exclusions
 
-The following table lists the permissions required to manage identity exclusions.
+Identity exclusions affect automated response actions in both Defender for Identity and Defender for Endpoint. The following table lists the permissions required to manage identity exclusions for each deployed product.
 
-| Unified RBAC for identities or endpoints | Required permission |
+| Unified RBAC for identities and endpoints | Required permission |
 | --- | --- |
-| **Disabled** \(both identities and endpoints\) | Security Administrator or Global Administrator role in [Microsoft Entra ID](https://entra.microsoft.com) or the [Microsoft 365 admin center](https://admin.microsoft.com). |
-| **Enabled** \(for identities or endpoints\) | Security Operator \(or higher\) global Microsoft Entra role, **or** the [Core security settings \(manage\)](https://learn.microsoft.com/en-us/defender-xdr/custom-permissions-details) permission in Unified RBAC. |
+| **Disabled for identities and endpoints** | Security Administrator or Global Administrator role in [Microsoft Entra ID](https://entra.microsoft.com) or the [Microsoft 365 admin center](https://admin.microsoft.com). |
+| **Enabled** | Security Operator \(or higher\) global Microsoft Entra role, **or** the [Core security settings \(manage\)](https://learn.microsoft.com/en-us/defender-xdr/custom-permissions-details) permission in Unified RBAC for the **Microsoft Defender for Endpoint** and **Microsoft Defender for Identity** data sources. If either product isn't deployed, permission for its data source isn't required. |
+
+For information about role assignments and data-source scope, see [Create a custom role](https://learn.microsoft.com/en-us/defender-xdr/create-custom-rbac-roles#create-a-custom-role).
 
 Note
 
