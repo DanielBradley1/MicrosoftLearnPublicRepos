@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/endpoint-security-policies-configure -->
-<!-- Sitemap-Last-Modified: 2026-09-17 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Manage endpoint security policies in Microsoft Defender for Endpoint
 
