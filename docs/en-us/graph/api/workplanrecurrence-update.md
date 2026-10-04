@@ -5,7 +5,7 @@
 
 Namespace: microsoft.graph
 
-Update the properties of a [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object in your own work plan. Updates require the full recurrence object to be provided \(PUT semantics\). PATCH isn't supported.
+Update the properties of a [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object in a user's work plan. Updates require the full recurrence object to be provided \(PUT semantics\). PATCH isn't supported.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -21,7 +21,9 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | :--- | :--- | :--- |
 | Delegated \(work or school account\) | Calendars.ReadWrite | Not available. |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| Application | Calendars.ReadWrite.All | Not available. |
+
+> **Note:** Application permissions are supported only when using the `/users/{id}` endpoint.
 
 ## HTTP request
 
@@ -33,7 +35,7 @@ Note
 
 Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission. Application permissions aren't supported when using the `/me` endpoint.
 
-When using the `/users/{id}` endpoint, the ID must be your own user ID.
+When using delegated permissions with the `/users/{id}` endpoint, the ID must be the signed-in user's ID.
 
 ```http
 PUT /users/{id | userPrincipalName}/settings/workHoursAndLocations/recurrences/{id}

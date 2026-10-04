@@ -13,7 +13,7 @@ The maximum time a subscription can last is 60 minutes; however, subscriptions c
 
 Microsoft Teams supports two types of change notifications:
 
-- **Change notification to track all changes related to a resource across the tenant:** For example, you can subscribe to changes in messages in any channel across the tenant and get notified whenever a message is created, updated, or deleted in any channel in the tenant. These notifications might have [licensing and payment requirements](https://learn.microsoft.com/en-us/graph/teams-licenses), such as change notifications for [messages](https://learn.microsoft.com/en-us/graph/teams-changenotifications-chatmessage) and [membership](https://learn.microsoft.com/en-us/graph/teams-changenotifications-chatmembership).
+- **Change notification to track all changes related to a resource across the tenant:** For example, you can subscribe to changes in messages in any channel across the tenant and get notified whenever a message is created, updated, or deleted in any channel in the tenant.
 - **Change notification to track all changes for a specific resource:** For example, you can subscribe to changes in messages in a particular channel and get notified whenever a message is created, updated, or deleted.
 
 For details about which resources support which types of change notifications, see [Microsoft Graph change notifications](https://learn.microsoft.com/en-us/graph/change-notifications-overview).
