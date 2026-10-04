@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-powerbi-copilot-chat -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-08-18 -->
 
 # Use Power BI data in Microsoft Copilot
 
