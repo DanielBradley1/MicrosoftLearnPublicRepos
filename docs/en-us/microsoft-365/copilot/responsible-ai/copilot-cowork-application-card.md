@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/copilot-cowork-application-card -->
-<!-- Sitemap-Last-Modified: 2026-06-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-22 -->
 
 # Application card: Microsoft Copilot Cowork
 

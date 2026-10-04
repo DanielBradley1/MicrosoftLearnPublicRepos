@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-troubleshooting -->
-<!-- Sitemap-Last-Modified: 2026-08-25 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Troubleshoot issues with the ServiceNow Catalog connector
 
