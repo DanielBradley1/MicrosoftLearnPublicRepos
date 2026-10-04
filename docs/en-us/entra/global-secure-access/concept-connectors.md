@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connectors -->
-<!-- Sitemap-Last-Modified: 2026-09-28 -->
+<!-- Sitemap-Last-Modified: 2026-03-12 -->
 
 # Microsoft Entra private network connectors
 

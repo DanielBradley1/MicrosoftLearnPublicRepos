@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept -->
-<!-- Sitemap-Last-Modified: 2026-09-28 -->
+<!-- Sitemap-Last-Modified: 2026-03-18 -->
 
 # Use Microsoft Entra groups to manage role assignments
 
