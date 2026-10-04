@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/concept-group-source-of-authority-guidance -->
-<!-- Sitemap-Last-Modified: 2026-08-10 -->
+<!-- Sitemap-Last-Modified: 2025-10-10 -->
 
 # Guidance for using Group Source of Authority \(SOA\)
 

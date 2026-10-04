@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory -->
+<!-- Sitemap-Last-Modified: 2025-04-09 -->
 
 # Configure Microsoft Entra ID to Active Directory provisioning \(preview\)
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-active-directory-object-enforcement -->
-<!-- Sitemap-Last-Modified: 2026-08-28 -->
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-ad-group-enforcement -->
+<!-- Sitemap-Last-Modified: 2026-08-31 -->
 
 # Configure AD user and group enforcement in Microsoft Entra Cloud Sync \(preview\)
 
