@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/scc-permissions -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-07-10 -->
 
 # Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview
 

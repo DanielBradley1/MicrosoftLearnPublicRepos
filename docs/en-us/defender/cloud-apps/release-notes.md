@@ -15,6 +15,14 @@ For more information on what's new with other Microsoft Defender security produc
 
 For news about earlier releases, see [Archive of past updates for Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/release-note-archive).
 
+## October 2026
+
+### Automatic enablement of SaaS accounts integration with Identity inventory
+
+Starting **October 15, 2026**, the SaaS accounts integration between Microsoft Defender for Cloud Apps and Identity inventory will transition from opt-in to automatic enablement. The integration will be enabled automatically for eligible tenants that don't use the **User group admin** or **App/instance admin** roles. Eligible tenants don't need to take any action.
+
+For more information, see [Identity inventory integration](https://aka.ms/saas-accounts-integration).
+
 ## August 2026
 
 ### Unified RBAC is enabled by default for new Defender for Cloud Apps customers
