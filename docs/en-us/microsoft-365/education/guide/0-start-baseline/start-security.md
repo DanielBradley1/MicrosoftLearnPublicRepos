@@ -54,4 +54,4 @@ Security baseline requirements include covering the core and basic consideration
 
 The next step is configuring security.
 
-[Next: Security Overview>](https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start-baseline/start-security)
+[Next: Security Overview>](https://learn.microsoft.com/en-us/microsoft-365/education/guide/2-baseline/security/baseline-security)

@@ -24,6 +24,7 @@ Most of Microsoft 365 services have been or will be enabled with IPv6 capabiliti
 - [Microsoft 365 performance tuning using baselines and performance history](https://learn.microsoft.com/en-us/microsoft-365/enterprise/performance-tuning-using-baselines-and-history?view=o365-worldwide)
 - [Performance troubleshooting plan for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/performance-troubleshooting-plan?view=o365-worldwide)
 - [Content Delivery Networks](https://learn.microsoft.com/en-us/microsoft-365/enterprise/content-delivery-networks?view=o365-worldwide)
-- [Microsoft 365 connectivity test](https://connectivity.office.com/)
+- [Microsoft 365 connectivity test](https://connectivity.m365.cloud.microsoft)
+- [Microsoft Copilot app connectivity test](https://connectivity.m365.cloud.microsoft/copilot)
 - [How Microsoft builds its fast and reliable global network](https://azure.microsoft.com/blog/how-microsoft-builds-its-fast-and-reliable-global-network/)
 - [Microsoft 365 Networking blog](https://techcommunity.microsoft.com/t5/Office-365-Networking/bd-p/Office365Networking)

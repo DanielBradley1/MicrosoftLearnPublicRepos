@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-knowledge-deployment -->
-<!-- Sitemap-Last-Modified: 2026-09-19 -->
+<!-- Sitemap-Last-Modified: 2026-08-25 -->
 
 # Deploy the ServiceNow Knowledge Copilot connector
 

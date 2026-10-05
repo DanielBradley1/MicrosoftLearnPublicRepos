@@ -51,7 +51,7 @@ You can also read about modern security controls in remote work scenarios at [Al
 
 Once the policy is in place, you should confirm It's working as expected. There are multiple ways of testing the path is correctly set to use the local Internet connection:
 
-- Run the [Microsoft 365 connectivity test](https://connectivity.office.com/) that will run connectivity tests for you including trace routes as above. We're also adding in VPN tests into this tooling that should also provide additional insights.
+- The [Microsoft 365 connectivity test](https://connectivity.m365.cloud.microsoft) will run connectivity tests for you including trace routes as above. Optionally, if you have the Copilot app, you can run the [Connectivity test for the Copilot app](https://connectivity.m365.cloud.microsoft/copilot)
 - A simple `tracert` to an endpoint within scope of the split tunnel should show the path taken, for example:
 
   ```powershell

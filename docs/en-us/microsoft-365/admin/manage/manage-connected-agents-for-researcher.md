@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-connected-agents?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-connected-agents-for-researcher?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2025-11-18 -->
 
 # Manage connected agents in the Microsoft 365 admin center
 
