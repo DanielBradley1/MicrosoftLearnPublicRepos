@@ -1,9 +1,13 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernance-overview?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernance-overview?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-03-23 -->
 
 # Overview of Tenant Governance APIs in Microsoft Graph
 
 Namespace: microsoft.graph
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 The tenant governance APIs in Microsoft Graph enable IT administrators to programmatically discover, manage, and govern Microsoft Entra tenants at scale. Modern organizations often manage multiple tenants due to mergers, acquisitions, geographic expansion, and decentralized IT models, which can lead to tenant sprawl.
 
@@ -25,9 +29,9 @@ A *related tenant* is a Microsoft Entra tenant that demonstrates a verifiable co
 
 Related tenants are identified based on observable connections between your tenant and other tenants. These connections help you discover both intentional external partnerships and unmanaged tenants in your organization.
 
-Before you can discover related tenants, you must enable the feature through the [enableRelatedTenants](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-tenantgovernancesetting-enablerelatedtenants?view=graph-rest-1.0) action on the [tenantGovernanceSetting](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancesetting?view=graph-rest-1.0) resource.
+Before you can discover related tenants, you must enable the feature through the [enableRelatedTenants](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-tenantgovernancesetting-enablerelatedtenants?view=graph-rest-beta) action on the [tenantGovernanceSetting](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancesetting?view=graph-rest-beta) resource.
 
-Use the [relatedTenant](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenant?view=graph-rest-1.0) resource type and its associated methods to discover, review, and get the latest view of tenants that interact with your tenant, including aggregated metrics for associated activities.
+Use the [relatedTenant](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenant?view=graph-rest-beta) resource type and its associated methods to discover, review, and get the latest view of tenants that interact with your tenant, including aggregated metrics for associated activities.
 
 ## Manage governance relationships
 
@@ -37,9 +41,9 @@ A *governance relationship* is a directional connection between two Microsoft En
 
 To establish a governance relationship, both tenants participate in a three-step handshake:
 
-1. The future **governed** tenant sends a [governance invitation](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governanceinvitation?view=graph-rest-1.0) to the future governing tenant. The future governing tenant must have enabled receiving governance invitations through the [Update tenantGovernanceSetting](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-tenantgovernancesetting-update?view=graph-rest-1.0) operation.
-2. The future **governing** tenant sends a [governance request](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) to the future governed tenant, which includes a selected [governance policy template](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-1.0).
-3. The future **governed** tenant reviews and accepts the request. Upon acceptance, a [governance relationship](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerelationship?view=graph-rest-1.0) is created.
+1. The future **governed** tenant sends a [governance invitation](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governanceinvitation?view=graph-rest-beta) to the future governing tenant. The future governing tenant must have enabled receiving governance invitations through the [Update tenantGovernanceSetting](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-tenantgovernancesetting-update?view=graph-rest-beta) operation.
+2. The future **governing** tenant sends a [governance request](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta) to the future governed tenant, which includes a selected [governance policy template](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-beta).
+3. The future **governed** tenant reviews and accepts the request. Upon acceptance, a [governance relationship](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerelationship?view=graph-rest-beta) is created.
 
 Note
 
@@ -57,11 +61,11 @@ The following governance models are supported:
 | Multiple | ❌ No | Multiple relationships between the same 2 tenants is not supported. |
 | Cloud solution providers | ❌ No | Coexistence of CSP relationships created through Partner Center and tenant governance relationships is not supported. |
 
-When you create a new add-on tenant from an existing tenant, Tenant Governance automatically establishes a governance relationship between the parent \(governing\) tenant and the new \(governed\) tenant using a default [governance policy template](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-1.0). This process ensures that newly created tenants are immediately under centralized governance.
+When you create a new add-on tenant from an existing tenant, Tenant Governance automatically establishes a governance relationship between the parent \(governing\) tenant and the new \(governed\) tenant using a default [governance policy template](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-beta). This process ensures that newly created tenants are immediately under centralized governance.
 
 ## Governance policy templates
 
-A [tenantGovernancePolicyTemplate](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-1.0) defines the configuration for governance relationships, including delegated administration role assignments and multi-tenant applications to provision. Policy templates are reusable across governance relationships, enabling consistent governance at scale. When a governance relationship is established, the system captures and stores a policy snapshot with the relationship, preserving the policy state at the time of creation.
+A [governancePolicyTemplate](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-beta) defines the configuration for governance relationships, including delegated administration role assignments and multi-tenant applications to provision. Policy templates are reusable across governance relationships, enabling consistent governance at scale. When a governance relationship is established, the system captures and stores a policy snapshot with the relationship, preserving the policy state at the time of creation.
 
 Note
 
@@ -71,7 +75,7 @@ Updating a governance policy template doesn't automatically update existing rela
 
 Cross-tenant delegated administration uses granular delegated admin privileges \(GDAP\) technology to enable administrators from the governing tenant to manage governed tenants without creating local or B2B accounts. When a governance relationship with delegated administration is established, the system creates GDAP role assignments in the governed tenant.
 
-A governance policy template defines which Microsoft Entra built-in roles are enabled for delegated administration. You configure this through the **delegatedAdministrationRoleAssignments** property of the **tenantGovernancePolicyTemplate** resource, which specifies the security group in the governing tenant that receives the role assignments and the roles to be assigned.
+A governance policy template defines which Microsoft Entra built-in roles are enabled for delegated administration. You configure this through the **delegatedAdministrationRoleAssignments** property of the **governancePolicyTemplate** resource, which specifies the security group in the governing tenant that receives the role assignments and the roles to be assigned.
 
 Governed tenants have full visibility into governing tenant admin activity. The governed tenant's sign-in and audit logs capture all actions that delegated administrators perform.
 
@@ -79,21 +83,21 @@ Governed tenants have full visibility into governing tenant admin activity. The 
 
 Through governance policy templates, you can select custom, multi-tenant applications to provision across governed tenants. When a governance relationship is established, the system creates a service principal with the same permissions in the governed tenant.
 
-This capability enables centralized application management at scale from the governing tenant, eliminating the need to manage application access on a per-tenant basis. Configure multi-tenant applications through the **multiTenantApplicationsToProvision** property of the **tenantGovernancePolicyTemplate** resource.
+This capability enables centralized application management at scale from the governing tenant, eliminating the need to manage application access on a per-tenant basis. Configure multi-tenant applications through the **multiTenantApplicationsToProvision** property of the **governancePolicyTemplate** resource.
 
 ## Maintain tenant configurations using Tenant Configuration Management APIs
 
-In addition to the tenant governance APIs, you can use the [Tenant Configuration Management APIs](https://learn.microsoft.com/en-us/graph/api/resources/unified-tenant-configuration-management-api-overview?view=graph-rest-1.0) and their associated methods to maintain consistent tenant configurations for different workloads across governed tenants. This includes creating a baseline of settings such as security defaults, conditional access policies, and identity providers, then applying that baseline to governed tenants and tracking configuration drift over time.
+In addition to the tenant governance APIs, you can use the [Tenant Configuration Management APIs](https://learn.microsoft.com/en-us/graph/api/resources/unified-tenant-configuration-management-api-overview?view=graph-rest-beta) and their associated methods to maintain consistent tenant configurations for different workloads across governed tenants. This includes creating a baseline of settings such as security defaults, conditional access policies, and identity providers, then applying that baseline to governed tenants and tracking configuration drift over time.
 
 ## Audit logs
 
-All tenant governance activities are logged in the Microsoft Entra [audit logs](https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit?view=graph-rest-1.0) of both the governing and governed tenants, providing full visibility into governance actions and changes. This includes governance relationship creation and termination, policy template updates, delegated administration activities, and multi-tenant application provisioning.
+All tenant governance activities are logged in the Microsoft Entra [audit logs](https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit?view=graph-rest-beta) of both the governing and governed tenants, providing full visibility into governance actions and changes. This includes governance relationship creation and termination, policy template updates, delegated administration activities, and multi-tenant application provisioning.
 
 ## Related content
 
-- [relatedTenant resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenant?view=graph-rest-1.0)
-- [governanceInvitation resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governanceinvitation?view=graph-rest-1.0)
-- [governanceRequest resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0)
-- [governanceRelationship resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerelationship?view=graph-rest-1.0)
-- [tenantGovernancePolicyTemplate resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-1.0)
-- [tenantgovernancesetting resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancesetting?view=graph-rest-1.0)
+- [relatedTenant resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenant?view=graph-rest-beta)
+- [governanceInvitation resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governanceinvitation?view=graph-rest-beta)
+- [governanceRequest resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-beta)
+- [governanceRelationship resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerelationship?view=graph-rest-beta)
+- [governancePolicyTemplate resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancepolicytemplate?view=graph-rest-beta)
+- [tenantgovernancesetting resource type](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancesetting?view=graph-rest-beta)

@@ -9,7 +9,7 @@ The Microsoft Graph Toolkit is deprecated. The retirement period begins Septembe
 
 Note
 
-This component is in preview and is subject to change. The use of these components in production applications is not supported. This component is currently only available as a React component and doesn't have a web component equivalent.
+This component is in preview and is subject to change. The use of these components in production applications is not supported. This component is currently only available as a React component and doesn't have a web component equivalent. This feature takes advantage of real-time endpoints, high-capacity APIs, and is subject to the same billing model described in the [payment models and licensing requirements for Microsoft Teams APIs](https://learn.microsoft.com/en-us/graph/teams-licenses).
 
 The chat component enables the user to have 1:1 or group conversations. This component doesn't support channel conversations. The component allows for rendering conversations and authoring new messages. All data is stored in Microsoft Teams.
 

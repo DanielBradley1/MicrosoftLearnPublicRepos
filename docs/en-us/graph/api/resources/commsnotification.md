@@ -11,7 +11,7 @@ Communications notification base type that is published by Communications server
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| changeType | [changeType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-1.0#changetype-values) | The possible values are: `created`, `updated`, `deleted`, `unknownFutureValue`. `unknownFutureValue` is an evolvable enumeration sentinel reserved for future extensibility. Its addition does not introduce a new notification change type or change existing notification delivery. |
+| changeType | String | The possible values are: `created`, `updated`, `deleted`. |
 | resourceUrl | String | URI of the resource that was changed. |
 
 > **Note:** `resourceData` is available as additional data. It is either an entity or a collection of entities depending on the number of changes packaged in the notification.
@@ -23,7 +23,7 @@ The following JSON representation shows the resource type.
 ```json
 {
   "@odata.type": "#microsoft.graph.commsNotification",
-  "changeType": "String",
+  "changeType": "created | updated | deleted",
   "resourceUrl": "String"
 }
 ```

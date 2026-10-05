@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-investigationactionstep?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-actionstep?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-07-29 -->
 
 # investigationActionStep resource type
 

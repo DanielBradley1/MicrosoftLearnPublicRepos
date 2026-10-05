@@ -1021,10 +1021,8 @@ Namespace: microsoft.graph
 
 | Member |
 | --- |
-| created |
-| updated |
-| deleted |
-| unknownFutureValue |
+| clientIpAddress |
+| authenticatorAppGps |
 
 ### countryLookupMethodType values
 
@@ -4216,7 +4214,6 @@ Possible values for user account types \(group membership\), per Windows definit
 | itemMajorVersionLimit |
 | maxStoragePerContainerInBytes |
 | unknownFutureValue |
-| isOfficeRestricted |
 
 ### workLocationSource values
 

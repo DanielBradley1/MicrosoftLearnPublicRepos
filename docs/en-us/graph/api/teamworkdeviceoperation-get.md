@@ -15,7 +15,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Get the details of an async, long-running operation on a Microsoft Teams-enabled [device](https://learn.microsoft.com/en-us/graph/api/resources/teamworkdeviceoperation?view=graph-rest-beta).
 
-> **Note**: Microsoft is temporarily offering usage of the APIs for managing Microsoft Teams-enabled devices at no charge. Microsoft expects to charge for the use of some or all of these APIs in the future. Microsoft will provide advanced notice of pricing changes.
+> **Note**: Microsoft is temporarily offering usage of the APIs for managing Microsoft Teams-enabled devices at no charge. Microsoft expects to charge for the use of some or all of these APIs in the future. Microsoft will provide advanced notice of pricing changes. For details about the current licensing model, see [Licensing and payment requirements](https://learn.microsoft.com/en-us/graph/teams-licenses).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
