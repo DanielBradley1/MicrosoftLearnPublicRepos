@@ -14,7 +14,7 @@ Defender for Business helps protect your organization's devices with enterprise-
 - Security hardening.
 - Operational best practices for Microsoft 365.
 
-For information, see the [Microsoft Trust Center - Security](https://www.microsoft.com/security).
+For more information, see [Microsoft Trust Center - Security](https://www.microsoft.com/security).
 
 For related configuration information, see the following articles:
 
@@ -25,14 +25,14 @@ For related configuration information, see the following articles:
 
 For information about privacy in Defender for Business, see:
 
-- [Microsoft Trust Center - Data protection and privacy](https://www.microsoft.com/trust-center/privacy).
+- [Microsoft Trust Center - Data protection and privacy](https://www.microsoft.com/trust-center/privacy)
 - [Privacy at Microsoft](https://privacy.microsoft.com/)
 
 ## Compliance
 
 For information about compliance in Defender for Business, see the [Microsoft Trust Center - Compliance](https://www.microsoft.com/trust-center/compliance/compliance-overview).
 
-## Related resources
+## Related content
 
 - [Small business Zero Trust guidance - Threat protection for Microsoft 365 Business Premium](https://learn.microsoft.com/en-us/security/zero-trust/guidance-smb-partner#additional-threat-protection)
 - [Privacy & data management overview](https://learn.microsoft.com/en-us/compliance/assurance/assurance-privacy)

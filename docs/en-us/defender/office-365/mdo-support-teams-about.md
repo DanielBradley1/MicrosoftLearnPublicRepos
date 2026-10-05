@@ -7,7 +7,7 @@ Tip
 
 *Did you know you can try the features in Microsoft Defender for Office 365 Plan 2 for free?* Use the 90-day Defender for Office 365 trial at the [Microsoft Defender portal trials hub](https://security.microsoft.com/trialHorizontalHub?sku=MDO&ref=DocsRef). Learn about who can sign up and trial terms on [Try Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/try-microsoft-defender-for-office-365).
 
-With the increased use of collaboration tools like Microsoft Teams, the possibility of malicious attacks using chat messages has also increased. This article describes the Microsoft 365 and Microsoft Defender for Office 365 protection features for Microsoft Teams.
+With the increased use of collaboration tools like Microsoft Teams, the possibility of malicious activity in Teams messages, calls, and meetings has also increased. This article describes the Microsoft 365 and Microsoft Defender for Office 365 protection features for Microsoft Teams.
 
 All licenses of Microsoft Teams in Microsoft 365 include the following built-in protections:
 
@@ -28,7 +28,7 @@ Microsoft Defender for Office 365 Plan 1 provides the following extra Teams prot
   Instructions to configure ZAP for Teams protection are in the next section.
 - **Teams messages in quarantine**: By default, only admins are allowed to manage Teams messages quarantined by ZAP for Teams. This is the same default limitation for email messages identified as malware or high confidence phishing. For more information, see [Manage quarantined Teams messages](https://learn.microsoft.com/en-us/defender-office-365/quarantine-admin-manage-messages-files#use-the-microsoft-defender-portal-to-manage-microsoft-teams-quarantined-messages).
 - **Teams message entity panel**: A single place to store all Teams message metadata for immediate SecOps review. Any threats coming from Teams chats, group chats, meeting chats, and other channels can be found in one place as soon as they're assessed. For more information, see [the Teams message entity panel](https://learn.microsoft.com/en-us/defender-office-365/teams-message-entity-panel).
-- **Report Teams items**: Users can report Teams items \(messages or calls\) as malicious or not malicious. Depending on the reported items settings in the organization, reported items go to the specified reporting mailbox, to Microsoft, or both. For more information, see [User reported settings in Teams](https://learn.microsoft.com/en-us/defender-office-365/submissions-teams) and the following video:
+- **Report Teams items**: Users can report Teams messages, calls, meetings, or meeting participants as malicious or not malicious. Depending on [Teams user reported settings](https://learn.microsoft.com/en-us/defender-office-365/submissions-teams#user-reporting-settings-for-teams-items), reported items go to the specified reporting mailbox, to Microsoft, or both.
 
 Microsoft 365 E5 and Defender for Office 365 Plan 2 extend Teams protection with a set of extra capabilities designed to disrupt the attack chain:
 
@@ -49,7 +49,7 @@ These features are summarized in the following table:
 | Teams messages in quarantine \(admin-managed\) |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 | Teams message entity panel |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 | Teams call entity panel |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
-| User-reported Teams items |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
+| User-reported Teams items \(messages, calls, meetings, and meeting participants\) |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 | Remove users from Teams chats \(admin remediation\) |  |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 | Advanced hunting on Teams messages |  |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 
@@ -167,6 +167,7 @@ For detailed syntax and parameter information, see [Set-TeamsProtectionPolicyRul
 ## See also
 
 - [Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/teams-overview)
+- [Report a security concern in Microsoft Teams meetings](https://learn.microsoft.com/en-us/microsoftteams/end-user-reporting-teams-meeting)
 - [Managing Teams quarantined messages](https://learn.microsoft.com/en-us/defender-office-365/quarantine-admin-manage-messages-files#use-the-microsoft-defender-portal-to-manage-microsoft-teams-quarantined-messages)
 - [Get started using Attack simulation training in Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-get-started)
 - [Get started with Defender for Cloud Apps for Microsoft Teams](https://learn.microsoft.com/en-us/defender-cloud-apps/what-is-defender-for-cloud-apps)

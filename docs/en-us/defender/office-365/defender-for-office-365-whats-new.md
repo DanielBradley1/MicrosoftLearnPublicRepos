@@ -20,6 +20,10 @@ For more information on what's new with other Microsoft Defender security produc
 - [What's new in Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/whats-new)
 - [What's new in Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes)
 
+## October 2026
+
+- **Expanding user reporting in Teams to include meetings**: Users can report scheduled or Meet now [Microsoft Teams meetings](https://learn.microsoft.com/en-us/defender-office-365/submissions-teams#report-meetings-in-teams) or individual meeting participants as a security concern during or after the meeting. Users can also report a meeting participant that was incorrectly identified as suspicious as not a security concern. Depending on [Teams user reported settings](https://learn.microsoft.com/en-us/defender-office-365/submissions-teams#user-reporting-settings-for-teams-items), reported meeting and participant metadata is sent to the specified reporting mailbox, to Microsoft, or both.
+
 ## September 2026
 
 - **Separating Teams user reporting settings from email settings**: Customers in Worldwide \(WW\) environments with Defender for Office 365 Plan 1, Defender for Office 365 Plan 2, Microsoft 365 E5, or Office 365 E5 can now manage Teams user reporting settings on a separate page at [https://security.microsoft.com/securitysettings/teamsUserSubmission](https://security.microsoft.com/securitysettings/teamsUserSubmission). This separation lets you configure different reporting destinations for Teams and Outlook user reports. For more information, see [MC1478463](https://admin.cloud.microsoft/?ref=MessageCenter/:/messages/MC1478463).

@@ -17,7 +17,7 @@ To confirm that real-time protection is turned on, you can view, and if necessar
 
 We recommend using Microsoft Defender Antivirus together with Defender for Business to get better coordinated protection across products and services. To learn more, see [Better together - Microsoft Defender Antivirus and Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/why-use-microsoft-defender-antivirus).
 
-## Users are unable to onboard mobile devices using the Microsoft Defender app.
+## Users are unable to onboard mobile devices using the Microsoft Defender app
 
 If Defender for Business isn't finished provisioning, users might not be able to onboard their mobile devices using the Microsoft Defender app. To confirm whether provisioning is complete, follow these steps:
 
@@ -27,7 +27,7 @@ If Defender for Business isn't finished provisioning, users might not be able to
    - If you see a message that says, "Hang on! We're preparing new spaces for your data and connecting them," it means that Defender for Business isn't finished provisioning. This process is happening now, and can take up to 24 hours to complete.
    - If you see a list of devices, or you're prompted to onboard devices, it means Defender for Business provisioning is complete. Users should now be able to onboard their mobile devices as expected.
 
-## Users are running into issues with the Microsoft Defender app on their mobile devices.
+## Users are running into issues with the Microsoft Defender app on their mobile devices
 
 If users are reporting issues with the Microsoft Defender app, see the following resources to help troubleshoot their issues:
 
@@ -42,8 +42,8 @@ Suppose that Lee has been using Microsoft Intune to manage devices and security 
 
 Fortunately, policy conflicts can be resolved by taking one or more of the following actions:
 
-- Delete your existing policies in the Intune admin center
-- See [Troubleshoot policies in Microsoft Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-configuration/troubleshoot-policies-in-microsoft-intune)
+- Delete your existing policies in the Intune admin center.
+- See [Troubleshoot policies in Microsoft Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-configuration/troubleshoot-policies-in-microsoft-intune).
 
 See the following articles to learn more about your security policies in Defender for Business:
 
@@ -93,6 +93,6 @@ Defender for Business uses a capability called *Security Management for Microsof
 
 Alternately, you can try onboarding devices manually. See [Onboard devices](https://learn.microsoft.com/en-us/defender-business/mdb-onboard-devices).
 
-## See also
+## Related content
 
 - [Defender for Business - Frequently asked questions and answers](https://learn.microsoft.com/en-us/defender-business/mdb-faq)
