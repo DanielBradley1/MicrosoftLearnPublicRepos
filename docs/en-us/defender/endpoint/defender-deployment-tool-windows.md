@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/defender-deployment-tool-windows -->
-<!-- Sitemap-Last-Modified: 2026-07-28 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Deploy Windows devices by using the Microsoft Defender deployment tool
 
