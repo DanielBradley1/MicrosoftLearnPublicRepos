@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/configure-proxy-internet -->
-<!-- Sitemap-Last-Modified: 2026-07-02 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Configure proxy connectivity for Microsoft Defender for Endpoint on Windows
 
