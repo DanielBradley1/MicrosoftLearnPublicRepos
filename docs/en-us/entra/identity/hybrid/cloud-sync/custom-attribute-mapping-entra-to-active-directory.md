@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/custom-attribute-mapping-entra-to-active-directory -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Directory extensions for provisioning Microsoft Entra ID to Active Directory
 

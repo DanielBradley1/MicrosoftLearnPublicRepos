@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/concept-source-of-authority-overview -->
-<!-- Sitemap-Last-Modified: 2025-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Embrace cloud-first posture: Convert Group Source of Authority to the cloud
 
