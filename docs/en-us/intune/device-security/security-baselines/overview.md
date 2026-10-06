@@ -58,6 +58,7 @@ The following security baseline instances are available for use with Intune. Use
 
 - **Security Baseline for Windows 10 and later**:
 
+  - [Version 26H2](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/ref-windows-mdm-settings?pivots=mdm-26h2)
   - [Version 25H2](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/ref-windows-mdm-settings?pivots=mdm-25h2)
   - [Version 24H2](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/ref-windows-mdm-settings?pivots=mdm-24h2)
   - [Version 23H2](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/ref-windows-mdm-settings?pivots=mdm-23h2)
