@@ -605,7 +605,7 @@ SQL databases require unique Microsoft Entra ID display names. With this, Micros
 
     Note
 
-    `VMName` in the following command is the name of the VM that you enabled system assigned identity on in the prerequsites section.
+    `VMName` in the following command is the name of the VM that you enabled system assigned identity on in the prerequisites section.
 
     ```sql
     CREATE USER [VMName] FROM EXTERNAL PROVIDER

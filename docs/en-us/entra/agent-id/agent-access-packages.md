@@ -13,6 +13,7 @@ Before creating an access package, confirm the following prerequisites are met i
 2. The authorization is one of:
 
    - Agents need their identity to be assigned OAuth *application permissions* for a target resource, such as Microsoft Graph or an application, to be able to access a target resource's APIs.
+   - Agents need their identity to be assigned OAuth *delegated permissions* for a target resource, such as Microsoft Graph or an application, to be able to assist a user when accessing a target resource's APIs.
    - Agents need their identity to be assigned as members of groups.
    - Agents need their identity to be assigned to directory roles. The allowable roles are listed in [Microsoft Entra roles allowed for agents](https://learn.microsoft.com/en-us/entra/agent-id/authorization-agent-id#microsoft-entra-roles-allowed-for-agents).
 

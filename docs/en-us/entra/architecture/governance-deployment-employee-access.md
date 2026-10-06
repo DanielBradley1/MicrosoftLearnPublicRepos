@@ -96,7 +96,7 @@ To consider custom extensions, ensure you understand Azure Logic Apps functional
 3. Edit the custom extension.
 4. Add custom extensions to an access package.
 
-See the following video to learn about custom extenstions and access packages in Microsoft Entra ID Governance.
+See the following video to learn about custom extensions and access packages in Microsoft Entra ID Governance.
 
 <iframe src="https://learn-video.azurefd.net/vod/player?id=4fdc4503-b3c9-42b7-b36b-375aea3024a9" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
@@ -118,7 +118,7 @@ Administrators assign primary and fallback reviewers during access review creati
 
 The My Access dashboard shows a reviewer's pending approvals and recommendations.
 
-[![Diagram of pending reviewes.](https://learn.microsoft.com/en-us/entra/architecture/media/governance-deployment/select-reviewer.png)](https://learn.microsoft.com/en-us/entra/architecture/media/governance-deployment/select-reviewer-expanded.png#lightbox)
+[![Diagram of pending reviews.](https://learn.microsoft.com/en-us/entra/architecture/media/governance-deployment/select-reviewer.png)](https://learn.microsoft.com/en-us/entra/architecture/media/governance-deployment/select-reviewer-expanded.png#lightbox)
 
 ### Multistage reviews
 

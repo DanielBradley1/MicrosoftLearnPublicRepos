@@ -9,7 +9,7 @@ Authentication helps verify identity, and access control is a process of authori
 
 Customer-facing applications can authenticate with Microsoft Entra External ID using Open Authorization 2.0 \([OAuth 2](https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols)\) or Security Assertion Markup Language 2.0 \([SAML 2](https://en.wikipedia.org/wiki/SAML_2.0)\).
 
-The following table summarizes the application integration options for OAuth 2 and OpendID Connect \(OIDC\).
+The following table summarizes the application integration options for OAuth 2 and OpenID Connect \(OIDC\).
 
 | Application type | Authentication initiator | Authentication options |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ Note
 
 The list in the previous article grows as we add more resource types.
 
-Microsoft provides a NuGet package for .NET developers building [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/) apps. This solution handles the back-end processing for incoming HTTP requests for Microsoft Entra authentication events. Find token validation to secure the API call, object model, type with IDE IntelliSense. Also find inbound and outbound validation of the API request and response schemas.
+Microsoft provides a [NuGet package for .NET developers](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/functions) building [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/) apps. This solution handles the back-end processing for incoming HTTP requests for Microsoft Entra authentication events. Find token validation to secure the API call, object model, type with IDE IntelliSense. Also find inbound and outbound validation of the API request and response schemas.
 
 Authentication extensions are executed in-line with sign-in and sign-up flows. Ensure the scenario is highly performant, robust, and secure. Azure Functions offers secure infrastructure, including libraries, [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts) for secret storage, caching, autoscaling, and monitoring. There are more recommendations in [Security operations](https://learn.microsoft.com/en-us/entra/architecture/deployment-external-operations).
 

@@ -74,7 +74,7 @@ Search SharePoint Site by site name or an exact URL as the search box is case se
 
 - [Catalog access reviews \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/catalog-access-reviews) also allow [custom data provided resources](https://learn.microsoft.com/en-us/entra/id-governance/custom-data-resource-access-reviews) to be included in a catalog.
 
-\*\*Prerequisite roles:\*\*See [Required roles to add resources to a catalog](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-delegate#required-roles-to-add-resources-to-a-catalog).
+**Prerequisite roles:** See [Required roles to add resources to a catalog](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-delegate#required-roles-to-add-resources-to-a-catalog).
 
 To add resources to a catalog:
 
