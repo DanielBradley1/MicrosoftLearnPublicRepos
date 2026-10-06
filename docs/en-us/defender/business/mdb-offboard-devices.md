@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-offboard-devices -->
-<!-- Sitemap-Last-Modified: 2026-04-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Offboard a device from Microsoft Defender for Business
 

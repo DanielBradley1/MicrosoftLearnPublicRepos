@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-manage-devices -->
-<!-- Sitemap-Last-Modified: 2026-07-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Manage devices in Microsoft Defender for Business
 

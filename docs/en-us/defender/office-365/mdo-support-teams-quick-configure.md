@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/mdo-support-teams-quick-configure -->
-<!-- Sitemap-Last-Modified: 2026-04-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Quickly configure Microsoft Teams protection in Microsoft Defender for Office 365
 

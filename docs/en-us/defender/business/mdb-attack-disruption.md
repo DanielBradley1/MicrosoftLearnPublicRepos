@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-attack-disruption -->
-<!-- Sitemap-Last-Modified: 2026-01-20 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Automatic attack disruption in Microsoft Defender for Business
 

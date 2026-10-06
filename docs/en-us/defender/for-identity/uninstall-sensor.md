@@ -5,7 +5,7 @@
 
 Remove the Microsoft Defender for Identity sensor when you need to decommission a server, clean up orphaned or duplicate sensor entries, or stop Defender for Identity monitoring on a specific server. For sensors onboarded without Microsoft Defender for Endpoint deployment, follow the dedicated offboarding procedure before removing the sensor entry.
 
-## Offboard a domain controller without Defender for Endpoint deployment \(Preview\)
+## Offboard a domain controller without Defender for Endpoint deployment
 
 For a domain controller onboarded without Defender for Endpoint deployment, run the offboarding package on the domain controller before removing the sensor from the portal. Removing the portal entry alone doesn't uninstall the sensor component. The sensor can continue sending data and reactivate.
 

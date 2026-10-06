@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor -->
-<!-- Sitemap-Last-Modified: 2026-09-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Activate the Microsoft Defender for Identity sensor v3.x
 
@@ -16,6 +16,8 @@ See [Microsoft Defender for Identity sensor v3.x prerequisites](https://learn.mi
 ## Turn on automatic sensor activation
 
 Note
+
+Automatic sensor activation and automatic Windows auditing are available only after your organization has an active license that includes Microsoft Defender for Identity.
 
 When **Automatic sensor v3.x activation** is enabled, Defender for Identity automatically activates sensor v3.x on eligible domain controllers, AD FS, AD CS, or Microsoft Entra Connect servers that you onboard to Defender for Endpoint. The servers must run Windows Server 2019 or later.
 
@@ -38,7 +40,7 @@ To activate the Defender for Identity sensor v3.x on an eligible server, follow 
 
    [![Screenshot of the successful sensor activation banner with a link to view onboarded servers.](https://learn.microsoft.com/en-us/defender-for-identity/deploy/media/activated-sensor.png)](https://learn.microsoft.com/en-us/defender-for-identity/deploy/media/activated-sensor.png#lightbox)
 
-## Onboard a domain controller without Defender for Endpoint deployment \(preview\)
+## Onboard a domain controller without Defender for Endpoint deployment
 
 Use onboarding without Defender for Endpoint deployment to activate the Defender for Identity sensor v3.x without first onboarding the domain controller to Defender for Endpoint:
 

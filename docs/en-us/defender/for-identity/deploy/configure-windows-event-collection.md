@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection -->
-<!-- Sitemap-Last-Modified: 2026-08-11 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Configure Windows event auditing
 
@@ -23,6 +23,8 @@ If you're deploying the Defender for Identity sensor v3.x, use automatic Windows
 ### Control automatic Windows auditing
 
 Note
+
+Automatic sensor activation and automatic Windows auditing are available only after your organization has an active license that includes Microsoft Defender for Identity.
 
 When **Automatic sensor v3.x activation** and **Automatic Windows auditing configuration** are enabled, Defender for Identity automatically activates sensor v3.x and configures Windows auditing on eligible domain controllers, AD FS, AD CS, or Microsoft Entra Connect servers that you onboard to Defender for Endpoint. The servers must run Windows Server 2019 or later.
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-create-edit-device-groups -->
-<!-- Sitemap-Last-Modified: 2026-07-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Device groups in Microsoft Defender for Business
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-compliance-posture -->
-<!-- Sitemap-Last-Modified: 2025-12-09 -->
+<!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-security-posture -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Determine your OAuth app security posture
 

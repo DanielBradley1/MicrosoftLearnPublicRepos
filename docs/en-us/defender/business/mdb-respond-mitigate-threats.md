@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-respond-mitigate-threats -->
-<!-- Sitemap-Last-Modified: 2026-07-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Respond to and mitigate threats in Microsoft Defender for Business
 

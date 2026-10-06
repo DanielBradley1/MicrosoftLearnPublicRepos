@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-onboard-devices -->
-<!-- Sitemap-Last-Modified: 2026-04-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Onboard devices to Microsoft Defender for Business
 

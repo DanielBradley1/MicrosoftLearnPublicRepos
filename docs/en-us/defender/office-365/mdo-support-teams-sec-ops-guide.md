@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/mdo-support-teams-sec-ops-guide -->
-<!-- Sitemap-Last-Modified: 2026-04-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Security Operations Guide for Teams protection in Microsoft Defender for Office 365
 

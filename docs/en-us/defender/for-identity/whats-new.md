@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/whats-new -->
-<!-- Sitemap-Last-Modified: 2026-09-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # What's new in Microsoft Defender for Identity
 
@@ -17,9 +17,17 @@ For more information, see also:
 
 For updates about versions and features released six months ago or earlier, see the [What's new archive for Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/whats-new-archive).
 
+## October 2026
+
+### General availability of sensor v3.x activation without Defender for Endpoint
+
+Defender for Identity sensor v3.x activation without Defender for Endpoint is now generally available for eligible domain controllers running Windows Server 2019 or later. This activation method supports only new sensor v3.x deployments on eligible domain controllers without an existing Defender for Identity sensor. Sensor v2.x migration isn't supported. For more information, see [Activate the Defender for Identity sensor](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor).
+
 ## September 2026
 
 ### Automatic sensor v3.x activation and Windows auditing by default
+
+Automatic sensor v3.x activation and automatic Windows auditing apply only to organizations with an active license that includes Microsoft Defender for Identity.
 
 The rollout differs for new Microsoft Defender for Endpoint customers and existing Defender for Identity customers:
 

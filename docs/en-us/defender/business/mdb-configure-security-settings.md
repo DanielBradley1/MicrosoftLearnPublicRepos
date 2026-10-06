@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-configure-security-settings -->
-<!-- Sitemap-Last-Modified: 2026-06-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Set up, review, and edit your security policies and settings in Microsoft Defender for Business
 
