@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/configure-ai-agent-runtime-protection -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-09-18 -->
 
 # Set up AI agent runtime protection with Microsoft Defender for Endpoint \(Preview\)
 

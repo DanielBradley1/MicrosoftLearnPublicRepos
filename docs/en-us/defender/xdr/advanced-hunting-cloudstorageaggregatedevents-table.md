@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-cloudstorageaggregatedevents-table -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2025-08-05 -->
 
 # CloudStorageAggregatedEvents \(Preview\)
 
