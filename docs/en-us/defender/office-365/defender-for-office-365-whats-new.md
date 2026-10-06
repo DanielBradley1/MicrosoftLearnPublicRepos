@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-09-21 -->
 
 # What's new in Microsoft Defender for Office 365
 

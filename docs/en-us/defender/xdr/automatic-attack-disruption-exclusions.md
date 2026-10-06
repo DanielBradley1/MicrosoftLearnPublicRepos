@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/automatic-attack-disruption-exclusions -->
-<!-- Sitemap-Last-Modified: 2026-10-04 -->
+<!-- Sitemap-Last-Modified: 2026-08-07 -->
 
 # Exclude assets from automated responses in automatic attack disruption
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/mdo-support-teams-about -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-09-21 -->
 
 # Microsoft Defender for Office 365 support for Microsoft Teams
 
