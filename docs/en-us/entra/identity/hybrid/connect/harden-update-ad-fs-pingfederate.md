@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/harden-update-ad-fs-pingfederate -->
-<!-- Sitemap-Last-Modified: 2026-02-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Hardening update to Microsoft Entra Connect Sync
 

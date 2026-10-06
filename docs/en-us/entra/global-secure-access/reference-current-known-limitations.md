@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/reference-current-known-limitations -->
-<!-- Sitemap-Last-Modified: 2026-05-29 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Known limitations for Global Secure Access
 

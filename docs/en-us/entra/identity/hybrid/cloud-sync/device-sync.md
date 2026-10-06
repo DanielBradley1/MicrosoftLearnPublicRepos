@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync -->
-<!-- Sitemap-Last-Modified: 2026-07-27 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Configure device sync with Microsoft Entra Cloud Sync
 

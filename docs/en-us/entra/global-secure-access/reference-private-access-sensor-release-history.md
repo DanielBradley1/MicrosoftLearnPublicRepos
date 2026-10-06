@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/reference-private-access-sensor-release-history -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Microsoft Entra Private Access Sensor release notes
 

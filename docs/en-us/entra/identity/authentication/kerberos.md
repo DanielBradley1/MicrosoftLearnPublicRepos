@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/kerberos -->
-<!-- Sitemap-Last-Modified: 2025-11-20 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Introduction to Microsoft Entra Kerberos
 

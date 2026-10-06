@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/app-provisioning/functions-for-customizing-application-data -->
-<!-- Sitemap-Last-Modified: 2026-04-10 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Reference for writing expressions for attribute mappings in Microsoft Entra ID
 

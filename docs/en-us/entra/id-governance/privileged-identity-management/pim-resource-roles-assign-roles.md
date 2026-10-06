@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-assign-roles -->
-<!-- Sitemap-Last-Modified: 2026-04-23 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Assign Azure resource roles in Privileged Identity Management
 

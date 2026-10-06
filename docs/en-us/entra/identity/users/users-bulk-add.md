@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-add -->
-<!-- Sitemap-Last-Modified: 2026-04-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Bulk create users in Microsoft Entra ID
 

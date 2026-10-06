@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-target-agent-identities -->
-<!-- Sitemap-Last-Modified: 2026-06-11 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Target agent identities in Microsoft Entra Conditional Access policies
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/samsung-knox-and-business-services-tutorial -->
-<!-- Sitemap-Last-Modified: 2025-05-20 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Configure Samsung Knox and Business Services for Single sign-on with Microsoft Entra ID
 

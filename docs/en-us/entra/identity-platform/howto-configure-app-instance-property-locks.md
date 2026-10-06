@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/howto-configure-app-instance-property-locks -->
-<!-- Sitemap-Last-Modified: 2025-04-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # How to configure app instance property lock for your applications
 

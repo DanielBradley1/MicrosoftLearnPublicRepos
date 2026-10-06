@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/fundamentals/zero-trust-protect-tenants -->
-<!-- Sitemap-Last-Modified: 2025-10-29 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Configure Microsoft Entra for Zero Trust: Protect tenants and isolate production systems
 

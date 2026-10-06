@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/security-best-practices-for-app-registration -->
-<!-- Sitemap-Last-Modified: 2025-06-20 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Security best practices for application properties in Microsoft Entra ID
 

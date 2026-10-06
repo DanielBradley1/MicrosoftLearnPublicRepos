@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/agent-id/faq -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Frequently asked questions about Microsoft Entra Agent ID
 

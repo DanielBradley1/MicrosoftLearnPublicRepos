@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/services-and-integration-partners -->
-<!-- Sitemap-Last-Modified: 2024-06-07 -->
+<!-- Sitemap-Last-Modified: 2026-04-09 -->
 
 # Services and integration partners
 

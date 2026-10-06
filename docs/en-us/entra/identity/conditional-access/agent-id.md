@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/conditional-access/agent-id -->
-<!-- Sitemap-Last-Modified: 2026-06-19 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Conditional Access for agents
 

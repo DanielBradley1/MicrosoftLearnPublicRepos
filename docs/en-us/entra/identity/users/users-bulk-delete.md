@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-delete -->
-<!-- Sitemap-Last-Modified: 2026-03-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Bulk delete users in Microsoft Entra ID
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Add and manage B2B collaboration users in the Microsoft Entra admin center
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions -->
-<!-- Sitemap-Last-Modified: 2026-08-04 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Microsoft Entra service limits and restrictions
 

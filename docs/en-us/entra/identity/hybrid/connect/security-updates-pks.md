@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/security-updates-pks -->
-<!-- Sitemap-Last-Modified: 2026-02-18 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Security improvements to Microsoft Entra Connect Sync autoupgrade and Microsoft Entra Connect Health alerts
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/cisco-secure-firewall-secure-client -->
-<!-- Sitemap-Last-Modified: 2025-03-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Configure Cisco Secure Firewall - Secure Client for Single sign-on with Microsoft Entra ID
 

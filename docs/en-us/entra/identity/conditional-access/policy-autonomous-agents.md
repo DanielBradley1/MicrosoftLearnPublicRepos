@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-autonomous-agents -->
-<!-- Sitemap-Last-Modified: 2026-06-03 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Secure autonomous agents with Conditional Access
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-stay-signed-in-prompt -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Manage the 'Stay signed in?' prompt
 

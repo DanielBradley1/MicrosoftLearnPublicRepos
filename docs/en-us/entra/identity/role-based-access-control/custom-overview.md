@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview -->
-<!-- Sitemap-Last-Modified: 2026-06-01 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Overview of role-based access control in Microsoft Entra ID
 
