@@ -12,7 +12,6 @@ Currently, browser join is available for appointments that are scheduled through
 - [Bookings](https://learn.microsoft.com/en-us/microsoft-365/bookings/bookings-overview)
 - Microsoft Teams Electronic Health Record \(EHR\) connector
 
-  - Integration with [Oracle Health EHR](https://learn.microsoft.com/en-us/microsoft-365/frontline/ehr-admin-oracle-health?view=o365-worldwide)
   - Integration with [Epic EHR](https://learn.microsoft.com/en-us/microsoft-365/frontline/ehr-admin-epic?view=o365-worldwide)
 
 ## Set up browser join
@@ -24,8 +23,6 @@ When creating your service, if you select **Add online meeting**, the link to jo
 ### Appointments scheduled through the Teams EHR connector
 
 No setup is needed by you or your staff!
-
-**Integration with Oracle Health EHR**: The Teams EHR connector supports patients joining virtual appointments through a link in the SMS text message. At the time of the appointment, patients can join by tapping the link in the SMS text message, and Teams opens in a browser.
 
 **Integration with Epic EHR**: The Teams EHR connector supports patients joining virtual appointments through MyChart web and mobile. At the time of the appointment, patients can start the appointment from MyChart by using the **Begin virtual visit** button, and Teams opens in a browser.
 
@@ -82,6 +79,10 @@ Staff members can change the language of the captions. The default language is E
 Currently, protected meeting capabilities that are part of [Teams Premium](https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/licensing-enhance-teams), such as sensitivity labels, watermarks, and end-to-end encryption \(E2EE\), aren't supported in browser join.
 
 If you've configured any of these features in your organization, attendees won't be able to join appointments from a desktop or mobile browser. Instead, they're prompted to download Teams and the meeting link they receive opens Teams in the desktop, mobile, or web app.
+
+### Other unsupported features
+
+Explicit Recording Consent \(ERC\), Whiteboard and PowerPoint Live features are not supported in the Virtual Appointments web browser join experience.
 
 ## Related articles
 

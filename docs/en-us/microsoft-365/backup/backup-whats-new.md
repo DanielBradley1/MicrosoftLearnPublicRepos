@@ -16,6 +16,18 @@ Developer API changes are tracked separately in [What's new for Microsoft 365 Ba
 
 ## New capabilities
 
+### Require two-person approval to shorten offboarding deletion
+
+**October 1, 2026**
+
+Backup critical action approval uses a two-person rule when an administrator requests to shorten the offboarding grace period for selected backup items from 90 days to seven days. A Global Administrator or Backup Administrator must first configure a roster of at least two eligible approvers, and each newly nominated approver must complete a fixed two-day aging window before approving.
+
+Each request requires two approvals from aged approvers. When exactly two approvers are configured, the requestor's own approval counts toward quorum. When three or more approvers are configured, the requestor is excluded and two other approvers must approve. A request remains open for 30 days; if it doesn't reach quorum, it expires without changing any data. While fewer than two aged approvers are configured, selected items remain on the 90-day grace period and new faster-deletion requests are blocked.
+
+When the second approval is recorded, the seven-day deletion schedule applies immediately to valid items in the request. This accelerates permanent deletion of their backups; after an item is purged, the deletion can't be undone.
+
+For more information, see [Backup critical action approval](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding?view=o365-worldwide#backup-critical-action-approval).
+
 ### Configure backup recovery windows
 
 **September 18, 2026**
@@ -154,6 +166,14 @@ For more information, see [Offboard specific sites, mailboxes, or users](https:/
 
 ## FAQ updates
 
+### How do Microsoft 365 Backup restores interact with site-level and file-level archiving?
+
+**September 29, 2026**
+
+Microsoft 365 Archive and Microsoft 365 Backup are orthogonal features. A Backup restore doesn't change a SharePoint site's current site-level tier state: a currently archived site remains archived, and a currently active site remains active, regardless of the site's state at the selected restore point. File-level tier state is restored to the state each file had at that restore point.
+
+For more information, see [How do Microsoft 365 Backup restores interact with site-level and file-level archiving?](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-faq?view=o365-worldwide#how-do-microsoft-365-backup-restores-interact-with-site-level-and-file-level-archiving).
+
 ### How should restore performance estimates be interpreted?
 
 **September 18, 2026**
@@ -177,6 +197,14 @@ For more information, see [Considerations when using restore](https://learn.micr
 Use **Recover an inactive mailbox**. **Restore an inactive mailbox** doesn't preserve the backup data from the old mailbox.
 
 For more information, see [Considerations when using restore](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide#considerations-when-using-restore).
+
+### Does bring your own key \(BYOK\) work with Microsoft 365 Backup?
+
+**August 21, 2026**
+
+Yes. The existing Microsoft 365 bring-your-own-key \(BYOK\) feature integrates with Microsoft 365 Backup to enhance data security. This is a clarification of supported security integration, not the launch of a new Microsoft 365 Backup feature.
+
+For more information, see [Security in Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-privacy-security?view=o365-worldwide#security).
 
 ### What should I do when ExternalDirectoryObjectID still exists?
 

@@ -104,7 +104,7 @@ Verify full WebSocket Secure \(WSS\) connectivity from user devices running Micr
 
 Copilot integrations can fail when a network perimeter blocks WSS, a network device performs Transport Layer Security inspection that interferes with the connection, or a proxy enforces aggressive connection timeouts.
 
-Work with the teams that manage network security, proxies, firewalls, secure web gateways, or SSE/SASE services to allow the required traffic. You can test connectivity to the `*.cloud.microsoft` domain by using either the [connectivity test for the Copilot app](https://connectivity.m365.cloud.microsoft/copilot). You can also use the [Microsoft 365 connectivity test tool](https://connectivity.m365.cloud.microsoft) for broader Microsoft products and service.
+Work with the teams that manage network security, proxies, firewalls, secure web gateways, or SSE/SASE services to allow the required traffic. You can test connectivity to the `*.cloud.microsoft` domain by using the [connectivity test for the Copilot app](https://connectivity.m365.cloud.microsoft/copilot). You can also use the [Microsoft 365 connectivity test tool](https://connectivity.m365.cloud.microsoft) for broader Microsoft products and service.
 
 ### Wildcards, FQDNs, and subdomains
 
