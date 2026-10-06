@@ -66,7 +66,11 @@ The credential management experience should enable customers to:
 - View their registered passkeys.
 - Delete a passkey.
 
-The [Microsoft Graph passkey sample](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample) demonstrates administrator-controlled provisioning with high-privilege application permissions. The sample is intended for testing only and isn't an implementation model for customer self-service.
+To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates how signed-in customers can list and register their own passkeys by using the credential management API with delegated permissions. Follow the sample's README to configure and run the app.
+
+Important
+
+The sample's deletion flow still uses Microsoft Graph with high-privilege application permissions and a client secret in browser code. Run the sample only in a test tenant. Don't deploy it to production.
 
 ## User experience
 
