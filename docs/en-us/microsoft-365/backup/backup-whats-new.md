@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-whats-new?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-22 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # What's new in Microsoft 365 Backup
 

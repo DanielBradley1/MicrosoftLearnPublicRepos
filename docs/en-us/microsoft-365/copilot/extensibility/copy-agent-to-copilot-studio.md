@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio -->
-<!-- Sitemap-Last-Modified: 2026-01-26 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Copy an agent from Agent Builder to Copilot Studio
 

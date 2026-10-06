@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.1 -->
-<!-- Sitemap-Last-Modified: 2026-03-06 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Plugin manifest schema 2.1 for Microsoft 365 Copilot
 

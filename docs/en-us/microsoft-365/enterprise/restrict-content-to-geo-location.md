@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/restrict-content-to-geo-location?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-05-09 -->
+<!-- Sitemap-Last-Modified: 2025-12-07 -->
 
 # Restrict SharePoint site content to a geo location
 

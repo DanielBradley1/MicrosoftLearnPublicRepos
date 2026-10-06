@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Share and manage agents built in Agent Builder
 

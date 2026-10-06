@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/moveto-microsoft-365/move-from-google-workspace-overview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-06-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Switch from Google Workspace to Microsoft 365
 

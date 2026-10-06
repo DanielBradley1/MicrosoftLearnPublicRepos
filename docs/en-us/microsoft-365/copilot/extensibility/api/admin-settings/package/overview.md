@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/overview -->
-<!-- Sitemap-Last-Modified: 2026-07-02 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Agent 365 Package Management API overview
 

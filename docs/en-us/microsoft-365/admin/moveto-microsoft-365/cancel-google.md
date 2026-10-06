@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/moveto-microsoft-365/cancel-google?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-11-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Cancel Google Workspace subscription
 

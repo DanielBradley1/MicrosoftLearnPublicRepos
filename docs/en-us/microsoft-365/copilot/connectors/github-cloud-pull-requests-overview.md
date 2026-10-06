@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/github-cloud-pull-requests-overview -->
-<!-- Sitemap-Last-Modified: 2026-06-04 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # GitHub Cloud Pull Requests connector overview
 

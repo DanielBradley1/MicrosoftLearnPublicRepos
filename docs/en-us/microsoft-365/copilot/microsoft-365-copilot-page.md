@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Manage Microsoft Copilot settings in the Microsoft 365 admin center
 

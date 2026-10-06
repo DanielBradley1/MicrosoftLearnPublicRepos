@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/lti/?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-01-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Integrating Microsoft products with your Learning Management System \(LMS\)
 

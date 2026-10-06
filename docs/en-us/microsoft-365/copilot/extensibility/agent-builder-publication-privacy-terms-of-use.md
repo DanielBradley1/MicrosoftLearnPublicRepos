@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-publication-privacy-terms-of-use -->
-<!-- Sitemap-Last-Modified: 2026-05-22 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Privacy statement and terms of use for agents in Agent Builder
 

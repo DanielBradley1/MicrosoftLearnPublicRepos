@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-developer-contact-info?view=m365-app-prev -->
-<!-- Sitemap-Last-Modified: 2026-06-29 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # root.developer.contactInfo object
 

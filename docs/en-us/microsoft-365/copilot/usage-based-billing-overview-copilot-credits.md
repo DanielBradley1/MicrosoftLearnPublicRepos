@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits -->
-<!-- Sitemap-Last-Modified: 2026-09-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Understand usage-based billing and cost management for Copilot Credits
 

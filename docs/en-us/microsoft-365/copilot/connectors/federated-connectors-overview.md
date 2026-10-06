@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Federated connectors overview
 

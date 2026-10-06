@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview -->
-<!-- Sitemap-Last-Modified: 2026-08-11 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Agent Evaluations CLI overview
 

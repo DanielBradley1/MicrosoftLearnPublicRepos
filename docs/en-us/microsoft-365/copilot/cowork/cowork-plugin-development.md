@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development -->
-<!-- Sitemap-Last-Modified: 2026-09-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Build plugins for Copilot Cowork
 

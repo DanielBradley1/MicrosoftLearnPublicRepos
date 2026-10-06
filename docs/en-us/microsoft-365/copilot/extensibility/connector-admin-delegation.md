@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/connector-admin-delegation -->
-<!-- Sitemap-Last-Modified: 2026-07-02 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Grant administrative rights to AI Administrators to manage connectors
 

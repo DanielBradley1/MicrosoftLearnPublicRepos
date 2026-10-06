@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites -->
-<!-- Sitemap-Last-Modified: 2026-07-09 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Set up your development environment for your plugin
 

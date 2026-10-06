@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins -->
-<!-- Sitemap-Last-Modified: 2026-08-12 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # MCP and API plugins for declarative agents
 

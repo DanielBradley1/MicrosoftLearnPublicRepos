@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/frontline/browser-join?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-11-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Manage the join experience for Teams appointments on browsers
 

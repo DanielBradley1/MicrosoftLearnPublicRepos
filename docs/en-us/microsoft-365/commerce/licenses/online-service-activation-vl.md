@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/online-service-activation-vl?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-12-02 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Activate online services in volume licensing
 

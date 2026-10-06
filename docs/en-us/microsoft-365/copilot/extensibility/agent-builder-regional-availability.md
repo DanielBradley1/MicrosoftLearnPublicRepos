@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-regional-availability -->
-<!-- Sitemap-Last-Modified: 2026-07-02 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Agent Builder regional availability and language support
 

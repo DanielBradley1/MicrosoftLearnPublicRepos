@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio -->
-<!-- Sitemap-Last-Modified: 2026-07-24 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Use developer mode in Microsoft 365 Copilot to test and debug agents
 

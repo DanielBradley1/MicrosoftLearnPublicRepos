@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps -->
-<!-- Sitemap-Last-Modified: 2026-07-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Add MCP apps to declarative agents in Microsoft 365 Copilot
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector -->
-<!-- Sitemap-Last-Modified: 2026-07-02 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Build your first synced Copilot connector with Microsoft 365 Agents Toolkit
 

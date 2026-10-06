@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-flex-routing -->
-<!-- Sitemap-Last-Modified: 2026-05-05 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Flex routing \(EU and EFTA\)
 
