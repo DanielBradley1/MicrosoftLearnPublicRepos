@@ -23,7 +23,7 @@ The following customer data is stored in the applicable *Geography*:
 
 The following customer data is stored in the applicable *Geography*:
 
-- Microsoft Teams chat data, including private messages, channel messages, meeting messages, and images used in chats. Teams meeting recordings stored in OneDrive or SharePoint are covered by the applicable OneDrive or SharePoint data-location commitment.
+Microsoft Teams chat messages \(including private messages, channel messages, meeting messages and images used in chats\), and, for customers using Microsoft Stream \(on SharePoint\), meeting recordings.
 
 ## Microsoft 365 Copilot and Microsoft 365 Copilot Chat
 
