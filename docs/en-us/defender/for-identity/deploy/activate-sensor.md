@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-09-14 -->
 
 # Activate the Microsoft Defender for Identity sensor v3.x
 

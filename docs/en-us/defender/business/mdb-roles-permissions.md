@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-roles-permissions -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-07-17 -->
 
 # Assign security roles and permissions in Microsoft Defender for Business
 

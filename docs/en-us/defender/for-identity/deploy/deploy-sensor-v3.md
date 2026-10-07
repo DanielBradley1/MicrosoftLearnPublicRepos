@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3 -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-09-09 -->
 
 # Deploy the Microsoft Defender for Identity sensor v3.x
 

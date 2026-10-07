@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-add-users -->
-<!-- Sitemap-Last-Modified: 2026-10-01 -->
+<!-- Sitemap-Last-Modified: 2026-07-17 -->
 
 # Add users and assign licenses in Microsoft Defender for Business
 

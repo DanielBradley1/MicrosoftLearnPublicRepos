@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-security-privacy-compliance -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-01-20 -->
 
 # Security, privacy, and compliance in Microsoft Defender for Business
 

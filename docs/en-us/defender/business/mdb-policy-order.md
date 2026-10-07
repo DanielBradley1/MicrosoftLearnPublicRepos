@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-policy-order -->
-<!-- Sitemap-Last-Modified: 2026-10-01 -->
+<!-- Sitemap-Last-Modified: 2026-01-20 -->
 
 # Understand policy order in Microsoft Defender for Business
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-review-remediation-actions -->
-<!-- Sitemap-Last-Modified: 2026-10-01 -->
+<!-- Sitemap-Last-Modified: 2026-07-17 -->
 
 # Review remediation actions in the Action Center
 

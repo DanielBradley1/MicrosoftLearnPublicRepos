@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-lighthouse-integration -->
-<!-- Sitemap-Last-Modified: 2026-10-01 -->
+<!-- Sitemap-Last-Modified: 2025-09-05 -->
 
 # Microsoft 365 Lighthouse and Microsoft Defender for Business
 

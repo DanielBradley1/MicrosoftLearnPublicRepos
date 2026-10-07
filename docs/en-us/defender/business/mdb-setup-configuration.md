@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-setup-configuration -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-01-20 -->
 
 # Set up and configure Microsoft Defender for Business
 
