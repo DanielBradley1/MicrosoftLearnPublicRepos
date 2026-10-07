@@ -3,23 +3,22 @@
 
 # Steps to start integrating with Microsoft Entra ID
 
-If you're new to hybrid identity, then this documentation is the place that you want to start. If you haven't done so, familiarize yourself with the [What is hybrid identity?](https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity) documentation before jumping in.
+Use this guide to integrate on-premises Active Directory with Microsoft Entra ID. It explains how to choose between Microsoft Entra Cloud Sync and Microsoft Entra Connect Sync and configure synchronization for users, groups, and devices.
 
-This document provides the steps that are required to integrate your on-premises Active Directory with Microsoft Entra ID. Integrating with Active Directory is the process of setting up synchronization for users and groups with Microsoft Entra ID. These steps differ slightly depending on which tool you use.
+First, use [Choose the right sync tool](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios) to select a synchronization tool. Then follow the section for that tool.
 
-Use the [Choosing the right sync tool](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios) first, to determine which one is right for you. Use the next section, for the tool that was recommended for you.
+## Cloud Sync
 
-## Cloud sync
-
-Use these tasks if you're deploying cloud sync to integrate with Active Directory.
+Use these tasks to deploy Cloud Sync and integrate Active Directory with Microsoft Entra ID.
 
 | Task | Description |
 | --- | --- |
-| [Determine which sync tool is correct for you](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios) | Use the wizard to determine whether cloud sync or Microsoft Entra Connect is the right tool for you. |
-| [Review the cloud sync prerequisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites) | Review the necessary prerequisites before getting started. |
+| [Choose the right sync tool](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios) | Use the wizard to determine whether Cloud Sync or Connect Sync is right for you. |
+| [Review Cloud Sync prerequisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites) | Review the prerequisites before you begin. |
 | [Download and install the provisioning agent](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-install) | Download and install the Microsoft Entra provisioning agent. |
-| [Configure cloud sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure) | Configure and tailor synchronization for your organization. |
-| [Verify users are synchronizing](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-single-forest#verify-users-are-created-and-synchronization-is-occurring) | Make sure it's working. |
+| [Configure Cloud Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure) | Configure synchronization for your organization. |
+| [Configure device sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync) | Synchronize Active Directory computer objects to Microsoft Entra ID for Microsoft Entra hybrid join. |
+| [Verify that users synchronize](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-single-forest#verify-users-are-created-and-synchronization-is-occurring) | Confirm that synchronization is working. |
 
 ## Microsoft Entra Connect
 
@@ -27,7 +26,7 @@ Use these tasks if you're deploying Microsoft Entra Connect to integrate with Ac
 
 | Task | Description |
 | --- | --- |
-| [Determine which sync tool is correct for you](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios) | Use the wizard to determine whether cloud sync or Microsoft Entra Connect is the right tool for you. |
+| [Choose the right sync tool](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios) | Use the wizard to determine whether Cloud Sync or Connect Sync is right for you. |
 | [Review the Microsoft Entra Connect prerequisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-prerequisites) | Review the necessary prerequisites before getting started. |
 | [Review and choose an installation type](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-select-installation) | Determine whether you'll use express or custom installation. |
 | [Download Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) | Download Microsoft Entra Connect. |

@@ -3,19 +3,20 @@
 
 # Configure your integration with Active Directory
 
-How you configure your synchronization, depends on which synchronization tool you're using and what your business goals are. Use the tables below to determine which features meet your target objectives.
+Choose Microsoft Entra Cloud Sync or Microsoft Entra Connect Sync based on your synchronization goals. The tables below link to configuration tasks for each tool.
 
-## Cloud sync
+## Cloud Sync
 
-After installing the Microsoft Entra provisioning agent, you'll need to configure cloud sync. This configuration is done via the portal. The following table provides a list of features you can use to meet your business goals.
+After you install the Microsoft Entra provisioning agent, configure Cloud Sync in the Microsoft Entra admin center. The following table lists configuration tasks.
 
 | Task | Description |
 | --- | --- |
-| [Configure and new installation cloud sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure) | Configure and tailor synchronization for your organization. |
-| [Scoping users and groups](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure#scope-provisioning-to-specific-users-and-groups) | How to scope cloud sync to specific users and groups |
+| [Configure a new Cloud Sync installation](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure) | Configure synchronization for your organization. |
+| [Configure device sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync) | Synchronize Active Directory computer objects to Microsoft Entra ID for Microsoft Entra hybrid join. |
+| [Scope provisioning to specific users and groups](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure#scope-provisioning-to-specific-users-and-groups) | Scope Cloud Sync to selected users and groups. |
 | [Mapping user and group attributes](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure#attribute-mapping) | Map attributes for users and groups. |
 | [Working with directory extensions and custom attributes](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure#directory-extensions-and-custom-attribute-mapping) | Use directory extensions and custom attributes |
-| [Configure single sign-on](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-sso) | Set up cloud sync to use single sign-on |
+| [Configure single sign-on](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-sso) | Set up Cloud Sync single sign-on. |
 
 ## Microsoft Entra Connect
 

@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-with-passkey -->
 <!-- Sitemap-Last-Modified: 2026-10-05 -->
 
-# Sign in with passkeys
+# Sign in with passkeys in Microsoft Entra External ID
 
 **Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 
@@ -57,7 +57,7 @@ To configure a profile:
 
 ## Step 3: Build a passkey management experience for your application
 
-Your application needs a credential management experience so signed-in customers can register and manage their own passkeys. Use the [credential management API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api) to build this experience with low-privilege delegated permissions.
+Your application needs a credential management experience so customers can register and manage their passkeys. Use the [FIDO2 provisioning APIs](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod) to build this into your app.
 
 The credential management experience should enable customers to:
 
@@ -66,11 +66,7 @@ The credential management experience should enable customers to:
 - View their registered passkeys.
 - Delete a passkey.
 
-To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates how signed-in customers can list and register their own passkeys by using the credential management API with delegated permissions. Follow the sample's README to configure and run the app.
-
-Important
-
-The sample's deletion flow still uses Microsoft Graph with high-privilege application permissions and a client secret in browser code. Run the sample only in a test tenant. Don't deploy it to production.
+The [Microsoft Graph passkey sample](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample) demonstrates administrator-controlled provisioning with high-privilege application permissions. The sample is intended for testing only and isn't an implementation model for customer self-service.
 
 ## User experience
 
@@ -200,7 +196,7 @@ No. Registration requires the customer's physical presence and local biometric o
 
 ### Are there low-privilege APIs for building a credential management experience?
 
-Yes. Use the [credential management API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api) to let signed-in customers list and register their own passkeys with delegated permissions.
+No. Use the [FIDO2 provisioning APIs](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod) to build your credential management experience.
 
 ### Can I use the same passkey across multiple domains \(related origins\)?
 
@@ -212,11 +208,11 @@ No. Passkeys aren't currently supported through native authentication APIs. Supp
 
 ### Is there an out-of-box passkey registration experience?
 
-No. Microsoft doesn't currently provide a built-in passkey registration experience for external tenants. Build a credential management experience in your application by using the [credential management API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api).
+No. Microsoft doesn't currently provide a built-in passkey registration experience for external tenants. Build a credential management experience in your application by using the [FIDO2 provisioning APIs](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod).
 
 ## Related content
 
-- [Credential management API for Microsoft Entra External ID](https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api)
+- [FIDO2 authentication method API reference](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod)
 - [Create a sign-up and sign-in user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers)
 - [Add multifactor authentication \(MFA\) to an app](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-multifactor-authentication-customers)
 - [Authentication methods in external tenants](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-authentication-methods-customers)

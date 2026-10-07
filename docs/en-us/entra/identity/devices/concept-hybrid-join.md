@@ -27,7 +27,9 @@ Microsoft Entra hybrid joined devices require network line of sight to your on-p
 |  | Conditional Access through Domain join or through Intune if co-managed |
 |  | [Self-service Password Reset and Windows Hello PIN reset on lock screen](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-sspr-windows) |
 
-![Diagram showing how a hybrid joined device works.](https://learn.microsoft.com/en-us/entra/identity/devices/media/concept-hybrid-join/azure-ad-hybrid-joined-device.png)
+When enabled, Microsoft Entra Cloud Sync can synchronize Active Directory computer objects to Microsoft Entra ID for Microsoft Entra hybrid join. It doesn't configure AD FS or other federation settings. For configuration steps, see [Configure device sync with Microsoft Entra Cloud Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync).
+
+![Diagram showing Active Directory Domain Services sending device information to Microsoft Entra ID for hybrid join.](https://learn.microsoft.com/en-us/entra/identity/devices/media/concept-hybrid-join/azure-ad-hybrid-joined-device.png)
 
 ## Scenarios
 

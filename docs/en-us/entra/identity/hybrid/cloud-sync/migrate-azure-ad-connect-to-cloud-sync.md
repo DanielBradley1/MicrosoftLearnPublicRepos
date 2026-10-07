@@ -3,9 +3,9 @@
 
 # Migrating from Microsoft Entra Connect to Microsoft Entra Cloud Sync
 
-Microsoft Entra Cloud Sync is the future for accomplishing your hybrid identity goals for synchronization of users, groups, and contacts to Microsoft Entra ID. It uses the Microsoft Entra cloud provisioning agent instead of the Microsoft Entra Connect application. If you're currently using Microsoft Entra Connect and wish to move to cloud sync, the following document provides guidance.
+Microsoft Entra Cloud Sync synchronizes users, groups, and contacts from Active Directory to Microsoft Entra ID by using the Microsoft Entra provisioning agent. When device sync is enabled, Cloud Sync can also synchronize computer objects for Microsoft Entra hybrid join. Use this guide to plan a phased migration from Microsoft Entra Connect to Cloud Sync.
 
-## Steps for migrating from Microsoft Entra Connect to cloud sync
+## Steps for migrating from Microsoft Entra Connect to Cloud Sync
 
 Important
 
@@ -18,7 +18,7 @@ You can still migrate in phases, such as by OU or another defined batch. Each ba
 | Step | Description |
 | --- | --- |
 | Choose the best sync tool | Before moving to cloud sync, you should verify that cloud sync is currently the best synchronization tool for you. You can do this task by reviewing the [supported sync scenarios comparison](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios). |
-| Verify the pre-requisites for migrating | The following guidance is only for users who have installed Microsoft Entra Connect using the Express settings and aren't synchronizing devices. Also you should verify the cloud sync [pre-requisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites). |
+| Verify the prerequisites for migrating | This guidance is for users who installed Microsoft Entra Connect by using Express settings. If you synchronize devices for Microsoft Entra hybrid join, include [device sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync) in your Cloud Sync migration plan. Also verify the [Cloud Sync prerequisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites). |
 | Back up your Microsoft Entra Connect configuration | Before making any changes, you should back up your Microsoft Entra Connect configuration. This way, you can rollback. For more information, see [Import and export Microsoft Entra Connect configuration settings](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-import-export-config). |
 | Review the migration tutorial | To become familiar with the migration process, review the [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp) tutorial. This tutorial guides you through the migration process in a sandbox environment. |
 | Create or identify an OU for the migration | Create a new OU or identify an existing OU that contains the users you'll test migration on. Keep this OU in Microsoft Entra Connect Sync scope during migration. |
