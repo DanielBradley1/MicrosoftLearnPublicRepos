@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/logout-user -->
-<!-- Sitemap-Last-Modified: 2026-04-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Device action: logout current user
 

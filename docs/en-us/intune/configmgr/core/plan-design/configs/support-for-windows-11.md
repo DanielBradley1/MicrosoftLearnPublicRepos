@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/support-for-windows-11 -->
-<!-- Sitemap-Last-Modified: 2025-07-31 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Support for Windows 11 in Configuration Manager
 

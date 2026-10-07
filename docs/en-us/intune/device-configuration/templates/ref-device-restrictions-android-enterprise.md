@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-android-enterprise -->
-<!-- Sitemap-Last-Modified: 2026-04-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Android template device settings list to restrict features using Intune
 

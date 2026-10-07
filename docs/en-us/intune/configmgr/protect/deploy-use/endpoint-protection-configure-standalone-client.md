@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/protect/deploy-use/endpoint-protection-configure-standalone-client -->
-<!-- Sitemap-Last-Modified: 2023-02-03 -->
+<!-- Sitemap-Last-Modified: 2026-09-18 -->
 
 # Configure Endpoint Protection on a standalone client
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/install/release-notes -->
-<!-- Sitemap-Last-Modified: 2025-04-24 -->
+<!-- Sitemap-Last-Modified: 2026-09-22 -->
 
 # Release notes for Configuration Manager
 

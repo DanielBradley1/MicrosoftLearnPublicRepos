@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-security/security-baselines/ref-windows-mdm-settings -->
-<!-- Sitemap-Last-Modified: 2026-06-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Windows MDM security baseline settings reference for Microsoft Intune
 

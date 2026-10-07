@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview -->
-<!-- Sitemap-Last-Modified: 2026-06-24 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Use security baselines to help secure Windows devices you manage with Microsoft Intune
 

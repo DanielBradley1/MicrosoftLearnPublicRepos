@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/support-for-sql-server-versions -->
-<!-- Sitemap-Last-Modified: 2026-07-29 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Supported SQL Server versions for Configuration Manager
 

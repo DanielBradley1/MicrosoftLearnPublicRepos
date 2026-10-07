@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/epm/overview -->
-<!-- Sitemap-Last-Modified: 2026-04-15 -->
+<!-- Sitemap-Last-Modified: 2026-06-23 -->
 
 # Use Endpoint Privilege Management with Microsoft Intune
 

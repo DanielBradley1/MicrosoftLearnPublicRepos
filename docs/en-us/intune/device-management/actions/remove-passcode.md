@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/remove-passcode -->
-<!-- Sitemap-Last-Modified: 2026-04-30 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Device action: remove passcode
 

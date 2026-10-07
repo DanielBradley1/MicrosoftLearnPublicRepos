@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/support-for-windows-10 -->
-<!-- Sitemap-Last-Modified: 2026-05-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-22 -->
 
 # Support for Windows 10 in Configuration Manager
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/create-device-categories -->
-<!-- Sitemap-Last-Modified: 2026-05-20 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Create and assign device categories in Microsoft Intune
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/site-and-site-system-prerequisites -->
-<!-- Sitemap-Last-Modified: 2026-09-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Site and site system prerequisites for Configuration Manager
 

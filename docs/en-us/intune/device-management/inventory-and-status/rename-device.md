@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/rename -->
-<!-- Sitemap-Last-Modified: 2026-04-21 -->
+<!-- Source: https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/rename-device -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Rename a device in Microsoft Intune
 
@@ -57,5 +57,5 @@ To bulk rename devices:
 
 ## Next steps
 
-- [Edit other device properties](https://learn.microsoft.com/en-us/intune/device-management/actions/edit-device-properties) \(ownership, primary user, notes, and scope tags\).
+- [Edit other device properties](https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/edit-device-properties) \(ownership, primary user, notes, and scope tags\).
 - To change the device name shown in the Company Portal, see [Rename a device from the Company Portal](https://learn.microsoft.com/en-us/intune/user-help/device-actions/update-device-name-company-portal-app).

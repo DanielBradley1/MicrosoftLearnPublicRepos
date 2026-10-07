@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/ -->
-<!-- Sitemap-Last-Modified: 2026-09-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Device management
 

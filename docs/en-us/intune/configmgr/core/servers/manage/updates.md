@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/updates -->
-<!-- Sitemap-Last-Modified: 2024-12-04 -->
+<!-- Sitemap-Last-Modified: 2026-09-22 -->
 
 # Updates and servicing for Configuration Manager
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/intune/device-management/admin-tasks -->
-<!-- Sitemap-Last-Modified: 2026-04-16 -->
+<!-- Source: https://learn.microsoft.com/en-us/intune/governance/admin-tasks -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Centrally manage common admin tasks in Microsoft Intune
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/ -->
-<!-- Sitemap-Last-Modified: 2026-08-06 -->
+<!-- Sitemap-Last-Modified: 2026-09-16 -->
 
 # Device actions
 

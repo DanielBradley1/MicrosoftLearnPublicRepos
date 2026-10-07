@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/whats-new/in-development -->
-<!-- Sitemap-Last-Modified: 2026-09-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # In development for Microsoft Intune
 

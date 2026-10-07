@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/inventory-and-status/find-primary-user -->
-<!-- Sitemap-Last-Modified: 2026-04-16 -->
+<!-- Sitemap-Last-Modified: 2026-07-05 -->
 
 # Change a device's primary user in Microsoft Intune
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/reset-passcode -->
-<!-- Sitemap-Last-Modified: 2026-04-06 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Device action: reset passcode
 

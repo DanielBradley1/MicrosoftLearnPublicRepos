@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices -->
-<!-- Sitemap-Last-Modified: 2026-05-27 -->
+<!-- Sitemap-Last-Modified: 2026-09-21 -->
 
 # Supported OS versions for clients and devices for Configuration Manager
 

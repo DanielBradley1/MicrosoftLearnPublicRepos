@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/support-for-windows-features-and-networks -->
-<!-- Sitemap-Last-Modified: 2022-10-04 -->
+<!-- Sitemap-Last-Modified: 2026-09-21 -->
 
 # Support for Windows features and networks in Configuration Manager
 

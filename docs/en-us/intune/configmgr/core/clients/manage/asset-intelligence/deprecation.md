@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/asset-intelligence/deprecation -->
-<!-- Sitemap-Last-Modified: 2022-10-04 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Asset intelligence deprecation
 
