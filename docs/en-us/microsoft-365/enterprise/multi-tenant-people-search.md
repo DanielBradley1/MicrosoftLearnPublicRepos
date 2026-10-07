@@ -36,9 +36,9 @@ To test the MTO People Search feature, it's assumed that you already have the fo
 
 Multitenant organization people search is supported across a range of scenarios and Microsoft 365 applications. Some of the scenarios you can test and validate are described below:
 
-1. **Microsoft Outlook \(OWA, desktop and mobile app\)**
+1. **Microsoft Outlook \(Outlook on the web and supported desktop and mobile clients\)**
 
-   - Nestor \([nestor@contoso.com](mailto:nestor@contoso.com)\) searches for "Megan" on the centralized search bar in OWA and gets the results and can view Megan's people card with limited profile information.
+   - Nestor searches for Megan by using the Search box in Outlook on the web and can open Megan’s profile card from the search results.
    - Nestor types in "Megan" in the *To* line of the email and can send an email to Megan after getting the results for [megan@fabrikam.com](mailto:megan@fabrikam.com).
    - Nestor @mentions "Megan" in the body of the email and can get the result for [megan@fabrikam.com](mailto:megan@fabrikam.com).
    - Nestor types in "Megan" in the *cc* line of the email and can get the result for [megan@fabrikam.com](mailto:megan@fabrikam.com).
@@ -50,9 +50,9 @@ Multitenant organization people search is supported across a range of scenarios 
    - Nestor can hover and/or click on Megan's profile picture/initials to view Megan's limited people card.
    - Nestor can share and collaborate on Office documents with Megan.
 
-3. **Bing for Business**
+3. **Microsoft 365 search**
 
-   - Nestor \([nestor@contoso.com](mailto:nestor@contoso.com)\) searches for "Megan" on the search bar and can view Megan's limited people card \([megan@fabrikam.com](mailto:megan@fabrikam.com)\).
+   - Nestor searches for "Megan" in Microsoft 365 at M365.cloud.microsoft and can view Megan’s profile information if Megan’s synchronized user account is discoverable in the tenant.
 
 ## Key terminology
 

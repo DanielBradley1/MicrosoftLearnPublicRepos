@@ -21,7 +21,7 @@ Existing cross-tenant sync jobs with B2B collaboration members can be used inste
 
 ### Can I delete the auto-generated MTO\_Sync job created during MTO setup?
 
-When an MTO is created, it generates cross-tenant sync jobs with the prefix "MTO\_Sync" that can be seen in the Entra ID Portal. These jobs can be deleted but then might be recreated automatically, which can be safely ignored.
+When an MTO is created, it generates cross-tenant sync jobs with the prefix "MTO\_Sync" that can be seen in the Entra ID Portal. Avoid deleting, renaming, or modifying an MTO\_Sync configuration that is managed by the Microsoft 365 admin center. Changing it can prevent the Microsoft 365 admin center from recognizing or managing the configuration correctly.
 
 ### What happens to the cross-tenant sync jobs when a tenant leaves an MTO?
 
@@ -39,7 +39,7 @@ The contact objects remain unaffected by the creation of an MTO or cross-tenant 
 
 ### Can security groups be synced across tenants?
 
-While groups can be used to sync users across tenants via Entra cross-tenant sync, the security groups themselves can't be synced across tenants.
+Microsoft Entra cross-tenant synchronization can synchronize security groups across tenants. Cross-tenant group synchronization requires Microsoft Entra ID Governance or Microsoft Entra Suite licensing and must be configured directly in Microsoft Entra ID.
 
 ### Can source attributes be mapped to different attributes on the target tenant?
 

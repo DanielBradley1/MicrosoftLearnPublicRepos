@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector -->
-<!-- Sitemap-Last-Modified: 2026-06-18 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Microsoft 365 Copilot connectors overview
 

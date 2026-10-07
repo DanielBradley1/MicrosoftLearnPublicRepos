@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-personal-news-digest -->
-<!-- Sitemap-Last-Modified: 2026-05-08 -->
+<!-- Sitemap-Last-Modified: 2026-07-06 -->
 
 # Use the Personal News Digest template to build an agent
 

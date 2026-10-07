@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-career-coach -->
-<!-- Sitemap-Last-Modified: 2025-12-02 -->
+<!-- Sitemap-Last-Modified: 2026-07-29 -->
 
 # Use the Career Coach template to build an agent
 

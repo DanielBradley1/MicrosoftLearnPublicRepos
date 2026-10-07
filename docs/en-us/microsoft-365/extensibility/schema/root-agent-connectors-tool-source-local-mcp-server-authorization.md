@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-agent-connectors-tool-source-local-mcp-server-authorization?view=m365-app-prev -->
-<!-- Sitemap-Last-Modified: 2026-06-29 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # root.agentConnectors.toolSource.localMcpServer.authorization object
 

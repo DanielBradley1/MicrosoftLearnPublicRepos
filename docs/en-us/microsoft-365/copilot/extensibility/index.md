@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/ -->
-<!-- Sitemap-Last-Modified: 2026-09-04 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Extending Microsoft 365 Copilot with plugins
 

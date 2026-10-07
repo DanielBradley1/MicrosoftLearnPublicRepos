@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackagedetail-update -->
-<!-- Sitemap-Last-Modified: 2026-05-01 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Update Copilot package
 

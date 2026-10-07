@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/adobe-experience-manager-assets-overview -->
-<!-- Sitemap-Last-Modified: 2026-03-19 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Adobe Experience Manager Assets connector overview
 

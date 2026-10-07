@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackages-list -->
-<!-- Sitemap-Last-Modified: 2026-07-01 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # List packages
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication -->
-<!-- Sitemap-Last-Modified: 2026-08-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Configure authentication for MCP and API plugins in agents
 

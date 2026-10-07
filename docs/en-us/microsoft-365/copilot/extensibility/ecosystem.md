@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/ecosystem -->
-<!-- Sitemap-Last-Modified: 2026-06-18 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Copilot extensibility in the Microsoft 365 ecosystem
 

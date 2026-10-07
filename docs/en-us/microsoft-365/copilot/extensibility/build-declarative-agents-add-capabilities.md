@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-add-capabilities -->
-<!-- Sitemap-Last-Modified: 2026-09-04 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Add capabilities and custom actions to a declarative agent created with Microsoft 365 Agents Toolkit
 

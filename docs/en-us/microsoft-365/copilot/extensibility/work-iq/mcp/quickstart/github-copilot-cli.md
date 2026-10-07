@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/quickstart/github-copilot-cli -->
-<!-- Sitemap-Last-Modified: 2026-07-01 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Connect GitHub Copilot CLI to the Work IQ MCP server
 

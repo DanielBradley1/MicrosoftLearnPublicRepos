@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog -->
-<!-- Sitemap-Last-Modified: 2026-05-22 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Submit agents from Agent Builder to your org catalog
 

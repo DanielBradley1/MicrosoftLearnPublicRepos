@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage -->
-<!-- Sitemap-Last-Modified: 2026-05-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Govern access, tools, and connections for plugins and agents
 

@@ -15,11 +15,11 @@ Each user's OneDrive can be provisioned in or [moved by an administrator](https:
 
 ## SharePoint Sites and Groups
 
-Management of the Multi-Geo feature is available through the [SharePoint admin center](https://go.microsoft.com/fwlink/?linkid=2185219). Detailed information can be found in the [corresponding blog post](https://techcommunity.microsoft.com/t5/Office-365-Blog/Now-available-Multi-Geo-in-SharePoint-and-Office-365-Groups/ba-p/263302).
+Management of the Multi-Geo feature is available through the [SharePoint admin center](https://go.microsoft.com/fwlink/?linkid=2185219). For configuration requirements and current steps, see [Microsoft 365 Multi-Geo Tenant configuration](https://learn.microsoft.com/en-us/microsoft-365/enterprise/multi-geo-tenant-configuration).
 
-When a user creates a SharePoint group-connected site in a multi-geo environment, their PDL is used to determine the geo location where the site and its associated Group mailbox are created. \(If the user's PDL value hasn't been set, or has been set to geo location that hasn't been configured as a satellite location, then the site and mailbox are created in the central location.\)
+When a user creates a SharePoint group-connected site in a multi-geo environment, their PDL is used to determine the geo location where the site and its associated Group mailbox are created. \(If the user's PDL hasn't been set, or if it specifies a Geography that hasn't been configured as a Satellite Geography for SharePoint and OneDrive, the site and associated group mailbox are provisioned in the Primary Provisioned Geography.\)
 
-Microsoft 365 services other than Exchange, OneDrive, SharePoint, and Teams aren't Multi-Geo. However, Microsoft 365 Groups that are created by these services will be configured with the PDL of the creator and their Exchange Group mailbox, and SharePoint sites are provisioned in the corresponding geo.
+Microsoft 365 Multi-Geo supports Exchange Online, SharePoint, OneDrive, Microsoft Teams, Microsoft 365 Copilot, and Microsoft 365 Copilot Chat. It can also be used with supported shared resources, including SharePoint sites, Microsoft 365 Groups, shared mailboxes, Microsoft Teams teams, and eDiscovery scenarios. However, Microsoft 365 Groups that are created by these services will be configured with the PDL of the creator and their Exchange Group mailbox, and SharePoint sites are provisioned in the corresponding geo.
 
 ## Managing the multi-geo environment
 

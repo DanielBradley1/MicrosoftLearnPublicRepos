@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-scrum-assistant -->
-<!-- Sitemap-Last-Modified: 2026-01-07 -->
+<!-- Sitemap-Last-Modified: 2026-07-29 -->
 
 # Use the Scrum Assistant template to build an agent
 

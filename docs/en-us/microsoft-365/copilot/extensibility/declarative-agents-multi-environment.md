@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agents-multi-environment -->
-<!-- Sitemap-Last-Modified: 2026-07-01 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Manage environments and versions for declarative agents with Microsoft 365 Agents Toolkit
 

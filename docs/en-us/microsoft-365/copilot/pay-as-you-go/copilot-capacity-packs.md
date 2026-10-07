@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/copilot-capacity-packs -->
-<!-- Sitemap-Last-Modified: 2026-05-01 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Use Copilot Studio capacity packs for Microsoft Copilot Chat and SharePoint agents
 

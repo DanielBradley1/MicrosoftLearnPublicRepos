@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-message-extension-bot -->
-<!-- Sitemap-Last-Modified: 2025-12-19 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Message extensions for Microsoft 365 Copilot
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/instructions-api-plugins -->
-<!-- Sitemap-Last-Modified: 2026-03-25 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Write effective instructions for declarative agents with API plugins
 

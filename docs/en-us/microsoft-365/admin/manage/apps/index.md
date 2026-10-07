@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Copilot Managed Runtime overview and key concepts for admins \(preview\)
 
