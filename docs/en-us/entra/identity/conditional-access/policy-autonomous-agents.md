@@ -11,8 +11,14 @@ Before you start, review the licensing, role, and agent setup requirements.
 
 ## Prerequisites
 
-- A Microsoft Entra ID P1 or P2 license.
-- Agent 365 license will soon be required
+- One of the following license plans:
+
+  - Microsoft 365 E7, which includes Agent 365 and Microsoft Entra Suite, to protect access for both users and agents.
+  - Microsoft Agent 365, paired with:
+
+    - Microsoft Entra ID P1 or Microsoft 365 E3 for Conditional Access.
+    - Microsoft Entra ID P2 or Microsoft 365 E5 when using agent risk-based Conditional Access.
+
 - At least the [Conditional Access Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator) role.
 - At least one agent identity registered in your tenant.
 - The agent uses the [autonomous app OAuth flow](https://learn.microsoft.com/en-us/entra/agent-id/agent-autonomous-app-oauth-flow).

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-with-passkey -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Sign in with passkeys in Microsoft Entra External ID
 
