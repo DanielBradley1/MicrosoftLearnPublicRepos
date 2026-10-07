@@ -1,15 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/device-provision?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/device-provision?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # device: provision
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Provision a [device](https://learn.microsoft.com/en-us/graph/api/resources/device?view=graph-rest-beta) on behalf of an approved Virtual Desktop Infrastructure \(VDI\) provider.
+Provision a [device](https://learn.microsoft.com/en-us/graph/api/resources/device?view=graph-rest-1.0) on behalf of an approved Virtual Desktop Infrastructure \(VDI\) provider.
 
 This action wraps the Zero Touch Deployment \(ZTD\) protocol to create a device in a pending state in the customer's directory. The device can't be used for authentication until it completes its registration. The created device is stamped with a system label that identifies the approved VDI provider.
 
@@ -56,16 +52,16 @@ The following table shows the parameters that you can use with this action.
 
 ## Response
 
-If successful, this action returns a `201 Created` response code and a [provisionResponse](https://learn.microsoft.com/en-us/graph/api/resources/provisionresponse?view=graph-rest-beta) in the response body. The response also includes a `Location` header that contains the URI of the created device object.
+If successful, this action returns a `201 Created` response code and a [provisionResponse](https://learn.microsoft.com/en-us/graph/api/resources/provisionresponse?view=graph-rest-1.0) in the response body. The response also includes a `Location` header that contains the URI of the created device object.
 
 ## Examples
 
-### Request
+#### Request
 
 The following example shows a request.
 
 ```http
-POST https://graph.microsoft.com/beta/devices/provision
+POST https://graph.microsoft.com/v1.0/devices/provision
 Content-Type: application/json
 
 {
@@ -73,7 +69,7 @@ Content-Type: application/json
 }
 ```
 
-### Response
+#### Response
 
 The following example shows the response.
 
@@ -84,7 +80,7 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#microsoft.graph.provisionResponse",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.provisionResponse",
   "challenge": "Y2hhbGxlbmdlVmFsdWVFeGFtcGxl",
   "deviceId": "2ec25e3b-9243-4f3c-8c83-2e2a9b8a4f1a"
 }

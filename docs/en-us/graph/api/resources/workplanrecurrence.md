@@ -1,27 +1,27 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-12-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-03 -->
 
 # workPlanRecurrence resource type
 
 Namespace: microsoft.graph
 
-Represents a recurring work schedule pattern that defines when and where you work regularly in your work plan.
+Represents a recurring work schedule pattern that defines when and where a user works regularly.
 
-Your work plan recurrence allows you to establish repeating weekly work schedules. The following list shows examples:
+A work plan recurrence allows a user to establish repeating weekly work schedules. The following list shows examples:
 
 - Office work every Monday, Wednesday, and Friday from 9 AM to 5 PM
 - Remote work on Tuesdays and Thursdays
 
-You can create multiple recurrences to accommodate different work patterns throughout the week. Time-off entries can't be set as recurring patterns and must be added as individual [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) objects.
+A user can create multiple recurrences to accommodate different work patterns throughout the week. Time-off entries can't be set as recurring patterns and must be added as individual [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) objects.
 
 ## Methods
 
 | Method | Return Type | Description |
 | :--- | :--- | :--- |
-| [List](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-list-recurrences?view=graph-rest-1.0) | [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) collection | Get the [recurrences](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) from your own work plan via the **recurrences** navigation property. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-post-recurrences?view=graph-rest-1.0) | [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) | Create a new [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object in your own work plan. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/workplanrecurrence-update?view=graph-rest-1.0) | [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) | Update the properties of a [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object in your own work plan. |
-| [Delete](https://learn.microsoft.com/en-us/graph/api/workplanrecurrence-delete?view=graph-rest-1.0) | None | Delete a [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object from your own work plan. |
+| [List](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-list-recurrences?view=graph-rest-1.0) | [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) collection | Get the [recurrences](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) from a user's work plan via the **recurrences** navigation property. |
+| [Create](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-post-recurrences?view=graph-rest-1.0) | [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) | Create a new [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object in a user's work plan. |
+| [Update](https://learn.microsoft.com/en-us/graph/api/workplanrecurrence-update?view=graph-rest-1.0) | [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) | Update the properties of a [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object in a user's work plan. |
+| [Delete](https://learn.microsoft.com/en-us/graph/api/workplanrecurrence-delete?view=graph-rest-1.0) | None | Delete a [workPlanRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanrecurrence?view=graph-rest-1.0) object from a user's work plan. |
 
 ## Properties
 

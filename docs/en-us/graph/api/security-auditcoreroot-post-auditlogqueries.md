@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-auditcoreroot-post-auditlogqueries?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-07-15 -->
+<!-- Sitemap-Last-Modified: 2026-09-18 -->
 
 # Create auditLogQuery
 
@@ -60,6 +60,10 @@ You can specify the following properties when creating a **auditLogQuery**.
 ## Response
 
 If successful, this method returns a `201 Created` response code and a [auditLogQuery](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogquery?view=graph-rest-1.0) object in the response body.
+
+Note
+
+This method is subject to tenant-level daily submission and concurrent-query limits. A tenant receives a baseline allocation, and tenants with more eligible licenses can receive a higher allocation. For details and retry guidance, see [Microsoft Graph service-specific throttling limits](https://learn.microsoft.com/en-us/graph/throttling-limits#security-audit-log-query-service-limits).
 
 ## Examples
 

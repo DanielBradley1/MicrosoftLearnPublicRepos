@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/list-list-permissions?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # List permissions on a list
 
@@ -31,7 +31,7 @@ GET /sites/{site-id}/lists/{list-id}/permissions
 
 ## Optional query parameters
 
-This method supports $select, $filter, $count, and $top OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
+This method supports the `$select`, `$filter`, `$count`, and `$top` OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 

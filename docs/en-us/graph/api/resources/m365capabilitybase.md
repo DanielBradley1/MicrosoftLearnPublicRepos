@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/m365capabilitybase?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # m365CapabilityBase resource type
 
@@ -9,6 +9,9 @@ Represents an abstract base type for cross-tenant Microsoft 365 capabilities. Th
 
 The following types derive from **m365CapabilityBase**:
 
+- [anonymousCalendarSharingFreeBusyDetail](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusydetail?view=graph-rest-1.0)
+- [anonymousCalendarSharingFreeBusyReviewer](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusyreviewer?view=graph-rest-1.0)
+- [anonymousCalendarSharingFreeBusySimple](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusysimple?view=graph-rest-1.0)
 - [crossTenantCalendarAvailabilityBasic](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantcalendaravailabilitybasic?view=graph-rest-1.0)
 - [crossTenantCalendarAvailabilityLimitedDetails](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantcalendaravailabilitylimiteddetails?view=graph-rest-1.0)
 - [crossTenantCalendarSharingFreeBusyDetail](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantcalendarsharingfreebusydetail?view=graph-rest-1.0)

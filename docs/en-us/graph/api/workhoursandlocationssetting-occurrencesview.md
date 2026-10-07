@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-occurrencesview?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-03 -->
 
 # workHoursAndLocationsSetting: occurrencesView
 
 Namespace: microsoft.graph
 
-Get [work plan occurrences](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) from your own work plan within a specified date range. This function requires the **startDateTime** and **endDateTime** parameters.
+Get [work plan occurrences](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) from a user's work plan within a specified date range. This function requires the **startDateTime** and **endDateTime** parameters.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -21,7 +21,9 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | :--- | :--- | :--- |
 | Delegated \(work or school account\) | Calendars.Read | Calendars.ReadWrite |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| Application | Calendars.Read.All | Calendars.ReadWrite.All |
+
+> **Note:** Application permissions are supported only when using the `/users/{id}` endpoint.
 
 ## HTTP request
 
@@ -33,7 +35,7 @@ Note
 
 Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission. Application permissions aren't supported when using the `/me` endpoint.
 
-When using the `/users/{id}` endpoint, the ID must be your own user ID.
+When using delegated permissions with the `/users/{id}` endpoint, the ID must be the signed-in user's ID.
 
 ```http
 GET /users/{id | userPrincipalName}/settings/workHoursAndLocations/occurrencesView(startDateTime='{startDateTime}',endDateTime='{endDateTime}')

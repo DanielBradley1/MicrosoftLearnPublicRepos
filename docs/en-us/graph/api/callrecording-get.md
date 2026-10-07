@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/callrecording-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Sitemap-Last-Modified: 2026-09-08 -->
 
 # Get callRecording
 
@@ -13,7 +13,6 @@ Note
 
 For online meetings:
 
-- This is a metered API. For more information, see [payment models for meeting APIs](https://learn.microsoft.com/en-us/graph/teams-licenses#payment-models-for-meeting-apis).
 - This API doesn't support meetings created using the [create onlineMeeting API](https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings) that are not associated with an event on the user's calendar.
 - This API works differently in one or more national clouds. For details, see [Microsoft Teams API implementation differences in national clouds](https://learn.microsoft.com/en-us/graph/teamwork-national-cloud-differences).
 

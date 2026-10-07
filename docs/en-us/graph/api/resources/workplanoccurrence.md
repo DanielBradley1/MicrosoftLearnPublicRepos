@@ -1,13 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-12-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-03 -->
 
 # workPlanOccurrence resource type
 
 Namespace: microsoft.graph
 
-Represents a specific work schedule instance for a particular day or time period in your work plan.
+Represents a specific work schedule instance for a particular day or time period in a user's work plan.
 
-Your work plan occurrences can be automatically generated from recurring work patterns or manually created for special arrangements. These occurrences are useful for handling exceptions to your regular schedules. The following list shows examples:
+Work plan occurrences can be automatically generated from a user's recurring work patterns or manually created for special arrangements. These occurrences are useful for handling exceptions to the user's regular schedules. The following list shows examples:
 
 - Working different hours for a specific day
 - Working from a different location
@@ -19,11 +19,11 @@ When a work plan occurrence exists for the same time period as a recurring patte
 
 | Method | Return Type | Description |
 | :--- | :--- | :--- |
-| [Create](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-post-occurrences?view=graph-rest-1.0) | [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) | Create a new [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) object in your own work plan. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/workplanoccurrence-update?view=graph-rest-1.0) | [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) | Update the properties of a [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) object in your own work plan. |
-| [Delete](https://learn.microsoft.com/en-us/graph/api/workplanoccurrence-delete?view=graph-rest-1.0) | None | Delete a [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) object from your own work plan. |
-| [Set current location](https://learn.microsoft.com/en-us/graph/api/workplanoccurrence-setcurrentlocation?view=graph-rest-1.0) | None | Update your [work](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) location for the current day or current active segment. |
-| [Occurrences view](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-occurrencesview?view=graph-rest-1.0) | [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) collection | Get [work plan occurrences](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) from your own work plan within a specified date range. |
+| [Create](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-post-occurrences?view=graph-rest-1.0) | [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) | Create a new [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) object in a user's work plan. |
+| [Update](https://learn.microsoft.com/en-us/graph/api/workplanoccurrence-update?view=graph-rest-1.0) | [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) | Update the properties of a [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) object in a user's work plan. |
+| [Delete](https://learn.microsoft.com/en-us/graph/api/workplanoccurrence-delete?view=graph-rest-1.0) | None | Delete a [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) object from a user's work plan. |
+| [Set current location](https://learn.microsoft.com/en-us/graph/api/workplanoccurrence-setcurrentlocation?view=graph-rest-1.0) | None | Update a user's [work](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) location for the current day or current active segment. |
+| [Occurrences view](https://learn.microsoft.com/en-us/graph/api/workhoursandlocationssetting-occurrencesview?view=graph-rest-1.0) | [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) collection | Get [work plan occurrences](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) from a user's work plan within a specified date range. |
 
 ## Properties
 
