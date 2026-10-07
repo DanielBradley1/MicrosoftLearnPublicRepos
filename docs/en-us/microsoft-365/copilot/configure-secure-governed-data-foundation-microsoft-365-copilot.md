@@ -27,10 +27,10 @@ By completing the steps in this article, you can:
 
 The capabilities described in this article require:
 
-- [Microsoft 365 E3](https://www.microsoft.com/microsoft-365/enterprise/e3) or [Microsoft 365 E5](https://www.microsoft.com/microsoft-365/enterprise/e5) \(or [Office 365 E3](https://www.microsoft.com/microsoft-365/enterprise/office-365-e3) or [Office 365 E5](https://www.microsoft.com/microsoft-365/enterprise/office-365-e5)\) for core Microsoft 365 services and features, such as SharePoint, OneDrive, and Microsoft Purview features.
-- This article covers both the [Microsoft Purview](https://learn.microsoft.com/en-us/purview/) foundational capabilities that are included in Microsoft 365 E3. This article also mentions optimized features that are included in Microsoft 365 E5.
-- [Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing)
+- A license for Microsoft Copilot. See [Copilot licensing requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#licensing-requirements).
 - [SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/advanced-management) \(included with Copilot licenses\)
+- An eligible for core Microsoft 365 services and features, such as SharePoint, OneDrive, and Microsoft Purview features. See [Microsoft 365 apps and services](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#microsoft-365-app-and-service-requirements).
+- At least foundational capabilities in [Microsoft Purview](https://learn.microsoft.com/en-us/purview/), which are included in Microsoft 365 E3. \(This article also mentions optimized features that are included in Microsoft 365 E5 or E7.\)
 
 ### Admin roles
 
@@ -48,12 +48,6 @@ For more information, see the following resources:
 ## Step 1: Remediate oversharing
 
 In this step, you identify and prioritize high-risk sites and sensitive content, apply interim protections to reduce Copilot exposure, and then remediate access and permissions.
-
-### Video: Preventing oversharing in Copilot
-
-The following video provides a high-level overview of how to prevent oversharing in Copilot by configuring capabilities in SharePoint Advanced Management and Microsoft Purview:
-
-<iframe src="https://learn-video.azurefd.net/vod/player?id=b45581fd-8711-47fa-9946-c5067735f4d1" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
 ### Identify high-risk sites and content
 
