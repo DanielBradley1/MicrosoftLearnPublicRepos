@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agent-instances?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-26 -->
+<!-- Sitemap-Last-Modified: 2026-05-20 -->
 
 # Manage agent instances in Microsoft 365 admin center
 

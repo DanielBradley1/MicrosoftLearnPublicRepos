@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-web-application-info-nested-app-auth-info?view=m365-app-1.30 -->
-<!-- Sitemap-Last-Modified: 2026-10-01 -->
+<!-- Sitemap-Last-Modified: 2026-08-11 -->
 
 # root.webApplicationInfo.nestedAppAuthInfo object
 

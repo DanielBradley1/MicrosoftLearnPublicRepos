@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/track-copilot-adoption -->
-<!-- Sitemap-Last-Modified: 2026-09-28 -->
+<!-- Sitemap-Last-Modified: 2026-08-18 -->
 
 # Drive adoption with Microsoft Copilot Usage report Organizational Messaging
 

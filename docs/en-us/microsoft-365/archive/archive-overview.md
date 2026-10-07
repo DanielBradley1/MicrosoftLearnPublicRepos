@@ -64,6 +64,14 @@ Administrators should notify site owners and end users before archiving a site s
 - Certain file types can't be archived, including OneNote, SharePoint pages, and SharePoint agents.
 - The Site Assets library on SharePoint sites does not support file-level archive.
 
+#### File types excluded from SAM archive policies
+
+SharePoint Advanced Management \(SAM\) automatic file archive policies can't archive files with the following extensions:
+
+`.js`, `.css`, `.one`, `.onepkg`, `.onetoc2`, `.onetmp`, `.spcolor`, `.sptheme`, `.spfont`, `.eot`, `.onebin`, `.woff`, `.woff2`, `.xsl`, `.json`, `.classifier`, `.aspx`, `.onetoc`, `.onebak`, `.onebackupconstruction`.
+
+These exclusions apply regardless of the file type filters configured for the policy.
+
 ## Related article
 
 - [Education offering](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-education-offering?view=o365-worldwide)

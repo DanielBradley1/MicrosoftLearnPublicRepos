@@ -21,6 +21,17 @@ If your organization uses a human resource management system, the Employee Self-
 
 This diagram outlines the high-level components that make up the overall solution for the Employee Self-Service agent and the simplified Workday integration. The Employee Self-Service agent connects to Workday using a single OAuth connection. Workday REST and SOAP endpoints are accessed through that same connection, and the signed-in user's identity is used at runtime for every Workday API call.
 
+Important
+
+SOAP calls don't require integration system users \(ISUs\) in the simplified Employee Self-Service Workday integration. Both SOAP and REST calls run as the signed-in user through the same OAuth connection. This guidance applies to the simplified Employee Self-Service integration, not to every Workday integration.
+
+The simplified integration uses the APIs for different purposes:
+
+- **REST:** The `/workers/me` call retrieves user context once per session. The worker ID is cached and reused for the rest of the session, replacing the legacy ISU-based user-context RaaS report.
+- **SOAP:** Existing employee scenarios, such as reading employee data, updating a phone number or email address, and requesting time off, continue to use SOAP with the signed-in user's identity. Their Workday audit trail is unchanged.
+
+The simplified setup doesn't move all Workday scenarios to REST. It removes the ISU and user-context RaaS dependencies while retaining SOAP for existing scenarios.
+
 Different roles need to perform various activities for both initial deployment and ongoing operation. As this solution involves multiple platforms, we recommend that you read through the documentation and understand the process before beginning integration. A first step is to identify stakeholders to set up an environment to [deploy the Employee Self-Service agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/deploy-overview-alm).
 
 Note
@@ -36,6 +47,19 @@ Workday integration is currently configured to retrieve only Employee details an
 
 You also need to meet the [prerequisites to deploy the Employee Self-Service agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/prerequisites).
 
+### Supported authentication
+
+The simplified Employee Self-Service Workday integration requires Microsoft Entra single sign-on \(SSO\) with OAuth. Use **Microsoft Entra ID Integrated** for the Workday connection. The supported identity provider \(IdP\) configurations are:
+
+- **Microsoft Entra ID directly:** Workday uses Microsoft Entra ID for SSO.
+- **A third-party IdP federated with Microsoft Entra ID:** Microsoft Entra federates to the third-party IdP, which is configured as Workday's IdP. Workday resolves the user from the SAML claims it receives.
+
+Important
+
+Basic authentication isn't supported for the simplified Employee Self-Service Workday integration, including testing and proof-of-concept \(POC\) deployments. A third-party Workday IdP that isn't federated with Microsoft Entra ID isn't supported either. Other authentication choices exposed by the Power Platform connector don't make them supported alternatives for this integration.
+
+Before you start a POC or production deployment, confirm that the target Workday environment uses one of these supported configurations. For identity matching when Microsoft Entra UPNs don't match Workday login IDs, see [Identity resolution for non-UPN tenants](#step-7-identity-resolution-for-non-upn-tenants).
+
 ### Set up Copilot Studio capacity
 
 We recommend that you set up Copilot Studio capacity to monitor capacity usage of the Employee Self-Service agent over time. [Learn more about the deployment process for the Employee Self-Service agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/deploy-overview-alm).
@@ -48,10 +72,6 @@ We recommend that you set up Copilot Studio capacity to monitor capacity usage o
 | Application administrator **or** Cloud application administrator **or** application owner | User who can configure SSO integration with Workday | 1. Add Workday from gallery  <br>1. Configure Microsoft Entra SSO  <br>1. Configure Workday  <br>1. Test SSO | Microsoft Entra  <br>Workday |
 | Environment Maker | User who can customize the Employee Self-Service agent | 1. Install and configure Workday extension pack  <br>1. Manage Workday topics  <br>1. Set up user context | Microsoft Copilot Studio |
 | InfoSec/IT Infrastructure/Change control board | User committee responsible for security infrastructure changes | Configure IT platform services such as network and firewall rules | Network firewall policies |
-
-Note
-
-Third-party identity provider authentication isn't supported for the Workday integration. The Employee Self-Service agent supports Microsoft Entra-authenticated and Microsoft Entra-federated authentication only. If Microsoft Entra single sign-on is established with Workday, the simplified setup works.
 
 ## Infrastructure setup for third-party external system solution integration
 
@@ -144,7 +164,7 @@ Edit the authentication policy for the Workday tenant. If there are no authentic
 
 1. Run the report **Manage Authentication policies**. Then select the **Edit** button for the policy for the tenant.
 2. Scope the authentication policy to the OAuth client identity used by the Employee Self-Service agent. Integration system users aren't used in the simplified setup.
-3. Select **SAML** as **Allowed Authentication Type**. If both SAML and User Name Password methods are in use, allow both.
+3. Select **SAML** as **Allowed Authentication Type** for the Employee Self-Service users. Other authentication methods needed by unrelated Workday integrations don't replace this requirement.
 4. Make sure you have the SAML option enabled for the **All Employees** security group, along with any other required method in your Workday environment.
 5. Execute the task **Activate All Pending Authentication Policy Changes** to activate all pending authentication policy changes. This step is required to finalize all authentication policy changes.
 
@@ -227,17 +247,7 @@ The following steps are required to install and enable the Workday extension pac
 
 ### Step 2: Set up connection authentication
 
-Currently, the Workday connector in Power Platform supports three types of authentication:
-
-- Basic
-- Microsoft Entra ID Integrated
-- Microsoft Entra ID Integrated with API Management
-
-In this article, you learn how to set up the **Microsoft Entra ID Integrated** authentication method. You need to complete the SSO configuration in order to do this setup.
-
-Note
-
-We recommend using Microsoft Entra ID Integrated. With this method, users benefit from automatic connection establishment using SSO, and token refresh occurs seamlessly.
+Select **Microsoft Entra ID Integrated** for the Workday connection. Complete the [supported SSO configuration](#supported-authentication) before you set up this connection. This method uses OAuth in the signed-in user's context, supports automatic connection establishment through SSO, and refreshes tokens seamlessly. Don't select Basic authentication for a simplified Employee Self-Service deployment or POC.
 
 When you install the Workday connector, the first step is to set up connections using the form. Fill out the following fields.
 
@@ -336,7 +346,7 @@ For more information about the user context variables the agent uses and how to 
 
 ### Step 7: Identity resolution for non-UPN tenants
 
-Workday uses an identity provider \(IdP\) for sign-in. The simplified setup works when Workday's IdP is either Microsoft Entra ID directly, or a third-party IdP that Microsoft Entra is federated with. These topologies match the **Entra federated with a cloud-based third-party IdP** and **Entra NOT federated with any third-party IdP** rows in the Workday authentication matrix in [Employee Self-Service prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/prerequisites).
+Workday uses an identity provider \(IdP\) for sign-in. The simplified setup works when Workday's IdP is either Microsoft Entra ID directly, or a third-party IdP that Microsoft Entra is federated with. See [Supported authentication](#supported-authentication) for the requirements that apply to both configurations.
 
 For tenants where Microsoft Entra UPNs match Workday login IDs, no further action is required. The Microsoft Entra ID Integrated authentication path resolves the signed-in user's identity automatically.
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-learning-coach -->
-<!-- Sitemap-Last-Modified: 2026-07-29 -->
+<!-- Sitemap-Last-Modified: 2025-12-02 -->
 
 # Use the Learning Coach template to build an agent
 

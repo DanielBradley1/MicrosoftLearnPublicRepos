@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/design-multi-tenant-architecture -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-02-11 -->
 
 # Design a multi-tenant architecture for large institutions
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-compare-dashboard-views -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-08-21 -->
 
 # Usage-based billing: What you see in the Microsoft 365 admin center vs. your Azure bill
 

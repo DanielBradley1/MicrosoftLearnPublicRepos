@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/optimize-microsoft-365-configuration-settings -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-08-18 -->
 
 # Optimize Microsoft Copilot configuration settings
 

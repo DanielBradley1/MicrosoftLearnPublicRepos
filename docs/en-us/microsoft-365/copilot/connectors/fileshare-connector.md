@@ -96,7 +96,7 @@ You can choose to share ACLs only if the share path you provided follows UNC pat
 
 ## Synchronization
 
-The refresh interval determines how often your data is synchronized between the data source and the Copilot connector index. There are two types of refresh intervals – full crawl and incremental crawl. For more details, click [here](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview#guidelines-for-crawl-settings). You can change the default values of the refresh interval from here if you want to.
+The refresh interval determines how often your data synchronizes between the data source and the Copilot connector index. Most connectors have two types of refresh intervals – full crawl and incremental crawl. For more details, see [Guidelines for crawl settings](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview#guidelines-for-crawl-settings). You can change the default values of the refresh interval. Note that Fileshare only supports full crawl.
 
 ## Review and test your connection
 

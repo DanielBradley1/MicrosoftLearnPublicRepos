@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/whats-new -->
-<!-- Sitemap-Last-Modified: 2026-08-27 -->
+<!-- Sitemap-Last-Modified: 2026-07-21 -->
 
 # What's new in Microsoft 365 Copilot extensibility
 

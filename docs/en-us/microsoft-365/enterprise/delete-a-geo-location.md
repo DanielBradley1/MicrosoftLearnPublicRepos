@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/delete-a-geo-location?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-12-07 -->
+<!-- Sitemap-Last-Modified: 2025-05-09 -->
 
 # Delete a *Satellite Geography* location in Microsoft 365 Multi-Geo
 

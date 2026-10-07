@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/typespec-scenarios -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2025-09-22 -->
 
 # TypeSpec agent scenarios for Microsoft 365 Copilot
 

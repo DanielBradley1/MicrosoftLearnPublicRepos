@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/configure-search-for-multi-geo?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-12-07 -->
+<!-- Sitemap-Last-Modified: 2025-05-09 -->
 
 # Configure Search for Microsoft 365 Multi-Geo
 
