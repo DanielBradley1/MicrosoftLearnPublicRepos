@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/applications-inventory -->
-<!-- Sitemap-Last-Modified: 2026-06-16 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # Applications inventory
 

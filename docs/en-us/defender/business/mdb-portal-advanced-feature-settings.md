@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-portal-advanced-feature-settings -->
-<!-- Sitemap-Last-Modified: 2026-01-20 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Review and edit settings in Microsoft Defender for Business
 

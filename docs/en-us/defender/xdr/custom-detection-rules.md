@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/custom-detection-rules -->
-<!-- Sitemap-Last-Modified: 2026-09-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-04 -->
 
 # Create custom detection rules in Microsoft Defender XDR
 

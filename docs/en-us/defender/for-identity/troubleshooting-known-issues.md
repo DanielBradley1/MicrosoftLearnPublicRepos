@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/troubleshooting-known-issues -->
-<!-- Sitemap-Last-Modified: 2026-09-02 -->
+<!-- Sitemap-Last-Modified: 2026-09-23 -->
 
 # Troubleshooting Microsoft Defender for Identity known issues
 

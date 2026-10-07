@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-app-policies-create -->
-<!-- Sitemap-Last-Modified: 2026-07-03 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Create and manage OAuth app policies
 

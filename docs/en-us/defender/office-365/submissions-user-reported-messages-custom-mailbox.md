@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/submissions-user-reported-messages-custom-mailbox -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # User reported settings
 

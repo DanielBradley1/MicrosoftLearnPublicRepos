@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/manage-admins -->
-<!-- Sitemap-Last-Modified: 2026-07-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-04 -->
 
 # Configure admin access in Defender for Cloud Apps
 

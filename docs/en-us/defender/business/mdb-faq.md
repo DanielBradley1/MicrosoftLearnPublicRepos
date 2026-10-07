@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-faq -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Microsoft Defender for Business - Frequently asked questions and answers
 

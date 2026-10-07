@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes -->
-<!-- Sitemap-Last-Modified: 2026-08-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # What's new in Microsoft Defender for Cloud Apps
 

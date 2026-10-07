@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-overview -->
-<!-- Sitemap-Last-Modified: 2026-06-25 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # OAuth app visibility and insights
 

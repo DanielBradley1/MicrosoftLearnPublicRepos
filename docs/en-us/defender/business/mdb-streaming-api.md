@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-streaming-api -->
-<!-- Sitemap-Last-Modified: 2026-07-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Use the streaming API with Microsoft Defender for Business
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases -->
-<!-- Sitemap-Last-Modified: 2026-09-08 -->
+<!-- Sitemap-Last-Modified: 2026-09-25 -->
 
 # Microsoft Defender for Endpoint release notes
 
