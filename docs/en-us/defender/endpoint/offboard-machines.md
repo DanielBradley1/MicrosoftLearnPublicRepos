@@ -40,6 +40,24 @@ You can also use other methods, such as:
 - [Offboard devices using a local script](https://learn.microsoft.com/en-us/defender-endpoint/configure-endpoints-script#offboard-devices-using-a-local-script)
 - [Offboard devices using the API](https://learn.microsoft.com/en-us/defender-endpoint/api/offboard-machine-api)
 
+### Automatic Azure offboarding
+
+Turning off Defender for Servers for a subscription in the Azure portal automatically offboards eligible servers from Microsoft Defender for Endpoint. Changing from Plan 2 to Plan 1 or moving a machine between subscriptions doesn't trigger automatic offboarding.
+
+To start offboarding and verify the result:
+
+1. In **Microsoft Defender for Cloud** in the Azure portal, identify the subscription where you want to turn off Defender for Servers.
+2. Turn off the plan using the [plan-change procedure](https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-servers-plan#disable-defender-for-servers-on-a-subscription). This is the only action required to initiate offboarding. The software automatically handles intent validation, MDE extension removal, and endpoint offboarding.
+3. Allow processing to complete, and then verify the result. Offboarding can take up to one hour for large subscriptions. If machines are powered off, the software retries later.
+
+Use the subscription's plan control to initiate offboarding, not deletion of the Azure environment connection.
+
+Automatic offboarding disconnects the endpoint from its current Defender for Endpoint organization and stops EDR reporting to that organization. It doesn't uninstall the endpoint software or remove historical device records. Software or record presence alone doesn't indicate a failure, and the plan setting alone doesn't confirm that offboarding is complete. Manual endpoint offboarding or uninstall isn't required as part of the automatic flow.
+
+Note
+
+If you turn the plan back on before offboarding completes, the offboarding and onboarding actions run asynchronously. Defender for Endpoint is onboarded again after a few hours. Turning the plan back on doesn't immediately cancel offboarding.
+
 ## Offboard Mac devices
 
 In the following procedure, steps 1 and 2 are optional if you do not want to see these devices that are retired in the "Device inventory" for 180 days.

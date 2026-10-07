@@ -51,147 +51,96 @@ This article provides instructions on how to run the tool via Live Response on W
 
 ## Linux
 
-The XMDE Client Analyzer tool can be downloaded as a [binary](https://go.microsoft.com/fwlink/?linkid=2297517) or [Python](https://aka.ms/XMDEClientAnalyzer) package that can be extracted and executed on Linux machines. Both versions of the XMDE Client Analyzer can be executed during a Live Response session.
+Use either the binary Live Response action pair, which doesn't require Python, or the Python action pair. Each installer downloads and validates the required Client Analyzer package on the device.
 
 ### Prerequisites
 
-- For installation the `unzip` package is required.
-- For execution the `acl` package is required.
+- The binary actions require `curl`, `find`, `mktemp`, `od`, `sha256sum`, `stat`, `unzip`, and standard POSIX shell utilities. They don't require `python3`.
+- The Python actions require `python3` in addition to the common prerequisites.
+- The device must be able to reach the Microsoft download endpoint over HTTPS. If it can't, use the local workflow in [Run the client analyzer on Linux](https://learn.microsoft.com/en-us/defender-endpoint/run-analyzer-linux) with a package location that the device can reach.
 
-Important
+Choose one of the following workflows for the collection.
 
-Window uses the Carriage Return and Line Feed invisible characters to represent the end of one line and beginning of a new line in a file, but Linux systems uses only the Line Feed invisible character at the end of its file lines. When using the following scripts, if done on Windows, this difference can result in errors and failures of the scripts to run. A potential solution to this is to utilize the Windows Subsystem for Linux and the `dos2unix` package to reformat the script so it aligns with the Unix and Linux format standard.
+### Option 1: Binary Client Analyzer
 
-### Installing the XMDE Client Analyzer
+#### Install the binary Client Analyzer
 
-Both versions of XMDE Client Analyzer, binary and Python, a self-contained package that must be downloaded and extracted before executing. For more information, see [Troubleshoot sensor health using Microsoft Defender for Endpoint Client Analyzer](https://learn.microsoft.com/en-us/defender-endpoint/overview-client-analyzer)
+1. Download the two binary action files:
 
-Due to the limited commands available in Live Response the steps detailed must be executed in a bash script, and by splitting the installation and execution portion of these commands it's possible to run the install script once, while running the execution script multiple times.
+   - [InstallXMDEClientAnalyzer.sh](https://github.com/microsoft/mdatp-xplat/blob/master/linux/LiveResponse/ClientAnalyzer/InstallXMDEClientAnalyzer.sh)
+   - [MDESupportTool.sh](https://github.com/microsoft/mdatp-xplat/blob/master/linux/LiveResponse/ClientAnalyzer/MDESupportTool.sh)
 
-Important
-
-The example scripts assume the machine has direct internet access and can retrieve the XMDE Client Analyzer from Microsoft. If the machine does not have direct internet access then the installation scripts will need to be updated to fetch the XMDE Client Analyzer from a location the machines can access successfully.
-
-#### Binary Client Analyzer Install Script
-
-The following script performs the first six steps of the [Running the Binary version of the Client Analyzer](https://learn.microsoft.com/en-us/defender-endpoint/overview-client-analyzer). When complete, the XMDE Client Analyzer binary is available from the `/tmp/XMDEClientAnalyzerBinary/ClientAnalyzer` directory.
-
-1. Create a bash file `InstallXMDEClientAnalyzer.sh` and paste the following content into it.
-
-   ```bash
-   #! /usr/bin/bash
-
-   echo "Starting Client Analyzer Script. Running As:"
-   whoami
-
-   echo "Getting XMDEClientAnalyzerBinary"
-   wget --quiet -O /tmp/XMDEClientAnalyzerBinary.zip https://go.microsoft.com/fwlink/?linkid=2297517
-   echo 'C65A4E4C6851D130942BFACD147A9D18B8A92B4F50FACF519477FD1C41A1C323 /tmp/XMDEClientAnalyzerBinary.zip' | sha256sum -c
-
-   echo "Unzipping XMDEClientAnalyzerBinary.zip"
-   unzip -q /tmp/XMDEClientAnalyzerBinary.zip -d /tmp/XMDEClientAnalyzerBinary
-
-   echo "Unzipping SupportToolLinuxBinary.zip"
-   unzip -q /tmp/XMDEClientAnalyzerBinary/XMDEClientAnalyzer/SupportToolLinuxBinary.zip -d /tmp/XMDEClientAnalyzerBinary/ClientAnalyzer
-
-   echo "MDESupportTool installed at /tmp/XMDEClientAnalyzerBinary/ClientAnalyzer"
-   ```
-
-#### Python Client Analyzer Install Script
-
-The following script performs the first six steps of the [Running the Python version of the Client Analyzer](https://learn.microsoft.com/en-us/defender-endpoint/overview-client-analyzer). When complete, the XMDE Client Analyzer Python scripts are available from the `/tmp/XMDEClientAnalyzer` directory.
-
-1. Create a bash file `InstallXMDEClientAnalyzer.sh` and paste the following content into it.
-
-   ```bash
-   #! /usr/bin/bash
-
-   echo "Starting Client Analyzer Install Script. Running As:"
-   whoami
-
-   echo "Getting XMDEClientAnalyzer.zip"
-   wget --quiet -O XMDEClientAnalyzer.zip https://aka.ms/XMDEClientAnalyzer 
-   echo '07E6A7B89E28A78309D5B6F1E25E4CDFBA9CA141450E422D76441C03AD3477E7 XMDEClientAnalyzer.zip' | sha256sum -c  
-
-   echo "Unzipping XMDEClientAnalyzer.zip"
-   unzip -q XMDEClientAnalyzer.zip -d /tmp/XMDEClientAnalyzer  
-
-   echo "Setting execute permissions on mde_support_tool.sh script"
-   cd /tmp/XMDEClientAnalyzer 
-   chmod a+x mde_support_tool.sh  
-
-   echo "Performing final support tool setup"
-   ./mde_support_tool.sh
-   ```
-
-#### Running the Client Analyzer Install Scripts
-
-1. Initiate a [Live Response session](https://learn.microsoft.com/en-us/defender-endpoint/live-response#initiate-a-live-response-session-on-a-device) on the machine you need to investigate.
-2. Select **Upload file to library**.
-3. Select **Choose file**.
-4. Select the downloaded file named `InstallXMDEClientAnalyzer.sh`, and then select **Confirm**.
-5. While still in the LiveResponse session, use the following commands to install the analyzer:
+2. If you prepare the action files on Windows, convert them to Unix line endings.
+3. Upload both files to the Live Response library. Each action is self-contained.
+4. Start a [Live Response session](https://learn.microsoft.com/en-us/defender-endpoint/live-response#initiate-a-live-response-session-on-a-device), and run the installer without parameters:
 
    ```console
    run InstallXMDEClientAnalyzer.sh
    ```
 
-### Running the XMDE Client Analyzer
+5. Copy the workspace ID printed by the installer. It has the format `mde-client-analyzer-binary-` followed by 16 lowercase hexadecimal characters.
 
-Live Response doesn't support running the XMDE Client Analyzer or Python directly, so an execution script is necessary.
+#### Run the binary Client Analyzer
 
-Important
+Run the matching support action with exactly the workspace ID from the installer:
 
-The following scripts assume the XMDE Client Analyzer was installed using the same locations from the scripts mentioned earlier. If your organization has chosen to install the scripts into a different location, then the following scripts need to be updated to align with your organization's chosen installation location.
+```console
+run MDESupportTool.sh -parameters "mde-client-analyzer-binary-<workspace-id>"
+```
 
-#### Binary Client Analyzer Run Script
+The action selects the appropriate amd64 or arm64 package and starts diagnostic collection.
 
-The Binary Client Analyzer accepts command line parameters to perform different analysis tests. To provide similar capabilities during Live Response the execution script takes advantage of the `$@` bash variable to pass all input parameters provided to the script to the XMDE Client Analyzer.
+### Option 2: Python Client Analyzer
 
-1. Create a bash file `MDESupportTool.sh` and paste the following content into it.
+#### Install the Python Client Analyzer
 
-   ```bash
-   #! /usr/bin/bash
+1. Download the two Python action files:
 
-   echo "cd /tmp/XMDEClientAnalyzerBinary/ClientAnalyzer"
-   cd /tmp/XMDEClientAnalyzerBinary/ClientAnalyzer
+   - [InstallXMDEPythonClientAnalyzer.sh](https://github.com/microsoft/mdatp-xplat/blob/master/linux/LiveResponse/ClientAnalyzer/InstallXMDEPythonClientAnalyzer.sh)
+   - [MDEPythonSupportTool.sh](https://github.com/microsoft/mdatp-xplat/blob/master/linux/LiveResponse/ClientAnalyzer/MDEPythonSupportTool.sh)
 
-   echo "Running MDESupportTool"
-   ./MDESupportTool $@
+2. If you prepare the action files on Windows, convert them to Unix line endings.
+3. Upload both files to the Live Response library. Each action is self-contained.
+4. Start a [Live Response session](https://learn.microsoft.com/en-us/defender-endpoint/live-response#initiate-a-live-response-session-on-a-device), and run the installer without parameters:
+
+   ```console
+   run InstallXMDEPythonClientAnalyzer.sh
    ```
 
-#### Python Client Analyzer Run Script
+5. Copy the workspace ID printed by the installer. It has the format `mde-client-analyzer-python-` followed by 16 lowercase hexadecimal characters.
 
-The Python Client Analyzer accepts command line parameters to perform different analysis tests. To provide similar capabilities during Live Response the execution script takes advantage of the `$@` bash variable to pass all input parameters provided to the script to the XMDE Client Analyzer.
+#### Run the Python Client Analyzer
 
-1. Create a bash file `MDESupportTool.sh` and paste the following content into it.
+Run the matching support action with exactly the workspace ID from the installer:
 
-   ```bash
-   #! /usr/bin/bash  
+```console
+run MDEPythonSupportTool.sh -parameters "mde-client-analyzer-python-<workspace-id>"
+```
 
-   echo "cd /tmp/XMDEClientAnalyzer"
-   cd /tmp/XMDEClientAnalyzer 
+The action starts diagnostic collection.
 
-   echo "Running mde_support_tool"
-   ./mde_support_tool.sh $@
-   ```
+### Retrieve the diagnostic package
 
-#### Running the Client Analyzer Script
+The runner prints its private run-directory path before it starts the Client Analyzer. After the action finishes, retrieve the generated diagnostic archive from that directory. Use the archive filename reported by the analyzer.
 
-Note
+```output
+Client Analyzer run directory: /var/tmp/<workspace-id>/runs/run-<run-id>
+```
 
-If you have an active Live Response session you can skip Step 1.
+```console
+GetFile "<run-directory>/<diagnostic-archive>.zip"
+```
 
-1. Initiate a [Live Response session](https://learn.microsoft.com/en-us/defender-endpoint/live-response#initiate-a-live-response-session-on-a-device) on the machine you need to investigate.
-2. Select **Upload file to library**.
-3. Select **Choose file**.
-4. Select the downloaded file named `MDESupportTool.sh`, and then select **Confirm**.
-5. While still in the Live Response session, use the following commands to run the analyzer and collect the resulting file.
+Successful workspaces aren't automatically removed by these actions, and the actions don't define a fixed cleanup interval. Retrieve the archive promptly, and follow your organization's `/var/tmp` retention and cleanup policy. If the analyzer reports an error, use the error output and the [Run the client analyzer on Linux](https://learn.microsoft.com/en-us/defender-endpoint/run-analyzer-linux) guidance to troubleshoot the device.
 
-   ```
-   run MDESupportTool.sh -parameters "--bypass-disclaimer -d"
-   GetFile "/tmp/your_archive_file_name_here.zip"
-   ```
+### Security and lifecycle
+
+- The installer creates a randomized private workspace below `/var/tmp`, validates the downloaded package and entrypoint, and writes a completion record only after setup succeeds.
+- The runner revalidates the workspace, completion record, ownership, permissions, and entrypoint digest immediately before execution.
+- Rerun the installer if the workspace is removed by a local cleanup policy or the runner reports a validation failure.
+- Replace both action files for the selected package in the Live Response library when a new version is published. Previously uploaded files and downloaded packages don't update automatically.
+
+This guidance applies only to Linux Live Response actions.
 
 ## See also
 

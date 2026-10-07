@@ -18,6 +18,7 @@ This table includes supported releases for all supported platforms in the past s
 | OS | Build | Month released | Details | Learn more |
 | --- | --- | --- | --- | --- |
 | Windows Antivirus | Platform 4.18.26080.4 / Engine 1.1.26080.3 | August 2026 | - Platform: 4.18.26080.4  <br>- Engine: 1.1.26080.3  <br>- Security intelligence: 1.159.11.0 | [Release details and updates](#windows-antivirus--august-2026-2--platform-418260804--engine-11260803) |
+| Android | 1.0.9330.0101 | Sep 2026 | - Build: 1.0.9330.0101  <br>- Release: Sep 30, 2026 | [Release details and updates](#android--sep-2026--platform-1093300101) |
 | iOS | 1.1.81160103 | Sep 2026 | - Build: 1.1.81160103  <br>- Release: Sep 24, 2026 | [Release details and updates](#ios--sep-2026--platform-version-1181160103) |
 | Linux | 101.26081.0010 | September 2026 | - Release version: 30.126081.0010.0  <br>- Engine version: 1.1.26090.3000  <br>- Signature version: 1.459.287.0 | [Release details and updates](#linux--september-2026--101260810010) |
 | iOS | 1.1.81140101 | Sep 2026 | - Build: 1.1.81140101  <br>- Release: Sep 15, 2026 | [Release details and updates](#ios--sep-2026--platform-version-1181140101) |
@@ -874,6 +875,20 @@ Fixed in platform version 101.26052.0011 and later. FIPS-enabled RHEL 8/9 device
 ## Android releases
 
 See the full list of [Android UX improvements](https://learn.microsoft.com/en-us/defender-endpoint/android-new-ux).
+
+### Android \| Sep 2026 \| Platform: 1.0.9330.0101
+
+#### Release details
+
+| Platform version | Release Date |
+| --- | --- |
+| 1.0.9330.0101 | Sep 30, 2026 |
+
+#### Enhancements and features
+
+| Feature Area | Update Summary |
+| --- | --- |
+| General | Performance improvements and general bug fixes. |
 
 ### Android \| Sep 2026 \| Platform: 1.0.9309.0102
 
