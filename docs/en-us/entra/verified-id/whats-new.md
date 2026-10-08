@@ -5,7 +5,11 @@
 
 ## Overview
 
-This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+This article summarizes the latest features, improvements, and service changes for Microsoft Entra Verified ID. Use it to understand new capabilities and plan updates to issuer or verifier implementations.
+
+## October 2026
+
+- **IDV partner gallery update**: Added [HYPR](https://www.hypr.com/integrations/microsoft-verified-id) as a new partner in the [Verified ID API-based integration partners](https://learn.microsoft.com/en-us/entra/verified-id/idv-partners#verified-id-api-based-integration-partners) section.
 
 ## May 2026
 

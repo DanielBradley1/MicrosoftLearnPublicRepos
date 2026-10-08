@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2025-04-09 -->
 
 # Microsoft Entra Connect Sync: Understand and customize synchronization
 

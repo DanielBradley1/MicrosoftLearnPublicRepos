@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/devices/concept-hybrid-join -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2025-06-27 -->
 
 # Microsoft Entra hybrid joined devices
 
