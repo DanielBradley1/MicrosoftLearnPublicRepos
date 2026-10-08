@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-system-preferred-authentication -->
-<!-- Sitemap-Last-Modified: 2026-09-01 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # System-preferred authentication
 
