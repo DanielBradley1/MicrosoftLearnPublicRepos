@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # What's new in Microsoft Graph
 
@@ -12,6 +12,13 @@ For details about previous updates to Microsoft Graph, see [Microsoft Graph what
 Important
 
 Features in *preview* status are subject to change without notice, and might not be promoted to generally available \(GA\) status. Don't use preview features in production apps.
+
+## October 2026: New in preview only
+
+### Mailbox import and export
+
+- Added the **isHidden** property to the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-beta&preserve-view=true) resource to identify hidden mailbox folders.
+- Use the existing **includeHiddenFolders** query parameter for [listing folders](https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders?view=graph-rest-beta&preserve-view=true) and [listing child folders](https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders?view=graph-rest-beta&preserve-view=true). Set it to `true` to include both hidden and nonhidden folders.
 
 ## September 2026: New and generally available
 
@@ -27,6 +34,7 @@ Promoted the `unknownFutureValue` member of the **changeType** enumeration from 
 
 - Added the **isPatternToken** property to the [fileStorageContainerCustomPropertyValue](https://learn.microsoft.com/en-us/graph/api/resources/filestoragecontainercustompropertyvalue) resource to indicate whether a custom property value is a `urlTemplate` pattern that consumers must resolve before use, rather than a literal value.
 - Added the **isOfficeRestricted** property to the [fileStorageContainerTypeSettings](https://learn.microsoft.com/en-us/graph/api/resources/filestoragecontainertypesettings) and [fileStorageContainerTypeRegistrationSettings](https://learn.microsoft.com/en-us/graph/api/resources/filestoragecontainertyperegistrationsettings) resources, and the **fileStorageContainerTypeSettingsOverride** enumeration.
+- Use the [revokeGrants](https://learn.microsoft.com/en-us/graph/api/permission-revokegrants) method of the [permission](https://learn.microsoft.com/en-us/graph/api/resources/permission) resource to revoke access to a sharing link for specified recipients.
 
 ### Groups
 
@@ -65,6 +73,10 @@ Updated the [getAllRetainedMessages](https://learn.microsoft.com/en-us/graph/api
 ### Agents
 
 Added the **isDisabled** property to the [agentIdentityBlueprint](https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true) resource. Use it to deactivate an agent identity blueprint without deleting it.
+
+### Application
+
+Added the **isDeviceAccessEnabled** property to the [onPremisesPublishing](https://learn.microsoft.com/en-us/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true) resource to configure device access for Microsoft Entra Private Access.
 
 ### Backup and recovery \| Microsoft 365 backup and storage
 
@@ -126,6 +138,10 @@ Added the **requireCertificateSidAlignment** property to the [x509CertificateAut
 ### People and workplace intelligence \| Analytics
 
 Added the **sensitivityLabel** property to the [searchHit](https://learn.microsoft.com/en-us/graph/api/resources/searchhit?view=graph-rest-beta&preserve-view=true) resource type to provide sensitivity-label information for the search result resource.
+
+### Reports \| Partner billing reports
+
+Added the [billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-beta&preserve-view=true) resource type and related export method for CSP partners to generate billed aggregated Azure usage reports for a specific invoice.
 
 ### Security \| Data security and compliance
 
