@@ -94,7 +94,7 @@ Models provided by Anthropic as a subprocessor are currently excluded from the E
 
 Microsoft Copilot is upholding data residency commitments as outlined in the Microsoft Product Terms and Data Protection Addendum. Microsoft Copilot was added as a covered workload in the data residency commitments in Microsoft Product Terms on March 1, 2024.
 
-Microsoft [Advanced Data Residency \(ADR\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/advanced-data-residency) and [Multi-Geo Capabilities](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo) offerings include data residency commitments for Microsoft Copilot customers as of March 1, 2024. For EU customers, Microsoft Copilot is an EU Data Boundary service. Customers outside the EU may have their queries processed in the US, EU, or other regions.
+Microsoft [Advanced Data Residency \(ADR\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-overview) and [Multi-Geo Capabilities](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo) offerings include data residency commitments for Microsoft Copilot customers as of March 1, 2024. For EU customers, Microsoft Copilot is an EU Data Boundary service. Customers outside the EU may have their queries processed in the US, EU, or other regions.
 
 ## Extensibility of Microsoft Copilot
 

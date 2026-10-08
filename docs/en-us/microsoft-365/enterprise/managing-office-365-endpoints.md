@@ -105,7 +105,7 @@ Select the link at the bottom to indicate if the article was helpful or not and 
 
 ### How do I determine the location of my tenant?
 
-**Tenant location** is best determined using our [datacenter map](https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations?view=o365-worldwide).
+**Tenant location** is best determined using our [datacenter map](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-services-data-location?view=o365-worldwide).
 
 ### Am I peering appropriately with Microsoft?
 

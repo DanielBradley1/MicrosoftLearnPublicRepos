@@ -9,9 +9,9 @@
 
 Required Conditions:
 
-Tenant has a sign-up country/region included in Local Region Geography, the European Union or the United States.
+[*Tenant*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) has a sign-up country/region included in [*Local Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions), the European Union or the United States.
 
-*For current language, please refer to the Privacy and Security Product Terms [**webpage**](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) and view the section titled "Location of Customer Data at Rest for Core Online Services".*
+*For current language, please refer to the Product Terms [**webpage**](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) and view the section titled "Location of Customer Data at Rest for Core Online Services".*
 
 **Commitment:**
 
@@ -23,29 +23,29 @@ If Customer provisions its tenant in Australia, Brazil, Canada, the European Uni
 
 Required Conditions:
 
-1. Tenant has a sign-up country/region included in *Local Region Geography* or *Expanded Local Region Geography*.
-2. Tenant has a valid Advanced Data Residency subscription for all users in the tenant
-3. The Exchange Online subscription customer data is provisioned in Local Geography or Expanded Local Geography
+1. *Tenant* has a sign-up country/region included in *Local Region Geography* or *Expanded Local Region Geography*.
+2. *Tenant* has a valid Advanced Data Residency subscription for all users in the *Tenant*
+3. The Exchange Online subscription [*Customer Data*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) is provisioned in Local Geography or Expanded Local Geography
 
 **Commitment:**
 
-Please refer to the [ADR commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#exchange-online) to understand the specific commitments provided via Product Terms. Examples of the committed data include: all types of mailboxes, including user mailboxes, resource mailboxes, and archive mailboxes.
+For specific Exchange Online commitments, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#exchange-online). Examples of the committed data include all types of mailboxes, including user mailboxes, resource mailboxes, and archive mailboxes.
 
 ### Multi-Geo add-on
 
 Required Conditions:
 
-1. Tenants have a valid Multi-Geo subscription that covers all users assigned to a *Satellite Geography*.
-2. Customers purchasing Multi-Geo through the Enterprise Agreement \(EA\) licensing program must maintain an active Enterprise Agreement.
-3. Total purchased Multi-Geo units must be greater than 5% of the total eligible users in the tenant.
+1. *Tenants* have a valid [*Multi-Geo*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) subscription that covers all users assigned to a [*Satellite Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions).
+2. Customers purchasing *Multi-Geo* through the Enterprise Agreement \(EA\) licensing program must maintain an active Enterprise Agreement.
+3. Total purchased *Multi-Geo* units must be greater than 5% of the total eligible users in the *Tenant*.
 
 **Commitment:**
 
-Customers can assign a Satellite Geography supported by Multi-Geo to a supported mailbox type. See the [Microsoft 365 Multi-Geo availability section](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide#microsoft-365-multi-geo-availability) of the Microsoft 365 Multi-Geo page for details. The Data at Rest for Office 365 Services for the mailbox as defined by the product terms shall be stored in the assigned Satellite Geography. Supported mailbox types include Exchange Online user primary and archive mailboxes, resource mailboxes, Microsoft 365 Group mailboxes, and shared mailboxes.
+Customers can assign a *Satellite Geography* supported by *Multi-Geo* to a supported mailbox type. See the [Microsoft 365 Multi-Geo availability section](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide#microsoft-365-multi-geo-availability) of the Microsoft 365 *Multi-Geo* page for details. The [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) for Office 365 Services for the mailbox as defined by the product terms shall be stored in the assigned *Satellite Geography*. Supported mailbox types include Exchange Online user primary and archive mailboxes, resource mailboxes, Microsoft 365 Group mailboxes, and shared mailboxes.
 
 ## Multi-Geo Capabilities in Exchange Online
 
-Customers may assign a *Satellite Geography* supported by Multi-Geo to a user. See the [Microsoft 365 Multi-Geo availability section](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide#microsoft-365-multi-geo-availability) of the Microsoft 365 Multi-Geo page for details. The user's Data at Rest for Office 365 Services as defined by the product terms shall be stored in the assigned *Satellite Geography*. This includes all types of Exchange Online mailboxes, including user mailboxes, resource mailboxes, Microsoft 365 Group mailboxes, shared mailboxes, and archive mailboxes.
+Customers may assign a *Satellite Geography* supported by *Multi-Geo* to a user. See the [Microsoft 365 Multi-Geo availability section](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide#microsoft-365-multi-geo-availability) of the Microsoft 365 *Multi-Geo* page for details. The user's *Data at Rest* for Office 365 Services as defined by the product terms shall be stored in the assigned *Satellite Geography*. This includes all types of Exchange Online mailboxes, including user mailboxes, resource mailboxes, Microsoft 365 Group mailboxes, shared mailboxes, and archive mailboxes.
 
 You can place mailboxes in *Satellite Geography* locations by:
 
@@ -55,20 +55,20 @@ You can place mailboxes in *Satellite Geography* locations by:
 
 ### Mailbox placement and moves
 
-After Microsoft completes the prerequisite Multi-Geo configuration steps, Exchange Online will honor the PreferredDataLocation attribute on user objects in Microsoft Entra ID. Exchange Online synchronizes the PreferredDataLocation property from Microsoft Entra ID into the MailboxRegion property in the Exchange Online directory service. The value of MailboxRegion determines the *Macro Region Geography* or *Local Region Geography* where user mailboxes and any associated archive mailboxes are placed. It isn't possible to configure a user's primary mailbox and archive mailboxes to reside in different *Geography* locations. Only one *Macro Region Geography* or *Local Region Geography* can be configured per user object.
+After Microsoft completes the prerequisite *Multi-Geo* configuration steps, Exchange Online will honor the PreferredDataLocation attribute on user objects in Microsoft Entra ID. Exchange Online synchronizes the PreferredDataLocation property from Microsoft Entra ID into the MailboxRegion property in the Exchange Online directory service. The value of MailboxRegion determines the [*Macro Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) or *Local Region Geography* where user mailboxes and any associated archive mailboxes are placed. It isn't possible to configure a user's primary mailbox and archive mailboxes to reside in different [*Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) locations. Only one *Macro Region Geography* or *Local Region Geography* can be configured per user object.
 
 - When PreferredDataLocation is configured on a user with an existing mailbox, the mailbox is put into a relocation queue and automatically moved to the specified *Macro Region Geography* or *Local Region Geography*.
 - When PreferredDataLocation is configured on a user without an existing mailbox, when you provision the mailbox, it's provisioned into the specified *Macro Region Geography* or *Local Region Geography*.
-- When PreferredDataLocation isn't specified on a user, when you provision the mailbox, it's provisioned in the *Primary Provisioned Geography*.
+- When PreferredDataLocation isn't specified on a user, when you provision the mailbox, it's provisioned in the [*Primary Provisioned Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions).
 - If the PreferredDataLocation code is incorrect \(for example, a typo of NAN instead of NAM\), the mailbox is provisioned in the *Primary Provisioned Geography*.
 
 Note
 
-Multi-geo capabilities and Skype for Business Online regionally hosted meetings both use the PreferredDataLocation property on user objects to locate services. If you configure PreferredDataLocation values on user objects for regionally hosted meetings, the mailbox for those users will be automatically moved to the specified *Macro Region Geography* or *Local Region Geography* after Multi-Geo is enabled on the Microsoft 365 tenant.
+*Multi-Geo* capabilities and Skype for Business Online regionally hosted meetings both use the PreferredDataLocation property on user objects to locate services. If you configure PreferredDataLocation values on user objects for regionally hosted meetings, the mailbox for those users will be automatically moved to the specified *Macro Region Geography* or *Local Region Geography* after *Multi-Geo* is enabled on the Microsoft 365 *Tenant*.
 
 ### Feature limitations for Multi-Geo in Exchange Online
 
-- Security and compliance features \(for example, auditing and eDiscovery\) that are available in the Exchange admin center \(EAC\) aren't available in Multi-Geo organizations. Instead, you need to use Microsoft Defender and Microsoft Purview to configure security and compliance features.
+- Security and compliance features \(for example, auditing and eDiscovery\) that are available in the Exchange admin center \(EAC\) aren't available in *Multi-Geo* organizations. Instead, you need to use Microsoft Defender and Microsoft Purview to configure security and compliance features.
 - Outlook for Mac users might experience a temporary loss of access to their Online Archive folder while you move their mailbox to a new *Geography* location. This condition occurs when the user's primary and archive mailboxes are in different *Geography* locations, because cross-geo mailbox moves might complete at different times.
 - Users can't share mailbox folders across *Geography* locations in Outlook on the web \(formerly known as Outlook Web App or OWA\). For example, a user in the European Union can't use Outlook on the web to open a shared folder in a mailbox located in the United States. However, Outlook on the Web users can open other mailboxes in different *Geography* locations by using a separate browser window as described in Open another person's mailbox in a separate browser window in Outlook Web App.
 
@@ -76,16 +76,16 @@ Note
 
 Cross-geo mailbox folder sharing is supported in Outlook on Windows.
 
-- Public folders are supported in Multi-Geo organizations. However, the public folders must remain in the *Primary Provisioned Geography* location. You can't move public folders to satellite geo locations.
-- In a Multi-Geo environment, cross-geo mailbox auditing isn't supported. For example, if a user is assigned permissions to access a shared mailbox in a different *Geography* location, mailbox actions performed by that user aren't logged in the mailbox audit log of the shared mailbox. Exchange admin audit events are also only available for the default location. For more information, see Manage mailbox auditing.
+- Public folders are supported in *Multi-Geo* organizations. However, the public folders must remain in the *Primary Provisioned Geography* location. You can't move public folders to satellite geo locations.
+- In a *Multi-Geo* environment, cross-geo mailbox auditing isn't supported. For example, if a user is assigned permissions to access a shared mailbox in a different *Geography* location, mailbox actions performed by that user aren't logged in the mailbox audit log of the shared mailbox. Exchange admin audit events are also only available for the default location. For more information, see Manage mailbox auditing.
 
 ### Administering Exchange Multi-Geo
 
 #### Administering Exchange Online mailboxes in a Multi-Geo environment
 
-Exchange Online PowerShell is required to view and configure Multi-Geo properties in your Microsoft 365 environment. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell).
+Exchange Online PowerShell is required to view and configure *Multi-Geo* properties in your Microsoft 365 environment. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell).
 
-In Exchange Online Multi-Geo environments, you don't need to do any manual steps to add Geographies to your tenant. After you receive the Message Center post that says multi-geo is ready for Exchange Online, all available Geographies will be ready and configured for you to use.
+In Exchange Online *Multi-Geo* environments, you don't need to do any manual steps to add Geographies to your *Tenant*. After you receive the Message Center post that says *Multi-Geo* is ready for Exchange Online, all available Geographies will be ready and configured for you to use.
 
 #### Connect directly to a geo location using Exchange Online PowerShell
 
@@ -119,7 +119,7 @@ The following connection instructions work for accounts that are or aren't confi
 
 #### View the available *Geography* locations that are configured in your Exchange Online organization
 
-To see the list of configured *Geography* locations in Microsoft 365 Multi-Geo, run the following command in Exchange Online PowerShell:
+To see the list of configured *Geography* locations in Microsoft 365 *Multi-Geo*, run the following command in Exchange Online PowerShell:
 
 ```powershell
 Get-OrganizationConfig | Select -ExpandProperty AllowedMailboxRegions | Format-Table
@@ -127,7 +127,7 @@ Get-OrganizationConfig | Select -ExpandProperty AllowedMailboxRegions | Format-T
 
 #### View the *Primary Provisioned Geography* location for your Exchange Online organization
 
-To view your tenant's *Primary Provisioned Geography* location, run the following command in Exchange Online PowerShell:
+To view your *Tenant's* *Primary Provisioned Geography* location, run the following command in Exchange Online PowerShell:
 
 ```powershell
 Get-OrganizationConfig | Select DefaultMailboxRegion
@@ -135,7 +135,7 @@ Get-OrganizationConfig | Select DefaultMailboxRegion
 
 #### Find the *Geography* location of a mailbox
 
-The **Get-Mailbox** cmdlet in Exchange Online PowerShell displays the following multi-geo related properties on mailboxes:
+The **Get-Mailbox** cmdlet in Exchange Online PowerShell displays the following *Multi-Geo* related properties on mailboxes:
 
 - **Database**: The first three letters of the database name correspond to the *Geography* code, which tells you where the mailbox is currently located. For Online Archive Mailboxes the **ArchiveDatabase** property should be used.
 - **MailboxRegion**: Specifies the *Geography* location code that was set by the admin \(synchronized from PreferredDataLocation in Microsoft Entra ID\).
@@ -359,9 +359,9 @@ Or, you can use the following steps to onboard mailboxes directly in a specific 
 
 Note
 
-The multi-geo reporting feature is currently in Preview, is not available in all organizations, and is subject to change.
+The *Multi-Geo* reporting feature is currently in Preview, is not available in all organizations, and is subject to change.
 
-**Multi-Geo Usage Reports** in the Microsoft 365 admin center displays the user count by *Geographic* location. The report displays user distribution for the current month and provides historical data for the past six months.
+***Multi-Geo* Usage Reports** in the Microsoft 365 admin center displays the user count by *Geographic* location. The report displays user distribution for the current month and provides historical data for the past six months.
 
 ## Migration
 
@@ -373,7 +373,7 @@ Some users open a shared mail folder from another mailbox \(that the user has re
 
 | Configuration | Description |
 | :--- | :--- |
-| User has mailbox folder permission to another mailbox  <br> | Potentially limited.  <br>If User A and Mailbox B aren't in the same *Geography* during the tenant move, User A can't open Mailbox B's folder in Outlook Web Access if User A only has permission to a specific folder in Mailbox B.  <br>To add a shared folder, right-click the user name in the left navigation panel and select **Add shared folder**.  <br> |
+| User has mailbox folder permission to another mailbox  <br> | Potentially limited.  <br>If User A and Mailbox B aren't in the same *Geography* during the *Tenant* move, User A can't open Mailbox B's folder in Outlook Web Access if User A only has permission to a specific folder in Mailbox B.  <br>To add a shared folder, right-click the user name in the left navigation panel and select **Add shared folder**.  <br> |
 | User with full mailbox permission to another mailbox  <br> | Fully supported.  <br>If User A has *Full Access* permission to Mailbox B, then User A can select the shared folder in the left navigation panel in Outlook Web Access to open a window showing Mailbox B. A user can open a shared mailbox using Outlook Web Access during the move without any adverse effect. The limitation only applies to folder-level sharing in a mailbox. |
 
 The process of email data migration to Microsoft 365 during the Exchange Online is a common scenario and is supported. Cloud migration between datacenter geos doesn't interfere with any on-premises to cloud mailbox migrations.

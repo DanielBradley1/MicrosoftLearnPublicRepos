@@ -65,7 +65,7 @@ For new users with no OneDrive provisioned, license the account and wait at leas
 
 ## OneDrive Provisioning and the effect of PDL
 
-If the user already has a OneDrive site created in the *Tenant*, setting their PDL won't automatically move their existing OneDrive. To move a user's OneDrive, see [OneDrive Geo Move](https://learn.microsoft.com/en-us/microsoft-365/enterprise/move-onedrive-between-geo-locations?view=o365-worldwide).
+If the user already has a OneDrive site created in the *Tenant*, setting their PDL won't automatically move their existing OneDrive. To move a user's OneDrive, see [Move a OneDrive site](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-spo?view=o365-worldwide#move-a-onedrive-site).
 
 Note
 

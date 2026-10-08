@@ -9,11 +9,11 @@
 
 Required Conditions:
 
-1. *Tenant* has a sign-up country/region included in *Local Region Geography*, the European Union, or the United States.
+1. [*Tenant*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) has a sign-up country/region included in [*Local Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions), the European Union, or the United States.
 
 **Commitment:**
 
-*For current language, please refer to the [Privacy and Security Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) and view the section titled "Location of Customer Data at Rest for Core Online Services."*
+*For current language, please refer to the [Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) and view the section titled "Location of Customer Data at Rest for Core Online Services."*
 
 ### Advanced Data Residency add-on
 
@@ -21,11 +21,11 @@ Required Conditions:
 
 1. *Tenant* has a sign-up country/region included in *Local Region Geography* or *Expanded Local Region Geography*.
 2. *Tenant* has a valid Advanced Data Residency subscription for all users in the *Tenant*.
-3. The Microsoft Teams subscription customer data is provisioned in *Local Region Geography* or *Expanded Local Region Geography*.
+3. The Microsoft Teams subscription [*Customer Data*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) is provisioned in *Local Region Geography* or *Expanded Local Region Geography*.
 
 **Commitment:**
 
-Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#microsoft-teams) to understand the specific commitments provided via Product Terms. Examples of the committed data include:
+For specific Microsoft Teams commitments, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-teams). Examples of the committed data include:
 
 - Chat/ channel messages and team structure: Every team in Microsoft Teams is backed by a Microsoft 365 Modern Group and its SharePoint site and Exchange mailbox. Private chats \(including group chats\), messages sent as part of a conversation in a channel, and the structure of teams and channels are stored in an Azure powered chat service. The data is also stored in a hidden folder in the user and group mailboxes to enable information protection features.
 - Images and Media: Media used in chats \(except for Giphy GIFs which aren't stored but are a reference link to the original Giphy URL\) are stored in an Azure based Media Service deployed to the same locations as the chat service.
@@ -35,29 +35,29 @@ Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-3
 
 Required Conditions:
 
-1. *Tenants* have a valid Multi-Geo subscription that covers all users assigned to a *Satellite Geography*
-2. Customers purchasing Multi-Geo through the Enterprise Agreement \(EA\) licensing program must maintain an active Enterprise Agreement.
-3. Total purchased Multi-Geo units must be greater than 5% of the total eligible seats in the *Tenant*.
+1. *Tenants* have a valid [*Multi-Geo*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) subscription that covers all users assigned to a [*Satellite Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions)
+2. Customers purchasing *Multi-Geo* through the Enterprise Agreement \(EA\) licensing program must maintain an active Enterprise Agreement.
+3. Total purchased *Multi-Geo* units must be greater than 5% of the total eligible seats in the *Tenant*.
 
-**Commitment:** Customers can assign users of Microsoft Teams to any *Satellite Geography* supported by Multi-Geo. The following customer data will be stored in the relevant *Satellite Geography*: Teams chat data that consists of chat messages, including private messages, channel messages, and images used in chats.
+**Commitment:** Customers can assign users of Microsoft Teams to any *Satellite Geography* supported by *Multi-Geo*. The following *Customer Data* will be stored in the relevant *Satellite Geography*: Teams chat data that consists of chat messages, including private messages, channel messages, and images used in chats.
 
 ## Multi-Geo Capabilities in Microsoft Teams
 
-Multi-Geo capabilities in Teams enable Teams chat data to be stored at rest in a specified *Macro Region Geography* or *Local Region Geography* location. Chat data consists of chat messages, including private messages, channel messages, and images used in chats.
+*Multi-Geo* capabilities in Teams enable Teams chat data to be stored at rest in a specified [*Macro Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) or *Local Region Geography* location. Chat data consists of chat messages, including private messages, channel messages, and images used in chats.
 
-Teams uses the Preferred Data Location \(PDL\) for users and groups to determine where to store data. If the PDL isn't set or is invalid, data is stored in the tenant's *Primary Provisioned Geography* location.
+Teams uses the [*Preferred Data Location \(PDL\)*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) for users and groups to determine where to store data. If the *PDL* isn't set or is invalid, data is stored in the *Tenant's* [*Primary Provisioned Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) location.
 
 Note
 
-Multi-Geo capabilities in Teams rolled out in July 2021. Your chat and channel messages will be automatically migrated to the correct *Macro Region Geography* or *Local Region Geography* location over the next few quarters. Any new PDL changes will be processed after the *Tenant* has completed the initial sync, and new PDL changes beyond that will be queued and processed in the order they are received.
+*Multi-Geo* capabilities in Teams rolled out in July 2021. Your chat and channel messages will be automatically migrated to the correct *Macro Region Geography* or *Local Region Geography* location over the next few quarters. Any new *PDL* changes will be processed after the *Tenant* has completed the initial sync, and new *PDL* changes beyond that will be queued and processed in the order they are received.
 
 ### User chat
 
 User chat includes one-to-one, one-to-many, and private meeting messages.
 
-When a new user is created, Teams reads the user's PDL and stores all their chat data in that *Macro Region Geography* or *Local Region Geography* location. For existing users, if an administrator adds or modifies the PDL for a user, that user's chat data is added to a migration queue to be moved to the specified *Macro Region Geography* or *Local Region Geography* location.
+When a new user is created, Teams reads the user's *PDL* and stores all their chat data in that *Macro Region Geography* or *Local Region Geography* location. For existing users, if an administrator adds or modifies the *PDL* for a user, that user's chat data is added to a migration queue to be moved to the specified *Macro Region Geography* or *Local Region Geography* location.
 
-The storage location for a one-to-one or one-to-many chat is based on the PDL of the person who created the chat. If that user's PDL is changed, the chat will be migrated to the new *Macro Region Geography* or *Local Region Geography* location. The storage location for a meeting chat is based on the PDL of the meeting organizer.
+The storage location for a one-to-one or one-to-many chat is based on the *PDL* of the person who created the chat. If that user's *PDL* is changed, the chat will be migrated to the new *Macro Region Geography* or *Local Region Geography* location. The storage location for a meeting chat is based on the *PDL* of the meeting organizer.
 
 To find the current location of a user's Teams data, connect to Teams PowerShell and run the following command:
 
@@ -67,13 +67,13 @@ Get-MultiGeoRegion -EntityType User -EntityId <UPN>
 
 ### Channel messages
 
-Each Microsoft 365 group has a Preferred Data Location \(PDL\) which denotes the *Geography* location where related data is to be stored. Teams uses the PDL for the group associated with each team to determine where to store channel messaging data for that team. This includes private channels and chat that occurs within a channel meeting.
+Each Microsoft 365 group has a *Preferred Data Location \(PDL\)* which denotes the [*Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) location where related data is to be stored. Teams uses the *PDL* for the group associated with each team to determine where to store channel messaging data for that team. This includes private channels and chat that occurs within a channel meeting.
 
-When a user creates a new team, that user's PDL determines what PDL is assigned to the Microsoft 365 group. The group PDL determines where that team's data is stored. If that user's PDL later changes, the group's PDL isn't changed.
+When a user creates a new team, that user's *PDL* determines what *PDL* is assigned to the Microsoft 365 group. The group *PDL* determines where that team's data is stored. If that user's *PDL* later changes, the group's *PDL* isn't changed.
 
-For existing teams, if an administrator adds or modifies the PDL for the Microsoft 365 group that backs a team, that team's channel messaging data is added to a migration queue to be moved to the specified *Macro Region Geography* or *Local Region Geography* location.
+For existing teams, if an administrator adds or modifies the *PDL* for the Microsoft 365 group that backs a team, that team's channel messaging data is added to a migration queue to be moved to the specified *Macro Region Geography* or *Local Region Geography* location.
 
-Changing the PDL of the Microsoft 365 group queues the Teams data to migrate to the chosen *Macro Region Geography* or *Local Region Geography* location. However, this doesn't migrate the SharePoint site or files associated with the Group automatically. You must move the site separately by following the procedures in Move a SharePoint site to a different *Geography* location. Be sure to do both steps to avoid Teams data and SharePoint data for one group in different locations.
+Changing the *PDL* of the Microsoft 365 group queues the Teams data to migrate to the chosen *Macro Region Geography* or *Local Region Geography* location. However, this doesn't migrate the SharePoint site or files associated with the Group automatically. You must move the site separately by following the procedures in Move a SharePoint site to a different *Geography* location. Be sure to do both steps to avoid Teams data and SharePoint data for one group in different locations.
 
 To find the current location of a team's data, connect to Teams PowerShell and run the following command:
 
@@ -83,7 +83,7 @@ Get-MultiGeoRegion -EntityType Group -EntityId <GroupObjectId>
 
 ### User Experience
 
-Teams Multi-Geo is seamless to the end user. Once you change the PDL of a user or a group, the respective data will queue for migration and the migration will occur automatically with no impact to the user or their Teams client even if they're active while the migration occurs.
+Teams *Multi-Geo* is seamless to the end user. Once you change the *PDL* of a user or a group, the respective data will queue for migration and the migration will occur automatically with no impact to the user or their Teams client even if they're active while the migration occurs.
 
 ### Migration
 

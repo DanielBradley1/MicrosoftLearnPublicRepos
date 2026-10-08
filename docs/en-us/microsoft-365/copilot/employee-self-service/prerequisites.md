@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/prerequisites -->
-<!-- Sitemap-Last-Modified: 2026-09-22 -->
+<!-- Sitemap-Last-Modified: 2026-08-18 -->
 
 # Prerequisites to deploy the Employee Self-Service agent
 

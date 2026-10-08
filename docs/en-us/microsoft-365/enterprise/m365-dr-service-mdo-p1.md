@@ -15,13 +15,13 @@ Capability Summary: Protects email and collaboration from zero-day malware, phis
 
 Required Conditions:
 
-1. *Tenant* has a sign-up country included in *Local Region Geography* or *Expanded Local Region Geography*.
+1. [*Tenant*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) has a sign-up country/region included in [*Local Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) or *Expanded Local Region Geography*.
 2. *Tenant* has a valid Advanced Data Residency subscription for all users in the *Tenant*
-3. The MDO P1 subscription customer data is provisioned in *Local Region Geography* or *Expanded Local Region Geography*.
+3. The MDO P1 subscription [*Customer Data*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) is provisioned in *Local Region Geography* or *Expanded Local Region Geography*.
 
 **Commitment:**
 
-Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#microsoft-defender-for-office-p1) for the specific customer data at rest commitment for Microsoft Defender for Office P1.
+Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-defender-for-office-p1) for the specific customer [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitment for Microsoft Defender for Office P1.
 
 Other Information
 
@@ -41,17 +41,17 @@ Capability summary: Built-in security features for all cloud mailboxes \(formerl
 
 Required Conditions:
 
-1. *Tenant* has a sign-up country included in *Local Region Geography* or *Expanded Local Region Geography*.
+1. *Tenant* has a sign-up country/region included in *Local Region Geography* or *Expanded Local Region Geography*.
 2. *Tenant* has a valid Advanced Data Residency subscription for all users in the *Tenant*
-3. Customer data for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\) is provisioned in *Local Region Geography* or *Expanded Local Region Geography*
+3. *Customer Data* for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\) is provisioned in *Local Region Geography* or *Expanded Local Region Geography*
 
 **Commitment:**
 
-Refer to the [Advanced Data Residency Commitment](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide) page for the specific customer data at rest commitment for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\).
+Refer to the [Advanced Data Residency Commitment](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide) page for the specific customer *Data at Rest* commitment for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\).
 
 ## Migration
 
-Customer data for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\) migrates after ADR migration is initiated. Microsoft Defender for Office 365 Plan 1 doesn't have customer data to migrate.
+*Customer Data* for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\) migrates after [*ADR*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) migration is initiated. Microsoft Defender for Office 365 Plan 1 doesn't have *Customer Data* to migrate.
 
 ## How can I determine customer data location?
 

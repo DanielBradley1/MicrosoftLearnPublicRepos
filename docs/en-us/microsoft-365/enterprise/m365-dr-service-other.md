@@ -1,61 +1,67 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-other?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-05-19 -->
 
-# Data Residency for Other Microsoft 365 Services
+# Other Microsoft 365 services data locations
 
 Note
 
-Unless otherwise stated in the [Microsoft Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all), the following Microsoft 365 services don't have specific commitments for data residency. You can use the following guidance to determine where your data may be provisioned at this time. Reference your *Tenant's Default Geography*.
+Unless otherwise stated in the [Microsoft Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all), the following Microsoft 365 services don't have specific commitments for [*Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions). Use the following guidance to determine where Microsoft might provision your data based on your [*Tenant's Default Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions).
 
-## Microsoft Entra ID
-
-Refer to [Microsoft Entra Data Locations](https://aka.ms/aaddatamap).
+For **Microsoft Entra ID** and **Microsoft Intune**, see [Non-Microsoft 365 services data locations](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-other-services-data-location?view=o365-worldwide).
 
 ## Forms
 
-| Tenant's *Default Geography* | Forms Default Data Storage Location | Comments |
+| [*Tenant's*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) *Default Geography* | Forms Default Data Storage Location | Comments |
 | :--- | :--- | :--- |
-| European Union \(EU\) Countries or European Free Trade Association \(EFTA\) Countries | Macro Region Geography 4 - European Union/EFTA |  |
-| European Countries that are Non-EU / Non-EFTA | Macro Region Geography 1 - Europe |  |
+| Countries or regions in the European Union \(EU\) or European Free Trade Association \(EFTA\) | [*Macro Region Geography 4 - European Union/EFTA*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) |  |
+| European countries or regions that are non-EU/non-EFTA | [*Macro Region Geography 1 - Europe*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) |  |
 | Australia | United States | For tenants who provisioned Forms on or prior to 2022-10-12 |
 | Australia | Australia | For new tenants, and tenants provisioning Forms after 2022-10-12 |
 | All other locations | United States |  |
 
-## Intune
-
-Refer to [Data storage and processing in Intune](https://learn.microsoft.com/en-us/intune/intune-service/protect/privacy-data-store-process#storage-locations).
-
 ## Office for Mobile
 
-Customer data for this service comes from other services, like Exchange Online and SharePoint Online. There's no customer data stored outside of those services except for the mobile device.
+[*Customer Data*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) for this service comes from other services, like Exchange Online and SharePoint Online. There's no *Customer Data* stored outside of those services except for the mobile device.
 
 ## OneNote Services
 
-OneNote stores customer data in OneDrive. It does however have an API that can cause persistent caches to be made outside of the Geography where OneDrive stores customer data.
+OneNote stores *Customer Data* in OneDrive. However, OneNote has an API that can cause persistent caches to be created outside of the [*Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) where OneDrive stores data.
 
 ## Planner
 
-See the [Static data location information for select services](#static-data-location-information-for-select-services) section.
+Refer to the [static data location information for select services](#static-data-location-information-for-select-services) section.
 
 Note
 
-Premium plans are stored as described in Project for the Web.
+Premium plan data is stored in Dataverse. Assigned tasks are also stored in the same Azure location as basic plans, and attachments are stored in the SharePoint location for the group. For more information, see [Security, privacy, and compliance in Microsoft Planner](https://learn.microsoft.com/en-us/planner/planner-security-privacy-compliance).
 
 ## Project for the web
 
-See [Power Apps for Data Residency](#power-apps-for-microsoft-365).
+Project for the web data is stored in the default Dataverse environment. For more information, see [Project for the web get started guide for administrators](https://learn.microsoft.com/en-us/project-for-the-web/project-for-the-web-get-started-guide-for-admins#dataverse) and [Microsoft Dynamics 365 and Power Platform data residency documentation](https://learn.microsoft.com/en-us/dynamics365/get-started/availability).
 
 ## Power Apps for Microsoft 365
 
-Refer to [Dynamics 365 availability and data locations \| Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/get-started/availability).
+Power Apps and its associated resources are deployed in the region that hosts the Power Platform environment. For more information, see [Choose the region when setting up an environment](https://learn.microsoft.com/en-us/power-platform/admin/regions-overview) and [Microsoft Dynamics 365 and Power Platform data residency documentation](https://learn.microsoft.com/en-us/dynamics365/get-started/availability).
 
-## Stream
+## Shifts
 
-You can find this information from the "?" option in the Stream UI, if you have it running and then click on "About Microsoft Stream" and see where your data is stored. If needed, create a trial *Tenant*.
+Refer to [Shifts data FAQ - Where is Shifts data stored?](https://learn.microsoft.com/en-us/microsoftteams/expand-teams-across-your-org/shifts/shifts-data-faq#where-is-shifts-data-stored).
+
+## Stream \(Microsoft Clipchamp\)
+
+Note
+
+Microsoft Stream has been replaced by Microsoft Clipchamp.
+
+Refer to [Microsoft Clipchamp overview](https://learn.microsoft.com/en-us/clipchamp/).
+
+## Viva Engage
+
+Refer to [Data residency - Viva Engage](https://learn.microsoft.com/en-us/viva/engage/manage-security-and-compliance/data-residency).
 
 ## Viva Glint
 
-The data region for Viva Glint is determined by the default geography of the *Tenant*, not individual users, and is stored in US or EU/EFTA data centers based on central *Tenant* location. If the central *Tenant* location is *outside* the US or EU/EFTA, the data for Viva Glint is stored in the US data center.
+Refer to [Viva Glint introduction](https://learn.microsoft.com/en-us/viva/glint/introduction-viva-glint).
 
 ## Viva Insights - Advanced, Mgr, Leader
 
@@ -63,26 +69,26 @@ Refer to [Viva Insights data residency for advanced insights, managers, and lead
 
 ## Viva Insights - Personal
 
-Customer data is processed and stored in the employee's Exchange Online mailbox. Data residency for Personal insights in Viva Insights is based on the employee's mailbox location. For more information, see [Personal insights in Viva Insights privacy guide for admins](https://learn.microsoft.com/en-us/viva/insights/personal/overview/privacy-guide-admins?branch=main#summary-of-key-points).
+Refer to the [Personal insights in Viva Insights privacy guide for admins](https://learn.microsoft.com/en-us/viva/insights/personal/overview/privacy-guide-admins#summary-of-key-points).
 
 ## Viva Learning
 
-See the [Static data location information for select services](#static-data-location-information-for-select-services) section.
+Refer to the [static data location information for select services](#static-data-location-information-for-select-services) section.
+
+## Viva Pulse
+
+Refer to [Data residency for Viva Pulse](https://learn.microsoft.com/en-us/viva/pulse/get-started/data-residency-for-viva-pulse).
 
 ## Whiteboard
 
-Refer to [Manage data for Microsoft Whiteboard \| Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/whiteboard/manage-data-organizations).
-
-## Viva Engage
-
-Refer to [Data Residency - Viva Engage \| Microsoft Learn](https://learn.microsoft.com/en-us/viva/engage/manage-security-and-compliance/data-residency).
+Refer to [Manage data for Microsoft Whiteboard](https://learn.microsoft.com/en-us/microsoft-365/whiteboard/manage-data-organizations).
 
 ## Static data location information for select services
 
-1. Macro Region Geography 1 & 4 - Europe/EU/EFTA
-2. Macro Region Geography 2 - Asia Pacific
-3. Macro Region Geography 3 - Americas
-4. Macro Region Geography 4 - European Union/EFTA
+1. *Macro Region Geography 1 - Europe* and *Macro Region Geography 4 - European Union/EFTA*
+2. [*Macro Region Geography 2 - Asia Pacific*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions)
+3. [*Macro Region Geography 3 - Americas*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions)
+4. *Macro Region Geography 4 - European Union/EFTA*
 5. Australia
 6. Canada
 7. Japan
@@ -90,7 +96,7 @@ Refer to [Data Residency - Viva Engage \| Microsoft Learn](https://learn.microso
 9. United Kingdom
 10. France
 
-| Country Code | Countries/Regions | Viva Insights Advanced | Viva Learning | Planner |
+| Country/Region Code | Countries/Regions | Viva Insights Advanced | Viva Learning | Planner |
 | --- | --- | --- | --- | --- |
 | AF | Afghanistan | APC<sup>2</sup> | APC<sup>2</sup> | APC<sup>2</sup> |
 | AX | Aland Islands | APC<sup>2</sup> | AMER<sup>3</sup> | EUR<sup>1</sup> |

@@ -9,11 +9,11 @@
 
 Required Conditions:
 
-- *Tenant* has a sign-up country/region included in *Local Region Geography*, the European Union or the United States.
+- [*Tenant*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) has a sign-up country/region included in [*Local Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions), the European Union or the United States.
 
 **Commitment:**
 
-*For current language, refer to the [Privacy and Security Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) and view the section titled "Location of Customer Data at Rest for Core Online Services."*
+*For current language, refer to the [Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) and view the section titled "Location of Customer Data at Rest for Core Online Services."*
 
 ### Advanced Data Residency add-on
 
@@ -21,23 +21,23 @@ Required Conditions:
 
 1. *Tenant* has a sign-up country/region included in *Local Region Geography* or *Expanded Local Region Geography*.
 2. *Tenant* has a valid Advanced Data Residency subscription for all users in the *Tenant*.
-3. The SharePoint subscription customer data is provisioned in *Local Region Geography* or *Expanded Local Region Geography*.
+3. The SharePoint subscription [*Customer Data*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) is provisioned in *Local Region Geography* or *Expanded Local Region Geography*.
 
 **Commitment:**
 
-Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#sharepointonedrive) for the specific customer data at rest commitment for SharePoint and OneDrive.
+Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#sharepoint-and-onedrive) for the specific customer [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitment for SharePoint and OneDrive.
 
 ### Multi-Geo add-on
 
 Required Conditions:
 
-1. *Tenants* have a valid Multi-Geo subscription that covers all users assigned to a *Satellite Geography*.
-2. Customers purchasing Multi-Geo through the Enterprise Agreement \(EA\) licensing program must maintain an active Enterprise Agreement.
-3. Total purchased Multi-Geo units must be greater than 5% of the total eligible licenses in the *Tenant*.
+1. *Tenants* have a valid [*Multi-Geo*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) subscription that covers all users assigned to a [*Satellite Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions).
+2. Customers purchasing *Multi-Geo* through the Enterprise Agreement \(EA\) licensing program must maintain an active Enterprise Agreement.
+3. Total purchased *Multi-Geo* units must be greater than 5% of the total eligible licenses in the *Tenant*.
 
 **Commitment:**
 
-Customers can assign users of SharePoint/OneDrive to any *Satellite Geography* supported by Multi-Geo \(see Section 4.1.3\). The following customer data will be stored in the relevant *Satellite Geography*:
+Customers can assign users of SharePoint/OneDrive to any *Satellite Geography* supported by *Multi-Geo* \(see Section 4.1.3\). The following *Customer Data* will be stored in the relevant *Satellite Geography*:
 
 - SharePoint site content and the files stored within that site, and files uploaded to OneDrive.
 
@@ -72,7 +72,7 @@ The following search features are affected:
 - eDiscovery: Items that changed during the migration aren't shown until crawling picks up the changes.
 - Data Loss Protection \(DLP\): Policies aren't enforced on items that change until crawling picks up the changes.
 
-As part of the migration, the *Primary Provisioned Geography* changes and all new content will be stored at rest in the new *Primary Provisioned Geography*. Existing content will move in the background with no impact to you for up to 90 days after the first change to the SharePoint data location in the admin center.
+As part of the migration, the [*Primary Provisioned Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) changes and all new content will be stored at rest in the new *Primary Provisioned Geography*. Existing content will move in the background with no impact to you for up to 90 days after the first change to the SharePoint data location in the admin center.
 
 ### SharePoint 2013 workflow
 
@@ -86,35 +86,35 @@ Important
 
 There is currently a known issue caused by the retirement of BCS that is affecting site moves. The fix is currently being worked on. Currently, if you are facing issues, please try using the PowerShell cmdlet while using the -SuppressBcsCheck parameter.
 
-Multi-Geo capabilities in OneDrive and SharePoint enable control of shared resources like SharePoint team sites and Microsoft 365 group mailboxes stored at rest in a specified *Macro Region Geography* or *Local Region Geography*.
+*Multi-Geo* capabilities in OneDrive and SharePoint enable control of shared resources like SharePoint team sites and Microsoft 365 group mailboxes stored at rest in a specified [*Macro Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) or *Local Region Geography*.
 
-Each user, Group mailbox, and SharePoint site have a Preferred Data Location \(PDL\) which denotes the *Macro Region Geography* or *Local Region Geography* \(location where related data is to be stored\). Users' personal data \(Exchange mailbox and OneDrive\) along with any Microsoft 365 Groups or SharePoint sites that they create can be stored in the specified *Macro Region Geography* or *Local Region Geographies* location to meet data residency requirements. You can specify different administrators for each *Macro Region Geography* or *Local Region Geographies* location.
+Each user, Group mailbox, and SharePoint site have a [*Preferred Data Location \(PDL\)*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) which denotes the *Macro Region Geography* or *Local Region Geography* \(location where related data is to be stored\). Users' personal data \(Exchange mailbox and OneDrive\) along with any Microsoft 365 Groups or SharePoint sites that they create can be stored in the specified *Macro Region Geography* or *Local Region Geographies* location to meet [*Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) requirements. You can specify different administrators for each *Macro Region Geography* or *Local Region Geographies* location.
 
-Users get a seamless experience when using Microsoft 365 services, including Office applications, OneDrive, and Search. See User experience in a Multi-Geo environment for details.
+Users get a seamless experience when using Microsoft 365 services, including Office applications, OneDrive, and Search. See User experience in a *Multi-Geo* environment for details.
 
 Note
 
-Once your tenant has enabled the Multi-Geo add-on, changing the default location for the tenant is not supported. This applies even for the Advanced Data Residency add-on.
+Once your *Tenant* has enabled the *Multi-Geo* add-on, changing the default location for the *Tenant* is not supported. This applies even for the Advanced Data Residency add-on.
 
 ### **OneDrive**
 
-Each user's OneDrive can be provisioned in or moved by an administrator to a *Satellite Geography* location in accordance with the user's PDL. Personal files are then kept in that *Satellite Geography* location, though they can be shared with users in other *Macro Region Geography* or *Local Region Geography* locations.
+Each user's OneDrive can be provisioned in or moved by an administrator to a *Satellite Geography* location in accordance with the user's *PDL*. Personal files are then kept in that *Satellite Geography* location, though they can be shared with users in other *Macro Region Geography* or *Local Region Geography* locations.
 
 ### **SharePoint Sites and Groups**
 
-Management of the Multi-Geo feature is available through the SharePoint admin center.
+Management of the *Multi-Geo* feature is available through the SharePoint admin center.
 
-When a user creates a SharePoint group-connected site in a multi-geo environment, their PDL is used to determine the *Macro Region Geography* or *Local Region Geography* location where the site and its associated Group mailbox are created. \(If the user's PDL value isn't set, or is set to *Macro Region Geography* or *Local Region Geography* location that isn't configured as a *Satellite Geography* location, then the site and mailbox are created in the *Primary Provisioned Geography*.\)
+When a user creates a SharePoint group-connected site in a *Multi-Geo* environment, their *PDL* is used to determine the *Macro Region Geography* or *Local Region Geography* location where the site and its associated Group mailbox are created. \(If the user's *PDL* value isn't set, or is set to *Macro Region Geography* or *Local Region Geography* location that isn't configured as a *Satellite Geography* location, then the site and mailbox are created in the *Primary Provisioned Geography*.\)
 
-Microsoft 365 services other than Exchange, OneDrive, SharePoint, and Teams aren't available with Multi-Geo. However, Microsoft 365 Groups that are created by these services are configured with the PDL of the creator and their Exchange Group mailbox, SharePoint site are provisioned in the corresponding *Macro Region Geography* or *Local Region Geography*.
+Microsoft 365 services other than Exchange, OneDrive, SharePoint, and Teams aren't available with *Multi-Geo*. However, Microsoft 365 Groups that are created by these services are configured with the *PDL* of the creator and their Exchange Group mailbox, SharePoint site are provisioned in the corresponding *Macro Region Geography* or *Local Region Geography*.
 
 ### **Managing the Multi-Geo environment**
 
-Setting up and managing your Multi-Geo environment is done through the SharePoint admin center.
+Setting up and managing your *Multi-Geo* environment is done through the SharePoint admin center.
 
 #### **SharePoint storage quotas in multi-geo environments**
 
-By default, all *Geography* locations of a multi-geo environment share the available *Tenant* storage quota.
+By default, all [*Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) locations of a *Multi-Geo* environment share the available *Tenant* storage quota.
 
 With the SharePoint geo storage quota setting, you can manage the storage quota for each *Geography* location. When you allocate a storage quota for a *Geography* location, it becomes the maximum amount of storage available for that *Geography* location, and is deducted from the available *Tenant* storage quota. The remaining available *Tenant* storage quota is then shared across the configured *Geography* locations for which a specific storage quota hasn't been allocated.
 
@@ -168,7 +168,7 @@ When moving OneDrive sites between *Geography* locations, it's important to comm
 - What *Geography* location their OneDrive is moving to, and the URL to access the new location
 - They should close their files and not make edits during the move.
 - File permissions and sharing won't change as a result of the move.
-- What to expect from the user experience in a multi-geo environment
+- What to expect from the user experience in a *Multi-Geo* environment
 
 Be sure to send your users an email when the move completes, informing them that they can resume working in OneDrive.
 
@@ -183,7 +183,7 @@ You can schedule OneDrive site moves in advance \(described later in this articl
 
 #### **Moving a OneDrive site**
 
-To perform a OneDrive *Geography* move, the *Tenant* administrator must first set the user's Preferred Data Location \(PDL\) to the appropriate *Geography* location. Once the PDL is set, wait for at least 24 hours for the PDL update to sync across the *Geography* locations before starting the OneDrive *Geography* move.
+To perform a OneDrive *Geography* move, the *Tenant* administrator must first set the user's *Preferred Data Location \(PDL\)* to the appropriate *Geography* location. Once the *PDL* is set, wait for at least 24 hours for the *PDL* update to sync across the *Geography* locations before starting the OneDrive *Geography* move.
 
 When using the *Geography* move cmdlets, connect to SPO Service at the user's current OneDrive *Geography* location, using the following syntax:
 
@@ -322,13 +322,13 @@ Followed sites and groups show up in the user's OneDrive regardless of their *Ge
 
 #### **Delve Geo URL updates**
 
-Users are sent to the Delve *Geography* corresponding to their PDL only after their OneDrive has been moved to the new *Geography*.
+Users are sent to the Delve *Geography* corresponding to their *PDL* only after their OneDrive has been moved to the new *Geography*.
 
 ### **Move a SharePoint site or SharePoint Embedded container site**
 
 #### **Move a SharePoint site or SharePoint Embedded container site to a different *Geography* location**
 
-With SharePoint site *Geography* move, you can move SharePoint sites and SharePoint Embedded container sites to other *Geography* locations within your Multi-Geo environment. The following types of site can be moved between *Geography* locations:
+With SharePoint site *Geography* move, you can move SharePoint sites and SharePoint Embedded container sites to other *Geography* locations within your *Multi-Geo* environment. The following types of site can be moved between *Geography* locations:
 
 - Microsoft 365 group-connected sites, including those sites associated with Microsoft Teams
 - Modern sites without a Microsoft 365 group association
@@ -357,7 +357,7 @@ When moving SharePoint sites between *Geography* locations, it's important to co
 - What *Geography* location their site is moving to, and the URL to access the new location.
 - They should close their files and not make edits during the move.
 - File permissions and sharing won't change because of the move.
-- What to expect from the user experience in a multi-geo environment.
+- What to expect from the user experience in a *Multi-Geo* environment.
 
 Be sure to send your sites' users an email when the move completes, informing them that they can resume working on their sites.
 
@@ -431,7 +431,7 @@ Start-SPOSiteContentMove -SourceSiteUrl <siteURL> -DestinationDataLocation <Dest
 
 To get the SourceSiteUrl for a SharePoint Embedded container site, you must use the SharePoint Embedded admin cmdlets. You can use the `Get-SPOContainer` PowerShell cmdlet and pass the container ID as the `-Identity` parameter to determine the site URL of a specific container.
 
-If the SharePoint Embedded container site is owned by an individual user, the container site can only be moved to the geography matching the Preferred Data Location \(PDL\) of the user.
+If the SharePoint Embedded container site is owned by an individual user, the container site can only be moved to the *Geography* matching the *Preferred Data Location \(PDL\)* of the user.
 
 And to start the site move while also renaming the site \(excluding SharePoint Embedded container sites\), run:
 
@@ -443,16 +443,16 @@ You cannot use the `-DestinationDataLocation` and `-DestinationUrl` parameters i
 
 #### **Start a SharePoint site *Geography* move for a Microsoft 365 group-connected site**
 
-To move a Microsoft 365 group-connected site, the SharePoint Administrator must first change the Preferred Data Location \(PDL\) attribute for the Microsoft 365 group.
+To move a Microsoft 365 group-connected site, the SharePoint Administrator must first change the *Preferred Data Location \(PDL\)* attribute for the Microsoft 365 group.
 
-To set the PDL for a Microsoft 365 group:
+To set the *PDL* for a Microsoft 365 group:
 
 ```PowerShell
 Set-SPOUnifiedGroup -PreferredDataLocation <PDL> -GroupAlias <GroupAlias>
 Get-SPOUnifiedGroup -GroupAlias <GroupAlias>
 ```
 
-Once you update the PDL, you can start the site move:
+Once you update the *PDL*, you can start the site move:
 
 ```PowerShell
 Start-SPOUnifiedGroupMove -GroupAlias <GroupAlias> -DestinationDataLocation <DestinationDataLocation>
@@ -483,7 +483,7 @@ The move statuses are described in the following table.
 | Success | The move completed successfully. |
 | Failed | The move failed. |
 | Stopped | The move was canceled by an admin while it was still queued. |
-| NotSupported | The move could not be processed because the PDL was invalid. |
+| NotSupported | The move could not be processed because the *PDL* was invalid. |
 | Rescheduled | The move did not succeed and is being scheduled again for another attempt. |
 
 You can also apply the `-Verbose` option to see additional information about the move.
@@ -552,17 +552,17 @@ SharePoint uses Azure Blob Storage for its content, while the metadata associate
 
 ### **Enabling SharePoint Multi-Geo in your *Satellite Geography* location**
 
-This article is for Global or SharePoint administrators who have created a Multi-Geo *Satellite Geography* location **before** SharePoint Multi-Geo capabilities became generally available on March 27, 2019, and who haven't enabled SharePoint Multi-Geo in their *Satellite Geography* location\(s\).
+This article is for Global or SharePoint administrators who have created a *Multi-Geo* *Satellite Geography* location **before** SharePoint *Multi-Geo* capabilities became generally available on March 27, 2019, and who haven't enabled SharePoint *Multi-Geo* in their *Satellite Geography* location\(s\).
 
 Note
 
-If you have added a new *Geography* location **after March 27th, 2019**, you don't need to perform these instructions, as your new *Geography* location will already be enabled for OneDrive and SharePoint Multi-Geo.
+If you have added a new *Geography* location **after March 27th, 2019**, you don't need to perform these instructions, as your new *Geography* location will already be enabled for OneDrive and SharePoint *Multi-Geo*.
 
-These instructions allow you to enable SharePoint in your *Satellite Geography* location, so your Multi-Geo satellite users can take advantage of both OneDrive and SharePoint Multi-Geo capabilities in Microsoft 365.
+These instructions allow you to enable SharePoint in your *Satellite Geography* location, so your *Multi-Geo* satellite users can take advantage of both OneDrive and SharePoint *Multi-Geo* capabilities in Microsoft 365.
 
 Important
 
-Please note that this is a one way enablement. Once you set SPO mode, you will not be able to revert your *Tenant* to OneDrive only Multi-Geo mode without an escalation with support.
+Please note that this is a one way enablement. Once you set SPO mode, you will not be able to revert your *Tenant* to OneDrive only *Multi-Geo* mode without an escalation with support.
 
 #### **To set a *Geography* location into SPO Mode**
 

@@ -30,7 +30,7 @@ At any time after you complete your purchase, the discount created by your promo
 
 **If you have an MCA billing account type:**
 
-Promo codes are not supported on Modern Customer Agreement \(MCA\) billing accounts. Promotional discounts are published directly inside of the product catalog to customers.
+Promo codes are not supported on Microsoft Customer Agreement \(MCA\) billing accounts. Promotional discounts are published directly inside of the product catalog to customers.
 
 ## Promo code terms
 

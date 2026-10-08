@@ -37,13 +37,13 @@ To deploy your tenant:
 
 ### Move a tenant's geographic locations
 
-Microsoft continues to open new datacenter geographic locations \(geos\) for Microsoft 365 services. These new datacenter geos add capacity and compute resources to support customer demand and usage growth. Additionally, the new datacenter geos offer in-geo data residency for core customer data.
+Microsoft continues to open new datacenter geographic locations \(geos\) for Microsoft 365 services. These new datacenter geos add capacity and compute resources to support customer demand and usage growth. Additionally, the new datacenter geos offer in-geo [*Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) for core [*Customer Data*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions).
 
-For more information, see [Moving core data to new Microsoft 365 datacenter geos](https://learn.microsoft.com/en-us/microsoft-365/enterprise/moving-data-to-new-datacenter-geos?view=o365-worldwide).
+For more information, see [How customer data can move between Geographies](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-compare-offerings?view=o365-worldwide#how-customer-data-can-move-between-geographies).
 
 ## Deploy Microsoft 365 Multi-Geo
 
-With Microsoft 365 Multi-Geo, your organization can expand its Microsoft 365 presence to multiple geographic regions and/or countries within your existing tenant.
+With Microsoft 365 [*Multi-Geo*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions), your organization can expand its Microsoft 365 presence to multiple countries or regions within your existing tenant.
 
 For more information, see [Microsoft 365 Multi-Geo](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide).
 

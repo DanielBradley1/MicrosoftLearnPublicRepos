@@ -214,7 +214,7 @@ Teams integration into EHR systems optimizes the amount of data used and stored 
 
 The Teams EHR connector doesn't store or transfer any identifiable personal data or any health records of patients or healthcare providers from the EHR system. The only data stored by the EHR connector is the EHR user's unique ID, which is used during Teams meeting setup.
 
-The EHR user's unique ID is stored in one of the three geographic regions described in [Where your Microsoft 365 customer data is stored](https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations). All chat, recordings, and other data shared in Teams by meeting participants are stored according to existing storage policies. To learn more about the location of data in Teams, see [Location of data in Teams](https://learn.microsoft.com/en-us/microsoftteams/location-of-data-in-teams).
+The EHR user's unique ID is stored in one of the three geographic regions described in [Microsoft 365 services data locations](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-services-data-location). All chat, recordings, and other data shared in Teams by meeting participants are stored according to existing storage policies. To learn more about the location of data in Teams, see [Location of data in Teams](https://learn.microsoft.com/en-us/microsoftteams/location-of-data-in-teams).
 
 ## Related articles
 

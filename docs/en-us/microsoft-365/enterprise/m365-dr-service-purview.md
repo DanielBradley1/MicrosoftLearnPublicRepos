@@ -1,23 +1,23 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-purview?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-02-19 -->
 
-# Data Residency support for Microsoft Purview
+# Data Residency for Microsoft Purview
 
-This article lists the Data Residency commitments \(available with the *Advanced Data Residency* add-on\) for supported Microsoft Purview services and solutions.
+This article lists the [*Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitments \(available with the [*Advanced Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) add-on\) for supported Microsoft Purview services and solutions.
 
 The required conditions for the related commitments for the following services are:
 
-1. *Tenant* has a sign-up country/region included in *Local Region Geography* or *Future Local Region Geography*.
+1. [*Tenant*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) has a sign-up country/region included in [*Local Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) or [*Future Local Region Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions).
 2. *Tenant* has a valid *Advanced Data Residency* subscription for all users in the *Tenant*.
-3. The Purview service Customer Data is provisioned in *Local Region Geography* or *Future Local Region Geography*.
+3. The Purview service [*Customer Data*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) is provisioned in *Local Region Geography* or *Future Local Region Geography*.
 
 ## Migration
 
-Customer Data supporting Purview services is closely aligned with the Exchange Online and SharePoint services, and the bulk of the data migrated, if required to fulfill the data residency commitments for the Purview services, will be handled by those services. In the cases where supporting Customer Data is maintained in an Azure Service, for example, the migration of that data is tied to the migration of the underlying Exchange Online/SharePoint data.
+*Customer Data* supporting Purview services is closely aligned with the Exchange Online and SharePoint services, and the bulk of the data migrated, if required to fulfill the *Data Residency* commitments for the Purview services, will be handled by those services. In the cases where supporting *Customer Data* is maintained in an Azure Service, for example, the migration of that data is tied to the migration of the underlying Exchange Online/SharePoint data.
 
 ## How can I determine Customer Data location?
 
-We are in the process of updating the data location for eligible Purview services in the Microsoft 365 admin center. When this change is complete, you will be able to see the *Current Geography* and *Committed Geography* location for eligible Purview services data within the *Data Location Card* by navigating to **Admin** > **Settings** > **Org settings** > **Organization profile** > **Data location**. Until that change is visible, you can view the Exchange Online data location information in order to understand where your committed data is stored for this service.
+Microsoft is updating the Microsoft 365 admin center to display data locations for eligible Microsoft Purview services. After the update, Global Tenant Admins will be able to view the *Current Geography* and *Committed Geography* for their *Tenant* on the *Data Location Card* by going to **Admin** > **Settings** > **Org settings** > **Organization profile** > **Data location**. Until then, Global Tenant Admins should use the Exchange Online location information to determine where this service stores committed data.
 
 ## Advanced Data Residency Eligible Services
 
@@ -25,12 +25,12 @@ We are in the process of updating the data location for eligible Purview service
 
 | Solution Area | Services | Components |
 | :--- | :--- | :--- |
-| Risk & Compliance | Audit \(Standard\) | See [Audit \(Standard\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#audit-standard) for specific commitments. |
-| Risk & Compliance | Audit \(Premium\) | See [Audit \(Premium\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#audit-premium) for specific commitments. |
-| Risk & Compliance | Data Lifecycle Management \(DLM\) | See [Data Lifecycle Management \(DLM\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#data-lifecycle-management-dlm) for specific commitments. |
-| Data Security | Data Loss Prevention \(DLP\) | See [Data Loss Prevention \(DLP\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#data-loss-prevention-dlp) for specific commitments. |
-| Data Security | Information Barriers | See [Information Barriers](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#information-barriers) for specific commitments. |
-| Data Security | Information Protection \(MIP\) | See [Information Protection \(MIP\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#information-protection-mip) for specific commitments. |
+| Risk & Compliance | Audit \(Standard\) | See [Audit \(Standard\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-standard) for specific commitments. |
+| Risk & Compliance | Audit \(Premium\) | See [Audit \(Premium\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-premium) for specific commitments. |
+| Risk & Compliance | Data Lifecycle Management \(DLM\) | See [Data Lifecycle Management \(DLM\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-lifecycle-management) for specific commitments. |
+| Data Security | Data Loss Prevention \(DLP\) | See [Data Loss Prevention \(DLP\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-loss-prevention-dlp) for specific commitments. |
+| Data Security | Information Barriers | See [Information Barriers](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#information-barriers) for specific commitments. |
+| Data Security | Information Protection \(MIP\) | See [Information Protection \(MIP\)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#information-protection) for specific commitments. |
 
 Note
 
@@ -48,7 +48,7 @@ Capability summary: Microsoft Purview Audit \(Standard\) provides you with the a
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#audit-standard) for the specific Customer Data at rest commitment for Audit \(Standard\).
+For the specific Customer [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitment for Audit \(Standard\), see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-standard).
 
 ### Risk & Compliance - Audit \(Premium\)
 
@@ -62,7 +62,7 @@ Capability summary: Microsoft Purview Audit \(Premium\) builds on the capabiliti
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#audit-premium) for the specific Customer Data at rest commitment for Audit \(Premium\).
+For the specific Customer *Data at Rest* commitment for Audit \(Premium\), see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-premium).
 
 ### Risk & Compliance - Data Lifecycle Management \(DLM\)
 
@@ -92,7 +92,7 @@ Capability summary: Lets you retain or delete content with policy management for
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#data-retention) for the specific Customer Data at rest commitment for Data Retention.
+For the specific Customer *Data at Rest* commitment for Data Retention, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-retention).
 
 #### Records Management:
 
@@ -104,7 +104,7 @@ Capability summary: Organizations of all types require a records-management solu
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#records-management) for the specific Customer Data at rest commitment for Records Management.
+For the specific Customer *Data at Rest* commitment for Records Management, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#records-management).
 
 ### Data Security - Data Loss Prevention \(DLP\)
 
@@ -136,7 +136,7 @@ DLP detects sensitive items by using deep content analysis, not by just a simple
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#data-loss-prevention-dlp) for the specific Customer Data at rest commitment for Data Loss Prevention \(DLP\).
+For the specific Customer *Data at Rest* commitment for Data Loss Prevention \(DLP\), see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-loss-prevention-dlp).
 
 ### Data Security - Information Barriers
 
@@ -150,7 +150,7 @@ Capability summary: Microsoft Purview Information Barriers \(IB\) is a complianc
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#information-barriers) for the specific Customer Data at rest commitment for Information Barriers.
+For the specific Customer *Data at Rest* commitment for Information Barriers, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#information-barriers).
 
 ### Data Security - Information Protection \(MIP\)
 
@@ -171,7 +171,7 @@ Capability summary: With Office 365 Message Encryption, your organization can se
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#office-message-encryption-ome) for the specific Customer Data at rest commitment for Office Message Encryption.
+For the specific Customer *Data at Rest* commitment for Office Message Encryption, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#office-message-encryption-ome).
 
 #### Sensitivity Labels:
 
@@ -192,4 +192,4 @@ Capability summary: Sensitivity labels from Microsoft Purview Information Protec
 
 Commitment:
 
-Refer to the [ADR Commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide#sensitivity-labels) for the specific Customer Data at rest commitment for Sensitivity Labels.
+For the specific Customer *Data at Rest* commitment for Sensitivity Labels, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#sensitivity-labels).

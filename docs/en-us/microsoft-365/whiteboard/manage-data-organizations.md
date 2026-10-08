@@ -13,7 +13,7 @@ Note
 
 The following information applies to whiteboards that are stored in Azure.
 
-Whiteboard currently stores content securely in Azure. Data might be stored in different locations, depending on the country/region and when Whiteboard switched to storing new content in those locations. To check where new data is created, see [Where your Microsoft 365 customer data is stored](https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations).
+Whiteboard currently stores content securely in Azure. Data might be stored in different locations, depending on the country/region and when Whiteboard switched to storing new content in those locations. To check where new data is created, see [Microsoft 365 services data locations](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-services-data-location).
 
 Content in Azure doesn't support Data Loss Prevention \(DLP\), eDiscovery, retention policies, and similar features. This content can be managed using [Whiteboard PowerShell cmdlets](https://learn.microsoft.com/en-us/powershell/module/whiteboardadmin/). Eventually, whiteboards stored in Azure need to be migrated to OneDrive or deleted.
 
@@ -40,7 +40,7 @@ Whiteboards are created in the OneDrive folder of the person who starts the whit
 
 Any users who don't have OneDrive provisioned are no longer able to create new whiteboards when this change is implemented. However, they can still edit their previously created boards. They can also collaborate on any whiteboards that are shared with them by others who have OneDrive.
 
-An average whiteboard might be anywhere from 50 KB to 1 MB in size and located wherever your OneDrive content resides. To check where data for your organization is stored, see [Where your Microsoft 365 customer data is stored](https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations). Then look at the location for OneDrive.
+An average whiteboard might be anywhere from 50 KB to 1 MB in size and located wherever your OneDrive content resides. To check where data for your organization is stored, see [Microsoft 365 services data locations](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-services-data-location). Then look at the location for OneDrive.
 
 ### Controls for OneDrive storage
 

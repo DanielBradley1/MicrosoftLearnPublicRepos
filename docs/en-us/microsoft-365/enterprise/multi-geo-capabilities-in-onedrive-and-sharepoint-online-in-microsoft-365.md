@@ -11,7 +11,7 @@ Users get a seamless experience when using Microsoft 365 services, including Off
 
 ## OneDrive
 
-Each user's OneDrive can be provisioned in or [moved by an administrator](https://learn.microsoft.com/en-us/microsoft-365/enterprise/move-onedrive-between-geo-locations?view=o365-worldwide) to a satellite location in accordance with the user's PDL. Personal files are then kept in that geo location, though they can be shared with users in other geo locations. Administrative options found under the OneDrive tab of an active user within the Microsoft 365 admin center are currently not supported for multi-geo tenants.
+Each user's OneDrive can be provisioned in or [moved by an administrator](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-spo?view=o365-worldwide#move-a-onedrive-site) to a satellite location in accordance with the user's PDL. Personal files are then kept in that geo location, though they can be shared with users in other geo locations. Administrative options found under the OneDrive tab of an active user within the Microsoft 365 admin center are currently not supported for multi-geo tenants.
 
 ## SharePoint Sites and Groups
 

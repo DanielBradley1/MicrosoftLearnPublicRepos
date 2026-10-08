@@ -7,7 +7,7 @@ Note
 
 This guidance applies to US Government Community Cloud \(GCC\) High environments.
 
-Data is stored as .whiteboard files in OneDrive for Business. An average whiteboard might be anywhere from 50 KB to 1 MB in size and located wherever your OneDrive for Business content resides. To check where new data is created, see [Where your Microsoft 365 customer data is stored](https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations). Look at the location for OneDrive for Business. All properties that apply to general files in OneDrive for Business also apply to Whiteboard, except for external sharing.
+Data is stored as .whiteboard files in OneDrive for Business. An average whiteboard might be anywhere from 50 KB to 1 MB in size and located wherever your OneDrive for Business content resides. To check where new data is created, see [Microsoft 365 services data locations](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-services-data-location). Look at the location for OneDrive for Business. All properties that apply to general files in OneDrive for Business also apply to Whiteboard, except for external sharing.
 
 In order to manage data, you must first ensure that Whiteboard is enabled for your organization. For more information, see [Manage access to Whiteboard in GCC High environments](https://learn.microsoft.com/en-us/microsoft-365/whiteboard/manage-whiteboard-access-gcc-high?view=o365-worldwide).
 
