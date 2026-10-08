@@ -221,6 +221,13 @@ The **Allow app creation with the Copilot Managed Runtime command line interface
 To configure the setting:
 
 1. Sign in to the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
+2. Go to **Copilot** > **Settings** > **Managed apps**.
+3. Select **Allow app creation with the Copilot Managed Runtime command line interface \(CLI\)**.
+4. Select **Environment groups** or **Environments**, select the applicable group or environment, and then enable the setting.
+
+For environment groups, you can instead use the group-management experience:
+
+1. Sign in to the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
 2. In the Power Platform admin center, go to **Manage** > **Environment groups**.
 3. Select the environment group, and then open **Rules**.
 4. Open **Allow app creation with the Copilot Managed Runtime command line interface \(CLI\)** rule, enable the setting, and then save the change.

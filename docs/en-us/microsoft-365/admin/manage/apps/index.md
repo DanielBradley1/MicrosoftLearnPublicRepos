@@ -88,10 +88,25 @@ Set-TenantSettings -RequestBody $tenantSettings
 
 ### Scope access to Copilot Studio app creation with security groups
 
-By default, all eligible users can use an enabled Copilot Studio app creation path. To limit access to specific users, configure an allow list through PowerShell or the API:
+To restrict Copilot Studio app creation to specific Microsoft Entra security groups, set `powerPlatform.powerApps.enabledGroupsManagedAppsMcsPreview` to a security group's object ID \(GUID\). To configure multiple groups, use a comma-separated string of object IDs.
 
-- **Allowed** \(no group configured\): open to all eligible users.
-- **Scoped** \(group configured\): only the specified users in the security group can use Copilot Studio to create apps.
+The following example configures access for one security group. Replace `<security-group-object-id>` with the group's object ID:
+
+```powershell
+$tenantSettings = Get-TenantSettings
+$tenantSettings.powerPlatform.powerApps.enabledGroupsManagedAppsMcsPreview = "<security-group-object-id>"
+Set-TenantSettings -RequestBody $tenantSettings
+```
+
+For multiple security groups, use the following example:
+
+```powershell
+$tenantSettings = Get-TenantSettings
+$tenantSettings.powerPlatform.powerApps.enabledGroupsManagedAppsMcsPreview = "<group-1-object-id>,<group-2-object-id>"
+Set-TenantSettings -RequestBody $tenantSettings
+```
+
+When the Copilot Studio app creation path is enabled, users who belong to any configured security group can create apps.
 
 ## Control source and deployment options
 
