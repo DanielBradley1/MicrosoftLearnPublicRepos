@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/uninstall-sensor -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Remove the Microsoft Defender for Identity sensor
 
