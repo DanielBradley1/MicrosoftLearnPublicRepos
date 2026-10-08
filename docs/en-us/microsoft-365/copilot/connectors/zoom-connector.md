@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/zoom-connector -->
-<!-- Sitemap-Last-Modified: 2026-04-20 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Zoom Meetings connector
 
