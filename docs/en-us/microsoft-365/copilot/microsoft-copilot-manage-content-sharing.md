@@ -7,7 +7,14 @@
 
 Note
 
-**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, see [Network requirements for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#network-requirements).
+**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, make sure to:
+
+- Allow `*.cloud.microsoft`.
+- Allow the Microsoft Copilot endpoints.
+- Verify that proxies, firewalls, Conditional Access, tenant restrictions, and app-control policies don't block the Copilot app.
+- Do not block `copilot.cloud.microsoft` to prevent personal account access. Instead, use [tenant restrictions](https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2#step-2-block-consumer-account-or-microsoft-account-tenants) to control personal Microsoft-account sign.
+
+For more information, see [Network requirements for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#network-requirements).
 
 Session and response sharing in Microsoft Copilot lets users share Copilot work with others through a link. Users can share either a full Copilot conversation or a single Copilot response.
 

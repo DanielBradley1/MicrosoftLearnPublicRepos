@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-application-card -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-08-18 -->
 
 # Application card: Microsoft Copilot \(for organizations\)
 

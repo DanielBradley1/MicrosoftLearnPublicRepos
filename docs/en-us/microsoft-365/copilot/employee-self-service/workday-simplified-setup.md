@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/workday-simplified-setup -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-07-02 -->
 
 # Set up the simplified Workday integration for Employee Self-Service
 

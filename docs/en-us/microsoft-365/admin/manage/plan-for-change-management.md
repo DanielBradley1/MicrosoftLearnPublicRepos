@@ -13,25 +13,31 @@ This model gives IT admins [configurable release options](#customize-your-organi
 
 From the Microsoft admin center, you can choose between various release options for Microsoft 365 updates, either during general availability or before general availability.
 
+Important
+
+In November 2026, admins will no longer have the ability to enroll additional users or tenants in [Targeted release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide). In January 2027, Targeted release will be retired and no longer available to use. For more information, see [Plan for the retirement of Targeted release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/targeted-release-retirement?view=o365-worldwide).
+
+We recommend configuring release preferences for Frontier, Standard release, and Deferred release audiences to align with the new release model as Microsoft begins delivering an increasing number of major features through it before Targeted release is retired. For more information, see [Configure Standard and Deferred release options for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide).
+
 ### General availability
 
 Microsoft thoroughly tests and validates all features and services before release.
 
-**Standard release** delivers fully supported features to your organization at general availability \(GA\). Standard is the default release option, and Microsoft recommends it for most organizations. If you need to delay features for some users, you can choose standard release for your organization and assign specific users to deferred release.
+**Standard release** delivers fully supported features to your organization at general availability \(GA\). Standard is the default release option, and Microsoft recommends it for most organizations. If you need to delay features for some users, you can choose Standard release for your organization and assign specific users to Deferred release.
 
-**Deferred release** delays deferred-capable GA features for up to 30 days, giving admins additional preparation time. After 30 days, the features appear to your deferred release users. If your organization has additional validation requirements, you can assign some or all users to deferred release. You can identify deferred-capable features in the Message center. To test and validate changes before they reach your deferred release users, add select users to standard release so they receive deferred-capable feature updates earlier.
+**Deferred release** delays deferred-capable GA features for up to 30 days, giving admins additional preparation time. After 30 days, the features appear to your Deferred release users. If your organization has additional validation requirements, you can assign some or all users to Deferred release. You can identify deferred-capable features in the Message center. To test and validate changes before they reach your Deferred release users, add select users to Standard release so they receive deferred-capable feature updates earlier.
 
 For more information about modern release options and how to configure them, see [Configure Standard and Deferred release options for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide).
 
 Note
 
-Currently, the modern release options of standard and deferred release channels aren't available for GCC, GCC High, and DoD cloud environments. Check this article for updates regarding future support.
+Currently, Deferred release and Frontier aren't available in government cloud environments. Check this article for future updates regarding availability.
 
 ### Before general availability
 
 As an IT admin, you can opt in to use features *before* general availability by assigning users to specific release audiences.
 
-The **Microsoft Frontier program** gives organizations early access to innovative and emerging AI capabilities in Microsoft 365 before those features reach general availability. By opting in to Frontier program, IT administrators can evaluate new Copilot agents and AI-powered experiences, determine readiness for broader deployment across their tenant, and provide feedback about Frontier feature capabilities to Microsoft.
+The **Microsoft Frontier program** gives organizations early access to innovative and emerging AI capabilities in Microsoft 365 before those features reach general availability. By opting in to Frontier program, IT administrators can evaluate new Copilot agents, test non-AI and AI-powered experiences, determine readiness for broader deployment across their tenant, and provide feedback about Frontier feature capabilities to Microsoft.
 
 The Frontier program supports early experimentation, but the features aren't fully supported, might change, and might not reach GA. They're intended for evaluation and readiness, not production use.
 
@@ -66,11 +72,11 @@ For more information, see [Overview of Microsoft MCP Server for Enterprise - Mic
 
 ## Available workloads for modern change management
 
-This is the first step in our modernization change management journey. We're starting the modern change management experience with Microsoft Copilot. Not all Microsoft 365 workloads are available in this new model. Existing and traditional change management tools and methodologies can still be used for these experiences.
+This is the first step in our modernization change management journey. Not all Microsoft 365 workloads are available in this new model. Existing and traditional change management tools and methodologies can still be used for these experiences.
 
 | Modern change management | Traditional change management |
 | --- | --- |
-| - [Modern change management - Overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/plan-for-change-management?view=o365-worldwide)  <br>- [Configure modern release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide)  <br>- [Modern release options FAQ](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-faq?view=o365-worldwide)  <br>- [Release Communications MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide)  <br>- [What's new in Message Center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center-updates?view=o365-worldwide) | - [Set up the Standard or Targeted release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide)  <br>- [Microsoft 365 change guide - Microsoft 365 Apps](https://learn.microsoft.com/en-us/microsoft-365-apps/best-practices/microsoft-365-change-guide)  <br>- [Stay on top of changes](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates?view=o365-worldwide) |
+| - [Modern change management - Overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/plan-for-change-management?view=o365-worldwide)  <br>- [Configure modern release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide)  <br>- [Modern release options FAQ](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-faq?view=o365-worldwide)  <br>- [Release Communications MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide)  <br>- [What's new in Message Center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center-updates?view=o365-worldwide) | - [Set up the Standard or Targeted release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide)- [Plan for the retirement of Targeted release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/targeted-release-retirement?view=o365-worldwide)  <br>- [Microsoft 365 change guide - Microsoft 365 Apps](https://learn.microsoft.com/en-us/microsoft-365-apps/best-practices/microsoft-365-change-guide)  <br>- [Stay on top of changes](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates?view=o365-worldwide) |
 
 ## Communication channels for Microsoft 365 updates
 

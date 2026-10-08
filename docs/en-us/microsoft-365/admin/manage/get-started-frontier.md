@@ -1,9 +1,25 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-09-28 -->
 
-# Get started with the Microsoft Copilot Frontier Program
+# Get started with the Microsoft Frontier Program
 
-The Microsoft Frontier program gives organizations early access to innovative and emerging AI capabilities in Microsoft 365 before those features reach general availability \(GA\). By opting in to Frontier, IT administrators can evaluate new Microsoft Copilot agents and AI-powered experiences, determine readiness for broader deployment across their tenant, and provide feedback about Frontier feature capabilities to Microsoft.
+The Microsoft Frontier program gives organizations preview access to innovative and emerging capabilities in Microsoft 365 before those features reach general availability \(GA\). By opting in to Frontier, IT administrators can evaluate new Microsoft Copilot agents, review AI and non-AI powered experiences, determine readiness for broader deployment across their tenant, and provide feedback about Frontier feature capabilities to Microsoft.
+
+Microsoft's audience-based release model helps IT admins control how features are delivered to different user groups. This release model includes:
+
+- **Frontier** \(opt-in\) is designed for users who want access before general availability to features to evaluate and prepare.
+- **Standard release** is the default release experience where users receive new features as soon as they're generally available.
+- **Deferred release** is for audiences in more complex environments that need additional time \(approximately 30 days after rollout to the Standard release audience begins\) to validate changes before deployment.
+
+You can opt in users to both Frontier preview *and* assign them to Standard release or Deferred release. Users who are opted in to Frontier receive eligible Microsoft 365 features before general availability. For features that aren't part of Frontier, the user's existing Standard release or Deferred release preference determines when they receive features at GA.
+
+To learn more about the audience-based release model, see [Configure modern release options for Microsoft 365 features](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options).
+
+Access to Frontier program experiences vary depending on your organization's subscription and user roles.
+
+Frontier features are preview and subject to change.
+
+To learn more about the Microsoft Frontier program, what's new, and how to try what's next, see [Microsoft Frontier program](https://www.microsoft.com/microsoft-365-copilot/frontier-program).
 
 Important
 
@@ -11,35 +27,22 @@ Frontier is managed at the tenant level. Production tenants can safely enroll us
 
 Frontier features are preview and subject to change.
 
-Microsoft's audience-based release model helps IT admins control how features are delivered to different user groups. This release model includes:
-
-- **Frontier** \(opt-in\) is designed for early adopters who want pre-release access to features to evaluate and prepare.
-- **Standard release** is the default release experience where users receive new features as soon as they're generally available.
-- **Deferred release** is for audiences in more complex environments that need additional time to validate changes before deployment.
-
-To learn more about the audience-based release model, see [Configure modern release options for Microsoft 365 features](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options).
-
-Access to Frontier program experiences vary depending on your organization's subscription and user roles.
-
-Joining the Frontier program requires a Microsoft Copilot license.
-
-Frontier features are preview and subject to change.
-
-To learn more about the Microsoft Frontier program, what's new, and how to try what's next in AI, see [Microsoft Frontier program](https://www.microsoft.com/microsoft-365-copilot/frontier-program).
-
 ## Prerequisites
 
 Review the following requirements and recommendations:
 
 - Verify your admin role. You need an account that includes one of the following roles: **AI Admin**, **Security Admin**, **Office Apps Admin**.
-- Verify that Microsoft Copilot licenses are assigned to users who you want to access Frontier features.
+- Verify that corresponding licenses are assigned to users who you want to access Frontier features.
 
-  - From the Microsoft 365 admin center, go to **Billing** > **Licenses** > **Microsoft Copilot** and confirm the assignments.
-  - Users without a Microsoft Copilot license aren't presented with Frontier features.
+  - For example, assign a Microsoft Copilot license to users who need access to Copilot-related Frontier features. From the Microsoft 365 admin center, go to **Billing** > **Licenses** > **Microsoft Copilot** and confirm the assignments. Users without a Microsoft Copilot license aren't presented with Copilot-related Frontier features.
 
-- Verify that your own admin account has a Microsoft Copilot license. Some Frontier settings and agents in the Microsoft 365 admin center might not appear.
+- Verify that your own admin account has also has a corresponding license for services, such as a Microsoft Copilot license, to ensure full access to Frontier AI settings and agents. Some Frontier settings and agents in the Microsoft 365 admin center might not appear.
 
 ## Enroll users in Frontier
+
+Important
+
+Frontier is for access to pre-GA features and Targeted release is for access to features early within general availability. With the retirement of Targeted release in January 2027, users assigned to Targeted release will default to their general availability release preferences, either [Standard release or Deferred release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide). If you already have users enrolled in Frontier, these users will stay enrolled in Frontier after the retirement of Targeted release. For more information, see [Plan for the retirement of Targeted release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/targeted-release-retirement?view=o365-worldwide).
 
 You can manage Frontier settings in the Microsoft 365 admin center.
 
@@ -54,7 +57,7 @@ To turn on Frontier preview experiences for your users, do the following steps:
 
    - **No access** \(default\)
    - **All users**
-   - **Specific users**
+   - **Specific users and groups**
 
 After you turn on Frontier experiences for your organization, eligible users can access supported preview features as they're released. It might take three hours for Frontier features and agents to be available to users.
 
@@ -87,7 +90,7 @@ After you enroll users in the Frontier program, **Frontier agents** are availabl
 
 ### Deploy agents to your users directly
 
-You can install and pin specific agents to select users or groups directly rather than users needing to search the Agent store. This method helps users start using Frontier agents more quickly.
+You can install and pin specific agents for select users or groups directly rather than users needing to search the Agent store. This method helps users start using Frontier agents more quickly. You must assign these users in Frontier Admin Control
 
 1. Go to **Agents** > **All agents**.
 2. Select the agent you want to install.
@@ -101,7 +104,7 @@ You can install and pin specific agents to select users or groups directly rathe
 
 Some Frontier features and agents require access to large language models from AI providers, such as Anthropic. Review the requirements and understand the implications for each large language model you want to use.
 
-To allow access to other models, use the Microsoft 365 admin center to explicitly approve each model. For more information, see [Manage AI provider settings in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-anthropic-apps#manage-the-setting-in-the-microsoft-365-admin-center).
+Even if a Frontier feature relies on a particular AI provider being turned on, Frontier will never enable AI providers on your behalf. If the corresponding AI provider isn't enabled by you, the Frontier feature will not be usable for you or your users. To allow access to other models, use the Microsoft 365 admin center to explicitly approve each model. For more information, see [Manage AI provider settings in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-anthropic-apps#manage-the-setting-in-the-microsoft-365-admin-center).
 
 ### Configure AI-enabled Cloud PCs for Frontier
 
@@ -111,7 +114,13 @@ To learn more about AI-enabled Cloud PCs, including minimum requirements that mu
 
 Important
 
-Frontier experiences are governed by your existing customer agreements, including the Product Terms and Microsoft Data Protection Addendum \(DPA\). Frontier experiences are preview features that allow for personal data processing, as described in the DPA. As preview features, Frontier experiences may be modified, suspended, or discontinued, may not be covered by standard support commitments or service level agreements, and may be subject to additional Frontier-specific preview terms where applicable. HIPAA Business Associate Agreement coverage is not included for Frontier experiences. Certain Frontier experiences may only be available on a paid basis. Copilot credit consumption requirements are described in the [Microsoft Copilot Credits Guide](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/ai/Microsoft-Copilot-Credits-Guide.pdf).
+Frontier experiences are governed by your existing customer agreements, including the Product Terms and Microsoft Data Protection Addendum \(DPA\). Frontier experiences are preview features that allow for personal data processing, as described in the DPA. As preview features, Frontier experiences may be modified, suspended, or discontinued, may not be covered by standard support commitments or service level agreements, and may be subject to additional Frontier-specific preview terms where applicable. HIPAA Business Associate Agreement coverage is not included for Frontier experiences. Certain Frontier experiences may only be available on a paid basis. Copilot credit consumption requirements are described in the [Microsoft Copilot Credits Guide](https://go.microsoft.com/fwlink/?linkid=2368800).
+
+## Next step
+
+To configure your organization's general availability release preferences for Microsoft 365 updates, read the following article.
+
+[Configure Standard relase and Deferred release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide)
 
 ## Related articles
 

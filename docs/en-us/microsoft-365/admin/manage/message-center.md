@@ -15,11 +15,11 @@ For the most recent updates to Message center, see [What's new in Message center
 
 For frequently asked questions about Message center, see [Message center FAQ](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center-faq?view=o365-worldwide).
 
-## Feature release status for your organization in Message Center
+## Feature release status for your organization in Message center
 
 Note
 
-The release status is only available for limited Microsoft Teams feature announcements.
+The release status is only available for limited feature announcements.
 
 For each new and updated feature announcement in Message center, the **Status for your org** field provides a release status to help you track when a feature is available in your tenant.
 
@@ -31,7 +31,7 @@ These three release statuses are updated on each applicable message over the lif
 
 Updates to feature release status are provided on the original Message center post. Filtering capability on **Status for your org** allows easier visibility on the updated release status.
 
-The release status is only available for new and updated features that are also announced on Microsoft 365 Public Roadmap and that have general availability status \(production ready\). If you don't see release status on a message, it means the release status isn't available for that feature.
+The release status is only available for new and updated features that are also announced on AI at Work Roadmap and that have general availability status \(production ready\). If you don't see release status on a message, it means the release status isn't available for that feature.
 
 ## Relevance recommendation
 
@@ -54,23 +54,7 @@ If you see **Processing** for a Message center post, it means that the score is 
 
 Microsoft needs your feedback to improve the accuracy and relevance for Message center posts. Use the [**Extended Feedback**](#give-feedback-on-a-post) option on Message center posts to send us your opinions.
 
-## Filter messages
-
-Message center presents a view of all active messages in a table format. By default, it shows the most recent message at the top of the list.
-
-Use the **Service**, **Tag**, and **Message state** drop-down menus to select a filtered view of messages:
-
-- Under **Service**, you can select various services, such as Microsoft 365 Apps, SharePoint Online, etc., to filter messages.
-- Under **Tag**, you can select **Admin impact**, **Data privacy**, **Feature update**, **Major update**, **New feature**, **Retirement**, **User impact**, or **Deferred feature** messages.
-- Under **Message state**, you can select **Favorites**, **Unread**, or **Updated** messages.
-
-The **Archive** tab shows the messages you have archived. To archive a message from the message pane, select **Archive**.
-
-You can select any column heading, except **Service** and **Tag**, to sort messages in ascending or descending order.
-
 ### Major updates
-
-Major updates can be reviewed by selecting the **Major update** from the **Tags** drop-down.
 
 Major updates are communicated at least 30 days in advance when an action is required and might include:
 
@@ -81,7 +65,9 @@ Major updates are communicated at least 30 days in advance when an action is req
 - A new service or application deployed with default settings turned on.
 - Changes to where data is stored or accessed.
 
-### Preferences
+In the Message center, major updates are tagged as **Major update**. Filter Major updates by selecting the **Major update** from the **Tags** drop-down.
+
+## Preferences
 
 If administration is distributed across your organization, you might not want or need to see posts about all Microsoft 365 services. Each admin can do the following actions:
 
@@ -93,21 +79,14 @@ To access Message center preferences, do the following steps:
 
 1. Select **Preferences** at the top of Message center.
 2. In the **Custom View** tab, make sure that the check box is selected for each service that you want to monitor. Clear the check boxes for the services you want to filter out of your Message center view.
-3. Digest emails are turned on by default and are sent to your primary email address. To stop receiving the weekly digest, clear the **Send me email notifications from message center** check box in the **Email tab**.
+3. Digest emails are turned on by default and are sent to your primary email address. To stop receiving the weekly digest, clear the **Send me email notifications from message center** check box in the **Email** tab.
 
    You can also enter up to two email addresses, separated by a semicolon.
 
    You can also choose the emails you want to get, and a weekly digest of services you select.
 4. Select **Save** to keep your changes.
 
-1. Select **Preferences** at the top of Message center.
-2. In the **Custom View** tab, make sure that the check box is selected for each service that you want to monitor. Clear the check boxes for the services you want to filter out of your Message center view.
-3. Digest emails are turned on by default and are sent to your primary email address. To stop receiving the weekly digest, clear the **Send me email notifications from message center** check box in the **Email tab**.
-
-   You can also enter up to two email addresses, separated by a semicolon.
-
-   You can also choose the emails you want to get and a weekly digest of services you select.
-4. Select **Save** to keep your changes.
+For more information about roles and permissions for Message center, see [Admin roles that don't have access to the Message center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center?view=o365-worldwide#admin-roles-that-dont-have-access-to-the-message-center).
 
 ### Display messages in your preferred language
 
@@ -129,32 +108,36 @@ Note
 
 This feature isn't available for all Microsoft 365 productivity apps and services yet. We'll let you know when the feature isn't available.
 
-## Display specific columns
+## Display specific columns & use filters
 
-To choose columns, on the **Message center** page, on the far right, select **Choose columns**, and in the **Choose columns** pane, select the ones you want displayed.
+To display specific columns, on the **Message center** page, on the far right of the table, select **Choose columns**, and in the **Choose columns** pane, select the ones you want displayed.
 
-Here's a quick overview of the information in each column.
+You can select any column heading, except **Service** and **Tag**, to sort messages in ascending or descending order.
+
+For an overview of the information in each column, see the following section.
 
 ### Column information
 
-| Column | Description |
+Message center presents a view of all active messages in a table format. By default, it shows the most recent message at the top of the list.
+
+| Column | Description & Filters |
 | --- | --- |
 | Check mark | Selecting the check mark in the column heading row selects all messages currently displayed. Selecting the check mark next to one or more messages lets you take action on those messages. |
 | Message title | Message titles are brief descriptions of upcoming changes. If the full title doesn't display, hover your cursor over it and the entire title appears in a pop-up box. |
 | More options | More options let you dismiss a message, mark it as read or unread, or share it with another admin. To restore an archived message, select the **Archive** tab, select the check mark next to the message, and select **Restore**. |
-| Favorite | You can select the star to mark a message as a favorite. Once you mark messages as favorite, you can also sort and filter them. |
-| Service | Icons indicate the application to which the message applies. |
-| Last updated | Date that the message was published or last updated. |
-| Timing of change | Allows you to sort and filter posts by when a rollout is planned. |
-| Act by | We only have dates here if we're making a change that requires you to take an action by a certain deadline. Since we rarely use the **Act by** column, if you see something here, you should pay extra attention to it. |
-| Relevance | Relevance is our recommendation based on the potential impact to your organization and the usage of affected services. |
-| Status for your org | This column only shows a status if the service is supported or if it's applicable. |
-| Tag | You can choose tags from the Tag drop-down to filter messages.  <br><br><br>**Data Privacy**: Data privacy notification \(limited to global administrator and Message center Privacy reader roles\).<br><br>**Major update**: Changes communicated at least 30 days in advance \([Major updates](#major-updates)\).<br><br>**Retirement**: Retirement of a service or feature.<br><br>**New feature**: New feature or service.<br><br>**Feature update**: Update to an existing feature.<br><br>**Admin impact**: When the change clearly impacts the admin in the following ways - UI change, workflow change, control available, and Specific/Potential Action.<br><br>**User impact**: When the change to the service clearly impacts the user - UI Change and workflow change.<br><br>**Updated message**: When a message is updated. |
+| Favorites | Select the star to mark a message as a favorite. Once you mark messages as favorite, you can also sort by the column and use the **Message state** filter for Favorites. |
+| Service | Icons indicate the application to which the message applies. Use the **Service** filter to select various services, such as Microsoft 365 Apps, SharePoint Online, Power BI, Windows, and others. |
 | Platform | The platform that's affected by the Message center post. |
-| Category | This column isn't shown by default, but can be specified in the **Choose columns** panel. Messages are identified by one of the following three categories:<br><br>**Prevent or fix issues**: Informs you of known issues affecting your organization and might require that you take action to avoid disruptions in service. Prevent or fix issues are different than Service health messages because they prompt you to be proactive to avoid issues.<br><br>**Plan for change**: Informs you of changes to Microsoft 365 that might require you to act to avoid disruptions in service. For example, we let you know about changes to system requirements or about features that are being removed. We try to provide at least 30 days' notice of any change that requires an admin to act to keep the service running normally.<br><br>**Stay informed**: Tells you about new or updated features we're turning on in your organization. Announced first in the [Microsoft AI at Work Roadmap](https://www.microsoft.com/microsoft-365/roadmap), formerly known as the Microsoft 365 Roadmap.<br><br>Also lets you know about planned maintenance in accordance with our Service Level Agreement. Planned maintenance might result in down time, where you or your users can't access Microsoft 365, a specific feature, or a service such as email or OneDrive. |
+| Last updated | Date that the message was published or last updated. Use the **Message state** filter for updated messages. |
 | Message ID | Microsoft tracks our Message center posts by message ID. You can refer to this ID if you want to give feedback or if you call Support about a particular message. |
+| Act by | We only have dates here if we're making a change that requires you to take an action by a certain deadline. Since we rarely use the **Act by** column, if you see something here, you should pay extra attention to it. |
+| Relevance | Relevance is our recommendation based on the potential impact to your organization and the usage of affected services. For more information, see [our levels of relevance](#relevance-recommendation). |
+| Status for your org | This column only shows a status if the service is supported or if it's applicable. |
+| Tag | Choose tags from the Tag drop-down to filter messages.  <br><br><br>**Admin impact**: When the change clearly impacts the admin in the following ways - UI change, workflow change, control available, and Specific/Potential Action.<br><br>**Data Privacy**: Data privacy notification \(limited to global administrator and Message center Privacy reader roles\).<br><br>**Deferred feature**: Feature is available in Deferred release. For more information, see \[Configure deferred release\].\(configure-release-options.md\).<br><br>**Feature update**: Update to an existing feature.<br><br>**Major update**: Changes communicated at least 30 days in advance. See [Major updates](#major-updates).<br><br>**New feature**: New feature or service.<br><br>**Retirement**: Retirement of a service or feature.<br><br>**User impact**: When the change to the service clearly impacts the user - UI Change and workflow change. |
+| Category | This column isn't shown by default, but can be specified in the **Choose columns** panel. Messages are identified by one of the following three categories:<br><br>**Prevent or fix issues**: Informs you of known issues affecting your organization and might require that you take action to avoid disruptions in service. Prevent or fix issues are different than Service health messages because they prompt you to be proactive to avoid issues.<br><br>**Plan for change**: Informs you of changes to Microsoft 365 that might require you to act to avoid disruptions in service. For example, we let you know about changes to system requirements or about features that are being removed. We try to provide at least 30 days' notice of any change that requires an admin to act to keep the service running normally.<br><br>**Stay informed**: Tells you about new or updated features we're turning on in your organization. announced first in the [AI at Work](https://go.microsoft.com/fwlink/?linkid=2070821).<br><br>Also lets you know about planned maintenance in accordance with our Service Level Agreement. Planned maintenance might result in down time, where you or your users can't access Microsoft 365, a specific feature, or a service such as email or OneDrive. |
+| Timing of change | Allows you to sort and filter posts by when a rollout is planned.<br><br>**This week**: Rollout planned for this week.<br><br>**This month**: Rollout planned for this month.<br><br>**Next month**: Rollout planned for next month.<br><br>**N/A**: No given planned rollout date.<br><br>**Custom**: Select start and end dates to filter messages by timing of change. |
 
-### Admin roles that don't have access to the Message center
+## Admin roles that don't have access to the Message center
 
 Most users assigned any admin role in Microsoft 365 can view Message center posts. You can also assign the **Message center reader role** to users who should be able to read and share Message center posts without having any other admin privileges.
 
@@ -197,9 +180,9 @@ See a message that someone else needs to act on? You can share the contents of t
 
 ## Get a link
 
-Need to follow up with another admin to make sure they're aware of a change and taking action? You can generate a link to share in email or instant messaging. The person you share the link with has to have access to Message center. For more information, see [admin roles that don't have access to the Message center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center?view=o365-worldwide#admin-roles-that-dont-have-access-to-the-message-center).
+Need to follow up with another admin to make sure they're aware of a change and taking action? You can generate a link to share in an email or a chat. The person you share the link with has to have access to Message center. For more information, see [admin roles that don't have access to the Message center](#admin-roles-that-dont-have-access-to-the-message-center).
 
-1. Select the message center post.
+1. Select the **More options** ellipses next to the Message title.
 2. Select **Copy link**.
 3. Use Ctrl+V or right-click and select **Paste** to insert the link to whatever document you wish.
 
@@ -207,25 +190,23 @@ Need to follow up with another admin to make sure they're aware of a change and 
 
 Any unread message in Message center appears in bold. Opening a message marks it as read.
 
-To mark a message as unread, from the main page of the message center, select the **More options** ellipses next to a message, and then select **Mark as unread**. You can also open a message and mark it as unread in the details panel.
+To mark a message as unread, from the main page of the message center, select the **More options** ellipses next to a message, and then select **Mark as unread**. You can also open a message and mark it as unread in the details panel. Filter for unread messages from the **Message state** drop-down by selecting **Unread**.
 
 ## Archive and restore a message
 
 If you see a message that doesn't pertain to you, or maybe you've already acted on it, you can archive the message. Archiving a message removes it from the Inbox. The view that you see in the Message center is specific to your user account, so archiving it from your view doesn't affect other admins.
 
+To archive a message from the message pane, from the **Message title** column, select **Archive**. The **Archive** tab shows the messages you have archived.
+
 There are two ways to archive a message:
 
-- On the main page of the Message center, select a message, and then select **Archive** above the list of messages.
-- Open the message, and then select **Archive** on the top of the message pane.
+1. On the **Inbox** tab of the Message center, select a message, and then select **Archive** above the list of messages.
+2. Open the message, and then select **Archive** on the top of the message pane.
 
 Need to get an archived message back? No problem.
 
 1. Select the **Archive** tab at the top of the Message center. A list of archived messages appears.
-2. Select the message, select **Restore**, and the message is restored to Inbox.
-
-## Scroll messages in the message pane
-
-When you open a message in a reading pane, you can use the **Up** and **Down** ![](https://learn.microsoft.com/en-us/microsoft-365/media/updownarrows.png?view=o365-worldwide) arrows on the top of the pane to move to the next, or the previous message in the list.
+2. Select the message, select **Restore**, and the message is restored to the Inbox tab.
 
 ## Track your message center tasks in Planner
 
@@ -250,6 +231,10 @@ For AI-powered workflows, you can also use Microsoft MCP Server for Enterprise. 
    - To stop receiving email notices about data privacy messages, verify that **Send me emails for data privacy messages** checkbox isn't selected. \(Data privacy messages aren't included in the weekly digest.\)
 
 2. Select **Save** to keep your changes.
+
+## Scroll messages in the message pane
+
+When you open a message in a reading pane, you can use the **Up** and **Down** ![](https://learn.microsoft.com/en-us/microsoft-365/media/updownarrows.png?view=o365-worldwide) arrows on the top of the pane to move to the next, or the previous message in the list.
 
 ## Related articles
 

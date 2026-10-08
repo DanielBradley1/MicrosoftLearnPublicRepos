@@ -19,7 +19,7 @@ Message center posts are written in English. You can control whether, by default
 
 ## Can I preview changes or features before they're rolled-out to my organization?
 
-Some changes and new features can be previewed by opting in to the Targeted release program. To opt in, from the Microsoft admin center, go to **Settings** > **Org settings** > **Organization profile** > **Release preferences**. You might need to select **Show all** at the bottom of the left navigation pane in Microsoft admin center to see **Settings**. You can choose Targeted release for your entire organization, or just for selected users. For more information about Targeted release, see [Standard or Targeted release options in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide).
+If you want to preview generally available features before they're released to your organization, assign most users to deferred release and assign a small group of early adopters, including yourself, to standard release. This approach lets IT or pilot groups test major updates before they're released broadly to your organization and gives business-critical users more time to prepare for changes. For more information, see [Configure standard release and deferred release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide).
 
 ## Can I find out the exact date a change is available in my organization?
 
