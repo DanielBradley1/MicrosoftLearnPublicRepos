@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-azure-ad-connect-to-cloud-sync -->
-<!-- Sitemap-Last-Modified: 2026-06-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Migrating from Microsoft Entra Connect to Microsoft Entra Cloud Sync
 

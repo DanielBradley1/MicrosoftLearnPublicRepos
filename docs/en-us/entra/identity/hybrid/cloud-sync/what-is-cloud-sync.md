@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync -->
-<!-- Sitemap-Last-Modified: 2026-02-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # What is Microsoft Entra Cloud Sync?
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/configure -->
-<!-- Sitemap-Last-Modified: 2025-04-09 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Configure your integration with Active Directory
 
