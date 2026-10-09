@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/quarantine-admin-manage-messages-files -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Manage quarantined messages and files as an admin
 
