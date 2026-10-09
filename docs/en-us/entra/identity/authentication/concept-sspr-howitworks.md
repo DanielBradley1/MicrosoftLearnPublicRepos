@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2025-03-04 -->
 
 # How it works: Microsoft Entra self-service password reset
 

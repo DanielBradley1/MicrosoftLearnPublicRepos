@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/samples-ciam-all -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # Microsoft Entra External ID app samples and guides
 
