@@ -59,7 +59,7 @@ The Microsoft Intune integration brings Knox E-FOTA capabilities into the admin 
 
 ![](https://learn.microsoft.com/en-us/intune/media/icons/16/cloud.svg) **Cloud requirements**
 
-> Samsung Knox E-FOTA updates are supported in the public cloud.
+> Samsung Knox E-FOTA updates are supported in the public cloud and in U.S. Government Community Cloud \(GCC\) High.
 
 ## Process overview
 

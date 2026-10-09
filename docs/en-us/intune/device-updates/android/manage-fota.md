@@ -38,7 +38,7 @@ Manufacturer-specific FOTA support might offer more controls beyond what device 
 
 Intune supports FOTA update management for supported devices from the following manufacturers:
 
-- **Samsung**: For Samsung devices, see [Samsung Knox E-FOTA integration with Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-updates/android/setup-samsung-knox).
+- **Samsung**: Samsung Knox E-FOTA integration is supported in the public cloud and in U.S. Government Community Cloud \(GCC\) High. For Samsung devices, see [Samsung Knox E-FOTA integration with Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-updates/android/setup-samsung-knox).
 - **Zebra**: For Zebra devices, see [LifeGuard Over-the-Air Integration with Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-updates/android/setup-zebra-lifeguard).
 
 ### Use device restrictions profiles to manage FOTA updates
