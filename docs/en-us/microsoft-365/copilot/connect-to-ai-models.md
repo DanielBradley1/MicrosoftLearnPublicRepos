@@ -3,7 +3,7 @@
 
 # Connect to SpaceXAI models \(as an independent processor\)
 
-You can now use SpaceXAI models within your Microsoft products. These models are hosted by SpaceXAI outside of Microsoft. You can elect to use SpaceXAI models with Copilot Studio in Microsoft 365.
+You can now use SpaceXAI models within your Microsoft products. These models are hosted by SpaceXAI outside of Microsoft. You can elect to use SpaceXAI models with Copilot Studio and with Copilot Cowork in Microsoft 365.
 
 SpaceXAI models can help people in your organization with some of the following:
 
@@ -12,7 +12,7 @@ SpaceXAI models can help people in your organization with some of the following:
 - Synthesize across multiple sources
 - Idea generation, drafting and editing
 
-When your organization chooses to use a SpaceXAI model, your organization is choosing to share your data with SpaceXAI to power Copilot Studio features. This data is processed outside all Microsoft managed environments and audit controls, therefore Microsoft's customer agreements, including the [Product Terms](https://www.microsoft.com/licensing/terms?msockid=344e0e6ad66c6b3e19441848d7416abd) and [Data Processing Addendum](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA?lang=18&msockid=344e0e6ad66c6b3e19441848d7416abd) don't apply. In addition, Microsoft's data residency commitments, audit and compliance requirements, service level agreements, and Customer Copyright Commitment don't apply to your use of SpaceXAI services. Instead, use of SpaceXAI services is governed by the [xAI Enterprise Terms of Service](https://x.ai/legal/terms-of-service-enterprise) and the [xAI Data Processing Addendum](https://x.ai/legal/data-processing-addendum#xai-data-processing-addendum).
+When your organization chooses to use a SpaceXAI model, your organization is choosing to share your data with SpaceXAI to power Copilot Studio and Copilot Cowork features. This data is processed outside all Microsoft managed environments and audit controls, therefore Microsoft's customer agreements, including the [Product Terms](https://www.microsoft.com/licensing/terms?msockid=344e0e6ad66c6b3e19441848d7416abd) and [Data Processing Addendum](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA?lang=18&msockid=344e0e6ad66c6b3e19441848d7416abd) don't apply. In addition, Microsoft's data residency commitments, audit and compliance requirements, service level agreements, and Customer Copyright Commitment don't apply to your use of SpaceXAI services. Instead, use of SpaceXAI services is governed by the [xAI Enterprise Terms of Service](https://x.ai/legal/terms-of-service-enterprise) and the [xAI Data Processing Addendum](https://x.ai/legal/data-processing-addendum#xai-data-processing-addendum).
 
 ## Before you begin
 

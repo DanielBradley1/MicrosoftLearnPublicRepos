@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-08-31 -->
 
 # Overview of Microsoft 365 Archive
 
