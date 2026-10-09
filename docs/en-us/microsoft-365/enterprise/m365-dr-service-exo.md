@@ -29,7 +29,7 @@ Required Conditions:
 
 **Commitment:**
 
-For specific Exchange Online commitments, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#exchange-online). Examples of the committed data include all types of mailboxes, including user mailboxes, resource mailboxes, and archive mailboxes.
+For specific Exchange Online commitments, see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#exchange-online). Examples of the committed data include all types of mailboxes, including user mailboxes, resource mailboxes, and archive mailboxes.
 
 ### Multi-Geo add-on
 

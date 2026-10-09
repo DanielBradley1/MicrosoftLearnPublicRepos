@@ -68,7 +68,7 @@ Administrators should notify site owners and end users before archiving a site s
 
 SharePoint Advanced Management \(SAM\) automatic file archive policies can't archive files with the following extensions:
 
-`.js`, `.css`, `.one`, `.onepkg`, `.onetoc2`, `.onetmp`, `.spcolor`, `.sptheme`, `.spfont`, `.eot`, `.onebin`, `.woff`, `.woff2`, `.xsl`, `.json`, `.classifier`, `.aspx`, `.onetoc`, `.onebak`, `.onebackupconstruction`.
+`.js`, `.css`, `.one`, `.onepkg`, `.onepart`, `.onetoc2`, `.onetmp`, `.spcolor`, `.sptheme`, `.spfont`, `.eot`, `.onebin`, `.woff`, `.woff2`, `.xsl`, `.json`, `.classifier`, `.aspx`, `.onetoc`, `.onebak`, `.onebackupconstruction`.
 
 These exclusions apply regardless of the file type filters configured for the policy.
 

@@ -48,7 +48,7 @@ Capability summary: Microsoft Purview Audit \(Standard\) provides you with the a
 
 Commitment:
 
-For the specific Customer [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitment for Audit \(Standard\), see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-standard).
+For the specific Customer [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitment for Audit \(Standard\), see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-standard).
 
 ### Risk & Compliance - Audit \(Premium\)
 
@@ -62,7 +62,7 @@ Capability summary: Microsoft Purview Audit \(Premium\) builds on the capabiliti
 
 Commitment:
 
-For the specific Customer *Data at Rest* commitment for Audit \(Premium\), see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-premium).
+For the specific Customer *Data at Rest* commitment for Audit \(Premium\), see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#audit-premium).
 
 ### Risk & Compliance - Data Lifecycle Management \(DLM\)
 
@@ -92,7 +92,7 @@ Capability summary: Lets you retain or delete content with policy management for
 
 Commitment:
 
-For the specific Customer *Data at Rest* commitment for Data Retention, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-retention).
+For the specific Customer *Data at Rest* commitment for Data Retention, see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-retention).
 
 #### Records Management:
 
@@ -104,7 +104,7 @@ Capability summary: Organizations of all types require a records-management solu
 
 Commitment:
 
-For the specific Customer *Data at Rest* commitment for Records Management, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#records-management).
+For the specific Customer *Data at Rest* commitment for Records Management, see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#records-management).
 
 ### Data Security - Data Loss Prevention \(DLP\)
 
@@ -136,7 +136,7 @@ DLP detects sensitive items by using deep content analysis, not by just a simple
 
 Commitment:
 
-For the specific Customer *Data at Rest* commitment for Data Loss Prevention \(DLP\), see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-loss-prevention-dlp).
+For the specific Customer *Data at Rest* commitment for Data Loss Prevention \(DLP\), see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#data-loss-prevention-dlp).
 
 ### Data Security - Information Barriers
 
@@ -150,7 +150,7 @@ Capability summary: Microsoft Purview Information Barriers \(IB\) is a complianc
 
 Commitment:
 
-For the specific Customer *Data at Rest* commitment for Information Barriers, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#information-barriers).
+For the specific Customer *Data at Rest* commitment for Information Barriers, see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#information-barriers).
 
 ### Data Security - Information Protection \(MIP\)
 
@@ -171,7 +171,7 @@ Capability summary: With Office 365 Message Encryption, your organization can se
 
 Commitment:
 
-For the specific Customer *Data at Rest* commitment for Office Message Encryption, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#office-message-encryption-ome).
+For the specific Customer *Data at Rest* commitment for Office Message Encryption, see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#office-message-encryption-ome).
 
 #### Sensitivity Labels:
 
@@ -192,4 +192,4 @@ Capability summary: Sensitivity labels from Microsoft Purview Information Protec
 
 Commitment:
 
-For the specific Customer *Data at Rest* commitment for Sensitivity Labels, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#sensitivity-labels).
+For the specific Customer *Data at Rest* commitment for Sensitivity Labels, see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#sensitivity-labels).

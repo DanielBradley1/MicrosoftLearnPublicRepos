@@ -21,7 +21,7 @@ Required Conditions:
 
 **Commitment:**
 
-Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-defender-for-office-p1) for the specific customer [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitment for Microsoft Defender for Office P1.
+Refer to the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-defender-for-office-p1) for the specific customer [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitment for Microsoft Defender for Office P1.
 
 Other Information
 
@@ -47,7 +47,7 @@ Required Conditions:
 
 **Commitment:**
 
-Refer to the [Advanced Data Residency Commitment](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide) page for the specific customer *Data at Rest* commitment for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\).
+Refer to the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide) for the specific customer *Data at Rest* commitment for the built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\).
 
 ## Migration
 

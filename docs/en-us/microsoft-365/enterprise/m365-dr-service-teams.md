@@ -25,7 +25,7 @@ Required Conditions:
 
 **Commitment:**
 
-For specific Microsoft Teams commitments, see the [ADR commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-teams). Examples of the committed data include:
+For specific Microsoft Teams commitments, see the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-teams). Examples of the committed data include:
 
 - Chat/ channel messages and team structure: Every team in Microsoft Teams is backed by a Microsoft 365 Modern Group and its SharePoint site and Exchange mailbox. Private chats \(including group chats\), messages sent as part of a conversation in a channel, and the structure of teams and channels are stored in an Azure powered chat service. The data is also stored in a hidden folder in the user and group mailboxes to enable information protection features.
 - Images and Media: Media used in chats \(except for Giphy GIFs which aren't stored but are a reference link to the original Giphy URL\) are stored in an Azure based Media Service deployed to the same locations as the chat service.

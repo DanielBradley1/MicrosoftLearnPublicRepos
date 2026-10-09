@@ -40,7 +40,7 @@ Microsoft recommends that you use roles with the fewest permissions. This helps 
 
 **Commitment:**
 
-Refer to the [ADR Commitment page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-365-copilot-and-microsoft-365-copilot-chat) to understand the specific [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitments for Microsoft 365 Copilot. Examples of the committed data include:
+Refer to the [ADR data commitments page](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide#microsoft-365-copilot-and-microsoft-365-copilot-chat) to understand the specific [*Data at Rest*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitments for Microsoft 365 Copilot. Examples of the committed data include:
 
 - "Content of Interactions" such as the user's prompt and the response from Microsoft 365 Copilot or Microsoft 365 Copilot Chat, including citations to any information used to ground Microsoft 365 Copilot's response.
 

@@ -9,7 +9,9 @@ For definitions of italicized terms, see [Key terms and definitions](https://lea
 
 Note
 
-If you have purchased a [*Multi-Geo*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) subscription, Microsoft stores certain *Customer Data* at rest in more than one [*Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) based on your configuration, even if you have also purchased *ADR*.
+If you have purchased a [*Multi-Geo*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) subscription, Microsoft stores certain *Customer Data* at rest in more than one [*Geography*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) based on your configuration, even if you have purchased the *Microsoft 365 Advanced Data Residency add-on \("ADR"\)*.
+
+Microsoft makes commitments to store certain in scope customer data at rest in the applicable *Local Region Geography* for [eligible customers](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-overview?view=o365-worldwide#eligibility-requirements) that purchase *ADR*. The commitments are specified as follows.
 
 ## Microsoft 365 Core Services
 
@@ -17,21 +19,19 @@ If you have purchased a [*Multi-Geo*](https://learn.microsoft.com/en-us/microsof
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- Exchange Online mailbox content \(email body, calendar entries, and the content of email attachments\)
+- Exchange Online mailbox content \(e-mail body, calendar entries, and the content of e-mail attachments stored in the related *Local Region Geography*\).
 
 ### SharePoint and OneDrive
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- SharePoint site content and the files stored within that site
-- Files uploaded to OneDrive
+- SharePoint site content and the files stored within that site and files uploaded to OneDrive
 
 ### Microsoft Teams
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- Microsoft Teams chat messages \(including private messages, channel messages, meeting messages, and images used in chats\)
-- For customers using Microsoft Stream \(on SharePoint\), meeting recordings
+- Microsoft Teams chat messages \(including private messages, channel messages, meeting messages and images used in chats\), and, for customers using Microsoft Stream \(on SharePoint\), meeting recordings
 
 ### Microsoft 365 Copilot and Microsoft 365 Copilot Chat
 
@@ -41,38 +41,33 @@ The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
 Note
 
-For Microsoft 365 Copilot Cowork limitations, see [Data Residency for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-copilot?view=o365-worldwide).
+For Microsoft 365 Copilot Cowork, please refer to the limitations described [here](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-copilot?view=o365-worldwide).
 
 ## Microsoft 365 Expanded Services
 
 ### Microsoft Defender for Office P1
 
-Microsoft Defender for Office 365 P1 doesn't store *Customer Data* within its service.
+The following *Customer Data* is stored at rest in the *Local Region Geography*:
+
+- Microsoft Defender for Office 365 P1 doesn't store *Customer Data* within its service.
 
 ### Exchange Online Protection
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- Service configuration data and policies
-- Quarantined email and attachments
-- Junk email and grading analysis
-- Blocklists \(URL, tenant, user\)
-- Spam domains
-- Reports and alerts
+- [Built-in security features for all cloud mailboxes \(formerly Exchange Online Protection \(EOP\)\)](https://learn.microsoft.com/en-us/defender-office-365/eop-about): The following customer data is stored at rest in the *Local Region Geography*: Service configuration data and policies, quarantined email and attachments, junk email, grading analysis, blocklists \(url, tenant, user\), spam domains, reports, and alerts.
 
 ### Office for the web
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- Office for the web stores files on a storage host that has applicable commitments to *Local Region Geography*
+- Office for the web stores files on a storage host that has its applicable promises to *Local Region Geography*
 
 ### Viva Connections
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- Viva Connections Dashboard and Feed content sourced from [SharePoint](#sharepoint-and-onedrive), [Exchange Online](#exchange-online), and [Microsoft Teams](#microsoft-teams)
-
-All *Customer Data* sourced from these services and covered by [*Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) commitments is stored in the *Local Region Geography*. For more information, see the respective services.
+- Viva Connections Dashboard and Feed can have content sourced from SharePoint, Exchange Online and Microsoft Teams. All customer data sourced from these services covered by data residency commitments will be stored in the *Local Region Geography*. Refer to [Exchange Online](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-exo?view=o365-worldwide), [SharePoint](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-spo?view=o365-worldwide), and [Microsoft Teams](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-teams?view=o365-worldwide) workload data residency pages for more details.
 
 ## Microsoft Purview services
 
@@ -80,13 +75,13 @@ All *Customer Data* sourced from these services and covered by [*Data Residency*
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- DLP admin configuration
+- DLP Admin Configuration
 - DLP policies in Microsoft Purview portal
 - DLP monitored activities
 - Violation history
 - Activity Explorer and Microsoft 365 unified audit logs
 - Quarantine storage
-- DLP alerts and DLP Alert management dashboard
+- DLP Alerts and DLP Alert management dashboard
 
 ### Information Barriers
 
@@ -94,7 +89,7 @@ The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
 - Policy settings
 - Risk indicators
-- Segments configuration
+- Segments Configuration
 
 ### Information Protection
 
@@ -103,7 +98,7 @@ The following *Customer Data* is stored at rest in the *Local Region Geography*:
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
 - Label configuration
-- Label definitions
+- Labels definition
 - Label policies
 - Custom help page
 - Activity Explorer and Microsoft 365 unified audit logs
@@ -121,15 +116,19 @@ The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
-- Sensitive information types, including Enhanced Data Match \(EDM\) and Trainable Classifiers configured by customers
+- Sensitive information types, including Enhanced Data Match \(EDM\) and Trainable Classifiers, configured by customers
+
+Note
+
+The Microsoft Purview services list includes all services covered as part of the *Advanced Data Residency* commitment as of February 2026. Additional Microsoft Purview services aren't currently supported.
 
 ### Audit \(Standard\)
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
 - Service configuration data
-- Audited activities
-- Audit records
+- Audited Activities
+- Audit Records
 - Audit log query permissions
 
 ### Audit \(Premium\)
@@ -137,37 +136,36 @@ The following *Customer Data* is stored at rest in the *Local Region Geography*:
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
 - All data covered under Audit \(Standard\)
-- Configuration and *Customer Data* related to high-value crucial events
+- Configuration and Customer Data related to high-value crucial events
 
 ### Data Lifecycle Management
 
-#### Data retention
+#### Data Retention
 
 The following *Customer Data* is stored at rest in the *Local Region Geography*:
 
 - Retention policy settings and retention label definitions
-- *Customer Data* stored in original locations for:
+- Customer Data stored in original locations for the following services:
 
-  - [Exchange Online](#exchange-online) email
-  - [SharePoint](#sharepoint-and-onedrive) sites
-  - [OneDrive](#sharepoint-and-onedrive) accounts
+  - Exchange email
+  - SharePoint site
+  - OneDrive accounts
   - Microsoft 365 Groups
   - Exchange public folders
-  - [Microsoft Teams](#microsoft-teams) chats and channel messages
+  - Microsoft Teams chats and channel messages
   - Viva Engage user and community messages
 
-- *Customer Data* copied and stored in Exchange Online hidden mailboxes:
+- Customer Data copied and stored in Exchange Online hidden mailboxes
 
   - Teams channel messages
   - Teams chats
   - Teams private channel messages
   - Viva Engage user and community messages
+  - SharePoint, OneDrive, Exchange Online and Microsoft Teams follow the data residency commitments for those services. Refer to [Exchange Online](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-exo?view=o365-worldwide), [SharePoint](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-spo?view=o365-worldwide), and [Microsoft Teams](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-teams?view=o365-worldwide) workload data residency pages for more details.
 
 - Training classifiers
 - Disposition data
 - Mappings between retention labels and Data Loss Prevention \(DLP\) policies
-
-For more information, see the respective services.
 
 #### Records Management
 
