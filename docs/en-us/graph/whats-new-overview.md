@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-03 -->
 
 # What's new in Microsoft Graph
 
@@ -209,6 +209,16 @@ Added support for managing Microsoft 365 cross-tenant capabilities in cross-tena
 ### Mail
 
 - Added the [note](https://learn.microsoft.com/en-us/graph/api/resources/note) resource type and methods to [list](https://learn.microsoft.com/en-us/graph/api/user-list-notes), [create](https://learn.microsoft.com/en-us/graph/api/user-post-notes), [get](https://learn.microsoft.com/en-us/graph/api/note-get), [update](https://learn.microsoft.com/en-us/graph/api/note-update), and [delete](https://learn.microsoft.com/en-us/graph/api/note-delete) quick-capture notes in a user's *Notes* folder. Use [delta query](https://learn.microsoft.com/en-us/graph/api/note-delta) to synchronize notes that were added, updated, or deleted since the previous request. You can also [list](https://learn.microsoft.com/en-us/graph/api/note-list-attachments), [add](https://learn.microsoft.com/en-us/graph/api/note-post-attachments), and [delete](https://learn.microsoft.com/en-us/graph/api/attachment-delete) inline image attachments, and use open or legacy extended properties to store custom data on a note.
+
+### Security \| Alerts and incidents
+
+- Added the **tenantId** property to the [userAccount](https://learn.microsoft.com/en-us/graph/api/resources/security-useraccount) resource to provide the Entra home tenant ID for the compromised user account indicated in a [security alert](https://learn.microsoft.com/en-us/graph/api/resources/security-alert) where the alert evidence is related to a [processEvidence](https://learn.microsoft.com/en-us/graph/api/resources/security-processevidence), [userEvidence](https://learn.microsoft.com/en-us/graph/api/resources/security-userevidence), or [mailboxEvidence](https://learn.microsoft.com/en-us/graph/api/resources/security-mailboxevidence).
+- Added the [alert: moveAlerts](https://learn.microsoft.com/en-us/graph/api/security-alert-movealerts) and [incident: mergeIncidents](https://learn.microsoft.com/en-us/graph/api/security-incident-mergeincidents) actions to support moving alerts and merging incidents in Microsoft Defender.
+- Added the [correlationReason](https://learn.microsoft.com/en-us/graph/api/resources/security-correlationreason) enumeration and [mergeResponse](https://learn.microsoft.com/en-us/graph/api/resources/security-mergeresponse) resource type.
+
+### Security \| eDiscovery
+
+Added the `cloudNativeHtmlConversion` member to the [additionalDataOptions](https://learn.microsoft.com/en-us/graph/api/resources/security-ediscoveryaddtoreviewsetoperation#additionaldataoptions-values) enumeration.
 
 ### Mailbox import and export
 
