@@ -5,10 +5,6 @@
 
 This article lists the versions and features of Microsoft Entra provisioning agent releases. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality.
 
-Warning
-
-Microsoft Entra Provisioning Agent version 1.1.2505.0 may fail to install on localized Windows Server installations, including Polish, German, and Dutch versions. For more information, see [Known issues](#known-issues).
-
 Note
 
 All new Provisioning Agent releases are made available for download through the Microsoft Entra admin center and only specific releases are pushed for auto upgrade.
@@ -26,6 +22,14 @@ For products and services governed by the Modern Lifecycle Policy, Microsoft's p
 From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted), select **Cloud Sync**, and go to **Agents** to download the **Provisioning Agent**.
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](https://learn.microsoft.com/en-us/entra/includes/media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
+
+## 1.1.2507.0
+
+**Release date:** October 8, 2026
+
+### Fixed issues
+
+- Fixed an issue that failed installation of the agent on a localized Windows Server installation, including but not limited to Polish, German, and Dutch languages with error `0x80070643`.
 
 ## 1.1.2505.0
 
