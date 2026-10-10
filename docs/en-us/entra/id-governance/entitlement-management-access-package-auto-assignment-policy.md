@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-auto-assignment-policy -->
-<!-- Sitemap-Last-Modified: 2026-08-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-09 -->
 
 # Configure an automatic assignment policy for an access package in entitlement management
 

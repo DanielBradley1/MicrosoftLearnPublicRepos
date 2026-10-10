@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-enforcement-resource-exclusions -->
-<!-- Sitemap-Last-Modified: 2026-07-01 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Improved enforcement for All resources policies with resource exclusions
 

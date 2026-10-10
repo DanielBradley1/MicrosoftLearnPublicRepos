@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/kerberos-server-key-rotation -->
-<!-- Sitemap-Last-Modified: 2026-05-26 -->
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/configure-microsoft-entra-kerberos-trust -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Configure Microsoft Entra Kerberos trust
 
