@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/zscaler-provisioning-tutorial -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-10-01 -->
 
 # Configure Zscaler ZSNet for automatic user provisioning with Microsoft Entra ID
 

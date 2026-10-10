@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/verified-id/idv-partners -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-06-11 -->
 
 # Microsoft Entra Verified ID identity verification partners
 
