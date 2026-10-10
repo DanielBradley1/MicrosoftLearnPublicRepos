@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/tenant-roadmap-microsoft-365?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2024-12-09 -->
 
 # Tenant roadmap for Microsoft 365
 

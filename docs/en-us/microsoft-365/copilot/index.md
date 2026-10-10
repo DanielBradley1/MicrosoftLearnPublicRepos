@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/ -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-08-18 -->
 
 ![](https://learn.microsoft.com/en-us/media/hubs/shared/icon-overview.svg?branch=main)
 

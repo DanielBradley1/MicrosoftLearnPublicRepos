@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-microsoft-365?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2025-04-02 -->
 
 # Multi-Geo Capabilities in OneDrive and SharePoint
 

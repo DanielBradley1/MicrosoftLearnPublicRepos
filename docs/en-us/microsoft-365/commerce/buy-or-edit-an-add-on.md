@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/commerce/buy-or-edit-an-add-on?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2025-09-02 -->
 
 # Buy and manage add-ons in the Microsoft 365 admin center
 
