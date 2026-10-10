@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/fundamentals/government-service -->
-<!-- Sitemap-Last-Modified: 2026-09-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Microsoft Intune for US Government GCC High and DoD service description
 
