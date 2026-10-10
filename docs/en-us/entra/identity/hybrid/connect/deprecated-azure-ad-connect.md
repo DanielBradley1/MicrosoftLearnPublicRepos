@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/deprecated-azure-ad-connect -->
-<!-- Sitemap-Last-Modified: 2025-07-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Using a deprecated version of Microsoft Entra Connect
 

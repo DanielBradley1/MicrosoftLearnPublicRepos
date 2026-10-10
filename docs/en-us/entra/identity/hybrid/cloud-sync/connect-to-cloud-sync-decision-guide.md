@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide -->
-<!-- Sitemap-Last-Modified: 2026-02-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Migrate from Microsoft Entra Connect to Cloud Sync: Decision Guide
 

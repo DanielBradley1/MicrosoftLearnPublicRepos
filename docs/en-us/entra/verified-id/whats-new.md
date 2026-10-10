@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/verified-id/whats-new -->
-<!-- Sitemap-Last-Modified: 2026-04-22 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # What's new in Microsoft Entra Verified ID
 
