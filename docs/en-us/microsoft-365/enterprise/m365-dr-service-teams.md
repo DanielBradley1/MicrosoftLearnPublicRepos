@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-teams?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-04-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Data Residency for Microsoft Teams
 

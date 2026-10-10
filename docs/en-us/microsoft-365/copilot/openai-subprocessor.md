@@ -23,7 +23,7 @@ Note
 
 - OpenAI models delivered through OpenAI as a subprocessor in Copilot experiences are currently excluded from in-country processing commitments when applicable.
 - Access to OpenAI operated models isn't currently available for use in government clouds \(GCC, GCC High, DoD\) or sovereign clouds.
-- OpenAI operated models are included in the EU Data Boundary, except as otherwise noted in the [EU Data Boundary documentation](https://learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-ongoing-partial-transfers#multiple-services).
+- OpenAI operated models are included in the EU Data Boundary, except as otherwise noted in the [EU Data Boundary documentation](https://learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-ongoing-partial-transfers#approved-third-party-ai-subprocessors).
 
 ## Manage OpenAI as a subprocessor in the Microsoft 365 admin center
 

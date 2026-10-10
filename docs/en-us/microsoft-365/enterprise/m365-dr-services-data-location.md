@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-04-01 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-services-data-location?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Microsoft 365 services data locations
 

@@ -31,6 +31,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Plugin | Capabilities |
 | --- | --- |
 | Adobe Journey Optimizer Plugin | Understand and troubleshoot your Journeys and Campaigns |
+| Africa's Talking SMS | Connect to Africa's Talking SMS to send and retrieve SMS messages. |
 | Ahrefs | Check backlinks, keywords, rankings, and SEO traffic. |
 | AI Meeting Notes TeamsMaestro | Free AI note taker for Microsoft Teams, powered by ChatGPT & Claude. |
 | Airtable | Query and manage your Airtable bases |
@@ -51,14 +52,20 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Azure Data Explorer | Access Microsoft Kusto logs. |
 | Azure DevOps MCP Server \(Remote\) | Manage Azure DevOps work items, builds, git, queries, and releases. |
 | Azure DevOps Plugin | Manage Azure DevOps work items, builds, git, queries, and releases. |
+| Backdocket | Find your law firm's cases, contacts, tasks, and reports in plain language. |
+| Basecamp 3 | Manage Basecamp 3 projects, tasks, documents, messages and schedules. |
+| BigCommerce | Connect to BigCommerce to manage store orders, products, and customers. |
+| Bigdata.com | Access real-time financial data. |
 | BigData.com MCP | Retrieve real-time financial news, company tearsheets, and event calendars. |
 | Bigmind | Connect to Bigmind through its MCP tools and services. |
 | BioRender MCP | Search the BioRender library, find your files, and generate new scientific figures directly. |
 | Biorxiv | Track new biology and medicine preprints from Copilot |
 | Blackbaud | Enables Blackbaud customers to access select Blackbaud solution data within Microsoft 365 Copilot. |
+| Blogger | Connect to Blogger to manage blogs and posts. |
 | BoardWise | Get board guidance, compliance answers, and response-letter help. |
 | Box | Streamline how users share, find, and leverage Box content to boost productivity and collaboration |
 | BulkSMS | Send SMS text messages from workflows and automations with BulkSMS. |
+| Business apps \(preview\) | Connect Cowork with business data and processes in Dynamics 365 and Power Apps. |
 | Businessmap MCP | Connect agents to Businessmap projects, portfolios, boards, cards, and docs. |
 | Calculate Working Day | Compute valid working days, allowing for holidays and weekends. |
 | Canva | Canva is the easy to use, collaborative design platform where teams create together! |
@@ -82,10 +89,12 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | CMS Coverage | Search Medicare coverage documents, contractors, and drug exclusion updates. |
 | Cognito Forms | Connect to Cognito Forms to manage forms and entries. |
 | Conductor AEO | Analyze your brand presence and sentiment in AI |
+| Confluence MCP Server | Connect to Confluence to browse team knowledge and documentation. |
 | Connect2All | Import, export and transform Dynamics 365 Business Central data. |
 | Consensus for Copilot | Search peer-reviewed research and synthesize scientific evidence. |
 | Contentsquare MCP | Analyze user behavior, customer journeys, conversions, and digital experiences. |
 | Context7 | Get up-to-date documentation, API references, and code examples. |
+| Converter by Power2Apps | Convert, edit and analyze documents, data, images and code. |
 | Cortellis Regulatory Intel | Research and summarize global regulatory intelligence |
 | Courtroom5 | Get case assessments, legal deadlines, and next-step guidance. |
 | Cradl AI | Connect to Cradl AI to extract structured data from documents. |
@@ -113,10 +122,16 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Dynamics 365 Customer Insights | AI-powered Customer Insights plugin for Journeys and Data |
 | Dynatrace | Connect to Dynatrace to monitor application health and investigate incidents. |
 | E-Sign MCP | Connect to E-Sign to create and send electronic signature envelopes. |
+| Easy8 | Connect to Easy8 to manage web-based software project work. |
+| Egnyte | Easily access and manage your Egnyte content right from within Microsoft 365 |
 | EIU.com | Access cited EIU analysis, methodology, and market intelligence. |
+| Encodian - Barcode | Create and read barcodes and QR codes in documents and images. |
+| Encodian - Convert | Convert between 70+ file and data formats with Encodian. |
 | Encodian - Excel | Create, transform and inspect Microsoft Excel and CSV files. |
 | Encodian - Image | Manipulate, convert and extract content from images. |
+| Encodian - PDF | Create and manipulate PDF documents with Encodian. |
 | Encodian - Utilities | Format, validate and search data with Encodian utilities. |
+| Encodian - Word | Create, populate and manipulate Microsoft Word documents. |
 | enosix arnold for Copilot Cowork | SAP ERP order intelligence in Microsoft 365 Copilot — orders, invoices, deliveries, and quotes. |
 | eSIM Copilot | Effortlessly order and manage eSIM with your own personal mobile connectivity assistant. |
 | Euromonitor Passport | Brings Euromonitor's global intelligence directly into your Microsoft workspace. |
@@ -135,8 +150,10 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Flow Studio MCP Copilot Cowork | Connect Cowork to Power Automate via Flow Studio MCP to build and debug Power Automate flows. |
 | FlowStudio MCP | Connect Cowork to Power Automate via Flow Studio MCP to build and debug Power Automate flows. |
 | Formstack Forms | Connect to Formstack Forms to discover available online forms. |
+| Forrester AI For Copilot | Forrester research, analyst insights, vendor profiles, and Wave evaluations. |
 | Freshdesk MCP | Connect to Freshdesk to handle customer support tickets and related records. |
 | Freshservice MCP | Connect to Freshservice to process IT service desk requests. |
+| G2 MCP | The G2 MCP server brings real-time Buyer Intent and review insights into AI workflows. |
 | Gmail | Search, read, and send Gmail messages in Microsoft 365 Copilot. |
 | GoDaddy | Check domain availability and get name suggestions. |
 | GoLinks | GoLinks are intuitive, easy-to-remember short links, shared by teams. |
@@ -161,6 +178,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Hubspot MCP | Pull deals, contacts, companies, pipelines, and tickets from your CRM. |
 | Hugging Face | Search models, datasets, Spaces, and papers on Hugging Face. |
 | IANS | Practitioner-sourced security intelligence, data, and peer experience. |
+| iAuditor | Connect to iAuditor to manage inspections and safety workflows. |
 | IBISWorld | Research industry, company, risk, forecast, and benchmark data |
 | ICD-10 Diagnosis Codes | Look up, validate, search, and browse ICD-10-CM diagnosis codes. |
 | IDC | Access IDC market research, datasets, forecasts, trackers, and documents. |
@@ -176,6 +194,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | kintone | Connect to kintone to create and update app records. |
 | Klardaten DATEV-Connector | Read-only DATEV data access through Klardaten for Microsoft 365 Copilot. |
 | Kpler for Copilot | Kpler maritime & commodities intelligence: trade flows, vessels, refineries |
+| Language - Question Answering | Generate answers from custom projects or supplied text. |
 | lawstronaut | Lawstronaut MCP provides real-time global legal data for AI agents. |
 | LeadIQ MCP | Look up verified B2B contacts, enrich companies, and prospect new leads |
 | LeanKit | Connect to LeanKit to manage boards and cards for work tracking. |
@@ -183,6 +202,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | LegalZoom | Your assistant for business formation, legal information, and attorney support. |
 | Legora for Copilot | Ask legal questions and get grounded answers with citations. |
 | Linear for Copilot | Use Linear tools and services in Microsoft 365 Copilot. |
+| LinkedIn | Connect to LinkedIn V2 to publish member and company articles. |
 | LiveChat MCP | Connect to LiveChat to manage support agents. |
 | Local Falcon | Explore local search rankings, business locations, and visibility reports. |
 | LSEG Copilot | LSEG plugin for financial analysis workflows |
@@ -205,6 +225,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Mockster | Generate realistic mock data for testing and prototyping. |
 | monday.com | Get more work done with your team using monday.com’s AI-powered platform in Microsoft 365 Copilot |
 | Money Forward Cloud Accounting | Reference trial balances, transition reports, journal entries, and master data in Money Forward Cloud Accounting. |
+| MongoDB Atlas | Query MongoDB Atlas databases, collections, and clusters, and run aggregations. |
 | Moody's Credit MCP | Moody's Credit MCP for GenAI-ready credit data |
 | Morningstar | Morningstar agent provides access to Morningstar's financial data and research. |
 | Morningstar Credit Analytics | CMBS deal, bond, loan, property and portfolio surveillance data. |
@@ -217,9 +238,12 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Nozbe | Manage projects and teamwork — simply, remotely, and effectively |
 | NPI Registry | Look up and search US healthcare providers in the public NPPES registry. |
 | NyquistAI | Search FDA medical-device data, recalls, and warning letters. |
+| OneBlink | Retrieve OneBlink form data and generate form documents. |
+| OneIQ ICG | Query OneIQ infrastructure data in Microsoft 365 Copilot. |
 | Onplana | Plan and track projects, tasks and portfolios with built-in AI, right inside Microsoft Teams |
 | Open Targets | Open Targets Platform target-disease associations, drug-target mechanisms, and |
 | Optiq Bridge US | Optiq Bridge securely connects NIQ data to MCP-compatible AI platforms such as Microsoft Copilot. |
+| Oracle Database MCP | Query and modify on-premises Oracle Database via a data gateway. |
 | Padlet MCP | Connect to Padlet through its MCP tools and services. |
 | PandaDoc for Copilot | Create, send, sign and track documents |
 | Patent | Streamable MCP endpoint exposing patent and trademark tools to AI agents. |
@@ -229,6 +253,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Pipefy MCP | Manage business workflows with AI-powered orchestration in Microsoft 365 |
 | Polar Analytics | Analyze your ecommerce and marketing metrics and dashboards. |
 | PopHIVE Health for Copilot | Explore US public-health trends, status, maps, and vaccination coverage. |
+| PostgreSQL | Access and modify on-premises PostgreSQL relational data. |
 | PrivCo Data MCP | PrivCo private-company data: profiles, financials, funding rounds, M&A deals |
 | PubMed | Search biomedical and life sciences research literature. |
 | Pulse by PassBy | Pulse provides real-world retail intelligence for physical stores |
@@ -236,6 +261,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Quire | Quire tasks in Microsoft Teams, Outlook, Microsoft 365 and agents for Microsoft Copilot. |
 | QuizFlight | Turn any training into an interactive, AI-powered learning experience |
 | qune Vergabe Connector | Deutsche öffentliche Ausschreibungen in Copilot suchen und zum Profil matchen |
+| Recorded Future | Investigate threat intelligence and security risk. |
 | Red Judicial | AI legal assistant for lawyers and legal professionals in Chile. |
 | Redmine MCP | Connect to Redmine to track software projects and issues. |
 | Reflexivity | Bring Reflexivity's institutional-grade AI investment analysis into Microsoft Teams. |
@@ -243,22 +269,30 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Resco Cloud | Connect to Resco Cloud to manage business records, questionnaires, and reports. |
 | Resilinc Supply Chain | Supply chain intelligence for risk, compliance, and resilience |
 | Rovo | Access and speed up work across Atlassian apps - without leaving Microsoft Teams |
+| Ruddr | Ask about projects, time, expenses, billing and reports in your Ruddr workspace. |
 | RxNorm & Drug Classes \(NLM\) | Normalize drug names and look up therapeutic drug classes via the NIH/NLM RxNav |
 | S&P Global - Deterministic Retrieval | Deterministic access to S&P Global data |
 | S&P Global Energy | S&P Global Energy - AI Ready & Structured Data |
+| S360 Breeze | Look up incidents, review retrospectives, and report outage impact with IcM. |
 | Sage Bionetworks | Search Synapse projects, files, evaluations, schemas and teams. |
 | Sales | Sales solution in Microsoft 365 Copilot reimagines the way sellers work |
+| Salesforce MCP Server | MCP server for Salesforce operations. |
 | Savvly MCP | Explore Savvly retirement projections, eligibility, comparisons, and FAQs. |
 | SciLeads | Help you sell to scientists |
 | Scite | Search and analyze scientific literature with Scite Smart Citations |
 | Scrive eSign MCP | Create and manage Scrive eSign documents, parties and signatures. |
 | SeekOut | Source, shortlist, and engage talent with SeekOut in Microsoft Copilot. |
+| SendGrid | Connect to SendGrid to send email and maintain recipient records. |
+| Servanta | Search your media coverage and get AI insights in Copilot and Teams. |
 | Service | Service modernizes service solutions in agent's flow of work. |
+| SharePoint Skills | Microsoft-authored skills that help you get more from SharePoint. |
 | siemens | Search Siemens products, developer docs, and content in Microsoft 365 Copilot. |
+| Sight Machine Connector | AI to retrieve and analyze manufacturing data. |
 | SignatureAPI | Connect to SignatureAPI to create and manage electronic signing envelopes. |
 | SignNow MCP | Manage SignNow e-signature documents and signing workflows. |
 | SiteTrax.io | Track intermodal assets, camera activity, and operational exceptions in Copilot. |
 | Skribble Sign | Upload documents and manage Skribble signature requests. |
+| Slack for Copilot | Search your channels, direct messages, threads, and shared files. |
 | SlidesGPT For Copilot | Connect to SlidesGPT through its MCP tools and services. |
 | Smarter Drafter MCP | Generates finished legal documents from your firm's forms through natural conversation. |
 | smarts.bio | Run bioinformatics tools and pipelines on your data in plain English. |
@@ -267,6 +301,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Square | Explore Square workflows and connected business data in Microsoft 365 Copilot. |
 | Stable Baseline Workbench | A company knowledge graph, editable diagrams, whiteboards, decks and a live meeting scribe. |
 | Statista Connect | Access Statista's comprehensive database of statistics, market insights, and consumer research |
+| Steady | Keep teams and agents coordinated automatically |
 | Strety | Run EOS \(the Entrepreneurial Operating System\) directly in Microsoft Teams. |
 | SwitchWize Rates | Compare public U.S. savings, CD, checking, and mortgage rates with source dates and freshness context. |
 | syrto-ai | The new Financial Intelligence: Find and analyze any Italian company on trusted |
@@ -274,8 +309,10 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Taskrabbit Booking Assistance | Check Tasker availability and book local services. |
 | Tastewise For Copilot | Discover food & beverage trends, consumer needs, and market insights. |
 | Tavily | Real-time web intelligence for Microsoft 365 Copilot — search, extract, map, and crawl. |
+| Team Forms MCP | Connect to Team Forms to inspect teams, forms, submissions, and generated files. |
 | Teamtailor | Use this tool to retrieve and work with The new way to attract, nurture and hire top talent. |
 | Teamwork Projects | Connect to Teamwork Projects to plan projects, tasks, and team membership. |
+| TeleSign SMS | Connect to TeleSign SMS to send global text messages. |
 | Templafy | Create consistent and high-quality presentation with branded template, AI and best-practice content |
 | TextMine | Search, upload, and run governed TextMine document work. |
 | Toodledo | Connect to Toodledo to manage your to-do list and tasks. |
@@ -305,6 +342,7 @@ Partner plugins connect Cowork to popular third-party services so the agent can 
 | Zint | Retrieve verified registry, financial, ESG, news, and website intelligence. |
 | ZipRecruiter | Search job listings across ZipRecruiter. |
 | Zoho Books for Copilot | Your financial data, ready when you ask, right within Microsoft. |
+| Zoho Mail | Connect to Zoho Mail to manage business email. |
 | Zoom Connector | Search and retrieve the signed-in user's Zoom meetings, recordings, notes, and docs |
 | ZoomInfo GTM MCP | Bring ZoomInfo go-to-market intelligence to your Microsoft experiences. |
 

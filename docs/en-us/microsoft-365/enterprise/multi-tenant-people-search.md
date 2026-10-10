@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/multi-tenant-people-search?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Microsoft 365 Multitenant Organization People Search
 

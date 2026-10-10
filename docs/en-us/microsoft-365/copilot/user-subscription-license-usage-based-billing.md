@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/user-subscription-license-usage-based-billing -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Understanding the user subscription license \(USL\) and usage-based billing \(UBB\)
 

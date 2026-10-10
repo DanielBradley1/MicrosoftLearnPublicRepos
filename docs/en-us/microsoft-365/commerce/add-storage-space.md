@@ -115,7 +115,7 @@ To set up pay-as-you-go billing for Microsoft 365 SharePoint Storage, follow the
 
 Note
 
-If you have a multigeo tenant that uses pay-as-you-go storage, billing is based on the tenant's storage quota, not the geo's quota. As a result, a geographical location can grow beyond its assigned geo quota. Starting in June 2026, billing is based on each geo's storage quota and usage.
+If you have a multi-geo tenant that uses pay-as-you-go storage, billing is based on the tenant's storage quota, not each geo's quota. Billing starts when the tenant's total storage usage across all geos **exceeds** the tenant quota.
 
 ### Disconnect Microsoft 365 SharePoint Storage
 
