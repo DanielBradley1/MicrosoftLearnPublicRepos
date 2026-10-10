@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-collect-support-log -->
-<!-- Sitemap-Last-Modified: 2026-01-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Collect support logs in Microsoft Defender for Endpoint using live response
 

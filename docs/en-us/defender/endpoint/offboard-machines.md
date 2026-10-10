@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/offboard-machines -->
-<!-- Sitemap-Last-Modified: 2026-09-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Offboard devices
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/azure-server-integration -->
-<!-- Sitemap-Last-Modified: 2026-01-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # The new Defender server security experience
 

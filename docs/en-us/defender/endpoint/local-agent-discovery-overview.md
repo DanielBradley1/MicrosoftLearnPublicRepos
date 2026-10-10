@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/local-agent-discovery-overview -->
-<!-- Sitemap-Last-Modified: 2026-09-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-09 -->
 
 # Local AI agent discovery with Microsoft Defender for Endpoint
 
