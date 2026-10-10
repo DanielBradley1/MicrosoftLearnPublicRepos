@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-updates/android/setup-samsung-knox -->
-<!-- Sitemap-Last-Modified: 2026-10-02 -->
+<!-- Sitemap-Last-Modified: 2026-07-25 -->
 
 # Samsung Knox E-FOTA integration with Microsoft Intune
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-updates/android/manage-fota -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-07-23 -->
 
 # Manage Firmware Over-the-Air updates on Android
 
