@@ -13,7 +13,17 @@ Important
 
 Features in *preview* status are subject to change without notice, and might not be promoted to generally available \(GA\) status. Don't use preview features in production apps.
 
+## October 2026: New and generally available
+
+### Mail \| Message trace
+
+- Added support for identifying recalled messages in message trace. Use the [exchangeMessageTrace](https://learn.microsoft.com/en-us/graph/api/resources/exchangemessagetrace) resource's **status** property, which can now return `recalled`.
+
 ## October 2026: New in preview only
+
+### Backup and recovery \| Microsoft 365 backup and storage
+
+- Track admin activities on backup and restore resources, including policy changes, dynamic rule executions, offboarding, and restore task completions, by using the [activityLogBase](https://learn.microsoft.com/en-us/graph/api/resources/activitylogbase?view=graph-rest-beta&preserve-view=true) resource and its derived types.
 
 ### Mailbox import and export
 
