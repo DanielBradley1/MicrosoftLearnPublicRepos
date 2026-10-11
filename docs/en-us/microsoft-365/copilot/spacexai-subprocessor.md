@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/spacexai-subprocessor -->
-<!-- Sitemap-Last-Modified: 2026-09-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-09 -->
 
 # SpaceXAI as a subprocessor in Microsoft Online Services
 
