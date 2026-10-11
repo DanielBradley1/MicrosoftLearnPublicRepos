@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-04-16 -->
+<!-- Sitemap-Last-Modified: 2026-10-02 -->
 
 # Track new and changed features in the Microsoft 365 Message center
 

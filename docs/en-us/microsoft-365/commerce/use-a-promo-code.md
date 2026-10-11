@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/commerce/use-a-promo-code?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2025-08-04 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Use a promo code to reduce the price of a new Microsoft 365 for business subscription
 

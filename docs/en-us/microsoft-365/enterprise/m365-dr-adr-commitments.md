@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-commitments?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-01-30 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-commitments?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Advanced Data Residency: Data commitments
 

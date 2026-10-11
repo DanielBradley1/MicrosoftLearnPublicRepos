@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-data-location?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-11 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-data-location-card?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Data Location Card
 

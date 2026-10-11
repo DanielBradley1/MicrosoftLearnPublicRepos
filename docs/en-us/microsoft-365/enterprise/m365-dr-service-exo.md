@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-exo?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-02-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Data Residency for Exchange Online
 
