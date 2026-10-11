@@ -159,4 +159,4 @@ To ensure reliability and facilitate support for your application:
 
   - On every request to Microsoft Graph, generate a unique GUID, send it in the `client-request-id` HTTP request header, and also log it in your application's logs.
   - Always log the full HTTP Graph API call including the full URL, all the headers and JSON body for both the response and the request. These are required when reporting issues in [Microsoft Q&A](https://learn.microsoft.com/en-us/answers/products/m365#microsoft-graph) or to Microsoft Support.
-  - If you're using a third-party application, the app vendor needs to engage with our support team to investigate the issue.
+  - If you're using a third-party application, contact the application's vendor to investigate the issue.

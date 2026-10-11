@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-indicator?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-04-04 -->
+<!-- Sitemap-Last-Modified: 2024-12-06 -->
 
 # indicator resource type
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 An abstract type that represents an indicator of compromise or increased risk. Indicators communicate artifacts that indicate that an asset was affected by or related to an attack vector or malicious actor.
 

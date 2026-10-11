@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-passivednsrecord?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-23 -->
+<!-- Sitemap-Last-Modified: 2024-12-06 -->
 
 # passiveDnsRecord resource type
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 Represents a passive DNS record. Passive DNS is a system of record that stores DNS resolution data for a given location, record, and timeframe. This historical resolution data set allows users to view which domains resolved to an IP address and vice versa. This data set allows for time-based correlation based on domain or IP overlap. Passive DNS might enable the identification of previously unknown or newly created threat actor infrastructure.
 

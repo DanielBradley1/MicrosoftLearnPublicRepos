@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/site-post-permissions?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-10 -->
 
 # Create permission
 
@@ -21,11 +21,11 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 | Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(work or school account\) | Sites.FullControl.All | Not available. |
+| Delegated \(work or school account\) | Sites.FullControl.All | Not supported. |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | Sites.FullControl.All | Not supported. |
 
-> **Note:** In delegated workflows, the user must have an administrator role, such as SharePoint Administrator or higher.
+> **Note:** In delegated workflows, the user must have an administrator role, such as SharePoint Administrator or higher. In addition, the delegated user running the API must be a member of the target SharePoint site.
 
 ## HTTP request
 

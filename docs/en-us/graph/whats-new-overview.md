@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-10 -->
 
 # What's new in Microsoft Graph
 

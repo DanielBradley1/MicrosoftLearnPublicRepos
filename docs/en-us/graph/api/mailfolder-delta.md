@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailfolder-delta?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-10 -->
 
 # mailFolder: delta
 
@@ -8,6 +8,8 @@ Namespace: microsoft.graph
 Get a set of mail folders that have been added, deleted, or removed from the user's mailbox.
 
 A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately applying [state tokens](https://learn.microsoft.com/en-us/graph/delta-query-overview) in one or more of these calls, you can query for incremental changes in the mail folders. This allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
+
+\[!NOTE\] Delta processing may create or update synchronization state stored in the mailbox. These writes are subject to mailbox storage quota enforcement. If a mailbox has reached its applicable storage quota, a mail folder delta request can return 403 ErrorQuotaExceeded, even when ordinary folder read requests continue to succeed. Reduce mailbox usage below the quota and retry the delta request. Applications should handle this error and direct affected users or administrators to address mailbox storage usage.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-intelligenceprofile?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-22 -->
+<!-- Sitemap-Last-Modified: 2024-12-10 -->
 
 # intelligenceProfile resource type
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 The Microsoft Defender Threat Intelligence Profiles \(Intel Profiles\) API provides the most up-to-date threat actor infrastructure visibility in the industry today, enabling threat intelligence and security operations \(SecOps\) teams to streamline their advanced threat hunting and analysis workflows. These teams have historically struggled to obtain visibility into the full extent of nation state and cybercriminal adversary infrastructures, creating blind spots in detection and response automation, hunting, and analytics. Sophisticated security professionals can use Microsoft Intelligence Profile APIs, along with the [indicators](https://learn.microsoft.com/en-us/graph/api/resources/security-intelligenceprofileindicator?view=graph-rest-1.0) and other associated markers, to automate defense of their organizations and track potentially malicious activity targeting their organization or industry. Users of the Microsoft Defender Threat Intelligence Profiles APIs have access to detailed threat actor intel profiles, including background information and interpretation guidance.
 

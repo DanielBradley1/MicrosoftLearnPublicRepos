@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-intelligenceprofileindicator-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-04-05 -->
+<!-- Sitemap-Last-Modified: 2025-07-23 -->
 
 # Get intelligenceProfileIndicator
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 Read the properties and relationships of a [intelligenceProfileIndicator](https://learn.microsoft.com/en-us/graph/api/resources/security-intelligenceprofileindicator?view=graph-rest-1.0) object.
 

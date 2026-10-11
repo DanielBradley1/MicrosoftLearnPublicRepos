@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-article?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-23 -->
+<!-- Sitemap-Last-Modified: 2024-12-10 -->
 
 # article resource type
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 Represents an article, which is a narrative that provides insight into threat actors, tooling, attacks, and vulnerabilities. Articles are not blog posts about threat intelligence; while they summarize different threats, they also link to actionable content and key indicators of compromise to help users take action.
 

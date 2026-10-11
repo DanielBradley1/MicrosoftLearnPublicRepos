@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-hosttracker?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-22 -->
+<!-- Sitemap-Last-Modified: 2024-12-10 -->
 
 # hostTracker resource type
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 Represents a unique code or value found within web pages and often used to track user interaction. These codes can be used to correlate a disparate group of websites to a central entity. Often, actors copy the source code of a victim’s website they want to impersonate for a phishing campaign. Seldomly, actors take the time to remove these IDs. Actors might also deploy tracker IDs to see how successful their cyberattack campaigns are. This is similar to marketers using SEO IDs, such as a Google Analytics Tracker ID, to track the success of their marketing campaign.
 

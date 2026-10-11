@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-hostcookie?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-23 -->
+<!-- Sitemap-Last-Modified: 2024-12-10 -->
 
 # hostCookie resource type
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 Represents a cookie, which is a small piece of data sent from a server to a client as the user browses the internet. These values sometimes contain a state for the application or little bits of tracking data. When Microsoft Defender Threat Intelligence crawls a website, it indexes cookie names so users can search them. Cookies are also used by malicious actors to keep track of infected victims or to store data to be used later.
 

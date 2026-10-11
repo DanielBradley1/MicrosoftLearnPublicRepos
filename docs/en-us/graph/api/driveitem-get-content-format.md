@@ -9,6 +9,10 @@ Use this API to retrieve the contents of an item in a specific format. Not all f
 
 To download the item in its original format, see [download an item's contents](https://learn.microsoft.com/en-us/graph/api/driveitem-get-content?view=graph-rest-1.0).
 
+Note
+
+The maximum size limit for files to use format conversion is 2 MB.
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

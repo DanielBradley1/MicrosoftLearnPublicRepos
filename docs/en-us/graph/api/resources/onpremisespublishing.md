@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/onpremisespublishing?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # onPremisesPublishing resource type
 
@@ -30,6 +30,7 @@ For a tutorial about configuring Application Proxy, see [Automate the configurat
 | isAccessibleViaZTNAClient | Boolean | Indicates whether the application is accessible via a [Global Secure Access client](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-clients) on a managed device. |
 | isBackendCertificateValidationEnabled | Boolean | Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to `true` by default. For all existing apps, the property is set to `false`. |
 | isContinuousAccessEvaluationEnabled | Boolean | Indicates whether [continuous access evaluation](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation) is enabled for Application Proxy application. For all Application Proxy apps, the property is set to `true` by default. |
+| isDeviceAccessEnabled | Boolean | Indicates whether the Microsoft Entra Private Access application is accessible or available in device access mode. `false` by default. |
 | isDnsResolutionEnabled | Boolean | Indicates Microsoft Entra Private Access should handle DNS resolution. `false` by default. |
 | isHttpOnlyCookieEnabled | Boolean | Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to `true` to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is `false`. |
 | isOnPremPublishingEnabled | Boolean | Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only. |
@@ -66,6 +67,7 @@ The following JSON representation shows the resource type.
   "isAccessibleViaZTNAClient": "Boolean",
   "isBackendCertificateValidationEnabled": true,
   "isContinuousAccessEvaluationEnabled": "Boolean",
+  "isDeviceAccessEnabled": "Boolean",
   "isDnsResolutionEnabled": "Boolean",
   "isHttpOnlyCookieEnabled": true,
   "isOnPremPublishingEnabled": true,

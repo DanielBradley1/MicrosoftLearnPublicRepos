@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/presence?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-12-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-10 -->
 
 # presence resource type
 
@@ -29,8 +29,8 @@ This resource supports subscribing to [change notifications](https://learn.micro
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| activity | String | The supplemental information to a user's availability. Possible values are `available`, `away`, `beRightBack`, `busy`, `doNotDisturb`, `offline`, `outOfOffice`, `presenceUnknown`. |
-| availability | String | The base presence information for a user. Possible values are `available`, `away`, `beRightBack`, `busy`, `doNotDisturb`, `focusing`, `inACall`, `inAMeeting`, `offline`, `presenting`, `presenceUnknown`. |
+| activity | String | The supplemental information to a user's availability. Possible values are `Available`, `Away`, `BeRightBack`, `Busy`, `DoNotDisturb`, `Offline`, `OutOfOffice`, `PresenceUnknown`. |
+| availability | String | The base presence information for a user. Possible values are `Available`, `Away`, `BeRightBack`, `Busy`, `DoNotDisturb`, `Focusing`, `InACall`, `InAMeeting`, `Offline`, `Presenting`, `PresenceUnknown`. |
 | id | String | The unique identifier for the user. |
 | outOfOfficeSettings | [outOfOfficeSettings](https://learn.microsoft.com/en-us/graph/api/resources/outofofficesettings?view=graph-rest-1.0) | The out of office settings for a user. |
 | sequenceNumber | String | The lexicographically sortable String stamp that represents the version of a **presence** object. |

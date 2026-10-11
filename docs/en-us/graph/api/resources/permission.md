@@ -239,3 +239,4 @@ After the sharing invitation has been redeemed by a user, the **grantedTo** prop
 | [Update permission](https://learn.microsoft.com/en-us/graph/api/permission-update?view=graph-rest-1.0) | `PATCH /drive/items/{item-id}/permissions/{id}` |
 | [Delete permission](https://learn.microsoft.com/en-us/graph/api/permission-delete?view=graph-rest-1.0) | `DELETE /drive/items/{item-id}/permissions/{id}` |
 | [Grant access to sharing link](https://learn.microsoft.com/en-us/graph/api/permission-grant?view=graph-rest-1.0) | `POST /shares/{encoded-sharing-url}/permission/grant` |
+| [Revoke grants on sharing link](https://learn.microsoft.com/en-us/graph/api/permission-revokegrants?view=graph-rest-1.0) | `POST /drive/items/{item-id}/permissions/{id}/revokeGrants` |

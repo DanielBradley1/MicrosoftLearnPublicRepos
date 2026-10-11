@@ -213,7 +213,7 @@ Before moving on, add dependencies that you use later.
        testImplementation 'junit:junit:4.13.2'
 
        // This dependency is used by the application.
-       implementation 'com.google.guava:guava:33.7.1-jre'
+       implementation 'com.google.guava:guava:33.7.2-jre'
        implementation 'com.azure:azure-identity:1.18.6'
        implementation 'com.microsoft.graph:microsoft-graph:6.70.0'
    }

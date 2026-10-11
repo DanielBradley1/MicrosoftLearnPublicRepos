@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-10-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-10 -->
 
 # onPremisesExtensionAttributes resource type
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph
 
 The return type of the **onPremisesExtensionAttributes** property of the [user](https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0) object and **extensionAttributes** property of the [device](https://learn.microsoft.com/en-us/graph/api/resources/device?view=graph-rest-1.0) object. Returns 15 custom extension attribute properties. Each attribute can store up to 1024 characters.
 
-On the [user](https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0) entity and for an **onPremisesSyncEnabled** user, the source of authority for this set of properties is the on-premises Active Directory that is synchronized to Microsoft Entra ID, and is read-only. For a cloud-only user \(where **onPremisesSyncEnabled** is `false` or `null`\), these properties can be set during [creation](https://learn.microsoft.com/en-us/graph/api/user-post-users?view=graph-rest-1.0) or [update](https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0). If a cloud-only user was previously synced from on-premises Active Directory, these properties can't be managed via the Microsoft Graph API. Instead, they can be managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell.
+On the [user](https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0) entity and for an **onPremisesSyncEnabled** user, the source of authority for this set of properties is the on-premises Active Directory that is synchronized to Microsoft Entra ID, and is read-only. For a cloud-only user \(where **onPremisesSyncEnabled** is `false` or `null`\), these properties can be set during [creation](https://learn.microsoft.com/en-us/graph/api/user-post-users?view=graph-rest-1.0) or [update](https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0) \(this includes if the user originally was synched from on-premises and subsequently converted via SOA to a cloud-only user\).
 
 The **extensionAttributes** property of the [device](https://learn.microsoft.com/en-us/graph/api/resources/device?view=graph-rest-1.0) entity is managed only in Microsoft Entra ID during device [creation](https://learn.microsoft.com/en-us/graph/api/device-post-devices?view=graph-rest-1.0) or [update](https://learn.microsoft.com/en-us/graph/api/device-update?view=graph-rest-1.0).
 

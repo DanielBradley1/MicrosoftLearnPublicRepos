@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-04-05 -->
+<!-- Sitemap-Last-Modified: 2026-06-19 -->
 
 # List childHostPairs
 
@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
+The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
 
 Get the list of [hostPair](https://learn.microsoft.com/en-us/graph/api/resources/security-hostpair?view=graph-rest-1.0) resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.
 

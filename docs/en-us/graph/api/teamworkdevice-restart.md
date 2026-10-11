@@ -17,7 +17,7 @@ Restart the specified Microsoft Teams-enabled [device](https://learn.microsoft.c
 
 A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
 
-> **Note**: Microsoft is temporarily offering usage of the APIs for managing Microsoft Teams-enabled devices at no charge. Microsoft expects to charge for the use of some or all of these APIs in the future. Microsoft will provide advanced notice of pricing changes. For details about the current licensing model, see [Licensing and payment requirements](https://learn.microsoft.com/en-us/graph/teams-licenses).
+> **Note**: Microsoft is temporarily offering usage of the APIs for managing Microsoft Teams-enabled devices at no charge. Microsoft expects to charge for the use of some or all of these APIs in the future. Microsoft will provide advanced notice of pricing changes.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

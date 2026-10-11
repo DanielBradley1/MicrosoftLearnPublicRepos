@@ -66,6 +66,8 @@ The following table specifies the properties that can be updated.
 | schedule | [microsoft.graph.security.ruleSchedule](https://learn.microsoft.com/en-us/graph/api/resources/security-ruleschedule?view=graph-rest-beta) | The triggering schedule of this rule. |
 | status | [microsoft.graph.security.detectionRuleStatus](https://learn.microsoft.com/en-us/graph/api/resources/enums-security?view=graph-rest-beta#detectionrulestatus-values) | The current run status of the rule. The possible values are: `enabled`, `disabled`, `autoDisabled`, `unknownFutureValue`. |
 
+To update the incident correlation setting, specify `true` or `false` for **detectionAction**/**incidentConfiguration**/**isExcludedFromIncidentCorrelation**. A `null` or omitted value leaves the existing setting unchanged.
+
 ## Response
 
 If successful, this method returns a `200 OK` response code and a [microsoft.graph.security.detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-beta) object in the response body.
@@ -90,9 +92,10 @@ PATCH https://graph.microsoft.com/beta/security/rules/detectionRules/office-enco
 Content-Type: application/json
 
 {
-  "status": "disabled",
-  "queryCondition": {
-    "queryText": "DeviceProcessEvents | where InitiatingProcessFileName in~ ('winword.exe','excel.exe','outlook.exe') | where FileName == 'powershell.exe' | where ProcessCommandLine has '-enc'"
+  "detectionAction": {
+    "incidentConfiguration": {
+      "isExcludedFromIncidentCorrelation": true
+    }
   }
 }
 ```
@@ -285,7 +288,7 @@ Content-Type: application/json
   "id": "office-encoded-powershell",
   "displayName": "Suspicious encoded PowerShell from Office",
   "description": "Detects encoded PowerShell processes launched by Office applications, a common phishing payload pattern.",
-  "status": "disabled",
+  "status": "enabled",
   "createdBy": "alice@contoso.com",
   "createdDateTime": "2026-05-25T10:15:00Z",
   "lastModifiedBy": "alice@contoso.com",
@@ -333,6 +336,9 @@ Content-Type: application/json
           "deviceIdColumn": "DeviceId"
         }
       ]
+    },
+    "incidentConfiguration": {
+      "isExcludedFromIncidentCorrelation": true
     }
   }
 }
