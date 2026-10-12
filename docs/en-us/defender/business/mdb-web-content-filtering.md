@@ -5,7 +5,7 @@
 
 Web content filtering enables your security team to track and regulate access to websites based on content categories. When you set up your web content filtering policy, you enable web protection for your organization.
 
-Web content filtering is available on the major web browsers, with blocks performed by Windows Defender SmartScreen \(Microsoft Edge\) and Network Protection \(Chrome, Firefox, Brave, and Opera\). For more information, see [Prerequisites for web content filtering](https://learn.microsoft.com/en-us/defender-endpoint/web-content-filtering#prerequisites).
+Web content filtering is available on the major web browsers, with blocks performed by Microsoft Defender SmartScreen for Microsoft Edge and Network Protection for Chrome, Firefox, Brave, and Opera. For more information, see [Prerequisites for web content filtering](https://learn.microsoft.com/en-us/defender-endpoint/web-content-filtering#prerequisites).
 
 In Defender for Business, you can have one web content filtering policy applied to all users.
 
@@ -17,21 +17,19 @@ Use the following steps to create a web content filtering policy:
 
 1. In the [Microsoft Defender portal](https://security.microsoft.com), go to **Settings** > **Endpoints** > **Rules** > **Web content filtering**, and then select **+ Add policy**.
 2. Specify a name and description for your policy.
-3. Select the web content filtering categories to block \(for example, **Adult content**, **High bandwidth**, **Legal liability**, or **Leisure**\). Don't select **Uncategorized**. Use the expand icon to fully expand each parent category, and then select specific web content categories.
+3. Select the web content filtering categories to block, such as **Adult content**, **High bandwidth**, **Legal liability**, or **Leisure**. Don't select **Uncategorized**. Use the expand icon to fully expand each parent category, and then select specific web content categories.
 
    To set up an audit-only policy that doesn't block any websites, don't select any categories.
-4. Apply the policy to all users. \(Scoping to specific devices isn't available in Defender for Business.\)
+4. Apply the policy to all users. Scoping to specific devices isn't available in Defender for Business.
 5. Review the summary and save the policy. The policy refresh might take up to two hours to apply to your organization's devices.
-
-Tip
 
 To learn more about web content filtering, see [Web content filtering](https://learn.microsoft.com/en-us/defender-endpoint/web-content-filtering).
 
 ## Categories for web content filtering
 
-Not all websites in the following categories are malicious. However, these websites might cause problems for your company due to compliance regulations, bandwidth usage, or other concerns.
+Not all websites in the following categories are malicious. These websites might cause problems for your company due to compliance regulations, bandwidth usage, or other concerns.
 
-You can start with an audit-only policy to better understand whether your security team should block any website categories. You can edit your policy later.
+Start with an audit-only policy to better understand whether your security team should block any website categories. You can edit your policy later.
 
 The following table describes web content categories you can choose for your web content filtering policy:
 
@@ -43,8 +41,8 @@ The following table describes web content categories you can choose for your web
 | **Leisure** | Sites that provide web-based chat rooms, online gaming, web-based email, or social networking |
 | **Uncategorized** | Sites that have no content or that are newly registered.  <br>  <br>As a best practice, don't select **Uncategorized**. |
 
-## Next steps
+## Related content
 
-- [Deployment and configuration methods for controlled folder access \(CFA\)](https://learn.microsoft.com/en-us/defender-endpoint/controlled-folder-access-overview#deployment-and-configuration-methods-for-cfa)
-- [Enable your attack surface reduction rules](https://learn.microsoft.com/en-us/defender-business/mdb-asr).
-- [Review settings for advanced features and the Microsoft Defender portal](https://learn.microsoft.com/en-us/defender-business/mdb-portal-advanced-feature-settings).
+- [Deployment and configuration methods for controlled folder access](https://learn.microsoft.com/en-us/defender-endpoint/controlled-folder-access-overview#deployment-and-configuration-methods-for-cfa)
+- [Attack surface reduction](https://learn.microsoft.com/en-us/defender-business/mdb-asr)
+- [Review and edit settings in Microsoft Defender for Business](https://learn.microsoft.com/en-us/defender-business/mdb-portal-advanced-feature-settings)

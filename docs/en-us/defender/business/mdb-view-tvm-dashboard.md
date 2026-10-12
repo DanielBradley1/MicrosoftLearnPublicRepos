@@ -26,14 +26,14 @@ Vulnerability management features and capabilities in Microsoft Defender for Bus
 
   [![Screenshot of Microsoft Defender Vulnerability Management-Remediation.](https://learn.microsoft.com/en-us/defender-business/media/mdb-mdvm-remediation.png)](https://learn.microsoft.com/en-us/defender-business/media/mdb-mdvm-remediation.png#lightbox)
 - **Inventories**: Lists software and apps currently in use in your organization. You see browsers, operating systems, and other software on devices, along with identified weaknesses and threats.
-- **Weaknesses**: Lists vulnerabilities along with the number of exposed devices in your organization. If you see "0" in the Exposed devices column, you don't have to take any immediate action. However, you can learn more about each vulnerability listed on this page. Select an item to learn more about it and what you can do to mitigate the potential threat to your company.
+- **Weaknesses**: Lists vulnerabilities along with the number of exposed devices in your organization. If you see "0" in the Exposed devices column, you don't have to take any immediate action. You can learn more about each vulnerability listed on this page. Select an item to learn more about it and what you can do to mitigate the potential threat to your company.
 
   [![Screenshot of Microsoft Defender Vulnerability Management-Weaknesses.](https://learn.microsoft.com/en-us/defender-business/media/mdb-mdvm-weakness-details.png)](https://learn.microsoft.com/en-us/defender-business/media/mdb-mdvm-weakness-details.png#lightbox)
 - **Event timeline**: Lists vulnerabilities that affect your organization in a timeline view.
 
-[Learn more about Microsoft Defender Vulnerability Management](https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management).
+Learn more about [Microsoft Defender Vulnerability Management](https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management).
 
-## Next steps
+## Related content
 
 - [Try training and learning resources for Defender for Business](https://learn.microsoft.com/en-us/defender-business/mdb-tutorials)
 - [Onboard devices to Defender for Business](https://learn.microsoft.com/en-us/defender-business/mdb-onboard-devices)
