@@ -126,6 +126,12 @@ Sometimes content access is restricted because the service account can't read al
 
 [![Screenshot of user criteria showing the use of gs.getUserId\(\) function.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/servicenow-knowledge-troubleshooting/user-criteria.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/servicenow-knowledge-troubleshooting/user-criteria.png#lightbox)
 
+## Advanced flow uses the deprecated user criteria resource
+
+If an existing Advanced flow deployment uses the `GetAllUserCriteria` resource at `/user_criteria`, migrate it to `GetAllUserCriteriaV2`. The deprecated resource evaluates each user against all active user criteria and doesn't support evaluating multiple users in one request.
+
+Follow [Set up REST API](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-knowledge-admin-setup#set-up-rest-api) to create the `GetAllUserCriteriaV2` resource with the `POST` method and `/user_criteria_v2` relative path. Keep the same **Microsoft Copilot** scripted REST API and API namespace, and then verify the resource path before the next full crawl.
+
 ## Unable to sign in due to single sign-on enabled ServiceNow instance
 
 If your organization uses single sign-on \(SSO\) to ServiceNow, you might have trouble signing in with the service account. You can bring up a username and password-based authentication by adding *login.do* to the ServiceNow instance URL. For example: `https://<your-organization-domain>.service-now.com./login.do`.

@@ -34,6 +34,24 @@ Use the following steps to troubleshoot and resolve the issue:
 
 When the required access is provided in ServiceNow, start a full crawl for the configured ServiceNow Catalog connector connection.
 
+## Catalog item count is higher than the indexed item count
+
+The ServiceNow Catalog connector discovers catalog items through their categories. A count based only on readable records in the `sc_cat_item` table can therefore be higher than the indexed item count.
+
+For each catalog item that isn't indexed, verify the following conditions:
+
+1. The item has an associated category.
+2. The category has a title and is active.
+3. The service account can read the category and the active parent and child categories in its hierarchy from the `sc_category` table.
+
+To identify category records that an access control list \(ACL\) or business rule hides from the service account:
+
+1. Use the ServiceNow Table API as an administrator to query the relevant category. Include the `sys_id`, `title`, `active`, and `parent` fields in the response.
+2. Run the same query as the service account and compare the results.
+3. If the request returns a `200` status but omits the category, use the ServiceNow Access Analyzer to identify the ACL, role, or business rule that prevents the service account from reading the record.
+
+After you associate each item with an eligible category and provide the required category access, start a full crawl.
+
 ## Missing access to certain tables
 
 Without the right access, the crawler might not index all content and might not grant permissions accurately. You must be a ServiceNow admin to troubleshoot this issue.
@@ -74,6 +92,12 @@ When the required access is provided in ServiceNow, start a full crawl for the c
 Sometimes content access might be restricted because the service account doesn't read all user criteria. This issue can happen if you use the `gs.getUserId()` or `gs.getUser()` function within any user criteria. If you use these functions, update these user criteria to avoid them. ServiceNow recommends that the functions use `user_id`.
 
 ![Screenshot of a script with instructions for implementing a specific user criteria evaluation, including guidelines to avoid certain functions and use a specific variable.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/servicenow-catalog-troubleshooting/script.png)
+
+## Advanced flow uses the deprecated user criteria resource
+
+If an existing Advanced flow deployment uses the `GetAllUserCriteria` resource at `/user_criteria`, migrate it to `GetAllUserCriteriaV2`. The deprecated resource evaluates each user against all active user criteria and doesn't support evaluating multiple users in one request.
+
+Follow [Set up REST API](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-admin-setup#set-up-rest-api) to create the `GetAllUserCriteriaV2` resource with the `POST` method and `/user_criteria_v2` relative path. Keep the same **Microsoft Copilot** scripted REST API and API namespace, and then verify the resource path before the next full crawl.
 
 ## Unable to sign in due to SSO enabled ServiceNow instance
 

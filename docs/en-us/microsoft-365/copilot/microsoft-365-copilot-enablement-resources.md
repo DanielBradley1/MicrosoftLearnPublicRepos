@@ -63,12 +63,21 @@ To learn more and get started:
 
 ## Step 5 - Send a welcome email and enable feedback
 
-After your licenses are assigned, you can send a welcome email to your users. This email can include information about Microsoft Copilot, how to use it, and any training resources you have available.
+After your licenses are assigned, you can send a welcome email to your users. This email can include information about Microsoft Copilot, how to use it, and any training resources you have available. You can also use the Copilot onboarding experience to help users get started with Copilot. Copilot onboarding is a guided, in-product experience that helps users build familiarity with Copilot and develop their prompting skills. As part of your onboarding rollout, you can:
 
-You can also enable feedback for Microsoft Copilot users. To learn more, see [Welcome end users to Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enable-users)
+- Add a link to your organization's AI usage policy for users to review.
+- Share the Copilot onboarding experience by copying the onboarding link or downloading and customizing the email template.
+- Use built-in notifications to let users know when Copilot onboarding is available.
+- Monitor Copilot onboarding completion through Viva Learning reporting and follow up with users as needed.
+- Allow feedback for Microsoft Copilot users.
+
+The onboarding experience can differ based on the user's Copilot license. For details about creating the onboarding experience, see [Manage Microsoft Copilot onboarding](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-copilot-onboarding).
+
+You can also continue supporting Copilot adoption by sharing learning resources and enabling feedback. To learn more, see [Welcome end users to Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enable-users).
 
 ## Related articles
 
 - [Copilot Prompt Gallery](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-prompt-gallery)
 - [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot)
 - [Microsoft Copilot reports](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-reports-for-admins)
+- [Manage Microsoft Copilot onboarding](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-copilot-onboarding)

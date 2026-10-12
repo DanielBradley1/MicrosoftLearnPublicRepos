@@ -5,7 +5,7 @@
 
 Start by deciding where people will use the experience:
 
-- **Inside Microsoft 365 Copilot experiences.** Build or configure supported agents, connectors, skills, and tools, and then follow the package, distribution, and governance guidance for the selected route.
+- **Inside Microsoft 365 Copilot experiences.** Build or configure supported agents, connectors, skills, and tools, and then follow the package, publishing, and governance guidance for the selected method.
 - **In your apps and custom agents.** Use APIs and SDKs to add Microsoft 365 work context and Copilot capabilities to experiences that you own and operate.
 
 You can use both approaches in one solution. Choose the primary path based on the user experience, runtime, distribution model, and operating responsibilities.
@@ -24,7 +24,7 @@ You can use both approaches in one solution. Choose the primary path based on th
 | Build a declarative agent that uses Copilot's orchestrator and models | [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) |
 | Add reusable instructions or workflows to a declarative agent | [Skills as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-skills) |
 | Ground Microsoft 365 Copilot in approved external organizational data | [Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector) |
-| Make remote MCP tools available through a supported route | [MCP servers and plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
+| Make remote MCP tools available through a supported method | [MCP servers and plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
 | Maintain or evaluate a Teams message extension integration | [Message extensions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-message-extension-bot) |
 | Build and distribute a plugin that brings supported capabilities together | [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview) |
 | Build an application that uses Microsoft 365 work context | [Work IQ APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/) |
@@ -41,14 +41,14 @@ A solution can combine multiple paths. For example:
 - An application can use a Copilot API while a separately packaged agent gives users a related experience inside Microsoft 365 Copilot.
 - A custom engine agent can use Work IQ APIs and also follow the package or distribution requirements of its target channel.
 
-Using an API doesn't by itself select a package or distribution route. Each part of a combined solution retains its own identity, authentication, deployment, distribution, and governance requirements.
+Using an API doesn't by itself select a package or publishing method. Each part of a combined solution retains its own identity, authentication, deployment, distribution, and governance requirements.
 
 ## Plan and continue
 
 - [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide) across data, identity, security, distribution, compatibility, cost, and ownership.
 - [For builders](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/builder-guide), choose a development experience and implementation guidance.
 - [For administrators](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/administrator-guide), prepare the organization and identify applicable controls.
-- [For ISVs and software publishers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/isv-publisher-guide), determine the supported customer distribution route.
+- [For ISVs and software publishers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/isv-publisher-guide), determine the supported customer publishing method.
 
 ## Related content
 

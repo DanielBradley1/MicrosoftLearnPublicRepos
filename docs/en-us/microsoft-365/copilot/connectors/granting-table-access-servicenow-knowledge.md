@@ -18,7 +18,7 @@ Instead of following the manual steps in this article, you can run background sc
 
 To create a user:
 
-1. Go to **User Administration > Users**.
+1. Go to **User Administration** > **Users**.
 2. Select **New** to create a new user.
 3. Fill in the user details:
 
@@ -32,7 +32,7 @@ To create a user:
 
 To create a role:
 
-1. Go to **User Administration > Roles**.
+1. Go to **User Administration** > **Roles**.
 2. Select **New**.
 3. Enter a unique name for the role, such as `Copilot Connector Account`.
 4. Select **Submit** to save the role.
@@ -41,7 +41,7 @@ To create a role:
 
 To assign the role to a user:
 
-1. Go to **User Administration > Users**.
+1. Go to **User Administration** > **Users**.
 2. Open the user record for the intended user, such as `Microsoft Copilot`.
 3. In the **Roles** related list, select **Edit**.
 4. Add the newly created role \(`Copilot Connector Account`\).
@@ -59,7 +59,7 @@ To assign the role to a user:
 To grant access to rows within a specific table, follow these steps:
 
 1. Elevate to the `security_admin` role.
-2. Go to **System Security > Access Control \(ACL\)**.
+2. Go to **System Security** > **Access Control \(ACL\)**.
 3. Select **New** to create a new ACL record.
 4. Fill in the following fields:
 
@@ -79,9 +79,15 @@ If the user can view the rows, but the field values aren't visible, you need to 
 
 ## Grant field-level access
 
-If the user can view rows but not field values, configure field-level access:
+If the user can view rows but not field values, configure field-level access.
 
-1. Go to **System Security > Access Control \(ACL\)**.
+Warning
+
+Creating a field-level read ACL named `<table>.*` can **remove field read access for other users** on any table that doesn't already have a field-level read ACL. ServiceNow grants a field read when an ACL matches, or when no field ACL exists at all. There's no default `*.*` read ACL to fall through to, so once `<table>.*` exists, it's the only match. Because it requires the connector role, every user **without** that role loses field read access on that table \(record and row access is unchanged, because table and field ACLs are combined\). This is standard ServiceNow behavior, not a bug. Create field-level ACLs only on tables where you verified the service account can see rows but not field values, and prefer the least-privilege per-field approach for shared, platform-wide tables such as `sys_user`, `sys_user_group`, `sys_dictionary`, `sys_properties`, and `core_company`.
+
+To grant read access to **all** fields on a table \(simplest, but restricts every field for users without the role\):
+
+1. Go to **System Security** > **Access Control \(ACL\)**.
 2. Select **New** to create a new ACL record.
 3. Fill in these fields:
 
@@ -92,12 +98,21 @@ If the user can view rows but not field values, configure field-level access:
 4. In the **Roles** section, add the previously created role \(`Copilot Connector Account`\).
 5. Select **Submit** to save the ACL.
 
+To grant read access to **only specific fields** \(recommended least-privilege approach, especially for shared, platform-wide tables\):
+
+1. Follow the same steps, but in **Name**, select the specific field instead of `*` \(for example, `sys_properties` with the `value` field\). Create one ACL per field the connector needs.
+2. This limits the restriction to only those fields, so other users keep read access to the rest of the table.
+
+Note
+
+If you select **Admin overrides** on the ACL \(the background setup script sets this\), admins keep access and **can't reproduce** the restriction under their own accounts. Verify the effect as an affected non-admin user who doesn't have the connector role. Don't rely on the service account for this check. It has the connector role, so it keeps access and would report success even if other users lost it.
+
 ## Final verification
 
 To verify access to the table:
 
 1. Impersonate the user \(for example, `Microsoft Copilot`\).
-2. Confirm that both rows and field values within the target table are now visible.
+2. Confirm that you can see both rows and field values within the target table.
 
 You successfully granted table access to a service account in ServiceNow.
 

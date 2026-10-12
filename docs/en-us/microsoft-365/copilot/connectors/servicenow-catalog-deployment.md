@@ -279,7 +279,7 @@ Don't enable `Assignment required`. For more information, see [Properties of an 
 
 ### Add API namespace
 
-If you're using the **Advanced** flow, enter the API namespace that you created in your ServiceNow instance. For details, see [Set up REST API](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-admin-setup#set-up-rest-api).
+If you're using the **Advanced** flow, enter the API namespace for the **Microsoft Copilot** scripted REST API that contains the `GetAllUserCriteriaV2` resource \(`POST /user_criteria_v2`\). For details, see [Set up REST API](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-admin-setup#set-up-rest-api).
 
 ### Roll out
 
