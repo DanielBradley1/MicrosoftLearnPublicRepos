@@ -7,7 +7,7 @@ Namespace: microsoft.graph.security
 
 Note
 
-The Microsoft Threat Intelligence APIs are available to all customers with a Microsoft Defender XDR or Microsoft Sentinel license. No separate license is required to access these APIs.
+The Microsoft Graph API for Microsoft Defender Threat Intelligence requires an [active Defender Threat Intelligence Portal license and API add-on license](https://go.microsoft.com/fwlink/?linkid=2235706) for the tenant.
 
 Represents an SSL certificate that is a digital certificate that enables secure and encrypted communication between a website and its users, protecting sensitive information. It verifies the identity of a website and encrypts data to ensure privacy and build user trust. When Microsoft Defender Threat Intelligence crawls a website, it indexes SSL certificates so users can search them. Malicious actors can exploit SSL certificates by using fraudulent certificates to create deceptive websites or compromising legitimate certificates to intercept encrypted communications.
 

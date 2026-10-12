@@ -27,7 +27,7 @@ This object is an abstract base type from which the following resources are deri
 | [singleUser](https://learn.microsoft.com/en-us/graph/api/resources/singleuser?view=graph-rest-1.0) | Entitlement Management | Represents a single user as approver to access packages. |
 | [targetAgentIdentitySponsorsOrOwners](https://learn.microsoft.com/en-us/graph/api/resources/targetagentidentitysponsorsorowners?view=graph-rest-1.0) | Entitlement Management | Represents the sponsors or owners of a specific agent identity. |
 | [targetApplicationOwners](https://learn.microsoft.com/en-us/graph/api/resources/targetapplicationowners?view=graph-rest-1.0) | Entitlement Management | Represents the application owners who can request an access package on behalf of that application. |
-| [targetManager](https://learn.microsoft.com/en-us/graph/api/resources/targetmanager?view=graph-rest-1.0) | Entitlement Management | Represents the manager of the target user who will receive the access package if approved, which may differ from the submitter's manager. |
+| [targetManager](https://learn.microsoft.com/en-us/graph/api/resources/targetmanager?view=graph-rest-1.0) | Entitlement Management | Represents the manager of a user who can request an access package on behalf of that user. |
 | [targetUserSponsors](https://learn.microsoft.com/en-us/graph/api/resources/targetusersponsors?view=graph-rest-1.0) | Entitlement Management | Represents another user in the tenant who can approve an access package on behalf of a user. |
 
 In entitlement management, this object is configured in the following properties and relationships:
