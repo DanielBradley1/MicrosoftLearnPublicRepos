@@ -34,8 +34,7 @@ The following reference lists all the tables in the schema. Each table name link
 | --- | --- |
 | **[AADSignInEventsBeta](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-aadsignineventsbeta-table)** | Microsoft Entra interactive and non-interactive sign-ins |
 | **[AADSpnSignInEventsBeta](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-aadspnsignineventsbeta-table)** | Microsoft Entra service principal and managed identity sign-ins |
-| **[AgentsInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-agentsinfo-table)** \(Preview\) | Information about AI agents and their properties from various platforms |
-| **[AIAgentsInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-aiagentsinfo-table)** \(Preview\) | Information about AI agents created with Microsoft Copilot Studio, including agent configuration and ownership details |
+| **[AgentsInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-agentsinfo-table)** | Information about AI agents and their properties from various platforms |
 | **[AlertEvidence](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-alertevidence-table)** | Files, IP addresses, URLs, users, or devices associated with alerts |
 | **[AlertInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-alertinfo-table)** | Alerts from Microsoft Defender for Endpoint, Microsoft Defender for Office 365, Microsoft Defender for Cloud Apps, and Microsoft Defender for Identity, including severity information and threat categorization |
 | **[BehaviorEntities](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-behaviorentities-table)** \(Preview\) | Entities \(file, process, device, user, and others\) that are involved in a behavior in Microsoft Defender for Cloud Apps \(not available for GCC\) and User and Entity Behavior Analytics \(UEBA\) |

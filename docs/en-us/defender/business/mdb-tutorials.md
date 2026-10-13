@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-tutorials -->
-<!-- Sitemap-Last-Modified: 2025-09-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Learning resources for Microsoft Defender for Business
 

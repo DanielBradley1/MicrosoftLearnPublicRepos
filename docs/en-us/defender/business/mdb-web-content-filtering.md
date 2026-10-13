@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-web-content-filtering -->
-<!-- Sitemap-Last-Modified: 2026-07-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Web content filtering in Microsoft Defender for Business
 

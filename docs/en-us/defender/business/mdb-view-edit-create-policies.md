@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-business/mdb-view-edit-create-policies -->
-<!-- Sitemap-Last-Modified: 2026-06-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # View or edit policies in Microsoft Defender for Business
 

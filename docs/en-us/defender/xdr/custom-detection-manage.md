@@ -50,7 +50,7 @@ You can also take the following actions on the rule from the rule details page:
 - **Modify query** - opens the query directly in advanced hunting for editing
 - **Turn on** / **Turn off** - allows you to enable the rule or stop it from running
 - **Delete** - turns off the rule and permanently removes it
-- **Include or exclude from correlation** - allows you to include or exclude an analytics rule from correlation. See [Manage analytics rule correlation settings in Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/exclude-analytics-rules-correlation) for more information.
+- **Include or exclude from correlation** - allows you to include or exclude an analytics rule from correlation. For custom detections, this per-rule setting is in public preview. Custom detections are included in correlation by default. See [Manage detection rule correlation settings in Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/exclude-analytics-rules-correlation) for more information.
 
 ### View and manage triggered alerts
 

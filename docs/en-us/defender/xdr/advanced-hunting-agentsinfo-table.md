@@ -1,11 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-agentsinfo-table -->
 <!-- Sitemap-Last-Modified: 2026-06-03 -->
 
-# AgentsInfo \(Preview\)
+# AgentsInfo
 
 Important
-
-Some information relates to prereleased product that may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 The `AIAgentsInfo` table is transitioning to the `AgentsInfo` table. Microsoft Agent 365 customers should use the `AgentsInfo` table today. The `AIAgentsInfo` table remains accessible until July 1, 2026. Migrate your queries from `AIAgentsInfo` to `AgentsInfo` before this date. For more information, see [Advanced hunting schema - Naming changes](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-schema-changes).
 
