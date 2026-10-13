@@ -26,6 +26,18 @@ For new information about Windows Autopilot solutions, see:
 
 You can use RSS to be notified when this page is updated. For more information, see [How to use the docs](https://learn.microsoft.com/en-us/intune/fundamentals/use-docs#notifications).
 
+## Week of October 12, 2026
+
+### Advanced capabilities \(formerly "Microsoft Intune Suite"\)
+
+#### New Remote Help for Windows version available
+
+Remote Help for Windows version 5.2.1210.0 is now available. This release includes stability and observability improvements.
+
+Applies to:
+
+- Windows
+
 ## Week of October 5, 2026
 
 ### Device security
