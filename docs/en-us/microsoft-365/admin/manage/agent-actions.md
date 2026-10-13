@@ -213,7 +213,7 @@ IT administrators can reassign ownership for agents that don't have an owner or 
 
 Important
 
-You can only reassign ownership of shared agents for Agent Builder and Copilot Studio agents.
+You can only reassign ownership of shared agents for Agent Builder and Copilot Studio agents. You can't reassign ownership of first-party agents, such as system agents or pre-built agents by Microsoft.
 
 To reassign ownership of a shared agent, follow these steps:
 

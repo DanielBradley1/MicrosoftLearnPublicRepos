@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/builder-guide -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Build solutions for Microsoft 365 Copilot
 

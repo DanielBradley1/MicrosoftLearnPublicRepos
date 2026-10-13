@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # What is a Microsoft 365 Copilot plugin?
 

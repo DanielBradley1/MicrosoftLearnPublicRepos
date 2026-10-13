@@ -3,7 +3,11 @@
 
 # Work IQ MCP overview
 
-The Work IQ MCP server exposes Microsoft 365 intelligence capabilities to AI agents through the [Model Context Protocol \(MCP\)](https://modelcontextprotocol.io). It provides a set of generic tools that enable agents to read, create, update, and delete Microsoft 365 entities, invoke Microsoft 365 Copilot for natural-language reasoning, and discover API schemas - all through a single MCP endpoint.
+The Work IQ MCP server exposes Microsoft 365 intelligence capabilities to AI agents through the [Model Context Protocol \(MCP\)](https://modelcontextprotocol.io). It provides tools that enable agents to read, create, update, and delete Microsoft 365 entities, invoke Microsoft 365 Copilot for natural-language reasoning, retrieve grounding content, and discover API schemas - all through a single MCP endpoint.
+
+Note
+
+The `retrieve` tool is available in public preview.
 
 Tip
 
@@ -19,12 +23,12 @@ Work IQ MCP is built on the following design principles:
 
 ## Tool categories
 
-The 10 tools are organized into four categories:
+The tools are organized into four categories:
 
 | Category | Tools | Description |
 | --- | --- | --- |
-| Entity tools | `fetch`, `create_entity`, `update_entity`, `delete_entity`, `do_action`, `call_function` | CRUD operations and actions on Microsoft 365 resources |
-| Copilot tools | `ask`, `list_agents` | Invoke Microsoft 365 Copilot for natural-language intelligence and discover available agents |
+| Entity tools | `fetch`, `fetch_blob`, `create_entity`, `update_entity`, `delete_entity`, `do_action`, `call_function` | CRUD operations and actions on Microsoft 365 resources |
+| Copilot tools | `ask`, `retrieve`, `list_agents` | Invoke Microsoft 365 Copilot, retrieve grounding content, and discover available agents |
 | Schema tools | `get_schema`, `search_paths` | Discover available API paths and retrieve OpenAPI schemas at runtime |
 
 For detailed information about each tool, including parameters, see [Work IQ MCP tool reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/tool-reference).
@@ -40,9 +44,10 @@ create_entity /me/events                   → create a calendar event
 fetch /me/chats/{id}/messages              → read Teams chat messages
 call_function /search/query                → semantic search
 ask "What deals closed this quarter?"      → invoke Copilot agent
+retrieve "Find the latest launch risks"     → return grounding and source metadata
 ```
 
-New workloads, backends, and data sources add **paths**, not tools. The tool surface stays fixed at 10.
+New workloads, backends, and data sources can add **paths** without requiring a separate tool for every resource.
 
 ## Authentication
 
@@ -50,10 +55,11 @@ The Work IQ MCP server uses Microsoft Entra ID for authentication. MCP clients a
 
 Note
 
-The Work IQ service principal is created automatically in the tenant when Work IQ is used for the first time. In some corner cases, such as configuring Work IQ MCP policy in the Microsoft 365 admin center before any MCP use in the tenant, the service principal might not exist yet and policy configuration can fail. Tenant administrators can provision it by following the steps in [Enable your tenant for Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/enable-work-iq).
+The Work IQ service principal is created automatically in the tenant when you use Work IQ for the first time. In some corner cases, such as configuring Work IQ MCP policy in the Microsoft 365 admin center before any MCP use in the tenant, the service principal might not exist yet and policy configuration can fail. Tenant administrators can provision it by following the steps in [Enable your tenant for Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/enable-work-iq).
 
 ## Related content
 
 - [Work IQ API overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview)
 - [Work IQ MCP tool reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/tool-reference)
+- [Use the retrieve tool in Work IQ MCP](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/retrieve)
 - [Work IQ API permissions reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/permissions)

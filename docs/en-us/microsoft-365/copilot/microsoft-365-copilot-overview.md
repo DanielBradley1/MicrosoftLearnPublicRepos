@@ -19,6 +19,8 @@ Note
 
 Anthropic subprocessors are available only in applicable Microsoft 365 licensed experiences and aren't available to all users by default. Anthropic operates with [Microsoft Enterprise data protections](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection). For more information, see [Anthropic models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor).
 
+## Compare Microsoft 365 Copilot licenses
+
 | Copilot Chat \(Basic\) license | Microsoft 365 Copilot \(Basic\) license | Microsoft 365 Copilot \(Premium\) license |
 | --- | --- | --- |
 | Securely interact with Copilot Chat using web data only | Securely interact with Copilot Chat using web data only | Securely interact with Copilot using web data and work data \([Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview-major-services) and [Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/)\) |

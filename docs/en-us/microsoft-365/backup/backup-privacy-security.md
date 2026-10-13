@@ -47,6 +47,50 @@ All data within Microsoft 365 Backup is stored within the customer tenant for an
 
 [Microsoft Purview auditing solutions](https://learn.microsoft.com/en-us/purview/audit-get-started) provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. You can [search for audit events](https://learn.microsoft.com/en-us/purview/audit-search) for [Backup activities](https://learn.microsoft.com/en-us/purview/audit-log-activities) such as create policy or restore using PowerShell or Microsoft Purview Audit.
 
+## Activity logs
+
+**Microsoft 365 Backup Activity Logs** provide an in-product view of backup policy and restore operations. Use activity logs for operational monitoring and troubleshooting. For compliance investigations that require the Microsoft 365 audit record, continue to use Microsoft Purview Audit.
+
+Activity logs include policy creation, activation, modification, pause, rename, deletion, dynamic rule activity \(creation, modification or deletion\), complete product level offboarding, protection-unit offboarding, and restore task creation and completion. Read-only operations, such as viewing policies or listing restore points, aren't included.
+
+**Open activity logs**
+
+1. Go to the Microsoft 365 admin center.
+2. Open **Microsoft 365 Backup**.
+3. Click on **Reports** tab.
+4. In the **Recent activities** card, click **View more** to open the **Activity logs** page.
+
+![User's image 1](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-privacy-security/image.png?view=o365-worldwide)
+
+![User's image 2](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-privacy-security/image1.png?view=o365-worldwide)
+
+The page shows total, successful, and failed activity counts. Each activity includes its status, service, impact, date, and the admin or system identity that performed it. Policy and restore details appear when they apply to the activity.
+
+**Find and export activities**
+
+- Use the date selector to choose the period you want to review.
+- Filter by activity, status, service, impact, or performed by.
+
+  - Status options can be Succeeded, Failed or Partially succeeded.
+  - Service options can be SharePoint, Exchange or OneDrive.
+  - Impact options can be
+
+    - High: Activities that disrupt backups \(for example, pausing or deleting backups, partial or full offboarding\) or trigger large-scale restores \(CSV based restores\).
+    - Medium: Activities that affect backups or restores and may require attention \(for example, policy activation, modification, dynamic rule creation or deletion etc.\).
+    - Low: Activities with little or no effect on backups or restores \(for example, policy rename, policy creation etc.\).
+
+- Use free-text search to find activities by supported activity log values.
+
+Click on **Export** to download the current filtered or searched result as a CSV file.
+
+Activity logs are retained for 365 days. The retention period isn't configurable. The system can support up to 1 million activities across all the supported services.
+
+**Required roles**
+
+- Global Administrators and Microsoft 365 Backup Administrators can view activity for SharePoint, OneDrive, and Exchange.
+- SharePoint Administrators can view activity for SharePoint and OneDrive.
+- Exchange Administrators can view activity for Exchange.
+
 ## Security
 
 Microsoft 365 Backup works with and integrates into Microsoft 365. This means that the Microsoft 365 security capabilities-such as identity and app management-apply to Microsoft 365 Backup. The bring-your-own-key \(BYOK\) feature seamlessly integrates with Microsoft 365 Backup to enhance data security.

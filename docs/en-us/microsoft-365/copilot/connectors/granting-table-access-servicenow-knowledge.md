@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/granting-table-access-servicenow-knowledge -->
-<!-- Sitemap-Last-Modified: 2026-04-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Grant table access to an account in ServiceNow Knowledge
 

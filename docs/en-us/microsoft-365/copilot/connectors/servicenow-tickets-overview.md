@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-tickets-overview -->
-<!-- Sitemap-Last-Modified: 2026-08-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # ServiceNow Tickets connector overview
 

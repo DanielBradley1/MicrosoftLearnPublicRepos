@@ -16,18 +16,14 @@ For more information, see [Network requirements for Microsoft Copilot](https://l
 
 Security is foundational to Microsoft's approach to Microsoft Copilot. This article explains how Microsoft secures Copilot and how it inherits Microsoft 365 security, compliance, and privacy protections.
 
-[![Diagram depicting ways Microsoft secures Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/security-microsoft-365-copilot/microsoft-secures-copilot.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/security-microsoft-365-copilot/microsoft-secures-copilot.png#lightbox)
+This article provides a high-level overview of Microsoft's security approach for Microsoft Copilot. It doesn't include deployment or data-readiness steps.
 
-Note
+- For detailed information about prompt defense, see [Microsoft Copilot prompt defense in depth](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-prompt-defense-in-depth).
+- For rollout planning and readiness guidance, see [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot).
+- For deep technical details about data flow, protections, and auditing, see:
 
-This article describes Microsoft's security approach for Microsoft Copilot. It doesn't include deployment or data-readiness steps.
-
-For rollout planning and readiness guidance, see [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot).
-
-For deep technical details about data flow, protections, and auditing, see:
-
-- [Microsoft Copilot data protection architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing)
-- [How does Microsoft Copilot work?](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture)
+  - [Microsoft Copilot data protection architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing)
+  - [How does Microsoft Copilot work?](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture)
 
 ## Microsoft's defense-in-depth approach
 

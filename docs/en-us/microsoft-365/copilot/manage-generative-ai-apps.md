@@ -36,8 +36,6 @@ Discovering, monitoring, and managing AI apps is essential to prevent data leaks
 
 ## Use DSPM for AI to discover and manage AI app usage
 
-[![Diagram depicting DSPM for AI capabilities and uses.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/manage-generative-ai-apps/use-dspm-for-ai-to-discover-manage-ai-app-usage.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/manage-generative-ai-apps/use-dspm-for-ai-to-discover-manage-ai-app-usage.png#lightbox)
-
 DSPM for AI provides your security and compliance team to discover AI activity, protect data in AI prompts, and govern data handling. [Learn more about DSPM for AI](https://learn.microsoft.com/en-us/purview/dspm-for-ai?tabs=m365).
 
 1. **Create or activate Purview policies**. DSPM for AI includes default policies that you can activate. See [One-click policies from Data Security Posture Management for AI](https://learn.microsoft.com/en-us/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai).
@@ -67,8 +65,6 @@ You can use the Microsoft Defender portal to see a list of AI apps your organiza
 
 ### Create a policy to monitor AI apps
 
-[![Diagram depicting how to create a policy to monitor AI apps.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/manage-generative-ai-apps/create-policy-monitor-ai-apps.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/manage-generative-ai-apps/create-policy-monitor-ai-apps.png#lightbox)
-
 Make sure to review the [prerequisites](https://learn.microsoft.com/en-us/defender-cloud-apps/governance-discovery#prerequisites). Also see [Control cloud apps with policies](https://learn.microsoft.com/en-us/defender-cloud-apps/governance-discovery#control-cloud-apps-with-policies).
 
 Create a new [custom policy](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-app-policies-create#custom-policies), specifying the following settings:
@@ -81,8 +77,6 @@ Create a new [custom policy](https://learn.microsoft.com/en-us/defender-cloud-ap
 - In the **Apply to** list, select **All continuous reports**.
 
 ### Create a policy to block specific AI apps
-
-[![Diagram depicting the steps to create a policy to block specific AI apps.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/manage-generative-ai-apps/create-policy-block-specific-ai-apps.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/manage-generative-ai-apps/create-policy-block-specific-ai-apps.png#lightbox)
 
 Make sure to review the articles [Control cloud apps with policies](https://learn.microsoft.com/en-us/defender-cloud-apps/governance-discovery#control-cloud-apps-with-policies) and [Create app governance policies](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-app-policies-create#custom-policies).
 

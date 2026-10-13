@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Microsoft Copilot adoption guide and overview for IT admins
 
