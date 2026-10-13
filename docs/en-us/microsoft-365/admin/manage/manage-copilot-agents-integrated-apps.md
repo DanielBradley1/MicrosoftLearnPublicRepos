@@ -45,6 +45,12 @@ You can manage several types of agents in Microsoft Copilot, each serving differ
   - **App Builder agent**: A type of Frontier agent developed by Microsoft that can be managed as part of Microsoft Copilot. You can also manage App Builder using [Power Platform admin center](https://admin.powerplatform.microsoft.com).
   - **Workflows agent**: A type of Frontier agent developed by Microsoft that can be managed as part of Microsoft Copilot. Flows created in Copilot are saved to the default environment unless [environment routing](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing?tabs=new#turn-on-environment-routing-in-the-admin-center) is enabled for Copilot Studio. You can also manage flows using the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
 
+Note
+
+The same Copilot Studio agent \(declarative or custom engine\) can appear more than once in the admin center with different publisher states, such as **Shared by creator** and **Published by your organization**. Depending on the publishing lifecycle and the actions that creators and admins take, these duplicate-looking entries can represent separate lifecycle and publisher records for the same underlying agent. They're expected and by design, not an error.
+
+For lifecycle details and available admin actions, see [How one agent can appear as multiple entries](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry#how-one-agent-can-appear-as-multiple-entries).
+
 ## Get started
 
 To get started managing agents within Microsoft 365 admin center, see [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-365-overview). You will learn about agent management roles and permissions, as well as agent inventory, lifecycle, tools, and settings.

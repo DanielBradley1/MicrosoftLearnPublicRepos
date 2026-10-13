@@ -222,6 +222,14 @@ Search can be filtered by time range, sender, recipient, attachment, subject, an
 
 For more information, see [Restore data in Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide).
 
+### Which Exchange mailbox types are supported?
+
+**October 12, 2026**
+
+Microsoft 365 Backup supports both user mailboxes and shared mailboxes. Other Exchange recipient types, including room mailboxes and group mailboxes, aren't supported.
+
+For more information, see [Create Exchange backup policies](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide).
+
 ### Which Exchange recipient types aren't supported?
 
 **January 28, 2026**

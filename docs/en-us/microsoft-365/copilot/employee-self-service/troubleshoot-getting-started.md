@@ -109,7 +109,7 @@ If your organization uses multiple tenants, make sure you're signing in to the t
 
 1. Sign in to [Copilot Studio](https://copilotstudio.microsoft.com/) in your browser with the same work account.
 2. Confirm the environment selector at the top of the page matches the environment you want.
-3. Confirm you can see the Employee Self-Service agent in the Agents list. If you can't, Employee Self-Service isn't installed in that environment. See [Install the Employee Self-Service agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/install).
+3. Confirm you can see the Employee Self-Service agent in the Agents list. If you can't, Employee Self-Service isn't installed in that environment. See [Install the Employee Self-Service Custom Engine Agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/install).
 4. If Employee Self-Service is there but the kit doesn't see it, your account may not be assigned the Environment Maker role. See [Prerequisites - Required roles](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/prerequisites#required-roles).
 
 ## /setup hangs partway through extraction

@@ -19,6 +19,10 @@ Versions give individual users a way to restore files or sites to prior points i
 
 Legal holds retain data, but that feature is optimized for export \(for example, via eDiscovery\), not for mass restore. Microsoft 365 Backup gives the right enhanced restore tooling for ransomware and accidental/malicious deletions at scale, plus optimized performance for those scenarios.
 
+#### Which Exchange mailbox types are supported?
+
+Microsoft 365 Backup supports both user mailboxes and shared mailboxes. Other Exchange recipient types, including room mailboxes and group mailboxes, aren't supported.
+
 #### What mailbox changes are "backed up"?
 
 Mailbox backup enables the recovery of copies of mailbox item "versions." Two types of actions create versions:

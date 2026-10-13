@@ -88,6 +88,6 @@ Select the new environment and agent when prompted.
 
 ## Next step
 
-After FlightCheck reports a clean run, see [Publish the Employee Self-Service agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/publish) to take the agent live.
+After FlightCheck reports a clean run, see [Publish to your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-publish) to take the agent live.
 
 If the installer fails or FlightCheck can't reach your environment, see [Troubleshoot getting started](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/troubleshoot-getting-started).

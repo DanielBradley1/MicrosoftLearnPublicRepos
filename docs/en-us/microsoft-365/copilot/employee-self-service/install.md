@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/install -->
 <!-- Sitemap-Last-Modified: 2026-04-27 -->
 
-# Install the Employee Self-Service agent
+# Install the Employee Self-Service Custom Engine Agent
 
-After completing the required steps in the [preparation](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/prepare) stage, you can install either or both the following Employee Self-Service agent starters in a specific Power Platform environment:
+Note
+
+This article covers the Custom Engine Agent \(CEA\) experience. To install the Employee Self-Service declarative agent templates, see [Install an Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/install-declarative-agent).
+
+After completing the required steps in the [preparation](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/prepare) stage, you can install either or both of the following Custom Engine Agent starters in a specific Power Platform environment:
 
 - Employee Self-Service HR agent
 - Employee Self-Service IT agent
@@ -99,7 +103,7 @@ Note
 
 ✅ \(Optional\) Setup Copilot ALM Starter for enterprise CI/CD
 
-## Install the Employee Self-Service agent for customization
+## Install the Custom Engine Agent for customization
 
 1. Go to the Copilot Studio home page.
 2. Select **Create** in the navigation pane. You should see an **Employee Self-Service HR** agent and an **Employee Self-Service IT** agent.

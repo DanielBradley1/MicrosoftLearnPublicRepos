@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/multi-agent-hub -->
 <!-- Sitemap-Last-Modified: 2026-05-29 -->
 
-# Employee Self-Service Agent hub
+# Set up the Employee Self-Service hub for custom engine agents
 
-The Employee Self-Service Agent hub gives employees a single front door for HR and IT help. You can set up one parent agent that routes queries to other domain agents through a seamless experience. This functionality is suited for teams that use multiple domain agents and require a unified agent experience.
+The Employee Self-Service hub gives employees one place to get help across multiple business domains. This article explains how to build the hub by connecting Employee Self-Service custom engine agents in Microsoft Copilot Studio. Each connected agent focuses on a specific domain and provides specialized capabilities, while the hub routes employee requests to the appropriate agent.
+
+Note
+
+This article applies to Employee Self-Service custom engine agents built with Microsoft Copilot Studio.
 
 ## Set up the Employee Self-Service Agent hub
 
@@ -11,7 +15,7 @@ The Employee Self-Service Agent hub gives employees a single front door for HR a
 
 Before you set up the Employee Self-Service Agent, make sure you meet the following requirements:
 
-- Complete the [installation](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/install) and [publishing](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/publish) steps for the Employee Self-Service HR and Employee Self-Service IT agents.
+- Complete the [Custom Engine Agent installation](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/install) and [publishing](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/publish) steps for the Employee Self-Service HR and Employee Self-Service IT agents.
 - Publish domain agents in a single Microsoft Copilot Studio environment.
 - Verify you have the required [roles](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/deploy-overview-alm) assigned: Power Platform admin, Copilot Studio maker, or HR/IT application owner.
 

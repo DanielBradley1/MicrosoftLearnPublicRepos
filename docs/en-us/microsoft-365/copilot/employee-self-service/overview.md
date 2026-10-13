@@ -1,15 +1,19 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/overview -->
 <!-- Sitemap-Last-Modified: 2026-03-27 -->
 
-# Employee Self-Service
+# Introduction to Employee Self-Service Custom Engine Agent
 
-As part of our general availability release, access is rolling out in waves, starting with managed customers and expanding to all customers over time. If you'd like to explore access sooner, reach out to your Microsoft account team. If you don't currently have an account team, keep an eye on [this blog post](https://aka.ms//gablog) for updates on when the Employee Self-Service Agent is available to all customers in Copilot Studio.
+Important
 
-The Employee Self-Service agent is designed as a unified, customer-facing, AI-powered interface for handling employee requests and automating routine tasks within enterprise environments. The Employee Self-Service agent, built on Copilot Studio, is designed for you to customize. Once you customize it for your organization's needs, the Employee Self-Service agent streamlines acc to HR, IT, and operational systems, reducing manual intervention and improving process efficiency.
+This documentation applies to the Employee Self-Service Custom Engine Agent. If you're deploying the latest Employee Self-Service experience, see [Employee Self-Service Declarative Agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-overview).
+
+For Responsible AI information shared by both ESS experiences, see the [Responsible AI FAQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/rai-faq).
+
+The Employee Self-Service Custom Engine Agent is designed as a unified, customer-facing, AI-powered interface for handling employee requests and automating routine tasks within enterprise environments. The Employee Self-Service Custom Engine Agent, built on Copilot Studio, is designed for you to customize. Once you customize it for your organization's needs, the Employee Self-Service agent streamlines acc to HR, IT, and operational systems, reducing manual intervention and improving process efficiency.
 
 ## Technical Architecture
 
-The Employee Self-Service agent operates as a custom agent within **Copilot Studio**, using **Microsoft's AI infrastructure** and **Power Platform**. The agent is constructed on a modular architecture. This design enables integration with enterprise data sources using APIs, connectors, and secure authentication mechanisms. The solution supports multitenant deployments and is adaptable to on-premises, hybrid, or fully cloud-based environments, depending on organizational requirements.
+The Employee Self-Service Custom Engine Agent operates as a custom agent within **Copilot Studio**, using **Microsoft's AI infrastructure** and **Power Platform**. The agent is constructed on a modular architecture. This design enables integration with enterprise data sources using APIs, connectors, and secure authentication mechanisms. The solution supports multitenant deployments and is adaptable to on-premises, hybrid, or fully cloud-based environments, depending on organizational requirements.
 
 ## Integration Capabilities
 
@@ -27,9 +31,9 @@ Data security and compliance are enforced through:
 
 ## Core features
 
-- **Employee and Manager scenarios**: The Employee Self-Service agent enables users to execute tasks such as querying HR policies, initiating IT support tickets, and updating personal information through conversational interfaces. All interactions are logged for auditability.
+- **Employee and Manager scenarios**: The Employee Self-Service Custom Engine Agent enables users to execute tasks such as querying HR policies, initiating IT support tickets, and updating personal information through conversational interfaces. All interactions are logged for auditability.
 
-  - **Employee Self-Service agent starters are separate to focus on domains - HR and IT**. Employee Self-Service agent starters are beginning points to help you get started with a specific agent path, based on your organization's needs. Each starter offers slightly different functionality to focus on the core jobs to be done of the domain and is extensible.
+  - **Employee Self-Service agent starters are separate to focus on domains - HR and IT**. Employee Self-Service Custom Engine Agent starters are beginning points to help you get started with a specific agent path, based on your organization's needs. Each starter offers slightly different functionality to focus on the core jobs to be done of the domain and is extensible.
 
     - **HR agent starter**: Empowers employees to self-serve HR needs by delivering clear, policy-based answers and guidance. This template delivers capabilities, including easy navigation of benefits, policy lookups, and access to organizational resources. The agent maintains an empathetic, professional tone and enforces boundaries by escalating complex or sensitive requests \(such as legal or personnel decisions\) to HR specialists.
     - **IT agent starter**: Enables employees to resolve IT issues efficiently through step-by-step troubleshooting and automated support flows. Key features include guided device setup, secure account management, and instant access to IT resources. The agent prioritizes clarity and patience, and ensures safe practices to protect data and systems.
@@ -61,17 +65,17 @@ In addition to the shipped solution accelerators, the agent is extensible within
 
 ## Implementation considerations
 
-Consider which Employee Self-Service agent starter is right for your organization to start with - HR or IT. Both Employee Self-Service agent starter can be deployed into a single Employee Self-Service agent experience, but you must deploy them one at a time. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/customize) about how to get started customizing the Employee Self-Service agent, common roles and responsibilities, and basic agent building blocks.
+Consider which Employee Self-Service Custom Engine Agent starter is right for your organization to start with - HR or IT. Both Employee Self-Service Custom Engine Agent starter can be deployed into a single Employee Self-Service Custom Engine Agent experience, but you must deploy them one at a time. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/customize) about how to get started customizing the Employee Self-Service agent, common roles and responsibilities, and basic agent building blocks.
 
-- **Deployment**: The Employee Self-Service agent can be provisioned in sandbox or production environments through the Power Platform Admin Center. Deployment pipelines support continuous integration and delivery, with environment isolation for testing and validation.
+- **Deployment**: The Employee Self-Service Custom Engine Agent can be provisioned in sandbox or production environments through the Power Platform Admin Center. Deployment pipelines support continuous integration and delivery, with environment isolation for testing and validation.
 - **Configuration**: Initial setup involves defining integration endpoints, mapping user roles, and configuring dialog flows. Starters and accelerators are available to expedite common scenarios. [Run FlightCheck](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/commands-reference#flightcheck-readiness-check) to proactively validate your configuration end-to-end.
 - **Security**: The solution adheres to enterprise-grade security standards, including identity federation, least-privilege access, and encrypted storage. Compliance with regulatory frameworks like GDPR and HIPAA is supported through built-in auditing and data retention policies.
 
-The Employee Self-Service agent and Copilot Studio consolidate employee self-service tasks within a secure, extensible, and scalable architecture. This consolidation delivers operational efficiencies and integration flexibility tailored for enterprise IT environments.
+The Employee Self-Service Custom Engine Agent and Copilot Studio consolidate employee self-service tasks within a secure, extensible, and scalable architecture. This consolidation delivers operational efficiencies and integration flexibility tailored for enterprise IT environments.
 
-## Structure of the Employee Self-Service agent
+## Structure of the Employee Self-Service Custom Engine Agent
 
-The Employee Self-Service agent consists of three main parts: the agent itself, domain topic packages, and Power Platform connectors and actions.
+The Employee Self-Service Custom Engine Agent consists of three main parts: the agent itself, domain topic packages, and Power Platform connectors and actions.
 
 [![Infographic showing the structure of the Employee Self-Service agent.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/structure-big.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/structure-big.png#lightbox)
 
@@ -79,7 +83,7 @@ The Employee Self-Service agent consists of three main parts: the agent itself, 
 
 ## Overview of external systems integration capabilities
 
-The Employee Self-Service agent integrates with a few external systems. These systems can be used as for knowledge retrieval scenarios, read/write workflows, and hand-off to other agents or support channels.
+The Employee Self-Service Custom Engine Agent integrates with a few external systems. These systems can be used as for knowledge retrieval scenarios, read/write workflows, and hand-off to other agents or support channels.
 
 The following matrix provides an overview of the various external systems integration capabilities:
 
@@ -99,16 +103,16 @@ The following matrix provides an overview of the various external systems integr
 
 ## Use Employee Self Service on Mobile
 
-Employee Self Service is available on mobile through the Microsoft Copilot app on iOS and Android. This availability enables employees to access HR and IT support wherever they work.
+Employee Self-Service Custom Engine Agent is available on mobile through the Microsoft Copilot app on iOS and Android. This availability enables employees to access HR and IT support wherever they work.
 
 ### What Employee Self Service on Mobile Supports
 
-- Access to the Employee Self Service agent from the Microsoft Copilot mobile app
+- Access to the Employee Self-Service Custom Engine Agent from the Microsoft Copilot mobile app
 - Core Employee Self Service scenarios aligned with the web experience
 
 ### How Access Works
 
-If your organization enables Employee Self Service on web, users can access Employee Self Service on mobile by signing in to the Microsoft Copilot app and selecting the Employee Self Service agent from the agent list.
+If your organization enables Employee Self-Service Custom Engine Agent on web, users can access Employee Self Service on mobile by signing in to the Microsoft Copilot app and selecting the Employee Self Service agent from the agent list.
 
 No other configuration is required to enable mobile access.
 
@@ -116,7 +120,7 @@ Users should update to the latest version of the app if they're not able to see 
 
 ### Current Limitations
 
-The Employee Self Service mobile experience supports core self-service scenarios available through the Microsoft Copilot mobile app. Some capabilities currently available on web aren't yet supported on mobile.
+The Employee Self-Service Custom Engine Agent mobile experience supports core self-service scenarios available through the Microsoft Copilot mobile app. Some capabilities currently available on web aren't yet supported on mobile.
 
 | Capability Area | Limitation on Mobile | Recommended Behavior |
 | --- | --- | --- |
@@ -129,4 +133,4 @@ The Employee Self Service mobile experience supports core self-service scenarios
 
 ### What's Next
 
-The Employee Self Service mobile experience continues to evolve as platform and configuration capabilities converge. Future updates are going to support scenarios and improve parity across surfaces.
+The Employee Self-Service Custom Engine Agent mobile experience continues to evolve as platform and configuration capabilities converge. Future updates are going to support scenarios and improve parity across surfaces.

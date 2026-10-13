@@ -3,6 +3,10 @@
 
 # Employee Self-Service agent deployment overview
 
+Note
+
+The managed-solution deployment process below applies to ESS custom engine agents. For ESS declarative agents, follow the [DA publishing process](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-publish#promote-the-declarative-agent-to-prod), including Dev, Test, and Prod quality gates, organization approval, and audience assignment. Don't use managed-solution export and import for DA promotion.
+
 There are several steps necessary to deploy the Employee Self-Service agent. Refer to the table for an overview of the deployment process.
 
 | Role | Development environment | Production environment |
