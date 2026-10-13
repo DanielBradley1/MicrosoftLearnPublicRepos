@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-faq -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Microsoft Entra application proxy frequently asked questions
 

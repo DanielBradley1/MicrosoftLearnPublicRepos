@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Run a registration campaign to set up a passkey or Microsoft Authenticator
 
