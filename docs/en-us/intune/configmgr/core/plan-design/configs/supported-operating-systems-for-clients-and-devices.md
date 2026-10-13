@@ -176,6 +176,10 @@ Configuration Manager has built-in capabilities for managing mobile devices that
 
 ## Exchange Server connector
 
+Important
+
+Starting in November 2021, this feature of Configuration Manager is [deprecated](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
+
 Configuration Manager supports limited management of devices that connect to your Exchange Server, without installing the Configuration Manager client. For more information, see [Manage mobile devices with Configuration Manager and Exchange](https://learn.microsoft.com/en-us/intune/configmgr/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).
 
 ### Supported versions of Exchange Server
