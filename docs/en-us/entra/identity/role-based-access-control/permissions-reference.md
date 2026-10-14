@@ -19,7 +19,7 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft Copilot and AI-related enterprise services in Microsoft 365.  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) | d2562ede-74db-457e-a7b6-544e236ebb61 |
 | [AI Reader](#ai-reader) | Read all aspects of Microsoft Copilot and AI-related enterprise services in Microsoft 365.  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) | 1fe13547-53f6-408d-ac04-7f8eed167b38 |
 | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
-| [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) | cf1c38e5-3621-4004-a7cb-879624dced7c |
+| [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting and update applications they own.  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) | cf1c38e5-3621-4004-a7cb-879624dced7c |
 | [Attack Payload Author](#attack-payload-author) | Can create attack payloads that an administrator can initiate later. | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f |
 | [Attack Simulation Administrator](#attack-simulation-administrator) | Can create and manage all aspects of attack simulation campaigns. | c430b396-e693-46cc-96f3-db01bf8bb62a |
 | [Attribute Assignment Administrator](#attribute-assignment-administrator) | Assign custom security attribute keys and values to supported Microsoft Entra objects. | 58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d |
@@ -497,13 +497,35 @@ This role grants the ability to manage application credentials. Users assigned t
 
 [![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions)
 
-This is a [privileged role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions). Users in this role can create application registrations when the "Users can register applications" setting is set to No. This role also grants permission to consent on one's own behalf when the "Users can consent to apps accessing company data on their behalf" setting is set to No. Users assigned to this role are added as owners when creating new application registrations.
+This is a [privileged role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions). Users in this role can create application registrations when the "Users can register applications" setting is set to No. Users assigned to this role are added as owners when creating new application registrations, and they can update applications that they own. This role also grants permission to consent on one's own behalf when the "Users can consent to apps accessing company data on their behalf" setting is set to No.
 
 | Actions | Description |
 | --- | --- |
 | microsoft.directory/applications/createAsOwner | Create all types of applications, and creator is added as the first owner |
 | microsoft.directory/oAuth2PermissionGrants/createAsOwner | Create OAuth 2.0 permission grants, with creator as the first owner  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) |
 | microsoft.directory/servicePrincipals/createAsOwner | Create service principals, with creator as the first owner |
+
+## Owned application registrations
+
+Users with the application developer role can perform the following actions on app registrations that they own:
+
+| Actions | Description |
+| --- | --- |
+| microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
+| microsoft.directory/applications/audience/update | Update the audience property for applications |
+| microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
+| microsoft.directory/applications/basic/update | Update basic properties for applications |
+| microsoft.directory/applications/credentials/update | Update application credentials  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) |
+| microsoft.directory/applications/delete | Delete all types of applications |
+| microsoft.directory/applications/disablement/update | Update whether an application is enabled for users to sign in |
+| microsoft.directory/applications/extensionProperties/update | Update extension properties on applications |
+| microsoft.directory/applications/notes/update | Update notes of applications |
+| microsoft.directory/applications/owners/update | Update owners of applications |
+| microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
+| microsoft.directory/applications/policies/update | Update policies of applications |
+| microsoft.directory/applications/tag/update | Update tags of applications |
+| microsoft.directory/applications/verification/update | Update application's verification property |
+| microsoft.directory/deletedItems.applications/delete | Permanently delete applications, which can no longer be restored |
 
 ## Attack Payload Author
 
