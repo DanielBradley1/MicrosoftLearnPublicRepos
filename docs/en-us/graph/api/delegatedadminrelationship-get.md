@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Get delegatedAdminRelationship
 
@@ -11,7 +11,7 @@ This API is available in the following [national cloud deployments](https://lear
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
 | --- | --- | --- | --- |
-| ✅ | ✅ | ✅ | ❌ |
+| ✅ | ✅ | ✅ | ✅ |
 
 ## Permissions
 

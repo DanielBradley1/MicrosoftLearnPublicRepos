@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-post-governancepolicytemplates?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Create tenantGovernancePolicyTemplate
 

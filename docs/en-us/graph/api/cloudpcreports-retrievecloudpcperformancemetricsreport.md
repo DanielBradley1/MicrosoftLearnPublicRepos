@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/cloudpcreports-retrievecloudpcperformancemetricsreport?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # cloudPcReports: retrieveCloudPcPerformanceMetricsReport
 
@@ -12,6 +12,12 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 Get VM-level utilization and performance metrics for a specific Cloud PC from the [cloudPcReports](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcreports?view=graph-rest-beta) resource, including CPU, memory, and network metrics. The metrics are returned as flattened time-series data.
 
 This API supports only Windows 365 Enterprise Cloud PCs and Windows 365 Frontline Cloud PCs in dedicated mode.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ❌ |
 
 ## Permissions
 
