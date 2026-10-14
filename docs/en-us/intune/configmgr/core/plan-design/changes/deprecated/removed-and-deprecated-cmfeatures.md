@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures -->
-<!-- Sitemap-Last-Modified: 2026-06-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Removed and deprecated features for Configuration Manager
 
