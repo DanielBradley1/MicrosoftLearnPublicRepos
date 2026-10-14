@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-entra-id-federation-customers -->
-<!-- Sitemap-Last-Modified: 2026-09-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
 
