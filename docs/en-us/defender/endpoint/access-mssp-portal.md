@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/access-mssp-portal -->
-<!-- Sitemap-Last-Modified: 2026-07-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Access the Microsoft Defender MSSP customer portal
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/exclude-analytics-rules-correlation -->
-<!-- Sitemap-Last-Modified: 2026-07-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Manage detection rule correlation settings in Microsoft Defender XDR
 

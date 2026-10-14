@@ -24,7 +24,15 @@ Make sure that the server on which you're activating the sensor:
 - Is onboarded to Defender for Endpoint. The Microsoft Defender Antivirus component can be in either active or passive mode. For eligible domain controllers, you can instead use [sensor v3.x onboarding without Defender for Endpoint deployment](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-the-domain-controller-preview).
 - Doesn't have a Defender for Identity sensor v2.x already deployed.
 - Runs Windows Server 2019 or later.
-- Has the Windows Server July 2026 or later cumulative update installed.
+- Has the Windows Server September 2026 or later cumulative update installed \(Defender for Identity sensor version 3.0.10 or later\).
+
+Use the September 2026 cumulative update for your Windows Server version, or a later cumulative update:
+
+| Windows Server version | September 2026 cumulative update |
+| --- | --- |
+| Windows Server 2019 | [KB5122876](https://support.microsoft.com/en-us/servicing/os/windows-10/2026/09/kb5122876-windows-10-1809-security-update) |
+| Windows Server 2022 | [KB5122882](https://support.microsoft.com/en-us/servicing/os/windows-server/2026/09/kb5122882-windows-server-2022-security-update) |
+| Windows Server 2025 | [KB5122871](https://support.microsoft.com/en-us/servicing/os/windows-server/2026/09/kb5122871-windows-server-2025-security-update) |
 
 #### Supported server types
 
@@ -95,7 +103,7 @@ The Defender for Identity sensor interacts with Active Directory in two ways:
 
 The v3.x sensor uses the local system identity of the server for both purposes. It doesn't use Directory Service Accounts \(DSA\) or group Managed Service Accounts \(gMSA\). LocalSystem is the only supported identity for v3.x.
 
-If you're migrating from sensor v2.x and previously had a gMSA configured for [action accounts](https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts), select **Automatically use the sensor's local system account** in the Microsoft Defender portal \(**Settings** > **Identities** > **Microsoft Defender for Identity** > **Manage action accounts**\). The v3.x sensors don't use gMSA accounts configured for v2.x sensors.
+Before migrating from sensor v2.x, select **Automatically use the sensor's local system account** in the Microsoft Defender portal \(**Settings** > **Identities** > **Microsoft Defender for Identity** > **Manage action accounts**\). Migration doesn't change this [action account setting](https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts) automatically. The v3.x sensors don't use gMSA accounts configured for v2.x sensors.
 
 Important
 
@@ -105,7 +113,7 @@ If any of your sensors are v3.x, select **Automatically use the sensor's local s
 
 If your workspace still has a Directory Service Account \(DSA\) or group Managed Service Account \(gMSA\) configured because v2.x sensors on AD FS, AD CS, or Entra Connect servers still require it, DSA and gMSA credentials continue to be validated on all sensors in the workspace, including v3.x sensors. If DSA or gMSA credential validation fails, the **Directory services user credentials are incorrect** health alert appears. Workspace-level validation of DSA and gMSA credentials on all sensors is by design. Defender for Identity validates DSA and gMSA credentials at the workspace level for all sensors as long as those accounts exist, regardless of whether individual sensors use them for auditing or response actions.
 
-Defender for Identity v3.x sensors ignore the DSA and gMSA for auditing and response actions, but they're still included in workspace-level credential validation. To stop receiving this health alert on v3.x sensors, remove the workspace-level DSA or gMSA after all sensors are fully migrated to v3.x and no v2.x sensors require it.
+Defender for Identity v3.x sensors ignore the DSA and gMSA for auditing and response actions, but they're still included in workspace-level credential validation. Migration doesn't remove the workspace-level DSA or gMSA configuration automatically. To stop receiving this health alert on v3.x sensors, manually remove the configuration after all sensors are fully migrated to v3.x and no v2.x sensors require it. Removing the workspace configuration doesn't delete the gMSA account in Active Directory.
 
 ### Test your prerequisites
 
@@ -129,7 +137,7 @@ If automatic auditing isn't available or you opted out, [configure auditing manu
 
 ### Configure RPC auditing
 
-Install the July 2026 or later Windows Server cumulative update before you install or upgrade to Defender for Identity sensor version 3.0.8 or later. Starting with sensor version 3.0.8, RPC auditing is enabled automatically on domain controllers, so you no longer need to apply an RPC configuration tag. The related health alert clears shortly after the upgrade.
+Install the September 2026 or later Windows Server cumulative update before you install or upgrade to Defender for Identity sensor version 3.0.10 or later. Starting with sensor version 3.0.8, RPC auditing is enabled automatically on domain controllers, so you no longer need to apply an RPC configuration tag. The related health alert clears shortly after the upgrade.
 
 Note
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/alerts-incidents-correlation -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-04 -->
 
 # Alert correlation and incident merging in the Microsoft Defender portal
 

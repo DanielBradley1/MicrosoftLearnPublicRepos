@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-agentsinfo-table -->
-<!-- Sitemap-Last-Modified: 2026-06-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # AgentsInfo
 

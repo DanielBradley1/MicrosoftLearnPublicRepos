@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/address-unwanted-behaviors-mde -->
-<!-- Sitemap-Last-Modified: 2026-07-29 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Address unwanted behaviors in Microsoft Defender for Endpoint
 
