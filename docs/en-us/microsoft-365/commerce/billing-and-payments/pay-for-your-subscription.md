@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/pay-for-your-subscription?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-05-10 -->
+<!-- Sitemap-Last-Modified: 2026-10-06 -->
 
 # Pay your Microsoft business invoice by using a credit or debit card
 

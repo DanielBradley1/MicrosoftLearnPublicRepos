@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/fasttrack/microsoft-security-copilot -->
-<!-- Sitemap-Last-Modified: 2026-04-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Microsoft Security Copilot
 

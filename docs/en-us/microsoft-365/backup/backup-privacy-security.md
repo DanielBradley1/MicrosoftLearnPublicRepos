@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-privacy-security?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Privacy, security, and compliance in Microsoft 365 Backup
 

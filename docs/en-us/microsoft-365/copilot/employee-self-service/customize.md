@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/customize -->
-<!-- Sitemap-Last-Modified: 2026-07-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Customize the Employee Self-Service agent
 

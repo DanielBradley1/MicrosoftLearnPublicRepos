@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/rai-faq -->
-<!-- Sitemap-Last-Modified: 2025-11-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Responsible AI FAQ for the Employee Self-Service agent
 

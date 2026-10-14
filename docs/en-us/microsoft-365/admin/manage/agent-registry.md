@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Manage agent registry in Microsoft 365 admin center
 

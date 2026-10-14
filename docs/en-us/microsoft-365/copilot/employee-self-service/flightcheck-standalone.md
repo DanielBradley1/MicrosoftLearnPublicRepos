@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/flightcheck-standalone -->
-<!-- Sitemap-Last-Modified: 2026-06-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Run FlightCheck without installing the full Agent Developer Kit
 

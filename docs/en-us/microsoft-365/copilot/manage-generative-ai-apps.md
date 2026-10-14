@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-generative-ai-apps -->
-<!-- Sitemap-Last-Modified: 2026-04-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Manage generative AI apps for your organization
 

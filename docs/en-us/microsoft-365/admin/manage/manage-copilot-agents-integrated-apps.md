@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Manage agents in the Microsoft 365 admin center
 
