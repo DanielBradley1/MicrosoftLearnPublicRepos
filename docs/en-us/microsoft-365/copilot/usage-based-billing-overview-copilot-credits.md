@@ -35,6 +35,7 @@ Microsoft 365 Copilot
 - Work IQ API for custom apps and agents
 - Copilot Managed Runtime
 - Teams Phone Agent
+- Code \(Copilot license required\)
 
 Spending policies can automatically apply to future supported Microsoft Copilot services and agents. The **Auto-apply new services** setting is enabled by default for spending policies. Administrators can turn off the setting for policies where future services and agents should be reviewed before they're added. For more information, see [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#select-agents-and-services).
 
@@ -54,6 +55,7 @@ For more information, see:
 - [Manage Copilot Cowork for your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance)
 - [Planning Teams Phone Agent](https://learn.microsoft.com/en-us/microsoftteams/aa-cq-plan-overview#teams-phone-agent)
 - [Copilot in SharePoint](https://learn.microsoft.com/en-us/SharePoint/copilot-in-sharepoint-get-started)
+- [Copilot Code \(Frontier\)](https://learn.microsoft.com/en-us/copilot/code)
 
 Estimate Cowork usage: Use the [Copilot Credit Estimator](https://aka.ms/CopilotCreditPlanningModel) to model potential credit usage for your organization.
 

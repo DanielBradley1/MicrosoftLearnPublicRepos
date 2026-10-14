@@ -155,6 +155,14 @@ The following image shows how the user accesses federated connector data sources
 
 [![Screenshot of federated connector data sources in Researcher.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/researcher-data-source.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/researcher-data-source.png#lightbox)
 
+## User experience and controls
+
+To connect and use a federated connector in Microsoft 365 Copilot Chat, follow this path: **Microsoft 365 Copilot Chat** > **...** > **Settings** > **Sources** > select a data source > **Connect**.
+
+An admin must enable the connector and make it available to users. Sign in to the data source with your own credentials, return to Copilot Chat, and enter a prompt that describes what you want to retrieve or do. Include the data source name and relevant details, such as a project or record name. For example, ask "Find the open issues for Project Alpha in my connected project-tracking tool and summarize their status." For illustrated connection steps, see [Connect to federated connectors in Copilot Chat](#connect-to-federated-connectors-in-copilot-chat).
+
+After connecting a data source, users can ask questions in a supported Copilot experience. Copilot selects relevant connector tools at runtime and uses the live results returned by the source to respond in the conversation. The source system remains the system of record, and users can access only the data their account is permitted to access.
+
 ## Dynamic tooling through MCP
 
 Dynamic tooling enables Microsoft 365 Copilot to retrieve information from connected systems and take actions in them at runtime based on a user's request.

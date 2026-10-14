@@ -43,6 +43,7 @@ For more information about US government cloud, see [Understand Microsoft US gov
 - [Microsoft Copilot Chat \(Basic\) license and experience](#tabpanel_1_microsoft-copilot-chat-basic)
 - [Microsoft 365 Copilot \(Basic\) license and experience](#tabpanel_1_microsoft-365-copilot-basic)
 - [Microsoft 365 Copilot \(Premium\) license and experience](#tabpanel_1_microsoft-365-copilot-premium)
+- [Usage-based billing capabilities](#tabpanel_1_usage-based-billing)
 
 **Copilot Chat \(Basic\)** is the standalone baseline experience included with eligible Microsoft 365 licenses. It provides a secure, enterprise-ready AI chat that primarily uses web data and has limited use of organizational content. Copilot Chat can use organizational content, but you must explicitly provide that content with your prompt.
 
@@ -126,7 +127,6 @@ Pay-as-you-go access to agents that use work data.
 - [Microsoft Purview](https://learn.microsoft.com/en-us/purview/ai-microsoft-purview): can classify and label your data based on the sensitivity of the content. It can also help prevent unauthorized sharing or leakage and review Copilot prompts and responses.
 - [Microsoft Agents](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility): agents are scoped or focused versions of Microsoft Copilot that act as AI assistants and can automate business processes. These Agents use web and work data \([Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview-major-services) and [Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/)\).
 - [Usage reports](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-copilot-usage): helps you understand how users are engaging with Copilot and can be useful in tracking adoption over time and in Microsoft 365 apps. Use the [organizational messages](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-enable-users) feature to act on adoption trends they are seeing. It lets you reach your users in the flow of their daily work with targeted, actionable guidance.
-- [Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/): you have access to [Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) via [usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits). Cowork carries out tasks across your Microsoft 365 environment on your behalf.
 
 You can access Microsoft 365 Copilot \(Premium\) through:
 
@@ -154,6 +154,13 @@ Other resources:
 - Measure insights with [Copilot Analytics](https://techcommunity.microsoft.com/blog/microsoftvivablog/introducing-copilot-analytics-to-measure-ai-impact-on-your-business/4301717)
 - Microsoft offers Copilot experiences in many products. For more information, see [documentation, training, and other technical resources](https://learn.microsoft.com/en-us/copilot/) to make the most of the enterprise-grade data-security and privacy features for your organization.
 
+Important
+
+To use [usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup) capabilities, you must have a [Microsoft 365 Copilot \(Premium\) license](#compare-microsoft-365-copilot-licenses).
+
+- [Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/): you have access to [Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) via [usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits). Cowork carries out tasks across your Microsoft 365 environment on your behalf.
+- [Microsoft Copilot Code \(Frontier\)](https://learn.microsoft.com/en-us/copilot/code): you have access to [Code](https://learn.microsoft.com/en-us/copilot/code) via [usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits). Microsoft Copilot Code helps enterprise users build, understand, and automate code using natural language and organizational context. Microsoft Copilot Code is in Frontier. For more information, see [Frontier preview program](https://adoption.microsoft.com/copilot/frontier-program/).
+
 Note
 
 To ensure your users access Copilot Chat for work and education, instruct them to sign in with their Microsoft Entra account before accessing Copilot via the Microsoft Copilot app, copilot.cloud.microsoft, Copilot Chat in Edge, or productivity apps. Entry points for users signed in with a personal account \(MSA\):
@@ -170,12 +177,12 @@ You can manage whether your users can sign in to Microsoft 365 apps using a pers
 
 The following table outlines key security considerations:
 
-| Data security consideration | Copilot Chat \(Basic\) license | Microsoft 365 Copilot \(Basic\) license | Microsoft 365 Copilot \(Premium\) license |
-| --- | --- | --- | --- |
-| [Enterprise Data Protection \(EDP\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection) | Yes | Yes | Yes |
-| Responses grounded in web data | Yes | Yes | Yes |
-| Responses grounded in organizational data | Yes, but you must:<br><br>- Upload the files with your prompt<br>- Use Copilot Chat with open content \(Outlook and Teams\)<br>- Use a pay-as-you-go agent that has access to organizational content | Yes, but you must:<br><br>- Upload the files with your prompt<br>- Use Copilot Chat with open content \(Outlook and Teams\)<br>- Use a pay-as-you-go agent that has access to organizational content | Yes, automatic via [Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview) and [Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/). |
-| European Union Data Boundary \(EUDB\) | Yes | Yes | Yes |
+| Data security consideration | Copilot Chat \(Basic\) license | Microsoft 365 Copilot \(Basic\) license | Microsoft 365 Copilot \(Premium\) license | Usage-based billing capabilities |
+| --- | --- | --- | --- | --- |
+| [Enterprise Data Protection \(EDP\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection) | Yes | Yes | Yes | Yes |
+| Responses grounded in web data | Yes | Yes | Yes | Yes |
+| Responses grounded in organizational data | Yes, but you must:<br><br>- Upload the files with your prompt<br>- Use Copilot Chat with open content \(Outlook and Teams\)<br>- Use a pay-as-you-go agent that has access to organizational content | Yes, but you must:<br><br>- Upload the files with your prompt<br>- Use Copilot Chat with open content \(Outlook and Teams\)<br>- Use a pay-as-you-go agent that has access to organizational content | Yes, automatic via [Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview) and [Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/). | Yes, automatic via [Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview) and [Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/). |
+| European Union Data Boundary \(EUDB\) | Yes | Yes | Yes | Yes |
 
 ### Enterprise Data Protection \(EDP\)
 
