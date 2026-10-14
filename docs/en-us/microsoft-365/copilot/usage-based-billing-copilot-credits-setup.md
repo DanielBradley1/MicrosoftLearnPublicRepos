@@ -38,7 +38,7 @@ This section covers the initial setup to guide administrators through enabling u
 3. To unlock AI experiences enabled by usage-based billing, select **Get Started**.
 4. A side-panel with the title **Activate the default spending policy for your organization** opens.
 5. In the **Billing method** section, select how your organization is billed for Copilot credit usage. Select the default subscription for your organization. This subscription is selected by default for other policies that you create. For more detailed information on how the billing method is populated, see [Configure billing method](#configure-billing-method).
-6. In the **Set the monthly spending limit** for this policy section, select one of the options.
+6. In the **Set the monthly spending limit** for this policy section, select one of the options. For more details on limits in spending policies, see [Manage Copilot credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#set-limits-and-alerts).
 
    - **Don't limit monthly spending** - Allows the policy to use credits against the organization's billing method without restrictions.
    - **Limit monthly spending** - Limits the number of credits the default policy can spend each month.

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-knowledge-admin-setup -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-08-25 -->
 
 # Set up the ServiceNow service for ServiceNow Knowledge connector ingestion
 

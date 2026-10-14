@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Test and validate your plugin for Microsoft 365 Copilot
 

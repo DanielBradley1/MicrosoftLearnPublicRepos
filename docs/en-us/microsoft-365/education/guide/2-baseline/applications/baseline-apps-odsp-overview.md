@@ -50,12 +50,6 @@ SharePoint is deeply integrated into Teams. Files that are stored in Teams are s
 | Learn about how Teams and SharePoint work together | [Overview of Teams and SharePoint integration](https://learn.microsoft.com/en-us/sharepoint/teams-connected-sites) |
 | Learn how to manage settings and permissions when Teams and SharePoint are integrated together | [Manage settings and permissions when SharePoint and Teams are integrated](https://learn.microsoft.com/en-us/sharepoint/manage-teams-sharepoint-experiences) |
 
-Note
-
-For education scenarios:
-
--
-
 ## Collaboration
 
 SharePoint and OneDrive provide a rich collaboration environment where people inside and outside your organization can work together, coauthoring documents. Microsoft 365 provides various options to help you create a secure and productive file collaboration environment that meets the needs of your organization. Use these resources to get started.
@@ -99,12 +93,6 @@ If you have files to move to SharePoint and OneDrive, you can use some of the fo
 ## Limits to SharePoint and OneDrive
 
 The following links can be used in moving files that are needed in your organization to SharePoint and OneDrive from other locations.
-
-Note
-
-For education scenarios:
-
--
 
 ## Next steps
 

@@ -78,7 +78,14 @@ Turn off **Auto-apply new services** for any policy that shouldn't automatically
 
 ### Set limits and alerts
 
-Microsoft continuously evaluates customer usage patterns and industry trends to help define healthy spending policies for usage-based billing scenarios to support a high-quality user experience. We are actively learning and refining these guardrails to ensure customers can successfully use Copilot capabilities. As a result, recommendations and policy requirements may evolve over time, and administrators may see updated guidance over time in the product experience intended to maintain a quality user experience.
+Microsoft continuously evaluates customer usage patterns and industry trends to define healthy spending policies for usage-based billing scenarios. We're continuing to refine these guardrails so customers can successfully use Copilot capabilities. As a result, recommendations and policy requirements may evolve, and administrators may see updated guidance in the product experience.
+
+- **Monthly budget limit for users:** Set at least 2,000 credits per user per month
+- **Monthly spending limit for policy:** Set the monthly spending limit for policy at or above the required minimum for eligible users covered by the policy
+
+What if your limit is lower than recommended?
+
+To help ensure a good user experience, your policy must meet the minimum. If your budget meets that minimum but is below the recommended amount, you can still save your policy. We'll suggest a limit that may better support your users.
 
 1. For the users and groups that you selected for this policy, select the credit limits that apply to them, similar to what you did for the default spending policy.
 2. Select the monthly spending limit for this policy.

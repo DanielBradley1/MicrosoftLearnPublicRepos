@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-03-19 -->
 
 # ServiceNow Catalog connector overview
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish-plugin-publicly -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-09-30 -->
 
 # Publish your plugin through Microsoft Marketplace
 

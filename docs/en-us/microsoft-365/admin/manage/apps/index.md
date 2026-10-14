@@ -76,34 +76,28 @@ Enabling the **Cowork** app builder skill requires onboarding the tenant to the 
 
 ### Where the settings live
 
-The app creation path controls are in the Microsoft 365 admin center, under **Apps** > **Overview** > **Set up app creation spaces**. You can also enable and configure creation paths through PowerShell or the API.
+The app creation path controls are in the Microsoft 365 admin center, under **Apps** > **Overview** > **Set up app creation spaces**. You can also configure creation paths by using Microsoft Power Platform CLI.
 
-The Power Platform tenant setting for the Copilot Studio app creation preview is `powerPlatform.powerApps.enableManagedAppsMcsPreview`. The setting uses string values rather than Boolean values. The following PowerShell example applies the public-preview default value, `DefaultOn`:
+To turn off Copilot Studio app creation, use the following command:
 
-```powershell
-$tenantSettings = Get-TenantSettings
-$tenantSettings.powerPlatform.powerApps.enableManagedAppsMcsPreview = "DefaultOn"
-Set-TenantSettings -RequestBody $tenantSettings
+```bash
+pac admin update-tenant-settings --setting-name powerPlatform.powerapps.enableManagedAppsMcsPreview --setting-value 'off'
 ```
+
+For more information, see [Programmability and extensibility - Power Platform](https://learn.microsoft.com/en-us/power-platform/admin/programmability-extensibility-overview#available-tools) and [Microsoft Power Platform CLI admin command group](https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/admin#pac-admin-update-tenant-settings).
+
+Note
+
+Copilot Studio retrieves the tenant settings each time you refresh the page. If you leave a Copilot Studio tab open, the settings are cached for up to 15 minutes or until the next page load.
 
 ### Scope access to Copilot Studio app creation with security groups
 
-To restrict Copilot Studio app creation to specific Microsoft Entra security groups, set `powerPlatform.powerApps.enabledGroupsManagedAppsMcsPreview` to a security group's object ID \(GUID\). To configure multiple groups, use a comma-separated string of object IDs.
+To restrict Copilot Studio app creation to specific Microsoft Entra security groups, set `powerPlatform.powerapps.enabledGroupsManagedAppsMcsPreview` to a security group's object ID \(GUID\). To configure multiple groups, use a comma-separated string of object IDs.
 
-The following example configures access for one security group. Replace `<security-group-object-id>` with the group's object ID:
+The following example configures access for one security group. Replace `<SGID>` with the Microsoft Entra security group object ID:
 
-```powershell
-$tenantSettings = Get-TenantSettings
-$tenantSettings.powerPlatform.powerApps.enabledGroupsManagedAppsMcsPreview = "<security-group-object-id>"
-Set-TenantSettings -RequestBody $tenantSettings
-```
-
-For multiple security groups, use the following example:
-
-```powershell
-$tenantSettings = Get-TenantSettings
-$tenantSettings.powerPlatform.powerApps.enabledGroupsManagedAppsMcsPreview = "<group-1-object-id>,<group-2-object-id>"
-Set-TenantSettings -RequestBody $tenantSettings
+```bash
+pac admin update-tenant-settings --setting-name powerPlatform.powerapps.enabledGroupsManagedAppsMcsPreview --setting-value '<SGID>'
 ```
 
 When the Copilot Studio app creation path is enabled, users who belong to any configured security group can create apps.

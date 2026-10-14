@@ -5,11 +5,17 @@
 
 Microsoft Copilot Cowork includes ready-to-use plugins that help teams connect more of the tools, data, and expertise they rely on every day. These available plugins span both native Microsoft integrations and partner offerings, giving organizations flexible ways to extend Cowork out of the box.
 
-Plugins are available from the Microsoft 365 App Store. Your admin can also deploy plugins for your organization. For details on browsing and installing plugins, see [Use plugins with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugins).
+Plugins are available from the Microsoft 365 App Store. Your admin can also deploy plugins for your organization. Learn more about browsing and installing plugins in [Use plugins with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugins).
 
 ## Microsoft plugins
 
-Integrated plugins bring Microsoft services directly into Cowork so teams can coordinate work across the tools and business data they already use. These built-in integrations help people move from one-off tasks to more connected, multistep execution. This move makes it easier to define an outcome, pull in the right context, and keep work progressing across functions with the governance and control organizations expect. This includes plugins like Fabric IQ, which brings Power BI and Fabric data into Cowork workflows, and Microsoft Dynamics 365 plugins, which bring customer, service, and business process context into the same flow of work.
+Integrated plugins bring Microsoft services directly into Cowork so teams can coordinate work across the tools and business data they already use. These built-in integrations help people move from one-off tasks to more connected, multistep execution. This move makes it easier to define an outcome, pull in the right context, and keep work progressing across functions with the governance and control organizations expect.
+
+This includes plugins like:
+
+- Fabric IQ, which brings Power BI and Fabric data into Cowork workflows.
+- Business Applications in Work IQ, which brings unified business context across your line-of-business systems to Cowork.
+- Microsoft Dynamics 365 plugins, which bring customer, service, and business process context into the same flow of work.
 
 | Plugin | Description | Capabilities |
 | --- | --- | --- |
@@ -17,6 +23,7 @@ Integrated plugins bring Microsoft services directly into Cowork so teams can co
 | [Dynamics 365 ERP](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/enable-copilot-cowork-erp) | Connect Cowork to Dynamics 365 ERP | Access financial data, supply chain information, and operations workflows |
 | [Dynamics 365 Sales](https://learn.microsoft.com/en-us/dynamics365/sales/use-copilot-cowork-sales-skills) | Connect Cowork to Dynamics 365 Sales | Query leads, opportunities, accounts, and sales pipeline data |
 | [Fabric IQ](https://learn.microsoft.com/en-us/fabric/iq/connectors/cowork-overview) | Connect Cowork to Microsoft Fabric and Power BI | Query datasets, generate reports, and access business intelligence insights across your Fabric workspace |
+| [Business Applications in Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-work-iq) | Connect Cowork to line-of-business data | Ask practical questions across your Dataverse, Dynamics 365 Sales, Dynamics 365 Service, and custom Power Apps data |
 
 Dynamics 365 Customer Service and Sales integrations are enabled by default and can be disabled in the [Microsoft 365 admin center](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-intelligence#enable-microsoft-365-admin-center-copilot-dataverse-settings).
 
@@ -26,7 +33,7 @@ Dynamics 365 plugins require an associated Power Platform environment. After you
 
 ## Partner plugins
 
-Partner plugins connect Cowork to popular third-party services so the agent can read and act on data in the tools your organization already uses. Like Microsoft plugins, partner plugins are distributed through the Microsoft 365 App Store and require your IT admin to make them available before you can add them.
+Partner plugins connect Cowork to popular non-Microsoft services so the agent can read and act on data in the tools your organization already uses. Like Microsoft plugins, partner plugins are distributed through the Microsoft 365 App Store and require your IT admin to make them available before you can add them.
 
 | Plugin | Capabilities |
 | --- | --- |
@@ -356,7 +363,7 @@ The partner plugin catalog continues to grow. To display the full list of partne
 
 Your organization can build custom plugins for Cowork. Custom plugins use the same package format as Microsoft and partner plugins, and can include both skills and connectors.
 
-For details on building custom plugins, see [Build plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development). For details on deploying custom plugins to your organization, see [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins).
+Learn more about building custom plugins in [Build plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development). Learn more about deploying custom plugins to your organization in [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins).
 
 ## Request a plugin
 

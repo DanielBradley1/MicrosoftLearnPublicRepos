@@ -68,6 +68,17 @@ Note
 
 Paying with a Boleto Bancario isn't available for MCA billing accounts.
 
+## Pay by Pix in Brazil
+
+Customers who have a billing address in Brazil and an MCA billing account type can use Pix for one-time payments. To pay by Pix:
+
+1. When you make a payment, select **Add a new payment method**.
+2. Select **Pix**.
+3. Use the QR code in the payment pane, or use the payment link. The QR code and payment link are valid for 24 hours.
+4. Complete the payment. The payment pane closes automatically and returns you to the Microsoft 365 admin center.
+
+After you submit the payment, allow time for it to appear on the invoice in the Microsoft 365 admin center.
+
 ## Paying by SEPA Direct Debit in Europe
 
 Microsoft accepts SEPA Direct debit for eligible customers. You can add SEPA Direct Debit as a payment method any time through Microsoft 365 admin center, if you meet these conditions:

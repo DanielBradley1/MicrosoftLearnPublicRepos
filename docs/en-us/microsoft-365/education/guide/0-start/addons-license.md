@@ -9,7 +9,7 @@ This legend provides a quick reference to the icons used in the tables in this a
 
 |  |  |
 | :--- | :---: |
-| ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/su25.png) **Microsoft365 A1 license** | ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/a1ck25.png) **License fulfilled by A1 license** |
+| ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/a1-tag.png) **Microsoft365 A1 license** | ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/a1ck25.png) **License fulfilled by A1 license** |
 | ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/a3-tag.png) **Microsoft365 A3 license** | ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/a3ck25.png) **License fulfilled by A3 license** |
 | ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/a5-tag.png) **Microsoft365 A5 license** | ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/su25.png) **Student Use license** |
 | ![](https://learn.microsoft.com/en-us/microsoft-365/education/guide/images/license/oa125.png) **Office365 A1 license** |  |

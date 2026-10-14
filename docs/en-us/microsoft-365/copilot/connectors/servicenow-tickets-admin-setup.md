@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-tickets-admin-setup -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-03-19 -->
 
 # Set up the ServiceNow service for ServiceNow Tickets connector ingestion
 
