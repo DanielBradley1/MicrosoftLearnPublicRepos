@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-deployment -->
-<!-- Sitemap-Last-Modified: 2026-09-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Deploy the ServiceNow Catalog connector
 

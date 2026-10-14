@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Govern plugin access and connections
 

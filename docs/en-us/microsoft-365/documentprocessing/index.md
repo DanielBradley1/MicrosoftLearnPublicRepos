@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Document processing for Microsoft 365 documentation
 

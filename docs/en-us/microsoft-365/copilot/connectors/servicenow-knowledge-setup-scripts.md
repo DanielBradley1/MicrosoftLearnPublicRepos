@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-knowledge-setup-scripts -->
-<!-- Sitemap-Last-Modified: 2026-08-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Set up ServiceNow Knowledge connector prerequisites by using background scripts
 
