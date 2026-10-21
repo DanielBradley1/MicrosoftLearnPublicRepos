@@ -17,6 +17,9 @@ This table includes supported releases for all supported platforms in the past s
 
 | OS | Build | Month released | Details | Learn more |
 | --- | --- | --- | --- | --- |
+| macOS | 101.26082.0012 | October 2026 | - Release version: 20.126082.12.0  <br>- Engine version: 1.1.26100.3000  <br>- Signature version: 1.461.61.0 | [Release details and updates](#macos--october-2026--101260820012) |
+| Linux | 101.26091.0003 | October 2026 | - Release version: 30.126091.0003.0  <br>- Engine version: 1.1.26090.3000  <br>- Signature version: 1.461.35.0 | [Release details and updates](#linux--october-2026--101260910003) |
+| Windows Antivirus | Platform 4.18.26090.9 / Engine 1.1.26090.9 | September 2026 | - Platform: 4.18.26090.9  <br>- Engine: 1.1.26090.9  <br>- Security intelligence: 1.461.1.0 | [Release details and updates](#windows-antivirus--september-2026--platform-418260909--engine-11260909) |
 | Windows Antivirus | Platform 4.18.26080.4 / Engine 1.1.26080.3 | August 2026 | - Platform: 4.18.26080.4  <br>- Engine: 1.1.26080.3  <br>- Security intelligence: 1.159.11.0 | [Release details and updates](#windows-antivirus--august-2026-2--platform-418260804--engine-11260803) |
 | Android | 1.0.9330.0101 | Sep 2026 | - Build: 1.0.9330.0101  <br>- Release: Sep 30, 2026 | [Release details and updates](#android--sep-2026--platform-1093300101) |
 | iOS | 1.1.81160103 | Sep 2026 | - Build: 1.1.81160103  <br>- Release: Sep 24, 2026 | [Release details and updates](#ios--sep-2026--platform-version-1181160103) |
@@ -229,6 +232,27 @@ To share feedback, open Defender for Endpoint on macOS and go to **Help > Send f
 To get latest features, configure your device for the Beta channel \(formerly Insider-Fast\) device.
 
 For known issues, see [macOS known issues](#macos-known-issues).
+
+### macOS \| October-2026 \| 101.26082.0012
+
+#### Versions
+
+| Release version | Engine version | Signature version |
+| --- | --- | --- |
+| 20.126082.12.0 | 1.1.26100.3000 | 1.461.61.0 |
+
+#### Enhancements and features
+
+| Feature area | Update summary |
+| --- | --- |
+| General | Device Control: Device health reporting now shows Bluetooth permission status. |
+| General | UI: Improved keyboard accessibility in side panes by moving focus into the open pane and keeping Tab navigation within its controls. |
+| General | UI: Improved accessibility of feedback rating controls so individual stars can receive focus without an extra group focus target. |
+| General | Antivirus: Improved health reporting to indicate when the protection engine connection is unavailable. |
+| General | Antivirus: Improved reliability by preventing a rare service crash. |
+| General | EDR: Added support for configuring AI agent runtime protection on macOS. |
+| General | EDR: Improved authentication reliability after startup and wake by waiting for network connectivity to recover before resuming cloud communication. |
+| General | Bug and performance fixes. |
 
 ### macOS \| September-2026 \| 101.26072.0017
 
@@ -567,6 +591,21 @@ If you have any concerns or need assistance during this transition, contact supp
 ### Linux known issues
 
 - **Intermittent issue during process scanning**: In version `101.26072.0004`, `wdavdaemon` might restart in rare cases while scanning running processes. The process recovers automatically, and no action is required. A fix will be available in an upcoming release. **Resolution**: Upgrade to platform version 101.26072.0005 or later.
+
+### Linux \| October 2026 \| 101.26091.0003
+
+#### Release details
+
+| Release version | Engine version | Signature version |
+| --- | --- | --- |
+| 30.126091.0003.0 | 1.1.26090.3000 | 1.461.35.0 |
+
+#### Enhancements and features
+
+| Feature area | Update summary |
+| --- | --- |
+| Security | Upgraded libcurl to version 8.22.0 to address CVE-2026-9546. |
+| Security | Hardened quarantine operations by enforcing authorization checks and protecting against file-path manipulation that could lead to privilege escalation. |
 
 ### Linux \| September 2026 \| 101.26081.0010
 
@@ -1407,6 +1446,29 @@ For the latest UX improvements, see [iOS UX improvements](https://learn.microsof
 ## Microsoft Defender Antivirus releases
 
 For more information about Microsoft Defender Antivirus updates, see [Microsoft Defender Antivirus security intelligence product updates and support](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-updates).
+
+### Windows Antivirus \| September 2026 \| Platform 4.18.26090.9 \| Engine 1.1.26090.9
+
+#### Release details
+
+| Component | Version | Date |
+| --- | --- | --- |
+| Platform | 4.18.26090.9 | October 12, 2026 |
+| Engine | 1.1.26090.9 | October 12, 2026 |
+| Security intelligence<sup>1</sup> | 1.461.1.0 | October 12, 2026 |
+| Support phase | Security and Critical Updates | - |
+
+<sup>1</sup>The security intelligence version listed here is relevant to the listed engine release. Newer versions of security intelligence are released regularly. For more information, see [Security intelligence updates for Microsoft Defender Antivirus and other Microsoft anti-malware](https://www.microsoft.com/wdsi/defenderupdates).
+
+### Enhancements and features
+
+- Added automatic protection-engine refresh when the device's resolved license tier changes.
+- Fixed a stalled security-intelligence update worker which could block all subsequent updates.
+- Addressed an update configuration issue that could leave DisableBmNetworkSensor = 1 after platform updates.
+- Renamed the PowerShell configuration-protection property from ControlledConfigurationState to ConfigurationProtection.
+- Retained the feature-control cache during signature updates to preserve cached settings through the update lifecycle.
+- Improved path-normalization handling for Attack Surface Reduction rules.
+- Fixed attack surface reduction exclusions being dropped when multiple policies target the same rule.
 
 ### Windows Antivirus \| August 2026-2 \| Platform 4.18.26080.4 \| Engine 1.1.26080.3
 

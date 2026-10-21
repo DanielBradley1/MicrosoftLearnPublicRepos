@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/anti-spam-bulk-complaint-level-bcl-about -->
-<!-- Sitemap-Last-Modified: 2026-08-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Bulk email detection and bulk complaint level \(BCL\) in cloud organizations
 
@@ -58,7 +58,7 @@ For more information, see [Bulk senders insight](https://learn.microsoft.com/en-
 
 Note
 
-The features described in this section are rolling out, and should be available in all organizations by mid-September, including security operations center \(SOC\) experiences.
+The features described in this section are rolling out, and should be available in all organizations by end of October, including security operations center \(SOC\) experiences.
 
 As previously described, the action for bulk mail that meets or exceeds the BCL threshold is defined in anti-spam policies. For example, deliver to the Junk Email folder or quarantine.
 
@@ -93,6 +93,8 @@ To prevent mail *from specific senders* or *to specific recipients* from receivi
   - **Set rule settings** page: Verify **Stop processing more rules** isn't selected.
 
 For previous Preview customers, the rule that set `X-MS-Exchange-Organization-BulkStamping` to the value `1` to tag messages as **Bulk** is no longer required.
+
+The `X-MS-Exchange-Organization-BulkStamping` header is an internal header that's used only during message transport. The header is removed before the message is delivered to the mailbox, so it isn't visible in the message headers that recipients see. This behavior is by design.
 
 To enable bulk mail delivery to the **Promotions** folder, do the following steps:
 

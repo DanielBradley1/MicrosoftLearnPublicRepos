@@ -3,11 +3,11 @@
 
 # Configure Microsoft Defender for Identity action accounts
 
-Defender for Identity allows you to take [remediation actions](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions) targeting on-premises Active Directory accounts in the event that an identity is compromised. To take these actions, Microsoft Defender for Identity needs to have the required permissions to do so. This action account configuration is separate from the [Directory Service Account](https://learn.microsoft.com/en-us/defender-for-identity/deploy/directory-service-accounts), which is for reading AD data.
+Use an action account with the required permissions to take [remediation actions](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions) on compromised on-premises Active Directory accounts. Action accounts are separate from [Directory Service Accounts](https://learn.microsoft.com/en-us/defender-for-identity/deploy/directory-service-accounts), which read Active Directory data.
 
 Important
 
-This configuration applies to the Defender for Identity sensor v2.x on domain controllers only. Remediation actions aren't performed by sensors on AD FS, AD CS, or Microsoft Entra Connect servers that aren't domain controllers. The sensor v3.x always uses the domain controller's local system account for remediation actions. If all your sensors are v3.x, no action account configuration is needed.
+This configuration applies to the Defender for Identity sensor v2.x on domain controllers only. Remediation actions aren't performed by sensors on AD FS, AD CS, or Microsoft Entra Connect servers that aren't domain controllers. The sensor v3.x always uses the domain controller's local system account for remediation actions. If your workspace uses v3.x sensors, verify that **Automatically use the sensor's local system account** is selected. If the setting is already selected, no additional action-account configuration is needed.
 
 By default, the Microsoft Defender for Identity sensor impersonates the `LocalSystem` account of the domain controller and performs the actions, including [attack disrupting scenarios from Microsoft Defender](https://learn.microsoft.com/en-us/microsoft-365/security/defender/automatic-attack-disruption).
 

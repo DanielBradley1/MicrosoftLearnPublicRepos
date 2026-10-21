@@ -3,7 +3,7 @@
 
 # Validate sensor deployment on domain controllers
 
-Use the following procedures to check that your sensors are working.
+Validate Microsoft Defender for Identity sensor deployment on domain controllers by checking portal data, advanced hunting results, and test alerts.
 
 Note
 
@@ -11,9 +11,13 @@ The first time you activate the sensor on your domain controller, it might take 
 
 ## Check the Identity Security dashboard
 
+Review the dashboard to check identity data from your deployment:
+
 1. In the Defender portal, select **Identities** > **Dashboard**, and review the details shown. Check for expected results from your environment. For more information, see [Identity Security dashboard](https://learn.microsoft.com/en-us/defender-for-identity/dashboard).
 
 ## Confirm entity data in the Defender portal
+
+Check device, user, and group data collected from your environment:
 
 1. In the Defender portal, select **Assets > Devices**, and select the machine for your new sensor. Confirm that Defender for Identity events appear on the device timeline.
 2. Select **Assets > Users** and check for users from a newly onboarded domain. You can also use the global search to find specific users. Confirm that user details pages include **Overview**, **Observed in organization**, and **Timeline** data.
@@ -25,7 +29,7 @@ For more information, see [Investigate assets](https://learn.microsoft.com/en-us
 
 ## Verify data in advanced hunting tables
 
-Use advanced hunting queries to confirm that sensor data is written to the expected tables.
+Use advanced hunting queries to confirm that sensor data appears in the expected tables. Run each query separately. Replace `DC_FQDN` and `domain` with your domain controller's fully qualified domain name and domain.
 
 1. In the Defender portal's **Advanced hunting** page, run the following queries to verify that data appears in the expected tables:
 
@@ -72,7 +76,7 @@ We recommend simulating risky behavior in a test environment to trigger supporte
 
 2. In Microsoft Secure Score, select **Recommended Actions** to check for a new **Resolve unsecure domain configurations** recommendation. You might want to filter recommendations by the **Defender for Identity** product.
 
-For more information, see [Microsoft Defender for Identity's security posture assessments](https://learn.microsoft.com/en-us/defender-for-identity/security-assessment)
+For more information, see [Microsoft Defender for Identity's security posture assessments](https://learn.microsoft.com/en-us/defender-for-identity/security-assessment).
 
 ## Test alert functionality
 

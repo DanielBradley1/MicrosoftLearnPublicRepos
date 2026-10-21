@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3 -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # Deploy the Microsoft Defender for Identity sensor v3.x
 
@@ -21,7 +21,7 @@ Before you activate the Defender for Identity sensor v3.x, note that v3.x:
 
 Make sure that the server on which you're activating the sensor:
 
-- Is onboarded to Defender for Endpoint. The Microsoft Defender Antivirus component can be in either active or passive mode. For eligible domain controllers, you can instead use [sensor v3.x onboarding without Defender for Endpoint deployment](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-the-domain-controller-preview).
+- Is onboarded to Defender for Endpoint. The Microsoft Defender Antivirus component can be in either active or passive mode. For eligible servers, you can instead use [sensor v3.x onboarding without Defender for Endpoint deployment](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-a-server-without-defender-for-endpoint-deployment).
 - Doesn't have a Defender for Identity sensor v2.x already deployed.
 - Runs Windows Server 2019 or later.
 - Has the Windows Server September 2026 or later cumulative update installed \(Defender for Identity sensor version 3.0.10 or later\).
@@ -92,7 +92,7 @@ When running as a virtual machine, always allocate all memory to the virtual mac
 
 The Defender for Identity sensor v3.x limits CPU utilization to 30% and memory usage to 1.5 GB. However, if another service uses substantial system resources, the server might still experience performance strain. If the sensor reaches the CPU limit, it throttles some event processing. If the sensor reaches the memory limit, the sensor service might restart.
 
-Refer to the [Defender for Identity Capacity Planning documentation](https://learn.microsoft.com/en-us/defender-for-identity/deploy/capacity-planning) to determine whether your servers have enough resources for a Microsoft Defender for Identity sensor.
+The [Defender for Identity sizing tool](https://learn.microsoft.com/en-us/defender-for-identity/deploy/capacity-planning) applies to v2.x sensors and isn't required for v3.x.
 
 ### Service account requirements
 
@@ -131,7 +131,7 @@ Complete these configuration steps after the sensor is activated and running.
 
 ### Configure Windows event auditing
 
-Defender for Identity relies on Windows event logs for many detections. For v3.x sensors, [enable automatic auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-defender-for-identity-to-collect-windows-events-automatically), which handles all auditing settings without manual configuration.
+Defender for Identity relies on Windows event logs for many detections. For v3.x sensors, [enable automatic auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-defender-for-identity-to-collect-windows-events-automatically) to configure supported auditing settings. Complete the additional steps for [AD FS](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-auditing-on-an-ad-fs-server) or [AD CS](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-auditing-on-an-ad-cs-server), as applicable.
 
 If automatic auditing isn't available or you opted out, [configure auditing manually](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-windows-event-collection-manually) or [configure Windows event collection using PowerShell](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-windows-event-collection-using-powershell).
 

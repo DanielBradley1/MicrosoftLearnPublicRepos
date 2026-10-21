@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/migrate-to-sensor-v3 -->
-<!-- Sitemap-Last-Modified: 2026-09-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # Migrate from Defender for Identity sensor v2 to sensor v3.x
 
@@ -19,6 +19,8 @@ To migrate, each server must meet the following requirements:
 - Defender for Identity sensor v2.x \(version 2.254.19112.470 or later\)
 - Windows Server 2019 or later
 - Microsoft Defender for Endpoint deployed, with the September 2026 or later Windows Server cumulative update installed.
+
+Before migrating, select **Automatically use the sensor's local system account** in the Microsoft Defender portal. Migration doesn't change this setting automatically. For details, see [Service account requirements](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3#service-account-requirements).
 
 For the full list of v3.x requirements, see [Defender for Identity sensor v3.x prerequisites](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3).
 
@@ -51,7 +53,7 @@ The **Migration state** column on the **Sensors** page shows the current status 
 For optimal protection and monitoring, complete the configuration steps described in [Defender for Identity sensor v3.x prerequisites](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3), including:
 
 - [Configure automatic Windows event auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3#configure-windows-event-auditing). Existing auditing configurations from the v2.x sensor are preserved and converted for v3.x, but we recommend [enabling automatic Windows event auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-defender-for-identity-to-collect-windows-events-automatically) for optimal configuration validation.
-- [Switch action accounts from gMSA to local system](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3#service-account-requirements). The v3.x sensor uses the local system identity for response actions. If you had a gMSA configured for [action accounts](https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts), select **Automatically use the sensor's local system account** in the Microsoft Defender portal. If gMSA remains enabled for action accounts, response actions \(including attack disruption\) won't work.
+- [Verify the local system action-account setting](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3#service-account-requirements). Confirm that **Automatically use the sensor's local system account** remains selected for [action accounts](https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts). If gMSA remains selected, response actions \(including attack disruption\) won't work.
 - [Understand DSA and gMSA health alerts in environments with both v2 and v3 sensors](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3#dsa-and-gmsa-health-alerts-in-environments-with-both-v2-and-v3-sensors). If your workspace still has a Directory Service Account \(DSA\) or group Managed Service Account \(gMSA\) configured for v2 sensors, DSA and gMSA credentials continue to be validated on all sensors, including v3 sensors. This is by design. V3 sensors ignore the DSA and gMSA for auditing and response actions, but credential validation occurs at the workspace level. To stop receiving the **Directory services user credentials are incorrect** health alert, remove the DSA or gMSA after all sensors are migrated to v3.
 - [Configure RPC auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3#configure-rpc-auditing). Starting with sensor version 3.0.8 \(July 2026 release\), RPC auditing is enabled automatically when you upgrade the sensor, so no manual configuration is required.
 

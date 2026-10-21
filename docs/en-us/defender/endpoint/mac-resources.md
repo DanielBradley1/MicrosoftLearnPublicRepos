@@ -153,7 +153,7 @@ Defender for Endpoint stores quarantined files in `/Library/Application Support/
 
 ## Uninstall Defender for Endpoint
 
-Before you uninstall Defender for Endpoint, offboard the device and remove or update the policies that manage it. For the optional device-retirement tags, tamper protection requirements, offboarding package, and system extension policy cleanup, see [Offboard Mac devices](https://learn.microsoft.com/en-us/defender-endpoint/offboard-machines#offboard-mac-devices).
+Before you uninstall Defender for Endpoint, offboard the device and remove or update the policies that manage it. For the optional device-retirement tags, tamper protection requirements, offboarding package, and system extension policy cleanup, see [Offboard Mac devices](https://learn.microsoft.com/en-us/defender-endpoint/offboard-machines#offboard-macos-devices).
 
 You can uninstall the app interactively or from the command line. If you manage devices with Jamf Pro, deploy the offboarding profile before you remove the application. Centrally managed uninstallation isn't currently available in Microsoft Intune.
 

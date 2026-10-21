@@ -7,7 +7,7 @@ Download and install the Defender for Identity sensor v2.x on domain controllers
 
 Tip
 
-For domain controllers running Windows Server 2019 or later, deploy the [Defender for Identity sensor v3.x](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3) instead. The v3.x sensor is activated from the Defender portal and doesn't require a downloaded installation package.
+For eligible domain controllers running Windows Server 2019 or later, use the [Defender for Identity sensor v3.x deployment guidance](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3). The v2.x installer procedures below don't apply to v3.x. To onboard without Defender for Endpoint deployment, use the [v3.x onboarding package](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-the-domain-controller-preview).
 
 We recommend alternate installation methods for these use cases:
 

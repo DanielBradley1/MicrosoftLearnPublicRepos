@@ -62,6 +62,7 @@ The following table lists publicly disclosed threat actor names with their origi
 | [CovertNetwork-1658](https://www.microsoft.com/en-us/security/blog/2024/10/31/chinese-threat-actor-storm-0940-uses-credentials-from-password-spray-attacks-from-a-covert-network/) | Covert network | ORB07 |
 | Crescent Typhoon | China | CESIUM |
 | Crimson Sandstorm | Iran | CURIUM, IMPERIAL KITTEN, Tortoise Shell, HOUSEBLEND, TA456 |
+| Crystal Typhoon | China | Storm-1849, UAT4356 |
 | Cuboid Sandstorm | Iran | DEV-0228, IMPERIAL KITTEN |
 | Daffodil Gust | United Arab Emirates | Stealth Falcon, Fruity Armor, Project Raven |
 | [Denim Tsunami](https://www.microsoft.com/en-us/security/blog/2022/07/27/untangling-knotweed-european-private-sector-offensive-actor-using-0-day-exploits/) | Austria, Private sector offensive actor | DEV-0291 |
@@ -177,21 +178,30 @@ The following table lists publicly disclosed threat actor names with their origi
 | [Storm-2227](https://www.microsoft.com/en-us/security/blog/2026/01/14/inside-redvds-how-a-single-virtual-desktop-provider-fueled-worldwide-cybercriminal-operations/) | Group in development |  |
 | [Storm-2246](https://blogs.microsoft.com/on-the-issues/2025/09/16/microsoft-seizes-338-websites-to-disrupt-rapidly-growing-raccoono365-phishing-service/) | Group in development |  |
 | [Storm-2372](https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/) | Group in development |  |
+| Storm-2380 | Group in development | DragonForce, Hackledorb |
 | [Storm-2460](https://www.microsoft.com/en-us/security/blog/2025/08/18/dissecting-pipemagic-inside-the-architecture-of-a-modular-backdoor-framework/) | Group in development |  |
 | [Storm-2470](https://www.microsoft.com/en-us/security/blog/2026/01/14/inside-redvds-how-a-single-virtual-desktop-provider-fueled-worldwide-cybercriminal-operations/) | Group in development |  |
 | [Storm-2477](https://www.microsoft.com/en-us/security/blog/2025/05/21/lumma-stealer-breaking-down-the-delivery-techniques-and-capabilities-of-a-prolific-infostealer/) | Group in development | Lumma Stealer |
 | [Storm-2561](https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/) | Group in development |  |
+| [Storm-2570](https://www.microsoft.com/en-us/security/blog/2026/09/24/beyond-ransomware-tracking-storm-2570-consistent-tradecraft-across-deployments/) | Financially motivated |  |
 | Storm-2581 | Financially motivated | UNC6040 |
 | [Storm-2603](https://www.microsoft.com/en-us/security/blog/2025/07/22/disrupting-active-exploitation-of-on-premises-sharepoint-vulnerabilities/) | China |  |
+| Storm-2634 | China | GTG-1002 |
 | [Storm-2657](https://www.microsoft.com/en-us/security/blog/2025/05/21/lumma-stealer-breaking-down-the-delivery-techniques-and-capabilities-of-a-prolific-infostealer/) | United States, Financially motivated | Payroll Pirates |
 | [Storm-2697](https://www.microsoft.com/en-us/security/blog/2026/05/28/the-gentlemen-ransomware-dissecting-a-self-propagating-go-encryptor/) | Financially motivated |  |
 | [Storm-2755](https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/) | Financially motivated |  |
 | [Storm-2945](https://www.microsoft.com/en-us/security/blog/2026/07/31/captivecrunch-midnight-blizzard-targets-travelers-worldwide-for-malware-delivery-and-credential-theft/) | Group in development |  |
 | [Storm-2949](https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/) | Group in development |  |
 | Storm-2981 | Financially motivated | Coinbase Cartel |
+| [Storm-2990](https://www.microsoft.com/en-us/security/blog/2026/10/14/the-hidden-network-inside-the-phishing-infrastructure-ecosystem-powering-global-cybercrime/) | Group in development |  |
+| [Storm-2992](https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/) | Group in development |  |
 | Storm-2999 | Financially motivated | TeamPCP |
+| [Storm-3069](https://www.microsoft.com/en-us/security/blog/2026/09/28/needymantis-unpacking-a-post-compromise-malware-family-used-in-targeted-operations/) | Group in development |  |
 | [Storm-3075](https://www.microsoft.com/en-us/security/blog/2026/06/08/ai-brands-as-bait-how-threat-actors-are-using-the-ai-hype-in-social-engineering/) | Financially motivated |  |
+| [Storm-3119](https://www.microsoft.com/en-us/security/blog/2026/10/14/the-hidden-network-inside-the-phishing-infrastructure-ecosystem-powering-global-cybercrime/) | Group in development | YAM Store |
 | Storm-3127 | Financially motivated | UNC6240 |
+| [Storm-3168](https://www.microsoft.com/en-us/security/blog/2026/09/25/storm-3168-agentic-driven-cloud-attacks-using-compromised-service-principals/) | Group in development | JADEPUFFER |
+| Storm-3189 | Group in development | ExfilSquad |
 | Strawberry Tempest | Financially motivated | DEV-0537, SLIPPY SPIDER, LAPSUS$ |
 | Sunglow Blizzard |  | DEV-0665 |
 | Swirl Typhoon | China | TELLURIUM, STALKER PANDA, Tick, Bronze Butler, REDBALDKNIGHT |

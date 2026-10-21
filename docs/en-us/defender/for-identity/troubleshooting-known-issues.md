@@ -370,7 +370,7 @@ There are two possible workarounds for this issue:
    psexec -s -i "C:\MDI\Azure ATP Sensor Setup.exe"
    ```
 
-2. Install the sensor with a Scheduled Task configured to run as **LocalSystem**. The command-line syntax to use is mentioned in [Defender for Identity sensor silent installation](https://learn.microsoft.com/en-us/defender-for-identity/install-sensor#defender-for-identity-sensor-silent-installation).
+2. Install the sensor with a Scheduled Task configured to run as **LocalSystem**. The command-line syntax to use is mentioned in [Defender for Identity sensor silent installation](https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor#perform-a-defender-for-identity-silent-installation).
 
 ## Sensor installation fails due to certificate management client
 
@@ -406,7 +406,7 @@ Ensure that the sensor can browse to \*.atp.azure.com directly or through the co
 
 `"Azure ATP sensor Setup.exe" [ProxyUrl="http://proxy.internal.com"] [ProxyUserName="domain\proxyuser"] [ProxyUserPassword="ProxyPassword"]`
 
-For more information, see [Run a silent installation with a proxy configuration](https://learn.microsoft.com/en-us/defender-for-identity/install-sensor#run-a-silent-installation-with-a-proxy-configuration) and [Install the Microsoft Defender for Identity sensor](https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor).
+For more information, see [Run a silent installation with a proxy configuration](https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor#command-for-running-a-silent-installation-with-a-proxy-configuration) and [Install the Microsoft Defender for Identity sensor](https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor).
 
 Important
 

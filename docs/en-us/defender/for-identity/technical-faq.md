@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/technical-faq -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # Microsoft Defender for Identity frequently asked questions
 
@@ -98,6 +98,12 @@ In addition, Microsoft conducts background verification checks on certain operat
 ### How many Defender for Identity sensors do I need?
 
 We recommend that you have a Defender for Identity sensor or standalone sensor for each one of your domain controllers. For more information, see [Defender for Identity sensor sizing](https://learn.microsoft.com/en-us/defender-for-identity/capacity-planning#sizing).
+
+### Will my Defender for Identity v3.x sensor continue working if I offboard the server from Defender for Endpoint?
+
+No. Offboarding a server from Defender for Endpoint stops Defender for Identity v3.x sensor reporting, including sensors migrated from v2.x. Offboarding doesn't automatically switch the server to identity-only mode.
+
+To deploy sensor v3.x without full Defender for Endpoint protection, use [onboarding without Defender for Endpoint deployment](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-a-domain-controller-without-defender-for-endpoint-deployment).
 
 ### Does Defender for Identity work with encrypted traffic?
 

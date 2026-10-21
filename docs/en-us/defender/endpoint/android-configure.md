@@ -3,7 +3,18 @@
 
 # Configure Microsoft Defender for Endpoint features on Android
 
-Security administrators can use Microsoft Intune to configure risk-based Conditional Access, custom indicators, web and network protection, privacy controls, vulnerability assessment, file scanning, sign-out controls, and device tags for Microsoft Defender for Endpoint on Android. Before you configure these features, deploy and onboard Defender for Endpoint on the Android devices you manage.
+Security administrators can use Microsoft Intune to configure the following features for Microsoft Defender for Endpoint on Android:
+
+- Risk-based Conditional Access
+- Custom indicators
+- Web and network protection
+- Privacy controls
+- Vulnerability assessment
+- File scanning
+- Sign-out controls
+- Device tags
+
+Before you configure these features, deploy and onboard Defender for Endpoint on the Android devices you manage.
 
 Microsoft Intune is a separate product that isn't included with every Defender for Endpoint subscription. You need a subscription that includes Intune, or you can buy Intune as a standalone subscription or add-on. For more information, see [Microsoft Intune licensing](https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/licenses).
 
@@ -41,11 +52,11 @@ IT administrators can configure web protection in the Microsoft Intune admin cen
 
 ## Create a Managed devices app configuration policy
 
-The Defender settings in the following sections use an Android Enterprise **Managed devices** app configuration policy in Intune. You can add multiple Defender configuration keys to one policy when the keys apply to the same profile type and assignments. Create separate policies when you need to target different profiles, users, or devices.
+The Defender settings in the following sections use an Android Enterprise **Managed devices** app configuration policy in Intune. You can add multiple Defender configuration keys to one policy. The keys must apply to the same profile type and assignments. Create separate policies when you need to target different profiles, users, or devices.
 
-Before you create the policy, add and approve **Defender: Antivirus** from Managed Google Play, and then sync it to Intune. After the sync, the app appears in Intune as **Microsoft Defender: Antivirus**. For deployment instructions, see [Deploy Microsoft Defender for Endpoint on Android with Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/deploy-android).
+Before you create the policy, add and approve **Defender: Antivirus** from Managed Google Play, and then sync it to Intune. After the sync, the app appears in Intune as **Microsoft Defender: Antivirus**. For more information, see [Deploy Microsoft Defender for Endpoint on Android with Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/deploy-android).
 
-For the complete procedure to create a **Managed devices** app configuration policy in Intune, see [Create an app configuration policy](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-android#create-an-app-configuration-policy) \(opens in a new tab in the Intune documentation\). When creating the policy, always start with these settings:
+For the complete procedure to create a **Managed devices** app configuration policy in Intune, see [Create an app configuration policy](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-android#create-an-app-configuration-policy). This page opens in a new tab in the Intune documentation. When creating the policy, always start with these settings:
 
 - **Basics** tab: Configure the following settings:
 
@@ -60,7 +71,7 @@ For the complete procedure to create a **Managed devices** app configuration pol
 
 - **Settings** tab: Select **Use configuration designer** for **Configuration settings format**, and then select **Add**.
 
-  - In the flyout that opens, select the configuration keys specified in the applicable sections of this article, and then select **OK**.
+  - In the flyout pane that opens, select the configuration keys specified in the applicable sections of this article, and then select **OK**.
   - Configure the value for each key, and then complete the assignments and create the policy as described in the Intune procedure.
 
 ## Configure network protection
@@ -144,10 +155,10 @@ Note
 
 Privacy controls let security administrators limit which threat details Defender for Endpoint sends from Android devices:
 
-- **Malware reports**: When privacy is enabled, Defender for Endpoint doesn't send the malicious app name or other app details in malware alert reports. For configuration instructions, see [Configure privacy for malware threat reports](#configure-privacy-for-malware-threat-report).
-- **Phishing reports**: When privacy is enabled, Defender for Endpoint doesn't send the domain name or unsafe website details in phishing alert reports. For configuration instructions, see [Configure privacy for phishing alert reports](#configure-privacy-for-phishing-alert-report).
-- **Vulnerability assessment of apps**: By default, Defender for Endpoint sends the list of apps installed in the work profile for vulnerability assessment. Security administrators can enable privacy to prevent this app inventory from being sent. For configuration instructions, see [Configure app inventory privacy for an Android Enterprise work profile](#configure-app-inventory-privacy-for-an-android-enterprise-work-profile).
-- **Network protection**: When privacy is enabled, Defender for Endpoint doesn't send network details. For configuration instructions, see [Configure privacy alert reports](#configure-privacy-alert-report).
+- **Malware reports**: When privacy is enabled, Defender for Endpoint doesn't send the malicious app name or other app details in malware alert reports. For more information, see [Configure privacy for malware threat reports](#configure-privacy-for-malware-threat-report).
+- **Phishing reports**: When privacy is enabled, Defender for Endpoint doesn't send the domain name or unsafe website details in phishing alert reports. For more information, see [Configure privacy for phishing alert reports](#configure-privacy-for-phishing-alert-report).
+- **Vulnerability assessment of apps**: By default, Defender for Endpoint sends the list of apps installed in the work profile for vulnerability assessment. Security administrators can enable privacy to prevent this app inventory from being sent. For more information, see [Configure app inventory privacy for an Android Enterprise work profile](#configure-app-inventory-privacy-for-an-android-enterprise-work-profile).
+- **Network protection**: When privacy is enabled, Defender for Endpoint doesn't send network details. For more information, see [Configure privacy alert reports](#configure-privacy-alert-report).
 
 **Prerequisite**: Install Company Portal version 5.0.6621.0 \(June 2025\) or later.
 
@@ -155,7 +166,7 @@ Privacy controls let security administrators limit which threat details Defender
 
 Security administrators can enable privacy controls for phishing and malware reports sent by Defender for Endpoint on Android. When Defender detects a corresponding threat, these controls prevent domain or app details from being sent in the alert.
 
-Use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy), and add one or both of the following configuration keys:
+Use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy). Add one or both of the following configuration keys:
 
 - **Hide URLs in report**:
 
@@ -247,7 +258,7 @@ When Defender for Endpoint detects malware in a non-APK file, the user receives 
 
 The privacy control for phishing reports can disable the collection of domain names and website information in phishing threat reports. Use this setting to choose whether Defender for Endpoint collects the domain name when it detects and blocks a malicious or phishing website.
 
-To turn on privacy for targeted users in the work profile, use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy), and add the following configuration key:
+To turn on privacy for targeted users in the work profile, use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy). Add the following configuration key:
 
 - **DefenderExcludeURLInReport**:
 
@@ -263,7 +274,7 @@ Turning this privacy control on or off doesn't affect the device compliance chec
 
 The privacy control for malware threat reports can disable the collection of app details, including name and package information, from malware threat reports. Use this setting to choose whether Defender for Endpoint collects the app name when it detects a malicious app.
 
-To turn on privacy for targeted users in the work profile, use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy), and add the following configuration key:
+To turn on privacy for targeted users in the work profile, use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy). Add the following configuration key:
 
 - **DefenderExcludeAppInReport**:
 
@@ -277,7 +288,7 @@ Using this privacy control doesn't affect the device compliance check or Conditi
 
 ## Disable sign out
 
-Defender for Endpoint supports deployment without the sign out button in the app. Hiding the button helps prevent users from tampering with the device. Use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy), and add the following configuration key:
+Defender for Endpoint supports deployment without the sign out button in the app. Hiding the button helps prevent users from tampering with the device. Use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy). Add the following configuration key:
 
 - **Disable Sign Out**:
 
@@ -291,7 +302,7 @@ Defender for Endpoint supports deployment without the sign out button in the app
 
 Defender for Endpoint on Android supports bulk tagging of mobile devices during onboarding. Security administrators configure device tags through Intune app configuration policies and deploy them to users' devices. After users install and activate Defender, the client app sends the device tags to the Microsoft Defender portal. The tags appear with the devices in the device inventory.
 
-To configure device tags, use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy), and add the following configuration key:
+To configure device tags, use the [Managed devices app configuration policy procedure](#create-a-managed-devices-app-configuration-policy). Add the following configuration key:
 
 - **DefenderDeviceTag**:
 

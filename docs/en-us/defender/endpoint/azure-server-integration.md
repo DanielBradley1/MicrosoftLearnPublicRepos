@@ -13,6 +13,12 @@ On this page: [Server asset page](#review-the-server-asset-page) \| [Investigate
 
 Servers already running Defender for Endpoint continue operating with their existing configuration. You don't need to onboard, reinstall, or migrate them to maintain their existing protection. Review the requirements for each unified capability before changing your configuration.
 
+## Onboard new servers
+
+For new deployments, see [Onboard servers to Microsoft Defender](https://learn.microsoft.com/en-us/defender-endpoint/onboard-server) to choose an automatic or manual deployment method and verify onboarding.
+
+To connect on-premises servers to Defender for Servers, see [Connect on-premises servers to Defender for Servers](https://learn.microsoft.com/en-us/azure/defender-for-cloud/quickstart-onboard-machines).
+
 ## Review the server asset page
 
 The server asset page brings together available cloud-resource and endpoint-device information for the same server, instead of requiring separate investigation pages.
@@ -126,5 +132,7 @@ See [Offboard devices](https://learn.microsoft.com/en-us/defender-endpoint/offbo
 
 ## Related content
 
+- [Onboard servers to Microsoft Defender](https://learn.microsoft.com/en-us/defender-endpoint/onboard-server)
+- [Offboard servers](https://learn.microsoft.com/en-us/defender-endpoint/offboard-machines)
 - [Server security questions](https://learn.microsoft.com/en-us/azure/defender-for-cloud/faq-defender-for-servers)
 - [What's new: public preview hub](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#new-defender-server-security-experience)

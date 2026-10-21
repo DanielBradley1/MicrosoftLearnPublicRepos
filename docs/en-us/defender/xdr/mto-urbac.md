@@ -13,7 +13,7 @@ In the multitenant portal, navigate to the **Permissions & roles page** by selec
 
 From the **Permissions & roles** page, you can create or edit a custom role. You can also import and delete roles. Use the **Search** function to find a specific role. To narrow results, filter roles by data source, permissions category, assignee type, or tenant name.
 
-## Create or edit a custom role \(Preview\)
+## Create or edit a custom role
 
 You can create a custom role to provide flexibility and control over access to specific data. To create a custom role, follow these steps:
 
@@ -45,7 +45,7 @@ To edit an existing role, select the three dots beside the role name in the Perm
 
 ![Screenshot of the Edit option in the Permissions page](https://learn.microsoft.com/en-us/defender-xdr/media/mto-urbac/urbac-edit-role.png)
 
-## Delete roles \(Preview\)
+## Delete roles
 
 Warning
 
@@ -63,7 +63,7 @@ The **Delete role** option is also available when editing a specific role.
 
 ![Screenshot highlighting the Delete option in the Edit role pane](https://learn.microsoft.com/en-us/defender-xdr/media/mto-urbac/urbac-delete-edit-pane.png)
 
-## Import roles \(Preview\)
+## Import roles
 
 You can import existing roles from a tenant’s workloads to migrate permissions and assignments. Imported roles become available in the Permissions and roles list.
 

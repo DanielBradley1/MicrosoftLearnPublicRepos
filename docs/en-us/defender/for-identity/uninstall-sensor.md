@@ -5,15 +5,15 @@
 
 Remove the Microsoft Defender for Identity sensor when you need to decommission a server, clean up orphaned or duplicate sensor entries, or stop Defender for Identity monitoring on a specific server. For sensors onboarded without Microsoft Defender for Endpoint deployment, follow the dedicated offboarding procedure before removing the sensor entry.
 
-## Offboard a domain controller without Defender for Endpoint deployment
+## Offboard a server without Defender for Endpoint deployment
 
-For a domain controller onboarded without Defender for Endpoint deployment, run the offboarding package on the domain controller before removing the sensor from the portal. Removing the portal entry alone doesn't uninstall the sensor component. The sensor can continue sending data and reactivate.
+For a server onboarded without Defender for Endpoint deployment, run the offboarding package on the server before removing the v3.x sensor from the portal. Removing the portal entry alone doesn't uninstall the v3.x sensor component. The v3.x sensor can continue sending data and reactivate.
 
 1. On the **Sensor management** tab of the **On-premises** page in the Microsoft Defender portal at [https://security.microsoft.com/securitysettings/identities](https://security.microsoft.com/securitysettings/identities), select the v3.x sensor, and then select **Delete**.
 2. In the removal dialog, select **Download offboarding package**.
 
    [![Screenshot of the Remove sensor dialog with the Download offboarding package option highlighted.](https://learn.microsoft.com/en-us/defender-for-identity/media/remove-sensor-without-defender-for-endpoint-deployment.png)](https://learn.microsoft.com/en-us/defender-for-identity/media/remove-sensor-without-defender-for-endpoint-deployment.png#lightbox)
-3. Copy the downloaded offboarding package to the domain controller.
+3. Copy the downloaded offboarding package to the server.
 4. Open PowerShell as an administrator, and change to the folder that contains the offboarding package.
 5. Run the deployment tool with the full path to the `.offboarding` file:
 
@@ -32,11 +32,11 @@ For a domain controller onboarded without Defender for Endpoint deployment, run 
 
 Important
 
-For a sensor onboarded without Defender for Endpoint deployment, complete [Offboard a domain controller without Defender for Endpoint deployment](#offboard-a-domain-controller-that-isnt-onboarded-to-defender-for-endpoint-preview) before deleting the sensor entry.
+For a v3.x sensor onboarded without Defender for Endpoint deployment, complete [Offboard a server without Defender for Endpoint deployment](#offboard-a-server-without-defender-for-endpoint-deployment) before deleting the sensor entry.
 
 To delete a v3.x sensor from the Microsoft Defender portal, follow these steps:
 
-1. On the **Sensor management** tab of the **On-premises** page in the Microsoft Defender portal at [https://security.microsoft.com/securitysettings/identities](https://security.microsoft.com/securitysettings/identities), select the domain controller where you want to deactivate Defender for Identity capabilities.
+1. On the **Sensor management** tab of the **On-premises** page in the Microsoft Defender portal at [https://security.microsoft.com/securitysettings/identities](https://security.microsoft.com/securitysettings/identities), select the server where you want to deactivate Defender for Identity capabilities.
 2. Select **Delete**, and confirm your selection.
 
    [![Screenshot of the Sensor management tab with the Delete action for a selected sensor.](https://learn.microsoft.com/en-us/defender-for-identity/media/screenshot-that-shows-how-to-delete-a-sensor.png)](https://learn.microsoft.com/en-us/defender-for-identity/media/screenshot-that-shows-how-to-delete-a-sensor.png#lightbox)

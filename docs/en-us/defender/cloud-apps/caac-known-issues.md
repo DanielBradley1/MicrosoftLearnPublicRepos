@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/caac-known-issues -->
-<!-- Sitemap-Last-Modified: 2026-08-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # Known limitations in Conditional Access app control
 
@@ -108,7 +108,7 @@ To work around this limitation, access Microsoft Teams directly rather than laun
 
 ## Limitations for sessions that are served with Microsoft Edge in-browser protection
 
-The following Google Workspace, deep link, and outdated policy enforcement limitations apply only to sessions that are served with Microsoft Edge in-browser protection.
+The following Google Workspace, deep link, cross-tenant session behavior, and outdated policy enforcement limitations apply only to sessions that are served with Microsoft Edge in-browser protection.
 
 ### Secure Microsoft Edge Session Controls can't be used with Google Workspace in Enterprise Microsoft Edge browsers
 
@@ -125,6 +125,14 @@ If the URL points to a resource within the secured application, the user is dire
 A user who starts a session in Microsoft Edge with a profile other than their work profile, is prompted to switch to their work profile by clicking the ‘Switch to work profile’ button.
 
 If the URL points to a resource within the secured application, the user is directed to the application's homepage in Microsoft Edge.
+
+### Cross-tenant session behavior
+
+Microsoft Edge in-browser protection is applied at the browser session level. It doesn't provide a separate enforcement boundary for each tenant within the same Edge work-profile session.
+
+In B2B or cross-tenant scenarios, a protected session can be established while accessing a resource in one tenant. The protection can continue to apply when the user accesses resources in another tenant within the same Edge work-profile session.
+
+If separate session enforcement is required between tenants, use separate Microsoft Edge work profiles.
 
 ### Outdated session policy enforcement with Microsoft Edge
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint -->
-<!-- Sitemap-Last-Modified: 2026-09-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # New features in Microsoft Defender for Endpoint
 
@@ -8,6 +8,13 @@ This article describes Microsoft Defender for Endpoint features that are in prev
 For recent releases of Microsoft Defender for Endpoint, including build numbers, improvements, and fixes, see [Microsoft Defender for Endpoint release notes](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases).
 
 Learn more about [Preview features](https://learn.microsoft.com/en-us/defender-xdr/preview).
+
+## October 2026
+
+| Type | Feature | Preview/GA | Description |
+| --- | --- | --- | --- |
+| Release - macOS | Build 101.26082.0012 | GA | Release version 20.126082.12.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--october-2026--101260820012). |
+| Feature | [Vulnerability assessment for Microsoft Store applications](https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-software-inventory#microsoft-store-applications) | GA | Vulnerability assessment for applications installed via the Microsoft Store is now generally available. Defender Vulnerability Management detects supported Microsoft Store applications, adds them to the software inventory, and assesses them for vulnerabilities. Coverage is currently limited to a select set of commonly used applications. Use the **Software evidence** area on the software page to view the file path for the vulnerable application, along with a suggested query showing the vulnerable app, version, and file location. |
 
 ## September 2026
 
@@ -28,7 +35,6 @@ Learn more about [Preview features](https://learn.microsoft.com/en-us/defender-x
 | Feature | [Antivirus audit mode for Linux](https://learn.microsoft.com/en-us/defender-endpoint/linux-preferences#antivirus-antimalware-and-edr-settings-in-defender-for-endpoint-on-linux) | Preview | Provides real-time malware detection and alerting without automatically quarantining files or terminating processes. This enables organizations to evaluate Defender detection efficacy and performance on sensitive workloads before enabling enforcement.  <br>  <br>**Available in Microsoft Defender for Endpoint on Linux version 101.26062.0007 or later.** |
 | Feature | [Offboarding API support for Linux](https://learn.microsoft.com/en-us/defender-endpoint/api/offboard-machine-api) | GA | Enables organizations to automate the offboarding of Linux servers from Microsoft Defender for Endpoint through the Offboard machine API, simplifying device lifecycle management at scale.  <br>  <br>**Available in Microsoft Defender for Endpoint on Linux version 101.26062.0007 or later.** |
 | Release - macOS | Build 101.26062.0012 | GA | Release version 20.126062.12.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--august-2026--101260620012). |
-| Feature | [Vulnerability assessment for Microsoft Store applications](https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-software-inventory#microsoft-store-applications-preview) | Preview | You can now monitor vulnerabilities on devices running Microsoft Store applications, including Microsoft Teams, Mozilla Firefox, WhatsApp, Slack, Dropbox, DuckDuckGo, Dell Command \| Update, HP Smart, NVIDIA Control Panel, 1Password, Beyond Compare, and Evernote \(see [Microsoft Store applications](https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-software-inventory#microsoft-store-applications-preview) for the full list\). Use the **Software evidence** area in the software page to view the file path for the vulnerable application, along with a suggested query showing the vulnerable app, version, and file location. |
 | Release - macOS | Build 101.26062.0011 | GA | Release version 20.126062.11.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--august-2026--101260620011). |
 
 ## July 2026

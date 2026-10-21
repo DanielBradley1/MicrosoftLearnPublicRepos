@@ -3,6 +3,8 @@
 
 # Configure sensors for AD FS, AD CS, and Microsoft Entra Connect
 
+Use these procedures for Defender for Identity v2.x sensors. For v3.x sensors, follow [v3.x deployment and configuration](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3).
+
 ## Install and configure sensors on non-domain-controller servers
 
 Install and configure the Defender for Identity sensor v2.x on Active Directory Federation Services \(AD FS\), Active Directory Certificate Services \(AD CS\), and Microsoft Entra Connect servers that aren't domain controllers. Before you begin, make sure you've completed the [sensor installation prerequisites](https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites-sensor-version-2).
@@ -19,9 +21,9 @@ These considerations apply:
 
 ## Prerequisites
 
-For general sensor prerequisites, see the [Microsoft Defender for Identity prerequisites](https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites-sensor-version-2) article. The following additional requirements apply to AD FS, AD CS, and Microsoft Entra Connect servers.
+For general sensor prerequisites, see the [Microsoft Defender for Identity prerequisites](https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites-sensor-version-2) article. The following additional requirements apply to v2.x sensors on AD FS, AD CS, and Microsoft Entra Connect servers.
 
-A sensor installed on an AD FS, AD CS, or Microsoft Entra Connect server can't use the local service account to connect to the domain. Instead, you need to configure a [Directory Service Account](https://learn.microsoft.com/en-us/defender-for-identity/deploy/directory-service-accounts).
+A v2.x sensor installed on an AD FS, AD CS, or Microsoft Entra Connect server can't use the local service account to connect to the domain. Instead, you need to configure a [Directory Service Account](https://learn.microsoft.com/en-us/defender-for-identity/deploy/directory-service-accounts).
 
 In addition, the Defender for Identity sensor for AD CS supports only AD CS servers with Certification Authority Role Service.
 

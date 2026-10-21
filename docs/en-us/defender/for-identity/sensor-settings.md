@@ -211,11 +211,11 @@ The following example runs the sensor installer silently from the command line w
 "Azure ATP sensor Setup.exe" /quiet NetFrameworkCommandLineArguments="/q"
 ```
 
-## Remove RPC auditing from a device
+## Remove legacy RPC auditing tags
 
 From sensor version 3.0.8, RPC auditing is enabled automatically when the sensor is upgraded and no longer requires a tag.
 
-If you configured RPC auditing for an earlier v3.x sensor using the **Unified Sensor RPC Audit** tag, you can remove it by deleting the asset rule or modifying the rule conditions so the device no longer matches.
+If you configured RPC auditing for an earlier v3.x sensor using the **Unified Sensor RPC Audit** tag, you can remove the legacy tag by deleting the asset rule or modifying the rule conditions so the device no longer matches. Removing the tag doesn't disable automatic RPC auditing on v3.x sensors that no longer require it.
 
 To manage asset rules, in the [Microsoft Defender portal](https://security.microsoft.com), go to **System > Settings > Microsoft Defender XDR > Asset Rule Management**.
 

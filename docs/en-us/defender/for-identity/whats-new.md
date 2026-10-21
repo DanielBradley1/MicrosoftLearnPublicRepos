@@ -19,9 +19,58 @@ For updates about versions and features released six months ago or earlier, see 
 
 ## October 2026
 
+### Automatic sensor v3.x activation and Windows auditing for existing customers
+
+This rollout applies only to organizations that are licensed for Defender for Identity and have an active workspace. Eligible organizations included in the rollout see a banner on the **Sensor management** tab of the **On-premises** settings page for 30 days.
+
+After the 30-day notice period, **Automatic sensor v3.x activation** and **Automatic Windows auditing configuration** are enabled by default through a very gradual rollout, including settings currently set to **Off**. To keep your current settings, select **Opt out** in the banner during the notice period.
+
+While the banner appears, select **Go to Advanced features** to enable the settings yourself, or **Opt out** to prevent automatic enablement.
+
+For more information, see [Activate the Defender for Identity sensor v3.x](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#control-automatic-activation) and [Configure Windows event auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#control-automatic-windows-auditing).
+
+### New Defender for Identity security alerts
+
+The October announcement includes the following new alerts:
+
+**New alerts related to Entra ID**:
+
+- [Malicious registration of a device with strong MFA](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#malicious-registration-of-a-device-with-strong-mfa)
+- [Malicious registration of an attacker controlled MFA device](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#malicious-registration-of-an-attacker-controlled-mfa-device)
+- [Newly created user performed organization branding change](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#newly-created-user-performed-organization-branding-change)
+- [Suspicious registration of a new Authenticator MFA method](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-registration-of-a-new-authenticator-mfa-method)
+- [Suspicious registration of a new Email MFA method](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-registration-of-a-new-email-mfa-method)
+- [Suspicious registration of a new Phone MFA method](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-registration-of-a-new-phone-mfa-method)
+- [Suspicious sign-in via Temporary Access Pass](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-sign-in-via-temporary-access-pass)
+
+**New alerts related to Active Directory**:
+
+- [Kerberos privilege escalation using a diamond ticket](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#kerberos-privilege-escalation-using-a-diamond-ticket)
+- [Malicious Kerberos activity and CVE-2025-33073 exploitation attempt](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#malicious-kerberos-activity-and-cve-2025-33073-exploitation-attempt)
+- [Malicious request of Data Protection API \(DPAPI\) master key](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#malicious-request-of-data-protection-api-dpapi-master-key)
+- [Possible data exfiltration over DNS](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#possible-data-exfiltration-over-dns)
+- [Potential Certighost \(CVE-2026-54121\) AD CS abuse](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#potential-certighost-cve-2026-54121-ad-cs-abuse)
+- [Suspicious Active Directory Certificate Services \(AD CS\) certificate request](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-active-directory-certificate-services-ad-cs-certificate-request)
+- [Suspicious Active Directory Certificate Services \(AD CS\) machine certificate issuance abuse \(ESC8\)](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-active-directory-certificate-services-ad-cs-machine-certificate-issuance-abuse-esc8)
+- [Suspicious Active Directory Certificate Services \(AD CS\) machine certificate issuance over RPC \(ESC11\)](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-active-directory-certificate-services-ad-cs-machine-certificate-issuance-over-rpc-esc11)
+- [Suspicious Active Directory Certificate Services \(AD CS\) misconfigured certificate template abuse \(ESC1\)](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-active-directory-certificate-services-ad-cs-misconfigured-certificate-template-abuse-esc1)
+- [Suspicious Certificate Authority \(CA\) certificate and private key theft](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-certificate-authority-ca-certificate-and-private-key-theft)
+- [Suspicious Kerberos PKINIT authentication \(AS-REQ\)](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-kerberos-pkinit-authentication-as-req)
+- [Suspicious Kerberos ticket authorization data](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#suspicious-kerberos-ticket-authorization-data)
+
+**New alerts related to other identity providers**:
+
+- [Anomalous volume of failed Okta authentication attempts](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#anomalous-volume-of-failed-okta-authentication-attempts)
+- [Multifactor authentication method added for a privileged Okta account](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#multifactor-authentication-method-added-for-a-privileged-okta-account)
+- [Okta access or refresh token grant from a risky context](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#okta-access-or-refresh-token-grant-from-a-risky-context)
+- [Okta anomalous privileged account authentication](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#okta-anomalous-privileged-account-authentication)
+- [Okta consent grant from a risky context](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#okta-consent-grant-from-a-risky-context)
+- [Password of a privileged Okta account was reset by another account](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#password-of-a-privileged-okta-account-was-reset-by-another-account)
+- [Secondary identity provider added in Okta](https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr#secondary-identity-provider-added-in-okta)
+
 ### General availability of sensor v3.x activation without Defender for Endpoint
 
-Defender for Identity sensor v3.x activation without Defender for Endpoint is now generally available for eligible domain controllers running Windows Server 2019 or later. This activation method supports only new sensor v3.x deployments on eligible domain controllers without an existing Defender for Identity sensor. Sensor v2.x migration isn't supported. For more information, see [Activate the Defender for Identity sensor](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor).
+Defender for Identity sensor v3.x activation without Defender for Endpoint is now generally available. Supported servers include eligible domain controllers, AD FS, AD CS, and Microsoft Entra Connect servers running Windows Server 2019 or later. This activation method supports only new sensor v3.x deployments on eligible servers without an existing Defender for Identity sensor. Sensor v2.x migration isn't yet available. For more information, see [Activate the Defender for Identity sensor](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor).
 
 ## September 2026
 
@@ -31,15 +80,15 @@ Automatic sensor v3.x activation and automatic Windows auditing apply only to or
 
 The rollout differs for new Microsoft Defender for Endpoint customers and existing Defender for Identity customers:
 
-**New Microsoft Defender for Endpoint customers:** If your organization is licensed for Defender for Identity, its first device was onboarded to Defender for Endpoint on or after September 13, 2026, and it doesn't already have a Defender for Identity workspace, Defender for Identity automatically creates a workspace when it identifies an eligible identity-role server. It also enables automatic sensor v3.x activation and Windows auditing by default.
+**New Microsoft Defender for Endpoint customers:** This applies to organizations licensed for Defender for Identity whose first device was onboarded to Defender for Endpoint on or after September 13, 2026. Automatic sensor v3.x activation and Windows auditing are enabled by default when Defender for Identity identifies an eligible identity-role server that's onboarded to Defender for Endpoint. A Defender for Identity workspace is also created automatically.
 
 This flow activates the Defender for Identity sensor capability on eligible servers that are already onboarded to Defender for Endpoint. It doesn't add a separate Defender for Identity installation, activate the sensor on other Defender for Endpoint servers, or affect servers that already have a Defender for Identity sensor.
 
-**Existing Defender for Identity customers:** The change becomes available gradually. The Defender portal displays a notice before it enables the settings automatically. After the notice period ends, the portal enables the settings.
+**Existing Defender for Identity customers:** This rollout applies only to organizations that are licensed for Defender for Identity and have an active workspace. Eligible organizations included in the rollout see a banner on the **Sensor management** tab of the **On-premises** settings page for 30 days.
 
-While the notice appears, select **Go to Advanced features** to enable the settings or **Opt out** to prevent automatic enablement.
+After the 30-day notice period, **Automatic sensor v3.x activation** and **Automatic Windows auditing configuration** are enabled by default through a very gradual rollout, including settings currently set to **Off**. To keep your current settings, select **Opt out** in the banner during the notice period.
 
-The notice appears on the **Sensor management** tab of the **On-premises** settings page.
+While the banner appears, select **Go to Advanced features** to enable the settings yourself, or **Opt out** to prevent automatic enablement.
 
 For more information, see [Activate the Defender for Identity sensor v3.x](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#control-automatic-activation) and [Configure Windows event auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#control-automatic-windows-auditing).
 
@@ -79,7 +128,7 @@ Automatic Windows event auditing now configures auditing for AD FS, AD CS, and M
 | --- | --- |
 | 2.255.19295.47272 | This sensor update adds support for a new Event Tracing for Windows \(ETW\) provider and includes other improvements. |
 
-### Sensor v2.x to v3.x migration is now generally available
+### General availability of sensor v2.x to v3.x migration
 
 Migration of Defender for Identity sensors from v2.x to v3.x is now generally available. For more information, see [Migrate to Defender for Identity sensor v3.x](https://learn.microsoft.com/en-us/defender-for-identity/deploy/migrate-to-sensor-v3).
 
@@ -95,7 +144,7 @@ When a server is marked **Not ready for migration** on the **Sensors** page, you
 
 The Password protection page now includes password risks from SaaS apps connected through Microsoft Defender for Cloud Apps, in addition to Active Directory, Microsoft Entra ID, and Okta. SaaS apps that support SaaS Security Posture Management \(SSPM\), such as Salesforce and ServiceNow, appear on the Password Hygiene and Password Policies tabs. Each SaaS app requires a Defender for Cloud Apps app connector. For more information, see [Investigate identity password protection](https://learn.microsoft.com/en-us/defender-for-identity/password-protection).
 
-### The **Domain investigation page** is now generally available
+### General availability of the Domain investigation page
 
 The **Domain investigation** page allows you to investigate an Active Directory domain. It shows Active Directory domain security, including domain properties, deployment health, identity summary, service account breakdown, sensitive entities, active recommendations, group policies, and trust relationships. For more information, see [Investigate a domain](https://learn.microsoft.com/en-us/defender-for-identity/investigate-domain).
 
@@ -167,7 +216,7 @@ These new alerts were added to the Defender for Identity security alerts:
 
 ### Known limitation: Migration of domain controllers with Windows Server 2025 from sensor v2.x to sensor v3.x is not supported
 
-Migrating domain controllers running Windows Server 2025 to sensor v3.x isn't currently supported. Continue using the v2.x sensor on Windows Server 2025 domain controllers until support for migration to v3.x is available.
+When announced in May 2026, migration of Windows Server 2025 domain controllers from sensor v2.x to sensor v3.x wasn't supported. This limitation was resolved in July 2026. See [Windows Server 2025 migration support](#migrate-windows-server-2025-domain-controllers-to-sensor-v3x) and the [current migration requirements](https://learn.microsoft.com/en-us/defender-for-identity/deploy/migrate-to-sensor-v3#prerequisites).
 
 ### Defender for Identity sensor updates
 

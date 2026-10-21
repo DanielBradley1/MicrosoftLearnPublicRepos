@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/alert-policies-defender-portal -->
-<!-- Sitemap-Last-Modified: 2026-07-17 -->
+<!-- Sitemap-Last-Modified: 2026-08-24 -->
 
 # Alert policies in the Microsoft Defender portal
 
@@ -50,6 +50,15 @@ Built-in alert tuning rules don't apply to alerts from [custom detection rules](
 Note
 
 The [Microsoft Security Copilot Phishing Triage Agent](https://learn.microsoft.com/en-us/defender-xdr/phishing-triage-agent) doesn't classify alerts suppressed by [alert tuning](https://learn.microsoft.com/en-us/defender-xdr/investigate-alerts#tune-an-alert). Be sure to disable the **Auto-Resolve - Email reported by user as malware or phish** built-in alert tuning rule and any custom tuning rules that suppress this alert.
+
+### Disable a built-in alert tuning rule
+
+To disable a built-in alert tuning rule, follow these steps:
+
+1. On the **Alert tuning** page, select the built-in rule.
+2. In the rule details pane, select **Disable**.
+
+   [![Screenshot of a built-in alert tuning rule details pane with the Disable action.](https://learn.microsoft.com/en-us/defender-xdr/media/built-in-alert-tuning-rules/disable-built-in-alert-tuning-rule.png)](https://learn.microsoft.com/en-us/defender-xdr/media/built-in-alert-tuning-rules/disable-built-in-alert-tuning-rule.png#lightbox)
 
 ## Open alert policies
 
