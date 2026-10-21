@@ -156,6 +156,10 @@ To use this device action, your account must be assigned the \[Intune RBAC permi
    1. Expand **Monitor** and then select **Passwords and keys**.
    2. On the **Passwords and keys** pane, you can find the last date and time that the password was rotated.
 
+Tip
+
+To manage the lockout timer, configure **Failed Attempts Reset In Minutes** in the [settings catalog](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/) before rotating the password.
+
 ## Monitor password rotation
 
 Password viewing and rotation both create Intune Audit events that you can view from within the Intune admin center.

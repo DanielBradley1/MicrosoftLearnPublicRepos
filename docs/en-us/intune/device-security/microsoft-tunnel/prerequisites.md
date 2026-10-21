@@ -94,6 +94,9 @@ Only the operating systems and container versions that are listed in the followi
   Microsoft Tunnel requires Docker or Podman on the Linux server to provide support for containers. Containers provide a consistent execution environment, health monitoring and proactive remediation, and a clean upgrade experience.
 
 
+  Encryption at rest is optional, but we strongly recommend configuring your Docker or Podman environment to encrypt files used by Microsoft Tunnel containers. For information about available options, see the documentation for your Linux distribution and container platform.
+
+
   For information about installing and configuring Docker or Podman, see:
 
 

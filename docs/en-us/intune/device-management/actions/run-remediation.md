@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/actions/run-remediation -->
 <!-- Sitemap-Last-Modified: 2026-09-28 -->
 
-# Device action: run remediation
+# Device action: run remediation \(preview\)
 
 The *run remediation* action in Microsoft Intune allows IT administrators to proactively detect and resolve support issues on managed devices. This action triggers a remediation script that checks for specific conditions and applies a fix if needed—without requiring user interaction.
 

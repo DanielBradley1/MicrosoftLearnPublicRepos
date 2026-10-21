@@ -154,6 +154,8 @@ Rules deployed to a device apply to *every user* that uses that device. Rules th
 
 *Default Elevation behavior* is used only when no rule match can be found. The default elevation behavior only applies when an elevation is triggered with the *Run with elevated access* right-click menu.
 
+Unlike elevation rules assigned to groups that contain users, the default elevation response is a device-scoped client setting configured by the *Windows elevation settings policy* and applies to all users on the device. Assigning this policy to a group that contains users doesn't create a per-user default. To provide different application elevation behavior for particular users, assign elevation rules to groups that contain those users. For more information, see [Policy scope and user assignments](https://learn.microsoft.com/en-us/intune/epm/manage-elevation-settings#policy-scope-and-user-assignments).
+
 ## Create elevation rules policy
 
 Deploy an *Elevation rules policy* to users or devices to deploy one or more rules for files that are managed for elevation by Endpoint Privilege Management. Each rule you add to this policy:

@@ -137,6 +137,8 @@ Except for the following situations, conflicting policies for EPM are handled li
 
 **Windows elevation settings policy**:
 
+The client settings configured by the *Windows elevation settings policy* are device-scoped, even when the policy is assigned to a group that contains users. Assigning different policies to groups that contain different users doesn't establish separate per-user default elevation responses. For more information, see [Policy scope and user assignments](https://learn.microsoft.com/en-us/intune/epm/manage-elevation-settings#policy-scope-and-user-assignments).
+
 When a device receives two separate elevation settings policies with conflicting values, the EPM client reverts to the default client behavior until the conflict is resolved.
 
 Note
