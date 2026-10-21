@@ -153,7 +153,7 @@ async def on_simple_form_submit(context, state, request: TaskModuleRequest) -> T
 
 Chain task modules by returning a `continue` response from a submit handler instead of a `message`. Teams replaces the current dialog with the new card.
 
-## Related content
+## Related information
 
 - [Teams extension overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-extension)
 - [Handle meeting events](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-meetings)

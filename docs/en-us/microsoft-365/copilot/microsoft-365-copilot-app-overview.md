@@ -13,7 +13,7 @@ You can use the Microsoft Copilot app in the following client formats:
 
 - Browser
 
-  - [copilot.microsoft.com](https://copilot.microsoft.com/)
+  - [copilot.cloud.microsoft](https://copilot.cloud.microsoft.com/)
 
 - Desktop app
 

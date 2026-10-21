@@ -70,7 +70,7 @@ User state is good for tracking information about the user, such as:
 - Route handlers you add will be provided with a `TurnState` instance. Access conversation or user state from this instance.
 - State is automatically loaded and saved.
 
-## Related content
+## Related information
 
 - [Agents SDK storage overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/storage)
 - [Learn more about the Activity Protocol](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/activity-protocol)

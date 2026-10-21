@@ -67,6 +67,16 @@ If you're looking for information about other usage-based billing products, use 
 - For Copilot Studio, see [Copilot Studio pay-as-you-go](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing#copilot-studio-pay-as-you-go).
 - For non-Copilot services such as Microsoft 365 Backup, Microsoft 365 SharePoint Storage, and High Volume Email, see [Set up and manage pay-as-you-go billing in the Billing node of the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-setup-billing-node).
 
+## Use Copilot Cost Management API
+
+The Microsoft 365 Copilot Cost Management API provides administrators with visibility into and control over Copilot and AI credit usage across their organization. Through Microsoft Graph, admins can manage spending policies, configure service access and notifications, and monitor tenant and user-level credit consumption.
+
+Note
+
+The API reports usage in AI credits and does not include pricing, invoices, currency costs, or purchasing forecasts.
+
+Learn more about the [Microsoft 365 Copilot Cost Management API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview).
+
 ## Manage usage-based billing in the Microsoft 365 admin center
 
 ### Use the cost management dashboard

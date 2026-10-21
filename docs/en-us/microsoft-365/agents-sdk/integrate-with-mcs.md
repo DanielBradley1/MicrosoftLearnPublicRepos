@@ -24,6 +24,6 @@ Note
 
 Currently, you can only use the Copilot Studio client library with Copilot Studio agents created by using the standard harness. Agents using the GitHub Copilot harness aren't yet officially supported.
 
-## Related content
+## Related information
 
 - [Integrate your Copilot Studio agent with the Microsoft 365 Agents SDK](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-integrate-web-or-native-app-m365-agents-sdk)

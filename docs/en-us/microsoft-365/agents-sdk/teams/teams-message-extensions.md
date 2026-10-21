@@ -982,7 +982,7 @@ async def on_configure_settings(context, state, query: MessagingExtensionQuery):
     return MessagingExtensionResponse()
 ```
 
-## Related content
+## Related information
 
 - [Teams extension overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-extension)
 - [Use task modules](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-task-modules)

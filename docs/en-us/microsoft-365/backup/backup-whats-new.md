@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-whats-new?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # What's new in Microsoft 365 Backup
 
@@ -15,6 +15,14 @@ Developer API changes are tracked separately in [What's new for Microsoft 365 Ba
 <summary>**New capabilities** - Launched within the last three months</summary>
 
 ## New capabilities
+
+### Monitor and export Microsoft 365 Backup activity
+
+**October 13, 2026**
+
+Microsoft 365 Backup Activity Logs provide an in-product view of backup policy and restore operations for operational monitoring and troubleshooting. Open **Reports** > **Recent activities** > **View more** to review activity counts and details, filter or search activities, and export the current results as a CSV file. Logs include policy and dynamic rule changes, product and protection-unit offboarding, and restore task creation and completion; read-only operations aren't included. Activity logs are retained for a fixed, nonconfigurable 365 days, and the system supports up to 1 million activities across supported services. Global Administrators and Microsoft 365 Backup Administrators can view all three workloads; SharePoint Administrators can view SharePoint and OneDrive activity, and Exchange Administrators can view Exchange activity. For compliance investigations that require the Microsoft 365 audit record, continue to use Microsoft Purview Audit.
+
+For more information, see [Activity logs](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-privacy-security?view=o365-worldwide#activity-logs).
 
 ### Require two-person approval to shorten offboarding deletion
 

@@ -3,7 +3,7 @@
 
 # Connect to other agents from a declarative agent
 
-When users interact with a declarative agent in Microsoft 365 Copilot Chat, it can connect to other agents to retrieve extra information or perform actions. You declare these connections in the agent manifest by listing agent title IDs in the [`worker_agents`](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.7) property. At runtime, Copilot Chat acts as the broker that mediates the interaction—users see the agent-to-agent exchange but don't need to select connected agents themselves.
+When users interact with a declarative agent in Microsoft 365 Copilot Chat, it can connect to other agents to retrieve extra information or perform actions. You declare these connections in the agent manifest by listing agent title IDs in the [`worker_agents`](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8) property. At runtime, Copilot Chat acts as the broker that mediates the interaction—users see the agent-to-agent exchange but don't need to select connected agents themselves.
 
 Note
 
@@ -11,7 +11,9 @@ Manifest-declared connected agents are a separate mechanism from the [Copilot Ch
 
 Note
 
-Users must install each connected agent before they can use them. For more information, see [Deploying connected agents to users in the organization](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry).
+Users must acquire each connected agent before they can use them. For more information, see [Deploying connected agents to users in the organization](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry).
+
+When a user interacts with a declarative agent, the agent can delegate part of the task to a connected agent. Microsoft 365 Copilot evaluates the connected agents declared in the manifest and selects one based on the current task and the connected agent's name, description, and example prompts. Copilot sends a text request to the selected connected agent, receives a text response, and incorporates that response into the declarative agent's ongoing interaction with the user.
 
 ## When to use connected agents
 
@@ -31,17 +33,34 @@ An agent might work well with a set of documents and actions but still be diffic
 
 ## Enabling connected agents
 
-Connect to other declarative agents by including the agents' title IDs in the existing [declarative agent's manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8).
+You must register connected agents in the [Microsoft Agent 365 agent registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/overview).
 
-First, get the title ID of the agent to connect. The title ID of a declarative agent is a string of a single letter, an underscore, and a GUID. You can find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio).
+First, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/resources/agentregistration).
 
 ![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/declarative-agents/developer-mode-title-id.png)
 
 Add the title ID to the [worker\_agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.
 
+### Authentication and authorization
+
+Connecting to a declarative agent relies on the user's existing authentication to Microsoft 365 Copilot, because the declarative agent runs within Microsoft 365 Copilot Chat. For external agents registered in Microsoft Agent 365, the agent registration must declare how Microsoft 365 Copilot authenticates to the external agent. Instead of embedding authentication configuration directly in the agent registration, the registration references an existing authentication registration through the `authorization` object in the `agentRegistration`. This separation allows authentication configuration to be managed independently from agent definitions. The design mirrors that of [API plugin manifests](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4).
+
+#### Syntax
+
+```json
+{
+  "type": "None | OAuthPluginVault",
+  "referenceId": "{string}"
+}
+```
+
+The `type` property specifies the authentication scheme used by the external agent. `OAuthPluginVault` uses a Microsoft Entra SSO registration. The `referenceId` is the `Microsoft Entra SSO registration ID` value generated in the Teams developer portal. See [Use the Teams developer portal](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-entra-sso#use-the-teams-developer-portal) for more detail.
+
+Whether a user can use the connected agent is determined separately from authentication. Users must have access to the connected agent, either by acquiring it themselves or through administrator deployment. Administrators must [install external agents registered in Microsoft Agent 365 for the user](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry).
+
 ## Best practices
 
-Declarative agents choose what agents to connect to based on the connected agent's `name`, `description`, and `conversation_starters` in the manifest. The description should describe to both humans and agents what the agent can do. For example, consider this description for an agent that works with structured data about video game sales.
+Declarative agents choose what agents to connect to based on the connected agent's `name`, `description`, and example prompts. For a declarative agent, example prompts are the `text` field of `conversation_starters` in the manifest. For an agentRegistration, it is the `examples` property of the `AgentSkill` object in the agent card. The agent's description should describe to both humans and agents what the agent can do. For example, consider this description for an agent that works with structured data about video game sales.
 
 ```text
 A comprehensive video game sales analytics agent that provides detailed insights into
@@ -58,12 +77,11 @@ across different years and regions, this agent delivers comprehensive gaming mar
 intelligence with precise data-driven answers.
 ```
 
-Conversation starters should inform both users and agents the types of prompts the agent can handle. Because users might use different terms for the same concept, consider varying the phrasing of conversation starters. For example, when working with legal cases, good conversation starters might also use "matter," "case," "customer," and "issue" terms. Only the `text` field of a conversation starter is used by connected agents.
+Example prompts should inform both users and agents the types of prompts the agent can handle. Because users might use different terms for the same concept, consider varying the phrasing of conversation starters. For example, when working with legal cases, good conversation starters might also use "matter," "case," "customer," and "issue" terms. Only the `text` field of a conversation starter is used by connected agents.
 
 ## Limitations
 
-- Declarative agents can only connect to other declarative agents through the connected agents feature. Consider using [MCP or API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) for connecting to other systems and agents.
-- Communication between agents only includes text. The active agent sends a text prompt to the connected agent, which responds with a text response. Agents can't send file binaries or images to other agents.
+- The active agent sends text only to a connected agent. Declarative agents return text or Adaptive Cards. Agents with Agent2Agent agent cards return text, Base64 image binaries, and Base64 file binaries.
 - While the user is prompted to confirm API plugin calls of the connected agent, any [adaptive cards](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api-plugin-adaptive-cards) are sent to the active agent. The user doesn't see the adaptive card or be able to use a dialog box. However, the active agent processes the data content of the adaptive card.
 
 ## Related content

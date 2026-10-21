@@ -146,7 +146,7 @@ Note
 
 The client is only available for activities on the Teams channel.
 
-## Related content
+## Related information
 
 - [Teams extension overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-extension)
 - [Handle meeting events](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-meetings)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/reports/resources/copilotreportroot -->
-<!-- Sitemap-Last-Modified: 2026-01-10 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # copilotReportRoot resource type
 
@@ -18,6 +18,7 @@ For more information about report views and names, see [Microsoft 365 reports - 
 | [getMicrosoft365CopilotUserCountSummary](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/reports/copilotreportroot-getmicrosoft365copilotusercountsummary) | Stream | Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period. |
 | [getMicrosoft365CopilotUserCountTrend](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/reports/copilotreportroot-getmicrosoft365copilotusercounttrend) | Stream | Get the trend in the daily number of active and enabled users of Microsoft 365 Copilot for a specified time period. |
 | [getMicrosoft365CopilotUsageUserDetail](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/reports/copilotreportroot-getmicrosoft365copilotusageuserdetail) | Stream | Get the most recent activity data for enabled users of Microsoft 365 Copilot apps. |
+| [getMicrosoft365CopilotUsageUserDetailByDate](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/reports/copilotreportroot-getmicrosoft365copilotusageuserdetailbydate) | Stream | Get user-level Microsoft 365 Copilot usage detail for a single selected date. |
 
 ## Properties
 

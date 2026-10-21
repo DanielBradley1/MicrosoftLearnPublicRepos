@@ -5,7 +5,7 @@
 
 Check out all of our small business content on [Small business help & learning](https://go.microsoft.com/fwlink/?linkid=2224585).
 
-As the admin of your organization, you can create multiple themes for the people in your organization, and select which themes apply to different members of your organization. The organization theme is what appears in the top navigation bar for people in your organization.
+As the admin of your organization, you can create multiple themes for the people in your organization, and select which themes apply to different members of your organization. The organization theme appears in the top navigation bar for people in your organization. You can also use the logo from your default theme to add a branded footer to the Chat screen in the Microsoft 365 Copilot app.
 
 You can add or update a default theme that applies to everyone in your organization. You can also create up to four additional group themes that can be assigned to multiple Microsoft 365 groups.
 
@@ -21,6 +21,7 @@ You can add or update a default theme that applies to everyone in your organizat
    | --- | --- |
    | [General](#general-modify-a-theme) | Modify a theme name and assign to up to five groups \(if applicable\). |
    | [Logos](#logos-specify-your-theme-logos) | Add your organization logo, including alternate logo for dark theme. |
+   | [Copilot Chat](#copilot-chat-add-a-branded-footer) | Add your organization's logo and an optional label to the footer in the Microsoft 365 Copilot app. This option is available for the default theme only. |
    | [Colors](#colors-choose-theme-colors) | Customize a color scheme by specifying navigation bar, accent, text and icon colors. |
 
 ## General: Modify a theme
@@ -68,6 +69,33 @@ You can remove your logos at any time. Just return to the **Logos** page and sel
 Note
 
 The Microsoft 365 suite header is designed to accommodate a variety of screen sizes, window sizes, and display settings. The responsive behavior of the suite header sometimes results in the logo not showing to give space to other capabilities shown on the suite header. To reduce the likelihood of this behavior a narrower image file is recommended.
+
+## Copilot Chat: Add a branded footer
+
+You can display your organization's logo and an optional label at the bottom of the Chat screen in the Microsoft 365 Copilot app. The branded footer helps users identify their organization's trusted, work-managed Copilot experience.
+
+The footer is turned off by default. It uses the logo configured on the **Logos** page for your organization's default theme. Other theme settings don't apply to the footer.
+
+To add a branded footer:
+
+1. Select your **Default Theme**. If you don't have a **Default Theme**, see [Add or update your organization's theme](#add-or-update-your-organizations-theme).
+2. On the **Logos** page, confirm that your organization's logo is configured.
+3. Open the **Copilot Chat** page.
+4. Select **Add your brand to Copilot Chat footer area**.
+5. In the **Footer style** dropdown, select one of the following options:
+
+   - **No label**
+   - **Approved by**
+   - **Provided by**
+   - **Managed by**
+
+6. Select **Save**.
+
+![Screenshot of the branded footer settings for Copilot Chat.](https://learn.microsoft.com/en-us/microsoft-365/media/20003-1-copilot-branded-footer.png?view=o365-worldwide)
+
+Note
+
+The branded footer uses your organization's default theme and applies to all users. You can't currently target different logos to specific user groups.
 
 ## Colors: Choose theme colors
 
@@ -124,7 +152,7 @@ The recommended contrast ratio between text, icon or button color and background
 
 ### If I define a theme, which places in Microsoft 365 will this be used?
 
-Any theme appears in the top navigation bar for everyone in the organization as part of the Microsoft 365 suite header.
+Any theme appears in the top navigation bar for everyone in the organization as part of the Microsoft 365 suite header. If you enable the branded Copilot Chat footer for the default theme, its logo and selected label also appear at the bottom of the Chat screen in the Microsoft 365 Copilot app.
 
 ## Related content
 

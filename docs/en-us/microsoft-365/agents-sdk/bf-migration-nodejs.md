@@ -469,7 +469,7 @@ export default new MyAgent()
 | **Maintainability** | Cleaner code structure for complex bots |
 | **Arrow functions** | Automatically bind `this` context without needing `.bind()` |
 
-## Related Content
+## Related information
 
 - [Azure Bot Framework SDK to Agents SDK migration guidance](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/bf-migration-guidance)
 - [Azure Bot Framework SDK to Microsoft 365 Agents SDK migration guidance for .NET](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/bf-migration-dotnet)

@@ -15,10 +15,6 @@ Federated connectors can be Microsoft-published or submitted by partners to Micr
 
 By using federated connectors, organizations can extend Copilot to work seamlessly with their existing tools and data to unlock more relevant and timely insights across their workflows.
 
-Note
-
-Support for write, update, and delete actions begins rolling out in early October 2026. For availability by Copilot experience, see [Write, update, and delete actions](#write-update-and-delete-actions-coming-soon).
-
 ## What are federated connectors?
 
 Federated Copilot connectors:
@@ -75,11 +71,17 @@ The following image shows federated connectors in the **Your connections** list 
 
 Important
 
-Admins control whether default federated connectors are available to their organization from the **Settings** tab in Agent 365, by using the [Allowed agent types](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#allowed-agent-types). When the Microsoft-published and third-party-published options are deselected, federated connectors aren't enabled by default in the tenant, including connectors released in the future, and the admin enables each connector individually. This setting replaces the tenant-wide PowerShell toggle. Tenants that previously used the cmdlet receive a Message Center post asking them to reapply the choice in the UX within a limited window, after which the cmdlet state is no longer honored. For more information, see [Manage federated connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/manage-federated-connectors).
+Admins control which federated connectors are available in their organization from **Agents** > **Settings** > **Agent and plugin access** in the Microsoft 365 admin center. Connectors are grouped by who built them: **Allow agents and plugins built by Microsoft**, **Allow agents and plugins built by your organization**, and **Allow agents and plugins built by external publishers**. When you clear an option, connectors of that type aren't available to users, including connectors released in the future. You can still turn on individual connectors from **Copilot connectors** > **Your connections**.
+
+**Agents** > **Settings** > **User access** also applies to connectors. It sets the maximum population of users who can use any connector, regardless of a connector's own staged rollout.
+
+For more information, see [Manage federated connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/manage-federated-connectors).
 
 ## Admin experience and controls
 
-Microsoft-published federated connectors are enabled by default for a tenant unless admins disable them. Admins must approve partner federated connectors before enabling them for the organization. Admins can manage federated Copilot connectors in the Microsoft 365 admin center by choosing **Copilot connectors** > **Your connections**.
+Microsoft-built federated connectors are available by default when you select **Allow agents and plugins built by Microsoft** in **Agent and plugin access** and include the user in **User access**. Connectors from external publishers are available only when you select **Allow agents and plugins built by external publishers**, or when an admin turns on the individual connector.
+
+Admins can manage federated Copilot connectors in the Microsoft 365 admin center by choosing **Copilot connectors** > **Your connections**.
 
 Administrators can manage Microsoft 365 Copilot connectors, synchronized connectors, federated connectors, and supported Cowork plugins from a single location: Copilot connectors > Your connections.
 
@@ -87,9 +89,30 @@ Admins can:
 
 - View federated connectors that are available in the tenant on the **Your connections** tab, including Microsoft-published connectors and partner connectors that Microsoft approved and the admin enabled.
 - Enable or disable connectors at the tenant level.
-- Limit availability to specific Microsoft Entra ID groups by choosing **Add staging** in the **Staged Rollout** column.
-- Bulk disable all federated connectors by using [Allowed Agent Type](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#allowed-agent-types), and selectively enable specific federated connectors in the Microsoft 365 admin center based on organizational policies and readiness. For more information, see [Manage federated connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/manage-federated-connectors).
-- Manage federated connectors from the Agent tab in the Microsoft 365 admin center portal apart from the **Copilot connectors** > **Your connections** section.
+- Limit a connector to specific users or Microsoft Entra ID groups by choosing **Add staging** in the **Staged rollout** column. Staging can't extend beyond the users allowed by **User access**.
+- Turn off connectors in bulk by publisher type in **Agents** > **Settings** > **Agent and plugin access**, then turn on specific connectors from **Your connections**.
+- Limit which users can use any agent or plugin, including connectors, in **Agents** > **Settings** > **User access**.
+
+### Which setting controls what
+
+| Control | Location | What it does for connectors |
+| --- | --- | --- |
+| **Agent and plugin access** | **Agents** > **Settings** > **Agent and plugin access** | Allows or blocks connectors in bulk by publisher type, including future connectors. Clearing a type sets that type's connectors' staged rollout to **No users**. |
+| **User access** | **Agents** > **Settings** > **User access** | Tenant-wide ceiling on who can use any agent or plugin, including MOS connector packages. Options: **All users** \(default\), **Specific users or groups**, **No users**. |
+| **Enable / Disable** | **Copilot** > **Connectors** > **Your connections** | Turns an individual connector on or pauses it without removing configuration. |
+| **Staged rollout** | **Copilot** > **Connectors** > **Your connections** > **Staged rollout** | Which users or groups get an individual connector, within the **User access** population. |
+| **Tools block / unblock** | **Agents** > **Tools** | Tool-level and connector-level blocking. |
+| **Delete** | **Copilot** > **Connectors** > **Your connections** | Permanently removes a custom connector and its configuration. |
+
+A user sees a federated connector in Copilot only when all of the following are true:
+
+- The connector's publisher type is allowed in **Agent and plugin access**, or an admin turned on the connector individually.
+- The connector is enabled.
+- The user is included in **User access**.
+- The user is included in the connector's staged rollout.
+- The user has a Microsoft 365 Copilot license.
+
+**Installed for** and agent sharing settings don't apply to federated connectors.
 
 Write, update, and delete tools are part of the connector and aren't enabled separately.
 
@@ -171,7 +194,7 @@ The MCP server associated with the federated connector determines tool availabil
 
 The authenticated user's identity and permissions in the source system govern tool access. Users can only access information they're authorized to view and change data they're authorized to modify.
 
-Tools that create, update, or delete data require user approval. For confirmation options and tool permissions, see [Write, update, and delete actions](#write-update-and-delete-actions-coming-soon).
+Tools that create, update, or delete data require user approval. For confirmation options and tool permissions, see [Write, update, and delete actions](#write-update-and-delete-actions).
 
 Examples of read operations through dynamic tooling include:
 
@@ -183,7 +206,7 @@ Examples of read operations through dynamic tooling include:
 
 Dynamic tooling doesn't index external data into Microsoft 365.
 
-## Write, update, and delete actions \(Coming soon\)
+## Write, update, and delete actions
 
 With federated connectors, users can do more than retrieve information. When a connector provides the appropriate tools, users can ask Microsoft 365 Copilot to create, update, or delete information in a connected third-party system on their behalf. Users can complete work without leaving Copilot. For example, a user can turn an escalation email into an issue in a project-tracking tool, update a record in a customer relationship management \(CRM\) system, or add a comment to a ticket directly from Copilot Chat.
 
@@ -273,13 +296,19 @@ Synced connectors are supported at an organization level; federated connectors a
 
 Both federated and synced connectors can coexist in your tenant and appear together in your connector list.
 
-### Does the **Allowed plugins type** setting apply to federated connectors released in the future?
+### Does Agent and plugin access apply to federated connectors released in the future?
 
-Yes. The setting applies to connectors released after you configure it. If you deselect the **Microsoft-published** and **third-party-published** options, users can't access new connectors until an admin enables them. If you select those options, new connectors follow the default rollout behavior.
+Yes. If you clear an option, new connectors of that type aren't available to users until an admin turns them on. If the option stays selected, new connectors of that type follow the default rollout and are available to everyone included in **User access**.
+
+### Does the User access setting apply to federated connectors?
+
+Yes. **User access** in **Agents** > **Settings** covers agents and plugins, including connectors and MCP servers. If it's set to **No users** or to specific users or groups, connector-level staging can't make a connector available to anyone outside that population.
 
 ### How do ISVs publish connectors?
 
 ISVs use a single connector manifest and single publishing pipeline for all connector types.
+
+For more questions about availability, visibility, and troubleshooting, see [Set up custom federated connectors – Frequently asked questions](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/frequently-asked-questions).
 
 ## Related content
 

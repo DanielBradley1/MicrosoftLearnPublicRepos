@@ -54,7 +54,7 @@ For more information, see [What's new in Message center](https://learn.microsoft
 
 ## Microsoft Release Communications MCP Server
 
-AI-enabled organizations use intelligent tooling to accelerate their internal processes. By integrating the Microsoft Release Communications \(MRC\) MCP Server with your AI tools, you can connect to the latest release information for updates on the [Microsoft AI at Work Roadmap](https://www.microsoft.com/microsoft-365/roadmap), formerly known as the Microsoft 365 Roadmap, and Azure Roadmap to create the infrastructure for AI-assisted reasoning over upcoming changes, priorities, and business impact.
+AI-enabled organizations use intelligent tooling to accelerate their internal processes. By integrating the Microsoft Release Communications \(MRC\) MCP Server with your AI tools, you can connect to the latest release information for updates on the [AI at Work Roadmap](https://www.microsoft.com/microsoft-365/roadmap), formerly known as the Microsoft 365 Roadmap, and Azure Roadmap to create the infrastructure for AI-assisted reasoning over upcoming changes, priorities, and business impact.
 
 For information on how to start using MRC MCP server, see [Get started with Release Communications MCP Server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide).
 

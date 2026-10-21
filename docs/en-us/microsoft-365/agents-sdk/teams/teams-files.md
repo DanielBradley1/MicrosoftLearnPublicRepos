@@ -139,7 +139,7 @@ The Teams API client doesn't provide file upload or download operations. In .NET
 
 For the complete send and receive flow, including incoming file attachments, upload URLs, and Microsoft Graph options, see [Send and receive files in Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/bots-filesv4).
 
-## Related content
+## Related information
 
 - [Teams extension overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-extension)
 - [Use task modules](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-task-modules)

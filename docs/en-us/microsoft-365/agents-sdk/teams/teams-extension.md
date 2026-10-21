@@ -163,7 +163,7 @@ Important
 - [Handle lifecycle events](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-configuration-lifecycle) and retrieve team or channel data.
 - [Access conversation members](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-context) through the Teams API client.
 
-## Related content
+## Related information
 
 - [AgentApplication](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/agent-application)
 - [Agents SDK overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/agents-sdk-overview)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/security-compliance?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # Manage security and compliance for Copilot Managed Runtime \(preview\)
 
@@ -59,6 +59,25 @@ Configure Copilot Managed Runtime sharing at the environment group level, not at
 
 For more information about environment groups and governance configuration, see [Governance for Copilot Managed Runtime](https://learn.microsoft.com/en-us/power-platform/admin/managed-governance).
 
+## Control access with a security group
+
+Apps in Copilot Managed Runtime use the security group associated with their environment to control access. Associate a Microsoft Entra security group with the environment to restrict who can run apps in that environment. The restriction applies automatically to all apps in the environment, so you don’t need to configure each app separately.
+
+Environment access and app sharing are separate controls. To run an app, a user must be a member of the environment’s security group and have access to the app. Sharing an app doesn’t bypass the environment’s security group restriction. Adding a user to the security group doesn’t grant access to individual apps.
+
+To associate a security group with an environment, follow these steps:
+
+1. In Power Platform admin center, select **Manage** > **Environments**.
+2. Select the environment, and then select **Edit**.
+3. In **Edit details**, under **Security group**, select the edit icon.
+4. Find and select the group, select **Done**, and then select **Save**.
+
+Important
+
+Before you associate a security group with an existing environment, review the group’s membership. Users who aren’t members of the group lose access to managed apps in the environment. To revoke a user’s environment access later, remove the user from the security group.
+
+For more information about configuration, supported group types, and environment access requirements, see [Control user access to environments with security groups and licenses](https://learn.microsoft.com/en-us/power-platform/admin/control-user-access).
+
 ## Content Security Policy \(CSP\)
 
 Apps built with Copilot Managed Runtime enforce Content Security Policy headers to protect against cross-site scripting and other injection attacks. Each app has its own CSP configuration, which the platform applies.
@@ -72,25 +91,6 @@ Advanced connector policies control which connectors and connector actions apps 
 Policies configured for the environment or environment group apply automatically to apps built with Copilot Managed Runtime deployed there.
 
 For details on configuring advanced connector policies, see [Advanced connector policies](https://learn.microsoft.com/en-us/power-platform/admin/advanced-connector-policies).
-
-## Auditing
-
-Microsoft Purview audits app lifecycle events in Copilot Managed Runtime. Administrators can search, filter, and build alerts for events in the `PowerPlatformAdminActivity` table.
-
-### Event types
-
-App events in Copilot Managed Runtime fall into two categories: structured events with named fields you can filter directly, and generic API call events where the operation is identified in the Properties JSON.
-
-| Lifecycle event | Event type | How to identify |
-| --- | --- | --- |
-| App launch \(play\) | `LaunchPowerApp` | Structured fields: app name, user, IP address, environment. |
-| App deletion | `DeletePowerApp` | Structured fields: app name, user, environment. User agent shows `node` for CLI deletions. |
-| App creation | `ApiEndpointCallEvent` + `CreateRoleAssignment` | Properties JSON `url.path`: `/appframework/apps`, method: POST. |
-| Build | `ApiEndpointCallEvent` | Properties JSON `url.path`: `/appframework/apps/{id}/build`, method: POST |
-| Deploy | `ApiEndpointCallEvent` | Properties JSON `url.path`: `/appframework/apps/{id}/deploy`, method: POST |
-| Environment added to group | `EnvironmentAddedToEnvironmentGroup` | Structured fields: environment ID, group ID. |
-| Governance policy changes | `UpdateRuleBasedPolicyOperation` / `UpdateRuleSetOperation` | Old and new rule state in event properties. |
-| Git push / code change | Not audited | No event generated. |
 
 ## Related content
 

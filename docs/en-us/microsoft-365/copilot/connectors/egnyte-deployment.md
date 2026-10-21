@@ -60,7 +60,6 @@ The following table lists the default values that are configured for the Egnyte 
 | Users | Access permissions | All files accessible to any Egnyte user are visible to all Microsoft 365 users in your tenant. |
 | Content | Index content | All published files are selected by default. |
 | Content | Manage properties | Default Egnyte properties are indexed automatically. |
-| Sync | Incremental crawl | Every 4 hours |
 | Sync | Full crawl | Every day |
 
 To customize these values, choose **Custom setup**. For more information, see [Customize settings](#customize-settings-optional).
@@ -91,7 +90,7 @@ Choose whether your users are Microsoft Entra ID provisioned users or non-Micros
 
 Important
 
-If you choose Microsoft Entra ID, the connector maps the email IDs of users from Egnyte to the UPN property from Microsoft Entra ID. If you choose non-Microsoft Entra ID, provide a regular expression to map identities from email ID to UPN. For more information, see [Map your non-Microsoft Entra ID identities](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/map-non-entra-id). Updates to users or groups that govern access permissions are synced in full crawls only. Incremental crawls don't currently support processing updates to permissions.
+If you choose Microsoft Entra ID, the connector maps the email IDs of users from Egnyte to the UPN property from Microsoft Entra ID. If you choose non-Microsoft Entra ID, provide a regular expression to map identities from email ID to UPN. For more information, see [Map your non-Microsoft Entra ID identities](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/map-non-entra-id). Updates to users or groups that govern access permissions sync in full crawls only.
 
 ### Customize content settings
 
@@ -125,7 +124,6 @@ You can add or remove properties from your Egnyte data source, assign a schema t
 
 You can adjust the crawl frequency to fit your data refresh needs:
 
-- **Incremental crawl:** Default is every 4 hours.
 - **Full crawl:** Default is every day.
 
 Choose a schedule that balances content freshness with Egnyte API rate limits.

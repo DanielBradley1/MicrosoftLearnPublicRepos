@@ -48,8 +48,8 @@ Next, update namespaces. The easiest approach is a solution-wide find-and-replac
 
 | Bot Framework Teams Namespace | Agents SDK Namespace |
 | --- | --- |
-| [Microsoft.Bot.Builder.Teams](https://learn.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.teams) | [Microsoft.Agents.Extensions.Teams.Compat](https://learn.microsoft.com/en-us/dotnet/api/microsoft.agents.extensions.teams.compat) |
-| [Microsoft.Bot.Schema.Teams](https://learn.microsoft.com/en-us/dotnet/api/microsoft.bot.schema.teams) | [Microsoft.Agents.Extensions.Teams.Models](https://learn.microsoft.com/en-us/dotnet/api/microsoft.agents.extensions.teams.models) |
+| [Microsoft.Bot.Builder.Teams](https://learn.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.teams) | [Microsoft.Agents.Extensions.MSTeams](https://learn.microsoft.com/en-us/dotnet/api/microsoft.agents.extensions.msteams) |
+| [Microsoft.Bot.Schema.Teams](https://learn.microsoft.com/en-us/dotnet/api/microsoft.bot.schema.teams) | [Microsoft.Agents.Extensions.MSTeams.Models](https://learn.microsoft.com/en-us/dotnet/api/microsoft.agents.extensions.msteams.models) |
 
 Some types and properties were renamed in the Agents SDK. Use the following mappings to guide changes.
 
@@ -244,7 +244,7 @@ If you see 401s during local debugging, either supply your App ID and secret in 
 ✓ **Build and test locally**: Use the Emulator with credentials; validate core scenarios and Teams behaviors.  
 ✓ **Deploy and monitor**: Update app settings in Azure to match the new configuration and watch logs after rollout.
 
-## Related Content
+## Related information
 
 - [Azure Bot Framework SDK to Agents SDK migration guidance](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/bf-migration-guidance)
 - [Azure Bot Framework SDK to Microsoft 365 Agents SDK migration guidance for nodejs](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/bf-migration-nodejs)

@@ -78,7 +78,6 @@ In this scenario, workspace creation was initially enabled for the user, allowin
 - [Storage](https://learn.microsoft.com/en-us/microsoft-365/loop/loop-storage?view=o365-worldwide)
 - [Permissions](https://learn.microsoft.com/en-us/microsoft-365/loop/loop-permission?view=o365-worldwide)
 - [Admin policies](https://learn.microsoft.com/en-us/microsoft-365/loop/loop-admin-configuration?view=o365-worldwide)
-- [Data integrations](https://learn.microsoft.com/en-us/microsoft-365/loop/loop-data-integrations-configuration?view=o365-worldwide)
 
 ### End-User Experience
 

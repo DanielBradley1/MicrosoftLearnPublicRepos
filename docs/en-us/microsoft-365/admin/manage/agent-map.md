@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-map?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Use Agent Map in the Microsoft 365 admin center
 
@@ -183,7 +183,7 @@ From the Agent Map, you can take administrative actions directly on agents witho
 
 Available actions are based on the state of the agent. Actions can include the following:
 
-- **Assign new owner** - Assign an owner to an agent that currently has no active owner. You can only assign ownership to users with a Copilot license.
+- **Assign new owner** - Assign an owner to an agent that currently has no active owner.
 - **Block** - Blocks the agent from members of your organization. They won't be able to install or use the agent. Additionally, the agent will be removed from any member of your organization who has already installed it.
 - **Unblock** - Restore access to a previously blocked agent.
 - **Install** - Deploys and installs the agent to the selected users.

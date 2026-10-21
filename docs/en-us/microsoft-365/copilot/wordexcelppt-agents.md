@@ -9,11 +9,11 @@ Word, Excel, and PowerPoint Agents are premium capabilities available only to us
 
 These agents exclusively use Anthropic's AI models. This AI model must be enabled. These requirements are mandatory for [Word, Excel, and PowerPoint Agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/wordexcelppt-agents) to function.
 
-Administrators can disable access to reasoning models at any time. If your organization decides to stop using Anthropic models, you can block the provider in the admin center, which removes the agents for licensed users.
+Administrators can disable access to reasoning models at any time. If your organization decides to stop using Anthropic models, you can block the provider in the admin center. This prevents users from accessing or using the agents, including users with a paid Microsoft 365 Copilot license.
 
 [Word, Excel, and PowerPoint Agents](https://support.microsoft.com/topic/76691f5e-bb19-4029-a34d-33a00e0a0c4f) in the Microsoft Copilot app are installed by Microsoft. For users with a paid Microsoft 365 Copilot license, the agents appear in the **Tools** menu and under **All Agents** in the left navigation pane when Anthropic models are enabled for the tenant. Admins can manage these agents similarly to other agents that were installed by [Microsoft](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-install).
 
-If administrators disable Anthropic models, [Word, Excel, and PowerPoint Agents](https://support.microsoft.com/topic/76691f5e-bb19-4029-a34d-33a00e0a0c4f) are hidden and unavailable, including for users with a paid Microsoft 365 Copilot license.
+If administrators disable Anthropic models, [Word, Excel, and PowerPoint Agents](https://support.microsoft.com/topic/76691f5e-bb19-4029-a34d-33a00e0a0c4f) are unavailable, including for users with a paid Microsoft 365 Copilot license. The Office Agent might still appear in the agent store, but users can't access or use it. Visibility in the agent store doesn't indicate that Anthropic models are enabled for the tenant.
 
 ### Connect to AI models in the Microsoft 365 admin center
 

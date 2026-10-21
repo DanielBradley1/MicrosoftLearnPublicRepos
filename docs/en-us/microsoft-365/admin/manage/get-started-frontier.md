@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Get started with the Microsoft Frontier Program
 
@@ -31,12 +31,18 @@ Frontier features are preview and subject to change.
 
 Review the following requirements and recommendations:
 
-- Verify your admin role. You need an account that includes one of the following roles: **AI Admin**, **Security Admin**, **Office Apps Admin**.
-- Verify that corresponding licenses are assigned to users who you want to access Frontier features.
+- Verify your [admin role](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles) in Microsoft 365 admin center. You need an account that includes one of the following roles:
 
-  - For example, assign a Microsoft Copilot license to users who need access to Copilot-related Frontier features. From the Microsoft 365 admin center, go to **Billing** > **Licenses** > **Microsoft Copilot** and confirm the assignments. Users without a Microsoft Copilot license aren't presented with Copilot-related Frontier features.
+  - AI Administrator
+  - Security Administrator
+  - Office Apps Administrator
 
-- Verify that your own admin account has also has a corresponding license for services, such as a Microsoft Copilot license, to ensure full access to Frontier AI settings and agents. Some Frontier settings and agents in the Microsoft 365 admin center might not appear.
+- Assign users licenses that provide access to the products you want them to preview.
+
+  - With the expansion of Frontier across Microsoft 365 previews to include both AI and non-AI features, a Microsoft Copilot license isn't required to enroll users in Frontier. However, to use Frontier features for Copilot, users need a [Microsoft Copilot license](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing) or a license that includes access to Copilot. Users enrolled in Frontier without a Microsoft Copilot license aren't presented with Copilot-related Frontier features.
+  - As another product example, to use Frontier features for Microsoft Teams, users need a license that includes access to Teams. Users enrolled in Frontier without a license that includes access to Teams aren't presented with Teams-related Frontier features.
+
+- Verify that your own admin account has also has a corresponding license for products to ensure full access to Frontier AI settings and agents. Some Frontier settings and agents in the Microsoft 365 admin center might not appear.
 
 ## Enroll users in Frontier
 
@@ -55,9 +61,9 @@ To turn on Frontier preview experiences for your users, do the following steps:
 5. Select **Copilot Frontier**.
 6. Choose how Frontier access is assigned in your organization:
 
-   - **No access** \(default\)
-   - **All users**
-   - **Specific users and groups**
+   - **No access** \(default\) - Users don't have access to Frontier features and agents.
+   - **All users** - All users automatically receive Frontier features and agents.
+   - **Specific users and groups** - Only specified users and groups automatically receive Frontier features and agents.
 
 After you turn on Frontier experiences for your organization, eligible users can access supported preview features as they're released. It might take three hours for Frontier features and agents to be available to users.
 

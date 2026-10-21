@@ -143,7 +143,7 @@ participant = await api.meetings.get_participant(
 )
 ```
 
-## Related content
+## Related information
 
 - [Teams extension overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-extension)
 - [Handle Teams messages](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/teams/teams-messages)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-faq?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Frequently asked questions about modern release options for Microsoft 365
 
@@ -41,7 +41,7 @@ When we roll out a feature for general availability, Standard release users rece
 
 Deferred release users receive the deferred-capable feature 30 days after the rollout to Standard release begins. This delay gives IT admins and power users more time to test, validate, and prepare before the feature reaches your Deferred release users.
 
-## Will tenant-wide features respect standard and deferred user settings?
+## Will tenant-wide features respect Standard release and Deferred release user settings?
 
 Most Microsoft 365 features are delivered at the user level and respect your Standard release and Deferred release assignments. However, some features are deployed at the tenant level. Tenant-wide changes might apply to all users at once, regardless of release audience assignment.
 
@@ -77,7 +77,7 @@ Yes, if your organization needs more time for validating deferred-capable featur
 
 ## Does Deferred release apply to features that aren't major updates?
 
-No, even if you have users in Deferred release, a feature that isn't classified as a **Major update** and **Deferred feature** via Message center still releases to users when the feature is broadly available.
+No. Configuring Deferred release delays only features classified as a **Deferred feature** in Message center for your users enrolled in Deferred release. Features not eligible for Deferred release are released to all users, including those in Deferred release, according to the Standard release schedule once they become generally available.
 
 ## How does Deferred release affect Frontier features?
 
@@ -111,7 +111,7 @@ To have your tenant receive eligible features as soon as they reach general avai
 
 ## What happens if I take no action regarding the retirement of Targeted release?
 
-Users and tenants currently assigned to Targeted release will continue receiving eligible Targeted release features until Targeted Release is retired. After retirement, Targeted release assignments will no longer be used for feature delivery. Users and tenants will follow their configured Standard release or Deferred release preference. If no modern release preference is configured, users receive features through Standard release. Before Targeted release enrollment changes are disabled in November 2026, administrators should review their release preferences in the Microsoft 365 admin center to help ensure users continue receiving Microsoft 365 updates according to their organization's desired rollout strategy.
+Users and tenants currently assigned to Targeted release will continue receiving eligible Targeted release features until Targeted Release is retired. Features not in Targeted release follow your [modern release preferences](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide). After retirement, Targeted release assignments will no longer be used for feature delivery. Users and tenants will follow their configured Standard release or Deferred release preference. Before Targeted release enrollment changes are disabled in November 2026, administrators should review their release preferences in the Microsoft 365 admin center to help ensure users continue receiving Microsoft 365 updates according to your organization's desired rollout strategy.
 
 ## Will Microsoft automatically update my release preference settings?
 

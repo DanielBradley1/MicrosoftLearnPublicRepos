@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Manage Microsoft Copilot settings in the Microsoft 365 admin center
 
@@ -249,6 +249,42 @@ In the [Microsoft 365 admin center](https://admin.microsoft.com), select **Copil
 This setting allows users to use other large language models \(LLM\) in Copilot Chat and Copilot Studio. For example, they can use Claude models by Anthropic within your Microsoft products.
 
 For more information, see [Connect to AI models](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor).
+
+### Azure DevOps data in Microsoft 365 Copilot
+
+Connect Azure DevOps to Microsoft 365 Copilot to ground responses and actions in your development data. Azure DevOps is a cloud-based platform that provides integrated tools commonly used by software development teams. It also provides work tracking tools to help plan, manage, and track work. Copilot can search and use work items, projects, pull requests, repositories, wiki content, queries, URLs, and related metadata.
+
+To ensure invocation of the ADO MCP server, users should explicitly name the ADO MCP server in their prompt, as well as target a repository or project when querying or updating a less frequently used repository.
+
+Important
+
+You need to be part of the **[Frontier preview program](https://adoption.microsoft.com/copilot/frontier-program/)** to get **early access** to this Microsoft Copilot feature. Frontier connects you directly with Microsoft's latest AI innovations. Frontier previews are subject to the existing preview terms of your customer agreements. As these features are still in development, their availability and capabilities may change over time.
+
+To configure Copilot to allow Copilot users to use Azure DevOps data:
+
+1. In the [Microsoft 365 admin center](https://admin.microsoft.com), select **Copilot** > **Settings** > **All settings** > **Azure DevOps data in Microsoft 365 Copilot**. The **Azure DevOps data in Microsoft 365 Copilot** pane is displayed.
+
+   <span class="mx-imgBorder">
+   <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/media/copilot-settings/azure-devops-data.png#lightbox" data-linktype="relative-path">
+   <img src="https://learn.microsoft.com/en-us/microsoft-365/copilot/media/copilot-settings/azure-devops-data.png" alt="Screenshot showing the setting for &#39;Agent DevOps data in Microsoft 365 Copilot&#39;." data-linktype="relative-path">
+   </a>
+   </span>
+
+2. Select one of the following user access settings:
+
+   - **No users** - No Copilot users will have access to Azure DevOps data in Copilot.
+   - **All users** \(*Default*\) - All Copilot users will have access to Azure DevOps data in Copilot.
+   - **Specific users and groups** - Choose from a list of users and groups that can have access to Azure DevOps data in Copilot.
+
+3. Select **Save**.
+
+Important
+
+When you allow Microsoft 365 Copilot users to search, retrieve, and act on Azure DevOps data, their queries and relevant Microsoft 365 Copilot contexts may be shared with Azure DevOps to complete the request. Azure DevOps data may also be returned to Microsoft 365 Copilot and used to generate responses or complete user-requested actions. Azure DevOps operates separately from Microsoft 365 Copilot and has different commitments. Data processed by Azure DevOps is subject to [Azure DevOps terms](https://go.microsoft.com/fwlink/?LinkId=2375136) and [Microsoft product terms](https://go.microsoft.com/fwlink/?LinkId=2375137).
+
+For related information, see the following resources:
+
+- [Set up the remote Azure DevOps MCP Server](https://learn.microsoft.com/en-us/azure/devops/mcp-server/remote-mcp-server)
 
 ### Copilot in Power Platform and Dynamics 365
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # Manage plugins, skills, and MCP servers
 
@@ -87,61 +87,57 @@ Managing a skill uses the same actions and steps as managing a plugin, so this s
 
 | Tool actions | Description |
 | --- | --- |
-| **[Install](#install-a-tool) and [uninstall](#uninstall-a-tool)** | Install a plugin or skill for users so that it's ready to use without manual installation by end users. You can uninstall a previously installed plugin or skill. |
+| **[Install](#install-a-plugin-or-skill) and [uninstall](#uninstall-a-plugin-or-skill)** | Install a plugin or skill for users so that it's ready to use without manual installation by end users. You can uninstall a previously installed plugin or skill. |
 | **[Manage user availability](#manage-plugin-availability-for-users)** | Make a plugin or skill available to all users, no users, or specific users and groups. |
-| **[Delete](#delete-a-tool)** | Delete a plugin or skill package that was uploaded to your tenant. Deleting isn't available for plugins or skills that come from the Microsoft 365 Store. |
-| **[Block](#block-a-tool)** | Block a plugin or skill across your organization to prevent users and agents from accessing it. |
+| **[Delete](#delete-a-plugin-or-skill)** | Delete a plugin or skill package that was uploaded to your tenant. Deleting isn't available for plugins or skills that come from the Microsoft 365 Store. |
+| **[Block](#block-a-plugin-or-skill)** | Block a plugin or skill across your organization to prevent users and agents from accessing it. |
 
 Note
 
 Delete applies only to plugins and skills that were uploaded to your tenant. User availability settings apply to any plugin or skill, whether it was uploaded or made available from the Microsoft 365 Store. To restrict access by user or publisher category, see [Manage plugin availability for users](#manage-plugin-availability-for-users) or [Manage plugin availability at the organization level](#manage-plugin-availability-at-the-organization-level).
 
-### Install a tool
+### Install a plugin or skill
 
 You can install a plugin or skill for your entire organization or for specific users or groups by using the same process as for other apps in the Microsoft 365 admin center.
 
 To install a plugin or skill so that it's available, follow these steps:
 
 1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
-2. Select **Agents** > **Tools** > **Plugins**.
-3. From the list, select a plugin or skill to install. The **Overview** pane opens.
+2. Select **Agents** > **Tools**.
+3. From the list, select the plugin or skill that you want to install, and then select **Install**.
 
    [![Screenshot showing a plugin's Overview pane in the Microsoft 365 admin center with the Install button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-pane.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-pane.png?view=o365-worldwide#lightbox)
-4. In the **Overview** pane, select **Install**.
-5. In the **Select users** pane, confirm the details.
-6. Choose who can use it by selecting either **All users** or **specific users or groups**.
-7. Select **Next**.
-8. In the **Review and install** pane, confirm the details and select **Install**.
+4. In the installation pane, review the details for the plugin or skill.
+5. Choose who can use the plugin or skill by selecting **All users** or **Specific users or groups**.
+6. Select **Next**, review the installation details, and then select **Install**.
 
-### Uninstall a tool
+### Uninstall a plugin or skill
 
 Uninstall a plugin or skill to remove it from the environment. It isn't available to agents unless you install it again.
 
 To uninstall a plugin or skill so that it's unavailable, follow these steps:
 
 1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
-2. Select **Agents** > **Tools** > **Plugins**.
-3. From the list, select a plugin or skill to uninstall. The **Overview** pane opens.
+2. Select **Agents** > **Tools**.
+3. From the list, select the plugin or skill that you want to uninstall, and then select **Uninstall**.
 
    [![Screenshot showing an installed plugin's Overview pane in the Microsoft 365 admin center with the Uninstall button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-installed.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-installed.png?view=o365-worldwide#lightbox)
-4. In the **Overview** pane, select **Uninstall**.
-5. Confirm the uninstall action by selecting **Uninstall**.
+4. Select **Uninstall** to confirm.
 
    [![Screenshot showing the confirmation dialog for uninstalling a plugin with the Uninstall button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-uninstall-confirm.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-uninstall-confirm.png?view=o365-worldwide#lightbox)
 
-### Delete a tool
+### Delete a plugin or skill
 
 You can delete a previously uploaded plugin or skill package across your entire organization by using the Microsoft 365 admin center. When you delete it, agents can no longer use it and it's removed from the registry.
 
 To delete a plugin or skill, follow these steps:
 
 1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
-2. Select **Agents** > **Tools** > **Plugins**.
-3. From the list, select a plugin or skill to delete. The **Overview** pane opens.
-4. Select **Delete**.
-5. Confirm the delete action by selecting **Delete**.
+2. Select **Agents** > **Tools**.
+3. From the list, select the plugin or skill that you want to delete.
+4. Select **Delete**, and then select **Delete** again to confirm.
 
-### Block a tool
+### Block a plugin or skill
 
 You can block a plugin or skill package across your entire organization by using the Microsoft 365 admin center. When you block it, agents can no longer use it.
 
@@ -149,9 +145,8 @@ To block a plugin or skill, follow these steps:
 
 1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
 2. Select **Agents** > **Tools** > **Plugins**.
-3. From the list, select a plugin or skill to block. The **Overview** pane opens.
-4. Select **Block**.
-5. Confirm the block action by selecting **Block**.
+3. From the list, select the plugin or skill that you want to block.
+4. Select **Block**, and then select **Block** again to confirm.
 
 Note
 

@@ -3,210 +3,70 @@
 
 # License options for Microsoft Copilot
 
-[Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview) is an AI-powered productivity tool that helps users with everyday tasks.
+Microsoft Copilot is available with Microsoft 365 E7 or as an add-on for eligible commercial, US Government, and education subscription plans. Use this article to identify an eligible prerequisite license and find setup resources.
 
-As part of your [Microsoft Copilot adoption](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources), make sure you have the right Microsoft 365 subscription plan.
+Important
 
-[![Diagram that shows the licensing step to adopt and enable Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/microsoft-365-copilot-enablement-resources/adopt-copilot-license-options.svg)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/microsoft-365-copilot-enablement-resources/adopt-copilot-license-options.svg#lightbox)
-
-Microsoft Copilot is available as an [add-on plan](https://www.microsoft.com/microsoft-365-copilot) with one of the licensing prerequisites listed in this article. The [Microsoft Copilot service description guide](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot) is also a good resource.
-
-The following image shows key differences between Microsoft Copilot options:
-
-[![A graphic that illustrates key capability differences between Copilot offered in Microsoft 365 licensing and the dedicated Microsoft Copilot add on license.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/microsoft-365-copilot-license-comparison.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/microsoft-365-copilot-license-comparison.png#lightbox)
-
-Use this article to determine if your organization has the correct Microsoft 365 subscription plan to add Microsoft Copilot. If you or your account doesn't have the right plan, you can purchase a new plan or possibly upgrade your existing plan.
-
-For more information, see the following resources:
-
-- For businesses: [Upgrade or change to a different Microsoft 365 for business plan](https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/upgrade-to-different-plan)
-- For home: [Switch between Microsoft 365 subscriptions](https://support.microsoft.com/office/3fcc1efc-2722-427f-8efa-db94b9b0a36b)
-
-  To determine your current subscription, including canceling any subscriptions, sign into your [Microsoft account subscription](https://account.microsoft.com/services).
-- For pricing: [Microsoft Copilot pricing and plans](https://www.microsoft.com/microsoft-365-copilot)
-
-Tip
-
-To learn more about Microsoft Copilot, see [Microsoft Copilot overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview) and [Microsoft Copilot architecture and how it works](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture).
+Licensing availability and product terms can change. Before you purchase or assign licenses, confirm eligibility in the [Microsoft Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all), [Microsoft Copilot service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot), and [Microsoft Copilot pricing and plans](https://www.microsoft.com/copilot). For more information, see [Compare Microsoft 365 E3, E5, and E7 license features](https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7).
 
 ## Microsoft Copilot licenses
 
-To add Microsoft Copilot to your Microsoft 365 subscription, you need one of the following Microsoft 365 subscription plans. You can get the Copilot license as an add-on. To learn how to assign Copilot licenses to your users, see [Assign or unassign licenses for users in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users).
+The following plans are eligible prerequisite licenses for Microsoft Copilot. After you purchase licenses, [assign the licenses to users in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users).
 
 Note
 
-For more information about subscription plans, see the [Microsoft Copilot service description guide](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot).
+Microsoft Copilot Business is an add-on for organizations with up to 300 users that have eligible Microsoft 365 Business licenses. It provides the same Microsoft Copilot capabilities, with licensing and purchasing options designed for small and medium-sized businesses. It's available with an annual commitment and supports up to 300 licensed users per tenant. Organizations with more than 300 users should use Microsoft Copilot licensing options designed for enterprise environments.
 
-### Microsoft Copilot Business
+### Commercial
 
-- Microsoft 365 Business Premium
-- Microsoft 365 Business Standard
-- Microsoft 365 Business Basic
-- Microsoft 365 Apps for Business
-- Microsoft Teams Essentials
+| License family | Eligible plans |
+| --- | --- |
+| Microsoft Copilot Business | Microsoft 365 Business Premium  <br>Microsoft 365 Business Standard  <br>Microsoft 365 Business Basic  <br>Microsoft 365 Apps for Business  <br>Microsoft Teams Essentials |
+| Microsoft 365 | Microsoft 365 E7, which includes Microsoft Copilot  <br>Microsoft 365 E5  <br>Microsoft 365 E3  <br>Microsoft 365 F1  <br>Microsoft 365 F3  <br>Microsoft 365 Business Premium  <br>Microsoft 365 Business Standard  <br>Microsoft 365 Business Basic  <br>Microsoft 365 Apps for Enterprise  <br>Microsoft 365 Apps for Business |
+| Office 365 | Office 365 E5  <br>Office 365 E3  <br>Office 365 E1  <br>Office 365 F3 |
+| Microsoft Teams | Microsoft Teams Enterprise  <br>Microsoft Teams EEA \(European Economic Area\)  <br>Microsoft Teams Essentials |
+| Exchange | Exchange Online Plan 2  <br>Exchange Online Plan 1  <br>Exchange Online Kiosk |
+| SharePoint | SharePoint Plan 2  <br>SharePoint Plan 1  <br>SharePoint Kiosk |
+| OneDrive for work or school | OneDrive for work or school Plan 2  <br>OneDrive for work or school Plan 1 |
+| Planner and Project | Microsoft Project and Planner Plan 5  <br>Microsoft Project and Planner Plan 3  <br>Microsoft Planner Plan 1, formerly Project Plan 1 |
+| Visio | Visio Plan 2  <br>Visio Plan 1 |
+| Other | Microsoft Clipchamp |
 
-### Microsoft Copilot
+For details about Microsoft 365 E3, E5, and E7, see [Compare Microsoft 365 E3, E5, and E7 license features](https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7).
 
-- **Microsoft 365 plans:**
+### US Government
 
-  - Microsoft 365 E7 \(includes Microsoft Copilot\)
-  - Microsoft 365 E5
-  - Microsoft 365 E3
-  - Microsoft 365 F1
-  - Microsoft 365 F3
-  - Microsoft 365 Business Premium
-  - Microsoft 365 Business Standard
-  - Microsoft 365 Business Basic
-  - Microsoft 365 Apps for Enterprise
-  - Microsoft 365 Apps for Business
+Microsoft Copilot is available as an add-on in Government Community Cloud \(GCC\), Government Community Cloud High \(GCC High\), and Department of Defense \(DoD\) environments for the following plans.
 
-- **Office 365 plans:**
+| License family | Eligible plans |
+| --- | --- |
+| Microsoft 365 | Microsoft 365 G5  <br>Microsoft 365 G3  <br>Microsoft 365 F1 |
+| Office 365 | Office 365 G5  <br>Office 365 G3  <br>Office 365 G1  <br>Office 365 F3 |
+| Exchange | Exchange Online Plan 2  <br>Exchange Online Plan 1  <br>Exchange Online Kiosk |
+| SharePoint | SharePoint Plan 2  <br>SharePoint Plan 1 |
+| OneDrive for Business | OneDrive for Business Plan 2  <br>OneDrive for Business Plan 1 |
+| Visio | Visio Plan 2  <br>Visio Plan 1 |
 
-  - Office 365 E5
-  - Office 365 E3
-  - Office 365 E1
-  - Office 365 F3
+### Education
 
-- **Microsoft Teams plans:**
+The academic offering is available for faculty, staff, and students aged 13 and older. Purchase eligible plans through Enrollment for Education Solutions \(EES\) or a Cloud Solution Provider \(CSP\).
 
-  - Microsoft Teams Enterprise
-  - Microsoft Teams EEA \(European Economic Area\)
-  - Microsoft Teams Essentials
+Important
 
-- **Exchange plans:**
+Copilot Chat is available for students aged 13 and older. To help ensure appropriate access and deployment, see [Microsoft 365 Copilot Chat for Students 13+](https://techcommunity.microsoft.com/blog/EducationBlog/microsoft-365-copilot-chat-for-students-13/4412957).
 
-  - Exchange Plan 2
-  - Exchange Plan 1
-  - Exchange Kiosk
-
-- **SharePoint plans:**
-
-  - SharePoint Plan 2
-  - SharePoint Plan 1
-  - SharePoint Kiosk
-
-- **OneDrive for work and school plans:**
-
-  - OneDrive for work and school Plan 2
-  - OneDrive for work and school Plan 1
-
-- **Planner and Project plans:**
-
-  - Microsoft Project and Planner Plan 5
-  - Microsoft Project and Planner Plan 3
-  - Microsoft Planner Plan 1 \(formerly Project Plan 1\)
-
-- **Visio plans:**
-
-  - Visio Plan 2
-  - Visio Plan 1
-
-- **Other plans:**
-
-  - Microsoft Clipchamp
-
-### US Government licenses
-
-Microsoft Copilot is available for customers in Government Community Cloud \(GCC\), Government Community Cloud High \(GCC-High\), and Department of Defense \(DoD\) cloud environments as an add-on to the following plans:
-
-- **Microsoft 365 Plans**
-
-  - Microsoft 365 G5
-  - Microsoft 365 G3
-  - Microsoft 365 F1
-
-- **Office 365 Plans**
-
-  - Office 365 G5
-  - Office 365 G3
-  - Office 365 G1
-  - Office 365 F3
-
-- **Exchange Plans**
-
-  - Exchange Plan 2
-  - Exchange Plan 1
-  - Exchange Kiosk
-
-- **SharePoint plans**
-
-  - SharePoint Plan 2
-  - SharePoint Plan 1
-
-- **OneDrive for Business plans**
-
-  - OneDrive for Business Plan 2
-  - OneDrive for Business Plan 1
-
-- **Visio plans**
-
-  - Visio Plan 2
-  - Visio Plan 1
-
-### Education licenses
-
-An academic offering of Microsoft Copilot is available for faculty, staff, and students aged 13 and older. To get the following plans, use Enrollment for Education Solutions \(EES\) or a Cloud Solution Provider \(CSP\). For more information on EES, download the [Enrollment for Education Solutions volume licensing guide](https://download.microsoft.com/download/F/6/6/F6611596-992F-498A-A8EE-B0B39A6A4D0A/Enrollment_for_Education_Solutions_Licensing_Guide.pdf) PDF from the Microsoft Download Center.
-
-- Microsoft 365 A5
-- Microsoft 365 A3
-- Microsoft 365 A2
-- Microsoft 365 A1
-- Office 365 A5
-- Office 365 A3
-- Office 365 A1
-
-Note
+| License family | Eligible plans |
+| --- | --- |
+| Microsoft 365 | Microsoft 365 A5  <br>Microsoft 365 A3  <br>Microsoft 365 A2  <br>Microsoft 365 A1 |
+| Office 365 | Office 365 A5  <br>Office 365 A3  <br>Office 365 A1 |
 
 Customers with Education or Business subscriptions that don't include Teams can purchase Microsoft Copilot licenses.
 
-## Microsoft Copilot Chat
+## Set up Microsoft Copilot
 
-[Copilot Chat](https://learn.microsoft.com/en-us/copilot/overview) is an AI prompt and response experience that's automatically included and available to organizations that have an [eligible Microsoft 365 subscription](https://learn.microsoft.com/en-us/copilot/manage#microsoft-365--chat-eligibility). Two Copilot Chat options are available: web-based chat and work-based chat.
+Use the following resources to assign licenses and prepare your environment:
 
-- Web-based chat:
+- [Assign or unassign licenses for users in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users)
+- [Microsoft 365 app and network requirements for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements)
 
-  - Shows results from the internet.
-  - Automatically included with an [eligible Microsoft 365 subscription](https://learn.microsoft.com/en-us/copilot/manage#microsoft-365--chat-eligibility) at no extra cost.
-
-- Work-based chat:
-
-  - Shows results that the Microsoft Entra work or school account can access.
-  - Is available with a Microsoft Copilot license.
-
-Note
-
-**The Microsoft 365 Copilot app is now called Microsoft Copilot**. The primary URL for accessing the updated Copilot app is changing to `copilot.cloud.microsoft`. To help ensure users' connections aren't blocked, make sure to:
-
-- Allow `*.cloud.microsoft`.
-- Allow the Microsoft Copilot endpoints.
-- Verify that proxies, firewalls, Conditional Access, tenant restrictions, and app-control policies don't block the Copilot app.
-- Do not block `copilot.cloud.microsoft` to prevent personal account access. Instead, use [tenant restrictions](https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2#step-2-block-consumer-account-or-microsoft-account-tenants) to control personal Microsoft-account sign.
-
-For more information, see [Network requirements for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#network-requirements).
-
-For more information, see the following articles:
-
-- [Learn more about Copilot Chat](https://learn.microsoft.com/en-us/copilot/overview)
-- [Manage Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/manage)
-- [Decide which Copilot is right for your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/which-copilot-for-your-organization)
-
-## Setup help and guidance
-
-Use the [Microsoft Copilot setup guide](https://admin.microsoft.com/Adminportal/Home?Q=learndocs#/modernonboarding/microsoft365copilotsetupguide) in the Microsoft 365 admin center. During the Rollout phase, this guide helps you step through the admin center to assign the required licenses.
-
-The [Set up Microsoft Copilot admin guide](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup) describes other features that you should also configure, including reviewing your Microsoft 365 apps privacy settings, setting the update channels, and more.
-
-Tip
-
-We recommend using the [Copilot License Details](https://aka.ms/CopilotLicenseDetails) diagnostic to verify that a specific user account meets the necessary requirements to access Copilot features.
-
-For more information, see the following articles:
-
-- [Assign licenses to users in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users)
-- [Microsoft 365 app and network requirements for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#network-requirements)
-
-## Related content
-
-- [Microsoft Copilot adoption guide and overview for IT admins](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources)
-- [Which Copilot is right for my organization?](https://learn.microsoft.com/en-us/microsoft-365/copilot/which-copilot-for-your-organization)
-- [Learn about Security Copilot inclusion in Microsoft 365 E5 and E7 subscriptions](https://learn.microsoft.com/en-us/copilot/security/security-copilot-inclusion)
+To verify whether a specific user account meets the requirements to access Copilot features, use the [Microsoft Copilot service plan diagnostic tool](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-service-plans).

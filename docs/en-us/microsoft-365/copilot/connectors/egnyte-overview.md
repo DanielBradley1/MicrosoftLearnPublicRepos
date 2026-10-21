@@ -40,6 +40,7 @@ The Egnyte connector allows users to:
 
 The Egnyte connector has the following limitations:
 
+- It doesn't support incremental crawl.
 - Doesn't index comments and replies.
 - Large file annotations might cause ingestion errors.
 - API rate limits can prevent successful crawl operations unless those limits are increased with Egnyte.

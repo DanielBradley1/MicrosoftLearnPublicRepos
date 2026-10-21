@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Configure new Standard and Deferred release options for Microsoft 365
 
@@ -23,11 +23,15 @@ For more information about getting started with the Frontier preview, see [Get s
 
 ### Standard release
 
-With **Standard release**, your organization receives new features as soon as they're generally available \(GA\). Standard release should be the primary release channel for most customers. Microsoft thoroughly tests and validates all features and services before releasing them. Your organization is configured as Standard release by default.
+With **Standard release**, your organization receives new features as soon as they're generally available \(GA\). Standard release should be the primary release channel for most customers. Microsoft thoroughly tests and validates all features and services before releasing them. For general availability updates, the default release preference for your organization is Standard release. You can update this setting to Deferred release if you need additional time for validation and change management.
+
+In your modern release preferences, your organization is configured for Standard release by default. With Standard release, your organization receives new features as soon as they're generally available \(GA\). Standard release should be the primary release channel for most customers. Microsoft thoroughly tests and validates all features and services before releasing them. You can update this setting to Deferred release if you need additional time for validation and change management.
+
+If your organization is using Targeted release, you can continue with your existing configuration until Targeted release is retired. Features that aren't in Targeted release follow your configured Standard release or Deferred release preference.
 
 ### Deferred release
 
-If you have additional validation requirements, consider using **Deferred release** for some or all users. Deferred release lets you delay [major updates](#what-qualifies-as-a-major-update) for specific users for approximately 30 days after rollout to the Standard release audience begins. After the 30-day period, generally available features are released to users in the Deferred release audience. In the Message center, features included in deferred release are tagged as both **Major update** and **Deferred feature**.
+If you have additional validation requirements, consider using **Deferred release** for some or all users. Deferred release lets you delay deferred-eligible [major updates](#what-qualifies-as-a-major-update) for specific users for approximately 30 days after rollout to the Standard release audience begins. After the 30-day period, deferred-eligible features are released to users in the Deferred release audience. If you have configured Deferred release for your organization, updates that aren't eligible for Deferred release aren't delayed and these updates are released to Deferred release users on the same schedule as Standard release. In the Message center, features included in Deferred release are tagged as both **Major update** and **Deferred feature**.
 
 ## How release validation works
 
@@ -102,7 +106,7 @@ To assign users or [security groups](https://learn.microsoft.com/en-us/entra/fun
 2. In the left navigation, expand **Copilot** and select **Settings**.
 
    [![Screenshot of Copilot settings in Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/copilot-settings-admin-center.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/copilot-settings-admin-center-expanded.png?view=o365-worldwide#lightbox)
-3. Under the **All Settings** tab, select **Copilot release preferences: General Availability**.
+3. Under the **View all** tab, select **Copilot Release Preferences: General Availability**.
 4. Choose either **Standard release** or **Deferred release**.
 5. Add any user or security group exceptions. You can add up to 100 exceptions to Standard release or Deferred release. Each user in a security group and each user added individually count toward the 100-user limit.
 
@@ -114,6 +118,8 @@ To assign users or [security groups](https://learn.microsoft.com/en-us/entra/fun
 6. Select **Save**.
 
 To opt in to Frontier preview, follow the instructions in [Configure Frontier preview for Microsoft 365 services](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier?view=o365-worldwide).
+
+In November 2026, release preferences for Frontier, Standard release, and Deferred release can be managed through the unified release preferences experience in the Microsoft 365 admin center. The current experience for managing Standard release and Deferred release preferences will be retired when the unified release preferences experience becomes available. Additional details about related admin experience changes will be shared in Message center and this article will be updated to show the new navigation.
 
 Note
 

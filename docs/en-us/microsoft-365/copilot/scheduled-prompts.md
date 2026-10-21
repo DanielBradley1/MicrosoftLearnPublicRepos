@@ -44,6 +44,10 @@ Use roles with the fewest permissions. Lower permissioned accounts help improve 
 
 For more information about the user experience in Microsoft Copilot, see [Schedule Copilot prompts](https://support.microsoft.com/topic/29dfd5fb-211a-4515-88a6-730b8074e489).
 
+Note
+
+Scheduled Prompts is available only in the Work IQ tab in Microsoft Copilot. Users won't see the option to create or manage scheduled prompts outside of the Work IQ tab.
+
 ## Legacy prompts
 
 The scheduled prompts feature no longer relies on Power Automate flows. If you scheduled a prompt during the public preview, it continues to run in Power Automate until it expires. You don't see these prompts in the Microsoft Copilot scheduled prompts page. To view or manage these legacy prompts, use [Power Automate](https://make.powerautomate.com/).

@@ -243,7 +243,6 @@ You should also review the configuration of your [ConditionalAccessPolicy](https
 - [Permissions](https://learn.microsoft.com/en-us/microsoft-365/loop/loop-permission?view=o365-worldwide)
 - [Managing SharePoint Embedded containers](https://learn.microsoft.com/en-us/microsoft-365/loop/spe-management?view=o365-worldwide)
 - [Purview management](https://learn.microsoft.com/en-us/microsoft-365/loop/purview-management?view=o365-worldwide)
-- [Data integrations](https://learn.microsoft.com/en-us/microsoft-365/loop/loop-data-integrations-configuration?view=o365-worldwide)
 
 ### End-User Experience
 

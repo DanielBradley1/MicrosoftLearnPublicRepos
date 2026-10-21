@@ -5,7 +5,7 @@
 
 Important
 
-The **AI experiences enabled by usage-based billing** setting is deprecated. This setting will be replaced by a new setting that allows admins to control whether users or groups can request access to experiences that require usage-based billing.
+The **AI experiences enabled by usage-based billing** setting is deprecated. This setting will be replaced by a new setting that allows admins to control whether users or groups can request access to experiences that require usage-based billing. For more information on the new setting, see [Access requests to usage-based billing experiences](https://learn.microsoft.com/en-us/microsoft-365/copilot/request-access-usage-based-billing-experiences)
 
 The **AI experiences enabled by usage-based billing** setting controls whether users in your organization can see AI experiences that rely on usage-based billing.
 

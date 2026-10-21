@@ -21,6 +21,10 @@ FastTrack provides remote guidance for:
 - Configuring ID governance features including access packages and lifecycle Workflows for agents.
 - Configuring network controls for agents.
 
+Note
+
+If you are participating in an Agent 365 trial, you continue to be eligible for FastTrack support, which helps you to successfully evaluate, onboard, and experience Agent 365.
+
 ## Out of scope
 
 - Registering agents through A365 SDK/CLI.

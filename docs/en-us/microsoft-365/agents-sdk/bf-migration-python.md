@@ -501,7 +501,7 @@ Ensure you're using Python 3.10 or higher. The Agents SDK uses modern Python fea
 
 ✓ **Analyze and plan**: Identify any deprecated features and decide migration vs. rebuild scope. ✓ **Upgrade Python version**: Move to Python 3.10 or higher \(3.11+ recommended\). ✓ **Replace packages**: Remove `botbuilder-*`; add `microsoft-agents-*` \(hosting-core, activity, hosting-aiohttp, authentication-msal, storage providers, hosting-teams\). ✓ **Update imports**: Apply find/replace per the tables above; change all `microsoft.agents` to `microsoft_agents`. ✓ **Update types and classes**: Fix renamed APIs and move `TurnContext` static methods to `Activity` instance methods. ✓ **Update configuration**: Create `.env` file with hierarchical naming \(double underscores\). ✓ **Update initialization**: Use `CloudAdapter` with `MsalAuth.from_environment()` and `AgentsHttpMiddleware`. ✓ **Configure logging**: Set up Python logging for `microsoft_agents` logger. ✓ **Build and test locally**: Use the Bot Framework Emulator with credentials; validate core scenarios. ✓ **Deploy and monitor**: Update environment variables in Azure to match the new configuration and watch logs after rollout.
 
-## Related content
+## Related information
 
 - [Azure Bot Framework SDK to Agents SDK migration guidance](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/bf-migration-guidance)
 - [Azure Bot Framework SDK to Microsoft 365 Agents SDK migration guidance for .NET](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/bf-migration-dotnet)

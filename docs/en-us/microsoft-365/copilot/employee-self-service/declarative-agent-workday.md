@@ -128,7 +128,7 @@ For the full task lists and worksheets, see the [Microsoft Entra and Workday adm
    | Microsoft Entra resource URL \(Application ID URI\) | `http://www.workday.com/<tenant>`. This value is the Workday SAML Service Provider ID, not the `api://` Application ID URI. |
    | Workday OAuth token URL | The token endpoint from the Workday worksheet. |
    | Workday OAuth client ID | The Workday API client ID, not the Microsoft Entra Application ID. |
-   | SOAP base URL | `https://<host>/ccx/service` |
+   | SOAP base URL | `https://<host>/ccx/service/` |
    | REST base URL | `https://<host>/ccx/api` |
    | Tenant name | Your Workday tenant name. |
 4. Select **Create**, complete the sign-in, and confirm that the connection status is **Connected**.
@@ -182,7 +182,7 @@ Work with your security team to allow traffic from the Power Platform environmen
 | An employee gets a "Task not authorized" error. | The employee's security group doesn't have the required Workday domain permissions. | Grant **Get** access on **Worker Data: Public Worker Reports** and **Integration Permissions** to the employee's security group. See [Workday task 5](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-reference#workday-task-5-configure-domain-security-for-your-rollout). |
 | Sign-in fails or loops. | The Workday SAML settings don't match Microsoft Entra ID. | Confirm that the **Service Provider ID**, **Issuer**, and identity provider SSO service URL in Workday match the Microsoft Entra values. See [Workday tasks](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-reference#workday-tasks). |
 | The Workday connection can't authenticate. | The Microsoft Entra resource URL is set to an `api://` value, or the client ID is the Microsoft Entra Application ID. | Set the resource URL to `http://www.workday.com/<tenant>`, and use the Workday API client ID. |
-| SOAP requests fail. | The SOAP base URL ends with the tenant name. | Set the SOAP base URL to end in `/ccx/service`. |
+| SOAP requests fail. | The SOAP base URL includes the tenant name. | Set the SOAP base URL to end in `/ccx/service/`. To find the value, see [Workday task 6](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-reference#workday-task-6-collect-the-api-client-values). |
 | The agent works in the test pane, but employees are repeatedly asked to sign in. | Parameter sharing is turned off. | Turn on **Allow permission to share parameters** for both **ESS Workday Runtime** and **ESS Workday Runtime REST Execution**. |
 | The agent doesn't answer Workday questions. | The Workday topics or flows are turned off. | Run `/connect workday` again. The skill resumes and repairs the runtime configuration. |
 | The agent works in Dev but not in Test or Production. | Workday isn't set up in the target environment. | Run `/connect workday` for that environment. See [Promote to Test and Production](#promote-to-test-and-production). |

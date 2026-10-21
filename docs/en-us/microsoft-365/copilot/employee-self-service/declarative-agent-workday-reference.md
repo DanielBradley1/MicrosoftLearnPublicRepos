@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-reference -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Microsoft Entra and Workday administrator reference for the Employee Self-Service declarative agent
 
@@ -157,19 +157,62 @@ Follow these rules throughout:
 
 ### Workday task 5: Configure domain security for your rollout
 
-API client scopes don't replace domain security permissions. Configure both.
+The agent calls Workday as the signed-in employee, so Workday domain security controls which data each employee can get through the agent. API client scopes don't replace domain security permissions. Configure both.
 
-1. Choose the employee population for the rollout: your entire workforce, or a limited or test group. For a limited or test rollout, use the intended Workday security group, and include the test employee. Don't default to **All Employees**.
-2. Grant that population **Get** permission on the **Worker Data: Public Worker Reports** domain.
-3. Grant that population **Get** permission on the **Integration Permissions** domain.
-4. Add other domains only when a specific supported scenario requires them.
+Start with the **Worker Data: Public Worker Reports** domain, which provides employee context information. Access to this domain doesn't give access to all data in the **Core Payroll**, **Organizations and Roles**, **Staffing**, or **Time Off and Leave** functional areas.
+
+1. Choose the security group for your rollout:
+
+   - **Testing or limited rollout:** Use a security group that contains only the employees who will test or use the agent, including the test employee. Expand access when you're ready to roll out more broadly.
+   - **Production rollout:** Use **All Employees** when you deploy to your entire workforce.
+
+
+   Don't start with **All Employees** for a test rollout.
+
+2. In the Workday search box, enter **view domain**, and then select the **View Domain** report.
+
+   [![Screenshot of Workday search results for view domain, with the View Domain report selected.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-1-search.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-1-search.png#lightbox)
+3. In **Domain**, enter **Worker Data: Public Worker Reports**, select it from the search results, and then select **OK**.
+
+   [![Screenshot of the View Domain prompt with Worker Data: Public Worker Reports selected in the search results.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-2-select-domain.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-2-select-domain.png#lightbox)
+4. Next to **Domain Security Policy**, select the related actions button \(**...**\), and then select **Domain Security Policy** > **Edit Permissions**.
+
+   [![Screenshot of the related actions menu for the domain security policy, with Domain Security Policy and then Edit Permissions selected.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-3-edit-permissions.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-3-edit-permissions.png#lightbox)
+5. Under **Integration Permissions**, add the security group from step 1 and select **Get**. Grant access under **Integration Permissions**, not under **Report/Task Permissions**.
+
+   [![Screenshot of the Integration Permissions table in Edit Permissions, showing the Security Groups, Get, and Put columns.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-4-integration-permissions.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-domain-security-4-integration-permissions.png#lightbox)
+6. Select **OK**.
+
+#### Configure additional domains for the scenarios you support
+
+Which domain governs a given piece of employee data depends on how your tenant is configured. For example, phone numbers might be governed by **Worker Data: Public Worker Reports** or by another domain, such as **Personal Data**, **Staffing**, or **Worker Data: Dependents**.
+
+For each employee scenario that you plan to support:
+
+1. Identify the security domain that governs the data for that scenario in your tenant.
+2. Repeat steps 2-6 for that domain, and grant **Get** under **Integration Permissions** to the same security group.
+3. Sign in as a test employee in that security group and confirm that the agent returns the data. If the agent returns a "Task not authorized" error, the data is governed by a domain that you haven't configured yet.
+
+Grant only the permissions that the scenarios you support require. The example domains aren't a list of permissions that every deployment needs.
 
 ### Workday task 6: Collect the API client values
 
 1. Run the **View API Client** task.
 2. Record the client ID and the token endpoint. The client ID isn't a secret.
 3. Record the REST base URL, which ends in `/ccx/api`.
-4. Record the SOAP base URL, which ends in `/ccx/service`. Don't add the tenant name to the end.
+4. Find and record the SOAP base URL:
+
+   1. In the Workday search box, enter **view public web services**, and then select the **Public Web Services** report.
+
+      [![Screenshot of the Workday search box with view public web service entered and the Public Web Services report shown in the results.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-soap-url-1-search.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-soap-url-1-search.png#lightbox)
+   2. In the **Web Service** column, filter the table to show **Human Resources \(Public\)**.
+
+      [![Screenshot of the Public Web Services report with the Web Service column filter set to Human Resources \(Public\).](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-soap-url-2-filter.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-soap-url-2-filter.png#lightbox)
+   3. Select the related actions button \(**...**\) next to **Human Resources \(Public\)**, and then select **Web Service** > **View Custom WSDL**. The WSDL opens in XML format.
+
+      [![Screenshot of the related actions menu for Human Resources \(Public\), with Web Service and then View Custom WSDL selected.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-soap-url-3-view-custom-wsdl.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/ess/workday-da-soap-url-3-view-custom-wsdl.png#lightbox)
+   4. Search the WSDL for `soapbind:address location`.
+   5. Copy the `location` value up to and including `/ccx/service/`. Don't include the tenant name, service name, or version that follow. For example, if the value is `https://wd5-services1.myworkday.com/ccx/service/contoso/Human_Resources/v48.0`, record `https://wd5-services1.myworkday.com/ccx/service/`.
 
 ### Workday task 7: Activate authentication policies
 
@@ -194,8 +237,8 @@ Fill in the **Your tenant values** column of the worksheet in the handoff, and r
 | API client settings | **View API Client** | Confirm that the grant type, Workday owned scope, and the four functional areas match [Workday task 4](#workday-task-4-configure-the-api-client). | Yes, confirmed |
 | OAuth token URL | **View API Client** > **Token Endpoint** | The full HTTPS token endpoint. | `https://wd5.myworkday.com/ccx/oauth2/contoso/token` |
 | REST base URL | Workday REST service endpoint | The base URL that ends in `/ccx/api`. | `https://wd5.myworkday.com/ccx/api` |
-| SOAP base URL | Workday SOAP service endpoint | The base URL that ends in `/ccx/service`, without the tenant name. | `https://wd5.myworkday.com/ccx/service` |
-| Domain security | **Domain Security Policies for Functional Area** | Confirm that the rollout population has **Get** on **Worker Data: Public Worker Reports** and **Integration Permissions**. | Yes, verified |
+| SOAP base URL | **Public Web Services** report > **Human Resources \(Public\)** > **View Custom WSDL** > `soapbind:address location` | The URL up to and including `/ccx/service/`, without the tenant name. | `https://wd5-services1.myworkday.com/ccx/service/` |
+| Domain security | **View Domain** > **Domain Security Policy** > **Edit Permissions** | Confirm that the rollout security group has **Get** under **Integration Permissions** on **Worker Data: Public Worker Reports** and on any additional domains for your supported scenarios. | Yes, verified |
 | Authentication policy | **Manage Authentication Policies** | Whether an existing SAML rule is active, or you activated a reviewed policy. | An existing active policy allows SAML |
 | Network readiness | Your organization's network policy | Whether both Workday hosts are allowed, or no change is required. | Both hosts are allowed |
 

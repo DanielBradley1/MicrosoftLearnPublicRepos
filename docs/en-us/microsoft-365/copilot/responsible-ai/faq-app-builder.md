@@ -3,6 +3,10 @@
 
 # FAQs for App Builder
 
+Important
+
+App building is now available in [Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork#build-apps-with-the-app-skill-frontier) and will soon roll out to Microsoft Copilot Studio. We recommend using these experiences moving forward. For more information, see the [blog post](https://aka.ms/AppsInCopilotStudioBlog).
+
 These frequently asked questions \(FAQ\) describe the AI impact of App Builder in Microsoft Copilot.
 
 ## What is App Builder?
