@@ -1,15 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-restore?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-restore?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-17 -->
 
-# Restore unifiedRoleDefinition
+# unifiedRoleDefinition: restore
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Restore a soft-deleted custom [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) object to the active role definitions collection for Microsoft Entra directory role management.
+Restore a soft-deleted custom [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) object to the active role definitions collection for Microsoft Entra directory role management.
 
 ## Permissions
 
@@ -35,7 +31,7 @@ POST /roleManagement/directory/deletedItems/roleDefinitions/{id}/restore
 
 | Name | Description |
 | :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Authorization | \*\*\*\*\*\* Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
 
 ## Request body
 
@@ -43,19 +39,21 @@ Don't supply a request body for this action.
 
 ## Response
 
-If successful, this action returns a `200 OK` response code and a [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) object in the response body.
+If successful, this action returns a `200 OK` response code and a [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) object in the response body.
 
 ## Examples
 
-### Request
+### Example 1: Restore a soft-deleted custom role definition
+
+#### Request
 
 The following example shows a request.
 
 ```http
-POST https://graph.microsoft.com/beta/roleManagement/directory/deletedItems/roleDefinitions/a1b2c3d4-5678-90ab-cdef-1234567890ab/restore
+POST https://graph.microsoft.com/v1.0/roleManagement/directory/deletedItems/roleDefinitions/a1b2c3d4-5678-90ab-cdef-1234567890ab/restore
 ```
 
-### Response
+#### Response
 
 The following example shows the response.
 
@@ -66,7 +64,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#roleManagement/directory/roleDefinitions/$entity",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#roleManagement/directory/roleDefinitions/$entity",
   "id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
   "description": "Can manage basic aspects of application registrations.",
   "displayName": "Application Support Administrator",

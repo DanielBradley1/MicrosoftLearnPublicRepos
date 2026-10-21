@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-22 -->
+<!-- Sitemap-Last-Modified: 2026-10-17 -->
 
 # unifiedRoleDefinition resource type
 
@@ -12,10 +12,11 @@ A role definition is a collection of permissions in Microsoft Entra listing the 
 | Method | Return Type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) collection | Read a list of unifiedRoleDefinition objects, and their properties. |
-| [Get](https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-get?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) | Read the properties of a unifiedRoleDefinition object. |
+| [Get](https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-get?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) | Read the properties of an active or soft-deleted unifiedRoleDefinition object. |
 | [Create](https://learn.microsoft.com/en-us/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) | Create a unifiedRoleDefinition object. |
 | [Update](https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-update?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) | Update a unifiedRoleDefinition object. |
-| [Delete](https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0) | None | Delete a unifiedRoleDefinition object. |
+| [Delete](https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0) | None | Delete an active unifiedRoleDefinition object or permanently delete a soft-deleted custom role definition. |
+| [unifiedRoleDefinition: restore](https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-restore?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) | Restore a soft-deleted custom role definition. |
 
 ## Properties
 

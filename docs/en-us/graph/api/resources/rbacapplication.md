@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/rbacapplication?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-22 -->
+<!-- Sitemap-Last-Modified: 2026-10-17 -->
 
 # rbacApplication resource type
 
@@ -23,6 +23,7 @@ None
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
+| deletedItems | [directoryRoleManagementDeletedItemContainer](https://learn.microsoft.com/en-us/graph/api/resources/directoryrolemanagementdeleteditemcontainer?view=graph-rest-1.0) | Container for custom role definitions that have been soft-deleted from Microsoft Entra directory role management. |
 | roleAssignments | [unifiedRoleAssignment](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0) collection | Resource to grant access to users or groups. |
 | roleAssignmentScheduleInstances | [unifiedRoleAssignmentScheduleInstance](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignmentscheduleinstance?view=graph-rest-1.0) collection | Instances for active role assignments. |
 | roleAssignmentScheduleRequests | [unifiedRoleAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0) collection | Requests for active role assignments to principals through PIM. |

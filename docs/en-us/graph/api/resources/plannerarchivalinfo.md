@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/plannerarchivalinfo?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2024-07-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # plannerArchivalInfo resource type
 
@@ -20,6 +20,9 @@ An archived entity is read-only.
 | justification | String | Read-only. Reason why the entity was archived or unarchived. |
 | statusChangedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Read-only. Identity of the user who archived or unarchived the entity |
 | statusChangedDateTime | DateTimeOffset | Read-only. Date and time at which the entity's archive status changed. |
+| isArchived | Boolean | Read-only. Indicates whether the entity is archived. |
+| modifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Read-only. Identity of the user who archived or unarchived the entity. |
+| modifiedDateTime | DateTimeOffset | Read-only. Date and time at which the entity's archive status changed. |
 
 ## Relationships
 
@@ -36,6 +39,11 @@ The following JSON representation shows the resource type.
   "statusChangedBy": {
     "@odata.type": "microsoft.graph.identitySet"
   },
-  "statusChangedDateTime": "String (timestamp)"
+  "statusChangedDateTime": "String (timestamp)",
+  "isArchived": "Boolean",
+  "modifiedBy": {
+    "@odata.type": "microsoft.graph.identitySet"
+  },
+  "modifiedDateTime": "String (timestamp)"
 }
 ```

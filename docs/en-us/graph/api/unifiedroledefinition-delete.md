@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-17 -->
 
 # Delete unifiedRoleDefinition
 
 Namespace: microsoft.graph
 
-Delete a [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
+Delete a [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) object. You can't delete built-in roles. Deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -33,6 +33,12 @@ For delegated access using work or school accounts, the signed-in user must be a
 DELETE /roleManagement/directory/roleDefinitions/{id}
 ```
 
+To permanently delete a soft-deleted custom role definition:
+
+```http
+DELETE /roleManagement/directory/deletedItems/roleDefinitions/{id}
+```
+
 ## Request headers
 
 | Name | Description |
@@ -47,9 +53,11 @@ Don't supply a request body for this method.
 
 If successful, this method returns `204 No Content` response code. It doesn't return anything in the response body.
 
-## Example
+## Examples
 
-### Request
+### Example 1: Soft-delete a custom role definition
+
+#### Request
 
 The following example shows a request.
 
@@ -154,7 +162,25 @@ await graph_client.role_management.directory.role_definitions.by_unified_role_de
 
 > For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
-### Response
+#### Response
+
+The following example shows the response.
+
+```http
+HTTP/1.1 204 No Content
+```
+
+### Example 2: Permanently delete a soft-deleted custom role definition
+
+#### Request
+
+The following example shows a request.
+
+```http
+DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/deletedItems/roleDefinitions/a1b2c3d4-5678-90ab-cdef-1234567890ab
+```
+
+#### Response
 
 The following example shows the response.
 

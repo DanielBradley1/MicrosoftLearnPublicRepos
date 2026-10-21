@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/backuprestoreroot-list-activitylogs?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-10 -->
 
-# List activitylogs
+# List activityLogs
 
 Namespace: microsoft.graph
 
@@ -133,7 +133,7 @@ Content-Type: application/json
       "restoreSessionId": "c3456789-d012-3456-e789-f01234567890",
       "restoreSessionStatus": "completed",
       "destinationType": "inPlace",
-      "tags": "fastRestore",
+      "restoreJobType": "standard",
       "restoreArtifactDetails": {
         "totalArtifactsCount": 100,
         "restoredCount": 100,

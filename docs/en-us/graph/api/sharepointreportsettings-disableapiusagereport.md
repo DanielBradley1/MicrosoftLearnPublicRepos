@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-disableapiusagereport?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # sharePointReportSettings: disableApiUsageReport
 
@@ -48,7 +48,7 @@ The following table lists the parameters that are required when you call this ac
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| metric | String | The name of the API usage report metric to disable. The supported values are: `egressReport`, `throttlingReport`. Required. |
+| metric | String | The name of the API usage report metric to disable. The supported values are: `egressReport`, `sharePointServicePrioritizationReport`, `throttlingReport`. Required. |
 
 ## Response
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-list-apiusagereportmetrics?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-05 -->
 
 # List apiUsageReportMetrics
 
@@ -9,7 +9,7 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Get the list of [SharePoint API usage report metrics and their enablement status](https://learn.microsoft.com/en-us/graph/api/resources/apiusagereportenablementstatus?view=graph-rest-beta) for the tenant. The supported metrics are `egressReport` and `throttlingReport`.
+Get the list of [SharePoint API usage report metrics and their enablement status](https://learn.microsoft.com/en-us/graph/api/resources/apiusagereportenablementstatus?view=graph-rest-beta) for the tenant. The supported metrics are `egressReport`, `sharePointServicePrioritizationReport`, and `throttlingReport`.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

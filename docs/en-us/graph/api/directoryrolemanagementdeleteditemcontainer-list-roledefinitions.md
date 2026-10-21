@@ -1,15 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/directoryrolemanagementdeleteditemcontainer-list-roledefinitions?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/directoryrolemanagementdeleteditemcontainer-list-roledefinitions?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-17 -->
 
 # List roleDefinitions
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-List custom [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) objects that have been soft-deleted from Microsoft Entra directory role management. Built-in role definitions can't be deleted and aren't returned.
+List custom [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) objects that have been soft-deleted from Microsoft Entra directory role management. Built-in role definitions can't be deleted and aren't returned.
 
 ## Permissions
 
@@ -43,7 +39,7 @@ This method supports the [OData query parameters](https://learn.microsoft.com/en
 
 | Name | Description |
 | :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Authorization | \*\*\*\*\*\* Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
 
 ## Request body
 
@@ -51,19 +47,21 @@ Don't supply a request body for this method.
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and a collection of [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) objects in the response body.
+If successful, this method returns a `200 OK` response code and a collection of [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) objects in the response body.
 
 ## Examples
 
-### Request
+### Example 1: List soft-deleted custom role definitions
+
+#### Request
 
 The following example shows a request.
 
 ```msgraph
-GET https://graph.microsoft.com/beta/roleManagement/directory/deletedItems/roleDefinitions
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/deletedItems/roleDefinitions
 ```
 
-### Response
+#### Response
 
 The following example shows the response.
 
@@ -74,7 +72,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#roleManagement/directory/deletedItems/roleDefinitions",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#roleManagement/directory/deletedItems/roleDefinitions",
   "value": [
     {
       "id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",

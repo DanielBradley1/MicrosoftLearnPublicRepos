@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/authentication?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-01-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # authentication resource type
 
@@ -32,6 +32,7 @@ None.
 | passwordMethods | [passwordAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/passwordauthenticationmethod?view=graph-rest-1.0) collection | Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password. |
 | platformCredentialMethods | [platformCredentialAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/platformcredentialauthenticationmethod?view=graph-rest-1.0) collection | Represents a platform credential instance registered to a user on Mac OS. |
 | phoneMethods | [phoneAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/phoneauthenticationmethod?view=graph-rest-1.0) collection | The phone numbers registered to a user for authentication. |
+| resourceAccountKeyAuthenticationMethods | [resourceAccountKeyAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/resourceaccountkeyauthenticationmethod?view=graph-rest-1.0) collection | Represents the resource account key credentials registered to a user for authentication on shared devices. |
 | softwareOathMethods | [softwareOathAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/softwareoathauthenticationmethod?view=graph-rest-1.0) collection | The software OATH time-based one-time password \(TOTP\) applications registered to a user for authentication. |
 | temporaryAccessPassMethods | [temporaryAccessPassAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/temporaryaccesspassauthenticationmethod?view=graph-rest-1.0) collection | Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes. |
 | windowsHelloForBusinessMethods | [windowsHelloForBusinessAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/windowshelloforbusinessauthenticationmethod?view=graph-rest-1.0) collection | Represents the Windows Hello for Business authentication method registered to a user for authentication. |

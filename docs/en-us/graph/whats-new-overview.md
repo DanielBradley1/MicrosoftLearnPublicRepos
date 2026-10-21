@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-10 -->
+<!-- Sitemap-Last-Modified: 2026-10-16 -->
 
 # What's new in Microsoft Graph
 
@@ -15,6 +15,11 @@ Features in *preview* status are subject to change without notice, and might not
 
 ## October 2026: New and generally available
 
+### Calendars
+
+- Promoted the **isSharedWithMe** property of [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar) resource from beta to v1.0. The property is used to identify the shared calendars.
+- Added the [delta](https://learn.microsoft.com/en-us/graph/api/calendar-delta) method to the [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar) resource type. Use it to track calendars added, deleted, or updated in a user's mailbox.
+
 ### Mail \| Message trace
 
 Added support to identify recalled messages in message trace. Use `recalled` as a supported value of the **status** property of the [exchangeMessageTrace](https://learn.microsoft.com/en-us/graph/api/resources/exchangemessagetrace) resource.
@@ -23,7 +28,21 @@ Added support to identify recalled messages in message trace. Use `recalled` as 
 
 ### Backup and recovery \| Microsoft 365 backup and storage
 
-Track admin activities on backup and restore resources, including policy changes, dynamic rule executions, offboarding, and restore task completions, by using the [activityLogBase](https://learn.microsoft.com/en-us/graph/api/resources/activitylogbase?view=graph-rest-beta&preserve-view=true) resource and its derived types.
+- Track admin activities on backup and restore resources, including policy changes, dynamic rule executions, offboarding, and restore task completions, by using the [activityLogBase](https://learn.microsoft.com/en-us/graph/api/resources/activitylogbase?view=graph-rest-beta&preserve-view=true) resource and its derived types.
+- Removed the **tags** property on the [restoreTaskActivityLog](https://learn.microsoft.com/en-us/graph/api/resources/restoretaskactivitylog?view=graph-rest-beta&preserve-view=true) in favor of the **restoreJobType** property. Use the **restoreJobType** property with values from the [restoreJobType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-beta&preserve-view=true#restorejobtype-values) enumeration type.
+- Added the **backupPolicyDeleted** member as a new supported value for the **activityType** property on the [activityLogBase](https://learn.microsoft.com/en-us/graph/api/resources/activitylogbase?view=graph-rest-beta&preserve-view=true) resource and its derived types.
+
+### Device and app management \| Cloud PC
+
+Updated the date when deprecated image properties on [cloudPcDeviceImage](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcdeviceimage?view=graph-rest-beta&preserve-view=true), [cloudPcSourceDeviceImage](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcsourcedeviceimage?view=graph-rest-beta&preserve-view=true), and [cloudPcGalleryImage](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcgalleryimage?view=graph-rest-beta&preserve-view=true) will stop returning data from January 31, 2024 to December 7, 2026. No replacement is planned for **recommendedSku**. Review the replacement property guidance in these resource topics and update affected integrations before the deadline.
+
+### Files
+
+Updated the [getSharePointApiUsage](https://learn.microsoft.com/en-us/graph/api/reportroot-getsharepointapiusage?view=graph-rest-beta&preserve-view=true) method to support SharePoint service prioritization reports. Use this report to retrieve total, standard, heavy, billed standard, and billed heavy API request counts by application and date.
+
+### Identity and access \| Governance
+
+- Added the [accessDriftSummary](https://learn.microsoft.com/en-us/graph/api/resources/accessdriftsummary?view=graph-rest-beta&preserve-view=true) resource type and related methods for identifying governed resources whose actual access differs from access-package intent. Use it to list and inspect drift summaries, retrieve drift details, and download bulk reconciliation reports. Access drift details identify whether each affected identity is a user or group through the **identityType** property of [entraDriftIdentityInfo](https://learn.microsoft.com/en-us/graph/api/resources/entradriftidentityinfo?view=graph-rest-beta&preserve-view=true).
 
 ### Mail \| Message trace
 
@@ -34,7 +53,31 @@ Added support to identify recalled messages in message trace. Use `recalled` as 
 - Added the **isHidden** property to the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-beta&preserve-view=true) resource to identify hidden mailbox folders.
 - Use the existing **includeHiddenFolders** query parameter for [listing folders](https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders?view=graph-rest-beta&preserve-view=true) and [listing child folders](https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders?view=graph-rest-beta&preserve-view=true). Set it to `true` to include both hidden and nonhidden folders.
 
+### Security
+
+Added the **incidentConfiguration** property to the [detectionAction](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionaction?view=graph-rest-beta&preserve-view=true) resource and the [incidentConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/security-incidentconfiguration?view=graph-rest-beta&preserve-view=true) complex type. Use this setting to exclude alerts generated by a custom detection rule from automatic incident correlation and create standalone, single-alert incidents.
+
+### Security \| Audit log query
+
+Added 35 members, from `PlannerCustomFieldDefinition` through `MESRawEmailContentMetadata`, to the [auditLogRecordType](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecordtype?view=graph-rest-beta&preserve-view=true) enumeration and added the matching [auditData derived types](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata-derived-types?view=graph-rest-beta&preserve-view=true) to represent workload-specific audit event payloads.
+
+### Security \| Data security and compliance
+
+Updated the **evaluationErrorType** enumeration to use customer-facing reasons for incomplete policy evaluations, and removed the **errorMessage** property from the [evaluationErrorDetail](https://learn.microsoft.com/en-us/graph/api/resources/evaluationerrordetail?view=graph-rest-beta&preserve-view=true) complex type. Use **errorType** to identify why an evaluation couldn't be completed.
+
+### Security \| Workbooks
+
+- Added the [workbook](https://learn.microsoft.com/en-us/graph/api/resources/security-workbook?view=graph-rest-beta&preserve-view=true) resource type and related methods to manage tenant-scoped Microsoft Security workbook documents. Use stable IDs for repeatable deployments and replace a workbook's JSON content as a complete document.
+
+### Teamwork and communications \| Messaging
+
+Added support for setting and unsetting custom emoji reactions on chat messages by specifying a display name \(**displayName**\), service-issued identifier \(**reactionId**\), or both. For more information, see [chatMessageReaction](https://learn.microsoft.com/en-us/graph/api/resources/chatmessagereaction?view=graph-rest-beta&preserve-view=true).
+
 ## September 2026: New and generally available
+
+### Applications
+
+- Updated the availability of the **coopEnforcement** property on the [authenticationBehaviors](https://learn.microsoft.com/en-us/graph/api/resources/authenticationbehaviors) resource to include the supported national cloud deployments: US Government L4, US Government L5 \(DoD\), and China operated by 21Vianet.
 
 ### Calendars \| Work hours and locations
 
@@ -56,10 +99,12 @@ Added the **onPremisesExtensionAttributes** property to the [group](https://lear
 
 ### Identity and access \| Directory management
 
-- Added the [provision](https://learn.microsoft.com/en-us/graph/api/device-provision) action to the [device](https://learn.microsoft.com/en-us/graph/api/resources/device) resource in v1.0 to enable approved Virtual Desktop Infrastructure \(VDI\) providers to provision devices in a customer's directory.
+- Added the [directoryRoleManagementDeletedItemContainer](https://learn.microsoft.com/en-us/graph/api/resources/directoryrolemanagementdeleteditemcontainer) resource type and related methods to v1.0. Use these APIs to list and inspect soft-deleted custom roles, restore them to the active role definitions collection, or permanently delete them.
+- Added the [provision](https://learn.microsoft.com/en-us/graph/api/device-provision) action to the [device](https://learn.microsoft.com/en-us/graph/api/resources/device) resource in v1.0 to enable approved Virtual Desktop Infrastructure \(VDI\) providers to provision devices in a customer's directory. Added the [provision](https://learn.microsoft.com/en-us/graph/api/device-provision) action to the [device](https://learn.microsoft.com/en-us/graph/api/resources/device) resource in v1.0 to enable approved Virtual Desktop Infrastructure \(VDI\) providers to provision devices in a customer's directory.
 
 ### Identity and access \| Governance
 
+- Added the [roleManagementCustomCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension) resource type and related methods for integrating external approval, ticketing, compliance, and audit workflows into Privileged Identity Management role assignment lifecycle events.
 - Promoted the **access reviews customer-provided data** APIs from beta to v1.0. Use them to review entitlement data that you upload for resources that Microsoft Entra doesn't discover itself, such as third-party applications. The promoted surface includes:
 
   - the **description** property on [accessReviewInstanceDecisionItemResource](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewinstancedecisionitemresource) to describe the resource under review.
@@ -72,13 +117,12 @@ Added the **onPremisesExtensionAttributes** property to the [group](https://lear
 
 ### Identity and access \| Identity and sign-in
 
-Added the [resourceAccountKeyAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/resourceaccountkeyauthenticationmethod) resource type and related methods for managing resource account key credentials on shared devices. Use the APIs to list, get, and delete credentials that enable devices such as Teams Rooms and Teams phones to sign in without user interaction.
-
-Added the [anonymousCalendarSharingFreeBusyDetail](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusydetail), [anonymousCalendarSharingFreeBusyReviewer](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusyreviewer), and [anonymousCalendarSharingFreeBusySimple](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusysimple) resource types. Use these cross-tenant access policy capabilities to authorize anonymous external users to view calendar free/busy information at different levels of detail.
+- Added the [resourceAccountKeyAuthenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/resourceaccountkeyauthenticationmethod) resource type and related methods for managing resource account key credentials on shared devices. Use the APIs to list, get, and delete credentials that enable devices such as Teams Rooms and Teams phones to sign in without user interaction.
+- Added the [anonymousCalendarSharingFreeBusyDetail](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusydetail), [anonymousCalendarSharingFreeBusyReviewer](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusyreviewer), and [anonymousCalendarSharingFreeBusySimple](https://learn.microsoft.com/en-us/graph/api/resources/anonymouscalendarsharingfreebusysimple) resource types. Use these cross-tenant access policy capabilities to authorize anonymous external users to view calendar free/busy information at different levels of detail.
 
 ### Security \| Audit log query
 
-- Added the **isRecordCountLimitExceeded**, **recordCountLimit**, and **approximateReturnedRecordCount** properties to the [auditLogQuery](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogquery) resource. Use these properties to determine whether a completed query exceeded the per-search record-count limit and to inspect the applicable limit and approximate returned record count.
+Added the **isRecordCountLimitExceeded**, **recordCountLimit**, and **approximateReturnedRecordCount** properties to the [auditLogQuery](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogquery) resource. Use these properties to determine whether a completed query exceeded the per-search record-count limit and to inspect the applicable limit and approximate returned record count.
 
 ### Teamwork and communications \| Messaging
 
@@ -90,9 +134,10 @@ Updated the [getAllRetainedMessages](https://learn.microsoft.com/en-us/graph/api
 
 Added the **isDisabled** property to the [agentIdentityBlueprint](https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true) resource. Use it to deactivate an agent identity blueprint without deleting it.
 
-### Application
+### Applications
 
-Added the **isDeviceAccessEnabled** property to the [onPremisesPublishing](https://learn.microsoft.com/en-us/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true) resource to configure device access for Microsoft Entra Private Access.
+- Updated the availability of the **coopEnforcement** property on the [authenticationBehaviors](https://learn.microsoft.com/en-us/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true) resource to include the supported national cloud deployments: US Government L4, US Government L5 \(DoD\), and China operated by 21Vianet.
+- Added the **isDeviceAccessEnabled** property to the [onPremisesPublishing](https://learn.microsoft.com/en-us/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true) resource to configure device access for Microsoft Entra Private Access.
 
 ### Backup and recovery \| Microsoft 365 backup and storage
 
@@ -142,108 +187,13 @@ Added the `unknownFutureValue` member to the **changeType** enumeration used by 
 
 ### Identity and access \| Governance
 
-Clarified that the [Get accessPackageResourceEnvironment](https://learn.microsoft.com/en-us/graph/api/accesspackageresourceenvironment-get?view=graph-rest-beta&preserve-view=true) method returns SharePoint Online resource environments only when it's called with delegated permissions. A SharePoint Online resource environment corresponds to a SharePoint root site, so to retrieve root site information with application permissions, use the [List sites](https://learn.microsoft.com/en-us/graph/api/site-list?view=graph-rest-beta&preserve-view=true) method with the `$filter=siteCollection/root ne null` query option.
-
+- Clarified that the [Get accessPackageResourceEnvironment](https://learn.microsoft.com/en-us/graph/api/accesspackageresourceenvironment-get?view=graph-rest-beta&preserve-view=true) method returns SharePoint Online resource environments only when it's called with delegated permissions. A SharePoint Online resource environment corresponds to a SharePoint root site, so to retrieve root site information with application permissions, use the [List sites](https://learn.microsoft.com/en-us/graph/api/site-list?view=graph-rest-beta&preserve-view=true) method with the `$filter=siteCollection/root ne null` query option.
 - Added public preview support for lifecycle policies that govern agent identities and guest users. Use [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-beta&preserve-view=true) and its derived policy types to configure scope, rules, workflow enforcement, impact evaluation, and processing reports.
 - Added guest-user lifecycle actions to [attest](https://learn.microsoft.com/en-us/graph/api/user-attest?view=graph-rest-beta&preserve-view=true), [add the signed-in user as a sponsor](https://learn.microsoft.com/en-us/graph/api/user-addselfassponsor?view=graph-rest-beta&preserve-view=true), and [remove the signed-in user as a sponsor](https://learn.microsoft.com/en-us/graph/api/user-removeselfassponsor?view=graph-rest-beta&preserve-view=true).
 
 ### Identity and access \| Identity and sign-in
 
 Added the **requireCertificateSidAlignment** property to the [x509CertificateAuthenticationMethodConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/x509certificateauthenticationmethodconfiguration?view=graph-rest-beta&preserve-view=true) resource. Use it to require certificate SID alignment for hybrid and cloud-only users during certificate-based authentication.
-
-### People and workplace intelligence \| Analytics
-
-Added the **sensitivityLabel** property to the [searchHit](https://learn.microsoft.com/en-us/graph/api/resources/searchhit?view=graph-rest-beta&preserve-view=true) resource type to provide sensitivity-label information for the search result resource.
-
-### Reports \| Partner billing reports
-
-Added the [billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-beta&preserve-view=true) resource type and related export method for CSP partners to generate billed aggregated Azure usage reports for a specific invoice.
-
-### Security \| Data security and compliance
-
-Added the `contentFiltering` member to the [userActivityTypes](https://learn.microsoft.com/en-us/graph/api/resources/enums-security?view=graph-rest-beta&preserve-view=true#useractivitytypes-values) enumeration used by the [compute protection scopes for a user](https://learn.microsoft.com/en-us/graph/api/userprotectionscopecontainer-compute?view=graph-rest-beta&preserve-view=true) and [compute protection scopes for a tenant](https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta&preserve-view=true) APIs, enabling applications to determine whether data loss prevention policies govern content filtering before evaluating content.
-
-Updated the [contentActivity](https://learn.microsoft.com/en-us/graph/api/resources/contentactivity?view=graph-rest-beta&preserve-view=true) resource to support reporting Secure by Default policy evaluations that couldn't be completed. Enforcement planes can submit structured incomplete-inspection reasons through the existing content activity ingestion API.
-
-### Security \| Audit log query
-
-- Added the **isRecordCountLimitExceeded**, **recordCountLimit**, and **approximateReturnedRecordCount** properties to the [auditLogQuery](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogquery?view=graph-rest-beta&preserve-view=true) resource. Use these properties to determine whether a completed query exceeded the per-search record-count limit and to inspect the applicable limit and approximate returned record count.
-
-### Teamwork and communications \| Messaging
-
-Updated the [getAllRetainedMessages](https://learn.microsoft.com/en-us/graph/api/channel-getallretainedmessages?view=graph-rest-beta&preserve-view=true) method to document support for retained private-channel message versions captured after the tenant's private-channel storage migration completed.
-
-## August 2026: New and generally available
-
-### Applications
-
-- Added the [authenticationBehaviors](https://learn.microsoft.com/en-us/graph/api/resources/authenticationbehaviors) resource type and the **coopEnforcement** property to the v1.0 endpoint. Application owners can use the property to explicitly test Cross-Origin-Opener-Policy enforcement, temporarily suppress enforcement while remediating an incompatible browser authentication flow, or return to the service default. The property is available in the global service only and isn't available in national cloud deployments.
-- Added the **authenticationBehaviors** property to the [application](https://learn.microsoft.com/en-us/graph/api/resources/application) resource type in v1.0. Returned only on `$select`.
-
-### Change notifications \| Subscription
-
-- Added support for delivering change notifications to Web Push endpoints \(RFC 8291\) for the [subscription](https://learn.microsoft.com/en-us/graph/api/resources/subscription) resource type.
-- Added the [getVapidPublicKey](https://learn.microsoft.com/en-us/graph/api/subscription-getvapidpublickey) method to obtain the VAPID public key \(RFC 8292\) used when creating Web Push subscriptions.
-
-### Files
-
-- Added the [Upsert columns](https://learn.microsoft.com/en-us/graph/api/filestoragecontainer-patch-columns) method to the [fileStorageContainer](https://learn.microsoft.com/en-us/graph/api/resources/filestoragecontainer) resource type to create or update up to 20 columnDefinition objects in a single request.
-- Added the **appliedByUser** parameter to the [assignSensitivityLabel](https://learn.microsoft.com/en-us/graph/api/driveitem-assignsensitivitylabel) action on the [driveItem](https://learn.microsoft.com/en-us/graph/api/resources/driveitem) resource. This parameter allows app-only callers to specify the user identity on whose behalf the sensitivity label is applied.
-
-### Identity and access \| Directory management
-
-- Added the **managerApplications** property to the [agentIdentity](https://learn.microsoft.com/en-us/graph/api/resources/agentidentity) and [agentIdentityBlueprintPrincipal](https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprintprincipal) resources to identify the applications that manage the backing agent identity blueprint.
-
-Added the [recovery](https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-recovery) resource type and related methods to programmatically recover critical Microsoft Entra directory objects from automatically created point-in-time snapshots. Use these APIs to inspect available snapshots, preview and scope changes before restoration, run recovery jobs, monitor progress, and review failed changes.
-
-### Identity and access \| Governance
-
-- Added the [externalSapAcConnectionInfo](https://learn.microsoft.com/en-us/graph/api/resources/externalsapacconnectioninfo) complex type, along with the supporting [authenticationInfo](https://learn.microsoft.com/en-us/graph/api/resources/authenticationinfo) and [clientCredentialAuthenticationInfo](https://learn.microsoft.com/en-us/graph/api/resources/clientcredentialauthenticationinfo) types, to configure connections from Microsoft Entra entitlement management to SAP Access Control \(AC\) systems. Set these on the **connectionInfo** property of an [externalOriginResourceConnector](https://learn.microsoft.com/en-us/graph/api/resources/externaloriginresourceconnector) when its **connectorType** is `sapAc`.
-- Promoted the **Lifecycle Workflows provisioning and workflow subject** APIs from beta to v1.0, introducing a broader, extensible subject model for workflows and surfacing per-subject processing results. The promoted surface includes:
-
-  - [workflowSubject](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflowsubject) base type and its [provisioningObjectWorkflowSubject](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-provisioningobjectworkflowsubject) and [directoryObjectWorkflowSubject](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-directoryobjectworkflowsubject) derived types
-  - [subjectProcessingResult](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-subjectprocessingresult) resource with the **subjectProcessingResults** navigation property on the [run](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-run) and [workflow](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflow) resources
-  - [subjectSummary](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-subjectsummary) resource and the [summary](https://learn.microsoft.com/en-us/graph/api/identitygovernance-subjectprocessingresult-summary) method on the [subjectProcessingResult](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-subjectprocessingresult) resource
-  - [activateAndWait](https://learn.microsoft.com/en-us/graph/api/identitygovernance-workflow-activateandwait) action on the [workflow](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflow) resource, returning the [awaitedWorkflowProcessingResult](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-awaitedworkflowprocessingresult) resource
-  - [provisioningAttributeMapping](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-provisioningattributemapping) and [attributeSetEntry](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-attributesetentry) resources
-  - [customTaskExtensionResponseData](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-customtaskextensionresponsedata) resource, the **replyMode** property on [customTaskExtension](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-customtaskextension), and the **targetSubject** property on [customTaskExtensionCalloutData](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-customtaskextensioncalloutdata)
-  - **targetSubjectType** property on [workflowBase](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflowbase) and **workflowSubject** property on [taskProcessingResult](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-taskprocessingresult)
-  - [subjectType](https://learn.microsoft.com/en-us/graph/api/resources/enums-identitygovernance#subjecttype-values) and [customTaskExtensionReplyMode](https://learn.microsoft.com/en-us/graph/api/resources/enums-identitygovernance#customtaskextensionreplymode-values) enumerations, along with the `extensibility` and `extensibilityOnDemand` enumeration members
-
-- Added the [externalOriginResourceConnector](https://learn.microsoft.com/en-us/graph/api/resources/externaloriginresourceconnector) resource type and methods to [create](https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-post-externaloriginresourceconnectors), [list](https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-list-externaloriginresourceconnectors), [get](https://learn.microsoft.com/en-us/graph/api/externaloriginresourceconnector-get), [update](https://learn.microsoft.com/en-us/graph/api/externaloriginresourceconnector-update), and [delete](https://learn.microsoft.com/en-us/graph/api/externaloriginresourceconnector-delete) connections from Microsoft Entra entitlement management to SAP Identity Access Governance \(SAP IAG\). For an SAP IAG connector, specify the SAP IAG endpoint, OAuth token endpoint, and client ID, along with the Azure subscription, resource group, key vault, and secret that identify where its client secret is stored. The connector is associated with an access package resource so that entitlement management can provision access to resources in SAP IAG through access packages.
-- Added the **reviewerId** and **scopeType** properties to [accessReviewReviewerScope](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewreviewerscope) to specify a reviewer directly or as a well-known scope instead of through a query.
-- Added the **applyDescription** property to [accessReviewInstanceDecisionItem](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewinstancedecisionitem) to describe the result of applying a decision.
-- Added the **appRoleId** and **appRoleDisplayName** properties to [accessReviewInstanceDecisionItemServicePrincipalResource](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewinstancedecisionitemserviceprincipalresource) to identify the app role under review.
-- Added the **errors** property to [accessReviewInstance](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewinstance) and the [accessReviewError](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewerror) resource type to report errors that occur during the review instance lifecycle.
-- Added the [accessReviewPrincipalScope](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewprincipalscope), [accessReviewResourceScope](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewresourcescope), and [accessReviewAccessPackageAssignmentPolicyScope](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewaccesspackageassignmentpolicyscope) resource types. Use them in the **principalScopes** and **resourceScopes** properties of [principalResourceMembershipsScope](https://learn.microsoft.com/en-us/graph/api/resources/principalresourcemembershipsscope) to state which principals have their access to which resources reviewed without writing a query expression.
-- Added the **accessReviewPrincipalScopeType**, **accessReviewResourceScopeType**, and **accessReviewReviewerScopeType** enumeration types to identify well-known principal, resource, and reviewer scopes.
-
-### Identity and access \| Identity and sign-in
-
-Added support for managing Microsoft 365 cross-tenant capabilities in cross-tenant access policies. Use the [m365CapabilityBase](https://learn.microsoft.com/en-us/graph/api/resources/m365capabilitybase) resource and the **m365Capabilities** relationship to manage which Microsoft 365 experiences—such as calendar sharing, MailTips, places booking, and cross-tenant migration—are enabled between tenants. For the default policy, you can [list](https://learn.microsoft.com/en-us/graph/api/crosstenantaccesspolicyconfigurationdefault-list-m365capabilities), [create](https://learn.microsoft.com/en-us/graph/api/crosstenantaccesspolicyconfigurationdefault-post-m365capabilities), and [update](https://learn.microsoft.com/en-us/graph/api/crosstenantaccesspolicyconfigurationdefault-update-m365capabilities) capabilities. For partner policies, you can [list](https://learn.microsoft.com/en-us/graph/api/crosstenantaccesspolicyconfigurationpartner-list-m365capabilities), [create](https://learn.microsoft.com/en-us/graph/api/crosstenantaccesspolicyconfigurationpartner-post-m365capabilities), [update](https://learn.microsoft.com/en-us/graph/api/crosstenantaccesspolicyconfigurationpartner-update-m365capabilities), and [delete](https://learn.microsoft.com/en-us/graph/api/crosstenantaccesspolicyconfigurationpartner-delete-m365capabilities) capabilities.
-
-### Mail
-
-- Added the [note](https://learn.microsoft.com/en-us/graph/api/resources/note) resource type and methods to [list](https://learn.microsoft.com/en-us/graph/api/user-list-notes), [create](https://learn.microsoft.com/en-us/graph/api/user-post-notes), [get](https://learn.microsoft.com/en-us/graph/api/note-get), [update](https://learn.microsoft.com/en-us/graph/api/note-update), and [delete](https://learn.microsoft.com/en-us/graph/api/note-delete) quick-capture notes in a user's *Notes* folder. Use [delta query](https://learn.microsoft.com/en-us/graph/api/note-delta) to synchronize notes that were added, updated, or deleted since the previous request. You can also [list](https://learn.microsoft.com/en-us/graph/api/note-list-attachments), [add](https://learn.microsoft.com/en-us/graph/api/note-post-attachments), and [delete](https://learn.microsoft.com/en-us/graph/api/attachment-delete) inline image attachments, and use open or legacy extended properties to store custom data on a note.
-
-### Security \| Alerts and incidents
-
-- Added the **tenantId** property to the [userAccount](https://learn.microsoft.com/en-us/graph/api/resources/security-useraccount) resource to provide the Entra home tenant ID for the compromised user account indicated in a [security alert](https://learn.microsoft.com/en-us/graph/api/resources/security-alert) where the alert evidence is related to a [processEvidence](https://learn.microsoft.com/en-us/graph/api/resources/security-processevidence), [userEvidence](https://learn.microsoft.com/en-us/graph/api/resources/security-userevidence), or [mailboxEvidence](https://learn.microsoft.com/en-us/graph/api/resources/security-mailboxevidence).
-- Added the [alert: moveAlerts](https://learn.microsoft.com/en-us/graph/api/security-alert-movealerts) and [incident: mergeIncidents](https://learn.microsoft.com/en-us/graph/api/security-incident-mergeincidents) actions to support moving alerts and merging incidents in Microsoft Defender.
-- Added the [correlationReason](https://learn.microsoft.com/en-us/graph/api/resources/security-correlationreason) enumeration and [mergeResponse](https://learn.microsoft.com/en-us/graph/api/resources/security-mergeresponse) resource type.
-
-### Security \| eDiscovery
-
-Added the `cloudNativeHtmlConversion` member to the [additionalDataOptions](https://learn.microsoft.com/en-us/graph/api/resources/security-ediscoveryaddtoreviewsetoperation#additionaldataoptions-values) enumeration.
-
-### Mailbox import and export
-
-- Added the **wellKnownName** property to the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder) resource type in v1.0. Use this property to identify folders created by Outlook by using a locale-independent name.
-- Added the [Delete mailboxItem](https://learn.microsoft.com/en-us/graph/api/mailboxfolder-delete-items) method to the [mailboxItem](https://learn.microsoft.com/en-us/graph/api/resources/mailboxitem) resource type in v1.0. Use this method to delete an individual mailbox item from a mailbox folder with Exchange soft-delete or hard-delete semantics.
-
-### Security
-
-Updated the retirement date for the legacy Microsoft Graph [security alerts API](https://learn.microsoft.com/en-us/graph/api/resources/alert) from August 31, 2026 to October 15, 2026.
 
 ### Identity and access \| Monitoring & health
 
@@ -257,22 +207,23 @@ Updated the retirement date for the legacy Microsoft Graph [security alerts API]
 
 Added the **sensitivityLabel** property to the [searchHit](https://learn.microsoft.com/en-us/graph/api/resources/searchhit?view=graph-rest-beta&preserve-view=true) resource type to provide sensitivity-label information for the search result resource.
 
-### Security
+### Reports \| Partner billing reports
 
-Added the **incidentConfiguration** property to the [detectionAction](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionaction?view=graph-rest-beta&preserve-view=true) resource and the [incidentConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/security-incidentconfiguration?view=graph-rest-beta&preserve-view=true) complex type. Use this setting to exclude alerts generated by a custom detection rule from automatic incident correlation and create standalone, single-alert incidents.
+Added the [billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-beta&preserve-view=true) resource type and related export method for CSP partners to generate billed aggregated Azure usage reports for a specific invoice.
 
 ### Security \| Audit log query
 
-- Added the **isRecordCountLimitExceeded**, **recordCountLimit**, and **approximateReturnedRecordCount** properties to the [auditLogQuery](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogquery?view=graph-rest-beta&preserve-view=true) resource. Use these properties to determine whether a completed query exceeded the per-search record-count limit and to inspect the applicable limit and approximate returned record count.
-- Added 35 members, from `PlannerCustomFieldDefinition` through `MESRawEmailContentMetadata`, to the [auditLogRecordType](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecordtype?view=graph-rest-beta&preserve-view=true) enumeration and added the matching [auditData derived types](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata-derived-types?view=graph-rest-beta&preserve-view=true) to represent workload-specific audit event payloads.
+Added the **isRecordCountLimitExceeded**, **recordCountLimit**, and **approximateReturnedRecordCount** properties to the [auditLogQuery](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogquery?view=graph-rest-beta&preserve-view=true) resource. Use these properties to determine whether a completed query exceeded the per-search record-count limit and to inspect the applicable limit and approximate returned record count.
 
 ### Security \| Data security and compliance
 
-Added the `contentFiltering` member to the [userActivityTypes](https://learn.microsoft.com/en-us/graph/api/resources/enums-security?view=graph-rest-beta&preserve-view=true#useractivitytypes-values) enumeration used by the [compute protection scopes for a user](https://learn.microsoft.com/en-us/graph/api/userprotectionscopecontainer-compute?view=graph-rest-beta&preserve-view=true) and [compute protection scopes for a tenant](https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta&preserve-view=true) APIs, enabling applications to determine whether data loss prevention policies govern content filtering before evaluating content.
+- Added the `contentFiltering` member to the [userActivityTypes](https://learn.microsoft.com/en-us/graph/api/resources/enums-security?view=graph-rest-beta&preserve-view=true#useractivitytypes-values) enumeration used by the [compute protection scopes for a user](https://learn.microsoft.com/en-us/graph/api/userprotectionscopecontainer-compute?view=graph-rest-beta&preserve-view=true) and [compute protection scopes for a tenant](https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta&preserve-view=true) APIs, enabling applications to determine whether data loss prevention policies govern content filtering before evaluating content.
+- Updated the [contentActivity](https://learn.microsoft.com/en-us/graph/api/resources/contentactivity?view=graph-rest-beta&preserve-view=true) resource to support reporting Secure by Default policy evaluations that couldn't be completed. Enforcement planes can submit structured incomplete-inspection reasons through the existing content activity ingestion API.
+- Added the **policyConfiguration** property to the [policyScopeBase](https://learn.microsoft.com/en-us/graph/api/resources/policyscopebase?view=graph-rest-beta&preserve-view=true) resource type. Enforcement planes can use the effective Secure by Default configuration returned by the protection scope APIs to determine whether to audit or block content when policy evaluation can't be completed.
 
-Added the **policyConfiguration** property to the [policyScopeBase](https://learn.microsoft.com/en-us/graph/api/resources/policyscopebase?view=graph-rest-beta&preserve-view=true) resource type. Enforcement planes can use the effective Secure by Default configuration returned by the protection scope APIs to determine whether to audit or block content when policy evaluation can't be completed.
+### Tasks and plans
 
-Updated the [contentActivity](https://learn.microsoft.com/en-us/graph/api/resources/contentactivity?view=graph-rest-beta&preserve-view=true) resource to support reporting Secure by Default policy evaluations that couldn't be completed. Enforcement planes can submit structured incomplete-inspection reasons through the existing content activity ingestion API
+Added the [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta&preserve-view=true) resource type for Planner Graph V4. Use these APIs to create and manage plans and tasks with richer scheduling, dependency, custom field, and chat capabilities than the existing Planner API surface.
 
 ### Teamwork and communications \| Messaging
 

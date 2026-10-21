@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/apiusagereportenablementstatus?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-16 -->
+<!-- Sitemap-Last-Modified: 2026-10-16 -->
 
 # apiUsageReportEnablementStatus resource type
 
@@ -15,7 +15,7 @@ Represents the enablement status of a specific API usage report metric for Share
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| metric | String | The name of the API usage report metric. The supported values are: `egressReport`, `throttlingReport`. |
+| metric | String | The name of the API usage report metric. The supported values are: `egressReport`, `sharePointServicePrioritizationReport`, `throttlingReport`. |
 | onboardingStatus | apiUsageReportOnboardingStatus | The current onboarding status of the metric. The possible values are: `enabling`, `enabled`, `disabling`, `disabled`, `unknownFutureValue`. |
 
 ## Relationships

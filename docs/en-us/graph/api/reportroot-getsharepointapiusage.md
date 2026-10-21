@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/reportroot-getsharepointapiusage?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-08-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-16 -->
 
 # reportRoot: getSharePointApiUsage
 
@@ -11,9 +11,17 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Get aggregated usage data for all applications in a tenant. Specify either a `period` or a `date`, but not both. Optionally filter the results by application ID. Data is returned in CSV format by default, or in JSON format when requested through the `$format` query parameter.
 
-Use the optional reportType parameter to choose which usage metrics to return: egressReport \(default\) includes usage \(UsageMB in CSV, usageMB in JSON\), and throttlingReport includes throttled request counts \(ThrottledRequests in CSV, throttledRequests in JSON\). Each report type must be enabled \(onboarded\) for the tenant before its data is available. Use [enableApiUsageReport](https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-enableapiusagereport?view=graph-rest-beta) to enable a report metric, [disableApiUsageReport](https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-disableapiusagereport?view=graph-rest-beta) to disable it, and [List apiUsageReportMetrics](https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-list-apiusagereportmetrics?view=graph-rest-beta) to check the enablement status. If you request a report type that isn't enabled for the tenant, this method returns a `403 Forbidden` response with the error code `accessDenied` and the message "Tenant is not enabled for this report type."
+Use the optional **reportType** parameter to choose which usage metrics to return:
 
-\[!NOTE\] CSV column headers use PascalCase \(ThrottledRequests\) while JSON properties use camelCase \(throttledRequests\) to maintain consistency with other Microsoft Graph reporting APIs.
+- `egressReport` \(default\) includes usage in MB and request counts.
+- `throttlingReport` includes request and throttled request counts.
+- `sharePointServicePrioritizationReport` includes total, standard, heavy, billed standard, and billed heavy request counts.
+
+The `sharePointServicePrioritizationReport` is intended for tenants that use SharePoint Service Prioritization. For details about the offering and onboarding, see [SharePoint Service Prioritization](https://aka.ms/spsp).
+
+Each report type must be enabled \(onboarded\) for the tenant before its data is available. Use [enableApiUsageReport](https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-enableapiusagereport?view=graph-rest-beta) to enable a report metric, [disableApiUsageReport](https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-disableapiusagereport?view=graph-rest-beta) to disable it, and [List apiUsageReportMetrics](https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-list-apiusagereportmetrics?view=graph-rest-beta) to check the enablement status. If you request a report type that isn't enabled for the tenant, this method returns a `403 Forbidden` response with the error code `accessDenied` and the message "Tenant is not enabled for this report type."
+
+\[!NOTE\] CSV column headers use PascalCase \(for example, `BilledStandardRequestCount`\), and JSON properties use camelCase \(for example, `billedStandardRequestCount`\) to maintain consistency with other Microsoft Graph reporting APIs.
 
 ## Permissions
 
@@ -48,7 +56,7 @@ In the request URL, provide the following parameters with values.
 | appId | String | Optional. A comma-separated list of application GUIDs to filter results. When specified, only detail rows for the specified applications are returned and the summary row is excluded. |
 | date | Date | Required if **period** isn't specified. Specifies the date for the report. Accepts `YYYY-MM-DD` format \(for example, `2026-02-05`\). Can't be used with **period**. Can't be a future date. |
 | period | String | Required if **date** isn't specified. Specifies the length of time over which the report is aggregated. The supported values are: `D1`, `D7`, `D30`. Can't be used with **date**. |
-| reportType | String | Optional. The type of usage report to return. The possible values are: `egressReport`, `throttlingReport`. Default is `egressReport`. The report type determines which columns appear in the response: egressReport includes usageMB and excludes throttledRequests; throttlingReport includes throttledRequests and excludes usageMB. |
+| reportType | String | Optional. The type of usage report to return. The possible values are: `egressReport`, `throttlingReport`, `sharePointServicePrioritizationReport`. Default is `egressReport`. The report type determines which columns appear in the response. |
 
 ## Optional query parameters
 
@@ -90,12 +98,15 @@ The CSV file column headers depend on the `reportType` parameter:
 - `throttlingReport`:
 
   `UsageDateTime,ServiceArea,TenantId,AppId,UsageRequests,ThrottledRequests,ActiveApps`
+- `sharePointServicePrioritizationReport`:
+
+  `UsageDateTime,ServiceArea,TenantId,AppId,UsageRequests,StandardRequestCount,HeavyRequestCount,BilledStandardRequestCount,BilledHeavyRequestCount,ActiveApps`
 
 The first data row is a summary row with ActiveApps populated and AppId empty. Subsequent rows are per-app, per-date details with AppId populated and ActiveApps empty. Data points are ordered by UsageDateTime descending \(most recent first\).
 
 ### JSON format
 
-If successful with JSON format, this method returns a structured object with `summary` and `details` properties. The `summary` contains aggregated totals, and `details` contains an array of per-application, per-date details. The `summary` is `null` when an `appId` filter is specified. The `details` array supports pagination via `$skip` and `$top` query parameters. Each data point includes the usageMB property for the egressReport or the throttledRequests property for the throttlingReport.
+If successful with JSON format, this method returns a structured object with `summary` and `details` properties. The `summary` contains aggregated totals, and `details` contains an array of per-application, per-date details. The `summary` is `null` when an `appId` filter is specified. The `details` array supports pagination via `$skip` and `$top` query parameters. The report type determines which properties each data point includes. For more information, see [sharePointApiUsageDataPoint](https://learn.microsoft.com/en-us/graph/api/resources/sharepointapiusagedatapoint?view=graph-rest-beta).
 
 ## Examples
 
@@ -1641,7 +1652,59 @@ UsageDateTime,ServiceArea,TenantId,AppId,UsageRequests,ThrottledRequests,ActiveA
 2026-02-03T00:00:00Z,OneDrive and SharePoint,12345678-1234-1234-1234-123456789abc,00000003-0000-0ff1-ce00-000000000000,7000,180,
 ```
 
-### Example 9: No data available
+### Example 9: Get a SharePoint service prioritization report in JSON format
+
+The following example shows a request that returns SharePoint service prioritization request and billing metrics.
+
+#### Request
+
+The following example shows a request.
+
+```msgraph
+GET https://graph.microsoft.com/beta/reports/getSharePointApiUsage(period='D7',reportType='sharePointServicePrioritizationReport')?$format=application/json
+```
+
+#### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "summary": {
+    "usageDateTime": "2026-02-04T00:00:00Z",
+    "serviceArea": "OneDrive and SharePoint",
+    "tenantId": "12345678-1234-1234-1234-123456789abc",
+    "appId": null,
+    "usageRequests": 15000,
+    "standardRequestCount": 12000,
+    "heavyRequestCount": 3000,
+    "billedStandardRequestCount": 11500,
+    "billedHeavyRequestCount": 2800,
+    "activeApps": 5
+  },
+  "details": [
+    {
+      "usageDateTime": "2026-02-04T00:00:00Z",
+      "serviceArea": "OneDrive and SharePoint",
+      "tenantId": "12345678-1234-1234-1234-123456789abc",
+      "appId": "00000003-0000-0ff1-ce00-000000000000",
+      "usageRequests": 8500,
+      "standardRequestCount": 7000,
+      "heavyRequestCount": 1500,
+      "billedStandardRequestCount": 6800,
+      "billedHeavyRequestCount": 1400,
+      "activeApps": null
+    }
+  ]
+}
+```
+
+### Example 10: No data available
 
 #### Request
 
@@ -1787,7 +1850,7 @@ The following example shows the response.
 HTTP/1.1 204 No Content
 ```
 
-### Example 10: Error - Missing both parameters
+### Example 11: Error - Missing both parameters
 
 #### Request
 
@@ -1813,7 +1876,7 @@ Content-Type: application/json
 }
 ```
 
-### Example 11: Error - Both parameters provided
+### Example 12: Error - Both parameters provided
 
 #### Request
 
@@ -1839,7 +1902,7 @@ Content-Type: application/json
 }
 ```
 
-### Example 12: Error - Invalid period
+### Example 13: Error - Invalid period
 
 #### Request
 
@@ -1990,7 +2053,7 @@ Content-Type: application/json
 }
 ```
 
-### Example 13: Error - Tenant not onboarded for preview
+### Example 14: Error - Tenant not onboarded for preview
 
 #### Request
 
@@ -2141,7 +2204,7 @@ Content-Type: application/json
 }
 ```
 
-### Example 14: Error - Report type not enabled for the tenant
+### Example 15: Error - Report type not enabled for the tenant
 
 #### Request
 

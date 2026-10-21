@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-17 -->
 
 # Get unifiedRoleDefinition
 
@@ -52,6 +52,12 @@ Get a role definition for the directory provider:
 
 ```http
 GET /roleManagement/directory/roleDefinitions/{id}
+```
+
+Get a soft-deleted custom role definition for the directory provider:
+
+```http
+GET /roleManagement/directory/deletedItems/roleDefinitions/{id}
 ```
 
 Get a role definition for the entitlement management provider:
@@ -379,5 +385,42 @@ Content-type: application/json
             "id": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
         }
     ]
+}
+```
+
+### Example 3: Get a soft-deleted custom role for the directory provider
+
+#### Request
+
+The following example shows a request.
+
+```http
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/deletedItems/roleDefinitions/a1b2c3d4-5678-90ab-cdef-1234567890ab
+```
+
+#### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#roleManagement/directory/deletedItems/roleDefinitions/$entity",
+  "id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+  "description": "Can manage basic aspects of application registrations.",
+  "displayName": "Application Support Administrator",
+  "isBuiltIn": false,
+  "isEnabled": true,
+  "rolePermissions": [
+    {
+      "allowedResourceActions": [
+        "microsoft.directory/applications/basic/update"
+      ]
+    }
+  ]
 }
 ```
