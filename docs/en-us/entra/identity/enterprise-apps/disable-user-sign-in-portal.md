@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/disable-user-sign-in-portal -->
-<!-- Sitemap-Last-Modified: 2025-12-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Disable user sign-in for an application
 
@@ -9,7 +9,7 @@ In this article, you learn how to prevent users from signing in to an applicatio
 
 Note
 
-The steps in this article disable user sign-in for a single tenant. If you need to globally disable an application across all tenants \(for multitenant apps\), consider [deactivating the application](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/deactivate-application-portal) instead, which prevents all token issuance globally.
+The steps in this article disable user sign-in for a single tenant by setting the service principal's `accountEnabled` property to `false`. This also makes the enterprise application's **Activation status** show **Deactivated**. The label doesn't necessarily mean that the app registration is deactivated. If you need to disable an application across all tenants, see [Deactivate an app registration](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/deactivate-app-registration).
 
 ## Prerequisites
 
@@ -86,6 +86,12 @@ Content-type: application/json
     "accountEnabled": false
 }
 ```
+
+## Restore tenant-local sign-in
+
+Before restoring sign-in, review why it was disabled and confirm that restoring access is appropriate. With the permissions listed in [Prerequisites](#prerequisites) in the affected tenant, set **Enabled for users to sign-in?** to **Yes** and select **Save**. For programmatic updates, set the service principal's `accountEnabled` property to `true` instead of `false`.
+
+Enabling tenant-local sign-in doesn't override app registration deactivation or Microsoft disablement. If **Activation status** still shows **Deactivated**, check the other conditions described in [Activation status](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties#activation-status).
 
 ## Related content
 

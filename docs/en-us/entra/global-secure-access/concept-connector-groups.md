@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connector-groups -->
-<!-- Sitemap-Last-Modified: 2026-05-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Microsoft Entra private network connector groups
 
@@ -82,9 +82,17 @@ Random is the default traffic routing method. New requests for a Global Secure A
 
 Session persistence, also called session affinity, consistently routes every request from a given user and device to the same connector within a group for the duration of a session. This approach is useful for applications that rely on connector egress IP for authentication and access control lists \(ACLs\). It ensures continuity and reduces the need for repeated authentication or data retrieval.
 
+### Performance \(preview\)
+
+Performance ensures user traffic is automatically routed to the connector with the lowest network latency, measured by Round-Trip Time \(RTT\). This ensures that users are served by the connector that can deliver the fastest response, which is particularly beneficial in deployments with geographically distributed connectors and end users.
+
+Note
+
+Performance mode is currently in preview. For more information, see the [Microsoft Entra preview terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 Tip
 
-Session persistence only works with Microsoft Entra Private Access applications, not Microsoft Entra application proxy applications.
+Connector load balancing only works with Microsoft Entra Private Access applications, not Microsoft Entra application proxy applications.
 
 ## Sample configurations
 

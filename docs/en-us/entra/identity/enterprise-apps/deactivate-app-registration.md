@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/deactivate-app-registration -->
-<!-- Sitemap-Last-Modified: 2026-03-16 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Deactivate an app registration
 
@@ -7,7 +7,7 @@ Deactivating an app registration provides a reversible way to prevent the applic
 
 Unlike permanently deleting an application, deactivation preserves all application metadata, permissions, and configuration settings, making it easy to reactivate the application if needed. The application remains visible in your tenant's enterprise applications list, but users can't sign in and no new tokens are issued.
 
-This article shows you how to deactivate an enterprise application, view deactivated applications, and reactivate them when necessary.
+This article shows you how to deactivate an app registration, view deactivated applications, and reactivate them when necessary.
 
 ## Prerequisites
 
@@ -140,7 +140,7 @@ You can view deactivated applications to monitor their status and track which ap
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 2. Browse to **App registrations**.
 3. Select the **Deactivated applications** tab.
-4. Alternatively, navigate to the **Enterprise apps** pane and check on a given enterprise app under **Manage** -> **Properties** -> **Activation status**.
+4. To view the related enterprise application's summary status, browse to **Enterprise apps**, select the application, and then select **Manage** > **Properties** > **Activation status**. This status also includes tenant-local sign-in disablement and Microsoft disablement; it isn't specific to app registration deactivation.
 
    ![Screenshot showing the Activation status field in the Enterprise app Properties page displaying whether an application is active or deactivated.](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/media/deactivate-app-registration/view-activation-status.png)
 
@@ -158,7 +158,7 @@ You can view deactivated applications to monitor their status and track which ap
 
 Important
 
-Deactivation must be performed on the app registration \(application object\). The deactivated state is then reflected on the enterprise app \(service principal object\). You can't deactivate the service principal directly. You can only disable sign-in on the service principal, by using set `accountEnabled = false`.
+The **Deactivate** operation applies to the app registration \(application object\), and its deactivated state is reflected on the enterprise application \(service principal object\). Separately, disabling sign-in on the tenant-local service principal \(`accountEnabled=false`\) is sufficient for its **Activation status** to show **Deactivated**, even when the app registration isn't deactivated. The label alone doesn't identify the cause. See [Activation status](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties#activation-status) to distinguish the conditions and choose the appropriate recovery guidance.
 
 ## Investigate deactivated applications
 
@@ -169,6 +169,8 @@ Based on your investigation, take appropriate action such as escalating to secur
 ## Reactivate an application
 
 To reactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least the [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role or a custom role with the `microsoft.directory/applications/disablement/update` action.
+
+Reactivate the app registration in its home tenant. This doesn't enable tenant-local sign-in if a service principal's `accountEnabled` remains `false`, and it doesn't override Microsoft disablement. If only tenant-local sign-in is disabled, follow [Restore tenant-local sign-in](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/disable-user-sign-in-portal#restore-tenant-local-sign-in) instead.
 
 - [Microsoft Entra admin center](#tabpanel_3_admin-center)
 - [Microsoft Graph API](#tabpanel_3_graph-api)

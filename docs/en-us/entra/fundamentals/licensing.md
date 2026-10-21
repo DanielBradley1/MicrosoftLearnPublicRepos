@@ -96,120 +96,99 @@ Extending Microsoft Entra security features to agents requires Microsoft Agent 3
 
 ## Microsoft Entra ID Governance
 
-The following table shows the licensing requirements for Microsoft Entra ID Governance features for member users. Microsoft Entra Suite includes all features of Microsoft Entra ID Governance. Microsoft 365 E7 also includes all ID Governance features through the Entra Suite and Agent 365. Licensing information and example license scenarios for Entitlement management, Access reviews, and Lifecycle Workflows are provided following the table.
+The following table shows the licensing requirements for Microsoft Entra ID Governance features for member users. Microsoft Entra Suite includes all features of Microsoft Entra ID Governance. Microsoft 365 E7 also includes all ID Governance features through the Entra Suite and Agent 365. Licensing information for Entitlement management, Access reviews, and Lifecycle Workflows are provided following the table.
 
 ### Features by license
 
 The following table shows what features associated with identity governance are available with each license. For more information on other features, see [Microsoft Entra plans and pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). Not all features are available in all clouds; see [Microsoft Entra feature availability](https://learn.microsoft.com/en-us/entra/identity/authentication/feature-availability) for Azure Government.
 
-| Feature | Free | Microsoft Entra ID P1 | Microsoft Entra ID P2 | Microsoft Entra ID Governance | Microsoft Entra Suite | Microsoft Agent 365 |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Provisioning** |  |  |  |  |  |  |
-| [API-driven provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-concepts) |  | ✅ | ✅ | ✅ | ✅ |  |
-| [HR-driven provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/what-is-hr-driven-provisioning) |  | ✅ | ✅ | ✅ | ✅ |  |
-| [Account Discovery](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/how-to-account-discovery) |  |  |  | ✅ | ✅ |  |
-| [Automated user provisioning to SaaS apps](https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list) | ✅ | ✅ | ✅ | ✅ | ✅ |  |
-| [Automated group provisioning to SaaS apps](https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list) |  | ✅ | ✅ | ✅ | ✅ |  |
-| [Automated provisioning to on-premises apps](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/on-premises-application-provisioning-architecture) |  | ✅ | ✅ | ✅ | ✅ |  |
-| [Cross-tenant synchronization for users \(same cloud\)](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure?pivots=cross-cloud-synchronization) |  | ✅ | ✅ | ✅ | ✅ |  |
-| [Cross-tenant synchronization for groups \(same cloud\)](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure?pivots=cross-cloud-synchronization) |  |  |  | ✅ | ✅ |  |
-| [Cross-cloud synchronization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure?pivots=cross-cloud-synchronization) |  |  |  | ✅ | ✅ |  |
-| **Lifecycle Workflows \(LCW\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [Lifecycle Workflows](https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows) |  |  |  | ✅ | ✅ |  |
-| [LCW + Custom Extensions \(Logic Apps\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-extensibility) |  |  |  | ✅ | ✅ |  |
-| [LCW + Agent Sponsorship tasks](https://learn.microsoft.com/en-us/entra/id-governance/agent-sponsor-tasks) |  |  |  |  |  | ✅ |
-| **Access reviews \(AR\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [AR - Capabilities previously generally available in Microsoft Entra ID P2](https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview) |  |  | ✅ | ✅ | ✅ |  |
-| [AR - PIM For Groups \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/create-access-review-pim-for-groups) |  |  |  | ✅ | ✅ |  |
-| [AR - Reviews scoped to inactive users without active users in the review](https://learn.microsoft.com/en-us/entra/id-governance/create-access-review#scope) |  |  |  | ✅ | ✅ |  |
-| [AR - Reviews scoped to active and inactive users with review decision helpers for inactive users for the reviewer](https://learn.microsoft.com/en-us/entra/id-governance/review-recommendations-access-reviews#inactive-user-recommendations) |  |  | ✅ | ✅ | ✅ |  |
-| [AR - Machine learning assisted access certifications and reviews](https://learn.microsoft.com/en-us/entra/id-governance/review-recommendations-access-reviews#user-to-group-affiliation) |  |  |  | ✅ | ✅ |  |
-| [AR - Catalog Access Reviews \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/catalog-access-reviews) |  |  |  | ✅ | ✅ |  |
-| [AR - Custom data provided resource \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/custom-data-resource-access-reviews) |  |  |  | ✅ | ✅ |  |
-| **Entitlement management \(EM\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [EM - Capabilities previously generally available in Microsoft Entra ID P2](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Users assigned to access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Agents and service principals assigned to access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package) |  |  |  |  |  | ✅ |
-| [EM - Users request access for themselves](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Admins directly assign a user assignments\(including guests\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Admins directly assign agents and service principals](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-any-identity) |  |  |  |  |  | ✅ |
-| [EM - Admins directly assign any user - via email address for users not yet in your directory](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-any-identity) |  |  |  | ✅ | ✅ |  |
-| [EM - Managers requesting on behalf of employees](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf) |  |  |  | ✅ | ✅ |  |
-| [EM - Owners and sponsors request access on behalf of their agents or service principals](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf#scenarios-for-requesting-on-behalf-of-agent-identities) |  |  |  |  |  | ✅ |
-| **EM - Supported resources** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [EM - Groups and teams in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-a-group-or-team-resource-role) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Eligible group ownerships and memberships in access packages \(PIM for Groups\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-eligible) |  |  |  | ✅ | ✅ |  |
-| [EM - Applications in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-an-application-resource-role) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - SharePoint sites in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-a-sharepoint-site-resource-role) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Microsoft Entra Roles \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-roles) |  |  |  | ✅ | ✅ |  |
-| [EM - SAP Identity Access Governance \(IAG\) business roles \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-sap-integration) |  |  |  | ✅ | ✅ |  |
-| [EM - API permissions in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-an-api-permission) |  |  |  |  |  | ✅ |
-| **EM - Approval options** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [EM - Multi-stage approvals with alternate approvers if no action is taken](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ | ✅ |
-| [EM - Specific approvers](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ | ✅ |
-| [EM - Managers as approvers](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Internal sponsors as approvers \(from assignees' connected organizations\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - External sponsors as approvers \(from assignees' connected organizations\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Sponsors as approvers \(from assignees' user profile\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  |  | ✅ | ✅ |  |
-| [EM - Agent Sponsors as approvers](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  |  |  |  | ✅ |
-| [EM - Externally determine approval requirements using custom extensions](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-dynamic-approval) |  |  |  | ✅ | ✅ |  |
-| [EM - Collect additional requestor information for approval](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy#collect-additional-requestor-information-for-approval) |  |  | ✅ | ✅ | ✅ |  |
-| **EM - Lifecycle** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [EM - Expiration of access package assignments](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-lifecycle-policy) |  |  | ✅ | ✅ | ✅ | ✅ |
-| [EM - Manage the lifecycle of external users](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users#manage-the-lifecycle-of-external-users) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Mark guest as governed](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-manage-lifecycle) |  |  |  | ✅ | ✅ |  |
-| **EM - Additional capabilities** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [EM - Separation of duties](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-incompatible) |  |  | ✅ | ✅ | ✅ |  |
-| [EM - Custom Extensions \(Logic Apps\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-logic-apps-integration) |  |  |  | ✅ | ✅ |  |
-| [EM - Auto Assignment Policies](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-auto-assignment-policy) |  |  |  | ✅ | ✅ |  |
-| [EM - Verified ID integration](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-verified-id-settings) |  |  |  | ✅ | ✅ |  |
-| [EM - Microsoft Entra ID Protection integration](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-configure-id-protection-approvals) |  |  |  | ✅ | ✅ |  |
-| [EM - Microsoft Purview Insider Risk Management integration](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-configure-insider-risk-management-approvals) |  |  |  | ✅ | ✅ |  |
-| [EM - Conditional Access Scoping](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users#review-your-conditional-access-policies) |  |  | ✅ | ✅ | ✅ |  |
-| **My Access** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [My Access portal](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview) |  |  | ✅ | ✅ | ✅ | ✅ |
-| [EM - My Access Search](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview) |  |  | ✅ | ✅ | ✅ | ✅ |
-| [EM - Suggested access packages in My Access](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-suggested-access-packages) |  |  |  | ✅ | ✅ |  |
-| [EM - Configure whether requestors can see approver details in My Access \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/my-access-approver-details) |  |  |  | ✅ | ✅ |  |
-| [EM - Delegate approvals in My Access \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview) |  |  |  | ✅ | ✅ |  |
-| **Privileged Identity Management \(PIM\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [Privileged Identity Management \(PIM\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) |  |  | ✅ | ✅ | ✅ |  |
-| [PIM For Groups](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups) |  |  | ✅ | ✅ | ✅ |  |
-| [PIM Conditional Access Controls](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context) |  |  | ✅ | ✅ | ✅ |  |
-| [PIM - Custom extensions for role activation \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/privileged-identity-management-custom-extensions) |  |  |  | ✅ | ✅ |  |
-| **Other** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** |
-| [Identity governance dashboard](https://learn.microsoft.com/en-us/entra/id-governance/governance-dashboard) |  | ✅ | ✅ | ✅ | ✅ |  |
-| [Insights and reporting - Inactive guest accounts](https://learn.microsoft.com/en-us/entra/identity/users/clean-up-stale-guest-accounts) |  |  |  | ✅ | ✅ |  |
-| [Conditional Access - Terms of use attestation](https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use) |  | ✅ | ✅ | ✅ | ✅ |  |
+| Feature | Free | Microsoft Entra ID P1 | Microsoft Entra ID P2 | Microsoft Entra ID Governance | Microsoft Entra Suite | Microsoft Agent 365 | Microsoft 365 E7 |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Provisioning** |  |  |  |  |  |  |  |
+| [API-driven provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-concepts) |  | ✅ | ✅ | ✅ | ✅ |  | ✅ |
+| [HR-driven provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/what-is-hr-driven-provisioning) |  | ✅ | ✅ | ✅ | ✅ |  | ✅ |
+| [Account Discovery](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/how-to-account-discovery) |  |  |  | ✅ | ✅ |  | ✅ |
+| [Automated user provisioning to SaaS apps](https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list) | ✅ | ✅ | ✅ | ✅ | ✅ |  | ✅ |
+| [Automated group provisioning to SaaS apps](https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list) |  | ✅ | ✅ | ✅ | ✅ |  | ✅ |
+| [Automated provisioning to on-premises apps](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/on-premises-application-provisioning-architecture) |  | ✅ | ✅ | ✅ | ✅ |  | ✅ |
+| [Cross-tenant synchronization for users \(same cloud\)](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure?pivots=cross-cloud-synchronization) |  | ✅ | ✅ | ✅ | ✅ |  | ✅ |
+| [Cross-tenant synchronization for groups \(same cloud\)](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure?pivots=cross-cloud-synchronization) |  |  |  | ✅ | ✅ |  | ✅ |
+| [Cross-cloud synchronization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure?pivots=cross-cloud-synchronization) |  |  |  | ✅ | ✅ |  | ✅ |
+| **Lifecycle Workflows \(LCW\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [Lifecycle Workflows](https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows) |  |  |  | ✅ | ✅ |  | ✅ |
+| [LCW + Custom Extensions \(Logic Apps\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-extensibility) |  |  |  | ✅ | ✅ |  | ✅ |
+| [LCW + Agent Sponsorship tasks](https://learn.microsoft.com/en-us/entra/id-governance/agent-sponsor-tasks) |  |  |  |  |  | ✅ | ✅ |
+| **Access reviews \(AR\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [AR - Capabilities previously generally available in Microsoft Entra ID P2](https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [AR - PIM For Groups \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/create-access-review-pim-for-groups) |  |  |  | ✅ | ✅ |  | ✅ |
+| [AR - Reviews scoped to inactive users without active users in the review](https://learn.microsoft.com/en-us/entra/id-governance/create-access-review#scope) |  |  |  | ✅ | ✅ |  | ✅ |
+| [AR - Reviews scoped to active and inactive users with review decision helpers for inactive users for the reviewer](https://learn.microsoft.com/en-us/entra/id-governance/review-recommendations-access-reviews#inactive-user-recommendations) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [AR - Machine learning assisted access certifications and reviews](https://learn.microsoft.com/en-us/entra/id-governance/review-recommendations-access-reviews#user-to-group-affiliation) |  |  |  | ✅ | ✅ |  | ✅ |
+| [AR - Catalog Access Reviews](https://learn.microsoft.com/en-us/entra/id-governance/catalog-access-reviews) |  |  |  | ✅ | ✅ |  | ✅ |
+| [AR - Custom data provided resource](https://learn.microsoft.com/en-us/entra/id-governance/custom-data-resource-access-reviews) |  |  |  | ✅ | ✅ |  | ✅ |
+| **Entitlement management \(EM\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [EM - Capabilities previously generally available in Microsoft Entra ID P2](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Users assigned to access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Agents and service principals assigned to access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package) |  |  |  |  |  | ✅ | ✅ |
+| [EM - Users request access for themselves](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Admins directly assign a user assignments\(including guests\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Admins directly assign agents and service principals](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-any-identity) |  |  |  |  |  | ✅ | ✅ |
+| [EM - Admins directly assign any user - via email address for users not yet in your directory](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-any-identity) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Managers requesting on behalf of employees](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Owners and sponsors request access on behalf of their agents or service principals](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf#scenarios-for-requesting-on-behalf-of-agent-identities) |  |  |  |  |  | ✅ | ✅ |
+| **EM - Supported resources** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [EM - Groups and teams in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-a-group-or-team-resource-role) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Eligible group ownerships and memberships in access packages \(PIM for Groups\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-eligible) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Applications in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-an-application-resource-role) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - SharePoint sites in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-a-sharepoint-site-resource-role) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Microsoft Entra Roles \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-roles) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - SAP Identity Access Governance \(IAG\) business roles \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-sap-integration) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - API permissions in access packages](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources#add-an-api-permission) |  |  |  |  |  | ✅ | ✅ |
+| **EM - Approval options** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [EM - Multi-stage approvals with alternate approvers if no action is taken](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [EM - Specific approvers](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [EM - Managers as approvers](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Internal sponsors as approvers \(from assignees' connected organizations\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - External sponsors as approvers \(from assignees' connected organizations\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Sponsors as approvers \(from assignees' user profile\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Agent Sponsors as approvers](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy) |  |  |  |  |  | ✅ | ✅ |
+| [EM - Externally determine approval requirements using custom extensions](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-dynamic-approval) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Collect additional requestor information for approval](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy#collect-additional-requestor-information-for-approval) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| **EM - Lifecycle** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [EM - Expiration of access package assignments](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-lifecycle-policy) |  |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [EM - Manage the lifecycle of external users](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users#manage-the-lifecycle-of-external-users) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Mark guest as governed](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-manage-lifecycle) |  |  |  | ✅ | ✅ |  | ✅ |
+| **EM - Additional capabilities** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [EM - Separation of duties](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-incompatible) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [EM - Custom Extensions \(Logic Apps\)](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-logic-apps-integration) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Auto Assignment Policies](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-auto-assignment-policy) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Verified ID integration](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-verified-id-settings) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Microsoft Entra ID Protection integration](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-configure-id-protection-approvals) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Microsoft Purview Insider Risk Management integration](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-configure-insider-risk-management-approvals) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Conditional Access Scoping](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users#review-your-conditional-access-policies) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| **My Access** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [My Access portal](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview) |  |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [EM - My Access Search](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview) |  |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [EM - Suggested access packages in My Access](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-suggested-access-packages) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Configure whether requestors can see approver details in My Access \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/my-access-approver-details) |  |  |  | ✅ | ✅ |  | ✅ |
+| [EM - Delegate approvals in My Access \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview) |  |  |  | ✅ | ✅ |  | ✅ |
+| **Privileged Identity Management \(PIM\)** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [Privileged Identity Management \(PIM\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [PIM For Groups](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [PIM Conditional Access Controls](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context) |  |  | ✅ | ✅ | ✅ |  | ✅ |
+| [PIM - Custom extensions for role activation \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/privileged-identity-management-custom-extensions) |  |  |  | ✅ | ✅ |  | ✅ |
+| **Other** | **Free** | **Microsoft Entra ID P1** | **Microsoft Entra ID P2** | **Microsoft Entra ID Governance** | **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7** |
+| [Identity governance dashboard](https://learn.microsoft.com/en-us/entra/id-governance/governance-dashboard) |  | ✅ | ✅ | ✅ | ✅ |  | ✅ |
+| [Insights and reporting - Inactive guest accounts](https://learn.microsoft.com/en-us/entra/identity/users/clean-up-stale-guest-accounts) |  |  |  | ✅ | ✅ |  | ✅ |
+| [Conditional Access - Terms of use attestation](https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use) |  | ✅ | ✅ | ✅ | ✅ |  | ✅ |
 
 ### Entitlement Management
 
 Using this feature requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature can operate with a Microsoft Entra ID P2 subscription. Some capabilities within this feature require guest billing.
 
-#### Example license scenarios
-
-Here are some example license scenarios to help you determine the number of licenses you must have.
-
-| Scenario | Calculation | Number of licenses |
-| --- | --- | --- |
-| An Identity Governance Administrator at Woodgrove Bank creates initial catalogs. One of the policies specifies that **All employees** \(2,000 employees\) can request a specific set of access packages. 150 employees request the access packages. | 2,000 employees who **can** request the access packages | 2,000 |
-| An Identity Governance Administrator at Woodgrove Bank creates initial catalogs. They create an auto-assignment policy that grants **All members of the Sales department** \(350 employees\) access to a specific set of access packages. 350 employees are auto-assigned to the access packages. | 350 employees need licenses. | 351 |
-
 ### Access reviews
 
 Using this feature requires a Microsoft Entra ID Governance subscription for your organization's member users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature might operate with a Microsoft Entra ID P2 subscription. Some capabilities within this feature require guest billing.
-
-#### Example license scenarios
-
-Here are some example license scenarios to help you determine the number of licenses you must have.
-
-| Scenario | Calculation | Number of licenses |
-| --- | --- | --- |
-| An administrator creates an access review of Group A with 75 member users and 1 group owner, and assigns the group owner as the reviewer. | 1 license for the group owner as reviewer, and 75 licenses for the 75 users. | 76 |
-| An administrator creates an access review of Group B with 500 member users and 3 group owners, and assigns the 3 group owners as reviewers. | 500 licenses for users, and 3 licenses for each group owner as reviewers. | 503 |
-| An administrator creates an access review of Group B with 500 member users. Makes it a self-review. | 500 licenses for each user as self-reviewers | 500 |
-| An administrator creates an access review of Group C with 50 member users. Makes it a self-review. | 50 licenses for each user as self-reviewers. | 50 |
-| An administrator creates an access review of Group D with 6 member users. Makes it a self-review. | 6 licenses for each user as self-reviewers. No additional licenses are required. | 6 |
 
 ### Lifecycle Workflows
 
@@ -221,13 +200,6 @@ With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 - Create up to 100 custom task extensions to be used in your workflows.
 
 Using this feature requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature require guest billing.
-
-#### Example license scenarios
-
-| Scenario | Calculation | Number of licenses |
-| --- | --- | --- |
-| A Lifecycle Workflows Administrator creates a workflow to add new hires in the Marketing department to the Marketing teams group. 250 new hire member users are assigned to the Marketing teams group via this workflow once. Other 150 new hire member users are assigned to the Marketing teams group via this workflow later the same year. | 1 license for the Lifecycle Workflows Administrator, and 400 licenses for the users. | 401 |
-| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who will be pre-offboarded are 40 users once. We offboard 40 licensed users. Now, we can re-assign these 40 licenses and assign 10 more licenses later in the year to pre-offboard 50 more users. | 50 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 51 |
 
 ## Microsoft Entra Tenant Governance
 
@@ -353,16 +325,6 @@ Ensure that your directory has Microsoft Entra ID P2 or Microsoft Entra ID Gover
 - Users able to approve or reject activation requests in PIM
 - Users assigned to an access review
 - Users who perform access reviews
-
-### Example license scenarios for PIM
-
-Here are some example license scenarios to help you determine the number of licenses you must have.
-
-| Scenario | Calculation | Number of licenses |
-| --- | --- | --- |
-| Woodgrove Bank has 10 administrators for different departments and 2 [Privileged Role Administrators](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) that configure and manage PIM. They make five administrators eligible. | Five licenses for the administrators who are eligible | 5 |
-| Graphic Design Institute has 25 administrators of which 14 are managed through PIM. Role activation requires approval and there are three different users in the organization who can approve activations. | 14 licenses for the eligible roles + three approvers | 17 |
-| Contoso has 50 administrators of which 42 are managed through PIM. Role activation requires approval and there are five different users in the organization who can approve activations. Contoso also does monthly reviews of users assigned to administrator roles and reviewers are the users' managers of which six aren't in administrator roles managed by PIM. | 42 licenses for the eligible roles + five approvers + six reviewers | 53 |
 
 ### When a license expires for PIM
 

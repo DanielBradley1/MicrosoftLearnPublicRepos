@@ -46,6 +46,29 @@ Important
 
 If you opt out of automatic upgrades, you're responsible for keeping the Global Secure Access client up to date on those devices. Devices that run older client versions don't receive the latest features, fixes, and security updates.
 
+## Version 2.34.222
+
+### Functional changes
+
+- Adds support for [Web sign-in for Windows](https://learn.microsoft.com/en-us/windows/security/identity-protection/web-sign-in).
+- When Private Access is enabled and the device isn't directly connected to the corporate network, Windows Firewall doesn't activate the domain profile.
+- The **Forwarding profile** tab in the **Advanced diagnostics** tool displays the name of each traffic forwarding profile as it appears in the Microsoft Entra admin center.
+- Adds support for Conditional Access sign-in frequency for Private Access applications.
+
+Note
+
+Support for Conditional Access sign-in frequency for Private Access applications gradually rolls out to customers.
+
+- The **Prefer local network** option bypasses only connections to IP addresses in common private network ranges.
+
+### Other changes
+
+- Improvements to User Datagram Protocol \(UDP\) tunneling.
+- Memory improvements.
+- New telemetries are available.
+- Accessibility improvements.
+- Miscellaneous bug fixes and improvements.
+
 ## Version 2.32.294
 
 Released for download on August 26, 2026.

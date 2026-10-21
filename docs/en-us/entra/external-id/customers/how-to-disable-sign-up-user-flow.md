@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-disable-sign-up-user-flow -->
-<!-- Sitemap-Last-Modified: 2025-08-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Disable sign-up in a sign-up and sign-in user flow
 
@@ -53,11 +53,12 @@ Follow these steps to disable the sign-up flow:
 
    Replace `{user-flow-id}` with the user flow ID that you obtained in the previous step. Notice the `isSignUpAllowed` parameter is set to *false*. To re-enable sign-up, make a call to the Microsoft Graph API endpoint, but set the `isSignUpAllowed` parameter to *true*.
 
-## Next steps
+## Next step
 
-- [Add your application to the user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-add-application)
-- [Create custom user attributes and customize the order of the attributes on the sign-up page](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-define-custom-attributes).
+[Test your user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-test-user-flows)
 
 ## Related content
 
-- [Test your user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-test-user-flows).
+- [Add your application to the user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-add-application)
+- [Create custom user attributes and customize the order of the attributes on the sign-up page](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-define-custom-attributes)
+- [Route invited users to an external identity provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-invite-external-identity-provider-users-customers)

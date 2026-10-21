@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-reports -->
-<!-- Sitemap-Last-Modified: 2026-09-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # View reports and logs in entitlement management
 
@@ -132,7 +132,7 @@ The workbook *Application role assignment activity* shows if there have been cha
 
 ## View access package drift
 
-Access package drift reports show where access to governed groups and enterprise applications no longer matches entitlement management policies. You can use this report to find users who have direct resource access without an access package assignment, and users who have an active access package assignment without the expected group membership or application assignment.
+Access package drift reports show where access to governed groups and enterprise applications no longer matches entitlement management policies. You can use this report to find users / agent IDs who have direct resource access without an access package assignment, and users / agent IDs who have an active access package assignment without the expected group membership or application assignment.
 
 Access package drift reports are in preview.
 
@@ -160,7 +160,9 @@ Access package drift reports include:
 - Enterprise applications that have application role assignments without corresponding access package assignments.
 - Active access package assignments where the expected group membership or application assignment is missing.
 
-To review access package drift:
+To review access package drift with Microsoft Graph, use the [List accessDriftSummary API](https://learn.microsoft.com/en-us/graph/api/accessdriftsummary-list?view=graph-rest-beta).
+
+To review access package drift through the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 2. Browse to **ID Governance** > **Access Guardian** > **Reports** > **Access Drift**.

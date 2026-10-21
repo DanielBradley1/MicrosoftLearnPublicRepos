@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-entra-id-federation-customers -->
-<!-- Sitemap-Last-Modified: 2026-09-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-13 -->
 
 # Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
 
@@ -104,7 +104,7 @@ Content-type: application/json
   "identities": [
     {
       "signInType": "federated",
-      "issuer": "https://login.microsoftonline.com/<entra-tenant-id>/v2.0/<entra-external-tenant-id>",
+      "issuer": "https://login.microsoftonline.com/<entra-tenant-primary-domain-name>/v2.0<entra-external-tenant-id>",
       "issuerAssignedId": "<entra-tenant-user-object-id>"
     }
   ]
@@ -113,7 +113,7 @@ Content-type: application/json
 
 Replace the following values:
 
-- `<entra-tenant-id>`: The directory \(tenant\) ID of the source Microsoft Entra ID tenant.
+- `<entra-tenant-primary-domain-name>`: The directory \(tenant\) primary domain name of the source Microsoft Entra ID tenant. For example, `contoso.onmicrosoft.com`.
 - `<entra-external-tenant-id>`: The directory \(tenant\) ID of the External ID tenant.
 - `<entra-tenant-user-object-id>`: The object ID of the user in the source Microsoft Entra ID tenant.
 
@@ -148,6 +148,8 @@ Error `40015` means that authentication at the external identity provider succee
 
 **How is adding Microsoft Entra ID as a custom OIDC federation different from inviting Microsoft Entra ID users as B2B guests?**
 
+Invited users from another Microsoft Entra tenant use the [default invitation redemption flow](https://learn.microsoft.com/en-us/entra/external-id/redemption-experience#invitation-redemption-flow) unless your application explicitly routes them to the custom OIDC identity provider.
+
 With Microsoft Entra ID federation:
 
 - User authentication always occurs in the home Microsoft Entra ID tenant.
@@ -174,9 +176,13 @@ When `domain_hint` is used, a domain confirmation dialog appears to ensure the u
 
 There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The `domain_hint` value for Microsoft Entra ID should be the domain name, for example `domain_hint=contoso.onmicrosoft.com`. For more information, see [Issuer Acceleration](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-authentication-methods-customers#issuer-acceleration).
 
-**Can I hide other identity provider buttons and show only Microsoft Entra ID?**
+**Can I hide specific identity provider buttons?**
 
-You can hide identity provider buttons by not including them in the user flow, but new users can only register if `domain_hint` is used.
+No, the identity provider buttons cannot be hidden.
+
+Note
+
+If an identity provider is removed from the user flow, users will no longer be able to sign up or redeem invitations using that identity provider. `domain_hint` does not address this limitation.
 
 **Are ID tokens returned as opaque values?**
 
@@ -189,5 +195,5 @@ Yes. You can configure multiple Microsoft Entra ID tenants as separate custom OI
 ## Related content
 
 - [Add OpenID Connect as an external identity provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-custom-oidc-federation-customers)
-- [Add an Azure AD B2C tenant as an OIDC identity provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-b2c-federation-customers)
+- [Route invited users to an external identity provider](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-invite-external-identity-provider-users-customers)
 - [OIDC claims mapping](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-oidc-claims-mapping-customers)
