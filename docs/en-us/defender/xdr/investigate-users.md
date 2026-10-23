@@ -144,7 +144,7 @@ The timeline draws from multiple advanced hunting tables and normalizes them int
 - CloudAppEvents
 - DeviceLogonEvents
 - EntraIdSignInEvents
-- GraphApiAuditEvents
+- GraphAPIAuditEvents
 
 ### Timeline schema
 

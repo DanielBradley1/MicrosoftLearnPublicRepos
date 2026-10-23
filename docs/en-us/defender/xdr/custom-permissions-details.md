@@ -30,8 +30,12 @@ Permissions for managing day-to-day operations and responding to incidents and a
 | --- | --- | --- |
 | Email & collaboration metadata | Read | View email and collaboration data in hunting scenarios, including advanced hunting, threat explorer, campaigns, and email entity. |
 | Email & collaboration content | Read | View and download email content and attachments. |
-| Email & collaboration content: Emails associated with alerts | Read | View and download email content associated with security alerts **Email reported by user as malware or phish** and **Email reported by user as junk**. |
+| Email & collaboration content: Emails associated with alerts | Read | View and download email content associated with security alerts. |
 | Email & collaboration content: Quarantine Emails | Read | View and download quarantined messages for all users. |
+
+Note
+
+The **Email & collaboration content: Emails associated with alerts** permission is only supported for the alerts **Email reported by user as malware or phish**, **Email reported by user as junk**, **A potentially malicious URL click was detected** and **A user clicked through to a potentially malicious URL**.
 
 ## Security posture – Posture management
 

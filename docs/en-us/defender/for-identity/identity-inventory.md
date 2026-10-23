@@ -92,7 +92,7 @@ The **Identities** list highlights key details for each human identity, includin
 | Domain | The Active Directory domain to which the identity belongs. |
 | Object ID | A unique identifier for the identity in Microsoft Entra ID. |
 | UPN \(User Principal Name\) | The unique sign-in name of the identity in an email-like format. |
-| Identity environment | Indicates whether the identity is on-premises \(originates from Active Directory\), Cloud only \(Entra ID\) or Hybrid \(synced from Azure Active Directory to Microsoft Entra ID\). |
+| Identity environment | Indicates whether the identity is on-premises \(originates from Active Directory\), Cloud only \(Entra ID\), or Hybrid \(synced from on-premises Active Directory to Microsoft Entra ID\). |
 | Identity provider | The name of the identity provider. |
 | Risk score | A score from 0 to 100 that's dynamically calculated for the identity. The score reflects how likely the identity is to be compromised and how much damage a compromise could cause. For details, see [Risk score tab](https://learn.microsoft.com/en-us/defender-xdr/investigate-users#risk-score-tab). |
 | Criticality level | The criticality level assigned to the identity. |
@@ -115,7 +115,7 @@ These statistics highlight non-human identities that might need prioritization. 
 
 | Name | Description |
 | --- | --- |
-| Risky | The number of non-human identities with a high risk score. Risk scores are based on factors described in the [Risk score tab of the identity](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-view-apps#getting-detailed-information-on-an-app). |
+| Risky | The number of non-human identities with a high risk score. Risk scores are based on factors described in the [Risk score tab of the identity](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-view-apps#risk-score-tab). |
 | Highly privileged | The number of non-human identities that have at least one high-privilege API permission or high-privilege Microsoft Entra role. |
 | Overprivileged | The number of non-human identities with more permissions than they use. |
 | Unused | The number of non-human identities with no recent sign-in activity. |
@@ -154,5 +154,5 @@ For Microsoft Entra ID identities, select **Create new policy** to set up a gove
 ### Related articles
 
 - [Investigate users in Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/investigate-users)
-- [Investigate non-human identities in Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/investigate-users)
+- [Investigate non-human identities in Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/investigate-non-human-identities)
 - [Investigate cloud application accounts](https://learn.microsoft.com/en-us/defender-cloud-apps/accounts)

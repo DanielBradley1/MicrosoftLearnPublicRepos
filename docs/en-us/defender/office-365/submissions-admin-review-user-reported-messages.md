@@ -77,6 +77,8 @@ The reported message is marked with the selected verdict, and an email message i
 
 When automatic notifications use the default template, users receive notification emails in their preferred language based on their Outlook language settings. Localized default templates are enabled automatically when automatic notifications are turned on. Localized templates don't change message verdicts, classification logic, or automated investigation behavior.
 
+Localized default notification templates support the following languages: English, Japanese, Spanish, Chinese \(Simplified\), Chinese \(Traditional, Taiwan\), Korean, Portuguese, Russian, Dutch, Arabic, Catalan, Croatian, Finnish, Greek, Hungarian, Indonesian, Polish, Romanian, Slovak, Slovenian, Swedish, Thai, Turkish, Vietnamese, French, Italian, and German.
+
 To customize the notification email, see [Customize the messages used to notify users](#customize-the-messages-used-to-notify-users).
 
 Note
