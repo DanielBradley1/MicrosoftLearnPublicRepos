@@ -39,7 +39,7 @@ This method supports the [OData query parameters](https://learn.microsoft.com/en
 
 | Name | Description |
 | :--- | :--- |
-| Authorization | \*\*\*\*\*\* Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
 
 ## Request body
 

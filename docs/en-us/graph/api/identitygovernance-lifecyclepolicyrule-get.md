@@ -11,6 +11,12 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Read the properties and relationships of [microsoft.graph.identityGovernance.lifecyclePolicyRule](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyrule?view=graph-rest-beta) object.
 
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
+
 ## Permissions
 
 Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
@@ -70,6 +76,7 @@ Content-Type: application/json
   "id": "6f3b8c1a-2d4e-4f6a-8b0c-1e2f3a4b5c6d",
   "ruleType": "periodicAttestation",
   "isEnabled": true,
+  "gracePeriodInDays": 7,
   "attestationIntervalInDays": 90
 }
 ```

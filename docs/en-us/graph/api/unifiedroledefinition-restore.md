@@ -31,7 +31,7 @@ POST /roleManagement/directory/deletedItems/roleDefinitions/{id}/restore
 
 | Name | Description |
 | :--- | :--- |
-| Authorization | \*\*\*\*\*\* Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
 
 ## Request body
 

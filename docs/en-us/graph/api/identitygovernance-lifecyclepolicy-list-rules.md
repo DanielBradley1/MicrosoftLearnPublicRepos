@@ -9,7 +9,13 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Get a list of the [lifecyclePolicyRule](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyrule?view=graph-rest-beta) objects and their properties for a [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-beta). Rules are evaluated together with AND logic.
+Get a list of the [lifecyclePolicyRule](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyrule?view=graph-rest-beta) objects and their properties for a [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-beta). Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 
@@ -72,6 +78,7 @@ Content-Type: application/json
       "id": "6f3b8c1a-2d4e-4f6a-8b0c-1e2f3a4b5c6d",
       "ruleType": "periodicAttestation",
       "isEnabled": true,
+      "gracePeriodInDays": 7,
       "attestationIntervalInDays": 90
     },
     {
@@ -79,6 +86,7 @@ Content-Type: application/json
       "id": "7a4c9d2b-3e5f-5a7b-9c1d-2f3a4b5c6d7e",
       "ruleType": "sponsorPresence",
       "isEnabled": true,
+      "gracePeriodInDays": 0,
       "minimumSponsorCount": 1
     }
   ]
