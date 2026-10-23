@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide -->
 <!-- Sitemap-Last-Modified: 2026-10-06 -->
 
-# Migrate from Microsoft Entra Connect to Cloud Sync: Decision Guide
+# Migrate from Microsoft Entra Connect Sync to Cloud Sync: decision guide
 
 Microsoft Entra Cloud Sync represents Microsoft's strategic direction for hybrid identity synchronization. It provides cloud-managed synchronization of users, groups, and contacts between Active Directory and Microsoft Entra ID. When device sync is enabled, Cloud Sync can synchronize Active Directory computer objects to Microsoft Entra ID for hybrid join.
 
-This decision guide helps IT architects and decision makers evaluate migration from Microsoft Entra Connect to Cloud Sync by comparing technical capabilities, identifying architectural advantages, and providing migration readiness assessments. For basic overview information, see [What is Microsoft Entra Cloud Sync?](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync). For step-by-step migration procedures, see [Migrating from Microsoft Entra Connect to Microsoft Entra Cloud Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-azure-ad-connect-to-cloud-sync).
+This decision guide helps IT architects and decision makers evaluate migration from Microsoft Entra Connect Sync to Cloud Sync by comparing technical capabilities, identifying architectural advantages, and providing migration readiness assessments. For basic overview information, see [What is Microsoft Entra Cloud Sync?](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync). For step-by-step migration procedures, see [Migrating from Microsoft Entra Connect to Microsoft Entra Cloud Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-azure-ad-connect-to-cloud-sync).
 
 New identity and synchronization features are being developed primarily on the Cloud Sync platform, making it the recommended path forward for most organizations.
 
@@ -45,13 +45,17 @@ Microsoft's development focus for new synchronization and provisioning capabilit
 
 The following table provides a detailed comparison of technical capabilities between Microsoft Entra Connect and Cloud Sync:
 
+Note
+
+This table describes capabilities available in Connect Sync and Cloud Sync. It doesn't indicate whether the guided migration tool can transfer each capability. Review the [guided migration-tool prerequisites and limits](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#prerequisites) before starting migration.
+
 | Feature/Capability | Connect Sync | Cloud Sync | Technical Notes |
 | :--- | :---: | :---: | :--- |
 | **Users, Groups, Contacts Sync** | ✓ | ✓ | Full parity for basic directory object synchronization |
 | **Single Connected Forest** | ✓ | ✓ | Both support standard single-forest topologies |
 | **Multiple Connected Forests** | ✓ | ✓ | Both support multiple connected forest scenarios |
 | **Disconnected Forest Support** | ✗ | ✓ | Cloud Sync enables M&A scenarios without forest consolidation |
-| **Device Synchronization** | ✓ | ✓ | Both support device synchronization for Microsoft Entra hybrid join; enable device sync separately in Cloud Sync |
+| **Device Synchronization** | ✓ | ✓ | Both support device synchronization for Microsoft Entra hybrid join; enable device sync separately in Cloud Sync. The current guided migration tool lists device synchronization as a migration blocker. Review the [migration-tool requirements](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#prerequisites) separately. |
 | **Multiple Active Sync Instances** | ✗ | ✓ | Cloud Sync agents provide automatic failover and load distribution |
 | **Scale Limits per Domain** | Unlimited | 150K objects | Cloud Sync currently supports up to 150,000 objects per domain |
 | **Large Group Support** | 250K members | 50K members | Connect supports larger groups; Cloud Sync limited to 50,000 members |
@@ -87,7 +91,7 @@ Based on your current requirements and the feature comparison in the table above
 
 ### Ready for immediate migration
 
-Your organization can migrate immediately if you meet all these criteria:
+Use these criteria to assess platform readiness. They don't establish guided-tool eligibility or replace a documented migration procedure:
 
 - **Object Scale**: Fewer than 150,000 objects per Active Directory domain
 - **Group Size**: Groups with fewer than 50,000 members
@@ -128,3 +132,9 @@ Use this framework to make your migration decision:
 - **Plan Migration Timing**: Monitor feature announcements, consider business cycles, and assess resource availability
 - **Validate Prerequisites**: Ensure your environment meets [Cloud Sync prerequisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites)
 - **Test Migration Process**: Use the [pilot migration tutorial](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp) to validate the migration process
+
+Choose an outcome based on both platform support and the available migration path:
+
+- **Use the guided migration tool:** Your organization and active Connect Sync installation meet the [current tool requirements](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#prerequisites), and the readiness review confirms eligibility.
+- **Use documented manual guidance:** Cloud Sync supports your required scenario and Microsoft provides a documented manual migration procedure. Review the [migration overview](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-azure-ad-connect-to-cloud-sync#choose-a-migration-path) and [manual pilot tutorial](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp#considerations).
+- **Continue using Connect Sync:** A required capability or documented migration path isn't available. Review the [feature comparison](#comparison-between-microsoft-entra-connect-and-cloud-sync). If a confirmed blocker prevents you from meeting a notified migration deadline, [request more time](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#request-more-time-to-migrate).

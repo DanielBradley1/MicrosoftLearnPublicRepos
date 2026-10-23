@@ -70,7 +70,7 @@ pca.acquireTokenByDeviceCode(deviceCodeRequest).then((response) => {
 
 ### Public APIs
 
-- [acquireTokenByRefreshToken](https://learn.microsoft.com/en-us/javascript/api/@azure/msal-node/apiid): This API acquires a token by exchanging the refresh token provided for a new set of tokens. The request is of the type [RefreshTokenRequest](https://learn.microsoft.com/en-us/javascript/api/@azure/msal-node/refreshtokenrequest). The `refresh token` is never returned to the user in a response, but can be accessed from the user cache. It is recommended that you use `acquireTokenSilent()` for non-interactive scenarios. When using [acquireTokenSilent\(\)](https://learn.microsoft.com/en-us/javascript/api/@azure/msal-node/clientapplication), MSAL will handle the caching and refreshing of tokens automatically.
+- [acquireTokenByRefreshToken](https://learn.microsoft.com/en-us/entra/msal/javascript/node/acquire-token-requests#public-apis-2): This API acquires a token by exchanging the refresh token provided for a new set of tokens. The request is of the type [RefreshTokenRequest](https://learn.microsoft.com/en-us/javascript/api/@azure/msal-node/refreshtokenrequest). The `refresh token` is never returned to the user in a response, but can be accessed from the user cache. It is recommended that you use `acquireTokenSilent()` for non-interactive scenarios. When using [acquireTokenSilent\(\)](https://learn.microsoft.com/en-us/javascript/api/@azure/msal-node/clientapplication), MSAL will handle the caching and refreshing of tokens automatically.
 
 ```javascript
 const config = {

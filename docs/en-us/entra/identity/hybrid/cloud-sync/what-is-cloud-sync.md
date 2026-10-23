@@ -13,6 +13,16 @@ Note
 
 Cloud Sync can be used for tenants in the Microsoft Commercial, US Government, and [21Vianet \(China\)](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. SSPR for on-premises identities isn't available with Cloud Sync in the 21Vianet \(China\) cloud.
 
+## Migrating from Microsoft Entra Connect Sync?
+
+If you currently use Microsoft Entra Connect Sync, choose your migration path in this order:
+
+1. Review the [migration decision guide](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide#comparison-between-microsoft-entra-connect-and-cloud-sync) to determine whether Cloud Sync supports your organization's requirements.
+2. If your organization and active Connect Sync installation meet the [guided migration-tool requirements](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#prerequisites), use the guided tool.
+3. If the guided tool doesn't support your scenario, use a documented manual migration procedure only when one is available. Otherwise, continue using Connect Sync. Review the [migration overview](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-azure-ad-connect-to-cloud-sync#choose-a-migration-path) and [manual migration tutorial](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp#considerations) to identify the applicable guidance.
+
+For common questions, see the [migration FAQ](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/cloud-sync-migration-faq). If you require device synchronization, review [Device Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync) separately from guided-tool eligibility.
+
 ## Core architecture and components
 
 Cloud Sync is built on a cloud-first architecture with two key components:
@@ -82,3 +92,4 @@ Cloud Sync integrates seamlessly with the broader Microsoft Entra identity platf
 - [What is the provisioning agent?](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-provisioning-agent)
 - [Install cloud sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-install)
 - [Migrate from Microsoft Entra Connect to Cloud Sync: Decision Guide](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide)
+- [Migrate with the guided migration tool](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool)

@@ -7,6 +7,10 @@ Device sync lets you synchronize computer objects from Active Directory \(AD\) t
 
 Device sync is disabled by default. Before you begin, make sure your environment meets the prerequisites. Then configure a service connection point \(SCP\), enable device sync, provision a device on demand, manage device sync with Microsoft Graph, and recover deleted devices.
 
+Note
+
+This article explains how to configure Device Sync in Microsoft Entra Cloud Sync. It doesn't describe how the guided migration tool transfers Device Sync from Microsoft Entra Connect Sync. Review the [migration-tool prerequisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#prerequisites) before planning migration from Connect Sync. For platform capabilities and available migration paths, see the [migration decision guide](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide#comparison-between-microsoft-entra-connect-and-cloud-sync) and [migration overview](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-azure-ad-connect-to-cloud-sync#choose-a-migration-path).
+
 ## Prerequisites
 
 Make sure your environment meets these requirements:

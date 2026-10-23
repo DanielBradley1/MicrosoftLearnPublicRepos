@@ -44,9 +44,13 @@ This scenario topology is similar to the multi-forest scenario. However, this on
 
 ![Diagram that shows a single-forest topology with a single Microsoft Entra tenant.](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/media/tutorial-migrate-aadc-aadccp/diagram-2.png)
 
-The piloting scenario involves the existence of both Microsoft Entra Connect and Microsoft Entra Cloud Sync in the same forest and scoping the users and groups accordingly. NOTE: An object should be in scope in only one of the tools.
+The piloting scenario involves Microsoft Entra Connect Sync and Cloud Sync in the same forest. Connect Sync and Cloud Sync must not simultaneously export normal changes for the same object and attribute set. During the documented manual phased-migration process, objects can remain in Connect Sync scope while `cloudNoFlow` and `JoinNoFlow` rules prevent normal Connect Sync exports and preserve required references.
 
-For an example of this scenario see [Tutorial: Pilot Microsoft Entra Cloud Sync in an existing synced AD forest](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp)
+For the documented process, see [Create a custom user inbound rule](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp#create-a-custom-user-inbound-rule) in the manual migration tutorial.
+
+Important
+
+Don't remove objects from Connect Sync scope before migration and reference validation are complete. Early scope removal can result in unintended reference removals. Follow [Plan scope removal from Microsoft Entra Connect Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp#plan-scope-removal-from-microsoft-entra-connect-sync).
 
 ### Merging objects from disconnected sources
 

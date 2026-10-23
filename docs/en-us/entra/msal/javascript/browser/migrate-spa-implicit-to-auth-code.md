@@ -70,6 +70,6 @@ When you uncheck the implicit grant settings in the app registration, the implic
 
 ## Next steps
 
-To learn more about the authorization code flow, including the differences between the implicit and auth code flows, see the [Microsoft identity platform and OAuth 2.0 authorization code flow](https://learn.microsoft.com/en-us/entra/identity-pltform/v2-oauth2-auth-code-flow).
+To learn more about the authorization code flow, including the differences between the implicit and auth code flows, see the [Microsoft identity platform and OAuth 2.0 authorization code flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow).
 
 If you'd like to dive deeper into JavaScript single-page application development on the Microsoft identity platform, the multi-part [Scenario: Single-page application](https://learn.microsoft.com/en-us/entra/identity-platform/scenario-spa-overview) series of articles can help you get started.

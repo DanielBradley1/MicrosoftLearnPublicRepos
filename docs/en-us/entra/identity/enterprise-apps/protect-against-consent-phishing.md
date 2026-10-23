@@ -35,6 +35,14 @@ If a Microsoft disabled application impacts the organization, the organization s
 2. Review and use the [guidance for defending against illicit consent grants](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants). The guidance includes auditing permissions and consent for disabled and suspicious applications found during review.
 3. Implement best practices for hardening against consent phishing, described in the following section.
 
+### If you believe Microsoft disabled an application in error
+
+Tenant administrators can't reverse Microsoft disablement by setting the service principal's `accountEnabled` property to `true` or by reactivating the app registration \(`isDisabled=false`\). This restriction also applies to administrators in the application's home tenant.
+
+If your organization publishes the application, work with an administrator in its home tenant to contact Microsoft Support through the [general Microsoft Entra support options](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-get-support#open-a-support-request). Explain why you believe the disablement is an error, and include the application \(client\) ID, home tenant ID, `disabledByMicrosoftStatus` value, and relevant investigation findings. Opening a support request doesn't guarantee reactivation.
+
+If your organization uses an application published by another organization, contact the publisher about the disablement and continue investigating the application's activity in your tenant. You can also use the general support options to get help with the impact on your tenant. Changing your tenant's sign-in setting doesn't remove the Microsoft disablement.
+
 ## Best practices for hardening against consent phishing attacks
 
 Administrators should be in control of application use by providing the right insights and capabilities to control how applications are allowed and used within organizations. While attackers never rest, there are steps organizations can take to improve the security posture. Some best practices to follow include:

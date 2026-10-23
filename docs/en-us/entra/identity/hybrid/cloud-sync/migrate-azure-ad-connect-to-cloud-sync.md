@@ -3,13 +3,30 @@
 
 # Migrating from Microsoft Entra Connect to Microsoft Entra Cloud Sync
 
-Microsoft Entra Cloud Sync synchronizes users, groups, and contacts from Active Directory to Microsoft Entra ID by using the Microsoft Entra provisioning agent. When device sync is enabled, Cloud Sync can also synchronize computer objects for Microsoft Entra hybrid join. Use this guide to plan a phased migration from Microsoft Entra Connect to Cloud Sync.
+Microsoft Entra Cloud Sync synchronizes users, groups, and contacts from Active Directory to Microsoft Entra ID by using the Microsoft Entra provisioning agent. When device sync is enabled, Cloud Sync can also synchronize computer objects for Microsoft Entra hybrid join. Use this guide to choose a migration path from Microsoft Entra Connect Sync and plan a phased migration when a documented manual procedure applies.
+
+## Choose a migration path
+
+Start with the [migration decision guide](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide#comparison-between-microsoft-entra-connect-and-cloud-sync) to check Cloud Sync platform capabilities. Then review the separate [guided migration-tool prerequisites and limits](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#prerequisites).
+
+| Migration path | When to use it |
+| --- | --- |
+| [Guided migration tool](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool) | The migration option appears on the active Connect Sync server and the readiness review confirms that the environment is eligible. |
+| [Manual phased migration](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp#considerations) | Cloud Sync supports the required scenario, the guided tool doesn't support it, and Microsoft provides a documented manual migration procedure. |
+| Continue using Connect Sync | A required capability or documented migration procedure isn't currently available. Review the [decision guide](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide#decision-framework). |
 
 ## Steps for migrating from Microsoft Entra Connect to Cloud Sync
 
 Important
 
-During the pilot or coexistence phase, don't remove OUs, domains, groups, users, contacts, or other referenced objects from Microsoft Entra Connect Sync scope. Keep the existing scope configured until objects are fully migrated and you're ready for final cutover. Removing objects from scope before final cutover is unsafe: it can drop references in the Microsoft Entra connector space and export reference deletes \(such as group membership removals\) to Microsoft Entra ID.
+During a phased migration, don't remove organizational units \(OUs\), domains, groups, users, contacts, or other referenced objects from Connect Sync scope before migration and reference validation are complete. Removing scope too early can result in unintended reference removals, such as group membership removals in Microsoft Entra ID. Review [Plan scope removal from Microsoft Entra Connect Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp#plan-scope-removal-from-microsoft-entra-connect-sync).
+
+The following process describes manual phased migration. If your environment is eligible, use the [guided migration tool](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool) instead.
+
+- **In scope** means the object remains represented in the synchronization configuration.
+- **Export authority** means the synchronization engine responsible for exporting normal changes.
+- During the documented manual pilot, objects remain in Connect Sync scope while `cloudNoFlow` and `JoinNoFlow` prevent normal Connect Sync exports.
+- Remove objects from Connect Sync scope only after Cloud Sync migration and reference validation are complete.
 
 The supported coexistence model is to keep objects in Microsoft Entra Connect Sync scope and use the `cloudNoFlow` and `JoinNoFlow` rules to prevent Microsoft Entra Connect Sync from exporting object adds, object deletes, and non-reference attribute updates. Reference attribute updates, such as `member` and `manager`, can still flow for reference resolution.
 
@@ -17,7 +34,7 @@ You can still migrate in phases, such as by OU or another defined batch. Each ba
 
 | Step | Description |
 | --- | --- |
-| Choose the best sync tool | Before moving to cloud sync, you should verify that cloud sync is currently the best synchronization tool for you. You can do this task by reviewing the [supported sync scenarios comparison](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios). |
+| Choose the best sync tool | Review the [migration decision guide](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide#comparison-between-microsoft-entra-connect-and-cloud-sync) and the [supported sync scenarios comparison](https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios). Review [guided-tool eligibility](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#prerequisites) before choosing this manual process. |
 | Verify the prerequisites for migrating | This guidance is for users who installed Microsoft Entra Connect by using Express settings. If you synchronize devices for Microsoft Entra hybrid join, include [device sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync) in your Cloud Sync migration plan. Also verify the [Cloud Sync prerequisites](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites). |
 | Back up your Microsoft Entra Connect configuration | Before making any changes, you should back up your Microsoft Entra Connect configuration. This way, you can rollback. For more information, see [Import and export Microsoft Entra Connect configuration settings](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-import-export-config). |
 | Review the migration tutorial | To become familiar with the migration process, review the [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp) tutorial. This tutorial guides you through the migration process in a sandbox environment. |
@@ -33,7 +50,7 @@ You can still migrate in phases, such as by OU or another defined batch. Each ba
 | Schedule your remaining users | Create a phased migration plan for the remaining users, groups, contacts, and related referenced objects. You can migrate in batches, such as by OU, but keep each batch in Microsoft Entra Connect Sync scope with the no-flow rules applied until the batch is fully migrated and ready for cutover. |
 | Verify all users are provisioned | As you migrate users, verify that they're provisioning and synchronizing correctly. |
 | Stop Microsoft Entra Connect | After you've verified that all objects in the migration scope are provisioned by Microsoft Entra Cloud Sync and their references, such as group memberships and manager relationships, remain intact, you can stop Microsoft Entra Connect Sync for that scope as part of final cutover. Microsoft recommends that you leave the server in a disabled state for a period of time so you can verify that the migration was successful. |
-| Verify everything is good | After a period of time, verify that everything is good. |
+| Validate migration results | Validate migrated objects and their references as described in [Plan scope removal](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp#plan-scope-removal-from-microsoft-entra-connect-sync). For guided-tool migrations, follow [Validate synchronization results](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#validate-synchronization-results). For questions or issues, review the [migration FAQ](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/cloud-sync-migration-faq) and [guided-tool troubleshooting](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-connect-sync-cloud-sync-tool#troubleshoot-common-issues). |
 | Decommission the Microsoft Entra Connect server | Once you've verified everything is good, take the Microsoft Entra Connect server offline. For more information, see [Uninstall Microsoft Entra Connect](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-uninstall). |
 
 ## Verify Users script
