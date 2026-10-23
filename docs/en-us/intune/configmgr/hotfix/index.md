@@ -21,6 +21,7 @@ Knowledge Base articles for Microsoft Configuration Manager hotfixes, update rol
 - [KB 38232642 Security update for Configuration Manager](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/38232642)
 - [KB 38982839 Security update for the SMS Provider and administration service](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/38982839)
 - [KB 39398030 Security update for scripts, SMS Provider, MPE, and DDR](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/39398030)
+- [KB 39169655 Update rollup for Microsoft Configuration Manager version 2603](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/39169655)
 
 ## Configuration Manager 2509
 

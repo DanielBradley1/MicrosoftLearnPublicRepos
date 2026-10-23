@@ -463,7 +463,7 @@ namespace IntuneGraphExample
 
 ### Authenticate Microsoft Entra ID using Microsoft Graph PowerShell
 
-PowerShell scripts can use the Microsoft Graph PowerShell module for authentication. To learn more, see [Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview) and the [Intune PowerShell examples](https://github.com/microsoftgraph/powershell-intune-samples).
+PowerShell scripts can use the Microsoft Graph PowerShell module for authentication. To learn more, see [Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview) and the [Intune PowerShell examples](https://github.com/microsoft/mggraph-intune-samples).
 
 ## Support multiple tenants and partners
 

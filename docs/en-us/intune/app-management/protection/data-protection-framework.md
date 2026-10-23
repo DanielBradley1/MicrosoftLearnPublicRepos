@@ -37,7 +37,7 @@ The following App Protection Policy settings should be enabled for the applicabl
 
 Microsoft recommends reviewing and categorizing usage scenarios, and then configuring users using the prescriptive guidance for that level. As with any framework, settings within a corresponding level may need to be adjusted based on the needs of the organization as data protection must evaluate the threat environment, risk appetite, and impact to usability.
 
-Administrators can incorporate the below configuration levels within their ring deployment methodology for testing and production use by importing the sample Intune App Protection Policy Configuration Framework JSON templates with [Intune's PowerShell scripts](https://github.com/microsoftgraph/powershell-intune-samples).
+Administrators can incorporate the below configuration levels within their ring deployment methodology for testing and production use by importing the sample Intune App Protection Policy Configuration Framework JSON templates with [Intune's PowerShell scripts](https://github.com/microsoft/mggraph-intune-samples).
 
 Note
 
@@ -227,7 +227,7 @@ The policy settings enforced in level 3 include all the policy settings recommen
 
 ## Next steps
 
-Administrators can incorporate the above configuration levels within their ring deployment methodology for testing and production use by importing the sample Intune App Protection Policy Configuration Framework JSON templates with [Intune's PowerShell scripts](https://github.com/microsoftgraph/powershell-intune-samples).
+Administrators can incorporate the above configuration levels within their ring deployment methodology for testing and production use by importing the sample Intune App Protection Policy Configuration Framework JSON templates with [Intune's PowerShell scripts](https://github.com/microsoft/mggraph-intune-samples).
 
 ## See also
 
