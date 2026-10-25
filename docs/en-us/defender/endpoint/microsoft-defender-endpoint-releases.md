@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Microsoft Defender for Endpoint release notes
 
@@ -17,6 +17,7 @@ This table includes supported releases for all supported platforms in the past s
 
 | OS | Build | Month released | Details | Learn more |
 | --- | --- | --- | --- | --- |
+| Android | 1.0.9406.0102 | Oct 2026 | - Build: 1.0.9406.0102  <br>- Release: Oct 23, 2026 | [Release details and updates](#android--oct-2026--platform-1094060102) |
 | macOS | 101.26082.0012 | October 2026 | - Release version: 20.126082.12.0  <br>- Engine version: 1.1.26100.3000  <br>- Signature version: 1.461.61.0 | [Release details and updates](#macos--october-2026--101260820012) |
 | Linux | 101.26091.0003 | October 2026 | - Release version: 30.126091.0003.0  <br>- Engine version: 1.1.26090.3000  <br>- Signature version: 1.461.35.0 | [Release details and updates](#linux--october-2026--101260910003) |
 | Windows Antivirus | Platform 4.18.26090.9 / Engine 1.1.26090.9 | September 2026 | - Platform: 4.18.26090.9  <br>- Engine: 1.1.26090.9  <br>- Security intelligence: 1.461.1.0 | [Release details and updates](#windows-antivirus--september-2026--platform-418260909--engine-11260909) |
@@ -914,6 +915,21 @@ Fixed in platform version 101.26052.0011 and later. FIPS-enabled RHEL 8/9 device
 ## Android releases
 
 See the full list of [Android UX improvements](https://learn.microsoft.com/en-us/defender-endpoint/android-new-ux).
+
+### Android \| Oct 2026 \| Platform: 1.0.9406.0102
+
+#### Release details
+
+| Platform version | Release Date |
+| --- | --- |
+| 1.0.9406.0102 | Oct 23, 2026 |
+
+#### Enhancements and features
+
+| Feature Area | Update Summary |
+| --- | --- |
+| Shared Device Management | Added **\[Preview\] Silent running mode** as a managed configuration for shared devices. Administrators can use `SilentRunMode` to enable \(`1`\) or disable \(`0`, default\) the setting. |
+| General | Performance improvements and general bug fixes. |
 
 ### Android \| Sep 2026 \| Platform: 1.0.9330.0101
 
