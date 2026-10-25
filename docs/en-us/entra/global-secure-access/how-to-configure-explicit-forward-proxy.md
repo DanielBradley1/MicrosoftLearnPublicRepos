@@ -22,7 +22,7 @@ With Explicit Forward Proxy, you can use the secure web and AI gateway capabilit
 You can enable and manage Explicit Forward Proxy by using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-2. Go to **Global Secure Access** > **Session management**, and then select the **Explicit Forward Proxy** tab.
+2. Go to **Global Secure Access** > **Connect** > **Explicit Forward Proxy**.
 3. Set the **Internet Access** toggle to **Enabled**. By default, smart session management is enabled when you enable Explicit Forward Proxy.
 4. Optionally, enable HTTP header session management. For more information, see [Configure HTTP header session management](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-explicit-forward-proxy-headers).
 

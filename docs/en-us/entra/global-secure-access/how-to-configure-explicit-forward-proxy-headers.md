@@ -17,7 +17,7 @@ The HTTP header session management feature is currently in preview. This informa
 
 ## Configuration steps
 
-1. Go to the Microsoft Entra admin center. Under **Global Secure Access** > **Session management** > **Explicit Forward Proxy**, select the **HTTP Header Session Management** checkbox.
+1. Go to the Microsoft Entra Admin Center. Under **Global Secure Access** > **Connect** > **Explicit Forward Proxy**, select the **HTTP Header Session Management** checkbox.
 2. Configure your outbound proxy service to intercept traffic to `*.internet.efp.globalsecureaccess.microsoft.com`.
 3. Configure your outbound proxy service to inject the `x-ms-gsa-efp-forwarded-for` header with the value of the private IP address detected on the incoming connection.
 4. Configure the Microsoft Entra Conditional Access policy to allow authentication to Explicit Forward Proxy only from the known networks that your organization trusts.

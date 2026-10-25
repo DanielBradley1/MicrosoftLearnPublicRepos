@@ -505,7 +505,7 @@ This is a [privileged role](https://learn.microsoft.com/en-us/entra/identity/rol
 | microsoft.directory/oAuth2PermissionGrants/createAsOwner | Create OAuth 2.0 permission grants, with creator as the first owner  <br><br><br>[![Privileged label icon.](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/media/permissions-reference/privileged-label.png)](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) |
 | microsoft.directory/servicePrincipals/createAsOwner | Create service principals, with creator as the first owner |
 
-## Owned application registrations
+### Owned application registrations
 
 Users with the application developer role can perform the following actions on app registrations that they own:
 
