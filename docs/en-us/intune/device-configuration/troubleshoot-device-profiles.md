@@ -58,7 +58,7 @@ The following client syncs happen in response to a device event or state change,
   | --- | --- |
   | Android, AOSP | Every 3 minutes for 15 minutes, then every 15 minutes for 2 hours, and then around every 8 hours |
   | iOS/iPadOS | Every 15 minutes for 1 hour, and then around every 8 hours |
-  | macOS | Every 15 minutes for 1 hour, and then around every 8 hours |
+  | macOS | Every 3 minutes for 15 minutes, then every 15 minutes for 2 hours, and then around every hour |
   | Windows | Every 3 minutes for 15 minutes, then every 15 minutes for 2 hours, and then around every 8 hours |
 
 ### Single device

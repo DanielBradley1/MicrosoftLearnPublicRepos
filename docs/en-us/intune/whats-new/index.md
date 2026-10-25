@@ -26,6 +26,19 @@ For new information about Windows Autopilot solutions, see:
 
 You can use RSS to be notified when this page is updated. For more information, see [How to use the docs](https://learn.microsoft.com/en-us/intune/fundamentals/use-docs#notifications).
 
+## Week of October 19, 2026
+
+### App management
+
+#### Unlimited licenses for Apple volume purchase program \(VPP\) apps
+
+You can now assign VPP apps with unlimited licenses from Apple Business and Apple School Manager, making it easier to deploy apps across your organization without managing license quantities.
+
+Applies to:
+
+- iOS/iPadOS
+- macOS
+
 ## Week of October 12, 2026
 
 ### Advanced capabilities \(formerly "Microsoft Intune Suite"\)
