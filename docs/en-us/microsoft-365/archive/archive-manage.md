@@ -9,6 +9,10 @@ On sites with file-level archive enabled, users can manually archive files that 
 
 To learn more about archive states, see [Archive states in Microsoft 365 Archive](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-states?view=o365-worldwide).
 
+## Automatically archive inactive files \(preview\)
+
+SharePoint Advanced Management inactive files policies automatically archive eligible files based on their recorded last human access date without archiving the entire site. The current preview is PowerShell-only; SharePoint Admin Agent support is planned before general availability. See [Manage inactive files policy with SharePoint Advanced Management \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/archive/manage-inactive-files?view=o365-worldwide) for prerequisites, simulation, and configuration steps.
+
 ## Archive a site
 
 [SharePoint Administrators](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#sharepoint-administrator) or [Global Administrators](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-administrator) can archive both non-group-connected sites and group-connected sites from the SharePoint admin center. When a group-connected site is archived, only the site is archived and the rest of the group remains active. After a site is archived, it stops consuming active storage quota and begins consuming Microsoft 365 Archive storage. Changes in storage usage might take time to appear in the SharePoint admin center.

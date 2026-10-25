@@ -5,11 +5,7 @@
 
 Important
 
-The information in this article only applies to OpenAI models operated by OpenAI \(provided by OpenAI as a subprocessor\). The information doesn't apply to OpenAI models operated by Microsoft \(Azure OpenAI\).
-
-Note
-
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. There are no changes to security, compliance, and privacy for organizations.
+This setting doesn't turn OpenAI models on or off in Copilot. It controls only whether OpenAI models operated by OpenAI \(provided by OpenAI as a subprocessor\) can be used. OpenAI models operated by Microsoft \(Azure OpenAI\) aren't affected and remain available in Copilot regardless of this setting. Disabling the setting only affects select features or specific models that are only available when OpenAI operated models are enabled.
 
 Microsoft is expanding options for how OpenAI models can be delivered within Microsoft Online Services. In addition to OpenAI models that Microsoft operates \(Azure OpenAI\), Microsoft now provides OpenAI operated models through OpenAI as a subprocessor. This option gives your organization the foundation for more model flexibility, including quicker access to new AI model innovations, while maintaining enterprise-grade commitments and safeguards.
 

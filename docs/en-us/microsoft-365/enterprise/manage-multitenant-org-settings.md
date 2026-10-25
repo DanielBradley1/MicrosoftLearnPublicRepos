@@ -267,13 +267,11 @@ To suppress Outlook external tag for tenants in your MTO:
 6. Select **Suppress Outlook external tag for MTO members**.
 7. Select **Save changes**.
 
-## Update the MTO cross-tenant sync job schema with newly supported attributes \(Private Preview\)
+## Update the MTO cross-tenant sync job schema with newly supported attributes
 
-Important
+Note
 
-Update the MTO cross-tenant sync job schema with newly supported attributes is currently available in preview. Features and availability may change before general availability \(GA\).
-
-Some MTO collaboration features depend on Exchange attributes that aren't part of the default MTO cross-tenant synchronization schema. As Microsoft adds support for new cross-tenant scenarios, Microsoft 365 admins can extend the MTO MAC-created sync job schema with newly supported attributes from the Microsoft 365 admin center.
+Update the MTO cross-tenant sync job schema with newly supported attributes is not available in Microsoft 365 GCC, GCC High, DoD, or Microsoft 365 China \(operated by 21Vianet\). Some MTO collaboration features depend on Exchange attributes that aren't part of the default MTO cross-tenant synchronization schema. As Microsoft adds support for new cross-tenant scenarios, Microsoft 365 admins can extend the MTO MAC-created sync job schema with newly supported attributes from the Microsoft 365 admin center.
 
 Important
 
@@ -308,6 +306,6 @@ To update MTO MAC-created sync job schema with newly supported attributes:
 
 The added attributes are picked up by the cross-tenant sync jobs on the next sync cycle. The notification card is dismissed automatically after the schema is updated.
 
-For information on enabling room discovery capability with newly supported attributes, see [Enable cross-tenant room discovery for MTO](https://learn.microsoft.com/en-us/microsoft-365/enterprise/enable-cross-tenant-room-discovery-for-mto).
+For information on enabling GAL-based room discovery capability with newly supported attributes, see [Enable cross-tenant GAL-based room discovery for MTO](https://learn.microsoft.com/en-us/microsoft-365/enterprise/enable-cross-tenant-room-discovery-for-mto).
 
 Follow [this guidance](https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-multitenant-org-settings) to manually update CTS sync job schema for newly supported attributes.

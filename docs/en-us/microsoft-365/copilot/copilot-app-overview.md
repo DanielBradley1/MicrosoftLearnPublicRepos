@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-overview -->
-<!-- Sitemap-Last-Modified: 2026-09-28 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-app-overview -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Get started with the Microsoft Copilot app
 

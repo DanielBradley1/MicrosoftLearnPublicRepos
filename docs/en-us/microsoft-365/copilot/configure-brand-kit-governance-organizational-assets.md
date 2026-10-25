@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-restrict-brand-kit-creation -->
-<!-- Sitemap-Last-Modified: 2026-06-12 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-brand-kit-governance-organizational-assets -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Configure brand kit governance and organizational assets
 

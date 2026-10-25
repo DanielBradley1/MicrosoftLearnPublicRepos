@@ -9,6 +9,10 @@ Storage consumption is charged at a per-GB monthly rate. This meter is charged o
 
 Note
 
+If you have a multi-geo tenant that uses pay-as-you-go storage, billing is based on the tenant's storage quota, not each geo's quota. Billing starts when the tenant's total archived and active storage usage across all geos **exceeds** the tenant quota.
+
+Note
+
 The reactivation fee for archived content in SharePoint was eliminated on March 31, 2025. After that date, reactivating archived content became free of charge, but re-archiving any newly reactivated content is restricted for a four-month period. This change doesn't apply to OneDrive accounts. For more information, see the [Microsoft 365 Archive blog](https://techcommunity.microsoft.com/blog/microsoft_365_archive_blog/microsoft-365-archive-eliminates-reactivation-fees-by-march-31-2025/4383215).
 
 Monthly archive storage usage is calculated as the total of two components: \(1\) the storage used by all archived SharePoint sites, and \(2\) the storage used by archived files that reside in non-archived SharePoint sites. Archived files that are contained within an archived site are counted only as part of that site's archived storage and are not counted again individually.

@@ -9,6 +9,14 @@ For the latest information, announcements, and news about preview and generally 
 
 ## October 2026
 
+### Declarative agent manifest version 1.9
+
+A new version of the declarative agent manifest schema is available. [Declarative agent manifest schema version 1.9](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9) adds the following features:
+
+- Added the new top-level `agent_skills` property, which references skill directories that follow the Agent Skills standard.
+- Added the new `Fabric` capability, which enables the agent to query and visualize Microsoft Fabric data within conversations.
+- Made the `instructions` property on the root manifest object optional.
+
 ### Govern Copilot credit consumption with the Cost Management API
 
 Administrators can create and manage spending policies, scope them to groups, configure per-service settings and threshold alerts, and diagnose per-user consumption with the new [Cost Management API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview).
@@ -22,6 +30,10 @@ A new [getMicrosoft365CopilotUsageUserDetailByDate](https://learn.microsoft.com/
 ### Review requested packages in the Package Management API
 
 Administrators can review the agents that users in the organization requested by filtering [List packages](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackages-list) on the `requestStatus` or `requestType` property.
+
+### Copilot package agent identity
+
+The Package Management API now returns the Microsoft Entra agent identity identifier associated with a Copilot package in the `agentIdentityId` property. The property is available when you [list Copilot packages](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackages-list) or [get Copilot package details](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackagedetail-get).
 
 ## July 2026
 

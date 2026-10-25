@@ -51,6 +51,8 @@ Note
 
 To manage file-level archive, see [Manage](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage?view=o365-worldwide).
 
+To automatically archive inactive files, see [inactive files policies in SharePoint Advanced Management \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/archive/manage-inactive-files?view=o365-worldwide). The current preview requires SharePoint Advanced Management entitlement and PowerShell configuration; enabling Archive alone doesn't create a policy.
+
 Billing for unlicensed OneDrive accounts can also be enabled from the same **Microsoft 365 Archive** panel.
 
 1. In the Microsoft 365 admin center, select [**Settings > Org settings**](https://go.microsoft.com/fwlink/p/?linkid=2171997).

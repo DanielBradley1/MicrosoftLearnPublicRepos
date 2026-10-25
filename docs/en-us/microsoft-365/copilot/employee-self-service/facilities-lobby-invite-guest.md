@@ -74,25 +74,25 @@ This process involves only one step:
 
 ### Create a topic
 
-- Create a topic named **Invite a guest**
+1. Create a topic named **Invite a guest**
 
-  - In Copilot Studio, select **Add a topic > From blank**.
-  - Once inside the topic, select **Open code editor**.
-  - Use the code from the Copilot Samples repository [Invite a Guest topic YAML](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeInviteGuest/topic.yaml) and paste in the code editor.
-  - Update the HTTP API URL in the code sample. Search for "kind: HttpRequestAction" and update the URL property as per your backend system.
-  - Save the topic.
+   1. In Copilot Studio, select **Add a topic > From blank**.
+   2. Once inside the topic, select **Open code editor**.
+   3. Use the code from the Copilot Samples repository [Invite a Guest topic YAML](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeInviteGuest/topic.yaml) and paste in the code editor.
+   4. Update the HTTP API URL in the code sample. Search for "kind: HttpRequestAction" and update the URL property as per your backend system.
+   5. Save the topic.
 
-- Validate
+2. Validate
 
-  - Open the visual representation of the topic definition and validate the workflow of the topic.
-  - Select **Topic Checker** for any static issues with the definition.
-  - Optionally, go through the following section, "Review the topic workflow", to understand and validate the steps.
+   1. Open the visual representation of the topic definition and validate the workflow of the topic.
+   2. Select **Topic Checker** for any static issues with the definition.
+   3. Optionally, go through the following section, "Review the topic workflow", to understand and validate the steps.
 
-- Now, let's test the newly added topic
+3. Now, let's test the newly added topic
 
-  - Using the Test button in **Copilot Studio**, open the test chat window.
-  - Invite guest using the prompt "Invite my guest to the office". This prompt opens an Adaptive card where you can fill the required details like guest name, purpose of visit, date, and time of visit, and so on.
-  - Upon successful submission, the Employee Self-Service system displays a confirmation that the guest invite is created.
+   1. Using the Test button in **Copilot Studio**, open the test chat window.
+   2. Invite guest using the prompt "Invite my guest to the office". This prompt opens an Adaptive card where you can fill the required details like guest name, purpose of visit, date, and time of visit, and so on.
+   3. Upon successful submission, the Employee Self-Service system displays a confirmation that the guest invite is created.
 
 ### Review the topic workflow
 
@@ -101,7 +101,7 @@ This process involves only one step:
   ![Diagram that shows the trigger node configuration where you can change the trigger description.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-lobby-invite-guest-validate-topic-trigger.png)
 - The next few nodes enforce certain limitations - like supporting only single guest visits and supporting only new visits and not edit/cancellation of existing visits.
 
-  - Enforcing these limitations is an optional step. To enforce these limitations, few variables are maintained based on the user query. These variables are then used in a group of conditional statements for enforcing the required limitations.
+  - Enforcing these limitations is an optional step. To enforce these limitations, a few variables are maintained based on the user query. These variables are then used in a group of conditional statements for enforcing the required limitations.
   - If these limitations aren't required, remove them by deleting the corresponding variables and condition nodes.
 
 - The next node is to make an HTTP call to the backend API to fetch all buildings. These buildings are prepopulated in the guest registration form that gets rendered in the following steps. We use HttpRequestAction component for making the HTTP call. The HTTP call can be alternatively configured in several other ways described in the following FAQ section.
@@ -115,7 +115,7 @@ This process involves only one step:
 - The following steps determine if the visit creation was successful and displays a message to the user accordingly.
 
   - Upon successful submission, the Employee Self-Service system displays a confirmation of the visit creation for the user's guest.
-  - In case the request failed due to any reason, a failure message is sent to the user. These messages can be customized by modifying the corresponding SendActivity components.
+  - In case the request fails due to any reason, a failure message is sent to the user. These messages can be customized by modifying the corresponding SendActivity components.
 
     ![Diagram that shows the handling of success and failure conditions in the topic.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-lobby-invite-guest-validate-topic-error-handling.png)
 

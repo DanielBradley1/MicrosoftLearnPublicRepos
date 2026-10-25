@@ -60,7 +60,7 @@ The [starter golden querysets](https://github.com/microsoft/CopilotStudioSamples
 3. **Adapt queries to reflect your employee population**. Add role specific and region specific variations so the evaluator can verify your personalization logic \(for example, managers vs. individual contributors, US vs. EU\).
 4. **Add or remove prompts to match your Employee Self-Service scope**. If your deployment doesn't use certain integrations \(like Workday or Microsoft Self-Help\), remove those prompts. If you have custom systems, add representative queries for them.
 5. **Include both must pass scenarios and nice-to-have scenarios**. Keep critical workflows \(for example, VPN access, parental leave, device issues\) but also test informal phrasing, misspellings, emotional tones, and vague prompts.
-6. **Use the sets to build regression coverage**. Once customized, turn them into stable test sets you run after every update to topics, instructions, knowledge sources, or integrations.
+6. **Use the sets to build regression coverage**. Once customized, turn them into stable test sets you run after every update to topics, instructions, knowledge sources, integrations, or the agent's AI model.
 7. **Continuously refine based on learnings, updates, and failures**. When a test fails, decide whether to fix the agent, revise the expected response, or split the scenario into more precise variants.
 
 ### Knowledge tests

@@ -5,6 +5,8 @@
 
 Microsoft 365 Archive provides cost-effective storage for inactive SharePoint files and sites.
 
+To automatically archive eligible files within SharePoint sites that remain in use, use [inactive files policies in SharePoint Advanced Management \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/archive/manage-inactive-files?view=o365-worldwide). Policies use the file's recorded last human access date and are configured through PowerShell during the current preview.
+
 Organizations often need to retain inactive or aging data for long periods in case they need to retrieve it later. Storing this data in SharePoint helps simplify searchability, security, compliance, and data lifecycle management.
 
 Microsoft 365 Archive allows you to retain inactive data by moving it into a cold storage tier within SharePoint. Data archived with Microsoft 365 Archive automatically retains the same searchability, security, and [compliance](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-compliance?view=o365-worldwide) standards at a reduced cost.

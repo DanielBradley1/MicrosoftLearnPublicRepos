@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-business-faq -->
-<!-- Sitemap-Last-Modified: 2026-08-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-license-options -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # License options for Microsoft Copilot
 

@@ -5,10 +5,6 @@
 
 Note
 
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. There are no changes to security, compliance, and privacy for organizations.
-
-Note
-
 - Multiple account access to Microsoft Copilot is available for some apps on specific types of devices. For more information, see [Apps where multiple account access to Microsoft Copilot is available](#apps-where-multiple-account-access-to-microsoft-copilot-is-available).
 - For information about turning off multiple account access by using a policy setting, see [Manage multiple account access to Microsoft Copilot using Cloud Policy](#manage-multiple-account-access-to-microsoft-copilot-using-cloud-policy).
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search-faq -->
-<!-- Sitemap-Last-Modified: 2026-09-01 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-search-faq -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Microsoft Copilot Search frequently asked questions
 

@@ -43,7 +43,7 @@ To extend the Employee Self-Service Copilot agent with a custom *Register a Vehi
 
 ## Fundamentals
 
-Extending Employee Self-Service for RE&F experiences requires an understanding of a two building blocks: **topics and adaptive cards**. Together, these building blocks define how conversational scenarios are designed and how they interact with RE&F services.
+Extending Employee Self-Service for RE&F experiences requires an understanding of two building blocks: **topics and adaptive cards**. Together, these building blocks define how conversational scenarios are designed and how they interact with RE&F services.
 
 ### Topics
 
@@ -74,25 +74,25 @@ This process involves only one step:
 
 ### Create a topic
 
-- Create a topic named **Register a Vehicle**
+1. Create a topic named **Register a Vehicle**
 
-  - In Copilot Studio, select **Add a topic > From blank**.
-  - Once inside the topic, select **Open code editor**.
-  - Use the code from the Copilot Samples repository [Register your Vehicle topic YAML](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeRegisterVehicle/topic.yaml) and paste in the code editor.
-  - Update the HTTP API URL in the code sample. Search for "kind: HttpRequestAction" and update the URL property as per your backend system.
-  - Save the topic.
+   1. In Copilot Studio, select **Add a topic > From blank**.
+   2. Once inside the topic, select **Open code editor**.
+   3. Use the code from the Copilot Samples repository [Register your Vehicle topic YAML](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeRegisterVehicle/topic.yaml) and paste in the code editor.
+   4. Update the HTTP API URL in the code sample. Search for "kind: HttpRequestAction" and update the URL property as per your backend system.
+   5. Save the topic.
 
-- Validate
+2. Validate
 
-  - Open the visual representation of the topic definition and validate the workflow of the topic.
-  - Select **Topic Checker** for any static issues with the definition.
-  - Optionally, go through the following section, "Review the topic workflow", to understand and validate the steps.
+   1. Open the visual representation of the topic definition and validate the workflow of the topic.
+   2. Select **Topic Checker** for any static issues with the definition.
+   3. Optionally, go through the following section, "Review the topic workflow", to understand and validate the steps.
 
-- Now, let's test the newly added topic
+3. Now, let's test the newly added topic
 
-  - Using the Test button in **Copilot Studio**, open the test chat window.
-  - Register a vehicle using the prompt "I want to register my vehicle for parking". This prompt opens an Adaptive card where you can fill the required details like vehicle type, vehicle make and model, license plate number, and so on.
-  - Upon successful submission, the Employee Self-Service system displays a confirmation that the vehicle is registered.
+   1. Using the Test button in **Copilot Studio**, open the test chat window.
+   2. Register a vehicle using the prompt "I want to register my vehicle for parking". This prompt opens an Adaptive card where you can fill the required details like vehicle type, vehicle make and model, license plate number, and so on.
+   3. Upon successful submission, the Employee Self-Service system displays a confirmation that the vehicle is registered.
 
 ### Review the topic workflow
 
@@ -101,7 +101,7 @@ This process involves only one step:
   ![Diagram that shows the trigger node configuration where you can change the trigger description.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-parking-register-vehicle-validate-topic-trigger.png)
 - The next few nodes take care of extracting and assigning correct CountryCode to each request.
 
-  - This configuration is an optional step. To correctly extract and validate the CountryCode, few variables are maintained. These variables are then used in a group of conditional statements to make the required configuration.
+  - This configuration is an optional step. To correctly extract and validate the CountryCode, a few variables are maintained. These variables are then used in a group of conditional statements to make the required configuration.
   - If CountryCode configuration isn't required, remove these nodes by deleting the corresponding variables and condition nodes.
 
 - The next node is to make an HTTP call to the backend Config API to fetch all Country Specific configuration. We use HttpRequestAction component for making the HTTP call. The HTTP call can be alternatively configured in several other ways described in the following FAQ section.
@@ -118,7 +118,7 @@ This process involves only one step:
 - The following steps determine if the vehicle registration was successful and displays a message to the user accordingly.
 
   - Upon successful submission, the Employee Self-Service system displays a confirmation of the registration for the user's vehicle.
-  - In case the request failed due to any reason, a failure message is sent to the user. These messages can be customized by modifying the corresponding SendActivity components.
+  - In case the request fails due to any reason, a failure message is sent to the user. These messages can be customized by modifying the corresponding SendActivity components.
 
     ![Diagram that shows the handling of success and failure conditions in the topic.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-parking-register-vehicle-validate-topic-error-handling.png)
 

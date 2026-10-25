@@ -70,6 +70,13 @@ Use a current, supported browser. Microsoft Edge, Google Chrome, Mozilla Firefox
 
 For Copilot to work in Word for the web, Excel for the web, and PowerPoint for the web, third-party cookies must be enabled.
 
+When users select a link in a Copilot Chat response, including responses from agents built in Copilot Studio, Copilot checks the link with [Safe Links in Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/safe-links-about) before it opens. This check requires third-party cookies for `*.safelinks.protection.outlook.com`. If the browser blocks third-party cookies, for example through an organization-managed browser policy, users see an **Unable to verify link** message and the link doesn't open.
+
+To avoid this issue, allow third-party cookies for `[*.]safelinks.protection.outlook.com`. For example:
+
+- In Microsoft Edge or Google Chrome, add `[*.]safelinks.protection.outlook.com` to the `CookiesAllowedForUrls` policy.
+- In the browser cookie settings, add `[*.]safelinks.protection.outlook.com` as a site that's allowed to use third-party cookies.
+
 ## Mobile requirements
 
 Use a supported version of the Microsoft 365 or Copilot mobile app and a supported mobile operating system. For current operating system requirements, see the app listing in the Apple App Store or Google Play Store and the applicable Microsoft 365 mobile app documentation.

@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-copilot-onboarding -->
 <!-- Sitemap-Last-Modified: 2026-10-12 -->
 
-# Manage Microsoft Copilot onboarding \(Frontier\)
+# Roll out Microsoft Copilot onboarding \(Frontier\)
 
 Copilot onboarding is a guided, in-product experience that helps users build confidence with Microsoft Copilot. It includes short, personalized activities that help users discover the Copilot capabilities available to them based on their role and license, understand how those capabilities can support their work, and build skills through guided practice. Copilot onboarding is available to users with both starter and Premium licenses.
 
@@ -35,6 +35,8 @@ Review the following prerequisites before you configure Copilot onboarding. Some
 | AI policy URL | **Optional.** Add one if you want users to review your organization's AI usage policy during onboarding. |
 
 ## Manage Copilot onboarding for your users
+
+<iframe src="https://learn-video.azurefd.net/vod/player?id=62c63820-6849-490f-af0f-b74fc327f72a" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
 ### Step 1: Confirm eligibility
 

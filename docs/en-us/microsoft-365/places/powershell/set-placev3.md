@@ -59,12 +59,12 @@ Set-PlaceV3
 
 Desks are a newly introduced entity type in Microsoft Places, representing individual desk units. Each desk includes a Mode property that specifies how the desk can be booked. For more information, refer to the mode section below.
 
-For Desk, There are some dependencies between mode and mailbox as follows:
+For desks, the following dependencies exist between mode and mailbox configuration:
 
 - If the Mode property is not defined, the desk defaults to Unavailable, and no desk mailbox is created automatically.
 - For desks set to Reservable or DropIn mode, a desk mailbox is required. One is automatically created when the desk is provisioned. Alternatively, you can link an existing mailbox by specifying the EmailAddress in the Mailbox parameter.
 - For desks in Assigned or Unavailable mode, linking a mailbox is optional, and no mailbox is created by default. However, you may manually associate these desks with custom mailboxes if needed.
-- If no mode is configured initially, the desk remains in Unavailable mode. Linking a mailbox afterward does not automatically update the desk’s mode.
+- If no mode is configured initially, the desk remains in Unavailable mode. Linking a mailbox afterward does not automatically update the desk's mode.
 
 Unlike Room or Workspace types, desks are not automatically provisioned by simply creating a mailbox. Additionally, metadata such as Capacity or DisplayName is not synchronized with mailbox properties. The mailbox is used primarily by the reservation engine, while metadata is read from the Places Directory.
 
@@ -114,7 +114,7 @@ Note
 
 The address fields \(Street, City, State, CountryOrRegion, and PostalCode\) set on the room or workspace mailbox object are ignored.
 
-Workspace supports Mode property. The details for the same are documented in `Mode` parameter section.
+Workspace supports the Mode property. The details for the same are documented in `-Mode` parameter section.
 
 ```powershell
 Set-PlaceV3
@@ -195,7 +195,7 @@ New-Place -Name 'Reservable Desk101' -Type Desk -ParentId $section.PlaceId -Mode
 This example updates the mode value to DropIn mode.
 
 ```powershell
-Set-PlaceV3 -Identity f12172b6-195d-4e6e-8f4f-eb72e41de99a -Mode @{Name='DropIn'}
+Set-PlaceV3 -Identity <DeskOrWorkspacePlaceId> -Mode @{Name='DropIn'}
 ```
 
 ### Example 7
@@ -207,7 +207,7 @@ Note that even if the desk is already an assigned mode desk, the change is only 
 ```powershell
 $modemetadata = New-Object 'System.Collections.Generic.Dictionary[String,object]'
 $modemetadata.Add("AssignedPersonEmailAddress","someUserEmailAddress")
-Set-PlaceV3 -Identity f12172b6-195d-4e6e-8f4f-eb72e41de99a Mode @{Name='Assigned';Metadata=$modemetadata}
+Set-PlaceV3 -Identity <DeskPlaceId> -Mode @{Name='Assigned';Metadata=$modemetadata}
 ```
 
 ## Parameters
@@ -241,7 +241,7 @@ For example, for places that aren't based on a mailbox \(buildings, floors, sect
 
 ### -AudioDeviceName, and -VideoDeviceName
 
-These parameters specify the name of the audio, and video devices in the room. If the value contains spaces, enclose the value in quotation marks \("\).
+These parameters specify the name of the audio and video devices in the room. If the value contains spaces, enclose the value in quotation marks \("\).
 
 The default value is blank \($null\). To indicate that this room has no audio, or video device, use the value $null for the parameter.
 
@@ -566,11 +566,11 @@ The Mode parameter defines how a place is intended to be used or booked. Current
 Currently, there are four modes in total.
 
 - **Reservable**- Reservable desks are the desks that are configured to be booked in advance or on-the-spot.
-- **Drop-in**- The desk is available for on-the-spot use and cannot be reserved in advance. You can use the capability from Microsoft Teams to link the peripheral devices present on these desks to the individual desk object in the directory.
+- **DropIn**- The desk is available for on-the-spot use and cannot be reserved in advance. You can use the capability from Microsoft Teams to link the peripheral devices present on these desks to the individual desk object in the directory.
 - **Assigned** - An assigned desk is permanently linked to a specific user and cannot be booked by others. Every assigned desk must always have a designated user.
 - **Unavailable**- The desk is not available for reservation due to maintenance or for any other reason.
 
-The mode value should contain the following properties: Name and Metadata, as shown in [Example 6](https://learn.microsoft.com/en-us/deployoffice/places/powershell/new-place#example-6). Name is string and metadata is a dictionary object.
+The Mode value contains a Name property and, for modes that support it, a Metadata dictionary. See [Example 7](#example-7) for an Assigned-mode example that includes metadata.
 
 - **Name**: The Name field specifies the active mode for a place. It uses an enumeration value, and the available options vary by place type. For desks, supported modes include `Reservable`, `DropIn`, `Assigned` and `Unavailable`. For desk pools, the supported modes are `Reservable`, `DropIn` and `Unavailable`.
 - **Metadata**: The Metadata field is a dictionary used to store additional information relevant to the selected mode. This metadata supports business logic tied to specific booking scenarios.
@@ -592,7 +592,7 @@ The mode value should contain the following properties: Name and Metadata, as sh
 
 The Tags parameter specifies additional features of the room \(for example, details like the type of view or furniture type\). There's no maximum length currently.
 
-You can specify multiple labels separated by commas. If the labels contains spaces, enclose the values in quotation marks: `"Label 1","Label 2",..."Label N"`.
+You can specify multiple labels separated by commas. If the labels contain spaces, enclose the values in quotation marks: `"Label 1","Label 2",..."Label N"`.
 
 Note
 
@@ -611,7 +611,7 @@ The entire set will be replaced on update. To add or remove a value, be sure to 
 
 ### I am receiving a permission denied error.
 
-Set-PlaceV3 requires one of the following roles: TenantPlacesManagement, GlobalAdmin, or MailRecepients. Because roles can be assigned in different ways, the following are the supported ways to assign role permissions:
+Set-PlaceV3 requires one of the following roles: TenantPlacesManagement, GlobalAdmin, or MailRecipients. Because roles can be assigned in different ways, the following are the supported ways to assign role permissions:
 
 - If the permission is assigned through Exchange Admin Center \(which only supports permanent permissions\), you should have no issues with using the Places cmdlets. It wouldn't be expected for you to see a Permission Denied error.
 - If the permission is assigned through Entra directly to the user \(as a permanent or a temporary role\), you should have no issues with using the Places cmdlets. It wouldn't be expected for you to see a Permission Denied error. However, there might be some delay in the sync between Entra and Exchange.

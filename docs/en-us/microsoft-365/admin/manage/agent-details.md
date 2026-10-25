@@ -316,7 +316,7 @@ The **Activity** tab in the agent details of the Microsoft 365 admin center prov
 
 Note
 
-You need a Microsoft E7 or Agent 365 license to see the **Activity** tab details of an agent.
+You need a Microsoft E7 or Agent 365 license to see the **Activity** tab details of third-party agents.
 
 Additional details include the following information:
 

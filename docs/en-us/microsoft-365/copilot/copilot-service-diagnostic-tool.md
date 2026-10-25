@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-service-plans -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-service-diagnostic-tool -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Microsoft Copilot service plan diagnostic tool and service plans for IT admins
 

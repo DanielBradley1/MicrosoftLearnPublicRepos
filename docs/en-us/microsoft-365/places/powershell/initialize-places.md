@@ -5,13 +5,16 @@
 
 The `Initialize-Places` cmdlet is a simplified, quick-create experience that can be used instead of the `New-Place`, and `Set-PlaceV3` cmdlets.
 
-Initialize-Places parses existing rooms, and workspaces in your tenant, and infer building, floor, and section names. It lets you verify, edit this information, and then builds a full hierarchy of Buildings > Floors > Rooms and Workspaces in your tenant. This hierarchy is sometimes referred to as Places Directory.
+Initialize-Places parses existing rooms and workspaces in your tenant and infers building, floor, and section names. It lets you review and edit the inferred information before creating a hierarchy of buildings, floors, sections, rooms, and workspaces in the Places Directory.
 
 This page provides details on the cmdlet syntax, and options. A step-by-step guide to use this cmdlet is provided in [Configure buildings and floors](https://learn.microsoft.com/en-us/microsoft-365/places/get-started/quick-setup-buildings-floors).
 
 Important
 
-Important updates were made to the MicrosoftPlaces cmdlet module on November 14, 2024. If you joined the Preview program before that date, get the latest version of the module by running `Run Install-Module -Name MicrosoftPlaces -Force`, then close and relaunch PowerShell.
+Use the latest version of the Microsoft Places PowerShell module. If the module isn't installed, or if Initialize-Places doesn't display the options documented on this page, run:  
+`Install-Module -Name MicrosoftPlaces -Force`
+
+Then close and reopen PowerShell before connecting to Microsoft Places.
 
 ## Syntax
 

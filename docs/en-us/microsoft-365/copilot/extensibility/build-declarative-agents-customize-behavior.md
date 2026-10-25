@@ -25,7 +25,7 @@ Start by adding instructions to the agent to phrase its responses as poems.
    ```
 
 
-   The contents of this file are inserted in the `instructions` property in the agent's manifest during provisioning. For more information, see [Declarative agent manifest object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#declarative-agent-manifest-object).
+   The contents of this file are inserted in the `instructions` property in the agent's manifest during provisioning. For more information, see [Declarative agent manifest object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#declarative-agent-manifest-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Microsoft 365 Agents Toolkit.
 
@@ -55,7 +55,7 @@ Next, add some conversation starters to the agent.
    ```
 
 
-   For more information, see [Conversation starters object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#conversation-starters-object).
+   For more information, see [Conversation starters object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#conversation-starters-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 

@@ -70,27 +70,27 @@ The implementation includes the following steps:
 
 ### Create a topic
 
-- Create a new topic named **Dining Search Stations**.
+1. Create a new topic named **Dining Search Stations**.
 
-  - In Copilot Studio, select **Add a topic > From blank**.
-  - Once inside the topic, select **Open code editor**.
-  - Copy the topic YAML from the sample repository and paste it into the code editor: [topic.yaml](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeSearchDiningStations/topic.yaml), and close the editor.
-  - Update the HTTP API URL in the code sample. Search for kind: HttpRequestAction. You see a code that sets a value to a variable named SearchStationsApiUrl. Update the variable value as per your backend system.
+   1. In Copilot Studio, select **Add a topic > From blank**.
+   2. Once inside the topic, select **Open code editor**.
+   3. Copy the topic YAML from the sample repository and paste it into the code editor: [topic.yaml](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeSearchDiningStations/topic.yaml), and close the editor.
+   4. Update the HTTP API URL in the code sample. Search for kind: HttpRequestAction. You see a code that sets a value to a variable named SearchStationsApiUrl. Update the variable value as per your backend system.
 
-    ![Screenshot showing how to update API url in the topic.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-dining-update-api-url.png)
-  - Resolve any validation errors, and then select Save.
+      ![Screenshot showing how to update API url in the topic.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-dining-update-api-url.png)
+   5. Resolve any validation errors, and then select Save.
 
-- Validate
+2. Validate
 
-  - Open the visual representation of the topic and verify the end-to-end flow.
-  - To identify any static issues, run **Topic checker**
-  - Optionally, follow the next section \(Review the topic workflow\) for a guided walkthrough of what to verify.
+   1. Open the visual representation of the topic and verify the end-to-end flow.
+   2. To identify any static issues, run **Topic checker**
+   3. Optionally, follow the next section \(Review the topic workflow\) for a guided walkthrough of what to verify.
 
-- Now, let's test the newly added topic
+3. Now, let's test the newly added topic
 
-  - In Copilot Studio, select **Test** to open the test chat.
-  - Ask a question such as Where can I find Chinese food?
-  - After submission, the Employee Self-Service Copilot agent displays Chinese food options.
+   1. In Copilot Studio, select **Test** to open the test chat.
+   2. Ask a question such as Where can I find Chinese food?
+   3. After submission, the Employee Self-Service Copilot agent displays Chinese food options.
 
 ### Review the topic workflow
 

@@ -214,6 +214,6 @@ This approach treats both target environments and agent versions as deployment t
 - [Microsoft 365 Agents Toolkit overview](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/overview-agents-toolkit?context=/microsoft-365/copilot/extensibility/context)
 - [Agents Toolkit CLI reference](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/agents-toolkit-cli?context=/microsoft-365/copilot/extensibility/context)
 - [Provision and deploy with Agents Toolkit](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/provision?context=/microsoft-365/copilot/extensibility/context)
-- [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8)
+- [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9)
 - [Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent)
 - [Publish agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)

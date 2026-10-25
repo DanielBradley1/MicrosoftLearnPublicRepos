@@ -20,11 +20,12 @@ Microsoft 365 Archive is a cost-effective, long-term storage solution for inacti
 - [Pricing model](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-pricing?view=o365-worldwide)
 - [Education offering](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-education-offering?view=o365-worldwide)
 
-## Archive sites
+## Archive files and sites
 
 ### Overview
 
 - [Manage Microsoft 365 Archive](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage?view=o365-worldwide)
+- [Automatically archive inactive files \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/archive/manage-inactive-files?view=o365-worldwide)
 - [Archive states](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-states?view=o365-worldwide)
 - [End user experience](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-end-user?view=o365-worldwide)
 

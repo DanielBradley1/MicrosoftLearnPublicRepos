@@ -9,7 +9,7 @@ Declarative agents are valuable in understanding and generating human-like text,
 
 Important
 
-The latest version of the declarative agent manifest schema is [version 1.8](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8). Use the latest schema version for new agents.
+The latest version of the declarative agent manifest schema is [version 1.9](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9). Use the latest schema version for new agents.
 
 ## Changes from previous version
 

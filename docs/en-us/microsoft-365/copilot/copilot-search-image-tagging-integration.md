@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search-image-tagging-integration -->
-<!-- Sitemap-Last-Modified: 2025-09-03 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-search-image-tagging-integration -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Set up and connect organizational asset library \(OAL\) with image tagging to Copilot search
 

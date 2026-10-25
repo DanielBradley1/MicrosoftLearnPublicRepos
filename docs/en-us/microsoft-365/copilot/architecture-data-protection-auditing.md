@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/architecture-data-protection-auditing -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # How data is protected and audited in Microsoft 365 and Microsoft Copilot
 
@@ -14,7 +14,7 @@ Tip
 To learn more how Microsoft Copilot uses your data, see:
 
 - [Data, Privacy, and Security for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy)
-- [Security for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-365-copilot)
+- [Security for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-copilot)
 
 ## How Microsoft Copilot works with sensitivity labels and encryption
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-reports-for-admins -->
-<!-- Sitemap-Last-Modified: 2025-09-17 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-admin-reports -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Microsoft Copilot reporting options for admins
 

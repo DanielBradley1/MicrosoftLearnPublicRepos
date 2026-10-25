@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/enablement-resources -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Microsoft Copilot adoption guide and overview for IT admins
 
@@ -42,28 +42,25 @@ To get started, go to [Microsoft Copilot adoption](https://adoption.microsoft.co
 
 ## Step 2 - Choose your Microsoft Copilot license
 
-There are different license options for Microsoft Copilot. The license you choose depends on your organization's needs and any existing Microsoft 365 subscriptions you have.
+Microsoft Copilot offers different license options. Choose the license that fits your organization's needs and consider any existing Microsoft 365 subscriptions you have.
 
 To learn more, see [Microsoft Copilot license plans](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing).
 
 ## Step 3 - Get your Microsoft 365 apps and network ready
 
-Microsoft Copilot integrates with your Microsoft 365 apps, including Microsoft Teams. To use Microsoft Copilot with your apps, make sure that your Microsoft 365 apps and network meet the requirements, and that your app privacy settings allow Copilot.
+Microsoft Copilot integrates with your Microsoft 365 apps, including Microsoft Teams. To use Microsoft Copilot with your apps, ensure that your Microsoft 365 apps and network meet the requirements, and that your app privacy settings allow Copilot.
 
 To learn more, see [Microsoft 365 app and service requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements#microsoft-365-app-and-service-requirements).
 
 ## Step 4 - Set up Copilot and assign licenses
 
-In this step, you assign Copilot licenses to your users and can configure some Microsoft Copilot features.
+In this step, assign Copilot licenses to your users and configure some Microsoft Copilot features.
 
-To learn more and get started:
-
-- [Set up Microsoft Copilot - Admin guide on Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup)
-- [Set up Microsoft Copilot - Setup guide in the Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home?Q=learndocs#/modernonboarding/microsoft365copilotsetupguide)
+To learn more, see the [Setup guide in the Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home?Q=learndocs#/modernonboarding/microsoft365copilotsetupguide)
 
 ## Step 5 - Send a welcome email and enable feedback
 
-After your licenses are assigned, you can send a welcome email to your users. This email can include information about Microsoft Copilot, how to use it, and any training resources you have available. You can also use the Copilot onboarding experience to help users get started with Copilot. Copilot onboarding is a guided, in-product experience that helps users build familiarity with Copilot and develop their prompting skills. As part of your onboarding rollout, you can:
+After you assign licenses, send a welcome email to your users. Include information about Microsoft Copilot, how to use it, and any available training resources. Use the Copilot onboarding experience to help users get started with Copilot. Copilot onboarding is a guided, in-product experience that helps users build familiarity with Copilot and develop their prompting skills. As part of your onboarding rollout, you can:
 
 - Add a link to your organization's AI usage policy for users to review.
 - Share the Copilot onboarding experience by copying the onboarding link or downloading and customizing the email template.

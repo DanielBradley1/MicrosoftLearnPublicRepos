@@ -3,7 +3,7 @@
 
 # Add knowledge sources to your declarative agent
 
-You can enhance the user experience of your declarative agent by adding capabilities like [code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter) and [image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator) and knowledge sources to enhance and customize your agent's knowledge. The [capabilities object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#capabilities-object) in the manifest reference and the **Knowledge** section in Microsoft 365 Copilot provide several options for you to unlock features for your users. This article describes the knowledge sources that you can add to your agents.
+You can enhance the user experience of your declarative agent by adding capabilities like [code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter) and [image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator) and knowledge sources to enhance and customize your agent's knowledge. The [capabilities object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#capabilities-object) in the manifest reference and the **Knowledge** section in Microsoft 365 Copilot provide several options for you to unlock features for your users. This article describes the knowledge sources that you can add to your agents.
 
 The following table lists the capabilities and knowledge sources you can configure by using Agent Builder in Microsoft 365 Copilot or [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) and indicates whether users require a Microsoft 365 Copilot license or metered usage to access agents with that capability or knowledge source.
 
@@ -30,7 +30,7 @@ The following table lists the capabilities and knowledge sources you can configu
 
 Microsoft 365 Copilot connectors enable you to add organizational data to your agent as grounding information. Use Copilot connectors to ingest your line-of-business data into Microsoft Graph so that Copilot can reason over your data as grounding information in responses to user prompts. For more information, see [Microsoft 365 Copilot connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector).
 
-For information about how to add Copilot connectors as knowledge to your agent manifest in Agents Toolkit, see [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#copilot-connectors-object).
+For information about how to add Copilot connectors as knowledge to your agent manifest in Agents Toolkit, see [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#copilot-connectors-object).
 
 For information about how to add Copilot connectors to your agent in Agent Builder, see [Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge#copilot-connectors).
 
@@ -38,7 +38,7 @@ For information about how to add Copilot connectors to your agent in Agent Build
 
 When you configure your agent to use SharePoint and OneDrive content as knowledge, Copilot searches SharePoint and OneDrive files, folders, or sites that a user has access to for grounding information.
 
-For information about how to add SharePoint and OneDrive knowledge to your agent manifest in Agents Toolkit, see [OneDrive and SharePoint object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#onedrive-and-sharepoint-object).
+For information about how to add SharePoint and OneDrive knowledge to your agent manifest in Agents Toolkit, see [OneDrive and SharePoint object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#onedrive-and-sharepoint-object).
 
 For information about how to add SharePoint and OneDrive knowledge to your agent in Agent Builder—and for the per-agent limits and how permissions and sensitivity labels are handled—see [SharePoint and OneDrive content](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge#sharepoint-and-onedrive-content).
 
@@ -429,6 +429,6 @@ You must be using [version 1.6](https://learn.microsoft.com/en-us/microsoft-365/
 ## Related content
 
 - [Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent)
-- [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8)
+- [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9)
 - [Add the code interpreter capability to your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter)
 - [Add the image generator capability to your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator)

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-14 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-overview -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Microsoft Copilot overview
 
@@ -238,7 +238,7 @@ In the admin center, use the [Copilot controls](https://learn.microsoft.com/en-u
 In Copilot controls, you can configure how users interact with Copilot and related AI experiences, including:
 
 - Control whether Copilot Chat is [pinned across experiences](https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-chat-navbar#pinning-options), such as in the Microsoft 365 app and other Copilot surfaces, based on licensing.
-- Manage whether users can [generate images in Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page#copilot-actions).
+- Manage whether users can generate images in Copilot Chat by [configuring Copilot actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-copilot-admin-center#configure-copilot-actions).
 - Control how users can [create and use agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/management-controls). Agents might have expanded capabilities and integration options for Microsoft 365 Copilot \(Premium\) users.
 - Manage web search grounding by using the [Allow web search in Copilot policy](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access#it-admin-control-for-both-microsoft-365-copilot-and-microsoft-365-copilot-chat). This policy applies to Copilot Chat experiences across all licenses.
 - [Remove user access to Copilot Chat entirely](https://learn.microsoft.com/en-us/copilot/manage#remove-access-to-copilot-chat), including for Copilot Chat \(Basic\) users.

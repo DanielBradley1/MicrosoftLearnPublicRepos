@@ -57,6 +57,6 @@ The image generator capability doesn't currently work in the **Try it** test pan
 
 - [Microsoft 365 Copilot extensibility samples](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/samples)
 - [Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent)
-- [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8)
+- [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9)
 - [Add the code interpreter capability to your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter)
 - [Add knowledge sources to your declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/knowledge-sources)

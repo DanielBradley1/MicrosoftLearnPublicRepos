@@ -24,7 +24,7 @@ Adding web search to your agent allows it to search the web to generate answers.
    ```
 
 
-   For more information, see [Web search object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#web-search-object).
+   For more information, see [Web search object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#web-search-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Microsoft 365 Agents Toolkit.
 
@@ -50,7 +50,7 @@ You can add files in OneDrive or the contents of SharePoint sites as a knowledge
    ```
 
 
-   For more information, see [OneDrive and SharePoint object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#onedrive-and-sharepoint-object).
+   For more information, see [OneDrive and SharePoint object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#onedrive-and-sharepoint-object).
 
 
    Note
@@ -81,7 +81,7 @@ The declarative agent has access to OneDrive and SharePoint content to generate 
    ```
 
 
-   For more information, see [Microsoft Teams messages object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#microsoft-teams-messages-object).
+   For more information, see [Microsoft Teams messages object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#microsoft-teams-messages-object).
 
 
    Note
@@ -109,7 +109,7 @@ The people knowledge source allows you to scope your agent to answer questions a
    ```
 
 
-   For more information, see [People object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#people-object).
+   For more information, see [People object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#people-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 
@@ -135,7 +135,7 @@ The email knowledge source allows you to scope your agent to use email from the 
    ```
 
 
-   For more information, see [Email object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#email-object).
+   For more information, see [Email object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#email-object).
 
 
    Note
@@ -168,7 +168,7 @@ Adding a [Copilot connector](https://learn.microsoft.com/en-us/microsoft-365/cop
    ```
 
 
-   For more information, see [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#copilot-connectors-object).
+   For more information, see [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#copilot-connectors-object).
 
 
    Note

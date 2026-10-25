@@ -3,11 +3,11 @@
 
 # Retrieve capability IDs for the declarative agent manifest
 
-This article describes how to retrieve the IDs that you need to include Copilot connectors and SharePoint/OneDrive files in the `capabilities` section of your [declarative agent manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8). You can use [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) or [Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview).
+This article describes how to retrieve the IDs that you need to include Copilot connectors and SharePoint/OneDrive files in the `capabilities` section of your [declarative agent manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9). You can use [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) or [Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview).
 
 ## Copilot connectors
 
-This section describes how to retrieve the value to set in the `connection_id` property of the [Connection object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#connection-object) in the [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#copilot-connectors-object) in the manifest.
+This section describes how to retrieve the value to set in the `connection_id` property of the [Connection object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#connection-object) in the [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#copilot-connectors-object) in the manifest.
 
 Important
 
@@ -95,7 +95,7 @@ Querying for Copilot connectors requires an admin account.
 
 ## Retrieving SharePoint IDs
 
-This section describes how to retrieve the value to set in the following properties within the `items_by_sharepoint_ids` property of the [`OneDriveAndSharePoint` object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#onedrive-and-sharepoint-object):
+This section describes how to retrieve the values to set in the following properties within the `items_by_sharepoint_ids` property of the [`OneDriveAndSharePoint` object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#onedrive-and-sharepoint-object):
 
 - `site_id`
 - `list_id`

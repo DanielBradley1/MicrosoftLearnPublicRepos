@@ -3,7 +3,7 @@
 
 # Manage generative AI apps for your organization
 
-As people embrace and incorporate [generative AI apps](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/), such as Microsoft Copilot and non-Microsoft AI apps into daily work, it's important for your organization's security team to be able to manage those apps. Microsoft applies a multi-layered, defense-in-depth strategy to secure Microsoft Copilot at every level \(see [Security for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-365-copilot)\).
+As people embrace and incorporate [generative AI apps](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/), such as Microsoft Copilot and non-Microsoft AI apps into daily work, it's important for your organization's security team to be able to manage those apps. Microsoft applies a multi-layered, defense-in-depth strategy to secure Microsoft Copilot at every level \(see [Security for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-copilot)\).
 
 But what about non-Microsoft AI apps?
 

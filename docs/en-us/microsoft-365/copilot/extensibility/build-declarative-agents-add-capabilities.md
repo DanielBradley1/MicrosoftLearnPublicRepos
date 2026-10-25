@@ -13,7 +13,7 @@ This guide assumes you have completed the [Create declarative agents by using Mi
 
 The image generator capability enables agents to generate images based on user prompts. To add image generator:
 
-1. Open the `appPackage/declarativeAgent.json` file and add the `GraphicArt` entry to the `capabilities` array. For more information, see [Graphic art object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#graphic-art-object).
+1. Open the `appPackage/declarativeAgent.json` file and add the `GraphicArt` entry to the `capabilities` array. For more information, see [Graphic art object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#graphic-art-object).
 
    ```json
    {
@@ -48,7 +48,7 @@ In GCCH environments, code interpreter is only available to users with a Microso
    ```
 
 
-   For more information, see [Code interpreter object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#code-interpreter-object).
+   For more information, see [Code interpreter object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#code-interpreter-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 

@@ -3,10 +3,6 @@
 
 # Assign AI provider access to users and groups
 
-Note
-
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. There are no changes to security, compliance, and privacy for organizations.
-
 Organizations that use third-party AI providers with Microsoft Copilot or Copilot Studio can restrict access to those AI providers by assigning permissions to specific users or Microsoft Entra ID security groups.
 
 ## AI provider user and group access

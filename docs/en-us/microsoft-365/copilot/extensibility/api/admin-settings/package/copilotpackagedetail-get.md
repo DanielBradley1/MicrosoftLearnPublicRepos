@@ -94,6 +94,7 @@ Content-Type: application/json
   "manifestId": "contoso-sales-agent",
   "appId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
   "assetId": "asset-00042",
+  "agentIdentityId": "11111111-2222-3333-4444-555555555555",
   "longDescription": "This is a detailed description for package abc. It provides comprehensive information about the package functionality, features, and usage scenarios.",
   "categories": [
     "Development",

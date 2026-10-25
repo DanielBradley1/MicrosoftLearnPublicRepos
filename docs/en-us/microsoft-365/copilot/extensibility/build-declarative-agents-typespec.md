@@ -75,7 +75,7 @@ Instructions change how an agent behaves.
    ```
 
 
-   The contents of this decorator are inserted in the `instructions` property in the agent's manifest during provisioning. For more information, see [Declarative agent manifest object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#declarative-agent-manifest-object).
+   The provisioning process inserts the contents of this decorator into the `instructions` property in the agent's manifest. For more information, see [Declarative agent manifest object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#declarative-agent-manifest-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 
@@ -102,7 +102,7 @@ Conversation starters are hints that Copilot displays to users to show how they 
    ```
 
 
-   For more information, see [Conversation starters object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#conversation-starters-object).
+   For more information, see [Conversation starters object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#conversation-starters-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 
@@ -127,7 +127,7 @@ The [web search capability](https://learn.microsoft.com/en-us/microsoft-365/copi
    ```
 
 
-   For more information, see [Web search object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#web-search-object).
+   For more information, see [Web search object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#web-search-object).
 
 
    Note
@@ -160,7 +160,7 @@ The [SharePoint capability](https://learn.microsoft.com/en-us/microsoft-365/copi
    ```
 
 
-   For more information, see [OneDrive and SharePoint object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#onedrive-and-sharepoint-object).
+   For more information, see [OneDrive and SharePoint object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#onedrive-and-sharepoint-object).
 
 
    Note
@@ -194,7 +194,7 @@ The [Teams messages capability](https://learn.microsoft.com/en-us/microsoft-365/
    ```
 
 
-   For more information, see [Microsoft Teams messages object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#microsoft-teams-messages-object).
+   For more information, see [Microsoft Teams messages object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#microsoft-teams-messages-object).
 
 
    Note
@@ -224,7 +224,7 @@ The [people capability](https://learn.microsoft.com/en-us/microsoft-365/copilot/
    ```
 
 
-   For more information, see [People object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#people-object).
+   For more information, see [People object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#people-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 
@@ -251,7 +251,7 @@ The [email capability](https://learn.microsoft.com/en-us/microsoft-365/copilot/e
    ```
 
 
-   For more information, see [Email object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#email-object).
+   For more information, see [Email object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#email-object).
 
 
    Note
@@ -281,7 +281,7 @@ The [image generator capability](https://learn.microsoft.com/en-us/microsoft-365
    ```
 
 
-   For more information, see [Graphic art object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#graphic-art-object).
+   For more information, see [Graphic art object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#graphic-art-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 
@@ -304,7 +304,7 @@ The [code interpreter capability](https://learn.microsoft.com/en-us/microsoft-36
    ```
 
 
-   For more information, see [Code interpreter object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#code-interpreter-object).
+   For more information, see [Code interpreter object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#code-interpreter-object).
 
 2. Select **Provision** in the **Lifecycle** pane of Agents Toolkit.
 
@@ -333,7 +333,7 @@ Add items ingested by a Copilot connector to the available knowledge for the age
    ```
 
 
-   For more information, see [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.8#copilot-connectors-object).
+   For more information, see [Copilot connectors object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#copilot-connectors-object).
 
 
    Note

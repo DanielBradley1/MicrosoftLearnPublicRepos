@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enable-users -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/enable-users -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Welcome users, create organizational messages, and enable feedback for Microsoft Copilot
 

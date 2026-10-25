@@ -130,7 +130,7 @@ Learn more about each option in [Approve actions](https://learn.microsoft.com/en
 
 ## Manage your work
 
-Cowork helps you stay organized with built-in project and task management.
+Cowork helps you organize and manage your tasks.
 
 - **Task views**: Display all of your tasks or filtered views based on task status or use the **Automations** tab to manage your scheduled prompts.
 

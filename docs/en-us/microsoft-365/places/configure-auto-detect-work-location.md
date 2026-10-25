@@ -176,7 +176,7 @@ In Windows, go to **Settings** > **Privacy & security** > **Location**, and veri
 
 ![Screenshot shows the Windows Location Settings experience for Teams.](https://learn.microsoft.com/en-us/microsoft-365/places/media/configure-auto-detect-work-location/windows-location-app-settings.png)
 
-In macOS, verify similar settings in the system setting.
+In macOS, select **Apple menu** > **System Settings** > **Privacy & Security** > **Location Services**. Verify that **Location Services** is turned on and that Microsoft Teams is allowed to use your location.
 
 #### Check 3. Has the user enabled the manage my work location setting in Teams?
 
@@ -194,7 +194,7 @@ To enable workplace check-in via Wi-Fi, users must connect to a corporate Wi‑F
 
 **Can workplace check-in be used to monitor employees?** No, because users can manually set or clear their work location at any time, whether they're inside or outside their corporate network. For example, they can mark themselves as in-office or even in a specific building while working from home, or mark themselves as remote while working on‑site. This is by design, as workplace check-in is meant to improve in‑person collaboration and coordination rather than monitor employees.
 
-**Is workplace check-in turned on automatically for employees?** No. Workplace check-in is off by default in every tenant and must be enabled and configured by admins. For Wi-Fi based workplace check-in, admins can choose between "Inform mode" \(users can opt-out\) and "Ask mode" \(users can opt in\). In both cases, users are always informed and can opt in or opt out before any location is shared. Furthermore, users must also grant operating‑system‑level location permission to Microsoft Teams for workplace check-in to work.
+**Is workplace check-in turned on automatically for employees?** No. Workplace check-in is off by default in every tenant and must be enabled and configured by admins. For Wi-Fi based workplace check-in, admins can choose between "Inform mode" \(users can opt-out\) and "Ask mode" \(users can opt in\). In Ask mode, users are informed that workplace check-in is available and must opt in before Wi-Fi-based automatic updates begin. In Inform mode, users are informed that workplace check-in is enabled by default and can opt out. In either mode, users can later change the setting in Teams. Furthermore, users must also grant operating‑system‑level location permission to Microsoft Teams for workplace check-in to work.
 
 **Can employees control or override their work location?** Yes. Employees remain in control by design. Users can manually set, override, or clear their work location at any time, whether they're inside or outside corpnet. Manually setting or clearing the work location overrides workplace check-in and prevents further workplace check-ins from being triggered for the remainder of the day.
 

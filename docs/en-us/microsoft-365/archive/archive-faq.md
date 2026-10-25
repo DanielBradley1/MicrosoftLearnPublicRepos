@@ -16,6 +16,8 @@ File-level archive allows end users to manually archive files. The following pre
 
 File-level archive is currently available only on SharePoint sites. Other limitations, such as certain file types, can prevent users from archiving files. See the full list in the Limitations section of [Overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview?view=o365-worldwide#limitations).
 
+Hiding the manual **Archive** action doesn't prevent automatic policies from archiving eligible files. Manual file archiving and automatic policy archiving are separate controls.
+
 #### How does file-level archive affect my site-level storage?
 
 File-level archive doesn't change site storage usage or quota behavior. Archived files are accounted for in site storage the same way as active files. Archiving a file doesn't reduce reported storage usage, change storage calculations, or affect quota enforcement. Because archived files continue to consume site storage, file-level archive can't be used to reduce storage usage or store data beyond a site's allocated quota.
@@ -35,9 +37,10 @@ When M365 Archive is enabled, you're considered over your allotted quota only if
 
 #### What is the difference between Microsoft 365 Archive and SharePoint Advanced Management?
 
-- Microsoft 365 Archive gives the ability to archive a site in SharePoint.
+- Microsoft 365 Archive provides the storage tier and reactivation experience for archived SharePoint files and sites.
 - Storage for archived sites is metered and charged at a $0.05/GB/month rate vs. the normal standard storage rate of $0.20/GB/month. For more information, see [Pricing model for Microsoft 365 Archive](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-pricing?view=o365-worldwide).
 - The site lifecycle management feature in SharePoint Advanced Management is a separate licensed offering. It helps automate and orchestrate the movement of sites into the archive tier via admin-defined policies, reducing manual operations. In other words, the site lifecycle management in SharePoint Advanced Management operates with Microsoft 365 Archive.
+- SharePoint Advanced Management also provides [inactive files policies \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/archive/manage-inactive-files?view=o365-worldwide) to automatically archive eligible files within sites that remain in use. The current preview is configured through PowerShell.
 
 #### How does Azure Blob compare to Microsoft 365 Archive?
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-license-feature-overview -->
-<!-- Sitemap-Last-Modified: 2026-06-30 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/compare-copilot-e3-e5-e7 -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Compare Microsoft Copilot in Microsoft 365 E3, E5, and E7
 

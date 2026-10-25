@@ -71,6 +71,10 @@ Content-Type: application/json
   "@odata.context": "https://graph.microsoft.com/beta/$metadata#copilot/agentRegistration/$entity",
   "id": "550e8400-e29b-41d4-a716-446655440000",
   "displayName": "Contoso Travel Booking Agent",
+  "a2aAuthorization": {
+    "referenceId": "2f1a9b8c-4d3e-4a7f-9c6b-1e5d8a2f7b30",
+    "type": "oAuthPluginVault"
+  },
   "description": "Helps users search and book flights and hotels",
   "ownerIds": [
     "3fa85f64-5717-4562-b3fc-2c963f66afa6",

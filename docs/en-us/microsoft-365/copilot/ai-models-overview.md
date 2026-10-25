@@ -3,10 +3,6 @@
 
 # Understanding AI functionality and models in Microsoft Online Services
 
-Note
-
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. There are no changes to security, compliance, and privacy for organizations.
-
 Some Microsoft Online Services offer features that use AI models and functionalities to deliver intelligent capabilities \(collectively, AI Functionalities\). AI Functionalities may be operated and provided by Microsoft or by third-parties. Third-party AI providers may offer AI functionalities either as independent data processors with their own direct contractual relationship with Microsoft enterprise customers or as AI Subprocessors. This classification determines how data is processed by that third party and governs the applicable contractual, privacy, and compliance obligations.
 
 AI Functionalities can help people in your organization with tasks such as:

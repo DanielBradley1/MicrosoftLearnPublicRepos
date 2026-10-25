@@ -23,7 +23,7 @@ No parameters are exposed for this command. A browser window opens where you ent
 
 ### Are there any prerequisites to using this command?
 
-No, but make sure you've downloaded and are using the latest version of [Microsoft PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows). You should also make sure you're using the latest version of the Microsoft Places PowerShell module. You can force the install of the latest version using:
+Yes. Use PowerShell 7.4.0 or later. Windows PowerShell isn't supported for managing Microsoft Places. Install or update the MicrosoftPlaces PowerShell module by running:
 
 ```powershell
 Install-Module -Name MicrosoftPlaces -Force

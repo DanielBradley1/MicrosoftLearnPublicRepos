@@ -3,10 +3,6 @@
 
 # Copilot in Microsoft 365 apps with Anthropic models
 
-Note
-
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. There are no changes to security, compliance, and privacy for organizations.
-
 To provide additional flexibility in model choice for customers in the European Union \(EU\), European Free Trade Association \(EFTA\), and United Kingdom \(UK\), Microsoft Copilot includes an admin setting that enables the use of Anthropic models in Copilot experiences across Word, Excel, and PowerPoint.
 
 This setting allows Microsoft Copilot in supported Microsoft 365 apps to use Anthropic models by default when generating or refining content.

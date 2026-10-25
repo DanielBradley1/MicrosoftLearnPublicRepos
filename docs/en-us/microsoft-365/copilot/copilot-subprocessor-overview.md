@@ -3,10 +3,6 @@
 
 # Overview of AI Subprocessors
 
-Note
-
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. There are no changes to security, compliance, and privacy for organizations.
-
 Microsoft Online Services, such as Microsoft 365, Dynamics 365, and Microsoft Azure, may use third-party providers, also known as subprocessors, as defined in the [Microsoft Data Protection Addendum](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA/?msockid=344e0e6ad66c6b3e19441848d7416abd) to help operate, maintain, or support AI functionalities offered in Microsoft cloud services. These AI Subprocessors are contractually required to meet Microsoft's security, privacy, and data protection standards.
 
 This article focuses specifically on AI Subprocessors that provide AI functionalities offered or used within Microsoft Online Services. It explains what these AI Subprocessors are, how Microsoft onboards them, and what it means for your organization. To learn more about the types of AI models used in Microsoft Online Services, see [Understanding AI functionality and models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/ai-models-overview).

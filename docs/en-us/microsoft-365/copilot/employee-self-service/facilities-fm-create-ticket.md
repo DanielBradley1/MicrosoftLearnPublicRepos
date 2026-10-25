@@ -143,29 +143,29 @@ Use the following steps to create an agent flow that the topic can call.
 
 ### Create a topic
 
-- Create a topic named **Create Facilities Management Ticket**.
+1. Create a topic named **Create Facilities Management Ticket**.
 
-  - In Copilot Studio, select **Add a topic > From blank**.
-  - Once inside the topic, select **Open code editor**.
-  - Copy the topic YAML from the sample repository, paste it into the code editor: [topic.yaml](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeCreateFacilitiesManagementTicket/topic.yaml), and close the code editor.
-  - In the topic workflow editor, locate the **Prompt Location** reference. Select the double-arrow button to open **Add a tool**, and then choose the **Extract Location Information prompt** you created earlier.
+   1. In Copilot Studio, select **Add a topic > From blank**.
+   2. Once inside the topic, select **Open code editor**.
+   3. Copy the topic YAML from the sample repository, paste it into the code editor: [topic.yaml](https://github.com/microsoft/CopilotStudioSamples/blob/main/EmployeeSelfServiceAgent/Facilities/EmployeeCreateFacilitiesManagementTicket/topic.yaml), and close the code editor.
+   4. In the topic workflow editor, locate the **Prompt Location** reference. Select the double-arrow button to open **Add a tool**, and then choose the **Extract Location Information prompt** you created earlier.
 
-    ![Screenshot that shows the Copilot Studio topic editor with the \_Add a tool\_ panel open and Extract Location Information selected.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-fm-create-facilities-ticket-topic-add-location-prompt.png)
-  - Repeat the previous step for the problem category prompt and the action \(the flow\).
-  - Resolve any validation errors, and then select **Save**.
+      ![Screenshot that shows the Copilot Studio topic editor with the \_Add a tool\_ panel open and Extract Location Information selected.](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/media/facilities-fm-create-facilities-ticket-topic-add-location-prompt.png)
+   5. Repeat the previous step for the problem category prompt and the action \(the flow\).
+   6. Resolve any validation errors, and then select **Save**.
 
-- Validate
+2. Validate
 
-  - Open the visual representation of the topic and verify the end-to-end flow.
-  - Run **Topic checker** to identify any static issues.
-  - Optionally, follow the next section \(Review the topic workflow\) for a guided walkthrough of what to verify.
+   1. Open the visual representation of the topic and verify the end-to-end flow.
+   2. Run **Topic checker** to identify any static issues.
+   3. Optionally, follow the next section \(Review the topic workflow\) for a guided walkthrough of what to verify.
 
-- Now, let's test the newly added topic
+3. Now, let's test the newly added topic
 
-  - In Copilot Studio, select **Test** to open the test chat.
-  - Enter a sample request such as "There's a water leak in the first-floor bathroom."
-  - Complete any required fields in the ticket form, and then submit.
-  - After submission, the Employee Self-Service agent confirms that the Facilities Management ticket was created.
+   1. In Copilot Studio, select **Test** to open the test chat.
+   2. Enter a sample request such as "There's a water leak in the first-floor bathroom."
+   3. Complete any required fields in the ticket form, and then submit.
+   4. After submission, the Employee Self-Service agent confirms that the Facilities Management ticket was created.
 
 ### Review the topic workflow
 

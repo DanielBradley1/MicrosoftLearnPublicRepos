@@ -7,6 +7,10 @@ This article describes the 1.8 schema used by the declarative agent manifest. Th
 
 Declarative agents are valuable in understanding and generating human-like text, making them versatile for tasks like writing and answering questions. This specification focuses on the declarative agent manifest that acts as a structured framework to specialize and enhance functionalities a specific user needs.
 
+Important
+
+The latest version of the declarative agent manifest schema is [version 1.9](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9). Use the latest schema version for new agents.
+
 ## Changes from previous version
 
 This schema version introduces the following changes from [version 1.7](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.7):

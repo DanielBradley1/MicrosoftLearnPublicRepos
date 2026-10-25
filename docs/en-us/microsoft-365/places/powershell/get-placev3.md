@@ -3,7 +3,7 @@
 
 # Get-PlaceV3
 
-Use the Get-PlaceV3 cmdlet to view metadata configured on conference rooms, workspaces, buildings, floors, sections, or desks within the Places directory.
+Use the Get-PlaceV3 cmdlet to view metadata configured on conference rooms, room lists, workspaces, buildings, floors, sections, or desks within the Places directory.
 
 Note
 
@@ -89,7 +89,7 @@ This parameter can't be used together with the Type parameter.
 
 ### -AncestorId
 
-The AncestorId parameter specifies the guid of place. If the specified place found, it returns all places below this place in the directory hierarchy. For example, if a building's PlaceId is provided as the AncestorId, the command would return all floors, sections, rooms, desk pools \(workspaces\) and desks that are under that building in the directory hierarchy.
+The AncestorId parameter specifies the guid of place. If the specified place is found, it returns all places below this place in the directory hierarchy. For example, if a building's PlaceId is provided as the AncestorId, the command would return all floors, sections, rooms, desk pools \(workspaces\) and desks that are under that building in the directory hierarchy.
 
 | Attribute | Description |
 | :--- | :--- |

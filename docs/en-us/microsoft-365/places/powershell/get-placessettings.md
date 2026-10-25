@@ -7,7 +7,7 @@ You can use Get-PlacesSettings to view all Microsoft Places features settings co
 
 Tip
 
-Make sure to launch PowerShell7 as an administrator and connect to the Microsoft Places using Connect-MicrosoftPlaces.
+Make sure that you're using PowerShell 7.4.0 or later and the latest version of the MicrosoftPlaces PowerShell module. Then connect to Microsoft Places by running Connect-MicrosoftPlaces.
 
 Caution
 
@@ -53,8 +53,8 @@ The ReadFromPrimary parameter dictates that Places feature setting should be ret
 
 #### Are there any prerequisites to using this command?
 
-- Ensure that you're running the latest version of [Microsoft PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows).
-- Ensure that you're running the latest version of the Places PowerShell client. You can force the install of the latest version using:
+- Ensure that you're using PowerShell 7.4.0 or later. Windows PowerShell isn't supported for managing Microsoft Places.
+- Ensure that you have the latest version of the MicrosoftPlaces PowerShell module installed. To install or update the module, run:
 
 ```powershell
 Install-Module -Name MicrosoftPlaces -Force

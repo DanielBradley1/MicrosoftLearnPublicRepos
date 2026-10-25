@@ -17,7 +17,7 @@ Access to the Package Management API requires a [Microsoft Agent 365](https://ww
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `agentIdentityId` | String | The Microsoft Entra Agent ID of the agent. |
+| `agentIdentityId` | String | Identifier of the Microsoft Entra agent identity associated with the Copilot package. Read-only. |
 | `appId` | String | Associated Microsoft Entra AD application registration ID for this package. |
 | `assetId` | String | Identifier used to reference this package in the asset store. |
 | `availableTo` | [packageAllowStatus](#packageallowstatus-enumeration) | Enum value specifying which users or groups within the tenant can access this package \(`allowedForAll`, `allowedForSome`, `allowedForNone`\). |

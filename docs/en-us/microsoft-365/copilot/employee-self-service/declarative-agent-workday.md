@@ -146,7 +146,7 @@ Then point the agent's Workday connection references to your Workday connection:
    - **ESS Workday Runtime REST Execution**
 
 3. For each connection reference, select the Workday connection that you created in Phase 4.
-4. Select **Manage** for each one, and turn on **Allow permission to share parameters**.
+4. For each connection reference, select **See details**, open the **Connection parameters** tab, turn on **Allow permission to share parameters**, and then select **Save**.
 5. Refresh Copilot Studio, go to **Topics**, and confirm that every Workday topic shows **On**.
 
 ### Phase 6: Validate in the test pane

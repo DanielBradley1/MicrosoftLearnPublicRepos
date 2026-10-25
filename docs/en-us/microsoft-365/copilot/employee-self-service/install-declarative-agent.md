@@ -11,7 +11,7 @@ Before you begin:
 
 - Confirm your organization has access to Employee Self-Service agent templates. Availability is rolling out in waves. If you don't see an Employee Self-Service template, contact your Copilot Studio or Power Platform administrator, your Employee Self-Service onboarding contact, or your Microsoft account team.
 - Confirm you can access Copilot Studio and have the required permissions for the intended Power Platform environment.
-
+- Confirm [billing and licensing requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-overview#billing-and-licensing-requirements) for makers and employees before you install the agent.
 - Select the environment where you will install and configure the agent. For environment strategy and access guidance, see [Prepare to deploy the Employee Self-Service agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/prepare).
 - Choose the template that matches the employee experience you plan to configure:
 

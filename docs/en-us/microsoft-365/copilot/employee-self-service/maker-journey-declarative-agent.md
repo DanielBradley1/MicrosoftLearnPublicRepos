@@ -24,7 +24,7 @@ Capabilities and integrations can vary by template version and availability in y
 Coordinate with your Power Platform administrator, Copilot Studio administrator, HR and IT service owners, and security or privacy reviewers before you begin.
 
 - Confirm that you have access to Copilot Studio and the Power Platform environment where you plan to install the agents.
-- Confirm licensing, capacity, and user access requirements for makers and employees. See [Copilot Studio licensing and subscriptions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions).
+- Confirm licensing, capacity, and user access requirements for makers and employees. See [Billing and licensing requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-overview#billing-and-licensing-requirements).
 - Confirm that the required connectors are allowed by your organization's data loss prevention \(DLP\) and governance policies. See [Copilot Studio security and governance](https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance).
 - Identify the knowledge sources and external systems you intend to use, and arrange for their owners to provide access, connection, and authentication details.
 - Define a pilot audience and representative HR and IT scenarios. Include an employee account with the correct permissions for testing user-specific information and actions.
