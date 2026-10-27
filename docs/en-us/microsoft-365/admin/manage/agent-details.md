@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # Understand agent details in Microsoft 365 admin center
 
 You can view and manage agent details for each agent listed in the agent registry within [Microsoft 365 admin center](https://admin.microsoft.com/). When you select an agent from the list, you can view these details in a fly-out pane. The **Details** pane provides information and actions, as well as additional information provided within tabs. Each tab provides capabilities and details specifically for the selected agent. Many of the tabs are standard to all agents, but some tabs are provided based on an agent's capabilities. For example, if an agent is designed to provide information and answers from other agents, the **Connected Agents** tab is provided. In addition to providing information about an agent in the details fly-out pane, you can also select specific actions for the agent, such as **Install**, **Block**, **Uninstall**, and **Pin for users**.
 
-[![Screenshot of the details for a specific agent.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-details-02.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-details-02.png?view=o365-worldwide#lightbox)
+[![Screenshot of the details for a specific agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-details-02.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-details-02.png#lightbox)
 
 ## View agent details
 
@@ -25,7 +25,7 @@ When you select an agent from the **Registry**, the details fly-out pane display
 | **Update in store** | Updates an existing agent in Agent Store based on a provided ZIP packet file. |
 | **Pin for users** | The agent is pinned in the UI \(based on channel\) where the agent was deployed, so that the agent can be found more easily. Based on the users or groups where the agent was deployed, you can specify who has the agent pinned. |
 
-For more information about agent actions, see [Agent actions available in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?view=o365-worldwide).
+For more information about agent actions, see [Agent actions available in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions).
 
 ### Tag an agent
 
@@ -39,7 +39,7 @@ To apply a tag to an agent:
 
 The applied tags appear on the agent's page and in the **Tags** column of the agents list. To find related agents, filter the list by tag. This filter is useful when you want to review all agents owned by one team or all agents that support a particular function.
 
-Admins manage the tags available in your organization from **Agent settings**. If the tag you need isn't available, see [Manage tags](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings?view=o365-worldwide#manage-tags).
+Admins manage the tags available in your organization from **Agent settings**. If the tag you need isn't available, see [Manage tags](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#manage-tags).
 
 ### Tabs provided within agent details
 
@@ -304,7 +304,7 @@ You can find the details of all types of permissions in the **Permissions** tab 
 1. Select a deployed agent from the Agent Registry list in the [Microsoft 365 admin center](https://admin.microsoft.com).
 2. In the agent details pane that opens, select the **Permissions** tab to view all the permissions granted to the agent.
 
-   [![Screenshot of the Permissions tab on the agent details page in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-permissions.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-permissions.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the Permissions tab on the agent details page in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-permissions.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-permissions.png#lightbox)
 
 ## Agent certification
 
@@ -350,7 +350,7 @@ Agent activity metrics in Agent 365 might not match the metrics in the Microsoft
 
 Use the **Activity** tab in Agent 365 to review cross-surface agent usage. Use the Microsoft 365 Copilot Agents usage report to review usage specifically in Microsoft 365 Copilot. Don't compare the metrics directly or expect them to match.
 
-For more information, see [Microsoft 365 Copilot Agents usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new?view=o365-worldwide).
+For more information, see [Microsoft 365 Copilot Agents usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new).
 
 ## Agent instances
 
@@ -367,7 +367,7 @@ The **Instances** tab provides a detailed table of all instances created from th
 
 Selecting a row opens that instance's details. Based on your assigned role, such as **AI Administrator** or **Global Administrator**, you can manage individual instance settings, review security and compliance status, assign or update Microsoft 365 licenses, and take lifecycle actions such as **Block**, **Unblock**, or **Delete** the instance.
 
-For more information about agent instances, see [Manage agent instances in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agent-instances?view=o365-worldwide).
+For more information about agent instances, see [Manage agent instances in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agent-instances).
 
 ## Connected agents
 
@@ -414,7 +414,7 @@ This article explains how to handle embedded files, how you can manage agents an
 
 #### Supported file types and limits
 
-[![Screenshot of the screen to upload a file as a knowledge source for an agent.](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-upload.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-upload.png?view=o365-worldwide#lightbox)
+[![Screenshot of the screen to upload a file as a knowledge source for an agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-upload.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-upload.png#lightbox)
 
 Embedded knowledge agents support uploading files as knowledge sources. Copilot only uses the text content of these files for grounding.
 
@@ -451,7 +451,7 @@ Don't delete these containers. Deleting these containers might break the functio
 
 In the **All agents** page in the Microsoft 365 admin center, you can filter the agent inventory to view only agents that use embedded files as knowledge sources.
 
-[![Screenshot of the agents and connectors page in the Microsoft 365 admin center with the filters highlighted.](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-filter.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-filter.png?view=o365-worldwide#lightbox)
+[![Screenshot of the agents and connectors page in the Microsoft 365 admin center with the filters highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-filter.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-filter.png#lightbox)
 
 For each agent, the following metadata is available:
 
@@ -478,7 +478,7 @@ The service applies sensitivity labels to the embedded content in the agent base
 
 You can view the sensitivity label for each agent in the **Overview** tab of the Microsoft 365 admin center.
 
-[![Screenshot of the overview details of an agent.](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-idea.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-idea.png?view=o365-worldwide#lightbox)
+[![Screenshot of the overview details of an agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-idea.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-idea.png#lightbox)
 
 #### User access and visibility
 
@@ -495,7 +495,7 @@ For **Researcher with Computer Use** onboarding instructions, see the following 
 
 **Researcher with Computer Use** is a powerful extension that builds on the capabilities of the Researcher agent. By using Computer Use, the Researcher agent can securely interact with public, gated, and interactive web content through a virtual computer. By using this method, users can uncover deeper insights, take action, and generate richer reports grounded in both their work data and the web. For more information, see [Use Researcher with Computer use in Microsoft Copilot](https://support.microsoft.com/topic/1f274537-6648-46e8-8264-052a49b92af4).
 
-[![Screenshot of Researcher with Computer Use.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/researcher.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/get-started.png?view=o365-worldwide#lightbox)
+[![Screenshot of Researcher with Computer Use.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/researcher.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/get-started.png#lightbox)
 
 ##### Configure admin settings for Researcher agent with Computer Use
 
@@ -505,7 +505,7 @@ To configure admin settings for **Researcher agent with Computer Use**, follow t
 2. In the left navigation pane, select **Researcher under Agents**, and check if there's another tab for **Computer Use**.
 3. Customize users that have access to **Researcher with Computer Use**.
 
-   [![Screenshot of the Researcher for Computer Use page.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/researcher-step-2.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-idea.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the Researcher for Computer Use page.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/researcher-step-2.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-idea.png#lightbox)
 
    - There are three options for configuring who has access to the experience:
 
@@ -514,19 +514,19 @@ To configure admin settings for **Researcher agent with Computer Use**, follow t
      3. No users in your organization.
 
 
-   [![Screenshot of the Computer Use option.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/researcher-step-3-a.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-idea.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the Computer Use option.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/researcher-step-3-a.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-idea.png#lightbox)
 
 
    - For users that have this option disabled, the **Computer Use** option is grayed out.
 
 
-   [![Screenshot of the Computer Use option greyed out.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/researcher-step-3-b.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-idea.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the Computer Use option greyed out.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/researcher-step-3-b.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-idea.png#lightbox)
 
 4. Configure Work access for **Researcher with Computer Use**:
 
    - The **Work** option lets users turn on **Work** in the **Sources** menu, so the Researcher agent can use a user's work content with Computer Use. For example, emails, chats, and files.
-   - When admins enable this option, users must still manually turn on Work access.  [![Screenshot of the Work option.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/researcher-step-4-a.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-idea.png?view=o365-worldwide#lightbox)
-   - When disabled, the **Work** source appears grayed out and isn't selectable.  [![Screenshot of the Work option greyed out.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/researcher-step-4-b.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/knowledge-agent-idea.png?view=o365-worldwide#lightbox)
+   - When admins enable this option, users must still manually turn on Work access.  [![Screenshot of the Work option.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/researcher-step-4-a.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-idea.png#lightbox)
+   - When disabled, the **Work** source appears grayed out and isn't selectable.  [![Screenshot of the Work option greyed out.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/researcher-step-4-b.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/knowledge-agent-idea.png#lightbox)
 
 5. Select which websites are allowed for **Computer Use**:
 
@@ -546,7 +546,7 @@ To configure admin settings for **Researcher agent with Computer Use**, follow t
 
 #### Agent metadata in the Microsoft 365 admin center
 
-[![Screenshot of the Career Coach for an agent.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/career-coach.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/details.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Career Coach for an agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/career-coach.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/details.png#lightbox)
 
 You can access key metadata for Copilot agents in **Agents** > **All Agents**. When you select an agent, you see the metadata in the **Data & tools** tab.
 

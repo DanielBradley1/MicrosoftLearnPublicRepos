@@ -9,10 +9,10 @@ Use the **Registry** tab to discover and manage tools available in your tenant. 
 
 For more information about managing tools, see the following articles:
 
-- [Manage plugins, skills, and MCP servers](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?view=o365-worldwide).
-- [Manage gateway](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-gateway?view=o365-worldwide).
+- [Manage plugins, skills, and MCP servers](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers).
+- [Manage gateway](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-gateway).
 - [Govern tools with Microsoft Agent 365 and Azure API Management \(preview\)](https://go.microsoft.com/fwlink/?LinkId=2382608).
-- [Bring your own \(BYO\) MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-byo-mcp-server?view=o365-worldwide).
+- [Bring your own \(BYO\) MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-byo-mcp-server).
 
 ## Key concepts
 
@@ -30,7 +30,7 @@ The Tools page brings together several types of tools that agents can use. The f
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
 2. In the left navigation pane, select **Agents** > **Tools** > **Registry**.
 
-   [![Screenshot showing the Tools registry in the Microsoft 365 admin center with tool categories, filters, and column headings.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-tools-registry.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-tools-registry.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Tools registry in the Microsoft 365 admin center with tool categories, filters, and column headings.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-tools-registry.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-tools-registry.png#lightbox)
 
 ## Key components of the Tools page
 
@@ -93,8 +93,8 @@ To view connector usage, follow these steps:
 3. Select **Connectors**.
 4. Review the list of Power Platform connectors used by agents in your organization.
 
-   [![Screenshot showing the Power Platform connectors filtered view in the agent tools registry.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-connectors.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-connectors.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Power Platform connectors filtered view in the agent tools registry.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-connectors.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-connectors.png#lightbox)
 5. Select a connector to view the agents that use it. The connector's overview page shows the agents associated with the selected connector, making it easier to understand how the connector is used across your organization.
 6. To manage the connector's policy, select **View in Power Platform** on the connector's overview page. In the Power Platform admin center, you can block, allow, and govern the connector's use. For more information, see [Advanced connector policies](https://learn.microsoft.com/en-us/power-platform/admin/advanced-connector-policies).
 
-   [![Screenshot showing a connector's overview page with the list of agents that use the connector and the View in Power Platform link.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/connector-overview-agents.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/connector-overview-agents.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing a connector's overview page with the list of agents that use the connector and the View in Power Platform link.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/connector-overview-agents.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/connector-overview-agents.png#lightbox)

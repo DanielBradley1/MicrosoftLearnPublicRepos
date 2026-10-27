@@ -36,7 +36,7 @@ Workflows agent respects tenant-level settings configured in the Microsoft 365 a
 - Whether analytics and telemetry are collected
 - Which Copilot features are available to users
 
-Learn more about managing Copilot agents and tenant settings in [Manage Copilot Agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps?view=o365-worldwide&preserve-view=true).
+Learn more about managing Copilot agents and tenant settings in [Manage Copilot Agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 
 ## What connectors are supported?
 

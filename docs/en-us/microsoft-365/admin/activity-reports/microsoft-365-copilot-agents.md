@@ -30,7 +30,7 @@ For information about the roles needed to view usage reports, see "Before you be
 
 ## Interpret the Microsoft Copilot Agents report
 
-Use the Microsoft Copilot Agents report to see the usage of Copilot agents in your organization that your organization built. The report includes agents that an admin approves and agents that users create through agent builder and share with users in your organization. Admins can manage agents the same way they manage any other app in the Integrated apps section of the Microsoft 365 admin center. For more information, see [Manage Copilot agents in Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+Use the Microsoft Copilot Agents report to see the usage of Copilot agents in your organization that your organization built. The report includes agents that an admin approves and agents that users create through agent builder and share with users in your organization. Admins can manage agents the same way they manage any other app in the Integrated apps section of the Microsoft 365 admin center. For more information, see [Manage Copilot agents in Integrated Apps](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 
 At the top of the report, you can filter by different periods. You can view the Microsoft Copilot agent report over the last 7, 30, 90, or 180 days:
 
@@ -40,7 +40,7 @@ Copilot agent data in Copilot Chat \(work\) and Copilot in Word and PowerPoint i
 
 [![Screenshot showing the active agents metrics for Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/media/agents-hero-metrics.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents-hero-metrics.png?view=o365-worldwide#lightbox)
 
-**Active agents** shows the distinct number of apps with a declarative agent element in that app with at least one active user over the selected time period. For more information, see [Declarative agents FAQ](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps). As defined earlier in this article, only agents that your organization created, including both admin approved and shared by users in your organization, are included.
+**Active agents** shows the distinct number of apps with a declarative agent element in that app with at least one active user over the selected time period. For more information, see [Declarative agents FAQ](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps). As defined earlier in this article, only agents that your organization created, including both admin approved and shared by users in your organization, are included.
 
 An active user of an agent is a user who asks an agent a question and receives a response. Users interact with agents in the following ways:
 
@@ -51,7 +51,7 @@ In **Recommendations**, the recommended action card suggests that admins visit t
 
 [![Screenshot showing the recommendation card for the Microsoft Copilot usage report.](https://learn.microsoft.com/en-us/microsoft-365/media/agents-recommendation.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents-recommendation.png?view=o365-worldwide#lightbox)
 
-To learn more about managing and enabling agents in your organization, see [Manage Copilot agents in Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+To learn more about managing and enabling agents in your organization, see [Manage Copilot agents in Integrated Apps](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 
 You can see the following summary charts in this report as the default view:
 

@@ -71,7 +71,7 @@ Use the Microsoft 365 admin center to review the submitted agent and control who
 6. Apply the required policy template, review permissions, and grant admin consent only when appropriate.
 7. Review the selection and select **Publish**.
 
-Your tenant might still expose agent management under **Settings** > **Integrated apps**. Use the approval and audience controls available in your tenant. See [Agent requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests) and [Manage agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+Your tenant might still expose agent management under **Settings** > **Integrated apps**. Use the approval and audience controls available in your tenant. See [Agent requests](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests) and [Manage agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 
 Approval and audience assignment determine who can discover and use the agent. Knowledge-source and external-system permissions still apply; catalog approval doesn't grant access to restricted data.
 
@@ -101,11 +101,11 @@ Resolve failed checks before expanding access. For configuration defects, return
 
 ## Manage declarative agent availability
 
-Use the Microsoft 365 admin center's agent management controls to manage the approved audience, preinstallation, and access policies. Expand the audience only after the pilot meets your release criteria. See [Agent registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry).
+Use the Microsoft 365 admin center's agent management controls to manage the approved audience, preinstallation, and access policies. Expand the audience only after the pilot meets your release criteria. See [Agent registry](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview).
 
 If you need to stop employee access, use the available administrative controls to block the agent or restrict its audience. Coordinate changes for the Hub and connected agents so employees don't encounter unavailable dependencies.
 
-For subsequent releases, make and publish changes in Dev, validate in Test, and promote the approved version unchanged to Prod. After rollout, review employee feedback and operational issues with your service owners.
+For subsequent releases, make and publish changes in Dev, validate in Test, and promote the approved version unchanged to Prod. After rollout, [review usage and employee feedback in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback), and review operational issues with your service owners.
 
 ## Related content
 

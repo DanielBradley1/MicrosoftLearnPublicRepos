@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-copilot-onboarding -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/roll-out-copilot-onboarding -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Roll out Microsoft Copilot onboarding \(Frontier\)
 

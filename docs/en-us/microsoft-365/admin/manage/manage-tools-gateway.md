@@ -50,7 +50,7 @@ Discovery starts automatically after consent is granted and typically completes 
 
 Note
 
-Tool-level granular control is supported for MCP servers registered in an AI Gateway tier in Azure API Management service. You can block or allow individual tools within a server instead of the entire server. For more information, see [Manage individual tools within an MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?view=o365-worldwide#manage-individual-tools-within-an-mcp-server).
+Tool-level granular control is supported for MCP servers registered in an AI Gateway tier in Azure API Management service. You can block or allow individual tools within a server instead of the entire server. For more information, see [Manage individual tools within an MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers#manage-individual-tools-within-an-mcp-server).
 
 New MCP servers registered in the connected gateway are discovered automatically during subsequent refreshes.
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-overview -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Microsoft Copilot pay-as-you-go service overview
 

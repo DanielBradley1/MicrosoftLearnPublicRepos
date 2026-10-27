@@ -2251,7 +2251,7 @@ Updates released between July 01, 2026, and July 15, 2026.
 
 
   - [Submit agents from Agent Builder to your org catalog](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog)
-  - [Manage agent requests in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests)
+  - [Manage agent requests in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests)
 
 ### Microsoft 365 Copilot
 
@@ -6103,7 +6103,7 @@ Updates released between January 13, 2025, and January 27, 2026.
   **Learn:**
 
 
-  [Manage Connected Agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-connected-agents)
+  [Manage Connected Agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-connected-agents)
 
 
   [Connect to other agents from a declarative agent](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-connected-agent)
@@ -7659,7 +7659,7 @@ Updates released between July 01, 2026, and July 15, 2026.
 
 
   - [/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog)
-  - [/microsoft-365/admin/manage/agent-requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests)
+  - [/microsoft-365/admin/manage/agent-requests](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests)
 
 ### Microsoft 365 Copilot
 
@@ -9071,7 +9071,7 @@ Updates released between January 13, 2025, and January 27, 2026.
   **Learn:**
 
 
-  [Manage Connected Agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-connected-agents)
+  [Manage Connected Agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-connected-agents)
 
 
   [Connect to other agents from a declarative agent](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-connected-agent)
@@ -11095,7 +11095,7 @@ Updates released between July 01, 2026, and July 15, 2026.
 
 
   - [/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog)
-  - [/microsoft-365/admin/manage/agent-requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests)
+  - [/microsoft-365/admin/manage/agent-requests](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests)
 
 ### Microsoft 365 Copilot
 
@@ -14534,7 +14534,7 @@ Updates released between January 13, 2025, and January 27, 2026.
   **Learn:**
 
 
-  [Manage Connected Agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-connected-agents)
+  [Manage Connected Agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-connected-agents)
 
 
   [Connect to other agents from a declarative agent](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-connected-agent)

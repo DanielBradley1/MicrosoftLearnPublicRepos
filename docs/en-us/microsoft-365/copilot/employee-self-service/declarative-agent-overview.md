@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Introduction to Employee Self-Service Declarative Agents
 
@@ -97,6 +97,7 @@ Use the following resources as you begin configuring and validating Employee Sel
 - **Configure Workday:** Follow the [Workday integration guide](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday) to integrate Workday with the Employee Self-Service declarative agent.
 - **Configure ServiceNow:** Follow the [ServiceNow knowledge setup](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-servicenow-knowledge) and [ServiceNow HR and IT integration guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-servicenow-hr-it) for supported ServiceNow scenarios.
 - **Evaluate response quality:** Use the [Employee Self-Service declarative agent evaluation guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-evaluations) to build and run tests before moving into production pilot.
+- **Monitor usage and feedback:** [Review usage and employee feedback in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback) after you publish your agent.
 
 ## Customization, scalability, and extensibility
 

@@ -3,7 +3,7 @@
 
 # Manage plugins, skills, and MCP servers
 
-Plugins are packaged integrations that extend agents with reusable capabilities, including skills, Model Context Protocol \(MCP\) servers, and connectors. Skills provide reusable instructions or workflows that help agents perform tasks consistently. For definitions of these and other tool types, see [Key concepts](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-tools-overview?view=o365-worldwide#key-concepts) in the Agent Tools overview.
+Plugins are packaged integrations that extend agents with reusable capabilities, including skills, Model Context Protocol \(MCP\) servers, and connectors. Skills provide reusable instructions or workflows that help agents perform tasks consistently. For definitions of these and other tool types, see [Key concepts](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-tools-overview#key-concepts) in the Agent Tools overview.
 
 This article explains how to upload, install, uninstall, and delete plugins and skills; manage plugin availability; review access requests; and govern MCP servers in the [Microsoft 365 admin center](https://admin.microsoft.com/).
 
@@ -66,18 +66,18 @@ To upload a plugin or skill, follow these steps:
 1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
 2. Select **Agents** > **Tools** > **Registry**.
 
-   [![Screenshot showing the Tools registry in the Microsoft 365 admin center with tool categories, filters, and the Upload button.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-list.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-list.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Tools registry in the Microsoft 365 admin center with tool categories, filters, and the Upload button.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-list.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-registry-list.png#lightbox)
 3. Select **Upload**.
 4. Upload the manifest file for the plugin or skill.
 
-   [![Screenshot showing the Upload manifest file step of the tool upload wizard with the Choose file button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-upload-manifest.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-upload-manifest.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Upload manifest file step of the tool upload wizard with the Choose file button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-upload-manifest.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-upload-manifest.png#lightbox)
 5. After the manifest uploads, review the components included in the package, such as MCP servers and skills, and then select **Next**.
 6. In the **Scope users** pane, choose who can use the plugin or skill by selecting either **All users** or **Specific users or groups**.
 
-   [![Screenshot showing the Select users step of the plugin install wizard with the All users option and Next button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-select-users.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-select-users.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Select users step of the plugin install wizard with the All users option and Next button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-select-users.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-select-users.png#lightbox)
 7. Review the configuration, and then select **Install**.
 
-   [![Screenshot showing the Review &amp; install pane of the plugin install wizard with the Install button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-review.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-review.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Review &amp; install pane of the plugin install wizard with the Install button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-review.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-install-review.png#lightbox)
 
 ## Manage plugins and skills
 
@@ -106,7 +106,7 @@ To install a plugin or skill so that it's available, follow these steps:
 2. Select **Agents** > **Tools**.
 3. From the list, select the plugin or skill that you want to install, and then select **Install**.
 
-   [![Screenshot showing a plugin's Overview pane in the Microsoft 365 admin center with the Install button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-pane.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-pane.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing a plugin's Overview pane in the Microsoft 365 admin center with the Install button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-pane.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-pane.png#lightbox)
 4. In the installation pane, review the details for the plugin or skill.
 5. Choose who can use the plugin or skill by selecting **All users** or **Specific users or groups**.
 6. Select **Next**, review the installation details, and then select **Install**.
@@ -121,10 +121,10 @@ To uninstall a plugin or skill so that it's unavailable, follow these steps:
 2. Select **Agents** > **Tools**.
 3. From the list, select the plugin or skill that you want to uninstall, and then select **Uninstall**.
 
-   [![Screenshot showing an installed plugin's Overview pane in the Microsoft 365 admin center with the Uninstall button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-installed.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-installed.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing an installed plugin's Overview pane in the Microsoft 365 admin center with the Uninstall button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-installed.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-overview-installed.png#lightbox)
 4. Select **Uninstall** to confirm.
 
-   [![Screenshot showing the confirmation dialog for uninstalling a plugin with the Uninstall button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-uninstall-confirm.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-uninstall-confirm.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the confirmation dialog for uninstalling a plugin with the Uninstall button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-uninstall-confirm.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/plugin-uninstall-confirm.png#lightbox)
 
 ### Delete a plugin or skill
 
@@ -156,7 +156,7 @@ Blocking a plugin prevents users from accessing the plugin and any agents that d
 
 After a developer registers a tool, such as a remote MCP server, the tool appears in the Microsoft 365 admin center for review and approval.
 
-[![Screenshot showing the Requests \(preview\) tab listing pending tool requests in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-requests-tab.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-requests-tab.png?view=o365-worldwide#lightbox)
+[![Screenshot showing the Requests \(preview\) tab listing pending tool requests in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-requests-tab.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/tools-requests-tab.png#lightbox)
 
 With the required permissions, you can review, approve, or reject requests to control which tools are available in your organization.
 
@@ -205,7 +205,7 @@ To block or allow an entire MCP server, follow these steps:
 2. Select **Agents** > **Tools**, and then select the **Registry** tab.
 3. Select an MCP server from the list to open its overview pane.
 
-   [![Screenshot showing an MCP server's Overview pane in the Microsoft 365 admin center with the Block button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-server-overview.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-server-overview.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing an MCP server's Overview pane in the Microsoft 365 admin center with the Block button highlighted.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-server-overview.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-server-overview.png#lightbox)
 4. Select **Block** to restrict the server across your organization, or **Unblock** to restore access to a previously blocked server.
 
 Blocking an MCP server disables all the tools it exposes. If one or more plugins use the MCP server, you can also block those plugins. To control individual tools instead of the entire server, use tool-level granular control.
@@ -227,15 +227,15 @@ To manage individual tools within an MCP server, follow these steps:
 3. Select an MCP server from the list to open its overview pane.
 4. Select the **Tools** tab. The list shows every tool the server exposes, along with its description and an **Enabled** or **Disabled** toggle.
 
-   [![Screenshot showing the Tools tab of an MCP server with a list of tools and their Enabled/Disabled toggles.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-tab.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-tab.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Tools tab of an MCP server with a list of tools and their Enabled/Disabled toggles.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-tab.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-tab.png#lightbox)
 5. Turn individual tools on or off as needed.
 6. Select **Save** to apply your changes, or **Discard changes** to cancel.
 
-   [![Screenshot showing the Tools tab with Save and Discard changes buttons highlighted after toggling a tool.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-save.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-save.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the Tools tab with Save and Discard changes buttons highlighted after toggling a tool.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-save.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/mcp-tools-save.png#lightbox)
 
 The policy you set for each tool applies wherever the tool is used and is enforced at runtime by the Agent 365 Tooling Gateway.
 
-For information about registering, evaluating, and monitoring your own remote MCP servers, see [Bring your own \(BYO\) MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-byo-mcp-server?view=o365-worldwide). For information about connecting an Azure AI Gateway or Azure API Management instance so its registered MCP servers are automatically discovered, see [Manage Tools Gateway](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-gateway?view=o365-worldwide).
+For information about registering, evaluating, and monitoring your own remote MCP servers, see [Bring your own \(BYO\) MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-byo-mcp-server). For information about connecting an Azure AI Gateway or Azure API Management instance so its registered MCP servers are automatically discovered, see [Manage Tools Gateway](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-gateway).
 
 ## Frequently asked questions
 

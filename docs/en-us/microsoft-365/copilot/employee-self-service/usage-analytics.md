@@ -5,6 +5,8 @@
 
 Monitoring the usage analytics of the Employee Self-Service agent should be part of the operational governance so that the agent's health and quality can be optimized continuously for end-users.
 
+For Employee Self-Service declarative agents, see [Monitor your Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback) for the available usage charts, CSV export, and employee feedback sharing settings.
+
 There are two approaches in consuming analytics:
 
 1. Service owners or makers systematically monitoring agent usage, effectiveness, quality, and satisfaction. [Learn more](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-overview) about Copilot Studio analytics documentation.

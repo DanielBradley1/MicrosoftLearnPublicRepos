@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/optimize-copilot-configuration-settings -->
-<!-- Sitemap-Last-Modified: 2026-10-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Optimize Microsoft Copilot configuration settings
 
@@ -203,7 +203,7 @@ Consider the following areas:
 
 Apply your organization's security, compliance, governance, and deployment requirements when determining agent access.
 
-For more information, see [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+For more information, see [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 
 ## Keep your configuration current
 

@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/management-controls -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/copilot-controls-management -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Copilot controls for management
 
@@ -69,7 +69,7 @@ Copilot controls provide visibility into the status, governance, and lifecycle o
 
 For more information on managing agents, see the following articles:
 
-- [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps)
+- [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
 - [Track, manage, and scale Copilot adoption in the Power Platform](https://learn.microsoft.com/en-us/power-platform/admin/copilot/copilot-hub)
 
 ## Customization
@@ -83,5 +83,5 @@ Beyond the management controls already discussed in this article, use the **Copi
 ## Related content
 
 - [Manage Microsoft Copilot scenarios in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page)
-- [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps)
+- [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
 - [Copilot controls - Microsoft Adoption](https://adoption.microsoft.com/copilot/control-system/)

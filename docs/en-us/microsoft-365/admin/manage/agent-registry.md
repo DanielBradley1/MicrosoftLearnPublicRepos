@@ -10,7 +10,7 @@ The agent registry in [Microsoft 365 admin center](https://admin.microsoft.com/)
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
 2. In the left navigation pane, select **Agents** > **All Agents** > **Registry**.
 
-   [![Screenshot of a list of available agents for a tenant.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-registry.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-registry.png?view=o365-worldwide#lightbox)
+   [![Screenshot of a list of available agents for a tenant.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-registry.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-registry.png#lightbox)
 
 ## Agent types
 
@@ -96,9 +96,9 @@ Shared agents can become ownerless when you delete the user who created them fro
 
 To help administrators manage these scenarios, the Microsoft 365 admin center enables you to identify and manage ownerless shared agents. The dashboard displays the total count of such agents, a one-click filter to quickly isolate them, and real-time updates that reflect user deletions. When administrators use these features, they can efficiently review and address ownership gaps by blocking or deleting affected agents.
 
-[![Screenshot of the ownerless agents view.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-without-owners.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-without-owners.png?view=o365-worldwide#lightbox)
+[![Screenshot of the ownerless agents view.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-without-owners.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-without-owners.png#lightbox)
 
-When you select the **Agents without owners** card, the agent list will be filtered to show the agents based on **Publisher type** and **Owner**. You can review the list of agents without owners and take appropriate actions for each agent, such as [blocking](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?view=o365-worldwide#block-or-unblock-agents) or [deleting](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?view=o365-worldwide#delete-agents) the agent.
+When you select the **Agents without owners** card, the agent list will be filtered to show the agents based on **Publisher type** and **Owner**. You can review the list of agents without owners and take appropriate actions for each agent, such as [blocking](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions#block-or-unblock-agents) or [deleting](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions#delete-agents) the agent.
 
 ### Key features
 
@@ -118,7 +118,7 @@ Security platforms detect risk signals when an agent's activities conflict with 
 
 ### Prerequisites for viewing risk signals
 
-- Your tenant must have an E7 or A365 license. To view your subscriptions in the Microsoft 365 admin center, select **Billing** > **Licenses** > **Subscriptions**. For more information, see [Licensing for agent management](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-365-overview?view=o365-worldwide#licensing-for-agent-management).
+- Your tenant must have an E7 or A365 license. To view your subscriptions in the Microsoft 365 admin center, select **Billing** > **Licenses** > **Subscriptions**. For more information, see [Licensing for agent management](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-365-overview#licensing-for-agent-management).
 
 ### The Risks column and risk details
 
@@ -131,9 +131,9 @@ The **Risks** column on the **All agents** page shows the aggregated count of ri
 - Risk signals are sourced from: Displays the Microsoft security platforms contributing risk signals for the agent, such as Microsoft Purview, Microsoft Entra, and Microsoft Defender. Only platforms with contributing signals are shown. Each platform name is a deep link to the respective portal for further investigation, subject to the user’s roles and permissions.
 - When an agent has multiple instances, risk signals are grouped by instance, allowing you to drill down into the aggregated signals for the selected agent instance.
 
-[![Screenshot of the All agents page showing the Risks column with aggregated risk signal counts for each agent.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/all-agents-registry-risks-column.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/all-agents-registry-risks-column.png?view=o365-worldwide#lightbox)
+[![Screenshot of the All agents page showing the Risks column with aggregated risk signal counts for each agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/all-agents-registry-risks-column.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/all-agents-registry-risks-column.png#lightbox)
 
-[![Screenshot of the Risk details pane showing source links and risk signals grouped into expandable High, Medium, and Low severity sections.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-risk-details-pane.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-risk-details-pane.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Risk details pane showing source links and risk signals grouped into expandable High, Medium, and Low severity sections.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-risk-details-pane.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-risk-details-pane.png#lightbox)
 
 Important
 
@@ -151,13 +151,13 @@ The risk signal counts in the Microsoft 365 admin center might be up to an hour 
 
 The **Agents at risk** tile on the All agents page displays the total number of agents in the tenant that have one or more risk signals. Selecting the tile opens a prefiltered view showing only agents with detected risk signals, so you can prioritize investigation and remediation.
 
-[![Screenshot of the Agents at risk tile on the All agents page showing the total count of agents with risk signals.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-settings-1.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-settings-1.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Agents at risk tile on the All agents page showing the total count of agents with risk signals.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-settings-1.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-settings-1.png#lightbox)
 
 ### Agents at risk card on the Overview page
 
 The **Agents at risk** card on the Microsoft 365 admin center **Overview** page lists the three agents with the highest aggregated risk counts across Microsoft security platforms and connected third-party platforms.
 
-[![Screenshot of the Agents at risk card on the Microsoft 365 admin center Overview page listing the top three most at-risk agents.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent365-overview-agents-at-risk-card.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent365-overview-agents-at-risk-card.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Agents at risk card on the Microsoft 365 admin center Overview page listing the top three most at-risk agents.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent365-overview-agents-at-risk-card.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent365-overview-agents-at-risk-card.png#lightbox)
 
 Select **View agents** to open **All agents** > **Registry**, where the list is filtered and sorted by risk level so that you can prioritize investigation and remediation.
 
@@ -167,7 +167,7 @@ The agent **Registry** within Microsoft 365 admin center provides a method to up
 
 Note
 
-You can also update an existing agent in Agent Store. For more information, see [View agent details](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details?view=o365-worldwide#view-agent-details).
+You can also update an existing agent in Agent Store. For more information, see [View agent details](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details#view-agent-details).
 
 To upload an agent, the agent must be contained in a ZIP packet file. The ZIP file contains resources, such as manifest files, configuration files, icons, branding, and embedded knowledge files.
 
@@ -186,15 +186,15 @@ To upload an agent as a ZIP packet file to the Microsoft 365 admin center:
 3. Verify the agent's name, icon, and host products.
 4. Under **Publish**, select the users or groups who can install the agent.
 
-   [![Screenshot of Publish to users during agent ZIP upload in Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-upload-01.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-upload-01.png?view=o365-worldwide#lightbox)
+   [![Screenshot of Publish to users during agent ZIP upload in Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-upload-01.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-upload-01.png#lightbox)
 5. Under **Deploy** \(optional\), select the users or groups who will have the agent preinstalled. Then, select **Next**.
 
    Note
 
    You can select a small audience for testing purposes. For instance, select **Just me**, or a single test group to narrow the availability of the agent.
-6. Choose to apply either an existing policy template, a custom policy, or the default policy. For more existing policy template information, see [Security templates](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#security-templates). Agent 365 users can apply selected custom policies and protections. Default policies and protections are managed through their security platform. Check the status of each in the platform. Note policies and protections might not be enabled. Then, select **Next**.
+6. Choose to apply either an existing policy template, a custom policy, or the default policy. For more existing policy template information, see [Security templates](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#policy-templates). Agent 365 users can apply selected custom policies and protections. Default policies and protections are managed through their security platform. Check the status of each in the platform. Note policies and protections might not be enabled. Then, select **Next**.
 
-   [![Screenshot of 'Apply Security Template' during agent ZIP upload in Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-upload-02.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-upload-02.png?view=o365-worldwide#lightbox)
+   [![Screenshot of 'Apply Security Template' during agent ZIP upload in Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-upload-02.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-upload-02.png#lightbox)
 7. Review agent permissions. Then, select **Next**.
 8. Review and finished. Select **Finish deployment**.
 
@@ -234,7 +234,7 @@ To pin agents so that each agent is more visible and accessible to members of yo
 
 ### Pinned agents
 
-[![Screenshot of agents within Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/m365-agents-admin-guide/agent-pinned.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/m365-agents-admin-guide/agent-pinned.png#lightbox)
+[![Screenshot of agents within Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agent-pinned.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agent-pinned.png#lightbox)
 
 ### Microsoft-pinned agents
 
@@ -284,7 +284,7 @@ You can select to pin agents using the following steps:
 3. Select **Pin agent** to pin a new agent.
 4. In the **Select an agent to pin** pane, find the agent you want to pin from the list of agents. You can search the list to find a specific agent by name. You can only pin agents that are deployed to some or all users.
 
-   [![Screenshot of the agent selection list in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/select-an-agent.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/select-an-agent.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the agent selection list in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/select-an-agent.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/select-an-agent.png#lightbox)
 5. When you find the desired agent, select it and then select **Next**.
 6. In the **Choose who will have this agent pinned** pane, choose the scope for the agent that you want to pin.
 
@@ -296,25 +296,25 @@ You can select to pin agents using the following steps:
    - **Specific users or groups the agent is deployed to** - Pin for one or more groups or individual accounts.
 
 
-   [![Screenshot of the scope selection pane for pinning agents in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/scope-agent.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/scope-agent.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the scope selection pane for pinning agents in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/scope-agent.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/scope-agent.png#lightbox)
 
 7. If you select **Specific users or groups the agent is deployed to**, select the specific users or groups to pin the agent.
 
-   [![Screenshot of the user and group selection list for pinning an agent.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/choose-specific-users-groups.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/choose-specific-users-groups.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the user and group selection list for pinning an agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/choose-specific-users-groups.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/choose-specific-users-groups.png#lightbox)
 8. Select **Save**.
 9. After you save the configuration, the system records which agent is pinned for the selected audience.
 
-   [![Screenshot of the pinned agents list in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/pinned-agents.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/pinned-agents.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the pinned agents list in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/pinned-agents.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/pinned-agents.png#lightbox)
 
 ### Agents that can be pinned
 
 You can only pin deployed agents. If the agent isn't deployed, you see a banner with a message to first deploy the agent.
 
-[![Screenshot of the message that asks you to deploy the agent first.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/deploy-agents.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/deploy-agents.png?view=o365-worldwide#lightbox)
+[![Screenshot of the message that asks you to deploy the agent first.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/deploy-agents.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/deploy-agents.png#lightbox)
 
 If the agent is blocked, unblock the agent before you pin it.
 
-[![Screenshot of the message that asks you to unblock the agent first.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/unblock-agent.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/unblock-agent.png?view=o365-worldwide#lightbox)
+[![Screenshot of the message that asks you to unblock the agent first.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/unblock-agent.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/unblock-agent.png#lightbox)
 
 ### Rank the list of pinned agents
 
@@ -329,19 +329,19 @@ From the list of pinned agents, find the agent that you want to unpin and select
 
 Select the agent and choose **Edit users** to modify the scope of users for which an agent is pinned.
 
-[![Screenshot of the Edit users option for pinning agents in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/edit-user.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/edit-user.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Edit users option for pinning agents in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/edit-user.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/edit-user.png#lightbox)
 
 ### Alternate entry point for pinning
 
 You can also pin an agent from the agent details pane. Select the pin for the user icon. The icon is only enabled if the agent is deployed.
 
-[![Screenshot of the agent details pane in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-details.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-details.png?view=o365-worldwide#lightbox)
+[![Screenshot of the agent details pane in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-details.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-details.png#lightbox)
 
 ## Customize view
 
 The agent list provided on the **All agents** page can be customized. You can choose which columns to display.
 
-[![Screenshot of the Customize view pane in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-customize-view.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-customize-view.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Customize view pane in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-customize-view.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-customize-view.png#lightbox)
 
 ## Microsoft Graph API for Agent Registry and Agent Details \(preview\)
 

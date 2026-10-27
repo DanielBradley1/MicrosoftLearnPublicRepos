@@ -69,14 +69,14 @@ The tenant switcher is a key benefit for partners and enterprise administrators.
 
 1. In the Microsoft 365 admin center command bar, select the tenant switcher next to the current tenant name.
 
-   [![Screenshot that shows Tenant switcher control next to the current tenant name in the Microsoft 365 admin center command bar.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-04.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-04.png?view=o365-worldwide#lightbox)
+   [![Screenshot that shows Tenant switcher control next to the current tenant name in the Microsoft 365 admin center command bar.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-04.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-04.png#lightbox)
 2. Search for or select the governed tenant that you want to administer.
 3. The Microsoft 365 admin center opens in the selected governed tenant by using your delegated access.
 4. Use the tenant switcher again to return to the governing tenant or move to another governed tenant.
 
 Use the tenant switcher when you need to work in one governed tenant. To return to the consolidated experience, use the tenant switcher to return to the governing tenant, and then select **All tenants**.
 
-[![Screenshot that shows Tenant switcher showing available governed tenants to move into or return to the governing tenant.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-01.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-01.png?view=o365-worldwide#lightbox)
+[![Screenshot that shows Tenant switcher showing available governed tenants to move into or return to the governing tenant.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-01.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-01.png#lightbox)
 
 ## Multi-tenant agent experience
 
@@ -87,7 +87,7 @@ The multi-tenant agent experience opens the consolidated agent inventory from th
 
 The **All tenants** scope is only available when the governing tenant has at least one supported tenant relationship and the signed-in administrator has a supported delegated role.
 
-[![Screenshot that shows consolidated multi-tenant Agents page opened from the All tenants scope in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-05.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-05.png?view=o365-worldwide#lightbox)
+[![Screenshot that shows consolidated multi-tenant Agents page opened from the All tenants scope in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-05.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-05.png#lightbox)
 
 ## View agents across tenants
 
@@ -110,7 +110,7 @@ After reviewing the consolidated listing, an authorized administrator can add a 
 3. Review the agent details and any permissions presented in the workflow.
 4. Complete the workflow, and then confirm that the agent appears in the **Agents** listing.
 
-[![Screenshot showing the 'Select tenants' pane.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-02.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-02.png?view=o365-worldwide#lightbox)
+[![Screenshot showing the 'Select tenants' pane.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-02.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-02.png#lightbox)
 
 ## Review agent details
 
@@ -120,7 +120,7 @@ Agent status is tenant-specific. A single agent can have different availability,
 2. In the details pane, select a governed tenant from the tenant list.
 3. Review the available tabs for that tenant instance, such as **Overview**, **Data & tools**, **Security & compliance**, **Permissions**, and **Activity**.
 
-[![Screenshot showing agent details across tenants.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-03.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-multi-tenant-03.png?view=o365-worldwide#lightbox)
+[![Screenshot showing agent details across tenants.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-03.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-multi-tenant-03.png#lightbox)
 
 ## Take action for a specific tenant in agent details
 

@@ -15,7 +15,7 @@ For example, you can ask Cowork to:
 - Escalate the service issue for an unresolved case
 - Update the contract record to the contract
 
-You stay in control. Cowork respects the role-based access and permissions already set by your organization, so it only shows information and offers actions that you are authorized to use. Some experiences might vary based on your organization’s apps, licenses, policies, and available services.
+You stay in control. Cowork respects the role-based access and permissions already set by your organization, so it only shows information and offers actions that you are authorized to use. Some experiences might vary based on your organization's apps, licenses, policies, and available services.
 
 Important
 

@@ -942,7 +942,7 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Learn:**
 
 
-  [Export to Excel](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry#export-to-excel)
+  [Export to Excel](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview#export-to-excel-for-users-and-agents)
 
 - **Support Message Extensions as Declarative Agents on Mobile** \[Android, iOS\]
 
@@ -1010,7 +1010,7 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Learn:**
 
 
-  [Agent Registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
+  [Agent Registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)
 
 ### Microsoft 365 Copilot Studio
 
@@ -1044,13 +1044,13 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Learn:**
 
 
-  [Sharing](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#sharing)
+  [Sharing](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-settings#sharing)
 
 
   **Demo:**
 
 
-  [Admin control for org-wide agent sharing links](https://microsoft-my.sharepoint-df.com/personal/sophieroy_microsoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fsophieroy%5Fmicrosoft%5Fcom%2FDocuments%2FRecordings%2FDemo%20Admin%20control%20for%20org%2Dwide%20agent%20sharing%20links%2D20250926%5F155245%2DMeeting%20Recording%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ea632fb0d%2D5e4c%2D4501%2D92a6%2D1c16c4381542&ct=1764029038871&or=Teams%2DHL&ga=1&gaS=47&isDarkMode=true)
+  Admin control for org-wide agent sharing links
 
 
   **Blogs:**
@@ -1817,7 +1817,7 @@ Updates released between July 22, 2025, and August 5, 2025.
 - **Admin pre-approval for trusted declarative agents** \[Web\]
 
   Admins can now pre-approve specific agents so their actions are always allowed without extra confirmation. This reduces interruptions and helps ensure a smooth workflow in integrated apps.  
-  [Learn more.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps)
+  [Learn more.](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
 - **Discover and install Copilot agents easily**
 
   Users in Word and PowerPoint can seamlessly find and install Copilot agents directly from the Unified App Store.  
@@ -2083,7 +2083,7 @@ Updates released between June 24, 2025, and July 8, 2025.
   Developers can now leverage an automatic project scaffolding for Graph connector applications within the Teams Toolkit, allowing for the generation of a full production-ready Graph connector application from just an API description file, significantly reducing setup time and complexity. [Learn more](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/build-your-first-connector).
 - **Deploy Copilot agents for easy discovery** \[Windows, Web\]
 
-  Deploy Copilot agents in the store for user discovery directly from your apps. Users can get new agents, open the store, install, and use them seamlessly within App Chat. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps?).
+  Deploy Copilot agents in the store for user discovery directly from your apps. Users can get new agents, open the store, install, and use them seamlessly within App Chat. [Learn more](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 - **Developers can use TypeSpec as an authoring experience**
 
   Developers can use TypeSpec as an authoring experience for declarative agents and API plugins in Teams Toolkit. [Learn more](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/build-declarative-agents-typespec).
@@ -2174,7 +2174,7 @@ Updates released between June 10, 2025, and June 24, 2025.
 
 - **Admins can manage Copilot extensibility under Copilot tab in Microsoft 365 admin center** \[Windows, Web\]
 
-  Admins have options to manage Copilot extensibility under Copilot tab including agent management for IT published agents and shared agents. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+  Admins have options to manage Copilot extensibility under Copilot tab including agent management for IT published agents and shared agents. [Learn more](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 - **Build agents faster with built in Office skills** \[Windows, Web\]
 
   Empower your agent building by consuming built-in Office skills like Q&A on documents and PowerPoint summaries. This feature speeds up integrations, reduces the need for custom solutions, and delivers context-aware insights for a smarter agent experience.
@@ -3692,7 +3692,7 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Learn:**
 
 
-  [Agent Registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
+  [Agent Registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)
 
 ### Microsoft 365 PowerPoint
 
@@ -4127,7 +4127,7 @@ Updates released between June 24, 2025, and July 8, 2025.
   View detailed audit logs and eDiscovery records for Copilot actions and declarative agents in Microsoft Purview to simplify compliance and investigation workflows. [Learn more](https://learn.microsoft.com/en-us/purview/audit-copilot).
 - **Deploy Copilot agents for easy discovery** \[Windows, Web\]
 
-  Deploy Copilot agents in the store for user discovery directly from your apps. Users can get new agents, open the store, install, and use them seamlessly within App Chat. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+  Deploy Copilot agents in the store for user discovery directly from your apps. Users can get new agents, open the store, install, and use them seamlessly within App Chat. [Learn more](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 - **Discover, acquire, and manage agents through in-app store in Word and PowerPoint** \[Windows, Web\]
 
   With Copilot extensibility, users can discover, acquire, and manage agents through the unified store. We are excited to introduce the Microsoft 365 unified store to Office documents, enabling users to discover, acquire, and manage agents directly within the in-app store for Word and PowerPoint, with Excel support coming soon. [Learn more](https://devblogs.microsoft.com/microsoft365dev/office-addins-at-build-2025/#modernized-store-for-office-add-ins-and-copilot-agents).
@@ -4179,7 +4179,7 @@ Updates released between June 10, 2025, and June 24, 2025.
 
 - **Admins can manage Copilot extensibility under Copilot tab in Microsoft 365 admin center** \[Windows, Web\]
 
-  Admins have options to manage Copilot extensibility under Copilot tab including agent management for IT published agents and shared agents. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+  Admins have options to manage Copilot extensibility under Copilot tab including agent management for IT published agents and shared agents. [Learn more](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 - **Build agents faster with built in Office skills** \[Windows, Web\]
 
   Empower your agent building by consuming built-in Office skills like Q&A on documents and PowerPoint summaries. This feature speeds up integrations, reduces the need for custom solutions, and delivers context-aware insights for a smarter agent experience.
@@ -5502,7 +5502,7 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Learn:**
 
 
-  [Export to Excel](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry#export-to-excel)
+  [Export to Excel](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview#export-to-excel-for-users-and-agents)
 
 - **Unified permissions management for agents** \[Windows, Web\]
 
@@ -5537,7 +5537,7 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Learn:**
 
 
-  [Agent Registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
+  [Agent Registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)
 
 ### Microsoft 365 Copilot Studio
 
@@ -5571,7 +5571,7 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Learn:**
 
 
-  [Sharing](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#sharing)
+  [Sharing](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-settings#sharing)
 
 
   **Learn:**
@@ -5583,7 +5583,7 @@ Updates released between November 12, 2025, and November 25, 2025.
   **Demo:**
 
 
-  [Admin control for org-wide agent sharing links](https://microsoft-my.sharepoint-df.com/personal/sophieroy_microsoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fsophieroy%5Fmicrosoft%5Fcom%2FDocuments%2FRecordings%2FDemo%20Admin%20control%20for%20org%2Dwide%20agent%20sharing%20links%2D20250926%5F155245%2DMeeting%20Recording%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ea632fb0d%2D5e4c%2D4501%2D92a6%2D1c16c4381542&ct=1764029038871&or=Teams%2DHL&ga=1&gaS=47&isDarkMode=true)
+  Admin control for org-wide agent sharing links
 
 
   **Blogs:**
@@ -6177,7 +6177,7 @@ Updates released between July 22, 2025, and August 5, 2025.
 
 - **Admin pre-approval for trusted declarative agents** \[Web\]
 
-  Admins can now pre-approve specific agents so their actions are always allowed without extra confirmation. This reduces interruptions and helps ensure a smooth workflow in integrated apps. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+  Admins can now pre-approve specific agents so their actions are always allowed without extra confirmation. This reduces interruptions and helps ensure a smooth workflow in integrated apps. [Learn more](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 - **Enhance agent builder with full screen mode** \[Windows, Mac, Web\]
 
   Enjoy an improved agent builder experience with a full-screen view that streamlines the process of creating and managing your agents. [Learn more](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder-build).
@@ -6336,7 +6336,7 @@ Updates released between June 24, 2025, and July 8, 2025.
   View detailed audit logs and eDiscovery records for Copilot actions and declarative agents in Microsoft Purview to simplify compliance and investigation workflows. [Learn more](https://learn.microsoft.com/en-us/purview/audit-copilot).
 - **Deploy Copilot agents for easy discovery** \[Windows, Web\]
 
-  Deploy Copilot agents in the store for user discovery directly from your apps. Users can get new agents, open the store, install, and use them seamlessly within App Chat. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+  Deploy Copilot agents in the store for user discovery directly from your apps. Users can get new agents, open the store, install, and use them seamlessly within App Chat. [Learn more](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 - **Discover, acquire, and manage agents through in-app store in Word and PowerPoint** \[Windows, Web\]
 
   With Copilot extensibility, users can discover, acquire, and manage agents through the unified store. We are excited to introduce the Microsoft 365 unified store to Office documents, enabling users to discover, acquire, and manage agents directly within the in-app store for Word and PowerPoint, with Excel support coming soon. [Learn more](https://devblogs.microsoft.com/microsoft365dev/office-addins-at-build-2025/#modernized-store-for-office-add-ins-and-copilot-agents).
@@ -6409,7 +6409,7 @@ Updates released between June 10, 2025, and June 24, 2025.
 
 - **Admins can manage Copilot extensibility under Copilot tab in Microsoft 365 admin center** \[Windows, Web\]
 
-  Admins have options to manage Copilot extensibility under Copilot tab including agent management for IT published agents and shared agents. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps).
+  Admins have options to manage Copilot extensibility under Copilot tab including agent management for IT published agents and shared agents. [Learn more](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 - **Build agents faster with built in Office skills** \[Windows, Web\]
 
   Empower your agent building by consuming built-in Office skills like Q&A on documents and PowerPoint summaries. This feature speeds up integrations, reduces the need for custom solutions, and delivers context-aware insights for a smarter agent experience.

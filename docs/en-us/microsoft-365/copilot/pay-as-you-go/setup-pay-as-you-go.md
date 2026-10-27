@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup -->
-<!-- Sitemap-Last-Modified: 2026-07-17 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/setup-pay-as-you-go -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Set up Microsoft Copilot pay-as-you-go services
 

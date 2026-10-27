@@ -40,7 +40,7 @@ App Builder respects tenant-level settings configured in the Microsoft 365 admin
 - Whether analytics and telemetry are collected
 - Which Copilot features are available to users
 
-To learn more about managing Copilot agents and tenant settings, see [Manage Copilot Agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps?view=o365-worldwide&preserve-view=true).
+To learn more about managing Copilot agents and tenant settings, see [Manage Copilot Agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps?view=o365-worldwide&preserve-view=true).
 
 ## Where is the data for App Builder apps stored?
 

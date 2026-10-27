@@ -21,7 +21,7 @@ Supported client surfaces during preview are Copilot Studio, Visual Studio Code,
 A BYO MCP server follows this developer-to-admin flow so that remote MCP servers are reviewed and governed before agents can access them:
 
 1. **A developer registers the server** through the Agent 365 CLI and provides the server URL, authentication type, and tools to expose. For more information, see [Register a remote MCP server](#register-a-remote-mcp-server).
-2. **An IT admin reviews the request** in the Microsoft 365 admin center and approves or rejects it. After approval, the admin grants the required Microsoft Entra permissions for the server. For more information, see [Review and approve MCP requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?view=o365-worldwide#review-and-approve-mcp-requests).
+2. **An IT admin reviews the request** in the Microsoft 365 admin center and approves or rejects it. After approval, the admin grants the required Microsoft Entra permissions for the server. For more information, see [Review and approve MCP requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers#review-and-approve-mcp-requests).
 3. **Supported clients use the approved server**, such as Copilot Studio and Visual Studio Code, to build and test agents with real tool invocations. For more information, see [Use an approved MCP server](#use-an-approved-mcp-server).
 4. **The security team monitors activity** and tool invocations through Microsoft Defender advanced hunting for compliance and anomaly detection. For more information, see [Monitor and observe MCP server activity](#monitor-and-observe-mcp-server-activity).
 
@@ -54,7 +54,7 @@ Before registering a remote MCP server, make sure:
 - You have [installed the Agent 365 CLI](#install-the-agent-365-cli) version 1.1.165-preview or later.
 - The Agent 365 service principal is provisioned in your tenant. If you can't find the service principal associated with app ID `ea9ffc3e-8a23-4a7d-836d-234d7c7565c1`, provision it by using the following resources:
 
-  - [Set up the service principal](https://learn.microsoft.com/en-us/microsoft-agent-365/developer/tooling#set-up-service-principal).
+  - [Set up the service principal](https://learn.microsoft.com/en-us/microsoft-365/admin/developer/tooling#set-up-service-principal).
   - [Learn who can provision a service principal](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-1).
 
 - Your MCP server has a publicly accessible endpoint.
@@ -67,7 +67,7 @@ Before registering a remote MCP server, make sure:
 
 ### Install the Agent 365 CLI
 
-To install the Agent 365 CLI, follow the instructions in [Install the Agent 365 CLI](https://learn.microsoft.com/en-us/microsoft-agent-365/developer/agent-365-cli#install-the-agent-365-cli).
+To install the Agent 365 CLI, follow the instructions in [Install the Agent 365 CLI](https://learn.microsoft.com/en-us/microsoft-365/admin/developer/agent-365-cli#install-the-agent-365-cli).
 
 ### Register your MCP server
 
@@ -287,7 +287,7 @@ After successful registration, submit the MCP server for admin review in the Mic
 
 ## Evaluate MCP servers
 
-You can evaluate the quality of your MCP tool definitions with the [`a365 develop-mcp evaluate`](https://learn.microsoft.com/en-us/microsoft-agent-365/developer/reference/cli/develop-mcp#develop-mcp-evaluate) command. This command inspects your server's tool schemas and generates a report with actionable guidance for improving tool names, descriptions, and parameter schemas.
+You can evaluate the quality of your MCP tool definitions with the [`a365 develop-mcp evaluate`](https://learn.microsoft.com/en-us/microsoft-365/admin/developer/reference/cli/develop-mcp#develop-mcp-evaluate) command. This command inspects your server's tool schemas and generates a report with actionable guidance for improving tool names, descriptions, and parameter schemas.
 
 The semantic checks are scored by a coding agent CLI \(GitHub Copilot CLI or Claude Code\) that runs *locally on your machine*, under your own account and AI subscription. This command doesn't send tool-schema data to Microsoft.
 
@@ -299,7 +299,7 @@ You don't need an admin role to run the evaluation. It runs locally against the 
 
 ### Prerequisites
 
-- Install the [Agent 365 CLI](https://learn.microsoft.com/en-us/microsoft-agent-365/developer/agent-365-cli#install-the-agent-365-cli).
+- Install the [Agent 365 CLI](https://learn.microsoft.com/en-us/microsoft-365/admin/developer/agent-365-cli#install-the-agent-365-cli).
 - For semantic \(AI\) scoring, one locally installed coding agent CLI:
 
   - **GitHub Copilot CLI**: Install with `npm install -g @github/copilot` \(Node.js 18 or later\). This is the standalone `copilot` binary, not the `gh copilot` GitHub CLI extension.
@@ -361,7 +361,7 @@ Open `<server-name>_eval_report.html` from the output directory in a browser. Th
 - The **per-tool scores** with category breakdowns: tool name, tool description, parameter name, parameter description, and schema structure.
 - A **prioritized action-item list**, ordered by impact, including the concrete requirements to reach the next maturity level.
 
-[![Screenshot of the develop-mcp evaluate HTML report showing overall quality score, maturity level, key counts, and per-dimension category scores.](https://learn.microsoft.com/en-us/microsoft-365/media/develop-mcp-evaluate-report.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/develop-mcp-evaluate-report.png?view=o365-worldwide#lightbox)
+[![Screenshot of the develop-mcp evaluate HTML report showing overall quality score, maturity level, key counts, and per-dimension category scores.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/develop-mcp-evaluate-report.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/develop-mcp-evaluate-report.png#lightbox)
 
 ### Data handling and AI transparency
 
@@ -384,7 +384,7 @@ Use the following troubleshooting guide to diagnose common errors and apply the 
 
 ## Review and approve BYO MCP server requests
 
-After a developer registers a BYO MCP server, an admin reviews and approves it the same way as any other tool request. For the full review and approval steps, see [Review and approve MCP requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?view=o365-worldwide#review-and-approve-mcp-requests).
+After a developer registers a BYO MCP server, an admin reviews and approves it the same way as any other tool request. For the full review and approval steps, see [Review and approve MCP requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers#review-and-approve-mcp-requests).
 
 ### Key governance controls
 
@@ -394,7 +394,7 @@ The following table summarizes the key governance controls:
 | --- | --- |
 | Approval or rejection | An admin approves or rejects each BYO MCP server before it can be used. |
 | Server-level block | An admin can block approved servers at any time. Runtime enforcement prevents agents from invoking blocked servers. |
-| Tool-level block | An admin can allow or block individual tools within a BYO server instead of the whole server. This capability is rolling out for supported MCP servers registered on Agent 365. Support for BYO MCP servers is planned for a future release. For more information, see [Manage individual tools within an MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?view=o365-worldwide#manage-individual-tools-within-an-mcp-server). |
+| Tool-level block | An admin can allow or block individual tools within a BYO server instead of the whole server. This capability is rolling out for supported MCP servers registered on Agent 365. Support for BYO MCP servers is planned for a future release. For more information, see [Manage individual tools within an MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers#manage-individual-tools-within-an-mcp-server). |
 | Tools snapshot | An admin can view the tools declared by each MCP server. |
 | Runtime enforcement | Blocked MCP servers can't be invoked at runtime across any client surface. |
 | Delete | An admin can delete a registered BYO MCP server that's no longer needed. For more information, see [Delete a BYO MCP server](#delete-a-byo-mcp-server). |
@@ -422,7 +422,7 @@ Note
 
 The first time you invoke the server, you might be prompted to complete a one-time connection setup. Follow the provided URL to create the required connection, such as entering your API key for an `APIKey`-based server. When you finish, return to your agent and retry the prompt. After a successful invocation, the MCP server returns the tool output.
 
-Learn how to invoke approved BYO MCP servers from Claude Code, VS Code, and GitHub Copilot CLI in the [Set up Work IQ MCP Servers for coding agents](https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview#extend-your-agents-with-available-or-custom-mcp-servers) section of the Work IQ MCP overview.
+Learn how to invoke approved BYO MCP servers from Claude Code, VS Code, and GitHub Copilot CLI in the [Set up Work IQ MCP Servers for coding agents](https://learn.microsoft.com/en-us/microsoft-365/admin/add-mcp-tools-developer-experiences#connect-mcp-servers-to-developer-clients) section of the Work IQ MCP overview.
 
 ## Monitor and observe MCP server activity
 

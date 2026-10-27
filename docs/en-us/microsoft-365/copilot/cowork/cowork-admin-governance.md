@@ -47,7 +47,7 @@ If an admin makes Cowork discoverable to end users but doesn't enable usage-base
 
 Cowork supports plugins from the Microsoft 365 App Store that add skills and connectors to extend what Cowork can do. As an admin, you control which plugins are available, how they're deployed, and who can use them.
 
-Get the admin guide on plugin deployment, availability controls, connector authentication, and monitoring in [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins) and [Manage plugins in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers).
+Get the admin guide on plugin deployment, availability controls, connector authentication, and monitoring in [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins) and [Manage plugins, skills, and MCP servers](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers).
 
 ## Manage models
 
@@ -123,10 +123,9 @@ The Microsoft 365 service boundary is the security and data-processing boundary 
 - [Use the local browser with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-local-browser)
 - [Manage plugins for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins)
 - [Microsoft Purview data security and compliance protections for Microsoft Copilot](https://learn.microsoft.com/en-us/purview/ai-m365-copilot)
-- [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps)
+- [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
 - [Agent availability settings](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-availability)
 - [Deploy agents in Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-deploy)
 - [Microsoft Copilot agent installation overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-install)
 - [Agents admin guide for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/m365-agents-admin-guide)
 - [Cowork network endpoints](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-network-endpoints)
--

@@ -40,7 +40,7 @@ The blueprint provides these phases for each of the following areas:
 ### Documentation resources
 
 - [Governance and security best practices overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/sec-gov-intro)
-- [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps)
+- [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
 
 ## Related content
 

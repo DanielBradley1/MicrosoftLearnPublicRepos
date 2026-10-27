@@ -3,7 +3,7 @@
 
 # Governance and lifecycle actions for agents available in Microsoft 365 admin center
 
-The Microsoft 365 admin center provides governance and lifecycle management capabilities for agents through the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?view=o365-worldwide). These capabilities enable administrators to manage agent visibility, access, distribution, and retirement across the tenant.
+The Microsoft 365 admin center provides governance and lifecycle management capabilities for agents through the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry-overview). These capabilities enable administrators to manage agent visibility, access, distribution, and retirement across the tenant.
 
 ## Agent actions
 
@@ -21,12 +21,12 @@ Microsoft 365 for government Community Cloud High \(GCCH\) and Government Commun
 | **[Assign a new owner](#assign-new-owner-to-an-agent)** | Assign a new owner to agents that are ownerless or active. |
 | **[Add an owner](#add-an-owner-to-an-agent-builder-agent)** | Add an owner to an Agent Builder agent that already has an owner. |
 | **[Remove an owner](#remove-an-owner-from-an-agent-builder-agent)** | Remove an owner from an Agent Builder agent that has multiple owners. |
-| **[Publish to store](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests?view=o365-worldwide#actions-for-requested-agents)** | Make a requested agent available to members of your organization by publishing the agent to Agent Store. For more information, see [Actions for requested agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests?view=o365-worldwide#actions-for-requested-agents). |
-| **[Reject submission](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests?view=o365-worldwide#actions-for-requested-agents)** | Prevent a requested agent from becoming available to members of your organization. For more information, see [Actions for requested agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests?view=o365-worldwide#actions-for-requested-agents). |
+| **[Publish to store](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests#actions-for-requested-agents)** | Make a requested agent available to members of your organization by publishing the agent to Agent Store. For more information, see [Actions for requested agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests#actions-for-requested-agents). |
+| **[Reject submission](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests#actions-for-requested-agents)** | Prevent a requested agent from becoming available to members of your organization. For more information, see [Actions for requested agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests#actions-for-requested-agents). |
 
 Note
 
-For information about actions related to the agent registry list, such as **Export to Excel**, **Upload custom agent**, and **Manage pinned agents**, see [Agent registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?view=o365-worldwide).
+For information about actions related to the agent registry list, such as **Export to Excel**, **Upload custom agent**, and **Manage pinned agents**, see [Agent registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry-overview).
 
 ### Install agents
 
@@ -41,8 +41,8 @@ To install an agent through the Microsoft 365 admin center, follow these steps:
 5. In the agent details pane that opens, immediately under the agent's name, select **Install**.
 6. In the **Deploy agent to selected users** pane, decide whether to install the agent to all users or to specific users or groups, and then select **Next**.
 
-   [![Screenshot showing the configuration screen to deploy an agent.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/deploy.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/deploy.png?view=o365-worldwide#lightbox)
-7. In the **Review permissions** pane, review the requested permissions for the agent. If the permissions are acceptable, select **Grant admin consent**. For more information, see [Agent permissions](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details?view=o365-worldwide#agent-permissions).
+   [![Screenshot showing the configuration screen to deploy an agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/deploy.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/deploy.png#lightbox)
+7. In the **Review permissions** pane, review the requested permissions for the agent. If the permissions are acceptable, select **Grant admin consent**. For more information, see [Agent permissions](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details#agent-permissions).
 8. In the **Permissions requested** window, select **Accept** to grant the permissions to the agent, and then select **Next**.
 9. In the **Review & finish** pane, select **Finish deployment**.
 
@@ -99,7 +99,7 @@ After you activate an agent, it becomes available for creating instances in the 
 
 ### Admin-initiated activation
 
-Administrators can proactively activate an agent through the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?view=o365-worldwide) without waiting for an activation request. During activation, administrators can make the agent available to all users, specific users, or specific security groups, depending on their organization's deployment requirements.
+Administrators can proactively activate an agent through the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry-overview) without waiting for an activation request. During activation, administrators can make the agent available to all users, specific users, or specific security groups, depending on their organization's deployment requirements.
 
 ### Policies predefined in the Microsoft prebuilt default template
 
@@ -140,7 +140,7 @@ To block or unblock an agent, follow these steps:
 4. In the agent details pane that opens, immediately under the agent's name, select **Block** or **Unblock**.
 5. In the **Block agent** or **Unblock agent** pane that opens, select either **Block agent** or **Unblock agent**, and then select **Save**.
 
-   [![Screenshot showing the panel to block an agent.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/block.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/block.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing the panel to block an agent.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/block.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/block.png#lightbox)
 
 Blocking or unblocking an agent that you created by using Microsoft Copilot Agent Builder and Microsoft Copilot Studio affects its availability and functionality in Microsoft Copilot. It also affects availability and functionality in other host products, such as Microsoft Outlook, Microsoft Teams, or other Microsoft 365 applications. However, blocking an agent that you created by using SharePoint or Microsoft Foundry only impacts its availability in Microsoft Copilot Chat.
 
@@ -257,10 +257,10 @@ To add an owner, follow these steps:
    To narrow the list, use the **Platform** filter and select **Agent Builder in Microsoft 365 Copilot**.
 4. On the **Details** tab in the agent details pane, select the user link next to **Owner**.
 
-   [![Screenshot of an Agent Builder agent details pane showing the Owner link.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-builder-owner-details.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-builder-owner-details.png?view=o365-worldwide#lightbox)
+   [![Screenshot of an Agent Builder agent details pane showing the Owner link.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-builder-owner-details.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-builder-owner-details.png#lightbox)
 5. In the **Owners** pane, select **Add owner**.
 
-   [![Screenshot of the Owners pane showing the owner list and the Add owner and Remove owner options.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-builder-owners-pane.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-builder-owners-pane.png?view=o365-worldwide#lightbox)
+   [![Screenshot of the Owners pane showing the owner list and the Add owner and Remove owner options.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-builder-owners-pane.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-builder-owners-pane.png#lightbox)
 6. Search for and select a user in your organization.
 7. Select **Add** to update the owner list.
 

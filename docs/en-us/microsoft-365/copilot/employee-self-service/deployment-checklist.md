@@ -176,7 +176,7 @@ For a stakeholder-led deployment of ESS declarative agents, including external-s
 | --- | --- |
 | [Publish Employee Self-Service declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-publish#publish-the-employee-self-service-declarative-agent) | Covers DA release promotion, admin approval, pilot audience assignment, and employee access verification. |
 | [Use Copilot Studio Agent Builder to build agents](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder-build) | Includes how to test the agent in the builder/test pane. |
-| [Manage agents for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps) | Explains how to publish, deploy, enable, or disable agents using the Microsoft 365 admin UI. |
+| [Manage agents for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps) | Explains how to publish, deploy, enable, or disable agents using the Microsoft 365 admin UI. |
 | [Using agents in Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/agents) | Covers how agents show up in Copilot Chat, enabling and billing. |
 
 ## Step 9: Grow over time
@@ -191,6 +191,8 @@ For a stakeholder-led deployment of ESS declarative agents, including external-s
 - Configure task-completion scenarios.
 - Enable multilingual responses.
 - Monitor analytics and feedback trends.
+
+For Employee Self-Service declarative agents, [monitor usage and employee feedback in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback).
 
 ### Growth documentation
 

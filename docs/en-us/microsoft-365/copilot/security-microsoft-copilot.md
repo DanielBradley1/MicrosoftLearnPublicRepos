@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-365-copilot -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-copilot -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Security for Microsoft Copilot
 

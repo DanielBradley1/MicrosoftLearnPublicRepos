@@ -433,7 +433,7 @@ For details on browsing, installing, and managing plugins, see [Use plugins with
 The built-in App skill lets you create lightweight, interactive apps in Cowork without writing code. Cowork invokes the skill when you describe an app you want to build.
 
 1. Describe the problem you want to solve, the app you want to create, or the information you want to visualize. You can reference data from Microsoft 365 sources, such as documents, spreadsheets, meetings, and messages.
-2. Enter your prompt. For example, “Build an app to run my daily scrum with my team.”
+2. Enter your prompt. For example, "Build an app to run my daily scrum with my team."
 3. Cowork invokes the App skill to create the app. The skill can also generate a data schema in supported connectors and build an app with the data sources connected and ready to use.
 
 Important

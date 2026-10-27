@@ -19,7 +19,7 @@ The **Agent settings** page includes the following configuration options:
 
 These settings allow you to customize agent behavior, control access, and maintain compliance with enterprise standards.
 
-[![Screenshot of the Agent settings page in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-settings.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-settings.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Agent settings page in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-settings.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-settings.png#lightbox)
 
 ## Agent management rules
 
@@ -72,13 +72,13 @@ By using the **Reassign Ownerless Agents** rule, you can:
 
 Admins can create a custom rule to block multiple ownerless agents that have no usage.
 
-[![Screenshot of rule details for blocking ownerless agents without usage in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/block-ownerless-agents-without-usage.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/block-ownerless-agents-without-usage.png?view=o365-worldwide#lightbox)
+[![Screenshot of rule details for blocking ownerless agents without usage in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/block-ownerless-agents-without-usage.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/block-ownerless-agents-without-usage.png#lightbox)
 
 #### Apply a template
 
 Use the **Apply template** action in an agent management rule to apply security policies to existing agents. This action helps you apply policies at scale after agents are published instead of applying policies to each agent individually.
 
-[![Screenshot of rule details with Apply Template selected as the action in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/apply-template-rule.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/apply-template-rule.png?view=o365-worldwide#lightbox)
+[![Screenshot of rule details with Apply Template selected as the action in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/apply-template-rule.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/apply-template-rule.png#lightbox)
 
 When you create the rule, define conditions that identify the agent instances you want to manage. The rule evaluates agents in the registry that have an agent identity. It doesn't apply to agent blueprints or AI teammates.
 
@@ -96,7 +96,7 @@ The **Apply template** action is a one-time bulk operation. It isn't a scheduled
 
 Admins can create a custom rule to reject multiple agent publish requests that are older than a specified number of days.
 
-[![Screenshot of rule details for rejecting agent publish requests older than 30 days in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/reject-old-agent-publish-requests.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/reject-old-agent-publish-requests.png?view=o365-worldwide#lightbox)
+[![Screenshot of rule details for rejecting agent publish requests older than 30 days in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/reject-old-agent-publish-requests.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/reject-old-agent-publish-requests.png#lightbox)
 
 ## Agent and plugin access
 
@@ -106,7 +106,7 @@ The **Agent and plugin access** setting controls which types of agents and plugi
 - **Allow agents and plugins built by your organization** - Enables users to install custom agents and plugins developed within your tenant.
 - **Allow agents and plugins built by external publishers** - Enables users to install non-Microsoft agents and plugins built by external developers.
 
-[![Screenshot of the Agent and plugin access page.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/allowed-agent-types.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/allowed-agent-types.png?view=o365-worldwide#lightbox)
+[![Screenshot of the Agent and plugin access page.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/allowed-agent-types.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/allowed-agent-types.png#lightbox)
 
 Tip
 
@@ -117,7 +117,7 @@ Tip
 
 To enhance governance and security for agents, apply a template that includes predefined security policies.
 
-For more information about templates, see [Policy templates](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/policy-template).
+For more information about templates, see [Policy templates](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/policy-template).
 
 ## Sharing
 
@@ -131,7 +131,7 @@ Options include:
 
 Sharing control only applies to agents built with **Microsoft Copilot Agent Builder**.
 
-[![Screenshot of Shared settings.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/sharing.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/sharing.png?view=o365-worldwide#lightbox)
+[![Screenshot of Shared settings.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/sharing.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/sharing.png#lightbox)
 
 ## User access
 
@@ -160,7 +160,7 @@ To manage access to Copilot agents and plugins, follow these steps:
    Data processed by non-Microsoft services isn't subject to Microsoft agreements. Review the terms provided by non-Microsoft agent and plugin publishers to make sure that you're familiar with the data handling and privacy practices of the agent or plugin. In addition, consult your internal policies before allowing access.
 
 
-   [![Screenshot of User access page.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/user-access.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/user-access.png?view=o365-worldwide#lightbox)
+   [![Screenshot of User access page.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/user-access.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/user-access.png#lightbox)
 
 4. Select **Save** to update your Copilot agent and plugin settings for your tenant.
 

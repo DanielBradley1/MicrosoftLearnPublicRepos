@@ -106,7 +106,7 @@ In the **Integrated apps** section of the [Microsoft 365 admin center](https://l
 
 For more information, see the following articles:
 
-- [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps)
+- [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
 - [Microsoft Copilot extensibility overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/)
 - [How Microsoft Copilot can work with your external data](https://techcommunity.microsoft.com/t5/microsoft-mechanics-blog/how-microsoft-365-copilot-can-work-with-your-external-data/ba-p/3937645)
 

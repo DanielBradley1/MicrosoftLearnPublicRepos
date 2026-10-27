@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/measurement-reporting -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/copilot-controls-measurement-reporting -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Copilot controls measurement and reporting
 

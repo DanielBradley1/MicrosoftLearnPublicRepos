@@ -3,6 +3,8 @@
 
 # Reviewing end-user feedback
 
+For Employee Self-Service declarative agents, see [Monitor your Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback#enable-employee-feedback-sharing) to enable feedback sharing and review employee reactions and comments in Copilot Studio.
+
 Feedback about Copilot is collected from Copilot experiences, such as when selecting a thumb's up or thumbs down on a response from Copilot in Microsoft 365 apps. After a user selects one of the thumb options, the feedback pane appears and asks for more information, including what the user liked \(thumbs up\) or what went wrong \(thumbs down\).
 
 Note

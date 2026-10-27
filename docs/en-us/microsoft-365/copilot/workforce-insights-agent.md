@@ -224,7 +224,7 @@ The following controls are available:
 | Deploy the agent \(recommended\) | Install the agent on behalf of users in your organization. This action makes the agent active and usable for specific users or groups without them having to install it themselves. |
 | Remove/block the agent | You can completely block access to the Workforce Insights agent for all users or remove a previously deployed agent from your inventory. |
 
-For more information on how to manage agents, see [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps?toc=%2Fcopilot%2Fmicrosoft-365%2Ftoc.json&bc=%2Fcopilot%2Fmicrosoft-365%2Fagent-framework%2Fbread%2Ftoc.json).
+For more information on how to manage agents, see [Manage agents for Microsoft Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
 
 ## Manage delegation policies
 

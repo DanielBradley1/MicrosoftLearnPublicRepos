@@ -17,7 +17,7 @@ This streamlined experience helps administrators maintain control, compliance, a
 
 Important
 
-Certain features are available within Microsoft 365 admin center based on services licensed in your subscription. To view your licensed subscriptions in the [Microsoft 365 admin center](https://admin.cloud.microsoft/), select **Billing** > **Licenses** > **Subscriptions**. For more information, see [Plans and licensing](https://learn.microsoft.com/en-us/microsoft-agent-365/overview#plans-and-licensing).
+Certain features are available within Microsoft 365 admin center based on services licensed in your subscription. To view your licensed subscriptions in the [Microsoft 365 admin center](https://admin.cloud.microsoft/), select **Billing** > **Licenses** > **Subscriptions**. For more information, see [Plans and licensing](https://learn.microsoft.com/en-us/microsoft-365/admin/overview#plans-and-licensing).
 
 ## Block agent instances
 

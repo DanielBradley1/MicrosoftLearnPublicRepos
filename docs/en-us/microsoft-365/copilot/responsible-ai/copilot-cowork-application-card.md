@@ -15,7 +15,7 @@ Microsoft Copilot Cowork is an AI-powered agentic system that carries out multi-
 
 Cowork is designed for information workers who use Microsoft 365 and want to delegate complex, multi-step tasks that would otherwise require switching between multiple applications. It connects to your Outlook, Calendar, Teams, OneDrive, SharePoint, and other Microsoft 365 services, operating within your existing permissions and security boundaries.
 
-Cowork is available as part of Microsoft Copilot. For more information, see [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/)
+Cowork is available as part of Microsoft Copilot. For more information, see [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/)
 
 ## Key terms
 
@@ -220,14 +220,14 @@ Responsible AI is a shared commitment between Microsoft and its customers. While
 
 For additional guidance or to learn more about the responsible use of Cowork, we recommend reviewing the following documentation:
 
-- [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/)
-- [Get started with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/get-started)
+- [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/)
+- [Get started with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/get-started)
 
 ## Learn more about responsible AI
 
 - [Responsible AI FAQ for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/cowork-responsible-ai-faq)
-- [Responsible AI overview for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/cowork-responsible-ai-overview)
+- [Responsible AI overview for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/)
 - [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai)
 - [Microsoft responsible AI resources](https://www.microsoft.com/ai/tools-practices)
 - [Microsoft Azure Learning courses on responsible AI](https://learn.microsoft.com/en-us/training/paths/responsible-ai-business-principles/)
-- [Data, Privacy, and Security for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy)
+- [Data, Privacy, and Security for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy.md)

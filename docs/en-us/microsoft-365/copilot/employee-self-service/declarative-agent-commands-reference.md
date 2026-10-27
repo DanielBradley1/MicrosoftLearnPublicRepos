@@ -59,7 +59,7 @@ The commands are grouped here by the task you're doing rather than alphabeticall
 | `/restore-template-configs` | Restores hybrid Workday reference-data template configurations from a backup. | Use it to roll back a Workday reference-data change. |
 | `/troubleshoot` | Diagnoses connectivity and authentication errors. | See [Command availability for declarative agents](#command-availability-for-declarative-agents) before you use this command. |
 | `/menu` | Shows the maker menu. It does not list `/setup` or `/analytics`. | Use it when you forget a command name. |
-| `/analytics` | Provides a link to the selected agent's Copilot Studio analytics. | Use it to view the analytics for that agent; it is not an ADK analytics dashboard. |
+| `/analytics` | Provides a link to the selected agent's Copilot Studio analytics. | Use it to [review usage and employee feedback](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback) for that agent. It isn't an ADK analytics dashboard. |
 
 ## Command availability for declarative agents
 

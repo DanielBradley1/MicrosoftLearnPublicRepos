@@ -7,7 +7,7 @@ When a member of your organization publishes an agent to your tenant, the agent 
 
 The **Requests** list of agents provides a view of agents that require your review and action. Members of your organization can request specific agents that need your review before an agent can be made available. For example, agents that members of your organization create by using Copilot Studio, Microsoft Foundry, or Microsoft 365 Agents Toolkit can be submitted for admin approval. When an agent is submitted for admin approval, Microsoft 365 admin center receives all metadata about an agent's definition. From the **Requests** list, you can select the agent to see the details about the agent to better understand the agent's capabilities, data sources, and custom actions before allowing the agent to be published to your organization.
 
-[![Screenshot of agent requests in Microsoft 365 admin center showing a list of agents that need admin review.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-requests.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-requests.png?view=o365-worldwide#lightbox)
+[![Screenshot of agent requests in Microsoft 365 admin center showing a list of agents that need admin review.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-requests.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-requests.png#lightbox)
 
 ## Agent registry filters
 
@@ -52,11 +52,11 @@ To view pending agent requests and act on those requests, use the following step
 8. Choose a policy template that applies to the agent.
 9. Select to apply either an existing template, the default template, or a custom template.
 10. Select **Next** to review permissions.
-11. In the **Review permissions** step, view the permissions requested by the agent and grant admin consent if appropriate. Permissions allow the agent to access relevant data or perform actions on behalf of users. For more information, see [Agent permissions](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details?view=o365-worldwide#agent-permissions).
+11. In the **Review permissions** step, view the permissions requested by the agent and grant admin consent if appropriate. Permissions allow the agent to access relevant data or perform actions on behalf of users. For more information, see [Agent permissions](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details#agent-permissions).
 12. Select **Next** to complete the process.
 13. Once you review the agent details, select **Publish**.
 
-For more information about publishing requested agents, see [Publish agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?view=o365-worldwide).
+For more information about publishing requested agents, see [Publish agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions).
 
 ## Requested agents pending update
 
@@ -75,13 +75,13 @@ When a member of your organization requests to activate an agent so that they ca
 
 The Microsoft 365 admin center activation process for agents ensures governance, security, and quality of custom applications.
 
-For more information about activating requested agents, see [Activate agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?view=o365-worldwide).
+For more information about activating requested agents, see [Activate agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions).
 
 ## Reject agents
 
 As an alternative, within the **Requests** list, you can select the ellipses to the right of the agent name, and then select **Reject submission** when you don't want to publish the agent.
 
-For more information about rejecting requested agents, see [Reject agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?view=o365-worldwide).
+For more information about rejecting requested agents, see [Reject agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions).
 
 ## Request Microsoft built agents unavailable due to admin policy
 

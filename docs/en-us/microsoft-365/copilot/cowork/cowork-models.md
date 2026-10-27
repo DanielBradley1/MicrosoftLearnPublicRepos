@@ -24,13 +24,18 @@ Your available options are in the **Model** dropdown menu in the chat input box.
 | Model | Description | Notes |
 | --- | --- | --- |
 | **Auto** | For most day-to-day work. | The default. When you select **Auto**, Cowork picks the model based on the models enabled by your organization. |
-| **GPT 5.5 \(Frontier\)** | Capable model for medium effort work. | Hosted in Azure AI Foundry. |
-| **GPT 5.6 Sol** | Intelligent and efficient for hard work‌. | Provided by OpenAI as a subprocessor. More information: [OpenAI as a subprocessor in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor) |
-| **GPT 5.6 Terra** | Balanced effort for common tasks‌. | Provided by OpenAI as a subprocessor. More information: [OpenAI as a subprocessor in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor) |
+| **GPT 6.1 Sol** | Intelligent and efficient for hard work. | Provided by OpenAI as a subprocessor. More information: [OpenAI as a subprocessor in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor) |
 | **GPT 6 Astra** | Latest model for tough problems. | Provided by OpenAI as a subprocessor. More information: [OpenAI as a subprocessor in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor) |
-| **Opus 5** | For complex, high stakes work. | More information: [Anthropic subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq#does-cowork-connect-to-external-models-for-processing) |
-| **Claude Sonnet 5** | For everyday tasks and fast responses such as drafting, quick lookups, and day-to-day work. | Use when you want a shorter response cycle for common tasks. More information: [Anthropic subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq#does-cowork-connect-to-external-models-for-processing) |
-| **Claude Fable 5.1** | Most advanced model for ambitious work. | More information: [Anthropic subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq#does-cowork-connect-to-external-models-for-processing). Learn about data retention in [Anthropic models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor). |
+| **GPT 5.6 Terra** | Balanced effort for common tasks. | Provided by OpenAI as a subprocessor. More information: [OpenAI as a subprocessor in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor) |
+| **GPT 5.5 \(Frontier\)** | Capable model for medium effort work. | Hosted in Azure AI Foundry. |
+| **Claude Opus 5.5** | For complex, high stakes work. | More information: [Anthropic subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq#does-cowork-connect-to-external-models-for-processing) |
+| **Claude Sonnet 5.5** | Efficient for everyday tasks. | Use when you want a shorter response cycle for common tasks. More information: [Anthropic subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq#does-cowork-connect-to-external-models-for-processing) |
+| **Claude Fable 5.1 \(Frontier\)** | Most advanced model for ambitious projects. | More information: [Anthropic subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq#does-cowork-connect-to-external-models-for-processing). Learn about data retention in [Anthropic models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor). |
+| **Grok 4.7** | Strong on long documents, coding, and multi-step tasks. | Provided by xAI as an independent processor. More information: [Connect to SpaceXAI models \(as an independent processor\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-models) |
+
+Note
+
+Model availability may vary based on tenant configuration. If your organization is within the [EU Data Boundary](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-eu-data-boundary?view=o365-worldwide), only GPT models are supported.
 
 ## How model choice affects responses
 

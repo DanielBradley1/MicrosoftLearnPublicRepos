@@ -198,7 +198,7 @@ To link directly to the agent:
 
 Note
 
-[Auto-pinning](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry#manage-pinning-of-agents) is recommended.
+[Auto-pinning](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview#manage-pinned-agents) is recommended.
 
 ### Block the Employee Self-Service agent in Microsoft Teams
 

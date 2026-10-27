@@ -25,7 +25,7 @@ Browser use is available in Cowork on the web at [copilot.cloud.microsoft.com](h
 
 ## Requirements
 
-Before Cowork can use the browser on your behalf, ensure the following requirements are met:
+Before Cowork can use the browser on your behalf, ensure you meet the following requirements:
 
 - Your tenant admin enabled **Cowork Browsing** for your organization.
 - You're using Cowork in a browser. This feature isn't currently supported in the desktop app or [on mobile](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-mobile).
@@ -35,10 +35,7 @@ Before Cowork can use the browser on your behalf, ensure the following requireme
 
 ### If you're not using Microsoft Edge
 
-Browser tasks currently work only in Microsoft Edge. If you start Cowork from a different browser or if Edge isn't installed:
-
-- Cowork tells you in the conversation that browser tasks run in Microsoft Edge and offers a link to **Get Microsoft Edge**.
-- Cowork still completes every step of your request that doesn’t need the browser. For example, if you ask it to file an expense report, it can still pull receipts from Outlook and draft the line items, then tell you which step needs Edge.
+Browser tasks currently work only in Microsoft Edge. If you start Cowork from a different browser or if Edge isn't installed, Cowork still completes every step of your request that doesn't need the browser. For example, if you ask it to file an expense report, it can still pull receipts from Outlook and draft the line items, but Cowork doesn't tell you which steps need Edge. It says that it doesn't have access to a browser tool to complete the task.
 
 ## First-run consent
 
@@ -101,7 +98,7 @@ Learn more about tenant-level controls and audit logs in [Manage Cowork](https:/
 
 ## Admin control
 
-The following browser use is supported for admins:
+Admins can use the following browser features:
 
 - Opt the tenant in to browser use in the Microsoft 365 admin center.
 - Limit the browser use feature to specific security groups or individuals.

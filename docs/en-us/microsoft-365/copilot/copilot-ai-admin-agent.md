@@ -215,8 +215,8 @@ Yes, the underlying workload's audit logs, such as Microsoft 365 admin center au
 
 ## Related articles
 
-- [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-365-overview)
-- [Agent management roles and permissions](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-roles-perms)
+- [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-365-overview)
+- [Agent management roles and permissions](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-roles-perms)
 - [Overview of Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview)
 - [License options for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing)
 - [Get started with agents in the Microsoft Copilot app](https://support.microsoft.com/microsoft-365-copilot/get-started-with-agents-in-the-microsoft-365-copilot-app)

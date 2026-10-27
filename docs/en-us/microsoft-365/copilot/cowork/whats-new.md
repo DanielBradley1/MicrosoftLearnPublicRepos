@@ -3,7 +3,17 @@
 
 # What's new in Copilot Cowork
 
-This article lists recent features, improvements, and changes in Microsoft 365 Copilot Cowork. Get a full guide to Cowork's capabilities in [Use Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork).
+This article lists recent features, improvements, and changes in Microsoft Copilot Cowork. Get a full guide to Cowork's capabilities in [Use Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork).
+
+## October 2026
+
+### New features
+
+| Feature | Description | Learn more |
+| --- | --- | --- |
+| GPT 6.1 Sol model | GPT 6.1 Sol is now available in the model selector as an intelligent and efficient model for hard work, replacing GPT 6 Sol. | [Choose a model for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-models) |
+| Grok 4.7 model | Grok 4.7 is now available in the model selector for long documents, coding, and multi-step tasks. Grok 4.7 is provided by xAI as an independent processor. | [Choose a model for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-models) |
+| Projects | Use projects in Copilot Cowork to keep related tasks, instructions, and context together. Start tasks from a project, return to related chats, and review the files those tasks produce. | [Use projects in Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-projects) |
 
 ## September 2026
 
@@ -45,7 +55,7 @@ Cowork is now generally available to all Microsoft 365 Copilot tenants. This rel
 
 | Feature | Description | Learn more |
 | --- | --- | --- |
-| General availability | Microsoft 365 Copilot Cowork is generally available to all Microsoft 365 Copilot tenants worldwide in tier-1 languages. | [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) |
+| General availability | Microsoft Copilot Cowork is generally available to all Microsoft 365 Copilot tenants worldwide in tier-1 languages. | [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) |
 | Claude Opus 4.8 model | Opus 4.8 is now available as a model option in the model selector. | [Use Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork) |
 | Claude Sonnet 5 model | Sonnet 5 is now available in the model selector as the efficient choice for everyday tasks, replacing Sonnet 4.6. | [Choose a model for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-models) |
 | Claude Fable 5 \(Preview\) model | Fable 5 is now available in preview in the model selector for your toughest challenges. Fable 5 is off by default; an admin turns it on in the Microsoft 365 admin center under Copilot settings. Fable 5 requires data retention, so your prompts and responses for that model are retained by the model provider, and Cowork shows a banner while it's selected. | [Data retention](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-models#data-retention) |
@@ -74,7 +84,7 @@ Cowork is now generally available to all Microsoft 365 Copilot tenants. This rel
 | Feature | Description | Learn more |
 | --- | --- | --- |
 | Claude Opus 4.7 model | Opus 4.7 is now available as a model option in the model selector. | [Use Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork) |
-| Mobile app support | Cowork is now available on iPhone and Android through the Microsoft 365 Copilot mobile app. | [Use Cowork on mobile](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-mobile) |
+| Mobile app support | Cowork is now available on iPhone and Android through the Microsoft Copilot mobile app. | [Use Cowork on mobile](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-mobile) |
 
 ## April 2026
 

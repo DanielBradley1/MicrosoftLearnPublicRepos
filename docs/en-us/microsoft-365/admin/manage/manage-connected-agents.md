@@ -28,7 +28,7 @@ For connected agents to work, both the primary agent and the connected agent mus
 1. In the [Microsoft 365 admin center](https://admin.microsoft.com/), go to **Agents** > **All agents**.
 2. Select **Researcher** or **Sales**, and then select the **Connected Agents** tab.
 
-   [![Screenshot showing how to connect an agent with Researcher in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/connect-agent.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/connect-agent.png?view=o365-worldwide#lightbox)
+   [![Screenshot showing how to connect an agent with Researcher in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/connect-agent.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/connect-agent.png#lightbox)
 3. Select **+ Connect agents**.
 4. In the **Select agent to connect** pane:
 

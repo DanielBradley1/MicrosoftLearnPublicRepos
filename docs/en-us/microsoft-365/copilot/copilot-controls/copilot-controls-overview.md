@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/overview -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-controls/copilot-controls-overview -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Copilot controls overview
 

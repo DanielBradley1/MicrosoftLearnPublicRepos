@@ -31,12 +31,12 @@ For more information, see the following articles:
 - **Developers** can use Copilot Studio SDK or Agents Toolkit for pro-code agents. Developers can also [submit agents to the marketplace](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-policies/agent-submit-marketplace)
 - Both **Makers** and **Developers** can add actions, connectors, and advanced logic in Copilot Studio or via the Microsoft 365 Agents Toolkit
 
-People in your organization can also [sideload agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-policies/agent-sideload), [share agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-shared-agents), and [publish agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry#publish-agents), according to tenant policies and admin controls that are configured in the Microsoft 365 admin center.
+People in your organization can also [sideload agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-policies/agent-sideload), [share agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-shared-agents), and [publish agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests#requested-agents-pending-review), according to tenant policies and admin controls that are configured in the Microsoft 365 admin center.
 
 For more information, see the following articles:
 
 - [Agents admin guide for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/m365-agents-admin-guide)
-- [Manage access to agents in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#manage-access-to-copilot-agents)
+- [Manage access to agents in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-details#agent-users)
 
 ## What tools do I need to create, build, implement, and use agents in Microsoft 365?
 
@@ -78,7 +78,7 @@ Yes, administrators can control data sources that are used. Administrators can a
 
 For more information, see the following resources:
 
-- [Manage agents in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps)
+- [Manage agents in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
 - [Connectors overview in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-copilot-connector)
 
 ## How does an agent access data?

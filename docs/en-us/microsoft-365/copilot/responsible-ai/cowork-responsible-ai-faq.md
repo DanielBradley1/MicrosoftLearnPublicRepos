@@ -105,7 +105,7 @@ How Cowork handles browser tasks responsibly:
 - **Audit visibility.** Each browser task is recorded in the unified audit log alongside other Cowork activity.
 - **Limits.** Cowork doesn't bypass site terms of service, doesn't impersonate the user when interacting with another human, and doesn't perform irreversible actions without approval.
 
-For the end-user experience and a list of which sites your organization allows, see [Use the local browser with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-local-browser).
+For the end-user experience and a list of which sites your organization allows, see [Use the local browser with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork-local-browser).
 
 ## How does Cowork handle different models?
 
@@ -118,7 +118,7 @@ Things to know about Cowork's multi-model approach:
 - **Admin control.** Admins can turn off individual models in the Microsoft 365 admin center if their organization chooses not to use them.
 - **Microsoft may add models.** We may deploy other AI models for Microsoft Copilot to use that are hosted and operated by Microsoft. These models are governed by the same contractual and data protection commitments already in place, including that no data leaves Microsoft. For more information about models that may be used by Copilot, see [Understanding AI functionality and models in Microsoft Online Services](https://learn.microsoft.com/en-us/microsoft-365/copilot/ai-models-overview).
 
-For the end-user view of model choice, see [Choose a model for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-models).
+For the end-user view of model choice, see [Choose a model for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork-models).
 
 ## How does Cowork ground responses in your Microsoft 365 content?
 
@@ -155,11 +155,11 @@ Your feedback is used to evaluate and improve Cowork's quality and safety.
 
 ## Related content
 
-- [Responsible AI overview for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/cowork-responsible-ai-overview)
-- [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/)
-- [Get started with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/get-started)
-- [Use Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork)
-- [Choose a model for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-models)
-- [Use the local browser with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-local-browser)
-- [Cowork common questions](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq)
+- [Responsible AI overview for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/)
+- [Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/)
+- [Get started with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/get-started)
+- [Use Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/use-cowork)
+- [Choose a model for Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork-models)
+- [Use the local browser with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork-local-browser)
+- [Cowork common questions](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork-faq)
 - [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai)

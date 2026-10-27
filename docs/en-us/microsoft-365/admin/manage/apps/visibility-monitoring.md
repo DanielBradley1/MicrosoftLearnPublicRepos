@@ -50,7 +50,7 @@ Admins can use *alerts* to track the operational health of their apps. Admins se
 
 Best practices when setting up alerts for health metrics:
 
-- The system evaluates alerts after it produces new metrics. Metrics are either 24-hour or 1-hour aggregates. This condition means an alert rule in the **Monitor** area is evaluated every 24 hours after the newest 24-hour aggregates are produced or every 1 hour after the newest 1-hour aggregate is produced. An alert rule does an on-demand evaluation upon its creation.
+- The system evaluates alerts after it produces new metrics. Metrics are either 24-hour or 1-hour aggregates. This condition means an alert rule in the **Monitor** area is evaluated every 24 hours after the newest 24-hour aggregates are produced or every 1 hour after the newest 1-hour aggregate is produced.
 - In the alert configuration panel, you can change whether an alert considers the last 24 hours or last 1 hour worth of data by selecting 1 hour or 24 hours in the **Data review period** dropdown.
 - Alert rules are alerts that admins create to monitor their apps. You can edit, delete, and turn an alert rule on or off. You can place alert rules on a specific app.
 - A *triggered alert* occurs when an app passes the admin defined threshold of the alert rule that monitors it. You can select the triggered alert to learn which app triggered the alert rule and the value of its metric that triggered the rule.
@@ -119,7 +119,7 @@ Follow these best practices:
 - **Start small**: Create a few high-value rules first, such as performance-open times, error rates, and usage spikes.
 - **Name consistently**: Use clear names like **Prod – Copilot Managed Runtime – Availability < 90**.
 - **Set appropriate severity**: Use **High** for production-impacting metrics and **Medium** or **Low** for trend monitoring.
-- **Manage the 10-rule limit**: Delete obsolete rules.
+- **Manage the 5-rule limit**: Delete obsolete rules.
 - **Choose data review period wisely**: Use the 1-hour option for mission-critical applications where you need to know as soon as possible when operational health degrades. Notifications for these alerts are sent out much more frequently compared to the 24-hour option.
 - **Validate email routing**: Ensure recipients can receive emails from azure-noreply@microsoft.com.
 
@@ -150,7 +150,7 @@ Time-based metrics report out the 75th percentile.
 
 ### How many alert rules can I turn on at one time?
 
-A tenant can have up to 10 alert rules at a time \(including both active and disabled rules\). This limit encourages a focused set of high-value alerts. Over time, review and retire alert rules as underlying issues are resolved. If you reach this limit, consider cleaning up or consolidating existing rules.
+A tenant can have up to 5 alert rules at a time \(including both active and disabled rules\). This limit encourages a focused set of high-value alerts. Over time, review and retire alert rules as underlying issues are resolved. If you reach this limit, consider cleaning up or consolidating existing rules.
 
 ### What's the difference between an alert rule and a triggered alert?
 

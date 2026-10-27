@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-365-overview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-20 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # Agent management in Microsoft 365 admin center
 
@@ -72,7 +72,7 @@ Note
 
 To compare Copilot Chat and Microsoft Copilot, see [License options for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing).
 
-For more information about Microsoft Agent 365, see [Plans and licensing for Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview#plans-and-licensing).
+For more information about Microsoft Agent 365, see [Plans and licensing for Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/admin/overview#plans-and-licensing).
 
 For a full enterprise plans comparison table, [get the full comparison table \(PDF\)](https://www.microsoft.com/microsoft-365/enterprise/microsoft-365-plans-and-pricing#comparison-pdf).
 
@@ -108,7 +108,7 @@ Tip
 
 A tenant is an instance of Microsoft Entra ID. Your subscription to Copilot or Agent 365 is hosted by a Microsoft Entra tenant. For more information about creating and understanding tenants, see [Set up a new Microsoft Entra tenant](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant) in the Microsoft Entra documentation.
 
-[![Screenshot showing the agent workload in Microsoft 365 admin center, which provides management controls and details for agents within your organization's tenant.](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-overview.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/agents/agent-overview.png?view=o365-worldwide#lightbox)
+[![Screenshot showing the agent workload in Microsoft 365 admin center, which provides management controls and details for agents within your organization's tenant.](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-overview.png)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/media/agents/agent-overview.png#lightbox)
 
 To ensure consistent interpretation across metrics and insights in the Agent overview, the following definitions clarify what is included in agent counts and reporting on the **Overview** dashboard:
 
@@ -127,7 +127,7 @@ To ensure consistent interpretation across metrics and insights in the Agent ove
 - **Platforms surfaced in Copilot Studio and ecosystem** Agent creation platforms represented in the overview include Microsoft-native tools \(such as Copilot Studio, Agent Builder, and others\) along with any external or third-party platforms detected and integrated into the agent registry.
 - **Data consistency across sources \(Registry vs. analytics systems\)** Metrics in the Agent overview are derived from multiple underlying systems \(such as the Agent Registry and usage analytics pipelines\). Minor variances may occur due to differences in ingestion timing, update frequency, and system-specific processing. These variances are expected and don't impact overall directional insights.
 
-View access to the agent **Overview** doesn't grant permission to install, modify, or manage agents. Administrative actions continue to be governed by role-based access controls aligned with agent installation and consent workflows. For more information about roles and permissions, see [Agent management roles and permissions in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-roles-perms?view=o365-worldwide).
+View access to the agent **Overview** doesn't grant permission to install, modify, or manage agents. Administrative actions continue to be governed by role-based access controls aligned with agent installation and consent workflows. For more information about roles and permissions, see [Agent management roles and permissions in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-roles-perms).
 
 ## Types of agents
 
@@ -148,7 +148,7 @@ The following table describes each type of agent:
 | **Agent Toolkit** | An Agent Toolkit agent has been created using Microsoft 365 Agents Toolkit. The toolkit provides tooling for building, testing, and managing agents across Microsoft 365. |
 | **Agent instance** | An agent that has been extended using the Microsoft Agent 365 SDK is an agent instance. Once extended, an agent instance has Entra-backed agent identity, enhanced notification capabilities, extended observability, covered MCP tooling, and an IT-approved template system. |
 
-For more information about agent types, see [Data & tools by agent type](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details?view=o365-worldwide#data--tools-by-agent-type).
+For more information about agent types, see [Data & tools by agent type](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details#data--tools-by-agent-type).
 
 ## Agent card details
 
@@ -170,7 +170,7 @@ Agent 365 licenses are required for data collection only for third-party agents,
 
   - For third-party agents, this metric begins when your organization activates Agent 365 licenses, so it will reflect fewer than 30 days of data immediately after activation. As activity accumulates, the metric will progressively reflect a fuller 30-day view.
 
-- **Registry sync** - The external connected platforms that were scanned. You can connect to external platforms to find and monitor agents used in your organization. Your use of external non-Microsoft products is subject to the third-party service provider's terms of use. You're responsible for complying with each provider's terms of use. For more information, see [Registry sync in the Microsoft 365 agent registry](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry).
+- **Registry sync** - The external connected platforms that were scanned. You can connect to external platforms to find and monitor agents used in your organization. Your use of external non-Microsoft products is subject to the third-party service provider's terms of use. You're responsible for complying with each provider's terms of use. For more information, see [Registry sync in the Microsoft 365 agent registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/connected-platforms).
 
 ## Top actions for you
 

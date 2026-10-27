@@ -33,7 +33,7 @@ Global Admins and AI Admins are responsible for activating agents within their M
 Ensure the following prerequisites are in place before you start the instance creation flow:
 
 - You're signed in to the Microsoft 365 admin center as a Global Admin or AI Admin.
-- The agent template you want to deploy is already activated \(published\) in your tenant. For more information, see [Activate agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?view=o365-worldwide#activate-agents).
+- The agent template you want to deploy is already activated \(published\) in your tenant. For more information, see [Activate agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests#requested-agents-pending-activate).
 - You identified the manager, the person who will be the business owner of this instance.
 - Sufficient licenses are available to assign to the new instance.
 - You confirmed the manager has an active user account in Microsoft Entra ID.
@@ -48,13 +48,13 @@ Follow these steps to create an instance, also known as an agentic user, from an
 
 ### Step 1: Go to the agent registry
 
-1. In the Microsoft 365 admin center, go to the **Agents** section and open the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?view=o365-worldwide). Here you see all agents that are activated for your tenant.
+1. In the Microsoft 365 admin center, go to the **Agents** section and open the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry-overview). Here you see all agents that are activated for your tenant.
 2. Locate the agent you want to use. Agents with a status of **Available** are eligible for instance creation.
 3. Select the agent to open its Agent Details flyout panel.
 
 ### Step 2: Open the agent details
 
-The [Agent Details](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details?view=o365-worldwide) panel provides a full overview of the agent, including its description, capabilities, supported scenarios, availability settings, data connections, and security configuration. Review these details to confirm this is the correct agent for your intended use case.
+The [Agent Details](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details) panel provides a full overview of the agent, including its description, capabilities, supported scenarios, availability settings, data connections, and security configuration. Review these details to confirm this is the correct agent for your intended use case.
 
 The panel includes several tabs you might want to review before creating an agentic user:
 

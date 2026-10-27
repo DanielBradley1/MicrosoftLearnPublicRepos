@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/meters -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/pay-as-you-go-meters -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Meters for Microsoft Copilot pay-as-you-go services
 

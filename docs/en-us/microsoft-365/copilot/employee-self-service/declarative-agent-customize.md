@@ -73,6 +73,8 @@ Providing a custom name to the agent shows the provided name for end-users in th
 - Employee Self-Service HR
 - Employee Self-Service IT
 
+For usage charts and employee reactions in Copilot Studio, see [Monitor your Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback).
+
 ### Customizing logo
 
 Employee Self-Service agent logo customization involves multiple stages, as follows:

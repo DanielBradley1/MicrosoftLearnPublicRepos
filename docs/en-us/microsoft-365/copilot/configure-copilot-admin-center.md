@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-admin-settings -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-copilot-admin-center -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Configure Microsoft Copilot settings in the Microsoft 365 admin center
 

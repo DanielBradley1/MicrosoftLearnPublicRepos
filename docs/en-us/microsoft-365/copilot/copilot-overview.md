@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Microsoft Copilot overview
 
@@ -213,7 +213,7 @@ Copilot Chat \(Basic\), Microsoft 365 Copilot \(Basic\), and Microsoft 365 Copil
 
 ### Responsible AI
 
-Microsoft Copilot adheres to Microsoft's [Responsible AI principles](https://www.microsoft.com/ai/principles-and-approach?msockid=3be31cda99b962db1b5a0a8398f063ed#ai-principles). For more information, see [Microsoft Copilot Responsible AI FAQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/responsible-ai-overview), and [Responsible AI at Microsoft](https://www.microsoft.com/ai/responsible-ai).
+Microsoft Copilot adheres to Microsoft's [Responsible AI principles](https://www.microsoft.com/ai/principles-and-approach?msockid=3be31cda99b962db1b5a0a8398f063ed#ai-principles). For more information, see [Application card: Microsoft Copilot \(for organizations\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-application-card) and [Responsible AI at Microsoft](https://www.microsoft.com/ai/responsible-ai).
 
 ## Model selection
 

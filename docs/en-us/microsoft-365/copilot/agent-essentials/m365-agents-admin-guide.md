@@ -241,7 +241,7 @@ To view and confirm agent access settings for your organization:
    Data processed by non-Microsoft services isn't subject to Microsoft agreements. Review the terms provided by third party agent publishers to make sure that you're familiar the agent's data handling and privacy practices. In addition, consult your internal policies before allowing access.
 5. Select **Save** to update your Copilot agent settings for your tenant.
 
-For more information, see [Enable or disable Copilot extensibility](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#enable-or-disable-copilot-extensibility).
+For more information, see [Enable or disable Copilot extensibility](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-settings#user-access).
 
 ### Agent sharing and publishing settings
 
@@ -391,7 +391,7 @@ To manage, assign, and publish the agent, see [Assign and deploy agents](#assign
 
 As an admin, you can manage the lifecycle of each agent available in your tenant by using actions. These agent actions include publishing, deploying, removing, and blocking. In addition, you can assign agents and deploy agents as separate actions. You can also manage the agents that members of your organization request to publish to your organizational catalog.
 
-✅ **Task: Manage agents for your organization in Microsoft 365 admin center. Specifically, [publish](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#publish-agents), [deploy](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#deploy-agents), [remove](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#remove-agents), or [block](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#block-or-unblock-agents) individual agents for users and groups at your organization. Consider the potential for oversharing agent access based on agent details and capabilities.**
+✅ **Task: Manage agents for your organization in Microsoft 365 admin center. Specifically, [publish](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests#requested-agents-pending-review), [deploy](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-actions#install-agents), [remove](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-actions#uninstall-agents), or [block](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-actions#block-or-unblock-agents) individual agents for users and groups at your organization. Consider the potential for oversharing agent access based on agent details and capabilities.**
 
 ### Understand agent installation
 
@@ -417,7 +417,7 @@ Members of your organization can use Copilot Studio to create and publish agents
 
 When members of your organization publish an agent to your organization using the Microsoft Teams and Microsoft Copilot channel, the agent becomes available as a requested agent in Copilot controls in Microsoft 365 admin center. You can then approve the agent to make it available to users or groups within your organization. After you review and publish the agent there, you can show it in the Teams app store so users can find and install it.
 
-For more information, see [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams), [Manage requested agents](#manage-requested-agents), and [Publish agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#publish-agents).
+For more information, see [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams), [Manage requested agents](#manage-requested-agents), and [Publish agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests#requested-agents-pending-review).
 
 ### Review available agents
 
@@ -490,11 +490,11 @@ Use the following steps to deploy an individual agent:
 
 You can remove an agent from the inventory for your organization. This action is applicable only for first-party or external agents. The agent can be readded to your inventory by acquiring it from the store.
 
-When you remove an agent, it will no longer be available in Copilot or other host products, such as Teams or Outlook. For more information, see [Remove agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#remove-agents).
+When you remove an agent, it will no longer be available in Copilot or other host products, such as Teams or Outlook. For more information, see [Remove agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-actions#uninstall-agents).
 
 ### Block agents
 
-Blocking an agent prevents any users in the tenant from accessing the agent. This action ensures that the agent can't be used by anyone in the organization. For more information, see [Block or unblock agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps#block-or-unblock-agents).
+Blocking an agent prevents any users in the tenant from accessing the agent. This action ensures that the agent can't be used by anyone in the organization. For more information, see [Block or unblock agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-actions#block-or-unblock-agents).
 
 ### Manage requested agents
 

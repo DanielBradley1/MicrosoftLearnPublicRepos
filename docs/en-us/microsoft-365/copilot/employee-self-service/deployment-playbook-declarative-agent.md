@@ -131,7 +131,7 @@ Two or three refine cycles are normal. Aim for confidence, not perfection: real 
 
 - \[ \] Promote to Production. Complete your organizational go/no-go review, then [promote the validated Test version to Prod](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/alm-declarative-agent#deploy-from-test-to-prod) unchanged and run FlightCheck again. Learn more: [Publish the Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-publish#promote-the-declarative-agent-to-prod).
 - \[ \] Launch to a pilot group. Have the Microsoft 365 administrator [review the agent request](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests) and assign about 5-10% of employees, across a mix of regions and roles. Tell employees the agent is in preview, and encourage them to try a variety of questions using thumbs up/thumbs down and detailed feedback.
-- \[ \] Monitor usage and feedback weekly. Track usage, satisfaction \(thumbs-up rate\), unanswered or fallback questions, and escalations to live support.
+- \[ \] [Monitor usage and feedback](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback) weekly. Track usage, satisfaction \(thumbs-up rate\), unanswered or fallback questions, and escalations to live support.
 - \[ \] Triage weekly. Review feedback and analytics every week. Fix issues in Dev, validate them in Test, and promote again. Add evaluations for new failure patterns, so each stays fixed.
 
 Real employees will ask questions you didn't anticipate. Your golden set and evaluations will grow during the pilot, and that's the point.
@@ -148,7 +148,7 @@ Real employees will ask questions you didn't anticipate. Your golden set and eva
 
 For more scenario coverage or a new domain \(HR or IT\), follow Stages 0 through 3 again — plan, build, validate, and pilot — before you add it to this rollout.
 
-- \[ \] Roll out in waves. Expand to larger groups in steps, up to your whole organization, and check analytics after each wave.
+- \[ \] Roll out in waves. Expand to larger groups in steps, up to your whole organization, and [check analytics](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-monitor-telemetry-feedback) after each wave.
 - \[ \] Add the other area. Add HR or IT, starting again from a golden set for that area.
 - \[ \] Add additional scenarios. Let employees view or update their records in HR systems like Workday, or open ServiceNow tickets. Use pilot evidence to select one integration and one scenario and follow the guidance: [Workday](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday) or [ServiceNow HR and IT](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-servicenow-hr-it).
 - \[ \] Keep quality up. Rerun your evaluations before every change, and keep reviewing analytics and feedback.
