@@ -106,16 +106,34 @@ You can manually update a certificate connector even when it supports automatic 
 
 ## Connector status
 
-In the Microsoft Intune admin center, you can select a certificate connector to view information about its status:
+In the Microsoft Intune admin center, the **Status** column displays the health of each certificate connector. To view the status and health messages for a connector:
 
-1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431)
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Go to **Tenant administration** > **Connectors and tokens** > **Certificate connectors**.
-3. Select a connector to view its status.
+3. Select a connector to open its details pane.
 
-   When viewing the connector status:
+The connector details pane displays the connector health status and any health messages that require your attention. Connector health status is based on recent certificate-processing activity. The most recently evaluated status is displayed for up to 15 minutes. If multiple issues are detected, the pane groups the messages by severity and provides guidance for each issue. A connector can display both **Action required** and **Warning** messages.
 
-   - Deprecated connectors show a **Warning**. After the six-month grace period, the warning changes to an Error.
-   - Connectors that are beyond the grace period show an Error. These connectors are no longer supported and can stop working at any time.
+The following statuses are available:
+
+| Status | Description |
+| --- | --- |
+| **Active** | No connector health issues are detected. |
+| **Warning** | The connector can issue certificates, but a less-severe issue requires attention. |
+| **Action required** | An issue prevents the connector from issuing certificates, or the connector is disconnected from Intune. |
+
+Health messages can identify the following conditions:
+
+| Status | Health message | Recommended action |
+| --- | --- | --- |
+| **Action required** | Certification authority connectivity | The connector can't reach the certification authority \(CA\). Confirm that the CA service is running, the connector host can reach the CA over the network, and firewall rules don't block RPC traffic. |
+| **Action required** | Connector is disconnected | The connector isn't connected to Intune. Confirm that the connector services are running on the server and that firewall rules don't block the required HTTPS connections. For more information, see [Network endpoints for Microsoft Intune](https://learn.microsoft.com/en-us/intune/fundamentals/endpoints). |
+| **Action required** | Certification authority issuing permission | The connector service account doesn't have the permissions required to issue certificates. Review the [certificate connector service account](https://learn.microsoft.com/en-us/intune/fundamentals/certificates/connector/prerequisites#certificate-connector-service-account) and certificate template requirements in the [connector prerequisites](https://learn.microsoft.com/en-us/intune/fundamentals/certificates/connector/prerequisites). |
+| **Action required** | Certificate template configuration | The CA rejected the request. Confirm that the Intune certificate profile matches the certificate template on the CA. This condition applies to PKCS profiles. For more information, see [Configure certificate templates on the CA](https://learn.microsoft.com/en-us/intune/device-configuration/certificates/pkcs-profiles#configure-certificate-templates-on-the-ca). |
+| **Warning** | Certification authority revocation permission | The connector service account can't revoke certificates. Grant the account the **Issue and Manage Certificates** permission on the CA. For more information, see [Certificate connector service account](https://learn.microsoft.com/en-us/intune/fundamentals/certificates/connector/prerequisites#certificate-connector-service-account). |
+| **Warning** | Certificate connector connectivity | The connector intermittently loses its connection to the CA, which can delay or prevent certificate requests. Confirm that the CA service is running, the connector host can reach the CA over the network, and firewall rules don't block RPC traffic. |
+
+For more help investigating connector failures, see [Troubleshoot the Certificate Connector for Microsoft Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-certificate-connector-events?context=/intune/context). For information about version support and deprecated connectors, see [Lifecycle](#lifecycle).
 
 ## Logging
 

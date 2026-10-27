@@ -38,15 +38,17 @@ When you deploy the CMG as a [virtual machine scale set](https://learn.microsoft
 
 - In version 2107 and later, you can configure the VM size:
 
-  - Lab \([B2s](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)\)
-  - Standard \([A2\_v2](https://learn.microsoft.com/en-us/azure/virtual-machines/av2-series)\)
-  - Large \([A4\_v2](https://learn.microsoft.com/en-us/azure/virtual-machines/av2-series)\)
+  - Starting in version 2609 and version 2603 with the [update rollup \(KB39169655\)](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/39169655): Small \(**Standard\_D2ads\_v6**\), Medium \(**Standard\_D4ads\_v6**\), or Large \(**Standard\_D8ads\_v6**\).
+  - Earlier versions without this update rollup: Lab \([B2s](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)\), Standard \([A2\_v2](https://learn.microsoft.com/en-us/azure/virtual-machines/av2-series)\), or Large \([A4\_v2](https://learn.microsoft.com/en-us/azure/virtual-machines/av2-series)\).
+
+
+  Existing deployments are automatically migrated to the corresponding new VM size when you install either update. Use the new VM sizes when estimating costs for updated deployments. For the size mapping and upgrade requirements, see [Size and scale for CMG](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/perf-scale#size-and-scale-for-cmg).
 
 
   Important
 
 
-  The **Lab \(B2s\)** size VM is only intended for lab testing and small proof-of-concept environments. It isn't intended for production use with the CMG. The B2s VMs are low cost and low performing.
+  The **Small** tier \(previously **Lab \(B2s\)**\) is only intended for lab testing and small proof-of-concept environments. It isn't intended for production use with the CMG.
 
 
   You can change the VM size after you deploy the CMG. This action updates the Azure service to use a new VM.

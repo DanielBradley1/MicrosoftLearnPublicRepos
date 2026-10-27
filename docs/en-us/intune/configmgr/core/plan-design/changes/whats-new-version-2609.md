@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-version-2609 -->
-<!-- Sitemap-Last-Modified: 2026-09-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-14 -->
 
 # What's new in version 2609 of Configuration Manager current branch
 
 *Applies to: Configuration Manager \(current branch\)*
 
 Update 2609 for Configuration Manager current branch is available as an in-console update. Apply this update on sites that run version 2503 or later.
+
+As of October 26, 2026, version 2609 is globally available for all customers to install.
 
 Always review the latest checklist for installing this update. For more information, see [Checklist for installing update 2609](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/checklist-for-installing-update-2609). After you update a site, also review the [Post-update checklist](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/checklist-for-installing-update-2609#post-update-checklist).
 

@@ -222,6 +222,7 @@ Intune supports the following OEMConfig apps:
 | Kyocera | jp.kyocera.enterprisedeviceconfig |  |
 | Lenovo | com.lenovo.oemconfig.rel |  |
 | LG | com.lge.android.oemconfig |  |
+| MEFERI | com.meferi.oemconfig | [MEFERI OEMConfig](https://meferi.com/en/software/omnisoftware-suite/oemconfig/) |
 | Motorola Solutions | com.motorolasolutions.lexoemconfig |  |
 | Motorola Mobility | com.motorola.oemconfig.rel | [Moto OEMConfig Guide](https://motorola-global-portal.custhelp.com/app/answers/prod_answer_detail/a_id/160503) |
 | Urovo | com.urovo.oemconfigs |  |

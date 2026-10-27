@@ -68,11 +68,11 @@ Do this procedure on the top-level site. That site is either a standalone primar
       - If you choose **Use existing**, then select an existing resource group from the list. This resource group needs to already exist in the same region you selected for the CMG. If you select an existing resource group, and it's in a different region than the previously selected region, the CMG will fail to deploy.
       - If you choose **Create new**, then enter the new resource group name.
 
-   4. By default, the **VM Size** is **Standard \(A2\_V2\)**. Select another option as your design specifies. For example, **Large \(A4\_v2\)** for increased client capacity per VM, or **Lab \(B2s\)** in a small test environment.
+   4. Select the **VM Size** as your design specifies. For VM sizes by Configuration Manager version, client capacity, and upgrade requirements, see [Size and scale for CMG](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/perf-scale#size-and-scale-for-cmg).
 
       Important
 
-      The **Lab \(B2s\)** size VM is only intended for lab testing and small proof-of-concept environments. For example, with the Configuration Manager technical preview branch. The B2s VMs aren't intended for production use with the CMG. They are low cost and low performing.
+      The **Small** tier \(previously **Lab \(B2s\)**\) is only intended for lab testing and small proof-of-concept environments, such as the Configuration Manager technical preview branch. It isn't intended for production use with the CMG.
    5. In the **VM Instance** field, enter the number of VMs for this service. The default is one, but you can scale up to 16 VMs per CMG.
    6. If you're using client authentication certificates, select **Certificates** to add trusted root certificates. Add all of the certificates in the trust chain.
 

@@ -48,31 +48,7 @@ When you install an update at the CAS, be aware of the following limitations and
 
 ### Early update ring
 
-At this time, version 2609 is released for the early update ring. To install this update, you need to opt in. The version 2609 early update ring PowerShell script adds your hierarchy or standalone primary site to the early update ring.
-
-[Version 2609 opt-in script](https://aka.ms/KB2377842_EnableEarlyRing)
-
-Microsoft digitally signs the script and bundles it inside a signed self-extracting executable.
-
-Note
-
-The version 2609 update is only applicable to sites running version 2503 or later.
-
-To opt in to the early update ring:
-
-1. Open a Windows PowerShell session **as administrator**.
-2. Run the **EnableEarlyUpdateRing2609.ps1** script, using the following syntax:
-
-   `EnableEarlyUpdateRing2609.ps1 <SiteServer_Name> | SiteServer_IP`
-
-   Where `SiteServer` refers to the central administration site or standalone primary site server. For example, `EnableEarlyUpdateRing2609.ps1 cmprimary01`.
-3. Check for updates. For more information, see [Get available updates](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/install-in-console-updates).
-
-The version 2609 update should now be available in the console.
-
-Important
-
-This script only adds your site to the early update ring for version 2609. It's not a permanent change.
+As of October 26, 2026, version 2609 is globally available for all customers to install.
 
 ## Pre-update checklist
 

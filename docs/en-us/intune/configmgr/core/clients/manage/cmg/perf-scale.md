@@ -29,15 +29,40 @@ Unless otherwise noted, this guidance is the same for all deployment models and 
 
   - **Virtual machine scale-set** *\(version 2107 and later\)*
 
-    - **Lab \(B2s\)**: 10
-    - **Standard \(A2\_v2\)**: 6,000
-    - **Large \(A4\_v2\)**: 10,000
+    Use the table for your Configuration Manager version and installed updates.
+
+    **Version 2609 and later, and version 2603 with the update rollup \(KB39169655\)**
+
+    | CMG tier | VM size | vCPU | Memory | Simultaneous client connections per VM instance |
+    | --- | --- | --- | --- | --- |
+    | Small | Standard\_D2ads\_v6 | 2 | 8 GiB | 10 |
+    | Medium | Standard\_D4ads\_v6 | 4 | 16 GiB | 6,000 |
+    | Large | Standard\_D8ads\_v6 | 8 | 32 GiB | 10,000 |
+
+
+    When you update to version 2609 or install the [version 2603 update rollup \(KB39169655\)](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/39169655), existing deployments are automatically migrated: Lab to Small, Standard to Medium, and Large to Large. The client connection limits for each tier remain the same.
 
 
     Important
 
 
-    The **Lab \(B2s\)** size VM is only intended for lab testing and small proof-of-concept environments. They aren't intended for production use with the CMG. The B2s VMs are low cost and low performing. The Configuration Manager technical preview branch only supports 10 clients, which is why this size supports that number of clients.
+    Before updating, check that the new VM sizes are available in your Azure region and that both the **standard Dadv6 Family vCPUs** and **Total Regional vCPUs** quotas have enough available quota, including headroom for temporary instances during upgrade or maintenance. For details, see [Check CMG capacity and vCPU quotas before upgrading](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-version-2609#check-cmg-capacity-and-vcpu-quotas-before-upgrading). Upgrade the Configuration Manager console after installing the update so that it displays the new VM sizes correctly.
+
+
+    **Version 2603 without KB39169655 and versions 2107 through 2509**
+
+
+    | CMG tier | VM size | vCPU | Memory | Simultaneous client connections per VM instance |
+    | --- | --- | --- | --- | --- |
+    | Lab | Standard\_B2s | 2 | 4 GiB | 10 |
+    | Standard | Standard\_A2\_v2 | 2 | 4 GiB | 6,000 |
+    | Large | Standard\_A4\_v2 | 4 | 8 GiB | 10,000 |
+
+
+    Important
+
+
+    The **Small** tier \(previously **Lab \(B2s\)**\) is only intended for lab testing and small proof-of-concept environments, not production use with the CMG. The Configuration Manager technical preview branch only supports 10 clients, which is why this tier supports that number of clients.
 
   - **Virtual machine scale set** *\(version 2010 and 2103 for Cloud Service Provider \(CSP\) subscriptions\)*: 2,000
   - **Cloud service \(classic\)** *\(version 2111 and earlier\)*: 6,000
