@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/evaluationscope?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-04 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # evaluationScope resource type
 
@@ -9,20 +9,15 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Represents the evaluation context used when Microsoft Purview evaluates content or computes protection scopes.
+Represents the scope used for data protection policy evaluation.
 
-The evaluation scope determines how policies are resolved for a request. By default, requests are evaluated using the tenant context. For Agent-to-Tool \(A2T\) scenarios, set the **type** property to `agent` to enable agent-aware policy evaluation, which considers both agent and tool locations when resolving applicable Microsoft Purview Data Loss Prevention \(DLP\) policies.
-
-This resource is used by the following APIs:
-
-- `protectionScopes/compute`
-- `processContent`
+Set in the **evaluationScope** property of [processContentRequest](https://learn.microsoft.com/en-us/graph/api/resources/processcontentrequest?view=graph-rest-beta) or the **evaluationScope** parameter of [tenantProtectionScopeContainer: compute](https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta).
 
 ## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| type | evaluationScopeType | Specifies the evaluation context for the request. Required. Set to `agent` for Agent-to-Tool \(A2T\) scenarios to enable policy evaluation based on `policyLocationApplication` and `policyLocationTool`. The possible values are: `tenant`, `agent`, `anonymousUser`, `unknownFutureValue`. |
+| type | [evaluationScopeType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-beta#evaluationscopetype-values) | The evaluation scope. Possible values are `tenant`, `agent`, `anonymousUser`, and `unknownFutureValue`. Required. Use `agent` to evaluate data loss prevention policies for agent interactions. |
 
 ## Relationships
 

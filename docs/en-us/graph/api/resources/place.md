@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # place resource type
 
@@ -28,11 +28,13 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | address | [physicalAddress](https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress?view=graph-rest-1.0) | The physical address of the **place**, including the street, city, state, country or region, and postal code. |
+| customProperties | [stringDictionary](https://learn.microsoft.com/en-us/graph/api/resources/stringdictionary?view=graph-rest-1.0) | Custom properties for the **place**. Each property has a string key and a string value. Nullable. |
 | label | String | User-defined description of the **place**. |
 | displayName | String | The name that is associated with the **place**. |
 | geoCoordinates | [outlookGeoCoordinates](https://learn.microsoft.com/en-us/graph/api/resources/outlookgeocoordinates?view=graph-rest-1.0) | Specifies the **place** location in latitude, longitude, and \(optionally\) altitude coordinates. |
 | id | String | The unique identifier for the **place**. Read-only. This identifier isn't immutable and can change if the mailbox or tenant configuration changes. |
 | isWheelChairAccessible | Boolean | Indicates whether the **place** is wheelchair accessible. |
+| lastUpdatedTime | DateTimeOffset | The date and time when the **place** was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable. |
 | parentId | String | The ID of a parent **place**. |
 | phone | String | The phone number of the **place**. |
 | placeId | String | A stable service-level identifier for the **place** object used by Places workloads. |
@@ -52,11 +54,13 @@ The following JSON representation shows the resource type.
 {
   "@odata.type": "#microsoft.graph.place",
   "address": {"@odata.type": "microsoft.graph.physicalAddress"},
+  "customProperties": {"@odata.type": "microsoft.graph.stringDictionary"},
   "displayName": "String",
   "geoCoordinates": {"@odata.type": "microsoft.graph.outlookGeoCoordinates"},
   "id": "String (identifier)",
   "isWheelChairAccessible": "Boolean",
   "label": "String",
+  "lastUpdatedTime": "String (timestamp)",
   "parentId": "String",
   "phone": "String",
   "placeId": "String",

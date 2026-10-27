@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/room?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # room resource type
 
@@ -22,6 +22,7 @@ For the list of supported methods, see [place](https://learn.microsoft.com/en-us
 | bookingType | [bookingType](#bookingtype-values) | Type of room. Possible values are: `unknown`, `standard`, `reserved`. |
 | building | String | Specifies the building name or building number that the room is in. |
 | capacity | Int32 | Specifies the capacity of the room. |
+| customProperties | [stringDictionary](https://learn.microsoft.com/en-us/graph/api/resources/stringdictionary?view=graph-rest-1.0) | Custom properties for the **place**. Each property has a string key and a string value. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | displayDeviceName | String | Specifies the name of the display device in the room. |
 | displayName | String | The name associated with the room. |
 | emailAddress | String | Email address of the room. |
@@ -31,6 +32,7 @@ For the list of supported methods, see [place](https://learn.microsoft.com/en-us
 | id | String | The unique identifier for the **room**. Read-only. This identifier isn't immutable and can change if the mailbox or tenant configuration changes. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | isWheelChairAccessible | Boolean | Specifies whether the room is wheelchair accessible. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | label | String | Specifies a descriptive label for the room, for example, a number or name. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
+| lastUpdatedTime | DateTimeOffset | The date and time when the **place** was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | nickname | String | Specifies a nickname for the room, for example, "conf room". |
 | parentId | String | The ID of a parent [floor](https://learn.microsoft.com/en-us/graph/api/resources/floor?view=graph-rest-1.0) or [section](https://learn.microsoft.com/en-us/graph/api/resources/section?view=graph-rest-1.0). Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | phone | String | The phone number of the room. |
@@ -62,6 +64,7 @@ The following JSON representation shows the resource type.
   "bookingType": "String",
   "building": "String",
   "capacity": 1024,
+  "customProperties": {"@odata.type": "microsoft.graph.stringDictionary"},
   "displayName": "String",
   "displayDeviceName": "String",
   "emailAddress": "String",
@@ -71,6 +74,7 @@ The following JSON representation shows the resource type.
   "id": "String (identifier)",
   "isWheelChairAccessible": true,
   "label": "String",
+  "lastUpdatedTime": "String (timestamp)",
   "nickname": "String",
   "parentId": "String",
   "phone": "String",

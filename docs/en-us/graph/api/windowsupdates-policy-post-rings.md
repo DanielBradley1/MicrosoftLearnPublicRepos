@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-policy-post-rings?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Create ring
 
@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Create a new [ring](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta) object.
 
-You can use this method with the following child object type: [qualityUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta).
+You can use this method with the following child object types: [driverUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatering?view=graph-rest-beta), [featureUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatering?view=graph-rest-beta), and [qualityUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -50,16 +50,22 @@ POST /admin/windows/updates/policies/{policyId}/rings
 
 In the request body, supply a JSON representation of the [ring](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta) object.
 
+Because **ring** is abstract, specify the concrete type in the `@odata.type` property. Supported values include `#microsoft.graph.windowsUpdates.driverUpdateRing`, `#microsoft.graph.windowsUpdates.featureUpdateRing`, and `#microsoft.graph.windowsUpdates.qualityUpdateRing`.
+
 You can specify the following properties when you create a **ring** object.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| deferralInDays | Int32 | The quality update deferral period in days. The value must be between `0` and `30`. Optional. |
+| deferralInDays | Int32 | The update deferral period in days. The value must be between `0` and `30`. Optional. |
 | description | String | The ring description. The maximum length is 1,500 characters. Required. |
 | displayName | String | The ring display name. The maximum length is 200 characters. Required. |
 | excludedGroupAssignment | [microsoft.graph.windowsUpdates.excludedGroupAssignment](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-excludedgroupassignment?view=graph-rest-beta) | Governs the update deployment audience with excluded groups. Groups are logical containers of devices represented by Microsoft Entra groups. Required. |
 | includedGroupAssignment | [microsoft.graph.windowsUpdates.includedGroupAssignment](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-includedgroupassignment?view=graph-rest-beta) | Governs the update deployment audience with included groups. Groups are logical containers of devices represented by Microsoft Entra groups. Required. |
-| isPaused | Boolean | The pause action for the quality update ring policy. Required. |
+| isHotpatchEnabled | Boolean | Indicates whether hotpatch updates are enabled. Applies only to **qualityUpdateRing**. Required for that type. |
+| isOfferOptional | Boolean | Indicates whether the feature update is offered to end users as optional. Applies only to **featureUpdateRing**. Required for that type. |
+| isPaused | Boolean | Indicates whether update offers for the ring are paused. Required. |
+| offerDurationInDays | Int32 | The total length of the gradual rollout window, in days. Applies only to **featureUpdateRing**. Optional. |
+| offerIntervalInDays | Int32 | How often, in days, a new subset of devices is offered the update. Applies only to **featureUpdateRing**. Optional. |
 
 ## Response
 
@@ -69,257 +75,33 @@ If successful, this method returns a `201 Created` response code and a [microsof
 
 ### Request
 
-The following example shows how to create a quality update ring.
-
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
+The following example shows how to create a feature update ring.
 
 ```http
-POST https://graph.microsoft.com/beta/admin/windows/updates/policies/86364b9d-d04a-46f3-b2ee-7ef4157ab6fc/rings
+POST https://graph.microsoft.com/beta/admin/windows/updates/policies/22222222-2222-4222-8222-222222222222/rings
 Content-Type: application/json
 
 {
-  "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdateRing",
-  "displayName": "Ring0 - IT devices",
-  "description": "First deployment ring to test updates before going to prod.",
+  "@odata.type": "#microsoft.graph.windowsUpdates.featureUpdateRing",
+  "displayName": "Pilot",
+  "description": "Pilot devices",
   "includedGroupAssignment": {
-    "@odata.type": "microsoft.graph.windowsUpdates.includedGroupAssignment"
+    "assignments": [
+      {
+        "groupId": "33333333-3333-4333-8333-333333333333"
+      }
+    ]
   },
   "excludedGroupAssignment": {
-    "@odata.type": "microsoft.graph.windowsUpdates.excludedGroupAssignment"
+    "assignments": []
   },
-  "deferralInDays": 5,
-  "isPaused": false
+  "deferralInDays": 0,
+  "isPaused": false,
+  "isOfferOptional": false,
+  "offerDurationInDays": 1,
+  "offerIntervalInDays": 0
 }
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Beta.Models.WindowsUpdates;
-
-var requestBody = new QualityUpdateRing
-{
-	OdataType = "#microsoft.graph.windowsUpdates.qualityUpdateRing",
-	DisplayName = "Ring0 - IT devices",
-	Description = "First deployment ring to test updates before going to prod.",
-	IncludedGroupAssignment = new IncludedGroupAssignment
-	{
-		OdataType = "microsoft.graph.windowsUpdates.includedGroupAssignment",
-	},
-	ExcludedGroupAssignment = new ExcludedGroupAssignment
-	{
-		OdataType = "microsoft.graph.windowsUpdates.excludedGroupAssignment",
-	},
-	DeferralInDays = 5,
-	IsPaused = false,
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Admin.Windows.Updates.Policies["{policy-id}"].Rings.PostAsync(requestBody);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphmodelswindowsupdates "github.com/microsoftgraph/msgraph-beta-sdk-go/models/windowsupdates"
-	  //other-imports
-)
-
-requestBody := graphmodelswindowsupdates.NewRing()
-displayName := "Ring0 - IT devices"
-requestBody.SetDisplayName(&displayName) 
-description := "First deployment ring to test updates before going to prod."
-requestBody.SetDescription(&description) 
-includedGroupAssignment := graphmodelswindowsupdates.NewIncludedGroupAssignment()
-requestBody.SetIncludedGroupAssignment(includedGroupAssignment)
-excludedGroupAssignment := graphmodelswindowsupdates.NewExcludedGroupAssignment()
-requestBody.SetExcludedGroupAssignment(excludedGroupAssignment)
-deferralInDays := int32(5)
-requestBody.SetDeferralInDays(&deferralInDays) 
-isPaused := false
-requestBody.SetIsPaused(&isPaused) 
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-rings, err := graphClient.Admin().Windows().Updates().Policies().ByPolicyId("policy-id").Rings().Post(context.Background(), requestBody, nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-com.microsoft.graph.beta.models.windowsupdates.QualityUpdateRing ring = new com.microsoft.graph.beta.models.windowsupdates.QualityUpdateRing();
-ring.setOdataType("#microsoft.graph.windowsUpdates.qualityUpdateRing");
-ring.setDisplayName("Ring0 - IT devices");
-ring.setDescription("First deployment ring to test updates before going to prod.");
-com.microsoft.graph.beta.models.windowsupdates.IncludedGroupAssignment includedGroupAssignment = new com.microsoft.graph.beta.models.windowsupdates.IncludedGroupAssignment();
-includedGroupAssignment.setOdataType("microsoft.graph.windowsUpdates.includedGroupAssignment");
-ring.setIncludedGroupAssignment(includedGroupAssignment);
-com.microsoft.graph.beta.models.windowsupdates.ExcludedGroupAssignment excludedGroupAssignment = new com.microsoft.graph.beta.models.windowsupdates.ExcludedGroupAssignment();
-excludedGroupAssignment.setOdataType("microsoft.graph.windowsUpdates.excludedGroupAssignment");
-ring.setExcludedGroupAssignment(excludedGroupAssignment);
-ring.setDeferralInDays(5);
-ring.setIsPaused(false);
-com.microsoft.graph.models.windowsupdates.Ring result = graphClient.admin().windows().updates().policies().byPolicyId("{policy-id}").rings().post(ring);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const ring = {
-  '@odata.type': '#microsoft.graph.windowsUpdates.qualityUpdateRing',
-  displayName: 'Ring0 - IT devices',
-  description: 'First deployment ring to test updates before going to prod.',
-  includedGroupAssignment: {
-    '@odata.type': 'microsoft.graph.windowsUpdates.includedGroupAssignment'
-  },
-  excludedGroupAssignment: {
-    '@odata.type': 'microsoft.graph.windowsUpdates.excludedGroupAssignment'
-  },
-  deferralInDays: 5,
-  isPaused: false
-};
-
-await client.api('/admin/windows/updates/policies/86364b9d-d04a-46f3-b2ee-7ef4157ab6fc/rings')
-	.version('beta')
-	.post(ring);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Models\WindowsUpdates\QualityUpdateRing;
-use Microsoft\Graph\Beta\Generated\Models\WindowsUpdates\IncludedGroupAssignment;
-use Microsoft\Graph\Beta\Generated\Models\WindowsUpdates\ExcludedGroupAssignment;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new QualityUpdateRing();
-$requestBody->setOdataType('#microsoft.graph.windowsUpdates.qualityUpdateRing');
-$requestBody->setDisplayName('Ring0 - IT devices');
-$requestBody->setDescription('First deployment ring to test updates before going to prod.');
-$includedGroupAssignment = new IncludedGroupAssignment();
-$includedGroupAssignment->setOdataType('microsoft.graph.windowsUpdates.includedGroupAssignment');
-$requestBody->setIncludedGroupAssignment($includedGroupAssignment);
-$excludedGroupAssignment = new ExcludedGroupAssignment();
-$excludedGroupAssignment->setOdataType('microsoft.graph.windowsUpdates.excludedGroupAssignment');
-$requestBody->setExcludedGroupAssignment($excludedGroupAssignment);
-$requestBody->setDeferralInDays(5);
-$requestBody->setIsPaused(false);
-
-$result = $graphServiceClient->admin()->windows()->updates()->policies()->byPolicyId('policy-id')->rings()->post($requestBody)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.WindowsUpdates
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.windowsUpdates.qualityUpdateRing"
-	displayName = "Ring0 - IT devices"
-	description = "First deployment ring to test updates before going to prod."
-	includedGroupAssignment = @{
-		"@odata.type" = "microsoft.graph.windowsUpdates.includedGroupAssignment"
-	}
-	excludedGroupAssignment = @{
-		"@odata.type" = "microsoft.graph.windowsUpdates.excludedGroupAssignment"
-	}
-	deferralInDays = 5
-	isPaused = $false
-}
-
-New-MgBetaWindowsUpdatesPolicyRing -PolicyId $policyId -BodyParameter $params
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.models.windows_updates.quality_update_ring import QualityUpdateRing
-from msgraph_beta.generated.models.windows_updates.included_group_assignment import IncludedGroupAssignment
-from msgraph_beta.generated.models.windows_updates.excluded_group_assignment import ExcludedGroupAssignment
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = QualityUpdateRing(
-	odata_type = "#microsoft.graph.windowsUpdates.qualityUpdateRing",
-	display_name = "Ring0 - IT devices",
-	description = "First deployment ring to test updates before going to prod.",
-	included_group_assignment = IncludedGroupAssignment(
-		odata_type = "microsoft.graph.windowsUpdates.includedGroupAssignment",
-	),
-	excluded_group_assignment = ExcludedGroupAssignment(
-		odata_type = "microsoft.graph.windowsUpdates.excludedGroupAssignment",
-	),
-	deferral_in_days = 5,
-	is_paused = False,
-)
-
-result = await graph_client.admin.windows.updates.policies.by_policy_id('policy-id').rings.post(request_body)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
@@ -332,19 +114,26 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.type": "#microsoft.graph.windowsUpdates.ring",
-  "displayName": "Ring0 - IT devices",
-  "description": "First deployment ring to test updates before going to prod.",
-  "includedGroupAssignment": {
-    "@odata.type": "microsoft.graph.windowsUpdates.includedGroupAssignment"
-  },
+  "@odata.type": "#microsoft.graph.windowsUpdates.featureUpdateRing",
+  "createdDateTime": "2026-09-28T11:05:00Z",
+  "deferralInDays": 0,
+  "description": "Pilot devices",
+  "displayName": "Pilot",
   "excludedGroupAssignment": {
-    "@odata.type": "microsoft.graph.windowsUpdates.excludedGroupAssignment"
+    "assignments": []
   },
-  "deferralInDays": 5,
+  "id": "44444444-4444-4444-8444-444444444444",
+  "includedGroupAssignment": {
+    "assignments": [
+      {
+        "groupId": "33333333-3333-4333-8333-333333333333"
+      }
+    ]
+  },
+  "isOfferOptional": false,
   "isPaused": false,
-  "id": "03f72335-b88c-519e-16e7-039fdab8670f",
-  "createdDateTime": "2020-06-09T10:00:00Z",
-  "lastModifiedDateTime": "2020-06-09T10:00:00Z"
+  "lastModifiedDateTime": "2026-09-28T11:05:00Z",
+  "offerDurationInDays": 1,
+  "offerIntervalInDays": 0
 }
 ```

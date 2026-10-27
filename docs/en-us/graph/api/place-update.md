@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/place-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-03-31 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Update place
 
@@ -25,7 +25,7 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 Important
 
-For delegated access using work or school accounts, the signed-in user must be assigned a supported [Microsoft Entra role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference?toc=%2Fgraph%2Ftoc.json) or a custom role that grants the permissions required for this operation. *Exchange Administrator* is the least privileged role supported for this operation. In Microsoft Entra ID, administrative roles can be assigned directly to individual users or through [role-assignable groups](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept); other groups can't be used for role assignments. In contrast, the Microsoft 365 admin center supports assigning administrative roles either directly to users or through groups.
+For delegated access using work or school accounts, the signed-in user must be assigned a supported [Microsoft Entra role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference?toc=%2Fgraph%2Ftoc.json) or a custom role that grants the permissions required for this operation. *Exchange Administrator* is the least privileged role supported for this operation. This API doesn't honor administrative roles assigned to groups in Microsoft Entra ID. Instead, assign the required role directly to the user in Microsoft Entra ID, or assign it to a user or group through the Microsoft 365 admin center.
 
 When using application permissions, you must configure the required `TenantPlacesManagement` role \(to manage Places\) and the `MailRecipient` role \(to manage users and mailboxes\). For more information on how to configure these roles, see [Role Based Access Control for Applications in Exchange Online](https://learn.microsoft.com/en-us/exchange/permissions-exo/application-rbac).
 
@@ -59,6 +59,7 @@ You can't use this API to update the **id**, **placeId**, **emailAddress**, **di
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | address | [physicalAddress](https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress?view=graph-rest-1.0) | The physical address of the [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0), including the street, city, state, country or region, and postal code. Optional. |
+| customProperties | [stringDictionary](https://learn.microsoft.com/en-us/graph/api/resources/stringdictionary?view=graph-rest-1.0) | Custom key-value pairs associated with the [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). Each stored value must be a string. Set a value to `null` to remove the corresponding entry. Optional. |
 | geoCoordinates | [outlookGeoCoordinates](https://learn.microsoft.com/en-us/graph/api/resources/outlookgeocoordinates?view=graph-rest-1.0) | Specifies the [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0) location in latitude, longitude, and \(optionally\) altitude coordinates. Optional. |
 | isWheelChairAccessible | Boolean | Indicates whether the [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0) is wheelchair accessible. Required. |
 | label | String | User-defined description of the [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). Optional. |
@@ -80,158 +81,20 @@ The following example shows how to update a **building** object.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
-
 ```http
 PATCH https://graph.microsoft.com/v1.0/places/e18a8e21-0494-4296-a5bc-f848dba2740d
 Content-Type: application/json
 
 {
   "@odata.type": "microsoft.graph.building",
+  "customProperties": {
+    "@odata.type": "microsoft.graph.stringDictionary",
+    "costCenter": "CC-1042",
+    "campusCode": "SEA"
+  },
   "tags": ["most popular building"]
 }
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Models;
-
-var requestBody = new Building
-{
-	OdataType = "microsoft.graph.building",
-	Tags = new List<string>
-	{
-		"most popular building",
-	},
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Places["{place-id}"].PatchAsync(requestBody);
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v1.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
-	  graphmodels "github.com/microsoftgraph/msgraph-sdk-go/models"
-	  //other-imports
-)
-
-requestBody := graphmodels.NewPlace()
-tags := []string {
-	"most popular building",
-}
-requestBody.SetTags(tags)
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-places, err := graphClient.Places().ByPlaceId("place-id").Patch(context.Background(), requestBody, nil)
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-Building place = new Building();
-place.setOdataType("microsoft.graph.building");
-LinkedList<String> tags = new LinkedList<String>();
-tags.add("most popular building");
-place.setTags(tags);
-Place result = graphClient.places().byPlaceId("{place-id}").patch(place);
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const place = {
-  '@odata.type': 'microsoft.graph.building',
-  tags: ['most popular building']
-};
-
-await client.api('/places/e18a8e21-0494-4296-a5bc-f848dba2740d')
-	.update(place);
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\GraphServiceClient;
-use Microsoft\Graph\Generated\Models\Building;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new Building();
-$requestBody->setOdataType('microsoft.graph.building');
-$requestBody->setTags(['most popular building', 	]);
-
-$result = $graphServiceClient->places()->byPlaceId('place-id')->patch($requestBody)->wait();
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Calendar
-
-$params = @{
-	"@odata.type" = "microsoft.graph.building"
-	tags = @(
-	"most popular building"
-)
-}
-
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph import GraphServiceClient
-from msgraph.generated.models.building import Building
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = Building(
-	odata_type = "microsoft.graph.building",
-	tags = [
-		"most popular building",
-	],
-)
-
-result = await graph_client.places.by_place_id('place-id').patch(request_body)
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 #### Response
 
@@ -248,6 +111,12 @@ Content-Type: application/json
   "id": "e18a8e21-0494-4296-a5bc-f848dba2740d",
   "placeId": "e18a8e21-0494-4296-a5bc-f848dba2740d",
   "displayName": "MRS",
+  "lastUpdatedTime": "2026-10-12T03:30:00Z",
+  "customProperties": {
+    "@odata.type": "microsoft.graph.stringDictionary",
+    "costCenter": "CC-1042",
+    "campusCode": "SEA"
+  },
   "phone": "8801733457",
   "tags": [
     "most popular building"
@@ -274,14 +143,14 @@ The following example shows how to update a **floor** object.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_2_http)
-- [C#](#tabpanel_2_csharp)
-- [Go](#tabpanel_2_go)
-- [Java](#tabpanel_2_java)
-- [JavaScript](#tabpanel_2_javascript)
-- [PHP](#tabpanel_2_php)
-- [PowerShell](#tabpanel_2_powershell)
-- [Python](#tabpanel_2_python)
+- [HTTP](#tabpanel_1_http)
+- [C#](#tabpanel_1_csharp)
+- [Go](#tabpanel_1_go)
+- [Java](#tabpanel_1_java)
+- [JavaScript](#tabpanel_1_javascript)
+- [PHP](#tabpanel_1_php)
+- [PowerShell](#tabpanel_1_powershell)
+- [Python](#tabpanel_1_python)
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/places/c64205d0-1a2d-4cfe-9012-3f5d668d28ea
@@ -461,14 +330,14 @@ The following example shows how to update a **section** object.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_3_http)
-- [C#](#tabpanel_3_csharp)
-- [Go](#tabpanel_3_go)
-- [Java](#tabpanel_3_java)
-- [JavaScript](#tabpanel_3_javascript)
-- [PHP](#tabpanel_3_php)
-- [PowerShell](#tabpanel_3_powershell)
-- [Python](#tabpanel_3_python)
+- [HTTP](#tabpanel_2_http)
+- [C#](#tabpanel_2_csharp)
+- [Go](#tabpanel_2_go)
+- [Java](#tabpanel_2_java)
+- [JavaScript](#tabpanel_2_javascript)
+- [PHP](#tabpanel_2_php)
+- [PowerShell](#tabpanel_2_powershell)
+- [Python](#tabpanel_2_python)
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/places/3e7160bb-75da-4456-ab3c-5ee061f4611a
@@ -632,14 +501,14 @@ The following example shows how to update a **desk** object.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_4_http)
-- [C#](#tabpanel_4_csharp)
-- [Go](#tabpanel_4_go)
-- [Java](#tabpanel_4_java)
-- [JavaScript](#tabpanel_4_javascript)
-- [PHP](#tabpanel_4_php)
-- [PowerShell](#tabpanel_4_powershell)
-- [Python](#tabpanel_4_python)
+- [HTTP](#tabpanel_3_http)
+- [C#](#tabpanel_3_csharp)
+- [Go](#tabpanel_3_go)
+- [Java](#tabpanel_3_java)
+- [JavaScript](#tabpanel_3_javascript)
+- [PHP](#tabpanel_3_php)
+- [PowerShell](#tabpanel_3_powershell)
+- [Python](#tabpanel_3_python)
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/places/530f7900-8063-4daf-9cc1-168cb3ac26e9
@@ -826,14 +695,14 @@ The following example shows how to update a **room** object.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_5_http)
-- [C#](#tabpanel_5_csharp)
-- [Go](#tabpanel_5_go)
-- [Java](#tabpanel_5_java)
-- [JavaScript](#tabpanel_5_javascript)
-- [PHP](#tabpanel_5_php)
-- [PowerShell](#tabpanel_5_powershell)
-- [Python](#tabpanel_5_python)
+- [HTTP](#tabpanel_4_http)
+- [C#](#tabpanel_4_csharp)
+- [Go](#tabpanel_4_go)
+- [Java](#tabpanel_4_java)
+- [JavaScript](#tabpanel_4_javascript)
+- [PHP](#tabpanel_4_php)
+- [PowerShell](#tabpanel_4_powershell)
+- [Python](#tabpanel_4_python)
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/places/cf100@contoso.com
@@ -1058,14 +927,14 @@ The following example shows how to update a **workspace** object.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_6_http)
-- [C#](#tabpanel_6_csharp)
-- [Go](#tabpanel_6_go)
-- [Java](#tabpanel_6_java)
-- [JavaScript](#tabpanel_6_javascript)
-- [PHP](#tabpanel_6_php)
-- [PowerShell](#tabpanel_6_powershell)
-- [Python](#tabpanel_6_python)
+- [HTTP](#tabpanel_5_http)
+- [C#](#tabpanel_5_csharp)
+- [Go](#tabpanel_5_go)
+- [Java](#tabpanel_5_java)
+- [JavaScript](#tabpanel_5_javascript)
+- [PHP](#tabpanel_5_php)
+- [PowerShell](#tabpanel_5_powershell)
+- [Python](#tabpanel_5_python)
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/places/ws100@contoso.com
@@ -1300,14 +1169,14 @@ The following example shows how to update a **roomList** object.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_7_http)
-- [C#](#tabpanel_7_csharp)
-- [Go](#tabpanel_7_go)
-- [Java](#tabpanel_7_java)
-- [JavaScript](#tabpanel_7_javascript)
-- [PHP](#tabpanel_7_php)
-- [PowerShell](#tabpanel_7_powershell)
-- [Python](#tabpanel_7_python)
+- [HTTP](#tabpanel_6_http)
+- [C#](#tabpanel_6_csharp)
+- [Go](#tabpanel_6_go)
+- [Java](#tabpanel_6_java)
+- [JavaScript](#tabpanel_6_javascript)
+- [PHP](#tabpanel_6_php)
+- [PowerShell](#tabpanel_6_powershell)
+- [Python](#tabpanel_6_python)
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/places/Building1RroomList@contoso.com

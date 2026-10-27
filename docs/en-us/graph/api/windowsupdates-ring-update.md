@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-ring-update?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-05-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Update ring
 
@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Update the properties of a [ring](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta) object.
 
-You can use this method with the following child object type: [qualityUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta).
+You can use this method with the following child object types: [driverUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatering?view=graph-rest-beta), [featureUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatering?view=graph-rest-beta), and [qualityUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -48,18 +48,24 @@ PATCH /admin/windows/updates/policies/{policyId}/rings/{ringId}
 
 ## Request body
 
+Specify the concrete type in the `@odata.type` property. Supported values include `#microsoft.graph.windowsUpdates.driverUpdateRing`, `#microsoft.graph.windowsUpdates.featureUpdateRing`, and `#microsoft.graph.windowsUpdates.qualityUpdateRing`.
+
 In the request body, supply *only* the values for properties to update. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
 
 The following table specifies the properties that can be updated.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| deferralInDays | Int32 | The quality update deferral period \(days\). The value must be between `0` and `30`. Optional. |
+| deferralInDays | Int32 | The update deferral period in days. The value must be between `0` and `30`. Optional. |
 | description | String | The ring description. The maximum length is 1,500 characters. Optional. |
 | displayName | String | The ring display name.The maximum length is 200 characters. Optional. |
 | excludedGroupAssignment | [microsoft.graph.windowsUpdates.excludedGroupAssignment](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-excludedgroupassignment?view=graph-rest-beta) | Governs the update deployment audience with excluded groups. Groups are logical containers of devices represented by Microsoft Entra groups. Optional. |
 | includedGroupAssignment | [microsoft.graph.windowsUpdates.includedGroupAssignment](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-includedgroupassignment?view=graph-rest-beta) | Governs the update deployment audience with included groups. Groups are logical containers of devices represented by Microsoft Entra groups. Optional. |
-| isPaused | Boolean | The pause action for the quality update ring policy. Optional. |
+| isHotpatchEnabled | Boolean | Indicates whether hotpatch updates are enabled. Applies only to **qualityUpdateRing**. Optional. |
+| isOfferOptional | Boolean | Indicates whether the feature update is offered to end users as optional. Applies only to **featureUpdateRing**. Optional. |
+| isPaused | Boolean | Indicates whether update offers for the ring are paused. Optional. |
+| offerDurationInDays | Int32 | The total length of the gradual rollout window, in days. Applies only to **featureUpdateRing**. Optional. |
+| offerIntervalInDays | Int32 | How often, in days, a new subset of devices is offered the update. Applies only to **featureUpdateRing**. Optional. |
 
 ## Response
 
@@ -81,7 +87,7 @@ The following example shows how to update a quality update ring.
 - [Python](#tabpanel_1_python)
 
 ```http
-PATCH https://graph.microsoft.com/beta/admin/windows/updates/policies/{policyId}/rings/{ringId}
+PATCH https://graph.microsoft.com/beta/admin/windows/updates/policies/33333333-3333-4333-8333-333333333333/rings/66666666-6666-4666-8666-666666666666
 Content-Type: application/json
 
 {
@@ -293,10 +299,10 @@ Content-Type: application/json
   "displayName": "Ring0 - IT devices",
   "description": "First deployment ring to test updates before going to prod.",
   "includedGroupAssignment": {
-    "@odata.type": "microsoft.graph.windowsUpdates.includedGroupAssignment"
+    "@odata.type": "#microsoft.graph.windowsUpdates.includedGroupAssignment"
   },
   "excludedGroupAssignment": {
-    "@odata.type": "microsoft.graph.windowsUpdates.excludedGroupAssignment"
+    "@odata.type": "#microsoft.graph.windowsUpdates.excludedGroupAssignment"
   },
   "deferralInDays": 5,
   "isPaused": false,

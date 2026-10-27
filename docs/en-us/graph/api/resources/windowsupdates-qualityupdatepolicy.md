@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatepolicy?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-01-27 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # qualityUpdatePolicy resource type
 
@@ -15,7 +15,7 @@ Inherits from [policy](https://learn.microsoft.com/en-us/graph/api/resources/win
 
 ## Methods
 
-For the list of supported methods, see [policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta).
+This resource is part of a polymorphic collection managed by the [policy resource](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta) base type. Operations are performed through the base type endpoints.
 
 ## Properties
 
@@ -32,7 +32,8 @@ For the list of supported methods, see [policy](https://learn.microsoft.com/en-u
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
-| applicableContent | [microsoft.graph.windowsUpdates.policyApproval](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policyapproval?view=graph-rest-beta) collection | Represents content applicable for offering to the related collection of devices. Inherited from [microsoft.graph.windowsUpdates.policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta). |
+| applicableCatalogs | [microsoft.graph.windowsUpdates.applicableCatalog](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-applicablecatalog?view=graph-rest-beta) collection | The quality update catalog entries that apply to devices targeted by the policy. Inherited from [policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta). |
+| applicableContent | [microsoft.graph.windowsUpdates.applicableContent](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-applicablecontent?view=graph-rest-beta) collection | The existing applicable-content collection. Inherited from [policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta). |
 | approvals | [microsoft.graph.windowsUpdates.policyApproval](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policyapproval?view=graph-rest-beta) collection | Represents a set of quality updates policy approval types. Inherited from [microsoft.graph.windowsUpdates.policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta). |
 | rings | [microsoft.graph.windowsUpdates.ring](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta) collection | Represents a set of deployment rings that contains update deployment settings. Inherited from [microsoft.graph.windowsUpdates.policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta). |
 

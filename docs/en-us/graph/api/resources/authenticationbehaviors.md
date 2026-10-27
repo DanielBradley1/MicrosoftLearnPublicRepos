@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/authenticationbehaviors?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # authenticationBehaviors resource type
 
@@ -11,7 +11,7 @@ Applications can adopt new breaking changes by enabling a behavior \(set the beh
 
 Note
 
-The **coopEnforcement** property isn't available in national cloud deployments. It's available only for the global service.
+The **coopEnforcement** property is available in the global service and the supported national cloud deployments: US Government L4, US Government L5 \(DoD\), and China operated by 21Vianet.
 
 ## Methods
 

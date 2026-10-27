@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/userset?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-04 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # userSet resource type
 
@@ -28,6 +28,8 @@ In entitlement management, the derived types of this object are configured in th
 - **primaryApprovers** property of [approvalStage](https://learn.microsoft.com/en-us/graph/api/resources/approvalstage?view=graph-rest-beta)
 - **reviewers** property of [assignmentReviewSettings](https://learn.microsoft.com/en-us/graph/api/resources/assignmentreviewsettings?view=graph-rest-beta)
 - **allowedRequestors** property of [requestorSettings](https://learn.microsoft.com/en-us/graph/api/resources/requestorsettings?view=graph-rest-beta)
+
+In approval delegation, the derived types of this object are configured in the **delegate** property of [approverDelegate](https://learn.microsoft.com/en-us/graph/api/resources/approverdelegate?view=graph-rest-beta).
 
 ## Properties
 

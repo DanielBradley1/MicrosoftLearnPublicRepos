@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-ring-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Get ring
 
@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Read the properties and relationships of [ring](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta) object.
 
-You can use this method with the following child object type: [qualityUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta).
+You can use this method with the following child object types: [driverUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatering?view=graph-rest-beta), [featureUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatering?view=graph-rest-beta), and [qualityUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -204,22 +204,20 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdateRing",
-    "displayName": "IT Test - Ring0",
-    "description": "First deployment ring to test updates with IT devices",
-    "includedGroupAssignment": {
-      "@odata.type": "microsoft.graph.windowsUpdates.includedGroupAssignment"
-    },
-    "excludedGroupAssignment": {
-      "@odata.type": "microsoft.graph.windowsUpdates.excludedGroupAssignment"
-    },
-    "deferralInDays": 3,
-    "isPaused": false,
-    "id": "a2c7637a-cda5-e59e-2385-972c4ee528d2",
-    "createdDateTime": "2020-06-09T10:00:00Z",
-    "lastModifiedDateTime": "2020-06-09T10:00:00Z",
-    "isHotpatchEnabled": true
-  }
+  "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdateRing",
+  "displayName": "IT Test - Ring0",
+  "description": "First deployment ring to test updates with IT devices",
+  "includedGroupAssignment": {
+    "@odata.type": "#microsoft.graph.windowsUpdates.includedGroupAssignment"
+  },
+  "excludedGroupAssignment": {
+    "@odata.type": "#microsoft.graph.windowsUpdates.excludedGroupAssignment"
+  },
+  "deferralInDays": 3,
+  "isPaused": false,
+  "id": "a2c7637a-cda5-e59e-2385-972c4ee528d2",
+  "createdDateTime": "2020-06-09T10:00:00Z",
+  "lastModifiedDateTime": "2020-06-09T10:00:00Z",
+  "isHotpatchEnabled": true
 }
 ```

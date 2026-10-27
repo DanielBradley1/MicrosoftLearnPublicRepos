@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-06-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # privilegedAccessGroupAssignmentScheduleRequest resource type
 
@@ -18,6 +18,7 @@ Inherits from [privilegedAccessScheduleRequest](https://learn.microsoft.com/en-u
 | [Get](https://learn.microsoft.com/en-us/graph/api/privilegedaccessgroupassignmentschedulerequest-get?view=graph-rest-1.0) | [privilegedAccessGroupAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0) | Read the properties and relationships of a [privilegedAccessGroupAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0) object. |
 | [Filter by current user](https://learn.microsoft.com/en-us/graph/api/privilegedaccessgroupassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0) | [privilegedAccessGroupAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0) collection | Return assignment schedule requests for the calling principal. |
 | [Cancel](https://learn.microsoft.com/en-us/graph/api/privilegedaccessgroupassignmentschedulerequest-cancel?view=graph-rest-1.0) | None | Cancel a pending request for a membership or ownership assignment to a group. |
+| [privilegedAccessGroupAssignmentScheduleRequest: updateRequest](https://learn.microsoft.com/en-us/graph/api/privilegedaccessgroupassignmentschedulerequest-updaterequest?view=graph-rest-1.0) | [privilegedAccessGroupAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0) | Submit the result of a custom extension evaluation for the request. |
 
 ## Properties
 

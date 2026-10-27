@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/networkaccess-remotenetworkconnectivityconfiguration-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Get remoteNetworkConnectivityConfiguration
 
@@ -15,7 +15,7 @@ This API is available in the following [national cloud deployments](https://lear
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
 | --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+| ✅ | ✅ | ✅ | ❌ |
 
 ## Permissions
 

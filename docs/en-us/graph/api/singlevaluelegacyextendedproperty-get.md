@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-07 -->
+<!-- Sitemap-Last-Modified: 2026-09-28 -->
 
 # Get singleValueLegacyExtendedProperty
 
@@ -26,6 +26,8 @@ The following user resources are supported:
 - [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-1.0)
 - [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0)
 - [note](https://learn.microsoft.com/en-us/graph/api/resources/note?view=graph-rest-1.0)
+- [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0)
+- [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0)
 
 As well as the following group resources:
 
@@ -33,7 +35,7 @@ As well as the following group resources:
 - group [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0)
 - group [post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0)
 
-See [Extended properties overview](https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview?view=graph-rest-1.0) for more information about when to use open extensions or extended properties, and how to specify extended properties.
+For more information about when to use open extensions or extended properties, and how to specify extended properties, see [Extended properties overview](https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview?view=graph-rest-1.0).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -51,14 +53,16 @@ Depending on the resource you're getting the extended property from and the perm
 | [contact](https://learn.microsoft.com/en-us/graph/api/resources/contact?view=graph-rest-1.0) | Contacts.Read | Contacts.Read | Contacts.Read |
 | [contactFolder](https://learn.microsoft.com/en-us/graph/api/resources/contactfolder?view=graph-rest-1.0) | Contacts.Read | Contacts.Read | Contacts.Read |
 | [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0) | Calendars.Read | Calendars.Read | Calendars.Read |
-| group [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-1.0) | Group.Read.All | Not supported | Not supported |
-| group [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0) | Group.Read.All | Not supported | Not supported |
-| group [post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0) | Group.Read.All | Not supported | Group.Read.All |
+| group [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-1.0) | Group.Read.All | Not supported. | Not supported. |
+| group [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0) | Group.Read.All | Not supported. | Not supported. |
+| group [post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0) | Group.Read.All | Not supported. | Group.Read.All |
 | [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) | MailboxFolder.Read | Not supported. | MailboxFolder.Read.All |
 | [mailboxItem](https://learn.microsoft.com/en-us/graph/api/resources/mailboxitem?view=graph-rest-1.0) | MailboxItem.Read | Not supported. | MailboxItem.Read.All |
 | [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-1.0) | Mail.Read | Mail.Read | Mail.Read |
 | [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0) | Mail.Read | Mail.Read | Mail.Read |
 | [note](https://learn.microsoft.com/en-us/graph/api/resources/note?view=graph-rest-1.0) | ShortNotes.Read | ShortNotes.Read | ShortNotes.Read.All |
+| [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) | Tasks.Read | Tasks.Read | Tasks.Read.All |
+| [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) | Tasks.Read | Tasks.Read | Tasks.Read.All |
 
 ## HTTP request
 
@@ -151,6 +155,32 @@ Get a **mailboxFolder** instance:
 ```http
 GET /admin/exchange/mailboxes/{mailboxId}/folders?$expand=singleValueExtendedProperties($filter=id eq '{id_value}')
 GET /admin/exchange/mailboxes/{mailboxId}/folders/{mailboxFolderId}?$expand=singleValueExtendedProperties($filter=id eq '{id_value}')
+```
+
+Note
+
+Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission. Application permissions aren't supported when using the `/me` endpoint.
+
+Get a **todoTask** instance:
+
+```http
+GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
+GET /me/todo/lists/{todoTaskListId}/tasks?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
+GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{todoTaskId}?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
+GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
+```
+
+Note
+
+Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission. Application permissions aren't supported when using the `/me` endpoint.
+
+Get a **todoTaskList** instance:
+
+```http
+GET /me/todo/lists/{todoTaskListId}?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
+GET /me/todo/lists?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
+GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
+GET /users/{id|userPrincipalName}/todo/lists?$expand=singleValueExtendedProperties($filter=id eq '{propertyId}')
 ```
 
 Note

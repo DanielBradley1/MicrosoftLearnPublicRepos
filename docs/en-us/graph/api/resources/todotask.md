@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-10-29 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # todoTask resource type
 
@@ -27,6 +27,9 @@ This resource supports the following:
 | [Create checklistItem](https://learn.microsoft.com/en-us/graph/api/todotask-post-checklistitems?view=graph-rest-1.0) | [checklistItem](https://learn.microsoft.com/en-us/graph/api/resources/checklistitem?view=graph-rest-1.0) | Create a new **checklistItem** object. |
 | [List linkedResources](https://learn.microsoft.com/en-us/graph/api/todotask-list-linkedresources?view=graph-rest-1.0) | [linkedResource](https://learn.microsoft.com/en-us/graph/api/resources/linkedresource?view=graph-rest-1.0) collection | Get the linkedResources from the linkedResources navigation property. |
 | [Create linkedResources](https://learn.microsoft.com/en-us/graph/api/todotask-post-linkedresources?view=graph-rest-1.0) | [linkedResource](https://learn.microsoft.com/en-us/graph/api/resources/linkedresource?view=graph-rest-1.0) | Create a new linkedResources object. |
+| **Extended properties** |  |  |
+| [Create single-value property](https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0) | [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) | Create one or more single-value extended properties in a new or existing [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) object. |
+| [Get single-value property](https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0) | [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) | Get [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) objects that contain a single-value extended property by using `$expand` or `$filter`. |
 
 ## Properties
 
@@ -59,6 +62,7 @@ Tasks can be exported using the PST download described in [Export content search
 | checklistItems | [checklistItem](https://learn.microsoft.com/en-us/graph/api/resources/checklistitem?view=graph-rest-1.0) collection | A collection of checklistItems linked to a task. |
 | extensions | [extension](https://learn.microsoft.com/en-us/graph/api/resources/extension?view=graph-rest-1.0) collection | The collection of open extensions defined for the task. Nullable. |
 | linkedResources | [linkedResource](https://learn.microsoft.com/en-us/graph/api/resources/linkedresource?view=graph-rest-1.0) collection | A collection of resources linked to the task. |
+| singleValueExtendedProperties | [singleValueExtendedProperty](https://learn.microsoft.com/en-us/graph/api/resources/singlevalueextendedproperty?view=graph-rest-1.0) collection | A collection of custom fields linked to the task. |
 
 ## JSON representation
 

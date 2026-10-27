@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/redirecturiallowedschemeconfiguration?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # redirectUriAllowedSchemeConfiguration resource type
 
@@ -27,7 +27,7 @@ None.
 | publicClient | [redirectUriPlatformAllowedSchemeConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/redirecturiplatformallowedschemeconfiguration?view=graph-rest-beta) | Platform-specific allowed scheme configuration for public client applications \(native/mobile apps\). |
 | restrictForAppsCreatedAfterDateTime | DateTimeOffset | Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected. |
 | spa | [redirectUriPlatformAllowedSchemeConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/redirecturiplatformallowedschemeconfiguration?view=graph-rest-beta) | Platform-specific allowed scheme configuration for single-page applications \(SPAs\). |
-| state | appManagementRestrictionState | Indicates whether the restriction is enabled or disabled. The possible values are: `enabled`, `disabled`, `unknownFutureValue`. |
+| state | appManagementRestrictionState | Indicates whether the restriction is evaluated. The possible values are: `enabled`, `disabled`, `audit`, `unknownFutureValue`. If `enabled`, the restriction is evaluated and enforced. If `disabled`, the restriction isn't evaluated or enforced. If `audit`, the restriction is evaluated but not enforced. |
 | web | [redirectUriPlatformAllowedSchemeConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/redirecturiplatformallowedschemeconfiguration?view=graph-rest-beta) | Platform-specific allowed scheme configuration for web applications. |
 
 ## Relationships

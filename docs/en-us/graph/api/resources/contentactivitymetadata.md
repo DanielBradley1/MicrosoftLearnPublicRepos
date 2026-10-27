@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/contentactivitymetadata?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-05-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # contentActivityMetadata resource type
 
@@ -28,6 +28,7 @@ Inherits from [processContentMetadataBase](https://learn.microsoft.com/en-us/gra
 | modifiedDateTime | DateTimeOffset | Date and time when the original content was last modified. For ephemeral content, such as messages, this property might be the same as **createdDateTime**. Required. Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-beta). |
 | name | String | A descriptive name for the content; for example, file name, web page title, or chat message. Required. Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-beta). |
 | recordType | [microsoft.graph.security.auditLogRecordType](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecordtype?view=graph-rest-beta) | The type of operation indicated by the record. Currently reserved to indicate `ComplianceDLPEnforcement`. |
+| sensitivityLabels | [currentLabel](https://learn.microsoft.com/en-us/graph/api/resources/currentlabel?view=graph-rest-beta) collection | Caller-supplied sensitivity labels describing the content. Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-beta). |
 | sequenceNumber | Int64 | A sequence number that indicates the order in which content was generated or should be processed. Required when **correlationId** is used. Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-beta). |
 
 ## Relationships
@@ -52,6 +53,11 @@ The following JSON representation shows the resource type.
   "modifiedDateTime": "String (timestamp)",
   "name": "String", 
   "recordType": "String",
-  "sequenceNumber": "Int64"
+  "sequenceNumber": "Int64",
+  "sensitivityLabels": [
+    {
+      "@odata.type": "microsoft.graph.currentLabel"
+    }
+  ]
 }
 ```

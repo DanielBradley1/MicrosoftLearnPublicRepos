@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/roomlist?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # roomList resource type
 
@@ -26,12 +26,14 @@ For more supported methods, see [place](https://learn.microsoft.com/en-us/graph/
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | address | [physicalAddress](https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress?view=graph-rest-1.0) | The street address of the room list. |
+| customProperties | [stringDictionary](https://learn.microsoft.com/en-us/graph/api/resources/stringdictionary?view=graph-rest-1.0) | Custom properties for the **place**. Each property has a string key and a string value. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | displayName | String | The name associated with the room list. |
 | emailAddress | String | The email address of the room list. |
 | geoCoordinates | [outlookGeoCoordinates](https://learn.microsoft.com/en-us/graph/api/resources/outlookgeocoordinates?view=graph-rest-1.0) | Specifies the room list location in latitude, longitude, and \(optionally\) altitude coordinates. |
 | id | String | Unique identifier for the room list. Read-only. This identifier isn't immutable and can change if there are changes to the mailbox or to the tenant configuration. |
 | isWheelChairAccessible | Boolean | If the room allows wheelchairs. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | label | String | The label of the room list. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
+| lastUpdatedTime | DateTimeOffset | The date and time when the **place** was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | phone | String | The phone number of the room list. |
 | parentId | String | The place ID of the parent of the room list. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | tags | String collection | Custom tags that are associated with the room list categorization or filtering. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
@@ -50,6 +52,8 @@ The following JSON representation shows the resource type.
 ```json
 {
   "@odata.type": "#microsoft.graph.roomList",
+  "customProperties": {"@odata.type": "microsoft.graph.stringDictionary"},
+  "lastUpdatedTime": "String (timestamp)",
   "id": "String (identifier)",
   "displayName": "String",
   "geoCoordinates": {

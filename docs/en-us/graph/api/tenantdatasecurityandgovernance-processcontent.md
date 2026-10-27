@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/tenantdatasecurityandgovernance-processcontent?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-04 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # tenantDataSecurityAndGovernance: processContent
 
@@ -9,18 +9,7 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Evaluate content against Microsoft Purview Data Loss Prevention \(DLP\) policies and return the policy actions that apply to the supplied content.
-
-Use this API when an application needs to evaluate content before or during data movement. In Agent-to-Tool \(A2T\) scenarios, the agent runtime calls this API before invoking an external tool to determine whether the content should be allowed, blocked, or audited according to Microsoft Purview policies.
-
-For A2T scenarios:
-
-- Set `evaluationScope.type` to `agent`.
-- Provide `protectedAppMetadata` to identify both the agent initiating the operation and the tool receiving the content.
-- Use the protection scope returned by `protectionScopes/compute` to determine whether this API should be called.
-- Pass the latest protection scope `ETag` value in the `If-None-Match` request header to enable policy change detection.
-
-The response contains any applicable policy actions together with the protection scope state, allowing callers to determine whether cached protection scopes should be refreshed.
+Process content from an agent interaction against tenant data protection policies. The protected agent is identified in **protectedAppMetadata.applicationLocation**, and the other parties in the interaction are identified in **activityMetadata.participants**.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -38,6 +27,8 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
 | Application | Content.Process.All | Not available. |
 
+The `Content.Process.All` permission requires administrator consent.
+
 ## HTTP request
 
 ```http
@@ -50,85 +41,89 @@ POST /security/dataSecurityAndGovernance/processContent
 | :--- | :--- |
 | Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
 | Content-Type | application/json. Required. |
-| If-None-Match | Optional. The `ETag` value returned by the latest `protectionScopes/compute` response. Enables detection of protection scope changes between requests. |
+| If-None-Match | The ETag returned by [tenantProtectionScopeContainer: compute](https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta). Optional. Use this header to determine whether the cached policy state changed. |
 
 ## Request body
 
-In the request body, supply a JSON representation of the parameters.
-
-The following table lists the parameters that are required when you call this action.
+In the request body, supply a JSON object with the following parameter.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| contentToProcess | [processContentRequest](https://learn.microsoft.com/en-us/graph/api/resources/processcontentrequest?view=graph-rest-beta) | Required. Specifies the content to evaluate together with the evaluation context. For this action, set **evaluationScope.type** to `agent` and identify the agent and tool in **protectedAppMetadata**. |
+| contentToProcess | [processContentRequest](https://learn.microsoft.com/en-us/graph/api/resources/processcontentrequest?view=graph-rest-beta) | The content and metadata to evaluate. Required. For agent evaluation, set **evaluationScope.type** to `agent`; specify a [policyLocationAgent](https://learn.microsoft.com/en-us/graph/api/resources/policylocationagent?view=graph-rest-beta) in **protectedAppMetadata.applicationLocation**; and include at least one concrete participant in **activityMetadata.participants**. |
 
 ## Response
 
-If successful, this action returns a `200 OK` response code and a [processContentResponse](https://learn.microsoft.com/en-us/graph/api/resources/processcontentresponse?view=graph-rest-beta) in the response body.
-
-The response contains the policy actions that apply to the submitted content. It also includes the protection scope state, which indicates whether the caller should refresh its cached protection scopes before processing future requests.
+If successful, this action returns a `200 OK` response code and a [processContentResponse](https://learn.microsoft.com/en-us/graph/api/resources/processcontentresponse?view=graph-rest-beta) object in the response body.
 
 ### Response headers
 
 | Name | Description |
 | :--- | :--- |
-| ETag | Indicates the current protection scope state. If the value changes, refresh the cached protection scopes by calling [tenantProtectionScopeContainer: compute](https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta). |
+| ETag | Indicates the current policy state. If the ETag changes and **protectionScopeState** is `modified`, refresh the cached scopes by calling [tenantProtectionScopeContainer: compute](https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta). |
 
 ## Examples
 
 ### Request
 
-The following example shows a request.
+The following example evaluates a human prompt before it enters a protected agent.
 
 ```http
 POST https://graph.microsoft.com/beta/security/dataSecurityAndGovernance/processContent
+Authorization: Bearer {token}
 Content-Type: application/json
+If-None-Match: "8936456543210"
 
 {
   "contentToProcess": {
     "contentEntries": [
       {
         "@odata.type": "microsoft.graph.processConversationMetadata",
-        "identifier": "78214691-2f04-4f01-99f8-55da9d25c260",
+        "identifier": "d01b09f7-b666-4ec9-9819-217a68ef1345",
+        "name": "Human prompt",
         "content": {
           "@odata.type": "microsoft.graph.textContent",
-          "data": "Summarize the quarterly results for the project team."
+          "data": "Summarize this confidential document."
         },
-        "name": "Quarterly results request",
+        "correlationId": "3691e553-9db2-4b7b-a84f-3d248d3c8335",
+        "sequenceNumber": 1,
         "isTruncated": false,
-        "createdDateTime": "2026-07-21T12:30:00Z",
-        "modifiedDateTime": "2026-07-21T12:30:00Z"
+        "createdDateTime": "2026-08-05T17:00:00Z",
+        "modifiedDateTime": "2026-08-05T17:00:00Z"
       }
     ],
     "activityMetadata": {
-      "activity": "uploadText"
+      "activity": "uploadText",
+      "participants": [
+        {
+          "@odata.type": "microsoft.graph.userParticipant",
+          "value": "11111111-1111-1111-1111-111111111111"
+        }
+      ]
     },
-    "deviceMetadata": {
-      "deviceType": "managed",
-      "operatingSystemSpecifications": {
-        "operatingSystemPlatform": "Windows",
-        "operatingSystemVersion": "11"
-      },
-      "ipAddress": "192.0.2.1"
+    "integratedAppMetadata": {
+      "name": "Agent365.Sydney",
+      "version": "2026.8.5.1"
+    },
+    "deviceMetadata": {},
+    "protectedAppMetadata": {
+      "applicationLocation": {
+        "@odata.type": "microsoft.graph.policyLocationAgent",
+        "value": "22222222-2222-2222-2222-222222222222",
+        "agentMetadata": {
+          "agentAdministrativeUnitId": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+          "agentBlueprintId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+          "agentCategory": "Agents.Foundry.MicrosoftAzure",
+          "agentOwner": "owner@contoso.com",
+          "agentPublisher": "Contoso",
+          "altAgentIds": [
+            "sydney-agent-22222222"
+          ],
+          "isEntraAgentId": true
+        }
+      }
     },
     "evaluationScope": {
       "type": "agent"
-    },
-    "integratedAppMetadata": {
-      "name": "Contoso agent runtime",
-      "version": "1.0"
-    },
-    "protectedAppMetadata": {
-      "name": "Contoso search tool",
-      "version": "1.0",
-      "applicationLocation": {
-        "@odata.type": "microsoft.graph.policyLocationTool",
-        "value": "search@mcp"
-      },
-      "sourceLocation": {
-        "@odata.type": "microsoft.graph.policyLocationApplication",
-        "value": "8f44d8d4-80c9-4d88-a487-a1940dc71b3d"
-      }
     }
   }
 }
@@ -138,16 +133,22 @@ Content-Type: application/json
 
 The following example shows the response.
 
-> **Note:** The response object shown here might be shortened for readability.
-
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+ETag: "8936456543210"
 
 {
   "@odata.context": "https://graph.microsoft.com/beta/$metadata#microsoft.graph.processContentResponse",
-  "policyActions": [],
-  "processingErrors": [],
-  "protectionScopeState": "notModified"
+  "@odata.type": "#microsoft.graph.processContentResponse",
+  "protectionScopeState": "notModified",
+  "policyActions": [
+    {
+      "@odata.type": "#microsoft.graph.restrictAccessAction",
+      "action": "restrictAccess",
+      "restrictionAction": "block"
+    }
+  ],
+  "processingErrors": []
 }
 ```

@@ -1,21 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-02 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # backupReport: getStatisticsByPolicy
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Get the statistics that correspond to the specified policy ID of a [backupPolicyReport](https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyreport?view=graph-rest-beta).
-
-This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
-
-| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
-| --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+Get the statistics that correspond to the specified policy ID of a [backupPolicyReport](https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyreport?view=graph-rest-1.0).
 
 ## Permissions
 
@@ -39,7 +29,7 @@ In the request URL, provide the following query parameters with values.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `policyId` | String | The ID of the backup policy for which the report is requested. Required. |
+| policyId | String | The ID of the backup policy for which the report is requested. Required. |
 
 ## Request headers
 
@@ -53,7 +43,7 @@ Don't supply a request body for this method.
 
 ## Response
 
-If successful, this function returns a `200 OK` response code and a [backupPolicyReport](https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyreport?view=graph-rest-beta) in the response body.
+If successful, this function returns a `200 OK` response code and a [backupPolicyReport](https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyreport?view=graph-rest-1.0) object in the response body.
 
 ## Examples
 
@@ -62,7 +52,7 @@ If successful, this function returns a `200 OK` response code and a [backupPolic
 The following example shows a request.
 
 ```http
-GET https://graph.microsoft.com/beta/solutions/backupRestore/reports/getStatisticsByPolicy(policyId='98a71fd2-00f7-413f-a908-370acfb2983f')
+GET https://graph.microsoft.com/v1.0/solutions/backupRestore/reports/getStatisticsByPolicy(policyId='98a71fd2-00f7-413f-a908-370acfb2983f')
 ```
 
 ### Response
@@ -76,7 +66,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#microsoft.graph.backupPolicyReport",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.backupPolicyReport",
   "backupPolicyId": "98a71fd2-00f7-413f-a908-370acfb2983f",
   "displayName": "Exchange Policy - Inadvertent data loss",
   "countStatistics": {

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/networkaccess-filteringrule-list?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2025-11-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # List filteringRules
 
@@ -18,7 +18,7 @@ This API is available in the following [national cloud deployments](https://lear
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
 | --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+| ✅ | ✅ | ✅ | ❌ |
 
 ## Permissions
 

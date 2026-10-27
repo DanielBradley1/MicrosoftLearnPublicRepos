@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/customextensionauthenticationconfiguration?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-08-09 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # customExtensionAuthenticationConfiguration resource type
 
 Namespace: microsoft.graph
 
-Abstract base type that exposes the configuration for the **authenticationConfiguration** property of the derived types that inherit from the [customCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/customcalloutextension?view=graph-rest-1.0) abstract type.
+Abstract base type that exposes the configuration for the **authenticationConfiguration** property of the derived types that inherit from the [customCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/customcalloutextension?view=graph-rest-1.0) abstract type, including [roleManagementCustomCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension?view=graph-rest-1.0).
 
 This abstract type is inherited by the following resource types:
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-approvalrule?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-01-27 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # approvalRule resource type
 
@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 An abstract type that represents an entity that governs the overall Windows update approval deployment rules.
 
-Base type of [qualityUpdateApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdateapprovalrule?view=graph-rest-beta) and [recoveryApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-recoveryapprovalrule?view=graph-rest-beta).
+Base type of [driverUpdateApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdateapprovalrule?view=graph-rest-beta), [qualityUpdateApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdateapprovalrule?view=graph-rest-beta), and [recoveryApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-recoveryapprovalrule?view=graph-rest-beta).
 
 ## Properties
 

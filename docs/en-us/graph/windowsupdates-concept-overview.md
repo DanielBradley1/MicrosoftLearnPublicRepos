@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/windowsupdates-concept-overview -->
-<!-- Sitemap-Last-Modified: 2026-01-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Windows updates API overview
 
@@ -85,6 +85,14 @@ To learn more, see [Manage safeguards for a deployment](https://learn.microsoft.
 Additionally, you can configure monitoring rules that are unique to your organization. These rules can send an alert or pause a deployment based on device signals such as rollbacks.
 
 To learn more, see [Manage monitoring rules for a deployment](https://learn.microsoft.com/en-us/graph/windowsupdates-manage-monitoring-rules).
+
+## Windows Autopatch policy and reporting APIs
+
+In Microsoft Graph beta, you can use the [policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta&preserve-view=true) and [ring](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta&preserve-view=true) resources to manage driver and firmware, feature, and quality update policies. You can also:
+
+- Manage tenant-level and MDM application settings through [tenantSetting](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-tenantsetting?view=graph-rest-beta&preserve-view=true) and [mdmAppSetting](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-mdmappsetting?view=graph-rest-beta&preserve-view=true).
+- Discover update applicability for policies through [applicableCatalog](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-applicablecatalog?view=graph-rest-beta&preserve-view=true).
+- Read device profiles, policy assignments, catalog applicability summaries, and driver deployment status through [updateData](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-updatedata?view=graph-rest-beta&preserve-view=true).
 
 ## API reference
 

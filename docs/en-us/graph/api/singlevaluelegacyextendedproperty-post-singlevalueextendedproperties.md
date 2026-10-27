@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Create single-value extended property
 
@@ -17,6 +17,8 @@ The following user resources are supported:
 - [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-1.0)
 - [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0)
 - [note](https://learn.microsoft.com/en-us/graph/api/resources/note?view=graph-rest-1.0)
+- [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0)
+- [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0)
 
 The following group resources:
 
@@ -24,7 +26,7 @@ The following group resources:
 - group [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0)
 - group [post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0)
 
-See [Extended properties overview](https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview?view=graph-rest-1.0) for more information about when to use open extensions or extended properties, and how to specify extended properties.
+For more information about when to use open extensions or extended properties, and how to specify extended properties, see [Extended properties overview](https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview?view=graph-rest-1.0).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -42,19 +44,21 @@ Depending on the resource you're creating the extended property in and the permi
 | [contact](https://learn.microsoft.com/en-us/graph/api/resources/contact?view=graph-rest-1.0) | Contacts.ReadWrite | Contacts.ReadWrite | Contacts.ReadWrite |
 | [contactFolder](https://learn.microsoft.com/en-us/graph/api/resources/contactfolder?view=graph-rest-1.0) | Contacts.ReadWrite | Contacts.ReadWrite | Contacts.ReadWrite |
 | [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0) | Calendars.ReadWrite | Calendars.ReadWrite | Calendars.ReadWrite |
-| group [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-1.0) | Group.ReadWrite.All | Not supported | Not supported |
-| group [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0) | Group.ReadWrite.All | Not supported | Not supported |
-| group [post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0) | Group.ReadWrite.All | Not supported | Not supported |
+| group [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-1.0) | Group.ReadWrite.All | Not supported. | Not supported. |
+| group [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0) | Group.ReadWrite.All | Not supported. | Not supported. |
+| group [post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0) | Group.ReadWrite.All | Not supported. | Not supported. |
 | [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) | MailboxFolder.Read | Not supported. | MailboxFolder.Read.All |
 | [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-1.0) | Mail.ReadWrite | Mail.ReadWrite | Mail.ReadWrite |
 | [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0) | Mail.ReadWrite | Mail.ReadWrite | Mail.ReadWrite |
 | [note](https://learn.microsoft.com/en-us/graph/api/resources/note?view=graph-rest-1.0) | ShortNotes.ReadWrite | ShortNotes.ReadWrite | ShortNotes.ReadWrite.All |
+| [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) | Tasks.ReadWrite | Tasks.ReadWrite | Tasks.ReadWrite.All |
+| [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) | Tasks.ReadWrite | Tasks.ReadWrite | Tasks.ReadWrite.All |
 
 ## HTTP request
 
 You can create extended properties in a new or existing resource instance.
 
-To create one or more extended properties in a *new* resource instance, use the same REST request as creating the instance, and include the properties of the new resource instance *and extended property* in the request body. Some resources support creation in more than one way. For more information on creating these resource instances, see the corresponding articles for creating a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0), [mailFolder](https://learn.microsoft.com/en-us/graph/api/user-post-mailfolders?view=graph-rest-1.0), [event](https://learn.microsoft.com/en-us/graph/api/user-post-events?view=graph-rest-1.0), [calendar](https://learn.microsoft.com/en-us/graph/api/user-post-calendars?view=graph-rest-1.0), [contact](https://learn.microsoft.com/en-us/graph/api/user-post-contacts?view=graph-rest-1.0), [contactFolder](https://learn.microsoft.com/en-us/graph/api/user-post-contactfolders?view=graph-rest-1.0), [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders?view=graph-rest-1.0), [group event](https://learn.microsoft.com/en-us/graph/api/group-post-events?view=graph-rest-1.0), and [group post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0).
+To create one or more extended properties in a *new* resource instance, use the same REST request as creating the instance, and include the properties of the new resource instance *and extended property* in the request body. Some resources support creation in more than one way. For more information on creating these resource instances, see the corresponding articles for creating a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0), [mailFolder](https://learn.microsoft.com/en-us/graph/api/user-post-mailfolders?view=graph-rest-1.0), [event](https://learn.microsoft.com/en-us/graph/api/user-post-events?view=graph-rest-1.0), [calendar](https://learn.microsoft.com/en-us/graph/api/user-post-calendars?view=graph-rest-1.0), [contact](https://learn.microsoft.com/en-us/graph/api/user-post-contacts?view=graph-rest-1.0), [contactFolder](https://learn.microsoft.com/en-us/graph/api/user-post-contactfolders?view=graph-rest-1.0), [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders?view=graph-rest-1.0), [group event](https://learn.microsoft.com/en-us/graph/api/group-post-events?view=graph-rest-1.0), [group post](https://learn.microsoft.com/en-us/graph/api/resources/post?view=graph-rest-1.0), [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0), and [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0).
 
 The following is the syntax of the requests.
 
@@ -82,6 +86,11 @@ POST /admin/exchange/mailboxes/{mailboxId}/folders
 
 POST /me/notes
 POST /users/{id|userPrincipalName}/notes
+
+POST /me/todo/lists/{todoTaskListId}/tasks
+POST /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks
+POST /me/todo/lists
+POST /users/{id|userPrincipalName}/todo/lists
 
 POST /groups/{id}/events
 
@@ -126,6 +135,11 @@ PATCH /admin/exchange/mailboxes/{mailboxId}/folders/{mailboxFolderId}
 PATCH /me/notes/{id}
 PATCH /users/{id|userPrincipalName}/notes/{id}
 
+PATCH /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}
+PATCH /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{todoTaskId}
+PATCH /me/todo/lists/{todoTaskListId}
+PATCH /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}
+
 PATCH /groups/{id}/events/{id}
 ```
 
@@ -150,7 +164,7 @@ Provide a JSON body of each [singleValueLegacyExtendedProperty](https://learn.mi
 | id | String | For each property in the **singleValueExtendedProperties** collection, specify this to identify the property. It must follow one of the supported formats. See [Outlook extended properties overview](https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview?view=graph-rest-1.0) for more information. Required. |
 | value | string | For each property in the **singleValueExtendedProperties** collection, specify the property value. Required. |
 
-When creating an extended property in a *new* resource instance, in addition to the new **singleValueExtendedProperties** collection, provide a JSON representation of that resource instance \(that is, a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0), [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-1.0), [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0), etc.\)
+When creating an extended property in a *new* resource instance, in addition to the new **singleValueExtendedProperties** collection, provide a JSON representation of that resource instance \(that is, a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0), [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-1.0), [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0), [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0), etc.\)
 
 ## Response
 

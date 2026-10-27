@@ -1,23 +1,19 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenantsrefreshstatus?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-23 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-relatedtenantsrefreshstatus?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # relatedTenantsRefreshStatus resource type
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents the [status](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refreshstatus?view=graph-rest-beta) of a [related tenants refresh operation](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refreshstatus?view=graph-rest-beta), including the most recent refresh timestamp and current status of the operation.
+Represents the status of the most recent [related tenants refresh operation](https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refresh?view=graph-rest-1.0).
 
 ## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| mostRecentRefreshTime | String | Timestamp of the respective refresh request. |
-| mostRecentRefreshRequestStatus | String | The status of the refresh operation |
-| isFirstRefresh | Boolean | Describes whether the related tenants refresh was the initial aggregation done by our service or not. |
+| isFirstRefresh | Boolean | Indicates whether the operation is the first refresh of the related tenants list. |
+| mostRecentRefreshDateTime | DateTimeOffset | The date and time of the most recent refresh operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is `2024-01-01T00:00:00Z`. |
+| mostRecentRefreshRequestStatus | String | The status of the most recent refresh operation. |
 
 ## Relationships
 
@@ -30,8 +26,8 @@ The following JSON representation shows the resource type.
 ```json
 {
   "@odata.type": "#microsoft.graph.relatedTenantsRefreshStatus",
-  "mostRecentRefreshTime": "String",
-  "mostRecentRefreshRequestStatus": "String",
-  "isFirstRefresh": "Boolean"
+  "isFirstRefresh": "Boolean",
+  "mostRecentRefreshDateTime": "String (timestamp)",
+  "mostRecentRefreshRequestStatus": "String"
 }
 ```

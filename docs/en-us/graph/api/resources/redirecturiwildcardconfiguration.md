@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/redirecturiwildcardconfiguration?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # redirectUriWildcardConfiguration resource type
 
@@ -25,7 +25,7 @@ None.
 | excludeFormats | [redirectUriWildcardExcludeFormats](https://learn.microsoft.com/en-us/graph/api/resources/redirecturiwildcardexcludeformats?view=graph-rest-beta) | Configuration that specifies exceptions to the wildcard restriction, such as allowing wildcards for specific trusted domains. |
 | isStateSetByMicrosoft | Boolean | Indicates whether the restriction state was set by Microsoft. |
 | restrictForAppsCreatedAfterDateTime | DateTimeOffset | Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected. |
-| state | appManagementRestrictionState | Indicates whether the restriction is enabled or disabled. The possible values are: `enabled`, `disabled`, `unknownFutureValue`. |
+| state | appManagementRestrictionState | Indicates whether the restriction is evaluated. The possible values are: `enabled`, `disabled`, `audit`, `unknownFutureValue`. If `enabled`, the restriction is evaluated and enforced. If `disabled`, the restriction isn't evaluated or enforced. If `audit`, the restriction is evaluated but not enforced. |
 
 ## Relationships
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/building?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # building resource type
 
@@ -22,11 +22,13 @@ For more supported methods, see [place](https://learn.microsoft.com/en-us/graph/
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | address | [physicalAddress](https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress?view=graph-rest-1.0) | The physical address of the **building**, including the street, city, state, country or region, and postal code. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
+| customProperties | [stringDictionary](https://learn.microsoft.com/en-us/graph/api/resources/stringdictionary?view=graph-rest-1.0) | Custom properties for the **place**. Each property has a string key and a string value. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | displayName | String | The name that is associated with the building. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | geoCoordinates | [outlookGeoCoordinates](https://learn.microsoft.com/en-us/graph/api/resources/outlookgeocoordinates?view=graph-rest-1.0) | Specifies the **building** location in latitude, longitude, and \(optionally\) altitude coordinates. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | id | String | The unique identifier for the building. Read-only. This identifier isn't immutable and can change if the mailbox or tenant configuration changes. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | isWheelChairAccessible | Boolean | Indicates whether the **building** is wheelchair accessible. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | label | String | User-defined description of the building. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
+| lastUpdatedTime | DateTimeOffset | The date and time when the **place** was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | parentId | String | Currently, buildings don't have a parent. Don't use. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | phone | String | The phone number of the **building**. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | resourceLinks | [resourceLink](https://learn.microsoft.com/en-us/graph/api/resources/resourcelink?view=graph-rest-1.0) collection | A set of links to external resources that are associated with the **building**. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
@@ -47,11 +49,13 @@ The following JSON representation shows the resource type.
 {
   "@odata.type": "#microsoft.graph.building",
   "address": {"@odata.type": "microsoft.graph.physicalAddress"},
+  "customProperties": {"@odata.type": "microsoft.graph.stringDictionary"},
   "displayName": "String",
   "geoCoordinates": {"@odata.type": "microsoft.graph.outlookGeoCoordinates"},
   "id": "String (identifier)",
   "isWheelChairAccessible": "Boolean",
   "label": "String",
+  "lastUpdatedTime": "String (timestamp)",
   "parentId": "String",
   "phone": "String",
   "resourceLinks": [{"@odata.type": "microsoft.graph.resourceLink"}],

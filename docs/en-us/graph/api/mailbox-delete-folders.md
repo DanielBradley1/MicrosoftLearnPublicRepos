@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailbox-delete-folders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-07-22 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # Delete mailboxFolder
 
@@ -20,8 +20,8 @@ Choose the permission or permissions marked as least privileged for this API. Us
 ## HTTP request
 
 ```http
-DELETE /admin/exchange/mailboxes/{mailboxId}/folders/{mailboxFolderId}/$ref
-DELETE /admin/exchange/mailboxes/{mailboxId}/folders/{mailboxFolderId}/childFolders/{mailboxFolderId}/$ref
+DELETE /admin/exchange/mailboxes/{mailboxId}/folders/{mailboxFolderId}
+DELETE /admin/exchange/mailboxes/{mailboxId}/folders/{mailboxFolderId}/childFolders/{mailboxFolderId}
 ```
 
 ## Request headers
@@ -44,26 +44,9 @@ If successful, this method returns a `204 No Content` response code.
 
 The following example shows how to delete a mailbox folder.
 
-- [HTTP](#tabpanel_1_http)
-- [JavaScript](#tabpanel_1_javascript)
-
 ```http
-DELETE https://graph.microsoft.com/v1.0/admin/exchange/mailboxes/MBX:e0648f21@aab09c93/folders/AAMkAGVmMDEzM/$ref
+DELETE https://graph.microsoft.com/v1.0/admin/exchange/mailboxes/MBX:e0648f21@aab09c93/folders/AAMkAGVmMDEzM
 ```
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-await client.api('/admin/exchange/mailboxes/MBX:e0648f21@aab09c93/folders/AAMkAGVmMDEzM/$ref')
-	.delete();
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 

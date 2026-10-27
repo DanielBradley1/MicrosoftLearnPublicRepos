@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/appliedauthenticationeventlistener?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-04 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # appliedAuthenticationEventListener resource type
 
@@ -15,7 +15,7 @@ Represents the [authentication event listeners](https://learn.microsoft.com/en-u
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| eventType | authenticationEventType | The type of authentication event that triggered the [custom authentication extension](https://learn.microsoft.com/en-us/graph/api/resources/customauthenticationextension?view=graph-rest-beta) request. The possible values are: `tokenIssuanceStart`, `pageRenderStart`, `unknownFutureValue`, `attributeCollectionStart`, `attributeCollectionSubmit`, `emailOtpSend`, `passwordSubmit`. Use the `Prefer: include-unknown-enum-members` request header to get the following values in this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `attributeCollectionStart`, `attributeCollectionSubmit`, `emailOtpSend`, `passwordSubmit`. |
+| eventType | [authenticationEventType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-beta#authenticationeventtype-values) | The type of authentication event that triggered the [custom authentication extension](https://learn.microsoft.com/en-us/graph/api/resources/customauthenticationextension?view=graph-rest-beta) request. The possible values are: `tokenIssuanceStart`, `pageRenderStart`, `unknownFutureValue`, `attributeCollectionStart`, `attributeCollectionSubmit`, `emailOtpSend`, `passwordSubmit`, `passwordUpdate`. Use the `Prefer: include-unknown-enum-members` request header to get the following values in this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `attributeCollectionStart`, `attributeCollectionSubmit`, `emailOtpSend`, `passwordSubmit`, `passwordUpdate`. |
 | executedListenerId | String | ID of the [authentication event listener](https://learn.microsoft.com/en-us/graph/api/resources/authenticationeventlistener?view=graph-rest-beta) that was executed. |
 | handlerResult | [authenticationEventHandlerResult](https://learn.microsoft.com/en-us/graph/api/resources/authenticationeventhandlerresult?view=graph-rest-beta) | The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event. |
 

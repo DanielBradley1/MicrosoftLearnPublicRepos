@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessroot?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # privilegedAccessRoot resource type
 
@@ -11,7 +11,10 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 
 ## Methods
 
-None.
+| Method | Return type | Description |
+| :--- | :--- | :--- |
+| [List custom extensions](https://learn.microsoft.com/en-us/graph/api/privilegedaccessroot-list-customextensions?view=graph-rest-1.0) | [roleManagementCustomCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension?view=graph-rest-1.0) collection | Get a list of PIM custom extensions. |
+| [Create custom extension](https://learn.microsoft.com/en-us/graph/api/privilegedaccessroot-post-customextensions?view=graph-rest-1.0) | [roleManagementCustomCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension?view=graph-rest-1.0) | Create a PIM custom extension. |
 
 ## Properties
 
@@ -23,6 +26,7 @@ None.
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
+| customExtensions | [roleManagementCustomCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension?view=graph-rest-1.0) collection | The custom extensions configured for PIM role management operations. |
 | group | [privilegedAccessGroup](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroup?view=graph-rest-1.0) | A group that's governed through Privileged Identity Management \(PIM\). |
 
 ## JSON representation

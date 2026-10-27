@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-policy-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Get policy
 
@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Read the properties and relationships of a [policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta) object.
 
-You can use this method with the following child object type: [qualityUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatepolicy?view=graph-rest-beta).
+You can use this method with the following child object types: [driverUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatepolicy?view=graph-rest-beta), [featureUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatepolicy?view=graph-rest-beta), and [qualityUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatepolicy?view=graph-rest-beta).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -204,18 +204,16 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdatePolicy",
-    "displayName": "Patch Tuesday Test",
-    "description": "Quality update policy to test upcoming Patch Tuesday updates",
-    "approvalRules": [
-      {
-        "@odata.type": "microsoft.graph.windowsUpdates.qualityUpdateApprovalRule"
-      }
-    ],
-    "id": "f316bfd9-c84e-a334-cebe-071d3c64b2c1",
-    "createdDateTime": "2020-06-09T10:00:00Z",
-    "lastModifiedDateTime": "2020-06-09T10:00:00Z"
-  }
+  "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdatePolicy",
+  "displayName": "Patch Tuesday Test",
+  "description": "Quality update policy to test upcoming Patch Tuesday updates",
+  "approvalRules": [
+    {
+      "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdateApprovalRule"
+    }
+  ],
+  "id": "f316bfd9-c84e-a334-cebe-071d3c64b2c1",
+  "createdDateTime": "2020-06-09T10:00:00Z",
+  "lastModifiedDateTime": "2020-06-09T10:00:00Z"
 }
 ```

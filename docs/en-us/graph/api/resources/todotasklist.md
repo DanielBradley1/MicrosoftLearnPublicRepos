@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-03-10 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # todoTaskList resource type
 
@@ -25,6 +25,9 @@ This resource supports
 | [Delete task list](https://learn.microsoft.com/en-us/graph/api/todotasklist-delete?view=graph-rest-1.0) | None | Delete the specified [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) . |
 | [List tasks](https://learn.microsoft.com/en-us/graph/api/todotasklist-list-tasks?view=graph-rest-1.0) | [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) collection | Get all the [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) resources in the specified list. |
 | [Create task](https://learn.microsoft.com/en-us/graph/api/todotasklist-post-tasks?view=graph-rest-1.0) | [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) | Create a [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) in the specified task list. |
+| **Extended properties** |  |  |
+| [Create single-value property](https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0) | [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) | Create one or more single-value extended properties in a new or existing [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) object. |
+| [Get single-value property](https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0) | [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) | Get [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) objects that contain a single-value extended property by using `$expand` or `$filter`. |
 
 ## Properties
 
@@ -50,6 +53,7 @@ This resource supports
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
 | extensions | [extension](https://learn.microsoft.com/en-us/graph/api/resources/extension?view=graph-rest-1.0) collection | The collection of open extensions defined for the task list. Nullable. |
+| singleValueExtendedProperties | [singleValueExtendedProperty](https://learn.microsoft.com/en-us/graph/api/resources/singlevalueextendedproperty?view=graph-rest-1.0) collection | The collection of single-value extended properties defined for the task list. Nullable. |
 | tasks | [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) collection | The tasks in this task list. Read-only. Nullable. |
 
 ## JSON representation

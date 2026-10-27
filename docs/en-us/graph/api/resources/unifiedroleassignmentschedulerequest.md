@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-07-22 -->
+<!-- Sitemap-Last-Modified: 2026-09-16 -->
 
 # unifiedRoleAssignmentScheduleRequest resource type
 
@@ -18,6 +18,7 @@ For more information about PIM scenarios you can define through the **unifiedRol
 | [Get](https://learn.microsoft.com/en-us/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0) | [unifiedRoleAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0) | Retrieve a request for an active role assignment made through the [unifiedRoleAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0) object. |
 | [Cancel](https://learn.microsoft.com/en-us/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0) | None | Cancel a request for an active role assignment. |
 | [Filter by current user](https://learn.microsoft.com/en-us/graph/api/unifiedroleassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0) | [unifiedRoleAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0) collection | Retrieve the requests for active role assignments for a particular principal. |
+| [unifiedRoleAssignmentScheduleRequest: updateRequest](https://learn.microsoft.com/en-us/graph/api/unifiedroleassignmentschedulerequest-updaterequest?view=graph-rest-1.0) | [unifiedRoleAssignmentScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0) | Submit the result of a custom extension evaluation for the request. |
 
 ## Properties
 

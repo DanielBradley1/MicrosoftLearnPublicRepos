@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-10-29 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Use the Microsoft To Do API
 
@@ -46,6 +46,10 @@ A [linkedResource](https://learn.microsoft.com/en-us/graph/api/resources/linkedr
 ```http
 GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/linkedresources/{linkedResourceId}
 ```
+
+## Single-value extended property
+
+A [singleValueExtendedProperty](https://learn.microsoft.com/en-us/graph/api/resources/singlevalueextendedproperty?view=graph-rest-1.0) represents a custom data field that can be created on a [todoTask](https://learn.microsoft.com/en-us/graph/api/resources/todotask?view=graph-rest-1.0) or [todoTaskList](https://learn.microsoft.com/en-us/graph/api/resources/todotasklist?view=graph-rest-1.0) entity. To create single-value extended properties, see [Create singleValueLegacyExtendedProperty](https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0). To get single-value extended properties, see [Get singleValueLegacyExtendedProperty](https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0).
 
 ## Track changes using delta query
 

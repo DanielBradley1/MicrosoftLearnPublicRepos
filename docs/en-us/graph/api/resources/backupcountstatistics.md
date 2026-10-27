@@ -1,13 +1,9 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/backupcountstatistics?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-02 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/backupcountstatistics?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # backupCountStatistics resource type
 
 Namespace: microsoft.graph
-
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Represents the count of artifacts in each of the protection stages.
 
@@ -22,7 +18,7 @@ Represents the count of artifacts in each of the protection stages.
 | protectedInProgress | Int32 | The count of artifacts whose protection attempt is currently in progress. This metric applies to artifacts for which the process to start or resume taking backups is still required. |
 | removed | Int32 | The count of artifacts not associated with any policy. This property is always `null` for a policy-level report. Nullable. |
 | total | Int32 | The count of artifacts in the specified entity. The currently supported entity is a backup policy. |
-| unprotectedCompleted | Int32 | The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are being taken. |
+| unprotectedCompleted | Int32 | The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are taken. |
 | unprotectedFailed | Int32 | The count of artifacts for which unprotection was attempted but didn't complete. These artifacts are typically in the protected state. |
 | unprotectedInProgress | Int32 | The count of artifacts for which unprotection is currently in progress. |
 

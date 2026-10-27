@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-16 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # What's new in Microsoft Graph
 
@@ -240,6 +240,7 @@ Added the [provision](https://learn.microsoft.com/en-us/graph/api/device-provisi
 
 ### Identity and access \| Governance
 
+- Added the [accessReviewCatalogScope](https://learn.microsoft.com/en-us/graph/api/resources/accessreviewcatalogscope?view=graph-rest-beta&preserve-view=true) resource to scope an access review to an entitlement management catalog. Use the **additionalCatalogResourceTypes** property to review access packages in the catalog, in addition to the groups, applications, and custom data provided resources that are always reviewed.
 - Clarified that the [Get accessPackageResourceEnvironment](https://learn.microsoft.com/en-us/graph/api/accesspackageresourceenvironment-get?view=graph-rest-beta&preserve-view=true) method returns SharePoint Online resource environments only when it's called with delegated permissions. A SharePoint Online resource environment corresponds to a SharePoint root site, so to retrieve root site information with application permissions, use the [List sites](https://learn.microsoft.com/en-us/graph/api/site-list?view=graph-rest-beta&preserve-view=true) method with the `$filter=siteCollection/root ne null` query option.
 - Added public preview support for lifecycle policies that govern agent identities and guest users. Use [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-beta&preserve-view=true) and its derived policy types to configure scope, rules, workflow enforcement, impact evaluation, and processing reports.
 - Added the [selectedAgentBuilderPlatformsSubjectSet](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-selectedagentbuilderplatformssubjectset?view=graph-rest-beta&preserve-view=true) resource type to include only agent identities created by selected builder platforms in an agent identity lifecycle policy scope.

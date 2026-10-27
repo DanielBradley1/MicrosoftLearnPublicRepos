@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/adminwindowsupdates?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-01-27 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # adminWindowsUpdates resource type
 
@@ -22,11 +22,13 @@ Represents an entity that acts as a container for all Windows Autopatch function
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
 | catalog | [microsoft.graph.windowsUpdates.catalog](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-catalog?view=graph-rest-beta) | Catalog of content that can be approved for deployment by Windows Autopatch. Read-only. |
+| data | [microsoft.graph.windowsUpdates.updateData](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-updatedata?view=graph-rest-beta) | Read-only Windows Autopatch device, policy assignment, applicability, and driver reporting data. |
 | deploymentAudiences | [microsoft.graph.windowsUpdates.deploymentAudience](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-deploymentaudience?view=graph-rest-beta) collection | The set of [updatableAsset](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-updatableasset?view=graph-rest-beta) resources to which a [deployment](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-deployment?view=graph-rest-beta) can apply. |
 | deployments | [microsoft.graph.windowsUpdates.deployment](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-deployment?view=graph-rest-beta) collection | Deployments created using Windows Autopatch. |
 | policies | [microsoft.graph.windowsUpdates.policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta) collection | A collection of policies for approving the deployment of different content to an audience over time. |
 | products | [microsoft.graph.windowsUpdates.product](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-product?view=graph-rest-beta) collection | A collection of Windows products. |
 | resourceConnections | [microsoft.graph.windowsUpdates.resourceConnection](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-resourceconnection?view=graph-rest-beta) collection | Service connections to external resources such as analytics workspaces. |
+| tenantSettings | [microsoft.graph.windowsUpdates.tenantSetting](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-tenantsetting?view=graph-rest-beta) | The Windows Autopatch settings for the current tenant. |
 | updatableAssets | [microsoft.graph.windowsUpdates.updatableAsset](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-updatableasset?view=graph-rest-beta) collection | Assets registered with Windows Autopatch that can receive updates. |
 | updatePolicies | [microsoft.graph.windowsUpdates.updatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-updatepolicy?view=graph-rest-beta) collection | A collection of policies for approving the deployment of different content to an audience over time. |
 

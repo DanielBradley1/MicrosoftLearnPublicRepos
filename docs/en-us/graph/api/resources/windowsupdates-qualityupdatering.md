@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-01-27 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # qualityUpdateRing resource type
 
@@ -15,7 +15,7 @@ Inherits from [ring](https://learn.microsoft.com/en-us/graph/api/resources/windo
 
 ## Methods
 
-For the list of supported methods, see [ring](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta).
+This resource is part of a polymorphic collection managed by the [ring resource](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring?view=graph-rest-beta) base type. Operations are performed through the base type endpoints.
 
 ## Properties
 

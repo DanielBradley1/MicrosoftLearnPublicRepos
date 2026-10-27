@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedrolemanagementpolicyrule-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-04-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # Update unifiedRoleManagementPolicyRule
 
@@ -9,6 +9,7 @@ Update a rule defined for a role management policy. The rule can be one of the f
 
 - [unifiedRoleManagementPolicyApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyapprovalrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyAuthenticationContextRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyauthenticationcontextrule?view=graph-rest-1.0)
+- [unifiedRoleManagementPolicyCustomExtensionRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicycustomextensionrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyEnablementRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyenablementrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyExpirationRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyexpirationrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyNotificationRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicynotificationrule?view=graph-rest-1.0)
@@ -75,9 +76,10 @@ The following table specifies the properties that can be updated.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | claimValue | String | The value of the authentication context claim.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyAuthenticationContextRule** rule type. |
+| customExtensionId | String | The unique identifier of the PIM custom extension associated with the rule.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyCustomExtensionRule** rule type. |
 | enabledRules | String collection | The collection of rules that are enabled for this policy rule. For example, `MultiFactorAuthentication`, `Ticketing`, and `Justification`.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyEnablementRule** rule type. |
 | isDefaultRecipientsEnabled | Boolean | Indicates whether a default recipient will receive the notification email.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyNotificationRule** rule type. |
-| isEnabled | Boolean | Whether this rule is enabled.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyAuthenticationContextRule** rule type. |
+| isEnabled | Boolean | Whether this rule is enabled.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyAuthenticationContextRule** and **unifiedRoleManagementPolicyCustomExtensionRule** rule types. |
 | isExpirationRequired | Boolean | Indicates whether expiration is required or if it's a permanently active assignment or eligibility.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyExpirationRule** rule type. |
 | maximumDuration | Duration | The maximum duration allowed for eligibility or assignment which is not permanent. Required when **isExpirationRequired** is `true`.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyExpirationRule** rule type. |
 | notificationLevel | String | The level of notification. The possible values are `None`, `Critical`, `All`.  <br>  <br>Can be updated for the **unifiedRoleManagementPolicyNotificationRule** rule type. |

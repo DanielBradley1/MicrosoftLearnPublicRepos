@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-policy-post-approvals?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Create policyApproval
 
@@ -42,6 +42,7 @@ POST /admin/windows/updates/policies/{policyId}/approvals
 | Name | Description |
 | :--- | :--- |
 | Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Content-Type | application/json. Required. |
 
 ## Request body
 
@@ -52,11 +53,12 @@ You can specify the following properties when you create a **policyApproval**.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | catalogEntryId | String | The catalog entry ID to approve. Required. |
-| status | microsoft.graph.windowsUpdates.approvalStatus | The approval status. The possible values are: `approved`, `suspended`, `unknownFutureValue`. Required. |
+| startDateTime | DateTimeOffset | The date and time when the approved content can start being offered. If omitted, the service uses the current time. Optional. |
+| status | [windowsUpdates.approvalStatus](https://learn.microsoft.com/en-us/graph/api/resources/enums-windowsupdates?view=graph-rest-beta#approvalstatus-values) | The approval status. The possible values are: `approved`, `suspended`, `unknownFutureValue`. When creating an approval, the value must be `approved`. Required. |
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and a [microsoft.graph.windowsUpdates.policyApproval](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policyapproval?view=graph-rest-beta) object in the response body.
+If successful, this method returns a `201 Created` response code and a [microsoft.graph.windowsUpdates.policyApproval](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policyapproval?view=graph-rest-beta) object in the response body.
 
 ## Examples
 
@@ -80,6 +82,7 @@ Content-Type: application/json
 {
   "@odata.type": "#microsoft.graph.windowsUpdates.policyApproval",
   "catalogEntryId": "1d8864c1-531f-4d5b-8225-8653ef4316d8",
+  "startDateTime": "2026-10-05T12:00:00Z",
   "status": "approved"
 }
 ```
@@ -253,15 +256,17 @@ The following example shows the response.
 > **Note:** The response object shown here might be shortened for readability.
 
 ```http
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
   "@odata.type": "#microsoft.graph.windowsUpdates.policyApproval",
+  "approvedBy": "user",
   "catalogEntryId": "1d8864c1-531f-4d5b-8225-8653ef4316d8",
-  "status": "approved",
+  "createdDateTime": "2026-10-02T10:00:00Z",
   "id": "ab3a53f0-f7aa-10b1-04d4-8680584cbbb6",
-  "createdDateTime": "2020-06-09T10:00:00Z",
-  "lastModifiedDateTime": "2020-06-09T10:00:00Z"
+  "lastModifiedDateTime": "2026-10-02T10:00:00Z",
+  "startDateTime": "2026-10-05T12:00:00Z",
+  "status": "approved"
 }
 ```

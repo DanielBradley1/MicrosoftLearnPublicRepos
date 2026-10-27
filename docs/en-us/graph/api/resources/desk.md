@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/desk?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # desk resource type
 
@@ -18,6 +18,7 @@ For the list of supported methods, see [place](https://learn.microsoft.com/en-us
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | address | [physicalAddress](https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress?view=graph-rest-1.0) | The physical address of the **desk**, including the street, city, state, country or region, and postal code. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
+| customProperties | [stringDictionary](https://learn.microsoft.com/en-us/graph/api/resources/stringdictionary?view=graph-rest-1.0) | Custom properties for the **place**. Each property has a string key and a string value. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | displayDeviceName | String | The name of the display device \(for example, `monitor` or `projector`\) that is available at the **desk**. |
 | displayName | String | The name that is associated with the **desk**. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | geoCoordinates | [outlookGeoCoordinates](https://learn.microsoft.com/en-us/graph/api/resources/outlookgeocoordinates?view=graph-rest-1.0) | Specifies the **desk** location in latitude, longitude, and \(optionally\) altitude coordinates. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
@@ -25,6 +26,7 @@ For the list of supported methods, see [place](https://learn.microsoft.com/en-us
 | id | String | The unique identifier for the **desk**. Read-only. This identifier isn't immutable and can change if the mailbox or tenant configuration changes. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | isWheelChairAccessible | Boolean | Indicates whether the **desk** is wheelchair accessible. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | label | String | User-defined description of the **desk**. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
+| lastUpdatedTime | DateTimeOffset | The date and time when the **place** was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | mailboxDetails | [mailboxDetails](https://learn.microsoft.com/en-us/graph/api/resources/mailboxdetails?view=graph-rest-1.0) | The mailbox object **id** and email address that are associated with the desk. |
 | mode | [placeMode](https://learn.microsoft.com/en-us/graph/api/resources/placemode?view=graph-rest-1.0) | The mode of the desk. The supported modes are:<br><br>- [assignedPlaceMode](https://learn.microsoft.com/en-us/graph/api/resources/assignedplacemode?view=graph-rest-1.0) - Desks that are assigned to a user.<br>- [reservablePlaceMode](https://learn.microsoft.com/en-us/graph/api/resources/reservableplacemode?view=graph-rest-1.0) - Desks that can be booked in advance using desk reservation tools.<br>- [dropInPlaceMode](https://learn.microsoft.com/en-us/graph/api/resources/dropinplacemode?view=graph-rest-1.0) - First come, first served desks. When you plug into a peripheral on one of these desks, the desk is booked for you, assuming the peripheral is associated with the desk in the Microsoft Teams Rooms pro management portal.<br>- [unavailablePlaceMode](https://learn.microsoft.com/en-us/graph/api/resources/unavailableplacemode?view=graph-rest-1.0) - Desks that are taken down for maintenance or marked as not reservable. |
 | parentId | String | The ID of a parent [section](https://learn.microsoft.com/en-us/graph/api/resources/section?view=graph-rest-1.0). Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
@@ -45,6 +47,7 @@ The following JSON representation shows the resource type.
 {
   "@odata.type": "#microsoft.graph.desk",
   "address": {"@odata.type": "microsoft.graph.physicalAddress"},
+  "customProperties": {"@odata.type": "microsoft.graph.stringDictionary"},
   "displayDeviceName": "String",
   "displayName": "String",
   "geoCoordinates": {"@odata.type": "microsoft.graph.outlookGeoCoordinates"},
@@ -52,6 +55,7 @@ The following JSON representation shows the resource type.
   "id": "String (identifier)",
   "isWheelChairAccessible": "Boolean",
   "label": "String",
+  "lastUpdatedTime": "String (timestamp)",
   "mailboxDetails": {"@odata.type": "microsoft.graph.mailboxDetails"},
   "mode": {"@odata.type": "microsoft.graph.placeMode"},
   "parentId": "String",

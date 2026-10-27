@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-policy-update?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-05-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Update policy
 
@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Update the properties of a [policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta) object.
 
-You can use this method with the following child object type: [qualityUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatepolicy?view=graph-rest-beta).
+You can use this method with the following child object types: [driverUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatepolicy?view=graph-rest-beta), [featureUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatepolicy?view=graph-rest-beta), and [qualityUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatepolicy?view=graph-rest-beta).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -48,6 +48,8 @@ PATCH /admin/windows/updates/policies/{policyId}
 
 ## Request body
 
+Specify the concrete type in the `@odata.type` property. Supported values include `#microsoft.graph.windowsUpdates.driverUpdatePolicy`, `#microsoft.graph.windowsUpdates.featureUpdatePolicy`, and `#microsoft.graph.windowsUpdates.qualityUpdatePolicy`.
+
 In the request body, supply *only* the values for properties to update. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
 
 The following table specifies the properties that can be updated.
@@ -55,8 +57,8 @@ The following table specifies the properties that can be updated.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | approvalRules | [microsoft.graph.windowsUpdates.approvalRule](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-approvalrule?view=graph-rest-beta) collection | The approved rule of the policy that determines which published content matches the rule on an ongoing basis. Optional. |
-| description | String | The quality update policy description. The maximum length is 1,500 characters. Optional. |
-| displayName | String | The quality update policy display name. The maximum length is 200 characters. Optional. |
+| description | String | The policy description. The maximum length is 1,500 characters. Optional. |
+| displayName | String | The policy display name. The maximum length is 200 characters. Optional. |
 
 ## Response
 
@@ -87,7 +89,7 @@ Content-Type: application/json
   "description": "Quality update policy to test upcoming Patch Tuesday updates",
   "approvalRules": [
     {
-      "@odata.type": "microsoft.graph.windowsUpdates.qualityUpdateApprovalRule",
+      "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdateApprovalRule",
       "deferralInDays": 0,
       "classification": "nonSecurity",
       "cadence": "outOfBand"
@@ -344,7 +346,7 @@ Content-Type: application/json
   "description": "Quality update policy to test upcoming Patch Tuesday updates",
   "approvalRules": [
     {
-      "@odata.type": "microsoft.graph.windowsUpdates.qualityUpdateApprovalRule",
+      "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdateApprovalRule",
       "deferralInDays": 0,
       "classification": "nonSecurity",
       "cadence": "outOfBand"

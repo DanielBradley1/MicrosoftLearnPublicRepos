@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/enums-windowsupdates?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Microsoft Graph Windows Updates enumeration values
 
 Namespace: microsoft.graph.windowsUpdates
+
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 ### azureADDeviceRegistrationErrorReason values
 
@@ -146,4 +150,94 @@ Namespace: microsoft.graph.windowsUpdates
 | :--- |
 | approved |
 | suspended |
+| unknownFutureValue |
+
+### approvedBy values
+
+| Member |
+| :--- |
+| system |
+| user |
+| unknownFutureValue |
+
+### deviceClientState values
+
+| Member |
+| :--- |
+| offering |
+| onHold |
+| installing |
+| installed |
+| cancelled |
+| uninstalling |
+| uninstalled |
+| notOffering |
+| unknownFutureValue |
+
+### deviceClientSubstate values
+
+| Member |
+| :--- |
+| deferred |
+| offerReady |
+| paused |
+| offerReceived |
+| downloadStart |
+| downloadComplete |
+| installStart |
+| installComplete |
+| restartRequired |
+| restartInitiated |
+| restartComplete |
+| updateInstalled |
+| rollbackComplete |
+| userCancelled |
+| deviceCancelled |
+| uninstall |
+| rollback |
+| updateUninstalled |
+| notSupported |
+| previousUpdateInProgress |
+| unknownFutureValue |
+
+### deviceServiceState values
+
+| Member |
+| :--- |
+| unknown |
+| pending |
+| offering |
+| onHold |
+| cancelled |
+| notOffering |
+| unknownFutureValue |
+
+### deviceServiceSubstate values
+
+| Member |
+| :--- |
+| unknown |
+| scheduled |
+| offerReady |
+| adminPaused |
+| adminCancelled |
+| removedFromDeployment |
+| notOffering |
+| unknownFutureValue |
+
+### hotpatchReadiness values
+
+| Member |
+| :--- |
+| ready |
+| notReady |
+| unknownFutureValue |
+
+### osStatus values
+
+| Member |
+| :--- |
+| endOfServicing |
+| inServicing |
+| nearEndOfServicing |
 | unknownFutureValue |

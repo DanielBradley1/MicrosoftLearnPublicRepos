@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-adminwindowsupdates-list-policies?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # List policies
 
@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Get a list of the [policy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy?view=graph-rest-beta) objects and their properties.
 
-You can use this method with the following child object type: [qualityUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatepolicy?view=graph-rest-beta).
+You can use this method with the following child object types: [driverUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatepolicy?view=graph-rest-beta), [featureUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatepolicy?view=graph-rest-beta), and [qualityUpdatePolicy](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatepolicy?view=graph-rest-beta).
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -35,10 +35,13 @@ For delegated access using work or school accounts, the signed-in user must be a
 
 ## HTTP request
 
-To get a list of **qualityUpdatePolicy** objects:
+To get all policy objects or only policies of a specific derived type:
 
 ```http
-GET /admin/windows/updates/policies?$filter=isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')
+GET /admin/windows/updates/policies
+GET /admin/windows/updates/policies/microsoft.graph.windowsUpdates.driverUpdatePolicy
+GET /admin/windows/updates/policies/microsoft.graph.windowsUpdates.featureUpdatePolicy
+GET /admin/windows/updates/policies/microsoft.graph.windowsUpdates.qualityUpdatePolicy
 ```
 
 ## Optional query parameters
@@ -63,168 +66,11 @@ If successful, this method returns a `200 OK` response code and a collection of 
 
 ### Request
 
-The following example shows how to get a list of quality update policies.
-
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
+The following example shows how to get a list that contains each supported policy type.
 
 ```http
-GET https://graph.microsoft.com/beta/admin/windows/updates/policies?$filter=isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')
+GET https://graph.microsoft.com/beta/admin/windows/updates/policies
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Admin.Windows.Updates.Policies.GetAsync((requestConfiguration) =>
-{
-	requestConfiguration.QueryParameters.Filter = "isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')";
-});
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphadmin "github.com/microsoftgraph/msgraph-beta-sdk-go/admin"
-	  //other-imports
-)
-
-
-requestFilter := "isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')"
-
-requestParameters := &graphadmin.WindowsUpdatesPoliciesRequestBuilderGetQueryParameters{
-	Filter: &requestFilter,
-}
-configuration := &graphadmin.WindowsUpdatesPoliciesRequestBuilderGetRequestConfiguration{
-	QueryParameters: requestParameters,
-}
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-policies, err := graphClient.Admin().Windows().Updates().Policies().Get(context.Background(), configuration)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-com.microsoft.graph.models.windowsupdates.PolicyCollectionResponse result = graphClient.admin().windows().updates().policies().get(requestConfiguration -> {
-	requestConfiguration.queryParameters.filter = "isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')";
-});
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-let policies = await client.api('/admin/windows/updates/policies')
-	.version('beta')
-	.filter('isof(\'microsoft.graph.windowsUpdates.qualityUpdatePolicy\')')
-	.get();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Admin\Windows\Updates\Policies\PoliciesRequestBuilderGetRequestConfiguration;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestConfiguration = new PoliciesRequestBuilderGetRequestConfiguration();
-$queryParameters = PoliciesRequestBuilderGetRequestConfiguration::createQueryParameters();
-$queryParameters->filter = "isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')";
-$requestConfiguration->queryParameters = $queryParameters;
-
-
-$result = $graphServiceClient->admin()->windows()->updates()->policies()->get($requestConfiguration)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.WindowsUpdates
-
-Get-MgBetaWindowsUpdatesPolicy -Filter "isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')" 
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.admin.windows.updates.policies.policies_request_builder import PoliciesRequestBuilder
-from kiota_abstractions.base_request_configuration import RequestConfiguration
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-query_params = PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters(
-		filter = "isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')",
-)
-
-request_configuration = RequestConfiguration(
-query_parameters = query_params,
-)
-
-result = await graph_client.admin.windows.updates.policies.get(request_configuration = request_configuration)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
@@ -240,21 +86,43 @@ Content-Type: application/json
   "@odata.context": "https://graph.microsoft.com/beta/admin/windows/updates/$metadata#policies",
   "value": [
     {
+      "@odata.type": "#microsoft.graph.windowsUpdates.driverUpdatePolicy",
+      "approvalRules": [
+        {
+          "@odata.type": "#microsoft.graph.windowsUpdates.driverUpdateApprovalRule",
+          "deferralInDays": 7
+        }
+      ],
+      "createdDateTime": "2026-09-28T10:00:00Z",
+      "description": "Driver and firmware updates for managed devices",
+      "displayName": "Contoso driver policy",
+      "id": "11111111-1111-4111-8111-111111111111",
+      "lastModifiedDateTime": "2026-09-28T10:00:00Z"
+    },
+    {
+      "@odata.type": "#microsoft.graph.windowsUpdates.featureUpdatePolicy",
+      "approvalRules": [],
+      "createdDateTime": "2026-09-28T10:05:00Z",
+      "description": "Administrator-approved Windows feature updates",
+      "displayName": "Contoso feature policy",
+      "id": "22222222-2222-4222-8222-222222222222",
+      "lastModifiedDateTime": "2026-09-28T10:05:00Z"
+    },
+    {
       "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdatePolicy",
-      "displayName": "Display Name value",
-      "description": "Description value",
-      "isAutoEnrollDevices": false,
-      "id": "7650b117-e3fc-424a-ae94-988104652bdd",
-      "createdDateTime": "2025-01-17T12:20:32.3403729-08:00",
-      "lastModifiedDateTime": "2025-01-17T12:21:57-08:00",
       "approvalRules": [
         {
           "@odata.type": "#microsoft.graph.windowsUpdates.qualityUpdateApprovalRule",
-          "deferralInDays": 0,
-          "classification": "nonSecurity",
-          "cadence": "outOfBand"
+          "cadence": "monthly",
+          "classification": "security",
+          "deferralInDays": 2
         }
-      ]
+      ],
+      "createdDateTime": "2026-09-28T10:10:00Z",
+      "description": "Monthly quality updates for production devices",
+      "displayName": "Contoso quality policy",
+      "id": "33333333-3333-4333-8333-333333333333",
+      "lastModifiedDateTime": "2026-09-28T10:10:00Z"
     }
   ]
 }

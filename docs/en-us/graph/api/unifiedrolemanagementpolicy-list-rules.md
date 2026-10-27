@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedrolemanagementpolicy-list-rules?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # List rules \(for a role management policy\)
 
@@ -9,6 +9,7 @@ Get the rules or settings defined for a role management policy. The rules are a 
 
 - [unifiedRoleManagementPolicyApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyapprovalrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyAuthenticationContextRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyauthenticationcontextrule?view=graph-rest-1.0)
+- [unifiedRoleManagementPolicyCustomExtensionRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicycustomextensionrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyEnablementRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyenablementrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyExpirationRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyexpirationrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyNotificationRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicynotificationrule?view=graph-rest-1.0)

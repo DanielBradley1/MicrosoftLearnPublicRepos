@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyrule?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-06-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # unifiedRoleManagementPolicyRule resource type
 
@@ -9,6 +9,7 @@ An abstract type that defines the rules or settings associated with role managem
 
 - [unifiedRoleManagementPolicyApprovalRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyapprovalrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyAuthenticationContextRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyauthenticationcontextrule?view=graph-rest-1.0)
+- [unifiedRoleManagementPolicyCustomExtensionRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicycustomextensionrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyEnablementRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyenablementrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyExpirationRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicyexpirationrule?view=graph-rest-1.0)
 - [unifiedRoleManagementPolicyNotificationRule](https://learn.microsoft.com/en-us/graph/api/resources/unifiedrolemanagementpolicynotificationrule?view=graph-rest-1.0)

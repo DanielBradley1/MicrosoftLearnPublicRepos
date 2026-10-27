@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/workspace?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # workspace resource type
 
@@ -19,6 +19,7 @@ For the list of supported methods, see [place](https://learn.microsoft.com/en-us
 | :--- | :--- | :--- |
 | address | [physicalAddress](https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress?view=graph-rest-1.0) | The physical address of the **workspace**, including the street, city, state, country or region, and postal code. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | capacity | Int32 | The maximum number of individual desks within a **workspace**. |
+| customProperties | [stringDictionary](https://learn.microsoft.com/en-us/graph/api/resources/stringdictionary?view=graph-rest-1.0) | Custom properties for the **place**. Each property has a string key and a string value. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | displayDeviceName | String | The name of the display device \(for example, `monitor` or `projector`\) that is available in the **workspace**. |
 | displayName | String | The name that is associated with the **workspace**. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | emailAddress | String | The email address that is associated with the **workspace**. This email address is used for booking. |
@@ -26,6 +27,7 @@ For the list of supported methods, see [place](https://learn.microsoft.com/en-us
 | id | String | The unique identifier for the **workspace**. Read-only. This identifier isn't immutable and can change if the mailbox or tenant configuration changes. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-1.0). |
 | isWheelChairAccessible | Boolean | Indicates whether the **workspace** is wheelchair accessible. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | label | String | User-defined description of the **workspace**. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
+| lastUpdatedTime | DateTimeOffset | The date and time when the **place** was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable. Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
 | mode | [placeMode](https://learn.microsoft.com/en-us/graph/api/resources/placemode?view=graph-rest-1.0) | The mode for a **workspace**. The supported modes are:<br><br>- [reservablePlaceMode](https://learn.microsoft.com/en-us/graph/api/resources/reservableplacemode?view=graph-rest-1.0) - Workspaces that can be booked in advance using desk pool reservation tools.<br>- [dropInPlaceMode](https://learn.microsoft.com/en-us/graph/api/resources/dropinplacemode?view=graph-rest-1.0) - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms pro management portal.<br>- [unavailablePlaceMode](https://learn.microsoft.com/en-us/graph/api/resources/unavailableplacemode?view=graph-rest-1.0) - Workspaces that are taken down for maintenance or marked as not reservable. |
 | nickname | String | A short, friendly name for the **workspace**, often used for easier identification or display in the UI. |
 | parentId | String | The ID of a parent [section](https://learn.microsoft.com/en-us/graph/api/resources/section?view=graph-rest-1.0). Inherited from [place](https://learn.microsoft.com/en-us/graph/api/resources/place?view=graph-rest-1.0). |
@@ -46,6 +48,7 @@ The following JSON representation shows the resource type.
   "@odata.type": "#microsoft.graph.workspace",
   "address": {"@odata.type": "microsoft.graph.physicalAddress"},
   "capacity": "Integer",
+  "customProperties": {"@odata.type": "microsoft.graph.stringDictionary"},
   "displayDeviceName": "String",
   "displayName": "String",
   "emailAddress": "String",
@@ -53,6 +56,7 @@ The following JSON representation shows the resource type.
   "id": "String (identifier)",
   "isWheelChairAccessible": "Boolean",
   "label": "String",
+  "lastUpdatedTime": "String (timestamp)",
   "mode": {"@odata.type": "microsoft.graph.placeMode"},
   "nickname": "String",
   "parentId": "String",

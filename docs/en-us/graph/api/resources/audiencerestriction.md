@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/audiencerestriction?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2025-05-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # audienceRestriction resource type
 
@@ -17,7 +17,7 @@ Represents a restriction to block apps based on their signInAudience value.
 | :--- | :--- | :--- |
 | excludeActors | [appManagementPolicyActorExemptions](https://learn.microsoft.com/en-us/graph/api/resources/appmanagementpolicyactorexemptions?view=graph-rest-beta) | Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction. This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement. |
 | restrictForAppsCreatedAfterDateTime | DateTimeOffset | Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied. |
-| state | appManagementRestrictionState | String value that indicates if the restriction is evaluated. The possible values are: enabled, disabled, and unknownFutureValue. If enabled, the restriction is evaluated. If disabled, the restriction isn't evaluated or enforced. |
+| state | appManagementRestrictionState | String value that indicates if the restriction is evaluated. The possible values are: `enabled`, `disabled`, `audit`, and `unknownFutureValue`. If `enabled`, the restriction is evaluated and enforced. If `disabled`, the restriction isn't evaluated or enforced. If `audit`, the restriction is evaluated but not enforced. |
 
 ## Relationships
 
