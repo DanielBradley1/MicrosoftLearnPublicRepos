@@ -17,6 +17,10 @@ A common scenario is a user who travels between sites. To connect a device at a 
 
 For elevation system settings policies to take effect, devices must also have an *elevation settings policy* targeted that enables EPM. For more information, see [Manage elevation settings](https://learn.microsoft.com/en-us/intune/epm/manage-elevation-settings).
 
+Note
+
+EPM System settings \(Network settings\) is rolling out gradually and may not yet be available in your tenant.
+
 ## About elevation system settings policy
 
 An *elevation system settings policy* identifies a category of Windows system settings and the elevation behavior that applies when a standard user changes those settings. Each policy contains one or more *rules*. Each rule defines:

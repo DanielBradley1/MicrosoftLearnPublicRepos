@@ -26,6 +26,24 @@ For new information about Windows Autopilot solutions, see:
 
 You can use RSS to be notified when this page is updated. For more information, see [How to use the docs](https://learn.microsoft.com/en-us/intune/fundamentals/use-docs#notifications).
 
+## Week of October 26, 2026
+
+### Device management
+
+#### Bulk manage eSIMs on corporate-owned Android Enterprise devices
+
+Microsoft Intune now supports bulk eSIM actions for corporate-owned Android Enterprise devices. From **Devices** > **All devices** > **Bulk device actions**, you can activate eSIMs on up to 100 selected devices running Android 15 or later by using a carrier activation server URL. Bulk eSIM activation is available only in the updated bulk device actions experience.
+
+When you bulk wipe supported devices, Intune preserves eSIM data plans by default. You can select the option to remove eSIMs when the wipe should also remove the data plans. Personally owned Android Enterprise work profile devices aren't supported.
+
+For more information, see [Activate eSIMs on multiple Android Enterprise devices](https://learn.microsoft.com/en-us/intune/device-management/actions/update-cellular-data-plan#activate-esims-on-multiple-android-enterprise-devices) and [Wipe multiple Android Enterprise devices](https://learn.microsoft.com/en-us/intune/device-management/actions/wipe#wipe-multiple-android-enterprise-devices).
+
+Applies to:
+
+- Android Enterprise corporate-owned fully managed devices \(COBO\)
+- Android Enterprise corporate-owned dedicated devices \(COSU\)
+- Android Enterprise corporate-owned devices with a work profile \(COPE\)
+
 ## Week of October 19, 2026
 
 ### App management
