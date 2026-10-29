@@ -11,7 +11,7 @@ This API is available in the following [national cloud deployments](https://lear
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
 | --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+| ✅ | ✅ | ✅ | ❌ |
 
 ## Permissions
 

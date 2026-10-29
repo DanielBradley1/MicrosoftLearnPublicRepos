@@ -1,11 +1,17 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-restore?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # unifiedRoleDefinition: restore
 
 Namespace: microsoft.graph
 
 Restore a soft-deleted custom [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) object to the active role definitions collection for Microsoft Entra directory role management.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

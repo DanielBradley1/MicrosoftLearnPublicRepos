@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # auditData resource type
 
 Namespace: microsoft.graph.security
 
-An abstract type that supports the audit logs of various Microsoft 365 services like [defaultAuditData](https://learn.microsoft.com/en-us/graph/api/resources/security-defaultauditdata?view=graph-rest-1.0), which contains the JSON files of these Microsoft 365 services.
+An abstract type that represents audit log data in an [auditLogRecord](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecord?view=graph-rest-1.0). This base type is inherited by over 300 derived types, each representing audit data for a specific Microsoft 365 service or feature. For a complete list of all derived types, see [auditData derived types](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata-derived-types?view=graph-rest-1.0).
+
+The [defaultAuditData](https://learn.microsoft.com/en-us/graph/api/resources/security-defaultauditdata?view=graph-rest-1.0) type is an open type that contains the raw JSON audit data for Microsoft 365 services that don't have a specific derived type.
 
 ## Properties
 

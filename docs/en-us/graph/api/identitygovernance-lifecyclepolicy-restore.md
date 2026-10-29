@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/identitygovernance-lifecyclepolicy-restore?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # lifecyclePolicy: restore
 
@@ -15,7 +15,7 @@ This API is available in the following [national cloud deployments](https://lear
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
 | --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+| ✅ | ✅ | ✅ | ✅ |
 
 ## Permissions
 
