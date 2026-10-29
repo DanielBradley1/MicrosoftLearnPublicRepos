@@ -7,6 +7,11 @@ Use this procedure to create an Integrated Security Operations Center \(ISOC\) w
 
 Before you begin, review the eligibility and workspace requirements in [ISOC in Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/isoc-overview).
 
+An ISOC workspace follows the same data residency and retention behavior as an Azure Log Analytics workspace. For more information, see:
+
+- [Geographical availability and data residency in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/geographical-availability-data-residency#data-storage-location).
+- [Manage data retention in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-configure#configure-the-default-analytics-retention-period-of-analytics-tables).
+
 ## Prerequisites
 
 Before you begin, make sure the following requirements are met:

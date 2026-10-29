@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Download and install a Microsoft Defender for Identity sensor v2.x
 
@@ -7,7 +7,9 @@ Download and install the Defender for Identity sensor v2.x on domain controllers
 
 Tip
 
-For eligible domain controllers running Windows Server 2019 or later, use the [Defender for Identity sensor v3.x deployment guidance](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3). The v2.x installer procedures below don't apply to v3.x. To onboard without Defender for Endpoint deployment, use the [v3.x onboarding package](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-the-domain-controller-preview).
+For eligible domain controllers running Windows Server 2019 or later, use the [Defender for Identity sensor v3.x deployment guidance](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3). To onboard without Defender for Endpoint deployment, use the [v3.x onboarding package](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-the-domain-controller-preview).
+
+The sensor v2.x installation restriction for new workspaces is in preview. For workspaces created starting in October 2026, [Defender for Identity sensor v3.x](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3) is the supported onboarding option for eligible servers running Windows Server 2019 or later. You can onboard sensor v2.x only to servers running Windows Server 2016 or earlier.
 
 We recommend alternate installation methods for these use cases:
 

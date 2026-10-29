@@ -70,8 +70,7 @@ Some information relates to prereleased product which may be substantially modif
 | `ThreatClassification` | `string` | Threat classification applied to the email |
 | `RecipientDomain` | `string` | Domain address of the recipient |
 | `EmailSize` | `long` | Size of the email message in bytes |
-| `IsFirstContact` | `int` | Whether the email was the first contact between the sender and recipient \(1 if yes, 0 if no\) |
-| `Topics` | `string` | Topics column provides granular, multi-label topic classifications that describe what an email is about. |
+| `IsFirstContact` | `int` | Whether the email was the first contact between the sender and recipient \(1 if yes, 0 if no\). IsFirstContact is applicable to inbound email only |
 
 Note
 

@@ -29,6 +29,7 @@ Currently, specific API details aren't available.
 
    - Darktrace/EMAIL
    - KnowBe4 Defend Platform
+   - Proofpoint Core Email Protection API
    - VIPRE Integrated Email Security \(IES\)
 
 3. **Enable integration**: After you onboard to the non-Microsoft security vendor, their solution is seamlessly and automatically incorporated into your security architecture.
@@ -162,7 +163,7 @@ A: The highest verdict takes precedence using the following order \(from most se
 
 ### Q: What if I use a different non-Microsoft vendor?
 
-A: Currently, ICES Vendor Ecosystem integration is available only for Darktrace, KnowBe4, and VIPRE Security Group. If you use a different ICES/CAPES vendor, you can't take advantage of this integration.
+A: This integration is supported only with the vendors listed in [Get Started](#get-started). Other ICES/CAPES vendors aren't supported.
 
 ### Q: Is there a charge for the non-Microsoft verdict data and actions by Defender for Office 365 policies?
 

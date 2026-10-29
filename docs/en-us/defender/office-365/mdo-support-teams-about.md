@@ -34,6 +34,7 @@ Microsoft 365 E5 and Defender for Office 365 Plan 2 extend Teams protection with
 
 - **Remove users from Teams chat**: To remediate malicious attacks, you can remove users from teams chats directly from the [Teams message entity panel](https://learn.microsoft.com/en-us/defender-office-365/teams-message-entity-panel#remove-users-from-teams-chats-in-the-teams-message-entity-panel).
 - **Hunting on Teams messages with URLs**: You can hunt for Teams messages containing URL across three new advanced hunting tables: [MessageEvents](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-messageevents-table), [MessagePostDeliveryEvents](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-messagepostdeliveryevents-table), and [MessageURLInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-messageurlinfo-table).
+- **Hunting on Teams calls and meetings**: You can hunt across activities performed during Microsoft Teams calls and meetings using the [CallActivityEvents](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-callactivityevents-table) advanced hunting table.
 
 These features are summarized in the following table:
 
@@ -52,6 +53,7 @@ These features are summarized in the following table:
 | User-reported Teams items \(messages, calls, meetings, and meeting participants\) |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 | Remove users from Teams chats \(admin remediation\) |  |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 | Advanced hunting on Teams messages |  |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
+| Advanced hunting on Teams calls and meetings |  |  | ![](https://learn.microsoft.com/en-us/defender-office-365/media/feature_present_icon.png) |
 
 ## Configure ZAP for Teams protection in Defender for Office 365
 

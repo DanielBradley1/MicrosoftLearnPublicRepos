@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint -->
-<!-- Sitemap-Last-Modified: 2026-10-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-16 -->
 
 # New features in Microsoft Defender for Endpoint
 
@@ -13,6 +13,7 @@ Learn more about [Preview features](https://learn.microsoft.com/en-us/defender-x
 
 | Type | Feature | Preview/GA | Description |
 | --- | --- | --- | --- |
+| Release - macOS | Build 101.26092.0009 | GA | Release version 20.126092.9.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--october-2026--101260920009). |
 | Release - macOS | Build 101.26082.0012 | GA | Release version 20.126082.12.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--october-2026--101260820012). |
 | Feature | [Vulnerability assessment for Microsoft Store applications](https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-software-inventory#microsoft-store-applications) | GA | Vulnerability assessment for applications installed via the Microsoft Store is now generally available. Defender Vulnerability Management detects supported Microsoft Store applications, adds them to the software inventory, and assesses them for vulnerabilities. Coverage is currently limited to a select set of commonly used applications. Use the **Software evidence** area on the software page to view the file path for the vulnerable application, along with a suggested query showing the vulnerable app, version, and file location. |
 

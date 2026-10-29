@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/whats-new -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # What's new in Microsoft Defender for Identity
 
@@ -72,7 +72,15 @@ The October announcement includes the following new alerts:
 
 Defender for Identity sensor v3.x activation without Defender for Endpoint is now generally available. Supported servers include eligible domain controllers, AD FS, AD CS, and Microsoft Entra Connect servers running Windows Server 2019 or later. This activation method supports only new sensor v3.x deployments on eligible servers without an existing Defender for Identity sensor. Sensor v2.x migration isn't yet available. For more information, see [Activate the Defender for Identity sensor](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor).
 
+### Known limitation: Sensor v3.x activation without Defender for Endpoint isn't supported in government clouds
+
+Activating the Defender for Identity v3.x sensor on servers without Microsoft Defender for Endpoint deployment is temporarily not supported in government cloud environments.
+
 ## September 2026
+
+### Sensor v2.x installation restriction for new workspaces \(Preview\)
+
+The sensor v2.x installation restriction for new workspaces is in preview. Starting in October 2026, Defender for Identity will restrict sensor v2.x installation in new workspaces. In these workspaces, sensor v3.x is the supported onboarding option for eligible servers running Windows Server 2019 or later. You can onboard sensor v2.x only to servers running Windows Server 2016 or earlier.
 
 ### Automatic sensor v3.x activation and Windows auditing by default
 

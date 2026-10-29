@@ -81,6 +81,7 @@ SecOps team members can proactively hunt for potentially malicious Teams message
   - [MessagePostDeliveryEvents](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-messagepostdeliveryevents-table): Contains raw data about ZAP events on Teams messages.
   - [MessageUrlInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-messageurlinfo-table): Contains raw data about URLs in Teams messages.
   - [UrlClickEvents](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-urlclickevents-table): Contains raw data about every allowed or blocked URL click by users in Teams clients.
+  - [CallActivityEvents](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-callactivityevents-table): Contains raw data about activities performed during Microsoft Teams calls and meetings in your organization.
 
 
   SecOps team members can join these hunting tables with other workload tables \(for example, EmailEvents or Device-related tables\) to gain insight into end to end user activities.

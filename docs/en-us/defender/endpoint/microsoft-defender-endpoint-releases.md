@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-16 -->
 
 # Microsoft Defender for Endpoint release notes
 
@@ -17,6 +17,9 @@ This table includes supported releases for all supported platforms in the past s
 
 | OS | Build | Month released | Details | Learn more |
 | --- | --- | --- | --- | --- |
+| Windows Antivirus | Platform 4.18.26100.4 / Engine 1.1.26100.4 | October 2026 | - Platform: 4.18.26100.4  <br>- Engine: 1.1.26100.4  <br>- Security intelligence: 1.463.1.0 | [Release details and updates](#windows-antivirus--october-2026--platform-418261004--engine-11261004) |
+| macOS | 101.26092.0009 | October 2026 | - Release version: 20.126092.9.0  <br>- Engine version: 1.1.26060.12000  <br>- Signature version: 1.453.151.0 | [Release details and updates](#macos--october-2026--101260920009) |
+| Linux | 101.26091.0004 | October 2026 | - Release version: 30.126091.0004.0  <br>- Engine version: 1.1.26070.5001  <br>- Signature version: 1.457.364.0 | [Release details and updates](#linux--october-2026--101260910004) |
 | Android | 1.0.9406.0102 | Oct 2026 | - Build: 1.0.9406.0102  <br>- Release: Oct 23, 2026 | [Release details and updates](#android--oct-2026--platform-1094060102) |
 | macOS | 101.26082.0012 | October 2026 | - Release version: 20.126082.12.0  <br>- Engine version: 1.1.26100.3000  <br>- Signature version: 1.461.61.0 | [Release details and updates](#macos--october-2026--101260820012) |
 | Linux | 101.26091.0003 | October 2026 | - Release version: 30.126091.0003.0  <br>- Engine version: 1.1.26090.3000  <br>- Signature version: 1.461.35.0 | [Release details and updates](#linux--october-2026--101260910003) |
@@ -233,6 +236,33 @@ To share feedback, open Defender for Endpoint on macOS and go to **Help > Send f
 To get latest features, configure your device for the Beta channel \(formerly Insider-Fast\) device.
 
 For known issues, see [macOS known issues](#macos-known-issues).
+
+### macOS \| October-2026 \| 101.26092.0009
+
+#### Versions
+
+| Release version | Engine version c | Signature version |
+| --- | --- | --- |
+| 20.126092.9.0 | 1.1.26060.12000 | 1.453.151.0 |
+
+#### Enhancements and features
+
+| Feature area | Update summary |
+| --- | --- |
+| General | Agent Protection: Improved reliability when applying managed protection policies. |
+| General | Antivirus: Reduced CPU usage during high-volume file activity by. |
+| General | Antivirus: Improved service reliability. |
+| General | Antivirus: Improved health reporting to indicate when the protection engine connection is unavailable. |
+| General | Antivirus: Added health reporting to help administrators verify that managed configuration profiles are correctly set up for Microsoft Defender system extensions. |
+| General | Antivirus: Review recent performance profile suggestions and apply or remove eligible profiles directly in the Defender app. |
+| General | Device Control: Legacy Device Control v1 is retired. |
+| General | Device Control: Device health reporting now shows Bluetooth permission status, helping administrators verify that Device Control is configured correctly. |
+| General | EDR: Improved authentication reliability after startup and wake. |
+| General | EDR: Added support for configuring AI agent runtime protection on macOS. |
+| General | EDR: Improved macOS device isolation. |
+| General | GUI: Improved accessibility. |
+| General | TVM: Improved software inventory reporting for macOS applications that do not provide standard display-name metadata. |
+| General | Bug and performance fixes |
 
 ### macOS \| October-2026 \| 101.26082.0012
 
@@ -592,6 +622,21 @@ If you have any concerns or need assistance during this transition, contact supp
 ### Linux known issues
 
 - **Intermittent issue during process scanning**: In version `101.26072.0004`, `wdavdaemon` might restart in rare cases while scanning running processes. The process recovers automatically, and no action is required. A fix will be available in an upcoming release. **Resolution**: Upgrade to platform version 101.26072.0005 or later.
+
+### Linux \| October 2026 \| 101.26091.0004
+
+#### Release details
+
+| Release version | Engine version | Signature version |
+| --- | --- | --- |
+| 30.126091.0004.0 | 1.1.26070.5001 | 1.457.364.0 |
+
+#### Enhancements and features
+
+| Feature area | Update summary |
+| --- | --- |
+| Platform Support | Added support for Azure Linux 4. |
+| Visibility | Added TCP socket bind telemetry, improving visibility into processes binding to local network addresses and ports.  <br>The feature will roll out gradually to customers over the next month. Once enabled, these events will be available in Advanced Hunting in the `DeviceNetworkEvents` table with `ActionType` set to `ListeningConnectionCreated`. |
 
 ### Linux \| October 2026 \| 101.26091.0003
 
@@ -1227,6 +1272,20 @@ See the full list of [Android UX improvements](https://learn.microsoft.com/en-us
 
 For the latest UX improvements, see [iOS UX improvements](https://learn.microsoft.com/en-us/defender-endpoint/ios-new-ux).
 
+### iOS \| Oct 2026 \| Platform Version: 1.1.82230103
+
+#### Release details
+
+| Platform version | Release Date |
+| --- | --- |
+| 1.1.82230103 | Oct 24, 2026 |
+
+#### Enhancements and features
+
+| Feature Area | Update Summary |
+| --- | --- |
+| Improvements | Performance improvements and general bug fixes. |
+
 ### iOS \| Sep 2026 \| Platform Version: 1.1.81160103
 
 #### Release details
@@ -1462,6 +1521,25 @@ For the latest UX improvements, see [iOS UX improvements](https://learn.microsof
 ## Microsoft Defender Antivirus releases
 
 For more information about Microsoft Defender Antivirus updates, see [Microsoft Defender Antivirus security intelligence product updates and support](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-updates).
+
+### Windows Antivirus \| October 2026 \| Platform 4.18.26100.4 \| Engine 1.1.26100.4
+
+#### Release details
+
+| Component | Version | Date |
+| --- | --- | --- |
+| Platform | 4.18.26100.4 | October 27, 2026 |
+| Engine | 1.1.26100.4 | October 27, 2026 |
+| Security intelligence<sup>1</sup> | 1.463.1.0 | October 27, 2026 |
+| Support phase | Security and Critical Updates | - |
+
+<sup>1</sup>The security intelligence version listed here is relevant to the listed engine release. Newer versions of security intelligence are released regularly. For more information, see [Security intelligence updates for Microsoft Defender Antivirus and other Microsoft anti-malware](https://www.microsoft.com/wdsi/defenderupdates).
+
+### Enhancements and features
+
+- Reduced CPU usage after full scans by avoiding repeated decompression of Windows image archives \(WIM\).
+- Recognize devices configured using Defender for Endpoint security settings management as managed devices.
+- Completed rollout of Microsoft Defender Clipboard Protection- DefenderSessionHelper.exe.
 
 ### Windows Antivirus \| September 2026 \| Platform 4.18.26090.9 \| Engine 1.1.26090.9
 

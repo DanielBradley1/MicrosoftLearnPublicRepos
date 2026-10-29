@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites-sensor-version-2 -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Sitemap-Last-Modified: 2026-10-25 -->
 
 # Microsoft Defender for Identity sensor v2.x prerequisites
 
@@ -79,6 +79,8 @@ For all operating systems:
 - Installations are supported for domain controllers, AD FS, AD CS, and Entra Connect servers.
 
 #### Legacy operating systems
+
+Plan to upgrade servers running [Windows Server 2016](https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016), which is approaching extended end of support. After extended support ends, sensors on Windows Server 2016 continue to report to Defender for Identity and receive sensor updates. However, some functionality that relies on operating system capabilities might not be available.
 
 Windows Server 2012 and Windows Server 2012 R2 reached extended end of support on October 10, 2023. Sensors running on these operating systems continue to report to Defender for Identity and even receive the sensor updates, but some functionality that relies on operating system capabilities might not be available. We recommend that you upgrade any servers using these operating systems.
 

@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/troubleshooting-known-issues -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Troubleshooting Microsoft Defender for Identity known issues
 
 This article describes how to troubleshoot known issues in Microsoft Defender for Identity.
+
+## Sensor v3.x activation without Defender for Endpoint isn't supported in government clouds
+
+Activating the Defender for Identity v3.x sensor on servers without Microsoft Defender for Endpoint deployment is temporarily not supported in government cloud environments.
 
 ## Sensor migration isn't supported between different Microsoft tenants
 

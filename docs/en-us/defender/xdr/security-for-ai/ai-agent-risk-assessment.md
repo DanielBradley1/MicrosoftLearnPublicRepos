@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/ai-agent-risk-assessment -->
 <!-- Sitemap-Last-Modified: 2026-07-20 -->
 
-# AI agent posture risk in Microsoft Defender \(preview\)
+# AI agent posture risk in Microsoft Defender
 
 Microsoft Defender assesses posture risk for AI agents in your organization, including agents registered with [Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview) and local agents discovered on endpoint devices. Each agent is evaluated against risk indicators and assigned an overall risk level based on the likelihood of compromise and the potential impact if compromised.
 

@@ -183,6 +183,7 @@ The following table lists the available uRBAC roles and their permissions.
 | **Alerts**: Security operations / Security data / Alerts \(manage\) | Manage | Manage alerts, investigations, scans, device tags, and packages. Includes cloud threat protection features. |
 | **Vulnerability Management**: Security posture / Posture management / Vulnerability management \(read\) | Read | View vulnerability data: software inventory, weaknesses, missing KBs, baselines, hunting, and devices. Includes data lake \(Preview\). |
 | **Exposure Management**: Security posture / Posture management / Exposure Management \(read\); Security posture / Posture management / Exposure Management \(manage\) | Read/Manage | View or manage exposure insights, including Secure Score, recommendations, initiatives, and metrics. |
+| **Management**: Authorization and settings / Core security settings \(read\) ; Authorization and settings / Core security settings \(manage\) | Read/Manage | View or manage your cloud security settings, including environment connections, plan enablement, policy configuration, and more. |
 
 Note
 

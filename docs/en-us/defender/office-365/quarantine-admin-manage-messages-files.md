@@ -40,7 +40,8 @@ Before you begin, review the following portal access, permissions, and retention
 
   - [Microsoft Defender XDR Unified role based access control \(RBAC\)](https://learn.microsoft.com/en-us/defender-xdr/manage-rbac) \(If **Email & collaboration** > **Defender for Office 365** permissions is ![](https://learn.microsoft.com/en-us/defender-office-365/media/scc-toggle-on.png) **Active**. Affects the Defender portal only, not PowerShell\):
 
-    - *Take action on quarantined messages for all users*: **Security operations / Security data / Email & collaboration quarantine \(manage\)**.
+    - *View and release emails and messages from quarantine*: **Security operations / Security data / Email & collaboration quarantine \(manage\)**.
+    - *Submit messages from quarantine to Microsoft*: **Security operations / Security data / Security data basics \(read\)**, **Security operations / Raw data \(Email & collaboration\) / Email & collaboration metadata \(read\)**, and **Security operations / Raw data \(Email & collaboration\) / Email & collaboration content: Quarantine Emails \(read\)**.
     - *Read-only access to quarantined messages for all users*: **Security operations / Security data / Security data basics \(read\)**.
     - *Preview and download quarantined messages for all users*: **Security operations/Raw data \(email & collaboration\)/Email and Collaboration content: Quarantine Emails \(read\)**.
 

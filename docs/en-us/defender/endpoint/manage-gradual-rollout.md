@@ -13,6 +13,8 @@ Capabilities are provided through several components:
 
 Updates are released monthly using a gradual release process. The gradual release process helps enable early failure detection to identify issues as they occur and address them quickly before a larger rollout.
 
+If an update causes issues, you can use `MpCmdRun.exe` to roll back Microsoft Defender Antivirus platform updates on Windows to the previous version or to the version included with Windows \(the inbox version\). In platform version 4.18.26030.3011 or later, you can also roll back endpoint detection and response \(EDR\) updates to the inbox version or to the previously installed \(N-1\) version, if a backup is available. For requirements and command options, see [Use the command line to manage Microsoft Defender Antivirus](https://learn.microsoft.com/en-us/defender-endpoint/command-line-arguments-microsoft-defender-antivirus).
+
 Note
 
 For more information on how to control daily security intelligence updates, see [Schedule Microsoft Defender Antivirus protection updates](https://learn.microsoft.com/en-us/defender-endpoint/manage-protection-update-schedule-microsoft-defender-antivirus). Updates ensure that next-generation protection can defend against new threats, even if cloud-delivered protection is not available to the endpoint.

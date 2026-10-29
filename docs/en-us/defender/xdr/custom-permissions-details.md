@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/custom-permissions-details -->
-<!-- Sitemap-Last-Modified: 2026-07-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Permissions in Microsoft Defender unified role-based access control \(RBAC\)
 
@@ -28,7 +28,7 @@ Permissions for managing day-to-day operations and responding to incidents and a
 
 | Permission name | Level | Description |
 | --- | --- | --- |
-| Email & collaboration metadata | Read | View email and collaboration data in hunting scenarios, including advanced hunting, threat explorer, campaigns, and email entity. |
+| Email & collaboration metadata | Read | View email and collaboration data in hunting scenarios, including advanced hunting, threat explorer, campaigns, and email entity, and submit email messages by using a Network message ID on the Submissions page. |
 | Email & collaboration content | Read | View and download email content and attachments. |
 | Email & collaboration content: Emails associated with alerts | Read | View and download email content associated with security alerts. |
 | Email & collaboration content: Quarantine Emails | Read | View and download quarantined messages for all users. |
