@@ -189,9 +189,34 @@ Here are some workarounds:
 
   <sup>1</sup>For users to register new sign-in methods, your grant control for the mobile policy needs to match your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info).
 
+- You can exclude the **Microsoft Authenticator Credential Registration** resource from the Conditional Access policy.
+
+  Note
+
+  The Microsoft Authenticator Credential Registration resource will be available in November 2026. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
+
+  As a Cloud Application Administrator or Application Administrator:
+
+  1. Manually provision the **Microsoft Authenticator Credential Registration** app by using one of the [supported methods for creating an enterprise application from a multitenant app](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=ms-graph). Use the following details:
+
+     - **App ID**: `6aa00308-ea33-4caa-90d6-ae905d8cb51b`
+     - **Required role**: Cloud Application Administrator or Application Administrator
+
+
+     For example, use Microsoft Graph Explorer to make a `POST` request to `https://graph.microsoft.com/v1.0/servicePrincipals` with the following body:
+
+
+     ```json
+     {
+       "appId": "6aa00308-ea33-4caa-90d6-ae905d8cb51b"
+     }
+     ```
+
+  2. After you provision the app, **Microsoft Authenticator Credential Registration** appears as a resource in Conditional Access. Exclude it from any Conditional Access policies scoped to **All resources** to unblock passkey registration in Microsoft Authenticator.
+
 Note
 
-With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. If you have other conditions set up with the **All resources** policies, those conditions must be met when the passkey is registered.
+With any workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. If you have other conditions set up with the **All resources** policies, those conditions must be met when the passkey is registered.
 
 ### Users who can't register passkeys because of Require approved client app or Require app protection policy Conditional Access grant controls
 
@@ -212,10 +237,7 @@ Here are some workarounds:
   - Targeted resource: **All resources \(formerly 'All cloud apps'\)**
   - Grant control: **Require approved client app**, or **Require app protection policy**, or **Require device to be marked as compliant**
 
-- You can grant users a temporary exemption from the Conditional Access policy. Consider using one or more compensating controls:
-
-  - Allow the exemption for only a limited period of time. Communicate to the user when they're allowed to register a passkey. Remove the exemption after the time period. Then direct users to call the help desk if they missed their time.
-  - Use another Conditional Access policy to require that users register only from a specific network location or a compliant device.
+- You can also change the Conditional Access policy structure to [exclude the Microsoft Authenticator Credential Registration resource](#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
 
 Note
 

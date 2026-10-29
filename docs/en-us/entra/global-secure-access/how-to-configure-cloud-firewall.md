@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-cloud-firewall -->
 <!-- Sitemap-Last-Modified: 2026-04-17 -->
 
-# Configure Global Secure Access cloud firewall
+# Configure cloud firewall for remote networks
 
 Global Secure Access cloud firewall protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches.
 

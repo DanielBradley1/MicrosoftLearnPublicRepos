@@ -3,7 +3,7 @@
 
 # Entra Agent ID lifecycle policies \(preview\)
 
-AI agent adoption is accelerating, resulting in a growing number of agent identities with access to critical resources. Without clear lifecycle controls, these identities can persist beyond their usefulness and introduce security risk. Keeping agent identities around when they are no longer needed can lead to security incidents, as forgotten identities can become easy targets for attackers, while agent identities without clear accountability may continue to retain access indefinitely. As organizations deploy more AI agents, these risks become amplified. Security and identity administrators therefore need automated lifecycle management to avoid agent proliferation to manage unmonitored, inactive and orphaned agent identities
+AI agent adoption is accelerating, resulting in a growing number of agent identities with access to critical resources. Without clear lifecycle controls, these identities can persist beyond their usefulness and introduce security risk. Keeping agent identities around when they are no longer needed can lead to security incidents, as forgotten identities can become easy targets for attackers, while agent identities without clear accountability may continue to retain access indefinitely. As organizations deploy more AI agents, these risks become amplified. Security and identity administrators therefore need automated lifecycle management to avoid agent proliferation to manage unmonitored, inactive and orphaned agent identities.
 
 Important
 
@@ -32,7 +32,7 @@ One of the following roles:
 Create a policy to define which agent identities should be evaluated and what happens when an agent identity doesn't meet an enabled rule.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator) or [AI Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#ai-administrator).
-2. Browse to **ID Governance** > **Lifecycle Workflows** > **Lifecycle Policies** > **Agent IDs**.
+2. Browse to **ID Governance** > **Lifecycle Workflows** > **Lifecycle Policies** > **Agent ID \(Preview\)**.
 3. Select **New policy**.
 4. Enter a unique policy name and description.
 5. Enable the lifecycle policy.
