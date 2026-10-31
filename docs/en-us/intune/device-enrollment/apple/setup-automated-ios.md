@@ -102,10 +102,13 @@ This article reflects the updated policy creation experience \(**Enrollment prog
     - **Setup Assistant with modern authentication**
 
 
+    We recommend **Setup Assistant with modern authentication** with [just-in-time \(JIT\) registration](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-just-in-time-registration) for iOS/iPadOS ADE with user affinity. With JIT registration, users complete Microsoft Entra registration and compliance checks in an app configured with the Apple SSO extension, without needing to sign in to Company Portal.
+
+
     Important
 
 
-    We recommend using **Setup Assistant with modern authentication** for your Apple devices for ADE \(automated device enrollment\) scenarios with user device affinity. Legacy authentication is deprecated and we don't recommend its use.
+    Intune has ended support for **Setup Assistant \(legacy\)** authentication for ADE with user affinity with the October 2026 \(2610\) service release. Existing profiles that use this method are automatically updated to **Setup Assistant with modern authentication**, and the legacy option is no longer available when creating or editing profiles. Already-enrolled devices aren't affected and remain enrolled. Review your profiles and test modern authentication in your environment. For more information, see [Retirement of Setup Assistant \(legacy\)](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/ref-automated-authentication-methods#option-4-setup-assistant-legacy).
 
 13. The **Run Company Portal in Single App Mode until authentication** option is no longer supported and will soon be removed. This option must be set to **No**.
 14. If you want devices using this policy to be supervised, select **Yes** in the **Supervised** list.

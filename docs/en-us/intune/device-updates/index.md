@@ -61,8 +61,7 @@ Manage operating system and driver updates for Windows, Apple, and Android devic
 
 ### How-To Guide
 
-- [iOS/iPadOS update policies](https://learn.microsoft.com/en-us/intune/device-updates/apple/deprecated-mdm-policies-ios)
-- [macOS update policies](https://learn.microsoft.com/en-us/intune/device-updates/apple/deprecated-mdm-policies-macos)
+- [Configure update policies for Apple devices](https://learn.microsoft.com/en-us/intune/device-updates/apple/)
 - [Apple software update reports](https://learn.microsoft.com/en-us/intune/device-updates/apple/monitor-reports)
 
 ### Concept

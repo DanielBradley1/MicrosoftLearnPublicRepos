@@ -24,22 +24,14 @@ After you get your Apple token, you can create an enrollment policy for school d
 8. Select **Next**.
 9. On the **Configuration settings** tab, configure **User Affinity**. Decide if devices with this policy must enroll with an assigned user or without an assigned user. User affinity isn't supported on tvOS and visionOS devices.
 
-   - **Enroll with User Affinity** - Choose this option for devices that belong to users and that want to use the company portal for services like installing apps. This option also lets users authenticate their devices by using the company portal. If using Active Directory Federation Services \(AD FS\), user affinity requires [WS-Trust 1.3 Username/Mixed endpoint](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff608241\(v=ws.10\)). [Learn more](https://learn.microsoft.com/en-us/powershell/module/adfs/get-adfsendpoint). Apple School Manager's Shared iPad mode requires user enroll without user affinity.
+   - **Enroll with User Affinity** - Choose this option for devices that belong to users and that want to use the company portal for services like installing apps. This option also lets users authenticate their devices by using the company portal. Apple School Manager's Shared iPad mode requires user enroll without user affinity.
    - **Enroll without User Affinity** - Choose this option for devices unaffiliated with a single user, such as a shared device. Use this option for devices that perform tasks without accessing local user data. Apps like the Company Portal app don't work.
 
-10. If you chose **Enroll with User Affinity**, select how users must authenticate: Company Portal, Setup Assistant \(legacy\), or Setup Assistant with modern authentication. For more information about authentication methods, see [Authentication methods for automated device enrollment in Intune](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/ref-automated-authentication-methods).
+10. If you chose **Enroll with User Affinity**, select how users must authenticate: **Setup Assistant with modern authentication** \(recommended\) or **Company Portal**. For more information about authentication methods, see [Authentication methods for automated device enrollment in Intune](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/ref-automated-authentication-methods).
 
     Note
 
-    If you want any of the following features, set **Authenticate with Company Portal instead of Apple Setup Assistant** to **Yes**.
-
-    - Use multifactor authentication
-    - Prompt users who need to change their password when they first sign in
-    - Prompt users to reset their expired passwords during enrollment
-
-
-    These features aren't supported when authenticating with Apple Setup Assistant.
-
+    Both methods support multifactor authentication and password change or reset prompts during enrollment. We recommend **Setup Assistant with modern authentication** with [just-in-time \(JIT\) registration](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-just-in-time-registration) for iOS/iPadOS ADE with user affinity.
 11. Choose if you want locked enrollment for devices using this policy. **Locked enrollment** disables Apple settings that allow the management profile to be removed from the **Settings** menu. After device enrollment, you can't change this setting without wiping the device.
 12. You can let multiple users sign on to enrolled iPads by using a managed Apple ID. To do so, choose **Yes** under **Shared iPad** \(this option requires **Enroll without User Affinity** set to **Yes**.\) Managed Apple IDs are created in the Apple School Manager portal. Learn more about [shared iPad](https://learn.microsoft.com/en-us/intune/solutions/education/ref-classroom-settings-ios-shared) and [shared iPad requirements for Apple](https://help.apple.com/classroom/ipad/2.0/#/cad7e2e0cf56).
 13. Choose if you want the devices using this policy to be able to **Sync with computers**. **Deny All** means that devices using this policy can't sync with any data on any computer.

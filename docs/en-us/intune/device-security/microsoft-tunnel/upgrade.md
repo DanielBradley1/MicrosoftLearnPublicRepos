@@ -116,6 +116,15 @@ Important
 
 Container releases take place in stages. If you notice that your container images aren't the most recent, please be assured that they will be updated and delivered within the following week.
 
+### November 2, 2026
+
+Version Number: 20261028.3
+
+Image hash values:
+
+- **agentImageDigest**: sha256:760c240d6b25bfa18330617e4517ac95afe652556bc720744491905cfc459190
+- **serverImageDigest**: sha256:f8773f5a82b815159142985ef50af0e343082363394d2ee5bc872ba01cd503e4
+
 ### September 9, 2026
 
 Version Number: 20260909.1

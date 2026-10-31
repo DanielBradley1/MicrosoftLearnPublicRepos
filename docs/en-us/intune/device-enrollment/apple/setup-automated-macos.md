@@ -76,7 +76,7 @@ This article reflects the updated policy creation experience \(**Enrollment prog
 
     - **Enroll with User Affinity**: Enroll devices that are associated with an assigned user. Choose this option for work devices that belong to users, and if you want to require users to have the Company Portal app to install apps. Multifactor authentication \(MFA\) is available with this option. Enrolling with user affinity is also referred to as enrolling with a *user*.
 
-      Option 2 requires more configurations. Users must authenticate themselves before enrollment to confirm their identity. Select one of the following authentication methods:
+      Enrollment with user affinity requires more configurations. Users must authenticate themselves before enrollment to confirm their identity. Select **Setup Assistant with modern authentication**:
 
       - **Setup Assistant with modern authentication** \(recommended\): This method requires users to complete all Setup Assistant screens and sign in to the Company Portal app with their Microsoft Entra credentials before they can access resources. After they sign in to Company Portal, the device:
 
@@ -89,16 +89,13 @@ This article reflects the updated policy creation experience \(**Enrollment prog
         If the user doesn't sign in to the Company Portal to complete registration, they'll be redirected to the Company Portal app each time they try to open a managed app with Conditional Access protection.
 
 
-        Devices running macOS 10.15 and later can use this method. Older macOS devices fall back to using the legacy Setup Assistant method. For more information about how to get the Company Portal app to Mac users, see [Add the Company Portal for macOS app](https://learn.microsoft.com/en-us/intune/app-management/deployment/add-company-portal-macos).
+        Devices running macOS 10.15 and later can use this method. For more information about how to get the Company Portal app to Mac users, see [Add the Company Portal for macOS app](https://learn.microsoft.com/en-us/intune/app-management/deployment/add-company-portal-macos).
 
 
       Important
 
 
-      We recommend using **Setup Assistant with modern authentication** for your Apple devices for ADE \(automated device enrollment\) scenarios with user device affinity. While use of the legacy authentication remains available, we don't recommend its use.
-
-
-      - **Setup Assistant \(legacy\)** \(no longer recommended\): Use the legacy Setup Assistant if you want users to experience the typical out-of-box-experience for Apple products. This method installs standard preconfigured settings when the device enrolls with Intune management. If you're using Active Directory Federation Services and you're using Setup Assistant to authenticate, a [WS-Trust 1.3 Username/Mixed endpoint](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff608241\(v=ws.10\)) is required. For more information about retrieving the ADFS endpoint, see [Get-ADfsEndpoint](https://learn.microsoft.com/en-us/powershell/module/adfs/get-adfsendpoint?view=win10-ps&preserve-view=true).
+      Intune has ended support for **Setup Assistant \(legacy\)** authentication for ADE with user affinity with the October 2026 \(2610\) service release. Existing profiles that use this method are automatically updated to **Setup Assistant with modern authentication**, and the legacy option is no longer available when creating or editing profiles. Already-enrolled devices aren't affected and remain enrolled. Review your profiles and test modern authentication in your environment. For more information, see [Retirement of Setup Assistant \(legacy\)](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/ref-automated-authentication-methods#option-4-setup-assistant-legacy).
 
 12. **Await final configuration** enables a locked experience at the end of Setup Assistant to ensure your most critical device configuration policies are installed on the device. This setting is applied once during the out-of-box Apple automated device enrollment experience in Setup Assistant. The device user doesn't experience it again unless they re-enroll their Mac.
 
@@ -115,7 +112,6 @@ This article reflects the updated policy creation experience \(**Enrollment prog
 
 
     - Enrollment via Setup Assistant with modern authentication
-    - Enrollment with Setup Assistant \(legacy\)
     - Enrollment without user device affinity
 
 13. You can enforce **Locked enrollment** to prevent users from unenrolling their devices from Intune. Select **Yes** to disable the Mac settings in System Preferences and Terminal that allow users to remove the management policy. After the device enrolls, you can't change this setting without wiping the device.
@@ -144,17 +140,14 @@ This article reflects the updated policy creation experience \(**Enrollment prog
       - {{serialNumber}} - for example, F4KN99ZUG5V2
       - {{OnPremisesSamAccountName}} - for example, contoso\\John
 
-    - **Restrict editing**: The default configuration is set to **Yes** so that device users can't edit the account name and full name configured for them. To allow device users to edit the account name and full name, select **Not configured**. If you're only using Setup Assistant \(legacy\) to enroll devices running macOS 10.15 and later, you can expect the following end user experience:
-
-      - **Yes**: The account creation screen in Setup Assistant never appears. Instead, the local user account is automatically created based on the other setting configurations, and the password is automatically populated from the Microsoft Entra authentication screen. The device user can't edit these fields.
-      - **Not configured**: The local user account screen is shown to the end user in Setup Assistant and is populated with the configured account values, and the password from the Microsoft Entra authentication screen. The device user can edit these fields during Setup Assistant.
+    - **Restrict editing**: The default configuration is set to **Yes** so that device users can't edit the account name and full name configured for them. To allow device users to edit the account name and full name, select **Not configured**.
 
 
     For account settings to work as intended, your enrollment policy must have the following configurations:
 
 
     - **User affinity**: Select **Enroll with User affinity**.
-    - **Authentication method**: Select **Setup Assistant with modern authentication** or **Setup Assistant \(legacy\)**.
+    - **Authentication method**: Select **Setup Assistant with modern authentication**.
     - **Await final configuration**: Select **Yes**.
 
 

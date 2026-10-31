@@ -68,7 +68,7 @@ This task list provides an overview. For more specific information, go to [Apple
 - Need access to the [Apple Business portal](https://business.apple.com/) or the [Apple School Manager \(ASM\) portal](https://school.apple.com/).
 - Be sure the Apple token \(.p7m\) is active. For more specific information, go to [Set up an Apple mobile ADE token](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-apple-token).
 - Be sure the [Apple MDM push certificate](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/create-mdm-push-certificate) is added to Intune, and is active. This certificate is required to enroll Apple mobile devices. For more information, go to [Get an Apple MDM push certificate](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/create-mdm-push-certificate).
-- Decide [how users will authenticate](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/ref-automated-authentication-methods) their iOS/iPadOS devices: the **Setup Assistant with modern authentication** \(recommended\) or **Company Portal** app. Make this decision before you create the enrollment policy. Using the **Company Portal** app or **Setup Assistant with modern authentication** is considered modern authentication. User affinity isn't supported on tvOS and visionOS so you don't need to select an authentication method for those devices.
+- Decide [how users will authenticate](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/ref-automated-authentication-methods) their iOS/iPadOS devices: **Setup Assistant with modern authentication** or the **Company Portal** app. We recommend **Setup Assistant with modern authentication** with [just-in-time \(JIT\) registration](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-just-in-time-registration) for ADE with user affinity. Make this decision before you create the enrollment policy. Using the **Company Portal** app or **Setup Assistant with modern authentication** is considered modern authentication. User affinity isn't supported on tvOS and visionOS so you don't need to select an authentication method for those devices.
 
   - Select the **Company Portal** app when:
 
@@ -83,6 +83,7 @@ This task list provides an overview. For more specific information, go to [Apple
   - Select the **Setup Assistant with modern authentication** when:
 
     - You want to wipe the device.
+    - You want to use **Await final configuration** to ensure that critical device configuration policies are installed before the user exits Setup Assistant. For more information, see [Create an Apple enrollment policy](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-automated-ios#create-an-apple-enrollment-policy).
     - You want to use multifactor authentication \(MFA\).
     - You want to prompt users to update their expired password when they first sign in.
     - You want to prompt users to reset their expired passwords during enrollment.
@@ -90,19 +91,19 @@ This task list provides an overview. For more specific information, go to [Apple
     - You want to automatically install the **Company Portal** app during enrollment. If your company uses the Volume Purchase Program \(VPP\), you can automatically install the **Company Portal** app during enrollment without user Apple IDs.
     - You want users to use the device, even when the Company Portal app isn't installed.
 
-      If you want devices registered in Microsoft Entra ID, then install the **Company Portal** app. When you create the enrollment policy and select Setup Assistant \(legacy\), you can install the Company Portal app. We recommend installing the **Company Portal** app during enrollment.
+      To register devices in Microsoft Entra ID, we recommend configuring [just-in-time \(JIT\) registration](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-just-in-time-registration) with **Setup Assistant with modern authentication**. With JIT registration, users complete Microsoft Entra registration and compliance checks in an app configured with the Apple single sign-on \(SSO\) extension, without needing to sign in to Company Portal. If you don't configure JIT registration, users must sign in to the **Company Portal** app to complete Microsoft Entra registration.
 
 
   Note
 
 
-  To authenticate users, Microsoft recommends using the **Company Portal** app or the **Setup Assistant with modern authentication**.
+  For iOS/iPadOS ADE with user affinity, Microsoft recommends **Setup Assistant with modern authentication** with [just-in-time \(JIT\) registration](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-just-in-time-registration). Company Portal authentication remains an alternative.
 
 
   Which option should you use? It depends:
 
 
-  - If you want to use the device before the Company Portal app installs, then use the **Setup Assistant with modern authentication**.
+  - If you want to use the device before the Company Portal app installs, then use **Setup Assistant with modern authentication**. With JIT registration, users complete Microsoft Entra registration in an app configured with the SSO extension. The following Company Portal sign-in flow applies when JIT registration isn't configured.
 
     During the Setup Assistant, users must enter their organization Microsoft Entra credentials \(`user@contoso.com`\). When they enter their credentials, the enrollment starts, and the Company Portal app installs. If you want, users can also enter their Apple ID to access Apple specific features, like Apple Pay.
 
@@ -148,10 +149,14 @@ This task list provides an overview. For more specific information, go to [Apple
 - In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), create an enrollment policy:
 
   - Choose to **Enroll with user affinity** \(associate a user to the device\), or **Enroll without user affinity** \(user-less devices or shared devices\).
-  - Choose where users authenticate: **Setup Assistant with modern authentication** \(recommended\), the **Company Portal** app, or **Setup Assistant \(legacy\)** \(not recommended\).
+  - Choose where users authenticate: **Setup Assistant with modern authentication** or the **Company Portal** app. We recommend **Setup Assistant with modern authentication** with [JIT registration](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-just-in-time-registration).
 
 
   For more specific information and suggestions, go to [Apple's Automated Device Enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/overview-automated-enrollment-apple).
+
+Important
+
+Intune has ended support for **Setup Assistant \(legacy\)** authentication for ADE with user affinity with the October 2026 \(2610\) service release. Existing profiles that use legacy authentication are automatically updated to **Setup Assistant with modern authentication**. Already-enrolled devices aren't affected and remain enrolled. For details, see [Retirement of Setup Assistant \(legacy\)](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/ref-automated-authentication-methods#option-4-setup-assistant-legacy).
 
 ### ADE end user tasks
 
@@ -167,24 +172,9 @@ When you create an enrollment policy in the [Microsoft Intune admin center](http
 
   Users might have to enter more information. For more specific end user steps, go to [Enroll your organization-provided iOS device](https://learn.microsoft.com/en-us/intune/user-help/enrollment/enroll-automated-ios).
 
-- **Enroll with user affinity + Setup Assistant \(legacy\) + Company Portal app**:
-
-  ![In the Intune admin center and Microsoft Intune, enroll iOS/iPadOS devices using automated device enrollment \(ADE\). Select enroll with user affinity, use the Setup Assistant for authentication, and install the Company Portal app.](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/media/guide-ios-ipados/ade-user-affinity-setup-assistant-legacy-company-portal-app.png)
-
-  1. When the device is turned on, the Apple Setup Assistant runs. Users enter their Apple ID \(`user@iCloud.com` or `user@gmail.com`\).
-  2. The Setup Assistant prompts the user for information.
-  3. The Company Portal app automatically opens, and should lock the device in a kiosk-style mode. It can take some time for the Company Portal app to open. Users sign in with their organization credentials \(`user@contoso.com`\), and the device is enrolled in Intune.
-
-     This step registers the device in Microsoft Entra ID. Users can install and use apps used by your organization, including LOB apps.
-
-- **Enroll with user affinity + Setup Assistant \(legacy\) - Company Portal app**:
-
-  ![In the Intune admin center and Microsoft Intune, enroll iOS/iPadOS devices using automated device enrollment \(ADE\). Select enroll with user affinity, use the Setup Assistant for authentication, and don't install the Company Portal app.](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/media/guide-ios-ipados/ade-user-affinity-setup-assistant-legacy-no-company-portal-app.png)
-
-  1. When the device is turned on, the Apple Setup Assistant runs. Users enter their Apple ID \(`user@iCloud.com` or `user@gmail.com`\).
-  2. The Setup Assistant prompts the user for information, and enrolls the device in Intune. The device isn't registered in Microsoft Entra ID.
-
 - **Enroll with user affinity + Setup Assistant with modern authentication**:
+
+  We recommend configuring [JIT registration](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-just-in-time-registration) with this authentication method. With JIT registration, users complete Microsoft Entra registration and compliance checks when they sign in to an app configured with the SSO extension, instead of signing in to Company Portal. The following steps describe the Company Portal registration flow when JIT registration isn't configured.
 
   ![In the Intune admin center and Microsoft Intune, enroll iOS/iPadOS devices using automated device enrollment \(ADE\). Select enroll with user affinity, and use the Setup Assistant for authentication. The Company Portal app automatically installs.](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/media/guide-ios-ipados/ade-user-affinity-setup-assistant-modern-authentication.png)
 

@@ -391,6 +391,10 @@ When discovery searches an untrusted forest for resources, the discovery agent m
 - To discover a computer resource by using Active Directory system discovery, the discovery agent must be able to resolve the FQDN of the resource. If it can't resolve the FQDN, it then tries to resolve the resource by its NetBIOS name.
 - To discover a user or group resource by using Active Directory user discovery or Active Directory group discovery, the discovery agent must be able to resolve the FQDN of the domain controller name that you specify for the Active Directory location.
 
+Note
+
+All discovery methods require the target resource account to be enabled. Disabled accounts are filtered during the discovery.
+
 For each location that you specify, you can configure individual search options, like enabling a recursive search of the location's Active Directory child containers. You can also configure a unique account to use when it searches that location. This account provides flexibility in configuring a discovery method at one site to search multiple Active Directory locations across multiple forests. You don't have to configure a single account that has permissions to all locations.
 
 When each of these three discovery methods runs at a specific site, the Configuration Manager site server at that site contacts the nearest domain controller in the specified Active Directory forest to locate Active Directory resources. The domain and forest can be in any supported Active Directory mode. The account that you assign to each location instance must have **Read** access permission to the specified Active Directory locations.

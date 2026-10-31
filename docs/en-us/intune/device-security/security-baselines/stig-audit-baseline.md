@@ -48,13 +48,13 @@ Before you use the STIG audit baseline, confirm that your environment meets the 
 
 ![](https://learn.microsoft.com/en-us/intune/media/icons/16/cloud.svg) **Cloud requirements**
 
-> Your organization must use a [US Government Community Cloud High \(GCC High\)](https://learn.microsoft.com/en-us/intune/fundamentals/government-service) tenant. The STIG audit baseline isn't available in commercial cloud or GCC environments.
+> The STIG audit baseline is available in commercial and [US Government Community Cloud High \(GCC High\)](https://learn.microsoft.com/en-us/intune/fundamentals/government-service) environments.
 
 ![](https://learn.microsoft.com/en-us/intune/media/icons/16/licensing.svg) **Licensing requirements**
 
 > The STIG audit baseline requires [Intune Advanced Analytics](https://learn.microsoft.com/en-us/intune/advanced-analytics/).
 > 
-> This feature requires a subscription in addition to Microsoft Intune Plan 1 or Plan 2. For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
+> For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
 
 ![](https://learn.microsoft.com/en-us/intune/media/icons/16/devices.svg) **Device platform requirements**
 
@@ -75,6 +75,8 @@ Before you use the STIG audit baseline, confirm that your environment meets the 
 > - **Security baselines**: Assign, Create, Delete, Read, Update
 > 
 > The [Endpoint Security Manager](https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/ref-built-in-roles#endpoint-security-manager) built-in role includes these permissions. You can also add them to a [custom role](https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role).
+> 
+> To view STIG audit reports, your Intune role must also include the **Device configurations** > **View Reports** permission.
 > 
 > You also need **scope tag** permissions for the device groups you want to audit.
 
@@ -104,33 +106,21 @@ To create a STIG audit baseline profile, use the following steps:
 8. On the **Assignments** tab, select the device groups that you want to audit against the STIG baseline. You can target all devices or specific groups.
 9. Review your settings on the **Review + create** tab, and then select **Create**.
 
-After you create the profile and assign it to groups, Intune evaluates the targeted devices against the STIG baseline as devices check in. Audit report data begins to populate as devices report their assessment results. Initial results for newly targeted devices can take up to 24 hours to appear.
+After you create the profile and assign it to groups, Intune evaluates the targeted devices against the STIG baseline as devices check in. Audit report data begins to populate as devices report their assessment results. Initial audit results for newly targeted devices can take 24 hours or longer to appear.
+
+During initial reporting, devices may temporarily show Error before audit results become available. An initial Error doesn't necessarily mean the device failed a benchmark check. Error can also indicate a problem retrieving the data needed for evaluation.
 
 ## Review STIG audit results
 
 After devices check in, you can review audit results through the **Audit report** view in the Intune admin center.
 
-![Screenshot showing the STIG audit baseline profile overview with device and user check-in status, Device assignment status report, and Audit report options in the Intune admin center.](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/media/stig-audit/stig-audit-profile-overview.png)
+Note
+
+For audit-only baselines, including STIG, the profile overview doesn't show **Device and user check-in status**, **Device assignment status**, or the standard **Per setting status** report. Use **Audit report** to review per-setting audit results and drill down into individual device results.
 
 1. Go to **Endpoint security** > **Security baselines**, and select **Microsoft Windows 11 STIG SCAP Benchmark**.
 2. Select the audit profile you want to review.
 3. Select **Audit report** to load the report view. You might need to select **Generate** the first time to begin populating data.
-
-### Device assignment status
-
-The **Device assignment status** report shows all devices that the policy targets, including devices in a pending policy assignment state. Use this report to confirm which devices received the audit profile and to track assignment progress.
-
-| Column | Description |
-| --- | --- |
-| **Device name** | The display name of the device as registered in Intune. |
-| **Last active user** | The last user who signed in to the device. |
-| **Assignment status** | The current policy assignment state for the device. |
-| **Last report modification time** | The last time the device reported its assignment status. |
-| **Intune Device ID** | The unique device identifier in Intune. |
-| **Microsoft Entra Device ID** | The device's identifier in Microsoft Entra ID. |
-| **Model** | The hardware model of the device. |
-| **Platform** | The operating system platform of the device. |
-| **Entra User ID** | The identifier of the associated user in Entra ID. |
 
 ### Audit report
 
@@ -151,7 +141,7 @@ You can filter the report by **Severity** to focus on specific areas. Use the **
 
 Select the device count for a rule, such as the number under **Success devices**, to open a detailed view for that rule. The drill-down view includes:
 
-- A **summary bar** that shows the count of devices in each status: *Pending*, *Not applicable*, *Success*, *Error*, *Conflict*, and *Total*.
+- A **summary bar** that shows the count of devices in each status: *Unknown*, *Not applicable*, *Pass*, *Fail*, *Error*, and *Conflict*. *Total* is the count of devices in the report, not an individual audit outcome.
 - A **device list** that shows the audit result for each targeted device. You can filter the list by status, search for specific devices, and export the results.
 
 The device list includes the following columns:
@@ -289,7 +279,7 @@ Before you can call the report APIs, you need the **PolicyId** \(GUID\) of your 
 
 Note
 
-Policy IDs are tenant-specific and change when a tenant upgrades to a new STIG version. For organizations that aggregate STIG audit data across multiple tenants, such as for the DISA Continuous Monitoring and Risk Scoring \(CMRS\) program, run this discovery call in each tenant to find the current PolicyId. Setting IDs are globally consistent across tenants for a given STIG template version, so you can correlate results across tenants by SettingId.
+Policy IDs are tenant-specific. After upgrading to a new STIG version, retrieve the PolicyId for the profile you want to report on. For organizations that aggregate STIG audit data across multiple tenants, such as for the DISA Continuous Monitoring and Risk Scoring \(CMRS\) program, run this discovery call in each tenant to find the current PolicyId. Setting IDs are globally consistent across tenants for a given STIG template version, so you can correlate results across tenants by SettingId.
 
 ### Retrieve the per-policy audit summary
 
@@ -416,9 +406,9 @@ The STIG audit baseline works differently from other Intune security baselines:
 | Pushes settings to devices | Yes | No |
 | Modifies device configuration | Yes | No |
 | Reports assessment status | Yes \(delivery of policy\) | Yes \(on-device value assessment\) |
-| Customizable settings | Yes | No \(all rules audited\) |
+| Customizable settings | Yes | No \(all supported automated checks audited\) |
 | Can conflict with other policies | Yes | No |
-| Available in commercial cloud | Yes | No \(GCC High only\) |
+| Available in commercial cloud | Yes | Yes |
 | Supports CSV export and Graph API | Yes | Yes |
 | XCCDF result mapping | N/A | Yes |
 
@@ -466,10 +456,10 @@ The following STIG rules require manual verification:
 ## Known limitations
 
 - **Audit-only** — The STIG Audit baseline doesn't enforce or fix settings. Use Settings Catalog profiles for configuration.
-- **No custom baselines** — You can't upload custom STIG profiles. The baseline includes the full set of STIG rules for the supported benchmark.
+- **No custom baselines** — You can't upload custom STIG profiles. The baseline evaluates the supported automated checks for the benchmark. Rules requiring manual verification must be assessed separately.
 - **No actual device values** — The Audit report shows the pass or fail result of each rule check, but it doesn't display the actual configuration value on the device.
 - **Single baseline version** — You can only use the latest supported baseline version to create new Audit profiles. You can't create profiles against older baseline versions. However, profiles you previously created with an older version remain available to run.
-- **GCC High only** — The STIG Audit baseline isn't available in commercial, GCC, or DoD cloud environments.
+- **Cloud availability** — The STIG audit baseline is available in commercial and GCC High environments.
 - **UX-only profile creation** — You must create STIG Audit profiles through the Intune admin center. API-based profile creation isn't supported.
 - **Data latency** — Audit data isn't real-time. There can be a delay of several hours between a device evaluation and the data appearing in the report. For details, see [Data freshness](#data-freshness).
 
@@ -485,11 +475,11 @@ The initial baseline audits against the **Microsoft Windows 11 STIG SCAP Benchma
 
 ### Can I use the STIG Audit baseline in a commercial cloud tenant?
 
-No. The STIG Audit baseline is available only for [GCC High](https://learn.microsoft.com/en-us/intune/fundamentals/government-service) tenants.
+Yes. The STIG audit baseline is available in commercial and [GCC High](https://learn.microsoft.com/en-us/intune/fundamentals/government-service) environments.
 
 ### Can I customize which STIG rules are audited?
 
-No. The STIG Audit baseline evaluates all rules in the supported benchmark as a single profile. You can't select a subset of rules for auditing. CAT I, CAT II, and CAT III rules are all included in a single baseline - there are no separate profiles by severity category.
+No. The STIG Audit baseline evaluates the supported automated checks as a single profile. You can't select a subset of checks for auditing. CAT I, CAT II, and CAT III checks are included in the same profile; there are no separate profiles by severity category. Rules requiring manual verification must be assessed separately.
 
 ### Does the STIG audit baseline conflict with other baselines or policies?
 

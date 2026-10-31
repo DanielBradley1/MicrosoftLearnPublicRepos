@@ -503,6 +503,10 @@ You can also **Import** a CSV file with the list of app names and their bundle I
 
 - **Defer software updates**: **Enable** delays when software updates show up on devices, from 1-90 days. This setting doesn't control when updates are or aren't installed.
 
+  Important
+
+  These settings are no longer supported for Apple software update management. Use Declarative Device Management \(DDM\) update settings in the settings catalog instead. For more information, go to [Configure update policies for Apple devices](https://learn.microsoft.com/en-us/intune/device-updates/apple/).
+
   When set to **Not configured** \(default\), Intune doesn't change or update this setting. By default, the OS might show software updates on devices as Apple releases them. For example, if an iOS/iPadOS update gets released by Apple on a specific date, then that update naturally shows up on devices around the release date.
 
   - **Delay visibility of software updates**: Enter a value from 1-90 days. When the delay expires, users get notified to update to the earliest OS version available when the delay is triggered. Don't set this value to zero \(`0`\) days.
@@ -531,6 +535,10 @@ You can also **Import** a CSV file with the list of app names and their bundle I
 ### Settings apply to: User approved device enrollment, Automated device enrollment \(supervised\)
 
 - **Defer software updates**: This setting defers the visibility of software updates on devices for up to 90 days. For example, if Apple releases a macOS update on a specific date, it naturally shows on devices around the release date. This setting can hide the update so that users don't see it as soon as it's available.
+
+  Important
+
+  These settings are no longer supported for Apple software update management. Use Declarative Device Management \(DDM\) update settings in the settings catalog instead. For more information, go to [Configure update policies for Apple devices](https://learn.microsoft.com/en-us/intune/device-updates/apple/).
 
   This setting doesn't control when updates are installed and doesn't impact scheduled updates. Seed build updates are allowed without delay.
 

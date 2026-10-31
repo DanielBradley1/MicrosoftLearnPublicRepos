@@ -12,14 +12,14 @@ The Configuration Manager console is always installed on the site server for the
 ## Prerequisites
 
 - [Supported OS versions for Configuration Manager consoles](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/supported-operating-systems-consoles)
-- You have local **Administrator** rights on the target computer for the console.
-- You have **Read** permissions to the location of the console installation files.
+- Local **Administrator** rights on the target computer for the console
+- **Read** permissions to the location of the console installation files
 
 ### .NET version requirements
 
-Starting in version 2403, the console requires Microsoft .NET Framework version 4.8. If you install the console on other devices, make sure to update .NET. If the device doesn't already have it, the console setup doesn't install this prerequisite.
+Starting in version 2403, the console requires Microsoft .NET Framework version 4.8. If you install the console on other devices, ensure you update .NET. If the device doesn't already have it, the console setup doesn't install this prerequisite.
 
-Starting in version 2107, the console requires Microsoft .NET Framework version 4.6.2, but version 4.8 is recommended. If you install the console on other devices, make sure to update .NET. If the device doesn't already have it, the console setup doesn't install this prerequisite.
+Starting in version 2107, the console requires Microsoft .NET Framework version 4.6.2, but version 4.8 is recommended. If you install the console on other devices, ensure you update .NET. If the device doesn't already have it, the console setup doesn't install this prerequisite.
 
 Starting in version 2103, the ConfigurationManager PowerShell module requires Microsoft .NET version 4.7.2 or later.
 
@@ -33,7 +33,7 @@ For more information, see [.NET Framework system requirements](https://learn.mic
 
 ## Source paths
 
-Decide which source path to use:
+Choose the source path to use:
 
 - ConsoleSetup folder in the installation path on the site server: `\Tools\ConsoleSetup`
 
@@ -46,9 +46,9 @@ When possible, start the console installer from the **ConsoleSetup** folder rath
 
 Important
 
-Don't install the console using the `CD.Latest` source files. It's an unsupported scenario, and may cause problems with the console installation. For more information, see [The `CD.Latest` folder](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/the-cd.latest-folder#unsupported-scenarios).
+Don't install the console by using the `CD.Latest` source files. It's an unsupported scenario, and it can cause problems with the console installation. For more information, see [The `CD.Latest` folder](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/the-cd.latest-folder#unsupported-scenarios).
 
-If you create a package for installing the console on other computers, make sure the package includes the following files:
+If you create a package for installing the console on other computers, ensure the package includes the following files:
 
 - ConsoleSetup.exe
 - AdminConsole.msi
@@ -61,7 +61,7 @@ If you create a package for installing the console on other computers, make sure
 
    Important
 
-   Always install the console by using **ConsoleSetup.exe**. Although you can install the Configuration Manager console by running AdminConsole.msi, this method doesn't run prerequisites or dependency checks. The installation might not install correctly.
+   Always install the console by using **ConsoleSetup.exe**. Although you can install the Configuration Manager console by running **AdminConsole.msi**, this method doesn't run prerequisites or dependency checks. The installation might not install correctly.
 2. In the wizard, select **Next**.
 3. On the **Site Server** page, enter the fully qualified domain name \(FQDN\) of the site server to which the Configuration Manager console connects.
 4. On the **Installation Folder** page, enter the installation folder for the Configuration Manager console. The folder path can't include trailing spaces or Unicode characters.
@@ -71,13 +71,13 @@ If you create a package for installing the console on other computers, make sure
 
 Tip
 
-Installing the Configuration Manager console from a command prompt always installs the English version. This behavior happens even if the target computer's OS is set to a different language. To install the Configuration Manager console in a language other than English, [use the Setup Wizard](#use-the-setup-wizard).
+Installing the Configuration Manager console from a command prompt always installs the English version. This behavior happens even if the target computer operating system is set to a different language. To install the Configuration Manager console in a language other than English, [use the Setup Wizard](#use-the-setup-wizard).
 
 ### ConsoleSetup.exe command-line options
 
 #### `/q`
 
-Installs the Configuration Manager console unattended. The `TargetDir` and `DefaultSiteServerName` options are required when you use this option.
+Installs the Configuration Manager console unattended. You must include the `TargetDir` and `DefaultSiteServerName` options when you use this option.
 
 #### `/uninstall`
 
@@ -85,15 +85,15 @@ Uninstalls the Configuration Manager console. Specify this option first when you
 
 #### `LangPackDir`
 
-Specifies the path to the folder that contains the language files. You can use **Setup Downloader** to download the language files. If you don't use this option, Setup looks for the language folder in the current folder. If the language folder isn't found, Setup continues to install English only. For more information, see [Setup Downloader](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/install/setup-downloader).
+Specifies the path to the folder that contains the language files. Use **Setup Downloader** to download the language files. If you don't use this option, Setup looks for the language folder in the current folder. If the language folder isn't found, Setup continues to install English only. For more information, see [Setup Downloader](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/install/setup-downloader).
 
 #### `TargetDir`
 
-Specifies the installation folder to install the Configuration Manager console. This option is required when you use the `/q` option.
+Specifies the installation folder to install the Configuration Manager console. You must include this option when you use the `/q` option.
 
 #### `DefaultSiteServerName`
 
-Specifies the FQDN of the site server to which the console connects when it opens. This option is required when you use the `/q` option.
+Specifies the FQDN of the site server to which the console connects when it opens. You must include this option when you use the `/q` option.
 
 ### Examples
 
@@ -111,7 +111,7 @@ Specifies the FQDN of the site server to which the console connects when it open
 
 ## Postinstallation information
 
-The Configuration Manager console requires installation of the built-in WebView2 extension for certain features such as Community hub and dashboards. A notification to install the extension is given to the console user when they open the console. For more information see, the [WebView2 console extension](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/admin-console-extensions#bkmk_notification).
+The Configuration Manager console requires the built-in WebView2 extension for certain features such as Community hub and dashboards. The console user receives a notification to install the extension when they open the console. For more information, see [WebView2 console extension](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/admin-console-extensions#bkmk_notification).
 
 ## Next steps
 
@@ -119,4 +119,4 @@ An administrator sees objects in the console based on the permissions assigned t
 
 For more information on the fundamentals of navigating the Configuration Manager console, see [How to use the console](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/admin-console).
 
-If your environment uses a proxy server, this configuration may impact the functionality of the console. For more information, see [Proxy server support - Configuration Manager console](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/network/proxy-server-support#configuration-manager-console).
+If your environment uses a proxy server, this configuration can impact the functionality of the console. For more information, see [Proxy server support - Configuration Manager console](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/network/proxy-server-support#configuration-manager-console).

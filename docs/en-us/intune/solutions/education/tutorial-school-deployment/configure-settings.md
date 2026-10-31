@@ -171,11 +171,10 @@ If you require a more complex Windows Update policy, you can create it in Micros
 - [Intune](#tabpanel_6_intune)
 - [Intune For Education](#tabpanel_6_intune-for-education)
 
-It is important to keep iOS devices up to date with the latest security updates. You can create control updates with Intune using three different methods:
+It is important to keep iOS devices up to date with the latest security updates. You can control updates with Intune using these methods:
 
-- **Option 1** - iOS and iPadOS 17.0 and newer devices \(recommended\) - [Managed software update policy](https://learn.microsoft.com/en-us/intune/device-updates/apple/).
-- **Option 2** - iOS and iPadOS 17.0 and older \(recommended\) - [Software update policy](https://learn.microsoft.com/en-us/intune/device-updates/apple/deprecated-mdm-policies-ios).
-- **Option 3** \(not recommended\) - End users manually install the updates.
+- **Option 1** - [Configure update policies for Apple devices](https://learn.microsoft.com/en-us/intune/device-updates/apple/).
+- **Option 2** - End users manually install the updates.
 
 At **Devices** > **Manage devices** > **Configuration** > **Create** > **Settings catalog** > **Restrictions**, you can use the following settings to delay how long after an update is released that users can manually install the updates.
 
