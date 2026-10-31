@@ -20,4 +20,4 @@ These use cases demonstrate the breadth and importance of identity governance in
 - [Understanding least privileged](https://learn.microsoft.com/en-us/entra/id-governance/scenarios/least-privileged)
 - [Govern the employee and guest lifecycle](https://learn.microsoft.com/en-us/entra/id-governance/scenarios/govern-the-employee-lifecycle)
 - [Govern access for applications in your environment](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-applications-prepare)
-- [Governing agent identities in Microsoft Entra Agent ID \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview)
+- [Governing agent identities in Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview)

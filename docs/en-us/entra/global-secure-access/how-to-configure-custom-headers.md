@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-custom-headers -->
 <!-- Sitemap-Last-Modified: 2026-09-16 -->
 
-# How to configure custom headers \(preview\)
+# How to configure custom headers
 
 Custom headers in Global Secure Access \(GSA\) lets you add custom HTTP headers to outbound web requests for specific destinations. You configure headers as part of a web filtering policy rule, so the headers are added only to traffic that matches the fully qualified domain names \(FQDNs\) that you select.
 
@@ -10,10 +10,6 @@ Note
 Custom headers are available only with Web Filtering \(v2\) policies. For more information, see [Web filtering in Global Secure Access \(V2\)](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-web-filtering).
 
 The most common use case is tenant restrictions for software as a service \(SaaS\) applications. Some popular SaaS services understand specific HTTP headers that identifies your organization's approved tenant or workspace in that service. When you add the HTTP header understood by the SaaS provider, the SaaS application allows access to your approved tenant and blocks access to consumer tenants or tenants from other organizations. You can also use header modification to add any custom header that a destination service expects, such as an identifier or policy tag.
-
-Important
-
-Header modification is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How it works
 
@@ -103,10 +99,6 @@ Important
 To restrict access to Microsoft Entra tenants, use [universal tenant restrictions](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-universal-tenant-restrictions) instead of custom headers.
 
 ## Custom headers in traffic logs
-
-Note
-
-While this feature is rolling out in September 2026, you may need to use this [special Entra Admin Center link](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_customheadersfields=true#view/Microsoft_Azure_Network_Access/TrafficLogs.ReactView) to see custom header details in Global Secure Access logs.
 
 You can review the Global Secure Access traffic logs to identify specific transactions with header modifications. To do that, navigate to the Entra Admin Center / Global Secure Access / Monitor / Traffic Logs. Click on the Transactions tab and add the Custom Headers column to the view.
 

@@ -7,7 +7,7 @@ Entitlement management is an [identity governance](https://learn.microsoft.com/e
 
 People in organizations need access to various groups, applications, and SharePoint Online sites to perform their job. Managing this access is challenging, as requirements change. New applications are added or identities need more access rights. This scenario gets more complicated when you collaborate with outside organizations. You might not know who in the other organization needs access to your organization's resources, and they won't know what applications, groups, or sites your organization is using.
 
-Entitlement management can help you more efficiently manage access to groups, applications, and SharePoint Online sites for internal identities, and also for identities outside your organization who need access to those resources. You can also use entitlement management in preview to assign groups, API permissions, and roles to agent IDs.
+Entitlement management can help you more efficiently manage access to groups, applications, and SharePoint Online sites for internal identities, and also for identities outside your organization who need access to those resources. You can also use entitlement management to assign groups, API permissions, and roles to agent IDs.
 
 ## Why use entitlement management?
 
@@ -21,7 +21,7 @@ These problems are compounded for identities who need access from another organi
 - No one person might know all of the specific individuals in other organization's directories to be able to invite them
 - Even if they were able to invite these identities, no one in that organization might remember to manage all of the identities access consistently
 
-Entitlement management can help address these challenges. To learn more about how customers have been using entitlement management, you can read the [Mississippi Division of Medicaid](https://customers.microsoft.com/story/1509263251891323344-mississippi-medicaid-microsoft-security-solutions), [Storebrand](https://customers.microsoft.com/story/1540760473505561700-storebrand-banking-microsoft-security-solutions), and [Digital Security and Resilience team at Microsoft](https://customers.microsoft.com/story/1805346232767723893-microsoft-microsoft-entra-id-governance-other-en-united-states) case studies. This video provides an overview of entitlement management and its value:
+Entitlement management can help address these challenges. To learn more about how organizations have been using entitlement management, see the [Digital Security and Resilience team at Microsoft](https://customers.microsoft.com/story/1805346232767723893-microsoft-microsoft-entra-id-governance-other-en-united-states) case study. This video provides an overview of entitlement management and its value:
 
 <iframe src="https://www.youtube-nocookie.com/embed/_Lss6bFrnQ8" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
@@ -55,7 +55,7 @@ Here are the types of resources you can manage identities' access to, with entit
 - Membership of Microsoft 365 Groups and Teams
 - Assignment to Microsoft Entra enterprise applications, including SaaS applications and custom-integrated applications that support federation/single sign-on and/or provisioning
 - Membership of SharePoint Online sites
-- API permissions, for agents with agent IDs or service principals, in preview as part of Microsoft Entra Agent ID
+- API permissions, for agents with agent IDs or service principals, as part of Microsoft Entra Agent ID
 - SAP IAG business roles and other access rights, in preview
 
 You can also control access to other resources that rely upon Microsoft Entra security groups or Microsoft 365 Groups. For example:
@@ -123,7 +123,7 @@ To better understand entitlement management and its documentation, you can refer
 
 This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite subscriptions, for your organization's users. Some capabilities, within this feature, may operate with a Microsoft Entra ID P2 subscription. For more information, see the articles of each capability for more details. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals).
 
-### License requirements for assigning agents to access packages \(preview\)
+### License requirements for assigning agents to access packages
 
 Using [Microsoft Entra ID Governance](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals) for agent identities requires one of the following license plans:
 

@@ -105,7 +105,7 @@ Once you've started using these identity governance features, you can easily aut
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-automation) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module |
 | Discover orphan or local accounts in your applications | [Discover existing](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/how-to-account-discovery) users in your applications. |
 
-## Identity governance for agents \(preview\)
+## Identity governance for agent identities
 
 With the addition of the Microsoft agent identity platform, managing an agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. Microsoft Entra Agent ID introduces [agent identities](https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id) — purpose-built identity constructs for AI agents — with governance controls that address the unique challenges of autonomous and semi-autonomous agents operating at enterprise scale.
 
@@ -113,7 +113,7 @@ Every agent identity requires a human [sponsor](https://learn.microsoft.com/en-u
 
 Agent identities are governed through the same [entitlement management](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire. [Lifecycle Workflows](https://learn.microsoft.com/en-us/entra/id-governance/agent-sponsor-tasks) automate sponsor transition notifications when sponsorship changes occur. All agent identities are discoverable, searchable, and queryable through the Microsoft Entra admin center and Microsoft Graph, giving organizations centralized visibility to prevent agent sprawl and shadow AI.
 
-For more information, see [Governing agent identities \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview).
+For more information, see [Governing agent identities](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview).
 
 ## Next steps
 

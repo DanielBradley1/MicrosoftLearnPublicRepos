@@ -3,11 +3,11 @@
 
 # Microsoft Entra ID Governance integrations
 
-[Microsoft Entra ID Governance](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-applications-prepare) allows you to balance your organization's need for security and employee productivity with the right processes and visibility. This page provides an overview of the hundreds of Microsoft Entra ID Governance integrations available. These application integrations are used to automate [identity lifecycle management](https://learn.microsoft.com/en-us/entra/id-governance/scenarios/govern-the-employee-lifecycle) and implement governance controls across your organization. Through these rich integrations, you can automate providing users [access to applications](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview), perform [periodic reviews](https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview) of who has access to an application, and secure them with capabilities such as multifactor authentication.
+[Microsoft Entra ID Governance](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-applications-prepare) allows you to balance your organization's need for security and employee productivity with the right processes and visibility. This page provides an overview of the hundreds of Microsoft Entra ID Governance integrations available. These application integrations are used to automate workforce [identity lifecycle management](https://learn.microsoft.com/en-us/entra/id-governance/scenarios/govern-the-employee-lifecycle) to implement governance controls across your organization. Through these rich integrations, you can automate providing users [access to applications](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview), perform [periodic reviews](https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview) of who has access to an application, and secure them with capabilities such as multifactor authentication. You can also extend Microsoft Entra ID Governance to reach additional applications, including on-premises and private cloud applications, not listed here.
 
 ## Featured integrations
 
-Some of the popular integrations include the applications in the following table. For more integrations, see [Microsoft Entra ID Governance](#microsoft-entra-id-governance-integrations).
+Some of the popular integrations include the applications in the following table. For more integrations, see [Microsoft Entra ID Governance application integrations](#microsoft-entra-id-governance-application-integrations).
 
 | Category | Application |
 | :--- | :--- |
@@ -27,9 +27,9 @@ Some of the popular integrations include the applications in the following table
 
 ## Microsoft Entra ID Governance application integrations
 
-The following list provides key integrations between Microsoft Entra ID Governance and various applications, including both automated provisioning and SSO just-in-time provisioning integrations. For a full list of applications that Microsoft Entra ID integrates with specifically for SSO, see: [SaaS App configuration guides for Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list).
+The following list summarizes integrations between Microsoft Entra ID Governance and various applications, which support either automated user provisioning and Single-Sign-On \(SSO\) just-in-time user provisioning. For a list of additional applications that Microsoft Entra ID integrates with for SSO, see: [SaaS App configuration guides for Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list).
 
-Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an application that isn't listed, and it's a SaaS, then [ask the SaaS vendor to onboard](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/v2-howto-app-gallery-listing). For integration with other applications, see [integrating applications with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-applications-integrate).
+In addition to these applications, Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an application that isn't listed, and it's a SaaS, then [ask the SaaS vendor to onboard](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/v2-howto-app-gallery-listing). For integration with other applications, see [integrating applications with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-applications-integrate).
 
 | Application | Automated provisioning | Single Sign On \(SSO\) |
 | :--- | :---: | :---: |
@@ -695,6 +695,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [ScreenSteps](https://learn.microsoft.com/en-us/entra/identity/saas-apps/screensteps-provisioning-tutorial) | ● | ● |
 | [SDS & Chemical Information Management](https://learn.microsoft.com/en-us/entra/identity/saas-apps/sds-chemical-information-management-tutorial) |  | ● |
 | [Second Nature AI](https://learn.microsoft.com/en-us/entra/identity/saas-apps/second-nature-ai-tutorial) |  | ● |
+| [Secure Cloud](https://learn.microsoft.com/en-us/entra/identity/saas-apps/secure-cloud-user-integration-provisioning-tutorial) | ● | ● |
 | [Secure Deliver](https://learn.microsoft.com/en-us/entra/identity/saas-apps/securedeliver-tutorial) |  | ● |
 | [SecureLogin](https://learn.microsoft.com/en-us/entra/identity/saas-apps/secure-login-provisioning-tutorial) | ● |  |
 | [SeekOut](https://learn.microsoft.com/en-us/entra/identity/saas-apps/seekout-tutorial) |  | ● |
@@ -898,7 +899,8 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Zscaler Three](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zscaler-three-provisioning-tutorial) | ● | ● |
 | [Zscaler Two](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zscaler-two-provisioning-tutorial) | ● | ● |
 | [Zscaler ZSCloud](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zscaler-zscloud-provisioning-tutorial) | ● | ● |
-| [Zscaler](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zscaler-provisioning-tutorial) | ● | ● |
+| [Zscaler ZSNet](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zscaler-provisioning-tutorial) | ● | ● |
+| [Zscaler](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zscaler-zidentity-provisioning-tutorial) | ● | ● |
 | [Zylo](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zylo-tutorial) |  | ● |
 
 ## Partner driven integrations

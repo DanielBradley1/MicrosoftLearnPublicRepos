@@ -23,7 +23,7 @@ Microsoft works with primary telecom providers that have global reach. These pro
 
 Microsoft maintains robust processes to help ensure successful delivery of every SMS and voice MFA request. However, once a request leaves the Microsoft network, delivery is delegated to external telecom providers.
 
-These providers often share the same end routes and carriers in a given destination country but might operate under different contractual agreements or traffic priorities. As a result, routing a request through a different provider doesn't always resolve the issue — the new request might follow the same downstream path and encounter the same obstacle.
+These providers often share the same end routes and carriers in a given destination country/region but might operate under different contractual agreements or traffic priorities. As a result, routing a request through a different provider doesn't always resolve the issue — the new request might follow the same downstream path and encounter the same obstacle.
 
 ## The journey of an SMS or voice MFA request
 
@@ -46,7 +46,7 @@ The provider should confirm this issue to Microsoft. Common causes include:
 
 - **Device-level configuration.** Even when all steps to send the message are correct, the device itself could refuse the call or route it to voicemail. Microsoft automatically retries these failures across different providers.
 - **Carrier-level blocking.** The carrier might block the call or message due to international automated fraud detection systems.
-- **Regional availability issues.** In rare cases, the message is dropped due to availability issues in a specific country. Microsoft and its providers have robust retry and reroute mechanisms for these scenarios and post automated outage communications when the impact is broadly reported.
+- **Regional availability issues.** In rare cases, the message is dropped due to availability issues in a specific country/region. Microsoft and its providers have robust retry and reroute mechanisms for these scenarios and post automated outage communications when the impact is broadly reported.
 
 ### The call or message is altered by a downstream carrier
 

@@ -102,7 +102,13 @@ Looking for the status of an authentication registration or reset event of a use
 
 ## Service principal sign-in activity \(preview\)
 
-The Service principal sign-in activity \(preview\) report provides the last activity date for every service principal. The report provides you with information on the usage of the service principal - whether it was used as a client or resource app and whether it was used in an app-only or delegated context. The report shows the last time the service principal was used.
+The Service principal sign-in activity \(preview\) report provides the last activity date for every service principal. The report provides you with information on the usage of the service principal - whether it was used as a client or resource app and whether it was used in an app-only or delegated context.
+
+Important
+
+Last activity can include partial sign-ins and other incomplete activity that doesn't appear in sign-in logs. A reported timestamp alone doesn't establish that authentication completed or succeeded, or that an access token was issued.
+
+During preview, some partial sign-in activity can be incorrectly classified as application-authentication \(app-only\) activity. This is a classification limitation in the current preview, which is intended to be resolved in the future.
 
 [![Screenshot of the service principal sign-in activity report.](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/media/concept-usage-insights-report/service-principal-sign-ins.png)](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/media/concept-usage-insights-report/service-principal-sign-ins.png#lightbox)
 

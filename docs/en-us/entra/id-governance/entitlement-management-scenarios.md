@@ -98,7 +98,7 @@ There are several ways that you can configure entitlement management for your or
 1. [Sign in to the My Access portal](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-access#sign-in-to-the-my-access-portal)
 2. View active access packages
 
-## Govern access for agents \(preview\)
+## Govern access for agents
 
 Using [Microsoft Entra ID Governance](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals) for agent identities requires one of the following license plans:
 

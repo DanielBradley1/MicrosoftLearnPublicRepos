@@ -21,19 +21,19 @@ For important details on what this service does, how it works, and frequently as
 
 Cross-tenant synchronization supports these cloud pairs:
 
-| Source | Target | Azure portal link domains |
-| --- | --- | --- |
-| Azure commercial | Azure commercial | `portal.azure.com` --> `portal.azure.com` |
-| Azure Government | Azure Government | `portal.azure.us` --> `portal.azure.us` |
-| 21Vianet \(China\) | 21Vianet \(China\) | `portal.azure.cn` --> `portal.azure.cn` |
+| Source | Target | Objects supported | Azure portal link domains |
+| --- | --- | --- | --- |
+| Azure commercial | Azure commercial | Users and groups | `portal.azure.com` --> `portal.azure.com` |
+| Azure Government | Azure Government | Users and groups | `portal.azure.us` --> `portal.azure.us` |
+| 21Vianet \(China\) | 21Vianet \(China\) | Users | `portal.azure.cn` --> `portal.azure.cn` |
 
 Cross-cloud synchronization supports these cloud pairs:
 
-| Source | Target | Azure portal link domains |
-| --- | --- | --- |
-| Azure commercial | Azure Government | `portal.azure.com` --> `portal.azure.us` |
-| Azure Government | Azure commercial | `portal.azure.us` --> `portal.azure.com` |
-| Azure commercial | Azure operated by 21Vianet  <br>\(Azure in China\) | `portal.azure.com` --> `portal.azure.cn` |
+| Source | Target | Objects supported | Azure portal link domains |
+| --- | --- | --- | --- |
+| Azure commercial | Azure Government | Users | `portal.azure.com` --> `portal.azure.us` |
+| Azure Government | Azure commercial | Users | `portal.azure.us` --> `portal.azure.com` |
+| Azure commercial | Azure operated by 21Vianet  <br>\(Azure in China\) | Users | `portal.azure.com` --> `portal.azure.cn` |
 
 ## Learning objectives
 

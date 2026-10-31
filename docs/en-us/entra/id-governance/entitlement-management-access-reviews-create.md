@@ -9,6 +9,10 @@ To reduce the risk of stale access, you should enable periodic reviews of users 
 
 Using this feature requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals).
 
+Note
+
+Catalog access reviews now support access packages \(preview\). For more information, see [Include access packages in catalog access reviews](https://learn.microsoft.com/en-us/entra/id-governance/catalog-access-reviews-access-packages).
+
 ## Create an access review of an access package
 
 You can enable access reviews when [creating a new access package](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create) or [editing an existing access package assignment policy](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-lifecycle-policy) policy. If you have multiple policies, for different communities of users to request access, you can have independent access review schedules for each policy. Follow these steps to enable access reviews of an access package's assignments:

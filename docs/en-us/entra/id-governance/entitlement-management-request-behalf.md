@@ -31,7 +31,7 @@ Note
 
 Both the manager/user \(requestor\) and the employee/user \(target\) must be licensed for Microsoft Entra ID Governance or Microsoft Entra Suite to use the on-behalf-of request feature.
 
-### License requirements for requesting on behalf of agent identities \(preview\)
+### License requirements for requesting on behalf of agent identities
 
 Using [Microsoft Entra ID Governance](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals) for agent identities requires one of the following license plans:
 

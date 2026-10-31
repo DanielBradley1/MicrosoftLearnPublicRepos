@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-reports -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # View reports and logs in entitlement management
 
@@ -199,7 +199,6 @@ The report currently refreshes about once a day, so data can be up to 24 hours o
 Access package drift reports have the following limitations:
 
 - Drift between entitlement management and third-party applications, Azure roles, or SharePoint sites isn't included.
-- Nested group drift isn't included. The report only shows drift between access package assignments and users directly assigned to the group.
 
 ## View orphan or local accounts in your applications
 
