@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/restorepoint?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # restorePoint resource type
 
@@ -40,7 +40,7 @@ The following limitations apply to this API:
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
-| protectionUnit | [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0) | The site, drive, or mailbox units that are protected under a protection policy. |
+| protectionUnit | [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0) | The site, drive, or mailbox unit protected under a protection policy. Supports `$expand` and `$filter` on **protectionUnit/policyId** using the `eq` operator. |
 
 ## JSON representation
 

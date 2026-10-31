@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-casetypeconfiguration?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-31 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # caseTypeConfiguration resource type
 
@@ -9,9 +9,9 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Exposes the discovery configuration for a single case type: the allowed status tree and the custom-field schema \(the blank-form definition\) that applies to every [case](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-case?view=graph-rest-beta) of that type.
+Exposes the configuration for a single case type: the allowed status tree, the custom-field schema \(the blank-form definition\), and the [SLA policy definitions](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-slapolicydefinition?view=graph-rest-beta) that apply to [cases](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-case?view=graph-rest-beta) of that type.
 
-Each configuration is keyed by **id**, whose value is the case type: `genericCase`, `incidentCase`, or `exposureCase`. The configuration is reached by containment navigation from the case management root at `/security/caseManagement/caseTypeConfigurations`, so each contained status and custom field is individually addressable. The collection and all of its contained resources are read-only.
+Each configuration is keyed by **id**, whose value is the case type: `genericCase`, `incidentCase`, or `exposureCase`. The configuration is reached by containment navigation from the case management root at `/security/caseManagement/caseTypeConfigurations`, so each contained status, custom field, and SLA policy definition is individually addressable. Case type configurations, statuses, and custom-field definitions are read-only. SLA policy definitions support create, read, update, and delete operations.
 
 ## Methods
 
@@ -21,6 +21,8 @@ Each configuration is keyed by **id**, whose value is the case type: `genericCas
 | [Get](https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-get?view=graph-rest-beta) | [microsoft.graph.security.caseManagement.caseTypeConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-casetypeconfiguration?view=graph-rest-beta) | Read the properties and relationships of a [caseTypeConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-casetypeconfiguration?view=graph-rest-beta) object. |
 | [List customFields](https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-list-customfields?view=graph-rest-beta) | [microsoft.graph.security.caseManagement.customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-customfielddefinition?view=graph-rest-beta) collection | Get the custom-field definitions that make up the blank-form schema for this case type. |
 | [List statuses](https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-list-statuses?view=graph-rest-beta) | [microsoft.graph.security.caseManagement.statusDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-statusdefinition?view=graph-rest-beta) collection | Get the top-level statuses that make up the allowed status tree for this case type. |
+| [List SLA policies](https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-list-slapolicies?view=graph-rest-beta) | [microsoft.graph.security.caseManagement.slaPolicyDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-slapolicydefinition?view=graph-rest-beta) collection | Get the SLA policy definitions configured for this case type. |
+| [Create SLA policy](https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-post-slapolicies?view=graph-rest-beta) | [microsoft.graph.security.caseManagement.slaPolicyDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-slapolicydefinition?view=graph-rest-beta) | Create an SLA policy definition for this case type. |
 
 ## Properties
 
@@ -35,6 +37,7 @@ Each configuration is keyed by **id**, whose value is the case type: `genericCas
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
 | customFields | [microsoft.graph.security.caseManagement.customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-customfielddefinition?view=graph-rest-beta) collection | The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports `$count`, `$expand`, `$filter`, `$orderby`, `$select`, `$skip`, and `$top`. |
+| slaPolicies | [microsoft.graph.security.caseManagement.slaPolicyDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-slapolicydefinition?view=graph-rest-beta) collection | The contained SLA policy definitions configured for this case type. Supports `$filter` and `$orderby` on **createdBy**, **createdDateTime**, **description**, **displayName**, **id**, **isActive**, **lastModifiedBy**, and **lastModifiedDateTime** on the collection endpoint. For information about supported query parameters, see [List slaPolicies](https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-list-slapolicies?view=graph-rest-beta#optional-query-parameters). Also supports `$count`, `$select`, `$skip`, and `$top` on the collection endpoint. Supports `$expand=slaPolicies` when getting a case type configuration. |
 | statuses | [microsoft.graph.security.caseManagement.statusDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-statusdefinition?view=graph-rest-beta) collection | The contained top-level statuses that a case of this type can be set to. Read-only. Supports `$count`, `$expand`, `$filter`, `$orderby`, `$select`, `$skip`, and `$top`. |
 
 ## JSON representation

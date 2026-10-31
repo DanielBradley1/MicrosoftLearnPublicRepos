@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/restoresessionbase-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-11-10 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Get restoreSessionBase
 
@@ -51,106 +51,9 @@ For a list of possible error responses, see [Backup Storage API error responses]
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
-
 ```msgraph
 GET https://graph.microsoft.com/v1.0/solutions/backupRestore/restoreSessions/959ba739-70b5-43c4-8c90-b2c22014f18b
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Solutions.BackupRestore.RestoreSessions["{restoreSessionBase-id}"].GetAsync();
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v1.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
-	  //other-imports
-)
-
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-restoreSessions, err := graphClient.Solutions().BackupRestore().RestoreSessions().ByRestoreSessionBaseId("restoreSessionBase-id").Get(context.Background(), nil)
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-RestoreSessionBase result = graphClient.solutions().backupRestore().restoreSessions().byRestoreSessionBaseId("{restoreSessionBase-id}").get();
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-let restoreSessionBase = await client.api('/solutions/backupRestore/restoreSessions/959ba739-70b5-43c4-8c90-b2c22014f18b')
-	.get();
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\GraphServiceClient;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-
-$result = $graphServiceClient->solutions()->backupRestore()->restoreSessions()->byRestoreSessionBaseId('restoreSessionBase-id')->get()->wait();
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.BackupRestore
-
-Get-MgSolutionBackupRestoreSession -RestoreSessionBaseId $restoreSessionBaseId
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph import GraphServiceClient
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-
-result = await graph_client.solutions.backup_restore.restore_sessions.by_restore_session_base_id('restoreSessionBase-id').get()
-```
-
-> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
@@ -167,6 +70,7 @@ Content-Type: application/json
   "id": "959ba739-70b5-43c4-8c90-b2c22014f18b",
   "status": "active",
   "restoreJobType": "standard",
+  "policyId": "99999999-aaaa-bbbb-cccc-dddddddddddd",
   "restoreSessionArtifactCount": {
     "total": 2,
     "completed": 1,

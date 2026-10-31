@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/privilegedaccessroot-post-customextensions?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Create roleManagementCustomCalloutExtension
 
@@ -65,6 +65,7 @@ Content-Type: application/json
   "resourceType": "entraRoles",
   "type": "preApproval",
   "customAttributes": ["department", "costCenter"],
+  "isEnabled": true,
   "endpointConfiguration": {
     "@odata.type": "#microsoft.graph.httpRequestEndpoint",
     "targetUrl": "https://api.contoso.com/webhooks/role-assignments"
@@ -96,6 +97,7 @@ Content-Type: application/json
   "resourceType": "entraRoles",
   "type": "preApproval",
   "customAttributes": ["department", "costCenter"],
+  "isEnabled": true,
   "endpointConfiguration": {
     "@odata.type": "#microsoft.graph.httpRequestEndpoint",
     "targetUrl": "https://api.contoso.com/webhooks/role-assignments"

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billing?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # billing resource type
 
@@ -9,7 +9,7 @@ Note
 
 This API is available for Cloud Solution Provider \(CSP\) partners only to access their billed and unbilled reconciliation data for a tenant. To learn more about the CSP program, see [Microsoft Cloud Solution Provider](https://learn.microsoft.com/en-us/partner-center/csp-overview).
 
-Represents billing details for billed and unbilled data.
+Represents billing details for aggregated usage, usage, and reconciliation data.
 
 ## Methods
 
@@ -23,6 +23,7 @@ None.
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
+| aggregatedUsage | [microsoft.graph.partners.billing.azureAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-azureaggregatedusage?view=graph-rest-1.0) | Represents aggregated Azure usage data for partner billing. |
 | manifests | [microsoft.graph.partners.billing.manifest](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-manifest?view=graph-rest-1.0) collection | Represents metadata for the exported data. |
 | operations | [microsoft.graph.partners.billing.operation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-operation?view=graph-rest-1.0) collection | Represents an operation to export the billing data of a partner. |
 | reconciliation | [microsoft.graph.partners.billing.billedReconciliation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billingreconciliation?view=graph-rest-1.0) | Represents details for billed and unbilled invoice reconciliation data. |

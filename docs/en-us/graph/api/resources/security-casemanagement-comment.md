@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-comment?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-08-20 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # comment resource type
 
@@ -32,7 +32,7 @@ To use a supported query option with a property declared only on **comment**, ca
 | id | String | The unique identifier for the resource. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-beta). Supports `$filter`. |
 | lastModifiedBy | String | The user or service that last modified the resource. Inherited from [caseManagementEntity](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-casemanagemententity?view=graph-rest-beta). Supports `$filter`. |
 | lastModifiedDateTime | DateTimeOffset | The date and time when the resource was last modified. Inherited from [caseManagementEntity](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-casemanagemententity?view=graph-rest-beta). Supports `$filter`. |
-| message | String | The comment body. Supports `$filter`. |
+| message | String | The comment body. The maximum length is 1,000 characters for [incident cases](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-incidentcase?view=graph-rest-beta) and 5,000 characters for [generic cases](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-genericcase?view=graph-rest-beta). Supports `$filter`. |
 
 ## Relationships
 

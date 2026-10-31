@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/rolemanagementcustomcalloutextension-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Update roleManagementCustomCalloutExtension
 
@@ -44,6 +44,8 @@ PATCH /identityGovernance/privilegedAccess/customExtensions/{roleManagementCusto
 
 In the request body, supply the values for relevant fields that should be updated. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
 
+To enable or disable the custom extension, set the **isEnabled** property to `true` or `false`, respectively.
+
 ## Response
 
 If successful, this method returns a `200 OK` response code and an updated [roleManagementCustomCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension?view=graph-rest-1.0) object in the response body.
@@ -52,7 +54,7 @@ If successful, this method returns a `200 OK` response code and an updated [role
 
 ### Request
 
-The following example updates the client configuration and custom attributes.
+The following example enables the custom extension and updates the client configuration and custom attributes.
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/identityGovernance/privilegedAccess/customExtensions/a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d
@@ -61,6 +63,7 @@ Content-Type: application/json
 {
   "description": "Validates ticket information and cost center",
   "customAttributes": ["department", "costCenter", "employeeType"],
+  "isEnabled": true,
   "clientConfiguration": {
     "timeoutInMilliseconds": 20000,
     "maximumRetries": 5
@@ -84,6 +87,7 @@ Content-Type: application/json
   "resourceType": "entraRoles",
   "type": "preApproval",
   "customAttributes": ["department", "costCenter", "employeeType"],
+  "isEnabled": true,
   "clientConfiguration": {
     "timeoutInMilliseconds": 20000,
     "maximumRetries": 5

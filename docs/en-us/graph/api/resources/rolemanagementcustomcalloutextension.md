@@ -30,7 +30,8 @@ Inherits from [customCalloutExtension](https://learn.microsoft.com/en-us/graph/a
 | displayName | String | The display name of the custom extension. Inherited from [customCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/customcalloutextension?view=graph-rest-1.0). |
 | endpointConfiguration | [customExtensionEndpointConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/customextensionendpointconfiguration?view=graph-rest-1.0) | The configuration for the external endpoint that PIM calls. Inherited from [customCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/customcalloutextension?view=graph-rest-1.0). |
 | id | String | The unique identifier for the custom extension. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-1.0). |
-| resourceType | [customExtensionResourceType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-1.0#customextensionresourcetype-values) | The PIM provider to which the extension applies. The possible values are: `entraRoles`, `azureResources`, `entraGroups`, `unknownFutureValue`. Supports `$filter` \(`eq`\). |
+| isEnabled | Boolean | When `true`, enables the custom extension. When `false`, disables it. Nullable. |
+| resourceType | [customExtensionResourceType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-1.0#customextensionresourcetype-values) | The PIM provider to which the extension applies. The possible values are: `entraRoles`, `azureResources`, `entraGroups`, `unknownFutureValue`, `applicationAuthorization`, `appRoles`. Use the `Prefer: include-unknown-enum-members` request header to get the following values in this [evolvable enumeration](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `applicationAuthorization`, `appRoles`. Supports `$filter` \(`eq`\). |
 | type | [customCalloutExtensionType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-1.0#customcalloutextensiontype-values) | The role assignment lifecycle stage at which PIM invokes the extension. The possible values are: `preApproval`, `postApproval`, `grant`, `revoke`, `unknownFutureValue`. |
 
 ## Relationships
@@ -57,6 +58,7 @@ The following JSON representation shows the resource type.
   "endpointConfiguration": {
     "@odata.type": "microsoft.graph.customExtensionEndpointConfiguration"
   },
+  "isEnabled": "Boolean",
   "resourceType": "String",
   "type": "String"
 }

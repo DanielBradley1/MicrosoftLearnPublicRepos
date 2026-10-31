@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/restoresessionbase?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # restoreSessionBase resource type
 
@@ -33,6 +33,7 @@ Restore sessions that are older than one year and in a terminal state are remove
 | error | publicError | Contains error details if the restore session fails or completes with an error. |
 | lastModifiedBy | identitySet | Identity of the person who last modified the restore session. |
 | lastModifiedDateTime | DateTimeOffset | Timestamp of the last modification of the restore session. |
+| policyId | String | The identifier of the protection policy that scopes the restore session. When supplied during creation or update, the service validates that the referenced protection units belong to the specified policy. |
 | restoreJobType | [restoreJobType](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-1.0#restorejobtype-values) | Indicates whether the restore session was created normally or by a bulk job. |
 | restoreSessionArtifactCount | [restoreSessionArtifactCount](https://learn.microsoft.com/en-us/graph/api/resources/restoresessionartifactcount?view=graph-rest-1.0) | The number of metadata artifacts that belong to this restore session. |
 | status | [restoreSessionStatus](https://learn.microsoft.com/en-us/graph/api/resources/restoresessionbase?view=graph-rest-1.0#restoresessionstatus-values) | Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: `draft`, `activating`, `active`, `completedWithError`, `completed`, `unknownFutureValue`, `failed`. Use the `Prefer: include-unknown-enum-members` request header to get the following members in this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `failed`. |
@@ -77,6 +78,7 @@ The following JSON representation shows the resource type.
   },
   "error": {
     "@odata.type": "microsoft.graph.publicError"
-  }
+  },
+  "policyId": "String"
 }
 ```

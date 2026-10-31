@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2025-10-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # cloudPcManagedLicense resource type
 
@@ -18,6 +18,8 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/virtualendpoint-list-managedlicenses?view=graph-rest-beta) | [cloudPcManagedLicense](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense?view=graph-rest-beta) collection | Get information about [cloudPcManagedLicense](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense?view=graph-rest-beta) objects that the Cloud PC service manages directly. |
+| [Submit managed license operation](https://learn.microsoft.com/en-us/graph/api/cloudpcmanagedlicense-submitmanagedlicenseoperation?view=graph-rest-beta) | [cloudPcManagedLicenseOperation](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicenseoperation?view=graph-rest-beta) | Submit an asynchronous operation on the [cloudPcManagedLicense](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense?view=graph-rest-beta) collection extend Windows 365 Reserve access for specified users. |
+| [Retrieve managed license operation](https://learn.microsoft.com/en-us/graph/api/cloudpcmanagedlicense-retrievemanagedlicenseoperation?view=graph-rest-beta) | [cloudPcManagedLicenseOperation](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicenseoperation?view=graph-rest-beta) | Retrieve the status and per-user results of a previously submitted operation on the [cloudPcManagedLicense](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense?view=graph-rest-beta) collection. |
 
 ## Properties
 

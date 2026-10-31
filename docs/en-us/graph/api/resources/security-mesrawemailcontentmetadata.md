@@ -1,17 +1,13 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-mesrawemailcontentmetadata?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-mesrawemailcontentmetadata?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # mesRawEmailContentMetadata resource type
 
 Namespace: microsoft.graph.security
 
-Important
+Audit data for MES Raw Email Content Metadata events returned in the **auditData** property of an [auditLogRecord](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecord?view=graph-rest-1.0).
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Audit data for MES Raw Email Content Metadata events returned in the **auditData** property of an [auditLogRecord](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecord?view=graph-rest-beta).
-
-Inherits from [microsoft.graph.security.auditData](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata?view=graph-rest-beta).
+Inherits from [microsoft.graph.security.auditData](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata?view=graph-rest-1.0).
 
 This resource is an open type.
 
@@ -19,7 +15,7 @@ This resource is an open type.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| dynamicProperties | [microsoft.graph.security.auditRecordTypeDictionary](https://learn.microsoft.com/en-us/graph/api/resources/security-auditrecordtypedictionary?view=graph-rest-beta) | An open-type dictionary that contains dynamic audit event properties as name-value pairs. Inherited from [microsoft.graph.security.auditData](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata?view=graph-rest-beta). |
+| dynamicProperties | [microsoft.graph.security.auditRecordTypeDictionary](https://learn.microsoft.com/en-us/graph/api/resources/security-auditrecordtypedictionary?view=graph-rest-1.0) | An open-type dictionary that contains dynamic audit event properties as name-value pairs. Inherited from [microsoft.graph.security.auditData](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata?view=graph-rest-1.0). |
 
 ## Relationships
 

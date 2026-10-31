@@ -1,21 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/groupresource-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-21 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/groupresource-get?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-29 -->
 
 # Get groupResource
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Read the properties and relationships of a [groupResource](https://learn.microsoft.com/en-us/graph/api/resources/groupresource?view=graph-rest-beta) object.
-
-This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
-
-| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
-| --- | --- | --- | --- |
-| ✅ | ✅ | ✅ | ✅ |
+Read the properties and relationships of a [groupResource](https://learn.microsoft.com/en-us/graph/api/resources/groupresource?view=graph-rest-1.0) object.
 
 ## Permissions
 
@@ -29,7 +19,7 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 Note
 
-In delegated scenarios that use work or school accounts, any Microsoft Entra ID member user can call this API if the required permissions are granted."
+In delegated scenarios that use work or school accounts, any Microsoft Entra ID member user can call this API if the required permissions are granted.
 
 ## HTTP request
 
@@ -53,7 +43,7 @@ Don't supply a request body for this method.
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and a [groupResource](https://learn.microsoft.com/en-us/graph/api/resources/groupresource?view=graph-rest-beta) object in the response body.
+If successful, this method returns a `200 OK` response code and a [groupResource](https://learn.microsoft.com/en-us/graph/api/resources/groupresource?view=graph-rest-1.0) object in the response body.
 
 ## Examples
 
@@ -61,148 +51,20 @@ If successful, this method returns a `200 OK` response code and a [groupResource
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
-
 ```http
-GET https://graph.microsoft.com/beta/identityGovernance/privilegedAccess/group/resources/a13fc7b0-a4ff-45fc-82c4-1d31a807426a
+GET https://graph.microsoft.com/v1.0/identityGovernance/privilegedAccess/group/resources/a13fc7b0-a4ff-45fc-82c4-1d31a807426a
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.IdentityGovernance.PrivilegedAccess.Group.Resources["{groupResource-id}"].GetAsync();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  //other-imports
-)
-
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-resources, err := graphClient.IdentityGovernance().PrivilegedAccess().Group().Resources().ByGroupResourceId("groupResource-id").Get(context.Background(), nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-GroupResource result = graphClient.identityGovernance().privilegedAccess().group().resources().byGroupResourceId("{groupResource-id}").get();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-let groupResource = await client.api('/identityGovernance/privilegedAccess/group/resources/a13fc7b0-a4ff-45fc-82c4-1d31a807426a')
-	.version('beta')
-	.get();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-
-$result = $graphServiceClient->identityGovernance()->privilegedAccess()->group()->resources()->byGroupResourceId('groupResource-id')->get()->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-
-Get-MgBetaIdentityGovernancePrivilegedAccessGroupResource -GroupResourceId $groupResourceId
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-
-result = await graph_client.identity_governance.privileged_access.group.resources.by_group_resource_id('groupResource-id').get()
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
 The following example shows the response.
 
-> **Note:** The response object shown here might be shortened for readability.
-
 ```http
 HTTP/1.1 200 OK
-Content-type: application/json
+Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#identityGovernance/privilegedAccess/group/resources",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#identityGovernance/privilegedAccess/group/resources/$entity",
   "id": "a13fc7b0-a4ff-45fc-82c4-1d31a807426a"
 }
 ```

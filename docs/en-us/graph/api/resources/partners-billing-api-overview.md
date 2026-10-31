@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-api-overview?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Use the Microsoft Graph API to export partner billing data
 
@@ -7,7 +7,7 @@ Note
 
 This API is available for Cloud Solution Provider \(CSP\) partners only to access their billed and unbilled reconciliation data for a tenant. To learn more about the CSP program, see [Microsoft Cloud Solution Provider](https://learn.microsoft.com/en-us/partner-center/csp-overview).
 
-As part of the Microsoft Partner Center ecosystem, Microsoft direct partners in the Cloud Solution Provider programs can request to export their billed and unbilled data to Azure Blob Storage asynchronously. This removes the need to maintain an open connection for hours and loop through millions of transactions iteratively. The asynchronous API provides a way to quickly access billing and reconciliation data in manageable chunks.
+As part of the Microsoft Partner Center ecosystem, Microsoft direct partners in the Cloud Solution Provider programs can request to export their billed and unbilled usage, billed aggregated usage, and invoice reconciliation data to Azure Blob Storage asynchronously. This removes the need to maintain an open connection for hours and loop through millions of transactions iteratively. The asynchronous API provides a way to quickly access usage, aggregated usage, and reconciliation data in manageable chunks.
 
 The partner billing API is defined in the OData subnamespace `microsoft.graph.partners.billing`.
 
@@ -37,7 +37,14 @@ To find out more about Zero Trust and other ways to align your organization to t
 
 ## Common use cases
 
-The partner billing API provides methods and actions that allow Microsoft direct partners to export their high-volume billed and unbilled Azure usage data. This API also enables them to export billed and unbilled invoice reconciliation data.
+The partner billing API provides methods and actions that allow Microsoft direct partners to export their high-volume billed and unbilled Azure usage, billed aggregated usage, and invoice reconciliation data.
+
+### Billed aggregated usage data
+
+| Use case | API |
+| :--- | :--- |
+| Create a new export operation to export billed aggregated usage data | [billedAggregatedUsage: export](https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export?view=graph-rest-1.0) |
+| Poll for operation status update | [Get operation](https://learn.microsoft.com/en-us/graph/api/partners-billing-operation-get?view=graph-rest-1.0) |
 
 ### Billed usage data
 
@@ -74,6 +81,10 @@ The download of usage or reconciliation data is a long-running operation that co
 ### Usage line-item endpoint
 
 Use the [billedUsage: export](https://learn.microsoft.com/en-us/graph/api/partners-billing-billedusage-export?view=graph-rest-1.0) or [unbilledUsage: export](https://learn.microsoft.com/en-us/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0) API to access billed or unbilled consumption line items. The API returns a `202 Accepted` response code and a `Location` header that contains the URL to the long-running operation. You can check the status of the long-running operation by making a GET request at regular intervals until you receive a success status with a [manifest](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-manifest?view=graph-rest-1.0) URL.
+
+### Aggregated usage endpoint
+
+Use the [billedAggregatedUsage: export](https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export?view=graph-rest-1.0) API to export billed aggregated usage data for a specific invoice. The API returns a `202 Accepted` response code and a `Location` header that contains the URL to the long-running operation. You can check the status of the long-running operation by making a GET request at regular intervals until you receive a success status with a [manifest](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-manifest?view=graph-rest-1.0) URL.
 
 ### Invoice line-item endpoint
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroup?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-11-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-29 -->
 
 # privilegedAccessGroup resource type
 
@@ -29,6 +29,7 @@ None.
 | eligibilityScheduleInstances | [privilegedAccessGroupEligibilityScheduleInstance](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupeligibilityscheduleinstance?view=graph-rest-1.0) collection | The instances of eligibility schedules to activate a just-in-time access. |
 | eligibilityScheduleRequests | [privilegedAccessGroupEligibilityScheduleRequest](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupeligibilityschedulerequest?view=graph-rest-1.0) collection | The schedule requests for operations to create, update, delete, extend, and renew an eligibility. |
 | eligibilitySchedules | [privilegedAccessGroupEligibilitySchedule](https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroupeligibilityschedule?view=graph-rest-1.0) collection | The eligibility schedules to activate a just-in-time access. |
+| resources | [groupResource](https://learn.microsoft.com/en-us/graph/api/resources/groupresource?view=graph-rest-1.0) collection | The groups managed through PIM for groups. |
 
 ## JSON representation
 
