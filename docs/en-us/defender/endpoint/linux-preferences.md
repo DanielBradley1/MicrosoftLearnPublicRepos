@@ -265,7 +265,7 @@ By default, Microsoft Defender Antivirus is set to `passive`. You can change the
 | Enforcement level | Description |
 | --- | --- |
 | **Real-time** | Actively monitors, detects, and remediates threats in real time. |
-| **Audit**\(Preview\) | Actively monitors and detects threats in real time without automatically remediating them. |
+| **Audit** | Actively monitors and detects threats in real time without automatically remediating them. |
 | **On-demand** | Detects and remediates threats only during manual or scheduled scans. |
 | **Passive** | Doesn't provide real-time threat detection. Threats can still be detected during manual or scheduled scans. |
 

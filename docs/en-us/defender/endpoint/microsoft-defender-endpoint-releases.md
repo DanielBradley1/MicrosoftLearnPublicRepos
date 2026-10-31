@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases -->
-<!-- Sitemap-Last-Modified: 2026-10-16 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Microsoft Defender for Endpoint release notes
 
@@ -21,6 +21,7 @@ This table includes supported releases for all supported platforms in the past s
 | macOS | 101.26092.0009 | October 2026 | - Release version: 20.126092.9.0  <br>- Engine version: 1.1.26060.12000  <br>- Signature version: 1.453.151.0 | [Release details and updates](#macos--october-2026--101260920009) |
 | Linux | 101.26091.0004 | October 2026 | - Release version: 30.126091.0004.0  <br>- Engine version: 1.1.26070.5001  <br>- Signature version: 1.457.364.0 | [Release details and updates](#linux--october-2026--101260910004) |
 | Android | 1.0.9406.0102 | Oct 2026 | - Build: 1.0.9406.0102  <br>- Release: Oct 23, 2026 | [Release details and updates](#android--oct-2026--platform-1094060102) |
+| iOS | 1.1.82230103 | Oct 2026 | - Build: 1.1.82230103  <br>- Release: Oct 24, 2026 | [Release details and updates](#ios--oct-2026--platform-version-1182230103) |
 | macOS | 101.26082.0012 | October 2026 | - Release version: 20.126082.12.0  <br>- Engine version: 1.1.26100.3000  <br>- Signature version: 1.461.61.0 | [Release details and updates](#macos--october-2026--101260820012) |
 | Linux | 101.26091.0003 | October 2026 | - Release version: 30.126091.0003.0  <br>- Engine version: 1.1.26090.3000  <br>- Signature version: 1.461.35.0 | [Release details and updates](#linux--october-2026--101260910003) |
 | Windows Antivirus | Platform 4.18.26090.9 / Engine 1.1.26090.9 | September 2026 | - Platform: 4.18.26090.9  <br>- Engine: 1.1.26090.9  <br>- Security intelligence: 1.461.1.0 | [Release details and updates](#windows-antivirus--september-2026--platform-418260909--engine-11260909) |
@@ -975,6 +976,7 @@ See the full list of [Android UX improvements](https://learn.microsoft.com/en-us
 | --- | --- |
 | Shared Device Management | Added **\[Preview\] Silent running mode** as a managed configuration for shared devices. Administrators can use `SilentRunMode` to enable \(`1`\) or disable \(`0`, default\) the setting. |
 | General | Performance improvements and general bug fixes. |
+| Connectivity update | Ensure the required Microsoft Defender for Endpoint URLs are allowed through your firewall and proxy servers to support device onboarding and ongoing operation. See [Standard Device Connectivity URLs](https://learn.microsoft.com/en-us/defender-endpoint/mtd#standard-device-connectivity-urls) for the list of required URLs. |
 
 ### Android \| Sep 2026 \| Platform: 1.0.9330.0101
 
@@ -1285,6 +1287,7 @@ For the latest UX improvements, see [iOS UX improvements](https://learn.microsof
 | Feature Area | Update Summary |
 | --- | --- |
 | Improvements | Performance improvements and general bug fixes. |
+| Connectivity update | Ensure the required Microsoft Defender for Endpoint URLs are allowed through your firewall and proxy servers to support device onboarding and ongoing operation. See [Standard Device Connectivity URLs](https://learn.microsoft.com/en-us/defender-endpoint/mtd#standard-device-connectivity-urls) for the list of required URLs. |
 
 ### iOS \| Sep 2026 \| Platform Version: 1.1.81160103
 
