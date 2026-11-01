@@ -1,13 +1,9 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-azureaggregatedusage?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-azureaggregatedusage?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # azureAggregatedUsage resource type
 
 Namespace: microsoft.graph.partners.billing
-
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Note
 
@@ -27,7 +23,7 @@ None.
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
-| billed | [microsoft.graph.partners.billing.billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-beta) | The billed aggregated usage data that can be exported. |
+| billed | [microsoft.graph.partners.billing.billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-1.0) | The billed aggregated usage data that can be exported. |
 
 ## JSON representation
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/attendancerecord?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-06 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # attendanceRecord resource type
 
@@ -19,6 +19,7 @@ Contains information associated with an attendance record in a [meetingAttendanc
 | :--- | :--- | :--- |
 | attendanceIntervals | [attendanceInterval](https://learn.microsoft.com/en-us/graph/api/resources/attendanceinterval?view=graph-rest-1.0) collection | List of time periods between joining and leaving a meeting. |
 | emailAddress | String | Email address of the user associated with this attendance record. |
+| engagements | [meetingEngagement](https://learn.microsoft.com/en-us/graph/api/resources/meetingengagement?view=graph-rest-1.0) collection | The list of real-time participant interaction behaviors during a meeting. |
 | externalRegistrationInformation | [virtualEventExternalRegistrationInformation](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventexternalregistrationinformation?view=graph-rest-1.0) | The external information for a [virtualEventRegistration](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventregistration?view=graph-rest-1.0). |
 | identity | [identity](https://learn.microsoft.com/en-us/graph/api/resources/identity?view=graph-rest-1.0) | The identity of the user associated with this attendance record. The specific type is one of the following derived types of [identity](https://learn.microsoft.com/en-us/graph/api/resources/identity?view=graph-rest-1.0), depending on the user type: [communicationsUserIdentity](https://learn.microsoft.com/en-us/graph/api/resources/communicationsuseridentity?view=graph-rest-1.0), [azureCommunicationServicesUserIdentity](https://learn.microsoft.com/en-us/graph/api/resources/azurecommunicationservicesuseridentity?view=graph-rest-1.0). |
 | registrationId | String | Unique identifier of a [virtualEventRegistration](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventregistration?view=graph-rest-1.0) that is available to all participants registered for the [virtualEventWebinar](https://learn.microsoft.com/en-us/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0). |
@@ -34,6 +35,7 @@ The following JSON representation shows the resource type.
   "@odata.type": "#microsoft.graph.attendanceRecord",
   "attendanceIntervals": [{"@odata.type": "#microsoft.graph.attendanceInterval"}],
   "emailAddress": "String",
+  "engagements": [{"@odata.type": "#microsoft.graph.meetingEngagement"}],
   "externalRegistrationInformation": {"@odata.type": "#microsoft.graph.virtualEventExternalRegistrationInformation"},
   "identity": {"@odata.type": "#microsoft.graph.identity"},
   "registrationId": "String",

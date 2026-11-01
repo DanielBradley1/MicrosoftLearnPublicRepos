@@ -1,22 +1,18 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/error?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2025-11-20 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/error?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
-# Error resource type
+# error resource type
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents the details of an error with a message and error code.
+Represents an error that occurred during a cross-tenant migration.
 
 ## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| code | String | The error code |
-| message | String | The message for the error |
+| code | String | The error code. |
+| message | String | The message for the error. |
 
 ## Relationships
 

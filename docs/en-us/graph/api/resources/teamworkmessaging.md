@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/teamworkmessaging?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # teamworkMessaging resource type
 
@@ -19,6 +19,8 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 | :--- | :--- | :--- |
 | [List customEmojis](https://learn.microsoft.com/en-us/graph/api/teamworkmessaging-list-customemojis?view=graph-rest-beta) | [teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/resources/teamworkcustomemoji?view=graph-rest-beta) collection | Get a list of custom emojis available in the organization. |
 | [Create teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/teamworkmessaging-post-customemojis?view=graph-rest-beta) | [teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/resources/teamworkcustomemoji?view=graph-rest-beta) | Upload a new custom emoji to the organization. |
+| [Get teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/teamworkcustomemoji-get?view=graph-rest-beta) | [teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/resources/teamworkcustomemoji?view=graph-rest-beta) | Get a single [custom emoji](https://learn.microsoft.com/en-us/graph/api/resources/teamworkcustomemoji?view=graph-rest-beta) or the raw image content of a custom emoji by display name from the teamwork messaging of the organization. |
+| [Delete teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/teamworkcustomemoji-delete?view=graph-rest-beta) | None | Delete a [custom emoji](https://learn.microsoft.com/en-us/graph/api/resources/teamworkcustomemoji?view=graph-rest-beta) by display name from the teamwork messaging of the organization. |
 
 ## Properties
 
