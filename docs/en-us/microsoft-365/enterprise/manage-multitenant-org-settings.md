@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-multitenant-org-settings?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-07-06 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Manage multitenant org settings
 
@@ -271,7 +271,9 @@ To suppress Outlook external tag for tenants in your MTO:
 
 Note
 
-Update the MTO cross-tenant sync job schema with newly supported attributes is not available in Microsoft 365 GCC, GCC High, DoD, or Microsoft 365 China \(operated by 21Vianet\). Some MTO collaboration features depend on Exchange attributes that aren't part of the default MTO cross-tenant synchronization schema. As Microsoft adds support for new cross-tenant scenarios, Microsoft 365 admins can extend the MTO MAC-created sync job schema with newly supported attributes from the Microsoft 365 admin center.
+Update the MTO cross-tenant sync job schema with newly supported attributes is not available in Microsoft 365 GCC, GCC High, DoD, or Microsoft 365 China \(operated by 21Vianet\).
+
+Some MTO collaboration features depend on Exchange attributes that aren't part of the default MTO cross-tenant synchronization schema. As Microsoft adds support for new cross-tenant scenarios, Microsoft 365 admins can extend the MTO MAC-created sync job schema with newly supported attributes from the Microsoft 365 admin center.
 
 Important
 

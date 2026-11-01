@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/set-up-custom-federated-connectors -->
-<!-- Sitemap-Last-Modified: 2026-08-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Set up custom federated connectors
 
@@ -12,6 +12,10 @@ A custom federated connector starts with a Model Context Protocol \(MCP\) server
 Before you begin, make sure you have the following items:
 
 - An **MCP server** URL with the tools you want to make available in Copilot exposed \(for example, `search`, `fetch`, `query`, or tools that create, update, or delete data\).
+- **Network access**
+
+  - If your MCP server restricts incoming traffic by source IP address, allow the [static egress IP addresses used by Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-network-requirements). Static egress is enabled by default; no manifest flag is required.
+
 - **Admin permissions**
 
   - Global Administrator or AI Administrator role in the [Microsoft 365 admin center](https://admin.microsoft.com/).
@@ -105,7 +109,15 @@ After you set up authentication, create the connector in the Microsoft 365 admin
    | Field | Description | Example |
    | --- | --- | --- |
    | **Display name** | The user-facing name for your connector. | Company Intranet |
+   | **Description** | A summary of your data source and the information it provides. | Company policies, procedures, and internal support resources. |
    | **Base URL** | Your MCP server endpoint. | `https://mcp.contoso.com` |
+
+
+   As a best practice, use the [connector description generation skill](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/generate-custom-connector-description) to create a clear, specific description of your data source that helps Copilot identify relevant capabilities and provide high-quality responses. Follow the linked instructions to save and use the skill, review the generated text, then add it in the **Description** field.
+
+
+   [![Screenshot of the Connect to MCP server form, showing the required Description field.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/custom-connector-description-create.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/custom-connector-description-create.png#lightbox)
+
 7. Enter the registration ID that matches the authentication method you set up previously:
 
    - For **Microsoft Entra SSO**, enter the **SSO registration ID** from the Teams Developer Portal.
@@ -116,6 +128,10 @@ After you set up authentication, create the connector in the Microsoft 365 admin
 ## Manage the connector
 
 After you create a connector, it appears in the **Your Connections** list. From there, you can roll it out to users and manage its lifecycle.
+
+To update the description later, open the connector from **Your Connections**, select **Edit description** in the details pane, and update the text. To refresh the description, use the [connector description generation skill](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/generate-custom-connector-description). Select **Save** to apply the change.
+
+[![Screenshot of a custom connector's details pane in Your Connections, with Edit description highlighted.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/custom-connector-description-edit.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/federated-connectors/custom-connector-description-edit.png#lightbox)
 
 The **Allow agents and plugins built by your organization** setting in **Agents** > **Settings** > **Agent and plugin access** governs custom connectors. If you clear that option, the connector isn't available to users until you stage it individually. **Agents** > **Settings** > **User access** also limits availability.
 

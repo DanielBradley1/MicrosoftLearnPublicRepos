@@ -60,6 +60,11 @@ The following table displays the various *Geographies* and the corresponding dat
 | Taiwan | Taipei |
 | United Arab Emirates | Abu Dhabi, Dubai |
 | United Kingdom | Cardiff, Durham, London |
+
+### Other Geographies
+
+| Geography | Datacenter locations \(City\) |
+| :--- | :--- |
 | United States | Boydton, Cheyenne, Chicago, Des Moines, Quincy, San Antonio, San Jose, Santa Clara |
 
 ## How to use this information

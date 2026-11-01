@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/best-practices-storage-management -->
-<!-- Sitemap-Last-Modified: 2026-02-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Best practices for storage management
 
@@ -10,7 +10,7 @@ This article summarizes the recommended best practices for information and stora
 | Best practice | Description |
 | --- | --- |
 | **Monitor storage in OneDrive, SharePoint, and Exchange** | Track storage consumption across your tenant to identify top consumers and optimize your schools' storage resources. Learn how to [view pooled storage usage and limit](https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/pooled-storage-management#view-pooled-storage-usage-and-limit) |
-| **Monitor and manage inactive users and groups** | Monitor and remove [inactive users](https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/pooled-storage-management#view-pooled-storage-usage-and-limit) and [groups](https://learn.microsoft.com/en-us/microsoft-365/solutions/microsoft-365-groups-expiration-policy) that are no longer needed to optimize your Microsoft 365 tenant's storage capacity. |
+| **Monitor and manage inactive users and groups** | Monitor and remove [inactive users](https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/pooled-storage-management#view-inactive-users) and [groups](https://learn.microsoft.com/en-us/microsoft-365/solutions/microsoft-365-groups-expiration-policy) that are no longer needed to optimize your Microsoft 365 tenant's storage capacity. |
 | **Enable limits across OneDrive, SharePoint, and Exchange** | Manage unexpected growth in Microsoft 365 storage by [setting customizable limits on SharePoint Sites, Mailboxes, and OneDrive.](https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/pooled-storage-management#manage-product-level-storage-limits) |
 | **Enable Teams meeting recordings retention settings** | Automatically delete old Teams meeting recordings by [setting meeting recording retention times.](https://learn.microsoft.com/en-us/microsoftteams/retention-policies) |
 | **Enable archive mailboxes** | Provide users archive mailboxes for older emails that must be retained for regulatory or legal purposes and [enable Archive policy](https://learn.microsoft.com/en-us/purview/enable-archive-mailboxes) to automate the process of moving older mail to the archive. |

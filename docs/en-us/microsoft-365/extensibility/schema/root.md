@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root?view=m365-app-1.30 -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # root object
 
@@ -111,7 +111,6 @@
       "supportsFiles": {boolean},
       "supportsCalling": {boolean},
       "supportsVideo": {boolean},
-      "supportsSessions": {boolean},
       "scopes": [
         "team | personal | groupChat | copilot"
       ],
@@ -877,11 +876,6 @@
             "description": "A value indicating whether the bot supports video calling.",
             "default": false
           },
-          "supportsSessions": {
-            "type": "boolean",
-            "description": "A property set by developers to opt-in to sessions.",
-            "default": false
-          },
           "scopes": {
             "type": "array",
             "description": "Specifies whether the bot offers an experience in the context of a channel in a team, in a group chat (groupChat), an experience scoped to an individual user alone (personal) OR within Copilot surfaces. These options are non-exclusive.",
@@ -1089,7 +1083,7 @@
           },
           "botId": {
             "$ref": "#/definitions/guid",
-            "description": "The Microsoft App ID specified for the bot powering the compose extension in the Bot Framework portal (https://dev.botframework.com/bots)."
+            "description": "The Microsoft App ID specified for the bot powering the compose extension in the Bot Framework portal (https://dev.botframework.com/bots)"
           },
           "composeExtensionType": {
             "type": "string",
@@ -2116,14 +2110,15 @@
                           "OAuthPluginVault",
                           "ApiKeyPluginVault",
                           "DynamicClientRegistration",
-                          "AzureKeyVault"
+                          "AzureKeyVault",
+                          "ConnectionVault"
                         ],
-                        "description": "The type of authorization required to invoke the MCP server. Supported values are: \u0027None\u0027 (anonymous access), \u0027OAuthPluginVault\u0027 (OAuth flow with referenceId), \u0027ApiKeyPluginVault\u0027 (API Key with referenceId), \u0027DynamicClientRegistration\u0027 (dynamic client registration with referenceId), \u0027AzureKeyVault\u0027 (Azure Key Vault integration)."
+                        "description": "The type of authorization required to invoke the MCP server. Supported values are: \u0027None\u0027 (anonymous access), \u0027OAuthPluginVault\u0027 (OAuth flow with referenceId), \u0027ApiKeyPluginVault\u0027 (API Key with referenceId), \u0027DynamicClientRegistration\u0027 (dynamic client registration with referenceId), \u0027AzureKeyVault\u0027 (Azure Key Vault integration), \u0027ConnectionVault\u0027 (Power Platform connector-managed connection referenced by referenceId)."
                       },
                       "referenceId": {
                         "type": "string",
                         "maxLength": 128,
-                        "description": "A reference identifier used when type is OAuthPluginVault, ApiKeyPluginVault, DynamicClientRegistration, or AzureKeyVault. The referenceId value is acquired independently when providing the necessary authorization configuration values. This mechanism exists to prevent the need for storing secret values in the plugin manifest."
+                        "description": "A reference identifier used when type is OAuthPluginVault, ApiKeyPluginVault, DynamicClientRegistration, AzureKeyVault, or ConnectionVault. The referenceId value is acquired independently when providing the necessary authorization configuration values. This mechanism exists to prevent the need for storing secret values in the plugin manifest."
                       }
                     },
                     "required": [
@@ -2136,7 +2131,8 @@
                             "OAuthPluginVault",
                             "ApiKeyPluginVault",
                             "DynamicClientRegistration",
-                            "AzureKeyVault"
+                            "AzureKeyVault",
+                            "ConnectionVault"
                           ]
                         }
                       }
@@ -2184,14 +2180,15 @@
                           "OAuthPluginVault",
                           "ApiKeyPluginVault",
                           "DynamicClientRegistration",
-                          "AzureKeyVault"
+                          "AzureKeyVault",
+                          "ConnectionVault"
                         ],
-                        "description": "The type of authorization required to invoke the MCP server. Supported values are: \u0027None\u0027 (anonymous access), \u0027OAuthPluginVault\u0027 (OAuth flow with referenceId), \u0027ApiKeyPluginVault\u0027 (API Key with referenceId), \u0027DynamicClientRegistration\u0027 (dynamic client registration with referenceId), \u0027AzureKeyVault\u0027 (Azure Key Vault integration)."
+                        "description": "The type of authorization required to invoke the MCP server. Supported values are: \u0027None\u0027 (anonymous access), \u0027OAuthPluginVault\u0027 (OAuth flow with referenceId), \u0027ApiKeyPluginVault\u0027 (API Key with referenceId), \u0027DynamicClientRegistration\u0027 (dynamic client registration with referenceId), \u0027AzureKeyVault\u0027 (Azure Key Vault integration), \u0027ConnectionVault\u0027 (Power Platform connector-managed connection referenced by referenceId)."
                       },
                       "referenceId": {
                         "type": "string",
                         "maxLength": 128,
-                        "description": " (maxLength: 128)\tA reference identifier used when type is OAuthPluginVault, ApiKeyPluginVault, DynamicClientRegistration, or AzureKeyVault. The referenceId value is acquired independently when providing the necessary authorization configuration values. This mechanism exists to prevent the need for storing secret values in the plugin manifest."
+                        "description": " (maxLength: 128)\tA reference identifier used when type is OAuthPluginVault, ApiKeyPluginVault, DynamicClientRegistration, AzureKeyVault, or ConnectionVault. The referenceId value is acquired independently when providing the necessary authorization configuration values. This mechanism exists to prevent the need for storing secret values in the plugin manifest."
                       }
                     },
                     "additionalProperties": false,
@@ -2205,7 +2202,8 @@
                             "OAuthPluginVault",
                             "ApiKeyPluginVault",
                             "DynamicClientRegistration",
-                            "AzureKeyVault"
+                            "AzureKeyVault",
+                            "ConnectionVault"
                           ]
                         }
                       }

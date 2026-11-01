@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-oauth -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Configure OAuth 2.0 authentication
 
@@ -17,7 +17,7 @@ For an MCP server that requires authorization, set the `type` property of the [r
 
 Note
 
-These values apply to the plugin manifest. If you instead register your MCP server as an *agent connector* in the `agentConnectors` node of the Microsoft 365 app manifest, use `OAuthPluginVault` or `DynamicClientRegistration` there as well. Don't use `AzureKeyVault`: it exists only in the `devPreview` schema, so a package that targets a numbered schema version fails validation. For more information, see [Register MCP servers as agent connectors](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/agent-connectors).
+These values apply to the MCP plugin manifest for declarative-agent actions. If you instead configure a plugin's remote MCP server through `agentConnectors` in the Microsoft 365 app manifest, use `OAuthPluginVault` or, for a server that supports DCR, `DynamicClientRegistration`. App manifest schemas 1.29 and 1.30 also include `AzureKeyVault`, but schema acceptance doesn't establish support in the target experience. For configuration and host requirements, see [Configure remote MCP servers for Microsoft 365 Copilot plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers).
 
 ## Step 2: Configure the redirect URI
 

@@ -1,19 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits -->
-<!-- Sitemap-Last-Modified: 2026-10-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Managing AI experiences enabled by usage-based billing
 
 Use spending policies in the Cost Management dashboard to control access and Copilot Credit spending for AI experiences enabled by usage-based billing.
 
-Administrators can:
+For initial configuration and billing options, see [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup).
 
-- Create spending policies that control access to supported agents and services.
-- Automatically apply existing spending policies to future supported services and agents.
-- Configure organizational and user-level spending limits.
-- Configure threshold notifications for administrators and users.
-- Assign model profiles and billing methods.
-
-For initial configuration and billing options, see [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup). To review consumption, see [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending).
+To review consumption, see [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending).
 
 Important
 
@@ -35,7 +29,9 @@ Review the administrator roles and permissions required to create or manage spen
 
 Before you create additional spending policies, complete the initial usage-based billing setup and activate the default spending policy. For more information, see [Getting started with usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup#getting-started-with-usage-based-billing).
 
-## Add spending policy
+## Add Identity-based spending policy
+
+Use this option when you want a policy to apply to the people who use selected agents and services. For example, a group using Cowork.
 
 1. In the Microsoft 365 admin center, go to **Copilot > Cost Management**.
 2. Select the **Configuration** tab and then select **+ Add spending policy**. You can create any number of spending policies.
@@ -44,17 +40,16 @@ Before you create additional spending policies, complete the initial usage-based
    - Define the policy scope
    - Select agents and services
    - Set limits and alerts
-   - Model profiles
    - Select a billing method
    - Review and add the policy
 
-### Define the policy scope
+### Policy scope
 
 The system supports user, group, and tenant policies.
 
 Give the policy a name and select the specific groups that the policy applies to.
 
-1. Create and name the policy.
+1. Create and name the policy and then choose **Identity** as the scope. Use this option when you need to manage usage by users or groups for a supported service.
 2. Select the users or groups to which the policy applies. By default, **All users** is selected. To target this rule to a subset of users, switch to **Specific groups** and select the directory group. You can also select multiple groups.
 3. At this time, you can only support specific users and resource accounts through security groups. To add specific users or resource accounts to a spending policy, ensure they're in a security group first and then select specific groups from the policy setup. For more details on resource accounts, see [⁠Manage - Resource accounts for voice applications](https://learn.microsoft.com/en-us/microsoftteams/aa-cq-manage-resource-accounts).
 4. Select **Next**.
@@ -115,37 +110,6 @@ To help ensure a good user experience, your policy must meet the minimum. If you
 
 6. Select **Next**.
 
-### Model profiles
-
-Model profiles are reusable sets of model providers and models that you can apply to spending policies. Use model profiles to control which models are available for supported experiences.
-
-You can also add model profiles directly from **Cost Management > Configuration** tab. For more information, see [Configure model profiles](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup#configure-model-profiles).
-
-To understand more about model profile considerations, see [Model profile considerations](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup#model-profile-considerations).
-
-Note
-
-Model profiles are currently available only for **Copilot Cowork**. The **Model profiles** step appears only when you select **Cowork** in a spending policy.
-
-To create and assign a model profile while creating a spending policy:
-
-1. By default, supported models and providers that are available in your organization can be used. You can keep the default model selection or customize model access by applying a model profile. In **Model profiles**, select from one of the following options:
-
-   - **Use default model selection** to allow Cowork to use all supported models and providers available in your tenant.
-   - **Customize model selection** to apply an existing model profile or create a new one.
-
-2. If you choose **Customize model selection**, select an existing profile or select **Create new model profile**.
-3. When creating a model profile:
-
-   1. Enter a name for the profile.
-   2. Select the model providers and models to include in the profile. You must select at least two models.
-   3. Choose whether Microsoft can select the most comparable model to maintain availability during a model-specific service interruption. If you don't allow Microsoft to select the most comparable model, users might experience a service interruption when a selected model becomes unavailable.
-   4. Save the model profile.
-
-4. Select **Next**.
-
-After you create a model profile, you can reuse it across applicable spending policies.
-
 ### Select billing method
 
 By default, the field selects the billing method tied to the default spending policy.
@@ -166,14 +130,13 @@ If you're a Global administrator or a Billing administrator, you can override th
    - Its policy-level and per-user limits.
    - Its policy and user notification thresholds.
    - Its selected services and agents.
-   - Its selected model profile.
    - The Auto-apply new services setting.
    - Its billing method.
 
 2. Select **Create spending policy** to complete the setup.
 3. You're notified that the spending policy is created. Select **Done**. The spending policy now shows up in the Configuration list and starts applying to scoped users immediately.
 
-## Understand how spending policies apply to users
+## Understand how user or Identity-based spending policies apply to users
 
 The following behaviors can affect which spending policy applies to a user and how previously consumed credits are handled.
 
@@ -188,6 +151,8 @@ Users can belong in multiple spending policies. If a user is in more than one po
 If a policy doesn't have a per-user limit set, the system uses its overall policy limit as the per-user value for this comparison. The chosen policy applies in full and settings from other policies aren't combined.
 
 When users reach their limit within a policy, they can request more credits but they don't default to other policies. The system keeps the user on the assigned policy and doesn't reevaluate the user against other policies.
+
+To understand more about overlapping policies in Resource-based spending policies, see [Understand Policy hierarchy](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs#understand-policy-hierarchy).
 
 ### Users who move between Microsoft Entra ID groups
 
@@ -207,23 +172,32 @@ For example:
 
 This behavior provides consistent user-level tracking and reduces the risk that a user could receive a new spending allocation by moving between departments, projects, groups, or spending policies.
 
+## Add Resource-based spending policy
+
+For steps and details on how to create a resource-based spending policy in the Microsoft 365 admin center, see [Create resource-based spending policies](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs#add-resource-based-spending-policy)
+
+To understand more about overlapping policies in Resource-based spending policies, see [Understand Policy hierarchy](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs#understand-policy-hierarchy).
+
 ## Edit spending policy
 
-To edit a spending policy, follow these steps:
+To edit an identity-based spending policy, follow these steps:
 
 1. In the Microsoft 365 admin center, go to **Copilot > Cost Management**.
 2. Select the **Configuration** tab.
 3. Select the spending policy you want to edit.
 4. The spending policy details fly-out opens, where you can modify its settings. This includes:
 
-   1. Scope
-   2. Agents and services
-   3. Model profile
-   4. Billing method
-   5. Spending limits
-   6. Alerts, and Email alert settings
+   1. **Scope**
+   2. **Agents and services**
+   3. **Billing method**
+   4. **Spending limits**
+   5. **Alerts, and Email alert settings**
 
 5. After making the necessary changes, select **Save changes** to apply the updates to the spending policy.
+
+Note
+
+You can't convert an existing identity-based policy into a resource-based policy.
 
 ## Delete spending policy
 
@@ -250,6 +224,7 @@ Spending policies are limit-based controls and don't reserve or allocate Copilot
 
 - [Understand usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
 - [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup)
+- [Manage Copilot Studio costs in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs).
 - [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending)
 - [Usage-based-billing guidance for CSPs, partner-managed customers, and MACC](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-csp-partner-macc)
 - [Understanding the user subscription license \(USL\) and usage-based billing \(UBB\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/user-subscription-license-usage-based-billing)

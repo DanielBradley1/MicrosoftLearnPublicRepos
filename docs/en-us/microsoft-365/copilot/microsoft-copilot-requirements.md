@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements -->
-<!-- Sitemap-Last-Modified: 2026-10-05 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Microsoft Copilot requirements
 
@@ -119,7 +119,7 @@ Where Microsoft 365 network guidance specifies a wildcard, allow the wildcard an
 
 ## Secure and governed foundation
 
-Although not required, it's strongly recommended to [configure a secure and governed foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot). When your organization's data is well governed, current, and appropriately shared, Copilot can deliver accurate, relevant, and secure responses. By using SharePoint Advanced Management and Microsoft Purview capabilities, you can:
+Although not required, it's strongly recommended to configure a secure and governed foundation for Microsoft Copilot. When your organization's data is well governed, current, and appropriately shared, Copilot can deliver accurate, relevant, and secure responses. By using SharePoint Advanced Management and Microsoft Purview capabilities, you can:
 
 - Remediate oversharing
 - Set up guardrails to protect data by default
@@ -129,7 +129,7 @@ The following table summarizes capabilities you can configure. Also see [Secure 
 
 | Product | Description |
 | --- | --- |
-| [SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/advanced-management) | SharePoint Advanced Management is a set of configurable capabilities that provides administrative content governance controls for SharePoint and OneDrive. SharePoint Advanced Management is available as part of Microsoft 365 Copilot or as an add-on.  <br>  <br>See the following articles:  <br>- [What is SharePoint Advanced Management?](https://learn.microsoft.com/en-us/sharepoint/advanced-management)  <br>- [Get ready for Microsoft Copilot and agents with SharePoint Advanced Management](https://learn.microsoft.com/en-us/microsoft-365/copilot/get-ready-copilot-sharepoint-advanced-management) |
+| [SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/advanced-management) | SharePoint Advanced Management is a set of configurable capabilities that provides administrative content governance controls for SharePoint and OneDrive. SharePoint Advanced Management is available as part of Microsoft 365 Copilot or as an add-on.  <br>  <br>See [What is SharePoint Advanced Management?](https://learn.microsoft.com/en-us/sharepoint/advanced-management) |
 | [Microsoft Purview](https://learn.microsoft.com/en-us/purview/purview) | Microsoft Purview helps to mitigate and manage the risks associated with AI usage, and implement corresponding protection and governance controls.  <br>  <br>See the following articles:  <br>- [Use Microsoft Purview to manage data security & compliance for Microsoft Copilot & Microsoft Copilot Chat](https://learn.microsoft.com/en-us/purview/ai-m365-copilot)  <br>- [Enable sensitivity labels for files in SharePoint and OneDrive](https://learn.microsoft.com/en-us/purview/sensitivity-labels-sharepoint-onedrive-files) |
 
 ## Web search requirements

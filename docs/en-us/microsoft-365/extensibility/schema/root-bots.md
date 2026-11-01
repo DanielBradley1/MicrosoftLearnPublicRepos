@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-bots?view=m365-app-1.30 -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # root.bots object
 
@@ -31,7 +31,6 @@ Properties that reference this object type:
   "supportsFiles": {boolean},
   "supportsCalling": {boolean},
   "supportsVideo": {boolean},
-  "supportsSessions": {boolean},
   "scopes": [
     "team | personal | groupChat | copilot"
   ],
@@ -140,11 +139,6 @@ Properties that reference this object type:
     "supportsVideo": {
       "type": "boolean",
       "description": "A value indicating whether the bot supports video calling.",
-      "default": false
-    },
-    "supportsSessions": {
-      "type": "boolean",
-      "description": "A property set by developers to opt-in to sessions.",
       "default": false
     },
     "scopes": {
@@ -1833,22 +1827,6 @@ Default value: `False`.
 #### supportsVideo
 
 A value indicating whether the bot supports video calling.
-
-**Type**  
-boolean
-
-**Required**  
-—
-
-**Constraints**  
-
-
-**Supported values**  
-Default value: `False`.
-
-#### supportsSessions
-
-A property set by developers to opt-in to sessions.
 
 **Type**  
 boolean

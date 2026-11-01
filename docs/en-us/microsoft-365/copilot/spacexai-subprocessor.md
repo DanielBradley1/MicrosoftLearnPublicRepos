@@ -27,8 +27,8 @@ Currently SpaceXAI operated models are disabled for all eligible customers. You 
 
 Note
 
-- This new subprocessor setting in the Microsoft 365 admin center is different than the SpaceXAI setting under **AI providers for other large language models**. For more information on that setting, see [Connect to SpaceXAI models](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-models).
-- If you previously used the SpaceXAI setting under **AI providers for other large language models** to provide your users with access to SpaceXAI models, and you now want to use SpaceXAI as a subprocessor, you need to enable the new subprocessor setting and assign the appropriate users or groups. Your previous settings aren’t automatically carried over to the new subprocessor setting.
+- This new subprocessor setting in the Microsoft 365 admin center is different than the SpaceXAI setting under **AI providers operating as independent processors**. For more information on that setting, see [Connect to SpaceXAI models](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-models).
+- If you previously used the SpaceXAI setting under **AI providers operating as independent processors** to provide your users with access to SpaceXAI models, and you now want to use SpaceXAI as a subprocessor, you need to enable the new subprocessor setting and assign the appropriate users or groups. Your previous settings aren’t automatically carried over to the new subprocessor setting.
 
 ## Enable the use of SpaceXAI operated models
 

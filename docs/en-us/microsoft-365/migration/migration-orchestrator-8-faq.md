@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-8-faq?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-06-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # FAQ and troubleshooting
 
@@ -17,9 +17,9 @@ If you need to move a user's mailbox and OneDrive back to the source tenant afte
 
 ### Do you have any recommendations for batches?
 
-To ensure a smooth migration process, we recommend limiting the number of mailboxes per batch to 2,000 and submitting batches at least two weeks before the cut-over date. This limit doesn't affect end users during synchronization. For guidance on migrating quantities exceeding 50,000 mailboxes, contact your account team for assistance.
+To ensure a smooth migration process, orchestrator batches are limited to 100 users. Customers may submit more than one batch to run concurrently. If you are moving mailboxes, create and begin the migration at least two weeks before the cut-over date \(supplied via your CompleteAfterDate\). This gives ample time for average size mailboxes to sync before the CompleteAfterDate. For guidance on migrating quantities exceeding 50,000 mailboxes or very large mailboxes, contact your account team for assistance.
 
-If you're migrating OneDrive, there's a 4,000 limit between SharePoint and OneDrive sites that can be moved and queued to move at one time.
+If you're migrating OneDrive, there's a 4,000 limit between SharePoint and OneDrive sites that can be moved and queued to move at one time. This limit also applies across all migrations including via the orchestrator and the standalone OneDrive and SharePoint tool.
 
 ### Can I perform a cross-cloud tenant-to-tenant migration?
 
@@ -45,9 +45,13 @@ Migration duration varies based on the total traffic in the service, the workloa
 
 - Workloads selected: Different workloads have different processing patterns. Exchange, OneDrive, Teams chats, and Teams meetings can progress differently.
 - Amount of data: Users with larger mailboxes, more OneDrive content, or more Teams data can take longer than users with smaller data sets.
-- Number of users in the batch: Larger migration waves can take longer to validate, monitor, and complete than smaller pilot groups.
+- Number of users in the batch: Larger migration batches can take longer to validate, monitor, and complete than smaller batches.
 - Overall service traffic: Processing time can vary based on the volume of migration traffic currently being handled across the service.
 - Tenant readiness and configuration quality: Validation can take longer when prerequisites are missing or when admins need multiple validation attempts to resolve issues.
+
+Important
+
+Not all workloads migrate data at the same time. If a customer is migrating Exchange mailboxes along with any other workloads \(OneDrive, Teams Chats, and/or Teams Meetings\), only the Exchange mailbox will be syncing until the CompleteAfterDate passes. Once that date passes and the mailbox has synced, then the remaining workloads will begin. In this case, customers should not expect that OneDrive, Teams Chats, and/or Teams Meetings will complete at the same time as mailboxes. OneDrive, Teams Chats, and Teams Meetings will only begin the work of actually moving the content after the mailbox has already completed.
 
 ### What to expect from validation timing
 

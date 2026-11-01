@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-license-management?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Advanced Data Residency: License management
 
@@ -50,7 +50,6 @@ The required level of coverage depends on the *Tenant* type:
 | Tenant type | Coverage requirement |
 | :--- | :--- |
 | Commercial \(*ADR*\) | 100% of all eligible paid Microsoft 365 seats |
-| Education \(*ADR-E*\) | 100% of all eligible Microsoft 365 seats \(paid and unpaid/free\) |
 | Mixed Commercial + Education \(*ADR*\) | 100% of all eligible paid Microsoft 365 seats \(free education seats not required\) |
 
 Important
@@ -83,10 +82,6 @@ When a *Tenant* has a mix of commercial and education license types \(for exampl
 | Paid Commercial/Public Sector \(E3, E5, etc.\) | Must be covered by *ADR* |
 | Paid Education \(Microsoft 365 A3/A5, Office 365 A3/A5\) | Must be covered by *ADR* |
 | Free subscriptions | Not required to be covered |
-
-Note
-
-*ADR for Education* is only available to Volume Licensing / EES \(Microsoft Enrollment for Education Solutions\) customers. Contact your Microsoft account representative for details on how to obtain an *ADR* Education related SKU.
 
 ## ADR and Multi-Geo license interaction
 

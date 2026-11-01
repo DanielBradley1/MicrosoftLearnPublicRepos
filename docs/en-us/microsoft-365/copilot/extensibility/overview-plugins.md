@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # MCP and API plugins for declarative agents
 
@@ -21,7 +21,7 @@ A plugin provides a plugin manifest that Copilot uses to learn the capabilities 
 
 For plugins based on an MCP server, Copilot resolves the plugin's tools dynamically at runtime by default, directly from the MCP server. Dynamic tool discovery means you get the latest tools the MCP server exposes without waiting for the agent to be repackaged and republished. When building the agent, a developer can optionally pin a fixed set of tools in the plugin manifest instead. REST API plugins always use the tools defined in the plugin manifest. For more information, see [Build plugins from an MCP server for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) and [Dynamic tool discovery for MCP plugins in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-dynamic-tool-discovery).
 
-This default applies to plugins only. It doesn't extend to agent connectors, which register an MCP server through the `agentConnectors` node in the Microsoft 365 app manifest rather than through a plugin manifest. For agent connectors, dynamic tool discovery requires app manifest version 1.29 or later *and* a host that permits it. For more information, see [Register MCP servers as agent connectors](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/agent-connectors).
+This default applies to MCP plugins used as declarative-agent actions. For a plugin that references a remote MCP server through `agentConnectors` in the Microsoft 365 app manifest, dynamic tool discovery requires app manifest version 1.29 or later *and* a host that permits it. For more information, see [Configure remote MCP servers for Microsoft 365 Copilot plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers).
 
 ## Plugin example
 

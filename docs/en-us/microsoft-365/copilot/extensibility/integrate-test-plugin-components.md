@@ -38,7 +38,7 @@ Use the applicable product-specific testing guidance:
 
 - [Debug agents using Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio)
 - [Debug agents using Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-vscode)
-- [Review custom skill support and known issues](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix)
+- [Review skill support and known issues](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix)
 - [Build and test a custom Copilot connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector)
 - [Debug MCP and API plugins locally](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-debug-local)
 - [Test a deployed declarative agent with Work IQ DevUI](https://microsoft.github.io/wiqd/extensions/provided/devui/)

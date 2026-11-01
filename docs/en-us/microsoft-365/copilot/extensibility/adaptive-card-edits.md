@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/adaptive-card-edits -->
-<!-- Sitemap-Last-Modified: 2026-03-06 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Allow inline editing of Adaptive Card responses \(preview\)
 
@@ -212,4 +212,3 @@ The following request and response examples show what happens when a user takes 
 
 - [Adaptive Card responses](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api-plugin-adaptive-cards)
 - [Add a dialog box to Adaptive Card templates](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/adaptive-card-dialog-box)
-- [Declarative agent app package](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent#building-declarative-agents)

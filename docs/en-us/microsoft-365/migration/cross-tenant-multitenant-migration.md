@@ -1,7 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-multitenant-migration?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-05-07 -->
 
-# Introduction
+# Moving from multitenant to migration readiness
+
+## Introduction
 
 This article is designed for tenant administrators with an established Multitenant Organization \(MTO\) who are preparing for identity and data migration from one MTO member to another. It outlines the steps to move from MTO-based collaboration to full migration readiness, ensuring secure access, minimal disruption, and compliance.
 

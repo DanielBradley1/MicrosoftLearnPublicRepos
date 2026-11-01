@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/permissions -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Work IQ API permissions reference
 
@@ -26,4 +26,20 @@ For example, to request the `WorkIQAgent.Ask` permission, use the OAuth `scope` 
 | Description | - | Allows the app to ask Work IQ agents questions and receive responses on behalf of the signed-in user. This includes read and write access to Microsoft 365 resources that are accessible to Work IQ agents and scoped to the signed-in user. |
 | AdminConsentRequired | - | Yes |
 
----
+### WorkIQ.Act
+
+| Category | Application | Delegated |
+| --- | --- | --- |
+| Identifier | - | 54b3dd6b-e697-4e6a-8fcd-96af0b25009d |
+| DisplayText | - | Act on Microsoft 365 data through WorkIQ |
+| Description | - | Allows the app to use WorkIQ to read and make changes to Microsoft 365 data that the signed-in user can access. |
+| AdminConsentRequired | - | Yes |
+
+### WorkIQ.Read
+
+| Category | Application | Delegated |
+| --- | --- | --- |
+| Identifier | - | c3c950a1-c6dc-4f63-9765-f363f1fab462 |
+| DisplayText | - | Read Microsoft 365 data through WorkIQ |
+| Description | - | Allows the app to use WorkIQ to read Microsoft 365 data that the signed-in user can access. |
+| AdminConsentRequired | - | Yes |

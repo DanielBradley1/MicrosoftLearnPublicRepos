@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup -->
-<!-- Sitemap-Last-Modified: 2026-10-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Set up usage-based billing for Copilot Credits
 
-Use the Cost Management dashboard in the Microsoft 365 admin center to enable usage-based billing, activate the default spending policy, configure model profiles, and select billing methods for Copilot Credits.
+Use the Cost Management dashboard in the Microsoft 365 admin center to enable usage-based billing, activate the default spending policy, create identity-based and resource-based spending policies.
 
 ## Roles and requirements
 
@@ -12,6 +12,8 @@ Global administrator and Billing administrator roles can add, select, and change
 AI administrator and License administrator roles can edit spending policies, manage limits and alerts, and billing methods. However, they can't create spending policies.
 
 AI Reader, Global Reader, License Administrator, and other supported reader-based roles can view consumption dashboards and reports. These roles provide read-only access to consumption information and don't allow administrators to create or change spending policies, limits, alerts, request policies, or billing methods.
+
+To manage Copilot Studio environments or agents with a resource-based spending policy, review the roles and prerequisites in [Manage Copilot Studio costs in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs#before-you-begin)
 
 Note
 
@@ -25,7 +27,9 @@ Microsoft recommends that you use roles with the fewest permissions. Using roles
 
 ## Getting started with usage-based billing
 
-This section covers the initial setup to guide administrators through enabling usage-based billing and creating the first spending policy. This process activates the AI experiences, like Cowork, that are gated by usage-based billing.
+This section covers the initial setup steps to guide administrators through enabling usage-based billing and creating the first spending policy. This process activates AI experiences, like Cowork, that are gated by usage-based billing.
+
+The following procedure activates the user or identity-based spending policy for supported experiences. The steps to activate a resource-based spending policy are very similar except when defining the scope for the policy. For steps on creating a resource-based spending policy, see [Manage Copilot Studio costs in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs#add-resource-based-spending-policy).
 
 1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339) with one of the following administrator roles:
 
@@ -59,39 +63,11 @@ This section covers the initial setup to guide administrators through enabling u
 12. Select **Activate**. You're notified that the set up is complete.
 13. Select **Manage Configuration**. The **Configuration** tab within the Cost management page is displayed. Copilot consumptive services are now available. You can now add more spending policies to scope access to specific groups, users, or services.
 
+**Optional** - Set up Copilot Studio spending. If you want to manage spending or costs for Copilot Studio environments or agents here, create a separate resource-based spending policy. Start with a specific environment if you want to try the transition before applying a policy to all environments. See [Manage Copilot Studio costs in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs).
+
 Note
 
 When you activate the default spending policy, you set the tenant-level limit for **all users**. Each additional spending policy that you create has its own independent limit and doesn't inherit the tenant-level limit.
-
-## Configure model profiles
-
-You can create and manage model profiles directly from **Cost Management**, or create and assign a model profile while creating a spending policy.
-
-For more information on how to add a model profile while creating a spending policy, see [Model profiles](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#model-profiles).
-
-Note
-
-Model profiles are currently available only for Copilot Cowork. The Model profiles step appears in a spending policy only when you select Cowork in Agents and services.
-
-### Create a model profile from Cost management
-
-1. In the Microsoft 365 admin center, go to **Copilot > Cost management > Configuration**.
-2. Select **Model profiles**.
-3. Select **Add model profile**.
-4. Enter a name for the model profile.
-5. Select the model providers and models to include in the profile.
-6. Select at least two models. The models can be from the same provider or from different providers.
-7. Optional: Select **Microsoft can select the most comparable model to maintain availability**.
-8. Save the model profile.
-
-After you create a model profile, you can apply it to supported spending policies. Model profiles are reusable and can be assigned to multiple spending policies.
-
-### Model profile considerations
-
-- You must select at least two models when creating a model profile.
-- If a model provider is disabled for your organization, its models aren't available for selection in a model profile. In the Microsoft 365 admin center, go to **Copilot > Settings > AI providers operating as independent processors** to manage provider settings.
-- The **Microsoft can select the most comparable model to maintain availability** option allows Microsoft to use a comparable model if a selected model becomes unavailable because of a model-specific service interruption. If you don't enable this option, users might experience service interruptions when a selected model becomes unavailable.
-- When creating a model profile, choose the models that best meet your organization's requirements. Review the capabilities and requirements of each model and make selections based on your organization's needs.
 
 ## Configure billing method
 
@@ -156,10 +132,12 @@ If you purchased capacity packs, you can use them with the services in this expe
 - In the **Billing Method** page, when setting up a spending policy, the number of credits available from Prepaid Capacity packs reflects the credits that are available for use, instead of the total number of credits purchased. \(where Available credits = Total purchased credits - Credits pre-allocated to environments in Power Platform admin center\)
 - You can choose to apply Prepaid Capacity packs at the individual spending policy level in the **Review billing method** step.
 - You must be a Global administrator or Billing administrator to override or set the billing method.
-- Copilot Credits from Prepaid Capacity packs can be consumed by multiple services managed by both Microsoft 365 admin center and Power Platform admin center. However, capacity that is assigned or used in Power Platform admin center \(for example, allocated to specific environments or consumed by agents\) reduces the Copilot credits available for services managed by Microsoft 365 admin center. Therefore, it's important to leverage the **Copilot > Cost management** dashboard in Microsoft 365 admin center to properly identify what is available for these services.
+- Prepaid Capacity pack credits can support services managed in either admin center. Credits allocated to environments in the Power Platform admin center reduce the credits available for other services in the Microsoft 365 admin center. If a Microsoft 365 admin center resource-based spending policy covers a Copilot Studio environment, its Power Platform admin center capacity allocation and linked billing plan no longer apply. For details, see [Manage Copilot Studio costs in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs).
 
-  - Check the Power Platform admin center for additional credit allocation and usage details: [Power Platform admin center](https://admin.powerplatform.microsoft.com/licenses).
-  - For more information on how to manage capacity allocation or reallocation, see [Manage Copilot Studio credits and capacity](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity#manage-capacity).
+Therefore, it's important to leverage the **Copilot > Cost management** dashboard in Microsoft 365 admin center to properly identify what is available for these services.
+
+- Check the Power Platform admin center for additional credit allocation and usage details: [Power Platform admin center](https://admin.powerplatform.microsoft.com/licenses).
+- For more information on how to manage capacity allocation or reallocation, see [Manage Copilot Studio credits and capacity](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity#manage-capacity).
 
 Note
 
@@ -188,6 +166,7 @@ If the selected subscription already contains one or more resource groups, selec
 
 - [Understand usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
 - [Manage AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)
+- [Manage Copilot Studio costs in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs).
 - [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending)
 - [Usage-based-billing guidance for CSPs, partner-managed customers, and MACC](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-csp-partner-macc)
 - [Understanding the user subscription license \(USL\) and usage-based billing \(UBB\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/user-subscription-license-usage-based-billing)

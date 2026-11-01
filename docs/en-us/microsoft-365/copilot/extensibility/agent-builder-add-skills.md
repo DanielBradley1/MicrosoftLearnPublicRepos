@@ -1,20 +1,25 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
-# Add custom skills to your declarative agent in Agent Builder
+# Add skills to your declarative agent in Agent Builder
 
-A custom skill is a modular, reusable component that you add to a declarative agent to help it perform a specific packaged task. A skill is a directory that contains a required `SKILL.md` file with instructions, plus optional resource files and scripts. This article describes how to add a custom skill to an agent built in Agent Builder, either by describing the skill in natural language or by uploading a skill package.
+A skill is a modular, reusable component that you add to a declarative agent to help it perform a specific packaged task. A skill is a directory that contains a required `SKILL.md` file with instructions, plus optional resource files and scripts. This article describes how to add a skill to an agent built in Agent Builder, either by describing the skill in natural language or by uploading a skill package.
 
-To learn what custom skills are, why to use them, and the full support matrix, supported file types, sandbox behavior, and governance, see [Custom skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills).
+To learn what skills are, why to use them, and the full support matrix, supported file types, sandbox behavior, and governance, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills).
+
+Important
+
+In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers), admins can deploy declarative agents with skills, but end users can't add skills to declarative agents they create.
+
+Support for independent software vendors \(ISVs\) to publish declarative agents with skills through Partner Center isn't available yet and is coming soon. ISVs shouldn't submit declarative agent packages that include skills to Partner Center.
 
 ## Prerequisites
 
 - A qualifying Microsoft 365 Copilot license, or access through pay-as-you-go. For details, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
-- Your organization must be enrolled in the Microsoft Frontier Program.
 
 Note
 
-In Agent Builder, you can add up to eight skills per agent, and each skill package is a compressed `.zip` file of up to 50 MB. For the full support matrix and limits, see [Custom skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix).
+In Agent Builder, you can add up to eight skills per agent, and each skill package is a compressed `.zip` file of up to 50 MB. For the full support matrix and limits, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix).
 
 ## Create a skill from a description
 
@@ -86,4 +91,4 @@ Upload the complete `.zip` package. Don't upload `SKILL.md` by itself.
 
 ## Related content
 
-- [Custom skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills)
+- [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/archive/manage-inactive-files?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Manage inactive files policy with SharePoint Advanced Management \(preview\)
 
@@ -55,6 +55,10 @@ Manual file archiving and automatic policy archiving are separate controls. Disa
 **Last access date \(LAD\)** is the recorded date a human last accessed a file. AI agent, application, script, and system access don't update it.
 
 **How the policy uses LAD:** A file can qualify for archiving when its recorded LAD is earlier than the policy's inactivity cutoff. Other eligibility rules still apply.
+
+Important
+
+**Last access date updates can take up to 30 days.** Recent human access might not yet be reflected in the recorded LAD used by an inactive files policy. During this delay, a recently accessed file can still qualify for archiving if its recorded LAD meets the policy’s inactivity threshold.
 
 A file can remain important even if it hasn't been edited recently. Select a threshold that reflects your organization's access patterns and business requirements.
 
@@ -290,7 +294,7 @@ Removing a policy soft-deletes the policy; it doesn't delete or reactivate the f
 | --- | --- |
 | The policy hasn't started processing. | Check that the policy is active and includes the sites you expect. A `SelectedSites` policy needs at least one included site; an `AllSites` policy skips excluded sites. Also confirm preview availability, your SharePoint Advanced Management entitlement, and the Archive prerequisites. |
 | The policy runs, but no files are archived. | Check `IsWhatIfMode` first. If it's `$true`, the policy reports results without archiving files. Otherwise, review the inactivity threshold, file type filters, and report outcome reasons to see why files were skipped. Built-in restrictions still apply. |
-| A file you expected to stay active qualifies for archiving. | Compare the file's last human access date with the policy's inactivity threshold. AI agent and system access don't update LAD. If the recorded LAD is before July 2025, missing human access history can make the file appear inactive for longer than it was. See [Select an inactivity threshold](#select-an-inactivity-threshold) before enabling archiving. |
+| A file you expected to stay active qualifies for archiving. | Compare the file's last human access date with the policy's inactivity threshold. Recent human access can take up to 30 days to be reflected in LAD, so a recently accessed file can still qualify based on its recorded date. AI agent and system access don't update LAD. If the recorded LAD is before July 2025, missing human access history can make the file appear inactive for longer than it was. See [Select an inactivity threshold](#select-an-inactivity-threshold) before enabling archiving. |
 | Archive results don't match the simulation. | Compare the settings and sites processed in each run. Files might have been accessed or become ineligible since the simulation. Review the outcome reasons for differences. |
 | A report lists files that weren't archived. | Check what the count represents: files evaluated, skipped, failed, or successfully archived. The outcome reasons help explain what happened. |
 | Files on an excluded site are still archived. | Confirm that you added the exclusion to the correct `AllSites` policy. Check whether another policy or a user archived the files, or whether they were archived before you added the exclusion. Excluding a site doesn't reactivate files. |

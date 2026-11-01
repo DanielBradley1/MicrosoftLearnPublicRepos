@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/pooled-storage-management -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Pooled storage management
 
@@ -228,22 +228,7 @@ Taking steps to reduce your storage consumption before your organization has rea
 
 #### View inactive users
 
-Note
-
-The storage usage by inactive users report is being retired on October 1, 2026. Use the [advanced report](#view-all-usage-in-onedrive-and-sharepoint) and review the owner last login date column to track user activity.
-
-1. Navigate to the Microsoft 365 Admin Center **> Reports > Storage >** **Storage usage by inactive users**.
-2. View up to 5,000 of the least active users in the tenant. Minimum inactivity period is 90 days.
-3. Export report to CSV with all the columns shown or export to the CSV template used for bulk deleting in Entra ID.
-
-The report is automatically refreshed within 72 hours. To check if any of the documents of inactive users are still being used by others in the tenant, refer to their last activity date from OneDrive storage report.
-
-Troubleshooting:
-
-- An empty value in the **Last Entra ID sign in** column indicates that the users last accessed their account before April 2020. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. Learn more about [signInActivity resource type](https://learn.microsoft.com/en-us/graph/api/resources/signinactivity)
-- If the tenant has user level data hidden, Exchange usage can't be retrieved for the tenant. [Reveal user level data to see Exchange usage information in inactive reports.](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports#show-user-details-in-the-reports)
-- If the system fails to retrieve inactive user details, it automatically retries the operation and initiates a new request to fetch the latest report. It will take up to 72 hours to generate the report again.
-- If a user doesn't use SharePoint and OneDrive products, the user information isn't shown in the inactive users report.
+The storage usage by inactive users report was retired on October 1, 2026. Use the [advanced report](#view-all-usage-in-onedrive-and-sharepoint) and review the owner last login date column to track user activity.
 
 #### Bulk delete users
 

@@ -4319,9 +4319,10 @@ Commit history: [https://github.com/microsoft/json-schemas/commits/live/teams/vD
 https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json
 ```
 
-### September 2026
+### October 2026
 
-Added [nestedAppAuthInfo](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-web-application-info-nested-app-auth-info?view=m365-app-1.30) field to enable prefetching the [Nested App Authentication](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/authentication/nested-authentication) token.
+- Added [`ConnectionVault`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-agent-connectors-tool-source-local-mcp-server-authorization?view=m365-app-prev&branch=Dev-Preview-Oct2026&tabs=syntax&preserve-view=true) as an authorization type for MCP server agent connectors. Configure `authorization.type` as `ConnectionVault` and provide the connection’s `referenceId`. For details, see [`ConnectionVault`](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers#use-connection-vault-authentication).
+- Discontinued support for `supportsSessions` property.
 
 ## Previous preview releases
 
@@ -4331,10 +4332,14 @@ Added [nestedAppAuthInfo](https://learn.microsoft.com/en-us/microsoft-365/extens
 <details>
 <summary>**2026**</summary>
 
+### September 2026
+
+- Added [nestedAppAuthInfo](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-web-application-info-nested-app-auth-info?view=m365-app-1.30) field to enable prefetching the [Nested App Authentication](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/authentication/nested-authentication) token.
+
 ### June 2026
 
 - Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) property.
-- Added the new [`supportsSessions`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-bots?view=m365-app-1.30#supportssessions) property to enable bots in Teams to have topic-based conversations with users.
+- Added the new `supportsSessions` property to enable bots in Teams to have topic-based conversations with users.
 - Added support for abbreviated application name in app bar using the new [`abbreviated`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-name?view=m365-app-1.30#abbreviated) property.
 - Increased `maxLength` in [`validDomains`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root?view=m365-app-1.30#validdomains) array from 16 to 100 to enable legacy Office Add-in migration to new unified manifest.
 

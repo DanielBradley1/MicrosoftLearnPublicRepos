@@ -5,7 +5,7 @@
 
 ## Microsoft 365 Backup charge model
 
-The Microsoft 365 Backup service, offered through the Microsoft 365 admin center, is a [pay-as-you-go consumption-based service](https://learn.microsoft.com/en-us/microsoft-365/syntex/syntex-pay-as-you-go-services). The list price is $0.15/GB/month of protected content.
+The Microsoft 365 Backup service, offered through the Microsoft 365 admin center, is a [pay-as-you-go consumption-based service](https://learn.microsoft.com/en-us/microsoft-365/syntex/syntex-pay-as-you-go-services). The list price is $0.15/GiB/month of protected content.
 
 ### What's counted towards protected backup storage?
 
@@ -22,13 +22,13 @@ Microsoft 365 Backup charges you based on the size of the following content once
   - Deleted and versioned items in the protected mailboxes.
 
 
-  For example, if you protect a 1-GB site that has 0.5 GB of data in its second-stage recycle bin, and a 1-GB mailbox that has a 1-GB online archive, then you'll be charged for 3.5 GB of Microsoft 365 Backup usage.
+  For example, if you protect a 1-GiB site that has 0.5 GiB of data in its second-stage recycle bin, and a 1-GiB mailbox that has a 1-GiB online archive, then you'll be charged for 3.5 GiB of Microsoft 365 Backup usage.
 
 #### Important considerations
 
 - The restore point frequency doesn't materially impact the cost of the backup storage, so reducing that frequency wouldn't change your costs.
 - Although Azure is being used as a payment processor, there are no additional Azure API or storage costs beyond the Microsoft 365 Backup usage charges previously mentioned.
-- Deleted or versioned content held in the recycle bin or in the mailboxes will expire from the backups once the backup recovery window lapses \(for example, 365 days after the backup is taken\). Once deleted or versioned content expires from the backups, they're no longer counted in the backup consumption equation and therefore no longer contribute to the cost. For example, if you have a site under protection that is currently 1 GB for the first month, you're charged for 1 GB of Microsoft 365 Backup usage. If you delete content in that site such that it's now only 0.5 GB, your next monthly bill will still be for 1 GB since the backup tool is retaining that deleted content for a year. After a year when the backup of that deleted content expires, the 0.5 GB being retained for backup purposes will no longer be charged for backup.
+- Deleted or versioned content held in the recycle bin or in the mailboxes will expire from the backups once the backup recovery window lapses \(for example, 365 days after the backup is taken\). Once deleted or versioned content expires from the backups, they're no longer counted in the backup consumption equation and therefore no longer contribute to the cost. For example, if you have a site under protection that is currently 1 GiB for the first month, you're charged for 1 GiB of Microsoft 365 Backup usage. If you delete content in that site such that it's now only 0.5 GiB, your next monthly bill will still be for 1 GiB since the backup tool is retaining that deleted content for a year. After a year when the backup of that deleted content expires, the 0.5 GiB being retained for backup purposes will no longer be charged for backup.
 - If you're using a partner \(ISV\) solution built on the Microsoft 365 Backup Storage platform, you'll be charged solely by them for their application. You won't receive a separate bill or charge directly from Microsoft for the Backup Storage consumption.
 
 ## Pricing calculator
@@ -38,6 +38,8 @@ The Microsoft 365 Backup pricing calculator is a tool that helps you estimate th
 Note
 
 The tool isn't intended to provide an exact prediction of your backup consumption, but rather to give you an estimate.
+
+Backup storage estimates use gibibytes \(GiB\). The calculator field labels and usage-report examples below retain their original GB wording.
 
 ### Using the pricing calculator
 

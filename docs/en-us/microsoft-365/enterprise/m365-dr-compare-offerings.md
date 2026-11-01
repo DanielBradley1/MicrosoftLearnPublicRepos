@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-compare-offerings?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Compare Microsoft 365 Data Residency offerings
 
-Microsoft offers five [*Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) solutions for Microsoft 365 customers. Two are included for eligible [*Tenants*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) at no additional cost, while three are paid add-on services for organizations with expanded or complex requirements. This article compares all five offerings to help you determine which solution best meets your organization's requirements.
+Microsoft offers four [*Data Residency*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) solutions for Microsoft 365 customers. Two are included for eligible [*Tenants*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) at no additional cost, while two are paid add-on services for organizations with expanded or complex requirements. This article compares all four offerings to help you determine which solution best meets your organization's requirements.
 
 For definitions of italicized terms, see [Key terms and definitions](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide).
 
@@ -19,7 +19,6 @@ These commitments are included for *Tenants* that meet specific eligibility crit
 These services require separate licensing and provide additional capabilities beyond the included commitments.
 
 - ***Advanced Data Residency \(ADR\)***: A paid add-on that expands service coverage and provides data migration services for [*Local Region Geographies*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions).
-- ***Advanced Data Residency for Education \(ADR-E\)***: A paid add-on for eligible Education customers that provides *Data Residency* and migration services for core workloads in *Local Region Geographies*.
 - ***Multi-Geo Capabilities***: A paid add-on that enables organizations to store *Customer Data* across multiple [*Geographies*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) within a single *Tenant*.
 
 ## Compare Microsoft 365 capabilities
@@ -28,14 +27,14 @@ The following table compares what each offering provides. Review the eligibility
 
 ### Table 1.3: Microsoft 365 capabilities by offering
 
-| Feature | Product Terms | EU Data Boundary \(EUDB\) | [*Advanced Data Residency \(ADR\)*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) | *Advanced Data Residency for Education \(ADR-E\)* | [*Multi-Geo Capabilities*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Commitment and data scope** | Stores specified *Customer Data* at rest in the applicable *Geography* for covered services | Stores and processes *Customer Data* and specified personal data within the EU/EFTA boundary, subject to documented exceptions | Stores specified *Customer Data* at rest in a *Local Region Geography* for core and expanded services | Stores specified *Customer Data* at rest in a *Local Region Geography* for covered Education services | Stores specified *Customer Data* at rest in configured *Geographies* for covered services |
-| **Level at which residency applies** | *Tenant* level, within the *Tenant's* committed *Geography* | *Tenant* level, within the EU/EFTA boundary | *Tenant* level, within an eligible *Local Region Geography* | *Tenant* level, within an eligible *Local Region Geography* | User and supported shared-resource level, across configured *Geographies* |
-| **Services covered** | [*Microsoft 365 Core Services*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) | *Microsoft 365 Core Services* and other in-scope services | Microsoft 365 core and expanded services | Exchange Online, SharePoint, OneDrive, and Microsoft Teams | *Microsoft 365 Core Services* |
-| **Migration capability** | No customer-requested migration service | Microsoft-managed movement into the boundary | Migration to the eligible *Local Region Geography* after customer opt-in | Migration to the eligible *Local Region Geography* after customer opt-in | Movement to available [*Satellite Geographies*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) based on customer configuration |
-| **Multiple geographies** | No | Data might be stored across countries or regions within the EU/EFTA boundary | No | No | Yes |
-| **Best for** | Eligible organizations whose included data-at-rest commitments meet their requirements | Eligible organizations that require EU/EFTA storage and processing commitments | Commercial organizations that require expanded workload coverage in a *Local Region Geography* | Education organizations that require covered data in a *Local Region Geography* | Multinational organizations that need to control data location by user or supported shared resource |
+| Feature | Product Terms | EU Data Boundary \(EUDB\) | *Advanced Data Residency \(ADR\)* | *Multi-Geo Capabilities* |
+| :--- | :--- | :--- | :--- | :--- |
+| **Commitment and data scope** | Stores specified *Customer Data* at rest in the applicable *Geography* for covered services | Stores and processes *Customer Data* and specified personal data within the EU/EFTA boundary, subject to documented exceptions | Stores specified *Customer Data* at rest in a *Local Region Geography* for core and expanded services | Stores specified *Customer Data* at rest in configured *Geographies* for covered services |
+| **Level at which residency applies** | *Tenant* level, within the *Tenant's* committed *Geography* | *Tenant* level, within the EU/EFTA boundary | *Tenant* level, within an eligible *Local Region Geography* | User and supported shared-resource level, across configured *Geographies* |
+| **Services covered** | [*Microsoft 365 Core Services*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) | *Microsoft 365 Core Services* and other in-scope services | Microsoft 365 core and expanded services | *Microsoft 365 Core Services* |
+| **Migration capability** | No customer-requested migration service | Microsoft-managed movement into the boundary | Migration to the eligible *Local Region Geography* after customer opt-in | Movement to available [*Satellite Geographies*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) based on customer configuration |
+| **Multiple geographies** | No | Data might be stored across countries or regions within the EU/EFTA boundary | No | Yes |
+| **Best for** | Eligible organizations whose included data-at-rest commitments meet their requirements | Eligible organizations that require EU/EFTA storage and processing commitments | Commercial organizations that require expanded workload coverage in a *Local Region Geography* | Multinational organizations that need to control data location by user or supported shared resource |
 
 The commitments don't cover identical data or operations. In particular, [*EUDB*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) includes processing commitments and additional data categories, while the other offerings primarily provide commitments for specified *Customer Data* stored at rest. Review the offering-specific documentation before making a compliance or purchasing decision.
 
@@ -43,14 +42,14 @@ The commitments don't cover identical data or operations. In particular, [*EUDB*
 
 ### Table 1.3.1: Microsoft 365 eligibility and licensing by offering
 
-| Requirement | Product Terms | EUDB | *ADR* | *ADR-E* | *Multi-Geo Capabilities* |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Offering type** | Included for eligible *Tenants*; configurable for select commercial *Tenants* | Included for eligible *Tenants* | Paid add-on | Paid Education add-on | Paid add-on |
-| **Geographic eligibility** | Specific *Local Region Geographies* and European Union | Sign-up location in a country or region in the EU or EFTA | Eligible *Local Region Geographies* | Eligible *Local Region Geographies* | Available *Satellite Geographies* |
-| **Subscription eligibility** | Eligible commercial and Education subscriptions, subject to the applicable terms | Eligible Microsoft 365 customers in the EU or EFTA | Qualifying commercial, public sector, and mixed commercial and Education subscriptions | Qualifying Microsoft 365 and Office 365 Education subscriptions through Volume Licensing or EES | Qualifying enterprise subscriptions and standalone Exchange Online, OneDrive, and SharePoint plans |
-| **License requirement** | No add-on license | No add-on license | Cover 100% of eligible paid Microsoft 365 seats | Cover 100% of eligible Microsoft 365 seats, including paid and unpaid or free seats | Purchase licenses for at least 5% of eligible users and license each user hosted in a *Satellite Geography* |
-| **Key limitations** | Commitment depends on eligibility and the applicable Product Terms; Education terms differ from commercial terms | *Tenants* with *Multi-Geo* aren't in scope | Available only for eligible *Local Region Geographies* | Available only to Volume Licensing or EES customers | Doesn't include expanded-service coverage; *Tenants* with *Multi-Geo* aren't in scope for *EUDB* |
-| **Detailed guidance** | [Product Terms data residency](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-product-terms?view=o365-worldwide) | [EUDB for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-eu-data-boundary?view=o365-worldwide) | [ADR overview and requirements](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-overview?view=o365-worldwide) | [ADR overview and requirements](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-overview?view=o365-worldwide#qualifying-subscriptions) | [Multi-Geo overview and requirements](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide) |
+| Requirement | Product Terms | EUDB | *ADR* | *Multi-Geo Capabilities* |
+| :--- | :--- | :--- | :--- | :--- |
+| **Offering type** | Included for eligible *Tenants*; configurable for select commercial *Tenants* | Included for eligible *Tenants* | Paid add-on | Paid add-on |
+| **Geographic eligibility** | Specific *Local Region Geographies* and European Union | Sign-up location in a country or region in the EU or EFTA | Eligible *Local Region Geographies* | Available *Satellite Geographies* |
+| **Subscription eligibility** | Eligible commercial and Education subscriptions, subject to the applicable terms | Eligible Microsoft 365 customers in the EU or EFTA | Qualifying commercial, public sector, and mixed commercial and Education subscriptions | Qualifying enterprise subscriptions and standalone Exchange Online, OneDrive, and SharePoint plans |
+| **License requirement** | No add-on license | No add-on license | Cover 100% of eligible paid Microsoft 365 seats | Purchase licenses for at least 5% of eligible users and license each user hosted in a *Satellite Geography* |
+| **Key limitations** | Commitment depends on eligibility and the applicable Product Terms; Education terms differ from commercial terms | *Tenants* with *Multi-Geo* aren't in scope | Available only for eligible *Local Region Geographies* | Doesn't include expanded-service coverage; *Tenants* with *Multi-Geo* aren't in scope for *EUDB* |
+| **Detailed guidance** | [Product Terms data residency](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-product-terms?view=o365-worldwide) | [EUDB for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-eu-data-boundary?view=o365-worldwide) | [ADR overview and requirements](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-overview?view=o365-worldwide) | [Multi-Geo overview and requirements](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide) |
 
 Note
 
@@ -62,19 +61,19 @@ The following table shows which Microsoft 365 services are covered by each *Data
 
 ### Table 1.3.2: Microsoft 365 service coverage by offering
 
-| Service | Product Terms | EUDB | *ADR* | *ADR-E* | *Multi-Geo* |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| Exchange Online | ✓ | ✓ | ✓ | ✓ | ✓ |
-| SharePoint | ✓ | ✓ | ✓ | ✓ | ✓ |
-| OneDrive | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Microsoft Teams | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Microsoft 365 Copilot | ✓ | ✓ | ✓ | — | ✓ |
-| Microsoft 365 Copilot Chat | ✓ | ✓ | ✓ | — | ✓ |
-| Microsoft Defender for Office P1 | — | ✓ | ✓ | — | — |
-| Exchange Online Protection | — | ✓ | ✓ | — | — |
-| Office for the web | — | ✓ | ✓ | — | — |
-| Viva Connections | — | ✓ | ✓ | — | — |
-| Microsoft Purview \(select services\) | — | ✓ | ✓ | — | — |
+| Service | Product Terms | EUDB | *ADR* | *Multi-Geo* |
+| :--- | :---: | :---: | :---: | :---: |
+| Exchange Online | ✓ | ✓ | ✓ | ✓ |
+| SharePoint | ✓ | ✓ | ✓ | ✓ |
+| OneDrive | ✓ | ✓ | ✓ | ✓ |
+| Microsoft Teams | ✓ | ✓ | ✓ | ✓ |
+| Microsoft 365 Copilot | ✓ | ✓ | ✓ | ✓ |
+| Microsoft 365 Copilot Chat | ✓ | ✓ | ✓ | ✓ |
+| Microsoft Defender for Office P1 | — | ✓ | ✓ | — |
+| Exchange Online Protection | — | ✓ | ✓ | — |
+| Office for the web | — | ✓ | ✓ | — |
+| Viva Connections | — | ✓ | ✓ | — |
+| Microsoft Purview \(select services\) | — | ✓ | ✓ | — |
 
 Note
 
@@ -120,12 +119,11 @@ The following table shows which *Data Residency* commitment types are available 
 | Taiwan | M-A | M-A | M-A | M-A | A | A | A | A |
 | United Arab Emirates | P-M-A | P-M-A | P-M-A | P-M-A | A | A | A | A |
 | United Kingdom | P-M-A | P-M-A | P-M-A | P-M-A | A | A | A | A |
-| United States | P-M | P-M | P-M | P-M | - | - | - | - |
 | All Other Geographies | - | - | - | - | - | - | - | - |
 
 P: *Product Terms*  
 M: *Multi-Geo Capabilities*  
-A: *Advanced Data Residency*, including *Advanced Data Residency for Education* for eligible Education customers
+A: *Advanced Data Residency*
 
 ## How Customer Data can move between Geographies
 

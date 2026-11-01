@@ -5,10 +5,6 @@
 
 Note
 
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. Some experiences, licenses, and capabilities might continue to reference Microsoft 365 Copilot and Microsoft 365 Copilot Chat during the transition period. There are no changes to security, compliance, and privacy for organizations.
-
-Note
-
 - The information in this article only applies to the use of Microsoft Copilot in organizations where users are signed in with their work or school account.
 - For information about the use of Microsoft Copilot by individuals that are signed in with a Microsoft account, such as a personal email address, see [Transparency Note for Microsoft Copilot \(for individuals\)](https://support.microsoft.com/privacy/microsoft-copilot/transparency-note).
 

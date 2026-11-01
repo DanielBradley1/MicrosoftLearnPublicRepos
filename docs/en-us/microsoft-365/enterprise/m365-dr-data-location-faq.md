@@ -37,7 +37,7 @@ Microsoft discontinued the [*Legacy Move Program*](https://learn.microsoft.com/e
 
 [*ADR*](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-key-terms-definitions?view=o365-worldwide#table-12-key-terms-and-definitions) is now the only *Durable Commitment on Data Location* that includes migration services. To migrate your data to a *Local Region Geography*:
 
-- **Enterprise Agreement or EES customers**: Work with your Microsoft account team to obtain *ADR* or *ADR-E* \(Education\) licenses.
+- **Enterprise Agreement or EES customers**: Work with your Microsoft account team to obtain *ADR* licenses.
 - **Cloud Solution Provider \(CSP\) customers**: Work with your CSP partner to purchase *ADR*.
 
 After purchasing, opt-in to migration through the *Data Location Card*. For details, see [ADR overview](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-overview?view=o365-worldwide).

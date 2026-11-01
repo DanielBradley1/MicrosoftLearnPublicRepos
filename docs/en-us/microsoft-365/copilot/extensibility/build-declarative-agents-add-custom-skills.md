@@ -1,23 +1,21 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-add-custom-skills -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
-# Add custom skills to a declarative agent created with Microsoft 365 Agents Toolkit \(preview\)
-
-Important
-
-Custom skills in declarative agents are in preview for organizations that are part of the Microsoft Frontier Preview. For more information, see [Explore AI Early Access in Microsoft 365](https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-program).
-
-Custom skills aren't available in tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers). This restriction applies to both admin-deployed and user-created declarative agents.
-
-Support for independent software vendors \(ISVs\) to publish declarative agents with custom skills through Partner Center isn't available yet and is coming soon. ISVs shouldn't submit declarative agent packages that include custom skills to Partner Center.
-
-A custom skill is a modular, reusable component that you add to a declarative agent to package instructions, resources, and scripts for a specific task. This article describes how to add a custom skill to a declarative agent by using the Microsoft 365 Agents Toolkit \(ATK\) command-line interface \(CLI\) or the Visual Studio Code extension.
-
-To learn what custom skills are, why to use them, and the full support matrix, supported file types, sandbox behavior, and governance, see [Custom skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills).
+# Add skills to a declarative agent created with Microsoft 365 Agents Toolkit
 
 Important
 
-This guide assumes you completed the [Create declarative agents by using Microsoft 365 Agents Toolkit and JSON](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents) tutorial. Adding a custom skill requires declarative agent manifest version 1.9. If you're using an agent created with an older version of Agents Toolkit, you might need to update the version of your agent manifest. For more information, see [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9).
+In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers), admins can deploy declarative agents with skills, but end users can't add skills to declarative agents they create.
+
+Support for independent software vendors \(ISVs\) to publish declarative agents with skills through Partner Center isn't available yet and is coming soon. ISVs shouldn't submit declarative agent packages that include skills to Partner Center.
+
+A skill is a modular, reusable component that you add to a declarative agent to package instructions, resources, and scripts for a specific task. This article describes how to add a skill to a declarative agent by using the Microsoft 365 Agents Toolkit \(ATK\) command-line interface \(CLI\) or the Visual Studio Code extension.
+
+To learn what skills are, why to use them, and the full support matrix, supported file types, sandbox behavior, and governance, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills).
+
+Important
+
+This guide assumes you completed the [Create declarative agents by using Microsoft 365 Agents Toolkit and JSON](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents) tutorial. Adding a skill requires declarative agent manifest version 1.9. If you're using an agent created with an older version of Agents Toolkit, you might need to update the version of your agent manifest. For more information, see [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9).
 
 ## Prerequisites
 
@@ -84,11 +82,11 @@ If you set the variable after you install the Visual Studio Code extension, rest
 9. Add your instructions to **SKILL.md** and save the file.
 10. Select **Provision** in the left pane to make the declarative agent available in your environment.
 
-## Limits and known issues
+## Limits
 
-In the Agents Toolkit, you add a skill as a directory \(you can't use `.zip`\), and the complete app package is limited to 10 MB. You can add up to eight skills per agent, with a maximum directory depth of three and up to 400 files across the skill directory. For the full support matrix and known issues, see [Custom skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix).
+In the Agents Toolkit, you add a skill as a directory \(you can't use `.zip`\), and the complete app package is limited to 10 MB. You can add up to eight skills per agent, with a maximum directory depth of three and up to 350 files across the skill directory. For the full support matrix, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix).
 
 ## Related content
 
-- [Custom skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills)
-- [Add custom skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)
+- [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills)
+- [Add skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)

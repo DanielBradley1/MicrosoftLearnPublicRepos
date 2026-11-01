@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Secure and govern Microsoft Copilot: Foundational deployment guidance
 
@@ -18,8 +18,6 @@ This blueprint is organized into three pillars:
 [![Screenshot depicting the three pillars covered in the blueprint.](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/secure-govern-copilot-foundational-deployment-guidance/secure-govern-copilot-blueprint.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/secure-govern-copilot-foundational-deployment-guidance/secure-govern-copilot-blueprint.png#lightbox)
 
 [https://aka.ms/Copilot/SecureGovernBlueprintPDF](https://aka.ms/Copilot/SecureGovernBlueprintPDF)
-
-For a more detailed walkthrough of these steps, see [Configure a secure and governed foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot).
 
 ### What the blueprint covers
 
@@ -42,7 +40,6 @@ The blueprint covers the following areas:
 
 ## Related guidance
 
-- [Configure a secure and governed foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot)
 - [Microsoft Purview blueprint: Secure by default](https://learn.microsoft.com/en-us/purview/deploymentmodels/depmod-securebydefault-intro)
 - [Microsoft Purview](https://learn.microsoft.com/en-us/purview/)
 - [SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/advanced-management)

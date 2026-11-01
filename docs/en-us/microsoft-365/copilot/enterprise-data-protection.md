@@ -1,11 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-29 -->
 
 # Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat
-
-Note
-
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. Some experiences, licenses, and capabilities might continue to reference Microsoft 365 Copilot and Microsoft 365 Copilot Chat during the transition period. There are no changes to security, compliance, and privacy for organizations.
 
 ## What is enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat?
 

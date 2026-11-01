@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/enablement-resources -->
-<!-- Sitemap-Last-Modified: 2026-10-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # Microsoft Copilot adoption guide and overview for IT admins
 
@@ -27,7 +27,7 @@ Microsoft recommends you complete the assessment before deploying Microsoft Copi
 
 Use the features in your Microsoft 365 subscription and SharePoint Advanced Management \(SAM\) licenses to help get your data ready for Copilot.
 
-See [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot).
+See [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance).
 
 ✅ **Use the Microsoft Adoption site**
 
@@ -75,6 +75,6 @@ You can also continue supporting Copilot adoption by sharing learning resources 
 ## Related articles
 
 - [Copilot Prompt Gallery](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-prompt-gallery)
-- [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot)
+- [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance)
 - [Microsoft Copilot reports](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-reports-for-admins)
 - [Manage Microsoft Copilot onboarding](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-copilot-onboarding)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-dynamic-tool-discovery -->
-<!-- Sitemap-Last-Modified: 2026-08-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Dynamic tool discovery for MCP plugins in Microsoft 365 Copilot
 
@@ -11,7 +11,7 @@ Dynamic tool discovery includes tools that return interactive UI widgets \([MCP 
 
 Note
 
-This article covers dynamic tool discovery for plugins, where an MCP server is registered through a plugin manifest for a declarative agent. Registering an MCP server as an *agent connector* uses a different manifest — the `agentConnectors` node in the Microsoft 365 app manifest. For agent connectors, dynamic tool discovery requires app manifest version 1.29 or later *and* a host that permits it. For more information, see [Register MCP servers as agent connectors](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/agent-connectors).
+This article covers MCP plugins used as declarative-agent actions. For a plugin that references a remote MCP server through `agentConnectors` in the Microsoft 365 app manifest, dynamic tool discovery requires app manifest version 1.29 or later *and* a host that permits it. For more information, see [Configure remote MCP servers for Microsoft 365 Copilot plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers).
 
 ## How dynamic tool discovery differs from pinned tools
 

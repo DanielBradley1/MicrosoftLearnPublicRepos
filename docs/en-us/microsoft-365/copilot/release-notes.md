@@ -14,6 +14,418 @@ Copilot features are introduced using a safe deployment model, gradually rolling
 - [iOS](#tabpanel_1_appleios)
 - [Mac](#tabpanel_1_mac)
 
+## October 27, 2026
+
+Updates released between October 13, 2026, and October 27, 2026.
+
+### Microsoft 365 Copilot
+
+- **Learning Agent in Microsoft 365 Copilot** \[Windows\]
+
+  The Learning agent helps employees build skills through personalized microlearning and structured learning experiences.
+
+  **Roadmap ID:** [490154](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=490154)
+
+  **Details:**
+
+  **What changed:** Microsoft 365 Copilot now includes a Learning agent that helps employees discover personalized learning opportunities. The experience supports both microlearning content and structured learning paths, making it easier to find skill-building resources within the flow of work and upskill on Copilot.
+
+  **Why:** Learning Agent makes continuous upskilling part of everyday work by delivering personalized, role- and task-relevant learning directly in Copilot. It helps employees discover what to learn, learn through real work, practice skills, identify gaps, and follow structured learning plans, enabling organizations to build AI fluency and role-based skills at scale.
+
+  **Try this:**
+
+  - Open [https://aka.ms/LearningAgent/add](https://aka.ms/LearningAgent/add)
+  - Click on any cards present on the home page or ask anything to learn/upskill
+
+
+  **Why this matters:** Personalized learning guidance helps employees discover relevant training without extensive searching.
+
+
+  **Business impact:** Organizations can support workforce skill development by helping employees find relevant learning resources more efficiently.
+
+
+  **Personal impact:** Users can identify useful learning opportunities faster and spend more time building skills.
+
+
+  **Learn**
+
+
+  - [Learning Agent](https://support.microsoft.com/en-us/viva/learning/learning-agent-overview)
+  - [Overview of Learning agent](https://learn.microsoft.com/en-us/viva/learning/learning-agent-overview)
+
+- **Insights - New Copilot Metrics Available** \[Web\]
+
+  We are bringing a set of new Copilot metrics including actions taken in Microsoft 365 Copilot app, Edge and OneNote, and more key use cases across Outlook, Word, Excel, and PowerPoint including suggested reply, translate, coach, clean data and more. This will empower customers to more deeply understand the key Copilot adoption cases in Copilot Dashboard and Advanced Analysis in Viva Insights.
+
+  **Roadmap ID:** [557981](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=557981)
+
+  **Details:**
+
+  **What changed:** The update introduces detailed metrics for Copilot usage across Microsoft 365 apps including suggested reply, translate, coach, and clean data features. Previously, Copilot Analytics offered limited visibility into user actions and adoption patterns. This expansion enables tracking of Copilot interactions in the Copilot app, Edge browser, OneNote, and core Office apps, improving data granularity and security auditing capabilities.
+
+  **Why:** Providing comprehensive usage metrics helps organizations understand how Copilot features are adopted and used, enabling better governance and optimization of AI assistance within Microsoft 365 environments.
+
+  **Try this:**
+
+  1. Open the Copilot Dashboard in Viva Insights.
+  2. Navigate to Advanced Analysis to explore new Copilot usage metrics.
+  3. Filter by application or feature to review adoption trends and user engagement.
+
+
+  **Why this matters:** Detailed adoption metrics allow IT and business leaders to monitor Copilot usage effectively and make informed decisions about training and deployment.
+
+
+  **Business impact:** Teams gain clearer visibility into AI tool adoption, supporting data-driven management of productivity tools and user experience improvements.
+
+
+  **Personal impact:** Users benefit from tailored support and training based on actual Copilot usage patterns, reducing friction and increasing productivity.
+
+
+  **Learn:** [Microsoft Copilot metrics](https://learn.microsoft.com/en-us/viva/insights/advanced/reference/metrics#microsoft-copilot-metrics)
+
+### Microsoft 365 Copilot app
+
+- **Web Link as a Reference in Copilot Notebooks** \[Web\]
+
+  Add web links as references in your Copilot Notebooks.
+
+  **Roadmap ID:** [516040](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=516040)
+
+  **Details:**
+
+  **What changed:** Copilot Notebooks now support web links as reference sources. Previously, notebook references did not include web links based on the information provided. Users can add web content as a source when building notebook context for Copilot.
+
+  **Why:** Relevant information often exists outside existing notebook sources. Adding web links broadens the information available to Copilot and helps users create notebooks with more complete context.
+
+  **Try this:**
+
+  - Open a Copilot Notebook and add a reference.
+  - Paste a web link as a source for the notebook.
+  - Review notebook content and use Copilot with the added reference.
+
+
+  **Why this matters:** Web-based sources can be included directly in notebook context, making it easier to work with information from multiple locations.
+
+
+  **Business impact:** Teams can incorporate relevant web content into Copilot workflows without maintaining separate reference collections.
+
+
+  **Personal impact:** You can bring useful online information into a notebook more quickly and reduce manual context gathering.
+
+- **New Copilot Notebooks design in the Microsoft Copilot App \(iOS\)** \[iOS\]
+
+  Copilot Notebooks in the Microsoft Copilot app \(iOS\) now lets users organize related chats, output creations, and references into a persistent AI workspace. Copilot uses the Notebook's accumulated context to ground responses, so work continues across sessions instead of starting over each time.
+
+  **Roadmap ID:** [566318](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=566318)
+
+  **Details:**
+
+  **What changed:** Copilot Notebooks in the Microsoft Copilot app on iOS provides a persistent workspace for related chats, generated content, and reference materials. Copilot uses the accumulated Notebook context to ground responses across sessions, reducing the need to re-enter background information. Copilot Notebooks in OneNote remain available, and notebooks in the Microsoft Copilot app can be opened as part of ongoing work.
+
+  **Why:** The new Notebooks UX brings a lightweight, chat-first experience to the Microsoft Copilot app, making it faster to start work and easier to navigate while keeping chats, outputs, and references organized around a project or topic.
+
+  **Try this:**
+
+  - Open the Microsoft Copilot app on iOS and create or open a Notebook.
+  - Add related chats, references, and generated content to the Notebook.
+  - Ask Copilot questions within the Notebook to use its accumulated context.
+
+
+  **Why this matters:** A lower-friction experience in the Copilot app helps users quickly find and return to the context they need, stay in the flow of work, and continue in OneNote when they need the fuller workspace experience.
+
+
+  **Business impact:** Teams can keep related AI-assisted work organized in a reusable workspace, improving continuity for ongoing projects.
+
+
+  **Personal impact:** You spend less time reintroducing context and can resume work more quickly across multiple sessions.
+
+### Microsoft 365 Copilot extensibility
+
+- **User can use Canva Connector in Researcher** \[Web\]
+
+  User can use Canva Connector in Researcher.
+
+  **Details:**
+
+  **What changed:** Researcher now supports the Canva Connector. Previously, Canva content was not available through this connector within Researcher. Users can include connected Canva information as part of their research workflow in Microsoft Copilot.
+
+  **Why:** This change expands the content sources available in Researcher. It helps users incorporate relevant Canva content without switching between tools.
+
+  **Try this:**
+
+  - Open Researcher in Microsoft Copilot and start a research task.
+  - Select the Canva Connector if it is available in your environment.
+  - Review the returned Canva content and use it in your research results.
+
+
+  **Why this matters:** Users can access additional connected content sources directly within Researcher, reducing context switching during research tasks.
+
+
+  **Business impact:** Teams can incorporate Canva content into research workflows more efficiently when the connector is enabled in their environment.
+
+
+  **Personal impact:** You spend less time moving between applications when gathering information for research tasks.
+
+- **Admins can create and deploy custom Model Context Protocol \(MCP\) connectors across Microsoft 365** \[Web\]
+
+  Admins can create custom Model Context Protocol \(MCP\) connectors in the Microsoft 365 Admin Centre and deploy them across Microsoft 365. This will allow admins to surface their organization's custom data in Microsoft 365 Copilot via these MCP-based connectors.
+
+  **Roadmap ID:** [501585](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=501585)
+
+  **Details:**
+
+  **What changed:** Previously, admins had limited ability to integrate custom data sources with Microsoft 365 Copilot. Now, they can build custom MCP-based connectors in the Microsoft 365 admin center and deploy them organization-wide. This enables Copilot to access and use proprietary data securely via these connectors.
+
+  **Why:** This capability allows organizations to extend Copilot’s usefulness by integrating their unique data, improving relevance and decision-making while maintaining centralized control.
+
+  **Try this:**
+
+  1. Open the Microsoft 365 admin center.
+  2. Go to the Copilot Extensibility section.
+  3. Create a new MCP connector and deploy it to users across the organization.
+
+
+  **Why this matters:** Custom connectors enable tailored Copilot experiences that leverage organizational data securely and at scale.
+
+
+  **Business impact:** Teams gain enhanced insights by integrating proprietary data into Copilot workflows, improving collaboration and productivity.
+
+
+  **Personal impact:** Users access richer, organization-specific information directly through Copilot, reducing time spent searching external systems.
+
+- **Rich entity representation for connectors in Search results** \[Web\]
+
+  Rich entity representation for connectors in Search results.
+
+  **Roadmap ID:** [502533](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=502533)
+
+  **Details:**
+
+  **What changed:** Search results in Microsoft Copilot now include detailed entity cards for connectors instead of plain text links. This update enhances visual context by showing metadata and relevant attributes directly in search results. It improves security by clearly identifying data sources and reducing misclicks.
+
+  **Why:** Providing richer entity information helps users quickly understand connector content without navigating away, reducing errors and improving search efficiency.
+
+  **Try this:**
+
+  1. Open Microsoft Copilot and enter a search query.
+  2. Review the connector results displayed with detailed entity cards.
+  3. Click on a connector entity to access its full content with confidence.
+
+
+  **Why this matters:** Clearer connector representations reduce confusion and help users find accurate information faster.
+
+
+  **Business impact:** Teams benefit from faster data discovery and reduced risk of accessing incorrect connector data.
+
+
+  **Personal impact:** You save time by identifying the right connector content at a glance without extra clicks.
+
+- **Work IQ APIs: Usage-based billing** \[Windows, Linux, Mac, Web\]
+
+  Enables usage-based billing for Work IQ endpoints, allowing developers to invoke agents and capabilities without requiring pre-assigned licenses, with usage billed based on the agents and models invoked per request.
+
+  **Roadmap ID:** [559017](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559017)
+
+  **Details:**
+
+  **What changed:** Work IQ APIs now support usage-based billing, allowing developers to call agents and models without needing pre-assigned licenses. Previously, access required assigned licenses regardless of usage. Billing is now based on fixed or variable costs invoked per API request, improving cost transparency and flexibility.
+
+  **Why:** This change removes licensing barriers for developers and aligns billing with actual usage, enabling more scalable and cost-efficient integration of Work IQ capabilities.
+
+  **Try this:**
+
+  1. Register your application to access Work IQ APIs.
+  2. Invoke Work IQ agents or models through the API without assigning licenses.
+  3. Monitor usage and billing based on the agents and models called per request.
+
+
+  **Why this matters:** Developers can integrate Work IQ features more flexibly and pay only for what they use, reducing upfront licensing complexity.
+
+
+  **Business impact:** Teams can adopt Work IQ capabilities incrementally without license management overhead, improving development agility and cost control.
+
+
+  **Personal impact:** You can experiment and build with Work IQ APIs without license constraints, saving time on administration and reducing costs.
+
+- **Work IQ APIs - Endpoints: Declarative Agent Access** \[Web\]
+
+  Enables programmatic access to first‑party and tenant‑defined declarative agents via the Work IQ endpoint, allowing applications to trigger specialized agents for domain‑specific tasks within broader workflows.
+
+  **Roadmap ID:** [559019](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559019)
+
+  **Details:**
+
+  **What changed:** The Work IQ endpoint now supports programmatic access to both first-party and tenant-defined declarative agents. Previously, triggering these specialized agents required manual or less integrated methods. This update allows applications to invoke domain-specific agents directly within broader workflows, improving automation capabilities.
+
+  **Why:** This change streamlines the integration of specialized agents into automated workflows, reducing complexity and enabling more precise task execution within Microsoft 365 environments.
+
+  **Try this:**
+
+  1. Access the Work IQ endpoint in your application.
+  2. Specify the declarative agent you want to invoke.
+  3. Trigger the agent to perform domain-specific tasks within your workflow.
+
+
+  **Why this matters:** Direct programmatic access to declarative agents enhances workflow automation and customization for specific business domains.
+
+
+  **Business impact:** Teams can automate specialized tasks more efficiently by integrating declarative agents into existing workflows without manual intervention.
+
+
+  **Personal impact:** You gain the ability to automate complex, domain-specific tasks, reducing manual effort and improving productivity.
+
+### OneNote
+
+- **Multimodal capture in Copilot Notebooks** \[Android\]
+
+  Multimodal capture enables users to transcribe audio, take images, and type notes in a single session. Copilot then creates a structured Copilot Page with insights and user-captured content, saved to a user-selected Copilot Notebook. Designed for capturing offline work moments—including in-person conversations, whiteboard sessions, and personal notes. This capability is already generally available on OneNote for iPhone and iPad.
+
+  **Roadmap ID:** [567895](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=567895)
+
+  **Details:**
+
+  **What changed:** Multimodal capture is now available in OneNote Copilot Notebooks for Android, matching the existing capability on iPhone and iPad. Users can combine audio transcription, image capture, and typed notes in a single session. Copilot organizes this content into a structured page with insights and saves it to the user’s chosen notebook.
+
+  **Why:** This update supports capturing diverse offline work moments like conversations and whiteboard sessions in one place.
+
+Users can now:
+
+- Record and transcribe audio.
+- Add images and typed notes together.
+- Save organized content automatically to Copilot Notebooks.
+
+  **Try this:**
+
+  - Open OneNote on your Android device and select a Copilot Notebook.
+  - Use the multimodal capture feature to record audio, take pictures, and type notes.
+  - Review the structured Copilot Page created from your inputs.
+
+
+  **Why this matters:** Combining multiple input types in one session helps users capture richer, more complete offline work moments.
+
+
+  **Business impact:** Teams improve collaboration by preserving detailed offline discussions and visual information in organized notebooks.
+
+
+  **Personal impact:** You reduce effort and time spent switching between apps to capture different types of notes during meetings or sessions.
+
+### Outlook
+
+- **Copilot Settings in classic Outlook for Windows** \[Windows\]
+
+  You will now be able to access different Copilot settings directly in classic Outlook for Windows.
+
+  **Roadmap ID:** [561491](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=561491)
+
+  **Details:**
+
+  **What changed:** Copilot settings are now available within the classic Outlook for Windows interface, eliminating the need to use separate portals or apps. Previously, users had to configure Copilot settings outside Outlook. This update centralizes configuration and respects existing security policies tied to Outlook client settings.
+
+  **Why:** Providing direct access to Copilot settings in Outlook simplifies management and customization, improving user control and reducing configuration errors.
+
+  **Try this:**
+
+  1. Open classic Outlook for Windows.
+  2. Go to the File menu.
+  3. Choose 'Copilot settings' to view and adjust preferences.
+
+
+  **Why this matters:** Centralized settings access streamlines IT management and enhances user experience by reducing setup complexity.
+
+
+  **Business impact:** IT teams can enforce Copilot policies more consistently, and users can tailor Copilot behavior without extra tools.
+
+
+  **Personal impact:** You can quickly adjust Copilot features to fit your workflow without leaving Outlook.
+
+### PowerPoint
+
+- **Reference an attached PowerPoint deck’s style when creating a new presentation in PowerPoint** \[Windows, Web\]
+
+  When creating a presentation with Copilot in PowerPoint, you can reference an existing PowerPoint file, so Copilot applies its theme and styles to the new deck, keeping the design consistent.
+
+  **Roadmap ID:** [555879](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555879)
+
+  **Details:**
+
+  **What changed:** Copilot in PowerPoint now supports attaching an existing presentation when creating and editing a new one. Previously, new presentations used default themes. Now, Copilot applies the attached file’s theme and styles to the new deck, ensuring design consistency.
+
+  **Why:** This update reduces manual formatting by applying existing styles automatically, helping users maintain consistent branding across presentations.
+
+  **Try this:**
+
+  1. Open PowerPoint and create a new presentation with Copilot.
+  2. Use the 'Attach file' feature to select an existing PowerPoint deck.
+  3. Request Copilot to generate slides using the attached deck’s style.
+
+
+  **Why this matters:** Consistent design across presentations enhances brand identity and saves time on formatting.
+
+
+  **Business impact:** Teams can streamline presentation creation and maintain visual consistency without extra effort.
+
+
+  **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
+
+- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web\]
+
+  You can now reference an image when creating a presentation with Copilot in PowerPoint.
+
+  **Roadmap ID:** [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
+
+  **Details:**
+
+  **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
+
+  **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
+
+  **Try this:**
+
+  1. Open PowerPoint and start a new presentation.
+  2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
+  3. Review the generated slides that incorporate the referenced image.
+
+
+  **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
+
+
+  **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+
+
+  **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
+
+### Teams
+
+- **Use Copilot Chat after a call in Queues app** \[Windows, Mac\]
+
+  After a recorded call is completed, use Copilot in the Queues app to quickly catch up on key details, uncover insights, and resolve customer issues faster without having to manually search through a transcript or listen back to a recording. Navigate to the unified call history in the Queues app, select the recorded call record, and launch the Copilot Chat sidecar from within the Recap tab. You can then ask Copilot to generate a summary or answer questions about specific details related to the call.
+
+  **Roadmap ID:** [568933](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=568933)
+
+  **Details:**
+
+  **What changed:** Copilot is now available in the Recap tab for recorded call queue calls that appear in the Queues app. After a recorded call is completed, users with Copilot can open the call record from unified call history, launch the Copilot Chat sidecar, generate a summary, and ask questions about call details. Previously, reviewing recorded calls often required searching transcripts or listening to recordings. Access to Copilot is tied to recorded calls and requires Copilot availability for the user.
+
+  **Why:** Recorded call reviews can take significant time when users must manually search transcripts or replay recordings. Bringing Copilot into the Recap experience helps users identify key information and follow up on customer issues more efficiently.
+
+  **Try this:**
+
+  - Open the Queues app and select a recorded call from unified call history.
+  - Select the Recap tab and launch the Copilot Chat sidecar.
+  - Ask Copilot to summarize the call or answer questions about specific details discussed.
+
+
+  **Why this matters:** Users can understand recorded customer interactions faster and find relevant details without manually reviewing the entire call record.
+
+
+  **Business impact:** Teams can reduce time spent reviewing recorded call queue conversations and improve consistency when handling customer follow-up actions.
+
+
+  **Personal impact:** You can get answers and summaries from recorded calls more quickly, reducing effort spent searching transcripts or replaying recordings.
+
+
+  **Learn:** [Get started with Microsoft Copilot in Teams Phone](https://support.microsoft.com/en-us/teams/copilot/get-started-with-microsoft-365-copilot-in-teams-phone)
+
 ## October 06, 2026
 
 Updates released between September 22, 2026, and October 06, 2026.
@@ -1457,7 +1869,7 @@ Updates released between August 11, 2026, and August 25, 2026.
 
 ### PowerPoint
 
-- **Reference an email with when using Copilot in PowerPoint to create a presentation** \[Windows\]
+- **Reference an email with when using Copilot in PowerPoint to create a presentation** \[Windows, Mac\]
 
   You can now reference an email when using Copilot in PowerPoint to create a presentation.
 
@@ -6482,6 +6894,191 @@ Updates released between December 23, 2025, and January 13, 2026.
   **Learn:**  
   [Connector capabilities and limitations](https://learn.microsoft.com/en-us/microsoftsearch/servicenow-knowledge-overview#connector-capabilities-and-limitations)
 
+## October 27, 2026
+
+Updates released between October 13, 2026, and October 27, 2026.
+
+### Microsoft 365 Copilot
+
+- **Learning Agent in Microsoft 365 Copilot** \[Windows\]
+
+  The Learning agent helps employees build skills through personalized microlearning and structured learning experiences.
+
+  **Roadmap ID:** [490154](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=490154)
+
+  **Details:**
+
+  **What changed:** Microsoft 365 Copilot now includes a Learning agent that helps employees discover personalized learning opportunities. The experience supports both microlearning content and structured learning paths, making it easier to find skill-building resources within the flow of work and upskill on Copilot.
+
+  **Why:** Learning Agent makes continuous upskilling part of everyday work by delivering personalized, role- and task-relevant learning directly in Copilot. It helps employees discover what to learn, learn through real work, practice skills, identify gaps, and follow structured learning plans, enabling organizations to build AI fluency and role-based skills at scale.
+
+  **Try this:**
+
+  - Open [https://aka.ms/LearningAgent/add](https://aka.ms/LearningAgent/add)
+  - Click on any cards present on the home page or ask anything to learn/upskill
+
+
+  **Why this matters:** Personalized learning guidance helps employees discover relevant training without extensive searching.
+
+
+  **Business impact:** Organizations can support workforce skill development by helping employees find relevant learning resources more efficiently.
+
+
+  **Personal impact:** Users can identify useful learning opportunities faster and spend more time building skills.
+
+
+  **Learn**
+
+
+  - [Learning Agent](https://support.microsoft.com/en-us/viva/learning/learning-agent-overview)
+  - [Overview of Learning agent](https://learn.microsoft.com/en-us/viva/learning/learning-agent-overview)
+
+### Microsoft 365 Copilot extensibility
+
+- **Work IQ APIs: Usage-based billing** \[Windows, Mac, Web\]
+
+  Enables usage-based billing for Work IQ endpoints, allowing developers to invoke agents and capabilities without requiring pre-assigned licenses, with usage billed based on the agents and models invoked per request.
+
+  **Roadmap ID:** [559017](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559017)
+
+  **Details:**
+
+  **What changed:** Work IQ APIs now support usage-based billing, allowing developers to call agents and models without needing pre-assigned licenses. Previously, access required assigned licenses regardless of usage. Billing is now based on fixed or variable costs invoked per API request, improving cost transparency and flexibility.
+
+  **Why:** This change removes licensing barriers for developers and aligns billing with actual usage, enabling more scalable and cost-efficient integration of Work IQ capabilities.
+
+  **Try this:**
+
+  1. Register your application to access Work IQ APIs.
+  2. Invoke Work IQ agents or models through the API without assigning licenses.
+  3. Monitor usage and billing based on the agents and models called per request.
+
+
+  **Why this matters:** Developers can integrate Work IQ features more flexibly and pay only for what they use, reducing upfront licensing complexity.
+
+
+  **Business impact:** Teams can adopt Work IQ capabilities incrementally without license management overhead, improving development agility and cost control.
+
+
+  **Personal impact:** You can experiment and build with Work IQ APIs without license constraints, saving time on administration and reducing costs.
+
+### Outlook
+
+- **Copilot Settings in classic Outlook for Windows** \[Windows\]
+
+  You will now be able to access different Copilot settings directly in classic Outlook for Windows.
+
+  **Roadmap ID:** [561491](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=561491)
+
+  **Details:**
+
+  **What changed:** Copilot settings are now available within the classic Outlook for Windows interface, eliminating the need to use separate portals or apps. Previously, users had to configure Copilot settings outside Outlook. This update centralizes configuration and respects existing security policies tied to Outlook client settings.
+
+  **Why:** Providing direct access to Copilot settings in Outlook simplifies management and customization, improving user control and reducing configuration errors.
+
+  **Try this:**
+
+  1. Open classic Outlook for Windows.
+  2. Go to the File menu.
+  3. Choose 'Copilot settings' to view and adjust preferences.
+
+
+  **Why this matters:** Centralized settings access streamlines IT management and enhances user experience by reducing setup complexity.
+
+
+  **Business impact:** IT teams can enforce Copilot policies more consistently, and users can tailor Copilot behavior without extra tools.
+
+
+  **Personal impact:** You can quickly adjust Copilot features to fit your workflow without leaving Outlook.
+
+### PowerPoint
+
+- **Reference an attached PowerPoint deck’s style when creating a new presentation in PowerPoint** \[Windows, Web\]
+
+  When creating a presentation with Copilot in PowerPoint, you can reference an existing PowerPoint file, so Copilot applies its theme and styles to the new deck, keeping the design consistent.
+
+  **Roadmap ID:** [555879](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555879)
+
+  **Details:**
+
+  **What changed:** Copilot in PowerPoint now supports attaching an existing presentation when creating and editing a new one. Previously, new presentations used default themes. Now, Copilot applies the attached file’s theme and styles to the new deck, ensuring design consistency.
+
+  **Why:** This update reduces manual formatting by applying existing styles automatically, helping users maintain consistent branding across presentations.
+
+  **Try this:**
+
+  1. Open PowerPoint and create a new presentation with Copilot.
+  2. Use the 'Attach file' feature to select an existing PowerPoint deck.
+  3. Request Copilot to generate slides using the attached deck’s style.
+
+
+  **Why this matters:** Consistent design across presentations enhances brand identity and saves time on formatting.
+
+
+  **Business impact:** Teams can streamline presentation creation and maintain visual consistency without extra effort.
+
+
+  **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
+
+- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web\]
+
+  You can now reference an image when creating a presentation with Copilot in PowerPoint.
+
+  **Roadmap ID:** [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
+
+  **Details:**
+
+  **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
+
+  **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
+
+  **Try this:**
+
+  1. Open PowerPoint and start a new presentation.
+  2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
+  3. Review the generated slides that incorporate the referenced image.
+
+
+  **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
+
+
+  **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+
+
+  **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
+
+### Teams
+
+- **Use Copilot Chat after a call in Queues app** \[Windows, Mac\]
+
+  After a recorded call is completed, use Copilot in the Queues app to quickly catch up on key details, uncover insights, and resolve customer issues faster without having to manually search through a transcript or listen back to a recording. Navigate to the unified call history in the Queues app, select the recorded call record, and launch the Copilot Chat sidecar from within the Recap tab. You can then ask Copilot to generate a summary or answer questions about specific details related to the call.
+
+  **Roadmap ID:** [568933](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=568933)
+
+  **Details:**
+
+  **What changed:** Copilot is now available in the Recap tab for recorded call queue calls that appear in the Queues app. After a recorded call is completed, users with Copilot can open the call record from unified call history, launch the Copilot Chat sidecar, generate a summary, and ask questions about call details. Previously, reviewing recorded calls often required searching transcripts or listening to recordings. Access to Copilot is tied to recorded calls and requires Copilot availability for the user.
+
+  **Why:** Recorded call reviews can take significant time when users must manually search transcripts or replay recordings. Bringing Copilot into the Recap experience helps users identify key information and follow up on customer issues more efficiently.
+
+  **Try this:**
+
+  - Open the Queues app and select a recorded call from unified call history.
+  - Select the Recap tab and launch the Copilot Chat sidecar.
+  - Ask Copilot to summarize the call or answer questions about specific details discussed.
+
+
+  **Why this matters:** Users can understand recorded customer interactions faster and find relevant details without manually reviewing the entire call record.
+
+
+  **Business impact:** Teams can reduce time spent reviewing recorded call queue conversations and improve consistency when handling customer follow-up actions.
+
+
+  **Personal impact:** You can get answers and summaries from recorded calls more quickly, reducing effort spent searching transcripts or replaying recordings.
+
+
+  **Learn:** [Get started with Microsoft Copilot in Teams Phone](https://support.microsoft.com/en-us/teams/copilot/get-started-with-microsoft-365-copilot-in-teams-phone)
+
 ## October 06, 2026
 
 Updates released between September 22, 2026, and October 06, 2026.
@@ -7210,7 +7807,7 @@ Updates released between August 11, 2026, and August 25, 2026.
 
 ### PowerPoint
 
-- **Reference an email with when using Copilot in PowerPoint to create a presentation** \[Windows\]
+- **Reference an email with when using Copilot in PowerPoint to create a presentation** \[Windows, Mac\]
 
   You can now reference an email when using Copilot in PowerPoint to create a presentation.
 
@@ -7234,9 +7831,6 @@ Updates released between August 11, 2026, and August 25, 2026.
 
 
   **Business impact:** Teams can quickly create presentations that incorporate relevant email information, improving communication clarity.
-
-
-  **Personal impact:** You save time by avoiding manual copying from emails and ensure your presentations include the latest information.
 
 - **Explain slide selection during PowerPoint Live with Microsoft 365 Copilot** \[Windows\]
 
@@ -9256,6 +9850,262 @@ Updates released between December 23, 2025, and January 13, 2026.
 
   **Learn:**  
   [Add capabilities](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder-build-agents#add-capabilities)
+
+## October 27, 2026
+
+Updates released between October 13, 2026, and October 27, 2026.
+
+### Microsoft 365 Copilot
+
+- **Insights - New Copilot Metrics Available** \[Web\]
+
+  We are bringing a set of new Copilot metrics including actions taken in Microsoft 365 Copilot app, Edge and OneNote, and more key use cases across Outlook, Word, Excel, and PowerPoint including suggested reply, translate, coach, clean data and more. This will empower customers to more deeply understand the key Copilot adoption cases in Copilot Dashboard and Advanced Analysis in Viva Insights.
+
+  **Roadmap ID:** [557981](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=557981)
+
+  **Details:**
+
+  **What changed:** The update introduces detailed metrics for Copilot usage across Microsoft 365 apps including suggested reply, translate, coach, and clean data features. Previously, Copilot Analytics offered limited visibility into user actions and adoption patterns. This expansion enables tracking of Copilot interactions in the Copilot app, Edge browser, OneNote, and core Office apps, improving data granularity and security auditing capabilities.
+
+  **Why:** Providing comprehensive usage metrics helps organizations understand how Copilot features are adopted and used, enabling better governance and optimization of AI assistance within Microsoft 365 environments.
+
+  **Try this:**
+
+  1. Open the Copilot Dashboard in Viva Insights.
+  2. Navigate to Advanced Analysis to explore new Copilot usage metrics.
+  3. Filter by application or feature to review adoption trends and user engagement.
+
+
+  **Why this matters:** Detailed adoption metrics allow IT and business leaders to monitor Copilot usage effectively and make informed decisions about training and deployment.
+
+
+  **Business impact:** Teams gain clearer visibility into AI tool adoption, supporting data-driven management of productivity tools and user experience improvements.
+
+
+  **Personal impact:** Users benefit from tailored support and training based on actual Copilot usage patterns, reducing friction and increasing productivity.
+
+
+  **Learn:** [Microsoft Copilot metrics](https://learn.microsoft.com/en-us/viva/insights/advanced/reference/metrics#microsoft-copilot-metrics)
+
+### Microsoft 365 Copilot app
+
+- **Web Link as a Reference in Copilot Notebooks** \[Web\]
+
+  Add web links as references in your Copilot Notebooks.
+
+  **Roadmap ID:** [516040](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=516040)
+
+  **Details:**
+
+  **What changed:** Copilot Notebooks now support web links as reference sources. Previously, notebook references did not include web links based on the information provided. Users can add web content as a source when building notebook context for Copilot.
+
+  **Why:** Relevant information often exists outside existing notebook sources. Adding web links broadens the information available to Copilot and helps users create notebooks with more complete context.
+
+  **Try this:**
+
+  - Open a Copilot Notebook and add a reference.
+  - Paste a web link as a source for the notebook.
+  - Review notebook content and use Copilot with the added reference.
+
+
+  **Why this matters:** Web-based sources can be included directly in notebook context, making it easier to work with information from multiple locations.
+
+
+  **Business impact:** Teams can incorporate relevant web content into Copilot workflows without maintaining separate reference collections.
+
+
+  **Personal impact:** You can bring useful online information into a notebook more quickly and reduce manual context gathering.
+
+### Microsoft 365 Copilot extensibility
+
+- **User can use Canva Connector in Researcher** \[Web\]
+
+  User can use Canva Connector in Researcher.
+
+  **Details:**
+
+  **What changed:** Researcher now supports the Canva Connector. Previously, Canva content was not available through this connector within Researcher. Users can include connected Canva information as part of their research workflow in Microsoft Copilot.
+
+  **Why:** This change expands the content sources available in Researcher. It helps users incorporate relevant Canva content without switching between tools.
+
+  **Try this:**
+
+  - Open Researcher in Microsoft Copilot and start a research task.
+  - Select the Canva Connector if it is available in your environment.
+  - Review the returned Canva content and use it in your research results.
+
+
+  **Why this matters:** Users can access additional connected content sources directly within Researcher, reducing context switching during research tasks.
+
+
+  **Business impact:** Teams can incorporate Canva content into research workflows more efficiently when the connector is enabled in their environment.
+
+
+  **Personal impact:** You spend less time moving between applications when gathering information for research tasks.
+
+- **Admins can create and deploy custom Model Context Protocol \(MCP\) connectors across Microsoft 365** \[Web\]
+
+  Admins can create custom Model Context Protocol \(MCP\) connectors in the Microsoft 365 Admin Centre and deploy them across Microsoft 365. This will allow admins to surface their organization's custom data in Microsoft 365 Copilot via these MCP-based connectors.
+
+  **Roadmap ID:** [501585](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=501585)
+
+  **Details:**
+
+  **What changed:** Previously, admins had limited ability to integrate custom data sources with Microsoft 365 Copilot. Now, they can build custom MCP-based connectors in the Microsoft 365 admin center and deploy them organization-wide. This enables Copilot to access and use proprietary data securely via these connectors.
+
+  **Why:** This capability allows organizations to extend Copilot’s usefulness by integrating their unique data, improving relevance and decision-making while maintaining centralized control.
+
+  **Try this:**
+
+  1. Open the Microsoft 365 admin center.
+  2. Go to the Copilot Extensibility section.
+  3. Create a new MCP connector and deploy it to users across the organization.
+
+
+  **Why this matters:** Custom connectors enable tailored Copilot experiences that leverage organizational data securely and at scale.
+
+
+  **Business impact:** Teams gain enhanced insights by integrating proprietary data into Copilot workflows, improving collaboration and productivity.
+
+
+  **Personal impact:** Users access richer, organization-specific information directly through Copilot, reducing time spent searching external systems.
+
+- **Rich entity representation for connectors in Search results** \[Web\]
+
+  Rich entity representation for connectors in Search results.
+
+  **Roadmap ID:** [502533](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=502533)
+
+  **Details:**
+
+  **What changed:** Search results in Microsoft Copilot now include detailed entity cards for connectors instead of plain text links. This update enhances visual context by showing metadata and relevant attributes directly in search results. It improves security by clearly identifying data sources and reducing misclicks.
+
+  **Why:** Providing richer entity information helps users quickly understand connector content without navigating away, reducing errors and improving search efficiency.
+
+  **Try this:**
+
+  1. Open Microsoft Copilot and enter a search query.
+  2. Review the connector results displayed with detailed entity cards.
+  3. Click on a connector entity to access its full content with confidence.
+
+
+  **Why this matters:** Clearer connector representations reduce confusion and help users find accurate information faster.
+
+
+  **Business impact:** Teams benefit from faster data discovery and reduced risk of accessing incorrect connector data.
+
+
+  **Personal impact:** You save time by identifying the right connector content at a glance without extra clicks.
+
+- **Work IQ APIs: Usage-based billing** \[Windows, Linux, Mac, Web\]
+
+  Enables usage-based billing for Work IQ endpoints, allowing developers to invoke agents and capabilities without requiring pre-assigned licenses, with usage billed based on the agents and models invoked per request.
+
+  **Roadmap ID:** [559017](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559017)
+
+  **Details:**
+
+  **What changed:** Work IQ APIs now support usage-based billing, allowing developers to call agents and models without needing pre-assigned licenses. Previously, access required assigned licenses regardless of usage. Billing is now based on fixed or variable costs invoked per API request, improving cost transparency and flexibility.
+
+  **Why:** This change removes licensing barriers for developers and aligns billing with actual usage, enabling more scalable and cost-efficient integration of Work IQ capabilities.
+
+  **Try this:**
+
+  1. Register your application to access Work IQ APIs.
+  2. Invoke Work IQ agents or models through the API without assigning licenses.
+  3. Monitor usage and billing based on the agents and models called per request.
+
+
+  **Why this matters:** Developers can integrate Work IQ features more flexibly and pay only for what they use, reducing upfront licensing complexity.
+
+
+  **Business impact:** Teams can adopt Work IQ capabilities incrementally without license management overhead, improving development agility and cost control.
+
+
+  **Personal impact:** You can experiment and build with Work IQ APIs without license constraints, saving time on administration and reducing costs.
+
+- **Work IQ APIs - Endpoints: Declarative Agent Access** \[Web\]
+
+  Enables programmatic access to first‑party and tenant‑defined declarative agents via the Work IQ endpoint, allowing applications to trigger specialized agents for domain‑specific tasks within broader workflows.
+
+  **Roadmap ID:** [559019](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559019)
+
+  **Details:**
+
+  **What changed:** The Work IQ endpoint now supports programmatic access to both first-party and tenant-defined declarative agents. Previously, triggering these specialized agents required manual or less integrated methods. This update allows applications to invoke domain-specific agents directly within broader workflows, improving automation capabilities.
+
+  **Why:** This change streamlines the integration of specialized agents into automated workflows, reducing complexity and enabling more precise task execution within Microsoft 365 environments.
+
+  **Try this:**
+
+  1. Access the Work IQ endpoint in your application.
+  2. Specify the declarative agent you want to invoke.
+  3. Trigger the agent to perform domain-specific tasks within your workflow.
+
+
+  **Why this matters:** Direct programmatic access to declarative agents enhances workflow automation and customization for specific business domains.
+
+
+  **Business impact:** Teams can automate specialized tasks more efficiently by integrating declarative agents into existing workflows without manual intervention.
+
+
+  **Personal impact:** You gain the ability to automate complex, domain-specific tasks, reducing manual effort and improving productivity.
+
+### PowerPoint
+
+- **Reference an attached PowerPoint deck’s style when creating a new presentation in PowerPoint** \[Windows, Web\]
+
+  When creating a presentation with Copilot in PowerPoint, you can reference an existing PowerPoint file, so Copilot applies its theme and styles to the new deck, keeping the design consistent.
+
+  **Roadmap ID:** [555879](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555879)
+
+  **Details:**
+
+  **What changed:** Copilot in PowerPoint now supports attaching an existing presentation when creating and editing a new one. Previously, new presentations used default themes. Now, Copilot applies the attached file’s theme and styles to the new deck, ensuring design consistency.
+
+  **Why:** This update reduces manual formatting by applying existing styles automatically, helping users maintain consistent branding across presentations.
+
+  **Try this:**
+
+  1. Open PowerPoint and create a new presentation with Copilot.
+  2. Use the 'Attach file' feature to select an existing PowerPoint deck.
+  3. Request Copilot to generate slides using the attached deck’s style.
+
+
+  **Why this matters:** Consistent design across presentations enhances brand identity and saves time on formatting.
+
+
+  **Business impact:** Teams can streamline presentation creation and maintain visual consistency without extra effort.
+
+
+  **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
+
+- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web\]
+
+  You can now reference an image when creating a presentation with Copilot in PowerPoint.
+
+  **Roadmap ID:** [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
+
+  **Details:**
+
+  **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
+
+  **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
+
+  **Try this:**
+
+  1. Open PowerPoint and start a new presentation.
+  2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
+  3. Review the generated slides that incorporate the referenced image.
+
+
+  **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
+
+
+  **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+
+
+  **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
 
 ## October 06, 2026
 
@@ -14966,6 +15816,45 @@ Updates released between December 23, 2025, and January 13, 2026.
   **Learn:**  
   [Access permissions](https://learn.microsoft.com/en-us/microsoftsearch/servicenow-tickets-deployment#access-permissions)
 
+## October 27, 2026
+
+Updates released between October 13, 2026, and October 27, 2026.
+
+### OneNote
+
+- **Multimodal capture in Copilot Notebooks \(Android\)** \[Android\]
+
+  Multimodal capture enables users to transcribe audio, take images, and type notes in a single session. Copilot then creates a structured Copilot Page with insights and user-captured content, saved to a user-selected Copilot Notebook. Designed for capturing offline work moments—including in-person conversations, whiteboard sessions, and personal notes. This capability is already generally available on OneNote for iPhone and iPad.
+
+  **Roadmap ID:** [567895](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=567895)
+
+  **Details:**
+
+  **What changed:** Multimodal capture is now available in OneNote Copilot Notebooks for Android, matching the existing capability on iPhone and iPad. Users can combine audio transcription, image capture, and typed notes in a single session. Copilot organizes this content into a structured page with insights and saves it to the user’s chosen notebook.
+
+  **Why:** This update supports capturing diverse offline work moments like conversations and whiteboard sessions in one place.
+
+Users can now:
+
+- Record and transcribe audio.
+- Add images and typed notes together.
+- Save organized content automatically to Copilot Notebooks.
+
+  **Try this:**
+
+  - Open OneNote on your Android device and select a Copilot Notebook.
+  - Use the multimodal capture feature to record audio, take pictures, and type notes.
+  - Review the structured Copilot Page created from your inputs.
+
+
+  **Why this matters:** Combining multiple input types in one session helps users capture richer, more complete offline work moments.
+
+
+  **Business impact:** Teams improve collaboration by preserving detailed offline discussions and visual information in organized notebooks.
+
+
+  **Personal impact:** You reduce effort and time spent switching between apps to capture different types of notes during meetings or sessions.
+
 ## September 23, 2026
 
 Updates released between August 26, 2026, and September 22, 2026.
@@ -15665,6 +16554,39 @@ Updates released between December 10, 2025, and December 23, 2025.
 
 
   [Embedded file content](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder-add-knowledge#embedded-file-content)
+
+## October 27, 2026
+
+Updates released between October 13, 2026, and October 27, 2026.
+
+### Microsoft 365 Copilot App
+
+- **New Copilot Notebooks design in the Microsoft Copilot App \(iOS\)** \[iOS\]
+
+  Copilot Notebooks in the Microsoft Copilot app \(iOS\) now lets users organize related chats, output creations, and references into a persistent AI workspace. Copilot uses the Notebook's accumulated context to ground responses, so work continues across sessions instead of starting over each time.
+
+  **Roadmap ID:** [566318](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=566318)
+
+  **Details:**
+
+  **What changed:** Copilot Notebooks in the Microsoft Copilot app on iOS provides a persistent workspace for related chats, generated content, and reference materials. Copilot uses the accumulated Notebook context to ground responses across sessions, reducing the need to re-enter background information. Copilot Notebooks in OneNote remain available, and notebooks in the Microsoft Copilot app can be opened as part of ongoing work.
+
+  **Why:** The new Notebooks UX brings a lightweight, chat-first experience to the Microsoft Copilot app, making it faster to start work and easier to navigate while keeping chats, outputs, and references organized around a project or topic.
+
+  **Try this:**
+
+  - Open the Microsoft Copilot app on iOS and create or open a Notebook.
+  - Add related chats, references, and generated content to the Notebook.
+  - Ask Copilot questions within the Notebook to use its accumulated context.
+
+
+  **Why this matters:** A lower-friction experience in the Copilot app helps users quickly find and return to the context they need, stay in the flow of work, and continue in OneNote when they need the fuller workspace experience.
+
+
+  **Business impact:** Teams can keep related AI-assisted work organized in a reusable workspace, improving continuity for ongoing projects.
+
+
+  **Personal impact:** You spend less time reintroducing context and can resume work more quickly across multiple sessions.
 
 ## September 23, 2026
 
@@ -16414,6 +17336,71 @@ Updates released between December 23, 2025, and January 13, 2026.
 
   **Personal Impact:** Users experience fewer frustrations when interacting with Copilot, getting precise answers and recommendations that fit their context-saving time and effort.
 
+## October 27, 2026
+
+Updates released between October 13, 2026, and October 27, 2026.
+
+### Microsoft 365 Copilot extensibility
+
+- **Work IQ APIs: Usage-based billing** \[Windows, Linux, Mac, Web\]
+
+  Enables usage-based billing for Work IQ endpoints, allowing developers to invoke agents and capabilities without requiring pre-assigned licenses, with usage billed based on the agents and models invoked per request.
+
+  **Roadmap ID:** [559017](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559017)
+
+  **Details:**
+
+  **What changed:** Work IQ APIs now support usage-based billing, allowing developers to call agents and models without needing pre-assigned licenses. Previously, access required assigned licenses regardless of usage. Billing is now based on fixed or variable costs invoked per API request, improving cost transparency and flexibility.
+
+  **Why:** This change removes licensing barriers for developers and aligns billing with actual usage, enabling more scalable and cost-efficient integration of Work IQ capabilities.
+
+  **Try this:**
+
+  1. Register your application to access Work IQ APIs.
+  2. Invoke Work IQ agents or models through the API without assigning licenses.
+  3. Monitor usage and billing based on the agents and models called per request.
+
+
+  **Why this matters:** Developers can integrate Work IQ features more flexibly and pay only for what they use, reducing upfront licensing complexity.
+
+
+  **Business impact:** Teams can adopt Work IQ capabilities incrementally without license management overhead, improving development agility and cost control.
+
+
+  **Personal impact:** You can experiment and build with Work IQ APIs without license constraints, saving time on administration and reducing costs.
+
+### Teams
+
+- **Use Copilot Chat after a call in Queues app** \[Windows, Mac\]
+
+  After a recorded call is completed, use Copilot in the Queues app to quickly catch up on key details, uncover insights, and resolve customer issues faster without having to manually search through a transcript or listen back to a recording. Navigate to the unified call history in the Queues app, select the recorded call record, and launch the Copilot Chat sidecar from within the Recap tab. You can then ask Copilot to generate a summary or answer questions about specific details related to the call.
+
+  **Roadmap ID:** [568933](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=568933)
+
+  **Details:**
+
+  **What changed:** Copilot is now available in the Recap tab for recorded call queue calls that appear in the Queues app. After a recorded call is completed, users with Copilot can open the call record from unified call history, launch the Copilot Chat sidecar, generate a summary, and ask questions about call details. Previously, reviewing recorded calls often required searching transcripts or listening to recordings. Access to Copilot is tied to recorded calls and requires Copilot availability for the user.
+
+  **Why:** Recorded call reviews can take significant time when users must manually search transcripts or replay recordings. Bringing Copilot into the Recap experience helps users identify key information and follow up on customer issues more efficiently.
+
+  **Try this:**
+
+  - Open the Queues app and select a recorded call from unified call history.
+  - Select the Recap tab and launch the Copilot Chat sidecar.
+  - Ask Copilot to summarize the call or answer questions about specific details discussed.
+
+
+  **Why this matters:** Users can understand recorded customer interactions faster and find relevant details without manually reviewing the entire call record.
+
+
+  **Business impact:** Teams can reduce time spent reviewing recorded call queue conversations and improve consistency when handling customer follow-up actions.
+
+
+  **Personal impact:** You can get answers and summaries from recorded calls more quickly, reducing effort spent searching transcripts or replaying recordings.
+
+
+  **Learn:** [Get started with Microsoft Copilot in Teams Phone](https://support.microsoft.com/en-us/teams/copilot/get-started-with-microsoft-365-copilot-in-teams-phone)
+
 ## October 06, 2026
 
 Updates released between September 22, 2026, and October 06, 2026.
@@ -16746,6 +17733,33 @@ Updates released between August 11, 2026, and August 25, 2026.
 
 
   **Learn:** [Use Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork#generate-images)
+
+### PowerPoint
+
+- **Reference an email with when using Copilot in PowerPoint to create a presentation** \[Windows, Mac\]
+
+  You can now reference an email when using Copilot in PowerPoint to create a presentation.
+
+  **Roadmap ID:** [555888](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555888)
+
+  **Details:**
+
+  **What changed:** Copilot in PowerPoint now allows referencing email content when creating presentations. Previously, users could not directly incorporate email information into their presentations using Copilot. This integration enhances content accuracy and context while maintaining Microsoft 365 security standards.
+
+  **Why:** Referencing emails directly streamlines presentation creation by reducing manual content transfer and errors. It helps users build presentations that reflect up-to-date communication without switching apps.
+
+  **Try this:**
+
+  1. Open PowerPoint and start a presentation.
+  2. Open the Copilot pane.
+  3. Enter a prompt and reference an email you would like to incorporate in your deck. You can reference an email by its subject, the senders, and time frame or date it was sent.
+  4. Review the output slides where Copilot has used the email information.
+
+
+  **Why this matters:** Including email content directly reduces errors and speeds up the presentation creation process.
+
+
+  **Business impact:** Teams can quickly create presentations that incorporate relevant email information, improving communication clarity.
 
 ## August 11, 2026
 

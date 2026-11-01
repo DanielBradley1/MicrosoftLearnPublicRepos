@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-static-tabs?view=m365-app-1.30 -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # root.staticTabs object
 
@@ -62,7 +62,7 @@ Properties that reference this object type:
     },
     "contentBotId": {
       "$ref": "#/definitions/guid",
-      "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)."
+      "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)"
     },
     "websiteUrl": {
       "$ref": "#/definitions/anyHttpUrl",

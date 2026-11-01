@@ -19,7 +19,7 @@ Security is foundational to Microsoft's approach to Microsoft Copilot. This arti
 This article provides a high-level overview of Microsoft's security approach for Microsoft Copilot. It doesn't include deployment or data-readiness steps.
 
 - For detailed information about prompt defense, see [Microsoft Copilot prompt defense in depth](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-prompt-defense-in-depth).
-- For rollout planning and readiness guidance, see [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot).
+- For rollout planning and readiness guidance, see [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance).
 - For deep technical details about data flow, protections, and auditing, see:
 
   - [Microsoft Copilot data protection architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing)
@@ -59,8 +59,7 @@ Microsoft Copilot operates within existing permissions and access controls. Over
 For prescriptive remediation guidance, see the following articles:
 
 - [Secure & governed data foundation for Microsoft Copilot: A deployment blueprint](https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance)
-- [How to configure a secure and governed foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot)
-- [Get ready for Microsoft Copilot and agents with SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/get-ready-copilot-sharepoint-advanced-management)
+- [What is SharePoint Advanced Management?](https://learn.microsoft.com/en-us/sharepoint/advanced-management)
 
 ## Security dashboard
 
@@ -133,7 +132,7 @@ Use these articles for deeper coverage of related articles:
 
 - **Deployment and readiness**
 
-  - [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot)
+  - [Configure a secure and governed data foundation for Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance)
   - [Minimum requirements to deploy Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements)
 
 - **Architecture and data handling**

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-mistral-ai-models -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Connect to Mistral AI models
 
@@ -32,12 +32,10 @@ To enable connection to Mistral AI models:
 
 1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com/) and select **Copilot** > **Settings**.
 2. On the **Copilot settings** page, select **View all**.
-3. Select **AI providers for other large language models**.
-4. Under **Available models for your organization**, choose **Mistral AI**.
+3. Select **AI providers operating as independent processors**.
+4. Under **Available model providers for your organization**, choose **Mistral AI**.
 5. Review the **Legal terms**, and if they're acceptable, then select the **I have read and agree to the Terms and Conditions** checkbox.
 6. Under **Choose which users can access Mistral AI models**, select the users or groups that you want to have access, and then choose **Save**.
-
-   ![Screenshot of the UI to configure the use of Mistral AI models in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/media/mistral-ui-admin-center.png)
 
 After you connect, it may take a few hours for the connection to complete.
 
@@ -59,8 +57,8 @@ To disable connection to Mistral AI models:
 
 1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com/) and select **Copilot** > **Settings**.
 2. On the **Settings** page, select **View all**.
-3. Select **AI providers for other large language models**.
-4. Under **Available models for your organization**, choose **Mistral AI**.
+3. Select **AI providers operating as independent processors**.
+4. Under **Available model providers for your organization**, choose **Mistral AI**.
 5. Under **Choose which users can access Mistral AI models**, select **No users**, and then choose **Save**.
 
 Once you disconnect Mistral, users can't use Mistral AI models. After completing the steps to disable Mistral AI in Microsoft 365, it may take several hours for the service to be fully disabled for your users.

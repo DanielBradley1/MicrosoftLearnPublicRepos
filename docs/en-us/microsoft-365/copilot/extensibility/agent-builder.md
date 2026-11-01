@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Agent Builder overview
 
@@ -14,7 +14,7 @@ Use Agent Builder to create and customize agents for scenario-specific use cases
 
 You can specify dedicated knowledge sources, including content on SharePoint and information provided by [Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector). You can also test the agent before you use, share, or publish it.
 
-Agent Builder also lets you add skills to an agent you build in Agent Builder, either by providing a skill or by creating one through natural language. Skills in Agent Builder are in preview and available only to organizations enrolled in the Microsoft Frontier Program. For more information, see [Add custom skills to your declarative agent in Agent Builder \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
+Agent Builder also lets you add skills to an agent you build in Agent Builder, either by providing a skill or by creating one through natural language. For more information, see [Add skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 
 You can build agents from the following apps and sites:
 
@@ -111,7 +111,7 @@ You can find and copy these details in Agent Builder in the **Get support** sect
 - [Build your first agent](https://res.public.onecdn.static.microsoft/s01-prod/pdf/Buid-an-agent-with-Agent-Builder.pdf)
 - [Build agents in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents)
 - [Agent Builder templates](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-templates-overview)
-- [Add custom skills to your declarative agent in Agent Builder \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)
+- [Add skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)
 - [Share and manage agents built in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents)
 - [Agent Builder regional availability and language support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-regional-availability)
 - [Copy an agent from Agent Builder to Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio)

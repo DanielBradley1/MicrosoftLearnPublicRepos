@@ -1,11 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-29 -->
 
 # Data, privacy, and security for web search in Microsoft Copilot and Microsoft Copilot Chat
-
-Note
-
-Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now named Microsoft Copilot Chat. Some experiences, licenses, and capabilities might continue to reference Microsoft 365 Copilot and Microsoft 365 Copilot Chat during the transition period. There are no changes to security, compliance, and privacy for organizations.
 
 Microsoft Copilot and [Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/overview) have an optional feature that allows Copilot to reference web content when responding to user prompts. Allowing Microsoft Copilot and Microsoft Copilot Chat to reference web content improves the quality of Copilot responses by grounding them in the latest information from the web.
 
@@ -28,6 +24,8 @@ This generated search query is different from the user's original prompt-it cons
 - Entire Microsoft 365 files \(for example, emails or documents\) or files uploaded into Copilot
 - Entire web pages or PDFs summarized by Copilot in Microsoft Edge \(only for Microsoft Copilot Chat\)
 - Any identifying information based on the user's Microsoft Entra ID \(for example, username, domain, or tenant ID\)
+
+When Copilot sends a web search request to the Bing search service, it also sends the user's client IP address, which Bing uses to help localize results, such as nearby weather and events.
 
 When using Microsoft Copilot, the generated search query doesn't include the entirety of Microsoft 365 documents associated with the prompt. However, it may also be informed by data within a Microsoft 365 document under the following conditions:
 
@@ -72,7 +70,7 @@ Unlike with Microsoft Copilot, users can't invoke organizational content like fi
 
 Microsoft Copilot and Microsoft Copilot Chat both use generated search queries sent to the Bing search service to ground responses in web data. The way Microsoft handles these queries is identical in both services.
 
-Generated search queries are sent to the Bing search service with user and tenant identifiers removed. Also, web search queries sent to Bing don't affect any of the following:
+Generated search queries are sent to the Bing search service with identifying information based on the user's Microsoft Entra ID removed \(for example, username, domain, or tenant ID\). Also, web search queries sent to Bing don't affect any of the following:
 
 - Search Ranking
 - Answers or features like Rich Captions

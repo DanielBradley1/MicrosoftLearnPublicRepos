@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-optimize-sharepoint -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Optimize SharePoint knowledge sources for the Employee Self-Service declarative agent
 
@@ -26,8 +26,7 @@ Governance of SharePoint content ensures that Copilot delivers accurate, relevan
 To minimize accidental content oversharing with Copilot results, it's crucial to implement best practice sharing settings. Proactive safeguards are key. To effectively prepare your organization for Copilot, set the appropriate sharing settings for end users at both the organization and site levels.
 
 - Switch defaults to "Specific people" for [sharing links at the organizational level](https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off#file-and-folder-links). Hide broad-scope options like "Everyone Except External Users" in the People Picker dropdown.
-- Educate site owners on access request flows and [site-level controls](https://learn.microsoft.com/en-us/sharepoint/get-ready-copilot-sharepoint-advanced-management#step-2-ensure-all-sites-have-valid-owners) to restrict member sharing.
-- Use SharePoint Advanced Management \(SAM\) to [audit overshared sites](https://learn.microsoft.com/en-us/sharepoint/get-ready-copilot-sharepoint-advanced-management#use-sharepoint-advanced-management-to-get-your-organization-ready-for-copilot) and apply expiration policies for stale links.
+- Use [Content Management Assessment](https://learn.microsoft.com/en-us/sharepoint/content-management-assessment) to identify potentially overshared content and other issues, such as ownerless sites.
 
 ### Apply least privilege principles
 

@@ -1,21 +1,19 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills -->
-<!-- Sitemap-Last-Modified: 2026-09-04 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
-# Custom skills in declarative agents \(preview\)
+# Skills in declarative agents
 
 Important
 
-Custom skills in declarative agents are in preview for organizations that are part of the Microsoft Frontier Preview. For more information, see [Explore AI Early Access in Microsoft 365](https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-program).
+In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers), admins can deploy declarative agents with skills, but end users can't add skills to declarative agents they create.
 
-Custom skills aren't available in tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers). This restriction applies to both admin-deployed and user-created declarative agents.
-
-Support for independent software vendors \(ISVs\) to publish declarative agents with custom skills through Partner Center isn't available yet and is coming soon. ISVs shouldn't submit declarative agent packages that include custom skills to Partner Center.
+Support for independent software vendors \(ISVs\) to publish declarative agents with skills through Partner Center isn't available yet and is coming soon. ISVs shouldn't submit declarative agent packages that include skills to Partner Center.
 
 A *skill* is a modular capability that you add to a declarative agent to help it accomplish a specific task more reliably and repeatably. A skill is a file directory that contains a required `SKILL.md` file, plus optional resource files and scripts. The `SKILL.md` file holds the instructions that direct the model to complete the task.
 
-Custom skills are a new, distinct component of a declarative agent. In earlier guidance, the word *skills* referred to task descriptions that you wrote inline within an agent's instructions. Custom skills replace that approach: instead of writing task detail directly in the instructions, you package it as a separate component that the agent references. For guidance on how instructions should reference skills, see [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions).
+Skills are a distinct component of a declarative agent. In earlier guidance, the word *skills* referred to task descriptions that you wrote inline within an agent's instructions. Skills replace that approach: instead of writing task detail directly in the instructions, you package it as a separate component that the agent references. For guidance on how instructions should reference skills, see [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions).
 
-You can add custom skills to a declarative agent by using [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) or [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit).
+You can add skills to a declarative agent by using [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) or [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit).
 
 ## What is a skill
 
@@ -33,7 +31,7 @@ For example, a finance team might build a quarterly business review skill that b
 
 ## Why use skills in declarative agents
 
-Custom skills help you build more reliable, repeatable agent workflows:
+Skills help you build more reliable, repeatable agent workflows:
 
 - **Optimized context use and improved accuracy.** Skills use progressive disclosure: the model loads a skill's instructions and contents into context only when the task requires them. The agent's context stays focused even as its library of skills grows. Providing scripts, rather than relying on model-generated code, also brings more repeatability to your workflows.
 - **Scale instructions without quality loss.** You can decompose complex instructions into modular, reusable skills. This approach lets you provide longer, more specific guidance without degrading instruction-following quality and without running into the 8,000-character limit on declarative agent instructions.
@@ -52,7 +50,7 @@ Some limits differ depending on whether you add the skill with Agent Builder or 
 | Maximum files per package | 350 files across all skills | 350 files across all skills |
 | Build a skill from individual uploads | Not supported; upload the complete `.zip` | Add or import the complete skill directory |
 | Directory hierarchy | Maximum directory depth is 3 | Maximum directory depth is 3 |
-| Reuse across agents | Not supported at this stage of the preview | Not supported at this stage of the preview |
+| Reuse across agents | Not supported | Not supported |
 
 ## Supported file and script types
 
@@ -82,13 +80,7 @@ Skill scripts run in a secure sandbox with the following limits:
 | Sensitivity labels | The sandbox retains sensitivity labels and honors label policies. It doesn't support user-defined permissions or Double Key Encryption. |
 | Storage | The system stores uploaded skill files in tenant-scoped SharePoint Embedded containers. |
 
-## Known issues
-
-During the preview, you might encounter the following behavior:
-
-- **Skills and embedded files can't be combined yet.** Agents that have both skills and embedded files aren't supported yet. Support is planned.
-
 ## Related content
 
-- [Add custom skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)
-- [Add custom skills to a declarative agent created with Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-add-custom-skills)
+- [Add skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)
+- [Add skills to a declarative agent created with Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-add-custom-skills)

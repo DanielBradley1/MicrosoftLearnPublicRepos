@@ -32,10 +32,10 @@ To summarize, applications built on top of the Microsoft 365 Backup Storage plat
 | **Backup granularity** | OneDrive account | SharePoint site | Exchange user account |
 | **Restore granularity** | OneDrive accounts  <br>  <br>Files restorable via versions \(coming soon\) | SharePoint sites  <br>  <br>Files restorable via versions \(coming soon\) | Mail/Contacts/Calendar/Task items |
 | **Restore options** | **Location**: Same or new URL  <br>  <br>**OneDrive** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new URL  <br>  <br>**Full site** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new folder within user's mailbox  <br>  <br>**Full and item level mailbox** restores only modified/deleted items from prior point in time |
-| **Restore speeds \(RTO\)** | Up to 1,000 average-sized OneDrive accounts at a median rate of up to 1-3 TB per hour depending on site item counts and the size of the site. High speed restores come when using the express restore points, not necessarily the ad-hoc restore points. | Up to 1,000 average-sized sites at a median rate of up to 1-3TB per hour depending on site item counts and the size of the site. High speed restores come when using an express restore point, not necessarily with ad-hoc restore points. | Up to 1,000 average-sized mailboxes at a median rate of up to 1-3 TB per hour depending on the item counts and sizes in the mailbox. Actual performance will range between 100-500 items/mailbox/min. |
+| **Restore speeds \(RTO\)** | Up to 1,000 average-sized OneDrive accounts at a median rate of up to 1-3 TiB per hour depending on site item counts and the size of the site. High speed restores come when using the express restore points, not necessarily the ad-hoc restore points. | Up to 1,000 average-sized sites at a median rate of up to 1-3TiB per hour depending on site item counts and the size of the site. High speed restores come when using an express restore point, not necessarily with ad-hoc restore points. | Up to 1,000 average-sized mailboxes at a median rate of up to 1-3 TiB per hour depending on the item counts and sizes in the mailbox. Actual performance will range between 100-500 items/mailbox/min. |
 | **Auditability** | Actions fully auditable | Actions fully auditable | Actions fully auditable |
 | **Geographic residency** | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements |
-| **Billing model** | $0.15 per GB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GB per month for all data protected by Backup  <br>  <br>Restores are free |
+| **Billing model** | $0.15 per GiB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GiB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GiB per month for all data protected by Backup  <br>  <br>Restores are free |
 
 ## Architectural overview and performance expectations
 
@@ -74,7 +74,7 @@ All restore points and restores to new URLs are relatively fast, but same URL re
 We have a number of restore capabilities depending on the scenario, each optimized for that scenario. The restore is not dependent on the amount of data, rather the number of sites and the type of restore point chosen.
 
 1. Single or subsite file restore needed: Use the granular folder/file restore option. These restores should take only a couple of mins on average.
-2. Small site restore: Use one of the ~daily express restore points recommended in the UI. This will restore full sites smaller than ~1TB in under 20 mins.
+2. Small site restore: Use one of the ~daily express restore points recommended in the UI. This will restore full sites smaller than ~1TiB in under 20 mins.
 3. Large many site restores: Use our fast or standard restore points. It may take a few hours to "warm up," but will then execute very quickly. Overall, this will be very fast as per our performance outline in the perf table below.
 
 The following table summarizes expected *median* performance for a normally distributed tenant, including tenants of large size and scale.
@@ -87,13 +87,13 @@ The following table summarizes expected *median* performance for a normally dist
 | 50 | 3 hours \(with express restore point\) | 2.5 hours |
 | 250 | 4 hours \(with exrpress restore point\) | 3 hours |
 | 1,000+ | Up to 250 protection units per hour \(with express restore point\) | 4 hours |
-| 1,000+ | Up to 250 protection units/hour  <br>Up to 2 TB/hour\* with express restore point  <br>at the median depending on the number of items in the site | 250+ protection units/hour  <br>Up to 2 TB/hour\*  <br>at the median depending on the number of items in the mailbox, at roughly 100-500 items/mailbox/min |
+| 1,000+ | Up to 250 protection units/hour  <br>Up to 2 TiB/hour\* with express restore point  <br>at the median depending on the number of items in the site | 250+ protection units/hour  <br>Up to 2 TiB/hour\*  <br>at the median depending on the number of items in the mailbox, at roughly 100-500 items/mailbox/min |
 
 <sup>**Important Restore performance notes:**</sup>
 
 <sup>\*Single protection unit OneDrive and SharePoint restores using express restore points can take on average between 10 minutes and 120 minutes, depending on site size.</sup> <sup>For mailboxes, restore times typically fall in the 100 - 500 item/minute range at the median.</sup>
 
-<sup>\*1,000+ protection unit restore speeds published here are based on internal benchmarking where SharePoint sites have an average of 12GB of stored content per site, Exchange Online mailboxes have an average of 26K items and an aggregate size of 10 GB. Those bulk recoveries use the in-place restore option, which is typical for large scale attack recovery scenarios. Actual times will depend on the number and size of the items in each site/mailbox.</sup>
+<sup>\*1,000+ protection unit restore speeds published here are based on internal benchmarking where SharePoint sites have an average of 12GiB of stored content per site, Exchange Online mailboxes have an average of 26K items and an aggregate size of 10 GiB. Those bulk recoveries use the in-place restore option, which is typical for large scale attack recovery scenarios. Actual times will depend on the number and size of the items in each site/mailbox.</sup>
 
 ### Backup scale limits
 

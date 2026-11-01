@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Microsoft Copilot overview
 
@@ -120,7 +120,7 @@ Pay-as-you-go access to agents that use work data.
   - [Copilot Search](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-search) is an AI-powered universal search experience across all your Microsoft 365 applications and connected non-Microsoft data sources. It's integrated with Microsoft Copilot, so users can find the results they need by using search, then seamlessly transition to chat for deeper exploration or follow-up task completion.
   - [Semantic indexing](https://learn.microsoft.com/en-us/microsoftsearch/semantic-index-for-copilot) enhances search relevance and accuracy by using advanced lexical and semantic understanding of Microsoft Graph data, resulting in more contextually precise information retrieval. Copilot preserves security, compliance, and privacy, ensuring organizational boundaries are respected while offering a seamless user experience.
 
-- [SharePoint Advanced Management \(SAM\)](https://learn.microsoft.com/en-us/sharepoint/get-ready-copilot-sharepoint-advanced-management): helps you reduce oversharing and cleanup inactive sites. These tasks declutter Copilot's data sources and improve the quality of the responses.
+- [SharePoint Advanced Management \(SAM\)](https://learn.microsoft.com/en-us/sharepoint/advanced-management): helps you reduce oversharing and cleanup inactive sites. These tasks declutter Copilot's data sources and improve the quality of the responses.
 
   - [Restricted content discovery](https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery): helps you limit discovery of content from specific SharePoint sites, including recently interacted files, in organization-wide search results and Microsoft Copilot responses while those reviews are taking place.
 

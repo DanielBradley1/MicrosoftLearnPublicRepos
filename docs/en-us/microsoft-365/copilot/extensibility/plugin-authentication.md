@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Configure authentication for MCP and API plugins in agents
 
@@ -25,7 +25,7 @@ Choose the authentication scheme that matches how your MCP server or API protect
 
 Note
 
-This article covers authentication for **plugins**, which you configure in the plugin manifest. Registering an MCP server as an *agent connector* is a different surface: you declare authorization for the `agentConnectors` node in the Microsoft 365 app manifest. Its supported authorization types differ from the plugin schemes in this table. For example, API key authentication is supported for API plugins only and isn't supported for MCP plugins. This difference between the two manifests is expected, not an error. For agent connector authorization, see [Register MCP servers as agent connectors](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/agent-connectors).
+This table covers MCP and API plugins used as declarative-agent actions. A plugin that references a remote MCP server through `agentConnectors` in the Microsoft 365 app manifest uses a different authorization configuration. That schema includes `ApiKeyPluginVault`, while MCP plugins used as declarative-agent actions don't support API keys. For configuration and host requirements, see [Configure remote MCP servers for Microsoft 365 Copilot plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers).
 
 ## How plugin authentication works
 

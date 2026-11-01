@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-regional-availability -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Agent Builder regional availability and language support
 
@@ -42,8 +42,7 @@ Note
 Some Agent Builder features aren't available in every national cloud environment:
 
 - Embedded file content isn't supported as a knowledge source in GCC. For more information, see [Embedded file content](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge#embedded-file-content).
-
-Skills are available only to organizations enrolled in the Microsoft Frontier Program in supported environments. For more information, see [Add custom skills to your declarative agent in Agent Builder \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
+- Skills aren't available in Agent Builder in GCC.
 
 ## Language support
 

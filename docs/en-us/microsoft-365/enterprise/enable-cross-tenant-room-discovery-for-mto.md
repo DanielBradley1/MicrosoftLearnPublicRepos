@@ -1,17 +1,17 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/enable-cross-tenant-room-discovery-for-mto?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-07-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
-# Enable room discovery capability with newly supported attributes \(Private Preview\)
+# Enable room discovery capability with newly supported attributes
 
 Microsoft 365 admins can enable cross-tenant room discovery in a Multi-Tenant Organization \(MTO\). Once configured, users can search for meeting rooms across different tenants in Global Address List \(GAL\) within the same MTO, and ensure the rooms are visible and correctly identified across tenants.
 
-Important
+Note
 
-Enable room discovery capability with newly supported attributes is currently available in preview. Features and availability may change before general availability \(GA\).
+Enable room discovery capability with newly supported attributes feature is not available in Microsoft 365 GCC, GCC High, DoD, or Microsoft 365 China \(operated by 21Vianet\).
 
 Note
 
-This Private Preview is primarily focused on the GAL-based cross-tenant room discovery experience. It allows shared meeting rooms to be correctly represented as room resources and discovered when users browse and book rooms from the Global Address List \(GAL\) across tenants within an MTO.
+This feature is primarily focused on the GAL-based cross-tenant room discovery experience. It allows shared meeting rooms to be correctly represented as room resources and discovered when users browse and book rooms from the Global Address List \(GAL\) across tenants within an MTO.
 
 ## Prerequisites
 

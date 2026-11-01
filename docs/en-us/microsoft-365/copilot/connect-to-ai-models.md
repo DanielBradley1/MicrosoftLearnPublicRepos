@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-models -->
-<!-- Sitemap-Last-Modified: 2026-10-09 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Connect to SpaceXAI models \(as an independent processor\)
 
@@ -26,8 +26,8 @@ You have to be a member of the Global administrator role to perform this task. F
 
 1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com/) and select **Copilot** > **Settings**.
 2. On the **Copilot settings** page, select **View all**.
-3. Select **AI providers for other large language models**.
-4. Under **Available models for your organization**, choose **SpaceXAI**.
+3. Select **AI providers operating as independent processors**.
+4. Under **Available model providers for your organization**, choose **SpaceXAI**.
 5. Review the **Legal terms**, and if they're acceptable, then select the **I have read and agree to the Terms and Conditions** checkbox.
 6. Under **Choose which users can access SpaceXAI models**, select the users or groups that you want to have access, and then choose **Save**.
 
@@ -47,8 +47,8 @@ Your organization may decide that it no longer wants users to be able to connect
 
 1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com/) and select **Copilot** > **Settings**.
 2. On the **Settings** page, select **View all**.
-3. Select **AI providers for other large language models**.
-4. Under **Available models for your organization**, choose **SpaceXAI**.
+3. Select **AI providers operating as independent processors**.
+4. Under **Available model providers for your organization**, choose **SpaceXAI**.
 5. Under **Choose which users can access SpaceXAI models**, select **No users**, and then choose **Save**.
 
 Once you disconnect SpaceXAI, users can't use SpaceXAI models. After completing the steps to disable SpaceXAI in Microsoft 365, it may take several hours for the service to be fully disabled for your users.

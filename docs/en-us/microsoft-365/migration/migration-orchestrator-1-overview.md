@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-07-09 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # An overview of tenant-to-tenant migration with orchestrator in Microsoft 365
 
@@ -10,6 +10,56 @@ Tenant-to-tenant migration using orchestrator in Microsoft 365 enables organizat
 This article provides a high-level overview of the migration process, including architecture models, licensing requirements, key security and compliance considerations, and supported workloads.
 
 To provide feedback to the product team, use [this form](https://forms.cloud.microsoft/r/Gy5jMxfy1y).
+
+## Supported scenarios
+
+Important
+
+This migration moves **content**, not **identities**. Customers are responsible for correctly creating and configuring users, and the product moves the in-scope content from its source tenant location to its target tenant location. We designed this product with the end-user in mind. This migration is intended to minimize disruption to the end-user.
+
+This new product simplifies both an admin's role in migrating content cross-tenant and a user's experience when they migrate. There are four supported workloads that can be specified to be moved when creating a batch: Exchange mailboxes, OneDrives, Teams chats, and Teams meetings. If you intend to run the migration of multiple workloads \(such as Exchange, chats, meetings, and OneDrive\), you should run them all together in the same batch, rather than managing separate batches for individual workloads. The orchestrator was designed to intelligently migrate the workloads in an order that accounts for all dependencies and minimizes risk for migrations to fail.
+
+Note
+
+When using the orchestrator, customers can specify a **CompleteAfterDate**. This is the time at which users will begin to feel an impact of the migration. Before this time, only syncing \(and specifically, Exchange syncing\) will happen in the background. When this time passes, the remaining workloads of OneDrive, Teams Chats, and Teams Meetings will begin processing.
+
+> Example 1: All four workloads are in scope. I begin the migration batch on January 1. I specify the CompleteAfterDate as January 10. Between January 1 and January 10, only Exchange mailboxes will be syncing in the background. No data is being moved for OneDrive, Teams Chats, or Teams Meetings. On January 10 \(assuming the Exchange sync is completed\), the mailbox will cutover. Only then will the migration for OneDrive, Teams Chats, and Teams Meetings begin.
+
+> Example 2: OneDrive and Teams Chats are in scope. I begin the migration batch on January 1. I specify the CompleteAfterDate as January 10. Between January 1 and January 10, no data is syncing. I have effectively created the batch and scheduled it for the future. On January 10, the OneDrive and Teams Chat data will begin.
+
+While customers can run migrations for individual workloads by specifying those workloads when creating the batch, the Teams Meeting migration does depend on a successful mailbox migration. **The migration batch will fail to initiate if the Teams meeting workload is selected without also selecting Teams chats and mailboxes.** Otherwise, Exchange mailboxes, OneDrives, and Teams Chats can be migrated independently. The product does, however, require that a user be specifically configured as having a mailbox on the source tenant and not having a mailbox on the target tenant \(MailUser\) before Identity Mapping can be performed. This requirement stands even if mailboxes are not being moved.
+
+Note
+
+If you intend to migrate OneDrive sites, there's a limit to how many OneDrive accounts can be scheduled to migrate at a time. This limit is shared between the OneDrive and SharePoint migrations. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration?view=o365-worldwide) about this limit.
+
+Important
+
+Identity Mapping is required, which means the specific user configuration supported by Identity Mapping is required. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-identity-mapping?view=o365-worldwide) about Identity mapping.
+
+### Exchange mailbox scope
+
+Mailboxes on any type of hold aren't migrated, and a move for those mailboxes is blocked. Talk to our engineering team before attempting to move any users with holds applied.
+
+Only user-visible content in the mailbox \(email, contacts, calendar, tasks, and notes\) migrates to the target tenant. The source mailbox is deleted after a successful migration. This deletion means that, after migration, under no circumstances is the source mailbox available, discoverable, or accessible in the source tenant. The calendar isn't available on the source tenant after migration.
+
+After the moves are complete, the source user mailbox is converted to a MailUser, and the targetAddress \(shown as ExternalEmailAddress in Exchange\) is stamped with the routing address to the destination tenant. This process leaves the legacy MailUser in the source tenant and allows for coexistence and mail routing. When business processes allow, the source tenant can remove the source MailUser or convert them to a mail contact.
+
+All limitations listed on the public documentation for [mailbox migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration?view=o365-worldwide) apply.
+
+### OneDrive scope
+
+The OneDrive content moves from the source to the target, leaving behind a redirect link on the source. Incremental and delta migration passes can't be performed. All limitations listed in the [public documentation for OneDrive migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration?view=o365-worldwide) apply.
+
+### Teams chat and meeting scope
+
+Chats and meetings are migrated from the source to the target. The original content on the source remains, though it might be in an edited form. This configuration means that the user participant list might change, with source users removed and target users added. There might be duplicate threads created on both tenants. Once the migration completes, users should only use their target identity to use Teams. If there's out-of-scope content, they can reference the source Teams client if they still have a licensed source user.
+
+### Not in-scope
+
+The Cross-Tenant User Data Migration solution doesn't migrate shared data, such as Teams and Channels or SharePoint Sites. This data remains in the source tenant.
+
+For workload-specific items that are out-of-scope, refer to the [known issues](https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-8-faq?view=o365-worldwide) list.
 
 ## Migration Architecture Models
 
@@ -50,47 +100,9 @@ This product is available for EA, CSP, Web direct, small business, and EDU custo
 
 Organizations subject to regulatory compliance \(for example, GDPR, HIPAA\) should consult legal and compliance teams before initiating migration.
 
-## Supported scenarios
-
 Important
 
-This migration moves **content**, not **identities**. Customers are responsible for correctly creating and configuring users, and the product moves the in-scope content from its source tenant location to its target tenant location. We designed this product with the end-user in mind. This migration is intended to minimize disruption to the end-user.
-
-This new product simplifies both an admin's role in migrating content cross-tenant and a user's experience when they migrate. There are four supported workloads that can be specified to be moved when creating a batch: Exchange mailboxes, OneDrives, Teams chats, and Teams meetings. If you intend to run the migration of multiple workloads \(such as Exchange, chats, meetings, and OneDrive\), you should run them all together in the same batch, rather than managing separate batches for individual workloads. The orchestrator was designed to intelligently migrate the workloads in an order that accounts for all dependencies and minimizes risk for migrations to fail.
-
-While customers can run migrations for individual workloads by specifying those workloads when creating the batch, the Teams Meeting migration does depend on a successful mailbox migration. **The migration batch will fail to initiate if the Teams meeting workload is selected without also selecting Teams chats and mailboxes.** Otherwise, Exchange mailboxes, OneDrives, and Teams Chats can be migrated independently. The product does, however, require that a user be specifically configured as having a mailbox on the source tenant and not having a mailbox on the target tenant \(MailUser\) before Identity Mapping can be performed. This requirement stands even if mailboxes are not being moved.
-
-Note
-
-If you intend to migrate OneDrive sites, there's a limit to how many OneDrive accounts can be scheduled to migrate at a time. This limit is shared between the OneDrive and SharePoint migrations. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration?view=o365-worldwide) about this limit.
-
-Important
-
-Identity Mapping is required, which means the specific user configuration supported by Identity Mapping is required. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-identity-mapping?view=o365-worldwide) about Identity mapping.
-
-### Exchange mailbox scope
-
-Mailboxes on any type of hold aren't migrated, and a move for those mailboxes is blocked. Talk to our engineering team before attempting to move any users with holds applied.
-
-Only user-visible content in the mailbox \(email, contacts, calendar, tasks, and notes\) migrates to the target tenant. The source mailbox is deleted after a successful migration. This deletion means that, after migration, under no circumstances is the source mailbox available, discoverable, or accessible in the source tenant. The calendar isn't available on the source tenant after migration.
-
-After the moves are complete, the source user mailbox is converted to a MailUser, and the targetAddress \(shown as ExternalEmailAddress in Exchange\) is stamped with the routing address to the destination tenant. This process leaves the legacy MailUser in the source tenant and allows for coexistence and mail routing. When business processes allow, the source tenant can remove the source MailUser or convert them to a mail contact.
-
-All limitations listed on the public documentation for [mailbox migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration?view=o365-worldwide) apply.
-
-### OneDrive scope
-
-The OneDrive content moves from the source to the target, leaving behind a redirect link on the source. Incremental and delta migration passes can't be performed. All limitations listed in the [public documentation for OneDrive migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration?view=o365-worldwide) apply.
-
-### Teams chat and meeting scope
-
-Chats and meetings are migrated from the source to the target. The original content on the source remains, though it might be in an edited form. This configuration means that the user participant list might change, with source users removed and target users added. There might be duplicate threads created on both tenants. Once the migration completes, users should only use their target identity to use Teams. If there's out-of-scope content, they can reference the source Teams client if they still have a licensed source user.
-
-### Not in-scope
-
-The Cross-Tenant User Data Migration solution doesn't migrate shared data, such as Teams and Channels or SharePoint Sites. This data remains in the source tenant.
-
-For workload-specific items that are out-of-scope, refer to the [known issues](https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-8-faq?view=o365-worldwide) list.
+Migrations are not subject to SLAs. The size of your migration including the number of users and their associated content, as well as overall traffic, will determine the completion time.
 
 ## Next steps
 

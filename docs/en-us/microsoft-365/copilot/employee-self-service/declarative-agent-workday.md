@@ -52,6 +52,8 @@ The runtime package calls Workday through a **Workday** connection that uses **M
 | Workday Update Email | Update their email address. |
 | Workday Update PhoneNumber | Update their phone number. |
 
+To add more scenarios, such as requesting time off or viewing information about direct reports, see [Add more Workday scenarios](#add-more-workday-scenarios).
+
 The agent also includes Workday system topics that these topics depend on. Don't edit, turn off, or delete them. For the list, see [System topics](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-reference#system-topics).
 
 ## Before you begin
@@ -175,6 +177,10 @@ Work with your security team to allow traffic from the Power Platform environmen
 - [Power Platform URLs and IP address ranges](https://learn.microsoft.com/en-us/power-platform/admin/online-requirements)
 - [Managed connectors outbound IP addresses](https://learn.microsoft.com/en-us/connectors/common/outbound-ip-addresses#power-platform)
 
+## Add more Workday scenarios
+
+To give employees and managers Workday tasks beyond the built-in scenarios, such as requesting time off or viewing information about direct reports, you can add open-source Workday samples to the agent after setup succeeds in Dev. For the available scenarios and when to add them, see [Add more Workday scenarios to the Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-samples).
+
 ## Troubleshooting
 
 | Symptom | Likely cause | Resolution |
@@ -198,6 +204,7 @@ Work with your security team to allow traffic from the Power Platform environmen
 ## Related content
 
 - [Microsoft Entra and Workday administrator reference for the Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-reference)
+- [Add more Workday scenarios to the Employee Self-Service declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-workday-samples)
 - [Manage the lifecycle of Employee Self-Service declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/alm-declarative-agent)
 - [Deploy Employee Self-Service declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/maker-journey-declarative-agent)
 - [Employee Self-Service Agent Developer Kit](https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/declarative-agent-developer-kit-overview)

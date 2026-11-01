@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-adr-overview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Advanced Data Residency: Overview and requirements
 
@@ -83,10 +83,6 @@ Customers must have licenses for one or more of the following products:
 
 - Microsoft 365 A3, A5
 - Office 365 A1, A3, A5 \(paid licenses\)
-
-Note
-
-*ADR for Education* \(Group 6\) is available only to Volume Licensing / EES \(Microsoft Enrollment for Education Solutions\) customers. Contact your Microsoft account representative for details on obtaining an *ADR* Education SKU.
 
 ### License coverage
 

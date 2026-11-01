@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Federated connectors overview
 
@@ -283,6 +283,10 @@ The following security and compliance features apply to federated connectors:
 - Federated connectors don't copy or store data in Microsoft 365.
 - The source system enforces all permissions. Users can only access content they're authorized to view and make changes they're authorized to make in the original data source.
 - OAuth 2.0 and encrypted communication ensure secure access and authentication.
+
+## Network requirements
+
+If your MCP server restricts incoming traffic by source IP address, configure its firewall to allow the static egress IP addresses used by Microsoft 365 Copilot. Static egress is enabled by default for MCP-based federated connectors. For the address list and configuration guidance, see [Static IP addresses for MCP and federated connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-network-requirements).
 
 ## FAQs
 

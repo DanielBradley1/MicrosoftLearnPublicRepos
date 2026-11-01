@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-26 -->
 
 # Build agents in Agent Builder
 
@@ -113,9 +113,9 @@ Note
 
 Agent Builder doesn't support authoring actions that integrate external services. To add low-code actions, connectors, or workflows, [copy the agent to Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio). If your scenario requires a separate pro-code implementation, see [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools).
 
-### Skills \(preview\)
+### Skills
 
-You can add skills to an agent built in Agent Builder, either by providing a skill package or by describing the skill in natural language. Skills in Agent Builder are in preview and are available only to organizations enrolled in the Microsoft Frontier Program. For more information, see [Add custom skills to your declarative agent in Agent Builder \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
+You can add skills to an agent built in Agent Builder, either by providing a skill package or by describing the skill in natural language. For more information, see [Add skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 
 ## Set the default response mode
 

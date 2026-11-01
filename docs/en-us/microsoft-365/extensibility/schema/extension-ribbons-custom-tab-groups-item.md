@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item?view=m365-app-1.30 -->
-<!-- Sitemap-Last-Modified: 2026-08-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-29 -->
 
 # extensionRibbonsCustomTabGroupsItem object
 
@@ -677,7 +677,7 @@ Default value: `false`.
 
 #### visible
 
-Controls whether the control is visible.
+Controls whether the control is visible. For more information on how to show or hide a group from a custom tab on the ribbon, see [Show or hide add-in commands on a custom tab](https://learn.microsoft.com/en-us/office/dev/add-ins/design/show-hide-controls-custom-tab).
 
 **Type**  
 boolean

@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-27 -->
 
 # Declarative agents for Microsoft 365 Copilot
 
-Declarative agents provide a goal-directed conversational experience that is powered by Microsoft 365 Copilot. You define the agent's purpose, instructions, knowledge, and supported actions to address a business scenario. A plugin can include or reference an agent with other supported capabilities, such as skills, Copilot connectors, or MCP-based tools.
+Declarative agents provide a goal-directed conversational experience that's powered by Microsoft 365 Copilot. You define the agent's purpose, instructions, knowledge, and supported actions to address a business scenario. A plugin can include or reference an agent with other supported capabilities, such as skills, Copilot connectors, or MCP-based tools.
 
 Choose a declarative agent when users need a dedicated conversational experience with behavior and capabilities tailored to a specific outcome. You don't need to create an agent when an existing Microsoft experience or approved agent can use the selected skills, connectors, or tools.
 
@@ -35,7 +35,7 @@ For detailed fit and limitation guidance, see [Declarative agent architecture](h
 
 ## Understand what the agent contributes
 
-A declarative agent is defined by configuration that describes:
+You define a declarative agent by configuration that describes:
 
 - **Identity and behavior**: The agent's name, purpose, instructions, conversation starters, constraints, and visual representation.
 - **Knowledge**: The approved information sources that ground responses.
@@ -51,7 +51,7 @@ Users engage with declarative agents in Microsoft 365 Copilot and supported Micr
 Before you build an agent:
 
 - Review agents that are already approved for the target users and experiences.
-- Determine whether an existing agent can be reused, copied, configured, or extended.
+- Determine whether you can reuse, copy, configure, or extend an existing agent.
 - Confirm who owns the agent instructions, knowledge, connections, and support.
 - Identify any gaps that require a new agent.
 
@@ -81,7 +81,7 @@ Declarative agent support for [Microsoft 365 Government](https://www.microsoft.c
 ## Related content
 
 - [Choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components)
-- [Agents in the Microsoft 365 ecosystem](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/ecosystem)
+- [Agent in-app experiences](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview#agent-in-app-experience)
 - [Declarative agent architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-architecture)
 - [Declarative agents FAQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/transparency-faq-declarative-agent)
 - [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)

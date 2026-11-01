@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-csp-partner-macc -->
-<!-- Sitemap-Last-Modified: 2026-10-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Usage-based billing guidance for CSPs, partner-managed customers, and MACC
 
@@ -23,7 +23,7 @@ If the customer doesn't have an Azure subscription: → Create a new subscriptio
 
 Connect the Azure subscription associated with your partner billing account [more details](https://learn.microsoft.com/en-us/partner-center/customers/purchase-azure-plan).
 
-Configure user access controls \(who can use the services\), spending limits, and alerts [more details](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#add-spending-policy).
+Configure user access controls \(who can use the services\), spending limits, and alerts [more details](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits#add-identity-based-spending-policy).
 
 Ensure the setting that allows users to discover and use usage-based services is turned on [more details](https://learn.microsoft.com/en-us/microsoft-365/copilot/discovery-setting-ai-experiences).
 
@@ -48,5 +48,6 @@ This model allows organizations to seamlessly extend their Azure investment into
 - [Understand usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
 - [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup)
 - [Manage AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)
+- [Manage Copilot Studio costs in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-studio-costs).
 - [Monitor Copilot Credit spending](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-monitor-spending)
 - [Understanding the user subscription license \(USL\) and usage-based billing \(UBB\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/user-subscription-license-usage-based-billing)
