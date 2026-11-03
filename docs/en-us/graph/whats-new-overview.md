@@ -13,6 +13,12 @@ Important
 
 Features in *preview* status are subject to change without notice, and might not be promoted to generally available \(GA\) status. Don't use preview features in production apps.
 
+## November 2026: New and generally available
+
+### Mail
+
+Added the [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist) resource type and related methods for managing personal distribution lists in a user's mailbox. Use these APIs to create, read, update, and delete distribution lists, and add or remove members.
+
 ## October 2026: New and generally available
 
 ### Backup and recovery \| Microsoft 365 backup and storage
@@ -44,10 +50,7 @@ Features in *preview* status are subject to change without notice, and might not
 ### Identity and access \| Identity and sign-in
 
 - Added the [federatedTokenValidationPolicy](https://learn.microsoft.com/en-us/graph/api/resources/federatedtokenvalidationpolicy) resource to control which federated domains Microsoft Entra ID accepts tokens from on a per-tenant basis, as a defense-in-depth measure against token-replay and rogue-IdP scenarios.
-
-### Identity and access \| Identity and sign-in
-
-Added support for routing SMS and voice authentication traffic through a telecom provider integration. Configure the provider endpoint, application identifier, evaluation mode, and migration percentage through the **telecomProviderSettings** property on the [smsAuthenticationMethodConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/smsauthenticationmethodconfiguration) and [voiceAuthenticationMethodConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/voiceauthenticationmethodconfiguration) resources.
+- Added support for routing SMS and voice authentication traffic through a telecom provider integration. Configure the provider endpoint, application identifier, evaluation mode, and migration percentage through the **telecomProviderSettings** property on the [smsAuthenticationMethodConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/smsauthenticationmethodconfiguration) and [voiceAuthenticationMethodConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/voiceauthenticationmethodconfiguration) resources.
 
 ### Mail \| Message trace
 
@@ -60,6 +63,10 @@ Added the [billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/re
 ### Security \| Audit log query
 
 Added 35 members, from `PlannerCustomFieldDefinition` through `MESRawEmailContentMetadata`, to the [auditLogRecordType](https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecordtype) enumeration and added the matching [auditData derived types](https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata-derived-types) to represent workload-specific audit event payloads.
+
+### Security \| Custom detection rules
+
+Added support for managing Microsoft Defender XDR custom detection rules in v1.0 through the [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule) resource.
 
 ### Tasks and plans
 
@@ -133,6 +140,10 @@ Updated the [getSharePointApiUsage](https://learn.microsoft.com/en-us/graph/api/
 ### Groups
 
 Added the **mailboxId** property to the [group](https://learn.microsoft.com/en-us/graph/api/resources/group?view=graph-rest-beta&preserve-view=true) resource type to identify the Exchange mailbox associated with a Microsoft 365 group. The property is returned only when specified in `$select`.
+
+### Mail
+
+Added the [importMime](https://learn.microsoft.com/en-us/graph/api/mailfolder-importmime?view=graph-rest-beta&preserve-view=true) method to the [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-beta&preserve-view=true) resource to create a non-draft message in a mail folder directly from MIME content. Unlike [creating a message](https://learn.microsoft.com/en-us/graph/api/mailfolder-post-messages?view=graph-rest-beta&preserve-view=true), which always creates a draft, this method creates the message in a final, non-draft state. The message appears in the destination folder as if it was delivered; however, it doesn't go through transport, isn't stamped as sent, and never appears in the *Sent Items* folder. The action preserves the full MIME content, including internet message headers, body parts, and attachments. Use the **importMime** API to import existing mail into a mailbox, such as to migrate messages from another system.
 
 ### Mail \| Message trace
 

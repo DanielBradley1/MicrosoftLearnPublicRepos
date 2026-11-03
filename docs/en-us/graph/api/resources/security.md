@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # security resource type
 
@@ -27,6 +27,7 @@ None
 | data security and compliance | [microsoft.graph.tenantDataSecurityAndGovernance](https://learn.microsoft.com/en-us/graph/api/resources/tenantdatasecurityandgovernance?view=graph-rest-1.0) | A container for Microsoft Purview data security and compliance APIs. |
 | identities | [microsoft.graph.security.identityContainer](https://learn.microsoft.com/en-us/graph/api/resources/security-identitycontainer?view=graph-rest-1.0) | A container for security identities APIs. |
 | incidents | [microsoft.graph.security.incident](https://learn.microsoft.com/en-us/graph/api/resources/security-incident?view=graph-rest-1.0) collection | A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack. |
+| rules | [microsoft.graph.security.rulesRoot](https://learn.microsoft.com/en-us/graph/api/resources/security-rulesroot?view=graph-rest-1.0) | Container for the security rules configured in Microsoft Defender XDR, including [custom detection rules](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-1.0). |
 
 ## JSON representation
 

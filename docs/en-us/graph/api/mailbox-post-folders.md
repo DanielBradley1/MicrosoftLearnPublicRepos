@@ -1,11 +1,17 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Create mailboxFolder
 
 Namespace: microsoft.graph
 
 Create a new [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) or child **mailboxFolder** in a user's mailbox.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

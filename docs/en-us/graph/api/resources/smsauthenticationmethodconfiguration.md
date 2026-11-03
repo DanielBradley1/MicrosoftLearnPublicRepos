@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/smsauthenticationmethodconfiguration?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-31 -->
+<!-- Sitemap-Last-Modified: 2025-12-03 -->
 
 # smsAuthenticationMethodConfiguration resource type
 
@@ -24,7 +24,6 @@ Inherits from [authenticationMethodConfiguration](https://learn.microsoft.com/en
 | excludeTargets | [excludeTarget](https://learn.microsoft.com/en-us/graph/api/resources/excludetarget?view=graph-rest-1.0) collection | Groups of users that are excluded from the policy. |
 | id | String | The authentication method policy identifier. |
 | state | authenticationMethodState | The possible values are: `enabled`, `disabled`. |
-| telecomProviderSettings | [telecomProviderSettings](https://learn.microsoft.com/en-us/graph/api/resources/telecomprovidersettings?view=graph-rest-1.0) | Settings for routing SMS authentication traffic through a telecom provider integration. |
 
 ## Relationships
 
@@ -45,9 +44,6 @@ The following JSON representation shows the resource type.
     {
       "@odata.type": "microsoft.graph.excludeTarget"
     }
-  ],
-  "telecomProviderSettings": {
-    "@odata.type": "microsoft.graph.telecomProviderSettings"
-  }
+  ]
 }
 ```

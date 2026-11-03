@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/voiceauthenticationmethodconfiguration?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-31 -->
+<!-- Sitemap-Last-Modified: 2026-07-01 -->
 
 # voiceAuthenticationMethodConfiguration resource type
 
@@ -25,7 +25,6 @@ Inherits from [authenticationMethodConfiguration](https://learn.microsoft.com/en
 | id | String | The authentication method policy identifier. |
 | isOfficePhoneAllowed | Boolean | `true` if users can register office phones, otherwise, `false`. |
 | state | authenticationMethodState | Represents whether users can register this authentication method. The possible values are: `enabled`, `disabled`. |
-| telecomProviderSettings | [telecomProviderSettings](https://learn.microsoft.com/en-us/graph/api/resources/telecomprovidersettings?view=graph-rest-1.0) | Settings for routing voice authentication traffic through a telecom provider integration. |
 
 ## Relationships
 
@@ -47,9 +46,6 @@ The following JSON representation shows the resource type.
       "@odata.type": "microsoft.graph.excludeTarget"
     }
   ],
-  "isOfficePhoneAllowed": "Boolean",
-  "telecomProviderSettings": {
-    "@odata.type": "microsoft.graph.telecomProviderSettings"
-  }
+  "isOfficePhoneAllowed": "Boolean"
 }
 ```

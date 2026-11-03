@@ -1,11 +1,17 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailbox-delete-folders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Delete mailboxFolder
 
 Namespace: microsoft.graph
 
 Delete a [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) or a child **mailboxFolder** within a mailbox.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

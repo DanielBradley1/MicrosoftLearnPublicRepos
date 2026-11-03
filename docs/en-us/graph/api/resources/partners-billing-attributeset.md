@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-attributeset?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2025-07-15 -->
 
 # attributeSet enum type
 
@@ -79,8 +79,6 @@ The [billedUsage: export](https://learn.microsoft.com/en-us/graph/api/partners-b
 | UnitPrice | Yes | Yes |
 | UnitType | Yes | Yes |
 | UsageDate | Yes | Yes |
-| PartnerPrice | Yes | Yes |
-| PriceBenefits | Yes | Yes |
 
 The [billedReconciliation: export](https://learn.microsoft.com/en-us/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-1.0) or [unbilledReconciliation: export](https://learn.microsoft.com/en-us/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-1.0) API response with the `full` or `basic` request parameter returns the following attributes.
 
@@ -133,45 +131,3 @@ The [billedReconciliation: export](https://learn.microsoft.com/en-us/graph/api/p
 | ProductQualifiers | Yes | No |
 | PromotionId | Yes | Yes |
 | ProductCategory | Yes | Yes |
-| PriceBenefits | Yes | Yes |
-
-The [billedAggregatedUsage: export](https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export?view=graph-rest-1.0) API response returns the following attributes.
-
-| Attribute |
-| :--- |
-| PartnerId |
-| CustomerId |
-| InvoiceNumber |
-| MpnId |
-| Tier2MpnId |
-| OrderDate |
-| ProductId |
-| SkuId |
-| AvailabilityId |
-| ChargeType |
-| UnitPrice |
-| PartnerPrice |
-| EffectiveUnitPrice |
-| Quantity |
-| BillableQuantity |
-| Subtotal |
-| TaxTotal |
-| Total |
-| PricingCurrency |
-| Currency |
-| PCToBCExchangeRate |
-| PCToBCExchangeRateDate |
-| PriceBenefits |
-| PublisherName |
-| PublisherId |
-| SubscriptionId |
-| ChargeStartDate |
-| ChargeEndDate |
-| TermAndBillingCycle |
-| UnitType |
-| BillingFrequency |
-| MeterId |
-| SubscriptionStartDate |
-| SubscriptionEndDate |
-| ReferenceId |
-| IdMapping |

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/agentuser-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-31 -->
+<!-- Sitemap-Last-Modified: 2026-05-06 -->
 
 # Get agentUser
 
@@ -29,22 +29,17 @@ Choose the permission or permissions marked as least privileged for this API. Us
   - In delegated scenarios, the signed-in user must be assigned the *Attribute Assignment Administrator* role and the app granted the *CustomSecAttributeAssignment.Read.All* permission.
   - In app-only scenarios with Microsoft Graph permissions, the app must be granted the *CustomSecAttributeAssignment.Read.All* permission.
 
-- To read the **managerApplications** property, the app must be granted *User.Read.All* or the higher-privileged *Directory.Read.All* permission in delegated work or school account scenarios or application scenarios. Delegated personal Microsoft accounts aren't supported for this property.
-
 ## HTTP request
 
 ```http
 GET /users/microsoft.graph.agentUser/{userId}
-GET /users/{user-id}/microsoft.graph.agentUser?$select=id,managerApplications
 ```
 
-You can retrieve an agent user's base **user** properties through `GET /users/{user-id}` without a type cast. To retrieve **managerApplications**, use the `microsoft.graph.agentUser` type-cast segment and explicitly include the property in `$select`.
+Note: You can get an agent user's information through the standard users' endpoint GET /users/userId. No special odata type needs to be specified in the request.
 
 ## Optional query parameters
 
 This method supports the `$select` and `$expand` OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
-
-The **managerApplications** property is returned only when explicitly selected. It doesn't support `$filter` and isn't a navigation property, so `$expand` doesn't apply to it.
 
 ## Request headers
 
@@ -62,17 +57,32 @@ If successful, this method returns a `200 OK` response code and an [agentUser](h
 
 ## Examples
 
-### Example 1: Get an agent user
-
-#### Request
+### Request
 
 The following example shows a request.
+
+- [HTTP](#tabpanel_1_http)
+- [JavaScript](#tabpanel_1_javascript)
 
 ```http
 GET https://graph.microsoft.com/v1.0/users/microsoft.graph.agentUser/929393ae-1e1d-159f-0d83-29f7df42e7b9
 ```
 
-#### Response
+```javascript
+
+const options = {
+	authProvider,
+};
+
+const client = Client.init(options);
+
+let agentUser = await client.api('/users/microsoft.graph.agentUser/929393ae-1e1d-159f-0d83-29f7df42e7b9')
+	.get();
+```
+
+> For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
+
+### Response
 
 The following example shows the response.
 
@@ -223,55 +233,5 @@ Content-Type: application/json
       "String"
     ]
   }
-}
-```
-
-### Example 2: Get manager applications
-
-The following example uses the derived-type cast and `$select` to retrieve the application IDs authorized to manage the agent user's backing agent blueprint. The **managerApplications** property is server-managed and read-only. To change these values, update the backing agent blueprint instead of the agent user.
-
-#### Request
-
-```http
-GET https://graph.microsoft.com/v1.0/users/11111111-2222-3333-4444-555555555555/microsoft.graph.agentUser?$select=id,managerApplications
-```
-
-#### Response
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users/microsoft.graph.agentUser(id,managerApplications)/$entity",
-  "@odata.type": "#microsoft.graph.agentUser",
-  "id": "11111111-2222-3333-4444-555555555555",
-  "managerApplications": [
-    "631a96bc-a705-4eda-9f99-fdaf9f54f6a2",
-    "742b07cd-b806-4feb-b009-9eaf0f55f7b3"
-  ]
-}
-```
-
-### Example 3: Get manager applications when none are configured
-
-When no manager applications are configured on the backing agent blueprint, **managerApplications** returns an empty collection, not `null`.
-
-#### Request
-
-```http
-GET https://graph.microsoft.com/v1.0/users/11111111-2222-3333-4444-555555555555/microsoft.graph.agentUser?$select=managerApplications
-```
-
-#### Response
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users/microsoft.graph.agentUser(managerApplications)/$entity",
-  "@odata.type": "#microsoft.graph.agentUser",
-  "managerApplications": []
 }
 ```

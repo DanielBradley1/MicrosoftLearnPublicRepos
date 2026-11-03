@@ -1,19 +1,23 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/alldomains?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/alldomains?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2024-03-06 -->
 
 # allDomains resource type
 
 Namespace: microsoft.graph
 
-A derived complex type that defines validation that applies to a category of domains without enumerating specific domain names. The **validatingDomains** property of the [federatedTokenValidationPolicy](https://learn.microsoft.com/en-us/graph/api/resources/federatedtokenvalidationpolicy?view=graph-rest-1.0) resource returns this type when `rootDomains` is set to `none`, `all`, `allFederated`, or `allManaged`.
+Important
 
-Inherits from [validatingDomains](https://learn.microsoft.com/en-us/graph/api/resources/validatingdomains?view=graph-rest-1.0).
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+A derived complex type that defines the type of domains that Microsoft Entra ID validates.
+
+Inherits from [validatingDomains](https://learn.microsoft.com/en-us/graph/api/resources/validatingdomains?view=graph-rest-beta).
 
 ## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| rootDomains | [rootDomains](https://learn.microsoft.com/en-us/graph/api/resources/enums?view=graph-rest-1.0#rootdomains-values) | Defines the types of domains that Microsoft Entra ID validates. Inherited from [validatingDomains](https://learn.microsoft.com/en-us/graph/api/resources/validatingdomains?view=graph-rest-1.0). For this subtype the value can be `none`, `all` \(default\), `allFederated`, `allManaged`, or `unknownFutureValue`. The `enumerated` and `allManagedAndEnumeratedFederated` values belong to the [enumeratedDomains](https://learn.microsoft.com/en-us/graph/api/resources/enumerateddomains?view=graph-rest-1.0) subtype. |
+| rootDomains | rootDomains | Defines the types of domains that Microsoft Entra ID validates. Inherited from [validatingDomains](https://learn.microsoft.com/en-us/graph/api/resources/validatingdomains?view=graph-rest-beta). The possible values are: `none`, `all`, `allFederated`, `allManaged`, `enumerated`, `allManagedAndEnumeratedFederated`, `unknownFutureValue`. |
 
 ## Relationships
 

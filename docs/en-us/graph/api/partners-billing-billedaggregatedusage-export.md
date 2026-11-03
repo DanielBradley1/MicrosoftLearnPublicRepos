@@ -1,15 +1,25 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # billedAggregatedUsage: export
 
 Namespace: microsoft.graph.partners.billing
 
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
 Note
 
 This API is available for Cloud Solution Provider \(CSP\) partners only to access their billed and unbilled reconciliation data for a tenant. To learn more about the CSP program, see [Microsoft Cloud Solution Provider](https://learn.microsoft.com/en-us/partner-center/csp-overview).
 
-Export billed aggregated Azure usage data for a specific invoice from a [billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-1.0) resource.
+Export billed aggregated Azure usage data for a specific invoice from a [billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-beta) resource.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 
@@ -46,7 +56,7 @@ The following table shows the parameters that you can use with this action.
 
 ## Response
 
-If successful, this method returns a `202 Accepted` response code and a `Location` header that contains the URL to the long-running operation. You can check the status of the long-running operation by making a GET request to this URL that returns one of the following objects in the response body: [microsoft.graph.partners.billing.runningOperation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-runningoperation?view=graph-rest-1.0), [microsoft.graph.partners.billing.exportSuccessOperation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-exportsuccessoperation?view=graph-rest-1.0), or [microsoft.graph.partners.billing.failedOperation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-failedoperation?view=graph-rest-1.0).
+If successful, this method returns a `202 Accepted` response code and a `Location` header that contains the URL to the long-running operation. You can check the status of the long-running operation by making a GET request to this URL that returns one of the following objects in the response body: [microsoft.graph.partners.billing.runningOperation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-runningoperation?view=graph-rest-beta), [microsoft.graph.partners.billing.exportSuccessOperation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-exportsuccessoperation?view=graph-rest-beta), or [microsoft.graph.partners.billing.failedOperation](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-failedoperation?view=graph-rest-beta).
 
 ## Examples
 
@@ -55,7 +65,7 @@ If successful, this method returns a `202 Accepted` response code and a `Locatio
 The following example shows a request.
 
 ```http
-POST https://graph.microsoft.com/v1.0/reports/partners/billing/aggregatedUsage/billed/export
+POST https://graph.microsoft.com/beta/reports/partners/billing/aggregatedUsage/billed/export
 Content-Type: application/json
 
 {
@@ -69,5 +79,5 @@ The following example shows the response.
 
 ```http
 HTTP/1.1 202 Accepted
-Location: https://graph.microsoft.com/v1.0/reports/partners/billing/operations/9ab9cb54-d07f-4f52-9ea6-a09d7de52c14
+Location: https://graph.microsoft.com/beta/reports/partners/billing/operations/9ab9cb54-d07f-4f52-9ea6-a09d7de52c14
 ```
