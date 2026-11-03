@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/phone-providers-faq -->
-<!-- Sitemap-Last-Modified: 2026-09-21 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Frequently asked questions
 
@@ -75,11 +75,11 @@ Your provider sets SMS and voice charges under the offer you purchase in [Micros
 4. Evaluate the integration.
 5. Roll out traffic to your provider.
 
-For details, see [Set up SMS and voice with your own telecom provider by using APIs](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api).
+For details, see [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 
 ### Can I test CYOT before I move traffic?
 
-Yes. **Evaluation** mode sends requests to your integration while Microsoft continues to deliver codes to users. Use `migrationPercentage` to set the evaluation sampling percentage when configuring the policy through APIs. To confirm delivery through your provider, switch to **Production** at a low traffic percentage.
+Yes. **Evaluation** mode sends requests to your integration while Microsoft continues to deliver codes to users. Set the **Evaluation sampling percentage** in your profile. To confirm delivery through your provider, switch to **Production** at a low traffic percentage.
 
 ### Can I move traffic gradually?
 
@@ -124,7 +124,7 @@ You can deploy the integration across multiple Azure regions, review your provid
 ## Related content
 
 - [Choose your own telephony provider for SMS and voice authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers).
-- [Set up SMS and voice with your own telecom provider by using APIs](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api).
+- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 - [Monitor and troubleshoot SMS and voice with your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Protect against telephony fraud with your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
 - [Plan for resiliency and high availability](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).

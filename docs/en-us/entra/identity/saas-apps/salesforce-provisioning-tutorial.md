@@ -18,9 +18,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 - A Salesforce.com tenant.
 - A Salesforce account username and password, and the token. See [configure automatic user account provisioning](#configure-automatic-user-account-provisioning) for how to get the token. In future, if you reset the account password, Salesforce provides you with a new token and you need to edit the Salesforce provisioning settings.
+- SOAP API `login()` enabled in your Salesforce org. Salesforce disables this operation by default for orgs created in Winter '26 and later. In Salesforce Setup, enter **User Interface** in the Quick Find box, select **User Interface**, and select **Enable SOAP API login\(\)**. This action can't be reverted on the **User Interface** page. For details, see the Salesforce [SOAP API login\(\) reference](https://developer.salesforce.com/docs/platform/api/guide/sforce-api-calls-login.html).
 - A custom user profile in Salesforce for the integration user. Once you have created a custom profile in the Salesforce portal, edit the profile's Administrative Permissions to enable the following:
 
   - API Enabled.
+  - Use Any API Auth.
   - Manage Users: Enabling this option automatically enables the following: Assign Permission Sets, Manage Internal UsersManage IP Addresses, Manage Login Access Policies, Manage Password Policies, Manage Profiles and Permission Sets, Manage Roles, Manage Sharing, Reset User Passwords and Unlock Users, View All Users, View Roles and Hierarchy, View Setup and Configuration.
 
 
@@ -31,6 +33,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 
   Assign the permissions directly to this profile. Don't add the permissions through permission sets.
+
+The account entered in **Admin Username** needs **Use Any API Auth** because the Microsoft Entra provisioning service signs in through SOAP API `login()`. Salesforce's Winter '27 release update requires this permission for SOAP API sign-ins in all orgs, including sandboxes, from December 1, 2026. For details, see [Assign Use Any API Auth Permission for SOAP login\(\)](https://help.salesforce.com/s/articleView?id=release-notes.rn_api_soap_login.htm&language=en_US&type=5).
 
 Important
 
@@ -149,7 +153,9 @@ As users that are in assigned to the application are updated in Microsoft Entra 
   - The credentials used have admin access to Salesforce.
   - The version of Salesforce that you're using supports Web Access \(such as Developer, Enterprise, Sandbox, and Unlimited editions of Salesforce.\)
   - Web API access is enabled for the user.
+  - SOAP API `login()` is enabled in the Salesforce org, and the **Admin Username** account has **Use Any API Auth**.
 
+- **SalesforceCredentialValidation:** If **Test Connection** reports "Your Salesforce.com credentials are invalid..." even with a correct password and a fresh security token, check the integration account's **Use Any API Auth** permission. Salesforce Login History can show successful sign-ins even when this connection fails. If the underlying error is `INSUFFICIENT_ACCESS: SOAP API login() requires the Use Any API Auth user permission`, grant **Use Any API Auth** to the integration account's profile, and then retry **Test Connection**.
 - The Microsoft Entra provisioning service supports provisioning language, locale, and timeZone for a user. These attributes are in the default attribute mappings but don't have a default source attribute. Ensure that you select the default source attribute and that the source attribute is in the format expected by SalesForce. For example, localeSidKey for english\(UnitedStates\) is en\_US. Review the guidance provided [here](https://help.salesforce.com/articleView?id=faq_getstart_what_languages_does.htm&type=5) to determine the proper localeSidKey format. The languageLocaleKey formats can be found [here](https://help.salesforce.com/articleView?id=faq_getstart_what_languages_does.htm&type=5). In addition to ensuring that the format is correct, you may need to ensure that the language is enabled for your users as described [here](https://help.salesforce.com/articleView?id=faq_getstart_what_languages_does.htm&type=5).
 - **SalesforceLicenseLimitExceeded:** The user could not be created in Salesforce because there are no available licenses for this user. Either procure additional licenses for the target application, or [review your user assignments](https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-application-preparation) to ensure that the correct users are assigned.
 - **SalesforceDuplicateUserName:** The user can't be provisioned because it has a Salesforce.com 'Username' that's duplicated in another Salesforce.com tenant. In Salesforce.com, values for the 'Username' attribute must be unique across all Salesforce.com tenants. By default, a user’s userPrincipalName in Microsoft Entra ID becomes their 'Username' in Salesforce.com. You have two options. One option is to find and rename the user with the duplicate 'Username' in the other Salesforce.com tenant, if you administer that other tenant as well. The other option is to remove access from the Microsoft Entra user to the Salesforce.com tenant with which your directory is integrated. We will retry this operation on the next synchronization attempt.

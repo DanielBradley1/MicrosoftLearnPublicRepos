@@ -7,7 +7,7 @@ MSAL adopts the strategy of "make simple scenarios simple, make complex scenario
 
 ## Use your own HttpClient
 
-Allows apps to adapt highly scalable HttpClient factories such as ASP.NET Core's [IHttpClientFactory](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-6.0). Helps desktop and mobile apps which have to deal with complex proxy configurations. Allows apps to fully control the HTTP messages.
+Allows apps to adapt highly scalable HttpClient factories such as ASP.NET Core's [IHttpClientFactory](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests). Helps desktop and mobile apps which have to deal with complex proxy configurations. Allows apps to fully control the HTTP messages.
 
 Details in [IMsalHttpClientFactory](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.imsalhttpclientfactory).
 
@@ -46,7 +46,7 @@ Allows apps to add query \(GET\) parameters to applications, customizing the exp
 
 Useful to target Microsoft Entra service slices where new features or bug fixes are deployed first and to customize the UX experience with features not exposed by MSAL. Note that MSAL doesn't perform the `/authorize` request in ASP.NET / ASP.NET Core scenarios, so those calls are not affected!
 
-Details [here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1.withextraqueryparameters?view=azure-dotnet#microsoft-identity-client-abstractacquiretokenparameterbuilder-1-withextraqueryparameters\(system-string\))
+Details [here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1.withextraqueryparameters)
 
 ## Desktop / Mobile Apps - ICustomWebUi
 
@@ -63,4 +63,4 @@ This pattern introduces security risks and is not supported by Entra ID cloud se
 
 While ICustomWebUi allows desktop and mobile apps to use their own browser instead of the embedded / system browsers provided by MSAL, it should only be used for testing or legacy scenarios where migration is not yet possible.
 
-Details [here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.extensibility.icustomwebui?view=azure-dotnet)
+Details [here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.extensibility.icustomwebui)

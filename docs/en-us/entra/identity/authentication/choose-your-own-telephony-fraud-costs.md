@@ -57,7 +57,7 @@ Review SMS and voice volume in your provider's usage reports. A sudden increase 
 
 ## Related content
 
-- [Set up SMS and voice with your own telecom provider by using APIs](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api).
+- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 - [Monitor and troubleshoot SMS and voice with your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Plan for resiliency and high availability](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
 - [Estimate telecom provider and Azure hosting costs](https://learn.microsoft.com/en-us/entra/identity/authentication/phone-providers-faq#how-much-does-choose-your-own-telephony-provider-cost).

@@ -102,7 +102,7 @@ When a request times out, check your provider's records before you try again. Yo
 
 ## Related content
 
-- [Set up SMS and voice with your own telecom provider by using APIs](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api).
+- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 - [Plan for resiliency and high availability with your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
 - [Prevent telephony fraud when using your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
 - [Audit logs in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs).

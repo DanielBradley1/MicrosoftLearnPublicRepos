@@ -20,7 +20,7 @@ The [authority](https://learn.microsoft.com/en-us/entra/identity-platform/msal-c
 
 When you call the the `AcquireTokenInteractive`,the user experience typically follows the steps:
 
-- The user enters their user ID \(or the account or `loginHint` provided as part of the call to <xref:Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenAsync\(System.Collections.Generic.IEnumerable{System.String}\)>\).
+- The user enters their user ID \(or the account or `loginHint` provided as part of the call to [Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenAsync\(System.Collections.Generic.IEnumerable{System.String}](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.ipublicclientapplication).\)
 - Microsoft Entra ID displays a brief "Taking you to your organization's page" UI.
 - Microsoft Entra ID redirects the user to the sign-in page of the identity provider \(usually customized with the organization branding\).
 

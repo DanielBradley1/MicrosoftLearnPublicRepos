@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-system-preferred-authentication -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
 # System-preferred authentication
 
@@ -223,9 +223,9 @@ When in the **Microsoft managed** state, the system evaluates available credenti
 | --- | --- | --- | --- |
 | 1 | [Temporary Access Pass \(TAP\)](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass) | Recovery | 1FA + MFA |
 | 2 | [Passkey](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2)<sup>1</sup> | Phishing-resistant | 1FA + MFA |
-| 3 | [Certificate-based authentication \(CBA\)](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication) | Phishing-resistant | 1FA or 1FA + MFA |
-| 4 | [Microsoft Authenticator notifications](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-authenticator-app) | Passwordless | 1FA + MFA |
-| 5 | [External multifactor authentication \(MFA\)](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-external-method-manage) | — | MFA |
+| 3 | [External multifactor authentication \(MFA\)](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-external-method-manage) | – | MFA |
+| 4 | [Certificate-based authentication \(CBA\)](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication) | Phishing-resistant | 1FA or 1FA + MFA |
+| 5 | [Microsoft Authenticator notifications](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-authenticator-app) | Passwordless | 1FA + MFA |
 | 6 | [Time-based one-time password \(TOTP\)](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-oath-tokens)<sup>2</sup> | — | MFA |
 | 7 | [Telephony](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-phone-options)<sup>3</sup> | — | MFA |
 | 8 | QR code | Frontline worker | 1FA |

@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api -->
 <!-- Sitemap-Last-Modified: 2026-10-30 -->
 
-# Set up SMS and voice
+# Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center
 
 Use Choose Your Own Telephony Provider \(CYOT\) to deliver SMS and voice authentication through your organization's telephony provider. With CYOT, you purchase a supported provider offer through [Microsoft Security Store](https://securitystore.microsoft.com/), deploy the integration in your Azure subscription, and configure Microsoft Entra to route SMS or voice authentication through your provider.
 
-This article walks you through the end-to-end setup, including purchasing your provider offer, deploying the integration, configuring the authentication method policy, and testing the experience before moving to production.
+This article walks you through the end-to-end setup in the Microsoft Entra admin center, including purchasing your provider offer, deploying the integration, configuring the authentication method policy, and testing the experience before moving to production.
 
 ## How the integration works
 
@@ -28,11 +28,10 @@ Use accounts with the following permissions:
 
 | Task | Required access | Why it's needed |
 | --- | --- | --- |
-| Create the application | Permission to register applications in the customer tenant | Lets setup create the application that securely connects Microsoft Entra to your integration. |
-| Deploy Azure resources | Subscription Owner, or Contributor + Role Based Access Control Administrator at the required scope | Lets setup deploy the integration in your subscription. |
-| Grant directory access during deployment | Privileged Role Administrator | Lets setup grant the directory permissions that Microsoft Entra needs to route requests to your integration. |
-| Read authentication method policy | Delegated `Policy.Read.AuthenticationMethod` permission and a supported role, such as Authentication Policy Administrator | Allows setup to read the existing SMS or voice authentication method configuration. |
-| Update authentication method policy | Authentication Policy Administrator and delegated `Policy.ReadWrite.AuthenticationMethod` permission | Allows setup to configure the SMS or voice authentication method to use the integration. |
+| Create the application during deployment | Permission to register applications in the customer tenant. | Lets setup create the application that securely connects Microsoft Entra to your integration. |
+| Deploy Azure resources | Subscription Owner, or Contributor + Role Based Access Control Administrator at the required scope. | Lets setup deploy the integration in your subscription. |
+| Grant directory access during deployment | Privileged Role Administrator. | Lets setup grant the directory permissions that Microsoft Entra needs to route requests to your integration. |
+| Configure authentication method profiles | Authentication Policy Administrator. | Allows you to review existing SMS or voice settings and configure the integration in the Microsoft Entra admin center. |
 
 Important
 
@@ -40,13 +39,22 @@ Before you begin, confirm that your Microsoft Entra policies allow the setup scr
 
 ## Step 1: Purchase and activate your telecom provider
 
-1. Purchase your provider's offer from [Microsoft Security Store](https://securitystore.microsoft.com/). For detailed purchasing instructions, see [Purchase and deploy a SaaS solution from Security Store](https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution).
-2. After you **Place Order**, select **Configure Account Now** and follow your provider's registration instructions.
-3. Keep this page available and continue to step 2. You'll complete registration in step 3 with the application ID from the deployment summary.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Authentication Policy Administrator.
+2. Go to **Entra ID** > **Authentication methods** > **Policies** and select **Add telecom profile**. The **Set up an SMS or voice provider** page guides you through subscription, integration, and profile setup.
+
+   [![Redacted screenshot of the Set up an SMS or voice provider page and its three setup tasks.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/setup-overview.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/setup-overview.png#lightbox)
+3. Select **Subscribe to a telecom provider** and choose a supported telecom provider. Use **Get solution** to open its offer in [Microsoft Security Store](https://securitystore.microsoft.com/), or select an existing subscription with **Select details**. See [Available telephony providers](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers#available-telephony-providers).
+
+   [![Redacted screenshot of the telecom provider selection pane. Demo pricing and offer details are obscured.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png#lightbox)
+4. Purchase your provider's offer. For detailed purchasing instructions, see [Purchase and deploy a SaaS solution from Security Store](https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution).
+5. After you **Place Order**, select **Configure Account Now** and follow your provider's registration instructions.
+6. Keep the registration page available and return to the Microsoft Entra setup page. Continue to step 2; you'll complete registration in step 3 with the application ID from the deployment summary.
 
 ## Step 2: Deploy the integration
 
-Use Azure Cloud Shell in PowerShell mode to run the setup script for the telecom provider you select.
+On **Set up an SMS or voice provider**, select **Set up the provider integration**. Select the Azure hosting subscription and review the telecom provider configuration populated in the pane.
+
+[![Redacted screenshot of the provider integration pane with subscription selection, Function App setup, registration guidance, and Verify.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/integration-setup.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/integration-setup.png#lightbox)
 
 ### What the setup script does
 
@@ -62,24 +70,25 @@ The integration runs on Azure resources in your subscription, billed based on yo
 
 ### Run the setup script
 
-1. Sign in to the Azure portal and select the **Cloud Shell** icon \(**>\_**\) in the top toolbar. You can also go directly to [https://shell.azure.com](https://shell.azure.com).
-2. Select **PowerShell**. If Cloud Shell opens in Bash, select **Switch to PowerShell** in the toolbar.
-3. If this is your first time, select **No storage account required**, choose your subscription, and then select **Apply**.
-4. Download and review the [setup script](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/setup/Setup-Epp.ps1):
+1. Select **View setup script on GitHub** in the integration pane and review the setup instructions.
+2. Sign in to the Azure portal and select the **Cloud Shell** icon \(**>\_**\) in the top toolbar. You can also go directly to [https://shell.azure.com](https://shell.azure.com).
+3. Select **PowerShell**. If Cloud Shell opens in Bash, select **Switch to PowerShell** in the toolbar.
+4. If this is your first time, select **No storage account required**, choose your subscription, and then select **Apply**.
+5. Download the setup script:
 
    ```powershell
    Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/main/setup/Setup-Epp.ps1' `
        -OutFile '.\Setup-Epp.ps1'
    ```
 
-5. Run the script.
+6. Run the script.
 
    ```powershell
    .\Setup-Epp.ps1
    ```
 
-6. Follow the prompts to select the customer tenant, hosting subscription, Azure region, telecom provider, runtime, and hosting plan, then approve the deployment plan.
-7. Save the deployment summary, including its tenant ID, endpoint URL, and **Application \(client\) ID**. You need these values to complete provider registration and configure your profile.
+7. Follow the prompts to select the customer tenant, hosting subscription, Azure region, telecom provider, runtime, and hosting plan. Use the configuration shown in the integration pane and approve the deployment plan.
+8. Save the deployment summary, including its tenant ID, endpoint URL, and **Application \(client\) ID**. You need these values to complete provider registration and configure your profile.
 
 Important
 
@@ -89,126 +98,64 @@ Copy these values before you leave the Cloud Shell window. Cloud Shell sessions 
 
 After deployment completes, return to your telecom provider's registration page to complete the provider setup.
 
-1. Provide the **Application \(client\) ID** from your Microsoft Entra application when requested by your telecom provider.
+1. Provide the **Application \(client\) ID** created by the setup script when requested by your telecom provider.
 2. Complete any additional registration steps required by the provider.
 3. In [Microsoft Security Store](https://securitystore.microsoft.com/), go to **Management** > **My Solutions** and confirm that the **Subscription status** is '**Subscribed**' before continuing.
-
-Important
-
-Complete the telecom provider registration before configuring Microsoft Entra to send authentication traffic through the provider.
+4. Return to **Set up the provider integration** in the Microsoft Entra admin center and select **Verify** to check the telecom provider subscription.
 
 ## Step 4: Update the authentication method policy
 
-Configure each channel with the endpoint URL and application client ID from the deployment summary. Start in evaluation mode, validate the integration, and then gradually move delivery to your telecom provider.
+Create a profile for each intended channel. The wizard carries over the current channel's targets and populates the endpoint and application ID when you select the deployed Function App. Start in **Evaluation**, validate the integration, and then gradually move delivery to your telecom provider.
 
 Warning
 
-CYOT updates your existing SMS or voice authentication method policy, so any change also applies to current SMS and voice users. Before you update the policy, save the full JSON response from [Read the current policy](#read-the-current-policy). In production, keep your existing `includeTargets` unchanged, and use evaluation mode and `migrationPercentage` to roll out gradually. Test targeting changes in a test tenant.
-
-### Read the current policy
-
-Use [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to read and update the policy. Confirm that you're signed in to the tenant whose ID matches the Tenant ID in the deployment summary.
-
-Use these request URLs for the corresponding channel:
-
-| Channel | Request URL |
-| --- | --- |
-| SMS | `https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/Sms` |
-| Voice | `https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/Voice` |
-
-1. Set the request method to **GET** and enter the corresponding channel's request URL.
-2. Open **Modify permissions** and consent to `Policy.Read.AuthenticationMethod`.
-3. Select **Run query** and save the complete JSON response as a record of the existing policy.
-4. Repeat for the other channel if you're configuring both SMS and voice.
-
-Important
-
-When you prepare the updated policy, use the saved response to preserve your existing `includeTargets` and other intended authentication method settings.
+**Target users** are shared with your existing SMS or voice policy, so any change here also affects users who sign in with SMS or voice today. Keep the current selections during rollout, and use a test tenant to try different users or groups.
 
 ### Configure CYOT settings
 
-Configure these properties:
+1. Go to **Set up an SMS or voice provider** and select **Create an SMS or voice profile**.
+2. On **Delivery channel**, select **SMS** or **Voice call**, then select **Next**. Each profile configures one delivery channel.
 
-| Property | Value |
-| --- | --- |
-| `telecomProviderSettings.url` | Endpoint URL from the deployment summary. |
-| `telecomProviderSettings.appId` | Integration application client ID. |
-| `telecomProviderSettings.isEvaluationModeEnabled` | Set to `true` for evaluation mode or `false` to enable telecom provider delivery. |
-| `telecomProviderSettings.migrationPercentage` | Percentage of eligible authentication requests sampled during evaluation, or routed to your telecom provider when evaluation mode is disabled. |
-| `includeTargets` | Preserve the existing production configuration. These targets are shared with the existing SMS or voice authentication method policy. |
+   [![Redacted screenshot of the Delivery channel step with SMS and Voice call options.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/delivery-channel.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/delivery-channel.png#lightbox)
+3. On **Target users**, review the targets carried over from the built-in channel configuration. Preserve the existing production **Include** and **Exclude** selections, then select **Next**.
+
+   [![Redacted screenshot of Target users with the carried-over targeting notice and included group values obscured.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/target-users.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/target-users.png#lightbox)
 
 ### Start in evaluation mode
 
-Start in evaluation mode to validate the integration before moving authentication delivery to your telecom provider.
+1. On **Profile plan**, select **Evaluation**. Review the **Evaluation sampling percentage**, then select **Next**.
 
-Use `migrationPercentage` to set the evaluation sampling percentage.
+   [![Redacted screenshot of the Evaluation plan, Microsoft-managed delivery explanation, and evaluation sampling control.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/evaluation-plan.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/evaluation-plan.png#lightbox)
+2. On **Function App**, select the Function App deployed for the channel's integration. The wizard populates its **Function App URL** and **App ID**, along with subscription and resource details. Compare the endpoint and application client ID with the deployment summary, then select **Next**.
 
-1. Use the tested SMS or voice JSON example provided below in **Request body**.
-2. Replace the endpoint URL and application client ID with the values for your deployment.
-3. Set `isEvaluationModeEnabled` to `true`.
-4. For production tenants, preserve the existing `includeTargets` from your saved policy configuration. Do not replace existing production targeting for CYOT testing.
-5. Open **Modify permissions**, consent to `Policy.ReadWrite.AuthenticationMethod`, and send the **PATCH** request to the corresponding channel's URL.
-6. Read the policy again with **GET** and verify the endpoint URL, application client ID, evaluation-mode setting, migration percentage, and existing targets.
-7. Complete the [evaluation-mode tests](#test-evaluation-mode) in step 5.
+   [![Redacted screenshot of Function App selection and automatically populated endpoint, application, subscription, and resource details.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/select-function-app.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/select-function-app.png#lightbox)
+3. On **Review and finalize**, confirm the delivery channel, existing targets, **Evaluation** plan, and selected Function App, then select **Create profile**.
 
-Important
+   Note
 
-The JSON examples below contain the tested configuration values. Before using an example, replace the endpoint URL and application client ID with the values for your deployment.
+   Changes to the authentication method policy can take up to an hour to take effect. Wait before you start testing.
+4. Complete the [evaluation-mode tests](#test-evaluation-mode) in step 5.
 
-For evaluation mode, set `isEvaluationModeEnabled` to `true`. In a production tenant, preserve the `includeTargets` from your existing SMS or voice policy. Use a test tenant if you want to validate CYOT with different target users or groups.
-
-For SMS:
-
-```json
-{
-  "@odata.type": "#microsoft.graph.smsAuthenticationMethodConfiguration",
-  "state": "enabled",
-  "telecomProviderSettings": {
-    "url": "<YOUR-ENDPOINT-URL>",
-    "appId": "<YOUR-APPLICATION-CLIENT-ID>",
-    "isEvaluationModeEnabled": false,
-    "migrationPercentage": 100
-  }
-}
-```
-
-For Voice:
-
-```json
-{
-  "@odata.type": "#microsoft.graph.voiceAuthenticationMethodConfiguration",
-  "state": "enabled",
-  "includeTargets": [
-    {
-      "verificationMode": "voiceOneTimePasscode"
-    }
-  ],
-  "telecomProviderSettings": {
-    "url": "<YOUR-ENDPOINT-URL>",
-    "appId": "<YOUR-APPLICATION-CLIENT-ID>",
-    "isEvaluationModeEnabled": false,
-    "migrationPercentage": 100
-  }
-}
-```
+Saving applies the selected plan and targets to the channel. In **Evaluation**, Microsoft-managed telephony continues delivering authentication messages while the integration processes validation requests. Repeat profile configuration for each channel you intend to support.
 
 ### Move to production mode
 
 After evaluation succeeds:
 
-1. Set `telecomProviderSettings.isEvaluationModeEnabled` to `false`.
-2. Set `telecomProviderSettings.migrationPercentage` to your initial traffic percentage.
-3. Keep the existing production `includeTargets` unchanged.
-4. Submit the policy update.
-5. Read the configuration again and verify the endpoint URL, application client ID, evaluation mode, migration percentage, and targets.
-6. Test [telecom provider delivery](#test-telecom-provider-delivery) before increasing traffic.
+1. Open the saved SMS or voice profile from **Authentication methods** > **Policies** and return to its **Profile plan** settings.
+2. Select **Production** and set **Traffic routed through provider percentage** to your initial traffic percentage.
+
+   [![Redacted screenshot of the Production plan and Traffic routed through provider percentage control.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/production-plan.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/production-plan.png#lightbox)
+3. Keep the existing production targets and selected Function App unchanged.
+4. Review and save the profile changes. Confirm the saved plan, percentage, endpoint, application ID, and targets.
+5. Test [telecom provider delivery](#test-telecom-provider-delivery) before increasing traffic.
 
 ### Increase traffic gradually
 
-1. Keep `isEvaluationModeEnabled` set to `false`.
-2. Increase `migrationPercentage` in increments until you reach `100`.
-3. Keep the endpoint URL, application client ID, and existing `includeTargets` unchanged while changing the migration percentage.
-4. [Validate authentication and telecom provider delivery](#check-each-rollout-stage) after each change.
+1. Keep the profile in **Production**.
+2. Increase **Traffic routed through provider percentage** in increments until you reach `100`.
+3. Keep the endpoint URL, application client ID, and existing production targets unchanged while updating the traffic percentage.
+4. [Validate authentication and telecom provider delivery](#check-each-rollout-stage) after every percentage change.
 5. Increase the percentage after each stage validates successfully. To investigate an issue, hold at the current percentage and see [Monitor and troubleshoot](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 
 Important
@@ -222,15 +169,15 @@ Use a test user with a phone number registered for SMS or voice.
 ### Test in Evaluation
 
 1. In an InPrivate browser session, sign in as the test user and complete an SMS or voice authentication.
-2. In the Azure portal, go to your **Function App** > **SendOtp** > **Invocations** and open the latest transaction. In **Invocation details**, confirm **Evaluation request completed** with HTTP `200`.
+2. In the Azure portal, go to your **Function App** → **Functions** → **SendOtp** → **Invocations** and open the latest transaction. In **Invocation details**, confirm **Evaluation request completed** with HTTP `200`.
 3. In the Microsoft Entra admin center, go to **Monitoring & health** > **Audit logs** and filter by **Service: Azure MFA**. Open the latest entry and confirm **DeliveryMethod** is `CyotEvaluation`.
 
 ### Test provider delivery
 
-After evaluation succeeds, set `isEvaluationModeEnabled` to `false` and configure your initial `migrationPercentage`.
+After evaluation succeeds, switch to **Production** and set your initial traffic percentage.
 
 1. In a new InPrivate browser session, sign in as the test user. Confirm the SMS or voice code arrives and authentication completes.
-2. In the Azure portal, go to your **Function App** > **Invocations** and open the latest transaction. In **Invocation details**, confirm the request completed with HTTP `200`.
+2. In the Azure portal, go to your **Function App** → **Functions** → **SendOtp** → **Invocations** and open the latest transaction. In **Invocation details**, confirm the request completed with HTTP `200`.
 3. In the Microsoft Entra admin center, go to **Audit logs** and filter by **Service: Azure MFA**. Open the latest entry and confirm **Delivery Method** is `Cyot`.
 4. In your provider's portal, confirm the message was delivered.
 
@@ -244,6 +191,6 @@ See [Monitor and troubleshoot your own telephony provider](https://learn.microso
 
 ## Related content
 
-- [Monitor and troubleshoot](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
+- [Monitor and troubleshoot your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Prevent telephony fraud when using your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
 - [Plan for resiliency when using your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).

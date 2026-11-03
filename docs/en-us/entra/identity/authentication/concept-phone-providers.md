@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Choose your own telephony provider for SMS and voice authentication
 
@@ -35,7 +35,7 @@ Review pricing and other commercial details for the available provider offers:
 
 - Soprano: [Per-user offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_user) or [per-transaction offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_transaction) in [Microsoft Security Store](https://securitystore.microsoft.com/).
 - Telesign: [Telesign Verify for Microsoft Entra](https://securitystore.microsoft.com/solutions/telesigncorporation1779799505747.telesign-verify-cyot-azure) in [Microsoft Security Store](https://securitystore.microsoft.com/).
-- Infobip.
+- Infobip: [Infobip offer](https://securitystore.microsoft.com/solutions/infobipdoo.infobip_microsoft_entra) in [Microsoft Security Store](https://securitystore.microsoft.com/).
 
 Note
 
@@ -61,7 +61,7 @@ At a high level, setting up CYOT involves:
 4. **Evaluate.** Validate the integration while Microsoft continues to deliver messages, so users aren't affected.
 5. **Roll out.** Move traffic to your provider gradually, validating at each stage.
 
-For detailed instructions, see [Set up SMS and voice with your own telecom provider by using APIs](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api).
+For detailed instructions, see [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 
 ## Plan your deployment
 
@@ -100,7 +100,7 @@ See [Troubleshoot SMS and voice with your own telecom provider](https://learn.mi
 
 ## Related content
 
-- [Set up SMS and voice with your own telecom provider by using APIs](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api).
+- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 - [Prevent telephony fraud when using your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
 - [Plan for resiliency when using your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
 - [Troubleshoot SMS and voice with your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).

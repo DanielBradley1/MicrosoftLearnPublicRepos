@@ -84,7 +84,7 @@ For more details, see [Localhost exceptions](https://learn.microsoft.com/en-us/a
 
 ### Linux and macOS
 
-On Linux, MSAL.NET opens the default system browser with a tool like [xdg-open](https://manpages.ubuntu.com/manpages/questing/en/man1/xdg-open.1.html). Opening the browser with `sudo` is unsupported by MSAL and will cause MSAL to throw an exception.
+On Linux, MSAL.NET opens the default system browser with a tool like [xdg-open](https://manpages.ubuntu.com/manpages/focal/man1/xdg-open.1.html). Opening the browser with `sudo` is unsupported by MSAL and will cause MSAL to throw an exception.
 
 On macOS, the browser is opened by invoking `open <url>`.
 

@@ -12,6 +12,10 @@ The scenario outlined in this article assumes that you already have the followin
 - A Microsoft Entra tenant.
 - A valid tenant for Salesforce Sandbox for Work or Salesforce Sandbox for Education. You may use a free trial account for either service.
 - A user account in Salesforce Sandbox with Team Admin permissions.
+- SOAP API `login()` enabled in your Salesforce Sandbox org. Salesforce disables this operation by default for orgs created in Winter '26 and later. In Salesforce Setup, enter **User Interface** in the Quick Find box, select **User Interface**, and select **Enable SOAP API login\(\)**. This action can't be reverted on the **User Interface** page. For details, see the Salesforce [SOAP API login\(\) reference](https://developer.salesforce.com/docs/platform/api/guide/sforce-api-calls-login.html).
+- A profile for the integration account entered in **Admin Username** with **API Enabled**, **Manage Users**, and **Use Any API Auth** enabled.
+
+The **Admin Username** account needs **Use Any API Auth** because the Microsoft Entra provisioning service signs in through SOAP API `login()`. Salesforce's Winter '27 release update requires this permission for SOAP API sign-ins in all orgs, including sandboxes, from December 1, 2026. For details, see [Assign Use Any API Auth Permission for SOAP login\(\)](https://help.salesforce.com/s/articleView?id=release-notes.rn_api_soap_login.htm&language=en_US&type=5).
 
 ## Assigning users to Salesforce Sandbox
 
@@ -91,6 +95,11 @@ Once you configure provisioning, use the following resources to monitor your dep
 1. Use the [provisioning logs](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs) to determine which users are provisioned successfully or unsuccessfully
 2. Check the [progress bar](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) to see the status of the provisioning cycle and how close it's to completion
 3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states the [application provisioning quarantine status](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-quarantine-status) article.
+
+## Common issues
+
+- If **Test Connection** fails, verify that SOAP API `login()` is enabled in the Salesforce Sandbox org and that the **Admin Username** account has **Use Any API Auth**.
+- **SalesforceCredentialValidation:** If **Test Connection** reports "Your Salesforce.com credentials are invalid..." even with a correct password and a fresh security token, check the integration account's **Use Any API Auth** permission. Salesforce Login History can show successful sign-ins even when this connection fails. If the underlying error is `INSUFFICIENT_ACCESS: SOAP API login() requires the Use Any API Auth user permission`, grant **Use Any API Auth** to the integration account's profile, and then retry **Test Connection**.
 
 ## Additional resources
 

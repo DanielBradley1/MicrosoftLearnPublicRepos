@@ -89,9 +89,9 @@ In some scenarios, you might want to require fresh authentication every time a u
 
 - Accessing sensitive applications.
 - Securing resources behind VPN or Network as a Service \(NaaS\) providers.
-- Securing privileged role elevation in PIM​.
+- Securing privileged role elevation in PIM.
 - Protecting user sign-ins to Azure Virtual Desktop machines.
-- Protecting risky users and risky sign-ins​ identified by Microsoft Entra ID Protection.
+- Protecting risky users and risky sign-ins identified by Microsoft Entra ID Protection.
 - Securing sensitive user actions like Microsoft Intune enrollment.
 
 When you select **Every time**, the policy requires full reauthentication **when the session is evaluated**. This requirement means that if the user closes and opens their browser during the session lifetime, they might not be prompted for reauthentication. Setting sign-in frequency to every time works best when the resource has the logic to identify when a client should get a new token. These resources redirect the user back to Microsoft Entra only once the session expires.
@@ -104,6 +104,28 @@ Using sign-in frequency to require reauthentication every time, without multifac
 
 - For applications in the Microsoft 365 stack, use [time-based user sign-in frequency](#user-sign-in-frequency) for a better user experience.
 - For the Azure portal and the Microsoft Entra admin center, use either [time-based user sign-in frequency](#user-sign-in-frequency) or [require reauthentication on PIM activation](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context) by using authentication context for a better user experience.
+
+### Every time strict \(preview\)
+
+**Every time strict \(preview\)** is a sign-in frequency control with a shorter validity window \(10 seconds\) for authentication freshness. It's intended for specific applications that need fresh authentication when they request a new token. These applications must be configured to work with the control. Examples include pharmaceutical e-prescribing applications and financial or banking applications that require reauthentication for sensitive actions.
+
+To require fresh authentication for a sensitive action, an application needs compatible session management. That logic must request a new token for the action. Applying the control alone isn't sufficient if the application continues to use its existing session without requesting a new token.
+
+The application decides when fresh authentication is needed through its own session management logic and intervals. Its reauthentication interval can be longer than 10 seconds. When the application requests a new token, **Every time strict \(preview\)** checks the time since the user's last authentication. If at least 10 seconds have elapsed, the control requires the user to reauthenticate.
+
+- Target only specific applications. Don't apply it broadly to all resources.
+- Work with the application owner to confirm that the application's token requests and session management meet its reauthentication requirements.
+- Test the sign-in experience with the selected applications before rollout. Frequent prompts can disrupt users and contribute to MFA fatigue.
+
+Warning
+
+Do not apply **Every time strict \(preview\)** settings to Office 365 applications.
+
+#### Global Secure Access sign-in every time \(preview\)
+
+Global Secure Access uses **Every time strict \(preview\)** in Conditional Access to require fresh reauthentication when users access sensitive private applications. Global Secure Access application session management uses a **five-minute reauthentication window**.
+
+For more information, see [Sign-in every time for Microsoft Entra Private Access \(preview\)](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-private-access-sign-in-every-time).
 
 ## Persistence of browsing sessions
 
