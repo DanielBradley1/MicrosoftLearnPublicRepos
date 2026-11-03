@@ -16,7 +16,7 @@ For more information about dependencies for specific Configuration Manager featu
 
 ## Ensure that TLS 1.2 is enabled as a protocol for SChannel at the operating system level
 
-For the most part, protocol usage is controlled at three levels, the operating system level, the framework or platform level, and the application level. TLS 1.2 is enabled by default at the operating system level. Once you ensure that the .NET registry values are set to enable TLS 1.2 and verify the environment is properly utilizing TLS 1.2 on the network, you may want to edit the `SChannel\Protocols` registry key to disable the older, less secure protocols. For more information on disabling TLS 1.0 and 1.1, see [Configuring Schannel protocols in the Windows Registry](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry).
+For the most part, protocol usage is controlled at three levels, the operating system level, the framework or platform level, and the application level. TLS 1.2 is enabled by default at the operating system level. After you ensure that the .NET registry values are set to enable TLS 1.2 and verify the environment is properly using TLS 1.2 on the network, you might want to edit the `SChannel\Protocols` registry key to disable the older, less secure protocols. For more information about disabling TLS 1.0 and 1.1, see [Configuring Schannel protocols in the Windows Registry](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry).
 
 ## Update and configure the .NET Framework to support TLS 1.2
 
@@ -28,15 +28,15 @@ First, determine the installed .NET versions. For more information, see [Determi
 
 Install the .NET updates so you can enable strong cryptography. Some versions of .NET Framework might require updates to enable strong cryptography. Use these guidelines:
 
-- NET Framework 4.6.2 and later supports TLS 1.1 and TLS 1.2. Confirm the registry settings, but no additional changes are required.
+- .NET Framework 4.6.2 and later support TLS 1.1 and TLS 1.2. Confirm the registry settings, but make no other changes.
 
   Note
 
   Starting in version 2107, Configuration Manager requires Microsoft .NET Framework version 4.6.2 for site servers, specific site systems, clients, and the console. If possible in your environment, install the latest version of .NET version 4.8.
-- Update NET Framework 4.6 and earlier versions to support TLS 1.1 and TLS 1.2. For more information, see [.NET Framework versions and dependencies](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies).
-- If you're using .NET Framework 4.5.1 or 4.5.2 on Windows 8.1, Windows Server 2012 R2, or Windows Server 2012, it's highly recommended that you install the latest security updates for the .Net Framework 4.5.1 and 4.5.2 to ensure TLS 1.2 can be enabled properly.
+- Update .NET Framework 4.6 and earlier versions to support TLS 1.1 and TLS 1.2. For more information, see [.NET Framework versions and dependencies](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies).
+- If you use .NET Framework 4.5.1 or 4.5.2 on Windows 8.1, Windows Server 2012 R2, or Windows Server 2012, Microsoft recommends that you install the latest security updates for the .NET Framework 4.5.1 and 4.5.2 to ensure TLS 1.2 can be enabled properly.
 
-  For your reference, TLS 1.2 was first introduced into .Net Framework 4.5.1 and 4.5.2 with the following hotfix rollups:
+  For your reference, TLS 1.2 was first introduced into .NET Framework 4.5.1 and 4.5.2 with the following hotfix rollups:
 
   - For Windows 8.1 and Server 2012 R2: Hotfix rollup 3099842
   - For Windows Server 2012: Hotfix rollup 3099844
@@ -47,7 +47,7 @@ Configure .NET Framework to support strong cryptography. Set the `SchUseStrongCr
 
 Make sure to set the following registry keys on any computer that communicates across the network with a TLS 1.2-enabled system. For example, Configuration Manager clients, remote site system roles not installed on the site server, and the site server itself.
 
-For 32-bit applications that are running on 32-bit OSs and for 64-bit applications that are running on 64-bit OSs, update the following subkey values:
+Update the following subkey values for 32-bit applications that run on 32-bit operating systems and for 64-bit applications that run on 64-bit operating systems:
 
 ```Registry
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]
@@ -58,7 +58,7 @@ For 32-bit applications that are running on 32-bit OSs and for 64-bit applicatio
       "SchUseStrongCrypto" = dword:00000001
 ```
 
-For 32-bit applications that are running on 64-bit OSs, update the following subkey values:
+Update the following subkey values for 32-bit applications that run on 64-bit operating systems:
 
 ```Registry
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v2.0.50727]

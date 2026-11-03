@@ -1,53 +1,53 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/support/tools -->
 <!-- Sitemap-Last-Modified: 2024-12-04 -->
 
-# Configuration Manager Tools
+# Configuration Manager tools
 
 *Applies to: Configuration Manager \(current branch\)*
 
 The Configuration Manager tools primarily include [client-based](#client-tools) and [server-based tools](#server-tools). Use these tools to help support and troubleshoot your Configuration Manager infrastructure.
 
-These tools are included in the `CD.Latest\SMSSETUP\Tools` folder on the site server. No further installation is required. Use these versions of the tools with supported versions of Configuration Manager current branch.
+You can find these tools in the `CD.Latest\SMSSETUP\Tools` folder on the site server. No further installation is required. Use these versions of the tools with supported versions of Configuration Manager current branch.
 
-All Windows operating systems listed as supported clients in [Supported operating systems for clients and devices](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) are supported for use with these tools.
+You can use these tools with all Windows operating systems that are listed as supported clients in [Supported operating systems for clients and devices](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).
 
 Note
 
-For supported versions of Configuration Manager current branch, use the versions of the tools in the CD.Latest folder on the site server. Some tools were formerly in the toolkit but not included current branch. These legacy tools are no longer supported.
+For supported versions of Configuration Manager current branch, use the versions of the tools in the `CD.Latest` folder on the site server. Some tools that were formerly in the toolkit aren't included in current branch. These legacy tools are no longer supported.
 
 ## Client tools
 
 These tools are in the `ClientTools` subfolder:
 
-- [Client Spy](https://learn.microsoft.com/en-us/intune/configmgr/core/support/clispy): Troubleshoot issues related to software distribution, inventory, and metering
-- [Deployment Monitoring Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/deployment-monitoring-tool): Troubleshoot applications, updates, and baseline deployments
-- [Policy Spy](https://learn.microsoft.com/en-us/intune/configmgr/core/support/policy-spy): View policy assignments
-- [Power Viewer Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/power-viewer-tool): View status of power management feature
-- [Send Schedule Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/send-schedule-tool): Trigger schedules and evaluations of configuration baselines
+- [Client Spy](https://learn.microsoft.com/en-us/intune/configmgr/core/support/clispy): Troubleshoot issues related to software distribution, inventory, and metering.
+- [Deployment Monitoring Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/deployment-monitoring-tool): Troubleshoot applications, updates, and baseline deployments.
+- [Policy Spy](https://learn.microsoft.com/en-us/intune/configmgr/core/support/policy-spy): View policy assignments.
+- [Power Viewer Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/power-viewer-tool): View status of power management feature.
+- [Send Schedule Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/send-schedule-tool): Trigger schedules and evaluations of configuration baselines.
 
 Note
 
-The `ClientTools` folder also includes the file Microsoft.Diagnostics.Tracing.EventSource.dll. Several client tools require this library. You can't directly use it.
+The `ClientTools` folder also includes the file `Microsoft.Diagnostics.Tracing.EventSource.dll`. Several client tools require this library. You can't directly use it.
 
 ## Server tools
 
 These tools are in the `ServerTools` subfolder:
 
-- [DP Job Queue Manager](https://learn.microsoft.com/en-us/intune/configmgr/core/support/dp-job-manager): Troubleshoots content distribution jobs to distribution points
-- [Collection Evaluation Viewer](https://learn.microsoft.com/en-us/intune/configmgr/core/support/ceviewer): View collection evaluation details
+- [DP Job Queue Manager](https://learn.microsoft.com/en-us/intune/configmgr/core/support/dp-job-manager): Troubleshoots content distribution jobs to distribution points.
+- [Collection Evaluation Viewer](https://learn.microsoft.com/en-us/intune/configmgr/core/support/ceviewer): View collection evaluation details.
 
   Important
 
-  Starting in Configuration Manager version 2103, this standalone tool isn't supported. The tool is no longer included with the Configuration Manager installation source. Starting in version 2010, its functionality is built-in to the console. For more information, see, [How to view collection evaluation](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/collections/collection-evaluation-view).
-- [Content Library Explorer](https://learn.microsoft.com/en-us/intune/configmgr/core/support/content-library-explorer): View contents of the content library single instance store
-- [Content Library Transfer](https://learn.microsoft.com/en-us/intune/configmgr/core/support/content-library-transfer): Transfers content library between drives
+  Starting in Configuration Manager version 2103, this standalone tool isn't supported. The tool is no longer included with the Configuration Manager installation source. Starting in version 2010, its functionality is built-in to the console. For more information, see [How to view collection evaluation](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/collections/collection-evaluation-view).
+- [Content Library Explorer](https://learn.microsoft.com/en-us/intune/configmgr/core/support/content-library-explorer): View contents of the content library single instance store.
+- [Content Library Transfer](https://learn.microsoft.com/en-us/intune/configmgr/core/support/content-library-transfer): Transfers content library between drives.
 - [Content Ownership Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/content-ownership-tool): Changes ownership of orphaned packages. These packages exist in the site without an owning site server.
-- [Role-based Administration and Auditing Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/rbaviewer): Helps administrators audit roles configuration
+- [Role-based Administration and Auditing Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/rbaviewer): Helps administrators audit roles configuration.
 
   Note
 
-  Starting in version 2107, RBAViewer has moved from `<installdir>\tools\servertools\rbaviewer.exe`. It's now located in the Configuration Manager console directory. After you install the console, RBAViewer.exe will be in the same directory. The default location is `C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\rbaviewer.exe`.
-- [Run Meter Summarization Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/run-meter-summ): Run metering summarization task and analyze metering data
+  Starting in version 2107, RBAViewer moved from `<installdir>\tools\servertools\rbaviewer.exe`. It's now located in the Configuration Manager console directory. After you install the console, `RBAViewer.exe` is in the same directory. The default location is `C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\rbaviewer.exe`.
+- [Run Meter Summarization Tool](https://learn.microsoft.com/en-us/intune/configmgr/core/support/run-meter-summ): Run metering summarization task and analyze metering data.
 
 Note
 

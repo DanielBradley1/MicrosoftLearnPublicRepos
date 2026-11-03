@@ -9,7 +9,6 @@ Microsoft Deployment Toolkit \(MDT\) provides a unified collection of tools, pro
 
 ### Download
 
-- [Download MDT](https://aka.ms/mdtdownload)
 - [Release notes](https://learn.microsoft.com/en-us/intune/configmgr/mdt/release-notes)
 - [Known issues](https://learn.microsoft.com/en-us/intune/configmgr/mdt/known-issues)
 - [FAQ](https://learn.microsoft.com/en-us/intune/configmgr/mdt/faq)
