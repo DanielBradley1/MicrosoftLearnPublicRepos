@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-cloudstorageaggregatedevents-table -->
-<!-- Sitemap-Last-Modified: 2026-09-24 -->
+<!-- Sitemap-Last-Modified: 2026-11-01 -->
 
 # CloudStorageAggregatedEvents \(Preview\)
 
@@ -10,6 +10,8 @@ Important
 Some information relates to prereleased product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 This advanced hunting table is populated by records from [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-integration-365#advanced-hunting-in-xdr). If your organization doesn't have Microsoft Defender for Cloud, queries that use the table aren’t going to work or return any results. For more information about prerequisites in integrating Defender for Cloud with Defender, read [Microsoft Defender XDR integration](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-integration-365).
+
+The `CloudStorageAggregatedEvents` table is populated only for subscriptions with Defender for Storage V2 enabled at the subscription level. Enabling Defender for Storage only at the individual storage-account level does not qualify. The legacy Defender for Storage plan is not supported.
 
 For information on other tables in the advanced hunting schema, see the [advanced hunting reference](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-schema-tables).
 

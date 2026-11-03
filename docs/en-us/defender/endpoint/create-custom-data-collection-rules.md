@@ -3,10 +3,6 @@
 
 # Create and manage custom data collection rules in Microsoft Defender for Endpoint
 
-Important
-
-Some information in this article relates to a prereleased product which may be substantially modified before it's commercially released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 Custom data collection rules let you capture specific endpoint events beyond default telemetry and send them to Microsoft Sentinel for advanced hunting and investigation. This article walks you through creating, editing, monitoring, and deleting these rules in the Microsoft Defender portal.
 
 Tip
