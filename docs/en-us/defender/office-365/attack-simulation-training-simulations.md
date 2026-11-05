@@ -419,6 +419,10 @@ Select one of the following options:
 
   - **Tenant landing pages** tab: Contains any custom landing pages that you created. To create a new landing page, select ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-create.png) **Create new**. The creation steps are the same as at **Attack simulation training** > **Content library** tab > **Phish landing pages** > **Tenant landing pages** tab. For instructions, see [Create landing pages](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-landing-pages#create-landing-pages).
 
+    Note
+
+    A new training assignment might take some time to appear. If you use a custom landing page, consider adding a message about this timing.
+
 
   On both tabs, the following information is shown for each landing page. You can sort the landing pages by clicking on an available column header. Select ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-customize.png) **Customize columns** to change the columns that are shown. The default columns are marked with an asterisk \(<sup>\*</sup>\):
 
@@ -522,6 +526,10 @@ On the **Select end user notification** page, select from the following notifica
   For the **How-to Guide** [social engineering technique](#select-a-social-engineering-technique), you can only configure a [Positive reinforcement notification.](#select-a-positive-reinforcement-notification).
 
 When you're finished on the **Select end user notification** page, select **Next**.
+
+Note
+
+Training assignments might not be available immediately after a simulation interaction. The subsequent notification email can also take some time to arrive. For details, see [End-user notifications for Attack simulation training](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-end-user-notifications).
 
 ### Select a training assignment notification
 

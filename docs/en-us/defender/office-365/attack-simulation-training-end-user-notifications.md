@@ -100,6 +100,12 @@ To create a custom end-user notification, use the following steps:
    - **Description**: Enter an optional description.
 
 
+   Note
+
+
+   Training assignments might not be available immediately after a simulation interaction. The subsequent notification email can also take some time to arrive.
+
+
    When you're finished n the **Define details** page, select **Next**.
 
 4. On the **Define content** page, the only setting that's available is **Add content in business language**. When you select it, an **Add content in default language** flyout opens that contains the following settings:

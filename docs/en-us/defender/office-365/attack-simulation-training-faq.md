@@ -53,11 +53,17 @@ It's possible that all users targeted by the simulation don't receive the simula
 
 You can use the [Get-DistributionGroupMember](https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-distributiongroupmember) cmdlet in [Exchange Online PowerShell](https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell) to view and validate targeted group members.
 
+### When will the training assignment notification arrive?
+
+Training assignments might not be available immediately after a simulation interaction. The subsequent notification email can also take some time to arrive. For details, see [End-user notifications for Attack simulation training](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-end-user-notifications).
+
 ### Trainings unexpectedly assigned or not assigned to users
 
 The training threshold in training campaigns prevents users from having the same trainings assigned to them during a specific interval \(90 days by default\). For more information, see [Set the training threshold](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-settings#configure-the-training-threshold).
 
 If you created a [simulation](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-simulations#assign-training) or a [simulation automation](https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-simulation-automations#assign-training) with the training assignment value **Assign training for me \(Recommended\)**, we assign training based on a user's previous simulation and training results. To assign training based on specific criteria, select **Select training courses and modules myself**.
+
+A new training assignment can take some time to appear on the user's training page after a simulation interaction.
 
 ### What happens when a user replies to or forwards a simulation message?
 

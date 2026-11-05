@@ -91,6 +91,10 @@ To create a landing page in Attack simulation training, use the following steps:
 
      - **Text** tab: A rich text editor is available to create the landing page. To see the typical font and formatting settings, toggle **Formatting controls** to ![](https://learn.microsoft.com/en-us/defender-office-365/media/scc-toggle-on.png) **On**.
 
+       Note
+
+       A new training assignment might take some time to appear. If you use a custom landing page, consider adding a message about this timing.
+
        The following controls are also available on the **Text** tab:
 
        - **Dynamic tag**: Select from the following tags:

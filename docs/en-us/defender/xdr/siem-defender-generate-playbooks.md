@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/siem-defender-generate-playbooks -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Generate playbooks using AI in the Microsoft Defender portal \(preview\)
+# Generate playbooks using AI in the Microsoft Defender portal
 
 Use Playbook Generator to create code-based playbooks from natural language in the Microsoft Defender portal. Describe the automation workflow you want, review the generated plan and code, test the playbook, and activate it for use in automation rules.
 

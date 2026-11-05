@@ -14,8 +14,8 @@ Use the **AI Agents** page in the Microsoft Defender portal to review agent conf
 
 ## Prerequisites
 
-- Enable security for AI agents, including the Microsoft 365 connector. See [Enable security for AI agents using Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/get-started-defender-security-for-ai).
-- To discover local AI agents that run on endpoints, set up [AI agent runtime protection in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/configure-ai-agent-runtime-protection). Discovery requires Microsoft Defender for Endpoint and Microsoft Defender Antivirus in active mode. Local agents are onboarded separately.
+- For cloud agents, enable security for AI agents, including the Microsoft 365 connector. See [Enable security for AI agents using Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/get-started-defender-security-for-ai).
+- To discover local AI agents that run on endpoints, meet the [local AI agent discovery prerequisites](https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents#prerequisites). Local agents are onboarded separately, and discovery doesn't require you to enable AI agent runtime protection.
 
 ## Review AI agent risk and security posture
 
@@ -112,6 +112,19 @@ For more information:
 
 - To query local agents discovered on endpoint devices, see [Discover local AI agents in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents).
 - For information about Advanced Hunting, see [Proactively hunt for threats with Advanced Hunting in Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-overview).
+
+## Feature availability for GCC customers
+
+Microsoft Defender security for AI capabilities differ between GCC and the commercial offering. The following table lists availability for AI agent discovery and security posture capabilities in GCC.
+
+| Capability | GCC |
+| --- | --- |
+| **Agent discovery and inventory** | Supported |
+| **Agent risk assessment** | Not supported |
+| **Security recommendations** | Not supported |
+| **Attack surface graph** | Not supported |
+
+For general government environment requirements, see [Microsoft Defender XDR for US Government](https://learn.microsoft.com/en-us/defender-xdr/usgov).
 
 ## Next steps
 

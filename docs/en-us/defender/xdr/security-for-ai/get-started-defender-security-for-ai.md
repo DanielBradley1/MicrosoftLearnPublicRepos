@@ -9,10 +9,11 @@ Onboarding includes enabling data collection, connecting the Microsoft 365 app c
 
 ## Prerequisites
 
-Before you start, make sure you have:
+Local agents are onboarded separately from cloud agents. For local AI agent discovery, meet the [discovery prerequisites](https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents#prerequisites). Discovery doesn't require you to enable AI agent runtime protection. To configure runtime protection separately, see [Set up AI agent runtime protection](https://learn.microsoft.com/en-us/defender-endpoint/configure-ai-agent-runtime-protection).
+
+Before you onboard cloud agents, make sure you have:
 
 - [Onboard to Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview).
-- Local agents are onboarded separately from cloud agents. To include local AI agents that run on endpoints, set up [AI agent runtime protection in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/configure-ai-agent-runtime-protection). Microsoft Defender for Endpoint must run in **active mode**.
 - Security Administrator role or higher in Microsoft Entra ID.
 - For Copilot Studio real-time protection, you need collaboration with a Power Platform administrator.
 

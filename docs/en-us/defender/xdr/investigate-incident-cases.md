@@ -256,6 +256,18 @@ To review activity history:
 6. Filter the activity history as needed.
 7. Select an activity item to review more details.
 
+## Review similar cases
+
+Use the **Similar cases** page to view other incident cases that resemble the current case based on similar alerts or entities. These cases provide a larger context to help direct your investigation. You can review how similar cases were handled or look for recurring patterns.
+
+The **Similarity reason** column shows why each case appears in the list, including the number of shared alerts and entities.
+
+To review similar cases from an open incident case:
+
+1. Go to **Artifacts** > **Similar cases**.
+2. Review the **Similarity reason** column to see whether each case has shared alerts, shared entities, or both.
+3. Hover over the similarity reason to see the shared alerts and entities.
+
 ## Review attachments
 
 Use the **Attachments** tab to review files added to the incident case. Attachments can provide supporting context for investigation, handoff, or post-incident review.

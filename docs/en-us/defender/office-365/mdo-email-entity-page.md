@@ -538,7 +538,7 @@ The following actions are available at the top of the Email entity page:
 - The message was dropped before delivery or delivery failed.
 - The message was *soft deleted* or *hard deleted*.
 - The message has a delivery location of *On-prem/External*.
-- ZAP moved the message to quarantine.
+- ZAP moved the message to quarantine but message expires from quarantine.
 
 [![Screenshot of the available actions at the top of the Email entity page.](https://learn.microsoft.com/en-us/defender-office-365/media/email-entity-available-actions.png)](https://learn.microsoft.com/en-us/defender-office-365/media/email-entity-available-actions.png#lightbox)
 

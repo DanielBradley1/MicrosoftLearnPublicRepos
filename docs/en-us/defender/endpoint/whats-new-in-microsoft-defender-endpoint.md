@@ -9,10 +9,17 @@ For recent releases of Microsoft Defender for Endpoint, including build numbers,
 
 Learn more about [Preview features](https://learn.microsoft.com/en-us/defender-xdr/preview).
 
+## November 2026
+
+| Type | Feature | Preview/GA | Description |
+| --- | --- | --- | --- |
+| Release - macOS | Build 101.26092.0012 | GA | Release version 20.126092.12.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--november-2026--101260920012). |
+
 ## October 2026
 
 | Type | Feature | Preview/GA | Description |
 | --- | --- | --- | --- |
+| Feature | [Local AI agent discovery on Windows and macOS](https://learn.microsoft.com/en-us/defender-endpoint/local-agent-discovery-overview) | GA | Discover supported local AI agents and their configured MCP servers on onboarded Windows and macOS devices, and investigate them in the AI agent inventory and advanced hunting. Windows requires Microsoft Defender Antivirus platform version 4.18.26090.9 \(2609\) or later. macOS requires Microsoft Defender for Endpoint version 101.26072.0017 or later. Discovery in WSL remains in preview. See the [discovery prerequisites](https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents#prerequisites) and [support matrix](https://learn.microsoft.com/en-us/defender-endpoint/ai-agent-support-matrix). |
 | Feature | [Antivirus audit mode for Linux](https://learn.microsoft.com/en-us/defender-endpoint/linux-preferences#antivirus-antimalware-and-edr-settings-in-defender-for-endpoint-on-linux) | GA | Provides real-time malware detection and alerting without automatically quarantining files or terminating processes. This enables organizations to evaluate Defender detection efficacy and performance on sensitive workloads before enabling enforcement.  <br>  <br>**Available in Microsoft Defender for Endpoint on Linux version 101.26062.0007 or later.** |
 | Release - macOS | Build 101.26092.0009 | GA | Release version 20.126092.9.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--october-2026--101260920009). |
 | Release - macOS | Build 101.26082.0012 | GA | Release version 20.126082.12.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--october-2026--101260820012). |

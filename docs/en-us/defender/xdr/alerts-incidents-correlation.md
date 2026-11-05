@@ -35,13 +35,15 @@ For step-by-step guidance, see one of the following articles:
 
 The Defender portal's correlation activities don't stop when incidents are created. Defender continues to detect commonalities and relationships between incidents and alerts in separate incidents. When multiple incidents are determined to be alike, Defender merges the incidents into a single incident.
 
-### View associated incidents without changing correlation behavior
+### View recommended correlations without changing correlation behavior
 
-In the investigation experience, you can expand context by changing the associated incidents view from **This incident only** to **All associated incidents**.
+In the attack story, use the **Recommended correlations** filter to select individual related incidents or **All recommended correlations** to view with the current incident.
 
-This view helps analysts see additional related incidents and alerts in the investigation graph. It doesn't change incident grouping, correlation rules, or merge logic.
+This view helps analysts see additional related incidents and alerts in the investigation graph. It includes incidents that weren't correlated into the current incident, so analysts can see the full attack story in one view. It doesn't change incident grouping, correlation rules, or merge logic.
 
-Items shown in **All associated incidents** can remain separate incidents with their own owner, status, and lifecycle until an actual incident merge occurs.
+Items shown in **Recommended correlations** can remain separate incidents with their own owner, status, and lifecycle until an actual incident merge occurs.
+
+On the **Summary** tab, the **Recommended correlations** card explains why some of these incidents might be part of the same attack.
 
 ### Criteria for merging incidents
 
