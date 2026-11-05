@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-automated-macos -->
-<!-- Sitemap-Last-Modified: 2026-05-18 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Set up automated device enrollment for macOS
 
@@ -173,7 +173,7 @@ This article reflects the updated policy creation experience \(**Enrollment prog
 The following table describes the Setup Assistant screens shown during automated device enrollment for Macs. You can show or hide these screens on supported devices during enrollment. For more information about how each Setup Assistant screen affects the user experience, see these Apple resources:
 
 - [Apple Platform Deployment guide: Manage Setup Assistant for Apple devices](https://support.apple.com/en-mide/guide/deployment/depdeff4a547/web)
-- [Apple Developer documentation: ShipKeys](https://developer.apple.com/documentation/devicemanagement/skipkeys)
+- [Apple Developer documentation: SkipKeys](https://developer.apple.com/documentation/devicemanagement/skipkeys)
 
 | Setup Assistant screen | What happens when visible |
 | --- | --- |

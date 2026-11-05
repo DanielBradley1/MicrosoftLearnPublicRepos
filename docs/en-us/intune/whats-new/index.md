@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/whats-new/ -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # What's new in Microsoft Intune
 
@@ -158,18 +158,6 @@ For more information, see [Certificate Connector for Microsoft Intune](https://l
 Applies to:
 
 - Certificate Connector for Microsoft Intune
-
-### Role-based access control
-
-#### Scoped permissions for role-based access control are generally available
-
-Microsoft Intune scoped permissions for role-based access control are now generally available. Permissions from role assignments with different scope tags are applied independently instead of being merged, giving admins the intended access within each scope. Use the **Permissions Assessment Report** before enabling scoped permissions to review how access will change.
-
-For more information, see [Permission behavior across role assignments](https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/scope-tags#permission-behavior-across-role-assignments).
-
-Applies to:
-
-- Microsoft Intune admin center
 
 ### Scripts
 

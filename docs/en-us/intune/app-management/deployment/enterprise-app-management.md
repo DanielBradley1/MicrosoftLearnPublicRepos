@@ -117,10 +117,6 @@ Auto-update app reporting stores only the latest reported state per device. If a
 
 Devices might report that they attempted an auto-update action \(enforcement or detection\) and return status after that action. If the app version changes while devices are still processing, reporting can show status for devices at different points in the update flow. Not all devices check in after the latest version is released.
 
-#### Not supported as a blocking app in ESP or Autopilot device preparation
-
-You can't add an auto-update Enterprise App Catalog app as a blocking app in the Enrollment Status Page \(ESP\) or Autopilot device preparation.
-
 #### Conflicts with other app types
 
 Auto-update apps can conflict with other app types that target the same app. This conflict scenario isn't supported. For example, if a line-of-business app assignment installs version 2 while an auto-update app manages the same app, devices can enter a race condition where the installed version changes between the two versions. To avoid conflicts, manage each app through a single deployment type.
