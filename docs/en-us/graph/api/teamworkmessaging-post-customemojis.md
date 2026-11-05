@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/teamworkmessaging-post-customemojis?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-08-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
-# Create customEmoji
+# Create teamworkCustomEmoji
 
 Namespace: microsoft.graph
 
@@ -48,7 +48,8 @@ The following table lists the properties that are required when you create a cus
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| contentBytes | String | The base64-encoded image content for the emoji. Supported formats include PNG and GIF. |
+| contentBytes | Binary | The base64-encoded image content for the emoji. Supported formats include PNG and GIF. |
+| contentType | String | The media type of the custom emoji content, such as `image/png` or `image/gif`. |
 | displayName | String | The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names. |
 
 ## Response
@@ -61,178 +62,16 @@ If successful, this method returns a `201 Created` response code and a [teamwork
 
 The following example shows a request to upload a custom emoji.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
-
 ```msgraph
 POST https://graph.microsoft.com/beta/teamwork/messaging/customEmojis
 Content-Type: application/json
 
 {
     "displayName": "thumbsup_custom",
-    "contentBytes": "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU..."
+    "contentBytes": "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU...",
+    "contentType": "image/png"
 }
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Beta.Models;
-
-var requestBody = new TeamworkCustomEmoji
-{
-	DisplayName = "thumbsup_custom",
-	ContentBytes = "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU...",
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Teamwork.Messaging.CustomEmojis.PostAsync(requestBody);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphmodels "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-	  //other-imports
-)
-
-requestBody := graphmodels.NewTeamworkCustomEmoji()
-displayName := "thumbsup_custom"
-requestBody.SetDisplayName(&displayName) 
-contentBytes := "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU..."
-requestBody.SetContentBytes(&contentBytes) 
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-customEmojis, err := graphClient.Teamwork().Messaging().CustomEmojis().Post(context.Background(), requestBody, nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-TeamworkCustomEmoji teamworkCustomEmoji = new TeamworkCustomEmoji();
-teamworkCustomEmoji.setDisplayName("thumbsup_custom");
-teamworkCustomEmoji.setContentBytes("iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU...");
-TeamworkCustomEmoji result = graphClient.teamwork().messaging().customEmojis().post(teamworkCustomEmoji);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const teamworkCustomEmoji = {
-    displayName: 'thumbsup_custom',
-    contentBytes: 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU...'
-};
-
-await client.api('/teamwork/messaging/customEmojis')
-	.version('beta')
-	.post(teamworkCustomEmoji);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Models\TeamworkCustomEmoji;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new TeamworkCustomEmoji();
-$requestBody->setDisplayName('thumbsup_custom');
-$requestBody->setContentBytes('iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU...');
-
-$result = $graphServiceClient->teamwork()->messaging()->customEmojis()->post($requestBody)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Teams
-
-$params = @{
-	displayName = "thumbsup_custom"
-	contentBytes = "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU..."
-}
-
-New-MgBetaTeamworkMessagingCustomEmoji -BodyParameter $params
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.models.teamwork_custom_emoji import TeamworkCustomEmoji
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = TeamworkCustomEmoji(
-	display_name = "thumbsup_custom",
-	content_bytes = "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU...",
-)
-
-result = await graph_client.teamwork.messaging.custom_emojis.post(request_body)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
@@ -244,8 +83,10 @@ Content-type: application/json
 
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#teamwork/messaging/customEmojis/$entity",
+    "id": "01ZPGUWVOZAD7SNI6IYPC3QOQWMDMZQO6U",
     "displayName": "thumbsup_custom",
     "contentBytes": "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAABGhJREFU...",
+    "contentType": "image/png",
     "createdDateTime": "2026-06-10T12:00:00Z",
     "createdBy": {
         "user": {
@@ -259,3 +100,5 @@ Content-type: application/json
 ## Related content
 
 - [List customEmojis](https://learn.microsoft.com/en-us/graph/api/teamworkmessaging-list-customemojis?view=graph-rest-beta)
+- [Get teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/teamworkcustomemoji-get?view=graph-rest-beta)
+- [Delete teamworkCustomEmoji](https://learn.microsoft.com/en-us/graph/api/teamworkcustomemoji-delete?view=graph-rest-beta)

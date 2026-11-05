@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/policyroot?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # policyRoot resource type
 
@@ -33,6 +33,7 @@ None
 | crossTenantAccessPolicy | [crossTenantAccessPolicy](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantaccesspolicy?view=graph-rest-1.0) | The custom rules that define an access scenario when interacting with external Microsoft Entra tenants. |
 | defaultAppManagementPolicy | [tenantAppManagementPolicy](https://learn.microsoft.com/en-us/graph/api/resources/tenantappmanagementpolicy?view=graph-rest-1.0) | The tenant-wide policy that enforces app management restrictions for all applications and service principals. |
 | featureRolloutPolicies | [featureRolloutPolicy](https://learn.microsoft.com/en-us/graph/api/resources/featurerolloutpolicy?view=graph-rest-1.0) collection | The feature rollout policy associated with a directory object. |
+| federatedTokenValidationPolicy | [federatedTokenValidationPolicy](https://learn.microsoft.com/en-us/graph/api/resources/federatedtokenvalidationpolicy?view=graph-rest-1.0) | Represents a policy to control enabling or disabling validation of federation authentication tokens. |
 | homeRealmDiscoveryPolicies | [homeRealmDiscoveryPolicy](https://learn.microsoft.com/en-us/graph/api/resources/homerealmdiscoverypolicy?view=graph-rest-1.0) collection | The policy to control Microsoft Entra authentication behavior for federated users. |
 | identitySecurityDefaultsEnforcementPolicy | [identitySecurityDefaultsEnforcementPolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitysecuritydefaultsenforcementpolicy?view=graph-rest-1.0) | The policy that represents the security defaults that protect against common attacks. |
 | ownerlessGroupPolicy | [ownerlessGroupPolicy](https://learn.microsoft.com/en-us/graph/api/resources/ownerlessgrouppolicy?view=graph-rest-1.0) | The policy configuration for managing groups that have lost their sole owner. |

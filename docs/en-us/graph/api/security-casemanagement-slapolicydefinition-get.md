@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-casemanagement-slapolicydefinition-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Get slaPolicyDefinition
 
@@ -23,9 +23,9 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 | Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | CaseManagement.Read.All | CaseManagement.ReadWrite.All |
+| Delegated \(work or school account\) | CaseManagement.Read.All | CaseManagement.ConfigManage.All, CaseManagement.ReadWrite.All |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | CaseManagement.Read.All | CaseManagement.ReadWrite.All |
+| Application | CaseManagement.Read.All | CaseManagement.ConfigManage.All, CaseManagement.ReadWrite.All |
 
 Important
 

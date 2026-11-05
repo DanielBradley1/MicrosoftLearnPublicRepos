@@ -1,15 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/migrationsroot-list-crosstenantmigrationjobs?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/migrationsroot-list-crosstenantmigrationjobs?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
-# List crossTenantMigrationJob objects
+# List crossTenantMigrationJobs
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Get a list of the [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-beta) objects and their properties. By default 20 objects are returned. More can be retrieved through the `@odata.nextLink` url provided in the response.
+Get a list of the [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) objects and their properties. By default, 20 objects are returned. You can retrieve more objects by using the **@odata.nextLink** URL provided in the response.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -42,7 +38,7 @@ GET /solutions/migrations/crossTenantMigrationJobs
 
 ## Optional query parameters
 
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
+This method supports the `$select`, `$orderby`, `$count`, `$top`, and `$skiptoken` [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters) to customize the response. The `$orderby` query parameter sorts only the current page, `$count` returns the number of objects in the current page, and `$top` can reduce the page size but can't return more than 20 objects. To retrieve the next page, use the **@odata.nextLink** URL provided in the response.
 
 ## Request headers
 
@@ -56,7 +52,7 @@ Don't supply a request body for this method.
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and a collection of [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-beta) objects in the response body.
+If successful, this method returns a `200 OK` response code and a collection of [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) objects in the response body.
 
 ## Examples
 
@@ -64,135 +60,9 @@ If successful, this method returns a `200 OK` response code and a collection of 
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
-
 ```http
-GET https://graph.microsoft.com/beta/solutions/migrations/crossTenantMigrationJobs
+GET https://graph.microsoft.com/v1.0/solutions/migrations/crossTenantMigrationJobs
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Solutions.Migrations.CrossTenantMigrationJobs.GetAsync();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  //other-imports
-)
-
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-crossTenantMigrationJobs, err := graphClient.Solutions().Migrations().CrossTenantMigrationJobs().Get(context.Background(), nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-CrossTenantMigrationJobCollectionResponse result = graphClient.solutions().migrations().crossTenantMigrationJobs().get();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-let crossTenantMigrationJobs = await client.api('/solutions/migrations/crossTenantMigrationJobs')
-	.version('beta')
-	.get();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-
-$result = $graphServiceClient->solutions()->migrations()->crossTenantMigrationJobs()->get()->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Migrations
-
-Get-MgBetaCrossTenantMigrationJob
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-
-result = await graph_client.solutions.migrations.cross_tenant_migration_jobs.get()
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
@@ -205,8 +75,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#solutions/migrations/crossTenantMigrationJobs",
-  "@odata.nextLink": "https://graph.microsoft.com/beta/solutions/migrations/CrossTenantMigrationJobs?$skiptoken=%5b%7B%22compositeToken%22%3a%7B%22token%22%3a%22%2bRID%3a~q1NPAJxLNS1QBAAAAAAAAA%3d%3d%23RT%3a1%23TRC%3a20%23RTD%3aHPJJmKT1uZqlBBnGyNSOBMHbIcd%5d",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#solutions/migrations/crossTenantMigrationJobs",
+  "@odata.nextLink": "https://graph.microsoft.com/v1.0/solutions/migrations/crossTenantMigrationJobs?$skiptoken=%5b%7B%22compositeToken%22%3a%7B%22token%22%3a%22%2bRID%3a~q1NPAJxLNS1QBAAAAAAAAA%3d%3d%23RT%3a1%23TRC%3a20%23RTD%3aHPJJmKT1uZqlBBnGyNSOBMHbIcd%5d",
   "value": [
     {
       "id": "012ec4f4-df7e-41ae-ba95-6d7ccb8f74a1",

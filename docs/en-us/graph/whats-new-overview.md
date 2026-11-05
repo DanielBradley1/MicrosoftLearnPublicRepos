@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # What's new in Microsoft Graph
 
@@ -18,6 +18,13 @@ Features in *preview* status are subject to change without notice, and might not
 ### Mail
 
 Added the [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist) resource type and related methods for managing personal distribution lists in a user's mailbox. Use these APIs to create, read, update, and delete distribution lists, and add or remove members.
+
+## November 2026: New in preview only
+
+### Teamwork and communications \| Messaging
+
+- Removed the `If-Match` header from [create section](https://learn.microsoft.com/en-us/graph/api/userteamwork-post-sections?view=graph-rest-beta&preserve-view=true), [update section](https://learn.microsoft.com/en-us/graph/api/teamworksection-update?view=graph-rest-beta&preserve-view=true), [delete section](https://learn.microsoft.com/en-us/graph/api/teamworksection-delete?view=graph-rest-beta&preserve-view=true), [reorder sections](https://learn.microsoft.com/en-us/graph/api/teamworksection-reorder?view=graph-rest-beta&preserve-view=true), [create section item](https://learn.microsoft.com/en-us/graph/api/teamworksection-post-items?view=graph-rest-beta&preserve-view=true), [move section item](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-move?view=graph-rest-beta&preserve-view=true), [reorder section items](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-reorder?view=graph-rest-beta&preserve-view=true), and [delete section item](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-delete?view=graph-rest-beta&preserve-view=true) methods of the [teamworkSection](https://learn.microsoft.com/en-us/graph/api/resources/teamworksection?view=graph-rest-beta&preserve-view=true) and [teamworkSectionItem](https://learn.microsoft.com/en-us/graph/api/resources/teamworksectionitem?view=graph-rest-beta&preserve-view=true) resources. These operations now return a `409 Conflict` response code for concurrent changes, and no longer return `412 Precondition Failed` or `428 Precondition Required`.
+- Updated the [add teamworkSectionItem](https://learn.microsoft.com/en-us/graph/api/teamworksection-post-items?view=graph-rest-beta&preserve-view=true) method to move an item from another user-defined section.
 
 ## October 2026: New and generally available
 

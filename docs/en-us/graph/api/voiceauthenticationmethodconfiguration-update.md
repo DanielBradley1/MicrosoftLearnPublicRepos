@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/voiceauthenticationmethodconfiguration-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-31 -->
 
 # Update voiceAuthenticationMethodConfiguration
 
@@ -51,6 +51,7 @@ The following table specifies the properties that can be updated.
 | excludeTargets | [excludeTarget](https://learn.microsoft.com/en-us/graph/api/resources/excludetarget?view=graph-rest-1.0) collection | Groups of users that are excluded from the policy. |
 | isOfficePhoneAllowed | Boolean | `true` if users can register office phones, otherwise, `false`. |
 | state | authenticationMethodState | The possible values are: `enabled`, `disabled`. |
+| telecomProviderSettings | [telecomProviderSettings](https://learn.microsoft.com/en-us/graph/api/resources/telecomprovidersettings?view=graph-rest-1.0) | Settings for routing voice authentication traffic through a telecom provider integration. |
 
 > **Note:** The `@odata.type` property with a value of `#microsoft.graph.voiceAuthenticationMethodConfiguration` must be included in the body.
 
@@ -79,7 +80,13 @@ Content-Type: application/json
 
 {
   "@odata.type": "#microsoft.graph.voiceAuthenticationMethodConfiguration",
-  "isOfficePhoneAllowed": "false"
+  "isOfficePhoneAllowed": "false",
+  "telecomProviderSettings": {
+    "url": "https://provider.contoso.com/voice",
+    "appId": "b0e2c4d6-1a3b-4c5d-8e9f-0a1b2c3d4e5f",
+    "isEvaluationModeEnabled": false,
+    "migrationPercentage": 100
+  }
 }
 ```
 
