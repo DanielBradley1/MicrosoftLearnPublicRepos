@@ -143,7 +143,11 @@ You must always have at least one fallback identity provider active. So, if you 
 
 The cross-tenant synchronization settings are inbound-only organizational settings to allow the administrator of a source tenant to synchronize users and groups into a target tenant. These settings are checkboxes with the names **Allow user synchronization into this tenant** and **Allow group synchronization into this tenant** that are specified in the target tenant. These settings don't affect B2B invitations created through other processes such as [manual invitation](https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator) or [Microsoft Entra entitlement management](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users).
 
-[![Screenshot that shows the tab for cross-tenant synchronization with the checkboxes for synchronizing users and groups into a target tenant.](https://learn.microsoft.com/en-us/entra/media/external-identities/access-settings-users-sync.png)](https://learn.microsoft.com/en-us/entra/media/external-identities/access-settings-users-sync.png#lightbox)
+When role-enabled group sync is available in your environment, the target tenant also controls inbound role-assignable group synchronization through **Allow role-enabled group synchronization into this tenant**. Select this checkbox together with **Allow group synchronization into this tenant** to allow role-enabled group sync. This feature synchronizes role-assignability, not the source group's role assignments.
+
+[![Screenshot of the Cross-tenant sync tab showing the inbound user, group, and role-enabled group synchronization checkboxes.](https://learn.microsoft.com/en-us/entra/media/external-identities/allow-role-enabled-groups-inbound.png)](https://learn.microsoft.com/en-us/entra/media/external-identities/allow-role-enabled-groups-inbound.png#lightbox)
+
+The screenshot identifies the settings. The group and role-enabled group checkboxes aren't selected in this example.
 
 To configure these settings using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](https://learn.microsoft.com/en-us/graph/api/crosstenantidentitysyncpolicypartner-update) API. For more information, see [Configure cross-tenant synchronization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure).
 

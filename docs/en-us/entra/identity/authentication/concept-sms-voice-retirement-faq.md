@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement-faq -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Frequently asked questions about SMS and voice retirement
 
@@ -18,6 +18,12 @@ Beginning September 1, 2026, passkeys will be automatically enabled for users cu
 Yes. Microsoft-provided SMS and voice authentication will be retired on July 1, 2027 for Global Administrators and external users.
 
 Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date.
+
+## Which retirement date applies if I'm eligible for Global Administrator through a role-assignable group but haven't activated the role?
+
+If you're eligible for the Global Administrator role through a role-assignable group in Microsoft Entra Privileged Identity Management \(PIM\) but haven't activated the role, you're treated as a regular user. The February 1, 2027 retirement date applies to you.
+
+The July 1, 2027 retirement date for Global Administrators applies only while your Global Administrator role is active. Being eligible for the role doesn't qualify you for the later date.
 
 ## Will there be costs associated with using a telephony provider through Microsoft Security Store?
 
@@ -49,7 +55,7 @@ To find users still using SMS or Voice, run the [PowerShell script](https://gith
 
 ## Which cloud environments are included in this timeline?
 
-This timeline applies to public cloud environments only. Other cloud environments will follow on a later schedule, and we will provide advance communications to help customers prepare for the transition.
+This timeline applies to public cloud environments, including GCC. Other cloud environments will follow on a later schedule, and we will provide advance communications to help customers prepare for the transition.
 
 ## What authentication options can my organization use in China as Microsoft-provided SMS and voice are retired?
 

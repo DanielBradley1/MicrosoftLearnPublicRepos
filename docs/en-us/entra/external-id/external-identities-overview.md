@@ -118,10 +118,12 @@ Organizations can use Microsoft Entra Conditional Access policies to enhance the
 
 #### Conditional Access and MFA in external tenants
 
-In external tenants, organizations can enforce MFA for customers by creating a Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support two methods for authentication as a second factor:
+In external tenants, organizations can enforce MFA for customers by creating a Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support the following authentication methods for MFA:
 
 - **Email one-time passcode**. After users sign in with their email and password, they're prompted for a passcode that's sent to their email.
 - **SMS-based authentication**. SMS is available as a second-factor authentication method for MFA for users in external tenants. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook are prompted for second verification through SMS.
+- **Time-based one-time password \(TOTP\)**. Users register Microsoft Authenticator or a supported third-party authenticator app and enter the temporary verification code from the app when MFA is required.
+- **Passkey \(FIDO2\)**. Passkeys are phishing-resistant credentials that can satisfy MFA in a single gesture and enable passwordless sign-in.
 
 [Learn more about authentication methods in external tenants](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-multifactor-authentication-customers).
 

@@ -21,28 +21,27 @@ Get-MgDirectoryOnPremiseSynchronization | Select-Object -ExpandProperty Features
 The result looks like this output:
 
 ```powershell
-BlockCloudObjectTakeoverThroughHardMatchEnabled  : False
-BlockSoftMatchEnabled                            : False
-BypassDirSyncOverridesEnabled                    : False
-CloudPasswordPolicyForPasswordSyncedUsersEnabled : False
-ConcurrentCredentialUpdateEnabled                : False
-ConcurrentOrgIdProvisioningEnabled               : False
-DeviceWritebackEnabled                           : False
-DirectoryExtensionsEnabled                       : True
-FopeConflictResolutionEnabled                    : False
-GroupWriteBackEnabled                            : False
-PasswordSyncEnabled                              : True
-PasswordWritebackEnabled                         : False
-QuarantineUponProxyAddressesConflictEnabled      : False
-QuarantineUponUpnConflictEnabled                 : False
-SoftMatchOnUpnEnabled                            : True
-SynchronizeUpnForManagedUsersEnabled             : False
-UnifiedGroupWritebackEnabled                     : True
-UserForcePasswordChangeOnLogonEnabled            : False
-UserWritebackEnabled                             : True
-AdditionalProperties                             : {
-       allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
-}
+AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
+BlockCloudObjectTakeoverThroughHardMatchEnabled      : False
+BlockSoftMatchEnabled                                : False
+BypassDirSyncOverridesEnabled                        : False
+CloudPasswordPolicyForPasswordSyncedUsersEnabled     : False
+ConcurrentCredentialUpdateEnabled                    : False
+ConcurrentOrgIdProvisioningEnabled                   : False
+DeviceWritebackEnabled                               : False
+DirectoryExtensionsEnabled                           : True
+FopeConflictResolutionEnabled                        : False
+GroupWriteBackEnabled                                : False
+PasswordSyncEnabled                                  : True
+PasswordWritebackEnabled                             : False
+QuarantineUponProxyAddressesConflictEnabled          : False
+QuarantineUponUpnConflictEnabled                     : False
+SoftMatchOnUpnEnabled                                : True
+SynchronizeUpnForManagedUsersEnabled                 : False
+UnifiedGroupWritebackEnabled                         : True
+UserForcePasswordChangeOnLogonEnabled                : False
+UserWritebackEnabled                                 : True
+AdditionalProperties                                 : {}
 ```
 
 Note

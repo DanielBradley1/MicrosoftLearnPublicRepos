@@ -22,6 +22,14 @@ The scenario outlined in this article assumes that you already have the followin
 - A user account in Zendesk with Admin rights.
 - A Zendesk tenant with the Professional plan or better enabled.
 
+Important
+
+As part of its [API token deprecation](https://support.zendesk.com/hc/en-us/articles/10840968198042-Announcing-the-removal-of-API-tokens-as-an-authentication-method-for-API-requests), Zendesk has restricted the creation of new API tokens starting October 27, 2026, and plans to permanently deactivate all API tokens on April 30, 2027.
+
+Customers setting up **Microsoft Entra automatic provisioning with Zendesk** who are unable to create an API token can contact **Zendesk Support or their Zendesk account manager** to request an exception that restores API-token creation access.
+
+Microsoft Entra is working to introduce **OAuth client credentials authentication** for the Zendesk provisioning connector, currently targeted for **mid-December 2026**. Until this support becomes available, customers can use the exception process above to configure new provisioning integrations.
+
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning).

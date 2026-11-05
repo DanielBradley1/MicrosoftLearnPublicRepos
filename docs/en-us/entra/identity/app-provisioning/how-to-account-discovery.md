@@ -15,7 +15,7 @@ This classification gives you visibility into who has access to your application
 
 Important
 
-Group discovery is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+Group discovery, including group memberships, is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -79,6 +79,14 @@ Unassigned identities match a user or group in Microsoft Entra ID based on the m
 ### Assigned identities
 
 Assigned identities match a user or group in Microsoft Entra ID that's already assigned to the application. These identities are fully managed by the provisioning service. No action is needed unless you want to review or update their attribute mappings.
+
+### Review group memberships
+
+You can view the number of members in each discovered group and review its membership.
+
+1. Find the discovered group in the discovery results.
+2. Review the member count for the group.
+3. Select the member count to view the list of members in the group.
 
 ## Assign correlated users to your enterprise application and/or access packages
 
