@@ -92,6 +92,16 @@ Microsoft ODBC Driver for SQL Server version **18.7.1.1** has a known issue with
 
 For minimum required versions, validated versions, and versions with known blocking issues, see [Prerequisite checks - ODBC driver for SQL Server](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/install/list-of-prerequisite-checks#odbc-driver-for-sql-server).
 
+### Verify Azure prerequisites for existing CMGs
+
+If your hierarchy uses a cloud management gateway \(CMG\), verify its Azure prerequisites before updating the site. Version 2609 automatically disables shared-key access for CMG storage, including deployments where you haven't previously selected that option.
+
+- Verify that the CMG **server/web application's service principal** has the required resource-management and storage role-assignment permissions at the CMG resource group. Contributor alone doesn't grant permission to create role assignments. Use appropriately constrained permissions as described in [Configure Azure RBAC permissions for the server app](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-rbac-permissions-for-the-server-app).
+- Verify that **Microsoft.Maintenance** is registered in every subscription containing a CMG, along with the other [required resource providers](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-resource-providers). Wait until registration is complete.
+- Allow time for permission changes to propagate, then verify the effective access for each CMG server application and resource group. Check production separately from staging: role assignments are scoped to Azure resources, and provider registration is subscription-scoped. Neither change is tenant-wide.
+
+These prerequisites apply to existing deployments even if earlier CMG updates succeeded. Missing permissions or registration can cause the CMG deployment update to fail. For error details, review **CloudMgr.log** and the failed Azure deployment operations.
+
 ### Review the site and hierarchy status for unresolved issues
 
 A site update can fail because of existing operational problems. Before you update a site, resolve all operational issues for the following systems:
@@ -234,6 +244,10 @@ After the site updates, use the following checklist to complete common tasks and
 Make sure each site server and site system role is updated to version 2609. In the console, add the **Version** column to the **Sites** and **Distribution Points** nodes in the **Administration** workspace. When necessary, a site system role automatically reinstalls to update to the new version.
 
 Consider restarting remote site systems that don't successfully update at first. Review your site infrastructure and make sure that applicable site servers and remote site system servers successfully restarted. Typically, site servers restart only when Configuration Manager installs .NET as a prerequisite for a site system role.
+
+### Verify CMG deployment and client communication
+
+After updating a site that has a CMG, verify that the CMG deployment update completes successfully. Review **CloudMgr.log** and any failed Azure deployment operations. After the CMG is running, use the [CMG connection analyzer](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#connection-analyzer) to verify communication.
 
 ### Review SQL Server client components
 

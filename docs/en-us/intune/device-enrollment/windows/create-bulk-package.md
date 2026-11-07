@@ -51,7 +51,7 @@ On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft
    ![Screenshot of specifying name and product key in the Windows Configuration Designer app](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/media/create-bulk-package/bulk-enroll-device.png)
 
 5. Optionally, you can configure the Wi-Fi network devices connect to when they first start. If the network devices aren't configured, a wired network connection is required when the device is first started. ![Screenshot of enabling Wi-Fi including Network SSID and Network type options in the Windows Configuration Designer app](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/media/create-bulk-package/bulk-enroll-network.png)
-6. Select **Enroll in Azure AD**, enter a **Bulk Token Expiry** date, and then select **Get Bulk Token**. The token validity period is 180 days.
+6. Select **Enroll in Azure AD**, enter a **Bulk Token Expiry** date, and then select **Get Bulk Token**. The token validity period is 90 days.
 
    Note
 

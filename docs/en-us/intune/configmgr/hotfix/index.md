@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/hotfix/ -->
-<!-- Sitemap-Last-Modified: 2026-09-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Configuration Manager hotfixes and update rollups
 
@@ -22,6 +22,7 @@ Knowledge Base articles for Microsoft Configuration Manager hotfixes, update rol
 - [KB 38982839 Security update for the SMS Provider and administration service](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/38982839)
 - [KB 39398030 Security update for scripts, SMS Provider, MPE, and DDR](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/39398030)
 - [KB 39169655 Update rollup for Microsoft Configuration Manager version 2603](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/39169655)
+- [KB 40345593 Bulk registration token verification fails after 2603 update rollup](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/40345593)
 
 ## Configuration Manager 2509
 

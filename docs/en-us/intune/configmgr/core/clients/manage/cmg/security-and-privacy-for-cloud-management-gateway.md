@@ -31,7 +31,7 @@ The CMG connection point uses the following methods:
 - Reports connection status to show service health status in the console.
 - Reports traffic per endpoint every five minutes.
 
-Configuration Manager rotates the storage account key for the CMG. This process happens automatically every 180 days.
+For CMG deployments that use shared-key storage access on versions earlier than 2609, Configuration Manager rotates the storage account key automatically every 180 days. Starting in version 2609, shared-key access is automatically disabled for CMG storage, including existing deployments that previously used it. CMG storage operations use Microsoft Entra authentication instead. For the required Azure permissions and provider registration, see [Configure Microsoft Entra ID for CMG](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-rbac-permissions-for-the-server-app).
 
 ### Security mechanisms and protections
 
@@ -41,7 +41,13 @@ The CMG resources in Azure are part of the Azure platform as a service \(PaaS\).
 
 The service principals are authenticated by the server app registration in Microsoft Entra ID. This app is also known as the *web app*. You create this app registration automatically when you create the CMG, or manually by an Azure administrator in advance. For more information, see [Manually register Microsoft Entra apps for the CMG](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/manually-register-azure-ad-apps).
 
-The secret keys for the Azure apps are encrypted and stored in the Configuration Manager site database. As part of the setup process, the server app has **Read Directory Data** permission to the Microsoft Graph API. It also has the contributor role on the resource group that hosts the CMG. Each time the app needs to access resources like Microsoft Graph, it gets an access token from Azure, which it uses to access the cloud resource.
+The secret keys for the Azure apps are encrypted and stored in the Configuration Manager site database. As part of the setup process, the server app has **Read Directory Data** permission to the Microsoft Graph API. Its service principal also needs **Contributor** or equivalent resource-management permissions on the resource group that hosts the CMG. Each time the app needs to access resources like Microsoft Graph, it gets an access token from Azure, which it uses to access the cloud resource.
+
+For Microsoft Entra-authenticated storage, the server application also needs permission to manage the required **Storage Blob Data Contributor** and **Storage Table Data Contributor** role assignments. Contributor alone doesn't grant permission to create role assignments. Use a **Role Based Access Control Administrator** assignment constrained to those two storage data roles at the CMG resource group, or equivalent approved permissions. Verify inherited access and any conditions before adding a new assignment. For details, see [Configure Azure RBAC permissions for the server app](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-rbac-permissions-for-the-server-app).
+
+The administrator who grants these permissions needs the appropriate Azure RBAC privileges at the target scope. Registering **Microsoft.Maintenance** separately requires provider-registration permission at the subscription scope. These operator permissions aren't the same as the runtime permissions granted to the CMG application. For details, see [Configure Azure resource providers](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-resource-providers).
+
+Disabling shared-key access to the storage account doesn't remove the server application's client-secret requirement. Storage account keys and Microsoft Entra application secrets are different credentials.
 
 Microsoft Entra ID can automatically rotate the secret key for these apps, or you can do it manually. When the secret key changes, you need to [renew the secret key](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/configure/azure-services-wizard#bkmk_renew) in Configuration Manager.
 

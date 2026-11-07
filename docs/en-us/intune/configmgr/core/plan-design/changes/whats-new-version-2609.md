@@ -78,6 +78,12 @@ Configuration Manager updates Microsoft Visual C++ Redistributable to version 14
 
 Shared key access is automatically disabled for cloud management gateway \(CMG\) storage, even if you haven't previously selected the option to disable it in the console.
 
+Important
+
+Before updating a site that has a CMG, verify that the CMG server application's service principal has the required Azure role-assignment permissions at the CMG resource group, and that **Microsoft.Maintenance** is registered in the subscription. Existing CMGs that previously used shared-key access also need these prerequisites. Missing permissions or provider registration can cause the CMG deployment update to fail.
+
+For the required permissions and verification steps, see [Configure Azure RBAC permissions for the server app](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-rbac-permissions-for-the-server-app) and [Configure Azure resource providers](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-resource-providers).
+
 ### CMG virtual machine scale set image uses Windows Server 2022
 
 Cloud management gateway \(CMG\) virtual machine scale sets use a supported Windows Server 2022 image offer that doesn't include the deprecated .NET 6 packages. For more information, see [KB 37942646](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/37942646).

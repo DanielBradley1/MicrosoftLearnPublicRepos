@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-security/security-baselines/stig-audit-baseline -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Use STIG audit baselines to assess Windows device compliance in Microsoft Intune
 
@@ -101,7 +101,7 @@ To create a STIG audit baseline profile, use the following steps:
 
    Note
 
-   The STIG audit baseline audits all settings in the baseline as a single profile. You can't select or modify individual settings. The audit rules and their expected values are defined by DISA in the publicly available [SCAP benchmark files](https://public.cyber.mil/stigs/scap/), not by Intune.
+   The STIG audit baseline audits all settings in the baseline as a single profile. You can't select or modify individual settings. The audit rules and their expected values are defined by DISA in the publicly available [SCAP benchmark files](https://www.cyber.mil/stigs/SCAP/), not by Intune.
 7. On the **Scope tags** tab, optionally add scope tags to control which admins can see this profile.
 8. On the **Assignments** tab, select the device groups that you want to audit against the STIG baseline. You can target all devices or specific groups.
 9. Review your settings on the **Review + create** tab, and then select **Create**.
@@ -500,4 +500,4 @@ Yes. Use the Graph API to programmatically discover audit policies and retrieve 
 - [Monitor your baselines](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/monitor-baselines) - Monitor baseline compliance status.
 - [Microsoft Intune for US Government GCC High and DoD](https://learn.microsoft.com/en-us/intune/fundamentals/government-service) - Learn about Intune's GCC High service.
 - [DISA STIGs](https://public.cyber.mil/stigs/) - Access the full STIG library from DISA.
-- [DISA SCAP benchmarks](https://public.cyber.mil/stigs/scap/) - Download the SCAP benchmark files used to generate STIG audit profiles.
+- [DISA SCAP benchmarks](https://www.cyber.mil/stigs/SCAP/) - Download the SCAP benchmark files used to generate STIG audit profiles.
