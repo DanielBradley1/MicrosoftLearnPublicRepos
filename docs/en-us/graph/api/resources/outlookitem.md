@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/outlookitem?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2024-05-16 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # outlookItem resource type
 
 Namespace: microsoft.graph
+
+An abstract type that represents the common properties of Outlook items.
+
+Base type of [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0).
 
 ## Properties
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/teamworksection-reorder?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-02 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # teamworkSection: reorder
 
@@ -38,9 +38,8 @@ POST /users/{user-id}/teamwork/sections/reorder
 
 | Header | Value |
 | :--- | :--- |
-| Authorization | \*\*\*\*\*\* Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
 | Content-Type | application/json. Required. |
-| If-Match | The value of the **@microsoft.graph.sectionsVersion** annotation returned when you [list sections](https://learn.microsoft.com/en-us/graph/api/userteamwork-list-sections?view=graph-rest-beta), or the **@odata.etag** value from any previously retrieved [section](https://learn.microsoft.com/en-us/graph/api/resources/teamworksection?view=graph-rest-beta). Required for optimistic concurrency control. |
 
 ## Request body
 
@@ -56,10 +55,6 @@ The following table lists the parameter that is required when you call this acti
 
 If successful, this action returns a `200 OK` response code and a [teamworkSection](https://learn.microsoft.com/en-us/graph/api/resources/teamworksection?view=graph-rest-beta) collection in the response body, in the requested order.
 
-Note
-
-Each returned section includes an updated **@odata.etag** value. Use this value as the `If-Match` header for any subsequent mutation operation.
-
 The following errors are possible.
 
 | Response code | Message |
@@ -67,9 +62,7 @@ The following errors are possible.
 | `400 Bad Request` | The **sectionsOrder** property is missing, empty, exceeds the supported maximum, or contains null, empty, or duplicate IDs. |
 | `400 Bad Request` | The reorder list doesn't contain every current section exactly once, contains an unknown section ID, or doesn't place the *QuickViews* system section first. |
 | `404 Not Found` | The specified user wasn't found. |
-| `409 Conflict` | A section in the reorder list was deleted concurrently with the reorder request. [List sections](https://learn.microsoft.com/en-us/graph/api/userteamwork-list-sections?view=graph-rest-beta) again and retry with the current section IDs and version. |
-| `412 Precondition Failed` | The `If-Match` header value doesn't match the current section hierarchy version. [List sections](https://learn.microsoft.com/en-us/graph/api/userteamwork-list-sections?view=graph-rest-beta) again to retrieve the latest **@microsoft.graph.sectionsVersion** annotation and retry. |
-| `428 Precondition Required` | The `If-Match` header is required for this operation. |
+| `409 Conflict` | The sections can't be reordered because of a concurrent change, such as the deletion of a section in the reorder list. [List sections](https://learn.microsoft.com/en-us/graph/api/userteamwork-list-sections?view=graph-rest-beta) again and retry with the current section IDs. |
 
 ## Examples
 
@@ -77,18 +70,9 @@ The following errors are possible.
 
 The following example reorders three sections for a user.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [Python](#tabpanel_1_python)
-
 ```http
 POST https://graph.microsoft.com/beta/users/10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f/teamwork/sections/reorder
 Content-Type: application/json
-If-Match: "1742515200"
 
 {
   "sectionsOrder": [
@@ -98,181 +82,6 @@ If-Match: "1742515200"
   ]
 }
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Reorder;
-
-var requestBody = new ReorderPostRequestBody
-{
-	SectionsOrder = new List<string>
-	{
-		"ce274158-f4f5-4ba7-bd18-0b2204dc1691~10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f~QuickViews",
-		"a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-		"b2c3d4e5-f6a7-8901-bcde-f12345678901",
-	},
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Users["{user-id}"].Teamwork.Sections.Reorder.PostAsReorderPostResponseAsync(requestBody, (requestConfiguration) =>
-{
-	requestConfiguration.Headers.Add("If-Match", "\"1742515200\"");
-});
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  abstractions "github.com/microsoft/kiota-abstractions-go"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphusers "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
-	  //other-imports
-)
-
-headers := abstractions.NewRequestHeaders()
-headers.Add("If-Match", "\"1742515200\"")
-
-configuration := &graphusers.ItemTeamworkSectionsReorderRequestBuilderPostRequestConfiguration{
-	Headers: headers,
-}
-requestBody := graphusers.NewReorderPostRequestBody()
-sectionsOrder := []string {
-	"ce274158-f4f5-4ba7-bd18-0b2204dc1691~10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f~QuickViews",
-	"a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-	"b2c3d4e5-f6a7-8901-bcde-f12345678901",
-}
-requestBody.SetSectionsOrder(sectionsOrder)
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-reorder, err := graphClient.Users().ByUserId("user-id").Teamwork().Sections().Reorder().PostAsReorderPostResponse(context.Background(), requestBody, configuration)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-com.microsoft.graph.beta.users.item.teamwork.sections.reorder.ReorderPostRequestBody reorderPostRequestBody = new com.microsoft.graph.beta.users.item.teamwork.sections.reorder.ReorderPostRequestBody();
-LinkedList<String> sectionsOrder = new LinkedList<String>();
-sectionsOrder.add("ce274158-f4f5-4ba7-bd18-0b2204dc1691~10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f~QuickViews");
-sectionsOrder.add("a1b2c3d4-e5f6-7890-abcd-ef1234567890");
-sectionsOrder.add("b2c3d4e5-f6a7-8901-bcde-f12345678901");
-reorderPostRequestBody.setSectionsOrder(sectionsOrder);
-var result = graphClient.users().byUserId("{user-id}").teamwork().sections().reorder().post(reorderPostRequestBody, requestConfiguration -> {
-	requestConfiguration.headers.add("If-Match", "\"1742515200\"");
-});
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const teamworkSection = {
-  sectionsOrder: [
-    'ce274158-f4f5-4ba7-bd18-0b2204dc1691~10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f~QuickViews',
-    'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
-    'b2c3d4e5-f6a7-8901-bcde-f12345678901'
-  ]
-};
-
-await client.api('/users/10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f/teamwork/sections/reorder')
-	.version('beta')
-	.post(teamworkSection);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Users\Item\Teamwork\Sections\Reorder\ReorderRequestBuilderPostRequestConfiguration;
-use Microsoft\Graph\Beta\Generated\Users\Item\Teamwork\Sections\Reorder\ReorderPostRequestBody;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new ReorderPostRequestBody();
-$requestBody->setSectionsOrder(['ce274158-f4f5-4ba7-bd18-0b2204dc1691~10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f~QuickViews', 'a1b2c3d4-e5f6-7890-abcd-ef1234567890', 'b2c3d4e5-f6a7-8901-bcde-f12345678901', 	]);
-$requestConfiguration = new ReorderRequestBuilderPostRequestConfiguration();
-$headers = [
-		'If-Match' => '"1742515200"',
-	];
-$requestConfiguration->headers = $headers;
-
-
-$result = $graphServiceClient->users()->byUserId('user-id')->teamwork()->sections()->reorder()->post($requestBody, $requestConfiguration)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.users.item.teamwork.sections.reorder.reorder_request_builder import ReorderRequestBuilder
-from kiota_abstractions.base_request_configuration import RequestConfiguration
-from msgraph_beta.generated.users.item.teamwork.sections.reorder.reorder_post_request_body import ReorderPostRequestBody
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = ReorderPostRequestBody(
-	sections_order = [
-		"ce274158-f4f5-4ba7-bd18-0b2204dc1691~10f8c3a6-3e2a-4e8b-9c7d-5a4b6c8d9e0f~QuickViews",
-		"a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-		"b2c3d4e5-f6a7-8901-bcde-f12345678901",
-	],
-)
-
-request_configuration = RequestConfiguration()
-request_configuration.headers.add("If-Match", "\"1742515200\"")
-
-
-result = await graph_client.users.by_user_id('user-id').teamwork.sections.reorder.post(request_body, request_configuration = request_configuration)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-04-20 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # user resource type
 
@@ -121,6 +121,9 @@ This resource supports:
 | [Create contact](https://learn.microsoft.com/en-us/graph/api/user-post-contacts?view=graph-rest-1.0) | [contact](https://learn.microsoft.com/en-us/graph/api/resources/contact?view=graph-rest-1.0) | Create a new Contact by posting to the contacts collection. |
 | [List contact folders](https://learn.microsoft.com/en-us/graph/api/user-list-contactfolders?view=graph-rest-1.0) | [contactFolder](https://learn.microsoft.com/en-us/graph/api/resources/contactfolder?view=graph-rest-1.0) collection | Get the contact folder collection in the default Contacts folder of the signed-in user. |
 | [Create contact folder](https://learn.microsoft.com/en-us/graph/api/user-post-contactfolders?view=graph-rest-1.0) | [contactFolder](https://learn.microsoft.com/en-us/graph/api/resources/contactfolder?view=graph-rest-1.0) | Create a new ContactFolder by posting to the contactFolders collection. |
+| **Personal distribution lists** |  |  |
+| [List distribution lists](https://learn.microsoft.com/en-us/graph/api/user-list-distributionlists?view=graph-rest-1.0) | [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) collection | Get a list of the [personal distribution lists](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) in the user's mailbox. |
+| [Create distribution list](https://learn.microsoft.com/en-us/graph/api/user-post-distributionlists?view=graph-rest-1.0) | [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) | Create a new [personal distribution list](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) in the user's mailbox. |
 | **Profile photo** |  |  |
 | [Get](https://learn.microsoft.com/en-us/graph/api/profilephoto-get?view=graph-rest-1.0) | [profilePhoto](https://learn.microsoft.com/en-us/graph/api/resources/profilephoto?view=graph-rest-1.0) | Get the specified profilePhoto or its metadata \(profilePhoto properties\). |
 | [Update](https://learn.microsoft.com/en-us/graph/api/profilephoto-update?view=graph-rest-1.0) | None | Update the photo for any user in the tenant including the signed-in user, or the specified group or contact. |
@@ -313,6 +316,7 @@ For example: Cameron is the administrator of a directory for an elementary schoo
 | createdObjects | [directoryObject](https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0) collection | Directory objects that the user created. Read-only. Nullable. |
 | dataSecurityAndGovernance | [userDataSecurityAndGovernance](https://learn.microsoft.com/en-us/graph/api/resources/userdatasecurityandgovernance?view=graph-rest-1.0) | The data security and governance settings for the user. Read-only. Nullable. |
 | directReports | [directoryObject](https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0) collection | The users and contacts that report to the user. \(The users and contacts that have their manager property set to this user.\) Read-only. Nullable. Supports `$expand`. |
+| distributionLists | [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) collection | The personal distribution lists in the user's mailbox. Read-only. Nullable. |
 | drive | [drive](https://learn.microsoft.com/en-us/graph/api/resources/drive?view=graph-rest-1.0) | The user's OneDrive. Read-only. |
 | drives | [drive](https://learn.microsoft.com/en-us/graph/api/resources/drive?view=graph-rest-1.0) collection | A collection of drives available for this user. Read-only. |
 | events | [event](https://learn.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0) collection | The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable. |

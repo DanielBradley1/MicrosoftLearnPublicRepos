@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-api-overview?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-01-21 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Use the Microsoft Graph security API
 
@@ -41,7 +41,7 @@ To migrate to the advanced hunting APIs in Microsoft Graph, update the following
 
 | Subject | Older parameters | Microsoft Graph |
 | --- | --- | --- |
-| Endpoints | [https://api.securitycenter.microsoft.com/api/advancedqueries/run](https://learn.microsoft.com/en-us/defender-endpoint/api/run-advanced-query-api)  <br>  <br>[https://api.security.microsoft.com/api/advancedhunting/run](https://learn.microsoft.com/en-us/defender-xdr/api-advanced-hunting) | [https://graph.microsoft.com/beta/security/runHuntingQuery](https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery?view=graph-rest-1.0) |
+| Endpoints | [https://api.securitycenter.microsoft.com/api/advancedqueries/run](https://learn.microsoft.com/en-us/defender-endpoint/api/run-advanced-query-api)  <br>  <br>[https://api.security.microsoft.com/api/advancedhunting/run](https://learn.microsoft.com/en-us/defender-xdr/api-advanced-hunting) | [https://graph.microsoft.com/v1.0/security/runHuntingQuery](https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery?view=graph-rest-1.0) |
 | Resource URI | Microsoft Defender for Endpoint on `https://api.securitycenter.microsoft.com` | Microsoft Graph on `https://graph.microsoft.com` |
 | API permissions | *AdvancedQuery.Read* \(delegated\) and *AdvancedQuery.Read.All* \(application\) under Microsoft Defender for Endpoint \(formerly Windows Defender Advanced Threat Protection\)  <br>  <br>*AdvancedHunting.Read* \(delegated\) and *AdvancedHunting.Read.All* \(application\) under Microsoft Threat Protection | [*ThreatHunting.Read.All*](https://learn.microsoft.com/en-us/graph/permissions-reference#threathuntingreadall) \(delegated and application\) |
 | Request body | **Query** property. For example `{"Query":"DeviceProcessEvents \|where InitiatingProcessFileName =~ 'powershell.exe' \|where ProcessCommandLine contains 'appdata'\|project Timestamp, FileName, InitiatingProcessFileName, DeviceId\|limit 2"}` | **Query** and **Timespan** properties. For example, `{"Query": "DeviceProcessEvents", "Timespan": "P90D"}` |
@@ -56,6 +56,18 @@ Microsoft Graph does't have a built-in Advanced Hunting action that was availabl
 #### Power BI flow migration
 
 If you're using a custom Power BI report created with the older API, update your Power BI query to use the Microsoft Graph parameters described in the preceding table. For more information, see [Create custom Microsoft Defender XDR reports using Microsoft Graph security API and Power BI](https://learn.microsoft.com/en-us/defender-xdr/defender-xdr-custom-reports).
+
+## Custom detections
+
+You can create advanced hunting [custom detection rules](https://learn.microsoft.com/en-us/defender-xdr/custom-detection-rules) specific to your security operations to proactively monitor for threats and take action. For example, you can create custom detection rules that look for known indicators or misconfigured devices. These rules automatically trigger alerts and any response actions that you specify.
+
+### Quotas
+
+1. [List detection rules](https://learn.microsoft.com/en-us/graph/api/security-rulesroot-list-detectionrules?view=graph-rest-1.0): 10 rules per minute per application, 300 rules per hour per application, and 600 rules per hour per tenant.
+2. [Get a detection rule](https://learn.microsoft.com/en-us/graph/api/security-detectionrule-get?view=graph-rest-1.0): 100 rules per minute per application, 1,500 rules per hour per application, and 1,800 rules per hour per tenant.
+3. [Create a detection rule](https://learn.microsoft.com/en-us/graph/api/security-rulesroot-post-detectionrules?view=graph-rest-1.0): 10 rules per minute per application, 1,500 rules per hour per application, and 1,800 rules per hour per tenant.
+4. [Update a detection rule](https://learn.microsoft.com/en-us/graph/api/security-detectionrule-update?view=graph-rest-1.0): 100 rules per minute per application, 1,500 rules per hour per application, and 1,800 rules per hour per tenant.
+5. [Delete a detection rule](https://learn.microsoft.com/en-us/graph/api/security-rulesroot-delete-detectionrules?view=graph-rest-1.0): 100 rules per minute per application, 1,500 rules per hour per application, and 1,800 rules per hour per tenant.
 
 ## Alerts
 

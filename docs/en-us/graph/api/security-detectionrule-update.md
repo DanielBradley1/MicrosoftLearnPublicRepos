@@ -1,21 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/security-detectionrule-update?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-01 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/security-detectionrule-update?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Update detectionRule
 
 Namespace: microsoft.graph.security
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Update the properties of a [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-beta) object.
-
-This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
-
-| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
-| --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+Update the properties of a [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-1.0) object.
 
 ## Permissions
 
@@ -59,16 +49,15 @@ The following table specifies the properties that can be updated.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | description | String | A user-supplied description of the detection rule. |
-| detectionAction | [microsoft.graph.security.detectionAction](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionaction?view=graph-rest-beta) | The actions taken when a detection is made by this rule, including the alert that is created and any automated response actions. |
+| detectionAction | [microsoft.graph.security.detectionAction](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionaction?view=graph-rest-1.0) | The actions taken when a detection is made by this rule, including the alert that is created and any automated response actions. |
 | displayName | String | The display name of the rule. |
-| isEnabled | Boolean | **Deprecated.** Use **status** instead. The `isEnabled` property will be removed from this resource on 2026-10-01. |
-| queryCondition | [microsoft.graph.security.queryCondition](https://learn.microsoft.com/en-us/graph/api/resources/security-querycondition?view=graph-rest-beta) | The advanced hunting query that defines the detection logic of this rule. |
-| schedule | [microsoft.graph.security.ruleSchedule](https://learn.microsoft.com/en-us/graph/api/resources/security-ruleschedule?view=graph-rest-beta) | The triggering schedule of this rule. |
-| status | [microsoft.graph.security.detectionRuleStatus](https://learn.microsoft.com/en-us/graph/api/resources/enums-security?view=graph-rest-beta#detectionrulestatus-values) | The current run status of the rule. The possible values are: `enabled`, `disabled`, `autoDisabled`, `unknownFutureValue`. |
+| queryCondition | [microsoft.graph.security.queryCondition](https://learn.microsoft.com/en-us/graph/api/resources/security-querycondition?view=graph-rest-1.0) | The advanced hunting query that defines the detection logic of this rule. |
+| schedule | [microsoft.graph.security.ruleSchedule](https://learn.microsoft.com/en-us/graph/api/resources/security-ruleschedule?view=graph-rest-1.0) | The triggering schedule of this rule. |
+| status | [microsoft.graph.security.detectionRuleStatus](https://learn.microsoft.com/en-us/graph/api/resources/enums-security?view=graph-rest-1.0#detectionrulestatus-values) | The current run status of the rule. The possible values are: `enabled`, `disabled`, `autoDisabled`, `unknownFutureValue`. |
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and a [microsoft.graph.security.detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-beta) object in the response body.
+If successful, this method returns a `200 OK` response code and a [microsoft.graph.security.detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-1.0) object in the response body.
 
 ## Examples
 
@@ -76,17 +65,8 @@ If successful, this method returns a `200 OK` response code and a [microsoft.gra
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
-
 ```http
-PATCH https://graph.microsoft.com/beta/security/rules/detectionRules/office-encoded-powershell
+PATCH https://graph.microsoft.com/v1.0/security/rules/detectionRules/office-encoded-powershell
 Content-Type: application/json
 
 {
@@ -96,179 +76,6 @@ Content-Type: application/json
   }
 }
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Beta.Models.Security;
-
-var requestBody = new DetectionRule
-{
-	Status = DetectionRuleStatus.Disabled,
-	QueryCondition = new QueryCondition
-	{
-		QueryText = "DeviceProcessEvents | where InitiatingProcessFileName in~ ('winword.exe','excel.exe','outlook.exe') | where FileName == 'powershell.exe' | where ProcessCommandLine has '-enc'",
-	},
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Security.Rules.DetectionRules["{detectionRule-id}"].PatchAsync(requestBody);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphmodelssecurity "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
-	  //other-imports
-)
-
-requestBody := graphmodelssecurity.NewDetectionRule()
-status := graphmodels.DISABLED_DETECTIONRULESTATUS 
-requestBody.SetStatus(&status) 
-queryCondition := graphmodelssecurity.NewQueryCondition()
-queryText := "DeviceProcessEvents | where InitiatingProcessFileName in~ ('winword.exe','excel.exe','outlook.exe') | where FileName == 'powershell.exe' | where ProcessCommandLine has '-enc'"
-queryCondition.SetQueryText(&queryText) 
-requestBody.SetQueryCondition(queryCondition)
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-detectionRules, err := graphClient.Security().Rules().DetectionRules().ByDetectionRuleId("detectionRule-id").Patch(context.Background(), requestBody, nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-com.microsoft.graph.beta.models.security.DetectionRule detectionRule = new com.microsoft.graph.beta.models.security.DetectionRule();
-detectionRule.setStatus(com.microsoft.graph.beta.models.security.DetectionRuleStatus.Disabled);
-com.microsoft.graph.beta.models.security.QueryCondition queryCondition = new com.microsoft.graph.beta.models.security.QueryCondition();
-queryCondition.setQueryText("DeviceProcessEvents | where InitiatingProcessFileName in~ ('winword.exe','excel.exe','outlook.exe') | where FileName == 'powershell.exe' | where ProcessCommandLine has '-enc'");
-detectionRule.setQueryCondition(queryCondition);
-com.microsoft.graph.models.security.DetectionRule result = graphClient.security().rules().detectionRules().byDetectionRuleId("{detectionRule-id}").patch(detectionRule);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const detectionRule = {
-  status: 'disabled',
-  queryCondition: {
-    queryText: 'DeviceProcessEvents | where InitiatingProcessFileName in~ (\'winword.exe\',\'excel.exe\',\'outlook.exe\') | where FileName == \'powershell.exe\' | where ProcessCommandLine has \'-enc\''
-  }
-};
-
-await client.api('/security/rules/detectionRules/office-encoded-powershell')
-	.version('beta')
-	.update(detectionRule);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Models\Security\DetectionRule;
-use Microsoft\Graph\Beta\Generated\Models\Security\DetectionRuleStatus;
-use Microsoft\Graph\Beta\Generated\Models\Security\QueryCondition;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new DetectionRule();
-$requestBody->setStatus(new DetectionRuleStatus('disabled'));
-$queryCondition = new QueryCondition();
-$queryCondition->setQueryText('DeviceProcessEvents | where InitiatingProcessFileName in~ (\'winword.exe\',\'excel.exe\',\'outlook.exe\') | where FileName == \'powershell.exe\' | where ProcessCommandLine has \'-enc\'');
-$requestBody->setQueryCondition($queryCondition);
-
-$result = $graphServiceClient->security()->rules()->detectionRules()->byDetectionRuleId('detectionRule-id')->patch($requestBody)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Security
-
-$params = @{
-	status = "disabled"
-	queryCondition = @{
-		queryText = "DeviceProcessEvents | where InitiatingProcessFileName in~ ('winword.exe','excel.exe','outlook.exe') | where FileName == 'powershell.exe' | where ProcessCommandLine has '-enc'"
-	}
-}
-
-Update-MgBetaSecurityRuleDetectionRule -DetectionRuleId $detectionRuleId -BodyParameter $params
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.models.security.detection_rule import DetectionRule
-from msgraph_beta.generated.models.detection_rule_status import DetectionRuleStatus
-from msgraph_beta.generated.models.security.query_condition import QueryCondition
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = DetectionRule(
-	status = DetectionRuleStatus.Disabled,
-	query_condition = QueryCondition(
-		query_text = "DeviceProcessEvents | where InitiatingProcessFileName in~ ('winword.exe','excel.exe','outlook.exe') | where FileName == 'powershell.exe' | where ProcessCommandLine has '-enc'",
-	),
-)
-
-result = await graph_client.security.rules.detection_rules.by_detection_rule_id('detectionRule-id').patch(request_body)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 

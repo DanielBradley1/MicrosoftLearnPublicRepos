@@ -1,21 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/distributionlist-delete?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-07-08 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/distributionlist-delete?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Delete distributionList
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Delete a [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-beta) object.
-
-This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
-
-| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
-| --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+Delete a [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) object.
 
 ## Permissions
 
@@ -54,121 +44,9 @@ If successful, this method returns a `204 No Content` response code.
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [Python](#tabpanel_1_python)
-
 ```http
-DELETE https://graph.microsoft.com/beta/me/distributionLists/AAMkAGI2THVSAAA=
+DELETE https://graph.microsoft.com/v1.0/me/distributionLists/AAMkAGI2THVSAAA=
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-await graphClient.Me.DistributionLists["{distributionList-id}"].DeleteAsync();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  //other-imports
-)
-
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-graphClient.Me().DistributionLists().ByDistributionListId("distributionList-id").Delete(context.Background(), nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-graphClient.me().distributionLists().byDistributionListId("{distributionList-id}").delete();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-await client.api('/me/distributionLists/AAMkAGI2THVSAAA=')
-	.version('beta')
-	.delete();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-
-$graphServiceClient->me()->distributionLists()->byDistributionListId('distributionList-id')->delete()->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-
-await graph_client.me.distribution_lists.by_distribution_list_id('distributionList-id').delete()
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 

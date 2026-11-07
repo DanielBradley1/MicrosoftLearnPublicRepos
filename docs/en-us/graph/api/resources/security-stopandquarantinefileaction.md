@@ -1,17 +1,13 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-stopandquarantinefileaction?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-20 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-stopandquarantinefileaction?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # stopAndQuarantineFileAction resource type
 
 Namespace: microsoft.graph.security
 
-Important
+Represents an [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-1.0) that stops and quarantines a file on a device returned by a [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-1.0) hunting query. The action uses device ID and SHA-1 columns from the query output to identify where to stop and quarantine the file.
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents an [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-beta) that stops and quarantines a file on a device returned by a [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-beta) hunting query. The action uses device ID and SHA-1 columns from the query output to identify where to stop and quarantine the file.
-
-Inherits from [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-beta).
+Inherits from [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-1.0).
 
 ## Properties
 

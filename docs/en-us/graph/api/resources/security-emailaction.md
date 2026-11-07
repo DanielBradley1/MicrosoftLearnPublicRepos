@@ -1,17 +1,13 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-emailaction?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-20 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-emailaction?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # emailAction resource type
 
 Namespace: microsoft.graph.security
 
-Important
+Represents an [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-1.0) that targets an email message returned by a [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-1.0) hunting query. The action uses message and recipient columns from the query output to identify the email message.
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents an [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-beta) that targets an email message returned by a [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-beta) hunting query. The action uses message and recipient columns from the query output to identify the email message.
-
-Inherits from [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-beta).
+Inherits from [automatedAction](https://learn.microsoft.com/en-us/graph/api/resources/security-automatedaction?view=graph-rest-1.0).
 
 ## Properties
 

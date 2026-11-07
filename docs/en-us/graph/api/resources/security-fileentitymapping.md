@@ -1,17 +1,13 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-fileentitymapping?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-20 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-fileentitymapping?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # fileEntityMapping resource type
 
 Namespace: microsoft.graph.security
 
-Important
+Represents a mapping from columns in a [custom detection rule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-1.0) query result to a file entity that is attached to the resulting alert.
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents a mapping from columns in a [custom detection rule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-beta) query result to a file entity that is attached to the resulting alert.
-
-Base type: [entityMapping](https://learn.microsoft.com/en-us/graph/api/resources/security-entitymapping?view=graph-rest-beta).
+Base type: [entityMapping](https://learn.microsoft.com/en-us/graph/api/resources/security-entitymapping?view=graph-rest-1.0).
 
 ## Properties
 

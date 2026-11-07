@@ -1,15 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-mitretechnique?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-06-20 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/security-mitretechnique?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # mitreTechnique resource type
 
 Namespace: microsoft.graph.security
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents a MITRE Adversarial Tactics, Techniques, and Common Knowledge \(ATT&CK\) technique and optional subtechniques. This resource is configured in the **techniques** property of a [mitreTactic](https://learn.microsoft.com/en-us/graph/api/resources/security-mitretactic?view=graph-rest-beta).
+Represents a MITRE Adversarial Tactics, Techniques, and Common Knowledge \(ATT&CK\) technique and optional subtechniques. This resource is configured in the **techniques** property of a [mitreTactic](https://learn.microsoft.com/en-us/graph/api/resources/security-mitretactic?view=graph-rest-1.0).
 
 ## Properties
 

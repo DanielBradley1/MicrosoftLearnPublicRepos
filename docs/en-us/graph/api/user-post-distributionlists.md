@@ -1,21 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/user-post-distributionlists?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-08-19 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/user-post-distributionlists?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Create distributionList
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Create a new [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-beta) in the user's mailbox.
-
-This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
-
-| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
-| --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+Create a new [personal distribution list](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) in the user's mailbox.
 
 ## Permissions
 
@@ -43,7 +33,7 @@ POST /users/{id | userPrincipalName}/distributionLists
 
 ## Request body
 
-In the request body, supply a JSON representation of the [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-beta) object.
+In the request body, supply a JSON representation of the [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) object.
 
 You can specify the following properties when you create a **distributionList**.
 
@@ -53,7 +43,7 @@ You can specify the following properties when you create a **distributionList**.
 
 ## Response
 
-If successful, this method returns a `201 Created` response code and a [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-beta) object in the response body.
+If successful, this method returns a `201 Created` response code and a [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist?view=graph-rest-1.0) object in the response body.
 
 ## Examples
 
@@ -61,151 +51,14 @@ If successful, this method returns a `201 Created` response code and a [distribu
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [Python](#tabpanel_1_python)
-
 ```http
-POST https://graph.microsoft.com/beta/me/distributionLists
+POST https://graph.microsoft.com/v1.0/me/distributionLists
 Content-Type: application/json
 
 {
   "displayName": "Project Team"
 }
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Beta.Models;
-
-var requestBody = new DistributionList
-{
-	DisplayName = "Project Team",
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Me.DistributionLists.PostAsync(requestBody);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphmodels "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-	  //other-imports
-)
-
-requestBody := graphmodels.NewDistributionList()
-displayName := "Project Team"
-requestBody.SetDisplayName(&displayName) 
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-distributionLists, err := graphClient.Me().DistributionLists().Post(context.Background(), requestBody, nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-DistributionList distributionList = new DistributionList();
-distributionList.setDisplayName("Project Team");
-DistributionList result = graphClient.me().distributionLists().post(distributionList);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const distributionList = {
-  displayName: 'Project Team'
-};
-
-await client.api('/me/distributionLists')
-	.version('beta')
-	.post(distributionList);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Models\DistributionList;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new DistributionList();
-$requestBody->setDisplayName('Project Team');
-
-$result = $graphServiceClient->me()->distributionLists()->post($requestBody)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.models.distribution_list import DistributionList
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = DistributionList(
-	display_name = "Project Team",
-)
-
-result = await graph_client.me.distribution_lists.post(request_body)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
@@ -216,12 +69,13 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#users('user-id')/distributionLists/$entity",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('user-id')/distributionLists/$entity",
   "id": "AAMkAGI2THVSAAA=",
   "changeKey": "CQAAABYAAABE",
   "createdDateTime": "2024-03-15T10:30:00Z",
   "lastModifiedDateTime": "2024-03-15T10:30:00Z",
   "categories": [],
-  "displayName": "Project Team"
+  "displayName": "Project Team",
+  "personId": "e527d18c-9c02-4af4-b5da-729744507c9b"
 }
 ```

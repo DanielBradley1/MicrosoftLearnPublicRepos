@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailboxfolder-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Update mailboxFolder
 
@@ -10,6 +10,12 @@ Update [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mai
 Note
 
 The folder **type** can't be updated. Instead, the folder needs to be deleted and a new folder can be created.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 
