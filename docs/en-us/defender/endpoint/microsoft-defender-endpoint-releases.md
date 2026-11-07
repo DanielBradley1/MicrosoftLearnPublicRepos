@@ -17,6 +17,8 @@ This table includes supported releases for all supported platforms in the past s
 
 | OS | Build | Month released | Details | Learn more |
 | --- | --- | --- | --- | --- |
+| iOS | 1.1.82260102 | Nov 2026 | - Build: 1.1.82260102  <br>- Release: Nov 3, 2026 | [Release details and updates](#ios--nov-2026--platform-version-1182260102) |
+| Android | 1.0.9428.0102 | Oct 2026 | - Build: 1.0.9428.0102  <br>- Release: Oct 30, 2026 | [Release details and updates](#android--oct-2026--platform-1094280102) |
 | macOS | 101.26092.0012 | November 2026 | - Release version: 20.126092.12.0  <br>- Engine version: 1.1.26100.3000  <br>- Signature version: 1.463.110.0 | [Release details and updates](#macos--november-2026--101260920012) |
 | Linux | 101.26101.0000 | November 2026 | - Release version: 30.126101.0000.0  <br>- Engine version: 1.1.26090.3000  <br>- Signature version: 1.459.148.0 | [Release details and updates](#linux--november-2026--101261010000) |
 | Windows Antivirus | Platform 4.18.26100.4 / Engine 1.1.26100.4 | October 2026 | - Platform: 4.18.26100.4  <br>- Engine: 1.1.26100.4  <br>- Security intelligence: 1.463.1.0 | [Release details and updates](#windows-antivirus--october-2026--platform-418261004--engine-11261004) |
@@ -266,7 +268,6 @@ For known issues, see [macOS known issues](#macos-known-issues).
 
 | Feature area | Update summary |
 | --- | --- |
-| General | Agent Protection: Improved reliability when applying managed protection policies. |
 | General | Antivirus: Reduced CPU usage during high-volume file activity by. |
 | General | Antivirus: Improved service reliability. |
 | General | Antivirus: Improved health reporting to indicate when the protection engine connection is unavailable. |
@@ -275,7 +276,6 @@ For known issues, see [macOS known issues](#macos-known-issues).
 | General | Device Control: Legacy Device Control v1 is retired. |
 | General | Device Control: Device health reporting now shows Bluetooth permission status, helping administrators verify that Device Control is configured correctly. |
 | General | EDR: Improved authentication reliability after startup and wake. |
-| General | EDR: Added support for configuring AI agent runtime protection on macOS. |
 | General | EDR: Improved macOS device isolation. |
 | General | GUI: Improved accessibility. |
 | General | TVM: Improved software inventory reporting for macOS applications that do not provide standard display-name metadata. |
@@ -994,6 +994,21 @@ Fixed in platform version 101.26052.0011 and later. FIPS-enabled RHEL 8/9 device
 
 See the full list of [Android UX improvements](https://learn.microsoft.com/en-us/defender-endpoint/android-new-ux).
 
+### Android \| Oct 2026 \| Platform: 1.0.9428.0102
+
+#### Release details
+
+| Platform version | Release Date |
+| --- | --- |
+| Android | Oct 30, 2026 |
+
+#### Enhancements and features
+
+| Feature Area | Update Summary |
+| --- | --- |
+| General | Performance improvements and general bug fixes. Includes fixing minor app crash: It was because due to some race conditions among parallel processes during initialization of the app. This was an unlikely crash and used occur in 0.02% of devices. UI bug related to accessibility permission has been fixed: The accessibility dialog used to come twice in onboarding flow due to a mishandled condition in the code. |
+| Connectivity update | Network protection notification if present, will get refreshed on each network change that causes an increase in wifi issues count. The earlier experience didn't refresh notification on network change which gave user incorrect information about the current network status of the device. |
+
 ### Android \| Oct 2026 \| Platform: 1.0.9406.0102
 
 #### Release details
@@ -1305,6 +1320,21 @@ See the full list of [Android UX improvements](https://learn.microsoft.com/en-us
 ## iOS releases
 
 For the latest UX improvements, see [iOS UX improvements](https://learn.microsoft.com/en-us/defender-endpoint/ios-new-ux).
+
+### iOS \| Nov 2026 \| Platform Version: 1.1.82260102
+
+#### Release details
+
+| Platform version | Release Date |
+| --- | --- |
+| 1.1.82260102 | Nov 3, 2026 |
+
+#### Enhancements and features
+
+| Feature Area | Update Summary |
+| --- | --- |
+| Connectivity | Improved reliability of redirected network connections on slow or low-bandwidth networks for a more consistent connectivity experience. |
+| Localization | Updated translations for advanced diagnostic settings to make the option and its description clearer across supported languages. |
 
 ### iOS \| Oct 2026 \| Platform Version: 1.1.82230103
 
