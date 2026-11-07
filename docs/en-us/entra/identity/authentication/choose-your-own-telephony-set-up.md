@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-set-up-sms-voice-api -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up -->
+<!-- Sitemap-Last-Modified: 2026-11-02 -->
 
 # Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center
 
@@ -48,7 +48,12 @@ Before you begin, confirm that your Microsoft Entra policies allow the setup scr
    [![Redacted screenshot of the telecom provider selection pane. Demo pricing and offer details are obscured.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png#lightbox)
 4. Purchase your provider's offer. For detailed purchasing instructions, see [Purchase and deploy a SaaS solution from Security Store](https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution).
 5. After you **Place Order**, select **Configure Account Now** and follow your provider's registration instructions.
-6. Keep the registration page available and return to the Microsoft Entra setup page. Continue to step 2; you'll complete registration in step 3 with the application ID from the deployment summary.
+6. Keep your provider's registration page open, but leave the **Application \(client\) ID** field blank. The setup script creates this ID in step 2.
+7. Return to the Microsoft Entra setup page and continue to step 2.
+
+Important
+
+Don't enter any other ID in the provider's **Application \(client\) ID** field, such as your tenant ID, subscription ID, or an existing app's ID. Use only the **Application \(client\) ID** from the step 2 deployment summary.
 
 ## Step 2: Deploy the integration
 

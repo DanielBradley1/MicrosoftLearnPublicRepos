@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/backup/recover-objects -->
-<!-- Sitemap-Last-Modified: 2026-06-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
 # Recover objects using Microsoft Entra Backup and Recovery
 
@@ -76,9 +76,10 @@ Cancel a recovery job while it's running. Any recovery actions completed before 
 Note
 
 - Soft-deleted users, Microsoft 365 Groups, cloud security groups, application registrations, and service principals can be restored for 30 days. For more information, see [Soft deletion in Microsoft Entra Backup and Recovery](https://learn.microsoft.com/en-us/entra/backup/soft-deletion). Backup and Recovery restores supported properties and links from retained backups.
-- Hard-deleted objects can't be recovered. Use Protected Actions to prevent unwanted hard deletions in your tenant.
+- Hard-deleted objects can't be recovered. [Configure Hard Deletion Protection](https://learn.microsoft.com/en-us/entra/backup/configure-hard-deletion-protection) to block permanent deletion of supported objects during the first seven days after they're soft deleted. You can also use Protected Actions to protect hard-deletion permissions.
 
 ## Related content
 
 - [Create and review difference reports](https://learn.microsoft.com/en-us/entra/backup/create-review-difference-reports)
+- [Configure Hard Deletion Protection](https://learn.microsoft.com/en-us/entra/backup/configure-hard-deletion-protection)
 - [View available backups](https://learn.microsoft.com/en-us/entra/backup/view-available-backups)

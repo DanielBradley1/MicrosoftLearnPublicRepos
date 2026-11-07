@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/howto-sspr-authenticationdata -->
-<!-- Sitemap-Last-Modified: 2026-06-24 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
 # Prepopulate user authentication contact information for Microsoft Entra self-service password reset \(SSPR\)
 
@@ -9,9 +9,7 @@ Some organizations prefer to bootstrap this process through synchronization of a
 
 Important
 
-Starting **Nov 9, 2026**, If your SSPR settings require users to register during sign-in, and enabled users do not have enough methods to complete SSPR, a registration campaign will prompt affected users to register methods ahead of enforcement. Ensure users have registered at least one method that satisfies your SSPR policy. For more information, see [How to manage authentication methods](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage).
-
-Starting **Oct 5, 2026**, SSPR will only accept explicitly registered authentication methods. Directory-sourced properties — such as `mobilePhone`, `businessPhone`, and `otherMails` — that were never registered will no longer work for SSPR verification.
+Starting **February 2027**, SSPR will only accept explicitly registered authentication methods. Directory-sourced properties — such as `mobilePhone`, `businessPhone`, and `otherMails` — that were never registered will no longer work for SSPR verification.
 
 You can prepopulate authentication contact information if you meet the following requirements:
 

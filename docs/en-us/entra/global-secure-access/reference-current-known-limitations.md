@@ -181,13 +181,13 @@ The Global Secure Access client doesn't support concurrent sessions on the same 
 
 #### QUIC not supported for Internet Access
 
-Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+End-to-end QUIC forwarding isn't supported in Internet Access. Cloud firewall for clients supports QUIC acquisition and blocking in preview.
 
 Tip
 
 QUIC is currently supported in Private Access and Microsoft 365 workloads.
 
-Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check#quic-not-supported-for-internet-access).
+Keep QUIC enabled in browsers. Use **Custom Acquire** to acquire UDP traffic on destination port `443` for the intended destinations, and use cloud firewall to block that traffic. Apply the firewall policy through the security profile for the intended users. Applications that support fallback can then use HTTPS over TCP. **Default Acquire** on TCP port `443` doesn't acquire UDP port `443`, and an **Allow** rule doesn't enable supported end-to-end QUIC forwarding. For configuration and verification steps, see [Control QUIC traffic on UDP port 443](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-cloud-firewall-clients#control-quic-traffic-on-udp-port-443).
 
 #### WSL 2 connectivity
 
@@ -223,11 +223,13 @@ For Office 365 and Microsoft Entra to detect the device's true source IP, consid
 
 #### QUIC not supported for Internet Access
 
-Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+End-to-end QUIC forwarding isn't supported in Internet Access. Cloud firewall for clients supports QUIC acquisition and blocking in preview.
 
 Tip
 
-QUIC is currently supported in Private Access and Microsoft 365 workloads. Administrators can disable QUIC protocol on browsers, triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check#quic-not-supported-for-internet-access).
+QUIC is currently supported in Private Access and Microsoft 365 workloads.
+
+Keep QUIC enabled in browsers. Use **Custom Acquire** to acquire UDP traffic on destination port `443` for the intended destinations, and use cloud firewall to block that traffic. Apply the firewall policy through the security profile for the intended users. Applications that support fallback can then use HTTPS over TCP. **Default Acquire** on TCP port `443` doesn't acquire UDP port `443`, and an **Allow** rule doesn't enable supported end-to-end QUIC forwarding. For configuration and verification steps, see [Control QUIC traffic on UDP port 443](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-cloud-firewall-clients#control-quic-traffic-on-udp-port-443).
 
 Known limitations for the Global Secure Access client for Android include:
 

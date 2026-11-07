@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/backup/ -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
 # Microsoft Entra Backup and Recovery documentation
 
@@ -22,6 +22,7 @@ Learn how to use Microsoft Entra Backup and Recovery to protect your tenant from
 ### How-To Guide
 
 - [View available backups](https://learn.microsoft.com/en-us/entra/backup/view-available-backups)
+- [Configure Hard Deletion Protection](https://learn.microsoft.com/en-us/entra/backup/configure-hard-deletion-protection)
 - [Create and review difference reports](https://learn.microsoft.com/en-us/entra/backup/create-review-difference-reports)
 - [Recover objects](https://learn.microsoft.com/en-us/entra/backup/recover-objects)
 - [Review recovery history](https://learn.microsoft.com/en-us/entra/backup/review-recovery-history)

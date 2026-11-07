@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/backup/overview -->
-<!-- Sitemap-Last-Modified: 2026-06-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
 # Microsoft Entra Backup and Recovery overview
 
@@ -19,6 +19,7 @@ Microsoft Entra Backup and Recovery lets you:
 - **Create difference reports**: Before recovering objects to a previous state, compare the current state of your tenant with a backup and review changed attributes and links.
 - **Recover objects**: Recover all supported objects, selected object types, or specific object IDs.
 - **Review recovery history**: View completed and in-progress recovery operations for your tenant.
+- **Configure Hard Deletion Protection \(preview\)**: Protect supported objects from permanent deletion during the first seven days after they're soft deleted.
 
 Tip
 
@@ -32,6 +33,7 @@ To get started, browse to the [Microsoft Entra admin center](https://entra.micro
 - **Backups**: Browse available backups from the last seven days.
 - **Difference Reports**: Create and review reports that compare a backup with the current tenant state.
 - **Recovery History**: View completed and in-progress recovery operations for your tenant.
+- **Hard deletion protection \(preview\)**: Enable permanent protection for supported objects and view protected-object counts.
 
 ## Prerequisites
 
@@ -56,6 +58,7 @@ Use Microsoft Entra Backup and Recovery as part of a broader approach to recover
 
 ## Related content
 
+- [Configure Hard Deletion Protection](https://learn.microsoft.com/en-us/entra/backup/configure-hard-deletion-protection)
 - [View available backups](https://learn.microsoft.com/en-us/entra/backup/view-available-backups)
 - [Create and review difference reports](https://learn.microsoft.com/en-us/entra/backup/create-review-difference-reports)
 - [Recover objects](https://learn.microsoft.com/en-us/entra/backup/recover-objects)
