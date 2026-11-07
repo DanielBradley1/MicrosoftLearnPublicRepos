@@ -1,11 +1,17 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/whats-new -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # What's new in Microsoft 365 Copilot extensibility
 
 As a developer, you can extend, enrich, and customize [Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview) for the unique way your customers work. This article provides the latest information about what's new in Microsoft 365 Copilot extensibility.
 
 For the latest information, announcements, and news about preview and generally available \(GA\) features, follow the [Microsoft 365 Copilot developer blog](https://devblogs.microsoft.com/microsoft365dev/category/microsoft-365-copilot/).
+
+## November 2026
+
+### Review Copilot credit requests with the Cost Management API
+
+Administrators can list, review, approve, and reject users' requests for Copilot credits, individually or in bulk, with the new [credit request APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/creditrequest) in the [Cost Management API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview).
 
 ## October 2026
 
@@ -20,6 +26,10 @@ A new version of the declarative agent manifest schema is available. [Declarativ
 ### Govern Copilot credit consumption with the Cost Management API
 
 Administrators can create and manage spending policies, scope them to groups, configure per-service settings and threshold alerts, and diagnose per-user consumption with the new [Cost Management API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview).
+
+### Usage reports in the Cost Management API
+
+Administrators can now report Copilot credit consumption by user, security group, service, and funding class, and inspect a user's raw usage by service and session, with the new [usage reports](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview#usage-report-time-selectors-and-paging) in the Cost Management API.
 
 ### Daily user detail for Copilot usage reports
 

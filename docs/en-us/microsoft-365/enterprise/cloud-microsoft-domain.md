@@ -1,33 +1,48 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/cloud-microsoft-domain?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-06-26 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
-# Unified cloud.microsoft domain for Microsoft 365 apps
+# Unified cloud.microsoft domain
 
-Microsoft is unifying user-facing Microsoft 365 apps and services to a single and consistent domain: `cloud.microsoft`.
+`cloud.microsoft` is Microsoft's unified, purpose-managed domain for Microsoft 365, Microsoft Copilot, and other Microsoft SaaS experiences in the commercial cloud.
 
-The growth of Microsoft cloud services led to the expansion of the domain space they occupy, resulting in [hundreds of domains](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide). This fragmentation is a challenge for end user navigation, administrative simplicity, and the development of cross-app experiences. To solve this problem and to make it easier for customers, end users and app developers to interface with Microsoft 365 apps and services, Microsoft has designated a special domain - `cloud.microsoft`, to be used by Microsoft SaaS products going forward.
+The `cloud.microsoft` domain provides a consistent and durable domain foundation for Microsoft SaaS. Customers can use it to identify Microsoft services, help users recognize official product URLs, configure network policies, and support domain-dependent integrations as Microsoft SaaS products and experiences evolve.
 
-The `.microsoft` top-level domain is exclusive to Microsoft. The new domain doesn't have traditional suffixes such as `.com` or `.net` in the end. This is by design. `cloud.microsoft` resides under the `.microsoft` top-level domain, for which Microsoft is a registry operator and the sole registrant. This domain allows for extra security, privacy, and protection against spoofing when you interact with apps within that domain. You can trust that any website or app that ends with `cloud.microsoft` is an official Microsoft product or service.
+## What is cloud.microsoft?
 
-Some Microsoft 365 products that are already using the `cloud.microsoft` domain include Microsoft Copilot Chat, Word, Excel, PowerPoint, Outlook, OneNote, Planner, Microsoft Loop, Mesh, Viva Engage, Viva Insights, Viva Learning, Viva Pulse, and more. These are just some examples, and over time you'll see even more Microsoft 365 product experiences to be delivered from the `cloud.microsoft` domain.
+`cloud.microsoft` is a Microsoft domain dedicated to Microsoft SaaS applications, services, and APIs. It resides under the .microsoft top-level domain, for which Microsoft is the registry operator and sole registrant. Because .microsoft is the top-level domain, `cloud.microsoft` ends there, without a .com, .net, or other suffix.
 
-## Benefits of a unified domain
+Every hostname ending in `cloud.microsoft` is within a Microsoft-controlled namespace used for official Microsoft products and services.
 
-Consolidating authenticated user-facing Microsoft 365 experiences to a single domain benefits customer in several ways. For end users, it streamlines the overall experience by reducing sign-ins, redirects, and delays when navigating across apps. For admins, it reduces the complexity of allow lists that are required to connect to Microsoft 365 services and help your organization stay secure and productive. For all our customers - and our developers - this change helps align for better and tighter integration across the Microsoft 365 ecosystem by streamlining development and improving performance of cross-app experiences.
+Many Microsoft 365 and Microsoft Copilot experiences already use `cloud.microsoft`, with more Microsoft SaaS experiences transitioning to the domain over time.
 
-'Dot brand' top-level domains like `.microsoft` enhance security, trustworthiness, and integrity. Microsoft has exclusive rights to the `.microsoft` top-level domain, enabling enhanced security protocols and governance controls to be applied across the entire domain hierarchy, starting from the top level. All experiences on the `.microsoft` domain are guaranteed to be legitimate and authentic, as Microsoft is the registry operator and sole registrant.
+## Why cloud.microsoft domain unification matters
 
-## Security considerations
+Domain names affect how people and organizations recognize, trust, configure, secure, and use online services. A consistent domain structure makes Microsoft services easier to recognize and manage as they evolve.
 
-To ensure that customers and users can treat everything under the `*.cloud.microsoft` domain as fully trusted, the entire domain hierarchy is isolated, purpose built, and dedicated to hosting only secure and compliant Microsoft product experiences. The domain is managed to the highest standards of domain security and reputation, and is kept free of scenarios such as third-party websites, IaaS/PaaS resources \(such as file and blob storage\), and hosting of active content, code, or scripts that might affect the trust and integrity of products and applications residing in the domain.
+Domain unification provides several benefits:
 
-The `.microsoft` gTLD \(Generic Top-Level Domain\) is on the HTTP Strict-Transport-Security preload list in all popular browsers, meaning that all nonsecure HTTP requests are automatically upgraded to use HTTPS, and users are blocked from overriding certificate errors that could indicate an active network attacker is attempting to compromise the security of the connection. All `*.cloud.microsoft` subdomains inherit this protection.
+- **Product identity and trust:** Consistent and recognizable product URLs make it easier for users and organizations to identify official Microsoft services and destinations.
+- **Network configuration:** A unified domain structure makes it easier for IT teams to identify Microsoft traffic and apply network policies without maintaining complex configurations for many different product domains.
+- **Security and isolation:** Clear domain boundaries help browsers, applications, and security solutions distinguish Microsoft applications and services from third-party sites and other Internet destinations and apply appropriate security policies.
+- **Application integration:** A common domain makes it easier for Microsoft applications and services to work together, reducing dependencies on different product-specific domains as experiences become more connected.
 
-## Requirements for admins
+Microsoft 365 experiences have historically used many domains for different products and functions. Consolidating Microsoft SaaS experiences under `cloud.microsoft` provides a more consistent experience for users and applications, simplifies configuration for IT and network administrators, and establishes a durable domain foundation as Microsoft services evolve.
 
-Since 2023, `*.cloud.microsoft` and other domains related to the domain unification initiative are part of the [Microsoft 365 network guidance on domains and service endpoints](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide). Customers who use the Microsoft 365 web service API to automate network settings have been getting the network settings since then. Customers who manually update endpoints should ensure that `*.cloud.microsoft` and other required domains are included in their allow list to prevent connectivity and service incidents for their users.
+## What cloud.microsoft means for enterprise security and networking
 
-## Related content
+Microsoft manages `*.cloud.microsoft` as a purpose-governed namespace for first-party Microsoft SaaS applications, services, and APIs. Services must meet Microsoft requirements for use of the namespace before onboarding and throughout their operation.
 
-- [Introducing cloud.microsoft: a unified domain for Microsoft 365 apps and services](https://techcommunity.microsoft.com/t5/microsoft-365-blog/introducing-cloud-microsoft-a-unified-domain-for-microsoft-365/ba-p/3804961)
-- [Microsoft 365 URLs and IP address ranges](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide)
+Unlike general-purpose Internet domains and cloud hosting platforms, customers and third parties can't use `*.cloud.microsoft` to host their own applications or infrastructure. The namespace excludes customer-managed IaaS and PaaS resources, third-party websites and infrastructure, and third-party executable content. These restrictions give organizations greater confidence that destinations under `*.cloud.microsoft` represent Microsoft-managed services rather than unrelated workloads sharing the same domain.
+
+For Microsoft 365 and Microsoft Copilot, this restriction makes `*.cloud.microsoft` a stable network identifier that IT and security teams can use when configuring network policies. Organizations can apply policies to the namespace instead of evaluating each hostname as an unrelated Internet destination or maintaining application-to-endpoint mappings as Microsoft services evolve.
+
+Allowing connections to `*.cloud.microsoft` provides network reachability to Microsoft services. It doesn't, by itself, give users access to Microsoft services or customer data. Authentication, authorization, and Microsoft 365 security and data-protection controls continue to govern access based on context such as user, device, application, tenant, session, and data.
+
+`*.cloud.microsoft` also uses domain-level security mechanisms including DNSSEC, HTTP Strict Transport Security \(HSTS\) preload, and Certification Authority Authorization \(CAA\). These protections apply consistently across applications and services using the namespace.
+
+## What IT and network teams should do for cloud.microsoft
+
+- **Help users recognize official Microsoft destinations.** Educate users that URLs ending in `cloud.microsoft` are within a Microsoft-controlled namespace used for Microsoft products and services.
+- **Allow required connectivity.** Allow `*.cloud.microsoft` and other required [Microsoft 365 endpoints](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide) through firewalls, proxies, and network security solutions so they don't block required service traffic. Don't block individual hostnames within the `cloud.microsoft` namespace.
+- **Bypass TLS decryption and inspection.** Microsoft recommends preserving the intended end-to-end TLS connection between clients and `*.cloud.microsoft` destinations. Network solutions that terminate, decrypt, inspect, or modify these TLS connections can affect application availability, performance, interoperability, and supportability. For more information, see [Microsoft 365 TLS decryption guidance](https://learn.microsoft.com/en-us/microsoft-365/enterprise/network-intermediation?view=o365-worldwide).
+- **Use service-aware controls to enforce organizational policies.** Use Microsoft 365 identity, tenant, application, device, and data-protection controls to govern access to services and customer data. Use `*.cloud.microsoft` as a network policy boundary, not as a substitute for controls that evaluate user, device, application, tenant, session, and data context.

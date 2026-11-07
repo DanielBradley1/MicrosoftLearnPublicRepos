@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Copilot Managed Runtime default governance settings \(preview\)
 
@@ -127,6 +127,10 @@ The sharing rule controls how broadly makers can share apps they build:
 - **Allow sharing with everyone in your organization**: Allows sharing the app with other people in the tenant.
 - **Allow sharing with guest users**: Extends sharing to external guest users.
 
+Note
+
+Guest users can’t open apps built with Copilot Managed Runtime, even when **Allow sharing with guest users** is turned on. This behavior is a known issue. We’re working on a fix.
+
 ### Content security policy
 
 [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) \(CSP\) is a browser standard that limits where an app can load scripts, styles, images, and other resources from, and which sites can frame it. It gives you fine-grained control over what an app is allowed to load and which sites can embed it.
@@ -240,7 +244,7 @@ Copilot Managed Runtime provides a separate control for externally built artifac
 
 ### External artifact deployment
 
-The **Allow external artifact deployment** setting controls whether developers can deploy artifacts built outside the Microsoft-managed build system. When it's on, [`ms app deploy --artifact <path>`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy) uploads and deploys an artifact without triggering a platform-managed build. When it's off, the CLI throws an error and directs the developer to contact an administrator.
+The **Allow external artifact deployment** setting controls whether developers can deploy artifacts built outside the Microsoft-managed build system. When it's on, [`ms app deploy --artifact <path>`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy) uploads and deploys an artifact without triggering a platform-managed build. When it's off, the CLI throws an error and directs the developer to contact an administrator.
 
 Important
 

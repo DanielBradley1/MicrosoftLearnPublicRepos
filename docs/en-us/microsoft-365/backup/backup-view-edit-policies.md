@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-21 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Create, view, and edit backup policies in Microsoft 365 Backup
 
@@ -32,11 +32,10 @@ You can also use PowerShell cmdlets to perform these operations by following the
   
 
 
-Select the **SharePoint**, **Exchange**, or **OneDrive** tab for steps to create a backup policy for that product.
+Expand each section for steps to create a backup policy for SharePoint, Exchange, or OneDrive.
 
-- [SharePoint](#tabpanel_1_sharepoint)
-- [Exchange](#tabpanel_1_exchange)
-- [OneDrive](#tabpanel_1_onedrive)
+<details>
+<summary>**SharePoint**</summary>
 
 Follow these steps to set up a backup policy for SharePoint sites using Microsoft 365 Backup.
 
@@ -89,7 +88,7 @@ Follow these steps to set up a backup policy for SharePoint sites using Microsof
 
    The full workload backup feature is in preview.
 
-7. Select **Next** to move to the **Backup Settings** page, where you can provide a name for your policy.
+7. Select **Next** to move to the **Backup Settings** page, where you can provide a name for your policy and set the **Recovery window**. For SharePoint, choose 3 months, 6 months, or any whole number of years from 1 through 10. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
 8. On the **Review SharePoint backup policy** page, review the information to make sure it's how you want it, and then select **Create policy** \(or **Update policy** if it's an update\).
 
    ![Screenshot of the Review SharePoint backup policy page.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-policy-review-policy-sharepoint.png?view=o365-worldwide)
@@ -98,6 +97,10 @@ Follow these steps to set up a backup policy for SharePoint sites using Microsof
    ![Screenshot of the SharePoint backup policy created page.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-policy-created-sharepoint.png?view=o365-worldwide)
 
    Once the sites are added to a backup policy, it might take up to 15 minutes per 1,000 sites for restore points to become available for restore.
+</details>
+
+<details>
+<summary>**Exchange**</summary>
 
 Follow these steps to set up a backup policy for Exchange mailboxes sites using Microsoft 365 Backup.
 
@@ -136,6 +139,10 @@ Follow these steps to set up a backup policy for Exchange mailboxes sites using 
    ![Screenshot of the Exchange backup policy created page.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-policy-created-exchange.png?view=o365-worldwide)
 
    Once the mailboxes are added to a backup policy, it might take up to 15 minutes per 1,000 mailboxes for restore points to become available for restore.
+</details>
+
+<details>
+<summary>**OneDrive**</summary>
 
 Follow these steps to set up a backup policy for OneDrive accounts using Microsoft 365 Backup.
 
@@ -188,24 +195,25 @@ Follow these steps to set up a backup policy for OneDrive accounts using Microso
 
    The full workload backup feature is in preview.
 
-7. Select **Next** to move to the **Backup Settings** page, where you can provide a name for your policy.
+7. Select **Next** to move to the **Backup Settings** page, where you can provide a name for your policy and set the **Recovery window**. For OneDrive, choose 3 months, 6 months, or any whole number of years from 1 through 10. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
 8. On the **Review OneDrive backup policy** page, review the information to make sure it's how you want it, and then select **Create policy** \(or **Update policy** if it's an update\).
 9. The backup policy for OneDrive is created.
 
    ![Screenshot of the OneDrive backup policy created page.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-policy-created-onedrive.png?view=o365-worldwide)
 
    Once the sites are added to a backup policy, it might take 15 to 25 minutes per 1,000 sites for restore points to become available for restore.
+</details>
+
+---
 
 ## Configure the backup recovery window
 
 The **Recovery window** determines how long Microsoft 365 Backup keeps recovery points for the artifacts in a backup policy. You set the recovery window on a policy, and it applies to every artifact in that policy. Existing policies and artifacts default to a 1-year recovery window.
 
-You can set the recovery window to one of the following values:
+You can set the recovery window to one of the following values, depending on the workload:
 
-- 3 months
-- 6 months
-- 1 year
-- 2 years
+- **SharePoint and OneDrive**: 3 months, 6 months, 1 year, 2 years, 3 years, 4 years, 5 years, 6 years, 7 years, 8 years, 9 years, or 10 years.
+- **Exchange**: 3 months, 6 months, 1 year, or 2 years.
 
 1. In the create-policy wizard, on the **Backup Settings** page, set the **Recovery window** for the policy.
 2. Review your choice on the **Review** page, and then select **Create policy**.
@@ -221,11 +229,10 @@ When you remove an artifact from a policy, it keeps the last recovery window tha
 
 You can edit the scope of OneDrive accounts, SharePoint sites, and Exchange mailboxes associated with a backup policy. As part of edit, you can either add new accounts, sites, or mailboxes to or remove them from backup. Removing accounts, sites, and mailboxes from Microsoft 365 Backup doesn't mean existing backups aren't deleted, rather it means additional backups aren't taken.
 
-Select the **SharePoint**, **Exchange**, or **OneDrive** tab for steps to view and edit backup policies for that product.
+Expand each section for steps to view and edit backup policies for SharePoint, Exchange, or OneDrive.
 
-- [SharePoint](#tabpanel_2_sharepoint)
-- [Exchange](#tabpanel_2_exchange)
-- [OneDrive](#tabpanel_2_onedrive)
+<details>
+<summary>**SharePoint**</summary>
 
 Follow these steps to view and edit backup policies in SharePoint.
 
@@ -251,6 +258,10 @@ Follow these steps to view and edit backup policies in SharePoint.
    Note
 
    Removing sites from backup policy means no future backups are taken for those removed sites. Existing backups for the removed sites aren't deleted and will be charged.
+</details>
+
+<details>
+<summary>**Exchange**</summary>
 
 Follow these steps to view and edit backup policies for Exchange.
 
@@ -283,6 +294,10 @@ Follow these steps to view and edit backup policies for Exchange.
    Note
 
    Removing mailboxes from backup policy means no future backups are taken for those removed mailboxes. Existing backups for those mailboxes aren't deleted and will be charged.
+</details>
+
+<details>
+<summary>**OneDrive**</summary>
 
 Follow these steps to view and edit backup policies for OneDrive.
 
@@ -315,6 +330,9 @@ Follow these steps to view and edit backup policies for OneDrive.
    Note
 
    Removing accounts from backup policy means no future backups are taken for those removed accounts. Existing backups for those accounts aren't deleted and will be charged.
+</details>
+
+---
 
 ## Rename a policy
 

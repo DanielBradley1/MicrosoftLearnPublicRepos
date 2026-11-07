@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/plan-for-change-management?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Modern change management for Microsoft 365 - Overview
 
@@ -11,7 +11,7 @@ This model gives IT admins [configurable release options](#customize-your-organi
 
 ## Customize your organization's release experience for Microsoft 365
 
-From the Microsoft admin center, you can choose between various release options for Microsoft 365 updates, either during general availability or before general availability.
+From the Microsoft 365 admin center, you can choose between various release options for Microsoft 365 updates, either during general availability or before general availability.
 
 Important
 
@@ -37,9 +37,9 @@ Currently, Deferred release and Frontier aren't available in government cloud en
 
 As an IT admin, you can opt in to use features *before* general availability by assigning users to specific release audiences.
 
-The **Microsoft Frontier program** gives organizations early access to innovative and emerging AI capabilities in Microsoft 365 before those features reach general availability. By opting in to Frontier program, IT administrators can evaluate new Copilot agents, test non-AI and AI-powered experiences, determine readiness for broader deployment across their tenant, and provide feedback about Frontier feature capabilities to Microsoft.
+The **Microsoft Frontier program** gives organizations preview access to innovative and emerging features in Microsoft 365 before those features reach general availability. By opting in to Frontier program, IT administrators can evaluate new Copilot agents, test both non-AI and AI-powered experiences, determine readiness for broader deployment across their tenant, and provide feedback about Frontier feature capabilities to Microsoft.
 
-The Frontier program supports early experimentation, but the features aren't fully supported, might change, and might not reach GA. They're intended for evaluation and readiness, not production use.
+The Frontier program supports early experimentation, but the features aren't fully supported, might change, and might not reach GA. They're intended for evaluation and readiness, not production use. Frontier features are preview and subject to change.
 
 For more information on the Frontier program, see [Get started with the Microsoft Frontier program](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier?view=o365-worldwide).
 
@@ -76,7 +76,7 @@ This is the first step in our modernization change management journey. Not all M
 
 | Modern change management | Traditional change management |
 | --- | --- |
-| - [Modern change management - Overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/plan-for-change-management?view=o365-worldwide)  <br>- [Configure modern release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide)  <br>- [Modern release options FAQ](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-faq?view=o365-worldwide)  <br>- [Release Communications MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide)  <br>- [What's new in Message Center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center-updates?view=o365-worldwide) | - [Set up the Standard or Targeted release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide)- [Plan for the retirement of Targeted release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/targeted-release-retirement?view=o365-worldwide)  <br>- [Microsoft 365 change guide - Microsoft 365 Apps](https://learn.microsoft.com/en-us/microsoft-365-apps/best-practices/microsoft-365-change-guide)  <br>- [Stay on top of changes](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates?view=o365-worldwide) |
+| - [Configure modern release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options?view=o365-worldwide)  <br>- [Modern release options FAQ](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-faq?view=o365-worldwide)  <br>- [Release Communications MCP server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide)  <br>- [What's new in Message Center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center-updates?view=o365-worldwide)  <br>- [Get started with Frontier](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier?view=o365-worldwide)  <br>- [AI at Work Roadmap](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/roadmap?view=o365-worldwide) | - [Set up the Standard or Targeted release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide)  <br>- [Plan for the retirement of Targeted release](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/targeted-release-retirement?view=o365-worldwide)  <br>- [Microsoft 365 change guide - Microsoft 365 Apps](https://learn.microsoft.com/en-us/microsoft-365-apps/best-practices/microsoft-365-change-guide)  <br>- [Stay on top of changes](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates?view=o365-worldwide) |
 
 ## Communication channels for Microsoft 365 updates
 
@@ -84,7 +84,7 @@ The following table shows various communication channels we have that you can us
 
 | Communication channel | Description | Documentation |
 | --- | --- | --- |
-| Microsoft AI at Work Roadmap | - Understand what features are coming, when they're expected to release, and which environments they apply to.  <br>- Provides early planning signals that complement Message center announcements and supports proactive change management across Microsoft 365. | [Microsoft AI at Work Roadmap](https://www.microsoft.com/microsoft-365/roadmap) |
+| Microsoft AI at Work Roadmap | - Understand what features are coming, when they're expected to release, and which environments they apply to.  <br>- Provides early planning signals that complement Message center announcements and supports proactive change management across Microsoft 365. | [AI at Work Roadmap](https://www.microsoft.com/microsoft-365/roadmap) |
 | Message center | - Learn about official service announcements and feature changes.  <br>- Read these messages in the Microsoft 365 admin center, the admin mobile app, or receive a weekly digest in email.  <br>- Share these messages with others in your organization when you see a message someone else should act on. | [Message center in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center?view=o365-worldwide) |
 
 ## Related articles

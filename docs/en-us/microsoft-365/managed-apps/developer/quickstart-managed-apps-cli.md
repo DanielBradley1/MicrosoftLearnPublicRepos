@@ -171,7 +171,7 @@ Use these optional paths if you want to connect a different source repository, o
 
 ### Automate deployment with GitHub Actions
 
-To build and deploy your app automatically from a GitHub Actions workflow instead of the terminal, create the app for external artifact deployment with [`ms app create`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-create) `--repo none`, then follow [Deploy Microsoft Copilot Managed Runtime apps with GitHub Actions](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/deploy-managed-apps-github-actions?view=o365-worldwide). External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
+To build and deploy your app automatically from a GitHub Actions workflow instead of the terminal, create the app for external artifact deployment with [`ms app create`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-create) `--repo none`, then follow [Deploy Microsoft Copilot Managed Runtime apps with GitHub Actions](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/deploy-managed-apps-github-actions?view=o365-worldwide). External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
 
 ### Bring your own GitHub repository
 

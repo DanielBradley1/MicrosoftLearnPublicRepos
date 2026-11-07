@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-whats-new?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-14 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # What's new in Microsoft 365 Backup
 
@@ -15,6 +15,16 @@ Developer API changes are tracked separately in [What's new for Microsoft 365 Ba
 <summary>**New capabilities** - Launched within the last three months</summary>
 
 ## New capabilities
+
+### Extend SharePoint and OneDrive recovery windows up to 10 years
+
+**October 31, 2026**
+
+SharePoint and OneDrive backup policies now support recovery windows of 3 months, 6 months, or any whole number of years from 1 through 10. Exchange options remain 3 months, 6 months, 1 year, or 2 years. The existing one-year default is unchanged.
+
+For full SharePoint site and OneDrive account restores, weekly recovery points beyond the prior two weeks remain available through the configured recovery window, up to 10 years. Granular file and folder restore is available only for recovery points within the most recent 14 days, regardless of the configured recovery window. Increasing the recovery window doesn't create older recovery points or recover points that have already expired.
+
+For more information, see [Configure the backup recovery window](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#configure-the-backup-recovery-window) and [Restore point frequency](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide#restore-point-frequency).
 
 ### Monitor and export Microsoft 365 Backup activity
 
@@ -100,7 +110,7 @@ For more information, see [Enable email notifications](https://learn.microsoft.c
 
 **September 2, 2026**
 
-Granular restore is generally available. Microsoft 365 Backup administrators can browse or search a protected restore point, select files and folders, and restore them to the original location or a new timestamped folder. In-place restores inherit destination-folder permissions and provide choices for name conflicts.
+Granular restore is generally available. Microsoft 365 Backup administrators can browse or search a protected restore point within the most recent 14 days, select files and folders, and restore them to the original location or a new timestamped folder. Recovery points older than 14 days support full account or site restore only. In-place restores inherit destination-folder permissions and provide choices for name conflicts.
 
 Note
 
@@ -173,6 +183,30 @@ For more information, see [Offboard specific sites, mailboxes, or users](https:/
 <summary>**FAQ updates** - New or materially revised customer guidance</summary>
 
 ## FAQ updates
+
+### How do recovery-window changes apply to policies and removed items?
+
+**November 4, 2026**
+
+You can change the recovery window on an active policy, but not while the policy is paused or has a run in progress. Increasing the window applies immediately. Decreasing a policy's window, or moving an item into a policy with a shorter window, starts a 30-day grace period before recovery points older than the new window are deleted. Review the reduction before that period ends. An item removed from a policy keeps the last recovery window that applied to it and remains in Removed items until that window ends.
+
+For more information, see [Configure the backup recovery window](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#configure-the-backup-recovery-window).
+
+### How do removal and shutdown affect Full Workload Backup?
+
+**November 4, 2026**
+
+Full Workload Backup remains in preview. When it is active and you remove a protection unit from a custom policy, choose **Add to exclusion list** to stop new backups or **Move to Full Workload Backup** to protect it in that policy's next run. Removing a unit directly from Full Workload Backup adds it to the exclusion list so it isn't automatically protected again; existing backups remain available according to its retention settings, and it can still be added to a custom policy. Turning off Full Workload Backup removes that policy and moves units protected only by it to Removed items. Existing backups remain restorable according to retention settings, but new backups stop until those units are added to a custom policy or Full Workload Backup is enabled again. Other backup policies aren't affected.
+
+For more information, see [Full Workload Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#full-workload-backup).
+
+### What happens when I delete a dynamic rule?
+
+**November 4, 2026**
+
+Dynamic rules for Exchange and OneDrive remain in preview. When you delete a rule, choose whether to continue backups or stop new backups. **Delete rule but continue backups** converts the current membership to a static list: existing accounts remain protected, but future group membership changes aren't reflected. **Delete rule and stop new backups** stops new backups for accounts included through that rule; their existing backups remain restorable until the configured recovery window expires. To protect those accounts again, add them manually or create a new dynamic rule that includes them.
+
+For more information, see [Delete a dynamic rule](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#delete-a-dynamic-rule).
 
 ### How do Microsoft 365 Backup restores interact with site-level and file-level archiving?
 

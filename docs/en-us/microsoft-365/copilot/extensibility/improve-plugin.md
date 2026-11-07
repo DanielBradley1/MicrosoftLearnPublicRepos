@@ -78,7 +78,7 @@ Then:
 4. Update separately controlled agents, connections, identities, remote MCP servers, or external services when required.
 5. Confirm which package version reached each audience.
 
-For an alpha Work IQ Dev Tools plugin, `wiqd plugin share` publishes to the plugin registry for the selected audience; public-store submission happens separately in Partner Center. Follow the [Work IQ Dev Tools plugin guide](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) for its provision, package, validate, and share sequence when preparing another release.
+The Work IQ Dev Tools plugin command `wiqd plugin publish` submits to the organization app catalog for administrator approval; `wiqd plugin share` grants direct access to the selected audience. Public-store submission happens separately in Partner Center. Follow the [Work IQ Dev Tools plugin guide](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) for the lifecycle commands, or [Configure plugin CI/CD with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-ci-cd) for automated candidate testing and update submission.
 
 Before rollout, confirm whether the method supports restoring a previous version. Replacing the package doesn't automatically restore an external service, connection, identity, data, or permission change.
 

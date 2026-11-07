@@ -7,8 +7,6 @@ Important
 
 In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers), admins can deploy declarative agents with skills, but end users can't add skills to declarative agents they create.
 
-Support for independent software vendors \(ISVs\) to publish declarative agents with skills through Partner Center isn't available yet and is coming soon. ISVs shouldn't submit declarative agent packages that include skills to Partner Center.
-
 A skill is a modular, reusable component that you add to a declarative agent to package instructions, resources, and scripts for a specific task. This article describes how to add a skill to a declarative agent by using the Microsoft 365 Agents Toolkit \(ATK\) command-line interface \(CLI\) or the Visual Studio Code extension.
 
 To learn what skills are, why to use them, and the full support matrix, supported file types, sandbox behavior, and governance, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills).
@@ -85,6 +83,12 @@ If you set the variable after you install the Visual Studio Code extension, rest
 ## Limits
 
 In the Agents Toolkit, you add a skill as a directory \(you can't use `.zip`\), and the complete app package is limited to 10 MB. You can add up to eight skills per agent, with a maximum directory depth of three and up to 350 files across the skill directory. For the full support matrix, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix).
+
+## Publish your agent
+
+Independent software vendors \(ISVs\) can submit declarative agents that include skills to Microsoft Marketplace. Use Work IQ Dev Tools to validate and build the submittable package from an existing declarative agent project. For the public third-party path, Work IQ Dev Tools doesn't submit the offer on your behalf. Use Partner Center to upload the package, complete the store listing, and submit the offer for certification.
+
+For the end-to-end workflow, see [Partner Center Publishing \(3P\)](https://github.com/microsoft/wiqd/blob/main/plugins/wiqd/skills/wiqd/workflows/partner-center.md) and the [Microsoft Marketplace step-by-step submission guide](https://learn.microsoft.com/en-us/partner-center/marketplace-offers/add-in-submission-guide).
 
 ## Related content
 

@@ -101,9 +101,15 @@ The following limits and guidance apply during preview:
 
 | Measure | Value | Type |
 | --- | ---: | --- |
-| Sites scanned per policy | 100,000 sites | Hard limit |
+| Sites scanned per AllSites policy run | 100,000 sites | Hard limit per run |
 | Files archived per day | 1-2 million files at current scale | Throughput guidance |
 | Site associations per policy | 1,000 sites | Hard limit |
+
+The 100,000-site limit applies to each individual run of an AllSites policy, not its total scope. You can create an AllSites policy for a tenant with more than 100,000 eligible sites. The policy continues scanning remaining sites in subsequent monthly runs. Evaluating all eligible sites can therefore require more than one monthly run.
+
+Microsoft plans to increase the AllSites scan limit to 1,000,000 sites per run by general availability.
+
+A SelectedSites policy supports up to 1,000 included sites. For AllSites policies, the separate 1,000-site association limit applies to exclusions, not the policy's total scope.
 
 The files-archived value reflects current service scale and is throughput guidance, not a guarantee. Microsoft continues to invest in increasing throughput. Actual archive volume depends on how many scanned files are eligible, file state, built-in exclusions, site availability, throttling, service health, and policy configuration.
 

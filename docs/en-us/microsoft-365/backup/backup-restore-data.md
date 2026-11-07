@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Restore data in Microsoft 365 Backup
 
@@ -11,7 +11,7 @@ Currently, you can restore accounts, SharePoint sites, and Exchange mailbox cont
 
 Important
 
-Granular restore is now generally available for SharePoint sites and accounts. Beyond full site/account restores, M365 Backup admins can browse and search restore points to recover specific files and folders.
+Granular restore is now generally available for SharePoint sites and OneDrive accounts. Beyond full site/account restores, M365 Backup admins can browse and search restore points within the most recent 14 days to recover specific files and folders.
 
   
 
@@ -25,13 +25,15 @@ Granular restore is now generally available for SharePoint sites and accounts. B
 
 The restore point frequency, also known as the [recovery point objective](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-faq?view=o365-worldwide#what-is-the-service-recovery-point-objective) \(RPO\), defines the maximum amount of time during which data is lost after an attack. Stated differently, it's the time between the most recent backup of the healthy state of data and the time of the attack. The RPOs for each of the protected services are summarized in the following table.
 
-| Type | RPO for 0-14 days in the past | RPO for 15-365 days in the past |
+| Type | RPO for 0-14 days in the past | RPO beyond 14 days in the past |
 | --- | --- | --- |
-| Full account and full SharePoint site restore | 10 minutes | One week |
+| Full OneDrive account and full SharePoint site restore | 10 minutes | One week, through the configured recovery window of up to 10 years |
 | Exchange Online | 10 minutes | 10 minutes |
-| File and folder restore in SharePoint and OneDrive | \(Roughly\) Daily | One week |
+| File and folder restore in SharePoint and OneDrive | \(Roughly\) Daily | Not available |
 
-Note that the granular file/folder restore points are roughly daily, but may align only to the weekly restore points in rare cases.
+For full OneDrive account and SharePoint site restores, available recovery points depend on the configured recovery window and the backup history accumulated since protection began. Increasing the recovery window doesn't create older recovery points or recover points that have already expired. For configuration options, see [Configure the backup recovery window](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#configure-the-backup-recovery-window).
+
+Granular file and folder restore is available only for recovery points within the most recent 14 days. The restore points are roughly daily, but may align only to weekly restore points within that 14-day window in rare cases. Recovery points older than 14 days support full OneDrive account or SharePoint site restores only. Configuring a longer recovery window doesn't extend granular restore availability.
 
 Note
 
@@ -102,7 +104,7 @@ Follow these steps to restore data backed up for OneDrive.
 
 ### Option 2: Selected content only
 
-Use this option to perform a restore of only selected files and folders from a protected OneDrive account's restore point. In the Microsoft 365 admin center, on the **Microsoft 365 Backup** page, in the **OneDrive** section, select **Restore**. In this flow, the **Restore specific files or folders** option gives Microsoft 365 Backup admins the capability to restore a subset of the account's files and folders from a specific restore point.
+Use this option to perform a restore of only selected files and folders from a protected OneDrive account's restore point within the most recent 14 days. Recovery points older than 14 days support full account restore only. In the Microsoft 365 admin center, on the **Microsoft 365 Backup** page, in the **OneDrive** section, select **Restore**. In this flow, the **Restore specific files or folders** option gives Microsoft 365 Backup admins the capability to restore a subset of the account's files and folders from a specific restore point.
 
 Important
 
@@ -111,7 +113,7 @@ To use this feature, users must be assigned the **SharePoint Backup Admin role**
 ![Screenshot that shows the granular restore step selection.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-restore-data/granular-restore-step-selection.png?view=o365-worldwide)
 
 1. Start by selecting the protected OneDrive account you wish to restore from the list of backed up OneDrive accounts and then select **Next**.
-2. On the next page, select the date from which you want to restore files and folders. If no restore point is available for the selected date, you will be prompted to confirm selection of the nearest restore point.
+2. On the next page, select a date within the most recent 14 days from which you want to restore files and folders. If no restore point is available for the selected date, you will be prompted to confirm selection of the nearest available restore point within that 14-day window.
 3. In the **Content** section, you may be prompted to select the subsite and document library you wish to browse. If there are multiple document libraries to choose from, then you can utilize the **Search** box to identify the desired document library.
 4. In the **Select files & folders** section, you will be able to traverse the folder hierarchy until you reach the folder from which you wish to restore. Clicking on the folder's title will enter that folder, while checking the checkbox will select it for restore.
 
@@ -186,7 +188,7 @@ Follow these steps to restore data backed up for SharePoint.
 
 ### Option 2: Selected content only
 
-Use this option to perform a restore of only selected files and folders from a protected SharePoint site's restore point. In the Microsoft 365 admin center, on the **Microsoft 365 Backup** page, in the **SharePoint** section, select **Restore**. In this flow, the **Restore specific files or folders** option gives Microsoft 365 Backup admins the capability to restore a subset of the site's files and folders from a specific restore point.
+Use this option to perform a restore of only selected files and folders from a protected SharePoint site's restore point within the most recent 14 days. Recovery points older than 14 days support full site restore only. In the Microsoft 365 admin center, on the **Microsoft 365 Backup** page, in the **SharePoint** section, select **Restore**. In this flow, the **Restore specific files or folders** option gives Microsoft 365 Backup admins the capability to restore a subset of the site's files and folders from a specific restore point.
 
 Important
 
@@ -195,7 +197,7 @@ To use this feature, users must be assigned the **SharePoint Backup Admin role**
 ![Screenshot that shows the granular restore step selection.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-restore-data/granular-restore-step-selection.png?view=o365-worldwide)
 
 1. Start by selecting the protected SharePoint site you wish to restore from the list of backed up SharePoint sites and then select **Next**.
-2. On the next page, select the date from which you want to restore files and folders. If no restore point is available for the selected date, you will be prompted to confirm selection of the nearest restore point.
+2. On the next page, select a date within the most recent 14 days from which you want to restore files and folders. If no restore point is available for the selected date, you will be prompted to confirm selection of the nearest available restore point within that 14-day window.
 3. In the **Content** section, you may be prompted to select the subsite and document library you wish to browse. If there are multiple document libraries to choose from, then you can utilize the **Search** box to identify the desired document library.
 4. In the **Select files & folders** section, you will be able to traverse the folder hierarchy until you reach the folder from which you wish to restore. Clicking on the folder's title will enter that folder, while checking the checkbox will select it for restore.
 
@@ -328,10 +330,10 @@ After a multi-geo move, a OneDrive account and SharePoint site will only be able
 
   - Restore session history is retained for 366 days.
   - Abusive restore actions aren't permitted. You should limit restores for testing purposes to no more than twice a month per protection unit. Restores for real recovery purposes aren't limited.
-  - The restore point frequency dictates the points in time from which you can recover a prior state of your data. Restore points start being generated when you create the backup policy for a given OneDrive account, SharePoint Site, or Exchange Online mailbox. For Exchange Online, restore points are available for 10 minutes for the entire year. For OneDrive and SharePoint, the available restore points are available for 10 minutes for up to 2 weeks prior, and weekly for 2 to 52 weeks prior. Based on the defined and currently invariable backup frequency setting previously described, the following example highlights what is possible.
+  - The restore point frequency dictates the points in time from which you can recover a prior state of your data. Restore points start being generated when you create the backup policy for a given OneDrive account, SharePoint site, or Exchange Online mailbox. For Exchange Online, restore points are available for 10 minutes for the configured recovery window. For full OneDrive account and SharePoint site restores, recovery points are available every 10 minutes for the prior two weeks, and weekly beyond two weeks through the configured recovery window of up to 10 years. Only recovery points that have been generated and haven't expired are available. Based on the backup frequency setting previously described, the following example highlights what is possible.
 
     - Megan, the Backup admin, creates a policy for the SharePoint site "HR Hub" on February 1, 2024, at 8:00 AM PST. At 10:00 AM PST, Megan has the option of rolling back the state of the site to any 10-minute period between 8:00 AM and 10:00 AM PST.
-    - On April 1, 2024, Megan has the option to roll back the site to any 10-minute period in the prior 14 days \(that is, any 10-minute period between March 18 and the current date-time\). If Megan wants to choose an earlier prior point in time, she would need to choose March 15, 8, or 1, and so on, back through February 1, or up to 52 weeks if the policy was created at least 52 weeks in the past.
+    - On April 1, 2024, Megan has the option to roll back the site to any 10-minute period in the prior 14 days \(that is, any 10-minute period between March 18 and the current date-time\). If Megan wants to choose an earlier prior point in time, she would need to choose March 15, 8, or 1, and so on, back through February 1. As backup history accumulates, weekly recovery points remain available through the configured recovery window, up to 10 years. Megan can't restore to a point before protection began or to a recovery point that has already expired.
     - Megan then adds a user’s mailbox to the policy on February 1, 2024, at 11:00 AM PST. Megan has the option of restoring modified or deleted items from that user's mailbox to any 10-minute period during the entire recovery window.
 
   - Users whose Microsoft Entra ID has been deleted will be displayed as blank lines in the restore picker experience for OneDrive and Exchange Online since those users no longer exist in the environment. Rest assured, their historical backups still exist in the Backup tool, but some [special handling is needed to restore them](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-faq?view=o365-worldwide#what-is-the-service-recovery-point-objective).

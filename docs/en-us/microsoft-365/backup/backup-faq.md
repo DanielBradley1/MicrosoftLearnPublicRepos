@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-faq?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Frequently asked questions about Microsoft 365 Backup
 
@@ -60,7 +60,8 @@ Example events that aren't versioned or recoverable via backup:
 
 The recovery point objective \(RPO\) is the maximum amount of time between the most recent backup and a data destruction event. Stated another way, it's the amount data lost due to a data destruction event not recoverable via the backups. For Microsoft 365 Backup, the RPOs are:
 
-- For OneDrive and SharePoint, the RPO for the trailing two weeks is 10 minutes. This means if it's Monday at 8:00 AM, you can go back in time to any 10-minute period up to two weeks in the past. Beyond two weeks, you can go to any one week period of time in past from 2 to 52 weeks in the past.
+- For full OneDrive account and SharePoint site restores, the RPO for the trailing two weeks is 10 minutes. This means if it's Monday at 8:00 AM, you can go back in time to any 10-minute period up to two weeks in the past. Beyond two weeks, weekly recovery points are available through the configured recovery window, up to 10 years, subject to the backup history accumulated since protection began. Increasing the recovery window doesn't create older recovery points or recover points that have already expired.
+- For granular file and folder restores in OneDrive and SharePoint, recovery points are available only within the most recent 14 days, with a roughly daily frequency. Recovery points older than 14 days support full account or site restore only, even when a longer recovery window is configured. For more information, see [Restore point frequency](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide#restore-point-frequency).
 - For Exchange Online, the RPO is 10 minutes, meaning the most amount of data that can be lost due to a data destruction event is roughly 10 minutes' worth of data.
 
 Let's start with what it doesn't mean: We're *not* taking snapshots every 10 minutes.
@@ -69,11 +70,11 @@ A backup frequency of 10 minutes means that all changes made to the item are sav
 
 #### What happens when user content is backed up but then is removed or deleted from Microsoft Entra ID \(formerly Azure Active Directory\)?
 
-When a user is removed from the backup policy, the backup of the OneDrive account or Exchange mailbox is retained for one year from the date the backup was created.
+When a OneDrive account or Exchange mailbox is removed from the backup policy, it keeps the last recovery window that applied to it and appears in the **Removed items** list until that window ends. Existing backups remain restorable until they expire, but no new backups are taken.
 
 When a user is deleted from Microsoft Entra ID, the backup of the OneDrive account or Exchange mailbox is retained for one year from the date the backup was created.
 
-When a site is removed from the backup policy, the backup of the SharePoint site is held for 52 weeks from the time a given restore point was created for that site.
+When a SharePoint site is removed from the backup policy, it keeps the last recovery window that applied to it and appears in the **Removed items** list until that window ends. Existing backups remain restorable until they expire, but no new backups are taken. For more information, see [Configure the backup recovery window](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#configure-the-backup-recovery-window).
 
 #### How can I restore the OneDrive account or Exchange mailbox for a user who is deleted from Microsoft Entra ID \(formerly Azure Active Directory\)?
 

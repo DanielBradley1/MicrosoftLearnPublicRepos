@@ -490,7 +490,7 @@ Note
 | `--open-browser` |  | No | Best-effort launch the system browser if Device Code Flow re-authentication is needed. Has no effect with `--json`. |
 | `--force-reauth` |  | No | Bypass the stored GitHub mapping and force Device Code Flow. Only affects apps bound to an external GitHub repository. |
 
-`ms app deploy --artifact <path>` uploads and deploys the artifact without a platform-managed build. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
+`ms app deploy --artifact <path>` uploads and deploys the artifact without a platform-managed build. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
 
 Your organization is responsible for validating externally built artifacts and securing the build pipeline before deployment.
 

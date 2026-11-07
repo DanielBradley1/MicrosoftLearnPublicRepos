@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Set up the Standard or Targeted release options for Microsoft 365
 
@@ -70,6 +70,16 @@ Targeted release allows admins, change managers, or anyone else responsible for 
 - Keep most users in Standard release and assign IT pros and power users to Targeted release to evaluate new features ahead of broader rollout. Targeted release users can then prepare user notifications, documentation, and the internal help desk before updates are released worldwide.
 - Only assign specific users in Targeted release.
 - If you need to test a feature in Targeted release with a larger group of users \(or a tenant\), consider using a test tenant instead of putting your entire organization in Targeted release.
+
+## Prerequisites
+
+To configure Targeted release options, you need one of the following roles in the Microsoft 365 admin center:
+
+- Office Apps Admin
+- Security Admin
+- AI Admin
+
+For more information, see [About administrator roles in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide).
 
 ## Set up the release option in the admin center
 

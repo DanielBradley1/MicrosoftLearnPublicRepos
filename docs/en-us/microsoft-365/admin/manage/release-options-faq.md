@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-faq?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Frequently asked questions about modern release options for Microsoft 365
 
@@ -128,6 +128,13 @@ No. In November 2026, administrators can no longer add users to, remove users fr
 ## Does the retirement of Targeted release affect existing Microsoft 365 functionality?
 
 No. This change affects how organizations manage Microsoft 365 feature release preferences. Existing Microsoft 365 services and functionality continue to operate normally.
+
+## What happens if I add more than 10,000 users exceptions to Standard release or Deferred release?
+
+Each exception added either per user or by a security group counts towards the 10,000-user limit. If you do either of the following actions, you will receive an error in the Microsoft 365 admin center and will need to remove some user exceptions before adding additional ones:
+
+- If you initially attempt to add more than 10,000 user exceptions when first configuring exceptions
+- If you later add users to a security group that's already included as an exception and the exception limit then exceeds 10,000
 
 ## Related articles
 

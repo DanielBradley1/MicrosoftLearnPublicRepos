@@ -74,7 +74,7 @@ Beyond per-app telemetry, administrators can see every app in the tenant in the 
 
 These experiences require no setup from the developer. Apps automatically appear in the centralized inventory and monitoring.
 
-[Learn how to add alerts for your apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/visibility-monitoring?view=o365-worldwide#create-alerts-for-your-apps)
+[Learn how to add alerts for your apps](https://learn.microsoft.com/en-us/admin/manage/apps/visibility-monitoring?view=o365-worldwide#create-alerts-for-your-apps)
 
 ## CLI telemetry
 

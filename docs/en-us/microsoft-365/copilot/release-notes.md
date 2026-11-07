@@ -14,6 +14,282 @@ Copilot features are introduced using a safe deployment model, gradually rolling
 - [iOS](#tabpanel_1_appleios)
 - [Mac](#tabpanel_1_mac)
 
+## November 4, 2026
+
+Updates released between October 28, 2026 and November 3, 2026.
+
+### Excel
+
+- **Navigate to your workbook changes directly from the Copilot chat pane response** \[Windows, Web, Mac\]
+
+  In Copilot in Excel, the response contains links to highlight where changes are made in your workbook. Navigate directly to new sheets, tables, ranges, and objects like charts and shapes.
+
+  **What changed:** In the Copilot chat response, there now is a link you can click that will take you directly to changes in the workbook. Previously, you would need to locate the change in the response and navigate in the sheet on your own.
+
+  **Why:** We want you to understand where copilot made edits and connect you to them directly from the chat response. This will help build confidence in the changes and allow you to review while you're reading the response in the chat pane.
+
+  **Try this:**
+
+  1. Send a prompt to Copilot where the workbook is modified.
+  2. The chat response will show the changes in a different format with a highlight to indicate a link you can click for navigation. New Sheets, tables, ranges, and objects will be highlighted.
+
+
+  **Why this matters:** The feature allows quick review of document changes made by Copilot, increasing transparency of the edits.
+
+
+  **Business impact:** Teams can understand changes made while reading the response from Copilot and quickly navigate to those places for review.
+
+
+  **Personal impact:** You can review the Copilot Edits in your document.
+
+### Microsoft 365 admin center
+
+- **Agents usage report** \[Web\]
+
+  A new agents usage report will be available in the Microsoft 365 admin center. The report will be scoped to include agents in Microsoft 365 Copilot and Copilot Chat with usage by both M365 Copilot licensed and unlicensed users. The report will include total active agent users, total active agents, active users segmentation by licensed and unlicensed users, and active users and active agents segmentation by publisher type \(i.e. user-created agents, agents built by your org, agents built by Microsoft, agents built by Microsoft partners\). The report will also include usage details per user, agent, and user-agent pair. #copilotcontrolsystem
+
+  **Roadmap ID:** [497999](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=497999)
+
+  **What changed:** The Microsoft 365 admin center now includes an agents usage report scoped to agents in Microsoft 365 Copilot and Copilot Chat. The report shows total active agent users, total active agents, and segments active users by licensed and unlicensed status. It also segments active users and agents by publisher type, including user-created agents, agents built by your organization, Microsoft, and Microsoft partners. Usage details are provided per user, agent, and user-agent pair, enabling detailed monitoring and management.
+
+  **Why:** This report provides administrators with detailed visibility into agent usage across licensed and unlicensed users. Admins can now:
+
+  - Monitor adoption and engagement of agents.
+  - Identify which agents and publishers are most active.
+  - Track usage patterns at user and agent levels for better governance and support.
+
+
+  **Try this:**
+
+
+  - Open the Microsoft 365 admin center.
+  - Navigate to the agents usage report under Copilot management.
+  - Review usage metrics segmented by user licensing and publisher type.
+
+
+  **Why this matters:** Detailed usage reporting helps organizations manage Copilot agents securely and optimize their deployment based on real user data.
+
+
+  **Business impact:** Admins gain actionable insights to govern agent usage and ensure compliance across Microsoft 365 environments.
+
+
+  **Personal impact:** You can quickly identify active agents and user engagement, reducing time spent on manual tracking and improving support responsiveness.
+
+- **Authoritative content management for Microsoft 365 Copilot Search** \[Web\]
+
+  Specify and manage SharePoint sites deemed as authoritative content to enhance their relevance and ranking in Microsoft 365 Copilot Search. In the Microsoft 365 admin center, under Copilot > Search > Authoritative content, add and manage up to 100 SharePoint sites. #copilotcontrolsystem
+
+  **Roadmap ID:** [503553](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=503553)
+
+  **What changed:** The Microsoft 365 Admin Center introduces a centralized governance layer under Copilot > Search > Authoritative content. Admins with Global admin or Global reader roles can view, add, delete, and bulk import or export up to 100 authoritative SharePoint sites. Previously, there was no centralized management for authoritative sources in Copilot Search.
+
+  **Why:** This change allows organizations to enhance search relevance by designating trusted SharePoint sites, improving content discovery and user experience within Copilot Search.
+
+  **Try this:**
+
+  1. Go to Microsoft 365 Admin Center and select Copilot > Search > Authoritative content.
+  2. Add or remove SharePoint Online sites to define authoritative sources.
+  3. Use the bulk import or export options to manage multiple sites efficiently.
+
+
+  **Why this matters:** Defining authoritative content improves search result accuracy, helping users find trusted organizational information faster.
+
+
+  **Business impact:** IT teams gain centralized control over search content relevance, reducing support requests related to search accuracy.
+
+
+  **Personal impact:** Users experience more relevant search results, saving time locating important SharePoint content.
+
+### Microsoft 365 Copilot
+
+- **SharePoint list agent** \[Web\]
+
+  Enables effortless list creation for Copilot users through prompts, with intelligent schema generation and setup. This agent helps teams to quickly transform structured information and Copilot responses to Microsoft Lists.
+
+  **Roadmap ID:** [534606](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=534606)
+
+  **What changed:** Copilot users can now create Microsoft Lists through natural language prompts using the SharePoint list agent. The agent generates list structure and setup based on the information provided. Teams can convert structured information and Copilot-generated content into lists with less manual configuration.
+
+  **Why:** Creating lists often requires manual planning and setup before data can be captured. Automated schema generation reduces setup effort and helps teams organize information faster.
+
+  **Try this:**
+
+  - Open Copilot and describe the list you want to create.
+  - Review the generated list structure and suggested fields.
+  - Create the Microsoft List and add or refine content as needed.
+
+
+  **Why this matters:** Natural language list creation lowers the effort required to turn information into structured, trackable records.
+
+
+  **Business impact:** Teams can standardize and organize information more quickly without spending as much time designing list structures.
+
+
+  **Personal impact:** You can create useful lists faster and avoid repetitive setup tasks.
+
+- **Copilot New Tab Page in Microsoft Edge** \[Web\]
+
+  Search, chat, and explore the web from one search box with Copilot-suggested actions and curated work content to help your users get things done faster on the new, refreshed Copilot New Tab Page. Users can also view personalized news and activities.
+
+  **Roadmap ID:** [558256](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=558256)
+
+  **What changed:** The refreshed Copilot New Tab Page in Microsoft Edge brings search, chat, and web exploration together in a single search box. It also surfaces Copilot-suggested actions, curated work content, personalized news, and activities in one place. Users can start common tasks and discover relevant content directly from a new tab.
+
+  **Why:** People often switch between multiple pages and tools to find information and begin tasks. Bringing these experiences together helps reduce navigation overhead and speeds access to relevant content.
+
+  **Try this:**
+
+  - Open a new tab in Microsoft Edge and use the search box to start a search or chat.
+  - Select a Copilot-suggested action from the page.
+  - Review curated work content, news, and activities shown on the new tab page.
+
+
+  **Why this matters:** A single starting point for search, chat, and content discovery helps users find information and begin work more efficiently.
+
+
+  **Business impact:** Organizations can streamline common information-finding and task-starting workflows within Microsoft Edge.
+
+
+  **Personal impact:** Users spend less time navigating between destinations and can begin searches, chats, and tasks from one page.
+
+- **Copilot Cowork supports local Microsoft Edge browser use** \[Web\]
+
+  Copilot Cowork can use Microsoft Edge on your device to complete web-based steps as part of a task, including on sites where you’re already signed in. Cowork works in a separate Edge tab while you follow its progress in the Cowork conversation.
+
+  **What changed:** When a task requires a browser, Cowork can use your local Microsoft Edge browser to navigate pages, gather information, fill in forms, and complete supported actions on your behalf. Because Cowork works through your local Edge session, it can use sites you’re already signed in to with the same access you have. Credentials, cookies, and session tokens stay on your device.
+
+  **Why:** Many workflows include steps that happen on websites. Local browser use lets Cowork carry the work into those experiences, helping you delegate a broader, multi-step task rather than manually completing each web-based step yourself.
+
+  **Try this:**
+
+  - Open Copilot Cowork on the web in Microsoft Edge.
+  - Ask Cowork to complete a task that requires a browser, such as gathering information from a website or completing a supported form.
+  - Follow its progress in the Cowork conversation and provide input, approval, or take over when prompted.
+
+
+  **Why this matters:** Cowork is designed to take on multi-step work. Local browser use extends that work to the browser, helping Cowork carry a task further from request to outcome while keeping you in control when your input or approval is needed.
+
+
+  **Business impact:** Organizations can extend Cowork to more web-based workflows while maintaining existing browser, identity, Conditional Access, and data protection policies.
+
+
+  **Personal impact:** You can spend less time navigating websites and manually moving through web-based steps, while staying in control of sensitive or consequential actions.
+
+### Microsoft 365 Copilot extensibility
+
+- **User can use HubSpot Connector in Researcher** \[Web\]
+
+  The HubSpot connector allows users using the Researcher agent to be able to leverage 3rd party information from HubSpot to enrich generated responses with relevant information.
+
+  **Roadmap ID:** [501292](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=501292)
+
+  **What changed:** The Researcher agent now supports the HubSpot connector, allowing users to pull relevant data from HubSpot to enhance generated responses. Previously, Researcher did not integrate with HubSpot data. This update enables more informed and context-rich outputs by incorporating HubSpot information.
+
+  **Why:** Adding HubSpot data improves the accuracy and relevance of Researcher agent responses, supporting better decision-making and content creation.
+
+  **Try this:**
+
+  1. Open the Researcher agent in Microsoft 365.
+  2. Connect to the HubSpot connector.
+  3. Request information that includes HubSpot data to enrich your results.
+
+
+  **Why this matters:** Integrating HubSpot data into Researcher helps users access comprehensive insights without switching platforms.
+
+
+  **Business impact:** Teams can combine CRM data with Microsoft 365 workflows, improving sales and marketing productivity.
+
+
+  **Personal impact:** You save time by accessing HubSpot insights directly within Researcher, reducing the need to switch between apps.
+
+### Outlook
+
+- **Account Selector in Outlook Copilot Side Pane** \[Web\]
+
+  When users have more than one Copilot-enabled account added to new Outlook, the Copilot side pane in Calendar will include an account dropdown that makes it clear which Copilot-enabled account you’re using and lets you switch accounts without relying on Outlook UI’s account context.
+
+  **Roadmap ID:** [559991](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559991)
+
+  **What changed:** Users who have more than one Copilot-enabled account in new Outlook now see an account dropdown in the Copilot side pane within Calendar. Previously, account context depended on the broader Outlook user interface context. The new selector clearly identifies the active Copilot-enabled account and allows account switching directly from the Copilot side pane.
+
+  **Why:** Users with multiple accounts need a clear way to confirm which account Copilot is using. Direct account selection reduces confusion and helps ensure actions are performed in the intended account context.
+
+  **Try this:**
+
+  - Open Calendar in new Outlook and select the Copilot side pane.
+  - Select the account dropdown to view available Copilot-enabled accounts.
+  - Choose a different account and continue using Copilot in the selected context.
+
+
+  **Why this matters:** Clear account visibility helps users work in the correct Copilot context when multiple accounts are available.
+
+
+  **Business impact:** Organizations that support multiple work accounts can reduce account-context mistakes during calendar-related Copilot tasks.
+
+
+  **Personal impact:** Users can switch accounts more quickly and verify the active Copilot account without navigating other Outlook controls.
+
+### PowerPoint
+
+- **Reference an attached PowerPoint deck’s style when creating a new presentation in PowerPoint** \[Windows, Mac\]
+
+  When creating a presentation with Copilot in PowerPoint, you can reference an existing PowerPoint file, so Copilot applies its theme and styles to the new deck, keeping the design consistent.
+
+  **Roadmap ID:**
+
+  - [555878](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555878)
+  - [555880](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555880)
+
+
+  **What changed:** Copilot in PowerPoint now supports attaching an existing presentation when creating and editing a new one. Previously, new presentations used default themes. Now, Copilot applies the attached file’s theme and styles to the new deck, ensuring design consistency.
+
+
+  **Why:** This update reduces manual formatting by applying existing styles automatically, helping users maintain consistent branding across presentations.
+
+
+  **Try this:**
+
+
+  1. Open PowerPoint and create a new presentation with Copilot.
+  2. Use the 'Attach file' feature to select an existing PowerPoint deck.
+  3. Request Copilot to generate slides using the attached deck’s style.
+
+
+  **Why this matters:** Consistent design across presentations enhances brand identity and saves time on formatting.
+
+
+  **Business impact:** Teams can streamline presentation creation and maintain visual consistency without extra effort.
+
+
+  **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
+
+### Teams
+
+- **AI Workflows in Workflows app** \[Windows, Mac\]
+
+  With AI Workflows in the Workflows app, you will have access to custom AI-powered templates to automate complex tasks and streamline daily operations. AI Workflows enhance productivity by simplifying task execution and helping users stay organized throughout the day. Admins can enable this feature to equip users with intelligent automation tools that make managing work more efficient and intuitive.
+
+  **Roadmap ID:** [500379](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=500379)
+
+  **What changed:** AI Workflows are available in the Workflows app in Microsoft Teams. Users can use these Copilot-powered scheduled prompts to automate complex tasks and support day-to-day work. Admins control access through Teams app management settings, and AI Workflows are off by default unless the Workflows app is enabled.
+
+  **Why:** Organizations often handle repetitive processes that require multiple manual steps. AI-powered templates help reduce routine effort and support more consistent execution of common tasks.
+
+  **Try this:**
+
+  1. Open the Workflows app in Microsoft Teams and explore available AI workflows.
+  2. Select a template and customize it for a business process.
+  3. Ask your administrator to enable AI Workflows if the feature is not available.
+
+
+  **Why this matters:** Users can automate more complex work directly in Teams with reusable AI-assisted processes.
+
+
+  **Business impact:** Organizations can standardize recurring processes and reduce manual effort through AI-enabled workflow automation.
+
+
+  **Personal impact:** You can complete routine tasks faster and spend less time managing repetitive work.
+
 ## October 27, 2026
 
 Updates released between October 13, 2026, and October 27, 2026.
@@ -367,32 +643,36 @@ Users can now:
 
   **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
 
-- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web\]
+- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web, Mac\]
 
   You can now reference an image when creating a presentation with Copilot in PowerPoint.
 
-  **Roadmap ID:** [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
+  **Roadmap ID:**
 
-  **Details:**
+  - [555890](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555890)
+  - [555881](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555881)
+  - [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
 
-  **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
+    **Details:**
 
-  **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
+    **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
 
-  **Try this:**
+    **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
 
-  1. Open PowerPoint and start a new presentation.
-  2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
-  3. Review the generated slides that incorporate the referenced image.
+    **Try this:**
 
-
-  **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
-
-
-  **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+    1. Open PowerPoint and start a new presentation.
+    2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
+    3. Review the generated slides that incorporate the referenced image.
 
 
-  **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
+    **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
+
+
+    **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+
+
+    **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
 
 ### Teams
 
@@ -585,32 +865,35 @@ This report enables admins to:
 
   **Personal impact:** You save time by automating repetitive tasks and gain more control over Copilot’s assistance.
 
-- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** \[Mac\]
+- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** \[Windows, Mac\]
 
   You can now reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint.
 
-  **Roadmap ID:** [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555897)
+  **Roadmap ID:**
 
-  **Details:**
+  - [555895](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555895)
+  - [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555897)
 
-  **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePoint and OneDrive when you mention them in your prompt, such as by file or document name. Previously, these implicit file references were not supported for files stored in these locations. This update makes it easier to use relevant Microsoft 365 content without manually attaching or uploading the file.
+    **Details:**
 
-  **Why:** This change makes it easier to create presentations using content you already have in Microsoft 365. You can naturally reference a relevant file in your prompt, and Copilot can use that file as context when creating your presentation.
+    **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePoint and OneDrive when you mention them in your prompt, such as by file or document name. Previously, these implicit file references were not supported for files stored in these locations. This update makes it easier to use relevant Microsoft 365 content without manually attaching or uploading the file.
 
-  **Try this:**
+    **Why:** This change makes it easier to create presentations using content you already have in Microsoft 365. You can naturally reference a relevant file in your prompt, and Copilot can use that file as context when creating your presentation.
 
-  1. Open PowerPoint and start creating a presentation with Copilot.
-  2. In your prompt, reference a file saved in SharePoint or OneDrive by the document name and/or owner of the document.
-  3. Ask Copilot to create a presentation using information from that file. For example: “Create a presentation summarizing the key findings from the DOCUMENT NAME.”
+    **Try this:**
 
-
-  **Why this matters:** You can bring existing SharePoint and OneDrive content into your presentation workflow more naturally, without first locating the file and manually attaching it.
-
-
-  **Business impact:** Teams can create presentations faster by integrating cloud-stored resources without switching apps or manually uploading files.
+    1. Open PowerPoint and start creating a presentation with Copilot.
+    2. In your prompt, reference a file saved in SharePoint or OneDrive by the document name and/or owner of the document.
+    3. Ask Copilot to create a presentation using information from that file. For example: “Create a presentation summarizing the key findings from the DOCUMENT NAME.”
 
 
-  **Personal impact:** You save time locating and incorporating relevant files, reducing friction in presentation creation.
+    **Why this matters:** You can bring existing SharePoint and OneDrive content into your presentation workflow more naturally, without first locating the file and manually attaching it.
+
+
+    **Business impact:** Teams can create presentations faster by integrating cloud-stored resources without switching apps or manually uploading files.
+
+
+    **Personal impact:** You save time locating and incorporating relevant files, reducing friction in presentation creation.
 
 ### Viva Insights
 
@@ -6894,6 +7177,95 @@ Updates released between December 23, 2025, and January 13, 2026.
   **Learn:**  
   [Connector capabilities and limitations](https://learn.microsoft.com/en-us/microsoftsearch/servicenow-knowledge-overview#connector-capabilities-and-limitations)
 
+## November 4, 2026
+
+Updates released between October 28, 2026 and November 3, 2026.
+
+### Excel
+
+- **Navigate to your workbook changes directly from the Copilot chat pane response** \[Windows, Web, Mac\]
+
+  In Copilot in Excel, the response contains links to highlight where changes are made in your workbook. Navigate directly to new sheets, tables, ranges, and objects like charts and shapes.
+
+  **What changed:** In the Copilot chat response, there now is a link you can click that will take you directly to changes in the workbook. Previously, you would need to locate the change in the response and navigate in the sheet on your own.
+
+  **Why:** We want you to understand where copilot made edits and connect you to them directly from the chat response. This will help build confidence in the changes and allow you to review while you're reading the response in the chat pane.
+
+  **Try this:**
+
+  1. Send a prompt to Copilot where the workbook is modified.
+  2. The chat response will show the changes in a different format with a highlight to indicate a link you can click for navigation. New Sheets, tables, ranges, and objects will be highlighted.
+
+
+  **Why this matters:** The feature allows quick review of document changes made by Copilot, increasing transparency of the edits.
+
+
+  **Business impact:** Teams can understand changes made while reading the response from Copilot and quickly navigate to those places for review.
+
+
+  **Personal impact:** You can review the Copilot Edits in your document.
+
+### PowerPoint
+
+- **Reference an attached PowerPoint deck’s style when creating a new presentation in PowerPoint** \[Windows, Mac\]
+
+  When creating a presentation with Copilot in PowerPoint, you can reference an existing PowerPoint file, so Copilot applies its theme and styles to the new deck, keeping the design consistent.
+
+  **Roadmap ID:**
+
+  - [555878](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555878)
+  - [555880](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555880)
+
+
+  **What changed:** Copilot in PowerPoint now supports attaching an existing presentation when creating and editing a new one. Previously, new presentations used default themes. Now, Copilot applies the attached file’s theme and styles to the new deck, ensuring design consistency.
+
+
+  **Why:** This update reduces manual formatting by applying existing styles automatically, helping users maintain consistent branding across presentations.
+
+
+  **Try this:**
+
+
+  1. Open PowerPoint and create a new presentation with Copilot.
+  2. Use the 'Attach file' feature to select an existing PowerPoint deck.
+  3. Request Copilot to generate slides using the attached deck’s style.
+
+
+  **Why this matters:** Consistent design across presentations enhances brand identity and saves time on formatting.
+
+
+  **Business impact:** Teams can streamline presentation creation and maintain visual consistency without extra effort.
+
+
+  **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
+
+### Teams
+
+- **AI Workflows in Workflows app** \[Windows, Mac\]
+
+  With AI Workflows in the Workflows app, you will have access to custom AI-powered templates to automate complex tasks and streamline daily operations. AI Workflows enhance productivity by simplifying task execution and helping users stay organized throughout the day. Admins can enable this feature to equip users with intelligent automation tools that make managing work more efficient and intuitive.
+
+  **Roadmap ID:** [500379](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=500379)
+
+  **What changed:** AI Workflows are available in the Workflows app in Microsoft Teams. Users can use these Copilot-powered scheduled prompts to automate complex tasks and support day-to-day work. Admins control access through Teams app management settings, and AI Workflows are off by default unless the Workflows app is enabled.
+
+  **Why:** Organizations often handle repetitive processes that require multiple manual steps. AI-powered templates help reduce routine effort and support more consistent execution of common tasks.
+
+  **Try this:**
+
+  1. Open the Workflows app in Microsoft Teams and explore available AI workflows.
+  2. Select a template and customize it for a business process.
+  3. Ask your administrator to enable AI Workflows if the feature is not available.
+
+
+  **Why this matters:** Users can automate more complex work directly in Teams with reusable AI-assisted processes.
+
+
+  **Business impact:** Organizations can standardize recurring processes and reduce manual effort through AI-enabled workflow automation.
+
+
+  **Personal impact:** You can complete routine tasks faster and spend less time managing repetitive work.
+
 ## October 27, 2026
 
 Updates released between October 13, 2026, and October 27, 2026.
@@ -7020,32 +7392,36 @@ Updates released between October 13, 2026, and October 27, 2026.
 
   **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
 
-- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web\]
+- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web, Mac\]
 
   You can now reference an image when creating a presentation with Copilot in PowerPoint.
 
-  **Roadmap ID:** [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
+  **Roadmap ID:**
 
-  **Details:**
+  - [555890](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555890)
+  - [555881](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555881)
+  - [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
 
-  **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
+    **Details:**
 
-  **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
+    **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
 
-  **Try this:**
+    **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
 
-  1. Open PowerPoint and start a new presentation.
-  2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
-  3. Review the generated slides that incorporate the referenced image.
+    **Try this:**
 
-
-  **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
-
-
-  **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+    1. Open PowerPoint and start a new presentation.
+    2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
+    3. Review the generated slides that incorporate the referenced image.
 
 
-  **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
+    **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
+
+
+    **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+
+
+    **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
 
 ### Teams
 
@@ -7169,6 +7545,36 @@ Updates released between September 22, 2026, and October 06, 2026.
 
 
   **Personal impact:** You save time by automating repetitive tasks and gain more control over Copilot’s assistance.
+
+- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** \[Windows, Mac\]
+
+  You can now reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint.
+
+  **Roadmap ID:**
+
+  - [555895](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555895)
+  - [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555897)
+
+    **Details:**
+
+    **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePoint and OneDrive when you mention them in your prompt, such as by file or document name. Previously, these implicit file references were not supported for files stored in these locations. This update makes it easier to use relevant Microsoft 365 content without manually attaching or uploading the file.
+
+    **Why:** This change makes it easier to create presentations using content you already have in Microsoft 365. You can naturally reference a relevant file in your prompt, and Copilot can use that file as context when creating your presentation.
+
+    **Try this:**
+
+    1. Open PowerPoint and start creating a presentation with Copilot.
+    2. In your prompt, reference a file saved in SharePoint or OneDrive by the document name and/or owner of the document.
+    3. Ask Copilot to create a presentation using information from that file. For example: “Create a presentation summarizing the key findings from the DOCUMENT NAME.”
+
+
+    **Why this matters:** You can bring existing SharePoint and OneDrive content into your presentation workflow more naturally, without first locating the file and manually attaching it.
+
+
+    **Business impact:** Teams can create presentations faster by integrating cloud-stored resources without switching apps or manually uploading files.
+
+
+    **Personal impact:** You save time locating and incorporating relevant files, reducing friction in presentation creation.
 
 ## September 23, 2026
 
@@ -9851,6 +10257,221 @@ Updates released between December 23, 2025, and January 13, 2026.
   **Learn:**  
   [Add capabilities](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder-build-agents#add-capabilities)
 
+## November 4, 2026
+
+Updates released between October 28, 2026 and November 3, 2026.
+
+### Excel
+
+- **Navigate to your workbook changes directly from the Copilot chat pane response** \[Windows, Web, Mac\]
+
+  In Copilot in Excel, the response contains links to highlight where changes are made in your workbook. Navigate directly to new sheets, tables, ranges, and objects like charts and shapes.
+
+  **What changed:** In the Copilot chat response, there now is a link you can click that will take you directly to changes in the workbook. Previously, you would need to locate the change in the response and navigate in the sheet on your own.
+
+  **Why:** We want you to understand where copilot made edits and connect you to them directly from the chat response. This will help build confidence in the changes and allow you to review while you're reading the response in the chat pane.
+
+  **Try this:**
+
+  1. Send a prompt to Copilot where the workbook is modified.
+  2. The chat response will show the changes in a different format with a highlight to indicate a link you can click for navigation. New Sheets, tables, ranges, and objects will be highlighted.
+
+
+  **Why this matters:** The feature allows quick review of document changes made by Copilot, increasing transparency of the edits.
+
+
+  **Business impact:** Teams can understand changes made while reading the response from Copilot and quickly navigate to those places for review.
+
+
+  **Personal impact:** You can review the Copilot Edits in your document.
+
+### Microsoft 365 admin center
+
+- **Agents usage report** \[Web\]
+
+  A new agents usage report will be available in the Microsoft 365 admin center. The report will be scoped to include agents in Microsoft 365 Copilot and Copilot Chat with usage by both M365 Copilot licensed and unlicensed users. The report will include total active agent users, total active agents, active users segmentation by licensed and unlicensed users, and active users and active agents segmentation by publisher type \(i.e. user-created agents, agents built by your org, agents built by Microsoft, agents built by Microsoft partners\). The report will also include usage details per user, agent, and user-agent pair. #copilotcontrolsystem
+
+  **Roadmap ID:** [497999](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=497999)
+
+  **What changed:** The Microsoft 365 admin center now includes an agents usage report scoped to agents in Microsoft 365 Copilot and Copilot Chat. The report shows total active agent users, total active agents, and segments active users by licensed and unlicensed status. It also segments active users and agents by publisher type, including user-created agents, agents built by your organization, Microsoft, and Microsoft partners. Usage details are provided per user, agent, and user-agent pair, enabling detailed monitoring and management.
+
+  **Why:** This report provides administrators with detailed visibility into agent usage across licensed and unlicensed users. Admins can now:
+
+  - Monitor adoption and engagement of agents.
+  - Identify which agents and publishers are most active.
+  - Track usage patterns at user and agent levels for better governance and support.
+
+
+  **Try this:**
+
+
+  - Open the Microsoft 365 admin center.
+  - Navigate to the agents usage report under Copilot management.
+  - Review usage metrics segmented by user licensing and publisher type.
+
+
+  **Why this matters:** Detailed usage reporting helps organizations manage Copilot agents securely and optimize their deployment based on real user data.
+
+
+  **Business impact:** Admins gain actionable insights to govern agent usage and ensure compliance across Microsoft 365 environments.
+
+
+  **Personal impact:** You can quickly identify active agents and user engagement, reducing time spent on manual tracking and improving support responsiveness.
+
+- **Authoritative content management for Microsoft 365 Copilot Search** \[Web\]
+
+  Specify and manage SharePoint sites deemed as authoritative content to enhance their relevance and ranking in Microsoft 365 Copilot Search. In the Microsoft 365 admin center, under Copilot > Search > Authoritative content, add and manage up to 100 SharePoint sites. #copilotcontrolsystem
+
+  **Roadmap ID:** [503553](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=503553)
+
+  **What changed:** The Microsoft 365 Admin Center introduces a centralized governance layer under Copilot > Search > Authoritative content. Admins with Global admin or Global reader roles can view, add, delete, and bulk import or export up to 100 authoritative SharePoint sites. Previously, there was no centralized management for authoritative sources in Copilot Search.
+
+  **Why:** This change allows organizations to enhance search relevance by designating trusted SharePoint sites, improving content discovery and user experience within Copilot Search.
+
+  **Try this:**
+
+  1. Go to Microsoft 365 Admin Center and select Copilot > Search > Authoritative content.
+  2. Add or remove SharePoint Online sites to define authoritative sources.
+  3. Use the bulk import or export options to manage multiple sites efficiently.
+
+
+  **Why this matters:** Defining authoritative content improves search result accuracy, helping users find trusted organizational information faster.
+
+
+  **Business impact:** IT teams gain centralized control over search content relevance, reducing support requests related to search accuracy.
+
+
+  **Personal impact:** Users experience more relevant search results, saving time locating important SharePoint content.
+
+### Microsoft 365 Copilot
+
+- **SharePoint list agent** \[Web\]
+
+  Enables effortless list creation for Copilot users through prompts, with intelligent schema generation and setup. This agent helps teams to quickly transform structured information and Copilot responses to Microsoft Lists.
+
+  **Roadmap ID:** [534606](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=534606)
+
+  **What changed:** Copilot users can now create Microsoft Lists through natural language prompts using the SharePoint list agent. The agent generates list structure and setup based on the information provided. Teams can convert structured information and Copilot-generated content into lists with less manual configuration.
+
+  **Why:** Creating lists often requires manual planning and setup before data can be captured. Automated schema generation reduces setup effort and helps teams organize information faster.
+
+  **Try this:**
+
+  - Open Copilot and describe the list you want to create.
+  - Review the generated list structure and suggested fields.
+  - Create the Microsoft List and add or refine content as needed.
+
+
+  **Why this matters:** Natural language list creation lowers the effort required to turn information into structured, trackable records.
+
+
+  **Business impact:** Teams can standardize and organize information more quickly without spending as much time designing list structures.
+
+
+  **Personal impact:** You can create useful lists faster and avoid repetitive setup tasks.
+
+- **Copilot New Tab Page in Microsoft Edge** \[Web\]
+
+  Search, chat, and explore the web from one search box with Copilot-suggested actions and curated work content to help your users get things done faster on the new, refreshed Copilot New Tab Page. Users can also view personalized news and activities.
+
+  **Roadmap ID:** [558256](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=558256)
+
+  **What changed:** The refreshed Copilot New Tab Page in Microsoft Edge brings search, chat, and web exploration together in a single search box. It also surfaces Copilot-suggested actions, curated work content, personalized news, and activities in one place. Users can start common tasks and discover relevant content directly from a new tab.
+
+  **Why:** People often switch between multiple pages and tools to find information and begin tasks. Bringing these experiences together helps reduce navigation overhead and speeds access to relevant content.
+
+  **Try this:**
+
+  - Open a new tab in Microsoft Edge and use the search box to start a search or chat.
+  - Select a Copilot-suggested action from the page.
+  - Review curated work content, news, and activities shown on the new tab page.
+
+
+  **Why this matters:** A single starting point for search, chat, and content discovery helps users find information and begin work more efficiently.
+
+
+  **Business impact:** Organizations can streamline common information-finding and task-starting workflows within Microsoft Edge.
+
+
+  **Personal impact:** Users spend less time navigating between destinations and can begin searches, chats, and tasks from one page.
+
+- **Copilot Cowork supports local Microsoft Edge browser use** \[Web\]
+
+  Copilot Cowork can use Microsoft Edge on your device to complete web-based steps as part of a task, including on sites where you’re already signed in. Cowork works in a separate Edge tab while you follow its progress in the Cowork conversation.
+
+  **What changed:** When a task requires a browser, Cowork can use your local Microsoft Edge browser to navigate pages, gather information, fill in forms, and complete supported actions on your behalf. Because Cowork works through your local Edge session, it can use sites you’re already signed in to with the same access you have. Credentials, cookies, and session tokens stay on your device.
+
+  **Why:** Many workflows include steps that happen on websites. Local browser use lets Cowork carry the work into those experiences, helping you delegate a broader, multi-step task rather than manually completing each web-based step yourself.
+
+  **Try this:**
+
+  - Open Copilot Cowork on the web in Microsoft Edge.
+  - Ask Cowork to complete a task that requires a browser, such as gathering information from a website or completing a supported form.
+  - Follow its progress in the Cowork conversation and provide input, approval, or take over when prompted.
+
+
+  **Why this matters:** Cowork is designed to take on multi-step work. Local browser use extends that work to the browser, helping Cowork carry a task further from request to outcome while keeping you in control when your input or approval is needed.
+
+
+  **Business impact:** Organizations can extend Cowork to more web-based workflows while maintaining existing browser, identity, Conditional Access, and data protection policies.
+
+
+  **Personal impact:** You can spend less time navigating websites and manually moving through web-based steps, while staying in control of sensitive or consequential actions.
+
+### Microsoft 365 Copilot extensibility
+
+- **User can use HubSpot Connector in Researcher** \[Web\]
+
+  The HubSpot connector allows users using the Researcher agent to be able to leverage 3rd party information from HubSpot to enrich generated responses with relevant information.
+
+  **Roadmap ID:** [501292](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=501292)
+
+  **What changed:** The Researcher agent now supports the HubSpot connector, allowing users to pull relevant data from HubSpot to enhance generated responses. Previously, Researcher did not integrate with HubSpot data. This update enables more informed and context-rich outputs by incorporating HubSpot information.
+
+  **Why:** Adding HubSpot data improves the accuracy and relevance of Researcher agent responses, supporting better decision-making and content creation.
+
+  **Try this:**
+
+  1. Open the Researcher agent in Microsoft 365.
+  2. Connect to the HubSpot connector.
+  3. Request information that includes HubSpot data to enrich your results.
+
+
+  **Why this matters:** Integrating HubSpot data into Researcher helps users access comprehensive insights without switching platforms.
+
+
+  **Business impact:** Teams can combine CRM data with Microsoft 365 workflows, improving sales and marketing productivity.
+
+
+  **Personal impact:** You save time by accessing HubSpot insights directly within Researcher, reducing the need to switch between apps.
+
+### Outlook
+
+- **Account Selector in Outlook Copilot Side Pane** \[Web\]
+
+  When users have more than one Copilot-enabled account added to new Outlook, the Copilot side pane in Calendar will include an account dropdown that makes it clear which Copilot-enabled account you’re using and lets you switch accounts without relying on Outlook UI’s account context.
+
+  **Roadmap ID:** [559991](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=559991)
+
+  **What changed:** Users who have more than one Copilot-enabled account in new Outlook now see an account dropdown in the Copilot side pane within Calendar. Previously, account context depended on the broader Outlook user interface context. The new selector clearly identifies the active Copilot-enabled account and allows account switching directly from the Copilot side pane.
+
+  **Why:** Users with multiple accounts need a clear way to confirm which account Copilot is using. Direct account selection reduces confusion and helps ensure actions are performed in the intended account context.
+
+  **Try this:**
+
+  - Open Calendar in new Outlook and select the Copilot side pane.
+  - Select the account dropdown to view available Copilot-enabled accounts.
+  - Choose a different account and continue using Copilot in the selected context.
+
+
+  **Why this matters:** Clear account visibility helps users work in the correct Copilot context when multiple accounts are available.
+
+
+  **Business impact:** Organizations that support multiple work accounts can reduce account-context mistakes during calendar-related Copilot tasks.
+
+
+  **Personal impact:** Users can switch accounts more quickly and verify the active Copilot account without navigating other Outlook controls.
+
 ## October 27, 2026
 
 Updates released between October 13, 2026, and October 27, 2026.
@@ -10080,32 +10701,36 @@ Updates released between October 13, 2026, and October 27, 2026.
 
   **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
 
-- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web\]
+- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web, Mac\]
 
   You can now reference an image when creating a presentation with Copilot in PowerPoint.
 
-  **Roadmap ID:** [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
+  **Roadmap ID:**
 
-  **Details:**
+  - [555890](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555890)
+  - [555881](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555881)
+  - [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
 
-  **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
+    **Details:**
 
-  **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
+    **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
 
-  **Try this:**
+    **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
 
-  1. Open PowerPoint and start a new presentation.
-  2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
-  3. Review the generated slides that incorporate the referenced image.
+    **Try this:**
 
-
-  **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
-
-
-  **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+    1. Open PowerPoint and start a new presentation.
+    2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
+    3. Review the generated slides that incorporate the referenced image.
 
 
-  **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
+    **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
+
+
+    **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+
+
+    **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
 
 ## October 06, 2026
 
@@ -17336,6 +17961,95 @@ Updates released between December 23, 2025, and January 13, 2026.
 
   **Personal Impact:** Users experience fewer frustrations when interacting with Copilot, getting precise answers and recommendations that fit their context-saving time and effort.
 
+## November 4, 2026
+
+Updates released between October 28, 2026 and November 3, 2026.
+
+### Excel
+
+- **Navigate to your workbook changes directly from the Copilot chat pane response** \[Windows, Web, Mac\]
+
+  In Copilot in Excel, the response contains links to highlight where changes are made in your workbook. Navigate directly to new sheets, tables, ranges, and objects like charts and shapes.
+
+  **What changed:** In the Copilot chat response, there now is a link you can click that will take you directly to changes in the workbook. Previously, you would need to locate the change in the response and navigate in the sheet on your own.
+
+  **Why:** We want you to understand where copilot made edits and connect you to them directly from the chat response. This will help build confidence in the changes and allow you to review while you're reading the response in the chat pane.
+
+  **Try this:**
+
+  1. Send a prompt to Copilot where the workbook is modified.
+  2. The chat response will show the changes in a different format with a highlight to indicate a link you can click for navigation. New Sheets, tables, ranges, and objects will be highlighted.
+
+
+  **Why this matters:** The feature allows quick review of document changes made by Copilot, increasing transparency of the edits.
+
+
+  **Business impact:** Teams can understand changes made while reading the response from Copilot and quickly navigate to those places for review.
+
+
+  **Personal impact:** You can review the Copilot Edits in your document.
+
+### PowerPoint
+
+- **Reference an attached PowerPoint deck’s style when creating a new presentation in PowerPoint** \[Windows, Mac\]
+
+  When creating a presentation with Copilot in PowerPoint, you can reference an existing PowerPoint file, so Copilot applies its theme and styles to the new deck, keeping the design consistent.
+
+  **Roadmap ID:**
+
+  - [555878](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555878)
+  - [555880](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555880)
+
+
+  **What changed:** Copilot in PowerPoint now supports attaching an existing presentation when creating and editing a new one. Previously, new presentations used default themes. Now, Copilot applies the attached file’s theme and styles to the new deck, ensuring design consistency.
+
+
+  **Why:** This update reduces manual formatting by applying existing styles automatically, helping users maintain consistent branding across presentations.
+
+
+  **Try this:**
+
+
+  1. Open PowerPoint and create a new presentation with Copilot.
+  2. Use the 'Attach file' feature to select an existing PowerPoint deck.
+  3. Request Copilot to generate slides using the attached deck’s style.
+
+
+  **Why this matters:** Consistent design across presentations enhances brand identity and saves time on formatting.
+
+
+  **Business impact:** Teams can streamline presentation creation and maintain visual consistency without extra effort.
+
+
+  **Personal impact:** You reduce formatting tasks and produce professional-looking presentations more efficiently.
+
+### Teams
+
+- **AI Workflows in Workflows app** \[Windows, Mac\]
+
+  With AI Workflows in the Workflows app, you will have access to custom AI-powered templates to automate complex tasks and streamline daily operations. AI Workflows enhance productivity by simplifying task execution and helping users stay organized throughout the day. Admins can enable this feature to equip users with intelligent automation tools that make managing work more efficient and intuitive.
+
+  **Roadmap ID:** [500379](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=500379)
+
+  **What changed:** AI Workflows are available in the Workflows app in Microsoft Teams. Users can use these Copilot-powered scheduled prompts to automate complex tasks and support day-to-day work. Admins control access through Teams app management settings, and AI Workflows are off by default unless the Workflows app is enabled.
+
+  **Why:** Organizations often handle repetitive processes that require multiple manual steps. AI-powered templates help reduce routine effort and support more consistent execution of common tasks.
+
+  **Try this:**
+
+  1. Open the Workflows app in Microsoft Teams and explore available AI workflows.
+  2. Select a template and customize it for a business process.
+  3. Ask your administrator to enable AI Workflows if the feature is not available.
+
+
+  **Why this matters:** Users can automate more complex work directly in Teams with reusable AI-assisted processes.
+
+
+  **Business impact:** Organizations can standardize recurring processes and reduce manual effort through AI-enabled workflow automation.
+
+
+  **Personal impact:** You can complete routine tasks faster and spend less time managing repetitive work.
+
 ## October 27, 2026
 
 Updates released between October 13, 2026, and October 27, 2026.
@@ -17368,6 +18082,39 @@ Updates released between October 13, 2026, and October 27, 2026.
 
 
   **Personal impact:** You can experiment and build with Work IQ APIs without license constraints, saving time on administration and reducing costs.
+
+### PowerPoint
+
+- **Attach and reference an image when creating a presentation with Copilot in PowerPoint** \[Windows, Web, Mac\]
+
+  You can now reference an image when creating a presentation with Copilot in PowerPoint.
+
+  **Roadmap ID:**
+
+  - [555890](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555890)
+  - [555881](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555881)
+  - [555882](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555882)
+
+    **Details:**
+
+    **What changed:** Copilot in PowerPoint now allows users to reference attached images during presentation creation. Previously, image referencing was not supported, limiting content to text only. This update improves content integration without altering security or privacy controls.
+
+    **Why:** Referencing images helps users create richer, more contextually relevant presentations by combining visuals with generated text.
+
+    **Try this:**
+
+    1. Open PowerPoint and start a new presentation.
+    2. Use the Copilot pane to enter a prompt and attach an image you want to use in your presentation.
+    3. Review the generated slides that incorporate the referenced image.
+
+
+    **Why this matters:** Including images improves presentation clarity and audience engagement by combining visuals with generated content.
+
+
+    **Business impact:** Teams benefit from clearer presentations that combine visuals and text, improving message delivery.
+
+
+    **Personal impact:** You save time by letting Copilot integrate images into your slides, reducing manual effort.
 
 ### Teams
 
@@ -17407,32 +18154,35 @@ Updates released between September 22, 2026, and October 06, 2026.
 
 ### PowerPoint
 
-- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** \[Mac\]
+- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** \[Windows, Mac\]
 
   You can now reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint.
 
-  **Roadmap ID:** [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555897)
+  **Roadmap ID:**
 
-  **Details:**
+  - [555895](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555895)
+  - [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&searchterms=555897)
 
-  **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePoint and OneDrive when you mention them in your prompt, such as by file or document name. Previously, these implicit file references were not supported for files stored in these locations. This update makes it easier to use relevant Microsoft 365 content without manually attaching or uploading the file.
+    **Details:**
 
-  **Why:** This change makes it easier to create presentations using content you already have in Microsoft 365. You can naturally reference a relevant file in your prompt, and Copilot can use that file as context when creating your presentation.
+    **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePoint and OneDrive when you mention them in your prompt, such as by file or document name. Previously, these implicit file references were not supported for files stored in these locations. This update makes it easier to use relevant Microsoft 365 content without manually attaching or uploading the file.
 
-  **Try this:**
+    **Why:** This change makes it easier to create presentations using content you already have in Microsoft 365. You can naturally reference a relevant file in your prompt, and Copilot can use that file as context when creating your presentation.
 
-  1. Open PowerPoint and start creating a presentation with Copilot.
-  2. In your prompt, reference a file saved in SharePoint or OneDrive by the document name and/or owner of the document.
-  3. Ask Copilot to create a presentation using information from that file. For example: “Create a presentation summarizing the key findings from the DOCUMENT NAME.”
+    **Try this:**
 
-
-  **Why this matters:** You can bring existing SharePoint and OneDrive content into your presentation workflow more naturally, without first locating the file and manually attaching it.
-
-
-  **Business impact:** Teams can create presentations faster by integrating cloud-stored resources without switching apps or manually uploading files.
+    1. Open PowerPoint and start creating a presentation with Copilot.
+    2. In your prompt, reference a file saved in SharePoint or OneDrive by the document name and/or owner of the document.
+    3. Ask Copilot to create a presentation using information from that file. For example: “Create a presentation summarizing the key findings from the DOCUMENT NAME.”
 
 
-  **Personal impact:** You save time locating and incorporating relevant files, reducing friction in presentation creation.
+    **Why this matters:** You can bring existing SharePoint and OneDrive content into your presentation workflow more naturally, without first locating the file and manually attaching it.
+
+
+    **Business impact:** Teams can create presentations faster by integrating cloud-stored resources without switching apps or manually uploading files.
+
+
+    **Personal impact:** You save time locating and incorporating relevant files, reducing friction in presentation creation.
 
 ## September 23, 2026
 

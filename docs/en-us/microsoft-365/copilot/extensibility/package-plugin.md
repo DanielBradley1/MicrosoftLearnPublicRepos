@@ -32,6 +32,8 @@ Don't use packaging to resolve an unfinished component or integration. Return to
 
 If no packaging route supports your plugin's components and target experiences, stop. Choose a supported method or revise the plugin. Don't combine or rename artifacts to create an unsupported package.
 
+To automate WIQD source checks, candidate packaging, and package-first validation, see [Configure plugin CI/CD with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-ci-cd).
+
 Note
 
 Static `wiqd plugin validate` checks only the declarative-agent surface and referenced API-plugin or OpenAPI files. A skill-only or connector-only plugin can pass the static check without its top-level capabilities being validated. Package-first deep validation is required to check the built app package.

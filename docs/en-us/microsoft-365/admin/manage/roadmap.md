@@ -3,7 +3,7 @@
 
 # Use the AI at Work Roadmap
 
-With dozens of apps and features, it can be challenging to keep up with what's new and what's coming. That's where the [Microsoft AI at Work Roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap), formerly known as Microsoft 365 Roadmap, comes in.
+With dozens of apps and features, it can be challenging to keep up with what's new and what's coming. That's where the [AI at Work Roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap), formerly known as Microsoft 365 Roadmap, comes in.
 
 The roadmap is the central location for IT professionals, business decision makers, and anyone else who's interested, to see what's coming. It was created to help you plan, communicate changes, and take full advantage of your Microsoft 365 subscription.
 
@@ -13,7 +13,7 @@ Find features by typing in a roadmap ID, a keyword from the description, or a ta
 
 ### Filter features
 
-The following table describes the filters available on the Microsoft AI at Work Roadmap.
+The following table describes the filters available on the AI at Work Roadmap.
 
 | Filter | Description |
 | --- | --- |
@@ -38,19 +38,19 @@ Within a specific feature card, select the envelope icon to share a link to a sp
 
 ### Subscribe to an RSS feed
 
-You can subscribe to Microsoft AI at Work Roadmap RSS updates with Microsoft Outlook or another RSS reader. To receive updates for all features on the Microsoft AI at Work Roadmap, select the RSS icon located above the roadmap filters. If you want to follow only specific features, select the RSS icon on an individual feature.
+You can subscribe to AI at Work Roadmap RSS updates with Microsoft Outlook or another RSS reader. To receive updates for all features on the AI at Work Roadmap, select the RSS icon located above the roadmap filters. If you want to follow only specific features, select the RSS icon on an individual feature.
 
 For more information about adding an RSS feed to Outlook, see [Subscribe to an RSS Feed](https://support.microsoft.com/outlook/subscribe-to-an-rss-feed).
 
 ### Send direct link
 
-To share a link to the entire Microsoft AI at Work page with your current filter selections, copy the URL in your browser and share. The URL has your filter selections encoded.
+To share a link to the entire AI at Work Roadmap page with your current filter selections, copy the URL in your browser and share. The URL has your filter selections encoded.
 
 To share a specific feature, expand the feature card and select the link icon under Share to copy the direct link to that feature.
 
 ## Get AI-powered change insights
 
-For Microsoft AI at Work Roadmap and Azure Updates information, connect to **Microsoft Release Communications MCP Server** to enable AI agents to answer questions about upcoming features, rollout timelines, and product changes. For more information, see [Microsoft Release Communications MCP Server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide).
+For AI at Work Roadmap and Azure Updates information, connect to **Microsoft Release Communications MCP Server** to enable AI agents to answer questions about upcoming features, rollout timelines, and product changes. For more information, see [Microsoft Release Communications MCP Server](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/mrc-mcp?view=o365-worldwide).
 
 ## Download roadmap feature information
 
@@ -62,7 +62,7 @@ To provide feedback about the site or existing roadmap items, use the feedback b
 
 ## Related articles
 
-[Microsoft AI at Work Roadmap](https://www.microsoft.com/microsoft-365/roadmap)
+[AI at Work Roadmap](https://www.microsoft.com/microsoft-365/roadmap)
 
 [Modern change management for Microsoft 365 - Overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/plan-for-change-management?view=o365-worldwide)
 

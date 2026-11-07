@@ -9,7 +9,7 @@ Before makers can publish Lovable projects to Microsoft Copilot Managed Runtime,
 
 This setup enables a third-party authoring and build service to deploy apps into your Microsoft tenant.
 
-This article is for Microsoft tenant and Power Platform administrators. Makers should see [Publish a Lovable app to Microsoft Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/publish-from-lovable?view=o365-worldwide).
+This article is for Microsoft tenant and Power Platform administrators. Makers should see [Publish a Lovable app to Microsoft Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/publish-from-lovable?view=o365-worldwide).
 
 Important
 
@@ -159,7 +159,7 @@ Revoking the Lovable integration prevents future access, but it doesn't automati
 
 ## Related information
 
-- [Publish a Lovable app to Microsoft Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/publish-from-lovable?view=o365-worldwide)
+- [Publish a Lovable app to Microsoft Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/publish-from-lovable?view=o365-worldwide)
 - [Lovable tenant setup for Microsoft Copilot Managed Runtime](https://docs.lovable.dev/integrations/microsoft-copilot-managed-runtime-tenant-setup)
 - [Copilot Managed Runtime overview and key concepts for admins](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide)
 - [Copilot Managed Runtime default governance settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide)

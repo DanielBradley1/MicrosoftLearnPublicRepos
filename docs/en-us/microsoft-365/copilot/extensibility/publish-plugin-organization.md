@@ -20,7 +20,7 @@ Ensure you have:
 
 | How you created the package | What to do |
 | --- | --- |
-| **Work IQ Dev Tools** using `wiqd plugin` | Use `wiqd plugin share --scope tenant` to publish the tested package to the plugin registry for your tenant, or give the package to an administrator for upload. Follow the [Work IQ Dev Tools plugin guide](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/). The `wiqd plugin` commands are in alpha. |
+| **Work IQ Dev Tools** using `wiqd plugin` | Use `wiqd plugin publish --env <env>` to submit the provisioned plugin to the organization app catalog for administrator approval. Use `wiqd plugin share --scope tenant` for direct tenant-wide access, or give the package to an administrator for upload. Follow the [Work IQ Dev Tools plugin guide](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/). |
 | **Microsoft 365 Agents Toolkit** | Follow the [Agents Toolkit publishing instructions](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/publish). Confirm that the procedure supports your plugin package and intended Microsoft 365 experience. |
 | **Administrator upload** | Give the tested package to your administrator. They follow [Upload plugins or skills](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context#upload-plugins-or-skills). |
 | **Another supported tool** | Follow that tool's documented plugin publishing or sharing instructions. Confirm that they support your package and intended audience. |
@@ -28,6 +28,8 @@ Ensure you have:
 Note
 
 This article covers plugin packages. For an existing standalone \(unpackaged\) agent, follow the guidance for [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents), [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-fundamentals-publish-channels), or the [Work IQ Dev Tools agent lifecycle](https://microsoft.github.io/wiqd/concepts/agent-lifecycle/).
+
+For automated candidate testing and approved release submission through WIQD, see [Configure plugin CI/CD with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-ci-cd).
 
 ## Publish or share your plugin
 
@@ -45,7 +47,7 @@ The selected method or your organization's policy determines whether an administ
 | --- | --- | --- |
 | **Submitted or in review** | The package is awaiting review or approval. Publication isn't complete. | Track the submission and address any requested changes. |
 | **Published** | The plugin is published through the selected organizational method. | Confirm how intended users can find it and complete any required availability steps. |
-| **Shared** | The package is published to the plugin registry for the selected audience. This result doesn't necessarily add it to an organization-wide catalog or complete required availability steps. | Verify access and any required setup. |
+| **Shared** | Direct access was granted to the selected audience. Sharing isn't organization app-catalog submission and doesn't complete required availability steps. | Verify access and any required setup. |
 | **Rejected or blocked** | A requirement prevents publishing or sharing. | Resolve the issue and repeat any affected validation or tests before trying again. |
 
 Keep the package identity, version, submission identifier if provided, status, and intended audience with your release information.

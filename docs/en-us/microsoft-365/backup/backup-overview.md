@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Overview of Microsoft 365 Backup
 
@@ -27,10 +27,10 @@ To summarize, applications built on top of the Microsoft 365 Backup Storage plat
 
 | Feature | OneDrive | SharePoint | Exchange Online |
 | --- | --- | --- | --- |
-| **Recovery window** | Configurable on a backup policy: 3 months, 6 months, 1 year, or 2 years. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, 1 year, or 2 years. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, 1 year, or 2 years. Existing policies and artifacts default to 1 year. |
-| **Recovery points** | 10 minutes for two weeks prior  <br>  <br>Weekly snapshots 2-52 weeks prior | 10 minutes for two weeks prior  <br>  <br>Weekly snapshots 2-52 weeks prior | 10 minutes for prior 52 weeks |
+| **Recovery window** | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, 1 year, or 2 years. Existing policies and artifacts default to 1 year. |
+| **Recovery points** | For full account restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | For full site restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | 10 minutes for prior 52 weeks |
 | **Backup granularity** | OneDrive account | SharePoint site | Exchange user account |
-| **Restore granularity** | OneDrive accounts  <br>  <br>Files restorable via versions \(coming soon\) | SharePoint sites  <br>  <br>Files restorable via versions \(coming soon\) | Mail/Contacts/Calendar/Task items |
+| **Restore granularity** | Full OneDrive accounts through the configured recovery window  <br>  <br>Selected files and folders from recovery points within the most recent 14 days only | Full SharePoint sites through the configured recovery window  <br>  <br>Selected files and folders from recovery points within the most recent 14 days only | Mail/Contacts/Calendar/Task items |
 | **Restore options** | **Location**: Same or new URL  <br>  <br>**OneDrive** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new URL  <br>  <br>**Full site** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new folder within user's mailbox  <br>  <br>**Full and item level mailbox** restores only modified/deleted items from prior point in time |
 | **Restore speeds \(RTO\)** | Up to 1,000 average-sized OneDrive accounts at a median rate of up to 1-3 TiB per hour depending on site item counts and the size of the site. High speed restores come when using the express restore points, not necessarily the ad-hoc restore points. | Up to 1,000 average-sized sites at a median rate of up to 1-3TiB per hour depending on site item counts and the size of the site. High speed restores come when using an express restore point, not necessarily with ad-hoc restore points. | Up to 1,000 average-sized mailboxes at a median rate of up to 1-3 TiB per hour depending on the item counts and sizes in the mailbox. Actual performance will range between 100-500 items/mailbox/min. |
 | **Auditability** | Actions fully auditable | Actions fully auditable | Actions fully auditable |
@@ -73,7 +73,7 @@ All restore points and restores to new URLs are relatively fast, but same URL re
 
 We have a number of restore capabilities depending on the scenario, each optimized for that scenario. The restore is not dependent on the amount of data, rather the number of sites and the type of restore point chosen.
 
-1. Single or subsite file restore needed: Use the granular folder/file restore option. These restores should take only a couple of mins on average.
+1. Single or subsite file restore needed: Use the granular folder/file restore option for recovery points within the most recent 14 days. These restores should take only a couple of mins on average.
 2. Small site restore: Use one of the ~daily express restore points recommended in the UI. This will restore full sites smaller than ~1TiB in under 20 mins.
 3. Large many site restores: Use our fast or standard restore points. It may take a few hours to "warm up," but will then execute very quickly. Overall, this will be very fast as per our performance outline in the perf table below.
 

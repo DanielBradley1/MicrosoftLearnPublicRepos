@@ -28,7 +28,7 @@ Have:
 
 Note
 
-This article covers plugin packages. To publish or share an existing standalone \(unpackaged\) agent, use the product-specific guidance for [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents), [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-365-copilot-extend-with-agents#publish-and-configure-an-agent-for-microsoft-365-copilot), or [Work IQ Dev Tools](https://microsoft.github.io/wiqd/concepts/agent-lifecycle/).
+This article covers plugin packages. To publish or share an existing standalone \(unpackaged\) agent, use the product-specific guidance for [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents), [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams), or [Work IQ Dev Tools](https://microsoft.github.io/wiqd/concepts/agent-lifecycle/).
 
 Administrator approval is required only when the selected method or your organization's policy requires it.
 

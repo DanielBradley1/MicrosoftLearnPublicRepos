@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/3-standard/identity/standard-identity-1-entra-id-p1 -->
-<!-- Sitemap-Last-Modified: 2025-08-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-02 -->
 
 # Step 1: Microsoft Entra ID Plan 1
 
@@ -36,7 +36,7 @@ Microsoft Entra ID P1 is a powerful identity and access management solution that
 
 | Feature | Description | Learn more Links |
 | --- | --- | --- |
-| **Fraud Alert** | Allow users to report fraud attempts via unknown MFA prompts | [Configure Microsoft Entra multifactor authentication settings](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings#fraud-alert) |
+| **Report suspicious activity** | Configure settings that allow users to report fraudulent verification requests | [Configure Microsoft Entra multifactor authentication settings](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings#report-suspicious-activity) |
 | **MFA Reports** | Review MFA events and sign-ins | [Sign-in event details for Microsoft Entra multifactor authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-reporting) |
 | **MFA Caller ID and Phone Greetings** | Configure phone call mfa with Caller ID and customer greetings | [Configure Microsoft Entra multifactor authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings) |
 | **Trusted IPs** | Configure CA with trusted locations and IP addresses | [Conditional Access: Network assignment](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network) |

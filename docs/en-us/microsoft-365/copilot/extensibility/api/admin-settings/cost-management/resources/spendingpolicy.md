@@ -61,7 +61,7 @@ An [evolvable enumeration](https://learn.microsoft.com/en-us/graph/best-practice
 | Value | Description |
 | :--- | :--- |
 | `enabled` | The policy is active and enforced. |
-| `disabled` | The policy isn't enforced. This is the initial state of a newly created policy. |
+| `disabled` | The policy isn't enforced. This is the initial state of a newly created policy. A policy is also disabled when every group assigned to it has been deleted, or when the service disables it in response to a change in the tenant's subscription. |
 | `provisioning` | The policy is being created or transitioned; group links and validation are in progress. |
 | `provisioningFailed` | The most recent provisioning attempt failed; the policy isn't enforced. |
 | `unknownFutureValue` | Evolvable enumeration sentinel value. |

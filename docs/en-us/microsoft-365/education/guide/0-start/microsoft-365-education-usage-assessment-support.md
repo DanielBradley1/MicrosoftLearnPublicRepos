@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/microsoft-365-education-usage-assessment-support -->
-<!-- Sitemap-Last-Modified: 2026-10-20 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Microsoft 365 Education usage and assessment support
 
@@ -25,7 +25,6 @@ When you're collecting information about how you're using Microsoft products and
 - How many of these seats are currently assigned?
 - How are students, faculty, and staff adopting and using Microsoft products and services, like Microsoft Teams, OneDrive, Exchange, SharePoint, or Copilot?
 - How many users are inactive? How many licenses are unused?
-- How much do your current licenses cost?
 
 ## How to run the Service Usage Assessment PowerShell tool
 

@@ -18,7 +18,7 @@ Copilot Managed Runtime brings three audiences together around the same governed
 - **Makers and developers** build apps using tools and languages they already know.
 - **Administrators** govern apps across the tenant.
 
-To learn how people create apps across Cowork, Copilot Studio, and the CLI, see [What is Copilot Managed Runtime \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/?view=o365-worldwide).
+To learn how people create apps across Cowork, Copilot Studio, and the CLI, see [What is Copilot Managed Runtime \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide).
 
 ## Key features
 
@@ -186,9 +186,9 @@ For detailed requirements and configuration guidance, see:
 ## Related information
 
 - [FAQ about Microsoft Copilot Managed Runtime \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/faq-about-apps?view=o365-worldwide)
-- [Create and manage apps across Microsoft 365 \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/?view=o365-worldwide)
-- [Copilot Managed Runtime SDK overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/?view=o365-worldwide)
-- [Quickstart: Create an app with the CLI](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/quickstart-managed-apps-cli?view=o365-worldwide)
-- [Quickstart: Build an app with GitHub Copilot or Claude Code](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/quickstart-github-copilot?view=o365-worldwide)
+- [Create and manage apps across Microsoft 365 \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide)
+- [Copilot Managed Runtime SDK overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide)
+- [Quickstart: Create an app with the CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide)
+- [Quickstart: Build an app with GitHub Copilot or Claude Code](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide)
 - [Govern apps in Copilot Managed Runtime at scale](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide)
 - [Apps in Microsoft Copilot Studio \(preview\)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/apps-overview)

@@ -113,7 +113,7 @@ In the [Microsoft 365 admin center](https://admin.microsoft.com), go to **Copilo
 
 - [Copilot Managed Runtime overview and key concepts for admins \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide)
 - [FAQ about Microsoft Copilot Managed Runtime \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/faq-about-apps?view=o365-worldwide)
-- [Copilot Managed Runtime SDK overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/?view=o365-worldwide)
+- [Copilot Managed Runtime SDK overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide)
 - [Environment routing for Copilot Managed Runtime](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing-copilot-managed-runtime)
 - [Manage costs for agents powered by the GitHub Copilot harness](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness)
 - [Power Apps licensing FAQs](https://learn.microsoft.com/en-us/power-platform/admin/powerapps-licensing-faq)

@@ -30,6 +30,8 @@ For a plugin, complete each stage in order.
 
 Define the required capabilities and target Microsoft experiences before you select a development tool. Then use [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) to compare the available authoring and packaging paths, including Microsoft 365 Agents Toolkit for supported Microsoft 365 app packages.
 
+For a pro-code plugin workflow, use the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs) on GitHub. Start with [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) for the supported creation, validation, provisioning, packaging, and sharing procedure.
+
 Before implementation, confirm that the required identities, environments, services, permissions, licenses, and owners are available.
 
 ## Related content
@@ -40,3 +42,4 @@ Before implementation, confirm that the required identities, environments, servi
 - [Choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components)
 - [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)
 - [Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
+- [Configure plugin CI/CD with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-ci-cd)

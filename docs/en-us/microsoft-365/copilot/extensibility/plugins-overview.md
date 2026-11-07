@@ -46,6 +46,7 @@ After you publish or share your plugin, users might still need approval, install
 ## Get started
 
 - **Have an existing declarative-agent source project?** Follow [Quickstart: Create your first plugin with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/quickstart-plugin).
+- **Want to create and package a plugin with pro-code tools?** Follow [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) in the GitHub documentation.
 - **Want to build or reuse capabilities?** Start with [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide).
 - **Need to administer a plugin?** See the [Manage plugins with Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins#manage-plugins-with-microsoft-agent-365) administration map.
 - **Want to publish for customers?** See [Build and publish plugins for customers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/isv-publisher-guide).

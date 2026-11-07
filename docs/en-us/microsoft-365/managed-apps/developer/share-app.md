@@ -9,7 +9,7 @@ A Copilot Managed Runtime app is private to its owners until you share it. You c
 
 Run the sharing commands from the directory that contains your app. Each command acts on that app automatically.
 
-When a user has access, they can find and launch the app from the app portal at [https://managedapps.cloud.microsoft/](https://managedapps.cloud.microsoft/). For the end-user experience, see [What are Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/?view=o365-worldwide).
+When a user has access, they can find and launch the app from the app portal at [https://managedapps.cloud.microsoft/](https://managedapps.cloud.microsoft/). For the end-user experience, see [What are Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/?view=o365-worldwide).
 
 ## Access levels
 

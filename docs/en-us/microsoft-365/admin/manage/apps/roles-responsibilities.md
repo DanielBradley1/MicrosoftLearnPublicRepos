@@ -86,7 +86,7 @@ To learn how to give someone a role, see [Assign admin roles in the Microsoft 36
 
 ## Related content
 
-- [Copilot Managed Runtime overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/?view=o365-worldwide)
+- [Copilot Managed Runtime overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide)
 - [Review and customize default settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide)
 - [Monitor operational health](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/visibility-monitoring?view=o365-worldwide)
 - [Manage security and compliance](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/security-compliance?view=o365-worldwide)

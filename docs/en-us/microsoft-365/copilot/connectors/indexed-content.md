@@ -54,6 +54,7 @@ To search for indexed content, enter the unique identifier of the item in the in
 | GitHub Server Issues | Issue URL | Found in the URL. For example, in `https://github.com/organization/project/issues/123`, use the complete issue URL. |
 | GitHub Server Pull Requests | Pull request URL | Found in the URL. For example, in `https://github.com/organization/project/pull/456`, use the complete pull request URL. |
 | GitHub Server Knowledge | Knowledge URL | Found in the URL. For example, use the complete URL `https://github.contoso.com/organization/project/blob/main/docs/README.md.` |
+| Zoom | Meeting UUID | Use the UUID of the specific meeting instance, not the meeting ID. For information on finding the UUID, see [Zoom Meeting API querying tips](https://developers.zoom.us/blog/meeting-api-querying-tips-part1/). |
 
 ## Examples
 

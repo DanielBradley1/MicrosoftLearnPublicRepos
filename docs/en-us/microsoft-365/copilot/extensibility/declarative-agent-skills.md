@@ -7,8 +7,6 @@ Important
 
 In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers), admins can deploy declarative agents with skills, but end users can't add skills to declarative agents they create.
 
-Support for independent software vendors \(ISVs\) to publish declarative agents with skills through Partner Center isn't available yet and is coming soon. ISVs shouldn't submit declarative agent packages that include skills to Partner Center.
-
 A *skill* is a modular capability that you add to a declarative agent to help it accomplish a specific task more reliably and repeatably. A skill is a file directory that contains a required `SKILL.md` file, plus optional resource files and scripts. The `SKILL.md` file holds the instructions that direct the model to complete the task.
 
 Skills are a distinct component of a declarative agent. In earlier guidance, the word *skills* referred to task descriptions that you wrote inline within an agent's instructions. Skills replace that approach: instead of writing task detail directly in the instructions, you package it as a separate component that the agent references. For guidance on how instructions should reference skills, see [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions).

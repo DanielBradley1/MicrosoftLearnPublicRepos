@@ -19,6 +19,7 @@ Create a plugin from existing capabilities with Work IQ Dev Tools, or follow the
 
 - [Build or reuse capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
 - [Package and test](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin)
+- [Build a plugin with Work IQ Dev Tools \(GitHub\)](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/)
 - [Validate and test your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin)
 
 ## Publish and make plugins available
@@ -26,6 +27,7 @@ Create a plugin from existing capabilities with Work IQ Dev Tools, or follow the
 ### How-To Guide
 
 - [Publish or share](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
+- [Configure plugin CI/CD with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-ci-cd)
 - [Make available and govern](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins)
 
 ## Monitor, update, and retire plugins
