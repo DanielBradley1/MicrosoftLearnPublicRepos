@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/shared-connections?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-21 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/shared-connections?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Use shared connections in an app \(preview\)
 
@@ -29,7 +29,7 @@ The app accesses the data source by using the shared connection's credentials, n
 
 ## Prerequisites
 
-- An existing app set up for local development. See [Create an app with the Copilot Managed Runtime SDK](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/quickstart-managed-apps-cli?view=o365-worldwide).
+- An existing app set up for local development. See [Create an app with the Copilot Managed Runtime SDK](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide).
 - A connection you can use, or credentials to create one, with access to the data the app needs.
 - A connector and authentication type that support sharing.
 
@@ -43,7 +43,7 @@ Add your data source, choose what the app can do, then deploy and share the app.
 
 ### 1. Add your data source
 
-From the directory that contains your app, use the Copilot Managed Runtime CLI \(`ms`\) to add a data source with [`ms app add data-source`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-add-data-source). For example, to add a SQL table, run:
+From the directory that contains your app, use the Copilot Managed Runtime CLI \(`ms`\) to add a data source with [`ms app add data-source`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-add-data-source). For example, to add a SQL table, run:
 
 ```bash
 ms app add data-source --connector shared_sql --as table
@@ -51,7 +51,7 @@ ms app add data-source --connector shared_sql --as table
 
 Follow the prompts to choose or create a connection, then select your database and table. Choose an authentication type that supports sharing. The CLI automatically configures a shared connection when the selected connection supports it.
 
-For other connectors or for actions instead of tables, see [Connect an app to data](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/connect-to-data?view=o365-worldwide).
+For other connectors or for actions instead of tables, see [Connect an app to data](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/connect-to-data?view=o365-worldwide).
 
 ### 2. Set what the app can do
 
@@ -61,7 +61,7 @@ Choose either of the following options to set the allowed actions.
 
 #### Option 1: Use a coding agent
 
-Use a coding agent with the Copilot Managed Runtime plugin. If you didn't set up the plugin, see [Build an app with GitHub Copilot](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/quickstart-github-copilot?view=o365-worldwide).
+Use a coding agent with the Copilot Managed Runtime plugin. If you didn't set up the plugin, see [Build an app with GitHub Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide).
 
 Tell your coding agent what users should be able to do. For example:
 
@@ -99,7 +99,7 @@ To allow reading and updating, use `["get", "patch"]` instead.
 
 ##### For connector actions
 
-To list a connector's actions, use [`ms connector list-actions`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-connector-list-actions) from the directory that contains your app. Replace `<connector-id>` with the connector's ID, such as `shared_sql`:
+To list a connector's actions, use [`ms connector list-actions`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-connector-list-actions) from the directory that contains your app. Replace `<connector-id>` with the connector's ID, such as `shared_sql`:
 
 ```bash
 ms connector list-actions --connector <connector-id>
@@ -125,9 +125,9 @@ If your app uses both tables and actions on the same connection, include both ki
 
 ### 3. Deploy and share the app
 
-Run the app locally with [`ms app dev`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-dev). When it's ready, commit and push your changes, including `ms.config.json`, then [build and deploy the app](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/dev-inner-loop?view=o365-worldwide). Deployment checks that your shared connections have allowed actions configured.
+Run the app locally with [`ms app dev`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-dev). When it's ready, commit and push your changes, including `ms.config.json`, then [build and deploy the app](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide). Deployment checks that your shared connections have allowed actions configured.
 
-Next, [share the app](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/share-app?view=o365-worldwide) with the users who need it. Share the app, not the connection. Users don't need direct access to the underlying connection.
+Next, [share the app](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide) with the users who need it. Share the app, not the connection. Users don't need direct access to the underlying connection.
 
 Ask someone who doesn't own the connection to try the deployed app. Confirm that they can complete the intended tasks without creating their own connection to the shared data source.
 
@@ -144,7 +144,7 @@ When you add features later, update the allowed actions manually or with your ag
 
 ## Related content
 
-- [Connect an app to data](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/connect-to-data?view=o365-worldwide)
+- [Connect an app to data](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/connect-to-data?view=o365-worldwide)
 - [Connector reference catalog](https://learn.microsoft.com/en-us/connectors/connector-reference/)
 - [Shared connections and secure implicit connections in Power Apps](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/connections-list#shared-connections-and-secure-implicit-connections)
-- [Share an app](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/share-app?view=o365-worldwide)
+- [Share an app](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide)

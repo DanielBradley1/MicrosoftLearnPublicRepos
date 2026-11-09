@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/managed-runtime-security-governance?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-05 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/managed-runtime-security-governance?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Security and governance in the Copilot Managed Runtime \(preview\)
 
@@ -12,7 +12,7 @@ Regardless of where apps are created, including Copilot Cowork, Microsoft Copilo
 - **The managed host** provides the foundation for developers to build and run apps, enforcing authentication, data request boundaries, and governed access to business services.
 - **Administrative controls** let IT admins review and adapt the policies that control app sharing, data source availability, and permitted operations.
 
-This article explains how those protections work together and links to the guidance for reviewing or configuring each feature. For app creation options, see [What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/?view=o365-worldwide).
+This article explains how those protections work together and links to the guidance for reviewing or configuring each feature. For app creation options, see [What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide).
 
 Important
 
@@ -29,7 +29,7 @@ Knowing an app's address isn't enough to open it. The platform delivers app cont
 
 Users sign in with Microsoft Entra ID, Microsoft's identity service for organizational accounts, so developers don't need to configure a separate identity integration. By default, the app remains private to its owners until shared.
 
-For the host's authentication responsibilities, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/architecture?view=o365-worldwide). To grant or revoke app access, see [Share an app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/share-app?view=o365-worldwide).
+For the host's authentication responsibilities, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide). To grant or revoke app access, see [Share an app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide).
 
 ### App code runs within enforced boundaries
 
@@ -46,7 +46,7 @@ These controls apply to different communication paths.
 
 Browser requests are subject to CSP, while connector requests pass through the platform's authentication, authorization, and connector policy checks. Allowing a connector doesn't require adding the connected service's address to the app's CSP allow list.
 
-For more information, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/architecture?view=o365-worldwide) and [How CSP applies to apps](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/content-security-policy?view=o365-worldwide#how-csp-applies-to-copilot-managed-runtime-apps).
+For more information, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide) and [How CSP applies to apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide#how-csp-applies-to-copilot-managed-runtime-apps).
 
 ### Content Security Policy governs browser activity
 
@@ -61,17 +61,17 @@ The default policy restricts several types of browser activity:
 
 These restrictions apply to the entire app, including bundled third-party packages. If a package attempts to send information directly to an external endpoint that CSP doesn't allow, the browser blocks that request.
 
-Together, the sandbox and browser-enforced policy reduce what malicious code can do at runtime. Administrators can configure the applicable CSP settings when a business scenario requires additional capabilities, as detailed in the [Administrative controls for your organization](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/managed-runtime-security-governance?view=o365-worldwide#administrative-controls-for-your-organization) section. These protections don't replace reviewing app code and dependencies.
+Together, the sandbox and browser-enforced policy reduce what malicious code can do at runtime. Administrators can configure the applicable CSP settings when a business scenario requires additional capabilities, as detailed in the [Administrative controls for your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/managed-runtime-security-governance?view=o365-worldwide#administrative-controls-for-your-organization) section. These protections don't replace reviewing app code and dependencies.
 
-For the default directives, see [Content security policy](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#content-security-policy). For developer troubleshooting, see [Identify a CSP violation](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/content-security-policy?view=o365-worldwide#identify-a-csp-violation).
+For the default directives, see [Content security policy](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#content-security-policy). For developer troubleshooting, see [Identify a CSP violation](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide#identify-a-csp-violation).
 
 ### Connector policies govern access to business services
 
 Apps use Microsoft connectors to work with business services without requiring developers to build each integration from scratch. Each connector exposes actions, such as retrieving records or performing an operation in the connected service.
 
-By default, end users consent to connection creation, and the app uses each user's own connection to retrieve data according to their permissions in the connected service. For more information, see [End-user connection consent](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/connect-to-data?view=o365-worldwide#end-user-connection-consent).
+By default, end users consent to connection creation, and the app uses each user's own connection to retrieve data according to their permissions in the connected service. For more information, see [End-user connection consent](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/connect-to-data?view=o365-worldwide#end-user-connection-consent).
 
-A maker can intentionally configure a supported shared connection instead. The app then uses the shared connection's credentials rather than each user's own connection. A platform-enforced connection proxy restricts requests to the actions configured for the app. Users don't receive a connection they can reuse in other apps. For configuration and security considerations, see [Use shared connections in an app](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/shared-connections?view=o365-worldwide).
+A maker can intentionally configure a supported shared connection instead. The app then uses the shared connection's credentials rather than each user's own connection. A platform-enforced connection proxy restricts requests to the actions configured for the app. Users don't receive a connection they can reuse in other apps. For configuration and security considerations, see [Use shared connections in an app](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/shared-connections?view=o365-worldwide).
 
 Connector requests pass through the SDK and managed host, where authentication and governance are applied centrally. Administrators govern this access through advanced connector policies \(ACP\), which determine both which connectors an app can use and which actions it can perform. Approving a connector does not automatically permit every action it offers.
 
@@ -92,11 +92,11 @@ By default, the platform stores apps in platform-managed Git repositories, so th
 
 Each of these builds is associated with a source Git commit, so teams can trace deployed code back to its source and investigate changes over time. Publishing is an explicit deployment step, so teams can continue development without changing the live app and deploy an earlier successful commit when needed. Together, build isolation and deployment traceability help teams control both how app code is built and which version reaches users.
 
-For information about source control, preview, and deployment behavior, see [Build, preview, and deploy apps](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/dev-inner-loop?view=o365-worldwide).
+For information about source control, preview, and deployment behavior, see [Build, preview, and deploy apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide).
 
 Important
 
-Developers can also use a supported external GitHub repository. The build protections and deployment behavior described in this section apply to apps that use platform-managed repositories, not external GitHub repositories. For an example of building and deploying apps through an external pipeline, see [Deploy apps with GitHub Actions](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/deploy-managed-apps-github-actions?view=o365-worldwide).
+Developers can also use a supported external GitHub repository. The build protections and deployment behavior described in this section apply to apps that use platform-managed repositories, not external GitHub repositories. For an example of building and deploying apps through an external pipeline, see [Deploy apps with GitHub Actions](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/deploy-managed-apps-github-actions?view=o365-worldwide).
 
 Administrators can separately allow externally built artifacts. These artifacts bypass the Microsoft-managed build system, so your organization is responsible for validating them and securing their build pipeline. For this control, see [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
 
@@ -126,7 +126,7 @@ Important
 
 Organization-only links can include guest users when guest sharing is allowed because guests are part of the organization's directory. "Organization-only" doesn't mean "employees only" in the case of guests.
 
-For administrative controls, see [Sharing settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#sharing). For commands to grant and revoke access, see [Share an app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/apps/share-app?view=o365-worldwide#grant-access-to-users-or-groups).
+For administrative controls, see [Sharing settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#sharing). For commands to grant and revoke access, see [Share an app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide#grant-access-to-users-or-groups).
 
 ### Configure CSP for approved browser activity
 

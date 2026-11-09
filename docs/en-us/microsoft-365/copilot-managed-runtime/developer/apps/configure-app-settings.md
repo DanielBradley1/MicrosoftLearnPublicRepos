@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/configure-app-settings?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/configure-app-settings?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Configure app settings \(preview\)
 
@@ -15,7 +15,7 @@ The following app setting is currently available:
 
 ## View app settings
 
-To view all app settings and their effective values, use [`ms app get-settings`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-get-settings):
+To view all app settings and their effective values, use [`ms app get-settings`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-get-settings):
 
 ```console
 ms app get-settings
@@ -48,7 +48,7 @@ The command returns:
 
 ## Configure an app setting
 
-Use [`ms app set-setting`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-set-setting) with the setting flag and a value. Boolean values must be `true` or `false`.
+Use [`ms app set-setting`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-set-setting) with the setting flag and a value. Boolean values must be `true` or `false`.
 
 For example, to hide the app header bar, run:
 
@@ -72,4 +72,4 @@ The resulting configuration includes the following setting:
 }
 ```
 
-Configured settings take effect the next time you run [`ms app dev`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-dev) or [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy).
+Configured settings take effect the next time you run [`ms app dev`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-dev) or [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy).

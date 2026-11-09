@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Copilot Managed Runtime CLI command reference \(preview\)
 
@@ -213,7 +213,7 @@ ms app create --display-name <name> [directory] [options]
 Note
 
 - For `--repo <url>`, the CLI clones the external GitHub repository into the directory and overlays the template. The repo must exist and be empty.
-- For `--repo none`, the CLI scaffolds the template and writes `ms.config.json` but doesn't initialize a local Git repo or bind a remote. This creates an app for external artifact deployment that you build and deploy yourself. For an example, see [Deploy Microsoft Copilot Managed Runtime apps with GitHub Actions](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/deploy-managed-apps-github-actions?view=o365-worldwide).
+- For `--repo none`, the CLI scaffolds the template and writes `ms.config.json` but doesn't initialize a local Git repo or bind a remote. This creates an app for external artifact deployment that you build and deploy yourself. For an example, see [Deploy Microsoft Copilot Managed Runtime apps with GitHub Actions](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/deploy-managed-apps-github-actions?view=o365-worldwide).
 - If the GitHub mapping is missing or expired, `ms app create` runs the Device Code Flow in-band and retries once.
 
 ---
@@ -490,7 +490,7 @@ Note
 | `--open-browser` |  | No | Best-effort launch the system browser if Device Code Flow re-authentication is needed. Has no effect with `--json`. |
 | `--force-reauth` |  | No | Bypass the stored GitHub mapping and force Device Code Flow. Only affects apps bound to an external GitHub repository. |
 
-`ms app deploy --artifact <path>` uploads and deploys the artifact without a platform-managed build. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
+`ms app deploy --artifact <path>` uploads and deploys the artifact without a platform-managed build. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
 
 Your organization is responsible for validating externally built artifacts and securing the build pipeline before deployment.
 
@@ -694,7 +694,7 @@ Shows all app settings and their current values.
 ms app get-settings
 ```
 
-[Learn how to view app settings](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/configure-app-settings?view=o365-worldwide#view-app-settings)
+[Learn how to view app settings](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/configure-app-settings?view=o365-worldwide#view-app-settings)
 
 ---
 
@@ -715,7 +715,7 @@ Pass settings as named flags. Only the keys you specify are updated.
 | `--show-header <bool>` |  | No | Show or hide the app header bar. |
 | `[other-settings...]` |  | No | One or more named setting flags to update. Only provided keys are changed. |
 
-[Learn how to configure an app setting](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/configure-app-settings?view=o365-worldwide#configure-an-app-setting)
+[Learn how to configure an app setting](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/configure-app-settings?view=o365-worldwide#configure-an-app-setting)
 
 ---
 

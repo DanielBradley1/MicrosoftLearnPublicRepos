@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Microsoft Copilot Managed Runtime SDK overview \(preview\)
 
@@ -112,6 +112,6 @@ Check the **Closed** tab in **Issues** to see how other customers solved problem
 
 ## Next steps
 
-[Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/quickstart-github-copilot?view=o365-worldwide)
+[Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide)
 
-[Quickstart: Create an app with the Copilot Managed Runtime SDK \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/quickstart-managed-apps-cli?view=o365-worldwide)
+[Quickstart: Create an app with the Copilot Managed Runtime SDK \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide)

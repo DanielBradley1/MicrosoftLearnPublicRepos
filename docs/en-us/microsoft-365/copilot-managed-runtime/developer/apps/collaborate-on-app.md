@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/collaborate-on-app?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/collaborate-on-app?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Collaborate on an app \(preview\)
 
@@ -14,7 +14,7 @@ Before you begin, make sure you have:
 - The Copilot Managed Runtime CLI and [Node.js](https://nodejs.org/) installed.
 - [Git](https://git-scm.com/downloads) installed with Git Credential Manager configured.
 - Access to the tenant that contains the app.
-- Edit access to the app. The app owner must grant this access before you can find and clone the app. For more information, see [Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/share-app?view=o365-worldwide).
+- Edit access to the app. The app owner must grant this access before you can find and clone the app. For more information, see [Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide).
 
 Sign in to the Copilot Managed Runtime CLI:
 
@@ -38,7 +38,7 @@ If the app doesn't appear, verify that you're signed in with the account that re
 
 ## Clone the app
 
-Use [`ms app clone`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-clone) with the app ID to clone the app's platform-managed Git repository:
+Use [`ms app clone`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-clone) with the app ID to clone the app's platform-managed Git repository:
 
 ```bash
 ms app clone --app <app-id> [directory]
@@ -80,11 +80,11 @@ git commit -m "Describe the change"
 git push
 ```
 
-The pushed commit updates the app's source repository. It doesn't update the live app. To build, preview, and deploy the changes, see [Build, preview, and deploy Microsoft Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/dev-inner-loop?view=o365-worldwide).
+The pushed commit updates the app's source repository. It doesn't update the live app. To build, preview, and deploy the changes, see [Build, preview, and deploy Microsoft Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide).
 
 ## Related information
 
-- [Build, preview, and deploy Microsoft Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/dev-inner-loop?view=o365-worldwide)
-- [Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/share-app?view=o365-worldwide)
-- [Copilot Managed Runtime architecture \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/architecture?view=o365-worldwide)
-- [Copilot Managed Runtime CLI command reference \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide)
+- [Build, preview, and deploy Microsoft Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide)
+- [Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide)
+- [Copilot Managed Runtime architecture \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide)
+- [Copilot Managed Runtime CLI command reference \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide)

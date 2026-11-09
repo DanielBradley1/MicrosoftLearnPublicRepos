@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/monitor-apps?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/monitor-apps?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Monitor apps \(preview\)
 
@@ -58,7 +58,7 @@ The app captures telemetry only after it loads successfully. Startup failures, s
    });
    ```
 
-5. If Content Security Policy \(CSP\) is enforced in your environment, the default policy blocks telemetry from reaching Application Insights, because `connect-src` allows only your app's own origin. Have an administrator add the Application Insights ingestion origins to `connect-src`. See [Configure Content Security Policy \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/content-security-policy?view=o365-worldwide) to identify the blocked origins and update the directive.
+5. If Content Security Policy \(CSP\) is enforced in your environment, the default policy blocks telemetry from reaching Application Insights, because `connect-src` allows only your app's own origin. Have an administrator add the Application Insights ingestion origins to `connect-src`. See [Configure Content Security Policy \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide) to identify the blocked origins and update the directive.
 
 ### View the data
 
@@ -74,13 +74,13 @@ Beyond per-app telemetry, administrators can see every app in the tenant in the 
 
 These experiences require no setup from the developer. Apps automatically appear in the centralized inventory and monitoring.
 
-[Learn how to add alerts for your apps](https://learn.microsoft.com/en-us/admin/manage/apps/visibility-monitoring?view=o365-worldwide#create-alerts-for-your-apps)
+[Learn how to add alerts for your apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/visibility-monitoring?view=o365-worldwide#create-alerts-for-your-apps)
 
 ## CLI telemetry
 
 The `ms` CLI sends anonymized telemetry by default to help improve the product. It captures usage and diagnostic signals, such as which commands run, whether they succeed, and performance and error data. It doesn't collect your source code or your app's data.
 
-Use the [`ms telemetry` commands](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#telemetry) to control collection.
+Use the [`ms telemetry` commands](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#telemetry) to control collection.
 
 Check the current setting:
 
@@ -100,7 +100,7 @@ Turn it back on:
 ms telemetry enable
 ```
 
-Both [`enable`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-telemetry-enable) and [`disable`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-telemetry-disable) accept two flags that select what they apply to:
+Both [`enable`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-telemetry-enable) and [`disable`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-telemetry-disable) accept two flags that select what they apply to:
 
 - `--remote`: Controls sending telemetry to the service. This flag is the default when no flag is given.
 - `--console`: Controls printing telemetry events to your local console, which is useful for seeing exactly what the CLI would emit.
@@ -109,7 +109,7 @@ Pass both flags to toggle both targets at once.
 
 ### Build and deploy telemetry
 
-Every build the platform runs produces a record you can inspect from the CLI. Use [`ms app build-status`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-build-status) to check the status and outcome of a build:
+Every build the platform runs produces a record you can inspect from the CLI. Use [`ms app build-status`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-build-status) to check the status and outcome of a build:
 
 ```bash
 ms app build-status --app <name> --commit <sha>

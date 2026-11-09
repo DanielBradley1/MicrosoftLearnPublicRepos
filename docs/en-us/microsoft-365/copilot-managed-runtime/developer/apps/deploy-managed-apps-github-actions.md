@@ -1,9 +1,9 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/deploy-managed-apps-github-actions?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/deploy-managed-apps-github-actions?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Deploy Microsoft Copilot Managed Runtime apps with GitHub Actions
 
-You can deploy [Copilot Managed Runtime apps](https://learn.microsoft.com/en-us/microsoft-365/?view=o365-worldwide) with GitHub Actions without going through the platform-managed build pipeline. Build each app with your own toolchain and deploy the external artifact directly through the Microsoft Copilot Managed Runtime CLI \(`ms`\).
+You can deploy [Copilot Managed Runtime apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide) with GitHub Actions without going through the platform-managed build pipeline. Build each app with your own toolchain and deploy the external artifact directly through the Microsoft Copilot Managed Runtime CLI \(`ms`\).
 
 Three GitHub Actions in the [`microsoft/Managed-Apps`](https://github.com/microsoft/Managed-Apps) repository \(under the `github-actions/` path\) do the work:
 
@@ -21,10 +21,10 @@ External artifact deployment is for apps that don't use the default platform-man
 
 Before you deploy an app from GitHub Actions:
 
-1. Create an **app with `"repoType": "none"`**. Run [`ms app create`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-create) `--repo none` locally to create the app and generate its `ms.config.json` \(stamped with `"repoType": "none"`\). This step needs the **`@microsoft/managed-apps-cli`** version `0.7.0` or later installed locally; the workflow installs the CLI on the runner for you.
+1. Create an **app with `"repoType": "none"`**. Run [`ms app create`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-create) `--repo none` locally to create the app and generate its `ms.config.json` \(stamped with `"repoType": "none"`\). This step needs the **`@microsoft/managed-apps-cli`** version `0.7.0` or later installed locally; the workflow installs the CLI on the runner for you.
 2. Use a **GitHub repository** that contains your app source \(including `ms.config.json`\) and the workflow file. You need permission to manage the repository's Actions secrets.
 3. Configure a **service principal** with permission on the app's environment. You create one in [Step 1](#step-1-create-and-configure-the-service-principal).
-4. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
+4. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
 
 Important
 
@@ -229,7 +229,7 @@ The action outputs `app-id`, `environment-id`, `commit-sha`, and `app-play-uri` 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
 | The action reports that it isn't signed in. | The action didn't receive all three service principal inputs. | Pass `app-id`, `client-secret`, and `tenant-id` to both `ms-app-pack` and `ms-app-deploy`. |
-| `External artifact deployment is disabled for this environment` | External artifact deployment isn't enabled. | See [External artifact deployment](https://learn.microsoft.com/en-us/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment). |
+| `External artifact deployment is disabled for this environment` | External artifact deployment isn't enabled. | See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment). |
 | `Forbidden — 'Repositories.MicrosoftApps.Deploy.Write'` \(Dataverse environment\) | The service principal is missing the required Dataverse roles. | Assign both the **System Administrator** and **System Customizer** roles to the application user. |
 | `400 Principal not found` \(non-Dataverse environment\) | You used the app registration's object ID instead of the service principal's object ID. | Use the object ID from **Enterprise applications**, not from **App registrations**. |
 | `ms.config.json not found in working-directory` | `working-directory` doesn't point to the directory that contains `ms.config.json`. | Set `working-directory` to that path. The `paths:` filter, `npm install` step, and the actions must all use the same path. |
@@ -237,7 +237,7 @@ The action outputs `app-id`, `environment-id`, `commit-sha`, and `app-play-uri` 
 
 ## Related content
 
-- [Copilot Managed Runtime CLI command reference \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide)
+- [Copilot Managed Runtime CLI command reference \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide)
 - [`microsoft/Managed-Apps` repository](https://github.com/microsoft/Managed-Apps)
 - [Get started with the Power Platform API](https://learn.microsoft.com/en-us/power-platform/admin/powerplatform-api-getting-started)
 - [Power Platform for Admins connector reference](https://learn.microsoft.com/en-us/connectors/powerplatformforadmins/)

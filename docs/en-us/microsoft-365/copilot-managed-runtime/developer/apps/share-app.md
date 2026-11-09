@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/share-app?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)
 
@@ -9,7 +9,7 @@ A Copilot Managed Runtime app is private to its owners until you share it. You c
 
 Run the sharing commands from the directory that contains your app. Each command acts on that app automatically.
 
-When a user has access, they can find and launch the app from the app portal at [https://managedapps.cloud.microsoft/](https://managedapps.cloud.microsoft/). For the end-user experience, see [What are Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/?view=o365-worldwide).
+When a user has access, they can find and launch the app from the app portal at [https://managedapps.cloud.microsoft/](https://managedapps.cloud.microsoft/). For the end-user experience, see [What are Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide).
 
 ## Access levels
 
@@ -24,7 +24,7 @@ The two levels are independent, and granting or revoking one doesn't affect the 
 
 ## Grant access to users or groups
 
-Use [`ms app share`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-share) with a comma-separated list of email addresses or Microsoft Entra object IDs:
+Use [`ms app share`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-share) with a comma-separated list of email addresses or Microsoft Entra object IDs:
 
 ```bash
 ms app share <principals> [--access play | edit]
@@ -46,7 +46,7 @@ The CLI automatically looks up email addresses. It reports any entry it can't re
 
 ## Revoke access
 
-Use [`ms app unshare`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-unshare) to remove access:
+Use [`ms app unshare`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-unshare) to remove access:
 
 ```bash
 ms app unshare <principals> [--access play | edit]
@@ -66,7 +66,7 @@ A share link is a *People in your organization* link you can hand out instead of
 
 ### Create a link
 
-Use [`ms app share link create`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-share-link-create) to generate a *People in your organization* share link for the current app:
+Use [`ms app share link create`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-share-link-create) to generate a *People in your organization* share link for the current app:
 
 ```bash
 ms app share link create
@@ -76,7 +76,7 @@ The command returns a short link ID, the share URL, and the access it grants. Di
 
 ### List existing links
 
-Use [`ms app share link list`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-share-link-list) to view all active share links for the current app:
+Use [`ms app share link list`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-share-link-list) to view all active share links for the current app:
 
 ```bash
 ms app share link list
@@ -84,7 +84,7 @@ ms app share link list
 
 ### Revoke a link
 
-Use [`ms app share link revoke`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-share-link-revoke) to remove the access of everyone who redeemed a link, and then delete the link:
+Use [`ms app share link revoke`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-share-link-revoke) to remove the access of everyone who redeemed a link, and then delete the link:
 
 ```bash
 ms app share link revoke --link-id <id>

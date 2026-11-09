@@ -1,5 +1,5 @@
-<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/quickstart-github-copilot?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot \(preview\)
 
@@ -105,7 +105,7 @@ When the preview looks right, ask the agent to deploy:
 deploy app
 ```
 
-The agent runs [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/managed-apps/developer/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy) and returns the live URL. Your app is now running for users as an app, governed by Entra ID, Conditional Access, and DLP, with telemetry and operational health flowing into the admin center.
+The agent runs [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy) and returns the live URL. Your app is now running for users as an app, governed by Entra ID, Conditional Access, and DLP, with telemetry and operational health flowing into the admin center.
 
 ## Share the app
 
