@@ -89,7 +89,7 @@ You can create an alert for a specific app from either the **Monitor** page or t
 11. In the **Notification type** list, select one of the following options:
 
     - **None**: No email is sent. Return to the Monitor area to check the alert status.
-    - **Email**: All Global and Power Platform admins receive an email when the alert triggers. The email comes from **microsoft-noreply@microsoft.com**.
+    - **Email**: You can specify up to 5 users \(including security groups\) to receive an email when the alert triggers. The email comes from **microsoft-noreply@microsoft.com** for alerts with a 24 hour review period and **azure-noreply@microsoft** for alerts with a 1 hour review period.
 
 12. Select **Save**.
 
@@ -104,9 +104,9 @@ You can create an alert for a specific app from either the **Monitor** page or t
 
 ### When an alert triggers
 
-If you select to receive email notifications when any app triggers an alert, Global and Power Platform admins get an email notification.
+If you select to receive email notifications when any app triggers an alert, the user and/or groups you specified under the email notification option will get an email when the alert fires.
 
-In the **Monitor** experience, the **Triggered alerts** tab shows you a list of all the alerts in your tenant that have triggered. The **Last triggered** column updates to the latest time that the alert triggered. Clicking into a triggered alert shows you information about the alert rule configuration and what app triggered that alert. If an alert configured with a data review period of 1-hour hasn't triggered for more than 24 hours, the triggered alert disappears from the *Triggered alerts* list. If an alert was configured with a data review period of 24-hours and hasn't triggered for more than 48 hours, the triggered alert disappears from the list.
+In the **Monitor** experience, the **Triggered alerts** tab shows you a list of all the alerts in your tenant that triggered. The **Last triggered** column updates to the latest time that the alert triggered. Selecting a triggered alert shows you information about the alert rule configuration and what app triggered that alert. If an alert configured with a data review period of 1 hour didn't trigger for more than 24 hours, the triggered alert disappears from the *Triggered alerts* list. If an alert was configured with a data review period of 24 hours and didn't trigger for more than 48 hours, the triggered alert disappears from the list.
 
 ### How to manage alert rules
 
@@ -119,9 +119,9 @@ Follow these best practices:
 - **Start small**: Create a few high-value rules first, such as performance-open times, error rates, and usage spikes.
 - **Name consistently**: Use clear names like **Prod – Copilot Managed Runtime – Availability < 90**.
 - **Set appropriate severity**: Use **High** for production-impacting metrics and **Medium** or **Low** for trend monitoring.
-- **Manage the 5-rule limit**: Delete obsolete rules.
+- **Manage the 10-rule limit**: Delete obsolete rules.
 - **Choose data review period wisely**: Use the 1-hour option for mission-critical applications where you need to know as soon as possible when operational health degrades. Notifications for these alerts are sent out much more frequently compared to the 24-hour option.
-- **Validate email routing**: Ensure recipients can receive emails from azure-noreply@microsoft.com.
+- **Validate email routing**: Ensure recipients can receive emails from **azure-noreply@microsoft.com** and **microsoft-noreply@microsoft.com**.
 
 ## FAQs
 
@@ -150,7 +150,7 @@ Time-based metrics report out the 75th percentile.
 
 ### How many alert rules can I turn on at one time?
 
-A tenant can have up to 5 alert rules at a time \(including both active and disabled rules\). This limit encourages a focused set of high-value alerts. Over time, review and retire alert rules as underlying issues are resolved. If you reach this limit, consider cleaning up or consolidating existing rules.
+A tenant can have up to 10 alert rules at a time \(including both active and disabled rules\). This limit encourages a focused set of high-value alerts. Over time, review and retire alert rules as underlying issues are resolved. If you reach this limit, consider cleaning up or consolidating existing rules.
 
 ### What's the difference between an alert rule and a triggered alert?
 
@@ -164,7 +164,27 @@ You must be a Global admin or Power Platform admin to create and manage alerts.
 
 ### Does the severity level affect how alerts are processed?
 
-The **Severity**, such as **Low**, **Medium**, or **High** is a classification label for triage and reporting. It doesn't change evaluation frequency or email notification behavior.
+The **Severity**, such as **Low**, **Medium**, or **High**, is a classification label for triage and reporting. It doesn't change evaluation frequency or email notification behavior.
+
+### I created an hourly alert rule, why can't I see any data or alert triggering right after?
+
+The first check runs after the first full hour, once there is at least one data point.
+
+### Why are there gaps in the hourly chart?
+
+An hour with no activity has no data point
+
+### Will I get an email every hour while the problem lasts?
+
+You'll get an email as soon as a low-latency alert fires, then a reminder every 4 hours while the issue continues. Reminders stop when the issue resolves or after 7 days, whichever comes first. If the issue comes back after it resolves, you'll get a new notification.
+
+### Can I see more the 24 hour, or export hourly data?
+
+No, the hourly chart covers the last 24 hours only and Monitor's data export feature only covers daily metric aggregates.
+
+### Can hourly alerts be opted into the 'When an alert fires' trigger on the Power Platform for Admins V2 Connector?
+
+At the moment, no, only alerts that have a 24-hour data review period can be opted in. Learn more: [Route alert notifications to any connector backed destination \(preview\)](https://learn.microsoft.com/en-us/power-platform/admin/monitoring/alerts#route-alert-notifications-to-any-connector-backed-destination-preview)
 
 ## Related content
 
