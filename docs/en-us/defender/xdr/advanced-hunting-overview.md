@@ -3,7 +3,7 @@
 
 # Proactively hunt for threats with advanced hunting in Microsoft Defender
 
-Advanced hunting is a query-based threat hunting tool that you use to explore up to 30 days of raw Defender XDR data. When you onboard a Microsoft Sentinel workspace, you can also query analytics-tier data according to the retention configured for the workspace. You can proactively inspect events in your network to locate threat indicators and entities. The flexible access to data enables unconstrained hunting for both known and potential threats.
+Advanced hunting is a query-based threat hunting tool that you use to explore up to 30 days of raw Defender data. When you onboard a Microsoft Sentinel workspace, you can also query analytics-tier data according to the retention configured for the workspace. You can proactively inspect events in your network to locate threat indicators and entities. The flexible access to data enables unconstrained hunting for both known and potential threats.
 
 Advanced hunting supports two modes: guided and advanced. Use [guided mode](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-query-builder) if you're not yet familiar with Kusto Query Language \(KQL\) or if you prefer the convenience of a query builder. Use [advanced mode](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-query-language) if you're comfortable using KQL to create queries from scratch.
 
@@ -21,7 +21,7 @@ Advanced hunting supports queries that check a broader data set coming from:
 - Microsoft Defender for Identity
 - Microsoft Sentinel
 
-To use advanced hunting, [turn on Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/m365d-enable). To use advanced hunting with Microsoft Sentinel, [connect Microsoft Sentinel to the Defender portal](https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-onboard).
+To use advanced hunting, [turn on Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/m365d-enable). To use advanced hunting with Microsoft Sentinel, [connect Microsoft Sentinel to the Defender portal](https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-onboard).
 
 For more information on advanced hunting in Microsoft Defender for Cloud Apps data, see [Advanced hunting in Defender for Cloud Apps \(video\)](https://learn-video.azurefd.net/vod/player?id=ffdedc73-6edf-45a9-8c90-566296e8d4ec).
 
@@ -29,7 +29,7 @@ For more information on advanced hunting in Microsoft Defender for Cloud Apps da
 
 You need to be assigned permissions before you can run advanced hunting queries. You have the following options:
 
-- [Microsoft Defender XDR Unified role based access control \(URBAC\)](https://learn.microsoft.com/en-us/defender-xdr/manage-rbac):
+- [Microsoft Defender unified role-based access control \(URBAC\)](https://learn.microsoft.com/en-us/defender-xdr/manage-rbac):
 
   - **Advanced Hunting access \(Email & Collaboration tables\)**: Membership assigned with the **Security operations** > **Raw data** > **Email & collaboration metadata \(read\)** URBAC permission. This permission provides access to:
 
@@ -92,7 +92,7 @@ The following table describes the available quotas and usage parameters.
 
 | Quota or parameter | Size | Refresh cycle | Description |
 | --- | --- | --- | --- |
-| Date range | 30 days for native Defender XDR data. Microsoft Sentinel table retention depends on the configured analytics-tier retention. | Every query | Each query can look up native Defender XDR data from up to the past 30 days. When you onboard a Microsoft Sentinel workspace, the available date range for its tables depends on the configured analytics-tier retention. |
+| Date range | 30 days for native Defender data. Microsoft Sentinel table retention depends on the configured analytics-tier retention. | Every query | Each query can look up native Defender data from up to the past 30 days. When you onboard a Microsoft Sentinel workspace, the available date range for its tables depends on the configured analytics-tier retention. |
 | Result set | 100,000 rows | Every query | Each query can return up to 100,000 records. |
 | Timeout | 10 minutes | Every query | Each query can run for up to 10 minutes. If it doesn't complete within 10 minutes, the service displays an error. |
 | CPU resources | Based on tenant size | Every 15 minutes | The portal displays a warning whenever a query runs and the tenant consumes over 10% of allocated resources. [Queries are blocked](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-errors) if the tenant reaches 100% until after the next 15-minute cycle. |
@@ -122,9 +122,9 @@ Microsoft Defender converts advanced hunting results to the [timezone](https://l
 
 ## Extend data retention
 
-To retain supported Defender XDR hunting tables for more than 30 days, onboard a Microsoft Sentinel workspace and configure the tables' analytics-tier retention. For more information, see [Configure table settings in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/manage-table-tiers-retention).
+To retain supported Defender hunting tables for more than 30 days, onboard a Microsoft Sentinel workspace and configure the tables' analytics-tier retention. For more information, see [Configure table settings in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/manage-table-tiers-retention).
 
-You can also stream Defender XDR data to external services for longer retention. For more information, see:
+You can also stream Defender data to external services for longer retention. For more information, see:
 
 - Microsoft Defender [Streaming API](https://learn.microsoft.com/en-us/defender-xdr/streaming-api)
 - Microsoft Defender for Endpoint [Raw Data Streaming API](https://learn.microsoft.com/en-us/defender-endpoint/api/raw-data-export)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/custom-permissions-details -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-09 -->
 
 # Permissions in Microsoft Defender unified role-based access control \(RBAC\)
 
@@ -23,6 +23,17 @@ Permissions for managing day-to-day operations and responding to incidents and a
 | File collection | Manage | Collect or download relevant files for analysis, including executable files. |
 | Email & collaboration quarantine | Manage | View and release email from quarantine. |
 | Email & collaboration advanced actions | Manage | Move or Delete email to the junk email folder, deleted items or inbox, including soft and hard delete of email. |
+| Automation rules | Read | View automation rules and their configuration. |
+| Automation rules | Manage | Create, edit, enable, disable, and delete automation rules. |
+| Playbooks | Read | View playbooks and their configuration. |
+| Playbooks | Manage | Create, edit, and delete playbooks. Also authorizes testing and manually running playbooks in the supported automation experiences. |
+| Integrations | Read | View automation integrations and their connections. |
+| Integrations | Manage | Create, edit, and delete automation integrations. |
+| Execute query actions | Manage | Execute read-only actions that retrieve information without changing state, such as retrieving a user, listing devices, searching alerts, or checking status. |
+| Execute soft actions | Manage | Execute actions that change operational or workflow state without directly changing security, access, or enforcement state, such as sending a notification, adding a comment, or updating a case. Includes query actions. |
+| Execute hard actions | Manage | Execute actions that change security posture, identity, access, credentials, sessions, containment, or enforcement, or whose downstream impact can't be reliably bounded. Examples include disabling a user, isolating a device, resetting a password, and running a playbook. Includes the **Execute soft actions** and **Execute query actions** permissions. |
+| Approve soft actions | Manage | Approve requests for soft actions. Also authorizes approving query actions when approval is required. |
+| Approve hard actions | Manage | Approve requests for hard, soft, and query actions when approval is required. Includes the **Approve soft actions** permission. |
 
 ## Security operations – Raw data \(Email & collaboration\)
 

@@ -1,16 +1,16 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions -->
 <!-- Sitemap-Last-Modified: 2026-10-12 -->
 
-# Remediation actions in Microsoft Defender for Identity
+# Identity remediation actions in Microsoft Defender
 
 Applies to:
 
 - Microsoft Defender for Identity
 - Microsoft Defender
 
-Microsoft Defender for Identity lets you respond to compromised users with remediation actions that work consistently across your connected identity sources. The actions available for an identity depend on the connector that manages the account, and they span on-premises Active Directory and Microsoft Entra ID, identity providers such as Okta, CyberArk Identity, and SailPoint Identity Security Cloud, and applications connected through Microsoft Defender for Cloud Apps such as Google Workspace, Salesforce, and Box.
+Microsoft Defender lets you respond to compromised identities with remediation actions that work consistently in your connected identity sources. The actions available for an identity depend on the connector that manages the account, and they span on-premises Active Directory and Microsoft Entra ID, identity providers such as Okta, CyberArk Identity, and SailPoint Identity Security Cloud, and applications connected through Microsoft Defender for Cloud Apps such as Google Workspace, Salesforce, and Box.
 
-The response actions on users are available directly from the identity page, the identity side panel, the advanced hunting page, or in the action center. After you take action on a user, you can review the activity details in the action center.
+Response actions are available directly from the identity page, the identity side panel, the advanced hunting page, or in the action center. After you take action on an identity, you can review the activity details in the action center.
 
 ## How remediation actions work
 
@@ -34,11 +34,11 @@ Remediation actions are recorded by the identity system where the action is exec
 
 ## Remediation actions in Automatic Attack Disruption
 
-Remediation actions can also be applied automatically by Microsoft Defender's automatic attack disruption. When an active attack is detected, attack disruption uses Defender for Identity remediation capabilities to contain the threat without manual intervention. For details, see [automatic attack disruption](https://learn.microsoft.com/en-us/defender-xdr/automatic-attack-disruption).
+Remediation actions can also be applied automatically by Microsoft Defender's automatic attack disruption. When an active attack is detected, attack disruption uses identity remediation capabilities to contain the threat without manual intervention. For details, see [automatic attack disruption](https://learn.microsoft.com/en-us/defender-xdr/automatic-attack-disruption).
 
 ## Supported actions
 
-The following Defender for Identity actions can be performed on Identities.
+The following identity remediation actions can be performed on Identities.
 
 Depending on your Microsoft Entra ID roles, you might see additional Microsoft Entra ID actions, such as requiring users to sign in again and confirming a user as compromised. For more information, see [Remediate risks and unblock users](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock).
 
@@ -52,7 +52,7 @@ Depending on your Microsoft Entra ID roles, you might see additional Microsoft E
 
 ## Roles and permissions
 
-The following table lists the remediation actions supported by Defender for Identity and the roles required to initiate each action.
+The following table lists the identity remediation actions supported by Defender and the roles required to initiate each action.
 
 | Remediation Action | Active Directory | Microsoft Entra ID | Okta, SailPoint, CyberArk | Supported SaaS apps |
 | --- | --- | --- | --- | --- |
@@ -71,7 +71,7 @@ There are some limitations for Microsoft Entra ID when performing certain action
 To perform any of the [supported actions](#supported-actions), you need to:
 
 - **Configure the account that Microsoft Defender for Identity uses to perform actions**: Make sure the **Automatically use the sensor's local system account** option is selected. In the [Microsoft Defender portal](https://security.microsoft.com), go to **Settings** > **Identities** > **Microsoft Defender for Identity** > **Manage action accounts**. This setting is required if any of your sensors are v3.x. For more information, see [Manage action accounts](https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts).
-- **Sign in to the Microsoft Defender portal with the required permissions**: For Defender for Identity actions, you'll need a custom role with **Response \(manage\)** permissions. For more information, see [Create custom roles with Microsoft Defender unified RBAC](https://learn.microsoft.com/en-us/microsoft-365/security/defender/create-custom-rbac-roles). For details on the specific roles required for each action, see [Roles and permissions](#roles-and-permissions).
+- **Sign in to the Microsoft Defender portal with the required permissions**: For identity remediation actions, you'll need a custom role with **Response \(manage\)** permissions. For more information, see [Create custom roles with Microsoft Defender unified RBAC](https://learn.microsoft.com/en-us/microsoft-365/security/defender/create-custom-rbac-roles). For details on the specific roles required for each action, see [Roles and permissions](#roles-and-permissions).
 
 To apply a remediation action to an identity, perform the following steps:
 

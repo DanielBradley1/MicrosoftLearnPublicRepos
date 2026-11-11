@@ -28,7 +28,7 @@ The Identity page is organized into a top section and a set of tabs. The top sec
 
 From the **Overview** page, use the **Actions** menu to trigger remediation actions on the identity. Actions apply to the accounts associated with the identity and depend on which connectors are enabled, spanning on-premises Active Directory, Microsoft Entra ID, identity and access management \(IAM\) systems, and SaaS apps. Available actions can include disabling or enabling accounts, revoking sessions, forcing a password change, and marking the user as compromised. You can also view the identity's account settings.
 
-For the full list of remediation actions and the identity providers and connected apps that support them, see [Remediation actions in Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions#supported-actions).
+For the full list of remediation actions and the identity providers and connected apps that support them, see [Identity remediation actions in Microsoft Defender](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions#supported-actions).
 
 [![Screenshot of the identity page with the identity actions menu showing.](https://learn.microsoft.com/en-us/defender-xdr/media/investigate-users/identity-actions.png)](https://learn.microsoft.com/en-us/defender-xdr/media/investigate-users/identity-actions.png#lightbox)
 
@@ -107,11 +107,11 @@ The **Risk score** tab summarizes the identity's risk level by combining alert a
 | **Risk Trend** | A line chart that shows how the risk score changed over a configurable time period \(for example, 30 days\). Select **Go to timeline** to view the full activity timeline. |
 | **Likelihood of Compromise Details** | A bar chart that shows alert distribution across MITRE ATT&CK categories, with a filterable alert table. Use the **Active alerts only** toggle to focus on unresolved alerts. Filter by account set, status, or kill chain stage. |
 
-The **Confirm safe** action now includes **Reset risk** for both the identity risk score and the Microsoft Entra risk level. For more information, see [Remediation actions in Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions#supported-actions).
+The **Confirm safe** action now includes **Reset risk** for both the identity risk score and the Microsoft Entra risk level. For more information, see [Identity remediation actions in Microsoft Defender](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions#supported-actions).
 
 Note
 
-Identity risk in Microsoft Defender for Identity uses automated decay logic to allow SOC prioritization. If no new risk factors are detected, the identity risk score decreases over time. Microsoft Entra ID maintains its own risk level independently and doesn't apply decay. As a result, you might see an Entra risk level with no corresponding identity risk score when the Entra risk update time is older than 30 days.
+Identity risk in Microsoft Defender uses automated decay logic to allow SOC prioritization. If no new risk factors are detected, the identity risk score decreases over time. Microsoft Entra ID maintains its own risk level independently and doesn't apply decay. As a result, you might see an Entra risk level with no corresponding identity risk score when the Entra risk update time is older than 30 days.
 
 ## Timeline tab
 

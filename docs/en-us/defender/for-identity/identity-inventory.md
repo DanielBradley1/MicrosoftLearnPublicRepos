@@ -70,7 +70,7 @@ Select a tab to view details and available actions for each identity type.
 - [Human identities](#tabpanel_1_human-identities)
 - [Non-Human identities \(Preview\)](#tabpanel_1_non-human-identities)
 
-The **Human identities** tab consolidates all user identities from Active Directory and Microsoft Entra ID in one place, making it easier to view and manage user accounts. To investigate details about a specific user, see [Investigate users in Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/investigate-users).
+The **Human identities** tab consolidates all user identities from Active Directory and Microsoft Entra ID in one place, making it easier to view and manage user accounts. To investigate details about a specific user, see [Investigate users in Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/investigate-users).
 
 ### Human identity statistics
 

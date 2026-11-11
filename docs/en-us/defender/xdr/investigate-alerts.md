@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/investigate-alerts -->
-<!-- Sitemap-Last-Modified: 2026-09-10 -->
+<!-- Sitemap-Last-Modified: 2026-11-09 -->
 
 # Investigate alerts in Microsoft Defender XDR
 
@@ -275,7 +275,7 @@ Create alert tuning rules from the Microsoft Defender XDR **Settings** area or f
 
 Note
 
-**Detection-source selection, available in preview, lets you choose specific detection sources within each service source** for more precise alert tuning. During the current preparation period, you can edit your existing rules to include or exclude detection sources. Your selections take effect on November 8, 2026. Rules that you don't update continue to apply to all detection sources under their selected service sources, **including custom detections**.
+**Detection-source selection, available in preview, lets you choose specific detection sources within each service source** for more precise alert tuning. When you select an entire service source, the rule applies to all detection sources under that service source, **including custom detections**.
 
 - [Create a rule from the Settings page](#tabpanel_1_settings)
 - [Create a rule from the Alerts page](#tabpanel_1_alerts)

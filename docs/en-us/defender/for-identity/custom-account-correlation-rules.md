@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/custom-account-correlation-rules -->
 <!-- Sitemap-Last-Modified: 2026-08-08 -->
 
-# Manage account correlation rules in Microsoft Defender for Identity \(Preview\)
+# Manage identity account correlation rules in Microsoft Defender \(Preview\)
 
-Custom account correlation rules are a Microsoft Defender for Identity setting for accounts that don't share strong identifiers. These identifiers include account ID, SID, object ID, or UPN. The rules are especially useful for privileged accounts with unique naming conventions. By defining custom rules, you get full visibility and better protection for all accounts.
+Use custom identity account correlation rules in Microsoft Defender to correlate identity accounts that don't share strong identifiers. These identifiers include account ID, SID, object ID, or UPN. The rules are especially useful for privileged accounts with unique naming conventions. By defining custom rules, you get full visibility and better protection for all identity accounts.
 
 [![Screenshot of the Account Correlation Rules settings page with rule management actions and configured rules.](https://learn.microsoft.com/en-us/defender-for-identity/media/account-correlation-rules-settings.png)](https://learn.microsoft.com/en-us/defender-for-identity/media/account-correlation-rules-settings.png#lightbox)
 

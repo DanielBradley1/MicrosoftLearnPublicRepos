@@ -138,6 +138,8 @@ You can change the order of custom statuses within their lifecycle category.
 
 ### Delete a custom status
 
+You can't delete a custom status that's currently assigned to any cases. Before you delete the status, update all cases that use it to a different status.
+
 1. On the **Custom statuses** page, find the custom status you want to delete.
 2. Select **More options** \(...\).
 3. Select **Delete**.

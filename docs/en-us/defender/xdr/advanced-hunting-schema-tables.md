@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-schema-tables -->
-<!-- Sitemap-Last-Modified: 2026-07-27 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Understand the advanced hunting schema
 
@@ -28,7 +28,7 @@ To quickly access the schema reference, select the **View reference** action nex
 
 ## Learn the schema tables
 
-The following reference lists all the tables in the schema. Each table name links to a page describing the column names for that table. Table and column names are also listed in Microsoft Defender XDR as part of the schema representation on the advanced hunting screen.
+The following reference lists all the tables in the schema. Each table name links to a page describing the column names for that table. Table and column names are also listed in Microsoft Defender as part of the schema representation on the advanced hunting screen.
 
 | Table name | Description |
 | --- | --- |

@@ -7,9 +7,9 @@ The `IdentityQueryEvents` table in the [advanced hunting](https://learn.microsof
 
 Tip
 
-For detailed information about the events types \(`ActionType` values\) supported by a table, use the built-in schema reference available in Microsoft Defender XDR.
+For detailed information about the events types \(`ActionType` values\) supported by a table, use the built-in schema reference available in Microsoft Defender.
 
-This advanced hunting table is populated by records from Microsoft Defender for Identity or Microsoft Sentinel and Mirosoft Entra ID. If your organization hasn’t deployed the service in Microsoft Defender XDR, queries that use the table aren’t going to work or return any results. For more information about how to deploy Defender for Identity in Defender XDR, read [Deploy supported services](https://learn.microsoft.com/en-us/defender-xdr/deploy-supported-services). For information on other tables in the advanced hunting schema, [see the advanced hunting reference](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-schema-tables).
+This advanced hunting table is populated by records from Microsoft Defender for Identity or Microsoft Sentinel and Microsoft Entra ID. If your organization hasn’t deployed the service in Microsoft Defender, queries that use the table aren’t going to work or return any results. For more information about how to deploy Defender for Identity in the Defender portal, read [Deploy supported services](https://learn.microsoft.com/en-us/defender-xdr/deploy-supported-services). For information on other tables in the advanced hunting schema, [see the advanced hunting reference](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-schema-tables).
 
 | Column name | Data type | Description |
 | --- | --- | --- |
