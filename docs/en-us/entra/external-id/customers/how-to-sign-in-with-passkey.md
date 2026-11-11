@@ -16,7 +16,6 @@ In an external tenant, you can use passkeys in two ways:
 
 - A Microsoft Entra external tenant. [Create a free trial](https://aka.ms/ciam-free-trial) or use an existing external tenant.
 - An account with at least the [Authentication Policy Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) role to configure passkey policies.
-- A [custom URL domain](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-custom-url-domain) configured for your tenant. Passkeys are registered against the custom URL as the relying party.
 - A [sign-up and sign-in user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers) associated with your application.
 - An app that's [registered](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) in your external tenant and added to the sign-up and sign-in user flow.
 

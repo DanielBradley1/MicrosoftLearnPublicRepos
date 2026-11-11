@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/reference-version-history -->
-<!-- Sitemap-Last-Modified: 2026-06-11 -->
+<!-- Sitemap-Last-Modified: 2026-11-09 -->
 
 # Microsoft Entra private network connector: version release history
 
@@ -20,6 +20,19 @@ Here's a list of related resources:
 | How to enable application proxy | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-add-on-premises-application). |
 | Understand Microsoft Entra private network connectors | Find out more about [connector management](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connectors) and how connectors [autoupgrade](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connectors#connector-updates). |
 | Microsoft Entra private network connector Download | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
+
+## Version 1.5.5130.0
+
+### Release status
+
+Nov 9, 2026: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
+
+### New features and improvements
+
+- Performance and diagnostics: Added 24-hour CPU and memory history and improved health reporting accuracy.
+- DNS resolution: Added interface-specific DNS suffix and server support, and improved SRV query fallback.
+- Logging and observability: Added trace-file rotation, increased default Session event-log capacity to 3 GB, and improved connectivity and backend error messages.
+- Reliability and security: Added TCP keepalive to reduce idle connection resets, improved memory management during request processing, and enhanced local log and file security.
 
 ## Version 1.5.4892.0
 
