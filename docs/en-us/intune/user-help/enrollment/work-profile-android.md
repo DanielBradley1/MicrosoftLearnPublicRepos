@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/user-help/enrollment/work-profile-android -->
-<!-- Sitemap-Last-Modified: 2026-04-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Introduction to Android work profile
 
@@ -32,15 +32,15 @@ The appearance of the briefcase can vary slightly from device to device. To see 
 
 ## Find your work profile
 
-Once you've set up a work profile, your organization can automatically install work apps on your device. You can access all work apps in the work profile. The work profile location varies by device manufacturer and Android version. This section describes where to find the work profile in the app drawer and on the home screen.
+After you set up a work profile, your organization can automatically install work apps on your device. You can access all work apps in the work profile. The work profile location varies by device manufacturer and Android version. This section describes where to find the work profile in the app drawer and on the home screen.
 
 Note
 
-If you're using a custom launcher, work apps can appear in places other than the app drawer or home screen folder.
+If you use a custom launcher, work apps can appear in places other than the app drawer or home screen folder.
 
 ### App drawer
 
-Swipe up on the home screen or select **Apps** to access the app drawer. Work apps appear alongside your personal apps or within a **Work** tab in your app drawer.
+Swipe up on the home screen or select **Apps** to access the app drawer. Work apps appear alongside your personal apps or in a **Work** tab in your app drawer.
 
 ![Screenshot of work tab in Google Pixel 4 app drawer.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/work-profile-android/google-pixel-4-app-drawer-android.png)
 
@@ -56,11 +56,11 @@ To see how the folder appears on other Android devices, jump to [Examples of wor
 
 ## Get more work apps
 
-Open the work version of the Google Play Store to see all of the apps your organization has made available to you.
+Open the work version of the Google Play Store to see all of the apps your organization makes available to you.
 
 ![Screenshot of Google Play Store icon with briefcase badge.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/work-profile-android/samsung-galaxy-s20-play-store-android.png)
 
-Continue to use the work version of the Play Store to search for and install other apps for work. If you don't see an app you need for work, you can request it from your IT support person.
+Continue to use the work version of the Play Store to search for and install other apps for work. If you don't see an app you need for work, request it from your IT support person.
 
 The Play Store app's appearance varies by device manufacturer and Android version, but the work version is always marked with a briefcase.
 
@@ -82,7 +82,9 @@ To see how quick settings appear on other Android devices, see [Examples of paus
 
 Open the Settings app and go to **Work profile settings**. Switch the **Work profile** toggle off.
 
-Google Pixel 4 \(Android 11\) ![Screenshot of Work profile toggle switch turned off in Google Pixel 4 device settings.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/work-profile-android/google-pixel-4-settings-android.png)
+Google Pixel 4 \(Android 11\)
+
+![Screenshot of Work profile toggle switch turned off in Google Pixel 4 device settings.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/work-profile-android/google-pixel-4-settings-android.png)
 
 To see how work profile settings appear on other Android devices, see [Examples of pause in the settings app](https://learn.microsoft.com/en-us/intune/user-help/enrollment/work-profile-android#pause-in-settings-app).
 
@@ -179,7 +181,7 @@ Nexus 5X \(Android 8.1.0\)
 
 This image shows the pause option in the app drawer on a Google Pixel 4 \(Android 11\). For more information, see [Pause the work profile](#app-drawer-pause-option).
 
-![Screenshot of Work profile switch turned off in Google Pixel 4 app drawer showing "Work profile is paused."](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/work-profile-android/samsung-galaxy-s20-pause-app-drawer.png)
+![Screenshot of Work profile switch turned off in Google Pixel 4 app drawer showing Work profile is paused.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/work-profile-android/samsung-galaxy-s20-pause-app-drawer.png)
 
 ## Next steps
 

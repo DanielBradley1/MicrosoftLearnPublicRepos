@@ -3,70 +3,59 @@
 
 # Enroll device with Android work profile
 
-Enroll your personal Android device to get access to work emails, apps, Wi-Fi, and other resources. During enrollment, you will:
+Enroll your personal Android device to get access to work emails, apps, Wi-Fi, and other resources. During enrollment, you:
 
-1. Create a work profile.
-2. Activate the work profile.
-3. Update device settings.
+- Create a work profile.
+- Activate the work profile.
+- Update device settings.
 
-This article describes how to enroll your device using the Intune Company Portal app. For more information about the work profile and its features, see [Introduction to Android work profile](https://learn.microsoft.com/en-us/intune/user-help/enrollment/work-profile-android).  
+This article describes how to enroll your device by using the Intune Company Portal app. For more information, see [Introduction to Android work profile](https://learn.microsoft.com/en-us/intune/user-help/enrollment/work-profile-android).  
 
 
 <iframe src="https://www.youtube-nocookie.com/embed/9Dl8HsGk4tI" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
 ## Before you begin
 
-[Install the Intune Company Portal app from Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). The Company Portal app is used to enroll and manage your device, install work apps, and get IT support.
+[Install the Intune Company Portal app from Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). Use the Company Portal app to enroll and manage your device, install work apps, and get IT support.
 
 ## Enroll device
 
-Make sure you're signed in to the primary user account on your device. Work profile enrollment isn't supported on secondary user accounts.
+Ensure you sign in to the primary user account on your device. The system doesn't support work profile enrollment on secondary user accounts.
 
 1. Open the Intune Company Portal app and sign in with your work or school account.
-2. On the **Company Access Setup** screen, review the tasks required to enroll your device. Then tap **BEGIN**.
+2. On the **Company Access Setup** screen, review the tasks required to enroll your device. Then select **BEGIN**.
 
    ![Screenshot of Company Access Setup screen highlighting the Begin button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/access-setup-work-profile-1911.png)
-
-3. On the privacy information screen, review the list of items that your organization can and can't see on your device. Then tap **CONTINUE**.
+3. On the privacy information screen, review the list of items that your organization can and can't see on your device. Then select **CONTINUE**.
 
    ![Screenshot of Company Portal's We care about your privacy screen, highlighting the Continue button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-company-portal-android/android-privacy-screen-1911.png)
-
-4. Review the Google terms for creating a work profile. Accept the terms to continue. The appearance of this screen varies based on OS version.
+4. Review the Google terms for creating a work profile. Accept the terms to continue. The appearance of this screen varies based on operating system version.
 
    ![Screenshot of Company Portal showing link to Google terms, and highlighting the Accept & continue button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/google-terms-screen-work-profile.png)
-
 5. Review the Samsung Knox privacy policy. Select **Agree** to continue. This screen only appears if you're using a Samsung device.
 
    ![Screenshot of Company Portal showing link to Samsung Knox Privacy Policy and highlighting Agree button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/samsung-knox-privacy-policy-2307.png)
-
 6. Wait a few minutes while your work profile is set up. Then select **Next**.
 
    ![Screenshot of Company Portal highlighting the Next button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/work-profile-setup-next-2307.png)
-
-7. On the **Company Access Setup** screen, confirm that you created the profile. Then tap **CONTINUE** to proceed to the next enrollment task.
+7. On the **Company Access Setup** screen, confirm that you created the profile. Then select **CONTINUE** to proceed to the next enrollment task.
 
    ![Screenshot of Company Access Setup showing work profile is created.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/work-profile-complete-1911.png)
-
 8. Wait while the app registers your device. When prompted to, sign in with your work account.
-9. On the **Company Access Setup** screen, confirm that the work profile is active. Then tap **CONTINUE** to proceed to the next enrollment task.
+9. On the **Company Access Setup** screen, confirm that the work profile is active. Then select **CONTINUE** to proceed to the next enrollment task.
 
    ![Screenshot of Company Access Setup showing work profile is active.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/work-profile-active-1911.png)
+10. In the Company Portal app, review the list of settings your organization requires. Update the settings on your device if necessary. Select **RESOLVE** to open the setting on your device. After you're done updating settings, select **CONFIRM DEVICE SETTINGS**.
 
-10. In the Company Portal app, review the list of settings your organization requires. Update the settings on your device if necessary. Tap **RESOLVE** to open the setting on your device. After you're done updating settings, tap **CONFIRM DEVICE SETTINGS**.
-
-![Screenshot of Company Portal's Update device settings screen highlighting the RESOLVE button and CONFIRM DEVICE SETTINGS button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/confirm-device-settings-work-profile-2307.png)
-
-11. When setup and enrollment are complete, you're sent back to the setup list, where you should see a green checkmark next to each enrollment task. Tap **DONE**.
+    ![Screenshot of Company Portal's Update device settings screen highlighting the RESOLVE button and CONFIRM DEVICE SETTINGS button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/confirm-device-settings-work-profile-2307.png)
+11. When setup and enrollment are complete, you return to the setup list, where you should see a green checkmark next to each enrollment task. Select **DONE**.
 
     ![Screenshot of Company Portal's Company Access Setup screen, showing completed setup and highlighting Done button.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/work-profile-done-1911.png)
-
-12. Optionally, when prompted to view suggested work apps in Google Play Store, tap **OPEN**. If you're not ready to install apps, you can do it later by going to the Play Store app in your work profile.
+12. Optionally, when prompted to view suggested work apps in Google Play Store, select **OPEN**. If you're not ready to install apps, you can do it later by going to the Play Store app in your work profile.
 
     ![Screenshot of Company Portal prompt to open badged version of Google Play.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/get-apps-banner-android-2005.png)
 
-
     You can also access available apps from the Company Portal menu > **Get Apps**.
-
 
     ![Screenshot of the Company Portal menu, highlighting the Get Apps link.](https://learn.microsoft.com/en-us/intune/user-help/enrollment/media/enroll-work-profile-android/updated-drawer-android-2005.png)
 
@@ -76,7 +65,7 @@ Work profiles are supported in [countries and regions where Android Enterprise i
 
 ## Update Google Play services
 
-If the version of Google Play services on your device is outdated, you may be unable to enroll your device. [Open Google Play services](https://play.google.com/store/apps/details?id=com.google.android.gms) on your device to check for available updates. For more information about how to update Android apps, see [Update your Android apps](https://support.google.com/googleplay/answer/113412)\(opens Google Support website\).
+If the version of Google Play services on your device is outdated, you might be unable to enroll your device. [Open Google Play services](https://play.google.com/store/apps/details?id=com.google.android.gms) on your device to check for available updates. For more information about how to update Android apps, see [Update your Android apps](https://support.google.com/googleplay/answer/113412)\(opens Google Support website\).
 
 ## Next steps
 

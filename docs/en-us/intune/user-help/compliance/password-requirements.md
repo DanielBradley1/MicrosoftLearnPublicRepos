@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/user-help/compliance/password-requirements -->
-<!-- Sitemap-Last-Modified: 2026-04-08 -->
+<!-- Sitemap-Last-Modified: 2026-11-09 -->
 
 # Add or change device passcode on work or school device
 
@@ -10,11 +10,11 @@
 - iOS/iPadOS
 - macOS
 
-When you enroll your device for work or school use, you might need to adjust the lock screen and startup settings you use to unlock your device so that they align with your organization's password and biometric requirements. Password and biometric requirements are put in place to prevent unauthorized individuals from gaining access to the work or school data on your device. Until you choose a more secure authentication method for your device's lock screen, you might be blocked from accessing your organization's network.
+When you enroll your device for work or school use, you might need to adjust the lock screen and startup settings you use to unlock your device so that they align with your organization's password and biometric requirements. Password and biometric requirements prevent unauthorized individuals from gaining access to the work or school data on your device. Until you choose a more secure authentication method for your device's lock screen, you might be blocked from accessing your organization's network.
 
 ## List of Company Portal messages
 
-For a list of all passcode-related messages in Company Portal, see [Device password messages in Company Portal](https://learn.microsoft.com/en-us/intune/user-help/compliance/ref-password-messages). Company Portal sends you one message per password requirement. For example, if your passcode is too short and too simple, you receive one message about the length and one message about the complexity. Your workplace chooses the password and biometric requirements for your device. If the Company Portal messages appear too vague, contact your IT support person directly for the exact password and biometric requirements for your device.
+For a list of all passcode-related messages, see [Device password messages in Company Portal](https://learn.microsoft.com/en-us/intune/user-help/compliance/ref-password-messages). Company Portal sends you one message per password requirement. For example, if your passcode is too short and too simple, you receive one message about the length and one message about the complexity. Your workplace chooses the password and biometric requirements for your device. If the Company Portal messages appear too vague, contact your IT support person directly for the exact password and biometric requirements for your device.
 
 ## Change password and biometrics
 
@@ -30,5 +30,5 @@ The following resources are available for Apple, Android, and Windows devices, a
 
 Still need help?
 
-- If you still receive password and authentication-related messages after updating your settings, try restarting your device.
+- If you still receive password and authentication-related messages after you update your settings, try restarting your device.
 - Your organization's policies determine password and biometric requirements. For questions about specific messages, contact your IT support person. Check the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) for your organization's help desk information.

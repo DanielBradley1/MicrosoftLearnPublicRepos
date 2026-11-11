@@ -3,13 +3,13 @@
 
 # Work or school apps for iOS
 
-Intune-managed apps \(*managed* apps for short\) are apps that've been configured for you to securely use at work or school. They're specially configured to meet your organization's security requirements and protect internal data. For example, if you're signed in to one of these apps with your work or school account, your org can restrict certain features, such as copy and paste. Or they could restrict you from saving work files to your device's local storage. These types of restrictions prevent proprietary information from being shared outside of the app or org.
+Intune-managed apps \(*managed* apps for short\) are apps configured for you to securely use at work or school. They're specially configured to meet your organization's security requirements and protect internal data. For example, if you sign in to one of these apps with your work or school account, your org can restrict certain features, such as copy and paste. Or they could restrict you from saving work files to your device's local storage. These types of restrictions prevent proprietary information from being shared outside of the app or org.
 
 To maximize data protection, your organization might configure several of these apps to work together. For example:
 
-1. You connect to your organization's network in a managed browser app, such as Microsoft Edge.
-2. You click a link to open a peer's presentation file.
-3. An appropriate managed app, such as Microsoft PowerPoint, opens the file.
+- You connect to your organization's network in a managed browser app, such as Microsoft Edge.
+- You click a link to open a peer's presentation file.
+- An appropriate managed app, such as Microsoft PowerPoint, opens the file.
 
 Your org can require you to use a specific app to do something like opening a work file, or accessing a web link. If you don't have the app, you might not be able to do these things.
 
@@ -29,7 +29,7 @@ There are three ways to get apps for work or school:
 
 ### Apple Volume Purchase Program agreement
 
-Your organization may purchase iOS app licenses in bulk to accommodate the number of students or employees they have. If prompted to, review and accept the Apple Volume Purchase Program agreement to install the app.
+Your organization might purchase iOS app licenses in bulk to accommodate the number of students or employees they have. If prompted to, review and accept the Apple Volume Purchase Program agreement to install the app.
 
 ## Available apps
 
@@ -41,7 +41,7 @@ If there's an app you need, but don't see in Company Portal, you can request it.
 
 ## What can my org manage in an app?
 
-The following list describes the settings your IT support person can control within an app. These settings affect how you view, access, and otherwise use work or school data on your device:
+The following list describes the settings your IT support person can control in an app. These settings affect how you view, access, and otherwise use work or school data on your device:
 
 - Access to specific websites
 - Transfers of data between apps
@@ -55,7 +55,7 @@ The following list describes the settings your IT support person can control wit
 
 ## Approve line-of-business app
 
-By default, your device doesn't trust line-of-business \(LOB\) apps acquired outside of the App Store, which may prevent your organization's own company apps from being installed. You'll know this is happening if you open an installed LOB app and receive an *untrusted enterprise developer* message.
+By default, your device doesn't trust line-of-business \(LOB\) apps acquired outside of the App Store, which might prevent your organization's own company apps from being installed. You know this is happening if you open an installed LOB app and receive an *untrusted enterprise developer* message.
 
 ![Screenshot of iOS app message about an untrusted enterprise developer.](https://learn.microsoft.com/en-us/intune/user-help/apps/media/managed-apps-ios/end-user-company-portal-messages-01.png)
 
@@ -63,5 +63,6 @@ For information about how to manually install and trust an enterprise app on you
 
 ## Next steps
 
-- Contact your IT support person for more information about work or school apps. Check the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) for your organization's support and helpdesk information.
-- For information about using work or school apps on an Android device, see [Get work or school apps for Android](https://learn.microsoft.com/en-us/intune/user-help/apps/managed-apps-android).
+Contact your IT support person for more information about work or school apps. Check the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) for your organization's support and helpdesk information.
+
+For information about using work or school apps on an Android device, see [Get work or school apps for Android](https://learn.microsoft.com/en-us/intune/user-help/apps/managed-apps-android).

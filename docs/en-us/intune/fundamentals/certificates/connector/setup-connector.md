@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/fundamentals/certificates/connector/setup-connector -->
-<!-- Sitemap-Last-Modified: 2026-04-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-09 -->
 
 # Install the Certificate Connector for Microsoft Intune
 
@@ -80,7 +80,49 @@ Use the following procedure to both configure a new connector and modify a previ
 
    Important
 
-   Be sure to include the HTTP or HTTPS prefix. This is a change from the proxy configuration for previous versions of the connector.
+   Include the HTTP or HTTPS prefix in the proxy address. This requirement differs from previous versions of the connector.
+
+   The proxy settings configured in the Certificate Connector wizard apply to the connector services. They don't configure the system-wide Windows HTTP Services \(WinHTTP\) proxy.
+
+   If your environment also requires a WinHTTP proxy, configure it separately. Changing the system-wide WinHTTP proxy can affect other applications and services that use the default WinHTTP proxy configuration. Review any changes with your network administrator.
+
+   If your environment requires a system-wide static WinHTTP proxy, use the following procedure:
+
+   1. Open **Command Prompt as administrator**. Before making changes, display and record the existing configuration:
+
+      ```cmd
+      netsh winhttp show proxy
+      ```
+
+   2. Configure the proxy. The following example sets a static proxy and bypass list. Replace the server, port, and bypass entries with values approved for your environment:
+
+      ```cmd
+      netsh winhttp set proxy proxy-server="proxy.contoso.com:8080" bypass-list="<local>;*.contoso.com"
+      ```
+
+
+      The bypass list allows direct connections to short-name hosts and hosts matching `*.contoso.com`.
+
+   3. Verify the resulting configuration:
+
+      ```cmd
+      netsh winhttp show proxy
+      ```
+
+
+   To remove the configured proxy and use direct connections, run the following command only if direct connectivity is intended:
+
+
+   ```cmd
+   netsh winhttp reset proxy
+   ```
+
+
+   Resetting the proxy doesn't restore a previous proxy configuration and can interrupt connectivity where a proxy is required.
+
+
+   For available commands and configuration options, see [netsh winhttp](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-winhttp).
+
 5. On the *Prerequisites* page, the wizard runs several checks on the server before the configuration can begin. Review and resolve any errors or warnings before you continue.
 6. On the *Microsoft Entra sign-in* page \(which appears as *Azure AD Sign-In*\), select the environment that hosts your Microsoft Entra ID, and then select **Sign In**. Then when prompted, authenticate your access. An Intune license is required for the account that you sign in with, which can be an Intune Administrator.
 
