@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/onedriveforbusinessbrowsesession-browse?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # oneDriveForBusinessBrowseSession: browse
 
@@ -174,7 +174,19 @@ Content-Type: application/json
             "webUrl": "https://contoso-my.sharepoint.com/personal/user0_contoso_onmicrosoft_com/Documents/api/objectdelete-onedriveforbusinessbrowsesessions.md",
             "type": "file",
             "itemsCount": 0,
-            "sizeInBytes": "2594"
+            "sizeInBytes": "2594",
+            "createdDateTime": "2026-10-01T09:00:00Z",
+            "createdBy": {
+                "user": {
+                    "id": "86cb95bd-1e9c-4775-836a-6573a4d24950"
+                }
+            },
+            "lastModifiedDateTime": "2026-10-02T15:30:00Z",
+            "lastModifiedBy": {
+                "user": {
+                    "id": "fc4d4f67-6e01-4c71-9dd2-c8dc65d70f20"
+                }
+            }
         },
         {
             "itemKey": "bb281f72-f7cc-4379-b295-0c61253127af,77042fcb-74e3-46aa-8a53-05f9739ebdf4,07a7125a-15e3-402d-beb9-ee6540f7f5bc,e3cca06d-b45d-4e98-bd16-c57a4563776f",
@@ -252,9 +264,9 @@ Content-Type: application/json
 }
 ```
 
-### Example 3: Browse items with nextLink.
+### Example 3: Browse items with nextLink
 
-We get the nextLink in the response of first POST api call as shown above and subsequent pages are fetched using the nextlink.
+The following example shows how to use the **nextLink** returned in the response to the initial POST request to retrieve subsequent pages.
 
 #### Request
 

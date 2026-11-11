@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-07 -->
 
 # What's new in Microsoft Graph
 
@@ -17,17 +17,41 @@ Features in *preview* status are subject to change without notice, and might not
 
 ### Backup and recovery \| Microsoft 365 backup and storage
 
+- Added the **error** property to the [granularRestoreArtifactBase](https://learn.microsoft.com/en-us/graph/api/resources/granularrestoreartifactbase) resource and its derived types. Use this property to get error details when a granular restore operation for an individual artifact fails or completes with an error.
 - Added audit metadata to the [browseQueryResponseItem](https://learn.microsoft.com/en-us/graph/api/resources/browsequeryresponseitem) resource. Use this metadata to identify when a file or folder was created or last modified and who made the change when you select items for granular restore.
+- Added support for tracking backup retention periods and pending retention changes on [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase). Use the **backupRetentionPeriodInDays** and **pendingRetentionPeriodChange** properties to monitor protection units as they move between policies with different retention periods.
+
+### Identity and access \| Directory management
+
+- Added the **isPrivileged** property to the [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition) resource type. Use it to identify roles that contain sensitive Microsoft Entra resource actions.
 
 ### Mail
 
-Added the [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist) resource type and related methods for managing personal distribution lists in a user's mailbox. Use these APIs to create, read, update, and delete distribution lists, and add or remove members.
+- Added the [distributionList](https://learn.microsoft.com/en-us/graph/api/resources/distributionlist) resource type and related methods for managing personal distribution lists in a user's mailbox. Use these APIs to create, read, update, and delete distribution lists, and add or remove members.
+- Promoted the [reportMessage](https://learn.microsoft.com/en-us/graph/api/message-reportmessage) method on the [message](https://learn.microsoft.com/en-us/graph/api/resources/message) resource from beta to v1.0. Use this method to report a message as junk, phishing, or not junk, which improves mail filtering.
+
+### Mailbox import and export
+
+- Added the **isHidden** property to the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder) resource to identify hidden mailbox folders.
+- Use the existing **includeHiddenFolders** query parameter for [listing folders](https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders) and [listing child folders](https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders). Set it to `true` to include both hidden and nonhidden folders.
 
 ## November 2026: New in preview only
 
 ### Identity and access \| Directory management
 
 - Devices now support soft-deletion and restoration. When a device is deleted, it's moved to the [deleted items container](https://learn.microsoft.com/en-us/graph/api/resources/directory?view=graph-rest-beta&preserve-view=true) and can be restored within 30 days. After 30 days, it's permanently deleted.
+
+### Security
+
+- Added the [resourceQuota](https://learn.microsoft.com/en-us/graph/api/resources/resourcequota?view=graph-rest-beta&preserve-view=true) resource type and the **resourceQuotas** property on the [organization](https://learn.microsoft.com/en-us/graph/api/resources/organization?view=graph-rest-beta&preserve-view=true) resource to let administrators monitor and configure quota allocations for resource types in their Microsoft Entra organization.
+
+### Security \| Case management
+
+- Removed support for the `$skip` query parameter in the [case management APIs](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagementroot?view=graph-rest-beta&preserve-view=true). Update affected requests to omit `$skip`.
+
+### Security \| Data security and compliance
+
+Added the [classificationGradingJobResponse](https://learn.microsoft.com/en-us/graph/api/resources/classificationgradingjobresponse?view=graph-rest-beta&preserve-view=true) resource type and [classificationGradingContentLocation](https://learn.microsoft.com/en-us/graph/api/resources/classificationgradingcontentlocation?view=graph-rest-beta&preserve-view=true) complex type to return matched text and surrounding context through the optional **contextText** property in classification grading results.
 
 ### Teamwork and communications \| Messaging
 
@@ -187,6 +211,10 @@ Added support to identify recalled messages in message trace. Use `recalled` as 
 ### Security
 
 Added the **incidentConfiguration** property to the [detectionAction](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionaction?view=graph-rest-beta&preserve-view=true) resource and the [incidentConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/security-incidentconfiguration?view=graph-rest-beta&preserve-view=true) complex type. Use this setting to exclude alerts generated by a custom detection rule from automatic incident correlation and create standalone, single-alert incidents.
+
+### Security \| Agentic security
+
+- Added the [agenticSecurityRoot](https://learn.microsoft.com/en-us/graph/api/resources/agenticsecurityroot?view=graph-rest-beta&preserve-view=true) resource and related methods to discover security playbooks, create and monitor investigation sessions, inspect agent progress, and download investigation reports.
 
 ### Security \| Audit log query
 

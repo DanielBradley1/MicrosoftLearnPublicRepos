@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # List childFolders
 
 Namespace: microsoft.graph
 
 Get the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) collection under the specified [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) in a mailbox.
+
+By default, hidden child folders aren't returned. To include them, specify `includeHiddenFolders=true`.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -29,9 +31,15 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /admin/exchange/mailboxes/{mailboxId}/folders/{mailboxFolderId}/childFolders
 ```
 
-## Optional query parameters
+## Query parameters
 
-This method supports the `$select`, `$filter`, `$top`, `$skip`, `$orderby`, `$count`, and `$expand` OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
+This method supports the following optional query parameter.
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| includeHiddenFolders | Boolean | The default value is `false`. Set it to `true` to include both hidden and nonhidden child folders, and use the **isHidden** property to distinguish them. If you use `$select`, include **isHidden** to return the property. |
+
+This method also supports the `$select`, `$filter`, `$top`, `$skip`, `$orderby`, `$count`, and `$expand` OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -49,7 +57,9 @@ If successful, this method returns a `200 OK` response code and a collection of 
 
 ## Examples
 
-### Request
+### Example 1: List child folders
+
+#### Request
 
 The following example shows how to get the mailbox folder collection under a specified folder.
 
@@ -144,7 +154,7 @@ result = await graph_client.admin.exchange.mailboxes.by_mailbox_id('mailbox-id')
 
 > For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
-### Response
+#### Response
 
 The following example shows the response.
 
@@ -153,7 +163,6 @@ The following example shows the response.
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 232
 
 {
     "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#admin/exchange/mailboxes/MBX:e0643f21@a7809c93/folders('NJWt2LeVEAAAIBDAAAAA==')/childFolders",
@@ -162,6 +171,7 @@ Content-length: 232
             "@odata.type": "#microsoft.graph.mailboxFolder",
             "id": "EDSVrdi3lRAAEvNS16AAA=",
             "displayName": "Folder_1",
+            "isHidden": false,
             "parentFolderId": "NJWt2LeVEAAAIBDAAAAA==",
             "parentMailboxUrl": "https://graph.microsoft.com/v1.0/admin/exchange/mailboxes/MBX:e0643f21@a7809c93",
             "childFolderCount": 0,
@@ -173,6 +183,7 @@ Content-length: 232
             "@odata.type": "#microsoft.graph.mailboxFolder",
             "id": "EDSVrdi3lRAAEED0yTAAA=",
             "displayName": "Folder_2",
+            "isHidden": false,
             "parentFolderId": "NJWt2LeVEAAAIBDAAAAA==",
             "parentMailboxUrl": "https://graph.microsoft.com/v1.0/admin/exchange/mailboxes/MBX:e0643f21@a7809c93",
             "childFolderCount": 0,
@@ -181,5 +192,41 @@ Content-length: 232
             "type": "IPF.Note"
         }
     ]
+}
+```
+
+### Example 2: Include hidden child folders
+
+The following example shows how to include both hidden and nonhidden immediate child folders. The query parameter doesn't make the request recursive.
+
+#### Request
+
+The following example shows a request.
+
+```http
+GET https://graph.microsoft.com/v1.0/admin/exchange/mailboxes/MBX:e0643f21@a7809c93/folders/NJWt2LeVEAAAIBDAAAAA==/childFolders?includeHiddenFolders=true&$select=id,displayName,isHidden
+```
+
+#### Response
+
+The following example shows the response shortened for readability. If the response includes **@odata.nextLink**, use the entire URL unchanged to retrieve the next page.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "value": [
+    {
+      "id": "EDSVrdi3lRAAEvNS16AAA=",
+      "displayName": "Folder_1",
+      "isHidden": false
+    },
+    {
+      "id": "EDSVrdi3lRAAEED0yUAAA=",
+      "displayName": "Application data",
+      "isHidden": true
+    }
+  ]
 }
 ```

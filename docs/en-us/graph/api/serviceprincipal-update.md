@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/serviceprincipal-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-01 -->
+<!-- Sitemap-Last-Modified: 2026-11-07 -->
 
 # Update servicePrincipal
 
@@ -24,9 +24,9 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 | Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Application.ReadWrite.All | AgentIdentity.ReadWrite.All, Directory.ReadWrite.All |
+| Delegated \(work or school account\) | Application.ReadWrite.All | AgentIdentity.ReadWrite.All, Directory.ReadWrite.All, HardDeletionSetting.ReadWrite.Enable |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Application.ReadWrite.OwnedBy | AgentIdentity.ReadWrite.All, Application.ReadWrite.All, Directory.ReadWrite.All |
+| Application | Application.ReadWrite.OwnedBy | AgentIdentity.ReadWrite.All, Application.ReadWrite.All, Directory.ReadWrite.All, HardDeletionSetting.ReadWrite.Enable |
 
 Important
 

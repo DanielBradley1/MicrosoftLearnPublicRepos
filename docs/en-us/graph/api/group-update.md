@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/group-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-07-27 -->
+<!-- Sitemap-Last-Modified: 2026-11-07 -->
 
 # Update group
 
@@ -29,9 +29,9 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 | Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Group-NestingSupport.ReadWrite.All | Directory.ReadWrite.All, Group-PreferredDataLocation.ReadWrite.All, Group.ManageProtection.All, Group.ReadWrite.All |
+| Delegated \(work or school account\) | Group-NestingSupport.ReadWrite.All | Directory.ReadWrite.All, Group-PreferredDataLocation.ReadWrite.All, Group.ManageProtection.All, Group.ReadWrite.All, HardDeletionSetting.ReadWrite.Enable |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Group-NestingSupport.ReadWrite.All | Directory.ReadWrite.All, Group-PreferredDataLocation.ReadWrite.All, Group.ManageProtection.All, Group.ReadWrite.All |
+| Application | Group-NestingSupport.ReadWrite.All | Directory.ReadWrite.All, Group-PreferredDataLocation.ReadWrite.All, Group.ManageProtection.All, Group.ReadWrite.All, HardDeletionSetting.ReadWrite.Enable |
 
 ### Permissions for specific scenarios
 

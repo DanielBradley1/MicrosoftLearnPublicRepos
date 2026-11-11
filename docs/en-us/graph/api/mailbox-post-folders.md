@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Create mailboxFolder
 
@@ -46,6 +46,7 @@ You can specify the following properties when you create a **mailboxFolder**.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | displayName | String | The display name of the folder. Required. |
+| isHidden | Boolean | Indicates whether the folder is hidden. Optional. The default value is `false`. Set to `true` to create a hidden folder. This property can't be updated after the folder is created. |
 | type | String | Describes the folder class type. Required. |
 
 ## Response
@@ -66,6 +67,7 @@ POST https://graph.microsoft.com/v1.0/admin/exchange/mailboxes/MBX:e0648f21@aab0
 
 {
   "displayName": "Announcements",
+  "isHidden": false,
   "type": "IPF.Note",
   "singleValueExtendedProperties": [
         {
@@ -110,12 +112,12 @@ The following example shows the response.
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 179
 
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#admin/exchange/mailboxes('MBX%3A73c326ef%402829ab8a')/folders/$entity",
   "id": "AQMkAGUw==",
   "displayName": "Announcements",
+  "isHidden": false,
   "parentFolderId": "AQMkAGUc==",
   "parentMailboxUrl": "https://graph.microsoft.com/v1.0/admin/exchange/mailboxes/MBX:e0648f21@aab09c93",
   "childFolderCount": 0,

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/chats-getallmessages?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-05 -->
+<!-- Sitemap-Last-Modified: 2026-11-07 -->
 
 # chats: getAllMessages
 
@@ -39,7 +39,7 @@ This method also supports [date range parameters](https://learn.microsoft.com/en
 GET /users/{id}/chats/getAllMessages?$top=50&$filter=lastModifiedDateTime gt 2020-06-04T18:03:11.591Z and lastModifiedDateTime lt 2020-06-05T21:00:09.413Z
 ```
 
-This method supports the `$filter` query parameter. The following table lists examples.
+This method also supports the `$filter` query parameter. The following table lists examples.
 
 | Scenario | `$filter` parameter | Possible values |
 | :--- | :--- | :--- |
@@ -49,7 +49,7 @@ This method supports the `$filter` query parameter. The following table lists ex
 | Get control\(system event\) messages | $filter=messageType eq 'systemEventMessage' |  |
 | Exclude control \(system event\) messages | $filter=messageType ne 'systemEventMessage' |  |
 
-> **Note:** These filter clauses can be joined by using the `or` operator. A filter clause can appear more than once in a query, and it can filter on a different value each time it appears within the query..
+> **Note:** These filter clauses can be joined by using the `or` operator. A filter clause can appear more than once in a query, and it can filter on a different value each time it appears within the query.
 
 ## Request headers
 
@@ -60,6 +60,12 @@ This method supports the `$filter` query parameter. The following table lists ex
 ## Response
 
 If successful, this method returns a `200 OK` response code and a list of [chatMessages](https://learn.microsoft.com/en-us/graph/api/resources/chatmessage?view=graph-rest-1.0) in the response body.
+
+Note
+
+This API can also return copies of channel messages that the user saved in Microsoft Teams. Teams stores these copies in the user's mailbox so users can search for saved messages. The original channel messages aren't changed. For these response items, **chatId** is `null` and **channelIdentity** is populated.
+
+If your application processes only chat messages, exclude items where **chatId** is `null` and **channelIdentity** is populated. Apply this check in your application after it retrieves the response.
 
 ## Example
 

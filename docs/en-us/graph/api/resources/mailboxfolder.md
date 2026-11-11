@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-19 -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # mailboxFolder resource type
 
@@ -35,6 +35,7 @@ This resource supports [delta query](https://learn.microsoft.com/en-us/graph/del
 | childFolderCount | Int32 | The number of immediate child folders in the current folder. |
 | displayName | String | The display name of the folder. |
 | id | String | The unique identifier for the folder. |
+| isHidden | Boolean | Indicates whether the folder is hidden. The default value is `false`. This property can be set only when you create the folder; it can't be updated using PATCH. By default, [listing folders](https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders?view=graph-rest-1.0) or [listing child folders](https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders?view=graph-rest-1.0) returns only folders that aren't hidden. To include hidden folders in the response, use the optional query parameter `includeHiddenFolders=true`. The response includes both hidden and nonhidden folders. If you use `$select` to limit the returned properties, include **isHidden** in the selection. |
 | parentFolderId | String | The unique identifier for the parent folder of this folder. |
 | totalItemCount | Int32 | The number of items in the folder. |
 | type | String | Describes the folder class type. |
@@ -59,6 +60,7 @@ The following JSON representation shows the resource type.
   "displayName": "String",
   "childFolderCount": "Int32",
   "id": "String (identifier)",
+  "isHidden": "Boolean",
   "parentFolderId": "String",
   "totalItemCount": "Int32",
   "wellKnownName": "String",

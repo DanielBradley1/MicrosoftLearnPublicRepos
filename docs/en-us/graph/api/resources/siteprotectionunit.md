@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/siteprotectionunit?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-04-07 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # siteProtectionUnit resource type
 
@@ -19,6 +19,7 @@ Inherits from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/r
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
+| backupRetentionPeriodInDays | Int32 | The policy-configured retention period of the backup, in days. Not nullable. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | createdBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-1.0) | The identity of the person who created the protection unit. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | createdDateTime | DateTimeOffset | The time of creation of the protection unit. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | error | [publicError](https://learn.microsoft.com/en-us/graph/api/resources/publicerror?view=graph-rest-1.0) | Contains error details if enabling or disabling the protection unit fails. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
@@ -26,6 +27,7 @@ Inherits from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/r
 | lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-1.0) | The identity of the person who last modified the protection unit. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | lastModifiedDateTime | DateTimeOffset | The time the protection unit was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | offboardRequestedDateTime | DateTimeOffset | The date and time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
+| pendingRetentionPeriodChange | [retentionPeriodChange](https://learn.microsoft.com/en-us/graph/api/resources/retentionperiodchange?view=graph-rest-1.0) | The retention period change to be applied to the protection unit when it moves between policies with different retention periods. Read-only. `null` when no change is pending. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | policyId | String | Unique identifier of the protection policy associated with this protection unit. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | protectionSources | protectionSource | Indicates the sources by which a protection unit is currently protected. A protection unit protected by multiple sources is indicated by comma-separated values. The possible values are: `none`, `manual`, `dynamicRule`, `unknownFutureValue`. Inherited from [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase?view=graph-rest-1.0). |
 | siteId | String | Unique identifier of the SharePoint site. |
@@ -44,6 +46,7 @@ The following JSON representation shows the resource type.
 ```json
 {
   "@odata.type": "#microsoft.graph.siteProtectionUnit",
+  "backupRetentionPeriodInDays": "Int32",
   "createdBy": {"@odata.type": "microsoft.graph.identitySet"},
   "createdDateTime": "String (timestamp)",
   "error": {"@odata.type": "microsoft.graph.publicError"},
@@ -51,6 +54,7 @@ The following JSON representation shows the resource type.
   "lastModifiedBy": {"@odata.type": "microsoft.graph.identitySet"},
   "lastModifiedDateTime": "String (timestamp)",
   "offboardRequestedDateTime": "String (timestamp)",
+  "pendingRetentionPeriodChange": {"@odata.type": "microsoft.graph.retentionPeriodChange"},
   "policyId": "String",
   "protectionSources": "String",
   "siteId": "String",
