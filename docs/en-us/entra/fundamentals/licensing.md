@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/fundamentals/licensing -->
-<!-- Sitemap-Last-Modified: 2026-06-18 -->
+<!-- Sitemap-Last-Modified: 2026-07-28 -->
 
 # Microsoft Entra licensing
 
@@ -234,6 +234,18 @@ Microsoft Entra P1 is also included in Microsoft 365 E3 and Microsoft 365 Busine
 | Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
 | --- | --- | --- | --- | --- |
 | New tenant creation with governance relationship | ✅ | ✅ | ✅ | ✅ |
+
+### Resource policy \(preview\)
+
+Most resource policy operations during preview require a Microsoft Entra ID Governance service plan, available with Microsoft Entra ID Governance or another offering that includes that service plan. Microsoft Entra P1 or P2 alone doesn't meet this requirement.
+
+| Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
+| --- | --- | --- | --- | --- |
+| Most resource policy operations, including creating or editing definitions and assignments, activating assignments, and restoring deleted policies |  |  |  | ✅ |
+| Browse and view policy definitions, including Rego source | ✅ | ✅ | ✅ | ✅ |
+| Delete policy definitions or assignments, or deactivate an assignment | ✅ | ✅ | ✅ | ✅ |
+
+The browsing, viewing, deletion, and deactivation exceptions don't remove role or API permission requirements.
 
 ## Microsoft Entra Connect
 

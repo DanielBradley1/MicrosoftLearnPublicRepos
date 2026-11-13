@@ -41,6 +41,18 @@ Microsoft Entra P1 is also included in Microsoft 365 E3 and Microsoft 365 Busine
 | --- | --- | --- | --- | --- |
 | New tenant creation with governance relationship | ✅ | ✅ | ✅ | ✅ |
 
+### Resource policy \(preview\)
+
+Most resource policy operations during preview require a Microsoft Entra ID Governance service plan, available with Microsoft Entra ID Governance or another offering that includes that service plan. Microsoft Entra P1 or P2 alone doesn't meet this requirement.
+
+| Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
+| --- | --- | --- | --- | --- |
+| Most resource policy operations, including creating or editing definitions and assignments, activating assignments, and restoring deleted policies |  |  |  | ✅ |
+| Browse and view policy definitions, including Rego source | ✅ | ✅ | ✅ | ✅ |
+| Delete policy definitions or assignments, or deactivate an assignment | ✅ | ✅ | ✅ | ✅ |
+
+The browsing, viewing, deletion, and deactivation exceptions don't remove role or API permission requirements.
+
 ## Licensing scenarios by feature
 
 The following scenarios show how to calculate licensing needs for common Tenant Governance uses.
@@ -108,6 +120,16 @@ One administrator enables Related tenants discovery for the tenant. After discov
 Secure add-on tenant creation is available with Microsoft Entra Free for paid Microsoft customers. A premium Microsoft Entra license isn't required, but the customer's existing tenant must be associated with a paid Microsoft cloud subscription. Customers who use only a free tenant or trial subscription can't create more tenants from the Microsoft Entra admin center.
 
 For more information about the general tenant creation requirements, see [Create a new tenant in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant).
+
+### Resource policy \(preview\)
+
+Most resource policy operations during preview require a Microsoft Entra ID Governance service plan, available with Microsoft Entra ID Governance or an offering such as Microsoft Entra Suite. Microsoft Entra P1 or P2 alone doesn't meet this requirement.
+
+The [features-by-license tables](#features-by-license) list required operations and exceptions for built-in and custom policies. Role and API permission requirements still apply to operations that don't require this service plan.
+
+An enabled assignment in `doNotEnforce` mode still evaluates requests. Creating or editing that assignment requires the service plan; switching to `doNotEnforce` isn't the same as deactivating it.
+
+For feature behavior and availability, see [What is Microsoft Entra resource policy?](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-overview). To assign a built-in policy, see the [built-in policy quickstart](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-quickstart-portal).
 
 ## Related content
 

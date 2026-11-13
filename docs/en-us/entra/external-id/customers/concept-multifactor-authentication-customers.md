@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/concept-multifactor-authentication-customers -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Multifactor authentication in external tenants
 
@@ -79,6 +79,10 @@ SMS is an add-on feature and requires a [linked subscription](https://learn.micr
 Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them for your application using the Microsoft Graph `onPhoneMethodLoadStartevent` policy. See [Regions requiring opt-in for SMS verification](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-region-code-opt-in).
 
 ## Time-based one-time password \(TOTP\)
+
+Note
+
+TOTP authentication in external tenants will become generally available at the end of November 2026. Rollout will finish in early December 2026.
 
 TOTP is a standards-based method that generates a temporary verification code in Microsoft Authenticator or a supported third-party authenticator app. It works as a second-factor verification method for MFA in external tenants.
 

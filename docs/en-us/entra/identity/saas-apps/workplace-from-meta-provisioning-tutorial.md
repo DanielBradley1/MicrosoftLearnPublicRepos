@@ -69,8 +69,8 @@ The Microsoft Entra provisioning service allows you to scope who is provisioned 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Workplace from Meta App based on user assignments in Microsoft Entra ID.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
-2. Browse to **Entra ID** > **Enterprise apps**
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
    ![Screenshot of Enterprise applications blade.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/enterprise-applications.png)
 
@@ -85,6 +85,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 5. Select **+ New configuration**.
 
    ![Screenshot of Provisioning tab automatic.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/application-provisioning.png)
+
+
+   Important
+
+
+   Configure OAuth-based provisioning admin credentials that require interactive consent in the [Azure portal](https://portal.azure.com). The Microsoft Entra admin center doesn't currently support this authorization flow. In the Azure portal, go to **Microsoft Entra ID** > **Enterprise applications**, select your application, and then select **Provisioning** before you authorize access.
 
 6. Ensure the "Tenant URL" section is populated with the correct endpoint: `https://scim.workplace.com/`. Under the **Admin Credentials** section, select **Authorize**. You're redirected to Workplace from Meta's authorization page. Enter your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
 

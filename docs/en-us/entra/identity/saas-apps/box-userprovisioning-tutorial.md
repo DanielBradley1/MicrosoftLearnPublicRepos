@@ -78,13 +78,19 @@ You may also choose to enabled SAML-based Single Sign-On for Box, following the 
 
 The objective of this section is to outline how to enable provisioning of Active Directory user accounts to Box.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
-2. Browse to **Entra ID** > **Enterprise apps**.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 3. If you have already configured Box for single sign-on, search for your instance of Box using the search field. Otherwise, select **Add** and search for **Box** in the application gallery. Select Box from the search results, and add it to your list of applications.
 4. Select your instance of Box, then select the **Provisioning** tab.
 5. Select **+ New configuration**.
 
    ![Screenshot for the new configuration steps into the box.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/application-provisioning.png)
+
+
+   Important
+
+
+   Configure OAuth-based provisioning admin credentials that require interactive consent in the [Azure portal](https://portal.azure.com). The Microsoft Entra admin center doesn't currently support this authorization flow. In the Azure portal, go to **Microsoft Entra ID** > **Enterprise applications**, select your application, and then select **Provisioning** before you authorize access.
 
 6. Under the **Admin Credentials** section, select **Authorize** to open a Box login dialog in a new browser window.
 7. On the **Login to grant access to Box** page, provide the required credentials, and then select **Authorize**.

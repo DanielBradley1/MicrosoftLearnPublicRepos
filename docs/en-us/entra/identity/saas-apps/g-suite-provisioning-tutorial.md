@@ -104,8 +104,8 @@ To learn more about the G Suite Directory API endpoint, refer to the [Directory 
 
 ### To configure automatic user provisioning for G Suite in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
-2. Browse to **Entra ID** > **Enterprise apps**.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+2. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
    ![Enterprise applications blade](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/g-suite-provisioning-tutorial/enterprise-applications.png)
 
@@ -123,6 +123,12 @@ To learn more about the G Suite Directory API endpoint, refer to the [Directory 
 5. Set **+ New configuration**.
 
    ![Screenshot of Provisioning tab automatic.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/application-provisioning.png)
+
+
+   Important
+
+
+   Configure OAuth-based provisioning admin credentials that require interactive consent in the [Azure portal](https://portal.azure.com). The Microsoft Entra admin center doesn't currently support this authorization flow. In the Azure portal, go to **Microsoft Entra ID** > **Enterprise applications**, select your application, and then select **Provisioning** before you authorize access.
 
 6. Under the **Admin Credentials** section, select **Authorize**. You're redirected to a Google authorization dialog box in a new browser window.
 

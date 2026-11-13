@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot -->
 <!-- Sitemap-Last-Modified: 2026-10-30 -->
 
-# Troubleshoot SMS and voice with your own telecom provider
+# Troubleshoot SMS and voice with your own telephony provider
 
-Use this article to trace SMS and voice requests end to end with Choose Your Own Telephony Provider \(CYOT\), find where a request stopped, and contact the right team to resolve it: Microsoft support, your Azure team, or your telecom provider.
+Use this article to trace SMS and voice requests end to end with Choose Your Own Telephony Provider \(CYOT\), find where a request stopped, and contact the right team to resolve it: Microsoft support, your Azure team, or your telephony provider.
 
 ## How a CYOT request flows
 
@@ -12,7 +12,7 @@ Each request passes through four stages, and each stage is recorded in its own l
 | Stage | What happens | Where to look |
 | --- | --- | --- |
 | 1. Microsoft Entra sends the request | Microsoft Entra requires an SMS or voice code and sends the request to your endpoint. | Microsoft Entra audit logs |
-| 2. Your endpoint processes it | Your Function App receives the request and sends it to your telecom provider. | Function App logs |
+| 2. Your endpoint processes it | Your Function App receives the request and sends it to your telephony provider. | Function App logs |
 | 3. Your provider delivers it | Your provider sends the SMS message or voice call to the user's phone. | Your provider's portal |
 | 4. The user signs in | The user enters the code, and Microsoft Entra completes authentication. | Microsoft Entra sign-in logs |
 
@@ -77,9 +77,9 @@ Use what you see in audit logs to find the right contact.
 | `CyotDeliveryFailed` with `EndpointClientError` | Your endpoint rejected the request. Check your Function App logs and authentication settings. | Your Azure team |
 | `CyotDeliveryFailed` with `EndpointServerError` | Your endpoint returned an error or didn't respond in time. Check your Function App logs and your provider's status. | Your Azure team |
 | `CyotDeliveryFailed` with `NonceMismatch` | Your endpoint's response didn't match what Microsoft Entra expects. Compare any customizations with the CYOT sample. | Your Azure team |
-| `CyotDeliverySucceeded`, but the user didn't receive the code | Your endpoint accepted the request. Check your provider's delivery records. | Your telecom provider |
+| `CyotDeliverySucceeded`, but the user didn't receive the code | Your endpoint accepted the request. Check your provider's delivery records. | Your telephony provider |
 | The user received the code, but sign-in failed | Check the sign-in logs for an expired, reused, or incorrect code. | Microsoft support |
-| Delivery blocked to certain countries/regions, fraud blocks, or unexpected charges | Review your provider's fraud, destination, and spending controls. | Your telecom provider |
+| Delivery blocked to certain countries/regions, fraud blocks, or unexpected charges | Review your provider's fraud, destination, and spending controls. | Your telephony provider |
 
 Tip
 
@@ -91,7 +91,7 @@ When a request times out, check your provider's records before you try again. Yo
 | --- | --- | --- |
 | Microsoft support | Authentication method policy, Microsoft Entra authentication, and the request to your endpoint | [Get support for Microsoft Entra](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-get-support) |
 | Your Azure team | Your Function App, its configuration, and Azure resources | Internal. For Azure platform issues, contact Azure support. |
-| Your telecom provider | Provider account, delivery, fraud controls, and usage charges | Support details in the provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing |
+| Your telephony provider | Provider account, delivery, fraud controls, and usage charges | Support details in the provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing |
 
 ### Information to include
 
@@ -102,12 +102,12 @@ When a request times out, check your provider's records before you try again. Yo
 
 ## Related content
 
-- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
-- [Plan for resiliency and high availability with your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
-- [Prevent telephony fraud when using your own telecom provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
-- [Audit logs in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs).
-- [Monitor Microsoft Entra sign-ins](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins).
-- [CYOT sign-in monitoring](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/docs/SIGN-IN-MONITORING.md).
-- [CYOT setup troubleshooting](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/setup/docs/Troubleshooting.md).
-- [Integrate Microsoft Entra logs with Azure Monitor](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs).
+- [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
+- [Plan for resiliency and high availability](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
+- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
+- [What are Microsoft Entra audit logs?](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs).
+- [What are Microsoft Entra sign-in logs?](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins).
+- [Monitor Microsoft Entra ID sign-ins](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/docs/SIGN-IN-MONITORING.md).
+- [Setup and onboarding troubleshooting](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/setup/docs/Troubleshooting.md).
+- [Integrate Microsoft Entra logs with Azure Monitor logs](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs).
 - [Analyze Microsoft Entra activity logs with Log Analytics](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics).

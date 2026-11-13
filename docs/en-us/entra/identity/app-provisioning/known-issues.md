@@ -52,6 +52,12 @@ If the user in the target tenant is assigned an exchange license, cross-tenant s
 
 Configuring synchronization from the target tenant isn't supported. All configurations must be done in the source tenant. The target administrator is able to turn off cross-tenant synchronization at any time.
 
+### Users removed from scope aren't deleted after an immediate restart
+
+If you remove a previously synchronized user from the scope of a cross-tenant synchronization job and restart the job before the next synchronization cycle, the user isn't deleted from the target tenant in subsequent cycles. The user remains in the target tenant until a change to the source user object causes the service to recognize that the user is out of scope and delete the user from the target tenant.
+
+After removing a user from scope, wait for the next synchronization cycle before restarting the job.
+
 ### Two users in the source tenant matched with the same user in the target tenant
 
 When two users in the source tenant have the same mail, and they both need to be created in the target tenant, one user is created in the target and linked to the two users in the source. Ensure that the mail attribute is not shared among users in the source tenant. In addition, please ensure that the mail of the user in the source tenant is from a verified domain. The external user will not be created successfully if the mail is from an unverified domain.

@@ -7,6 +7,16 @@ Most large organizations operate Microsoft services in multiple tenants because 
 
 Microsoft Entra Tenant Governance enables you to get visibility across all your tenants and ensure they are configured to meet your security and compliance requirements. This includes the tenants you administer today, "shadow IT" tenants that you don't administer but that create risks for your organization, and new tenants that your users create.
 
+Tenant Governance also includes resource policy for request-time governance within a tenant. Choose the capabilities that address your requirements; resource policy doesn't require related tenant discovery or a governance relationship.
+
+| Capability | Purpose |
+| --- | --- |
+| Related tenants | Discover observable tenant relationships. |
+| Governance relationships | Establish approved cross-tenant administrative access. |
+| Configuration management | Compare resource configuration with a baseline and report drift. |
+| Resource policy \(preview\) | Evaluate matching Microsoft Graph requests and help prevent noncompliant resource changes. |
+| Secure tenant creation | Create add-on tenants with governance and recovery capabilities. |
+
 ## Related tenants
 
 Related tenants capabilities help you identify tenants that you need to govern, or that have security or privacy exposure to tenants that you administer.
@@ -50,6 +60,23 @@ Key features:
 
 Learn more about [configuration management](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-management).
 
+## Resource policy \(preview\)
+
+Resource policy capabilities help you prevent supported configuration changes that don't meet your organization's requirements.
+
+Key features:
+
+- Assign built-in policies without authoring policy code.
+- Author custom policies in Rego to express your organization's configuration requirements.
+- Reuse custom policy logic with assignment parameters and explicitly selected policy versions.
+- Test policies with simulated requests and assess real request impact in `doNotEnforce` mode before enforcement.
+- Block noncompliant requests through assignments in `enforce` mode before the requested changes occur.
+- Inspect evaluation audit events through Microsoft Graph to assess policy impact and investigate request outcomes.
+
+Request-time policy evaluation doesn't automatically scan or remediate preexisting resources.
+
+Learn more about [resource policy](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-overview) and the [built-in policy quickstart](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-quickstart-portal).
+
 ## Secure tenant creation
 
 Secure tenant creation capabilities help you control which users can create new add-on tenants, automatically set up governance relationships with those tenants, and ensure that your organization can recover administrative access to those tenants if necessary.
@@ -77,3 +104,4 @@ Tenant Governance is available at two service levels: Tenant Governance Basic an
 - [Enable tenant discovery](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-enable-tenant-discovery)
 - [Set up a governance relationship](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-set-up-governance-relationship)
 - [Deploy Tenant Governance](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/deployment-guide)
+- [Resource policy overview](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-overview)

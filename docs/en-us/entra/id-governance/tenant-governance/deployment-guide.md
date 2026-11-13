@@ -3,9 +3,19 @@
 
 # Deploy Microsoft Entra Tenant Governance end to end
 
-This article describes how to deploy Microsoft Entra Tenant Governance across your organization. The deployment follows five phases: verifying prerequisites, discovering related tenants, establishing governance relationships, implementing delegated administration, and setting up configuration monitoring.
+This article describes how to deploy Microsoft Entra Tenant Governance across your organization. Choose the capabilities that address your governance requirements. Resource policy has an independent adoption path; it isn't an additional phase of cross-tenant deployment.
 
-Each phase builds on the previous one. Complete the phases in order, but skip optional phases if they don't apply to your environment.
+## Choose Tenant Governance features
+
+Use related tenants and governance relationships for tenant discovery and cross-tenant administration. Use configuration management to detect drift from approved resource configuration. Use resource policy to help prevent supported noncompliant changes at request time.
+
+| Adoption path | Start here |
+| --- | --- |
+| Discover and administer related tenants. | Follow the prerequisites and existing phases in this guide. Skip optional phases that don't apply. |
+| Monitor existing resource configuration. | Review [configuration management](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-management) and its service permissions. |
+| Adopt resource policy in a tenant. | Start with the [built-in policy quickstart](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-quickstart-portal), continue with the [observe-and-enforce tutorial](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-tutorial-portal), then follow [safe assignment deployment](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-safe-deployment) for a production rollout. |
+
+The resource policy path doesn't require related tenant discovery or a governance relationship. Its permissions, licensing, and procedures are separate from the cross-tenant prerequisites below.
 
 ## Prerequisites
 
@@ -234,5 +244,7 @@ For more information, see [Create a governed workforce tenant](https://learn.mic
 - [Governance policy templates](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/governance-policy-templates)
 - [Cross-tenant delegated administration](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/cross-tenant-delegated-administration)
 - [Configuration management](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-management)
+- [Resource policy overview](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-overview)
+- [Safely deploy resource policy assignments](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-safe-deployment)
 - [Microsoft Entra licensing](https://learn.microsoft.com/en-us/entra/fundamentals/licensing#microsoft-entra-tenant-governance)
 - [Frequently asked questions](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/faq)

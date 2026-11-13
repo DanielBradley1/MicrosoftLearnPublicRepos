@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/faq -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Frequently asked questions for Microsoft Entra Tenant Governance
 
@@ -62,6 +62,12 @@ No. Multi-tier relationships aren't currently supported. For example, you can't 
 Yes. Use [PIM for Groups](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups) so that admins activate group membership in the governing tenant before using GDAP access configured in the relationship to manage other tenants. PIM policies configured in the governed tenant and applied to a governing tenant administrator aren't supported.
 
 ## Configuration management
+
+### How does configuration management differ from resource policy?
+
+[Configuration management](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-management) detects drift from a baseline. [Resource policy \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-overview) evaluates matching Microsoft Graph requests and can block noncompliant changes. It doesn't scan or remediate preexisting resources.
+
+Use the features together to detect drift and help prevent noncompliant changes. Check each feature's supported resources, permissions, and policy format; they aren't interchangeable.
 
 ### What Microsoft services and resources can I monitor?
 

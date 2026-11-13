@@ -23,6 +23,10 @@ Using this feature requires Microsoft Entra ID Governance or Microsoft Entra Sui
 
 ## Monitor guest accounts at scale with inactive guest insights
 
+Note
+
+The inactive guest report updates once per day and displays a timestamp showing when it was last updated. Because of this refresh schedule, the total guest count in the report might differ from the current total in your tenant or the counts shown on the **ID Governance** dashboard or the **Users** page.
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 2. Browse to **ID Governance** > **Dashboard**.
 3. Access the inactive guest account report by navigating to the **Guest access governance** card then select **View inactive guests**.
