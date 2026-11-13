@@ -38,7 +38,8 @@ Use the applicable product-specific testing guidance:
 
 - [Debug agents using Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio)
 - [Debug agents using Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-vscode)
-- [Review skill support and known issues](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix)
+- [Test skill discovery and invocation in Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills#test-discovery-and-invocation)
+- [Review declarative-agent skill support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix)
 - [Build and test a custom Copilot connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector)
 - [Debug MCP and API plugins locally](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-debug-local)
 - [Test a deployed declarative agent with Work IQ DevUI](https://microsoft.github.io/wiqd/extensions/provided/devui/)
@@ -59,6 +60,8 @@ Test the end-to-end scenarios from the solution brief rather than testing only i
 7. Verify that logs and diagnostics identify the components involved.
 
 When testing in Microsoft 365 Copilot, you can enter `-developer on` in Copilot Chat to inspect agent metadata and action selection. Enter `-developer off` when you finish.
+
+For a plugin containing skills, test explicit selection and automatic invocation separately. If the package combines an agent and a skill, verify that users can discover and use both. If a skill requires a connector or MCP tool, confirm that the capability is invoked instead of judging success only from the final response. Test Chat and Cowork separately when you claim support for both.
 
 ## Test failures and boundaries
 

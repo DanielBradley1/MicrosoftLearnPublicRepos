@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/whats-new -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
 # What's new in Microsoft 365 Copilot extensibility
 
@@ -9,11 +9,19 @@ For the latest information, announcements, and news about preview and generally 
 
 ## November 2026
 
+### Skills in Copilot Chat
+
+Skills in Microsoft 365 Copilot Chat are generally available. Author reusable task instructions with optional resources and scripts for use directly in Chat, without creating a declarative agent. Users can select a skill explicitly or allow Copilot to select it automatically. Developers can distribute skills through supported plugin packages. See [Build skills for Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills).
+
 ### Review Copilot credit requests with the Cost Management API
 
 Administrators can list, review, approve, and reject users' requests for Copilot credits, individually or in bulk, with the new [credit request APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/creditrequest) in the [Cost Management API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview).
 
 ## October 2026
+
+### List tools in the Package Management API
+
+Administrators can now use the `elementTypes` filter on [List packages](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackages-list#filter-by-element-type) to return plugins, MCP servers, and skills in addition to agents, and can combine the `elementTypes` filter with request filters to review requests for plugins and MCP servers.
 
 ### Declarative agent manifest version 1.9
 
@@ -109,13 +117,13 @@ The Agent Registration API enables developers and administrators to programmatic
 
 ### Copilot policy settings API \(preview\)
 
-The Copilot policy settings API is now available in preview. This API provides a unified endpoint to read and update Copilot settings across multiple policy services, including Cloud Policy Service \(CPS\) and Microsoft Intune. For more information, see [copilotPolicySetting resource type](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/resources/copilotpolicysetting).
+The Copilot policy settings API is now in preview. This API provides a unified endpoint to read and update Copilot settings across multiple policy services, including Cloud Policy Service \(CPS\) and Microsoft Intune. For more information, see [copilotPolicySetting resource type](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/resources/copilotpolicysetting).
 
 ## March 2026
 
 ### Share agents to teams in Microsoft Teams
 
-You can now share agents built with Agent Builder in Microsoft 365 Copilot to teams as well as users and groups. For more information, see [Share and manage agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents).
+You can now share agents that you built with Agent Builder in Microsoft 365 Copilot to teams as well as users and groups. For more information, see [Share and manage agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents).
 
 ### Use natural language to create an agent in Microsoft 365 Copilot
 
@@ -123,7 +131,7 @@ You can now create agents more quickly with Agent Builder in Microsoft 365 Copil
 
 ### Interactive UI widgets for declarative agents
 
-You can now add interactive UI widgets to your declarative agents by extending MCP server-based actions using the [OpenAI Apps SDK](https://developers.openai.com/apps-sdk). Widgets can render inline or in full-screen mode within Microsoft 365 Copilot. For more information, see [Add MCP apps to declarative agents in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps).
+You can now add interactive UI widgets to your declarative agents by extending MCP server-based actions by using the [OpenAI Apps SDK](https://developers.openai.com/apps-sdk). Widgets can render inline or in full-screen mode within Microsoft 365 Copilot. For more information, see [Add MCP apps to declarative agents in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps).
 
 ## February 2026
 
@@ -135,7 +143,7 @@ Agent Builder is now available in Government Community Cloud High \(GCCH\) envir
 
 ### Retrieval API pay-as-you-go consumption \(preview\)
 
-The Microsoft 365 Copilot Retrieval API is now available to users without a Microsoft 365 Copilot add-on license via pay-as-you-go consumption \(preview\). This model provides access to the Retrieval API for tenant-level data sources such as SharePoint and Microsoft 365 Copilot connectors. For more information, see [Microsoft 365 Copilot Retrieval API pay-as-you-go consumption \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/ai-services/retrieval/paygo-retrieval).
+The Microsoft 365 Copilot Retrieval API is now available to users without a Microsoft 365 Copilot add-on license through pay-as-you-go consumption \(preview\). This model provides access to the Retrieval API for tenant-level data sources such as SharePoint and Microsoft 365 Copilot connectors. For more information, see [Microsoft 365 Copilot Retrieval API pay-as-you-go consumption \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/ai-services/retrieval/paygo-retrieval).
 
 ## Related content
 

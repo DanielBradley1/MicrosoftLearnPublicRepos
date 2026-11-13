@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Share and manage agents built in Agent Builder
 
@@ -216,8 +216,6 @@ You can share ownership of an agent directly by adding users with the **Can edit
 
 Admins can also update the owner of a shared agent within the organization. For more information, see [Reassign ownership of shared agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-actions#assign-new-owner-to-an-agent).
 
-To reassign ownership via PowerShell, see [Reassign an agent's owner with PowerShell](https://learn.microsoft.com/en-us/power-platform/release-plan/2025wave2/microsoft-copilot-studio/reassign-agents-owner-powershell).
-
 ## Troubleshooting
 
 When sharing an agent and its knowledge sources, you might encounter the errors listed in the following table.
@@ -240,4 +238,3 @@ When sharing an agent and its knowledge sources, you might encounter the errors 
 - [Manage agent requests in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests)
 - [Publish and deploy your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels)
 - [Upload into Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)
-- [Reassign an agent's owner with PowerShell](https://learn.microsoft.com/en-us/power-platform/release-plan/2025wave2/microsoft-copilot-studio/reassign-agents-owner-powershell)

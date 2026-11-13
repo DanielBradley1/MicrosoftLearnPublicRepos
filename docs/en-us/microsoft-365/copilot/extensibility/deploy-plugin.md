@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Make your plugin available
 
@@ -57,6 +57,12 @@ For a plugin published through Microsoft Marketplace:
 6. Verify that intended users can find and use the plugin.
 
 Publication through Microsoft Marketplace doesn't automatically make the plugin available in every customer organization.
+
+### Skills in Copilot Chat
+
+For a plugin that contains skills, verify that the intended audience can discover and use the installed plugin in Copilot Chat. Uploading, publishing, or assigning a package isn't proof that its skills are available to a user.
+
+If you also target Copilot Cowork, verify availability in both products. Don't assume that creating, sharing, or installing a skill in one product completes every step in the other. See [Test discovery and invocation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills#test-discovery-and-invocation).
 
 ## Complete required configuration
 

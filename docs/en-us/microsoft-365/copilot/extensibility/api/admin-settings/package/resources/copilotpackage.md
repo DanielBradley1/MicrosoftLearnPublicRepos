@@ -24,7 +24,7 @@ Access to the Package Management API requires a [Microsoft Agent 365](https://ww
 | `createdDateTime` | DateTimeOffset | The date and time that the agent package was created. |
 | `deployedTo` | [packageAcquireStatus](#packageacquirestatus-enumeration) | Enum value indicating the current deployment scope of the package within the tenant \(`acquiredForAll`, `acquiredForSome`, `acquiredForNone`\). |
 | `displayName` | String | Human-readable name of the package shown to users and administrators. |
-| `elementTypes` | String collection | Collection of element types contained within this package \(for example, `bot`, `declarativeAgent`\). |
+| `elementTypes` | String collection | Collection of element types contained within this package \(for example, `bot`, `declarativeAgent`\). For tools, possible values include `AgentConnectors` and `AgentSkills`. Supports `$filter` on [List packages](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackages-list#filter-by-element-type). |
 | `governanceMetadata` | String | The agentic classification of the agent. Possible values are: `PromptAgent`, `HostedAgent`, `WorkflowAgent`, `ManagedAgent`, `Unmanaged`, and `AIApp`. |
 | `id` | String | Unique identifier for the Copilot package within the tenant. |
 | `isBlocked` | Boolean | Boolean flag indicating whether the package is administratively blocked from use within the tenant. |

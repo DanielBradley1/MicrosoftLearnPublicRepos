@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills -->
-<!-- Sitemap-Last-Modified: 2026-10-27 -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Add skills to your declarative agent in Agent Builder
 
 A skill is a modular, reusable component that you add to a declarative agent to help it perform a specific packaged task. A skill is a directory that contains a required `SKILL.md` file with instructions, plus optional resource files and scripts. This article describes how to add a skill to an agent built in Agent Builder, either by describing the skill in natural language or by uploading a skill package.
 
 To learn what skills are, why to use them, and the full support matrix, supported file types, sandbox behavior, and governance, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills).
+
+For a personal skill used directly in Copilot Chat without an agent, see [Build skills for Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills). The upload steps and limits in this article apply to Agent Builder, not personal Chat uploads.
 
 Important
 

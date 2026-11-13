@@ -26,14 +26,16 @@ The following matrix lists only component routes that the linked source document
 | --- | --- | --- | --- | --- |
 | Agent Builder | Declarative agent | Microsoft 365 Copilot | Create, test, share, and submit an agent through the managed authoring experience | Documented route: [Agent Builder in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) |
 | Agent Builder | Skill added to an Agent Builder declarative agent | Microsoft 365 Copilot | Create or upload a reusable skill for the agent | Documented route: [Add skills in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills) |
+| Copilot Chat | Personal skill used directly in Chat | Microsoft 365 Copilot Chat | Create or edit a skill conversationally, or upload an authored skill | Authoring guidance: [Build skills for Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills) |
+| Work IQ Dev Tools | Skill registered at the plugin level in a Microsoft 365 app package | Copilot Chat and other hosts supported by the selected components | Create, package, validate, and distribute the plugin | Skills in Chat are generally available; WIQD remains in preview and `wiqd plugin` remains alpha. See [Package a skill in a plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills#package-a-skill-in-a-plugin). |
 | Work IQ Dev Tools | Declarative agent project, including tool-supported API or remote MCP actions and agent skills | Microsoft 365 Copilot | Create, edit, validate, provision, package, publish to the organization, share, test, monitor, and evaluate the project | Preview: [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs) |
-| Work IQ Dev Tools | Microsoft 365 app package that composes a declarative agent, skill, or remote MCP connector in a documented combination | Microsoft 365 and Copilot experiences supported by the selected components and package | Create or import, compose, validate, provision, package, export, and share the plugin | The `wiqd plugin` command tree is alpha and doesn't publish to the public store: [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) |
+| Work IQ Dev Tools | Microsoft 365 app package that composes a declarative agent, skill, or remote MCP connector in a documented combination | Microsoft 365 and Copilot experiences supported by the selected components and package | Create, compose, validate, provision, package, export, share, and submit the plugin to the organization catalog | The `wiqd plugin` command tree is alpha and doesn't publish to the public store: [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) |
 | Microsoft 365 Agents Toolkit | Declarative agent in a supported Microsoft 365 app package | Microsoft 365 Copilot | Create, validate, provision, package, test, and publish the app package | Documented route: [Build or reuse declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-declarative-agents) |
 | Microsoft 365 Agents Toolkit | Synced Copilot connector | Microsoft 365 Copilot and Microsoft Search | Build the connector, package the app, deploy the connection, and test indexed content | Documented route: [Build your first custom Copilot connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector) |
 | Microsoft 365 Agents Toolkit | Remote MCP server used by a declarative agent | Microsoft 365 Copilot declarative agent | Add the MCP integration, package the app, and test the agent and server together | Documented route: [Build a plugin for a declarative agent from an MCP server](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) |
 | Microsoft 365 Agents SDK | Custom engine agent | Microsoft 365 Copilot, Teams, and other supported channels | Build and host custom orchestration, models, integrations, and multi-channel agent experiences | Documented route: [Custom engine agents for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent#microsoft-365-agents-sdk) |
-| Cowork | Cowork plugin with supported skills and remote connectors | Copilot Cowork | Import or create, package, test, and publish the Cowork plugin | Documented route: [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365-copilot/cowork/cowork-plugin-development) |
-| Copilot Studio | Agent with capabilities, knowledge, connectors, workflows, or tools supported by the selected Copilot Studio experience | Microsoft 365 Copilot through a supported Copilot Studio publishing channel | Build, test, publish, and manage the agent in the managed environment | Documented route; capability and channel support varies: [Build agents with Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-365-copilot-extend-with-agents?context=/microsoft-365/copilot/extensibility/context) |
+| Cowork | Cowork plugin with supported skills and remote connectors | Copilot Cowork | Create, package, test, and publish the Cowork plugin | Documented route: [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development) |
+| Copilot Studio | Agent with capabilities, knowledge, connectors, workflows, or tools supported by the selected Copilot Studio experience | Microsoft 365 Copilot through a supported Copilot Studio publishing channel | Build, test, publish, and manage the agent in the managed environment | Documented route; capability and channel support varies: [Connect and configure an agent for Teams and Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams) |
 | GitHub Copilot | Code, configuration, tests, and independently hosted services used by another documented component route | Supported IDE, GitHub, or command-line development environment | Assist implementation; another tool owns the Microsoft 365 package, validation, publishing, and governance route | Development assistance, not a Microsoft 365 packaging route: [GitHub Copilot documentation](https://docs.github.com/copilot) |
 
 The tools don't all perform the same function. An authoring or packaging tool creates the supported plugin artifacts. GitHub Copilot can assist with implementation, but it doesn't by itself choose the Microsoft 365 package, validation, publishing, or governance model.
@@ -67,7 +69,7 @@ Use Work IQ Dev Tools when you need:
 
 - Source-controlled project files.
 - Named development, staging, and production environments.
-- Offline static validation, package-first deep validation, or live manifest diagnostics in Visual Studio Code.
+- Offline source validation, validation of an existing package, or live manifest diagnostics in Visual Studio Code.
 - Terminal, JSON-output, or continuous integration workflows.
 - Scriptable agent, action, skill, or alpha plugin-package configuration.
 - Packaging, sharing, and organization publishing workflows supported by the selected command surface.
@@ -79,14 +81,16 @@ Choose the WIQD surface that owns the task:
 | Surface | Documented use | Status or boundary |
 | --- | --- | --- |
 | `wiqd agent` | Create, edit, validate, provision, package, publish, share, manage collaborators, evaluate, inspect, and delete a declarative-agent project. | WIQD is in preview. Agent skills and some other capabilities require feature flags. |
-| `wiqd plugin` | Create or import a Microsoft 365 app package, add supported agents, skills, or remote MCP connectors, validate, provision, package, export, share, and delete it. | The entire plugin command tree is alpha. It has no `wiqd plugin publish` command; public-store submission and administrator upload remain separate processes. |
+| `wiqd plugin` | Create a Microsoft 365 app package, add supported agents, skills, or remote MCP connectors, validate, provision, package, export, share, submit to the organization catalog, and delete it. | The entire plugin command tree is alpha. `wiqd plugin publish` submits to the organization catalog for administrator approval; it doesn't submit to the public store. |
 | Work IQ Dev Tools extension for Visual Studio Code | Show Microsoft Validation Layer diagnostics, schema-aware completion, hovers, and supported quick fixes while you edit manifests. | Inner-loop static validation only; keep CLI validation in continuous integration. |
 | `wiqd agent eval` | Run quality evaluations against a deployed declarative agent and produce result files or scorecards. | Applies to deployed declarative agents, not custom engine agents. |
 | `wiqd agent list`, `ask`, and `monitor` | Find deployed declarative agents, send test prompts, and query the Microsoft 365 Insights Agent about usage and health. | Experimental Work IQ surface; requires Work IQ authentication. |
 | `wiqd devui` | Test a deployed declarative agent in a local browser interface and inspect plugin selection, retrieval, citations, identifiers, and raw results. | Preview feature that must be enabled. |
-| Copilot CLI agent `wiqd:wiqd` | Drive documented agent and plugin workflows conversationally instead of entering each WIQD command directly. | The installer includes this integration unless it is explicitly skipped. |
+| WIQD coding-assistant plugin | Drive documented agent and plugin workflows conversationally instead of entering each WIQD command directly. | Install from the host's marketplace, or use the installation script with a supported host already installed. Marketplace plugin installation doesn't install the WIQD CLI. |
 
 WIQD supports stable JSON output and documented exit codes for automation. Its trusted-pipeline authentication applies only to core lifecycle operations such as provision, publish, and share. It doesn't authenticate Work IQ monitoring, evaluations, or other extensions. See [CI/CD authentication](https://microsoft.github.io/wiqd/getting-started/ci-cd-authentication/) before you add WIQD commands to a pipeline.
+
+Validation modes are `source`, `package`, and `marketplace`. Select `--mode source` explicitly for offline checks; the default, `package`, requires an existing ZIP and uploads it for validation. Validation doesn't build the ZIP or establish that every capability works at runtime. See [Validation and MVL](https://microsoft.github.io/wiqd/concepts/validation-mvl/).
 
 Work IQ Dev Tools doesn't target custom engine agents. For custom orchestration, models, hosting, or multi-channel scenarios, use the [Microsoft 365 Agents SDK or another supported custom-engine approach](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent#development-approaches-for-custom-engine-agents).
 
@@ -105,7 +109,7 @@ Use it when you need:
 - Import, validation, packaging, and publishing commands for a supported package route.
 - Microsoft 365 app-package support for the selected agent, plugin, connector, or target experience.
 
-Support varies by manifest schema, capability, package route, and Microsoft experience. For current tool capabilities, see [Microsoft 365 Agents Toolkit overview](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/overview-agents-toolkit?context=/microsoft-365/copilot/extensibility/context). For the Cowork plugin workflow, see [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365-copilot/cowork/cowork-plugin-development).
+Support varies by manifest schema, capability, package route, and Microsoft experience. For current tool capabilities, see [Microsoft 365 Agents Toolkit overview](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/overview-agents-toolkit?context=/microsoft-365/copilot/extensibility/context). For the Cowork plugin workflow, see [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development).
 
 ## SharePoint
 
@@ -121,9 +125,9 @@ Use Cowork when:
 
 - Cowork is a target experience for the plugin.
 - The plugin uses the skills and connector models supported by Cowork.
-- You need to import, create, package, or publish a Cowork plugin through its supported workflow.
+- You need to create, package, or publish a Cowork plugin through its supported workflow. Don't assume that importing an existing plugin supports the same lifecycle. Check the current import limitations in the linked guide.
 
-For current package structure, manifest requirements, supported skill format, connector configuration, and publishing guidance, see [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365-copilot/cowork/cowork-plugin-development).
+For current package structure, manifest requirements, supported skill format, connector configuration, and publishing guidance, see [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development).
 
 ## Copilot Studio
 

@@ -91,13 +91,10 @@ This behavior doesn't represent a security incident and has no effect on tenant 
 
 ### Exchange Web Services requirements
 
-Before you disable EWS, make sure that you have the required build to avoid disruption of Office Add-ins. **August 2026 build 16.0.20430.20092** is the first build with the baseline security mode feature.
+Before you disable EWS, make sure that you have the required build to avoid disruption of Outlook features and Office Add-ins. The following minimum build numbers are required:
 
-Here's when that build reaches the various update channels:
-
-- Current Channel \(CC\): Currently available.
-- Monthly Enterprise Channel \(MEC\): Currently available.
-- Semi-Annual Enterprise Channel \(SAC\): July 2026.
+- Microsoft 365: 16.0.20430.20092, which shipped in September 2026. This is for CC \(Current Channel\), MEC \(Monthly Enterprise Channel\), or SAC \(Semi-Annual Channel\).
+- Office 2024 LTSC: 16.0.17932.20976, which shipped in September 2026.
 - Teams panels: To avoid disruption, update your devices Teams app version 1449/1.0.97.2025120101, which was shipped in September 2025.
 
 Note

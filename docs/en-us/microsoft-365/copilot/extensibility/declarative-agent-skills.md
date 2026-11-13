@@ -1,7 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills -->
-<!-- Sitemap-Last-Modified: 2026-10-27 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Skills in declarative agents
+
+This article covers skills attached to a declarative agent. To author a skill for use directly in Microsoft 365 Copilot Chat without creating an agent, see [Build skills for Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills). The support matrix in this article applies to agent-scoped skills, not to all skills or plugin packages.
 
 Important
 

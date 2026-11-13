@@ -117,7 +117,13 @@ The capabilities object is the base type for objects in the `capabilities` prope
 
 Note
 
-Users can access declarative agents with any capabilities other than Web search only if their tenants allow metered usage or if they have a Microsoft 365 Copilot license.
+Declarative agent capabilities fall into three availability categories:
+
+- **Available to all users**: Don't require metered usage or a Microsoft 365 Copilot license.
+- **Available with metered usage or a license**: Require either metered usage to be enabled or a Microsoft 365 Copilot license.
+- **Available only with a license**: Require a Microsoft 365 Copilot license. Metered usage alone doesn't provide access.
+
+Users can access a declarative agent only if they meet the requirements for all capabilities it uses. For details about each capability's availability, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
 
 #### Capabilities object example
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/integrate-with-mcs -->
-<!-- Sitemap-Last-Modified: 2026-08-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-17 -->
 
 # Integrate with Copilot Studio
 
@@ -22,7 +22,7 @@ Each sample is configured as a console app so that you can get started quickly. 
 
 Note
 
-Currently, you can only use the Copilot Studio client library with Copilot Studio agents created by using the standard harness. Agents using the GitHub Copilot harness aren't yet officially supported.
+Currently, you can only use the Copilot Studio client library with Copilot Studio agents created by using the standard harness. Agents using the Microsoft Copilot harness aren't yet officially supported.
 
 ## Related information
 

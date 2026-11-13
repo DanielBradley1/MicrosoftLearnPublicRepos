@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-add-custom-skills -->
-<!-- Sitemap-Last-Modified: 2026-10-27 -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Add skills to a declarative agent created with Microsoft 365 Agents Toolkit
 
@@ -10,6 +10,8 @@ In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://lear
 A skill is a modular, reusable component that you add to a declarative agent to package instructions, resources, and scripts for a specific task. This article describes how to add a skill to a declarative agent by using the Microsoft 365 Agents Toolkit \(ATK\) command-line interface \(CLI\) or the Visual Studio Code extension.
 
 To learn what skills are, why to use them, and the full support matrix, supported file types, sandbox behavior, and governance, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills).
+
+This guide adds agent-scoped skills. To distribute a skill for use directly in Copilot Chat through a plugin, see [Build skills for Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills#package-a-skill-in-a-plugin).
 
 Important
 
@@ -82,7 +84,7 @@ If you set the variable after you install the Visual Studio Code extension, rest
 
 ## Limits
 
-In the Agents Toolkit, you add a skill as a directory \(you can't use `.zip`\), and the complete app package is limited to 10 MB. You can add up to eight skills per agent, with a maximum directory depth of three and up to 350 files across the skill directory. For the full support matrix, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix).
+In the Agents Toolkit, you add a skill as a directory \(you can't use `.zip`\), and the complete app package is limited to 10 MB. You can add up to eight skills per agent, with a maximum directory depth of three and up to 350 files across all skills. For the full support matrix, see [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills#support-matrix).
 
 ## Publish your agent
 
@@ -94,3 +96,4 @@ For the end-to-end workflow, see [Partner Center Publishing \(3P\)](https://gith
 
 - [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills)
 - [Add skills to your declarative agent in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills)
+- [Declarative agent manifest reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9)
