@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Sitemap-Last-Modified: 2026-10-24 -->
 
 # tenantProtectionScopeContainer: compute
 
@@ -43,7 +43,7 @@ In the request body, provide JSON object with the following parameters.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| activities | microsoft.graph.security.userActivityTypes | Optional. Flags specifying the user activities the calling application supports or is interested. Possible values are `none`, `uploadText`, `uploadFile`, `downloadText`, `downloadFile`, `unknownFutureValue`. This object is a multi-valued enumeration. |
+| activities | microsoft.graph.security.userActivityTypes | Optional. Specifies the user activities the calling application supports or is interested in. This flagged enumeration allows multiple members to be selected simultaneously. The possible values are: `none`, `uploadText`, `uploadFile`, `downloadText`, `downloadFile`, `unknownFutureValue`, `copyToClipboard`, `pasteFromClipboard`, `print`, `accessDebugTools`. Use the `Prefer: include-unknown-enum-members` request header to get the following values in this evolvable enum: `copyToClipboard`, `pasteFromClipboard`, `print`, `accessDebugTools`. |
 | deviceMetadata | [deviceMetadata](https://learn.microsoft.com/en-us/graph/api/resources/devicemetadata?view=graph-rest-1.0) | Optional. Information about the device context \(type, OS\) used for contextual policy evaluation. Not expected to be used when computing tenant protection scopes |
 | integratedAppMetadata | [integratedApplicationMetadata](https://learn.microsoft.com/en-us/graph/api/resources/integratedapplicationmetadata?view=graph-rest-1.0) | Optional. Information about the calling application \(name, version\) integrating with Microsoft Purview. |
 | locations | [policyLocation](https://learn.microsoft.com/en-us/graph/api/resources/policylocation?view=graph-rest-1.0) collection | Optional. List of specific locations the application is interested in. If provided, results are trimmed to policies covering these locations. Use [policy location application](https://learn.microsoft.com/en-us/graph/api/resources/policylocationapplication?view=graph-rest-1.0) for application locations, [policy location domain](https://learn.microsoft.com/en-us/graph/api/resources/policylocationdomain?view=graph-rest-1.0) for domain locations, or [policy location URL](https://learn.microsoft.com/en-us/graph/api/resources/policylocationurl?view=graph-rest-1.0) for URL locations. You must specify the `@odata.type` property to declare the type of policyLocation. For example, `"@odata.type": "microsoft.graph.policyLocationApplication"`. |

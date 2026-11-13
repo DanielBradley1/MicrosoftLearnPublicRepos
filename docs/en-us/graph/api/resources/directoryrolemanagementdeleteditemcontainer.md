@@ -13,7 +13,7 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 
 | Method | Return type | Description |
 | :--- | :--- | :--- |
-| [List roleDefinitions](https://learn.microsoft.com/en-us/graph/api/directoryrolemanagementdeleteditemcontainer-list-roledefinitions?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) collection | List soft-deleted custom role definitions. |
+| [List deleted roleDefinitions](https://learn.microsoft.com/en-us/graph/api/directoryrolemanagementdeleteditemcontainer-list-roledefinitions?view=graph-rest-1.0) | [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0) collection | List soft-deleted custom role definitions. |
 
 ## Properties
 

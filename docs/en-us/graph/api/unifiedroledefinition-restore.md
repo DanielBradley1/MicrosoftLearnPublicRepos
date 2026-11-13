@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/unifiedroledefinition-restore?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # unifiedRoleDefinition: restore
 
@@ -72,6 +72,7 @@ Content-Type: application/json
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#roleManagement/directory/roleDefinitions/$entity",
   "id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+  "deletedDateTime": null,
   "description": "Can manage basic aspects of application registrations.",
   "displayName": "Application Support Administrator",
   "isBuiltIn": false,

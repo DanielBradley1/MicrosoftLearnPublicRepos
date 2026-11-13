@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/enums-identitygovernance?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Identity governance enum values
 
@@ -121,4 +121,13 @@ The **subjectType** enumeration is an evolvable enumeration marked with the `IsF
 | countBasedThresholdExceeded |
 | percentageBasedThresholdExceeded |
 | multipleConditionsExceeded |
+| unknownFutureValue |
+
+### workflowTriggerOperatorEventTiming values
+
+| Member |
+| :--- |
+| before |
+| after |
+| on |
 | unknownFutureValue |

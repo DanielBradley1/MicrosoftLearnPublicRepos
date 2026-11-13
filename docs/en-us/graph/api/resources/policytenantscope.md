@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/policytenantscope?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-09 -->
+<!-- Sitemap-Last-Modified: 2026-09-29 -->
 
 # policyTenantScope resource type
 
@@ -15,7 +15,7 @@ Inherits from [policyScopeBase](https://learn.microsoft.com/en-us/graph/api/reso
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| activities | microsoft.graph.security.userActivityTypes | Flags specifying the user activities the calling application supports or is interested. Possible values are `none`, `uploadText`, `uploadFile`, `downloadText`, `downloadFile`, `unknownFutureValue`. Required. This object is a multi-valued enumeration. |
+| activities | microsoft.graph.security.userActivityTypes | Specifies the user activities the calling application supports or is interested in. This flagged enumeration allows multiple members to be selected simultaneously. The possible values are: `none`, `uploadText`, `uploadFile`, `downloadText`, `downloadFile`, `unknownFutureValue`, `copyToClipboard`, `pasteFromClipboard`, `print`, `accessDebugTools`. Use the `Prefer: include-unknown-enum-members` request header to get the following values in this evolvable enum: `copyToClipboard`, `pasteFromClipboard`, `print`, `accessDebugTools`. Required. |
 | executionMode | microsoft.graph.security.executionMode | Policy execution mode at the tenant level. Possible values are `evaluateInline` and `evaluateOffline`. Inherited from `policyScopeBase`. Required. |
 | locations | Collection\([microsoft.graph.policyLocation](https://learn.microsoft.com/en-us/graph/api/resources/policylocation?view=graph-rest-1.0)\) | Locations protected at the tenant level. Inherited from `policyScopeBase`. Required. |
 | policyActions | Collection\([microsoft.graph.dlpActionInfo](https://learn.microsoft.com/en-us/graph/api/resources/dlpactioninfo?view=graph-rest-1.0)\) | Enforcement actions at the tenant level. Inherited from `policyScopeBase`. Required. |
