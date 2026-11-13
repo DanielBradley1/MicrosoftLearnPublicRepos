@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/whats-new/ -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-02 -->
 
 # What's new in Microsoft Intune
 
@@ -29,6 +29,16 @@ You can use RSS to be notified when this page is updated. For more information, 
 ## Week of October 26, 2026 \(Service release 2610\)
 
 ### App management
+
+#### Newly available protected apps for Intune
+
+The following protected apps are now available for Microsoft Intune:
+
+- eScription One by DeliverHealth
+- Prisma Browser for Intune by Palo Alto Networks, Inc.
+- Elevate UC for Intune by Serverdata.net, Inc.
+
+For more information about protected apps, see [Microsoft Intune protected apps](https://learn.microsoft.com/en-us/intune/app-management/ref-protected-apps).
 
 #### Manage referenced apps on AOSP devices
 

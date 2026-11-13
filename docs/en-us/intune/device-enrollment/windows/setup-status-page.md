@@ -349,6 +349,14 @@ It also tracks the following types of apps when they're assigned to all devices,
 
 If you're using Microsoft Entra hybrid join, Win32 and UWP apps assigned to the device with user installation context aren't tracked during provisioning.
 
+### PowerShell script execution during ESP
+
+PowerShell scripts can run while the Enrollment Status Page \(ESP\) is displayed. However, ESP doesn't track PowerShell scripts as blocking workloads or wait for them to complete successfully. ESP can complete when its tracked applications and policies meet the configured ESP criteria, even if a PowerShell script is still running.
+
+At startup, the Intune management extension processes PowerShell scripts first, then starts Win32 app processing in the same startup flow. This ordering doesn't guarantee that all PowerShell scripts finish before any Win32 app processing begins. Other device check-ins or notifications can independently trigger app processing while a script is still running.
+
+Don't rely on ESP or the Intune management extension startup order to ensure that a PowerShell script completes before a Win32 app starts installing. If an app requires a script or another prerequisite to complete before installation, include that prerequisite as part of the Win32 app deployment.
+
 ### Known issues
 
 This section lists the known issues for the enrollment status page.
