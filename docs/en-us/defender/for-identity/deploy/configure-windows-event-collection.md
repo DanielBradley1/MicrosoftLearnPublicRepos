@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection -->
-<!-- Sitemap-Last-Modified: 2026-10-06 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Configure Windows event auditing
 
@@ -45,7 +45,7 @@ When enabled, the v3.x sensor automatically:
   - **Directory services advanced auditing**: Configures the required Windows advanced audit policies on the local system.
   - **NTLM auditing**: Configures the required NTLM auditing settings.
   - **Domain object auditing**: Adds audit entries to the domain root object's System Access Control List \(SACL\) to enable required directory service auditing.
-  - **Configuration container auditing**: Modifies the SACL on the Configuration partition to capture changes to directory service configuration objects.
+  - **Configuration container auditing**: For environments that currently have or previously had Microsoft Exchange, configures the Configuration partition's SACL to capture directory service configuration changes.
   - **AD FS auditing**: Automatically configures the following settings:
 
     - **Object-level auditing on the AD FS configuration container**: Adds audit entries to the object's System Access Control List \(SACL\) of the AD FS configuration container, to enable auditing of AD FS-related directory objects.

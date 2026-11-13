@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts -->
-<!-- Sitemap-Last-Modified: 2026-08-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Configure Microsoft Defender for Identity action accounts
 
@@ -83,7 +83,7 @@ To create and configure a dedicated gMSA action account, perform the following s
 
 Use the Microsoft Defender portal to add the gMSA action account:
 
-1. Go to the [Microsoft Defender portal](https://security.microsoft.com) and select **Settings** -> **Identities** > **Microsoft Defender for Identity** > **Manage action accounts** > **+Create new account**.
+1. Go to the [Microsoft Defender portal](https://security.microsoft.com) and select **Settings** > **Identities** > **General** > **Manage action accounts** > **+ Create new account**.
 
    For example:
 
@@ -95,4 +95,4 @@ Your action account is listed on the **Manage action accounts** page.
 
 ## Related content
 
-For more information, see [Remediation actions in Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions).
+For more information, see [Identity remediation actions in Microsoft Defender](https://learn.microsoft.com/en-us/defender-for-identity/remediation-actions).

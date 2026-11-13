@@ -1,15 +1,15 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/role-groups -->
 <!-- Sitemap-Last-Modified: 2026-07-27 -->
 
-# Microsoft Defender for Identity role groups
+# Role groups for identity security in Microsoft Defender
 
-Microsoft Defender for Identity offers role-based security to safeguard data according to your organization's specific security and compliance needs. We recommend that you use role groups to manage access to Defender for Identity, segregating responsibilities across your security team and granting only the amount of access that users need to do their jobs.
+Identity security capabilities in Microsoft Defender use role-based security to safeguard data according to your organization's specific security and compliance needs. We recommend that you use role groups to manage access to identity security capabilities in Microsoft Defender, segregating responsibilities across your security team and granting only the amount of access that users need to do their jobs.
 
 ## Unified role-based access control \(RBAC\)
 
-Users that are already have the [Security Administrators](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference) on your tenant's Microsoft Entra ID are also automatically Defender for Identity administrator. Microsoft Entra Security Administrators don't need extra permissions to access Defender for Identity.
+Users that are already have the [Security Administrators](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference) on your tenant's Microsoft Entra ID are also automatically Defender for Identity administrator. Microsoft Entra Security Administrators don't need extra permissions to access identity security capabilities in Microsoft Defender.
 
-For other users, enable and use Microsoft 365 role-based access control \(RBAC\) to create custom roles and to support more Entra ID roles such as Security operator or Security Reader by default to manage access to Defender for Identity.
+For other users, enable and use Microsoft 365 role-based access control \(RBAC\) to create custom roles and to support more Entra ID roles such as Security operator or Security Reader by default to manage access to identity security capabilities in Microsoft Defender.
 
 Important
 

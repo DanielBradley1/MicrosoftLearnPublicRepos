@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/manage-admins -->
 <!-- Sitemap-Last-Modified: 2026-10-04 -->
 
-# Configure admin access in Defender for Cloud Apps
+# Configure SaaS security admin access in Microsoft Defender in Defender for Cloud Apps
 
-Microsoft Defender for Cloud Apps supports role-based access control. This article provides instructions for setting access to Defender for Cloud Apps for your admins. For more information about assigning administrator roles, see the articles for [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference) and [Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles).
+SaaS security capabilities in Microsoft Defender support role-based access control. This article provides instructions for setting access to Microsoft Defender for Cloud Apps for your admins. For more information about assigning administrator roles, see the articles for [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference) and [Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles).
 
-## Microsoft 365 and Microsoft Entra roles with access to Defender for Cloud Apps
+## Microsoft 365 and Microsoft Entra roles with access to SaaS security in Microsoft Defender
 
 Note
 
@@ -17,7 +17,7 @@ Note
 
 As Microsoft Defender moves toward a fully unified identity platform, some Defender for Cloud Apps data pipelines remain separate. Defender for Cloud Apps RBAC scoping uses a separate data pipeline that isn't yet integrated with the [Identity inventory](https://learn.microsoft.com/en-us/defender-for-identity/identity-inventory). Correlations defined in the Identity inventory don't affect Defender for Cloud Apps scoping. For a full list of affected features, see [Enable Identity inventory integration](https://learn.microsoft.com/en-us/defender-cloud-apps/general-setup#enable-identity-inventory-integration).
 
-By default, the following Microsoft 365 and [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference) admin roles have access to Defender for Cloud Apps:
+By default, the following Microsoft 365 and [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference) admin roles have access to SaaS security capabilities in Microsoft Defender:
 
 | Role name | Description |
 | --- | --- |
@@ -79,7 +79,7 @@ The following specific admin roles can be configured in the Microsoft Defender p
 
 Note
 
-The **App/instance admin** and **User group admin** role assignments are no longer available for new configurations as part of platform consolidation efforts. Existing configurations aren't affected and continue to be supported. If your organization requires these capabilities, contact Microsoft Support.
+The **App/instance admin**, **User group admin**, **Cloud Discovery global admin**, and **Cloud Discovery report admin** role assignments are no longer available for new configurations as part of platform consolidation efforts. Existing configurations aren't affected and continue to be supported. If your organization requires these capabilities, contact Microsoft Support.
 
 Important
 

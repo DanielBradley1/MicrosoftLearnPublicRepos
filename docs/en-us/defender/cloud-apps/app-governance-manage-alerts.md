@@ -3,11 +3,11 @@
 
 # Remediate OAuth app threats with app governance alerts
 
-You can investigate alerts about malicious cloud apps and apps that may present risks to your organization in the Defender portal **Alerts** or **Incidents** pages.
+You can investigate alerts about malicious cloud apps and apps that may present risks to your organization on the **Alerts** or **Incidents** pages in the Microsoft Defender portal.
 
 For example:
 
-[![Screenshot of the app governance alerts summary page in the Microsoft Defender XDR.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance/mapg-cc-alerts.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance/mapg-cc-alerts.png#lightbox)
+[![Screenshot of the app governance alerts summary page.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance/mapg-cc-alerts.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance/mapg-cc-alerts.png#lightbox)
 
 ## View alert details
 
