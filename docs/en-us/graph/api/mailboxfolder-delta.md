@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailboxfolder-delta?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-08-26 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # mailboxFolder: delta
 
@@ -200,7 +200,6 @@ The following example shows a `$deltaToken` in an **@odata.deltaLink** response 
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 254
 
 {
     "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#Collection(mailboxFolder)",
@@ -209,12 +208,14 @@ Content-length: 254
         {
             "@odata.type": "#microsoft.graph.mailboxFolder",
             "displayName": "Inbound",
+            "isHidden": false,
             "wellKnownName": null,
             "id": "AAMkAGUwNjQ4ZjIxLTQ3Y2YtNDViMi1iZjc4LTMzNjMwNWM0ZGE2YQAuAAAAAADbrwBIJbBSTKolRbhHUzSHAQCQ2fKdhq8oSKEDSVrdi3lRAAACgfP9AAA="
         },
         {
             "@odata.type": "#microsoft.graph.mailboxFolder",
             "displayName": "Outbound",
+            "isHidden": false,
             "wellKnownName": null,
             "id": "AAMkAGUwNjQ4ZjIxLTQ3Y2YtNDViMi1iZjc4LTMzNjMwNWM0ZGE2YQAuAAAAAADbrwBIJbBSTKolRbhHUzSHAQCQ2fKdhq8oSKEDSVrdi3lRAAACgfP_AAA="
         }

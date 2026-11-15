@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-rulecondition?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2025-09-10 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # ruleCondition resource type
 
@@ -22,7 +22,7 @@ Have a different scenario that can use additional programmatic alert support on 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | aggregation | [microsoft.graph.deviceManagement.aggregationType](#aggregationtype-values) | The built-in aggregation method for the rule condition. The possible values are: `count`, `percentage`, `affectedCloudPcCount`, `affectedCloudPcPercentage`, `unknownFutureValue`. |
-| conditionCategory | [microsoft.graph.deviceManagement.conditionCategory](#conditioncategory-values) | The property that the rule condition monitors. The possible values are: `provisionFailures`, `imageUploadFailures`, `azureNetworkConnectionCheckFailures`, `cloudPcInGracePeriod`, `frontlineInsufficientLicenses`, `cloudPcConnectionErrors`, `cloudPcHostHealthCheckFailures`, `cloudPcZoneOutage`, `unknownFutureValue`, `frontlineBufferUsageDuration`, `frontlineBufferUsageThreshold`, `cloudPcUserSettingsPersistenceUsageThreshold`, `cloudPcDeprovisionedThreshold`, `cloudPcReserveDeprovisionFailedThreshold`. Use the `Prefer: include-unknown-enum-members` request header to get the following values from this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `frontlineBufferUsageDuration`, `frontlineBufferUsageThreshold`, `cloudPcUserSettingsPersistenceUsageThreshold`, `cloudPcDeprovisionedThreshold`, `cloudPcReserveDeprovisionFailedThreshold`. |
+| conditionCategory | [microsoft.graph.deviceManagement.conditionCategory](#conditioncategory-values) | The property that the rule condition monitors. The possible values are: `provisionFailures`, `imageUploadFailures`, `azureNetworkConnectionCheckFailures`, `cloudPcInGracePeriod`, `frontlineInsufficientLicenses`, `cloudPcConnectionErrors`, `cloudPcHostHealthCheckFailures`, `cloudPcZoneOutage`, `unknownFutureValue`, `frontlineBufferUsageDuration`, `frontlineBufferUsageThreshold`, `cloudPcUserSettingsPersistenceUsageThreshold`, `cloudPcDeprovisionedThreshold`, `cloudPcReserveDeprovisionFailedThreshold`, `cloudPcReserveLicensesAvailabilityBelowThreshold`, `reserveCloudPcUnlicensedUsersAssignment`, `cloudPcMaxUserStorageUsageThresholdExceeded`. Use the `Prefer: include-unknown-enum-members` request header to get the following values from this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `frontlineBufferUsageDuration`, `frontlineBufferUsageThreshold`, `cloudPcUserSettingsPersistenceUsageThreshold`, `cloudPcDeprovisionedThreshold`, `cloudPcReserveDeprovisionFailedThreshold`, `cloudPcReserveLicensesAvailabilityBelowThreshold`, `reserveCloudPcUnlicensedUsersAssignment`, `cloudPcMaxUserStorageUsageThresholdExceeded`. |
 | operator | [microsoft.graph.deviceManagement.operatorType](#operatortype-values) | The built-in operator for the rule condition. The possible values are: `greaterOrEqual`, `equal`, `greater`, `less`, `lessOrEqual`, `notEqual`, `unknownFutureValue`. |
 | relationshipType | [microsoft.graph.deviceManagement.relationshipType](#relationshiptype-values) | The relationship type. The possible values are: `and`, `or`. |
 | thresholdValue | String | The threshold value of the alert condition. The threshold value can be a number in string form or string like "WestUS". |
@@ -53,6 +53,9 @@ Have a different scenario that can use additional programmatic alert support on 
 | cloudPcUserSettingsPersistenceUsageThreshold | Indicates that the alert rule condition targets user experience sync storage that exceeds the usage threshold. |
 | cloudPcDeprovisionedThreshold | Indicates that the alert rule condition targets the count of Windows 365 Cloud PCs that entered deprovision. |
 | cloudPcReserveDeprovisionFailedThreshold | Indicates that the alert rule condition targets the count of Windows 365 Reserve Cloud PCs that entered a failed deprovisioning process. |
+| cloudPcReserveLicensesAvailabilityBelowThreshold | Indicates that the number of available Windows 365 Reserve Cloud PC licenses decreased below the configured threshold. |
+| reserveCloudPcUnlicensedUsersAssignment | Indicates that the alert rule condition targets the number of users assigned to Windows 365 Reserve Cloud PC provisioning policies who don't have the required licenses. |
+| cloudPcMaxUserStorageUsageThresholdExceeded | Indicates that the alert rule condition monitors the highest storage usage across all users and triggers an alert when the maximum usage reaches the configured threshold. |
 
 ### aggregationType values
 

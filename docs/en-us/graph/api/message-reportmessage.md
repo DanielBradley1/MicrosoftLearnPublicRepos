@@ -1,21 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/message-reportmessage?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2025-08-20 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/message-reportmessage?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
 # message: reportMessage
 
 Namespace: microsoft.graph
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Report a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-beta) as junk, phishing, or not junk, which improves mail filtering.
-
-This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
-
-| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
-| --- | --- | --- | --- |
-| ✅ | ❌ | ❌ | ❌ |
+Report a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0) as junk, phishing, or not junk, which improves mail filtering.
 
 ## Permissions
 
@@ -45,16 +35,16 @@ POST /users/{userId}/messages/{messageId}/reportMessage
 
 In the request body, supply a JSON representation of the parameters.
 
-The following table lists the parameters that are required when you call this action.
+The following table lists the parameters that you can use with this action.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| IsMessageMoveRequested | Boolean | Indicates whether the message should be moved out of current folder. |
-| ReportAction | reportAction | Indicates the type of action to be reported on the message that can be junk, not junk, or phishing. The possible values are: `unknown`, `junk`, `notJunk`, `phish`, `unknownFutureValue`. |
+| IsMessageMoveRequested | Boolean | Indicates whether the message should be moved out of the current folder. Optional. |
+| ReportAction | reportAction | Indicates the type of action to be reported on the message that can be junk, not junk, or phishing. The possible values are: `unknown`, `junk`, `notJunk`, `phish`, `unknownFutureValue`. Required. |
 
 ## Response
 
-If successful, this action returns a `200 OK` response code and a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-beta) object in the response body.
+If successful, this action returns a `200 OK` response code and a [message](https://learn.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0) object in the response body.
 
 ## Examples
 
@@ -62,163 +52,15 @@ If successful, this action returns a `200 OK` response code and a [message](http
 
 The following example shows a request.
 
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [Python](#tabpanel_1_python)
-
 ```http
-POST https://graph.microsoft.com/beta/me/messages/AAMkADhAAATs28OAAA=/reportMessage
+POST https://graph.microsoft.com/v1.0/me/messages/AAMkADhAAATs28OAAA=/reportMessage
 Content-Type: application/json
 
 {
-  "IsMessageMoveRequested": "true",
+  "IsMessageMoveRequested": true,
   "ReportAction": "junk"
 }
 ```
-
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Beta.Me.Messages.Item.ReportMessage;
-using Microsoft.Graph.Beta.Models;
-
-var requestBody = new ReportMessagePostRequestBody
-{
-	IsMessageMoveRequested = true,
-	ReportAction = ReportAction.Junk,
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.Me.Messages["{message-id}"].ReportMessage.PostAsync(requestBody);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphusers "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
-	  graphmodels "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-	  //other-imports
-)
-
-requestBody := graphusers.NewItemReportMessagePostRequestBody()
-isMessageMoveRequested := true
-requestBody.SetIsMessageMoveRequested(&isMessageMoveRequested) 
-reportAction := graphmodels.JUNK_REPORTACTION 
-requestBody.SetReportAction(&reportAction) 
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-reportMessage, err := graphClient.Me().Messages().ByMessageId("message-id").ReportMessage().Post(context.Background(), requestBody, nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-com.microsoft.graph.beta.users.item.messages.item.reportmessage.ReportMessagePostRequestBody reportMessagePostRequestBody = new com.microsoft.graph.beta.users.item.messages.item.reportmessage.ReportMessagePostRequestBody();
-reportMessagePostRequestBody.setIsMessageMoveRequested(true);
-reportMessagePostRequestBody.setReportAction(ReportAction.Junk);
-var result = graphClient.me().messages().byMessageId("{message-id}").reportMessage().post(reportMessagePostRequestBody);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const message = {
-  IsMessageMoveRequested: 'true',
-  ReportAction: 'junk'
-};
-
-await client.api('/me/messages/AAMkADhAAATs28OAAA=/reportMessage')
-	.version('beta')
-	.post(message);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Users\Item\Messages\Item\ReportMessage\ReportMessagePostRequestBody;
-use Microsoft\Graph\Beta\Generated\Models\ReportAction;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new ReportMessagePostRequestBody();
-$requestBody->setIsMessageMoveRequested(true);
-$requestBody->setReportAction(new ReportAction('junk'));
-
-$result = $graphServiceClient->me()->messages()->byMessageId('message-id')->reportMessage()->post($requestBody)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.users.item.messages.item.report_message.report_message_post_request_body import ReportMessagePostRequestBody
-from msgraph_beta.generated.models.report_action import ReportAction
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = ReportMessagePostRequestBody(
-	is_message_move_requested = True,
-	report_action = ReportAction.Junk,
-)
-
-result = await graph_client.me.messages.by_message_id('message-id').report_message.post(request_body)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
 ### Response
 
@@ -231,7 +73,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#message",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#message",
   "@odata.type": "#microsoft.graph.message",
   "@odata.etag": "W/\"FwAAABYAAAC4ofQHEIqCSbQPot83AFcbAAAW/0tB\"",
   "id": "AAMkADhAAAW-VPeAAA=",

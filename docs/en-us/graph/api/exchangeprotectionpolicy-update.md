@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/exchangeprotectionpolicy-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Update exchangeProtectionPolicy
 
 Namespace: microsoft.graph
 
-Update an [Exchange protection policy](https://learn.microsoft.com/en-us/graph/api/resources/exchangeprotectionpolicy?view=graph-rest-1.0). This method adds a [mailboxprotectionunit](https://learn.microsoft.com/en-us/graph/api/resources/mailboxprotectionunit?view=graph-rest-1.0) to or removes it from the protection policy.
+Update an [Exchange protection policy](https://learn.microsoft.com/en-us/graph/api/resources/exchangeprotectionpolicy?view=graph-rest-1.0). This method updates retention settings or adds a [mailboxProtectionUnit](https://learn.microsoft.com/en-us/graph/api/resources/mailboxprotectionunit?view=graph-rest-1.0) to or removes it from the protection policy.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -34,15 +34,19 @@ PATCH /solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPol
 | Name | Description |
 | :--- | :--- |
 | Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Content-Type | application/json. Required. |
 
 ## Request body
 
 In the request body, provide a JSON representation of the following properties to update the **exchangeProtectionPolicy** object.
 
+Supply only the properties to update.
+
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| displayName | String | Display Name of the [exchangeProtectionPolicy](https://learn.microsoft.com/en-us/graph/api/resources/exchangeprotectionpolicy?view=graph-rest-1.0). Optional. |
-| mailboxProtectionUnits@delta | Collection\([mailboxProtectionUnit](https://learn.microsoft.com/en-us/graph/api/resources/mailboxprotectionunit?view=graph-rest-1.0)\) | Collection of **mailboxProtectionUnit** objects to be added to or removed from the Exchange protection policy. Required. |
+| displayName | String | Display Name of the [exchangeProtectionPolicy](https://learn.microsoft.com/en-us/graph/api/resources/exchangeprotectionpolicy?view=graph-rest-1.0). |
+| mailboxProtectionUnits@delta | [mailboxProtectionUnit](https://learn.microsoft.com/en-us/graph/api/resources/mailboxprotectionunit?view=graph-rest-1.0) collection | Collection of **mailboxProtectionUnit** objects to be added to or removed from the Exchange protection policy. |
+| retentionSettings | [retentionSetting](https://learn.microsoft.com/en-us/graph/api/resources/retentionsetting?view=graph-rest-1.0) collection | Updated retention settings for the policy. If **retentionSettings** is omitted, the existing retention settings are unchanged. You can update **retentionSettings** without adding or removing protection units. |
 
 To remove a **mailboxProtectionUnit** from the policy, specify the `@removed` annotation in the request body for the protection unit together with the ID of the [mailboxProtectionUnit](https://learn.microsoft.com/en-us/graph/api/resources/mailboxprotectionunit?view=graph-rest-1.0).
 
@@ -50,11 +54,17 @@ To remove a **mailboxProtectionUnit** from the policy, specify the `@removed` an
 
 If successful, this method returns a `200 OK` response code and an updated [exchangeProtectionPolicy](https://learn.microsoft.com/en-us/graph/api/resources/exchangeprotectionpolicy?view=graph-rest-1.0) object in the response body.
 
+The service returns the complete **retentionSettings** collection, rather than echoing the request collection. The response includes a fixed 14-day period \(`P14D`\) for the `R/PT10M` interval and the configured policy retention period for the `R/P1W` interval. The 14-day period is a service-defined backup tier, not a supported policy retention period for create or update requests.
+
 For a list of possible error responses, see [Backup Storage API error responses](https://learn.microsoft.com/en-us/graph/backup-storage-error-codes).
 
 ## Examples
 
-### Request
+### Example 1: Add or remove protection units
+
+The following example shows how to add or remove protection units from the policy.
+
+#### Request
 
 The following example shows a request.
 
@@ -363,7 +373,7 @@ result = await graph_client.solutions.backup_restore.exchange_protection_policie
 
 > For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
-### Response
+#### Response
 
 The following example shows the response.
 
@@ -478,6 +488,53 @@ HTTP/1.1 200 OK
         "responseCode": 409
       },
       "id": "4267e382-71a9-4c07-bef7-bda97e09c0d2"
+    }
+  ]
+}
+```
+
+### Example 2: Update the retention period
+
+The following example shows how to update the policy retention period to 180 days without changing its protection units.
+
+#### Request
+
+The following example shows a request.
+
+```http
+PATCH https://graph.microsoft.com/v1.0/solutions/backupRestore/exchangeProtectionPolicies/845457dc-4bb2-4815-bef3-8628ebd1952e
+Content-Type: application/json
+
+{
+  "retentionSettings": [
+    {
+      "interval": "R/P1W",
+      "period": "P180D"
+    }
+  ]
+}
+```
+
+#### Response
+
+The following example shows the response with the retention settings for both backup intervals.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "845457dc-4bb2-4815-bef3-8628ebd1952e",
+  "retentionSettings": [
+    {
+      "interval": "R/PT10M",
+      "period": "P14D"
+    },
+    {
+      "interval": "R/P1W",
+      "period": "P180D"
     }
   ]
 }

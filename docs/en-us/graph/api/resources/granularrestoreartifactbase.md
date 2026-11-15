@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/granularrestoreartifactbase?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-06-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
 # granularRestoreArtifactBase resource type
 
@@ -17,7 +17,8 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 | :--- | :--- | :--- |
 | browseSessionId | String | The unique identifier of the [browseSession](https://learn.microsoft.com/en-us/graph/api/resources/browsesessionbase?view=graph-rest-1.0) |
 | completionDateTime | DateTimeOffset | Date time when the artifact's restoration completes. |
-| id | String | The unique identifier for the artifact. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-1.0). Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-1.0) |
+| error | [publicError](https://learn.microsoft.com/en-us/graph/api/resources/publicerror?view=graph-rest-1.0) | Contains error details if the restoration fails or completes with an error. |
+| id | String | The unique identifier for the artifact. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-1.0). |
 | restoredItemKey | String | The unique identifier for the restored artifact. |
 | restoredItemPath | String | The path of the restored artifact. It's the path of the folder where all the artifacts are restored within a granular restore session. |
 | restoredItemWebUrl | String | The web url of the restored artifact. |
@@ -46,6 +47,9 @@ The following JSON representation shows the resource type.
   "restoredItemWebUrl": "String",
   "restorePointDateTime": "String (timestamp)",
   "startDateTime": "String (timestamp)",
+  "error": {
+    "@odata.type": "microsoft.graph.publicError"
+  },
   "completionDateTime": "String (timestamp)"
 }
 ```

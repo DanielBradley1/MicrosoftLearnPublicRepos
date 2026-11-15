@@ -1,24 +1,26 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-timebasedattributetriggerv2?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-09-02 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-timebasedattributetriggerv2?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # timeBasedAttributeTriggerV2 resource type
 
 Namespace: microsoft.graph.identityGovernance
 
-Important
+Represents an extensible time-based trigger that evaluates a user's date attribute by using a configurable operator to initiate a [lifecycle workflow](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflow?view=graph-rest-1.0).
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+Inherits from [workflowExecutionTrigger](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflowexecutiontrigger?view=graph-rest-1.0).
 
-Represents an extensible time-based trigger that evaluates a user's date attribute by using a configurable operator to initiate a [lifecycle workflow](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflow?view=graph-rest-beta).
+Configure this type in the **trigger** property of [triggerAndScopeBasedConditions](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-triggerandscopebasedconditions?view=graph-rest-1.0).
 
-Inherits from [workflowExecutionTrigger](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflowexecutiontrigger?view=graph-rest-beta).
+## Methods
+
+None.
 
 ## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | attribute | String | The name of the date-type user attribute to evaluate, such as `employeeHireDate` or `employeeLeaveDateTime`. |
-| operator | [microsoft.graph.identityGovernance.workflowExecutionTriggerOperator](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflowexecutiontriggeroperator?view=graph-rest-beta) | The operator that determines how to evaluate the date attribute. |
+| operator | [microsoft.graph.identityGovernance.workflowExecutionTriggerOperator](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflowexecutiontriggeroperator?view=graph-rest-1.0) | The operator that determines how to evaluate the date attribute. |
 
 ## Relationships
 

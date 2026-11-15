@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-list-statuses?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-08-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
 # List statuses
 
@@ -44,7 +44,7 @@ GET /security/caseManagement/caseTypeConfigurations/{caseTypeConfigurationId}/st
 
 ## Optional query parameters
 
-This method supports the `$count`, `$filter`, `$orderby`, `$select`, `$skip`, and `$top` OData query parameters. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
+This method supports the `$count`, `$filter`, `$orderby`, `$select`, and `$top` OData query parameters. The `$skip` query parameter isn't supported. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 

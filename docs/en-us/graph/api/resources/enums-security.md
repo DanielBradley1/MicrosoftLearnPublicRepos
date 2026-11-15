@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/enums-security?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-06-24 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Security enum values
 
@@ -292,6 +292,15 @@ Namespace: microsoft.graph.security
 | detected |
 | blocked |
 | prevented |
+| unknownFutureValue |
+
+### detectionRuleStatus values
+
+| Member |
+| :--- |
+| enabled |
+| disabled |
+| autoDisabled |
 | unknownFutureValue |
 
 ### eventPropagationStatus values
@@ -704,6 +713,10 @@ Namespace: microsoft.graph.security
 | downloadText |
 | downloadFile |
 | unknownFutureValue |
+| copyToClipboard |
+| pasteFromClipboard |
+| print |
+| accessDebugTools |
 
 ### userActivityType values
 
@@ -714,6 +727,10 @@ Namespace: microsoft.graph.security
 | downloadText |
 | downloadFile |
 | unknownFutureValue |
+| copyToClipboard |
+| pasteFromClipboard |
+| print |
+| accessDebugTools |
 
 ### labelActionSource values
 

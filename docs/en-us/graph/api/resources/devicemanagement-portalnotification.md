@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-portalnotification?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2024-07-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # portalNotification resource type
 
@@ -25,7 +25,7 @@ Have a different scenario that can use additional programmatic alert support on 
 | alertRecordId | String | The associated alert record ID. |
 | alertRuleId | String | The associated alert rule ID. |
 | alertRuleName | String | The associated alert rule name. |
-| alertRuleTemplate | [microsoft.graph.deviceManagement.alertRuleTemplate](https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-alertrule?view=graph-rest-beta#alertruletemplate-values) | The associated alert rule template. The possible values are: `cloudPcProvisionScenario`, `cloudPcImageUploadScenario`, `cloudPcOnPremiseNetworkConnectionCheckScenario`, `unknownFutureValue`, `cloudPcInGracePeriodScenario`. Use the `Prefer: include-unknown-enum-members` request header to get the following values from this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `cloudPcInGracePeriodScenario`. |
+| alertRuleTemplate | [microsoft.graph.deviceManagement.alertRuleTemplate](https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-alertrule?view=graph-rest-beta#alertruletemplate-values) | The associated alert rule template. The possible values are: `cloudPcProvisionScenario`, `cloudPcImageUploadScenario`, `cloudPcOnPremiseNetworkConnectionCheckScenario`, `unknownFutureValue`, `cloudPcInGracePeriodScenario`, `cloudPcFrontlineInsufficientLicensesScenario`, `cloudPcInaccessibleScenario`, `cloudPcFrontlineConcurrencyScenario`, `cloudPcUserSettingsPersistenceScenario`, `cloudPcDeprovisionFailedScenario`, `cloudPcReserveHealthScenario`. Use the `Prefer: include-unknown-enum-members` request header to get the following values from this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `cloudPcInGracePeriodScenario`, `cloudPcFrontlineInsufficientLicensesScenario`, `cloudPcInaccessibleScenario`, `cloudPcFrontlineConcurrencyScenario`, `cloudPcUserSettingsPersistenceScenario`, `cloudPcDeprovisionFailedScenario`, `cloudPcReserveHealthScenario`. |
 | id | String | The unique identifier for the portal notification. |
 | isPortalNotificationSent | Boolean | `true` if the portal notification has already been sent to the user; `false` otherwise. |
 | severity | [microsoft.graph.deviceManagement.ruleSeverityType](https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-alertrule?view=graph-rest-beta#ruleseveritytype-values) | The associated alert rule severity. The possible values are: `unknown`, `informational`, `warning`, `critical`, `unknownFutureValue`. |

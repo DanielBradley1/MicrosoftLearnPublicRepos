@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-networkaccessroot?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-03-19 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # networkAccessRoot resource type
 
@@ -29,13 +29,14 @@ None.
 | connectivity | [microsoft.graph.networkaccess.connectivity](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-connectivity?view=graph-rest-beta) | Connectivity represents all the connectivity components in Global Secure Access. |
 | filteringPolicies | [microsoft.graph.networkaccess.filteringPolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-filteringpolicy?view=graph-rest-beta) collection | A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile. |
 | filteringProfiles | [microsoft.graph.networkaccess.filteringProfile](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-filteringprofile?view=graph-rest-beta) collection | A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups. |
-| threatIntelligencePolicy | [microsoft.graph.networkaccess.threatIntelligencePolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-threatintelligencepolicy?view=graph-rest-beta) | A threat intelligence policy allows you to apply security controls blocking known threats and malicious destinations based on Microsoft's threat indicator feeds. |
 | logs | [microsoft.graph.networkaccess.logs](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-logs?view=graph-rest-beta) | Represents network connections that are routed through Global Secure Access. |
 | reports | [microsoft.graph.networkaccess.reports](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-reports?view=graph-rest-beta) | Represents the status of the Global Secure Access services for the tenant. |
 | settings | [microsoft.graph.networkaccess.settings](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-settings?view=graph-rest-beta) | Global Secure Access settings. |
 | tenantStatus | [microsoft.graph.networkaccess.tenantStatus](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-tenantstatus?view=graph-rest-beta) | Represents the status of the Global Secure Access services for the tenant. |
+| threatIntelligencePolicy | [microsoft.graph.networkaccess.threatIntelligencePolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-threatintelligencepolicy?view=graph-rest-beta) | A threat intelligence policy allows you to apply security controls blocking known threats and malicious destinations based on Microsoft's threat indicator feeds. |
 | tls | [microsoft.graph.networkaccess.tlsTermination](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-tlstermination?view=graph-rest-beta) | A container for tenant-level TLS inspection settings for Global Secure Access. |
 | tlsInspectionPolicies | [microsoft.graph.networkaccess.tlsInspectionPolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-tlsinspectionpolicy?view=graph-rest-beta) collection | Allows you to configure TLS termination for your organization's network traffic through Global Secure Access. |
+| webFilteringPolicies | [microsoft.graph.networkaccess.webFilteringPolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-webfilteringpolicy?view=graph-rest-beta) collection | The web filtering policies that define how Global Secure Access allows or blocks web traffic. |
 
 ## JSON representation
 

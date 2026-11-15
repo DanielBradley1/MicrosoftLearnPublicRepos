@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-11-14 -->
 
 # processContentMetadataBase resource type
 
@@ -11,6 +11,8 @@ This is an abstract type from which the following resources derive:
 
 - [processConversationMetadata](https://learn.microsoft.com/en-us/graph/api/resources/processconversationmetadata?view=graph-rest-1.0)
 - [processFileMetadata](https://learn.microsoft.com/en-us/graph/api/resources/processfilemetadata?view=graph-rest-1.0)
+
+The optional **sensitivityLabels** property contains a collection of caller-supplied sensitivity label metadata. Represent each supplied label as a [currentLabel](https://learn.microsoft.com/en-us/graph/api/resources/currentlabel?view=graph-rest-1.0) object, including when you supply only one label. The collection is inherited by the derived metadata types. If you omit the property or supply an empty collection, you don't provide caller-supplied label metadata. Providing this metadata doesn't apply or change labels on the content, and an empty collection doesn't remove labels.
 
 ## Properties
 
@@ -24,6 +26,7 @@ This is an abstract type from which the following resources derive:
 | length | Int64 | The length of the original content in bytes. |
 | modifiedDateTime | DateTimeOffset | Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as `createdDateTime`. |
 | name | String | Required. A descriptive name for the content \(for example, file name, web page title, "Chat Message"\). |
+| sensitivityLabels | [currentLabel](https://learn.microsoft.com/en-us/graph/api/resources/currentlabel?view=graph-rest-1.0) collection | Caller-supplied sensitivity labels describing the content. |
 | sequenceNumber | Int64 | A sequence number indicating the order in which content was generated or should be processed, required when `correlationId` is used. |
 
 ## Relationships
@@ -45,6 +48,11 @@ The following JSON representation shows the resource type.
   "length": "Int64",
   "isTruncated": "Boolean",
   "createdDateTime": "String (timestamp)",
-  "modifiedDateTime": "String (timestamp)"
+  "modifiedDateTime": "String (timestamp)",
+  "sensitivityLabels": [
+    {
+      "@odata.type": "microsoft.graph.currentLabel"
+    }
+  ]
 }
 ```

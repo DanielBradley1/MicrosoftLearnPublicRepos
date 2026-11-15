@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-alertrule?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2025-09-10 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # alertRule resource type
 
@@ -32,7 +32,7 @@ Have a different scenario that can use additional programmatic alert support on 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| alertRuleTemplate | [microsoft.graph.deviceManagement.alertRuleTemplate](#alertruletemplate-values) | The rule template of the alert event. The possible values are: `cloudPcProvisionScenario`, `cloudPcImageUploadScenario`, `cloudPcOnPremiseNetworkConnectionCheckScenario`, `unknownFutureValue`, `cloudPcInGracePeriodScenario`, `cloudPcFrontlineInsufficientLicensesScenario`, `cloudPcInaccessibleScenario`, `cloudPcFrontlineConcurrencyScenario`, `cloudPcUserSettingsPersistenceScenario`, `cloudPcDeprovisionFailedScenario`. Use the `Prefer: include-unknown-enum-members` request header to get the following values from this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `cloudPcInGracePeriodScenario`, `cloudPcFrontlineInsufficientLicensesScenario`, `cloudPcInaccessibleScenario`, `cloudPcFrontlineConcurrencyScenario`, `cloudPcUserSettingsPersistenceScenario`, `cloudPcDeprovisionFailedScenario`. |
+| alertRuleTemplate | [microsoft.graph.deviceManagement.alertRuleTemplate](#alertruletemplate-values) | The rule template of the alert event. The possible values are: `cloudPcProvisionScenario`, `cloudPcImageUploadScenario`, `cloudPcOnPremiseNetworkConnectionCheckScenario`, `unknownFutureValue`, `cloudPcInGracePeriodScenario`, `cloudPcFrontlineInsufficientLicensesScenario`, `cloudPcInaccessibleScenario`, `cloudPcFrontlineConcurrencyScenario`, `cloudPcUserSettingsPersistenceScenario`, `cloudPcDeprovisionFailedScenario`, `cloudPcReserveHealthScenario`. Use the `Prefer: include-unknown-enum-members` request header to get the following values from this [evolvable enum](https://learn.microsoft.com/en-us/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): `cloudPcInGracePeriodScenario`, `cloudPcFrontlineInsufficientLicensesScenario`, `cloudPcInaccessibleScenario`, `cloudPcFrontlineConcurrencyScenario`, `cloudPcUserSettingsPersistenceScenario`, `cloudPcDeprovisionFailedScenario`, `cloudPcReserveHealthScenario`. |
 | description | String | The rule description. |
 | displayName | String | The display name of the rule. |
 | enabled | Boolean | The status of the rule that indicates whether the rule is enabled or disabled. If `true`, the rule is enabled; otherwise, the rule is disabled. |
@@ -57,6 +57,7 @@ Have a different scenario that can use additional programmatic alert support on 
 | cloudPcFrontlineConcurrencyScenario | Indicates that the alert rule was triggered for all conditions of the Frontline Cloud PCs concurrency usage. It includes buffer usage conditions for now. |
 | cloudPcUserSettingsPersistenceScenario | Indicates that the alert rule is associated with a Frontline Cloud PC user experience sync storage scenario where usage reached defined limits or thresholds. |
 | cloudPcDeprovisionFailedScenario | Indicates that the alert rule was triggered when a Cloud PC entered a failed deprovisioning process. |
+| cloudPcReserveHealthScenario | Indicates that the alert rule monitors Windows 365 Reserve Cloud PC health conditions, such as decreased available seats or unlicensed users. |
 
 ### ruleSeverityType values
 

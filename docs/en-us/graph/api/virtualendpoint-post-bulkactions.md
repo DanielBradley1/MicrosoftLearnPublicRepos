@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2024-06-27 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Create cloudPcBulkAction
 
@@ -27,6 +27,12 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
 | Application | CloudPC.ReadWrite.All | Not available. |
 
+Note
+
+For delegated access using work or school accounts, the signed-in user must have the `BulkActions/Write` permission and the permissions required for the selected action through [Windows 365 role-based access control](https://learn.microsoft.com/en-us/windows-365/enterprise/role-based-access), in addition to the Microsoft Graph permission. To create a [cloudPcBulkSetDeviceName](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulksetdevicename?view=graph-rest-beta&preserve-view=true) action, the user must also have `CloudPCs/SetDeviceName`. The **Cloud PC Administrator** role or a custom role that grants these permissions can be used. Supported Microsoft Entra roles include **Windows 365 Administrator** and **Intune Administrator**.
+
+For scoped role assignments, the target Cloud PCs must also be within the user's assigned [scope groups](https://learn.microsoft.com/en-us/windows-365/enterprise/role-based-access#scope-groups) and [scope tags](https://learn.microsoft.com/en-us/windows-365/enterprise/role-based-access#scope-tags). These user role requirements don't apply to application-only access.
+
 ## HTTP request
 
 ```http
@@ -44,39 +50,39 @@ POST /deviceManagement/virtualEndpoint/bulkActions
 
 In the request body, supply a JSON representation of the [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta) object.
 
+The **cloudPcBulkAction** resource is abstract. Specify a derived type in **@odata.type** to select the action to perform. For example, use `#microsoft.graph.cloudPcBulkSetDeviceName` to set device names by using a template, or `#microsoft.graph.cloudPcBulkPowerOff` to power off Cloud PCs.
+
 You can specify the following properties when you create a **cloudPcBulkAction**.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
+| cloudPcIds | String collection | IDs of the Cloud PCs the bulk action applies to. Individual Cloud PC IDs are GUID-formatted strings. Required. |
+| deviceNamingTemplate | String | The naming template for [cloudPcBulkSetDeviceName](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulksetdevicename?view=graph-rest-beta). Required for that derived type. Use an optional prefix followed by one `%RAND:x%` macro, where `x` represents the number of random alphanumeric characters and is at least 5. The generated name must be 5–15 characters long. The prefix can contain ASCII letters, digits, and hyphens, and must not start with a hyphen. The prefix length plus `x` must not exceed 15. For example, `ACRA-%RAND:5%` generates a ten-character name such as `ACRA-A1B2C`. |
 | displayName | String | Name of this bulk action. Required. |
-| cloudPcIds | String collection | IDs of the Cloud PCs the bulk action applies to. Required. |
 | scheduledDuringMaintenanceWindow | Boolean | Indicates whether the bulk actions can be initiated during maintenance window. When `true`, bulk action will use maintenance window to schedule action, When `false` means bulk action will not use the maintenance window. Default value is `false`. |
 
 ## Response
 
-If successful, this method returns a `201 Created` response code and a [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta) object in the response body.
+If successful, this method returns a `202 Accepted` response code and a derived [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta) object in the response body.
+
+The action runs asynchronously after the request is accepted. Use [Get cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/cloudpcbulkaction-get?view=graph-rest-beta) to check its **status** and **actionSummary**. An accepted request doesn't mean that all targeted Cloud PCs completed the action.
 
 ## Examples
 
-### Request
+### Example 1: Power off Cloud PCs
+
+The following example shows how to power off Cloud PCs.
+
+#### Request
 
 The following example shows a request.
-
-- [HTTP](#tabpanel_1_http)
-- [C#](#tabpanel_1_csharp)
-- [Go](#tabpanel_1_go)
-- [Java](#tabpanel_1_java)
-- [JavaScript](#tabpanel_1_javascript)
-- [PHP](#tabpanel_1_php)
-- [PowerShell](#tabpanel_1_powershell)
-- [Python](#tabpanel_1_python)
 
 ```http
 POST https://graph.microsoft.com/beta/deviceManagement/virtualEndpoint/bulkActions
 Content-type: application/json
 
 {
-  "@odata.type": "#microsoft.graph.cloudPcBulkAction",
+  "@odata.type": "#microsoft.graph.cloudPcBulkPowerOff",
   "displayName": "Bulk Power Off by Andy",
   "cloudPcIds": [
     "d6e0b8ee-8836-4b8d-b038-6130a97a3a9d",
@@ -86,205 +92,18 @@ Content-type: application/json
 }
 ```
 
-```csharp
-
-// Code snippets are only available for the latest version. Current version is 5.x
-
-// Dependencies
-using Microsoft.Graph.Beta.Models;
-
-var requestBody = new CloudPcBulkAction
-{
-	OdataType = "#microsoft.graph.cloudPcBulkAction",
-	DisplayName = "Bulk Power Off by Andy",
-	CloudPcIds = new List<string>
-	{
-		"d6e0b8ee-8836-4b8d-b038-6130a97a3a9d",
-		"85994912-197b-4927-b569-447bd81350ec",
-	},
-	ScheduledDuringMaintenanceWindow = true,
-};
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=csharp
-var result = await graphClient.DeviceManagement.VirtualEndpoint.BulkActions.PostAsync(requestBody);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```go
-
-
-// Code snippets are only available for the latest major version. Current major version is $v0.*
-
-// Dependencies
-import (
-	  "context"
-	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
-	  graphmodels "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-	  //other-imports
-)
-
-requestBody := graphmodels.NewCloudPcBulkAction()
-displayName := "Bulk Power Off by Andy"
-requestBody.SetDisplayName(&displayName) 
-cloudPcIds := []string {
-	"d6e0b8ee-8836-4b8d-b038-6130a97a3a9d",
-	"85994912-197b-4927-b569-447bd81350ec",
-}
-requestBody.SetCloudPcIds(cloudPcIds)
-scheduledDuringMaintenanceWindow := true
-requestBody.SetScheduledDuringMaintenanceWindow(&scheduledDuringMaintenanceWindow) 
-
-// To initialize your graphClient, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=go
-bulkActions, err := graphClient.DeviceManagement().VirtualEndpoint().BulkActions().Post(context.Background(), requestBody, nil)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```java
-
-// Code snippets are only available for the latest version. Current version is 6.x
-
-GraphServiceClient graphClient = new GraphServiceClient(requestAdapter);
-
-CloudPcBulkAction cloudPcBulkAction = new CloudPcBulkAction();
-cloudPcBulkAction.setOdataType("#microsoft.graph.cloudPcBulkAction");
-cloudPcBulkAction.setDisplayName("Bulk Power Off by Andy");
-LinkedList<String> cloudPcIds = new LinkedList<String>();
-cloudPcIds.add("d6e0b8ee-8836-4b8d-b038-6130a97a3a9d");
-cloudPcIds.add("85994912-197b-4927-b569-447bd81350ec");
-cloudPcBulkAction.setCloudPcIds(cloudPcIds);
-cloudPcBulkAction.setScheduledDuringMaintenanceWindow(true);
-CloudPcBulkAction result = graphClient.deviceManagement().virtualEndpoint().bulkActions().post(cloudPcBulkAction);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```javascript
-
-const options = {
-	authProvider,
-};
-
-const client = Client.init(options);
-
-const cloudPcBulkAction = {
-  '@odata.type': '#microsoft.graph.cloudPcBulkAction',
-  displayName: 'Bulk Power Off by Andy',
-  cloudPcIds: [
-    'd6e0b8ee-8836-4b8d-b038-6130a97a3a9d',
-    '85994912-197b-4927-b569-447bd81350ec'
-  ],
-  scheduledDuringMaintenanceWindow: true
-};
-
-await client.api('/deviceManagement/virtualEndpoint/bulkActions')
-	.version('beta')
-	.post(cloudPcBulkAction);
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```php
-
-<?php
-use Microsoft\Graph\Beta\GraphServiceClient;
-use Microsoft\Graph\Beta\Generated\Models\CloudPcBulkAction;
-
-
-$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
-
-$requestBody = new CloudPcBulkAction();
-$requestBody->setOdataType('#microsoft.graph.cloudPcBulkAction');
-$requestBody->setDisplayName('Bulk Power Off by Andy');
-$requestBody->setCloudPcIds(['d6e0b8ee-8836-4b8d-b038-6130a97a3a9d', '85994912-197b-4927-b569-447bd81350ec', 	]);
-$requestBody->setScheduledDuringMaintenanceWindow(true);
-
-$result = $graphServiceClient->deviceManagement()->virtualEndpoint()->bulkActions()->post($requestBody)->wait();
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.cloudPcBulkAction"
-	displayName = "Bulk Power Off by Andy"
-	cloudPcIds = @(
-	"d6e0b8ee-8836-4b8d-b038-6130a97a3a9d"
-"85994912-197b-4927-b569-447bd81350ec"
-)
-scheduledDuringMaintenanceWindow = $true
-}
-
-New-MgBetaDeviceManagementVirtualEndpointBulkAction -BodyParameter $params
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-```python
-
-# Code snippets are only available for the latest version. Current version is 1.x
-from msgraph_beta import GraphServiceClient
-from msgraph_beta.generated.models.cloud_pc_bulk_action import CloudPcBulkAction
-# To initialize your graph_client, see https://learn.microsoft.com/en-us/graph/sdks/create-client?from=snippets&tabs=python
-request_body = CloudPcBulkAction(
-	odata_type = "#microsoft.graph.cloudPcBulkAction",
-	display_name = "Bulk Power Off by Andy",
-	cloud_pc_ids = [
-		"d6e0b8ee-8836-4b8d-b038-6130a97a3a9d",
-		"85994912-197b-4927-b569-447bd81350ec",
-	],
-	scheduled_during_maintenance_window = True,
-)
-
-result = await graph_client.device_management.virtual_endpoint.bulk_actions.post(request_body)
-```
-
-Important
-
-Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](https://learn.microsoft.com/en-us/graph/sdks/use-beta).
-
-For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
-
-### Response
+#### Response
 
 The following example shows the response.
 
 > **Note:** The response object shown here might be shortened for readability.
 
 ```http
-HTTP/1.1 201 Created
+HTTP/1.1 202 Accepted
 Content-Type: application/json
 
 {
-  "@odata.type": "#microsoft.graph.cloudPcBulkAction",
+  "@odata.type": "#microsoft.graph.cloudPcBulkPowerOff",
   "id": "231ad98f-41b3-872b-dd37-c70bf22cbdac",
   "displayName": "Bulk Power Off by Andy",
   "cloudPcIds": [
@@ -296,5 +115,54 @@ Content-Type: application/json
   "scheduledDuringMaintenanceWindow": true,
   "status": "pending",
   "createdDateTime": "2024-02-05T10:29:57Z"
+}
+```
+
+### Example 2: Set device names for Cloud PCs
+
+The following example shows how to create a bulk action to set the device names of two Cloud PCs. The template generates a name with the prefix `ACRA-` followed by five random alphanumeric characters for each Cloud PC.
+
+#### Request
+
+The following example shows a request.
+
+```http
+POST https://graph.microsoft.com/beta/deviceManagement/virtualEndpoint/bulkActions
+Content-Type: application/json
+
+{
+  "@odata.type": "#microsoft.graph.cloudPcBulkSetDeviceName",
+  "cloudPcIds": [
+    "30d0e128-de93-41dc-89ec-33d84bb662a0",
+    "7c82a3e3-9459-44e4-94d9-b92f93bf78dd"
+  ],
+  "deviceNamingTemplate": "ACRA-%RAND:5%",
+  "displayName": "Set device names for sales Cloud PCs",
+  "scheduledDuringMaintenanceWindow": false
+}
+```
+
+#### Response
+
+The following example shows the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 202 Accepted
+Content-Type: application/json
+
+{
+  "@odata.type": "#microsoft.graph.cloudPcBulkSetDeviceName",
+  "id": "1d164206-bf41-4fd2-8424-a3192d392273",
+  "cloudPcIds": [
+    "30d0e128-de93-41dc-89ec-33d84bb662a0",
+    "7c82a3e3-9459-44e4-94d9-b92f93bf78dd"
+  ],
+  "createdDateTime": "2026-10-15T07:00:00Z",
+  "deviceNamingTemplate": "ACRA-%RAND:5%",
+  "displayName": "Set device names for sales Cloud PCs",
+  "scheduledDuringMaintenanceWindow": false,
+  "status": "pending"
 }
 ```

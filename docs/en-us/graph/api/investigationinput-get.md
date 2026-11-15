@@ -1,0 +1,66 @@
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/investigationinput-get?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
+
+# Get agentic input
+
+Namespace: microsoft.graph
+
+Get an input reference contained by an agentic session. This operation uses the [agentic input](https://learn.microsoft.com/en-us/graph/api/resources/investigationinput?view=graph-rest-beta) resource.
+
+## Permissions
+
+Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+
+| Permission type | Least privileged permissions | Higher privileged permissions |
+| :--- | :--- | :--- |
+| Delegated \(work or school account\) | Perception.Read.All | Perception.Manage.All |
+| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
+| Application | Perception.Read.All | Perception.Manage.All |
+
+The signed-in user must have access to the requested resources. Granting an OAuth permission does not override the service's access controls.
+
+## HTTP request
+
+```http
+GET /security/agenticSecurity/sessions/{session-id}/inputs/{input-id}
+```
+
+## Optional query parameters
+
+This method supports the `$select` OData query parameter. Other query parameters aren't supported.
+
+## Request headers
+
+| Name | Description |
+| :--- | :--- |
+| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+
+## Request body
+
+Don't supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and an [agentic input](https://learn.microsoft.com/en-us/graph/api/resources/investigationinput?view=graph-rest-beta) object in the response body.
+
+## Examples
+
+### Request
+
+```http
+GET https://graph.microsoft.com/beta/security/agenticSecurity/sessions/6c27d97a-8003-4993-a6e3-e3a8b5a52d50/inputs/982f3662-a455-4f31-afd7-c9b483190888
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "982f3662-a455-4f31-afd7-c9b483190888",
+  "kind": "defenderIncidentId",
+  "value": "12345",
+  "displayName": "Incident 12345"
+}
+```

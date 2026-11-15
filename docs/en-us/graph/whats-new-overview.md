@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-11-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # What's new in Microsoft Graph
 
@@ -26,6 +26,10 @@ Features in *preview* status are subject to change without notice, and might not
 
 - Added the **isPrivileged** property to the [unifiedRoleDefinition](https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition) resource type. Use it to identify roles that contain sensitive Microsoft Entra resource actions.
 
+### Identity and access \| Governance
+
+- Promoted SAP Access Control \(SAP AC\) support for [externalOriginResourceConnector](https://learn.microsoft.com/en-us/graph/api/resources/externaloriginresourceconnector) from beta to v1.0. Use the `sapAc` connector type to configure connections to SAP AC systems for entitlement management.
+
 ### Mail
 
 - Updated national cloud availability in China operated by 21Vianet for the [mailFolder: delta](https://learn.microsoft.com/en-us/graph/api/mailfolder-delta) and [message: delta](https://learn.microsoft.com/en-us/graph/api/message-delta) methods. Use these methods to track incremental changes to mail folders and messages within a mail folder.
@@ -39,6 +43,7 @@ Features in *preview* status are subject to change without notice, and might not
 
 ### Security \| Data security and compliance
 
+- Applications can now supply one or more sensitivity labels with file content submitted to the [processContent](https://learn.microsoft.com/en-us/graph/api/userdatasecurityandgovernance-processcontent) API by using the **sensitivityLabels** property of [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase).
 - Added the `copyToClipboard`, `pasteFromClipboard`, `print`, and `accessDebugTools` members to the **userActivityType** and **userActivityTypes** enumerations in v1.0. These enumerations are used by [activityMetadata](https://learn.microsoft.com/en-us/graph/api/resources/activitymetadata) and [policyScopeBase](https://learn.microsoft.com/en-us/graph/api/resources/policyscopebase) to represent activities evaluated against data protection policies. Use the `Prefer: include-unknown-enum-members` request header to retrieve these values.
 
 ## November 2026: New in preview only
@@ -47,9 +52,21 @@ Features in *preview* status are subject to change without notice, and might not
 
 - Added request guidance and examples for using **retentionSettings** when you create or update [Exchange](https://learn.microsoft.com/en-us/graph/api/resources/exchangeprotectionpolicy?view=graph-rest-beta&preserve-view=true), [OneDrive for Business](https://learn.microsoft.com/en-us/graph/api/resources/onedriveforbusinessprotectionpolicy?view=graph-rest-beta&preserve-view=true), and [SharePoint](https://learn.microsoft.com/en-us/graph/api/resources/sharepointprotectionpolicy?view=graph-rest-beta&preserve-view=true) protection policies to configure how long backups are retained.
 
+### Device and app management \| Cloud PC
+
+- Added the `cloudPcReserveHealthScenario` member to the **alertRuleTemplate** enumeration type used by [alertRule](https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-alertrule?view=graph-rest-beta&preserve-view=true) to monitor Windows 365 Reserve Cloud PC health conditions.
+- Added the `cloudPcReserveLicensesAvailabilityBelowThreshold`, `reserveCloudPcUnlicensedUsersAssignment`, and `cloudPcMaxUserStorageUsageThresholdExceeded` members to the **conditionCategory** enumeration type used by [ruleCondition](https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-rulecondition?view=graph-rest-beta&preserve-view=true) to monitor available Reserve licenses, unlicensed user assignments, and maximum user storage usage.
+
 ### Identity and access \| Directory management
 
+- Added the **isSingleInstance** property to the [application](https://learn.microsoft.com/en-us/graph/api/resources/application?view=graph-rest-beta&preserve-view=true) resource, inherited by [agentIdentityBlueprint](https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true). Set it when creating a blueprint to support at most one active agent identity per tenant without an agent identity blueprint principal.
+- Added the **instanceMode** property to the [agentIdentity](https://learn.microsoft.com/en-us/graph/api/resources/agentidentity?view=graph-rest-beta&preserve-view=true) resource and the **instanceMode** enumeration to identify the single-instance or multi-instance topology.
 - Devices now support soft-deletion and restoration. When a device is deleted, it's moved to the [deleted items container](https://learn.microsoft.com/en-us/graph/api/resources/directory?view=graph-rest-beta&preserve-view=true) and can be restored within 30 days. After 30 days, it's permanently deleted.
+
+### Identity and access \| Identity and sign-in
+
+- Added the `aiElevatedAccountRisk` member to the [riskDetail](https://learn.microsoft.com/en-us/graph/api/resources/riskdetail?view=graph-rest-beta&preserve-view=true) enumeration to indicate that the user completed Microsoft-managed remediation to address their risk.
+- Added the `userPassedVerifiedIdDrivenByRiskBasedPolicy` member to the [riskDetail](https://learn.microsoft.com/en-us/graph/api/resources/riskdetail?view=graph-rest-beta&preserve-view=true) enumeration to indicate that the user remediated their risk by completing Verified ID verification under a risk-based Conditional Access policy.
 
 ### Identity and access \| Network access
 
@@ -78,13 +95,6 @@ Added the [classificationGradingJobResponse](https://learn.microsoft.com/en-us/g
 - Removed the `If-Match` header from [create section](https://learn.microsoft.com/en-us/graph/api/userteamwork-post-sections?view=graph-rest-beta&preserve-view=true), [update section](https://learn.microsoft.com/en-us/graph/api/teamworksection-update?view=graph-rest-beta&preserve-view=true), [delete section](https://learn.microsoft.com/en-us/graph/api/teamworksection-delete?view=graph-rest-beta&preserve-view=true), [reorder sections](https://learn.microsoft.com/en-us/graph/api/teamworksection-reorder?view=graph-rest-beta&preserve-view=true), [create section item](https://learn.microsoft.com/en-us/graph/api/teamworksection-post-items?view=graph-rest-beta&preserve-view=true), [move section item](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-move?view=graph-rest-beta&preserve-view=true), [reorder section items](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-reorder?view=graph-rest-beta&preserve-view=true), and [delete section item](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-delete?view=graph-rest-beta&preserve-view=true) methods of the [teamworkSection](https://learn.microsoft.com/en-us/graph/api/resources/teamworksection?view=graph-rest-beta&preserve-view=true) and [teamworkSectionItem](https://learn.microsoft.com/en-us/graph/api/resources/teamworksectionitem?view=graph-rest-beta&preserve-view=true) resources. These operations now return a `409 Conflict` response code for concurrent changes, and no longer return `412 Precondition Failed` or `428 Precondition Required`.
 - Updated the [add teamworkSectionItem](https://learn.microsoft.com/en-us/graph/api/teamworksection-post-items?view=graph-rest-beta&preserve-view=true) method to move an item from another user-defined section.
 - Added the [teamworkChannelTag](https://learn.microsoft.com/en-us/graph/api/resources/teamworkchanneltag?view=graph-rest-beta&preserve-view=true) resource type and associated methods for managing tags owned by a Microsoft Teams channel. Use channel tags to group users within a channel and manage their tag assignments.
-
-## November 2026: New in preview only
-
-### Device and app management \| Cloud PC
-
-- Added the `cloudPcReserveHealthScenario` member to the **alertRuleTemplate** enumeration type used by [alertRule](https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-alertrule?view=graph-rest-beta&preserve-view=true) to monitor Windows 365 Reserve Cloud PC health conditions.
-- Added the `cloudPcReserveLicensesAvailabilityBelowThreshold`, `reserveCloudPcUnlicensedUsersAssignment`, and `cloudPcMaxUserStorageUsageThresholdExceeded` members to the **conditionCategory** enumeration type used by [ruleCondition](https://learn.microsoft.com/en-us/graph/api/resources/devicemanagement-rulecondition?view=graph-rest-beta&preserve-view=true) to monitor available Reserve licenses, unlicensed user assignments, and maximum user storage usage.
 
 ## October 2026: New and generally available
 

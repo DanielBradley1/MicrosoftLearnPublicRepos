@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/onedriveforbusinessprotectionpolicy?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # oneDriveForBusinessProtectionPolicy resource type
 
@@ -20,12 +20,13 @@ Inherits from [protectionPolicyBase](https://learn.microsoft.com/en-us/graph/api
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| id | String | The unique identifier of the protection rule associated with the policy. |
-| displayName | String | The name of the policy to be created. |
-| createdDateTime | DateTimeOffset | The time of creation of the policy. |
 | createdBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-1.0) | The identity of person who created the policy. |
+| createdDateTime | DateTimeOffset | The time of creation of the policy. |
+| displayName | String | The name of the policy to be created. |
+| id | String | The unique identifier of the protection rule associated with the policy. |
 | lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-1.0) | The identity of the person who last modified the policy. |
 | lastModifiedDateTime | DateTimeOffset | The timestamp of the last modification of the policy. |
+| retentionSettings | [retentionSetting](https://learn.microsoft.com/en-us/graph/api/resources/retentionsetting?view=graph-rest-1.0) collection | Retention settings for the policy. Inherited from [protectionPolicyBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionpolicybase?view=graph-rest-1.0). |
 | status | [protectionPolicyStatus](https://learn.microsoft.com/en-us/graph/api/resources/onedriveforbusinessprotectionpolicy?view=graph-rest-1.0#protectionpolicystatus-values) | Status of the policy. The value is the aggregated status of the protection units. The possible values are: `inactive`, `activeWithErrors`, `updating`, `active`, `unknownFutureValue`. |
 
 ### protectionPolicyStatus values
@@ -54,6 +55,11 @@ The following JSON representation shows the resource type.
   "@odata.type": "#microsoft.graph.oneDriveForBusinessProtectionPolicy",
   "id": "String (identifier)",
   "displayName": "String",
+  "retentionSettings": [
+    {
+      "@odata.type": "microsoft.graph.retentionSetting"
+    }
+  ],
   "status": "String",
   "createdDateTime": "String (timestamp)",
   "createdBy": {

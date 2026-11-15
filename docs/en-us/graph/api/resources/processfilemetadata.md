@@ -1,11 +1,15 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/processfilemetadata?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-02-19 -->
+<!-- Sitemap-Last-Modified: 2026-11-14 -->
 
 # processFileMetadata resource type
 
 Namespace: microsoft.graph
 
 Represents metadata for a content entry that is a file.
+
+Inherits from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-1.0).
+
+Use the inherited **sensitivityLabels** collection to supply one or more [currentLabel](https://learn.microsoft.com/en-us/graph/api/resources/currentlabel?view=graph-rest-1.0) objects with the file content. Each object identifies a sensitivity label and its application mode. This metadata doesn't apply or change labels on the file. For request examples with one label and two distinct labels, see [processContent](https://learn.microsoft.com/en-us/graph/api/userdatasecurityandgovernance-processcontent?view=graph-rest-1.0#example-5-file-content-with-one-sensitivity-label).
 
 ## Properties
 
@@ -21,6 +25,7 @@ Represents metadata for a content entry that is a file.
 | modifiedDateTime | DateTimeOffset | Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as `createdDateTime`. Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-1.0). |
 | name | String | Required. A descriptive name for the content \(for example, file name, web page title, `Chat Message`\). Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-1.0). |
 | ownerId | String | The unique identifier \(for example, Entra User ID or UPN\) of the owner of the file. |
+| sensitivityLabels | [currentLabel](https://learn.microsoft.com/en-us/graph/api/resources/currentlabel?view=graph-rest-1.0) collection | Caller-supplied sensitivity labels describing the content. Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-1.0). |
 | sequenceNumber | Int64 | A sequence number indicating the order in which content was generated or should be processed, required when `correlationId` is used. Inherited from [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase?view=graph-rest-1.0). |
 
 ## Relationships
@@ -44,6 +49,11 @@ The following JSON representation shows the resource type.
   "createdDateTime": "String (timestamp)",
   "modifiedDateTime": "String (timestamp)",
   "customProperties": { "@odata.type": "microsoft.graph.customMetadataDictionary" },
-  "ownerId": "String"
+  "ownerId": "String",
+  "sensitivityLabels": [
+    {
+      "@odata.type": "microsoft.graph.currentLabel"
+    }
+  ]
 }
 ```

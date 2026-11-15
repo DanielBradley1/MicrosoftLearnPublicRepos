@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkreprovision?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2024-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # cloudPcBulkReprovision resource type
 
@@ -18,7 +18,7 @@ Inherits from [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/re
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | actionSummary | [cloudPcBulkActionSummary](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkactionsummary?view=graph-rest-beta) | Run summary of this bulk action. Inherited from [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta). |
-| cloudPcIds | String collection | IDs of the Cloud PCs the bulk action applies to. Inherited from [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta). |
+| cloudPcIds | String collection | IDs of the Cloud PCs the bulk action applies to. Individual Cloud PC IDs are GUID-formatted strings. Inherited from [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta). |
 | createdDateTime | DateTimeOffset | The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`. Inherited from [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta). |
 | displayName | String | Name of the bulk action. Inherited from [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta). |
 | id | String | ID of the bulk action. Inherited from [cloudPcBulkAction](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulkaction?view=graph-rest-beta). |

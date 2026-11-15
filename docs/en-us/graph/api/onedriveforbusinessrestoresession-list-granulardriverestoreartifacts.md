@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/onedriveforbusinessrestoresession-list-granulardriverestoreartifacts?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-07-01 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
 # List granularDriveRestoreArtifacts
 
@@ -53,7 +53,11 @@ If successful, this method returns a `200 OK` response code and a collection of 
 
 ## Examples
 
-### Request
+### Example 1: List granular drive restore artifacts
+
+The following example shows how to get a list of [granular drive restore artifacts](https://learn.microsoft.com/en-us/graph/api/resources/granulardriverestoreartifact?view=graph-rest-1.0).
+
+#### Request
 
 The following example shows a request.
 
@@ -158,7 +162,7 @@ result = await graph_client.solutions.backup_restore.one_drive_for_business_rest
 
 > For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
-### Response
+#### Response
 
 The following example shows the response.
 
@@ -196,6 +200,68 @@ Content-Type: application/json
       "startDateTime": "0001-01-01T00:00:00Z",
       "completionDateTime": "0001-01-01T00:00:00Z",
       "directoryObjectId": "f3846f8d-80a6-4480-ae20-5966ebdf2009"
+    }
+  ]
+}
+```
+
+### Example 2: List granular drive restore artifacts with a failed artifact
+
+The following example shows how to get a list of [granular drive restore artifacts](https://learn.microsoft.com/en-us/graph/api/resources/granulardriverestoreartifact?view=graph-rest-1.0) that includes a failed artifact with error details.
+
+#### Request
+
+The following example shows a request.
+
+```http
+GET https://graph.microsoft.com/v1.0/solutions/backupRestore/oneDriveForBusinessRestoreSessions/01b9d504-a6a4-464b-b2e1-0085d9fab651/granularDriveRestoreArtifacts
+```
+
+#### Response
+
+The following example shows the response with a failed artifact that includes error details.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#solutions/backupRestore/oneDriveForBusinessRestoreSessions('01b9d504-a6a4-464b-b2e1-0085d9fab651')/granularDriveRestoreArtifacts",
+  "value": [
+    {
+      "id": "f3846f8d-80a6-4480-ae20-5966ebdf2009,26380145-c085-4772-b5ef-94de6bc9447e,3be2f282-276a-4a1a-8db0-8bf0849df84d,292dcd7d-b1c3-40e5-afc3-7c10503a0eac",
+      "browseSessionId": "m_RtZ8BiiUXOK69cuN6gwubfm9_yeVlDg8s6hci01_cVOAE",
+      "restoredItemKey": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "webUrl": "https://contoso-my.sharepoint.com/personal/user1_contoso_com/Documents/Report.docx",
+      "restoredItemPath": "/personal/user1_contoso_com/Documents",
+      "restoredItemWebUrl": "https://contoso-my.sharepoint.com/personal/user1_contoso_com/Documents-restore/Report.docx",
+      "status": "succeeded",
+      "restorePointDateTime": "2024-06-01T00:00:00Z",
+      "startDateTime": "2024-06-02T10:00:00Z",
+      "completionDateTime": "2024-06-02T10:30:00Z",
+      "directoryObjectId": "f3846f8d-80a6-4480-ae20-5966ebdf2009",
+      "error": null
+    },
+    {
+      "id": "f3846f8d-80a6-4480-ae20-5966ebdf2009,26380145-c085-4772-b5ef-94de6bc9447e,3be2f282-276a-4a1a-8db0-8bf0849df84d,8d1ba53f-986a-409f-bf90-3bf55dbd7526",
+      "browseSessionId": "m_RtZ8BiiUXOK69cuN6gwubfm9_yeVlDg8s6hci01_cVOAE",
+      "restoredItemKey": "",
+      "webUrl": "https://contoso-my.sharepoint.com/personal/user1_contoso_com/Documents/Archive.zip",
+      "restoredItemPath": "",
+      "restoredItemWebUrl": "",
+      "status": "failed",
+      "restorePointDateTime": "2024-06-01T00:00:00Z",
+      "startDateTime": "2024-06-02T10:00:00Z",
+      "completionDateTime": "2024-06-02T10:15:00Z",
+      "directoryObjectId": "f3846f8d-80a6-4480-ae20-5966ebdf2009",
+      "error": {
+        "code": "Unknown",
+        "message": "The restore operation for this item encountered an error. Please retry the operation.",
+        "details": [],
+        "innerError": null
+      }
     }
   ]
 }
