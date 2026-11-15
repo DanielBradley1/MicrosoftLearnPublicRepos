@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-access -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Request access to an access package in entitlement management
 
@@ -11,36 +11,36 @@ An access package manager can configure policies to require approval for users t
 
 The first step is to sign in to the My Access portal where you can request access to an access package.
 
-**Prerequisite role:** Requestor
+**Prerequisite role:** No role required, but the user must be in scope of the access package.
 
-1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID. For US Government, the domain might be `https://myaccess.microsoft.us` instead.
+1. If you're going to be working with another organization, look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID. For US Government, the domain might be `https://myaccess.microsoft.us` instead. Open the link.
 
    `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
 
    Note
 
    When signing into My Access via your directory hint link, you're required to reauthenticate with your sign-in credentials.
-2. Open the link.
+2. If you know the resource in your organization that you need access to, then you can launch My Access at `https://myaccess.microsoft.com` or, for US Government, `https://myaccess.microsoft.us`, so you can search for and request the acecss package with that resource.
 3. Sign in to the My Access portal.
 
    Be sure you use your organizational \(work or school\) account. If you're unsure, check with your project or business manager.
 
 ## Request an access package
 
-Once you find the access package in the My Access portal, you can submit a request for either yourself, or a direct employee.
+Once you find the access package in the My Access portal, you can submit a request for either yourself, a direct employee, or an agent.
 
-**Prerequisite role:** Requestor
+**Prerequisite role:** No role required, but the user must be in scope of the access package.
 
-1. Find the access package in the list. If necessary, you can search by typing a search string. You can search by name, description, or resources.
+1. Find the access package in the list. If you didn't receive a link for a specific access package, you can search by typing a search string. You can search by name, description, or resources.
 2. To request access, you can either select the row or select **Request**.
-3. On the Request details pane, select whether or not you're requesting the access package for yourself, or a direct employee.  ![Screenshot of manager requesting package.](https://learn.microsoft.com/en-us/entra/id-governance/media/entitlement-management-request-behalf/manager-request-package.png)
+3. On the Request details pane, select whether or not you're requesting the access package for yourself, or a direct employee, or an agent.  ![Screenshot of manager requesting package.](https://learn.microsoft.com/en-us/entra/id-governance/media/entitlement-management-request-behalf/manager-request-package.png)
 4. Review the details of the access package, then select **Continue**.
 5. You might have to answer questions and provide business justification for your request. If there are questions that you need to answer, type in your responses in the fields.
 6. If the **Business justification** box is displayed, type a justification for needing access.
 7. Set the **Request for specific period?** toggle to request access to the access package for a set duration of time:
 
-   1. If you don't need access for a specific period, set the **Request for specific period?** toggle to **No**.
-   2. If you need access for a certain time period, set the **Request for specific period?** toggle to **Yes**. Then, specify the start date and end date for access.
+   1. If the person or agent receiving access will need it indefinitely, set the **Request for specific period?** toggle to **No**.
+   2. If the person or agent receiving access will only need access for a certain time period, set the **Request for specific period?** toggle to **Yes**. Then, specify the start date and end date for access.
 
       ![My Access portal - Request access](https://learn.microsoft.com/en-us/entra/id-governance/media/entitlement-management-shared/my-access-request-access.png)
 
@@ -75,7 +75,7 @@ You might notice that some of the additional requestor information has pre-popul
 
 When you request access to an access package, your request might be denied or your request might expire if approvers don't respond in time. If you need access, you can try again and resubmit your request. The following procedure explains how to resubmit an access request:
 
-**Prerequisite role:** Requestor
+**Prerequisite role:** None, other than being an authorized user in the tenant
 
 1. Sign in to the **My Access** portal.
 2. Select **Request history** from the navigation menu to the left.

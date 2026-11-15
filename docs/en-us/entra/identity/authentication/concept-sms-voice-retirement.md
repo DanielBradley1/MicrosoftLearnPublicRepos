@@ -129,6 +129,7 @@ For answers to common questions about the SMS and voice retirement, telephony pr
 
 ## Related links
 
+- [User and admin experience during retirement](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement-experience)
 - [What are authentication methods?](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)
 - [Plan a passkey deployment](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication)
 - [Authentication methods activity report](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-methods-activity)

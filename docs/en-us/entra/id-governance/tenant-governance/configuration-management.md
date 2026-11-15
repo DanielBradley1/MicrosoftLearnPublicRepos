@@ -1,9 +1,17 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-management -->
-<!-- Sitemap-Last-Modified: 2026-07-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Configuration management
 
-Configuration management in Microsoft Entra Tenant Governance lets you define configuration baselines, monitor tenants for drift, and generate snapshots of current settings. This article explains the core concepts: resources, baselines, monitors, monitoring results, configuration drifts, and snapshot jobs.
+Configuration management in Microsoft Entra Tenant Governance lets you capture current settings, define configuration baselines, standardize baselines as templates, deploy configuration, and monitor tenants for drift.
+
+Configuration management supports operations in the **home tenant** and in **other tenants** that are connected through [governance relationships](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/governance-relationships). The home tenant is the tenant where you manage the operation. Other tenants are governed tenants that you select as targets.
+
+Tenant Governance Basic includes both home-tenant and cross-tenant configuration management. Tenant Governance Premium isn't required solely to manage configuration across governed tenants; Premium licenses add monitoring and snapshot capacity. For details, see [Microsoft Entra Tenant Governance licensing](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/licensing).
+
+The monitor view shows the configuration management navigation, monitor definitions, and entry points for results and drifts.
+
+[![Screenshot of monitors with Tenant Governance navigation and results and drifts tabs.](https://learn.microsoft.com/en-us/entra/id-governance/media/tenant-governance-configuration-management/monitors-overview.png)](https://learn.microsoft.com/en-us/entra/id-governance/media/tenant-governance-configuration-management/monitors-overview.png#lightbox)
 
 Note
 
@@ -17,13 +25,35 @@ For example, a Conditional Access policy in Microsoft Entra ID is represented by
 
 ## Baselines
 
-A **baseline** is the JSON representation of the configuration you want to monitor for a given tenant. It consists of a list of resources and the defined values for their associated properties. A baseline can contain multiple instances of a given resource type.
+A **baseline** is the JSON representation of the configuration you want to monitor or deploy for a given tenant. It consists of a list of resources and the defined values for their associated properties. A baseline can contain multiple instances of a given resource type.
 
 For example, a configuration baseline can define multiple instances of Exchange Online transport rules as part of its definition. To learn more about configuration baselines, see [Configuration baseline](https://learn.microsoft.com/en-us/graph/api/resources/configurationbaseline?view=graph-rest-1.0&preserve-view=true).
+
+## Configuration baseline templates \(Preview\)
+
+A **configuration baseline template** is a reusable baseline definition. Use Configuration baseline templates to standardize baseline definitions across monitors and deployments. Templates help you reuse approved settings and simplify setup across environments and tenants.
+
+A configuration baseline template defines resource settings. It's different from a [governance policy template](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/governance-policy-templates), which defines access through a governance relationship.
+
+For lifecycle and versioning guidance, see [Configuration baseline templates](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-baseline-templates).
+
+## Configuration deployments \(Preview\)
+
+A **configuration deployment** applies baseline-defined settings to a target tenant. Use Configuration deployments to apply baseline-defined configuration to the home tenant or governed tenants.
+
+Deployments change configuration; monitors evaluate it. After deployment, use a monitor to verify that the target tenant aligns with the baseline and to detect later changes. For status and failure handling, see [Configuration deployments](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-deployments).
 
 ## Monitors
 
 **Monitors** are core to the tenant configuration management solution. They run the processes responsible for continuously monitoring your tenants for configuration drifts. Each monitor references a JSON configuration baseline that specifies the resources to validate. The monitor definition also includes a name, description, schedule frequency, and a configuration mode that specifies the actions to perform when drifts are detected.
+
+### Cross-tenant monitors \(Preview\)
+
+A monitor targets either the home tenant or another tenant connected through an active governance relationship. For other-tenant monitoring, configure the required delegated permissions and workload access before creating the monitor. A relationship alone doesn't grant every workload permission.
+
+Choose **Monitors** under **Tenant management** for the home tenant, or **Monitors \(Preview\)** under **Other tenants** for a governed tenant. Select a governed target in the other-tenant creation wizard. Review results and drift records in the context of that target tenant.
+
+[![Screenshot of governed-tenant monitors with target tenant and run status columns.](https://learn.microsoft.com/en-us/entra/id-governance/media/tenant-governance-configuration-management/governed-tenant-monitors.png)](https://learn.microsoft.com/en-us/entra/id-governance/media/tenant-governance-configuration-management/governed-tenant-monitors.png#lightbox)
 
 Note
 
@@ -35,6 +65,8 @@ To learn more about monitors, see [configurationMonitor](https://learn.microsoft
 
 Every time a monitor executes based on its specified schedule, it produces a **monitoring result** that summarizes the execution. A monitoring result contains the execution duration, a status that indicates whether resource evaluation succeeded, and a count of detected drifts.
 
+Monitoring results can describe runs in the home tenant or governed tenants. Use tenant filters to distinguish results for each target tenant.
+
 If drifts are detected, the monitoring result reports their presence but doesn't include drift details. To get detailed information about each drift, query the associated configuration drift objects.
 
 To learn more about monitoring results, see [configurationMonitoringResult](https://learn.microsoft.com/en-us/graph/api/configurationmonitoringresult-get?view=graph-rest-1.0&preserve-view=true).
@@ -43,7 +75,7 @@ To learn more about monitoring results, see [configurationMonitoringResult](http
 
 When a delta exists between what a configuration baseline defines and the actual settings on a tenant, Tenant Governance reports a **configuration drift**. Configuration drifts are associated with a monitor and contain detailed information about the detected delta. Each drift object identifies the affected resource and lists each property whose current value differs from the baseline definition.
 
-After you remediate a detected drift, the next monitor execution automatically marks the configuration drift object as `fixed`. To learn more about configuration drifts, see [configurationDrift](https://learn.microsoft.com/en-us/graph/api/resources/configurationdrift?view=graph-rest-1.0&preserve-view=true).
+Drift records belong to the monitor's target tenant, whether it's the home tenant or a governed tenant. After you remediate a detected drift, the next monitor execution automatically marks the configuration drift object as `fixed` if the resource matches the baseline. To learn more about configuration drifts, see [configurationDrift](https://learn.microsoft.com/en-us/graph/api/resources/configurationdrift?view=graph-rest-1.0&preserve-view=true).
 
 ## Snapshot jobs
 
@@ -53,6 +85,15 @@ Important
 
 Snapshot jobs and their associated snapshots have a retention period of 7 days, after which they're deleted. Download and store generated snapshots before the retention period expires.
 
-The generated snapshot schema matches the schema of configuration baselines. Use a snapshot as-is to create monitors.
+The generated snapshot schema matches the schema of configuration baselines. Use a snapshot to create a baseline template, deployment, or monitor. Review the captured values before using them as your desired configuration.
 
 To learn more about snapshot jobs, see [configurationSnapshotJob](https://learn.microsoft.com/en-us/graph/api/resources/configurationsnapshotjob?view=graph-rest-1.0&preserve-view=true).
+
+## Related content
+
+- [Configure configuration management service permissions](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-set-up-permissions-tenant-monitoring).
+- [Create configuration snapshots](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-create-snapshots).
+- [Use configuration baseline templates](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-use-configuration-baseline-templates).
+- [Create a configuration deployment](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-create-configuration-deployment).
+- [Create a configuration monitor](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-create-monitor).
+- [View monitor results and manage monitors](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-see-monitor-results).

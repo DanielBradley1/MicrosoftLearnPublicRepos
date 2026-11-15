@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/architecture/governance-deployment-privileged-identities -->
 <!-- Sitemap-Last-Modified: 2025-03-25 -->
 
-# Microsoft Entra ID Governance deployment guide to govern privileged identities
+# Microsoft Entra ID Governance deployment guide to govern privileged identities and their access
 
 Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. You can discover how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements.
 
