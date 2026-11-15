@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/deploy-managed-apps-github-actions?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Deploy Microsoft Copilot Managed Runtime apps with GitHub Actions
 
 You can deploy [Copilot Managed Runtime apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide) with GitHub Actions without going through the platform-managed build pipeline. Build each app with your own toolchain and deploy the external artifact directly through the Microsoft Copilot Managed Runtime CLI \(`ms`\).
 
-Three GitHub Actions in the [`microsoft/Managed-Apps`](https://github.com/microsoft/Managed-Apps) repository \(under the `github-actions/` path\) do the work:
+Three GitHub Actions in the [`microsoft/Copilot-Managed-Runtime`](https://github.com/microsoft/Copilot-Managed-Runtime) repository \(under the `github-actions/` path\) do the work:
 
 - `install-ms-cli` installs the Copilot Managed Runtime CLI on the runner.
 - `ms-app-pack` builds the app and packs it into a deployable artifact.
@@ -21,7 +21,7 @@ External artifact deployment is for apps that don't use the default platform-man
 
 Before you deploy an app from GitHub Actions:
 
-1. Create an **app with `"repoType": "none"`**. Run [`ms app create`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-create) `--repo none` locally to create the app and generate its `ms.config.json` \(stamped with `"repoType": "none"`\). This step needs the **`@microsoft/managed-apps-cli`** version `0.7.0` or later installed locally; the workflow installs the CLI on the runner for you.
+1. Create an **app with `"repoType": "none"`**. Run [`ms app create`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-create) `--repo none` locally to create the app and generate its `ms.config.json` \(stamped with `"repoType": "none"`\). This step needs the **`@microsoft/cmr-cli`** version `0.7.0` or later installed locally; the workflow installs the CLI on the runner for you.
 2. Use a **GitHub repository** that contains your app source \(including `ms.config.json`\) and the workflow file. You need permission to manage the repository's Actions secrets.
 3. Configure a **service principal** with permission on the app's environment. You create one in [Step 1](#step-1-create-and-configure-the-service-principal).
 4. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
@@ -141,10 +141,10 @@ jobs:
       run: npm install
 
     - name: Install ms CLI
-      uses: microsoft/Managed-Apps/github-actions/install-ms-cli@v1
+      uses: microsoft/Copilot-Managed-Runtime/github-actions/install-ms-cli@v1
 
     - name: Pack app
-      uses: microsoft/Managed-Apps/github-actions/ms-app-pack@v1
+      uses: microsoft/Copilot-Managed-Runtime/github-actions/ms-app-pack@v1
       with:
         working-directory: 'apps/my-app'
         app-id:        ${{ secrets.PP_SP_CLIENT_ID }}
@@ -152,7 +152,7 @@ jobs:
         tenant-id:     ${{ secrets.PP_SP_TENANT_ID }}
 
     - name: Deploy app
-      uses: microsoft/Managed-Apps/github-actions/ms-app-deploy@v1
+      uses: microsoft/Copilot-Managed-Runtime/github-actions/ms-app-deploy@v1
       with:
         working-directory: 'apps/my-app'
         app-id:        ${{ secrets.PP_SP_CLIENT_ID }}
@@ -170,7 +170,7 @@ That's all you need for the standard workflow: `ms-app-pack` builds and stages t
 
 ## Reference: the GitHub Actions
 
-Reference each action as `microsoft/Managed-Apps/github-actions/<name>@v1`. The `v1` tag moves to the latest release; pin an immutable tag such as `@v1.0.1` for reproducible builds.
+Reference each action as `microsoft/Copilot-Managed-Runtime/github-actions/<name>@v1`. The `v1` tag moves to the latest release; pin an immutable tag such as `@v1.0.1` for reproducible builds.
 
 `ms-app-pack` and `ms-app-deploy` authenticate with the service principal, so pass these required inputs to each action from the secrets you added in [Step 2](#step-2-add-the-secrets-to-your-github-repository):
 
@@ -182,29 +182,29 @@ Reference each action as `microsoft/Managed-Apps/github-actions/<name>@v1`. The 
 
 ### install-ms-cli
 
-Installs `@microsoft/managed-apps-cli` onto the runner and adds the `ms` binary to the PATH. It works with no inputs for public npm. To install from a private feed \(for example, Azure DevOps Artifacts\) or to pin a version, set the optional inputs:
+Installs `@microsoft/cmr-cli` onto the runner and adds the `ms` binary to the PATH. It works with no inputs for public npm. To install from a private feed \(for example, Azure DevOps Artifacts\) or to pin a version, set the optional inputs:
 
 | Name | Default | Description |
 | --- | --- | --- |
 | `version` | `latest` | Semver or `latest`. Pin a specific version for reproducibility. |
 | `registry-url` | `https://registry.npmjs.org` | npm registry URL. Override it for internal feeds. |
 | `registry-auth-token` | *\(empty\)* | Bearer token or PAT for private registries. |
-| `npm-package-name` | `@microsoft/managed-apps-cli` | Override it for testing alternate builds. |
+| `npm-package-name` | `@microsoft/cmr-cli` | Override it for testing alternate builds. |
 
 The action outputs `cli-version`, the installed CLI version.
 
 ### ms-app-pack
 
-Builds and packs the app by running `ms app pack`. Pack runs the `buildCommand` from `ms.config.json` \(defaults to `npm run build`\) and stages the artifact under `<working-directory>/.ms/packed/`. Use this action before `ms-app-deploy` so build and packaging failures are visible as their own workflow step.
+Builds and packs the app by running [`ms app pack`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-pack). Pack runs the `buildCommand` from `ms.config.json` \(defaults to `npm run build`\) and stages the artifact under `<working-directory>/.ms/packed/`. Use this action before `ms-app-deploy` so build and packaging failures are visible as their own workflow step.
 
 Set `working-directory` \(optional, defaults to the repo root\) to the directory that contains `ms.config.json` and `package.json`, plus the three service principal inputs.
 
 ### ms-app-deploy
 
-Deploys to the app's environment by running `ms app deploy`. The action reads `appId`, `environmentId`, and `repoType` from `ms.config.json` and selects the deploy mode automatically. To deploy a prebuilt artifact and skip the build, set `artifact-path`:
+Deploys to the app's environment by running [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy). The action reads `appId`, `environmentId`, and `repoType` from `ms.config.json` and selects the deploy mode automatically. To deploy a prebuilt artifact and skip the build, set `artifact-path`:
 
 ```yaml
-- uses: microsoft/Managed-Apps/github-actions/ms-app-deploy@v1
+- uses: microsoft/Copilot-Managed-Runtime/github-actions/ms-app-deploy@v1
   with:
     working-directory: 'apps/my-app'
     artifact-path: '../app.zip'
@@ -238,6 +238,6 @@ The action outputs `app-id`, `environment-id`, `commit-sha`, and `app-play-uri` 
 ## Related content
 
 - [Copilot Managed Runtime CLI command reference \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide)
-- [`microsoft/Managed-Apps` repository](https://github.com/microsoft/Managed-Apps)
+- [`microsoft/Copilot-Managed-Runtime` repository](https://github.com/microsoft/Copilot-Managed-Runtime)
 - [Get started with the Power Platform API](https://learn.microsoft.com/en-us/power-platform/admin/powerplatform-api-getting-started)
 - [Power Platform for Admins connector reference](https://learn.microsoft.com/en-us/connectors/powerplatformforadmins/)

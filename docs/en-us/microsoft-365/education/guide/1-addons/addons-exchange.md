@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-addons/addons-exchange -->
-<!-- Sitemap-Last-Modified: 2026-04-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Microsoft Exchange addons for education
 
 Microsoft Exchange addons for education provide essential tools to enhance the security, compliance, and efficiency of email communication within educational institutions. These addons offer advanced features such as archiving, retention policies, and eDiscovery, ensuring that schools, colleges, and universities can manage their email data effectively while meeting regulatory requirements. This article explores the various Exchange addons available for education, their key features, and the benefits they bring to educational environments.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Requirements
 

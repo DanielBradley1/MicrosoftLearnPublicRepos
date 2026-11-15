@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-troubleshooting -->
 <!-- Sitemap-Last-Modified: 2026-08-11 -->
 
-# Troubleshoot the Agent Evaluations CLI
+# Troubleshoot the Microsoft 365 Copilot Evaluations CLI
 
-This article provides troubleshooting information for the Microsoft 365 Copilot Agent Evaluations CLI. Issues are grouped by the stage of the workflow they affect: setup, authentication, runtime, and environment.
+This article provides troubleshooting information for the Microsoft 365 Copilot Evaluations CLI. The following sections group issues by the stage of the workflow they affect: setup, authentication, runtime, and environment.
 
 ## Setup issues
 
@@ -113,6 +113,20 @@ Warning
 
 The `--log-level debug` option may include raw API payloads and response data in console output. Redaction is pattern-based and might not catch all PII or custom credentials. Don't share debug-level output publicly without manual review.
 
+### Tool-call evaluation issues \(v2 preview\)
+
+ToolCallSelection and ToolCallExecution require `@microsoft/m365-copilot-eval@preview` and schema v2. They're not available in v1 \(`latest`\).
+
+| Symptom | Action |
+| --- | --- |
+| `toolCallNotAllowed` | Review the requested consent identifiers and approve the intended operations with `default_allowed_tools` or `allowed_tools`. Evaluator expectations don't grant consent. |
+| `toolCallEvidenceIndeterminate` | Inspect `diagnostics.tool_calls` for unavailable evidence or HTTP outcomes that can't be parsed. An error isn't a pass or necessarily an agent defect. |
+| Expected call isn't matched | Check the case-sensitive `plugin_id`, `toolset_id`, and `function_name`. `plugin_id` is the package Title ID, not `plugin.id`. |
+| Saved tool-call results can't be re-scored | Confirm the saved items or turns include `response` and retained diagnostics. Evidence suppressed with `EVALS_SUPPRESS_DIAGNOSTICS=true` isn't available for replay. |
+| A plugin evaluation targets an agent | Remove `M365_AGENT_ID` and legacy `AGENT_ID` from your shell and loaded environment files, and omit `--m365-agent-id`. |
+
+For discovery commands, examples, and the distinction between failures and errors, see [Tool-call evaluators](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-tool-call-evaluators).
+
 ## Environment issues
 
 Problems with the cached Python runtime, cache directory, or network connectivity.
@@ -164,7 +178,7 @@ runevals --init-only --log-level debug
 
 ## Get support
 
-If the troubleshooting steps above don't resolve your issue, file an issue in the [M365 Copilot Agent Evaluations GitHub repo](https://github.com/microsoft/m365-copilot-eval).
+If the troubleshooting steps earlier in this article don't resolve your issue, file an issue in the [Microsoft 365 Copilot Evaluations GitHub repo](https://github.com/microsoft/m365-copilot-eval).
 
 Before you file an issue, collect:
 
@@ -175,12 +189,12 @@ Before you file an issue, collect:
 
 To file the issue:
 
-- Open a new issue at [M365 Copilot Agent Evaluations — Issues](https://github.com/microsoft/m365-copilot-eval/issues).
+- Open a new issue at [Microsoft 365 Copilot Evaluations issues](https://github.com/microsoft/m365-copilot-eval/issues).
 - Apply the appropriate label \(for example, `setup`, `authentication`, `runtime`, `environment`\) to help triage.
 
 ## Related content
 
-- [Agent Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
-- [Quickstart: Use the Agent Evaluations CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart)
+- [Microsoft 365 Copilot Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
+- [Quickstart: Use the Microsoft 365 Copilot Evaluations CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart)
 - [Dataset schema and test design](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-create-tests)
 - [CLI reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-reference)

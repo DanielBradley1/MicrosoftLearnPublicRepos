@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/all-license -->
-<!-- Sitemap-Last-Modified: 2025-12-04 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Microsoft 365 Education licenses
 
 This page provides an overview of the features included in the A1, A3, and A5 Microsoft Education licenses.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Legend
 

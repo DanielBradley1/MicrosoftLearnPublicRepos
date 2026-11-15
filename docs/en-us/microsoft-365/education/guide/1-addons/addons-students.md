@@ -1,7 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-addons/addons-students -->
-<!-- Sitemap-Last-Modified: 2025-12-25 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft 365 Student Addons
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Requirements
 

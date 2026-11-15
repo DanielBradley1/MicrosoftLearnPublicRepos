@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/tool-reference -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-26 -->
 
 # Work IQ MCP tool reference
 
@@ -591,13 +591,21 @@ Dataverse and Power BI are roadmap sources, not currently supported retrieval so
 
 The authoritative response payload is in the `application/vnd.ms-workiq.retrieval` property of `structuredContent`.
 
+The payload returns grounding content and source metadata in `results`. The top-level `markdown` and `retrievalHits` fields aren't included.
+
 | Property | Type | Description |
 | --- | --- | --- |
-| `markdown` | string | Model-friendly grounding content with inline citations that correspond to IDs in `retrievalHits`. |
-| `retrievalHits` | object array | Structured source metadata, including source URLs, identifiers, and source-specific metadata when available. |
-| `resultCount` | integer | The number of retrieval hits. |
+| `results` | object array | Retrieved results. Each entry contains an `id`, model-friendly `markdown`, and source metadata when available. |
+| `resultCount` | integer | The number of returned results. |
+| `searchMetadata` | object | Optional search metadata, such as query alteration information. |
 | `stoppedReason` | string | The terminal retrieval status, such as `completed`, `cancelled`, or `error`. |
 | `conversationId` | string | The conversation identifier, when returned. |
+
+Use each `results[].markdown` value for model grounding and metadata from that same result to identify and link to the source. Source metadata can include URLs, entity identifiers, content-protection information, sensitivity labels, relevance scores, and source-specific `resourceMetadata` facets. An empty `results` array means no results were returned.
+
+For clients migrating from the earlier response format, `results` replaces the top-level `markdown` and `retrievalHits` properties.
+
+Read retrieved content from `structuredContent["application/vnd.ms-workiq.retrieval"].results`, not from the MCP `content` array. The `content` array can be empty even when results are returned.
 
 For request examples, capability-specific scoping, SharePoint Embedded support, response-processing guidance, and error handling, see [Use the `retrieve` tool in Work IQ MCP](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/retrieve).
 

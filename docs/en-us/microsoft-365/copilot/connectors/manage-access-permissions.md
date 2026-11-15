@@ -31,3 +31,4 @@ Updating access permissions after you create the connection isn't currently supp
 
 - [Deploy Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview)
 - [Microsoft-built synced connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/prebuilt-connectors-overview)
+- [Plugin access, consent, and capability-specific controls](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins#when-a-capability-has-its-own-controls)

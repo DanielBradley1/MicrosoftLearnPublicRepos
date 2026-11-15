@@ -3,7 +3,7 @@
 
 # Add custom evaluators to your agent evaluations
 
-The Microsoft 365 Copilot Agent Evaluations CLI \(`@microsoft/m365-copilot-eval`\) includes a set of [built-in evaluators](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-evaluators). When the built-in evaluators don't cover your scenario, you can author *custom evaluators* to score agent responses against domain-specific criteria, such as regulatory compliance, brand tone, or a custom relevance rubric.
+The Microsoft 365 Copilot Evaluations CLI \(`@microsoft/m365-copilot-eval`\) includes a set of [built-in evaluators](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-evaluators). When the built-in evaluators don't cover your scenario, you can author *custom evaluators* to score agent responses against domain-specific criteria, such as regulatory compliance, brand tone, or a custom relevance rubric.
 
 Two kinds of custom evaluators exist, and the CLI automatically distinguishes between them:
 
@@ -273,7 +273,7 @@ For richer logs, run the CLI with `--log-level debug`.
 
 ## Related content
 
-- [Agent Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
+- [Microsoft 365 Copilot Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
 - [Evaluators reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-evaluators)
 - [Dataset schema and test design](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-create-tests)
 - [CLI reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-reference)

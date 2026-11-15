@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/copilotpackage -->
-<!-- Sitemap-Last-Modified: 2026-10-02 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # copilotPackage resource type
 
@@ -31,6 +31,7 @@ Access to the Package Management API requires a [Microsoft Agent 365](https://ww
 | `lastModifiedDateTime` | DateTimeOffset | Timestamp of the last modification made to the package configuration or metadata. |
 | `manifestId` | String | Unique identifier declared in the package manifest. Not updatable after creation. |
 | `manifestVersion` | String | Version of the manifest schema used to define this package. Not updatable after creation. |
+| `owners` | [packageAccessEntity](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/packageaccessentity) collection | Collection of accountable users and groups that own the package. Not updatable after creation. |
 | `platform` | String | The host platform this package targets \(for example, `teams`, `outlook`, `web`\). Supports $filter with eq. |
 | `publisher` | String | Name of the organization or entity that published this package. |
 | `requestStatus` | [copilotPackageRequestStatus](#copilotpackagerequeststatus-enumeration) | Nullable. Status of the request associated with this package. Supports `$filter` with `eq` on [List packages](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackages-list). |
@@ -113,6 +114,11 @@ The following JSON representation shows the resource type.
   "lastModifiedDateTime": "DateTimeOffset",
   "manifestId": "String",
   "manifestVersion": "String",
+  "owners": [
+    {
+      "@odata.type": "microsoft.graph.packageAccessEntity"
+    }
+  ],
   "platform": "String",
   "publisher": "String",
   "requestStatus": "String",

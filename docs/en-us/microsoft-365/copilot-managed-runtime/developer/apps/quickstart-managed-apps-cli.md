@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Quickstart: Create an app with the Copilot Managed Runtime SDK \(preview\)
 
 \[This article is prerelease documentation and is subject to change.\]
 
-This quickstart shows you how to scaffold, run, and ship a *Hello World* app from your terminal by using the Copilot Managed Runtime CLI \(`@microsoft/managed-apps-cli`\) and the Copilot Managed Runtime SDK \(`@microsoft/managed-apps`\). By the end, your *Hello World* app is running locally, previewed at a hosted URL, and deployed live to users - all from the terminal, with source control handled by a platform-managed repository.
+This quickstart shows you how to scaffold, run, and ship a *Hello World* app from your terminal by using the Copilot Managed Runtime CLI \([`@microsoft/cmr-cli`](https://www.npmjs.com/package/@microsoft/cmr-cli)\) and the Copilot Managed Runtime SDK \([`@microsoft/cmr-apps`](https://www.npmjs.com/package/@microsoft/cmr-apps)\). By the end, your *Hello World* app is running locally, previewed at a hosted URL, and deployed live to users - all from the terminal, with source control handled by a platform-managed repository.
 
 The main steps cover the default end-to-end path. The [Variations](#variations) section covers binding to an existing GitHub repository, converting an existing web project, and pulling an app onto a new machine.
 
@@ -37,7 +37,7 @@ The following table describes the process to follow.
 Install the CLI globally so the `ms` command is available in any project:
 
 ```bash
-npm install -g @microsoft/managed-apps-cli
+npm install -g @microsoft/cmr-cli
 ```
 
 Tip
@@ -52,7 +52,7 @@ ms --version
 
 ## Sign in
 
-Authenticate the CLI with your tenant. This one-time setup per machine uses your Microsoft Entra identity for everything that follows.
+Authenticate the CLI with your tenant by using [`ms auth login`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-auth-login). This one-time setup per machine uses your Microsoft Entra identity for everything that follows.
 
 ```bash
 ms auth login
@@ -62,7 +62,7 @@ A browser window opens for sign-in. After you sign in, the terminal confirms the
 
 ## Create the app
 
-Create a new app and scaffold the project in one command. This command creates the app on the platform, sets up a platform-managed Git repository for you, and scaffolds your project files.
+Create a new app and scaffold the project with [`ms app create`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-create). This command creates the app on the platform, sets up a platform-managed Git repository for you, and scaffolds your project files.
 
 ```bash
 ms app create hello-world --display-name "Hello World"
@@ -73,9 +73,9 @@ Because the platform manages the repo, you don't need to set up your own source 
 
 ## Build and run the app locally
 
-Build and run the app locally for your inner dev loop. This approach lets you see changes instantly as you edit code. Stay in local mode for all iteration: writing features, tweaking UI, debugging logic, trying connector calls. Move to a [platform build](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide#platform-build) when the app behaves the way you want locally and you're ready to validate it in a hosted environment.
+Build and run the app locally for your inner dev loop. This approach lets you see changes instantly as you edit code. Stay in local mode for all iteration: writing features, tweaking UI, debugging logic, trying connector calls. Move to a [platform build](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide#platform-build-and-preview) when the app behaves the way you want locally and you're ready to validate it in a hosted environment.
 
-Install dependencies once, then start the local dev loop:
+Install dependencies once, then start the local dev loop with [`ms app dev`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-dev):
 
 ```bash
 npm install
@@ -101,7 +101,7 @@ Learn more about the local network access restrictions:
 
 ## Add a connector \(optional\)
 
-If your app needs data, add a connector. Start by discovering what's available in your environment:
+If your app needs data, add a connector. Start by discovering what's available in your environment with [`ms connector list`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-connector-list):
 
 ```bash
 ms connector list [--search <query>]
@@ -109,7 +109,7 @@ ms connector list [--search <query>]
 
 The CLI prints matching connectors with their ID, auth type, tabular flag, and governance status \(DLP and ACP\). [Data Loss Prevention \(DLP\)](https://learn.microsoft.com/en-us/power-platform/admin/prevent-data-loss) and [Advanced Connector Policies \(ACP\)](https://learn.microsoft.com/en-us/power-platform/admin/advanced-connector-policies) are admin-defined rules that govern which connectors your app is allowed to use. When you see this status at design time, you know up front whether a connector is permitted in your environment. You avoid building against a data source that policy blocks at deploy or run time.
 
-Pick one of the listed connectors and add it to your app:
+Pick one of the listed connectors and add it to your app with [`ms app add data-source`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-add-data-source):
 
 ```bash
 ms app add data-source --connector <connector>
@@ -129,7 +129,7 @@ git push
 
 ### Play the app in preview mode
 
-When your app works the way you want locally and you're ready to test it in a hosted environment, open it in preview mode:
+When your app works the way you want locally and you're ready to test it in a hosted environment, open it in preview mode with [`ms app play`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-play):
 
 ```bash
 ms app play --mode preview
@@ -145,11 +145,11 @@ When you play the app in preview mode, the platform starts a build for your late
 
 Tip
 
-You can run [`ms app build`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-build) `[--commit <id>]` at any time to trigger a [platform build](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide#platform-build). If you don't provide a commit ID, it defaults to the latest commit on the main branch. Most of the time, pushing and hitting the preview URL is all you need. Use this command only if you want to kick off a platform build before opening the preview - for example, to warm up the build so the preview loads instantly when you share it, or to confirm a platform build succeeds without leaving the terminal.
+You can run [`ms app build`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-build) `[--commit <id>]` at any time to trigger a [platform build](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide#platform-build-and-preview). If you don't provide a commit ID, it defaults to the latest commit. Most of the time, pushing and hitting the preview URL is all you need. Use this command only if you want to kick off a platform build before opening the preview - for example, to warm up the build so the preview loads instantly when you share it, or to confirm a platform build succeeds without leaving the terminal.
 
 ## Deploy to live
 
-When the preview looks right, promote to a live app with a single command:
+When the preview looks right, promote to a live app with [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy):
 
 ```bash
 ms app deploy
@@ -200,9 +200,9 @@ ms app init --display-name "My App"
 
 [`ms app init`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-init) provisions an app record, writes `ms.config.json`, and either creates a platform-managed Git repository or keeps your existing Git remote, depending on what it detects in the working directory.
 
-### Clone an app onto a new machine
+### Clone an app on a new machine
 
-To work on an existing app from a new machine, look up the repository URL and clone it:
+To work on an existing app from a new machine, look up the repository URL with [`ms app info`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-info) and clone it:
 
 ```bash
 ms app info --app <app-id>
@@ -212,4 +212,4 @@ npm install
 ms app dev
 ```
 
-[`ms app info`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-info) returns the repository URL, owners, and environment ID for an app you access.
+Use [`ms app info`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-info) to get the repository URL, owners, and environment ID for an app you access.

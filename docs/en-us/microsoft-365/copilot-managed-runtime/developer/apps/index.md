@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft Copilot Managed Runtime SDK overview \(preview\)
 
@@ -24,7 +24,7 @@ Learn how developers build apps from a command line.
 - Access to more than 1,500 connectors, callable directly from JavaScript and TypeScript
 - A native Git inner loop with either a platform-managed repository or your own external GitHub repository
 - Adherence by default to your organization's IT policies, including sharing limits, Conditional Access, Advanced Connector Policies, and Data Loss Prevention
-- A GitHub Copilot plugin so you can get the most from your coding agent that helps you build and edit your business apps
+- The [Copilot Managed Runtime plugin](https://github.com/microsoft/Copilot-Managed-Runtime/tree/main/plugins/copilot-managed-runtime) so you can get the most from your coding agent that helps you build and edit your business apps
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ Use these tools to build apps locally:
 - [Node.js](https://nodejs.org/) \(LTS version\) >= v24.11.0.
 - [Git](https://git-scm.com/) >= v2.27.0.
 - [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager). If you install Git on Windows, you might already have GCM installed and can skip this step. Run `git credential-manager --version` to verify.
-- The Microsoft Copilot Managed Runtime CLI. Install it globally with `npm install -g @microsoft/managed-apps-cli` and verify with `ms --version`.
+- The Microsoft Copilot Managed Runtime CLI. Install it globally with `npm install -g @microsoft/cmr-cli` and verify with `ms --version`.
 - If using a remote GitHub repository \(optional\), use a repository owned by an organization on GitHub Enterprise Cloud and install [Microsoft Managed Apps](https://github.com/marketplace/microsoft-managed-apps) in the organization and repositories you'll use.
 
 ### License end users
@@ -69,8 +69,8 @@ Developers use the following tools when creating apps:
 
 | Tool | Description |
 | --- | --- |
-| The Copilot Managed Runtime CLI \(`@microsoft/managed-apps-cli`\) | A single command-line tool, invoked as `ms`, for creating, developing, and deploying apps. |
-| The Copilot Managed Runtime SDK \(`@microsoft/managed-apps`\) | A client library for calling connectors and interacting with the platform at runtime. |
+| The Copilot Managed Runtime CLI \([`@microsoft/cmr-cli`](https://www.npmjs.com/package/@microsoft/cmr-cli)\) | A single command-line tool, invoked as `ms`, for creating, developing, and deploying apps. |
+| The Copilot Managed Runtime SDK \([`@microsoft/cmr-apps`](https://www.npmjs.com/package/@microsoft/cmr-apps)\) | A client library for calling connectors and interacting with the platform at runtime. |
 | Native Git | The CLI doesn't replace Git. You use `git add`, `git commit`, and `git push` the same way you would on any other project. Builds and deploys flow from real commits in a real repository. |
 
 You can edit code in any IDE. There's no required editor and no required template beyond the scaffold the CLI produces.
@@ -96,11 +96,11 @@ All eligible tenants in commercial cloud automatically get Copilot Managed Runti
 
 ## Explore the repo and report issues
 
-To help you get started and stay productive, use the resources available in the [Copilot Managed Runtime CLI GitHub repository](https://github.com/microsoft/Managed-Apps).
+To help you get started and stay productive, use the resources available in the [Copilot Managed Runtime CLI GitHub repository](https://github.com/microsoft/Copilot-Managed-Runtime).
 
 ### Submit new issues
 
-To share feedback or seek guidance, [open a new issue in the repository](https://github.com/microsoft/managed-apps/issues).
+To share feedback or seek guidance, [open a new issue in the repository](https://github.com/microsoft/Copilot-Managed-Runtime/issues).
 
 Tip
 

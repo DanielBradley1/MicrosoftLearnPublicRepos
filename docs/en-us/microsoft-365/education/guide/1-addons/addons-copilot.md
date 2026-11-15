@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-addons/addons-copilot -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Microsoft Copilot addons for education
 
 Microsoft Copilot addons for education are designed to enhance the educational experience by leveraging AI-powered tools. These addons help educators create lesson plans, quizzes, and other educational materials, provide AI-generated feedback on student work, and ensure secure collaboration. With seamless integration into Microsoft 365 apps like Teams, Word, and PowerPoint, these tools support personalized learning and improve productivity in the classroom.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Requirements
 

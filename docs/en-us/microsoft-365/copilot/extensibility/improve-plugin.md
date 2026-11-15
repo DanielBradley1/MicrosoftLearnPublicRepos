@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Improve and update your plugin
 
@@ -34,7 +34,7 @@ For a plugin that includes an agent, use [Agent evaluation overview](https://lea
 
 Agent evaluation isn't required for every plugin. It doesn't replace capability testing, package validation, or testing the complete user experience.
 
-For deployed declarative agents, use the guided [`wiqd agent eval` workflow](https://microsoft.github.io/wiqd/extensions/provided/eval/). For direct command-line or pipeline control, see [Agent Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview).
+For deployed declarative agents, use the guided [`wiqd agent eval` workflow](https://microsoft.github.io/wiqd/extensions/provided/eval/). For direct command-line or pipeline control, see [Microsoft 365 Copilot Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview).
 
 ## Apply and test the change
 

@@ -135,3 +135,4 @@ Admins can export configuration details for the connections currently displayed 
 ## Related content
 
 - [Deploy Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview)
+- [Review plugin dependencies before cleanup](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/retire-plugin#clean-up-resources)

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Add skills to your declarative agent in Agent Builder
 
@@ -15,7 +15,7 @@ In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://lear
 
 ## Prerequisites
 
-- A qualifying Microsoft 365 Copilot license, or access through pay-as-you-go. For details, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
+- An eligible Microsoft 365 subscription that provides access to Microsoft 365 Copilot Chat. A Microsoft 365 Copilot add-on license isn't required. Some agent capabilities require a Microsoft 365 Copilot license or pay-as-you-go. For details, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
 
 Note
 

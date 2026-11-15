@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-addons/addons-viva -->
-<!-- Sitemap-Last-Modified: 2025-12-05 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Microsoft Viva addons for education
 
 Microsoft Viva offers a suite of tools designed to enhance the educational experience for both educators and students. This article provides an overview of the various Viva addons available for educational institutions, detailing their features, requirements, and benefits.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Requirements
 

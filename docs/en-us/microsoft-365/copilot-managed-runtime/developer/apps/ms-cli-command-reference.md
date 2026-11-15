@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Copilot Managed Runtime CLI command reference \(preview\)
 
 \[This article is prerelease documentation and is subject to change.\]
 
-The Copilot Managed Runtime CLI is published as [`@microsoft/managed-apps-cli`](https://www.npmjs.com/package/@microsoft/managed-apps-cli) and invoked as `ms`.
+This article describes every Copilot Managed Runtime CLI command, with syntax and parameters, to help you build, deploy, and share apps from the command line. The Copilot Managed Runtime CLI is published as [`@microsoft/cmr-cli`](https://www.npmjs.com/package/@microsoft/cmr-cli) and invoked as `ms`.
 
 Most commands operate on the app in the current directory and read defaults from its local configuration \(app name, environment, repository binding\). Run commands from the directory that contains your app unless a flag explicitly lets you target another app.
 
@@ -95,8 +95,8 @@ Every command accepts the following flags.
 
 | Flag | Alias | Required? | Description |
 | --- | --- | --- | --- |
-| `--json` |  | No | Output the result as a single JSON object \(or NDJSON for streaming commands\). Use this in scripts and CI. |
-| `--non-interactive` |  | No | Run without prompts. All required values must be supplied through flags or environment variables. Use this in scripts and CI. |
+| `--json` |  | No | Output the result as a single JSON object \(or NDJSON for streaming commands\). Use this flag in scripts and CI. |
+| `--non-interactive` |  | No | Run without prompts. Supply all required values through flags or environment variables. Use this flag in scripts and CI. |
 | `--no-color` |  | No | Disable colored output. |
 | `--cloud <cloud>` |  | No | Cloud environment to target. Valid values are `public` \(default\), `usgov`, `usgovhigh`, `usgovdod`, and `china`. |
 | `--version` | `-v` | No | Print the CLI version. |
@@ -112,7 +112,7 @@ Sign in once per machine. All other commands assume an authenticated session aga
 
 ### `ms auth login`
 
-Sign in to Microsoft Entra ID via the browser. Adds the new account to the cache and makes it active.
+Sign in to Microsoft Entra ID through the browser. Adds the new account to the cache and makes it active.
 
 ```bash
 ms auth login [--account <email>]
@@ -120,7 +120,7 @@ ms auth login [--account <email>]
 
 #### `ms auth login` `account` parameter
 
-Attempts to log you in as the selected account, useful for multi-account scenarios. To pick among already-cached accounts, use [`ms auth switch`](#ms-auth-switch) instead.
+Attempts to sign you in as the selected account, useful for multi-account scenarios. To pick among already-cached accounts, use [`ms auth switch`](#ms-auth-switch) instead.
 
 ---
 
@@ -220,7 +220,7 @@ Note
 
 ### `ms app init`
 
-Register an existing web project as an app, without scaffolding files.
+Register an existing web project as an app without scaffolding files.
 
 ```bash
 ms app init --display-name <name> [options]
@@ -281,7 +281,7 @@ List connectors available in an environment.
 ms connector list [--environment-id <id>] [--search <term>] [--include-blocked]
 ```
 
-Output includes the connector ID, authentication type, tabular support flag, and Data Loss Prevention \(DLP\) and Advanced Connector Policy \(ACP\) status. Seeing governance status at design time lets you avoid building against a connector that policy blocks at deploy or runtime.
+The output includes the connector ID, authentication type, tabular support flag, and Data Loss Prevention \(DLP\) and Advanced Connector Policy \(ACP\) status. By seeing governance status at design time, you can avoid building against a connector that policy blocks at deploy or runtime.
 
 #### `ms connector list` parameters
 
@@ -295,7 +295,7 @@ Output includes the connector ID, authentication type, tabular support flag, and
 
 ### `ms connector list-actions`
 
-List the operations exposed by a connector, including per-operation DLP status.
+List the operations that a connector exposes, including the data loss prevention \(DLP\) status for each operation.
 
 ```bash
 ms connector list-actions [--environment-id <id>] --connector <connector> [--search <term>]
@@ -305,7 +305,7 @@ ms connector list-actions [--environment-id <id>] --connector <connector> [--sea
 
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
-| `--connector <connector>` |  | Yes | Connector to inspect, by ID. |
+| `--connector <connector>` |  | Yes | Connector to inspect, specified by ID. |
 | `--environment-id <id>` | -e | No | Environment to query. Defaults from `ms.config.json` when present. |
 | `--search <term>` | -s | No | Filter by substring match on operation summary or action ID \(case-insensitive\). |
 
@@ -319,13 +319,13 @@ Use these commands to add, remove, and refresh the data sources your app depends
 
 ### Add app resources
 
-Run all `add` commands from the directory that contains your app. By default, they generate TypeScript models and services under `generated/`.
+Run all `add` commands from the directory that contains your app. By default, these commands generate TypeScript models and services under `generated/`.
 
 ---
 
 ### `ms app add data-source`
 
-Add a connector to the app, automatically choosing between table and action data sources.
+Add a connector to the app. The command automatically chooses between table and action data sources.
 
 ```bash
 ms app add data-source --connector <connector> [options]
@@ -335,7 +335,7 @@ Note
 
 - The CLI adds non-tabular connectors as actions automatically.
 - The CLI prompts for table versus action in interactive mode for tabular connectors. You must specify `--as` in non-interactive mode.
-- DLP and ACP preflight run before any action or table is added. The CLI filters out blocked operations and reports the count skipped.
+- DLP and ACP preflight run before the command adds any action or table. The CLI filters out blocked operations and reports the count skipped.
 
 #### `ms app add data-source` parameters
 
@@ -490,9 +490,9 @@ Note
 | `--open-browser` |  | No | Best-effort launch the system browser if Device Code Flow re-authentication is needed. Has no effect with `--json`. |
 | `--force-reauth` |  | No | Bypass the stored GitHub mapping and force Device Code Flow. Only affects apps bound to an external GitHub repository. |
 
-`ms app deploy --artifact <path>` uploads and deploys the artifact without a platform-managed build. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
+Until the deployment completes, the existing deployment remains intact and usable. After the deployment completes, end users see a notification that there's a new version available with a link to refresh the app.
 
-Your organization is responsible for validating externally built artifacts and securing the build pipeline before deployment.
+`ms app deploy --artifact <path>` uploads and deploys the artifact without a platform-managed build. External artifact deployment is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment). Your organization is responsible for validating externally built artifacts and securing the build pipeline before deployment.
 
 ## Play
 
@@ -512,12 +512,23 @@ ms app play [--app <name>] [--mode live | preview] [--commit <sha>] [--no-browse
 | --- | --- | --- | --- |
 | `--app <name>` |  | No | App to open. Defaults from `ms.config.json`. |
 | `--mode <mode>` | -m | No | `live` opens the deployed app. `preview` opens the latest build on `main`, or a specific commit when combined with `--commit`. Defaults to `live`. |
-| `--commit <sha>` | -c | No | Open the preview at a specific commit. Valid only with `--mode preview`. |
+| `--commit <sha>` | -c | No | Open the preview at a specific commit. Valid only with `--mode preview`. If not supplied, uses the head of the current branch. |
 | `--no-browser` |  | No | Print the launch URL without opening the default browser. Useful for SSH sessions, CI, and scripts. |
 
 Note
 
-`--mode live` warns that the live build is a snapshot and won't auto-update. Re-run `ms app deploy` to refresh it. If the app is never deployed, `--mode live` fails with a usage error that points you to `ms app deploy`.
+`--mode live` warns that the live build is a snapshot and doesn't auto-update. Re-run `ms app deploy` to refresh it. If you never deploy the app, `--mode live` fails with a usage error that points you to `ms app deploy`.
+
+#### Preview build behavior
+
+In `--mode preview`, the launch URL is based on the commit at the head of the current branch or a selected commit SHA. What you see in the browser for that URL depends on the state of the build for that commit:
+
+| Build state | Preview behavior |
+| --- | --- |
+| Latest commit has a successful build | Renders the build. |
+| Latest commit is still building | Renders the previous successful build with an in-progress banner: *"Latest build is in progress."* |
+| Latest commit failed to build | Renders the previous successful build with a failure banner: *"Latest build failed. Showing the last successful build."* |
+| App has no successful build yet | Renders a dedicated "never deployed" experience. |
 
 ## Share
 
@@ -638,20 +649,20 @@ Use these commands to view app state, update settings, and remove apps when need
 
 ### `ms app list`
 
-List all apps you can access. By default lists all apps in the tenant; pass `--environment-id` to scope to a single environment.
+List all apps you can access. By default, the command lists all apps in the tenant. Use `--environment-id` to scope the list to a single environment.
 
 ```bash
 ms app list [--environment-id <id>] [--permission <level>]
 ```
 
-Returns display name, app ID, repository URL, and owners for each app.
+Returns the display name, app ID, repository URL, and owners for each app.
 
 #### `ms app list` parameters
 
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
-| `--environment-id <id>` | -e | No | Scope the listing to a single environment. When omitted, all apps you can access across the tenant are returned. |
-| `--permission <level>` | -p | No | Permission filter. Either `edit` \(apps you can contribute to; default\) or `play` \(apps you can play/view\). Case-insensitive. |
+| `--environment-id <id>` | -e | No | Scope the listing to a single environment. When omitted, the command returns all apps you can access across the tenant. |
+| `--permission <level>` | -p | No | Permission filter. Use either `edit` \(apps you can contribute to; default\) or `play` \(apps you can play or view\). Case-insensitive. |
 
 ---
 
@@ -721,7 +732,7 @@ Pass settings as named flags. Only the keys you specify are updated.
 
 ### `ms app delete`
 
-Deletes the app from the environment. Doesn't delete local source code or the Git repository.
+Deletes the app from the environment. This command doesn't delete local source code or the Git repository.
 
 ```bash
 ms app delete [--app <name>] [--environment-id <id>] [--force]

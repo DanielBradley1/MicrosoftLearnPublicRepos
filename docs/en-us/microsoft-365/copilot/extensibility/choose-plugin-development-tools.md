@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools -->
-<!-- Sitemap-Last-Modified: 2026-10-27 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Choose development tools for your plugin
 
@@ -17,7 +17,7 @@ Choose a starting point based on the authoring approach, component, and level of
 | Pro-code developer building a supported declarative agent or an alpha plugin-package scenario with source control, terminal commands, or continuous integration | Work IQ Dev Tools \(preview\) |
 | Pro-code developer who needs lower-level manifest, package, or command control | Microsoft 365 Agents Toolkit directly |
 | Pro-code developer building a custom engine agent | Microsoft 365 Agents SDK or another supported custom-engine stack |
-| Developer evaluating a deployed declarative agent | Work IQ Dev Tools for the guided workflow, or Agent Evaluations CLI directly for lower-level control |
+| Developer evaluating a deployed declarative agent or plugin-package | Work IQ Dev Tools for the guided workflow, or Microsoft 365 Copilot Evaluations CLI directly for lower-level control |
 | GitHub Copilot user | GitHub Copilot assists the selected authoring route; it doesn't own the Microsoft 365 package, publishing, or runtime |
 
 The following matrix lists only component routes that the linked source documents. It isn't an exhaustive support matrix. If a combination isn't listed, check the current product documentation instead of inferring that it's supported or unsupported.

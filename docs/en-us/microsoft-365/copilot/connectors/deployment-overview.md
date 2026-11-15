@@ -239,12 +239,12 @@ Some connectors, such as ServiceNow, allow you to customize the values of specif
 
 Note
 
-To customize schema property values, you must create a new Copilot connector connection. Editing an existing connection to change schema property values isn't currently supported.
+Support for customizing schema property values on an existing connection varies by connector. Some connectors require a new connection. Check your connector's deployment guide to confirm whether you can edit an existing connection or need to create a new one.
 
 To customize the value of a schema property:
 
-1. During connection setup, select **Custom setup** and authenticate your credentials.
-2. Before publishing the connection, open the **Content** tab and go to **Manage properties**.
+1. During connection setup, select **Custom setup** and authenticate your credentials. If the connector supports customizing property values for existing connections, you can edit the existing connection instead.
+2. Open the **Content** tab and go to **Manage properties**.
 3. In the **Properties** table, select the property you want to customize \(for example, **URL**\).
 4. In the side panel, locate the **Default expression** section.
 5. Enter the expression in the **New default expression** box.

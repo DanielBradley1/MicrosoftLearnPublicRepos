@@ -38,8 +38,8 @@ Migration isn't a mechanical endpoint substitution. The application changes from
 | Primary scenario | Deterministic document retrieval | Grounding for agentic workflows |
 | Authentication | Delegated Microsoft Graph permissions | Delegated `WorkIQAgent.Ask` |
 | Sources | One selected retrieval source per request | Microsoft 365 data and, with `copilot`, connected enterprise sources |
-| Grounding content | Per-hit extracts | Citation-bearing Markdown |
-| Programmatic metadata | Retrieval hits and requested metadata | `retrievalHits` sidecar with source and security metadata |
+| Grounding content | Per-hit extracts | Per-result citation-bearing Markdown |
+| Programmatic metadata | Retrieval hits and requested metadata | Source and security metadata in `results` |
 | Source constraints | Source selection and KQL/filter expressions | Declarative Agent-shaped capabilities |
 | Discovery | Fixed REST endpoint and schema | Runtime `tools/list` discovery |
 | Billing | Microsoft 365 Copilot license or Copilot Retrieval API pay-as-you-go | Copilot Credits and Work IQ API spending policies |
@@ -172,11 +172,13 @@ Use `copilot` for `GraphConnectors`. Dataverse and Power BI are roadmap sources,
 
 The Copilot Retrieval API returns document hits and extracts. Work IQ returns:
 
-- `markdown`: Grounding text for the model, with inline citations.
-- `retrievalHits`: Structured source metadata for code.
+- `results`: Retrieved results, each with grounding Markdown, an `id`, and source metadata when available.
+- `searchMetadata`: Optional information about the search, such as query alteration information.
 - `resultCount`: Number of returned hits.
 - `stoppedReason`: `completed`, `cancelled`, or `error`.
 - `conversationId`: The conversation identifier, when returned.
+
+For clients migrating from the earlier Work IQ response format, `results` replaces the top-level `markdown` and `retrievalHits` properties. An empty `results` array means no results were returned.
 
 Read the payload from:
 
@@ -185,14 +187,15 @@ structuredContent
   -> application/vnd.ms-workiq.retrieval
 ```
 
+Read retrieved content from `structuredContent["application/vnd.ms-workiq.retrieval"].results`, not from the MCP `content` array. The `content` array can be empty even when results are returned. For a response example and result properties, see [Process the response](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/retrieve#process-the-response).
+
 Change the application pipeline as follows:
 
-1. Send `markdown` to the downstream model or agent.
-2. Resolve inline citation identifiers against `retrievalHits[].id`.
-3. Use `retrievalHits`, not parsed Markdown, for URLs, entity identifiers, sensitivity labels, evaluation, and audit records.
-4. Preserve `conversationId`, when returned, if the application needs to associate the retrieval turn with subsequent operations or diagnostics.
-5. Treat `isError: true` or `stoppedReason: "error"` as failed retrieval.
-6. Treat no hits as an empty result, not automatically as an infrastructure failure.
+1. Send each result's `markdown` to the downstream model or agent and use metadata from that same result to identify and link to the source.
+2. Use `results`, not parsed Markdown, for URLs, entity identifiers, content-protection information, sensitivity labels, evaluation, and audit records.
+3. Preserve `conversationId`, when returned, if the application needs to associate the retrieval turn with subsequent operations or diagnostics.
+4. Treat `isError: true` or `stoppedReason: "error"` as failed retrieval.
+5. Treat no hits as an empty result, not automatically as an infrastructure failure.
 
 ## Validate both paths before cutover
 
@@ -231,7 +234,7 @@ Confirm that:
 - `tools/list` advertises `retrieve`.
 - Results contain only content the signed-in user can access.
 - Location-scoped retrieval doesn't escape the intended corpus.
-- Inline Markdown citations resolve to retrieval hits.
+- Inline Markdown citations resolve to the corresponding result IDs and source links.
 - Sensitivity labels and source URLs are preserved when supplied.
 - Policy-denied calls fail clearly and aren't retried automatically.
 - Copilot Credit usage is assigned to the expected spending policy, group, users, and Work IQ API service.

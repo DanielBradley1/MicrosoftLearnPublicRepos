@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start-advanced/advanced-license -->
-<!-- Sitemap-Last-Modified: 2025-12-19 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Microsoft 365 Education licenses - Microsoft 365 and Office 365 A5
 
 This page provides an overview of the features included specifically in the Microsoft Education A5 \(advanced\) license. The A5 license also includes the features in the [A1 \(baseline\)](https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start-baseline/baseline-license) and [A3 \(standard\)](https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start-standard/standard-license) licenses, which aren't included here. For a list of features available in all education licenses, see [Microsoft 365 Education licenses](https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/all-license).
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Legend
 

@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-addons/addons-intune -->
-<!-- Sitemap-Last-Modified: 2025-08-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft Intune addons for education
 
 Microsoft Intune offers a range of addons designed to enhance the educational experience for both students and educators. These addons provide advanced capabilities for device management, security, and application deployment, ensuring a safe and efficient learning environment. This page provides an overview of the various Intune addons available for educational institutions, detailing their features, benefits, and ideal use cases.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Requirements
 

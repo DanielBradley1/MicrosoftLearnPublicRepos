@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/monitor-apps?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Monitor apps \(preview\)
 
@@ -46,8 +46,8 @@ The app captures telemetry only after it loads successfully. Startup failures, s
 4. Register a logger with the Copilot Managed Runtime SDK so the platform forwards metrics to Application Insights. Register it once.
 
    ```typescript
-   import { setConfig } from '@microsoft/managed-apps';
-   import type { Metric } from '@microsoft/managed-apps';
+   import { setConfig } from '@microsoft/cmr-apps';
+   import type { Metric } from '@microsoft/cmr-apps';
 
    setConfig({
      logger: {
@@ -82,19 +82,19 @@ The `ms` CLI sends anonymized telemetry by default to help improve the product. 
 
 Use the [`ms telemetry` commands](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#telemetry) to control collection.
 
-Check the current setting:
+Check the current setting with [`ms telemetry status`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-telemetry-status):
 
 ```bash
 ms telemetry status
 ```
 
-Turn telemetry off:
+Turn telemetry off with [`ms telemetry disable`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-telemetry-disable):
 
 ```bash
 ms telemetry disable
 ```
 
-Turn it back on:
+Turn it back on with [`ms telemetry enable`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-telemetry-enable):
 
 ```bash
 ms telemetry enable

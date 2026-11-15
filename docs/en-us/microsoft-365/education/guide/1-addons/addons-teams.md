@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-addons/addons-teams -->
-<!-- Sitemap-Last-Modified: 2026-04-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft Teams addons for education
 
 Microsoft Teams offers a range of addons designed to enhance the educational experience for both educators and students. These addons provide advanced features and capabilities that support virtual learning, improve communication, and streamline administrative tasks. This article explores the various Microsoft Teams addons available for educational institutions, detailing their key features, benefits, and ideal use cases to help you make the most of your Teams environment.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Requirements
 

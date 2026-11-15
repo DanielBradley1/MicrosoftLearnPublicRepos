@@ -59,6 +59,7 @@ The Work IQ service principal is created automatically in the tenant when you us
 
 ## Related content
 
+- [Work IQ Listen developer guide \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/listen)
 - [Work IQ API overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview)
 - [Work IQ MCP tool reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/tool-reference)
 - [Use the retrieve tool in Work IQ MCP](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/retrieve)

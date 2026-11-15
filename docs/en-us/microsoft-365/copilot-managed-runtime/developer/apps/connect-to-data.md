@@ -32,7 +32,7 @@ Don't edit the contents of `generated/` by hand. The CLI owns these files. Use t
 
 Run discovery commands from the directory that contains your app so the CLI automatically inherits your environment.
 
-List the connectors available in your environment:
+List the connectors available in your environment with [`ms connector list`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-connector-list):
 
 ```bash
 ms connector list [--search <term>]
@@ -40,7 +40,7 @@ ms connector list [--search <term>]
 
 The output includes each connector's ID, whether it supports tabular data, and its governance status \(DLP and ACP\). Use `--search` to filter by a substring of the connector name or ID, for example, [`ms connector list`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-connector-list) `--search sql`.
 
-To see the operations a specific connector exposes, including the DLP status of each one:
+To see the operations a specific connector exposes, including the DLP status of each one, use [`ms connector list-actions`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-connector-list-actions):
 
 ```bash
 ms connector list-actions --connector <connector> [--search <term>]

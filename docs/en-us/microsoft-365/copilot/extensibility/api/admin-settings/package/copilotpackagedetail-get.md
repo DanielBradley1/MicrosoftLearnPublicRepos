@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/copilotpackagedetail-get -->
-<!-- Sitemap-Last-Modified: 2026-07-01 -->
+<!-- Sitemap-Last-Modified: 2026-08-07 -->
 
 # Get Copilot package details
 
@@ -113,6 +113,12 @@ Content-Type: application/json
     }
   ],
   "acquireUsersAndGroups": [],
+  "owners": [
+    {
+      "resourceId": "user-789",
+      "resourceType": "user"
+    }
+  ],
   "elementDetails": [
     {
       "elementType": "bot",

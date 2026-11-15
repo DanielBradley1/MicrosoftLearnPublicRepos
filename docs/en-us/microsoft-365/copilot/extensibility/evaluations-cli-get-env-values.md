@@ -3,9 +3,9 @@
 
 # Get values for environment variables
 
-The Microsoft 365 Copilot Agent Evaluations CLI \(`@microsoft/m365-copilot-eval`\) reads connection and authentication settings from environment variables. This article shows you where to obtain each value.
+The Microsoft 365 Copilot Evaluations CLI \(`@microsoft/m365-copilot-eval`\) reads connection and authentication settings from environment variables. This article shows you where to obtain each value.
 
-For the list of variables and where to put them, see [Agent Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview#required-environment-variables) and [Quickstart: Use the Agent Evaluations CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart#step-3-configure-environment-variables).
+For the list of variables and where to put them, see [Microsoft 365 Copilot Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview#required-environment-variables) and [Quickstart: Use the Microsoft 365 Copilot Evaluations CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart#step-3-configure-environment-variables).
 
 ## Before you begin
 
@@ -185,7 +185,7 @@ Use the following table to troubleshoot issues you might encounter.
 
 ## Related content
 
-- [Agent Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
-- [Quickstart: Use the Agent Evaluations CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart)
-- [Agent Evaluations CLI reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-reference)
+- [Microsoft 365 Copilot Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
+- [Quickstart: Use the Microsoft 365 Copilot Evaluations CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart)
+- [Microsoft 365 Copilot Evaluations CLI reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-reference)
 - [Troubleshooting and support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-troubleshooting)

@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot \(preview\)
 
 \[This article is prerelease documentation and is subject to change.\]
 
-This quickstart shows you how to go from a natural-language prompt to a deployed Copilot Managed Runtime app by using the [GitHub Copilot CLI](https://docs.github.com/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli) with the Copilot Managed Runtime plugin. The Copilot agent plans the app, runs the Microsoft Copilot Managed Runtime CLI \(`@microsoft/managed-apps-cli`\) commands, drives the Git workflow, and asks you to confirm at each step, all from your terminal of choice.
+This quickstart shows you how to go from a natural-language prompt to a deployed Copilot Managed Runtime app by using the [GitHub Copilot CLI](https://docs.github.com/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli) with the [Copilot Managed Runtime plugin](https://github.com/microsoft/Copilot-Managed-Runtime/tree/main/plugins/copilot-managed-runtime) \(`copilot-managed-runtime`\). The Copilot agent plans the app, runs the Microsoft Copilot Managed Runtime CLI \([`@microsoft/cmr-cli`](https://www.npmjs.com/package/@microsoft/cmr-cli)\) commands, drives the Git workflow, and asks you to confirm at each step, all from your terminal of choice.
 
 ## Prerequisites
 
@@ -44,11 +44,11 @@ copilot
 In the Copilot session, add the Copilot Managed Runtime plugin marketplace and install the plugin:
 
 ```text
-/plugin marketplace add microsoft/Managed-Apps
+/plugin marketplace add microsoft/Copilot-Managed-Runtime
 ```
 
 ```text
-/plugin install microsoft-managed-apps@Managed-Apps
+/plugin install copilot-managed-runtime@Copilot-Managed-Runtime
 ```
 
 The plugin adds apps skills to Copilot: create app, add connector, push and preview, deploy, and share. It also orchestrates `ms` CLI commands on your behalf.
@@ -64,7 +64,7 @@ copilot
 In your new Copilot session, run the create-app skill:
 
 ```text
-/microsoft-managed-apps:create-app
+/copilot-managed-runtime:create-app
 ```
 
 Copilot acknowledges the skill and prompts you to describe the app you want.

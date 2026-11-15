@@ -1,13 +1,17 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-evaluators -->
 <!-- Sitemap-Last-Modified: 2026-08-04 -->
 
-# Evaluators reference for Agent Evaluations CLI
+# Evaluators reference for Microsoft 365 Copilot Evaluations CLI
 
-The Microsoft 365 Copilot Agent Evaluations CLI includes a set of evaluators that automatically score your agent's responses. Each evaluator measures a different aspect of quality, from semantic relevance to exact string matching. This article describes each evaluator, its scoring behavior, configuration options, and how to use it in your test datasets.
+The Microsoft 365 Copilot Evaluations CLI includes evaluators that score responses and inspect runtime behavior. Each evaluator measures a different aspect of quality, from semantic relevance to tool-call execution. This article describes their scoring behavior, configuration options, and use in test datasets.
 
 For information about how to configure evaluators in your datasets, see [Configure evaluators](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-create-tests#configure-evaluators).
 
 You can find the evaluation dataset schema in [JSON Schema](https://json-schema.org/) format on [GitHub](https://raw.githubusercontent.com/microsoft/m365-copilot-eval/refs/heads/main/schema/v1/eval-document.schema.json).
+
+Note
+
+Tool-call evaluators require CLI v2 \(`preview`\) and [schema v2](https://raw.githubusercontent.com/microsoft/m365-copilot-eval/refs/heads/main/schema/v2/eval-document.schema.json). They aren't available in CLI v1 \(`latest`\). The other examples in this article use schema v1.
 
 ## Evaluator summary
 
@@ -21,6 +25,8 @@ The following table summarizes all available evaluators.
 | [Similarity](#similarity) | LLM-based | 1-5 | 3 | No | `prompt`, `expected_response` |
 | [RetrievalQuery](#retrievalquery) | Non-LLM | Pass/fail | N/A | No | `prompt`, evaluator config |
 | [RetrievalResult](#retrievalresult) | Non-LLM | Proportional | 1.0 | No | `prompt`, evaluator config |
+| [ToolCallSelection](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-tool-call-evaluators#toolcallselection) \(v2 preview\) | Non-LLM | Pass/fail/error | 1.0, fixed | No | `prompt`, `calls[].tool`, selected-function telemetry |
+| [ToolCallExecution](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-tool-call-evaluators#toolcallexecution) \(v2 preview\) | Non-LLM | Pass/fail/error | 1.0, fixed | No | `prompt`, `calls[].tool`, execution telemetry with HTTP outcomes |
 | [Citations](#citations) | Count-based | >= 0 | 1 | No | `prompt` |
 | [PartialMatch](#partialmatch) | String match | 0.0-1.0 | 0.5 | No | `prompt`, `expected_response` |
 | [ExactMatch](#exactmatch) | String match | Boolean | N/A | No | `prompt`, `expected_response` |
@@ -234,6 +240,15 @@ The score is proportional to the number of expected items found. For example, if
 }
 ```
 
+## Tool-call evaluators
+
+Tool-call evaluators use runtime diagnostics \(Developer Info\) to check tool selection and HTTP execution outcomes. They are deterministic, don't use an LLM judge, and don't require `expected_response`.
+
+- **ToolCallSelection** checks whether the expected tool identities were selected, ignoring order and duplicates. You can optionally reject additional selections.
+- **ToolCallExecution** checks for a distinct successful HTTP execution \(status 200-299\) for each expected call. Repeat an identity to require multiple successful executions.
+
+Neither evaluator establishes answer quality or business correctness. Use response evaluators alongside tool-call checks when you need both. For configuration, consent, examples, and result interpretation, see [Tool-call evaluators](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-tool-call-evaluators).
+
 ## String and count-based evaluators
 
 These evaluators use deterministic string matching or counting logic. They don't require an LLM and run locally.
@@ -340,6 +355,7 @@ The **ExactMatch** evaluator performs a direct string comparison between the age
 
 ## Related content
 
-- [Agent Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
+- [Microsoft 365 Copilot Evaluations CLI overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview)
+- [Tool-call evaluators \(v2 preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-tool-call-evaluators)
 - [Dataset schema and test design](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-create-tests)
 - [CLI reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-reference)

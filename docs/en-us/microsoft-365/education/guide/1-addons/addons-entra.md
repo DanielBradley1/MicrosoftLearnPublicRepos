@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-addons/addons-entra -->
-<!-- Sitemap-Last-Modified: 2025-12-05 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft Entra addons for education
 
 Microsoft Entra offers a suite of advanced identity and access management solutions tailored for educational institutions. These solutions enhance security, streamline identity governance, and support hybrid learning environments. This page provides an overview of various Microsoft Entra addons available for education, detailing their features, benefits, and how they can help secure and manage access to educational resources effectively.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 ## Requirements
 

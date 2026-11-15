@@ -36,14 +36,10 @@ You should get information similar to this:
 ```powershell
 DisplayName               Id                                   UserPrincipalName
 -----------               --                                   -----------------
-Conf Room Adams           6e206948-b2b6-406c-a728-80bbe78e4003 Adams@M365x89521157.OnMicrosoft.com
-Adele Vance               916a6a08-b9d0-44b6-870f-562d8358a314 AdeleV@M365x89521157.OnMicrosoft.com
-MOD Administrator         5710f237-df3f-4bcd-b875-82deb02f98aa admin@M365x89521157.onmicrosoft.com
-Alex Wilber               8aa561dc-441d-4d74-aeb3-e2be41c116c8 AlexW@M365x89521157.OnMicrosoft.com
-Allan Deyoung             6b629e5e-3cf4-42d0-8007-3a93f0253382 AllanD@M365x89521157.OnMicrosoft.com
-Automate Bot              3a70feb4-9407-47b5-9b61-7526ac0e98d8 AutomateB@M365x89521157.OnMicrosoft.com      
-Conf Room Baker           d8cf3fef-1d03-4b9c-9be0-fed44fb87596 Baker@M365x89521157.OnMicrosoft.com
-Bianca Pisani             7fe8c2d1-eb8e-4032-96ba-26242ff0acd9 BiancaP@M365x89521157.OnMicrosoft.com        
+Conf Room Adams           00aa00aa-bb11-cc22-dd33-44ee44ee44ee Adams@contoso.OnMicrosoft.com
+Adele Vance               11bb11bb-cc22-dd33-ee44-55ff55ff55ff AdeleV@contoso.OnMicrosoft.com
+MOD Administrator         22cc22cc-dd33-ee44-ff55-66aa66aa66aa admin@contoso.OnMicrosoft.com
+Alex Wilber               33dd33dd-ee44-ff55-aa66-77bb77bb77bb AlexW@contoso.OnMicrosoft.com     
 ```
 
 ### View a specific account
@@ -57,7 +53,7 @@ Get-MgUser -UserId '<user principal name>'
 Here's an example:
 
 ```powershell
-Get-MgUser -UserId 'BelindaN@litwareinc.onmicosoft.com'
+Get-MgUser -UserId 'AdeleV@contoso.onmicosoft.com'
 ```
 
 ### View additional property values for a specific account
@@ -78,7 +74,7 @@ This command instructs PowerShell to:
 To see all the properties for a specific user account, use the **Select** cmdlet and the wildcard character \(\*\). Here's an example:
 
 ```powershell
-Get-MgUser -UserID 'BelindaN@litwareinc.onmicosoft.com' | Select *
+Get-MgUser -UserID 'Adele@contoso.onmicosoft.com' | Select *
 ```
 
 As another example, run the following command to check the enabled status of a specific user account:
@@ -123,7 +119,7 @@ This command instructs PowerShell to:
 The **UsageLocation** property is only one of many properties associated with a user account. To display all the properties for a specific user account, use the **Select** cmdlet and the wildcard character \(\*\). Here's an example:
 
 ```powershell
-Get-MgUser -UserID BelindaN@litwareinc.onmicosoft.com | Select *
+Get-MgUser -UserID AdeleV@contoso.onmicosoft.com | Select *
 ```
 
 For example, **City** is the name of a user account property. You can use the following command to list all accounts of users who live in London:

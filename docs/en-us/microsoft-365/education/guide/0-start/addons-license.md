@@ -1,9 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/addons-license -->
-<!-- Sitemap-Last-Modified: 2026-08-18 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # License addons for A3 \(Standard\) and A5 \(Advanced\) products and features
 
 This document provides detailed information about the various license addons available for Microsoft A3 and A5 licenses for education. Each section outlines the specific addons available for different license types, helping educational institutions to enhance their capabilities and services.
+
+Note
+
+Microsoft 365 Education is evolving. Microsoft announced changes to the Microsoft 365 Education portfolio, including new licensing options, a new Microsoft Classroom experience, and updated storage entitlements. The A1, A3, and A5 phases in this guide reflect the current portfolio. Guidance will be updated as the changes roll out. For details, see [Microsoft 365 Education portfolio evolution](https://learn.microsoft.com/en-us/training/educator-center/instructor-materials/microsoft-365-education-portfolio).
 
 This legend provides a quick reference to the icons used in the tables in this article.
 

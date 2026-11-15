@@ -16,7 +16,7 @@ Before you begin, make sure you have:
 - Access to the tenant that contains the app.
 - Edit access to the app. The app owner must grant this access before you can find and clone the app. For more information, see [Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide).
 
-Sign in to the Copilot Managed Runtime CLI:
+Sign in to the Copilot Managed Runtime CLI with [`ms auth login`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-auth-login):
 
 ```bash
 ms auth login
@@ -24,7 +24,7 @@ ms auth login
 
 ## Find the app ID
 
-Sign in with the account that received edit access, and then list the apps that you can edit:
+Sign in with the account that received edit access, and then list the apps that you can edit with [`ms app list`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-list):
 
 ```bash
 ms app list --permission edit
@@ -65,7 +65,7 @@ From the cloned project directory, install the app's dependencies:
 npm install
 ```
 
-Start the local development loop:
+Start the local development loop with [`ms app dev`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-dev):
 
 ```bash
 ms app dev
