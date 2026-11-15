@@ -9,11 +9,11 @@ This article describes the Windows device setting requirements in Intune Company
 
 To get the latest updates for Windows, see [Microsoft Support: Get the latest Windows update](https://support.microsoft.com/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212).
 
-We recommend keeping the operating system \(OS\) on work and school devices up-to-date. Before updating a device, back up all of the information on it. Keep a backup so that you can recover your data if something interrupts the update, or transfer your information to a replacement device.
+Keep the operating system \(OS\) on work and school devices up-to-date. Before you update a device, back up all of the information on it. Keep a backup so that you can recover your data if something interrupts the update, or transfer your information to a replacement device.
 
 ## Operating system isn't supported
 
-The operating system \(OS\) version running on your device isn't supported. The current version of Windows might not work with your organization's apps, tools, or other internal infrastructure. To resolve this issue, either upgrade or downgrade to an OS version supported by your organization. OS requirements vary by organization. Contact your IT support person to find out what requirements you need to meet.
+The operating system version that your device runs isn't supported. The current version of Windows might not work with your organization's apps, tools, or other internal infrastructure. To resolve this issue, either upgrade or downgrade to an OS version supported by your organization. OS requirements vary by organization. Contact your IT support person to find out what requirements you need to meet.
 
 For information about how to upgrade to Windows 11, see:
 
@@ -22,11 +22,11 @@ For information about how to upgrade to Windows 11, see:
 
 ## Enable anti-malware protection
 
-Anti-malware is an important factor in making sure your device is protected. To meet this compliance requirement, enable the anti-malware software and features required by your organization. On devices running more recent versions of Windows, the built-in anti-malware software is Microsoft Defender Antivirus.
+Anti-malware is an important factor in making sure your device is protected. To meet this compliance requirement, enable the anti-malware software and features required by your organization. On devices that run more recent versions of Windows, the built-in anti-malware software is Microsoft Defender Antivirus.
 
-Remember to only download apps from verified sources, such as the Company Portal app and the Microsoft Store. For more information about anti-malware for Windows, see [Microsoft Support: Getting started with anti-malware in Microsoft Defender](https://support.microsoft.com/topic/getting-started-with-anti-malware-in-microsoft-defender-f5219ae5-abb7-4985-a149-1ec1bb304eda).
+Download apps only from verified sources, such as the Company Portal app and the Microsoft Store. For more information, see [Microsoft Support: Getting started with anti-malware in Microsoft Defender](https://support.microsoft.com/topic/getting-started-with-anti-malware-in-microsoft-defender-f5219ae5-abb7-4985-a149-1ec1bb304eda).
 
-## Enable Window Code Integrity
+## Enable Windows Code Integrity
 
 Contact your IT support person to enable code integrity on your work or school device. Code integrity is a threat protection feature that checks the drivers and system files on your device for signs of corruption or malicious software. For it to work on your device, another security feature called *Secure Boot* must be enabled. Your IT support person can also help you enable Secure Boot, which will in turn trigger code integrity the next time you start up your device.
 
@@ -34,15 +34,15 @@ Contact your IT support person to enable code integrity on your work or school d
 
 Windows Defender Firewall helps prevent hackers and malicious software from gaining access to your work or school device through the internet or a network. Your organization might require you to turn it on before you can access their network resources.
 
-For more information and how-to instructions, see [Microsoft Support: Turn Microsoft Defender Firewall on or off](https://support.microsoft.com/windows/turn-microsoft-defender-firewall-on-or-off-ec0844f7-aebd-0583-67fe-601ecf5d774f) on Microsoft Support.
+For more information, see [Microsoft Support: Turn Microsoft Defender Firewall on or off](https://support.microsoft.com/windows/turn-microsoft-defender-firewall-on-or-off-ec0844f7-aebd-0583-67fe-601ecf5d774f).
 
 ## Access point restrictions not set up
 
-Your company applied access point restrictions on your device. This setting requires the Company Portal app to verify a few network settings on your device. Tap **Resolve** and wait while the Company Portal app checks for an approved network connection.
+Your company applied access point restrictions on your device. This setting requires the Company Portal app to verify network settings on your device. Select **Resolve** and wait while the Company Portal app checks for an approved network connection.
 
 ## Not connected to an approved network
 
-Your device is connected to a network that isn't approved for work access. While connected to this network, you can't access work email, apps, and other protected resources. To meet this compliance requirement, connect to a company-approved network. Then tap **Resolve** in Company Portal to retry.
+Your device is connected to a network that isn't approved for work access. While connected to this network, you can't access work email, apps, and other protected resources. To meet this compliance requirement, connect to a company-approved network. Then select **Resolve** in Company Portal to retry.
 
 ## Restrictions couldn't be enforced
 
@@ -50,7 +50,7 @@ Company Portal can't determine if your device is connected to an approved networ
 
 ## Enable Secure Boot
 
-[Secure Boot](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process#secure-boot) is a security standard developed by members of the PC industry to help ensure that a device boots using only software that's trusted by the original equipment manufacturer \(OEM\). Your organization might require you to enable it. We recommend reaching out to your IT support person for help with enabling Secure Boot on a work or school device.
+[Secure Boot](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process#secure-boot) is a security standard developed by members of the PC industry to help ensure that a device boots using only software that's trusted by the hardware manufacturer. Your organization might require you to enable it. Contact your IT support person for help enabling Secure Boot on a work or school device.
 
 Secure Boot settings are available in Windows Security and UEFI BIOS settings. For information about accessing the UEFI menu on a Surface device, see [Manage Surface UEFI settings](https://learn.microsoft.com/en-us/surface/manage-surface-uefi-settings#open-surface-uefi-menu). For information about how to boot other devices into UEFI BIOS mode, see the manufacturer's documentation.
 
@@ -72,4 +72,4 @@ The User Access Control settings prevent potentially harmful programs and softwa
 
 ## Next steps
 
-If you're having trouble resolving a compliance requirement, contact your IT support person or IT administrator for help. They can help you quickly identify the problem and solution so that you can use your device for work or school again. To find your organization's contact information, sign in to the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
+If you're having trouble resolving a compliance requirement, contact your IT support person or IT administrator for help. They can help you identify the problem and solution. To find your organization's contact information, sign in to the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).

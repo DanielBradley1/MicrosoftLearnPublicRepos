@@ -11,7 +11,7 @@ During a status check, Company Portal checks your device to make sure it meets y
 
 Tip
 
-After you change the settings on a noncompliant device, we recommend running another status check to register the changes with the Company Portal app.
+After you change the settings on a noncompliant device, run another status check to register the changes with the Company Portal app.
 
 1. Sign in to the Company Portal app for Android with your work account.
 2. Tap **DEVICES** and then select your device.
@@ -27,4 +27,4 @@ The device settings status in Company Portal tells you the following information
 - **Can access resources, but action required**: Your device is allowed to access work or school resources, but one or more settings don't meet your organization's requirements. Update your device settings by the date shown to keep your access.
 - **Not in Compliance**: Your device isn't allowed to access work or school resources. Make the required changes to gain access.
 
-For more help and support, contact your IT support person. Go to the **Support** tab in the Company Portal app for contact information, or access support details and device actions on the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
+For help and support, contact your IT support person. Go to the **Support** tab in the Company Portal app for contact information, or access support details and device actions on the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).

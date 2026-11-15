@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/user-help/company-portal/website -->
-<!-- Sitemap-Last-Modified: 2026-04-09 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Using the Intune Company Portal website
 
-Use the Intune Company Portal website to remotely manage your work apps and enrolled personal devices. To access the Company Portal website, go to [https://portal.manage.microsoft.com/](https://go.microsoft.com/fwlink/?linkid=2010980) on any device \(it doesn't have to be an enrolled device\) and sign in with your work or school account.
+Use the Intune Company Portal website to remotely manage your work apps and enrolled personal devices. To access the Company Portal website, see [https://portal.manage.microsoft.com/](https://go.microsoft.com/fwlink/?linkid=2010980) on any device and sign in with your work or school account. The device doesn't have to be enrolled.
 
-Once you're signed in, you can see your enrolled devices and:
+After you sign in, you can see your enrolled devices and do the following tasks:
 
 - [Check status](https://learn.microsoft.com/en-us/intune/user-help/compliance/validate-status-company-portal-website): Initiate a status check to verify or regain access to your organization's resources.
 - [View and manage work apps](https://learn.microsoft.com/en-us/intune/user-help/apps/manage-apps-company-portal-website): Search and filter through available work apps, including required and already-installed apps.
@@ -18,4 +18,4 @@ Once you're signed in, you can see your enrolled devices and:
 - [Reset a device password](https://learn.microsoft.com/en-us/intune/user-help/device-actions/reset-passcode-company-portal-website): Reset a forgotten password.
 - [Reset device to factory settings](https://learn.microsoft.com/en-us/intune/user-help/device-actions/reset-device-company-portal-website): Restore a used, lost, or stolen personal device to its out-of-box state.
 
-Some actions aren't available on all operating systems and device types. The reset device password action, for example, won't work on an Android device that has a work profile.
+Some actions aren't available on all operating systems and device types. The reset device password action, for example, doesn't work on an Android device that has a work profile.

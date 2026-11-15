@@ -18,3 +18,8 @@ If your device is noncompliant or blocked from accessing workplace resources, ch
 4. Tap **Check status**. Wait while Company Portal checks your settings. After the check, the device settings status tells you if you have access to workplace resources.
 
 Still need help? Contact your IT support person. Check for your organization's support details in the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) or Company Portal app for iOS.
+
+## Related content
+
+- [Company Portal device setting requirements for iOS/iPadOS](https://learn.microsoft.com/en-us/intune/user-help/compliance/device-settings-ios)
+- [Remove device from Company Portal for iOS app](https://learn.microsoft.com/en-us/intune/user-help/unenrollment/unenroll-ios)

@@ -8,13 +8,13 @@
 - iOS/iPadOS
 - Android
 
-Install a mobile threat defense \(MTD\) app on the personal device you use for work or school. An MTD app works by detecting and alerting you to threats on your device, like suspicious apps or networks, and operating system vulnerabilities. In this article, you'll learn how to set up and activate an MTD app so that you can satisfy your organization's security requirement and access work apps.
+Install a mobile threat defense \(MTD\) app on the personal device you use for work or school. An MTD app detects and alerts you to threats on your device, like suspicious apps or networks, and operating system vulnerabilities. In this article, you learn how to set up and activate an MTD app so that you can satisfy your organization's security requirement and access work apps.
 
 ## Step 1: Install MTD app
 
 Note
 
-An additional step, called *device registration*, happens prior to app installation on devices that aren't registered. Registration is required to confirm your identity and connect your work or school account to your device. For more information about device registration, see [Register your personal device on your organization's network](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-register-device-on-network).
+An additional step, called *device registration*, happens before app installation on devices that aren't registered. Registration is required to confirm your identity and connect your work or school account to your device. For more information, see [Register your personal device on your organization's network](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-register-device-on-network).
 
 Install a mobile threat defense \(MTD\) app on the device you use for work or school. Your organization chooses the MTD app you need to access internal resources. If the app name or listing isn't provided to you during enrollment or app setup, contact your IT support person to determine which app you need to use. The following MTD apps are commonly used on Apple devices. Select an app to open its listing in the App Store.
 
@@ -41,7 +41,7 @@ The following MTD apps are commonly used on Android devices. Select an app to op
 
 ## Step 2: Activate MTD app
 
-The prompt to install a MTD app happens when you're setting up your device for work or school. The prompt could appear as an Intune Company Portal push notification or as a message in the Company Portal app or website. Tap the prompt to get the appropriate MTD app.
+The prompt to install an MTD app appears while you set up your device for work or school. The prompt can appear as an Intune Company Portal push notification or as a message in the Company Portal app or website. Select the prompt to get the appropriate MTD app.
 
 After you install the MTD app, activate the MTD app on your iOS or Android device.
 
@@ -56,10 +56,10 @@ After you install the MTD app, activate the MTD app on your iOS or Android devic
    - In the Company Portal app, select **CONFIRM DEVICE SETTINGS**.
    - On the Company Portal website, select **Check status**.
 
-After you've met this requirement, you can securely sign in and access work apps and files on your device. If Company Portal is still blocking you from access:
+After you meet this requirement, you can securely sign in and access work apps and files on your device. If Company Portal is still blocking you from access:
 
 - Check the MTD app for threats and [resolve them](#resolving-a-threat).
-- Return to the Company Portal app or website and check for other flagged device settings. Your workplace might have other requirements that require your attention. For more information, see [Check device compliance in Company Portal app for iOS](https://learn.microsoft.com/en-us/intune/user-help/device-actions/sync-device-ios).
+- Return to the Company Portal app or website and check for other flagged device settings. Your workplace might have other requirements. For more information, see [Check device compliance in Company Portal app for iOS](https://learn.microsoft.com/en-us/intune/user-help/device-actions/sync-device-ios).
 
 ### Activation for Android app
 
@@ -71,7 +71,7 @@ After you've met this requirement, you can securely sign in and access work apps
    - In the Company Portal app, select **CONFIRM DEVICE SETTINGS**.
    - On the Company Portal website, select **Check status**.
 
-5. After you've met this requirement, you can securely sign in and access work apps and files on your device. If Company Portal is still blocking you from access:
+5. After you meet this requirement, you can securely sign in and access work apps and files on your device. If Company Portal is still blocking you from access:
 
    - Check the MTD app for threats and [resolve them](#resolving-a-threat).
    - Return to the Company Portal app and check for other compliance issues that need your attention. For more information, see [Check compliance in Company Portal app for Android](https://learn.microsoft.com/en-us/intune/user-help/compliance/validate-compliance-android).
@@ -109,14 +109,12 @@ Contact your support person for help with:
 - Identifying which MTD app to use
 - App installation
 - Failed installation
-- Detecting/resolving a threat
+- Detecting and resolving a threat
 - Uninstalling an MTD app
 
 Sign in to the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) with your work or school account to find your organization's IT helpdesk information.
 
-## Next steps
-
-Next, get apps for work or school. For more information, see:
+## Related content
 
 - [Use managed apps on your Android device](https://learn.microsoft.com/en-us/intune/user-help/apps/managed-apps-android)
 - [Use managed apps on your iOS device](https://learn.microsoft.com/en-us/intune/user-help/apps/managed-apps-ios)

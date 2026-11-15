@@ -17,9 +17,9 @@ As a companion to this article, see our [Intune app protection for Windows setup
 
 There are two types of apps available in Company Portal: *optional apps* and *required apps*.
 
-Optional apps are selected by your organization and deemed useful and appropriate for work or school. These apps are available to you, but it's up to you to install them.
+Your organization selects optional apps and deems them useful and appropriate for work or school. These apps are available to you, but you decide whether to install them.
 
-Required apps are necessary for work and school and are deployed directly to your work device. These apps are automatically installed for you without intervention. Required apps appear in your installed apps list alongside the optional apps you install.
+Your organization deploys required apps directly to your work device. These apps are necessary for work and school. These apps are automatically installed for you without intervention. Required apps appear in your installed apps list alongside the optional apps you install.
 
 To find out which installed apps are required:
 
@@ -27,17 +27,15 @@ To find out which installed apps are required:
 2. Go to **Downloads & updates**.
 
    ![Screenshot of the Downloads & updates page for the Company Portal app for Windows.](https://learn.microsoft.com/en-us/intune/user-help/apps/media/install-apps-windows/windows-companyportal-02.png)
-
 3. In the table, look under the column **Required by your organization**. A *yes* means that the app is required on your enrolled device.
 
 ## Install apps
 
 Before you begin, install [Intune Company Portal for Windows from the Microsoft Store](https://apps.microsoft.com/detail/9WZDNCRFJ3PZ).
 
-1. Sign in to the Company Portal app on your work or school device. You'll see the latest notifications on the Home page.
+1. Sign in to the Company Portal app on your work or school device. The **Home** page displays the latest notifications.
 
    ![Screenshot of the Home page with notifications in the Company Portal app for Windows.](https://learn.microsoft.com/en-us/intune/user-help/apps/media/install-apps-windows/windows-companyportal-03.png)
-
 2. You can access available apps from the following places in Company Portal:
 
    - **Home**: Go to **Home** to view your organization's featured apps.
@@ -49,11 +47,11 @@ Before you begin, install [Intune Company Portal for Windows from the Microsoft 
 
 Tip
 
-To select and install more than one app at a time, go to **Apps** and switch the layout view to multi-select mode. Then select the checkbox next to each app you want to install. Choose **Install selected** to install them.
+To select and install more than one app at a time, go to **Apps** and switch the layout view to multi-select mode. Then select each app you want to install. Choose **Install selected** to install them.
 
 ## View all apps
 
-Go to **Apps** to see a list of all available and installed apps on your device.
+Go to **Apps** to see all available and installed apps on your device.
 
 - **Name**: The name of the app.
 - **Version**: The version number of the app.
@@ -61,11 +59,11 @@ Go to **Apps** to see a list of all available and installed apps on your device.
 - **Date Published**: The date that the app was made available to download. Publish date could show an app's initial release or an app's most recent update.
 - **Status**: The current installation status of the app on your device, which could include *Available*, *Installing*, *Installed*, and *Install failed*.
 
-Select **Sort by** to rearrange the apps alphabetically by app or publisher name, or chronologically by publish date. Under **Refine**, you can select a category to narrow results to a certain type of app.
+Select **Sort by** to rearrange the apps alphabetically by app or publisher name, or chronologically by publish date. Under **Refine**, select a category to narrow results to a certain type of app.
 
 ## View installed apps
 
-Go to **Downloads & updates** to see a list of installed apps on your device. If no apps are available to view, you'll see a message that no company apps were installed.
+Go to **Downloads & updates** to see the apps installed on your device. If no apps are available to view, you see a message that no company apps were installed.
 
 ![Screenshot of the Downloads & updates page for the Company Portal app for Windows.](https://learn.microsoft.com/en-us/intune/user-help/apps/media/install-apps-windows/windows-companyportal-02.png)
 
@@ -79,7 +77,7 @@ The following information is available for each app:
 
 ## Installing Microsoft Office
 
-Depending on the size of your workplace or school, there could be multiple versions of Office available to install in Company Portal. You should only install one version of Office. If you try to install an additional one, the first one will be uninstalled. If you're unsure which version is best for your role, contact your IT support person for guidance.
+Depending on the size of your workplace or school, multiple versions of Office might be available to install in Company Portal. Install only one version of Office. If you try to install an additional version, the first version is uninstalled. If you're unsure which version is best for your role, contact your IT support person for guidance.
 
 ## Share apps
 
@@ -97,12 +95,12 @@ Request an app that's unavailable in the Company Portal app. Go to **Help & supp
 
 ## Uninstall apps
 
-The option to uninstall apps is available in the Company Portal app for some Win32 apps and Microsoft store apps:
+The option to uninstall apps is available in the Company Portal app for some Win32 apps and Microsoft Store apps:
 
 1. Go to **Apps**.
 2. Select the app you want to uninstall.
 3. Choose **Uninstall**.
 
-## Next steps
+## Next step
 
-Need additional help? Contact your support person. For contact information, sign in to the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) and go to **Help & support**.
+Need more help? Contact your support person. For contact information, sign in to the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) and go to **Help & support**.

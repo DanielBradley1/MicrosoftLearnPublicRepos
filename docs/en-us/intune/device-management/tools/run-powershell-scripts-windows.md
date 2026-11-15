@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/tools/run-powershell-scripts-windows -->
-<!-- Sitemap-Last-Modified: 2026-04-14 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Use PowerShell Scripts on Windows Devices in Intune
 
@@ -81,11 +81,24 @@ Scripts deployed to clients running the Intune management extension fails to run
      Note
 
      PowerShell scripts in Intune can be targeted to Microsoft Entra device security groups or Microsoft Entra user security groups. However, when targeting workplace joined \(WPJ\) devices, only Microsoft Entra device security groups can be used \(user targeting is ignored\).
+
+     Intune provides precreated **All Users** and **All Devices** groups in the Microsoft Intune admin center. The groups have built-in optimizations for your convenience. It's highly recommended that you use these groups to target all users and all devices instead of any "all users" or "all devices" groups that you might create yourself.
+   - If you want to exclude any groups of users affected by this assignment, select **Exclude Groups**.
    - Select **Next**.
 
      ![Assign or deploy PowerShell script to device groups in Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-management/tools/media/management-extension-windows/mgmt-extension-assignments.png)
 
 7. In **Review + add**, a summary is shown of the settings you configured. Select **Add** to save the script. When you select **Add**, the policy is deployed to the groups you chose.
+
+Note
+
+If Microsoft Entra soft-deletes any of these groups, Intune shows them as soft deleted in the console, and their assignments don’t apply until the groups are restored.
+
+For more information about including and excluding group assignments, see [Include and exclude group assignments](https://learn.microsoft.com/en-us/intune/app-management/deployment/configure-assignment-scope).
+
+Note
+
+You see the status of the selected group in the assignments. The possible status options are: Active, Deleted, or Soft-Deleted.
 
 ### Scenario - Failure to run script
 
