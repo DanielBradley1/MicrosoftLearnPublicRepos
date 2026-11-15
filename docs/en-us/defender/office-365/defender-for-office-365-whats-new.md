@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # What's new in Microsoft Defender for Office 365
 
@@ -19,6 +19,10 @@ For more information on what's new with other Microsoft Defender security produc
 - [What's new in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint)
 - [What's new in Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/whats-new)
 - [What's new in Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes)
+
+## November 2026
+
+- **Hunt for synthetic media \(deepfake\) detection events**: The [SyntheticMediaDetectionEvents table](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-synthetic-media-detection-events) in Microsoft Defender XDR advanced hunting contains details about synthetic media \(deepfake\) detected in Microsoft Teams, helping security teams investigate potential impersonation, fraud, or social engineering.
 
 ## October 2026
 

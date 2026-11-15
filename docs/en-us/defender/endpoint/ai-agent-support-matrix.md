@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/ai-agent-support-matrix -->
-<!-- Sitemap-Last-Modified: 2026-10-09 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft Defender for Endpoint AI agent support matrix
 
@@ -50,6 +50,8 @@ For runtime protection support, see [AI agent runtime protection support](#ai-ag
 | DeepSeek Harness | DeepSeek | ✓ | - |
 | Devin CLI | Cognition | ✓ | - |
 | Devin Desktop | Cognition | ✓ | ✓ |
+| Droid CLI | Factory | ✓ | - |
+| Factory App | Factory | ✓ | - |
 | Foundry Local | Microsoft | ✓ | - |
 | Gemini CLI | Google | ✓ | ✓ |
 | GitHub Copilot App | GitHub | ✓ | ✓ |
@@ -62,6 +64,7 @@ For runtime protection support, see [AI agent runtime protection support](#ai-ag
 | Junie CLI | JetBrains | ✓ | ✓ |
 | Kilo CLI | Kilo Code | ✓ | - |
 | Kimi Code CLI | Moonshot AI | ✓ | - |
+| Kimi Work | Moonshot AI | ✓ | - |
 | Kiro CLI | Amazon | ✓ | ✓ |
 | Kiro IDE | Amazon | ✓ | ✓ |
 | LM Studio | Element Labs | ✓ | - |
@@ -77,8 +80,9 @@ For runtime protection support, see [AI agent runtime protection support](#ai-ag
 | Poe Desktop | Quora | ✓ | - |
 | QClaw | Tencent | ✓ | - |
 | Qwen Code | Alibaba Cloud | ✓ | - |
-| Qwen Code Desktop | - | ✓ | - |
+| Qwen Code Desktop | Alibaba Cloud | ✓ | - |
 | Qwen Studio | Alibaba Cloud | ✓ | - |
+| Replit Agent | Replit | ✓ | - |
 | Trae IDE | ByteDance | ✓ | - |
 | VS Code AI Foundry Extension | Microsoft | ✓<sup>1</sup> | - |
 | VS Code Windows AI Studio Extension | Microsoft | ✓<sup>1</sup> | ✓ |
