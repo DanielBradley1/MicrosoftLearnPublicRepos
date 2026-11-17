@@ -3,6 +3,10 @@
 
 # Use developer mode to test and debug agents in Microsoft 365 Agents Toolkit
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 Testing is an important part of the process of developing [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) for Microsoft 365 Copilot Chat. You can use [developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio) while testing your agent to verify whether and how the Copilot orchestrator selects your knowledge sources for use in response to given prompts.
 
 Additionally, you can use the **Preview your app \(F5\)** feature in the [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) to test your agents in a local development environment. This feature provides an interactive way to validate behavior and troubleshoot issues directly from the development interface.
@@ -11,7 +15,7 @@ Additionally, you can use the **Preview your app \(F5\)** feature in the [Micros
 
 You can test your agent from Agents Toolkit in Visual Studio Code by selecting **Preview your app \(F5\)** in the Agents Toolkit pane. This launches your agent in a browser-based Copilot Chat experience, enabling you to quickly validate how it behaves in response to prompts.
 
-![Screenshot of Visual Studio Code showing the 'Preview your app \(F5\)' feature to test Microsoft 365 agents in the browser](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-atk-f5.png)
+![Screenshot of Visual Studio Code showing the 'Preview your app \(F5\)' feature to test Microsoft 365 agents in the browser](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-toolkit-debug.png)
 
 Once you select your agent in Microsoft 365 Copilot Chat, enable developer mode by typing `-developer on`. To disable developer mode, type `-developer off`.
 
@@ -36,7 +40,7 @@ The agent metadata provides key details about the agent and the current debuggin
 - **Conversation ID** - Identifier for the active chat session or conversation
 - **Request ID** - Identifier for the specific prompt within the conversation
 
-![Screenshot of Agents Toolkit session where Copilot has returned a card with debugging information showing the agent metadata](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-atk-metadata.png)
+![Screenshot of Agents Toolkit session where Copilot has returned a card with debugging information showing the agent metadata](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-toolkit-metadata.png)
 
 ### Agent capabilities
 
@@ -45,13 +49,13 @@ The agent capabilities section displays the configured capabilities for the agen
 - **Execution status** – Indicates whether the capability was used during orchestration
 - **Diagnostic log file** – A downloadable .txt file containing detailed execution results, including success or failure messages, which can help with troubleshooting and validation
 
-![Screenshot of Agent Toolkit session where Copilot has returned a card with debugging information showing the configured agent capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-atk-capabilities.png)
+![Screenshot of Agent Toolkit session where Copilot has returned a card with debugging information showing the configured agent capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-toolkit-capabilities.png)
 
 ### Agent actions
 
 The Agent Actions section provides detailed insight into how your agent's actions \(functions or plugins\) are processed during orchestration. This information is broken down into three key areas: [action metadata](#action-metadata), [function matching and selection](#function-matching-and-selection), and [execution details](#execution-details).
 
-![Screenshot of Agent Toolkit session where Copilot has returned a card with debugging information showing the configured agent actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-atk-actions.png)
+![Screenshot of Agent Toolkit session where Copilot has returned a card with debugging information showing the configured agent actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-toolkit-actions.png)
 
 #### Action metadata
 
@@ -76,7 +80,7 @@ The following are common failures you might encounter when you debug your agent 
 
 After launching your agent, check that the connection to the browser is marked as successful in the debug panel. If it isn't, try running F5 again in Visual Studio Code to start a new session.
 
-![Screenshot of Agent Toolkit session where connection to web browser is successful](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-atk-connection.png)
+![Screenshot of Agent Toolkit session where connection to web browser is successful](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-toolkit-connection.png)
 
 If the connection is successful but you don't see debug info, it might be because the orchestrator doesn't require your Microsoft 365 data or skills to respond. No debug info card is returned in this case.
 

@@ -92,3 +92,4 @@ Upload the complete `.zip` package. Don't upload `SKILL.md` by itself.
 ## Related content
 
 - [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills)
+- [Choose how to share or publish your skill as part of a plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)

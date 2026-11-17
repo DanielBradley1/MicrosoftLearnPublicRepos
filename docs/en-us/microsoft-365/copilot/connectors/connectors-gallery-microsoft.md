@@ -26,6 +26,7 @@ The following table lists the accounting and finance connectors that are availab
 | D&B Risk Analytics | Dun & Bradstreet | Access D&B Risk Analytics data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | DiligenceSquared | Microsoft | Search and read your transcripts, Expert Q&A, and reports. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | FactSet | FactSet | Get company fundamentals, estimates, ownership, and market data. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Financial Filings | Microsoft | Access Financial Filings data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | FinancialReports | Microsoft | Search company filings across global markets. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Fiscal.ai | Microsoft | Pull stock financials, valuation multiples, and earnings estimates. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Fitch Solutions | Microsoft | Get Fitch credit ratings, rating history, rating drivers, and CreditSights research. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -40,8 +41,10 @@ The following table lists the accounting and finance connectors that are availab
 | PrivCo | Microsoft | Look up private-company profiles, financials, funding rounds, and M&A deals. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Quartr | Quartr | Research earnings calls, transcripts, SEC filings, and investor presentations. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | S&P Kensho | S&P Global | Access S&P Kensho data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Savvly MCP | Microsoft | Access Savvly MCP data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Square | Microsoft | Explore Square workflows and connected business data. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Syrto | Microsoft | Look up Italian company profiles, financials, and market intelligence. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Vista Finance \(Trimble\) | Microsoft | Access Vista Finance \(Trimble\) data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Xero | Xero | Access Xero accounting data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Zacks | Zacks | Access Zacks financial data for income statements, balance sheets, and cash flow. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Zoho Books | Zoho | Access Zoho Books data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -55,6 +58,7 @@ The following table lists the collaboration and communication connectors that ar
 | Aha! | Microsoft | Empowers your organization to index and search Aha! features and ideas across your enterprise. The connector automatically crawls Aha! features and ideas, making them easily discoverable through Microsoft 365 Copilot and any Microsoft Search client. | [Aha! connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/aha-overview) |
 | Azure DevOps Wiki | Microsoft | Allows your organization to index wiki pages from Azure DevOps. | [Azure DevOps Wiki connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/azure-devops-wiki-overview) |
 | Azure DevOps Work Items | Microsoft | Allows your organization to search for work items in your Azure DevOps instance. | [Azure DevOps Work Items connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/azure-devops-work-items-overview) |
+| Cisco Workspaces | Microsoft | Access Cisco Workspaces data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Egnyte | Microsoft | Allows organizations to integrate with Egnyte for seamless workflow automation. | [Egnyte connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/egnyte-overview) |
 | Gmail | Microsoft | Search and read your Gmail messages, threads, and labels. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Jira Cloud | Microsoft | Allows your organization to index Jira issues and tickets. | [Jira Cloud connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/jira-cloud-overview) |
@@ -63,6 +67,7 @@ The following table lists the collaboration and communication connectors that ar
 | Miro | Microsoft | Allows an organization to integrate with Miro's collaborative whiteboarding platform. | [Miro connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/miro-overview) |
 | Miro | Miro | Search boards, diagrams, sticky notes, and mind maps in Miro. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Shortcut Story | Microsoft | Enables teams to manage agile software development projects with Shortcut. | [Shortcut Story connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/shortcut-story-overview) |
+| Slack | Microsoft | Access Slack data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | TeamsMaestro | MailMaestro | Access your meeting transcripts, summaries, and action items. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Trello | Microsoft | Allows organizations to enhance their project management by connecting with Trello's visual project management tools. | [Trello connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/trello-overview) |
 | Trello | Microsoft | Search your Trello boards, lists, cards, and workspaces. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -81,6 +86,7 @@ The following table lists the content management systems connectors that are ava
 | Confluence On-premises | Microsoft | Allows your organization to index Confluence pages from server or data center deployments. | [Confluence On-premises connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/confluence-onpremises-overview) |
 | Enterprise Websites Cloud | Microsoft | Allows your organization to search any non-SharePoint enterprise website. | [Enterprise Websites Cloud connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/enterprise-web-connector) |
 | Enterprise Websites On-premises | Microsoft | Allows your organization to search any non-SharePoint enterprise website. | [Enterprise Websites On-premises connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/enterprise-web-connector-onprem) |
+| Experlogix Smart Flows | Microsoft | Access Experlogix Smart Flows data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Guru | Microsoft | Allows integration with Guru's knowledge management platform to capture, store, and share organizational knowledge. | [Guru connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/guru-overview) |
 | MediaWiki | Microsoft | Enables your organization to search knowledge-based articles on sites it creates with MediaWiki. | [MediaWiki connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/mediawiki-connector) |
 | PandaDoc | Microsoft | Create, send, sign, and track documents. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -103,10 +109,13 @@ The following table lists the customer relationship management connectors that a
 
 | Connector name | Publisher | Description | Learn more |
 | --- | --- | --- | --- |
+| Business Applications | Microsoft | Access Business Applications data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Clarify | Microsoft | Query your pipeline, manage CRM records, source leads, and automate GTM. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| D365 Customer Insights MCP | Microsoft | Access D365 Customer Insights MCP data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | HubSpot | Microsoft | Manage customer data and sales pipelines. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Intercom | Microsoft | Search customer conversations, support tickets, and contact records. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Salesforce CRM | Microsoft | Search your Salesforce instance for contacts, opportunities, leads, and accounts objects. | [Salesforce CRM connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/salesforce-crm-overview) |
+| Zoho CRM | Microsoft | Access Zoho CRM data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 
 ## Data analytics
 
@@ -120,6 +129,8 @@ The following table lists the available data analytics connectors.
 | Ask Rystad | Microsoft | Search Rystad Energy analytics reports and asset documents. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | AskPolly | AskPolly | Access AskPolly data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Azure SQL | Microsoft | Enables your organization to search for data from your Azure SQL. | [Azure SQL connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/mssql-overview) |
+| CData Connect AI | Microsoft | Access CData Connect AI data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Comscore | Microsoft | Access Comscore data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Contentsquare | Microsoft | Analyze user behavior, customer journeys, conversions, and digital experiences. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | CSV | Microsoft | Enables your organization to search for content stored in CSV files. | [CSV connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/csv-connector) |
 | DataStax \(preview\) | Microsoft | Enables integration with DataStax for real-time data access. | [DataStax connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/datastax-overview) |
@@ -128,16 +139,20 @@ The following table lists the available data analytics connectors.
 | EIU | Microsoft | Access cited EIU analysis, methodology, and market intelligence. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | IBISWorld | Microsoft | Research industry, company, risk, forecast, and benchmark data. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | IDC | Microsoft | Access IDC market research, datasets, forecasts, trackers, and documents. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Kpler | Microsoft | Access Kpler data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Microsoft SQL Server | Microsoft | Allows your organization to search on-premises Microsoft SQL Server databases. | [Microsoft SQL Server connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/mssql-overview) |
 | Mixpanel | Microsoft | Analyze, query, and manage your Mixpanel data. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | MoSPI | Microsoft | Explore MoSPI datasets, indicators, metadata, and official statistics. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Optiq Bridge US | NielsenIQ | Query NielsenIQ retail sales measurement and consumer panel data. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Oracle SQL | Microsoft | Enables your organization to discover and index data from an on-premises database. Indexes specified content into Microsoft Search and supports periodic crawls. You can also restrict access to search results for certain users. | [Oracle SQL connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/oraclesql-connector) |
+| Orion by Gravity | Microsoft | Access Orion by Gravity data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Oxford Economics | Microsoft | Access Oxford Economics data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Polar Analytics | Microsoft | Bring all your data into one place and connect it to Copilot. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | PostgreSQL \(preview\) | Microsoft | Enables your organization to discover and index data from PostgreSQL databases. | [PostgreSQL connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/postgresql-connector) |
 | Pulse by PassBy | Microsoft | Access real-world retail intelligence for physical stores. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Resilinc | Microsoft | Monitor supply chain risk, compliance, and resilience. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | S&P Global Energy | S&P Global | Access S&P Global Energy data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Snowflake | Microsoft | Access Snowflake data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Statista | Statista | Access Statista data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Synapse.org | Sage Bionetworks | Search scientific datasets, research studies, and biomedical data. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Tableau Cloud \(preview\) | Microsoft | Connect to Tableau Cloud for advanced data visualization and business intelligence functionality. | [Tableau Cloud connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/tableau-cloud-overview) |
@@ -186,7 +201,11 @@ The following table lists the available IT management tool connectors.
 | GraphOS MCP Tools | Microsoft | Search Apollo GraphOS docs and connector specifications. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Hugging Face | Microsoft | Search models, datasets, Spaces, and papers on Hugging Face. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Jam | Microsoft | Get bug reports with recordings, console logs, and repro steps. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Microsoft 365 Admin Center | Microsoft | Access Microsoft 365 Admin Center data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| MongoDB | Microsoft | Access MongoDB data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| OneIQ ICG | Microsoft | Access OneIQ ICG data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | pg-aiguide | Microsoft | Get PostgreSQL, TimescaleDB, and PostGIS guidance and recommended practices. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Windows 365 | Microsoft | Access Windows 365 data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 
 ## Training and tutorial
 
@@ -198,6 +217,8 @@ The following table lists the available training and tutorial connectors.
 | Articulate | Articulate | Access Articulate data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Articulate EU | Articulate | Access Articulate EU data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Autodesk Product Help | Microsoft | Connect Autodesk product documentation through a secure, read-only interface. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| getAbstract | Microsoft | Access getAbstract data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Guidde | Microsoft | Access Guidde data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Learn365 | Zensai | Access Learn365 data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Microsoft Learn | Microsoft | Search official Microsoft docs and code samples. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Padlet | Microsoft | Search your Padlet boards and canvases and review their content. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -219,6 +240,7 @@ The following table lists the files and documents connectors that are available.
 | Egnyte | Egnyte | Access Egnyte data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | File Share | Microsoft | Allows your organization to search on-premises Windows file shares. | [File Share connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/fileshare-connector) |
 | Google Drive | Microsoft | Enables integration with Google Drive for file synchronization and storage. | [Google Drive connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/google-drive-overview) |
+| lumin | Microsoft | Access lumin data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 
 ## Health and life sciences
 
@@ -226,6 +248,7 @@ The following table lists the available health and life sciences connectors.
 
 | Connector name | Publisher | Description | Learn more |
 | --- | --- | --- | --- |
+| Benchling | Microsoft | Access Benchling data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | BioRender | BioRender | Find scientific templates, icons, and illustrations for figures. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | CAS Connections | Microsoft | Search the CAS Content Collection and look up chemical substances. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | ClinicalTrials.gov | Microsoft | Find and review public clinical study records. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -235,6 +258,8 @@ The following table lists the available health and life sciences connectors.
 | Consensus | Microsoft | Access Consensus research content in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Cortellis Regulatory Intelligence | Microsoft | Search health authority guidance, requirements, and regulatory documents. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | FDA Safety \(openFDA\) | Microsoft | Search FDA drug and device safety data from the openFDA public API. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Inductive Bio | Microsoft | Access Inductive Bio data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Maven Bio | Microsoft | Access Maven Bio data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | NyquistAI | Microsoft | Search FDA medical-device data, recalls, and warning letters. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Open Targets | Microsoft | Look up target-disease associations, drug mechanisms, and genetic evidence. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | PopHIVE | Microsoft | Look up US population and public health data, including disease trends and current status. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -253,6 +278,7 @@ The following table lists the available legal, HR, and recruiting connectors. Fo
 | BoardWise | Microsoft | Search BoardWise board guidance and response letter guidance. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Courtroom5 | Microsoft | Get case assessments, legal deadlines, and next-step guidance. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Credly \(preview\) | Microsoft | Integrate digital credential data from your organization's Credly platform into Microsoft 365. | [Credly connector \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/credly-overview) |
+| Darwinbox | Microsoft | Access Darwinbox data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Descrybe Legal Engine | Microsoft | Search and analyze legal questions, concepts, and cases. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Dice | Microsoft | Search tech job listings on Dice by keyword, location, and filters. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | DirectCase Legal Search | Microsoft | Search legislation and case law with linked citations. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -269,6 +295,8 @@ The following table lists the available legal, HR, and recruiting connectors. Fo
 | Litera | Litera | Access Litera data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Midpage Legal Research | Microsoft | Search case law, citations, statutes, and legal precedents. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | NetDocuments US | NetDocuments | Search your contracts, agreements, and matter documents. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Patent Connector | Microsoft | Access Patent Connector data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Red Judicial Legal | Microsoft | Access Red Judicial Legal data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Relativity | Relativity | Manage RelativityOne clients, matters, workspaces, users, and groups. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | SAP SuccessFactors | Microsoft | Integrate your organization with SAP SuccessFactors to securely synchronize organization data and organize HR functions through Microsoft 365 Organizational Data Service. | [Import organizational data from SAP SuccessFactors](https://learn.microsoft.com/en-us/viva/import-org-data-success-factors) |
 | SeekOut | SeekOut | Access SeekOut data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -284,12 +312,16 @@ The following table lists the available IT service management tool connectors.
 | --- | --- | --- | --- |
 | Cloudflare | Microsoft | Build and manage Cloudflare Workers, storage, databases, and AI. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Freshservice | Microsoft | Allows organizations to connect to Freshservice to enhance team collaboration. | [Freshservice connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/freshservice-overview) |
+| Incident Management MCP | Microsoft | Access Incident Management MCP data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Malwarebytes | Microsoft | Check URLs, email addresses, and phone numbers for scams and phishing. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | PagerDuty Escalation Policies | Microsoft | Enables organizations to index and search PagerDuty escalation policies. | [PagerDuty Escalation Policies connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/pagerduty-escalation-policies-overview) |
 | PagerDuty Incidents | Microsoft | Enables organizations to index and search PagerDuty incidents. | [PagerDuty Incidents connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/pagerduty-incidents-overview) |
 | PagerDuty Schedules | Microsoft | Index and search PagerDuty schedules. | [PagerDuty Schedules connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/pagerduty-schedules-overview) |
+| S360 Breeze | Microsoft | Access S360 Breeze data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| ServiceNow | Microsoft | Access ServiceNow data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | ServiceNow Catalog | Microsoft | Allows your organization to find Catalog items to order from the ServiceNow instance. Supports item-level user criteria permissions too. | [ServiceNow Catalog connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-catalog-overview) |
 | ServiceNow Tickets | Microsoft | Allows your organization to index incidents, change requests, and problem statuses from ServiceNow instances. | [ServiceNow Tickets connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/servicenow-tickets-overview) |
+| Zoho Desk | Microsoft | Access Zoho Desk data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 
 ## Reference
 
@@ -323,6 +355,7 @@ The following table lists the available productivity connectors.
 | Connector name | Publisher | Description | Learn more |
 | --- | --- | --- | --- |
 | Airtable | Microsoft | Query and manage your Airtable bases. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Cronofy | Microsoft | Access Cronofy data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | DeepL MCP | DeepL | Translate and improve text in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Fellow.ai | Microsoft | Look up meeting agendas, notes, action items, and 1:1 talking points. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Fireflies | Microsoft | Get meeting transcripts, summaries, and action items from calls. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -332,11 +365,13 @@ The following table lists the available productivity connectors.
 | Google Calendar | Microsoft | Check your events, meetings, invites, times, and attendees. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Google Contacts | Microsoft | Look up names, emails, phone numbers, job titles, and companies. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Granola | Microsoft | Query your Granola meeting notes, transcripts, and insights in Copilot. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| IFTTT MCP Server Streamable | Microsoft | Access IFTTT MCP Server Streamable data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Mem | Microsoft | Search, create, and organize your notes and knowledge. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Memoket | Microsoft | Turn spoken conversations into notes, summaries, and action items. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Notion | Microsoft | Search your docs, wikis, notes, tasks, and databases. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | SlidesGPT | Microsoft | Access SlidesGPT data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Taskrabbit Booking Assistance | Microsoft | Check Tasker availability and book local services. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Zapier | Microsoft | Access Zapier data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 
 ## Project management
 
@@ -347,6 +382,8 @@ The following table lists the project management connectors that are available.
 | Asana | Microsoft | Allows your organization to integrate with Asana's project management platform. | [Asana connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/asana-overview) |
 | Asana | Asana | Access Asana data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | awork | awork | Access awork data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Azure DevOps | Microsoft | Access Azure DevOps data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Businessmap | Microsoft | Access Businessmap data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Dotted | Dotted | Access Dotted project updates in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Flow Studio Cowork | Flow Studio Solutions | Access and manage Power Automate workflows in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Make | Microsoft | Run Make scenarios and manage your Make account. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
@@ -368,15 +405,20 @@ The following table lists the available sales and marketing connectors.
 | Adobe Journey Optimizer | Adobe | Work with Adobe Journey Optimizer journeys, campaigns, audiences, and offers. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Ahrefs | Microsoft | Check backlinks, keywords, rankings, and SEO traffic. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Bigmind | Microsoft | Access Bigmind data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Bitly | Microsoft | Access Bitly data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Crossbeam | Microsoft | Find partner overlaps, shared customers, and co-selling opportunities. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Customer.io | Microsoft | Analyze email, SMS, and push campaigns, journeys, and segments. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Gong | Microsoft | Lets organizations integrate with Gong sales call transcripts to better uncover actionable insights. | [Gong connector](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/gong-connector) |
 | Grain | Microsoft | Search sales call recordings, highlights, and conversation analytics. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | HG Insights | Microsoft | Access real-time company, technology, buyer intent, and market intelligence. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Highspot | Microsoft | Access Highspot data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| LeadIQ MCP | Microsoft | Access LeadIQ MCP data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Local Falcon | Microsoft | Track your local and AI search visibility and map rankings. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | MailerLite | Microsoft | Manage email campaigns, subscribers, and automation workflows. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 | Sprouts.ai | Microsoft | Enrich account data and check your Sprouts credit balance. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| Windsor.ai | Microsoft | Access Windsor.ai data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| ZINT | Microsoft | Access ZINT data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
+| ZoomInfo GTM MCP | Microsoft | Access ZoomInfo GTM MCP data in real time through a federated connector. | [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) |
 
 ## Support
 

@@ -3,6 +3,10 @@
 
 # Configure Microsoft Entra SSO authentication
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 Microsoft Entra single sign-on \(SSO\) authentication enables users to authenticate with their existing Microsoft Entra ID credentials. This integration simplifies access management and ensures secure connections to Model Context Protocol \(MCP\) servers or APIs without requiring extra credentials. Your MCP server or API must use Entra ID to control access.
 
 This article uses MCP plugins as the default walkthrough. The same steps apply to API plugins built from an OpenAPI document, except where noted.
@@ -15,15 +19,21 @@ Your MCP server or API must be secured by an Entra app registration. If you don'
 
 ## Step 2: Create the Entra SSO auth config
 
-Entra SSO authentication relies on an **authentication configuration** \(auth config\) - a record stored in the Microsoft Enterprise token store that Microsoft 365 Copilot uses to obtain tokens for your MCP plugin. You can create the auth config in three ways. The recommended approaches - Microsoft 365 Agents Toolkit and the declarative agent developer skill - create the auth config and update your plugin manifest automatically. You can then use the Microsoft Teams developer portal to manage and refine the auth config.
+Entra SSO authentication relies on an **authentication configuration** \(auth config\) - a record stored in the Microsoft Enterprise token store that Microsoft 365 Copilot uses to obtain tokens for your MCP plugin. Start with WIQD for a supported pro-code project. The Toolkit, developer-skill, and Teams developer portal procedures remain available as alternatives.
 
 However you create it, the auth config has an **auth config ID** and an **Application ID URI**. You use the **Application ID URI** in [Step 3](#step-3-update-the-entra-app-registration) and [Step 4](#step-4-add-the-new-token-audience-to-your-api).
 
 Important
 
-Even when Agents Toolkit or the declarative agent developer skill creates the auth config automatically, you must still complete [Step 3](#step-3-update-the-entra-app-registration) and [Step 4](#step-4-add-the-new-token-audience-to-your-api).
+Regardless of how you create the auth config, you must still complete [Step 3](#step-3-update-the-entra-app-registration) and [Step 4](#step-4-add-the-new-token-audience-to-your-api).
 
-### Use Microsoft 365 Agents Toolkit \(recommended\)
+### Use Work IQ Dev Tools \(recommended\)
+
+For an MCP action, use `wiqd agent add action` with `--mcp-server-url`, `--mcp-auth-type entra-sso`, and `--mcp-client-id` set to the Entra app's client ID from Step 1. For an OpenAPI action, use `--openapi-auth-identity-provider microsoft-entra` and `--openapi-auth-client-id`. See the [WIQD action command guidance](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-action) for the other required action options.
+
+For an existing plugin manifest, use [`wiqd agent add auth`](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-auth) with `--plugin-manifest`, `--auth-name`, and `--auth-type microsoft-entra`. Supply the identity-provider options documented for that command, including `--oauth-client-id`. Complete the project's provisioning workflow, obtain the auth config's **Application ID URI**, and continue with Step 3 and Step 4.
+
+### Use Microsoft 365 Agents Toolkit
 
 When you [build an agent with an MCP plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) in [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit), the toolkit prompts you for an authentication type as you add the MCP server plugin. Select **Microsoft Entra SSO** and provide the **client ID** of the Entra app from Step 1. Agents Toolkit creates the auth config in the Enterprise token store, generates the auth config ID, and updates the [runtime authentication object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4#runtime-authentication-object) in your plugin manifest automatically.
 

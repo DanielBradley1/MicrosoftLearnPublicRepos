@@ -3,6 +3,10 @@
 
 # TypeSpec agent scenarios for Microsoft 365 Copilot
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 This guide provides complete examples of creating TypeSpec agents for Microsoft 365 Copilot, from simple basic agents to complex implementations with multiple capabilities and authentication methods.
 
 ## Basic agent with no capabilities

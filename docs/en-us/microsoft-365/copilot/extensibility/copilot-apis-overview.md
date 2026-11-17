@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview -->
-<!-- Sitemap-Last-Modified: 2026-08-11 -->
+<!-- Sitemap-Last-Modified: 2026-11-02 -->
 
 # Microsoft 365 Copilot APIs overview
 
@@ -68,7 +68,7 @@ For details on the app package, manifest fields, and distribution, see [Agents a
 
 Note
 
-**Work IQ Dev Tools \(preview\)** — If you're building a declarative agent, `wiqd` can reduce this setup step: with named environments, `wiqd agent provision` performs the Microsoft 365 app registration for the agent and writes the resulting IDs back into the environment file, so app registration isn't a manual first step. This process applies to declarative agent provisioning, not to Copilot API clients in general. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
+**Work IQ Dev Tools** — If you're building a declarative agent, `wiqd` can reduce this setup step: with named environments, `wiqd agent provision` performs the Microsoft 365 app registration for the agent and writes the resulting IDs back into the environment file, so app registration isn't a manual first step. This process applies to declarative agent provisioning, not to Copilot API clients in general. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
 
 ## REST API integration
 
@@ -86,5 +86,5 @@ Microsoft Graph APIs generally provide CRUD operations on Microsoft 365 data. Th
 - [Call AI insight](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/ai-services/meeting-insights/resources/callaiinsight)
 - [Custom engine agents for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)
 - [Security and authentication for Microsoft 365 Copilot APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-security-authentication)
-- [Licensing and cost considerations for Copilot extensibility options](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/cost-considerations)
-- [Connect to other agents from a declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent)
+- [Licensing and cost considerations for Copilot extensibility options](https://learn.microsoft.com/en-us/plugins/cost-considerations)
+- [Connect to other agents from a declarative agent](https://learn.microsoft.com/en-us/plugins/declarative-agent-connected-agent)

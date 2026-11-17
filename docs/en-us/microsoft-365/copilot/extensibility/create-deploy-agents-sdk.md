@@ -3,6 +3,10 @@
 
 # Create and deploy an agent with Microsoft 365 Agents SDK
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/plugins/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 The Microsoft 365 Agents SDK enables you to build custom engine agents by using the AI stack of your choice, then deploy them to Microsoft 365 Copilot. With the Microsoft 365 Agents Toolkit for Visual Studio and Visual Studio Code, you can use the built-in templates to scaffold your projects.
 
 The SDK supports integration with a wide range of models and orchestrators—including Azure Foundry, Semantic Kernel, OpenAI Agents, LangChain, or custom-built solutions. You can even combine multiple agents built with different technologies and surface them through Microsoft 365 Copilot.
@@ -19,11 +23,11 @@ You can use the Microsoft 365 Agents SDK to:
 
 You can get started with the Microsoft 365 Agents SDK in one of three ways:
 
-- [Use the Microsoft 365 Agents Toolkit](#use-the-agents-toolkit-recommended) \(recommended\) - Available in C#, JavaScript, and Python for Visual Studio and Visual Studio Code, the toolkit provides scaffolding and templates to help you set up your agent project.
+- [Use the Microsoft 365 Agents Toolkit](#use-the-agents-toolkit) - The retained Toolkit workflow provides scaffolding and templates for C#, JavaScript, and Python projects in Visual Studio and Visual Studio Code.
 - [Clone a sample project](#clone-a-sample-project-or-use-the-cli) - Start with a working example and open it in your preferred IDE.
 - [Use the CLI](#clone-a-sample-project-or-use-the-cli) - Generate a new agent using command-line tools.
 
-### Use the Agents Toolkit \(recommended\)
+### Use the Agents Toolkit
 
 The Microsoft 365 Agents Toolkit helps you quickly scaffold agent projects using built-in templates for Visual Studio and Visual Studio Code.
 

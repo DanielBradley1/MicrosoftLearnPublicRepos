@@ -3,11 +3,15 @@
 
 # Build a plugin for a declarative agent from an MCP server
 
-This guide shows you how to integrate your service with a declarative agent for Microsoft 365 Copilot by adding an MCP server as a plugin using the Microsoft 365 Agents Toolkit. By following these steps, you enable conversational, AI-powered access to your MCP-exposed services for business users.
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
+This guide shows you how to integrate your service with a declarative agent for Microsoft 365 Copilot by using Microsoft 365 Agents Toolkit to add an MCP plugin that connects the agent to your server. By following these steps, you enable conversational, AI-powered access to your MCP-exposed services for business users.
 
 This walkthrough creates a declarative agent with an MCP plugin. The plugin manifest connects the agent to a remote MCP server; it doesn't package or host the running server.
 
-In the broader Microsoft 365 Copilot plugin model, the MCP server provides an MCP-based capability. This walkthrough covers the declarative-agent integration route, not every way that a Microsoft experience can connect to an MCP server.
+This walkthrough covers the declarative-agent action route. To connect a server at the plugin-package level instead, see [Configure remote MCP servers in the app manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers). For how the two manifest models relate, see [Plugins and declarative agent actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview#plugins-and-declarative-agent-actions). Use the route supported by your target experience.
 
 This walkthrough uses the [GitHub MCP server](https://github.com/github/github-mcp-server) as an example. The GitHub MCP server is a remote MCP server, provided and maintained by GitHub, that exposes tools for working with repositories, issues, pull requests, and other GitHub features. You use it here to build an agent that can search GitHub repositories and users from natural language prompts. You can follow the same steps with your own MCP server.
 
@@ -48,7 +52,7 @@ To create the agent:
 1. Open Visual Studio Code and select the **Microsoft 365 Agents Toolkit** icon in the Activity Bar.
 2. Select **Create a New Agent/App** in the Agents Toolkit task pane.
 
-   ![A screenshot of the Agents Toolkit interface](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/api-plugins/create-plugin-ttk.png)
+   ![A screenshot of the Agents Toolkit interface](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/api-plugins/create-plugin-toolkit.png)
 3. Select **Declarative Agent**.
 4. Select **Add an Action**, and then select **Start with an MCP Server**.
 5. Enter the GitHub MCP server URL `https://api.githubcopilot.com/mcp/`.
@@ -78,7 +82,7 @@ To provision and sideload the agent in your development tenant:
 
 Note
 
-**Work IQ Dev Tools \(preview\)** — You can also drive the package-and-sideload loop from the command line with the `wiqd` CLI: `wiqd agent package` builds the app package and `wiqd agent provision --env local` deploys it to your tenant for testing. To register a remote MCP server like the one in this walkthrough as a connector inside the app package, use `wiqd plugin add connector`, an alpha command whose interface might change. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
+**Work IQ Dev Tools** — For a declarative-agent project, use `wiqd agent add action --mcp-server-url <https-endpoint>` with the authentication options your server requires. Use `wiqd agent validate --mode source` for offline source checks. Provision the selected environment when needed to resolve the package identity, then run `wiqd agent package` with the same `--env` value. The separate `wiqd plugin add connector` command adds a remote connector to a standalone plugin project, not an action to a declarative-agent project. For current options, see the [WIQD command reference](https://microsoft.github.io/wiqd/cli/reference/).
 
 ## Step 4: Use the agent
 
@@ -93,6 +97,11 @@ To use the agent:
    ![A screenshot of the agent's response to a query for repositories](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/api-plugins/github-mcp-plugin-response.png)
 6. If the tool that the agent calls returns a UI widget \(MCP app\), confirm that the agent renders the widget inline in the response. For more information, see [Add MCP apps to declarative agents in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps).
 
+## Next step
+
+After you test the agent and its MCP action, follow [Package your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin) if you're including the agent in a plugin package.
+
 ## Related content
 
 - [Add MCP apps to declarative agents in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps)
+- [Configure authentication for MCP and API plugins in agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication)

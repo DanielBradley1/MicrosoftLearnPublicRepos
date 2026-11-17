@@ -3,6 +3,10 @@
 
 # Add instructions and conversation starters to a declarative agent created with Microsoft 365 Agents Toolkit
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 You can customize the behavior of your declarative agent in the agent's manifest.
 
 - [Instructions](#add-instructions-to-the-agent) ensure that the agent understands its role and tasks and how to interact with users.

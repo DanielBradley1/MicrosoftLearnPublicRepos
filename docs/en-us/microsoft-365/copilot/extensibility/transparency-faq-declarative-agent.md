@@ -11,7 +11,7 @@ Declarative agents customize Copilot through instructions, knowledge sources, an
 
 ## What can declarative agents do?
 
-Agents can answer questions, summarize configured knowledge, and invoke supported actions in Microsoft 365 Copilot and supported apps. Available capabilities depend on the authoring tool, licensing, policies, and host experience. See [Agent in-app experiences](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview#agent-in-app-experience) and [Declarative agent architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-architecture).
+Agents can answer questions, summarize configured knowledge, and invoke supported actions in Microsoft 365 Copilot and supported apps. Available capabilities depend on the authoring tool, licensing, policies, and host experience. For more information, see [Declarative agent architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-architecture).
 
 ## What are declarative agents' intended uses?
 
@@ -29,7 +29,7 @@ Declarative agent support for [Microsoft 365 Government](https://www.microsoft.c
 
 Microsoft tests response-generation capabilities before release to evaluate accuracy, grounding, and responsible responses aligned with human preferences. Responsible AI \(RAI\) testing evaluates different harm types and measures defect rates. The results inform model improvements and harm mitigations; they don't guarantee that every response is correct, current, or appropriate.
 
-RAI checks also apply during agent manifest validation and user prompt processing. For the applicable checks and validation failures, see [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation). These checks don't replace evaluation of your agent's instructions, knowledge, actions, and intended scenarios.
+RAI checks also apply during agent manifest validation and user prompt processing. For the applicable checks and validation failures, see [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/responsible-ai-validation). These checks don't replace evaluation of your agent's instructions, knowledge, actions, and intended scenarios.
 
 ## How should makers evaluate a specific agent?
 

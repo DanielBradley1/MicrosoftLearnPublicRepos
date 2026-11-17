@@ -7,6 +7,10 @@ Skills in Microsoft 365 Copilot Chat are generally available. A skill packages t
 
 You can author a skill for use directly in Copilot Chat without creating a declarative agent. Users can select an installed skill explicitly or let Copilot select it automatically when it's relevant. Users control automatic invocation for each skill.
 
+Important
+
+In tenants that use [Microsoft Purview Information Barriers \(IB\)](https://learn.microsoft.com/en-us/purview/information-barriers), skills aren't supported in Copilot Chat. This restriction applies to personal skills and skills distributed as part of a plugin.
+
 ## Choose the skill's scope
 
 | Target | Authoring and distribution path |
@@ -106,10 +110,6 @@ For a direct skill upload, provide either `SKILL.md` alone or a ZIP with `SKILL.
 ## Package a skill in a plugin
 
 [Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) provides a pro-code workflow for creating, validating, provisioning, packaging, and sharing a skill-based plugin.
-
-Note
-
-Work IQ Dev Tools is in preview, and its `wiqd plugin` command tree is alpha. General availability of skills in Copilot Chat doesn't change the tool's release status.
 
 1. Follow the WIQD installation and authentication prerequisites in [Build a plugin](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/).
 2. Create a plugin project, and add a skill:

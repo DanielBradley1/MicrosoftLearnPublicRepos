@@ -3,6 +3,10 @@
 
 # Dynamic tool discovery for MCP plugins in Microsoft 365 Copilot
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 Dynamic tool discovery enables declarative agents that use [MCP server-based plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) to resolve their available tools at runtime, directly from the MCP server, instead of being limited to the tool list captured in the agent's plugin manifest at publish time. This feature lets users access the latest capabilities of an MCP server in near real time, without waiting for the agent to be repackaged, revalidated, and republished.
 
 Note
@@ -137,5 +141,5 @@ Together, these processes guarantee that the assurances customers rely on at pub
 
 ## Related content
 
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+- [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
 - [Build plugins from an MCP server for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins)

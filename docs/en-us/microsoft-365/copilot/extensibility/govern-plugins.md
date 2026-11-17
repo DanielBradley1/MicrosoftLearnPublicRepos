@@ -1,19 +1,35 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Make your plugin available and govern access
+# Make plugins and agents available and govern access
 
-After you publish or share a plugin, complete the setup and access actions its method requires. A **Microsoft 365 administrator** handles actions that require administrator permissions. The plugin owner and intended users complete the rest.
+Publishing a plugin or agent doesn't install it or give users access to its data and services. Complete the separate approval, availability, assignment, consent, and connection steps required by the distribution route. Administrators, owners, and users can have different parts of that work.
 
-**If you built the plugin**, give the responsible administrator or owner:
+**If you built the plugin or agent**, give the responsible administrator or owner:
 
-- The plugin identity and exact version.
-- The published listing or package.
+- The plugin or agent identity and exact version.
+- The published listing, package, or product-specific submission details.
 - The intended users or groups and supported Microsoft 365 experiences.
 - Required licenses, permissions, consent, connections, and external services.
 - Setup instructions and a support contact.
 
-Publishing or sharing distributes the plugin. It doesn't ensure that every intended user can use it in every Microsoft 365 experience. Users might need to sign in, grant consent, or connect an account. Some direct-sharing methods require no administrator action.
+Some direct-sharing methods require no administrator action; others require review before broader use.
+
+## Separate the setup and access steps
+
+Use the publishing record and product-specific procedure to determine which steps apply. Don't treat one completed step as evidence that the others are complete.
+
+| Step | What it accomplishes | Where it happens and who acts |
+| --- | --- | --- |
+| Publish | Distributes the tested item through the selected route; submission can still be awaiting review | The publisher uses the authoring tool, Partner Center, or an administrator's Microsoft 365 upload route. Start with [Choose how to publish and distribute your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish). |
+| Approve | Completes the review required by the route or an access request | In the Microsoft 365 admin center, administrators review plugin access and registered MCP server requests under **Agents** > **Tools** > **Requests**. Agent submissions use **Agents** > **All agents** > **Requests**. These aren't interchangeable approval queues. |
+| Make available | Allows the item for the organization and intended audience | For plugins, administrators use **Agents** > **Settings** > **Agent and plugin access** for publisher categories and **Agents** > **Tools** > **Plugins** > *plugin* > **Users** for user availability. Agents have separate Agent Registry controls. |
+| Assign | Delivers an administrator installation to the intended users or groups when required | In the Microsoft 365 admin center, use the plugin's installation procedure under **Agents** > **Tools**, or the applicable agent deployment action under **Agents** > **All agents** > **Registry**. Availability alone isn't an installation. |
+| Consent | Grants the permissions required to access an application or service | An authorized administrator grants tenant-wide consent through the applicable permission flow or Microsoft Entra admin center. Users complete user consent when required. See [Grant tenant-wide admin consent](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent). |
+| Connect | Establishes the account or service connection required at runtime | Users or connection owners complete setup in the product that owns the connection. For example, see [Connect to plugin services in Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugins#connect-to-plugin-services). Publication and administrator installation don't sign a user in. |
+| Remove | Ends access or an installation within the agreed retirement scope | Administrators use the applicable plugin or agent removal controls in the Microsoft 365 admin center. Connection and service owners separately clean up dependencies through their owning products. See [Retire your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/retire-plugin). |
+
+For rollout procedures, continue to [Make plugins and agents available](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin). For ongoing restrictions and object-specific controls, see [Govern access, tools, and connections](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage).
 
 ## Manage plugins with Microsoft Agent 365
 
@@ -24,7 +40,8 @@ Use the page that matches the object and task you're managing:
 | Task | Go to |
 | --- | --- |
 | View or upload plugin packages and standalone skill packages | **Agents** > **Tools** > **Registry** |
-| Install, uninstall, block, delete, or manage user availability for a plugin | **Agents** > **Tools** > **Plugins** |
+| Install, uninstall, block, or delete a plugin, as supported for that item | **Agents** > **Tools**; select the plugin and its applicable action |
+| Manage user availability for a plugin | **Agents** > **Tools** > **Plugins** > *plugin* > **Users** |
 | Manage plugin availability by publisher category | **Agents** > **Settings** > **Agent and plugin access** |
 | Review plugin access requests or standalone MCP server registration requests | **Agents** > **Tools** > **Requests** |
 | View an agent record and its available actions | **Agents** > **All agents** > **Registry** |
@@ -32,38 +49,33 @@ Use the page that matches the object and task you're managing:
 
 The inventories are related but not interchangeable:
 
-- **Tools Registry** inventories plugin packages, skills, MCP servers, and connectors. For an overview, see [Overview of the Tools page](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-tools-overview?context=/microsoft-365/copilot/extensibility/context).
-- **Agent Registry** inventories agents and provides agent-specific ownership, availability, deployment, and lifecycle controls. For the supported actions, see [Governance and lifecycle actions for agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-actions?context=/microsoft-365/copilot/extensibility/context).
+- **Tools Registry** inventories plugin packages, skills, MCP servers, and connectors. For an overview, see [Overview of the Tools page](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-tools-overview).
+- **Agent Registry** inventories agents and provides agent-specific ownership, availability, deployment, and lifecycle controls. For the supported actions, see [Governance and lifecycle actions for agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-actions).
 
-For authoritative procedures, see [Manage plugins, skills, and MCP servers](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context), [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?context=/microsoft-365/copilot/extensibility/context), [Agent Requests](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests?context=/microsoft-365/copilot/extensibility/context), and [agent details](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-details?context=/microsoft-365/copilot/extensibility/context).
+For authoritative procedures, see [Manage plugins, skills, and MCP servers](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers), [Agent Registry](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview), and [Agent Requests](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests).
 
-Manage the plugin package to control its installation and availability. Also check separate controls when a packaged agent has an Agent Registry record, a connector requires separate connection or policy controls, a remote MCP server has separate hosting or runtime controls, or an app registration, permission, or external service is managed by another product. A control on the plugin doesn't automatically govern every dependency.
+A packaged agent can also have an Agent Registry record. For the effects of package blocking and the controls for individual objects, see [Govern access, tools, and connections](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage).
 
-For plugins containing skills used directly in Copilot Chat, verify discovery and invocation for the intended audience after installation. Users can explicitly select a skill or allow automatic invocation; the user's automatic-invocation setting is distinct from administrator-managed plugin availability. For authoring and host boundaries, see [Build skills for Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-copilot-chat-skills).
+## Use the administration surface that owns the setting
 
 Note
 
 This guidance covers plugin packages and their included capabilities. For an existing standalone \(unpackaged\) agent, use [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?context=/microsoft-365/copilot/extensibility/context). For standalone skills or MCP servers, see [Manage plugins, skills, and MCP servers](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context). For connector connections and policies, use the product that owns the connector.
 
-## Choose the next task
+Package access, data policies, permissions, and service configuration are separate controls:
 
-| What you need to do | Start with |
-| --- | --- |
-| Install the plugin or make it available to intended users | [Make your plugin available](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin) |
-| Govern plugin availability, access requests, or blocking | [Govern plugin access and connections](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage) |
-| Check usage, task success, or failures | [Monitor your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/monitor-plugin) |
-| Evaluate, fix, and release an updated package | [Improve and update your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin) |
-| Take down the plugin and clean up resources | [Retire your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/retire-plugin) |
+- **Microsoft 365 admin center \(Agent 365 controls\):** Plugin and agent inventories, supported approval and installation actions, availability, and tool controls, as shown in the administration map.
+- **Power Platform admin center:** Applicable Copilot Studio and Power Platform connector data policies. See [Configure data policies for Copilot Studio agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention).
+- **Microsoft Entra admin center:** Application permissions and tenant-wide consent when required.
+- **Product and service settings:** Connection sign-in, source permissions, and remote-service configuration.
 
-Follow the instructions for your publishing or sharing method. Complete only the review, approval, acquisition, installation, assignment, enablement, and connection actions that apply.
+The [Power Platform connector view in Tools Registry](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-tools-overview#view-power-platform-connector-usage-preview) provides visibility, not connector management. Package approval doesn't replace Power Platform policies or service permissions.
 
-## When a capability has its own controls
+### When a capability has its own controls
 
-Manage the plugin as the product. Start with its availability and access settings, and use the administration map in [Manage plugins with Microsoft Agent 365](#manage-plugins-with-microsoft-agent-365) to find the right administration surface.
+Record the owner and required configuration for each separately managed connection or service. Complete its authentication, consent, and source-permission setup before testing the user's task.
 
-Plugin availability doesn't grant access to external services or data. Complete the authentication, consent, permissions, and connection steps required by the plugin's capabilities.
-
-An included agent, connector connection, or remote MCP server can also have separate controls. Follow the owning product's guidance when those controls are necessary to manage the plugin. Don't assume that changing the plugin's settings changes every component, connection, or external service.
+For object-specific restrictions, use [Apply a component control when required](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage#apply-a-component-control-when-required).
 
 ## Check that users can use the plugin
 
@@ -79,12 +91,18 @@ Record the verified audience, experiences, plugin version, completed setup actio
 
 If something prevents users from using the plugin, record the issue, its effect on the intended users, and the person responsible for resolving it.
 
+## Choose the next task
+
+- To complete rollout, follow [Make plugins and agents available](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin).
+- To restrict access or manage individual objects, follow [Govern access, tools, and connections](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage).
+- To monitor, support, update, hand over, or retire the solution, start with [Monitor, update, and retire your plugin or agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin#choose-a-task).
+
 ## Related content
 
-- [Publish or share your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
+- [Choose how to publish and distribute your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
 - [Manage plugins with Microsoft Agent 365](#manage-plugins-with-microsoft-agent-365)
-- [Make your plugin available](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin)
-- [Govern plugin access and connections](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage)
+- [Make plugins and agents available](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin)
+- [Govern access, tools, and connections](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage)
 - [Monitor your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/monitor-plugin)
-- [Improve and update your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin)
+- [Monitor, update, and retire your plugin or agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin)
 - [Retire your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/retire-plugin)

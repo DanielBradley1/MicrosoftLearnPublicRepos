@@ -3,6 +3,10 @@
 
 # Configure OAuth 2.0 authentication
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 A plugin can access a Model Context Protocol \(MCP\) server or API by using a bearer token obtained through the OAuth 2.0 authorization code flow, with Proof Key for Code Exchange \(PKCE\) support enabled by default. In this flow, Microsoft 365 Copilot opens the sign-in experience, the OAuth provider returns an authorization response to Microsoft Teams, and Teams exchanges the authorization code for tokens.
 
 This article uses MCP plugins as the default walkthrough. The same steps apply to API plugins built from an OpenAPI document, except where noted.
@@ -31,11 +35,17 @@ This is the URL where your OAuth provider sends the authorization response after
 
 ## Step 3: Create the OAuth 2.0 auth config
 
-OAuth 2.0 authentication relies on an **authentication configuration** \(auth config\) - a record stored in the Microsoft Enterprise token store that Microsoft 365 Copilot uses to obtain and refresh tokens for your MCP plugin. You can create the auth config in three ways. The recommended approaches - Microsoft 365 Agents Toolkit and the declarative agent developer skill - create the auth config and update your plugin manifest automatically. You can then use the Teams developer portal to manage and refine the auth config.
+OAuth 2.0 authentication relies on an **authentication configuration** \(auth config\) - a record stored in the Microsoft Enterprise token store that Microsoft 365 Copilot uses to obtain and refresh tokens for your MCP plugin. Start with WIQD for a supported pro-code project. The Toolkit, developer-skill, and Teams developer portal procedures remain available as alternatives.
 
 However you create it, the auth config has an **auth config ID** that your plugin manifest references.
 
-### Use Microsoft 365 Agents Toolkit \(recommended\)
+### Use Work IQ Dev Tools \(recommended\)
+
+For an MCP action, use `wiqd agent add action` with `--mcp-server-url` and `--mcp-auth-type oauth`. Supply the registered client's details through `--mcp-client-id`, `--mcp-client-secret` when required, and `--mcp-scopes`. For an OpenAPI action, use `--openapi-auth-identity-provider oauth` and the corresponding `--openapi-auth-client-id`, `--openapi-auth-client-secret`, and `--openapi-auth-scopes` options. Enable PKCE for that OpenAPI route with `--openapi-auth-pkce` when your provider supports it. See the [WIQD action command guidance](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-action).
+
+For an existing plugin manifest, use [`wiqd agent add auth`](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-auth) with `--plugin-manifest`, `--auth-name`, and `--auth-type oauth`. Use that command's OAuth endpoint, scope, and client options; its PKCE option is `--oauth-pkce`. Complete the project's provisioning workflow for your environment. For automatic client registration instead of static OAuth, follow the [WIQD DCR route](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-dynamic-client-registration#use-work-iq-dev-tools-recommended).
+
+### Use Microsoft 365 Agents Toolkit
 
 When you [build an agent with an MCP plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) \(if the server requires authentication\) or [create an API plugin from an existing OpenAPI document](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-api-plugins-existing-api) in [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit), the toolkit prompts you for the OAuth **client ID**, **client secret**, and **scopes**. Agents Toolkit fetches the authorization, token, and refresh endpoints from the well-known endpoint of your MCP server \(or from the OpenAPI document for API plugins\), creates the auth config in the Enterprise token store, and updates the [runtime authentication object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4#runtime-authentication-object) in your plugin manifest automatically.
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/archive/archive-faq?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-07-16 -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Frequently asked questions about Microsoft 365 Archive
 
@@ -13,6 +13,8 @@ File-level archive allows end users to manually archive files. The following pre
    1. **Site enabled for file-level archive \[enabled by default\]**. File-level archive is allowed on SharePoint sites by default, but admins can disable it per site by using PowerShell. If file-level archive is disabled for a site, the Archive action isn't available for files on that site. For details, see [Manage](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-manage?view=o365-worldwide).
 
 3. **User permissioned for archiving**. To archive a file, the user must have 'edit' permissions to the file.
+
+Some SharePoint Framework \(SPFx\) customizations, such as Field Customizers, can require the previous document library experience. The Archive action isn't available in that experience.
 
 File-level archive is currently available only on SharePoint sites. Other limitations, such as certain file types, can prevent users from archiving files. See the full list in the Limitations section of [Overview](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-overview?view=o365-worldwide#limitations).
 

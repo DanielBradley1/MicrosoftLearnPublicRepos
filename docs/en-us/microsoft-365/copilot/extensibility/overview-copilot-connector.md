@@ -36,6 +36,8 @@ Authentication requirements differ between synced connectors, federated connecto
 
 For more information about federated connectors, see [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview).
 
+After you compare connector models, return to [Choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components) to decide which other components your plugin needs.
+
 ## How connector content surfaces in Microsoft 365 Copilot
 
 Synced connectors ingest content into Microsoft Graph where the data is semantically indexed and made available to Copilot. Users can find, summarize, and learn from this content using natural language prompts. They can also select citations in Copilot responses to preview external items stored in Microsoft Graph.
@@ -91,15 +93,17 @@ Additional requirements depend on the connector model and implementation approac
 
 ## Create your own synced Copilot connector
 
+For supported plugin composition, [Work IQ Dev Tools](https://aka.ms/wiqd/docs) is the recommended pro-code tool. This section covers building a synced ingestion service, not configuring a remote MCP connector in a WIQD plugin.
+
 To build a synced connector, an AI administrator must [register an application](https://learn.microsoft.com/en-us/graph/toolkit/get-started/add-aad-app-registration) and [grant admin consent](https://learn.microsoft.com/en-us/graph/connecting-external-content-deploy-teams#update-microsoft-graph-permissions) for required Microsoft Graph permissions in the **Microsoft Entra admin center**.
 
 Deployed connectors are tenant-wide unless external item security is restricted.
 
 You can create a synced Copilot connector in one of three ways:
 
-- Use the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector)
 - Use the [connector SDK](https://learn.microsoft.com/en-us/graph/custom-connector-sdk-sample-create)
 - Use the [Copilot connector APIs](https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview?context=microsoft-365-copilot/extensibility/context)
+- Follow the retained [Toolkit-based synced-connector walkthrough](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector)
 
 ## Configure custom connectors for Microsoft 365 Copilot
 

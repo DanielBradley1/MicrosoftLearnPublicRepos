@@ -11,7 +11,7 @@ This quickstart uses CLI v1 \(`latest`\) to evaluate a deployed agent. For CLI v
 
 Important
 
-For deployed declarative agents, start with [Work IQ Dev Tools \(preview\)](https://microsoft.github.io/wiqd/extensions/provided/eval/) for a guided workflow. Work IQ Dev Tools manages the compatible Microsoft 365 Copilot Evaluations CLI version, so you don't need to install `@microsoft/m365-copilot-eval` globally. Follow this quickstart when you need lower-level command control or maintain an existing `runevals` workflow.
+For deployed declarative agents, start with [Work IQ Dev Tools](https://microsoft.github.io/wiqd/extensions/provided/eval/) for a guided workflow. Work IQ Dev Tools manages the compatible Microsoft 365 Copilot Evaluations CLI version, so you don't need to install `@microsoft/m365-copilot-eval` globally. Follow this quickstart when you need lower-level command control or maintain an existing `runevals` workflow.
 
 ## Prerequisites
 

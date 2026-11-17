@@ -89,4 +89,4 @@ responses:
 ## Related content
 
 - [Write instructions for agents with API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/instructions-api-plugins)
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+- [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)

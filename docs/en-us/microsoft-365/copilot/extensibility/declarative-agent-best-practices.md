@@ -76,12 +76,12 @@ Define expected behavior before changing the agent, and keep a repeatable set of
 
 Include users who didn't write the instructions so that tests capture unexpected phrasing and assumptions. Turn reproducible user-reported problems into regression cases.
 
-For test-case design, assertions, and repeatable evaluation, see [Agent evaluation overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluation-overview). For release checks, see [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation) and [Validate and test your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin).
+For test-case design, assertions, and repeatable evaluation, see [Agent evaluation overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluation-overview). For release checks, see [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/responsible-ai-validation) and [Validate and test your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin).
 
 ## Related content
 
 - [Build agents with Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents)
-- [Build agents with Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools#microsoft-365-agents-toolkit)
+- [Build agents with Work IQ Dev Tools \(recommended for supported pro-code scenarios\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools#start-with-work-iq-dev-tools)
 - [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions)
 - [Add knowledge sources to your declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/knowledge-sources)
 - [Confirmation prompts for MCP and API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-confirmation-prompts)

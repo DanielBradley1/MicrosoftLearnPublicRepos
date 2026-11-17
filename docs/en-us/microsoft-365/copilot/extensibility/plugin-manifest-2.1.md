@@ -1,15 +1,15 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.1 -->
 <!-- Sitemap-Last-Modified: 2026-09-30 -->
 
-# Plugin manifest schema 2.1 for Microsoft 365 Copilot
+# API plugin manifest schema 2.1 for Microsoft 365 Copilot
 
 Note
 
-In this reference, *plugin* means the technical API custom action configured through a plugin manifest for a declarative agent. For the broader customer-facing plugin product, package, registry, and lifecycle, see [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview).
+This schema describes an API plugin that provides actions to a declarative agent. It isn't the Microsoft 365 app manifest for the installable plugin package. See [Plugins and declarative agent actions](https://learn.microsoft.com/en-us/plugins/plugins-overview#plugins-and-declarative-agent-actions) for the manifest relationship.
 
 API plugins enable Microsoft 365 Copilot to interact with REST APIs described by an [OpenAPI description](https://www.openapis.org/what-is-openapi). The OpenAPI description in an API plugin describes the REST APIs that Copilot can interact with. In addition, an API plugin includes a plugin manifest file that provides metadata about the plugin, such as the plugin's name, description, and version. The plugin manifest also includes information about the plugin's capabilities, such as the APIs it supports and the operations it can perform.
 
-The following article describes the 2.1 schema used by API plugin manifest files. For more information about API plugins, see [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins).
+The following article describes the 2.1 schema used by API plugin manifest files. For more information about API plugins, see [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/plugins/overview-plugins).
 
 Important
 
@@ -35,7 +35,7 @@ JSON objects defined in this document support only the described properties. Unr
 
 ### String localization
 
-Localizable strings can use a localization key instead of a literal value. The syntax is `[[key_name]]`, where `key_name` is the key name in the `localizationKeys` property in your localization files. For details on localization, see [Localize your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/localize-agents).
+Localizable strings can use a localization key instead of a literal value. The syntax is `[[key_name]]`, where `key_name` is the key name in the `localizationKeys` property in your localization files. For details on localization, see [Localize your agent](https://learn.microsoft.com/en-us/plugins/localize-agents).
 
 #### Localized string example
 
@@ -629,4 +629,4 @@ Here's an example of a plugin manifest file that uses most of the manifest prope
 
 ## Related content
 
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+- [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/plugins/overview-plugins)

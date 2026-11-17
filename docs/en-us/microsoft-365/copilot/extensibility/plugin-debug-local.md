@@ -3,6 +3,10 @@
 
 # Debug MCP and API plugins locally
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 Plugins enable declarative agents in Microsoft 365 Copilot to call Model Context Protocol \(MCP\) servers or REST APIs to retrieve data and perform tasks. Microsoft 365 Copilot must reach the MCP or API server over the internet. Typically, debugging tools host debug sessions on `localhost` \(127.0.0.1\), which is only accessible from the machine running the debugging tool. By using a reverse proxy, such as [dev tunnels](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview), you can expose your debug session to the internet to enable debugging calls from Microsoft 365 Copilot.
 
 This article shows you how to use the `devtunnel` tool to enable local debugging for your MCP server or API.

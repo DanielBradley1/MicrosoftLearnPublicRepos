@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin -->
-<!-- Sitemap-Last-Modified: 2026-11-03 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Package your plugin for Microsoft 365 Copilot
 
@@ -9,7 +9,9 @@ Important
 
 A `.zip` file isn't automatically a supported plugin package. Use a packaging route only when it supports the plugin's components and the Microsoft 365 experiences you intend to publish.
 
-Packaging is tool-specific. Some tools create the plugin package automatically, while others require you to assemble its manifests, metadata, configuration, and assets. The package references remote MCP servers, APIs, connector services, and other external services rather than physically including them.
+This article describes the Microsoft 365 app package used by the documented [Copilot Cowork plugin workflow](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development). Some tools create the package for you; other workflows let you assemble it manually. Use the selected product's guidance for the supported components, manifest version, and publishing route. A shared package format doesn't guarantee that every product supports the same capabilities.
+
+Remote MCP servers, APIs, and other connected services run separately. The package includes the supported declarations or references needed to connect to them, not the running services.
 
 ## Before you begin
 
@@ -22,13 +24,46 @@ Complete [integration testing](https://learn.microsoft.com/en-us/microsoft-365/c
 
 Don't use packaging to resolve an unfinished component or integration. Return to [Build or reuse](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin) when a required component doesn't work.
 
-## Choose your packaging path
+## Understand the Microsoft 365 app package
+
+The package is a ZIP file with `manifest.json` and the referenced icons at its root. The [Microsoft 365 app manifest schema](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/) defines its identity, metadata, and capability declarations.
+
+| Package content | Purpose |
+| --- | --- |
+| `manifest.json` | Identifies the app, version, developer, names, descriptions, icons, and supported capabilities. |
+| Icons | The color and outline image files referenced by the app manifest. The Cowork workflow documents `color.png` and `outline.png`. |
+| Agent skills | When included, skill folders contain `SKILL.md` and supported companion files. The app manifest references the folders through `agentSkills`. |
+| Remote connector configuration | When included, `agentConnectors` entries in the app manifest identify remote MCP endpoints and the applicable authorization configuration. The server itself isn't packaged. |
+| Referenced component files | Include the files required by the selected components, such as a tool-description file when the connector configuration references one, or agent definitions in a supported agent package. |
+
+For example, the Cowork documentation shows a package with this layout:
+
+```text
+manifest.json
+color.png
+outline.png
+skills/
+  contract-analysis/
+    SKILL.md
+    references/
+      clause-taxonomy.md
+tools/
+  contoso-legal-tools.json
+```
+
+The skill folders are present only when the plugin includes skills. The tool-description file is needed only when referenced by the connector configuration. Follow [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development) for current file, schema-version, icon, and skill requirements rather than treating the example as a template for every product.
+
+Note
+
+The [plugin manifest schema 2.4](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4) describes an API or MCP action component for a declarative agent, not the outer Microsoft 365 app package. Those actions are available only to the containing agent. Use the app manifest schema for the outer package.
+
+## Choose a supported packaging path
 
 | Plugin package route | Create the package | Result |
 | --- | --- | --- |
-| An alpha WIQD plugin project that composes supported agents, skills, or remote MCP connectors | Run `wiqd plugin validate`, provision the selected environment to bind the package identity, then run `wiqd plugin package`. Deep-validate the built package in the next step. See [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/). | A deployable `.zip` for supported sharing or administrator upload. |
+| A Work IQ Dev Tools plugin project \(recommended pro-code route for supported scenarios\) | Follow the documented source validation and provisioning steps for the selected environment, then run `wiqd plugin package`. See [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/). | A versioned app package to validate before sharing or publishing. |
 | A plugin package built with Microsoft 365 Agents Toolkit, when the selected workflow supports the plugin's components and target experiences | Select **Zip Teams App Package** or use the `teamsApp/zipAppPackage` lifecycle action. See [Customize an app manifest in Agents Toolkit](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/teamsfx-preview-and-customize-app-manifest?context=/microsoft-365/copilot/extensibility/context). | The plugin package produced by the supported workflow. |
-| A plugin package supported by another plugin-specific workflow | Follow the documented command, UI action, or automated workflow for that package. | The installable plugin package identified by that procedure. |
+| A manually assembled Cowork plugin package | Follow the manifest, skill, connector, icon, and ZIP layout instructions in [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development#assemble-a-package-by-hand). | A Microsoft 365 app package for the documented Cowork route. |
 
 If no packaging route supports your plugin's components and target experiences, stop. Choose a supported method or revise the plugin. Don't combine or rename artifacts to create an unsupported package.
 
@@ -38,7 +73,27 @@ To automate WIQD source checks, candidate packaging, and package-first validatio
 
 Note
 
-Static `wiqd plugin validate` checks only the declarative-agent surface and referenced API-plugin or OpenAPI files. A skill-only or connector-only plugin can pass the static check without its top-level capabilities being validated. Package-first deep validation is required to check the built app package.
+WIQD source validation isn't full validation of the built package. Validate the exact ZIP after packaging, using the current package-validation procedure in [Test and validate your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin).
+
+## Identify the package and its dependencies
+
+Choose the intended [publishing and distribution route](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish) before you assemble the release artifact. For every route, identify:
+
+- **Identity:** The app ID, package version, and component identifiers.
+- **Metadata:** Names, descriptions, developer information, icons, and applicable privacy and terms links.
+- **Authentication:** The identity model, supported authorization configuration, permission and consent needs, and credential references.
+- **Connections:** The endpoints, connection references, and environment-specific configuration.
+- **External dependencies:** Remote services, data sources, owners, and setup needed outside the package.
+
+Put only schema-supported declarations and references in the package. Keep operational details in the publishing-readiness record, and don't include credentials or secrets.
+
+| Distribution route | What to confirm for this package |
+| --- | --- |
+| Direct sharing for testing | The selected audience, test environment, package identity and metadata, and the authentication, connections, and external services those testers need. |
+| Organization distribution | The package identity and metadata for admin review, plus authentication, connection, permission, and external-service setup needed in the organization. |
+| Public distribution | The package identity and metadata for the chosen submission route, plus authentication, connections, and external dependencies that customer organizations and users must configure. |
+
+Sharing or publishing the package doesn't complete installation, assignment, consent, or connection setup. Follow the chosen route's current requirements; this article doesn't define a submission contract.
 
 ## Create the package
 
@@ -71,6 +126,6 @@ Bring a publishing readiness record into [testing and validation](https://learn.
 - Known limitations, unsupported combinations, and accepted risks.
 - Release owner and validation date.
 
-## Next: Test and validate your plugin
+## Next step
 
-Continue to [validate and test the exact plugin package](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin). Don't publish it until it passes the applicable package, installation, access, scenario, experience, and any required evaluation checks.
+[Test and validate your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin)

@@ -1,112 +1,88 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish-plugin-publicly -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Publish your plugin through Microsoft Marketplace
+# Publish your plugin to Microsoft Marketplace
 
-Publish an eligible plugin package through Microsoft Marketplace so customers in other organizations can discover it. Submit the package through the supported Microsoft Partner Center offer type, complete the required review, and make the approved offer available.
+Publish your Microsoft 365 Copilot plugin through Microsoft Marketplace so customers outside your organization can discover it. Use Work IQ Dev Tools \(WIQD\) to prepare and submit your offer through Partner Center, or submit it directly in the Partner Center portal.
 
-Not every plugin package is eligible for Marketplace publication. Confirm support for your package type, included capabilities, authoring tool, and intended Microsoft 365 experiences before preparing a submission.
-
-Marketplace publication is a public distribution method. It is distinct from sharing a plugin with specific users or an organization through a tool-specific sharing workflow. Neither method automatically completes the customer's installation, access, consent, or connection requirements.
+This article covers **Publish & distribute**: prepare the package and listing, submit for certification, and track the result. Microsoft controls certification and live publication. After publication, customers complete installation and access setup for their organization.
 
 ## Before you begin
 
-Ensure you have:
+Have the following ready:
 
-- The exact plugin package and version that passed [validation and testing](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin).
-- Confirmation that a supported Marketplace offer type accepts your package and included capabilities.
-- A publisher account enrolled in the [Microsoft 365 and Copilot program](https://learn.microsoft.com/en-us/partner-center/marketplace-offers/open-a-developer-account).
-- Permission to create and submit offers in Microsoft Partner Center.
-- Listing details, a privacy statement, terms of use, and support information.
-- Customer setup instructions for required licenses, accounts, permissions, consent, connections, and external services.
-- An owner responsible for the submission, updates, support, security response, and retirement.
+- A [tested and validated plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin), with its package version, included capabilities, intended experiences, and known limitations recorded.
+- An enrolled, verified publisher account in the Microsoft 365 and Copilot program in Partner Center, and a seller role authorized to create and submit offers. See [Open a developer account](https://learn.microsoft.com/en-us/partner-center/marketplace-offers/open-a-developer-account).
+- Listing content, icons, screenshots, support and privacy links, terms, and any licensing or purchase requirements.
+- Certification testing instructions and access details, provided through the supported submission process rather than committed to source.
+- An owner for certification responses, customer support, updates, and retirement.
 
-When authentication or customer-specific data access is required, confirm that the setup supports customers in other organizations and keeps each customer's access and data appropriately scoped.
+## Choose a publishing route
 
-## Check the publishing requirements
+| Route | Use it to |
+| --- | --- |
+| [Work IQ Dev Tools](#submit-with-work-iq-dev-tools) \(recommended pro-code route\) | Create the offer, populate the draft listing, upload the package and images, submit with explicit authorization, and track status through `wiqd publish pc`. |
+| [Partner Center portal](#submit-in-the-portal) | Create and manage the offer, upload the package, complete the listing, and submit directly in the browser. |
 
-Before preparing your listing, confirm that:
+This article covers plugin packages, which can include skills, connectors, and declarative agents. If you're certifying a standalone MCP server rather than publishing a plugin package, follow [Microsoft MCP server certification](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-certification) for its separate intake and submission requirements.
 
-- The selected offer type supports your plugin's package type and included capabilities.
-- The authoring and packaging method produces the package or manifest required for that offer.
-- The plugin works in each Microsoft 365 experience you intend to support.
-- The package and its dependencies meet the applicable security, identity, permissions, and customer setup requirements.
-- You can maintain the external services and support commitments described in the listing.
+## Prepare the package and listing
 
-Use the requirements for the selected offer type and package as the source of truth. Review the applicable [Marketplace certification policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies).
+1. [Build the plugin package](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin) and validate the exact ZIP file you want to submit.
 
-Successful package testing doesn't establish Marketplace eligibility. Support in one Microsoft 365 experience doesn't establish support in another.
+   For WIQD, validate the saved source before packaging, then require `wiqd plugin validate --mode package --package-file <validated-zip>` to pass on the final ZIP. Keep that ZIP unchanged through upload; if it changes, validate it again. Package validation uploads the existing ZIP and can require sign-in.
 
-Important
+   Marketplace policy and evidence findings are advisory, not the package-validation gate. Neither package validation nor a Marketplace-readiness report guarantees certification.
+2. Prepare listing content that accurately describes capabilities, supported experiences, setup, limitations, and external services. Add the required icons, screenshots, support link, privacy policy, and terms. State whether the plugin requires additional purchases.
 
-If no documented offer type supports your package and included capabilities, resolve eligibility before submitting. Don't substitute a different package type or assume that an agent-only submission procedure accepts a composed plugin package.
+   Confirm that the listing matches the tested package and that its public links work.
+3. Prepare certification notes that explain installation, authentication, representative tasks, expected results, external dependencies, and how reviewers get required test access.
 
-## Prepare your listing
+   Confirm that reviewers can reproduce the intended behavior. Provide sensitive access information only through the supported certification channel.
 
-Your Marketplace listing tells customers what the plugin does, where it works, and what they need to use it.
+## Submit through Partner Center
 
-Prepare:
+Use one of the following routes to submit your plugin.
 
-- A name, description, icons, screenshots, and any other required listing assets.
-- Publisher contact details and a support link.
-- A privacy statement and terms of use.
-- Required licenses, supported regions, and supported Microsoft 365 experiences.
-- Setup instructions for accounts, permissions, consent, connections, and customer configuration.
-- Disclosures about external services, data access, additional purchases, and known limitations.
-- Your update, support, security-response, and retirement policy.
+### Submit with Work IQ Dev Tools
 
-Keep the listing consistent with the exact package you tested. Describe external services as dependencies; don't imply that their hosting, credentials, or data are contained in the plugin package.
+The following steps summarize a new-offer submission from your plugin project folder. For full command examples and configuration requirements, see [Publish to Partner Center with WIQD](https://microsoft.github.io/wiqd/getting-started/publish-to-partner-center/).
 
-## Submit your plugin
+1. Sign in to the seller tenant with `wiqd auth login --interactive --tenant <seller-tenant-guid>`. Confirm that the selected seller and publisher are correct.
+2. Run `wiqd publish pc init`, and then complete the placeholders in `partner-center.json`, including the listing, legal and support information, images, and purchase requirements.
+3. After the final ZIP passes package validation, run `wiqd publish pc preflight` with `--package <validated-zip>` and `--release-notes "<reviewer-notes>"`. Resolve reported errors before continuing. Preflight doesn't change the offer.
+4. Review and authorize the draft changes. Run `wiqd publish pc prepare` with the same unchanged ZIP and release notes, and `--yes` to authorize offer creation and upload. Save the returned `productId` and review the prepared draft.
+5. Submit for certification with `wiqd publish pc submit --product-id product/<GUID> --yes --interactive`, using the product ID returned by prepare. Type `submit` when prompted. Draft preparation and certification submission require separate authorization.
+6. Save the returned `jobId` and track progress with `wiqd publish pc status --job-id <job-id> --watch`.
 
-Confirm the documented submission procedure for your package type and included capabilities before creating an offer in [Microsoft Partner Center](https://partner.microsoft.com/).
+`wiqd plugin publish` submits to the **organization catalog**, and `wiqd plugin share` grants direct access to a shared deployment. Use `wiqd publish pc` for the supported public Partner Center route.
 
-The [Microsoft Marketplace step-by-step submission guide](https://learn.microsoft.com/en-us/partner-center/marketplace-offers/add-in-submission-guide) describes the general Partner Center workflow and uses Office Add-in examples. It doesn't establish that a composed plugin package is eligible or identify an offer type for that package. Don't use an Office Add-in procedure as a substitute for confirmed plugin-package instructions.
+### Submit in the portal
 
-Once eligibility is confirmed, follow the offer-specific instructions to provide the listing, supported package or manifest, and certification testing information.
+For the portal procedure, follow the [Microsoft Marketplace step-by-step submission guide](https://learn.microsoft.com/en-us/partner-center/marketplace-offers/add-in-submission-guide):
 
-Record the offer ID, submitted package version, submission date, submission status, and responsible owner.
+1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard/v2/home), open **Marketplace offers**, and select the **Microsoft 365 and Copilot** program. Confirm the publisher before creating the offer; you can't change it later.
+2. Create the offer, reserve its name, and complete product setup. Use the offer type and accepted package format specified for your plugin, not the Office Add-in example shown in the common submission guide.
+3. Upload the validated package and resolve reported package errors. Confirm that Partner Center shows the expected version.
+4. Complete properties, legal and support information, localized listings, availability, and certification notes.
+5. Review the completed draft and submit for certification. Record the offer ID, submitted version, date, and owner.
 
-Note
+## Track certification and address findings
 
-Work IQ Dev Tools sharing grants direct access to a shared deployment. Its organizational publishing command submits the plugin to the organization catalog for administrator approval. Neither operation creates a Marketplace offer or replaces Microsoft Partner Center submission for public distribution. See [Publishing and existing projects](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/#publishing-and-existing-projects).
+Monitor the offer in Partner Center or use `wiqd publish pc status` for a WIQD submission. Record the package version and current status with your release evidence.
 
-## Complete the review
+Keep draft, submitted, rejected, certified, and live states distinct. A successful upload or submission isn't certification, and certification alone doesn't establish that the listing is live.
 
-Track the submission in Microsoft Partner Center and address certification findings.
+If certification identifies issues, correct the listing or package, retest affected behavior, and validate any changed ZIP before upload.
 
-If you change the package, validate and test the updated version before resubmitting it. If reviewers request changes to the listing, customer setup instructions, or support information, update those items and keep them consistent with the package.
+For WIQD, follow [Update an existing or rejected offer](https://microsoft.github.io/wiqd/getting-started/publish-to-partner-center/#update-an-existing-or-rejected-offer). Check status before making changes, preview the selected updates with `wiqd publish pc update --dry-run`, and authorize the changes before applying them. Review and submit the updated draft in Partner Center. Don't rerun the new-offer prepare or submit commands as an update shortcut, or retry an uncertain operation before checking its status.
 
-Additional requirements or programs can apply:
+## After listing: Complete customer availability
 
-- [Microsoft 365 store validation guidelines for agents](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/prepare/review-copilot-validation-guidelines?context=/microsoft-365/copilot/extensibility/context), when applicable to an included agent and the selected submission method.
-- [Microsoft 365 App Compliance Program certification](https://learn.microsoft.com/en-us/microsoft-365-app-certification/docs/certification), if you choose to pursue this optional certification.
+Once the offer is live, give customers the listing link, publisher, package version, and acquisition and setup instructions. Explain any required licenses, permissions, consent, sign-in, connections, or external services.
 
-After approval, complete any remaining publishing or availability steps required by the offer type.
+Listing doesn't complete customer installation or grant access in every organization. Direct administrators to [Install a plugin or skill](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers#install-a-plugin-or-skill) and [Make your plugin available](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin) for installation, audience, and publisher-access controls. Confirm that an intended customer can complete a representative task in the supported experience.
 
-**Submission isn't publication.** Publication is complete when the approved offer is available in Microsoft Marketplace.
+## Next step
 
-Record the published offer, package version, supported experiences, availability, and support owner.
-
-## Help customers get started
-
-Publishing in the marketplace doesn't automatically install, enable, authorize, or configure the plugin in every customer organization or Microsoft 365 experience.
-
-Provide clear instructions for:
-
-- Finding and acquiring the plugin.
-- Completing any required administrator approval, user assignment, or installation.
-- Enabling the plugin in supported experiences when required.
-- Signing in, granting consent, and connecting required services.
-- Verifying that the plugin completes its intended task.
-- Getting support and receiving updates.
-- Safely removing access or retiring the deployment.
-
-Explain which steps the customer administrator completes and which steps individual users complete. Include only the actions required by the supported publishing method and experience.
-
-Continue to [Make your plugin available and govern access](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins) for the post-publication lifecycle.
-
-## Related content
-
-- [Publish or share your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
-- [Publish your plugin to your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish-plugin-organization)
+Enter **Make available & govern** with [Make your plugin available](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/deploy-plugin). After availability is confirmed, continue to **Monitor, update & retire** with [Monitor your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/monitor-plugin).

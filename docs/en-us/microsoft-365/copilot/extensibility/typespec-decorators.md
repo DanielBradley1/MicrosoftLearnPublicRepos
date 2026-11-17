@@ -412,7 +412,7 @@ Defines the authentication reference ID for the authentication type.
 
 ### `@capabilities`
 
-Support an action function's capabilities object as defined in the [plugin manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) object. You can use this decorator to define simple adaptive cards with small definitions like `confirmation`. For more complex adaptive cards, you can use the `@card` decorator.
+Support an action function's capabilities object as defined in the [plugin manifest](https://learn.microsoft.com/en-us/plugins/overview-plugins) object. You can use this decorator to define simple adaptive cards with small definitions like `confirmation`. For more complex adaptive cards, you can use the `@card` decorator.
 
 ```typescript
 @capabilities(capabilities: valueof FunctionCapabilitiesMetadata)

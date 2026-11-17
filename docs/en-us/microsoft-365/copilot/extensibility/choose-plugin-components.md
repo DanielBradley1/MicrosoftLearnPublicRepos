@@ -3,40 +3,40 @@
 
 # Choose capabilities for your plugin
 
-Building on the decisions you made when you [planned your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide), decide which components the plugin needs. A plugin can bring together one or more agents, skills, Copilot connectors, and MCP-based components. It doesn't need to include every component type.
+Use your [plugin plan](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide) to choose the capabilities that meet your users' needs. A plugin can include skills, tools, and optional agents. It doesn't need all three, and a single packaged skill is also a plugin.
 
-At the end of this article, you'll know which components your plugin needs and what you can reuse or must build.
+Choose the smallest set of capabilities that satisfies the task. Confirm support in the target product before you decide what to build or reuse.
 
-## Map requirements to components
+## Match capabilities to the task
 
 Start with what the solution must know and do.
 
-| Requirement | Component to consider | Learn more |
+| Capability | What it does in a plugin | Learn more |
 | --- | --- | --- |
-| Provide a goal-directed conversational experience with defined instructions, knowledge, and tools | Declarative agent | [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) |
-| Reuse instructions, workflows, prompts, scripts, or business expertise | Skill | [Skills](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-skills) |
-| Provide approved access to enterprise or third-party data and services | Copilot connector | [Connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors) |
-| Expose tools and resources from a remote service for discovery and invocation | MCP server | [MCP servers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
+| Agent | Provides a specialized assistant for a role or workflow, with instructions, knowledge, and tools; plugins support declarative agents today. | [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) |
+| Skill | Provides reusable instructions for a task in a directory that contains `SKILL.md`. | [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills) |
+| Connector | Gives the solution access to apps or data through the connector model supported by the target product. | [Copilot connectors as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors) |
+| MCP server | Provides remotely hosted tools that the plugin connects to through MCP. | [MCP servers as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
 
 These components remain distinct. The plugin packages the selected components so that supported Microsoft experiences can discover, distribute, and manage them consistently.
 
-Important
+If your plugin needs a connector, [compare synced and federated connector models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector#connector-models) to choose the model that meets your data access requirements.
 
-Component packaging, availability, and behavior vary by Microsoft experience and development tool. Confirm current support before you finalize your component choices.
+Note
 
-## Choose how the components work together
+Declarative agents can contain [API-based and MCP-based actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins). When the agent is included in a plugin package, these actions remain available only through the agent; they aren't independently exposed package-level capabilities. See [Plugins and declarative agent actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview#plugins-and-declarative-agent-actions) for the distinction.
 
-Common compositions include:
+## What's in the package and what's external
 
-- An agent with skills that provide reusable workflows or specialized expertise.
-- An agent with a connector that provides approved organizational knowledge.
-- An agent with an MCP-based component that exposes tools or resources from a remote server.
-- Skills and connectors packaged for a supported experience that already provides the agent experience.
-- A plugin with multiple components that address one business scenario.
+Skills and agent definitions are packaged capabilities. Remote MCP servers and connected services run separately from the package; the package can include the connection information or references needed to use them.
 
-Choose the smallest set of components that satisfies the requirements. Don't add a component only because a development tool supports it.
+For each capability, identify both what you package and what must remain available outside the package. For example, a skill can guide a support workflow while an agent uses tools from a remote MCP server to work with the support system.
+
+Package requirements and component support vary by product and distribution route. See [Package your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin) before you finalize the package.
 
 ## Decide what to build or reuse
+
+First, browse the [Copilot Plugin Catalog](https://aka.ms/CopilotPluginCatalog) to see whether an existing plugin meets your users' needs.
 
 For each required component, look for an existing approved asset before you build something new.
 
@@ -61,7 +61,7 @@ For every selected component, identify:
 - Security, privacy, responsible AI, and governance constraints.
 - Version, compatibility, and distribution restrictions.
 
-A packaged reference doesn't transfer ownership of an independently operated service. For example, packaging MCP connection information doesn't make the plugin publisher responsible for operating the remote MCP server unless the publisher also owns that service.
+A packaged reference doesn't transfer ownership of an independently operated service. Confirm who operates and supports each connected service.
 
 ## Summarize your component decisions
 
@@ -69,19 +69,25 @@ For each component you select, note:
 
 | Component | Why it's needed | Build or reuse | Owner | Dependencies |
 | --- | --- | --- | --- | --- |
-| Agent, skill, connector, or MCP-based component | Requirement that it satisfies | Reuse, configure, extend, or build | Accountable team or person | Identity, data, service, hosting, or policy requirements |
+| Agent, skill, connector, or MCP server | Requirement that it satisfies | Reuse, configure, extend, or build | Accountable team or person | Identity, data, service, hosting, or policy requirements |
 
-You're ready to [choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) when:
+You're ready to build or reuse capabilities when:
 
 - Every solution requirement maps to a selected component or an identified gap.
 - You know which components can be reused.
 - You know which components need to be created or extended.
 - Each component has an owner and documented dependencies.
 
+## Next step
+
+[Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
+
 ## Related content
 
 - [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide)
 - [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent)
-- [Skills](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-skills)
+- [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills)
 - [Connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors)
 - [MCP servers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers)
+- [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+- [Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)

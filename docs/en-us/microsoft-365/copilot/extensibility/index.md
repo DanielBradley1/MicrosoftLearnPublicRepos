@@ -1,39 +1,58 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/ -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
-# Extending Microsoft 365 Copilot with plugins
+# Extend Microsoft 365 Copilot with Plugins
 
-Create a plugin from existing capabilities with Work IQ Dev Tools, or follow the complete lifecycle to prepare, build, test, publish, govern, update, and retire a plugin.
+Build and manage plugins for Microsoft 365 Copilot, from planning through publishing and retirement.
 
-## Get started with plugins
+## Prepare
 
-### Get started
+### Overview
 
-- [What is a plugin?](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview)
-- [Quickstart: Create your first plugin with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/quickstart-plugin)
-- [Prepare to build your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide)
-
-## Build and test plugins
+- [What is a plugin?](https://learn.microsoft.com/en-us/plugins/plugins-overview)
+- [Compare plugins and Copilot-powered apps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview)
+- [Browse the Copilot Plugin Catalog](https://aka.ms/CopilotPluginCatalog)
 
 ### How-To Guide
 
-- [Build or reuse capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
-- [Package and test](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin)
-- [Build a plugin with Work IQ Dev Tools \(GitHub\)](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/)
-- [Validate and test your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin)
+- [Plan your plugin](https://learn.microsoft.com/en-us/plugins/planning-guide)
+- [Choose capabilities](https://learn.microsoft.com/en-us/plugins/choose-plugin-components)
+- [Choose development tools](https://learn.microsoft.com/en-us/plugins/choose-plugin-development-tools)
 
-## Publish and make plugins available
-
-### How-To Guide
-
-- [Publish or share](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish)
-- [Configure plugin CI/CD with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-ci-cd)
-- [Make available and govern](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins)
-
-## Monitor, update, and retire plugins
+## Build or reuse
 
 ### How-To Guide
 
-- [Monitor your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/monitor-plugin)
-- [Improve and update your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin)
-- [Retire your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/retire-plugin)
+- [Quickstart: Package an existing declarative agent as a plugin with Work IQ Dev Tools](https://learn.microsoft.com/en-us/plugins/quickstart-plugin)
+- [Build or reuse capabilities](https://learn.microsoft.com/en-us/plugins/build-reuse-plugin)
+- [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/)
+
+## Package & test
+
+### How-To Guide
+
+- [Package and test](https://learn.microsoft.com/en-us/plugins/package-plugin)
+- [Validate and test your plugin](https://learn.microsoft.com/en-us/plugins/validate-plugin)
+
+## Publish & distribute
+
+### How-To Guide
+
+- [Publish or share](https://learn.microsoft.com/en-us/plugins/publish)
+- [Configure plugin CI/CD with Work IQ Dev Tools](https://learn.microsoft.com/en-us/plugins/plugin-ci-cd)
+
+## Make available, govern & use
+
+### How-To Guide
+
+- [Make your plugin available](https://learn.microsoft.com/en-us/plugins/deploy-plugin)
+- [Govern plugin access and connections](https://learn.microsoft.com/en-us/plugins/manage)
+- [Use plugins with Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugins)
+
+## Monitor, update & retire
+
+### How-To Guide
+
+- [Monitor your plugin](https://learn.microsoft.com/en-us/plugins/monitor-plugin)
+- [Improve and update your plugin](https://learn.microsoft.com/en-us/plugins/improve-plugin)
+- [Retire your plugin](https://learn.microsoft.com/en-us/plugins/retire-plugin)

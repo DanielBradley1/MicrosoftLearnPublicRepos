@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/retire-plugin -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Retire your plugin
 
@@ -41,7 +41,7 @@ Complete the actions needed for your retirement scope. You might need more than 
 | Remove an administrator-deployed installation | [Uninstall the plugin](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context#uninstall-a-plugin-or-skill). Also [restrict availability](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context#manage-plugin-availability-for-users) or block access if users must not add it again. | Microsoft 365 administrator |
 | Delete a package uploaded by your organization | [Delete the uploaded package](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context#delete-a-plugin-or-skill). This action isn't available for Marketplace packages. | Microsoft 365 administrator |
 | Stop direct sharing | Follow the authoring tool's removal procedure, where supported. Check whether recipients retain access and arrange [blocking](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context#block-a-plugin-or-skill) when needed. For Cowork, see [Block a plugin that's already been shared](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins#block-a-plugin-thats-already-been-shared). | Plugin owner and administrator |
-| End public distribution | Follow the applicable Partner Center offer procedure; start from [Publish your plugin through Microsoft Marketplace](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish-plugin-publicly). Notify customers and coordinate retirement of existing installations with their administrators. | Publisher and customer administrators |
+| End public distribution | Follow the applicable Partner Center offer procedure; start from [Publish your plugin to Microsoft Marketplace](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish-plugin-publicly). Notify customers and coordinate retirement of existing installations with their administrators. | Publisher and customer administrators |
 
 After applying the controls:
 
@@ -71,7 +71,7 @@ Review:
 - Connector connections and indexed data. To review connection state before cleanup, see [View connection details](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/view-details?context=/microsoft-365/copilot/extensibility/context).
 - Infrastructure, scheduled jobs, alerts, and support processes.
 
-For an alpha Work IQ Dev Tools project, the [plugin guide](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) describes `wiqd plugin delete` as tearing down resources provisioned for the selected environment. Check the command's effects before running it, then verify and clean up any remaining package records, connections, credentials, and external services through their owning products.
+For a Work IQ Dev Tools project, the [plugin guide](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) describes `wiqd plugin delete` as tearing down resources provisioned for the selected environment. Check the command's effects before running it, then verify and clean up any remaining package records, connections, credentials, and external services through their owning products.
 
 ## Verify retirement
 

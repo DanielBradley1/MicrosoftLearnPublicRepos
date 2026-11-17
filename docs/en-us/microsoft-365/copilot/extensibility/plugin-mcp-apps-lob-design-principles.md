@@ -92,11 +92,11 @@ show_create_form(
 )
 ```
 
-[![HubSpot contact form prefilled with information from the user's request](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hubspot-prefilled-contact.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hubspot-prefilled-contact.png#lightbox)
+[![HubSpot contact form prefilled with information from the user's request](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hub-spot-filled-contact.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hub-spot-filled-contact.png#lightbox)
 
 The app widget opens with those values populated so the user can review them and complete any missing fields. Treat prefilled values as user input: validate them on the MCP server before creating the record.
 
-Use [Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/) when Microsoft 365 work context can improve the task. It can help ground requests involving “my” and provide relevant context for creating or updating records.
+Use [Work IQ](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/index) when Microsoft 365 work context can improve the task. It can help ground requests involving “my” and provide relevant context for creating or updating records.
 
 ## Design tools and interactions for LOB data
 
@@ -266,7 +266,7 @@ get_deals(amount_min="20000", stage="Closed Won")
 
 Return the same structured list type after each refinement so the host renders the results consistently.
 
-[![HubSpot order list filtered from a natural-language request](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hubspot-filtered-orders.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hubspot-filtered-orders.png#lightbox)
+[![HubSpot order list filtered from a natural-language request](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hub-spot-filtered-orders.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hub-spot-filtered-orders.png#lightbox)
 
 ### Limit and cache list results
 
@@ -313,7 +313,7 @@ Users recognize related records by names such as company, contact, owner, or par
 
 Label the field as a related record; an indicator such as `Company: Contoso 🔗` can reinforce that the server resolves the name.
 
-[![HubSpot contact form with a Company relationship field and lookup indicator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hubspot-relationship-field.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hubspot-relationship-field.png#lightbox)
+[![HubSpot contact form with a Company relationship field and lookup indicator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hub-spot-relationship-field.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/hub-spot-relationship-field.png#lightbox)
 
 When the user selects **Save**, resolve each relationship to exactly one matching record that the user is authorized to access and associate before calling the create API. Never select the first match when a name is ambiguous:
 
@@ -355,7 +355,7 @@ The dedicated tool calls the LOB system's native operation rather than reconstru
 
 Resolving an incident through ServiceNow's native action is another example of a dedicated business operation.
 
-[![ServiceNow incident resolution performed through a dedicated action](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/servicenow-resolve-incident.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/servicenow-resolve-incident.png#lightbox)
+[![ServiceNow incident resolution performed through a dedicated action](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/service-now-resolve-incident.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/lob-mcp-apps/service-now-resolve-incident.png#lightbox)
 
 ## Start building an LOB MCP app
 

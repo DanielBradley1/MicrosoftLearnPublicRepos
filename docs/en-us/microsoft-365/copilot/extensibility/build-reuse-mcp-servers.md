@@ -41,8 +41,8 @@ Use WIQD to create a plugin that references a remote MCP server. For manual conf
 
 | Development approach | Start with |
 | --- | --- |
-| Declarative agent with Agents Toolkit | [Build a plugin for a declarative agent from an MCP server](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) |
-| Work IQ Dev Tools | [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) |
+| Work IQ Dev Tools \(recommended for supported pro-code scenarios\) | [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/); for an agent action, use the [WIQD agent action workflow](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-action) |
+| Existing declarative-agent project using Agents Toolkit | [Toolkit-based MCP integration walkthrough](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) |
 | Copilot Studio | [Microsoft Copilot Studio documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/) |
 | Interactive MCP response | [Add MCP apps to declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps) |
 | BYO remote MCP server registration with Agent 365 CLI | [Register a remote MCP server in Agent Tools](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-for-agent?context=/microsoft-365/copilot/extensibility/context#register-a-remote-mcp-server) |
@@ -53,18 +53,18 @@ The Agent 365 CLI BYO MCP route is in preview and uses a separate registration a
 
 ### Work IQ Dev Tools
 
-The alpha `wiqd plugin add connector` command adds a remote MCP connector to a WIQD plugin package. The documented server requirements include:
+The `wiqd plugin add connector` command adds a remote MCP connector to a WIQD plugin package. The documented server requirements include:
 
 - HTTPS with TLS 1.2 or later.
 - Streamable HTTP transport using JSON-RPC 2.0.
 - Support for `tools/list` and `tools/call`.
 - Tool calls that complete in less than 30 seconds.
 
-WIQD scaffolds against manifest version 1.29, where `mcpToolDescription` is optional. Copilot Cowork still requires a tool-description file. If Cowork is a target experience, capture the server's `tools/list` output and pass it with `--tool-description`; otherwise, the package can pass WIQD validation but fail connection verification in Cowork.
+WIQD scaffolds against manifest version 1.29, where `mcpToolDescription` is optional. If you include a tool-description file, pass its path relative to `appPackage` with `wiqd plugin add connector --tool-description <relative-file-path>` alongside the required connector options. The referenced file must be included in the ZIP. For current Cowork discovery behavior and package requirements, see [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development).
 
 For OAuth or API-key authentication, register the credential first and add only its reference identifier to the package. Don't put client secrets, API keys, or tokens in the manifest. See the [WIQD plugin authoring reference](https://microsoft.github.io/wiqd/getting-started/plugin-reference/#connector--remote-mcp-server-requirements).
 
-Configure [authentication](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication), choose [dynamic discovery or pinned tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-dynamic-tool-discovery), and add the metadata required by the target experience.
+For the WIQD plugin-package route, configure [authentication and tool discovery in the Microsoft 365 app manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers). If you instead add the server as an MCP action to a declarative agent, use [agent action authentication](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication) and [dynamic discovery or pinned tools for the agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-dynamic-tool-discovery). Follow the selected integration's requirements rather than copying configuration between manifest models.
 
 ## Confirm that the MCP capability is working
 

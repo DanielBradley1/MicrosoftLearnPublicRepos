@@ -3,6 +3,10 @@
 
 # Convert your declarative agent to a custom engine agent
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/plugins/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 Microsoft 365 Copilot provides a migration capability that allows you to convert declarative agents, including message extensions that were promoted to declarative agents, to custom engine agents. When you convert your declarative agent to a custom engine agent, you have full control of the orchestration, AI models, and data integrations and can take advantage of advanced functionality to create more sophisticated workflows.
 
 This article describes the steps to take to convert a declarative agent to a custom engine agent to take advantage of your own orchestration to better meet the unique needs of your organization.
@@ -11,11 +15,11 @@ This article describes the steps to take to convert a declarative agent to a cus
 
 The steps in this article require you to have the following prerequisites:
 
-- An existing declarative agent built with the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents).
+- An existing declarative agent built with the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/plugins/build-declarative-agents).
 
   Note
 
-  Agents built using [Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) aren't currently supported.
+  Agents built using [Microsoft 365 Copilot](https://learn.microsoft.com/en-us/plugins/agent-builder) aren't currently supported.
 - A custom bot and the bot ID. For information about how to create a custom bot, see [Bots and agents](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/build-a-bot).
 - Visual Studio Code with the Microsoft 365 Agents Toolkit extension installed.
 - The [Microsoft 365 Agents SDK](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/) or [Teams SDK](https://learn.microsoft.com/en-us/microsoftteams/platform/teams-ai-library/), if you want to implement Copilot-specific features like streaming or citations.
@@ -174,6 +178,6 @@ If users pinned the agent, they need to pin the agent again after you publish th
 ## Related content
 
 - [Custom engine agent overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)
-- [Agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)
+- [Agents overview](https://learn.microsoft.com/en-us/plugins/agents-overview)
 - [Upgrade your bot to a custom engine agent](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/teams-conversational-ai/how-conversation-ai-get-started)
 - [App manifest](https://learn.microsoft.com/en-us/microsoftteams/platform/resources/schema/manifest-schema)

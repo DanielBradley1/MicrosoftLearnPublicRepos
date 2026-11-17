@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # Set up your development environment for your plugin
 
-Use the development plan from [Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) to prepare the environments, accounts, tools, identities, permissions, connections, and services required by your plugin components.
+During **Prepare**, use the development plan from [Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) to set up the environments, accounts, tools, identities, permissions, connections, and services required by your plugin components. You finish with verified access and tool prerequisites so you can return to **Build or reuse**.
 
 Complete this setup before you build, configure, extend, or reuse the components. You might need more than one environment or tool when the plugin combines agents, skills, connectors, and MCP-based capabilities.
 
@@ -77,19 +77,23 @@ Some agent capabilities are only available to users in tenants with Copilot Stud
 
 #### Work IQ Dev Tools requirements
 
-[Work IQ Dev Tools](https://aka.ms/wiqd/docs) is a preview pro-code route for supported declarative-agent and plugin-package scenarios. Before you install it, confirm:
+[Work IQ Dev Tools](https://aka.ms/wiqd/docs) is generally available and is the default professional-developer route for supported declarative-agent and plugin scenarios. First review [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools), then add Toolkit or another component-specific tool only when the scenario requires it. Confirm:
 
 - Node.js 24.15 or later and npm on your `PATH` for CLI and installation-script execution. The installer doesn't install Node.js. These aren't required just to begin conversational or file-based authoring.
 - PowerShell 7 or later on Windows.
 - A Microsoft 365 account with access to Copilot.
-- An Azure subscription when you provision agents.
+- An Azure subscription when the selected scenario provisions Azure resources.
 - A development or test tenant that permits the required custom-app installation, sharing, or catalog actions.
 
-The installation script installs the WIQD CLI, its Visual Studio Code extension, and the public WIQD coding-assistant plugin for detected supported hosts unless you skip those integrations. It doesn't install the host. You can instead install the coding-assistant plugin from its marketplace, but that doesn't install the WIQD CLI. After installation, start a new host session. Sign in interactively before tenant operations and run `wiqd doctor` to verify the CLI environment. See [Install Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/installation/) and [Work IQ Dev Tools authentication](https://microsoft.github.io/wiqd/getting-started/authentication/).
+The installation script installs the WIQD CLI, its optional Visual Studio Code extension, and the public WIQD coding-assistant plugin for detected supported hosts unless you skip those integrations. It doesn't install the host. You can instead install the coding-assistant plugin from its marketplace, but that doesn't install the CLI. After installation, start a new host session. See [Install Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/installation/) for GitHub Copilot CLI and Claude Code setup.
+
+**Verify:** `wiqd --version` starts and `wiqd doctor` reports the status of required components. Resolve reported errors. For tenant provisioning, run `wiqd auth login --interactive` and confirm the intended account and tenant with `wiqd auth status` before proceeding. Follow [Work IQ Dev Tools authentication](https://microsoft.github.io/wiqd/getting-started/authentication/).
 
 For continuous integration, use the documented trusted-pipeline authentication for supported core lifecycle commands. Don't run `wiqd auth login` in a pipeline or expose credentials to untrusted pull-request jobs. Work IQ monitoring, evaluation, and other extensions have separate authentication requirements. See [CI/CD authentication](https://microsoft.github.io/wiqd/getting-started/ci-cd-authentication/).
 
 #### Microsoft 365 Agents Toolkit requirements
+
+These requirements apply to the retained Toolkit-based walkthroughs. For new supported declarative-agent and plugin projects, start with [Work IQ Dev Tools](#work-iq-dev-tools-requirements).
 
 You can use the [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) to build agents without a Microsoft 365 Copilot license. If you want to build agents that are grounded on organizational data, you need to either set up pay-as-you-go billing in your tenant or purchase a Microsoft 365 Copilot license.
 
@@ -97,7 +101,9 @@ To build agents with Agents Toolkit and other IDEs, you must have your admin ena
 
 To enable sideloading, from Teams admin center, select **Teams apps** > **Setup policies** > **Global \(Org-wide default\)**, and switch the **Upload custom apps** toggle to **On**.
 
-![Screenshot of org-wide setup policy with 'Upload custom apps' toggle enabled in Teams admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/tac-setup-policies.png)
+**Verify:** Your administrator confirms the policy applies to the development account and the intended test scenario.
+
+![Screenshot of org-wide setup policy with 'Upload custom apps' toggle enabled in Teams admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/teams-setup-policies.png)
 
 To manage your sideloaded custom apps, including agents, from the Teams client, go to **Apps** > **Manage your apps**.
 
@@ -110,11 +116,15 @@ The following steps are required for you to use Copilot Studio to build agents:
 - Your Power Platform admin or Dynamics 365 admin must [enable Generative AI features](https://learn.microsoft.com/en-us/power-platform/admin/geographical-availability-copilot) in Power Platform admin center.
 - For requirements to make your agent available in Teams and Microsoft 365 Copilot, see [Connect and configure an agent for Teams and Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams#prerequisites).
 
+**Verify:** The selected Copilot Studio environment, authoring access, channel prerequisites, and required connectors are available to the test account. Standalone Copilot Studio agents appear in the Agent Registry, not under plugins.
+
 ### Enabling developer mode
 
 You can use *developer mode* in Copilot to test whether and how the orchestrator selects your plugin in response to a given prompt.
 
 To enable developer mode, in Copilot Chat, type `-developer on`. To disable developer mode, type `-developer off`.
+
+**Verify:** The licensed Copilot experience reports that developer mode is enabled or disabled as requested. This diagnostic doesn't establish plugin discovery or installation in other experiences.
 
 ![Screenshot of `Microsoft 365 Copilot` session where user has typed `-developer on` to successfully enable developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/developer-mode-on.png)
 
@@ -204,11 +214,13 @@ Your environment is ready when:
 - Test users and representative nonproduction data are available.
 - Each dependency has an owner and unresolved blockers are documented.
 
-Continue to [build or reuse your plugin components](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin).
-
 ## Security and privacy
 
 Copilot uses existing permissions and policies to deliver the most relevant information, building on our existing commitments to data security and data privacy in the enterprise. For information about how Copilot uses and protects organizational data, see [Data, Privacy, and Security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy). For data privacy and security considerations for developing different Copilot extensibility solutions, see [Data, Privacy, and Security considerations of extending Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/data-privacy-security).
+
+## Next step
+
+Enter **Build or reuse** with [Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin). If you selected Work IQ Dev Tools, continue with the [existing-agent quickstart](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/quickstart-plugin) or [create a new plugin](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/), depending on your starting point.
 
 ## Related content
 

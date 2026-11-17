@@ -37,7 +37,7 @@ JSON objects defined in this document support only the described properties. Unr
 
 ### String localization
 
-Localizable strings can use a localization key instead of a literal value. The syntax is `[[key_name]]`, where `key_name` is the key name in the `localizationKeys` property in your localization files. For details on localization, see [Localize your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/localize-agents).
+Localizable strings can use a localization key instead of a literal value. The syntax is `[[key_name]]`, where `key_name` is the key name in the `localizationKeys` property in your localization files. For details on localization, see [Localize your agent](https://learn.microsoft.com/en-us/plugins/localize-agents).
 
 ## Declarative agent manifest object
 
@@ -110,7 +110,7 @@ Declarative agent capabilities fall into three availability categories:
 - **Available with metered usage or a license**: Require either metered usage to be enabled or a Microsoft 365 Copilot license.
 - **Available only with a license**: Require a Microsoft 365 Copilot license. Metered usage alone doesn't provide access.
 
-Users can access a declarative agent only if they meet the requirements for all capabilities it uses. For details about each capability's availability, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
+Users can access a declarative agent only if they meet the requirements for all capabilities it uses. For details about each capability's availability, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/plugins/prerequisites#agent-capabilities-and-licensing-models).
 
 #### Capabilities object example
 
@@ -299,7 +299,7 @@ The OneDrive and SharePoint object contains the following properties.
 | `items_by_sharepoint_ids` | Array of [Items by SharePoint IDs object](#items-by-sharepoint-ids-object) | Optional. An array of objects that identify SharePoint or OneDrive sources using IDs. If you omit both the `items_by_sharepoint_ids` and the `items_by_url` properties, the declarative agent can access all OneDrive and SharePoint sources in the organization. |
 | `items_by_url` | Array of [Items by URL object](#items-by-url-object) | Optional. An array of objects that identify SharePoint or OneDrive sources by URL. If you omit both the `items_by_sharepoint_ids` and the `items_by_url` properties, the declarative agent can access all OneDrive and SharePoint sources in the organization. |
 
-For information about how to optimize SharePoint content for Copilot, see [Optimize content retrieval](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/optimize-content-retrieval).
+For information about how to optimize SharePoint content for Copilot, see [Optimize content retrieval](https://learn.microsoft.com/en-us/plugins/optimize-content-retrieval).
 
 ##### Items by SharePoint IDs object
 
@@ -317,7 +317,7 @@ The items by SharePoint IDs object contains the following properties.
 
 Tip
 
-For information about how to get the unique identifiers for a SharePoint or OneDrive resource, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids).
+For information about how to get the unique identifiers for a SharePoint or OneDrive resource, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/plugins/declarative-agent-capabilities-ids).
 
 ##### Items by URL object
 
@@ -356,7 +356,7 @@ The connection object contains the following properties.
 
 Tip
 
-For instructions on getting the unique identifier for a Copilot connector, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids).
+For instructions on getting the unique identifier for a Copilot connector, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/plugins/declarative-agent-capabilities-ids).
 
 ###### Item identifier object
 
@@ -410,7 +410,7 @@ The container URL object contains the following properties.
 
 #### Graphic art object
 
-Indicates that the declarative agent can create images and art based on the text input from the user. For more information, see [Image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator).
+Indicates that the declarative agent can create images and art based on the text input from the user. For more information, see [Image generator](https://learn.microsoft.com/en-us/plugins/image-generator).
 
 The graphic art object contains the following property.
 
@@ -420,7 +420,7 @@ The graphic art object contains the following property.
 
 #### Code interpreter object
 
-Indicates that the declarative agent can generate and execute Python code to solve complex math problems, analyze data, generate visualizations, and more. For more information, see [Code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter).
+Indicates that the declarative agent can generate and execute Python code to solve complex math problems, analyze data, generate visualizations, and more. For more information, see [Code interpreter](https://learn.microsoft.com/en-us/plugins/code-interpreter).
 
 The code interpreter object contains the following property.
 
@@ -808,5 +808,5 @@ The following example shows a declarative agent manifest file that uses most of 
 
 ## Related content
 
-- [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions)
+- [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/plugins/declarative-agent-instructions)
 - [Microsoft 365 app manifest reference](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema)

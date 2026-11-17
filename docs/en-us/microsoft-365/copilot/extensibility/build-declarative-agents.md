@@ -13,7 +13,7 @@ Note
 
 Tip
 
-[Work IQ Dev Tools](https://aka.ms/wiqd/docs) \(preview\) and [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/overview-agents-toolkit?context=/microsoft-365/copilot/extensibility/context) provide related pro-code workflows. To choose based on your capability, package route, and target experience, see [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools).
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
 
 ![Screenshot shows the answer from the declarative agent in Microsoft 365 Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/build-da/ttk/agent-answer.png)
 
@@ -72,3 +72,5 @@ Start by creating a basic declarative agent.
 ## Next step
 
 [Add instructions and conversation starters to a declarative agent created with Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-customize-behavior)
+
+If this agent is part of a plugin, return to [Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin) to integrate it with your other components.

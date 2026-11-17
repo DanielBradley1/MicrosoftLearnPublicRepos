@@ -30,5 +30,5 @@ Custom engine agents provide different capabilities and constraints across archi
 
 ## Related content
 
-- [Agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)
-- [Declarative agent architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-architecture)
+- [Agents overview](https://learn.microsoft.com/en-us/plugins/agents-overview)
+- [Declarative agent architecture](https://learn.microsoft.com/en-us/plugins/declarative-agent-architecture)

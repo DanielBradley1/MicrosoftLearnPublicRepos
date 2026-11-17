@@ -3,6 +3,10 @@
 
 # Add knowledge sources to a declarative agent created with Microsoft 365 Agents Toolkit
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 You can control the knowledge available to your agent for generating responses with knowledge sources from the web and your Microsoft 365 organizational data. For a full list of the knowledge sources available, see [Add knowledge sources to your declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/knowledge-sources).
 
 Important

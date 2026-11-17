@@ -66,7 +66,7 @@ Identify operations that create, change, send, approve, purchase, delete, or dis
 - Evaluation criteria for accuracy, quality, safety, and misuse.
 - Monitoring, incident response, escalation, and suspension procedures.
 
-For more information, see [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation) and [Microsoft's commitment to responsible AI](https://www.microsoft.com/ai/responsible-ai).
+For more information, see [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/responsible-ai-validation) and [Microsoft's commitment to responsible AI](https://www.microsoft.com/ai/responsible-ai).
 
 ## Governance and admin controls for plugin sharing
 
@@ -89,7 +89,7 @@ For a public or multitenant solution, plan the customer-facing privacy statement
 
 - [Microsoft Commercial Marketplace certification policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies)
 - [Store validation guidelines for Copilot extensibility](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/prepare/review-copilot-validation-guidelines?context=/microsoft-365/copilot/extensibility/context)
-- [Responsible AI validation checks](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation)
+- [Responsible AI validation checks](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/responsible-ai-validation)
 - [Microsoft 365 App Compliance Program](https://learn.microsoft.com/en-us/microsoft-365-app-certification/docs/certification)
 
 ## Carry these requirements forward
@@ -104,6 +104,10 @@ As you plan, keep track of:
 - The unresolved requirements that depend on the selected components or tools.
 
 Use these requirements when you [choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components) and [choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools). After implementation, confirm them through [plugin validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin) and the applicable product-specific security and administration guidance.
+
+## Next step
+
+[Choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components)
 
 ## Related content
 

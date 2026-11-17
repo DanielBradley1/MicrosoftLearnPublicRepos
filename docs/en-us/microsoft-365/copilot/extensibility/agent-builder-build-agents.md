@@ -139,4 +139,6 @@ The **Try it** experience includes suggested prompts, which when selected invoke
 
 ## Next step
 
+If you're including the agent in a plugin package, see [Package your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin). For direct sharing and other distribution options, see [Choose how to publish and distribute your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish). Not every sharing scenario requires a ZIP package.
+
 [Share and manage agents built in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents)

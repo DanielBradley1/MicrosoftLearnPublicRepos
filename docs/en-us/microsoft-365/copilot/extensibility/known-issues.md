@@ -5,6 +5,12 @@
 
 This article provides information about known issues related to Microsoft 365 Copilot extensibility and any potential workarounds.
 
+## Plugins
+
+For package layout and Cowork-specific troubleshooting, see [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development). For current Work IQ Dev Tools commands and options, see the [WIQD command reference](https://microsoft.github.io/wiqd/cli/reference/).
+
+If your plugin includes a declarative agent or depends on a connector, review the [declarative-agent issues](#declarative-agents) and [Copilot connector issues](#copilot-connectors). The [API plugin issues](#api-plugins) apply to actions within a declarative agent, not the outer installable plugin package.
+
 ## Declarative agents
 
 The following known issues apply to declarative agents.
@@ -65,9 +71,9 @@ When you share an agent via the Microsoft 365 Copilot by using the **Specific us
 
 The following features aren't currently supported in [Microsoft 365 Government](https://www.microsoft.com/microsoft-365/government) tenants:
 
-- [Authenticated custom actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins).
-- Support for usage billing for extensibility features. For details about features that require usage billing, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
-- Support for publishing agents via the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents).
+- [Authenticated custom actions](https://learn.microsoft.com/en-us/plugins/overview-plugins).
+- Support for usage billing for extensibility features. For details about features that require usage billing, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/plugins/prerequisites#agent-capabilities-and-licensing-models).
+- Support for publishing agents via the [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/plugins/build-declarative-agents).
 
 ## Copilot connectors
 

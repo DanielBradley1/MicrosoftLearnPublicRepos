@@ -1,19 +1,21 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/builder-guide -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
 # Build solutions for Microsoft 365 Copilot
 
 Choose what you want to build, then follow the applicable supported path. If you're building a plugin, follow the plugin lifecycle from planning through monitoring, updates, and retirement.
 
-## Choose the applicable journey
+## Choose where to start
 
-| Your goal | Start with |
+| If you want to... | Start here |
 | --- | --- |
-| Bring supported capabilities together in a plugin for Microsoft experiences | [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview) |
-| Build an app that uses Microsoft 365 work context or Copilot capabilities | [Build Copilot-powered apps and agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview) |
-| Build an agent with your own orchestration, models, hosting, or runtime | [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent) |
+| Package your capabilities, such as agents, skills, connectors, and MCP servers, as a plugin that people can use in Microsoft 365 Copilot and other supported Microsoft apps | [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview) |
+| Use Copilot or Microsoft 365 data, such as email, files, and meetings, in your own app or agent | [Build Copilot-powered apps and agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview) |
+| Build an agent that uses your own AI models, orchestration, and hosting | [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent) |
 
-For a complete comparison, see [Ways to extend Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview).
+If you already have a custom engine agent, you can package it in a plugin to manage a single version of it and publish it to supported Microsoft apps. You can also include related capabilities, such as skills, connectors, and MCP servers, in the same plugin.
+
+Not sure which option fits? Compare all options in [Ways to extend Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview).
 
 ## Follow the plugin lifecycle
 
@@ -28,7 +30,7 @@ For a plugin, complete each stage in order.
 | Make available and govern | Intended users can access and use the plugin, required connections work, and applicable controls are applied | [Manage plugins with Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins#manage-plugins-with-microsoft-agent-365) |
 | Monitor, update, and retire | Usage and feedback reviewed, behavior evaluated when appropriate, updates tested and released, ownership or access adjusted, and retirement completed safely | [Monitor](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/monitor-plugin), [improve and update](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin), or [retire](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/retire-plugin) |
 
-Define the required capabilities and target Microsoft experiences before you select a development tool. Then use [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) to compare the available authoring and packaging paths, including Microsoft 365 Agents Toolkit for supported Microsoft 365 app packages.
+Define the required capabilities and target Microsoft experiences before you select a development tool. For supported pro-code declarative-agent and plugin scenarios, Work IQ Dev Tools is recommended. Use [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) to confirm capability support and compare no-code, low-code, and other supported paths.
 
 For a pro-code plugin workflow, use the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs) on GitHub. Start with [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) for the supported creation, validation, provisioning, packaging, and sharing procedure.
 
@@ -36,7 +38,7 @@ Before implementation, confirm that the required identities, environments, servi
 
 ## Related content
 
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview)
+- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview)
 - [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide)
 - [Build Copilot-powered apps and agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview)
 - [Choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components)

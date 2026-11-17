@@ -5,6 +5,8 @@
 
 When declarative agents are used in the Copilot experience in Microsoft 365 apps, they're able to interact with the open document. By default, agents can read the entire open document. Users can provide just a selected section of the open document to the agent, and agents can insert images into the open document.
 
+This article covers document interaction by declarative agents, not support for the full plugin package in Word or PowerPoint. For the broader plugin model, see [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview).
+
 Note
 
 [Accessing the document selection](#access-document-selection) is only supported in Word. [Accessing the entire open document](#access-the-entire-open-document) and [inserting images](#inserting-images) is supported in Word and PowerPoint.
@@ -120,7 +122,7 @@ Supported image types are .bmp, .gif, .jpeg, .jpg, and .png.
 
 ## Related content
 
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+- [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
 - [Plugin manifest schema 2.4 for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4)
 - [Adaptive Card response templates for API plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api-plugin-adaptive-cards)
 - [Adaptive Card documentation](https://adaptivecards.microsoft.com)

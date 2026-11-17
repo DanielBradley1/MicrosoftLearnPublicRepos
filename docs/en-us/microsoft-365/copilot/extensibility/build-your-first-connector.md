@@ -3,6 +3,12 @@
 
 # Build your first synced Copilot connector with Microsoft 365 Agents Toolkit
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
+This walkthrough retains Toolkit's synced-connector template. It builds an ingestion service, not the remote MCP connector configuration used by a WIQD plugin.
+
 [Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector) enable you to ingest your line-of-business data into Microsoft Graph to make it available to Microsoft 365 Copilot. When your data is ingested, Copilot can reason over the data and use it to respond to user prompts.
 
 This walkthrough creates a synced Copilot connector that can provide external data access as a component of a Microsoft 365 Copilot plugin. It doesn't create or package a complete plugin.
@@ -106,6 +112,8 @@ To customize this template for your custom data, you can update the content of t
 In addition to these folders, you can customize other parts of the code, depending on the scenario. You can search the code for comments starting with the `[Customization point]` string. These comments indicate areas for potential customization.
 
 ## Next step
+
+Use the [connector integration checks](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components#verify-components-in-the-integrated-scenario) to verify authentication, schema, indexing, freshness, and permissions. Include [failure and boundary tests](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components#test-failures-and-boundaries) for expired authentication, denied access, and unavailable connections or data sources.
 
 Record the connection ID, schema, environment, permissions, test evidence, and connector owner in your implementation record. If your plugin includes other components, build them before you [integrate and test your plugin components](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components).
 

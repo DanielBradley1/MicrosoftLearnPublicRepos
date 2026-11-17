@@ -1,13 +1,15 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview -->
-<!-- Sitemap-Last-Modified: 2026-10-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-02 -->
 
 # What is a Microsoft 365 Copilot plugin?
 
-A Microsoft 365 Copilot plugin is an installable package that brings together capabilities for a specific task. It can include supported agents and skills, along with configuration or references for connectors and remote MCP servers.
+A plugin is an installable package that adds new capabilities to Microsoft 365 Copilot and other Microsoft AI experiences. It brings together the skills, tools, and optional agents needed for a job in one unit that people can find, install, share, and manage.
 
 For example, a support plugin might use an agent to answer questions, a skill to guide troubleshooting, a connector to find support content, and an MCP server to provide tools.
 
-You build or reuse the capabilities, package and test the plugin, then publish or share it with the people who need it.
+A plugin can contain one capability or several; a single packaged skill is also a plugin. External services, such as remote MCP servers, can run separately from the package.
+
+Before building a new plugin, browse the [Copilot Plugin Catalog](https://aka.ms/CopilotPluginCatalog), a public registry of available plugins.
 
 ## What can a plugin include?
 
@@ -15,42 +17,60 @@ Choose what your plugin needs based on the task it should help users complete.
 
 | Capability | What it does | Learn more |
 | --- | --- | --- |
-| Declarative agent | Provides a focused assistant with instructions, knowledge, and tools. | [Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) |
-| Skill | Provides reusable instructions or a workflow for a specific job. | [Skills as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-skills) |
-| Copilot connector | Makes external organizational content available. | [Copilot connectors as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors) |
-| MCP integration | Connects to tools provided by a remote MCP server. | [MCP servers and plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
+| Skills | Provide reusable instructions for a task, packaged in a directory that contains `SKILL.md`. | [Skills in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-skills) |
+| Tools | Connect to apps and data, including supported Copilot connectors and remote MCP integrations. | [Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors) and [MCP servers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
+| Agents | Provide specialized assistants for a role or workflow; today, these are declarative agents. | [Declarative agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) |
 
-A plugin can use one capability or several. You can create new capabilities or reuse existing ones.
+A plugin doesn't need all three capability types. You can create new capabilities or reuse existing ones.
 
-What you can include depends on the development tool and the Microsoft 365 experience where people use the plugin. Check support before you build or package it.
+Support varies by product. Check the guidance for [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder), [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio), and [Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/) for the experience you're targeting before you build or package your plugin.
 
-The package doesn't contain every service it uses. For example, it can include connection information for an MCP server while the server runs separately.
+## Plugins and declarative agent actions
 
-Note
+A **Microsoft 365 Copilot plugin** is an installable package. An **API plugin** or **MCP plugin** is an integration that provides actions to a declarative agent. When a plugin package includes that agent, its API and MCP actions remain available through the agent; they don't become independently available capabilities of the package. The API or MCP server runs separately.
 
-API plugins used as actions within declarative agents have their own development and packaging guidance. See [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins).
+The manifests describe different levels of the solution:
 
-## Take your plugin from idea to use
-
-| Step | Action |
+| Manifest | What it describes |
 | --- | --- |
-| **Plan** | Define the task, intended users, and where they use the plugin. |
-| **Build or reuse** | Choose the capabilities you need and confirm that each works. |
-| **Package and test** | Bring the capabilities together, create the package, and test the plugin. Evaluate agent quality when appropriate. |
-| **Publish or share** | Distribute the tested plugin through a supported publishing or sharing method. |
-| **Make available and govern** | Complete any required review or installation, select who can use the plugin, and configure access and connections. |
-| **Monitor, update, and retire** | Check how the plugin performs, release tested updates, and remove it when it's no longer needed. |
+| [Microsoft 365 app manifest](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/), `manifest.json` | The installable package's identity, metadata, and supported capabilities. |
+| [Declarative agent manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9) | The agent's instructions, knowledge, and actions. Its `actions` entries reference or inline API or MCP plugin manifests. |
+| [API or MCP plugin manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-manifest-2.4), such as `ai-plugin.json` | An agent action integration, including the API or MCP server connection and applicable function, tool, and authentication configuration. It isn't the app manifest. |
+
+Use [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) to add actions to an agent. To connect a remote MCP server at the package level instead, use [remote MCP configuration in the app manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers). That route uses `agentConnectors`, not an agent's API or MCP plugin manifest. Choose the route supported by your target experience.
+
+## Plugin journey
+
+1. **[Prepare](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide):** Define the outcome, intended users, target products, and requirements for your plugin.
+2. **[Build or reuse](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin):** Choose and integrate the capabilities you need, then test how they work together.
+3. **Package & test:** [Package your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin), then [test and validate it](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/validate-plugin) for your intended publishing route.
+4. **[Publish & distribute](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish):** Share or publish the tested plugin through a supported route for your audience.
+5. **[Make available & govern](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins):** Complete any required admin review, installation, user availability, and access configuration.
+6. **[Monitor, update & retire](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/improve-plugin):** Review performance, support users, release updates, and retire your plugin when it's no longer needed.
+7. **Discover & use:** Browse available plugins in the [Copilot Plugin Catalog](https://aka.ms/CopilotPluginCatalog). Help users find and use your plugin in their target product; for Cowork, see [Use plugins with Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugins).
 
 After you publish or share your plugin, users might still need approval, installation, or connection setup before they can use it. The steps depend on how you shared it and your organization's settings.
 
-## Get started
+## Key terms
+
+| Term | Meaning |
+| --- | --- |
+| Copilot Plugin Catalog | A public registry for discovering available plugins. |
+| Plugin registry | A destination for plugins published or shared with a selected audience. |
+| Tools Registry | The view under **Agents** > **Tools** > **Registry** in the Microsoft 365 admin center for plugins, skills, MCP servers, and connector visibility. |
+| Agent Registry | The view under **Agents** > **All agents** > **Registry** for agent-specific controls; a packaged agent can also have an Agent Registry record. |
+| Microsoft Marketplace | A publishing route for reaching customers across organizations. |
+
+Public discovery, publishing, and tenant administration are separate. A listing in the Copilot Plugin Catalog doesn't establish organizational approval or availability. Tools Registry, Agent Registry, and Microsoft Marketplace aren't interchangeable names for one catalog.
+
+## Next step
+
+[Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide)
+
+## Related content
 
 - **Have an existing declarative-agent source project?** Follow [Quickstart: Create your first plugin with Work IQ Dev Tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/quickstart-plugin).
 - **Want to create and package a plugin with pro-code tools?** Follow [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/) in the GitHub documentation.
-- **Want to build or reuse capabilities?** Start with [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide).
+- **Building a custom engine app or agent?** Follow the [app development path](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview).
 - **Need to administer a plugin?** See the [Manage plugins with Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins#manage-plugins-with-microsoft-agent-365) administration map.
 - **Want to publish for customers?** See [Build and publish plugins for customers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/isv-publisher-guide).
-
-Note
-
-This guidance covers plugin packages and their included capabilities. To manage an existing standalone \(unpackaged\) agent, use [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry?context=/microsoft-365/copilot/extensibility/context). For standalone skills or MCP servers, see [Manage plugins, skills, and MCP servers](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-plugins-skills-mcp-servers?context=/microsoft-365/copilot/extensibility/context). For connector connections and policies, see [Deploy Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview?context=/microsoft-365/copilot/extensibility/context) and [Advanced connector policies](https://learn.microsoft.com/en-us/power-platform/admin/advanced-connector-policies).

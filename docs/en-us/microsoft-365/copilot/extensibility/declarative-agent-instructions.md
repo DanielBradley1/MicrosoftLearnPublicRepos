@@ -15,7 +15,7 @@ Declarative agents are customized versions of Microsoft 365 Copilot that help yo
 
 If your declarative agent also has API plugins as actions, the OpenAPI document for your plugin helps the agent understand any instructions referring to the API. For more information, see [How to make an OpenAPI document effective in extending Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/openapi-document-guidance).
 
-This guidance applies to developers and makers who use [Agent Builder in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) or [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) to create declarative agents. For more information about how to write instructions for Copilot Studio agents, see [Configure high-quality instructions for generative orchestration](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-mode-guidance).
+This guidance applies to developers and makers who create declarative agents with [Agent Builder in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder), [Work IQ Dev Tools](https://aka.ms/wiqd/docs), or the retained Toolkit-based workflows. WIQD is recommended for supported pro-code scenarios. For more information about how to write instructions for Copilot Studio agents, see [Configure high-quality instructions for generative orchestration](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-mode-guidance).
 
 Important
 
@@ -215,7 +215,7 @@ Developing instructions for declarative agents is often an iterative process. It
 1. **Create** instructions and conversation starters for your agent following the structure and format described in this article.
 2. **Publish** your agent. Responsible AI \(RAI\) practices are integrated into the validation process to ensure that agents uphold ethical standards. For more information, see:
 
-   - [RAI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation)
+   - [RAI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/responsible-ai-validation)
    - [RAI tools and practices](https://www.microsoft.com/ai/tools-practices)
    - [Apps powered by artificial intelligence](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/prepare/teams-store-validation-guidelines#apps-powered-by-artificial-intelligence?context=/microsoft-365/copilot/extensibility/context)
 
@@ -229,7 +229,7 @@ Developing instructions for declarative agents is often an iterative process. It
 4. **Iterate** on instructions to explore whether you can further improve the output.
 
    - Modify instructions to change the behavior of the agent.
-   - Try adding knowledge like web search, OneDrive/SharePoint, or Microsoft 365 Copilot connectors, if needed using Agents Toolkit or Copilot Studio.
+   - Try adding knowledge like web search, OneDrive/SharePoint, or Microsoft 365 Copilot connectors, using a supported configuration in Work IQ Dev Tools or Copilot Studio.
 
 The following diagram illustrates the iterative process for creating and refining declarative agent instructions.
 
@@ -237,7 +237,7 @@ The following diagram illustrates the iterative process for creating and refinin
 
 Tip
 
-**Work IQ Dev Tools \(preview\)** — Work IQ Dev Tools supports creating evaluations for declarative agents so you can measure how instruction changes affect agent behavior. Create evaluations for the behaviors you want to test, then run them against a provisioned agent as you refine its instructions. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
+**Work IQ Dev Tools** — Work IQ Dev Tools supports creating evaluations for declarative agents so you can measure how instruction changes affect agent behavior. Create evaluations for the behaviors you want to test, then run them against a provisioned agent as you refine its instructions. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
 
 ## Example instructions
 

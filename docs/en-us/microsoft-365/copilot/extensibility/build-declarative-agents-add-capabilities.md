@@ -3,6 +3,10 @@
 
 # Add capabilities and custom actions to a declarative agent created with Microsoft 365 Agents Toolkit
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 You can enhance the abilities of your agent by adding capabilities or custom actions. You can enhance your agent by enabling built-in capabilities like [image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator) or [code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter), or by adding [MCP or API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) as custom actions. This tutorial adds an API plugin. To add an MCP server, see [Build or reuse MCP servers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-mcp-servers) and [Build a plugin for a declarative agent from an MCP server](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins).
 
 Important

@@ -3,13 +3,23 @@
 
 # MCP servers as plugin capabilities
 
-A Model Context Protocol \(MCP\) server is a remote service that can expose tools and resources through Model Context Protocol. A plugin can bring together MCP-based capabilities with agents, skills, or Copilot connectors.
+A Model Context Protocol \(MCP\) server is an external service that exposes tools and resources through MCP. Your plugin can depend on that service alongside skills, agents, or connectors.
 
-The running MCP server remains separate from the plugin package. The package references or carries the configuration required for a supported Microsoft experience to discover the tools, connect to the server, and apply the appropriate authentication and permission model.
+The running server isn't part of the plugin package. The package can include connection information or references, while the service owner hosts and operates the server separately.
 
-Important
+Note
 
-MCP discovery, authentication, invocation, supported protocol features, user experience, and governance vary by Microsoft experience. Publishing or certifying an MCP-based plugin doesn't establish support in every host.
+Support for MCP discovery, authentication, and protocol features varies by product. Publishing a plugin or certifying its MCP server doesn't establish support in every host.
+
+## Choose an integration path
+
+Choose the guidance that matches how your solution uses the server:
+
+- **Plugin configuration:** [Configure remote MCP servers for Microsoft 365 Copilot plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers). The plugin package contains connection configuration in the Microsoft 365 app manifest; the server runs separately. Use this path only for target experiences that support this configuration.
+- **Declarative-agent actions:** [Build an MCP plugin for your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins). An MCP plugin connects the agent to the server through an MCP plugin manifest. Its tools remain available only through the agent, not as independently exposed capabilities of the outer plugin package.
+- **Copilot Studio agents:** [Connect your agent to an existing MCP server](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent).
+
+Follow the selected integration path's authentication and connection guidance. Don't assume that an authentication method supported by one integration path is supported by another.
 
 ## Decide whether you need an MCP server
 
@@ -63,15 +73,25 @@ As you decide whether to build or reuse an MCP server, note:
 - Hosting, data handling, availability, versioning, and support requirements.
 - Plugin configuration and distribution constraints.
 
-After you decide to build or reuse an MCP server, [choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools).
+## MCP server certification
+
+For new MCP server certification submissions, use the intake form and the **Apps and Agents for M365 and Copilot** offer type in Partner Center. Servers certified through the previous process move to the new process automatically. You can use the legacy process through November 18, 2026.
+
+For submission guidance and the intake form, see [Microsoft MCP server certification \(preview\)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-certification).
+
+## Next step
+
+[Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
 
 ## Related content
 
 - [Choose capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components)
 - [Connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors)
 - [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)
-- [Build a plugin from an MCP server](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins)
-- [Authentication overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication)
-- [Dynamic tool discovery](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-dynamic-tool-discovery)
-- [MCP apps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps)
+- [Configure remote MCP servers for plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers)
+- [Build an MCP plugin for a declarative agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins)
+- [Connect an MCP server in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent)
+- [Authentication for MCP and API actions in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication)
+- [Dynamic tool discovery for declarative-agent MCP actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-dynamic-tool-discovery)
+- [MCP apps in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps)
 - [Microsoft MCP server certification \(preview\)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-certification)

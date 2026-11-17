@@ -3,9 +3,15 @@
 
 # Add knowledge sources to your declarative agent
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 You can enhance the user experience of your declarative agent by adding capabilities like [code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter) and [image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator) and knowledge sources to enhance and customize your agent's knowledge. The [capabilities object](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9#capabilities-object) in the manifest reference and the **Knowledge** section in Microsoft 365 Copilot provide several options for you to unlock features for your users. This article describes the knowledge sources that you can add to your agents.
 
 The following table lists the capabilities and knowledge sources you can configure by using Agent Builder in Microsoft 365 Copilot or [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit) and indicates whether users require a Microsoft 365 Copilot license or metered usage to access agents with that capability or knowledge source.
+
+This table describes the Agent Builder and Toolkit configuration paths, not WIQD feature coverage. For the recommended pro-code route, confirm the supported configuration in the [WIQD documentation](https://aka.ms/wiqd/docs).
 
 | Capability or knowledge source | Agent Builder | Agents Toolkit | License or metered usage required? |
 | :--- | :--- | :--- | :--- |

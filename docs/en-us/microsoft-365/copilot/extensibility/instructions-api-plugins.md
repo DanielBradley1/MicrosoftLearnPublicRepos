@@ -3,7 +3,7 @@
 
 # Write effective instructions for declarative agents with API plugins
 
-Declarative agents tailor Microsoft 365 Copilot to meet the specific needs of an organization. When you build declarative agents with [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit), you can add skills to your agent via API plugins. API plugins enable your agent to query and interact with an organization's data via APIs.
+Declarative agents tailor Microsoft 365 Copilot to meet the specific needs of an organization. You can add custom actions through API plugins. For supported pro-code scenarios, [Work IQ Dev Tools](https://aka.ms/wiqd/docs) is recommended. These integrations let your agent query and interact with an organization's data through APIs; they aren't the reusable instruction files described in [Skills as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-skills).
 
 This article describes the agent architecture and provides best practices for writing instructions for declarative agents that include API plugins.
 
@@ -22,7 +22,7 @@ Together, these files define the agent's behavior and how it interacts with the 
 
 For more information about API plugins, see:
 
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+- [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
 - [How to make an OpenAPI document effective in extending Copilot capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/openapi-document-guidance)
 
 ### Function mapping in the plugin manifest
@@ -125,4 +125,4 @@ When code interpreter generates a file \(such as a chart image or a spreadsheet\
 ## Related content
 
 - [Build a declarative agent with Visual Studio Code](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents?tabs=ttk)
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+- [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)

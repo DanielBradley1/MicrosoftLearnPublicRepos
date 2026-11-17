@@ -5,7 +5,7 @@
 
 The Microsoft 365 Insights Agent is a Copilot agent that answers natural language questions about how the agents in your tenant are used. Ask about daily, weekly, and monthly active users, rolling retention, stickiness, adoption trends, or how one agent compares to another. The agent returns a grounded, aggregate answer right in chat.
 
-Feedback and Ratings is currently available in Frontier preview. Agent owners can ask for feedback submitted for agents they own, including thumbs-up and thumbs-down ratings and user-submitted verbatim comments. For details about the sharing control and how it relates to users submitting ratings and comments, see [Agent feedback sharing](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings?view=o365-worldwide#agent-feedback-sharing).
+Feedback and Ratings is currently available in Frontier preview. Agent owners can ask for feedback submitted for agents they own, including thumbs-up and thumbs-down ratings and user-submitted verbatim comments. For details about the sharing control and how it relates to users submitting ratings and comments, see [Agent feedback sharing](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings#agent-feedback-sharing).
 
 ## Why use the Insights Agent
 

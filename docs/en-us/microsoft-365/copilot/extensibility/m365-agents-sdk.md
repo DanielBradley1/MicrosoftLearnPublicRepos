@@ -3,6 +3,10 @@
 
 # Build custom engine agents with Microsoft 365 Agents SDK
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/plugins/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 **Microsoft 365 Agents SDK** is a comprehensive framework for building full-stack, multi-channel agents that operate seamlessly across Microsoft 365 Copilot, Teams, third-party platforms, custom applications, and websites. It integrates effortlessly with AI services like Azure AI Foundry and orchestration layers such as Semantic Kernel.
 
 [![Visual representation of a user input and a bot response.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/build-with-agents-sdk.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/build-with-agents-sdk.png#lightbox)

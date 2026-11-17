@@ -3,6 +3,12 @@
 
 # Bring your agents into Microsoft 365 Copilot
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/plugins/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
+This guide covers a custom engine agent integrated through the Agents SDK, not a WIQD declarative-agent workflow.
+
 You might have agents within your organization that you built using C#, JavaScript, or Python, and that are hosted on Azure or another hosting infrastructure. These agents are specialized experiences that might be focused on a specific area utilize AI services, and are already integrated to web or custom apps. You can use the Microsoft 365 Agents Toolkit to surface your agent in Microsoft 365 Copilot Chat. This allows users to use the unified Microsoft 365 Copilot UI to work with agents built across the enterprise, making your agents more discoverable and accessible to users.
 
 ## Use the Microsoft 365 Agents SDK
@@ -15,7 +21,7 @@ The built-in channel adapters in the Microsoft 365 Agents SDK support a number o
 
 To bring your agent into Copilot, you need modify some components of your agent, as described in this section.
 
-We recommend that you start with the Microsoft 365 Agents Toolkit and use the Echo/Empty Agent sample \(currently available in C# in Visual Studio and JavaScript in Visual Studio Code\). To familiarize yourself with the Agents SDK structure, go through the steps to test and deploy your agent using the Agents Toolkit and the SDK; these tools simplify the tasks described.
+The Toolkit-based workflow uses the Echo/Empty Agent sample \(currently available in C# in Visual Studio and JavaScript in Visual Studio Code\). To familiarize yourself with the Agents SDK structure, go through the steps to test and deploy your agent using the Agents Toolkit and the SDK.
 
 1. Create your app registration and Azure Bot Service record to handle channel communication - The Microsoft 365 Agents SDK uses Azure Bot Service to handle the communication between channels and your code, managing components related to those channels. You need to [Create an Azure Bot Service resource](https://learn.microsoft.com/en-us/azure/bot-service/abs-quickstart) with an app registration that you reference in your agent manually.
 2. Configure your agent event listeners - An agent built with the Microsoft 365 Agents SDK is structured to listen to events from the channel - in this case, Microsoft 365 Copilot. To begin, use **OnActivity**.

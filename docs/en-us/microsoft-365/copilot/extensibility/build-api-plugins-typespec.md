@@ -5,7 +5,11 @@
 
 Important
 
-MCP and API plugins are supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They aren't enabled as standalone experiences in Microsoft 365 Copilot.
+MCP and API plugins provide actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They're not standalone installable plugin packages: only the containing agent can access their functions and tools. For information about the package and action manifest relationship, see [Plugins and declarative agent actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview#plugins-and-declarative-agent-actions).
+
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
 
 [API plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins) are custom actions for declarative agents that connect a REST API with an [OpenAPI specification](https://www.openapis.org/what-is-openapi) to Microsoft 365 Copilot. This guide demonstrates how to add an API plugin to a declarative agent by using [TypeSpec](https://typespec.io/) and the [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit).
 

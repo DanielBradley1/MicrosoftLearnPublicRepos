@@ -3,6 +3,10 @@
 
 # Add MCP apps to declarative agents in Microsoft 365 Copilot
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 MCP apps are interactive UI widgets that run inside Microsoft 365 Copilot, powered by Model Context Protocol \(MCP\) servers. They allow declarative agents to go beyond text responses and deliver rich, actionable experiences directly in the Copilot chat. You can add MCP apps to your declarative agents by adding an [MCP server-based plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) whose tools return interactive UI. Microsoft 365 Copilot supports UI widgets created using the following methods.
 
 - [MCP Apps](https://modelcontextprotocol.github.io/ext-apps/api/documents/Overview.html) - an extension to MCP that enables MCP servers to deliver interactive user interfaces to hosts.

@@ -7,7 +7,7 @@ To improve the quality of your [declarative agents](https://learn.microsoft.com/
 
 ## Start with Work IQ Dev Tools for declarative agents
 
-For deployed declarative agents, start with [Work IQ Dev Tools \(preview\)](https://microsoft.github.io/wiqd/extensions/provided/eval/) for a guided evaluation workflow. The `wiqd agent eval` and `wiqd plugin eval` workflows manage the compatible Microsoft 365 Copilot Evaluations CLI version, run evaluations, and produce result scorecards. You don't need to install `@microsoft/m365-copilot-eval` globally for this workflow.
+For deployed declarative agents, start with [Work IQ Dev Tools](https://microsoft.github.io/wiqd/extensions/provided/eval/) for a guided evaluation workflow. The `wiqd agent eval` and `wiqd plugin eval` workflows manage the compatible Microsoft 365 Copilot Evaluations CLI version, run evaluations, and produce result scorecards. You don't need to install `@microsoft/m365-copilot-eval` globally for this workflow.
 
 Use the [Microsoft 365 Copilot Evaluations CLI directly](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-overview) when you need lower-level command control or maintain an existing `runevals` workflow.
 
@@ -179,6 +179,8 @@ Evaluation measures response accuracy, task completion, tool usage, boundary adh
 - **Performance testing** for latency, throughput, and reliability.
 
 Use evaluation alongside these practices to ensure a complete quality strategy.
+
+For a plugin that includes an agent, use evaluations as part of [integration and quality checks during development](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin#check-integration-and-quality).
 
 ## Evaluation-driven development
 

@@ -5,7 +5,9 @@
 
 Use APIs when people interact with an application that you host and operate. This path gives you control over the user experience, runtime, deployment, and application lifecycle.
 
-To build an agent for Microsoft 365 Copilot—including a custom engine agent that you host and package as a plugin—see [Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin).
+This is the **Build Copilot into your own app** path: build Copilot capabilities into an app you own with APIs, SDKs, Microsoft Graph and Work IQ app guidance. You finish with a choice of services, runtime, hosting, and application lifecycle.
+
+To package supported skills, tools, and agents for Copilot instead, follow the [plugin path](https://learn.microsoft.com/en-us/plugins/plugins-overview). A custom engine agent's orchestration, hosting, and runtime belong on this app path, even when the solution also has separately packaged capabilities.
 
 ## Choose an approach
 
@@ -13,6 +15,9 @@ To build an agent for Microsoft 365 Copilot—including a custom engine agent th
 | --- | --- |
 | [Work IQ APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/) | Use Microsoft 365 work context through supported REST, agent-to-agent \(A2A\), and MCP interfaces |
 | [Microsoft 365 Copilot APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview) | Add Copilot search, retrieval, chat, export, meeting, reporting, and administration capabilities to an application |
+| [Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview) | Access Microsoft 365 data and services through the permissions and API contracts your app requires |
+| [Copilot API client libraries](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/sdks/api-libraries) | Call supported Microsoft 365 Copilot APIs from your application |
+| [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent) | Choose your own orchestration, models, hosting, and runtime |
 
 You can combine these options. For example, an application can use the Microsoft 365 Copilot APIs for chat and retrieval and Work IQ APIs for Microsoft 365 work context.
 
@@ -36,7 +41,7 @@ Before implementation:
 - Define deployment environments, monitoring, support, versioning, and incident response.
 - Determine whether any part of the solution also requires a plugin or Microsoft 365 app package.
 
-If the solution also requires a plugin, see [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide).
+If the solution also requires a plugin, see [Plan your plugin](https://learn.microsoft.com/en-us/plugins/planning-guide).
 
 ## Follow the application lifecycle
 
@@ -48,10 +53,14 @@ If the solution also requires a plugin, see [Plan your plugin](https://learn.mic
 6. Monitor availability, usage, cost, security, and quality.
 7. Update, deprecate, or retire the solution according to your service lifecycle.
 
+## Next step
+
+Choose [Work IQ APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/), [Microsoft 365 Copilot APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview), or a [custom engine agent approach](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent) for your application plan.
+
 ## Related content
 
 - [Ways to extend Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview)
-- [For builders](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/builder-guide)
+- [For builders](https://learn.microsoft.com/en-us/plugins/builder-guide)
 - [Microsoft 365 Copilot APIs overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview)
 - [Work IQ APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/)
 - [Build a custom engine agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)

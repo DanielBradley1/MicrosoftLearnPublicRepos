@@ -3,7 +3,7 @@
 
 # Configure remote MCP servers for Microsoft 365 Copilot plugins
 
-A [Microsoft 365 Copilot plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview) connects supported Microsoft experiences to tools provided by a remote Model Context Protocol \(MCP\) server. The plugin package contains connection configuration, and the server runs separately.
+A [Microsoft 365 Copilot plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview) connects supported Microsoft experiences to tools provided by a remote Model Context Protocol \(MCP\) server. The plugin package contains connection configuration, and the server runs separately.
 
 Use **Work IQ Dev Tools \(WIQD\)** to create, validate, and package your plugin. Start with [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/).
 

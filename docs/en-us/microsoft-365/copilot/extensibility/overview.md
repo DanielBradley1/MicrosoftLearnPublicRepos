@@ -3,90 +3,56 @@
 
 # Ways to extend Microsoft 365 Copilot
 
-Start by deciding where people will use the experience:
+Choose the path that matches where people will use your solution. This article compares the two paths so you can select the right starting point before **Prepare**.
 
-- **Inside Microsoft 365 Copilot experiences.** Build or configure supported agents, connectors, skills, and tools, and then follow the package, publishing, and governance guidance for the selected method.
-- **In your apps and custom agents.** Use APIs and SDKs to add Microsoft 365 work context and Copilot capabilities to experiences that you own and operate.
+- **Build a plugin:** Package skills, tools \(MCP servers, connectors\) and agents as a plugin, then publish it through the plugin registry.
+- **Build Copilot into your own app:** Build Copilot capabilities into an app you own with APIs, SDKs, Microsoft Graph and Work IQ app guidance.
 
-You can use both approaches in one solution. Choose the primary path based on the user experience, runtime, distribution model, and operating responsibilities.
+Before building a new plugin, browse the [Copilot Plugin Catalog](https://aka.ms/CopilotPluginCatalog) to see whether an existing plugin meets your needs.
 
-## Choose where the experience lives
+## Compare the two paths
 
-| Where people use the experience | Start with | Use it when |
+| Decision | Build a plugin | Build Copilot into your own app |
 | --- | --- | --- |
-| Inside Microsoft 365 Copilot experiences | [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview) | You want to build or configure a plugin with supported agents, skills, connectors, or MCP-based tools |
-| In your apps and custom agents | [Build Copilot-powered apps and agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview) | You want to use Microsoft 365 work context or Copilot capabilities in an experience that you host and operate |
+| Who it's for | Builders extending supported Copilot experiences | Developers who own and operate the application experience or agent runtime |
+| What you build | A plugin that brings supported skills, tools, and agents into Copilot | An app that calls APIs or uses SDKs for Microsoft 365 work context and Copilot capabilities |
+| Distribution | Plugin registry distribution for your organization, or an eligible public submission through Partner Center and Microsoft Marketplace | The deployment and distribution channel for your own application platform |
+| Where to start | [Microsoft plugins hub](https://learn.microsoft.com/en-us/plugins), then [What is a plugin?](https://learn.microsoft.com/en-us/plugins/plugins-overview) | [Build Copilot-powered apps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview) |
+| Next | [Plan your plugin](https://learn.microsoft.com/en-us/plugins/planning-guide) | Select the APIs, SDKs, runtime, and hosting model on the app path |
 
-## Choose by what you want to create
+## Build a plugin
 
-| If you want to | Start with |
+Microsoft plugins bring skills, tools and agents to supported Copilot experiences. Builders publish through the Microsoft plugin registry to reach people in their organization, or submit plugins through Partner Center for certification and public distribution through Microsoft Marketplace. Admins manage plugin availability and access centrally, and people discover enabled plugins where they work. Supported capabilities and availability vary by product and rollout.
+
+A shared package doesn't mean an identical experience everywhere. Supported capabilities, availability and required setup vary by product, publishing route and rollout.
+
+During **Prepare**, choose a capability for the customer's task:
+
+| Task | Capability guidance |
 | --- | --- |
-| Build a declarative agent that uses Copilot's orchestrator and models | [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) |
-| Add reusable instructions or workflows to a declarative agent | [Skills as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-skills) |
-| Ground Microsoft 365 Copilot in approved external organizational data | [Microsoft 365 Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector) |
-| Make remote MCP tools available through a supported method | [MCP servers and plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers) |
-| Maintain or evaluate a Teams message extension integration | [Message extensions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-message-extension-bot) |
-| Build and distribute a plugin that brings supported capabilities together | [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview) |
-| Build an application that uses Microsoft 365 work context | [Work IQ APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/) |
-| Add Copilot search, retrieval, chat, export, meeting, reporting, or administration capabilities to an application | [Microsoft 365 Copilot APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview) |
-| Build an agent with your own orchestration, models, hosting, or runtime | [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent) |
+| Provide a goal-directed conversation using Copilot's orchestrator and models | [Declarative agents](https://learn.microsoft.com/en-us/plugins/overview-declarative-agent) |
+| Teach a repeatable task through instructions and resources | [Skills as plugin capabilities](https://learn.microsoft.com/en-us/plugins/plugin-type-skills) |
+| Ingest external content into Microsoft Graph | [Copilot connectors \(synced\)](https://learn.microsoft.com/en-us/plugins/overview-copilot-connector) |
+| Retrieve external content in real time through MCP | [Copilot connectors \(federated\)](https://learn.microsoft.com/en-us/plugins/overview-copilot-connector) |
+| Reference a remote MCP server from an app manifest | [Plugin connectors \(`agentConnectors[]`\)](https://learn.microsoft.com/en-us/plugins/configure-plugin-mcp-servers) |
+| Give a declarative agent a technical MCP or API action | [MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/plugins/overview-plugins) |
 
-For help comparing declarative and custom engine agents, see [Compare declarative and custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview).
+Power Platform connectors used in Copilot Studio are a different integration model. Don't treat them as equivalent to Copilot connectors or plugin connectors.
 
-## Agent in-app experience
+For professional development, start with [Work IQ Dev Tools](https://learn.microsoft.com/en-us/plugins/choose-plugin-development-tools), choose a documented environment, and add Agents Toolkit or an SDK only when the scenario needs it. Follow the product-specific authoring, testing, and distribution procedure for each selected capability.
 
-Plan how users will interact with the agent in each target Microsoft 365 experience:
+## Build Copilot into your own app
 
-- **In-context experience**: Users work with an agent within a supported app, such as Teams or Word, while continuing their work in that app.
-- **Immersive experience**: Users have a dedicated conversation with an agent in Microsoft 365 Copilot, focused on its purpose, knowledge, and capabilities.
+Use [Build Copilot-powered apps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview) for API, SDK, Microsoft Graph, Work IQ app, embedded, and custom engine guidance. Keep the application experience, runtime, hosting, identities, and service lifecycle on that path.
 
-![Illustration of in-context and immersive agent experiences in Microsoft 365 Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/copilot-experiences.png)
+An API action in a declarative agent isn't the same as an app calling a Microsoft 365 Copilot API. Using an API doesn't by itself choose a plugin package or publishing method.
 
-Availability and behavior depend on the agent type, host app, capabilities, licensing, and organizational policies. Don't assume that an agent or capability works in every Microsoft 365 app. For document-specific behavior, see [Work with documents in declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-document-interaction).
+## Combine the paths without combining their responsibilities
 
-Important
+A solution can include both an application you host and a separately packaged plugin. Each part retains its own identity, authentication, deployment, distribution, and governance requirements.
 
-An agent doesn't always inherit the user's sign-in from the host app. External actions and services can require a separate sign-in or consent, even when the user is already signed in to Microsoft 365. Plan the applicable [authentication requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication).
+For example, publishing a plugin doesn't host its remote MCP server or finish customer consent and connection setup. Likewise, deploying your app doesn't publish a plugin to the registry.
 
-## Connector availability in Microsoft 365 experiences
+## Next step
 
-Microsoft 365 Copilot connectors make external organizational content available to supported Copilot and Microsoft Search experiences. Synced connectors index content in Microsoft Graph; federated connectors retrieve content at query time. For model-specific capabilities and availability, see the [Copilot connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector).
-
-Connectors used by Copilot Studio and Power Platform provide a different integration route for agents, apps, and workflows. Don't assume that the same connector configuration works across both models. See [Extend agent capabilities with Copilot connectors](https://learn.microsoft.com/en-us/microsoft-copilot-studio/copilot-connectors-in-copilot-studio).
-
-## Combine both paths
-
-A solution can combine multiple paths. For example:
-
-- A declarative agent can call an external API or remote MCP server through a supported action.
-- An application can use a Copilot API while a separately packaged agent gives users a related experience inside Microsoft 365 Copilot.
-- A custom engine agent can use Work IQ APIs and also follow the package or distribution requirements of its target channel.
-
-Using an API doesn't by itself select a package or publishing method. Each part of a combined solution retains its own identity, authentication, deployment, distribution, and governance requirements.
-
-## Unified app model
-
-Microsoft 365 uses app packages to distribute supported agents and other app capabilities. A plugin package can bring together supported capabilities, but packaging alone doesn't make them available in every host app.
-
-Choose a supported [packaging path](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/package-plugin), then follow the applicable [publishing or sharing guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish). Organization distribution and public distribution have different review, access, and connection requirements. After distribution, [govern plugin access and connections](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/manage).
-
-## Security and governance
-
-For each component, identify its data flows, permissions, external services, and responsible AI requirements. Microsoft 365 access controls don't replace the security responsibilities of external services. See [Plan data, privacy, and security](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/data-privacy-security).
-
-## Plan and continue
-
-- [Plan your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/planning-guide) across data, identity, security, distribution, compatibility, cost, and ownership.
-- [Choose development tools](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) for the selected capabilities. Use [developer mode](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-copilot-studio) to inspect declarative-agent behavior while testing.
-- [For builders](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/builder-guide), choose a development experience and implementation guidance.
-- [For administrators](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/administrator-guide), prepare the organization and identify applicable controls.
-- [For ISVs and software publishers](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/isv-publisher-guide), determine the supported customer publishing method.
-
-## Related content
-
-- [Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview)
-- [Build Copilot-powered apps and agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview)
-- [Compare declarative and custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)
-- [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)
-- [Work IQ APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/)
-- [Microsoft 365 Copilot APIs overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview)
+For the plugin path, enter **Prepare** with [Plan your plugin](https://learn.microsoft.com/en-us/plugins/planning-guide). For the app path, continue to [Build Copilot-powered apps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/apps-agents-overview).

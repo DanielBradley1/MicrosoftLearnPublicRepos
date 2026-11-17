@@ -7,7 +7,7 @@ The Microsoft 365 Copilot Evaluations CLI \(`@microsoft/m365-copilot-eval`\), pr
 
 Important
 
-For deployed declarative agents, start with [Work IQ Dev Tools \(preview\)](https://microsoft.github.io/wiqd/extensions/provided/eval/) for a guided workflow. Work IQ Dev Tools manages the compatible Microsoft 365 Copilot Evaluations CLI version and exposes it through `wiqd agent eval`. Use the standalone CLI guidance in this section when you need lower-level command control or maintain an existing `runevals` workflow.
+For deployed declarative agents, start with [Work IQ Dev Tools](https://microsoft.github.io/wiqd/extensions/provided/eval/) for a guided workflow. Work IQ Dev Tools manages the compatible Microsoft 365 Copilot Evaluations CLI version and exposes it through `wiqd agent eval`. Use the standalone CLI guidance in this section when you need lower-level command control or maintain an existing `runevals` workflow.
 
 ## Choose a CLI version
 
@@ -77,6 +77,7 @@ These values enable authentication and allow the tool to run LLM-based evaluatio
 
 ## Related content
 
+- [Check integration and quality during plugin development](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin#check-integration-and-quality)
 - [Quickstart: Use the Microsoft 365 Copilot Evaluations CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-quickstart)
 - [Dataset schema and test design](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-create-tests)
 - [Evaluators reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/evaluations-cli-evaluators)

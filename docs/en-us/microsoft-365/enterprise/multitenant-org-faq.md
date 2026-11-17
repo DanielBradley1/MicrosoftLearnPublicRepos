@@ -35,7 +35,7 @@ If the user exists as a B2B member, they'll automatically experience MTO capabil
 
 ### What happens when a synced user already exists as a contact on the target tenant?
 
-The contact objects remain unaffected by the creation of an MTO or cross-tenant sync jobs. Cross-tenant sync creates B2B member objects which might cause duplicate entries to show when the user is searched for. We recommend cleaning up main contacts before implementing MTO. [Common considerations for multitenant user management in Microsoft Entra ID - Microsoft Entra \| Microsoft Learn](https://learn.microsoft.com/en-us/entra/architecture/multi-tenant-common-considerations#issues-with-using-mail-contact-objects-instead-of-external-users-or-members)
+The contact objects remain unaffected by the creation of an MTO or cross-tenant sync jobs. Cross-tenant sync creates B2B member objects which might cause duplicate entries to show when the user is searched for. We recommend cleaning up main contacts before implementing MTO. Learn more about [Common considerations for multitenant user management in Microsoft Entra ID - Microsoft Entra \| Microsoft Learn](https://learn.microsoft.com/en-us/entra/architecture/multi-tenant-common-considerations#issues-with-using-mail-contact-objects-instead-of-external-users-or-members).
 
 ### Can security groups be synced across tenants?
 
@@ -93,9 +93,11 @@ This is a known issue that might impact a small set of users. Microsoft is worki
 
 Microsoft Teams on the web is supported in an MTO. However, the most optimized experience is available on Teams desktop, VDI, and mobile clients. We recommend customers use these clients for the best experience.
 
-### A few users are unable to see all MTO tenants in the drop-down. Is this expected?
+### Why don't all MTO tenants appear in a user's Teams account picker?
 
-It's possible that some users won't see all MTO tenants in the account picker drop-down. When this happens, navigate to Accounts and orgs tab in the app settings on the new Teams desktop client. Turn on toggle next to the org you want to show in the account picker.
+An MTO tenant other than a user's home tenant is hidden from the account picker by default, with its toggle in **Accounts and orgs** turned off. The tenant becomes visible automatically when the user first accesses a resource hosted there—for example, by joining a meeting or accessing a channel in that tenant.
+
+To display the tenant before accessing a resource, users can open **Settings > Accounts and orgs** in the Teams desktop app and turn on the toggle next to that organization.
 
 ![A screenshot showing toggle for other orgs to show in the account picker.](https://learn.microsoft.com/en-us/microsoft-365/enterprise/media/multitenant-org-faq/teams-account-picker.png?view=o365-worldwide)
 
@@ -123,11 +125,27 @@ Teams and conference room booking across tenants aren't yet supported in an MTO.
 
 There's no impact on Teams Federation. Customers are still able to chat via that method. MTO would make Teams chat easier by providing a more seamless People search and centralized chat notification experience within the MTO group.
 
+### How does Teams display presence across tenants in an MTO?
+
+Teams uses the identity best suited to each collaboration experience; either the user's home-tenant identity or their B2B collaboration identity in another tenant.
+
+Presence is maintained separately for these identities and is not synchronized between them. The presence displayed is associated with the identity used for that experience \(Chat, meeting, and so on\), so it may differ between experiences that use different identities.
+
+### When do MTO user updates appear in Teams?
+
+Teams relies on upstream services, including Microsoft Entra cross-tenant synchronization and search, to discover and display users across MTO tenants. Newly synchronized users and updates to existing users may take time to appear in Teams while these services process and propagate the changes. Completing MTO setup or user synchronization does not necessarily mean that all changes are immediately visible in Teams.
+
+For timing expectations that can affect availability in Teams, see:
+
+- **[Cross-tenant synchronization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview)** — synchronization frequency and factors affecting its duration.
+- **[Availability of synchronized users in Teams](https://learn.microsoft.com/en-us/microsoft-365/enterprise/sync-users-multi-tenant-orgs)** — propagation time before synchronized users become available in services such as Teams.
+- **[Search availability](https://learn.microsoft.com/en-us/microsoft-365/enterprise/plan-multi-tenant-org-overview)** — when synchronized users become searchable and when to contact Microsoft support.
+
 ## SharePoint Online \(SPO\)
 
 ### Are org shareable links visible to all MTO users by default? Can this be restricted?
 
-Org Shareable links or "Anyone in my organization" links are redeemable by all MTO users since MTO users are B2B member users. However, the link would have to be shared with the MTO user somehow, whether that is by chat, email or on a document somewhere etc.
+Org Shareable links or "Anyone in my organization" links are redeemable by all MTO users since MTO users are B2B member users. However, the link would have to be shared with the MTO user somehow, whether that is by chat, email, on a document somewhere, and so on.
 
 ### What changes occur in Teams when a B2B guest user is converted to a member after MTO creation?
 

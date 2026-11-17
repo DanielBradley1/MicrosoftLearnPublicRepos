@@ -38,11 +38,11 @@ JSON objects defined in this document support only the described properties. Unr
 
 ### String localization
 
-Localizable strings can use a localization key instead of a literal value. The syntax is `[[key_name]]`, where `key_name` is the key name in the `localizationKeys` property in your localization files. For details on localization, see [Localize your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/localize-agents).
+Localizable strings can use a localization key instead of a literal value. The syntax is `[[key_name]]`, where `key_name` is the key name in the `localizationKeys` property in your localization files. For details on localization, see [Localize your agent](https://learn.microsoft.com/en-us/plugins/localize-agents).
 
 Tip
 
-**Work IQ Dev Tools \(preview\)** — Because this schema is large and changes over time, validating against the current shipping version matters. `wiqd agent validate` runs the Microsoft Validation Layer — the same engine the platform uses to accept a manifest — offline and in under a second, catching missing required fields, wrong types, invalid enum values, unresolved cross-file references, and constraints that JSON schema alone can't express, such as the maximum number of conversation starters. The Visual Studio Code extension surfaces the same diagnostics inline as you type. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
+**Work IQ Dev Tools** — Use `wiqd agent validate --mode source` for offline diagnostics on saved declarative-agent source, including schema and semantic checks. The Visual Studio Code extension shows manifest diagnostics while you edit. Source checks don't validate the final package. To validate a built ZIP, use `wiqd agent validate --mode package --package-file <path-to-zip>`; this uploads the ZIP and can require sign-in. For current modes and prerequisites, see the [WIQD command reference](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-validate).
 
 ## Declarative agent manifest object
 
@@ -123,7 +123,7 @@ Declarative agent capabilities fall into three availability categories:
 - **Available with metered usage or a license**: Require either metered usage to be enabled or a Microsoft 365 Copilot license.
 - **Available only with a license**: Require a Microsoft 365 Copilot license. Metered usage alone doesn't provide access.
 
-Users can access a declarative agent only if they meet the requirements for all capabilities it uses. For details about each capability's availability, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models).
+Users can access a declarative agent only if they meet the requirements for all capabilities it uses. For details about each capability's availability, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/plugins/prerequisites#agent-capabilities-and-licensing-models).
 
 #### Capabilities object example
 
@@ -306,7 +306,7 @@ The OneDrive and SharePoint object contains the following properties.
 | `items_by_sharepoint_ids` | Array of [Items by SharePoint IDs object](#items-by-sharepoint-ids-object) | Optional. An array of objects that identify SharePoint or OneDrive sources using IDs. If you omit both the `items_by_sharepoint_ids` and the `items_by_url` properties, the declarative agent can access all OneDrive and SharePoint sources in the organization. |
 | `items_by_url` | Array of [Items by URL object](#items-by-url-object) | Optional. An array of objects that identify SharePoint or OneDrive sources by URL. If you omit both the `items_by_sharepoint_ids` and the `items_by_url` properties, the declarative agent can access all OneDrive and SharePoint sources in the organization. |
 
-For information about how to optimize SharePoint content for Copilot, see [Optimize content retrieval](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/optimize-content-retrieval).
+For information about how to optimize SharePoint content for Copilot, see [Optimize content retrieval](https://learn.microsoft.com/en-us/plugins/optimize-content-retrieval).
 
 ##### Items by SharePoint IDs object
 
@@ -324,7 +324,7 @@ The items by SharePoint IDs object contains the following properties.
 
 Tip
 
-For information about how to get the unique identifiers for a SharePoint or OneDrive resource, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids).
+For information about how to get the unique identifiers for a SharePoint or OneDrive resource, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/plugins/declarative-agent-capabilities-ids).
 
 ##### Items by URL object
 
@@ -363,7 +363,7 @@ The connection object contains the following properties.
 
 Tip
 
-For instructions on getting the unique identifier for a Copilot connector, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-capabilities-ids).
+For instructions on getting the unique identifier for a Copilot connector, see [Retrieve capability IDs for the declarative agent manifest](https://learn.microsoft.com/en-us/plugins/declarative-agent-capabilities-ids).
 
 ###### Item identifier object
 
@@ -417,7 +417,7 @@ The container URL object contains the following properties.
 
 #### Graphic art object
 
-Indicates that the declarative agent can create images and art based on the text input from the user. For more information, see [Image generator](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator).
+Indicates that the declarative agent can create images and art based on the text input from the user. For more information, see [Image generator](https://learn.microsoft.com/en-us/plugins/image-generator).
 
 The graphic art object contains the following property.
 
@@ -427,7 +427,7 @@ The graphic art object contains the following property.
 
 #### Code interpreter object
 
-Indicates that the declarative agent can generate and execute Python code to solve complex math problems, analyze data, generate visualizations, and more. For more information, see [Code interpreter](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter).
+Indicates that the declarative agent can generate and execute Python code to solve complex math problems, analyze data, generate visualizations, and more. For more information, see [Code interpreter](https://learn.microsoft.com/en-us/plugins/code-interpreter).
 
 The code interpreter object contains the following property.
 
@@ -574,7 +574,7 @@ namespace MyAgent {
 
 #### People object
 
-Indicates that the declarative agent can search for information about people in the organization. Refer to [People knowledge](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/knowledge-sources#people) for more details on the data returned by base People capability.
+Indicates that the declarative agent can search for information about people in the organization. Refer to [People knowledge](https://learn.microsoft.com/en-us/plugins/knowledge-sources#people) for more details on the data returned by base People capability.
 
 The people object contains the following properties.
 
@@ -880,7 +880,7 @@ The special instructions object contains the following property.
 | --- | --- | --- |
 | `discourage_model_knowledge` | Boolean | Required. If set to `true`, the agent doesn't use model knowledge when generating responses. The default value is `false`. |
 
-To learn when and how to use this property, see [Ground responses to configured knowledge sources](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions#ground-responses-to-configured-knowledge-sources).
+To learn when and how to use this property, see [Ground responses to configured knowledge sources](https://learn.microsoft.com/en-us/plugins/declarative-agent-instructions#ground-responses-to-configured-knowledge-sources).
 
 ### Disclaimer object
 
@@ -916,7 +916,7 @@ An optional JSON object that specifies the Microsoft Purview sensitivity label f
 
 ### Worker agent object
 
-Identifies a declarative agent that can be used by this agent. See [Connect to other agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent) for usage and best practices.
+Identifies a declarative agent that can be used by this agent. See [Connect to other agents](https://learn.microsoft.com/en-us/plugins/declarative-agent-connected-agent) for usage and best practices.
 
 Note
 
@@ -926,7 +926,7 @@ The worker agent object contains the following properties.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `id` | String | Optional. The title ID of the application that contains the declarative agent. This is returned when publishing the application with the Microsoft 365 Agents Toolkit or may be found in the [agent metadata section of the developer mode card](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/debugging-agents-vscode#agent-metadata-section). You must specify either `id` or `file`, but not both. |
+| `id` | String | Optional. The title ID of the application that contains the declarative agent. This is returned when publishing the application with the Microsoft 365 Agents Toolkit or may be found in the [agent metadata section of the developer mode card](https://learn.microsoft.com/en-us/plugins/debugging-agents-vscode#agent-metadata-section). You must specify either `id` or `file`, but not both. |
 
 ### User override object
 
@@ -1196,5 +1196,5 @@ The following example shows a declarative agent manifest file that uses most of 
 
 ## Related content
 
-- [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions)
+- [Write effective instructions for declarative agents](https://learn.microsoft.com/en-us/plugins/declarative-agent-instructions)
 - [Microsoft 365 app manifest reference](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema)

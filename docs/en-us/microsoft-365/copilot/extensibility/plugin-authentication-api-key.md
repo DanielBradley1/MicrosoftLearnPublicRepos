@@ -3,6 +3,10 @@
 
 # Configure API key authentication
 
+Tip
+
+**Recommended:** Start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs) for supported pro-code declarative-agent and plugin scenarios. See the [WIQD quickstart](https://microsoft.github.io/wiqd/getting-started/quickstart/). Toolkit-based instructions remain available for existing projects and workflows that require them. Check [capability and target-experience support](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools) before choosing a tool: WIQD doesn't target custom engine agents.
+
 Some APIs use API keys for authorization. An API key is a shared secret that the client includes in API requests to authenticate and gain access. API plugins support sending the API key in three ways:
 
 - As a bearer token in the `Authorization` header
@@ -11,7 +15,7 @@ Some APIs use API keys for authorization. An API key is a shared secret that the
 
 Note
 
-API key authentication applies to API plugins \(built from an OpenAPI document\) only. Model Context Protocol \(MCP\) plugins don't support API key authentication. For MCP plugins, use [OAuth 2.0](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-oauth) \(including [dynamic client registration](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-dynamic-client-registration)\) or [Microsoft Entra SSO](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-entra-sso) authentication.
+For declarative-agent actions, API key authentication applies to API plugins built from an OpenAPI document, not MCP plugins. For an agent's MCP plugin, use [OAuth 2.0](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-oauth) \(including [dynamic client registration](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-dynamic-client-registration)\) or [Microsoft Entra SSO](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-entra-sso). A package-level remote MCP connection uses a different configuration; see [authentication in the app manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers#configure-authentication).
 
 Configure API key authentication in two steps: add the API key to your OpenAPI document and create the API key auth config.
 
@@ -56,9 +60,15 @@ securitySchemes:
 
 ## Step 2: Create the API key auth config
 
-API key authentication relies on an **authentication configuration** \(auth config\) - a record stored in the Microsoft Enterprise token store that Microsoft 365 Copilot uses to send the API key when your plugin calls the API. You can create the auth config by using Microsoft 365 Agents Toolkit or the Microsoft Teams developer portal. The declarative agent developer skill doesn't support API key authentication, because it builds MCP plugins.
+API key authentication relies on an **authentication configuration** \(auth config\) - a record stored in the Microsoft Enterprise token store that Microsoft 365 Copilot uses to send the API key when your plugin calls the API. Start with WIQD for a supported pro-code project. Toolkit and Microsoft Teams developer portal procedures remain available as alternatives. The declarative agent developer skill doesn't support API key authentication, because it builds MCP plugins.
 
-### Use Microsoft 365 Agents Toolkit \(recommended\)
+### Use Work IQ Dev Tools \(recommended\)
+
+For an existing API plugin manifest, use [`wiqd agent add auth`](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-auth) with `--plugin-manifest`, `--auth-name`, and `--auth-type api-key`. Set `--api-key-in` to `header` or `query` and `--api-key-name` to the name from your OpenAPI security scheme. If the API accepts its key as a bearer token instead, select `--auth-type bearer-token`.
+
+When adding an action from an OpenAPI document, [`wiqd agent add action`](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-action) accepts `--api-key` for API-key or bearer credentials. The command documents environment placeholders when the value is omitted. Follow the selected command's credential handling and complete the project's provisioning workflow. These API-key options don't establish API key support for an agent's MCP plugin.
+
+### Use Microsoft 365 Agents Toolkit
 
 When you [create an API plugin from an existing OpenAPI document](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-api-plugins-existing-api) in [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit), the toolkit registers the API key, creates the auth config, and updates your plugin manifest for you. You must define the `securitySchemes` property in your OpenAPI document.
 

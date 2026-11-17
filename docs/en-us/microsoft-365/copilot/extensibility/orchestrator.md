@@ -17,7 +17,7 @@ For example, a user might ask, "What tickets are assigned to me right now?" An a
 
 The following diagram illustrates an API-action interaction. It's a conceptual view, not a fixed execution sequence or a guarantee that every request uses Microsoft Graph or an external API.
 
-[![Conceptual example of a ticket query progressing through platform checks, tool selection, API execution, result analysis, and a response.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/copilot_orchestrator_sequence_v2.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/copilot_orchestrator_sequence_v2.png#lightbox)
+[![Conceptual example of a ticket query progressing through platform checks, tool selection, API execution, result analysis, and a response.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/copilot-orchestrator-sequence.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/copilot-orchestrator-sequence.png#lightbox)
 
 1. **Interpret the request.** Copilot uses the prompt, agent instructions, conversation history, and available app context to identify the user's task. Platform safety and policy checks can affect whether and how the request proceeds.
 2. **Select relevant capabilities.** Copilot determines whether configured knowledge or tools can help. For an external action, plugin and tool descriptions help identify an appropriate operation.

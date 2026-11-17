@@ -48,4 +48,4 @@ Copilot and its agents are governed by comprehensive security policies aligned w
 ## Related content
 
 - [Add the code interpreter capability to your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter)
-- [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation)
+- [Responsible AI validation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/responsible-ai-validation)

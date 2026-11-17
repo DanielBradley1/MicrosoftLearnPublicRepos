@@ -42,7 +42,7 @@ By combining these elements, agents provide a powerful way to extend Copilot to 
 
 Declarative agents enable you to configure Copilot for specific scenarios by adding custom instructions, additional knowledge, and actions to automate business processes. Because declarative agents use Copilot's AI infrastructure, model, and orchestrator, they adhere to the security, compliance, and Responsible AI \(RAI\) requirements for Microsoft 365. The following image shows the basic anatomy of a declarative agent.
 
-[![Anatomy of a declarative agent. Declarative agents use Copilot's built-in orchestrator and foundation models, enabling integration of custom instructions, knowledge, and actions with minimal code for seamless experiences across Microsoft 365 apps.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-da.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-da.png#lightbox)
+[![Anatomy of a declarative agent. Declarative agents use Copilot's built-in orchestrator and foundation models, enabling integration of custom instructions, knowledge, and actions with minimal code for seamless experiences across Microsoft 365 apps.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-declarative.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-declarative.png#lightbox)
 
 To configure a declarative agent, you provide:
 
@@ -53,18 +53,18 @@ To configure a declarative agent, you provide:
 Declarative agents have the following characteristics:
 
 - **Hosting:** Use Copilot's orchestrator and foundation model. No additional hosting is required.
-- **Tooling:** Build agents using low-code tools such as [Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) or pro-code tools like Visual Studio or Visual Studio Code and [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit).
+- **Tooling:** Build agents using low-code tools such as [Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder). For supported pro-code scenarios, [Work IQ Dev Tools](https://aka.ms/wiqd/docs) is recommended.
 - **Channels:** Run in Microsoft 365 Copilot and Microsoft 365 apps like Teams, Word, Excel, and Outlook.
 
 Tip
 
-**Work IQ Dev Tools \(preview\)** — For teams that build declarative agents from a terminal, `wiqd` provides declarative-agent-specific tooling that spans the full lifecycle - from scaffolding a project through validating, provisioning, packaging, publishing, and monitoring. For more information, see the [Work IQ Dev Tools documentation](https://aka.ms/wiqd/docs).
+**Work IQ Dev Tools** is the recommended pro-code starting point for supported declarative-agent scenarios. It provides lifecycle commands for creating, validating, provisioning, packaging, publishing, and monitoring agents. Start with the [WIQD documentation](https://aka.ms/wiqd/docs). WIQD doesn't target custom engine agents.
 
 ## Custom engine agents
 
 Custom engine agents are fully customized AI assistants. They're useful for scenarios that require complex workflows, orchestration, or specific language models. Building a custom engine agent might require you to provide additional hosting for models and orchestrators and to ensure that your custom agent is compliant, secure, and adheres to [responsible AI \(RAI\) policies](https://learn.microsoft.com/en-us/azure/well-architected/ai/responsible-ai). The following image shows the basic the anatomy of a custom engine agent.
 
-[![Anatomy of a custom engine agent. The diagram shows how orchestrators integrate foundation models with knowledge, skills, and autonomy to deliver user experiences and collaborate with other agents.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-cea.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-cea.png#lightbox)
+[![Anatomy of a custom engine agent. The diagram shows how orchestrators integrate foundation models with knowledge, skills, and autonomy to deliver user experiences and collaborate with other agents.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-custom-engine.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agents-system-custom-engine.png#lightbox)
 
 To develop a custom engine agent, you need:
 
@@ -94,19 +94,19 @@ The following table summarizes the key differences between declarative agents an
 | Customization | Limited to Copilot's orchestrator and models. | Fully customizable, including choice of AI models and orchestration. |
 | Proactive interactions | Not supported; rely on user-initiated interactions. | Enable agents to trigger actions automatically, even without direct user input. |
 | Channels | Integrated into Microsoft 365 apps. | Available for Microsoft 365 and external apps. |
-| Setup complexity | Can be developed with low-code tools \(Agent Builder\) and pro-code tools \(Visual Studio Code/Agents Toolkit\). | Varies from simple setups in Copilot Studio to advanced pro-code implementations using Visual Studio or Visual Studio Code. |
+| Setup complexity | Can be developed with low-code tools \(Agent Builder\) or Work IQ Dev Tools, the recommended tool for supported pro-code scenarios. | Varies from simple setups in Copilot Studio to advanced pro-code implementations using Visual Studio or Visual Studio Code. |
 | Engine hosting | Hosted in Microsoft 365. | Hosted in Microsoft 365 with Copilot Studio or externally with custom solutions such as Azure AI. |
 | Deployment options | Within my organization or publish in the commercial store for my customers \(ISVs\). | Within my organization or publish in the commercial store for my customers \(ISVs\). |
 | Compliance and security | Inherits Microsoft 365 compliance, RAI, and security standards | Must ensure your own compliance, RAI practices, and security measures. |
 
 The following flow chart summarizes the decision process for choosing what type of agent to build.
 
-[![A decision guide for choosing between declarative agents and custom engine agents.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/cea-da-decision-guide.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/cea-da-decision-guide.png#lightbox)
+[![A decision guide for choosing between declarative agents and custom engine agents.](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-type-decision-guide.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-type-decision-guide.png#lightbox)
 
 **Build a declarative agent when:**
 
 - You want your agent to work within Copilot's orchestration and language models to ensure consistency with security and compliance.
-- You want a faster implementation or want to develop an agent with no or low-code using tools like [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/) or you're a developer who prefers a streamlined experience with pro-code options like [Visual Studio](https://visualstudio.microsoft.com/) or [Microsoft 365 Agents Toolkit](https://aka.ms/M365AgentsToolkit).
+- You want a faster implementation or want to develop an agent with no or low-code using tools like [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/). For supported pro-code declarative-agent development, start with [Work IQ Dev Tools](https://aka.ms/wiqd/docs).
 - Your user's workflow is within Microsoft 365 apps \(SharePoint, OneDrive, Teams\) and they want to work within the context of these applications \(via @mentions or in Teams business chats\). For example, An IT helpdesk agent that responds to @mentions in Teams or a document summarization agent invoked in SharePoint.
 
 **Build a custom engine agent when:**
@@ -128,5 +128,5 @@ Consider the cost implications of your agent solution design, from both the user
 - [Declarative agent architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-architecture)
 - [Custom engine agents overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent)
 - [Custom engine agent architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/custom-engine-agent-architecture)
-- [Build a declarative agent with Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents)
-- [Build a declarative agent with TypeSpec and Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents-typespec)
+- [Get started with Work IQ Dev Tools](https://aka.ms/wiqd/docs)
+- [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools)

@@ -28,6 +28,10 @@ Note
 
 Agent Builder doesn't support authoring actions that integrate external services. To add low-code actions, connectors, or workflows, [copy the agent to Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio). If your scenario requires a separate pro-code implementation, see [Choose development tools for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools).
 
+## Plan your plugin
+
+If your agent will be part of a plugin, [choose the capabilities your plugin needs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components) before you build.
+
 ## Licensing
 
 Access to Agent Builder, and the capabilities you can add to an agent, depend on the licenses assigned in your tenant. For details, see [Agent capabilities and licensing models](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites#agent-capabilities-and-licensing-models), [Plan licensing and cost for Microsoft 365 Copilot extensibility](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/cost-considerations), and [Microsoft 365 Copilot licensing](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing).
@@ -46,7 +50,7 @@ For information about data subject rights and responding to requests to rectify 
 
 ## Admin controls
 
-Administrators can control whether Agent Builder is available to users in their organization. For information about agent admin controls, see [Manage agents for Microsoft 365 Copilot in Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps). For the broader post-publishing model, see the [Manage plugins with Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins#manage-plugins-with-microsoft-agent-365) administration map.
+Creating agents in Agent Builder is a core Copilot capability when agents are enabled. Administrators can't disable agent creation in Agent Builder separately while keeping agents enabled. They can control agent access, org-wide sharing, and approval for catalog publishing. For details, see [Governance and admin controls](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents#governance-and-admin-controls). For the broader post-publishing model, see the [Manage plugins with Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/govern-plugins#manage-plugins-with-microsoft-agent-365) administration map.
 
 ## Network requirements
 
@@ -78,7 +82,7 @@ You can submit feedback from within Agent Builder to help contribute to product 
 Submit feedback by using one of the following options:
 
 - The thumbs-up or thumbs-down control on AI-generated responses on the **Try it** tab.
-- The **Send feedback** button if you encounter a responsible AI \(RAI\) validation failure. For more information, see [Responsible AI validation checks](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/rai-validation).
+- The **Send feedback** button if you encounter a responsible AI \(RAI\) validation failure. For more information, see [Responsible AI validation checks](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/responsible-ai-validation).
 - The **Send feedback** option in the menu on the top right.
 
 ![Send feedback in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/assets/images/agent-builder-screenshots/agent-builder-send-feedback.png)

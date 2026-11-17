@@ -134,6 +134,7 @@ After your agent is approved, open its Agent Store listing to share the URL with
 
 ## Related content
 
+- [Publish a plugin or agent to your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish#publish-to-your-organization)
 - [Privacy statement and terms of use for agents in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-publication-privacy-terms-of-use)
 - [Share and manage agents built in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents)
 - [Manage agent requests in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-requests)

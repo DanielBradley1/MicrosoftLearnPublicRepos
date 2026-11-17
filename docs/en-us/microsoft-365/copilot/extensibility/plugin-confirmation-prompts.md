@@ -5,7 +5,7 @@
 
 Important
 
-MCP and API plugins are supported as actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They aren't enabled as standalone experiences in Microsoft 365 Copilot.
+MCP and API plugins provide actions within [declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent). They're not standalone installable plugin packages: only the containing agent can access their functions and tools. For information about the package and action manifest relationship, see [Plugins and declarative agent actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview#plugins-and-declarative-agent-actions).
 
 The first time Microsoft 365 Copilot uses a Model Context Protocol \(MCP\) or API plugin, it notifies the user and asks them to allow or cancel the operation. If the user allows Copilot to connect to the plugin, all future operations that retrieve data \(HTTP GET operations\) don't require any confirmation. Other HTTP operations prompt the user, showing the data to be sent and giving the user a choice to allow or decline.
 
@@ -155,4 +155,4 @@ Include a localizationInfo section in your app manifest that references the loca
 
 ## Related content
 
-[Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)
+[MCP and API plugins for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins)

@@ -288,5 +288,5 @@ Work IQ is a proprietary tool, but the development team welcomes community feedb
 
 - [Microsoft Work IQ GitHub repo](https://github.com/microsoft/work-iq-mcp)
 - [Model Context Protocol documentation](https://modelcontextprotocol.io/)
-- [Build plugins from an MCP server for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins)
+- [Build plugins from an MCP server for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/plugins/build-mcp-plugins)
 - [User and admin consent overview](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview#admin-consent)
