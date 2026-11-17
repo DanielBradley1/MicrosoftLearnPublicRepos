@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-delete-goals?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Delete goal
+# goal resource type
 
 Namespace: microsoft.graph
 
@@ -9,55 +9,77 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Delete a goal object.
+Represents a goal in the Planner Unified plans Graph API within a [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta), including its name, status, dates, priority, and notes. See the **status** property for the supported status values.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/plan-list-goals?view=graph-rest-beta) | [goal](https://learn.microsoft.com/en-us/graph/api/goal?view=graph-rest-beta) collection | Get a list of the goal objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/goal-get?view=graph-rest-beta) | [goal](https://learn.microsoft.com/en-us/graph/api/goal?view=graph-rest-beta) | Read the properties and relationships of [goal](https://learn.microsoft.com/en-us/graph/api/goal?view=graph-rest-beta) object. |
+| [List tasks](https://learn.microsoft.com/en-us/graph/goal-list-tasks?view=graph-rest-beta) | [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) collection | Get a list of the task objects and their properties. |
 
-## HTTP request
+## Properties
 
-```http
-DELETE /me/planner/plans_v2/{planId}/goals/{goalId}/$ref
-DELETE /users/{usersId}/planner/plans_v2/{planId}/goals/{goalId}/$ref
-```
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| archivalInfo | [plannerArchivalInfo](https://learn.microsoft.com/en-us/graph/api/plannerarchivalinfo?view=graph-rest-beta) | Information about whether the entity is archived, and when it was archived. |
+| capabilities | [goalCapability](https://learn.microsoft.com/en-us/graph/api/goalcapability?view=graph-rest-beta) | Server-computed, read-only capability flags indicating which optional features are enabled for the entity. |
+| createdBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who created the entity. Read-only. |
+| createdDateTime | DateTimeOffset | Date and time the entity was created. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
+| displayName | String | Title of the goal. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+| finishDate | Date | Date the goal is targeted to finish. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who last modified the entity. Read-only. |
+| lastModifiedDateTime | DateTimeOffset | Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
+| notes | [itemBody](https://learn.microsoft.com/en-us/graph/api/itembody?view=graph-rest-beta) | Additional details or notes about the goal. |
+| planId | String | ID of the plan that contains the goal. Immutable after creation. |
+| priority | Int32 | Priority of the goal. |
+| startDate | Date | Date the goal starts. |
+| status | plannerGoalStatus | Progress status of the goal. The possible values are: `notStarted`, `onTrack`, `behind`, `atRisk`, `closed`, `unknownFutureValue`. |
 
-## Request headers
+## Relationships
 
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+| Relationship | Type | Description |
+| :--- | :--- | :--- |
+| tasks | [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) collection | The collection of tasks associated with the goal. Read-only. Nullable. |
 
-## Request body
+## JSON representation
 
-Don't supply a request body for this method.
+The following JSON representation shows the resource type.
 
-## Response
-
-If successful, this method returns a `204 No Content` response code.
-
-## Examples
-
-### Request
-
-The following example shows a request.
-
-```http
-DELETE https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/goals/{goalId}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 204 No Content
+```json
+{
+  "@odata.type": "#microsoft.graph.goal",
+  "id": "String (identifier)",
+  "displayName": "String",
+  "planId": "String",
+  "status": "String",
+  "priority": "Int32",
+  "startDate": "Date",
+  "finishDate": "Date",
+  "notes": {
+    "@odata.type": "microsoft.graph.itemBody"
+  },
+  "archivalInfo": {
+    "@odata.type": "microsoft.graph.plannerArchivalInfo"
+  },
+  "createdBy": {
+    "@odata.type": "microsoft.graph.identitySet"
+  },
+  "createdDateTime": "String (timestamp)",
+  "lastModifiedBy": {
+    "@odata.type": "microsoft.graph.identitySet"
+  },
+  "lastModifiedDateTime": "String (timestamp)",
+  "capabilities": {
+    "@odata.type": "microsoft.graph.goalCapability"
+  },
+  "extensions": {
+    "@odata.type": "microsoft.graph.extensionFieldCollection"
+  }
+}
 ```

@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/contentlink-get?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Get contentLink
+# Get content link
 
 Namespace: microsoft.graph
 
@@ -29,10 +29,6 @@ GET /users/{usersId}/planner/plans_v2/{planId}/links/{contentLinkId}
 GET /me/planner/plans_v2/{planId}/tasks/{taskId}/links/{contentLinkId}
 GET /users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/links/{contentLinkId}
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -69,25 +65,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.graph.contentLink",
-    "id": "eb8b65f4-318a-9e90-8af9-67a53027e563",
-    "displayName": "String",
-    "linkType": "String",
-    "webUrl": "String",
-    "createdBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "lastModifiedBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "lastModifiedDateTime": "String (timestamp)",
-    "capabilities": {
-      "@odata.type": "microsoft.graph.contentLinkCapability"
-    },
-    "extensions": {
-      "@odata.type": "microsoft.graph.extensionFieldCollection"
-    }
-  }
+  "@odata.type": "#microsoft.graph.contentLink",
+  "id": "eb8b65f4-318a-9e90-8af9-67a53027e563",
+  "displayName": "Product launch"
 }
 ```

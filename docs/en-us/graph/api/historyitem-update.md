@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/historyitem-update?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Update historyItem
+# historyItem resource type
 
 Namespace: microsoft.graph
 
@@ -9,91 +9,45 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Update the properties of a historyItem object.
+An audit or activity record for a change made to a [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta) or its child entities. `entityId`, `entityType`, `eventType`, and `occurredDateTime` \(the primary sort key\) are returned by default; the acting identity and before/after state are opt-in via $select.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+History items are service-generated audit records. The API doesn't expose standalone create, update, or delete operations for these records.
+
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/plan-list-historyitems?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/historyitem?view=graph-rest-beta) collection | Get a list of the historyItem objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/historyitem-get?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/historyitem?view=graph-rest-beta) | Read the properties and relationships of [historyItem](https://learn.microsoft.com/en-us/graph/api/historyitem?view=graph-rest-beta) object. |
 
-## HTTP request
-
-```http
-PATCH /me/planner/plans_v2/{planId}/historyItems/{historyItemId}
-PATCH /users/{usersId}/planner/plans_v2/{planId}/historyItems/{historyItemId}
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply *only* the values for properties to update. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
-
-The following table specifies the properties that can be updated.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| planId | String | ID of the plan the change occurred in. Optional. |
-| entityId | String | ID of the entity the history item describes. Optional. |
-| entityType | historyEntityType | Type of the entity the history item describes. The possible values are: `task`, `unknownFutureValue`. Optional. |
-| eventType | historyEventType | Type of the change event that occurred. The possible values are: `created`, `updated`, `deleted`, `undeleted`, `moved`, `unknownFutureValue`. Optional. |
-| occurredDateTime | DateTimeOffset | Date and time the change occurred. Read-only. Optional. |
-| actor | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user \(or application\) that performed the change. Optional. |
-| oldData | String | Serialized representation of the entity state before the change. Optional. |
-| newData | String | Serialized representation of the entity state after the change. Optional. |
+| actor | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) that performed the change. |
+| entityId | String | ID of the entity the history item describes. |
+| entityType | historyEntityType | Type of the entity the history item describes. The possible values are: `task`, `unknownFutureValue`. |
+| eventType | historyEventType | Type of the change event that occurred. The possible values are: `created`, `updated`, `deleted`, `undeleted`, `moved`, `unknownFutureValue`. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| newData | String | Serialized representation of the entity state after the change. |
+| occurredDateTime | DateTimeOffset | Date and time the change occurred. Read-only. |
+| oldData | String | Serialized representation of the entity state before the change. |
+| planId | String | ID of the plan the change occurred in. |
 
-## Response
+## Relationships
 
-If successful, this method returns a `200 OK` response code and an updated [historyItem](https://learn.microsoft.com/en-us/graph/api/resources/historyitem?view=graph-rest-beta) object in the response body.
+None.
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-PATCH https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/historyItems/{historyItemId}
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.historyItem",
-  "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
-  "entityId": "a5f3d9c2-7b41-4e6d-9c2a-1f8b3d6a9e42",
-  "entityType": "task",
-  "eventType": "updated",
-  "occurredDateTime": "2026-06-15T09:30:00Z",
-  "actor": {
-    "@odata.type": "microsoft.graph.identitySet"
-  },
-  "oldData": "{\"status\":\"notStarted\"}",
-  "newData": "{\"status\":\"inProgress\"}"
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.historyItem",
-  "id": "02636413-50f8-710f-bed1-a0f488aa4e54",
+  "id": "String (identifier)",
   "planId": "String",
   "entityId": "String",
   "entityType": "String",

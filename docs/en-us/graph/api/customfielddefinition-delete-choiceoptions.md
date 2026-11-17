@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/customfielddefinition-delete-choiceoptions?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Delete customChoiceOption
+# customChoiceOption resource type
 
 Namespace: microsoft.graph
 
@@ -9,55 +9,40 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Delete a customChoiceOption object.
+A selectable option for a single-choice or multiple-choice [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/customfielddefinition?view=graph-rest-beta), contained under its `choiceOptions` collection.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/customfielddefinition-list-choiceoptions?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) collection | Get a list of the customChoiceOption objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/customchoiceoption-get?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) | Read the properties and relationships of [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) object. |
 
-## HTTP request
+## Properties
 
-```http
-DELETE /me/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions/{customChoiceOptionId}/$ref
-DELETE /users/{usersId}/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions/{customChoiceOptionId}/$ref
-```
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| displayName | String | Display text of the choice option. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
 
-## Request headers
+## Relationships
 
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+None.
 
-## Request body
+## JSON representation
 
-Don't supply a request body for this method.
+The following JSON representation shows the resource type.
 
-## Response
-
-If successful, this method returns a `204 No Content` response code.
-
-## Examples
-
-### Request
-
-The following example shows a request.
-
-```http
-DELETE https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions/{customChoiceOptionId}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 204 No Content
+```json
+{
+  "@odata.type": "#microsoft.graph.customChoiceOption",
+  "id": "String (identifier)",
+  "displayName": "String",
+  "extensions": {
+    "@odata.type": "microsoft.graph.extensionFieldCollection"
+  }
+}
 ```

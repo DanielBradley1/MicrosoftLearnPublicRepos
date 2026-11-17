@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/customFieldValues
 ```
 
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
-
 ## Request headers
 
 | Name | Description |
@@ -69,9 +65,7 @@ Content-Type: application/json
   "value": [
     {
       "@odata.type": "#microsoft.graph.customFieldValue",
-      "id": "32618015-76cd-34e6-561e-21ced3b2077b",
-      "customFieldDefinitionId": "String",
-      "value": "String"
+      "id": "32618015-76cd-34e6-561e-21ced3b2077b"
     }
   ]
 }

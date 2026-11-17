@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/customfielddefinition-list-choiceoptions?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# List customChoiceOption objects
+# List choiceOptions
 
 Namespace: microsoft.graph
 
@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /me/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions
 GET /users/{usersId}/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -71,10 +67,7 @@ Content-Type: application/json
     {
       "@odata.type": "#microsoft.graph.customChoiceOption",
       "id": "2eb17e1c-d4c2-52c5-9207-d5e023b47665",
-      "displayName": "String",
-      "extensions": {
-        "@odata.type": "microsoft.graph.extensionFieldCollection"
-      }
+      "displayName": "Product launch"
     }
   ]
 }

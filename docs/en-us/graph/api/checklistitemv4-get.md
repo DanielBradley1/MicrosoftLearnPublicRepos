@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/checklistitemv4-get?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Get checklistItemV4
+# Get checklist item
 
 Namespace: microsoft.graph
 
@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /me/planner/plans_v2/{planId}/tasks/{taskId}/checklist/{checklistItemV4Id}
 GET /users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/checklist/{checklistItemV4Id}
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -67,28 +63,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.graph.checklistItemV4",
-    "id": "0d03366e-da38-ca6d-a60b-f3f6d8a68345",
-    "displayName": "String",
-    "isChecked": "Boolean",
-    "createdBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "lastModifiedBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "lastModifiedDateTime": "String (timestamp)",
-    "completedBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "completedDateTime": "String (timestamp)",
-    "capabilities": {
-      "@odata.type": "microsoft.graph.checklistCapability"
-    },
-    "extensions": {
-      "@odata.type": "microsoft.graph.extensionFieldCollection"
-    }
-  }
+  "@odata.type": "#microsoft.graph.checklistItemV4",
+  "id": "0d03366e-da38-ca6d-a60b-f3f6d8a68345",
+  "displayName": "Product launch"
 }
 ```

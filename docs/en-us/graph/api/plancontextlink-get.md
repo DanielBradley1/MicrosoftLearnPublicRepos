@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plancontextlink-get?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Get planContextLink
+# Get context link
 
 Namespace: microsoft.graph
 
@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /me/planner/plans_v2/{planId}/contexts/{planContextLinkId}
 GET /users/{usersId}/planner/plans_v2/{planId}/contexts/{planContextLinkId}
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -67,21 +63,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.graph.planContextLink",
-    "id": "901187ee-a684-eeaa-61d0-b0fb4774cdab",
-    "key": "String",
-    "displayNameSegments": [
-      "String"
-    ],
-    "webUrl": "String",
-    "associationType": "String",
-    "displayAs": "String",
-    "isActive": "Boolean",
-    "customLinkText": "String",
-    "ownerAppId": "String",
-    "isCreation": "Boolean",
-    "createdDateTime": "String (timestamp)"
-  }
+  "@odata.type": "#microsoft.graph.planContextLink",
+  "id": "901187ee-a684-eeaa-61d0-b0fb4774cdab"
 }
 ```

@@ -24,8 +24,7 @@ Choose the permission or permissions marked as least privileged for this API. Us
 ## HTTP request
 
 ```http
-PATCH /me/planner/plans_v2/{planId}/buckets/{bucketId}
-PATCH /users/{usersId}/planner/plans_v2/{planId}/buckets/{bucketId}
+PATCH /planner/plans_v2/{planId}/buckets/{bucketId}
 ```
 
 ## Request headers
@@ -34,6 +33,9 @@ PATCH /users/{usersId}/planner/plans_v2/{planId}/buckets/{bucketId}
 | :--- | :--- |
 | Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
 | Content-Type | application/json. Required. |
+| If-Match | The complete ETag of the resource to update or delete. Required. |
+
+Use the complete ETag returned by the latest read of this resource as the `If-Match` value. Don't construct or compare ETags yourself. A missing, invalid, or no-longer-usable ETag results in `412 Precondition Failed`. A conflicting change can result in `409 Conflict`; read the resource again and reconcile the changes before retrying. An older ETag doesn't necessarily fail when the service can merge nonconflicting changes.
 
 ## Request body
 
@@ -43,9 +45,10 @@ The following table specifies the properties that can be updated.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| displayName | String | Title of the bucket. Required. |
-| planId | String | ID of the plan that contains the bucket. Immutable after creation. Optional. |
-| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. Optional. |
+| displayName | String | Title of the bucket. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+
+Send only the properties that you want to change. Don't include immutable or service-populated properties from a GET response.
 
 ## Response
 
@@ -58,16 +61,13 @@ If successful, this method returns a `200 OK` response code and an updated [buck
 The following example shows a request.
 
 ```http
-PATCH https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/buckets/{bucketId}
+PATCH https://graph.microsoft.com/beta/planner/plans_v2/{planId}/buckets/{bucketId}
+If-Match: {etag}
 Content-Type: application/json
 
 {
   "@odata.type": "#microsoft.graph.bucket",
-  "displayName": "To do",
-  "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection"
-  }
+  "displayName": "In progress"
 }
 ```
 
@@ -84,20 +84,6 @@ Content-Type: application/json
 {
   "@odata.type": "#microsoft.graph.bucket",
   "id": "206ac2f7-b3e0-e350-a95d-d7fe9091c22f",
-  "displayName": "To do",
-  "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
-  "creationInfo": {
-    "@odata.type": "microsoft.graph.creationInfo"
-  },
-  "lastModifiedBy": {
-    "@odata.type": "microsoft.graph.identitySet"
-  },
-  "lastModifiedDateTime": "String (timestamp)",
-  "capabilities": {
-    "@odata.type": "microsoft.graph.bucketCapability"
-  },
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection"
-  }
+  "displayName": "In progress"
 }
 ```

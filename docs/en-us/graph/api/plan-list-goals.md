@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-list-goals?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# List goal objects
+# List goals
 
 Namespace: microsoft.graph
 
@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /me/planner/plans_v2/{planId}/goals
 GET /users/{usersId}/planner/plans_v2/{planId}/goals
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -71,32 +67,9 @@ Content-Type: application/json
     {
       "@odata.type": "#microsoft.graph.goal",
       "id": "9935021b-eda4-2af0-bcc7-8bd400583aa0",
-      "displayName": "String",
-      "planId": "String",
-      "status": "String",
-      "priority": "Integer",
-      "startDate": "Date",
-      "finishDate": "Date",
-      "notes": {
-        "@odata.type": "microsoft.graph.itemBody"
-      },
-      "archivalInfo": {
-        "@odata.type": "microsoft.graph.plannerArchivalInfo"
-      },
-      "createdBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "createdDateTime": "String (timestamp)",
-      "lastModifiedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "lastModifiedDateTime": "String (timestamp)",
-      "capabilities": {
-        "@odata.type": "microsoft.graph.goalCapability"
-      },
-      "extensions": {
-        "@odata.type": "microsoft.graph.extensionFieldCollection"
-      }
+      "displayName": "Product launch",
+      "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
+      "status": "notStarted"
     }
   ]
 }

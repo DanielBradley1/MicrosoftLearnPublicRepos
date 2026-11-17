@@ -27,6 +27,10 @@ This resource supports:
 | [Retry service provisioning](https://learn.microsoft.com/en-us/graph/api/user-retryserviceprovisioning?view=graph-rest-1.0) | None | Retry the user service provisioning. |
 | [Revoke sign-in sessions](https://learn.microsoft.com/en-us/graph/api/user-revokesigninsessions?view=graph-rest-1.0) | None | Revokes all the user's refresh and session tokens issued to applications, by resetting the **signInSessionsValidFromDateTime** user property to the current date-time. It forces the user to sign in to those applications again. |
 | [Export personal data](https://learn.microsoft.com/en-us/graph/api/user-exportpersonaldata?view=graph-rest-1.0) | None | Submits a data policy operation request, made by a company administrator to export an organizational user's data. |
+| **Lifecycle policies** |  |  |
+| [user: attest](https://learn.microsoft.com/en-us/graph/api/user-attest?view=graph-rest-1.0) | None | Attest to the continued need for a guest user. |
+| [user: addSelfAsSponsor](https://learn.microsoft.com/en-us/graph/api/user-addselfassponsor?view=graph-rest-1.0) | None | Add the signed-in user as a sponsor of a sponsorless guest user. |
+| [user: removeSelfAsSponsor](https://learn.microsoft.com/en-us/graph/api/user-removeselfassponsor?view=graph-rest-1.0) | None | Remove the signed-in user as a sponsor of a guest user. |
 | **App role assignments** |  |  |
 | [List](https://learn.microsoft.com/en-us/graph/api/user-list-approleassignments?view=graph-rest-1.0) | [appRoleAssignment](https://learn.microsoft.com/en-us/graph/api/resources/approleassignment?view=graph-rest-1.0) collection | Get the apps and app roles assigned to this user. |
 | [Add](https://learn.microsoft.com/en-us/graph/api/user-post-approleassignments?view=graph-rest-1.0) | [appRoleAssignment](https://learn.microsoft.com/en-us/graph/api/resources/approleassignment?view=graph-rest-1.0) | Assign an app role to this user. |
@@ -324,6 +328,7 @@ For example: Cameron is the administrator of a directory for an elementary schoo
 | inferenceClassification | [inferenceClassification](https://learn.microsoft.com/en-us/graph/api/resources/inferenceclassification?view=graph-rest-1.0) | Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance. |
 | insights | [itemInsights](https://learn.microsoft.com/en-us/graph/api/resources/iteminsights?view=graph-rest-1.0) | Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable. |
 | licenseDetails | [licenseDetails](https://learn.microsoft.com/en-us/graph/api/resources/licensedetails?view=graph-rest-1.0) collection | A collection of this user's license details. Read-only. |
+| lifecycle | [microsoft.graph.identityGovernance.userIdentityLifecycle](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-useridentitylifecycle?view=graph-rest-1.0) | The user's lifecycle policy state, including compliance and attestation information. Read-only. |
 | mailFolders | [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-1.0) collection | The user's mail folders. Read-only. Nullable. |
 | manager | [directoryObject](https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0) | The user or contact that is this user's manager. Read-only. Supports `$expand`. |
 | memberOf | [directoryObject](https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0) collection | The groups and directory roles that the user is a member of. Read-only. Nullable. Supports `$expand`. |

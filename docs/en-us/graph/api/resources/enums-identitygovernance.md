@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/enums-identitygovernance?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Identity governance enum values
 
@@ -75,6 +75,7 @@ The **subjectType** enumeration is an evolvable enumeration marked with the `IsF
 | Member |
 | :--- |
 | user |
+| agentIdentity |
 | unknownFutureValue |
 | provisioningObject |
 
@@ -130,4 +131,112 @@ The **subjectType** enumeration is an evolvable enumeration marked with the `IsF
 | before |
 | after |
 | on |
+| unknownFutureValue |
+
+### lifecyclePolicyRelationship values
+
+| Member |
+| :--- |
+| effective |
+| inScopeButIneffective |
+| pending |
+| unknownFutureValue |
+
+### lifecyclePolicyComplianceStatus values
+
+| Member |
+| :--- |
+| notEvaluated |
+| compliant |
+| nonCompliant |
+| unknownFutureValue |
+
+### lifecyclePolicyEnforcementStatus values
+
+| Member |
+| :--- |
+| notRequired |
+| notStarted |
+| processing |
+| waiting |
+| actionDue |
+| complete |
+| unknown |
+| unknownFutureValue |
+
+### lifecyclePolicyScopeProcessingStatus values
+
+| Member |
+| :--- |
+| idle |
+| notStarted |
+| evaluating |
+| processing |
+| unknownFutureValue |
+
+### lifecyclePolicyScopeProcessingAttemptStatus values
+
+| Member |
+| :--- |
+| notStarted |
+| evaluating |
+| processing |
+| completed |
+| failed |
+| timedOut |
+| invalidScope |
+| unknownFutureValue |
+
+### lifecyclePolicyEnforcementActionState values
+
+| Member |
+| :--- |
+| none |
+| warningStateEnabled |
+| nonComplianceNotificationSent |
+| firstNotificationSent |
+| secondNotificationSent |
+| finalNotificationSent |
+| disabled |
+| deleted |
+| complianceRestored |
+| unknownFutureValue |
+
+### lifecyclePolicyNextEnforcementAction values
+
+| Member |
+| :--- |
+| nonComplianceNotification |
+| firstNotification |
+| secondNotification |
+| finalNotification |
+| disable |
+| disableNotification |
+| delete |
+| unknownFutureValue |
+
+### lifecyclePolicySource values
+
+| Member |
+| :--- |
+| userCreated |
+| systemDefault |
+| unknownFutureValue |
+
+### agentBuilderPlatforms values
+
+| Member |
+| :--- |
+| microsoftCopilotStudio |
+| foundry |
+| unknownFutureValue |
+
+### complianceState values
+
+| Member |
+| :--- |
+| compliant |
+| warning |
+| warningNotify |
+| nonCompliant |
 | unknownFutureValue |

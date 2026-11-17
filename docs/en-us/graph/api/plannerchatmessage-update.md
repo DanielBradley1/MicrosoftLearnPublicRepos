@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plannerchatmessage-update?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Update plannerChatMessage
+# plannerChatMessage resource type
 
 Namespace: microsoft.graph
 
@@ -9,93 +9,46 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Update the properties of a plannerChatMessage object.
+A chat message associated with a [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) or a [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta), surfaced on the task through the `messages` navigation property.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/task-list-messages?view=graph-rest-beta) | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/plannerchatmessage?view=graph-rest-beta) collection | Get a list of the plannerChatMessage objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/plannerchatmessage-get?view=graph-rest-beta) | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/plannerchatmessage?view=graph-rest-beta) | Read the properties and relationships of [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/plannerchatmessage?view=graph-rest-beta) object. |
 
-## HTTP request
-
-```http
-PATCH /me/planner/plans_v2/{planId}/tasks/{taskId}/messages/{plannerChatMessageId}
-PATCH /users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/messages/{plannerChatMessageId}
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply *only* the values for properties to update. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
-
-The following table specifies the properties that can be updated.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| messageType | plannerChatMessageType | Format of the message content. The possible values are: `richTextHtml`, `plainText`, `unknownFutureValue`. Optional. |
-| content | String | Body content of the chat message. Optional. |
-| properties | [chatMessageProperties](https://learn.microsoft.com/en-us/graph/api/resources/chatmessageproperties?view=graph-rest-beta) | @mentions and reactions associated with the message. Optional. |
-| threadType | plannerChatThreadType | Indicates whether the message belongs to a task-level or plan-level conversation. The possible values are: `task`, `plan`, `unknownFutureValue`. Optional. |
-| parentEntityId | String | ID of the task or plan the message belongs to. Optional. |
-| isDeleted | Boolean | Indicates whether the message was deleted. Optional. |
-| deletedTime | DateTimeOffset | Date and time the message was deleted. Optional. |
-| isEdited | Boolean | Indicates whether the message was edited after it was sent. Optional. |
-| editedTime | DateTimeOffset | Date and time the message was last edited. Optional. |
+| content | String | Body content of the chat message. |
+| createdBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who created the entity. Read-only. |
+| createdDateTime | DateTimeOffset | Date and time the entity was created. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
+| deletedTime | DateTimeOffset | Date and time the message was deleted. |
+| editedTime | DateTimeOffset | Date and time the message was last edited. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| isDeleted | Boolean | Indicates whether the message was deleted. |
+| isEdited | Boolean | Indicates whether the message was edited after it was sent. |
+| messageType | plannerChatMessageType | Format of the message content. The possible values are: `richTextHtml`, `plainText`, `unknownFutureValue`. |
+| parentEntityId | String | ID of the task or plan the message belongs to. |
+| properties | [chatMessageProperties](https://learn.microsoft.com/en-us/graph/api/chatmessageproperties?view=graph-rest-beta) | @mentions and reactions associated with the message. |
+| threadType | plannerChatThreadType | Indicates whether the message belongs to a task-level or plan-level conversation. The possible values are: `task`, `plan`, `unknownFutureValue`. |
 
-## Response
+## Relationships
 
-If successful, this method returns a `200 OK` response code and an updated [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/resources/plannerchatmessage?view=graph-rest-beta) object in the response body.
+None.
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-PATCH https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/tasks/{taskId}/messages/{plannerChatMessageId}
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.plannerChatMessage",
-  "messageType": "plainText",
-  "content": "Great progress on this task!",
-  "properties": {
-    "@odata.type": "microsoft.graph.chatMessageProperties"
-  },
-  "threadType": "task",
-  "parentEntityId": "7e2b4a9d-3c61-4f8e-9a52-8d3c6f9b1a24",
-  "isDeleted": false,
-  "deletedTime": "2026-06-15T09:30:00Z",
-  "isEdited": false,
-  "editedTime": "2026-06-16T14:20:00Z"
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.plannerChatMessage",
-  "id": "260e1d70-6d06-3014-ceb0-4b020aa33c89",
+  "id": "String (identifier)",
   "messageType": "String",
   "content": "String",
   "properties": {

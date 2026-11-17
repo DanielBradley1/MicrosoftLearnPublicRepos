@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/customchoiceoption-update?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Update customChoiceOption
+# customChoiceOption resource type
 
 Namespace: microsoft.graph
 
@@ -9,79 +9,37 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Update the properties of a customChoiceOption object.
+A selectable option for a single-choice or multiple-choice [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/customfielddefinition?view=graph-rest-beta), contained under its `choiceOptions` collection.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/customfielddefinition-list-choiceoptions?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) collection | Get a list of the customChoiceOption objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/customchoiceoption-get?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) | Read the properties and relationships of [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) object. |
 
-## HTTP request
-
-```http
-PATCH /me/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions/{customChoiceOptionId}
-PATCH /users/{usersId}/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions/{customChoiceOptionId}
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply *only* the values for properties to update. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
-
-The following table specifies the properties that can be updated.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| displayName | String | Display text of the choice option. Optional. |
-| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. Optional. |
+| displayName | String | Display text of the choice option. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
 
-## Response
+## Relationships
 
-If successful, this method returns a `200 OK` response code and an updated [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) object in the response body.
+None.
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-PATCH https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}/choiceOptions/{customChoiceOptionId}
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.customChoiceOption",
-  "displayName": "High",
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection"
-  }
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.customChoiceOption",
-  "id": "2eb17e1c-d4c2-52c5-9207-d5e023b47665",
+  "id": "String (identifier)",
   "displayName": "String",
   "extensions": {
     "@odata.type": "microsoft.graph.extensionFieldCollection"

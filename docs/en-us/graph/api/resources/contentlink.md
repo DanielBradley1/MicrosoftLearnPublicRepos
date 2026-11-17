@@ -15,12 +15,12 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 
 ## Methods
 
+To create links with their parent, use a deep insert in [Create plan](https://learn.microsoft.com/en-us/graph/api/planner-post-plans_v2?view=graph-rest-beta) or [Create task](https://learn.microsoft.com/en-us/graph/api/planner-post-tasks_v2?view=graph-rest-beta). This doesn't imply standalone create or update support.
+
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/task-list-links?view=graph-rest-beta) | [contentLink](https://learn.microsoft.com/en-us/graph/api/resources/contentlink?view=graph-rest-beta) collection | Get a list of the contentLink objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/task-post-links?view=graph-rest-beta) | [contentLink](https://learn.microsoft.com/en-us/graph/api/resources/contentlink?view=graph-rest-beta) | Create a new contentLink object. |
 | [Get](https://learn.microsoft.com/en-us/graph/api/contentlink-get?view=graph-rest-beta) | [contentLink](https://learn.microsoft.com/en-us/graph/api/resources/contentlink?view=graph-rest-beta) | Read the properties and relationships of [contentLink](https://learn.microsoft.com/en-us/graph/api/resources/contentlink?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/contentlink-update?view=graph-rest-beta) | [contentLink](https://learn.microsoft.com/en-us/graph/api/resources/contentlink?view=graph-rest-beta) | Update the properties of a contentLink object. |
 
 ## Properties
 
@@ -29,12 +29,12 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 | capabilities | [contentLinkCapability](https://learn.microsoft.com/en-us/graph/api/resources/contentlinkcapability?view=graph-rest-beta) | Server-computed, read-only capability flags indicating which optional features are enabled for the entity. |
 | createdBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who created the entity. Read-only. |
 | displayName | String | Display label for the link. |
-| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set at creation. Can't be changed afterward. Supports $select. |
 | id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-beta) |
 | lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who last modified the entity. Read-only. |
 | lastModifiedDateTime | DateTimeOffset | Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
-| linkType | contentLinkType | Type of content the link points to. The possible values are: `documentReference`, `webReference`, `unknownFutureValue`. |
-| webUrl | String | URL the link points to. |
+| linkType | contentLinkType | Type of content the link points to. Required at creation and immutable afterward. The possible values are: `documentReference`, `webReference`, `unknownFutureValue`. |
+| webUrl | String | URL the link points to. Required at creation and immutable afterward. |
 
 ## Relationships
 

@@ -18,9 +18,7 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/task-list-messages?view=graph-rest-beta) | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/resources/plannerchatmessage?view=graph-rest-beta) collection | Get a list of the plannerChatMessage objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/task-post-messages?view=graph-rest-beta) | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/resources/plannerchatmessage?view=graph-rest-beta) | Create a new plannerChatMessage object. |
 | [Get](https://learn.microsoft.com/en-us/graph/api/plannerchatmessage-get?view=graph-rest-beta) | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/resources/plannerchatmessage?view=graph-rest-beta) | Read the properties and relationships of [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/resources/plannerchatmessage?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/plannerchatmessage-update?view=graph-rest-beta) | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/resources/plannerchatmessage?view=graph-rest-beta) | Update the properties of a plannerChatMessage object. |
 
 ## Properties
 

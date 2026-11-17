@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plannergroup-update?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
-# Update plannerGroup
+# plannerGroup resource type
 
 Namespace: microsoft.graph
 
@@ -9,72 +9,34 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Update the properties of a plannerGroup object.
+The **plannerGroup** resource provides access to Planner resources for a [group](https://learn.microsoft.com/en-us/graph/api/group?view=graph-rest-beta). It doesn't contain any usable properties.
 
-This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+## Methods
 
-| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
-| --- | --- | --- | --- |
-| ✅ | ✅ | ✅ | ❌ |
-
-## Permissions
-
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
-
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return Type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List group's plans](https://learn.microsoft.com/en-us/graph/plannergroup-list-plans?view=graph-rest-beta) | [plannerPlan](https://learn.microsoft.com/en-us/graph/api/plannerplan?view=graph-rest-beta) collection | Get a **plannerPlan** object collection. |
+| [List plans \(Planner Unified plans Graph API\)](https://learn.microsoft.com/en-us/graph/plannergroup-list-plans_v2?view=graph-rest-beta) | [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta) collection | Get a list of the [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta) objects owned by the group. |
 
-## HTTP request
+## Properties
 
-```http
-PATCH /groups/{groupsId}/planner
-```
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String | Read-only. Identifier of the **plannerGroup** |
 
-## Request headers
+## Relationships
 
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
+| Relationship | Type | Description |
+| :--- | :--- | :--- |
+| plans | [plannerPlan](https://learn.microsoft.com/en-us/graph/api/plannerplan?view=graph-rest-beta) collection | Read-only. Nullable. Returns the [plannerPlans](https://learn.microsoft.com/en-us/graph/api/plannerplan?view=graph-rest-beta) owned by the group. |
+| plans\_v2 | [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta) collection | Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the group. |
 
-## Request body
+## JSON representation
 
-No properties are currently supported for update.
+The following JSON representation shows the resource type.
 
-## Response
-
-If successful, this method returns a `200 OK` response code and an updated [plannerGroup](https://learn.microsoft.com/en-us/graph/api/resources/plannergroup?view=graph-rest-beta) object in the response body.
-
-## Examples
-
-### Request
-
-The following example shows a request.
-
-```http
-PATCH https://graph.microsoft.com/beta/groups/{groupsId}/planner
-Content-Type: application/json
-
+```json
 {
-  "@odata.type": "#microsoft.graph.plannerGroup"
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.plannerGroup",
-  "id": "2bd744d8-6bac-cfb5-18ea-8fedc6bd49c4"
+  "id": "String (identifier)"
 }
 ```

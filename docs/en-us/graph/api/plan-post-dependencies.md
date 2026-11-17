@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-post-dependencies?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Create dependency
+# dependency resource type
 
 Namespace: microsoft.graph
 
@@ -9,87 +9,43 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Create a new dependency object.
+Represents a dependency constraint between two items, such as [tasks](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta), in a [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta). The **sourceItemId** and **targetItemId** properties identify the dependency endpoints.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/plan-list-dependencies?view=graph-rest-beta) | [dependency](https://learn.microsoft.com/en-us/graph/api/dependency?view=graph-rest-beta) collection | Get a list of the dependency objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/dependency-get?view=graph-rest-beta) | [dependency](https://learn.microsoft.com/en-us/graph/api/dependency?view=graph-rest-beta) | Read the properties and relationships of [dependency](https://learn.microsoft.com/en-us/graph/api/dependency?view=graph-rest-beta) object. |
 
-## HTTP request
-
-```http
-POST /me/planner/plans_v2/{planId}/dependencies
-POST /users/{usersId}/planner/plans_v2/{planId}/dependencies
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply a JSON representation of the [dependency](https://learn.microsoft.com/en-us/graph/api/resources/dependency?view=graph-rest-beta) object.
-
-You can specify the following properties when creating a **dependency**.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| sourceItemId | String | ID of the source item in the dependency. Required. |
-| targetItemId | String | ID of the target item in the dependency. Required. |
-| constraint | dependencyType | The kind of dependency constraint between the source and target items. The possible values are: `sourceFinishDrivesTargetStart`, `sourceStartDrivesTargetStart`, `sourceFinishDrivesTargetFinish`, `targetStartDrivesSourceFinish`, `unknownFutureValue`. Required. |
-| archivalInfo | [plannerArchivalInfo](https://learn.microsoft.com/en-us/graph/api/resources/plannerarchivalinfo?view=graph-rest-beta) | Information about whether the entity is archived, and when it was archived. Optional. |
-| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. Optional. |
+| archivalInfo | [plannerArchivalInfo](https://learn.microsoft.com/en-us/graph/api/plannerarchivalinfo?view=graph-rest-beta) | Information about whether the entity is archived, and when it was archived. |
+| constraint | dependencyType | The kind of dependency constraint between the source and target items. The possible values are: `sourceFinishDrivesTargetStart`, `sourceStartDrivesTargetStart`, `sourceFinishDrivesTargetFinish`, `targetStartDrivesSourceFinish`, `unknownFutureValue`. |
+| creationInfo | [creationInfo](https://learn.microsoft.com/en-us/graph/api/creationinfo?view=graph-rest-beta) | Read-only creation metadata for the entity. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who last modified the entity. Read-only. |
+| lastModifiedDateTime | DateTimeOffset | Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
+| sourceItemId | String | ID of the source item in the dependency. Immutable after creation. |
+| targetItemId | String | ID of the target item in the dependency. Immutable after creation. |
 
-## Response
+## Relationships
 
-If successful, this method returns a `201 Created` response code and a [dependency](https://learn.microsoft.com/en-us/graph/api/resources/dependency?view=graph-rest-beta) object in the response body.
+None.
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-POST https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/dependencies
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.dependency",
-  "sourceItemId": "5a3d7c9e-2f61-4b8a-9d42-6c1e8f3b9a52",
-  "targetItemId": "8b4d6f2a-3c91-4e7d-9a52-1f6c8b3d9e24",
-  "constraint": "sourceFinishDrivesTargetStart",
-  "archivalInfo": {
-    "@odata.type": "microsoft.graph.plannerArchivalInfo"
-  },
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection"
-  }
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.dependency",
-  "id": "97f05daa-0479-6fa3-cb09-28d363132000",
+  "id": "String (identifier)",
   "sourceItemId": "String",
   "targetItemId": "String",
   "constraint": "String",

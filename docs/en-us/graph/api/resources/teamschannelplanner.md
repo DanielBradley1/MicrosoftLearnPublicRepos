@@ -18,8 +18,7 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 | Method | Return Type | Description |
 | :--- | :--- | :--- |
 | [List plans](https://learn.microsoft.com/en-us/graph/api/teamschannelplanner-list-plans?view=graph-rest-beta) | [plannerPlan](https://learn.microsoft.com/en-us/graph/api/resources/plannerplan?view=graph-rest-beta) collection | Get a list of [plannerPlan](https://learn.microsoft.com/en-us/graph/api/resources/plannerplan?view=graph-rest-beta) objects owned by a shared [channel](https://learn.microsoft.com/en-us/graph/api/resources/channel?view=graph-rest-beta) in Teams. |
-| [List plans\_v2](https://learn.microsoft.com/en-us/graph/api/teamschannelplanner-list-plans_v2?view=graph-rest-beta) | [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) collection | Get a list of the [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) objects owned by the Teams channel. |
-| [Create plan\_v2](https://learn.microsoft.com/en-us/graph/api/teamschannelplanner-post-plans_v2?view=graph-rest-beta) | [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) | Create a new [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) object. |
+| [List plans \(Planner Unified plans Graph API\)](https://learn.microsoft.com/en-us/graph/api/teamschannelplanner-list-plans_v2?view=graph-rest-beta) | [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) collection | Get a list of the [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) objects owned by the Teams channel. |
 
 ## Properties
 
@@ -32,7 +31,7 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
 | plans | [plannerPlan](https://learn.microsoft.com/en-us/graph/api/resources/plannerplan?view=graph-rest-beta) collection | A collection of [plannerPlan](https://learn.microsoft.com/en-us/graph/api/resources/plannerplan?view=graph-rest-beta) objects owned by the Teams channel. Currently, only shared channels are supported. Read-only. Nullable. |
-| plans\_v2 | [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) collection | Read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported. |
+| plans\_v2 | [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) collection | Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the Teams channel. Currently, only shared channels are supported. |
 
 ## JSON representation
 

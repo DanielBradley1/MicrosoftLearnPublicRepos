@@ -18,12 +18,8 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/plan-list-customfielddefinitions?view=graph-rest-beta) | [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/customfielddefinition?view=graph-rest-beta) collection | Get a list of the customFieldDefinition objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/plan-post-customfielddefinitions?view=graph-rest-beta) | [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/customfielddefinition?view=graph-rest-beta) | Create a new customFieldDefinition object. |
 | [Get](https://learn.microsoft.com/en-us/graph/api/customfielddefinition-get?view=graph-rest-beta) | [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/customfielddefinition?view=graph-rest-beta) | Read the properties and relationships of [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/customfielddefinition?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/customfielddefinition-update?view=graph-rest-beta) | [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/customfielddefinition?view=graph-rest-beta) | Update the properties of a customFieldDefinition object. |
-| [Delete](https://learn.microsoft.com/en-us/graph/api/plan-delete-customfielddefinitions?view=graph-rest-beta) | None | Delete a customFieldDefinition object. |
 | [List choiceOptions](https://learn.microsoft.com/en-us/graph/api/customfielddefinition-list-choiceoptions?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) collection | Get a list of the customChoiceOption objects and their properties. |
-| [Create customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customfielddefinition-post-choiceoptions?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) | Create a new customChoiceOption object. |
 
 ## Properties
 
@@ -32,15 +28,15 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 | archivalInfo | [plannerArchivalInfo](https://learn.microsoft.com/en-us/graph/api/resources/plannerarchivalinfo?view=graph-rest-beta) | Information about whether the entity is archived, and when it was archived. |
 | createdBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who created the entity. Read-only. |
 | createdDateTime | DateTimeOffset | Date and time the entity was created. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
-| deletedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user who deleted the custom field definition, if it was deleted. |
-| deletedDateTime | DateTimeOffset | Date and time the custom field definition was deleted, if applicable. |
+| deletedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user who deleted the custom field definition, if it was deleted. Read-only. |
+| deletedDateTime | DateTimeOffset | Date and time the custom field definition was deleted, if applicable. Read-only. |
 | displayName | String | Name of the custom field. |
 | id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-beta) |
 | lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who last modified the entity. Read-only. |
 | lastModifiedDateTime | DateTimeOffset | Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
 | planId | String | ID of the plan the custom field is defined on. Required, and immutable after creation. |
 | rollupType | customFieldRollupType | How values of this custom field are rolled up across tasks. The possible values are: `noRollup`, `max`, `min`, `sum`, `average`, `unknownFutureValue`. |
-| valueType | customFieldValueType | Data type of the custom field's values.. The possible values are: `text`, `date`, `utcDateTime`, `number`, `decimal`, `flag`, `singleChoiceText`, `multipleChoiceText`, `unknownFutureValue`. |
+| valueType | customFieldValueType | Data type of the custom field's values. Immutable after creation. The possible values are: `text`, `date`, `utcDateTime`, `number`, `decimal`, `flag`, `singleChoiceText`, `multipleChoiceText`, `unknownFutureValue`. The values `utcDateTime`, `decimal`, and `multipleChoiceText` can occur on existing fields; they aren't supported types for new field definitions. |
 
 ## Relationships
 

@@ -18,9 +18,7 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/task-list-customfieldvalues?view=graph-rest-beta) | [customFieldValue](https://learn.microsoft.com/en-us/graph/api/resources/customfieldvalue?view=graph-rest-beta) collection | Get a list of the customFieldValue objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/task-post-customfieldvalues?view=graph-rest-beta) | [customFieldValue](https://learn.microsoft.com/en-us/graph/api/resources/customfieldvalue?view=graph-rest-beta) | Create a new customFieldValue object. |
 | [Get](https://learn.microsoft.com/en-us/graph/api/customfieldvalue-get?view=graph-rest-beta) | [customFieldValue](https://learn.microsoft.com/en-us/graph/api/resources/customfieldvalue?view=graph-rest-beta) | Read the properties and relationships of [customFieldValue](https://learn.microsoft.com/en-us/graph/api/resources/customfieldvalue?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/customfieldvalue-update?view=graph-rest-beta) | [customFieldValue](https://learn.microsoft.com/en-us/graph/api/resources/customfieldvalue?view=graph-rest-beta) | Update the properties of a customFieldValue object. |
 
 ## Properties
 

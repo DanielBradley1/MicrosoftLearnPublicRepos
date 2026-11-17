@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/planview-post-categories?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Create categoryDefinition
+# categoryDefinition resource type
 
 Namespace: microsoft.graph
 
@@ -9,78 +9,37 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Create a new categoryDefinition object.
+A named category that can be applied to [tasks](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) in a [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta). It has no defaults beyond the universal property set.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [Read plan categories](https://learn.microsoft.com/en-us/graph/planview-list-categories?view=graph-rest-beta) | [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta) | Read a plan with its category definitions expanded. |
 
-## HTTP request
-
-```http
-POST /planView/categories
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply a JSON representation of the [categoryDefinition](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) object.
-
-You can specify the following properties when creating a **categoryDefinition**.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| displayName | String | Name of the category. Required. |
-| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. Optional. |
+| capabilities | [categoryDefinitionCapability](https://learn.microsoft.com/en-us/graph/api/categorydefinitioncapability?view=graph-rest-beta) | Server-computed, read-only capability flags indicating which optional features are enabled for the entity. |
+| displayName | String | Name of the category. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
 
-## Response
+## Relationships
 
-If successful, this method returns a `201 Created` response code and a [categoryDefinition](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) object in the response body.
+None.
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-POST https://graph.microsoft.com/beta/planView/categories
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.categoryDefinition",
-  "displayName": "Marketing",
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection"
-  }
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.categoryDefinition",
-  "id": "6b52004e-a959-a35e-0bc4-3421d8033b1d",
+  "id": "String (identifier)",
   "displayName": "String",
   "capabilities": {
     "@odata.type": "microsoft.graph.categoryDefinitionCapability"

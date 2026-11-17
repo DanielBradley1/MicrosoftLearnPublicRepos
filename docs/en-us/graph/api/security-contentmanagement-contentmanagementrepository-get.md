@@ -19,7 +19,7 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | :--- | :--- | :--- |
 | Delegated \(work or school account\) | Repository.Read.All | Repository.ReadWrite.All |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| Application | Repository.Read.All | Repository.ReadWrite.All |
 
 ## HTTP request
 

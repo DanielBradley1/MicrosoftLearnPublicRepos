@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-list-dependencies?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# List dependency objects
+# List dependencies
 
 Namespace: microsoft.graph
 
@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /me/planner/plans_v2/{planId}/dependencies
 GET /users/{usersId}/planner/plans_v2/{planId}/dependencies
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -70,23 +66,7 @@ Content-Type: application/json
   "value": [
     {
       "@odata.type": "#microsoft.graph.dependency",
-      "id": "97f05daa-0479-6fa3-cb09-28d363132000",
-      "sourceItemId": "String",
-      "targetItemId": "String",
-      "constraint": "String",
-      "creationInfo": {
-        "@odata.type": "microsoft.graph.creationInfo"
-      },
-      "archivalInfo": {
-        "@odata.type": "microsoft.graph.plannerArchivalInfo"
-      },
-      "lastModifiedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "lastModifiedDateTime": "String (timestamp)",
-      "extensions": {
-        "@odata.type": "microsoft.graph.extensionFieldCollection"
-      }
+      "id": "97f05daa-0479-6fa3-cb09-28d363132000"
     }
   ]
 }

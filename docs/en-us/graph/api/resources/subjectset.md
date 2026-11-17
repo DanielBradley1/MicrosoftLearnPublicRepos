@@ -10,11 +10,17 @@ A shared object that is used in entitlement management access package assignment
 - In entitlement management, used in the request, approval, and assignment review settings of an access package assignment policy.
 - In role management policies, used in the approval settings that are defined in rules for role management policies.
 - In lifecycle workflows, used to configure the users that are in the scope of a workflow.
+- In lifecycle policies, used by the **scope** property of [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-1.0) to select guest users or agent identities for evaluation.
 
 This object is an abstract base type from which the following resources are derived:
 
 | Resource | Feature | Description |
 | --- | --- | --- |
+| [selectedObjectsSubjectSet](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-selectedobjectssubjectset?view=graph-rest-1.0) | Lifecycle Policies | Selects specific directory objects for policy evaluation. |
+| [allExcludingSpecificObjectsSubjectSet](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-allexcludingspecificobjectssubjectset?view=graph-rest-1.0) | Lifecycle Policies | Includes all supported subjects except specified directory objects. |
+| [allExcludingGroupsSubjectSet](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-allexcludinggroupssubjectset?view=graph-rest-1.0) | Lifecycle Policies | Includes supported subjects except members of specified groups. |
+| [selectedAgentBuilderPlatformsSubjectSet](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-selectedagentbuilderplatformssubjectset?view=graph-rest-1.0) | Lifecycle Policies | Selects agent identities associated with specified builder platforms. |
+| [allExcludingAgentBuilderPlatformsSubjectSet](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-allexcludingagentbuilderplatformssubjectset?view=graph-rest-1.0) | Lifecycle Policies | Includes agent identities except those associated with specified builder platforms. |
 | [attributeRuleMembers](https://learn.microsoft.com/en-us/graph/api/resources/attributerulemembers?view=graph-rest-1.0) | Entitlement Management | Represents members of a connected organization in an access package assignment policy. |
 | [connectedOrganizationMembers](https://learn.microsoft.com/en-us/graph/api/resources/connectedorganizationmembers?view=graph-rest-1.0) | Entitlement Management | Represents members of a connected organization in an access package assignment policy. |
 | [externalSponsors](https://learn.microsoft.com/en-us/graph/api/resources/externalsponsors?view=graph-rest-1.0) | Entitlement Management | Represents user's connected organization external sponsors for access package assignments. |

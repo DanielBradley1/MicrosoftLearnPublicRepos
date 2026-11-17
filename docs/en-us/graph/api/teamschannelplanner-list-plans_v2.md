@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/teamschannelplanner-list-plans_v2?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # List plans\_v2 for a Teams channel
 
@@ -32,10 +32,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 ```http
 GET /teams/{teamsId}/channels/{channelId}/planner/plans_v2
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -76,42 +72,7 @@ Content-Type: application/json
     {
       "@odata.type": "#microsoft.graph.plan",
       "id": "da037802-c736-af41-ff32-789862c95bd9",
-      "displayName": "String",
-      "container": {
-        "@odata.type": "microsoft.graph.planContainer"
-      },
-      "calendar": {
-        "@odata.type": "microsoft.graph.planCalendar"
-      },
-      "creationInfo": {
-        "@odata.type": "microsoft.graph.creationInfo"
-      },
-      "lastModifiedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "lastModifiedDateTime": "String (timestamp)",
-      "archivalInfo": {
-        "@odata.type": "microsoft.graph.plannerArchivalInfo"
-      },
-      "planView": {
-        "@odata.type": "microsoft.graph.planView"
-      },
-      "contentSensitivityLabelAssignment": {
-        "@odata.type": "microsoft.graph.contentSensitivityLabelAssignment"
-      },
-      "hasChat": "Boolean",
-      "duration": "Integer",
-      "sharedWithContainers": [
-        {
-          "@odata.type": "microsoft.graph.plannerSharedWithContainer"
-        }
-      ],
-      "capabilities": {
-        "@odata.type": "microsoft.graph.planCapability"
-      },
-      "extensions": {
-        "@odata.type": "microsoft.graph.extensionFieldCollection"
-      }
+      "displayName": "Product launch"
     }
   ]
 }

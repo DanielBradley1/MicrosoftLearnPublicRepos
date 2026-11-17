@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/planneruser-list-v2?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
-# List plan objects
+# List plans\_v2
 
 Namespace: microsoft.graph
 
@@ -9,7 +9,7 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Get a list of the plan objects and their properties.
+Get a list of the [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) objects and their properties.
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -30,13 +30,10 @@ Choose the permission or permissions marked as least privileged for this API. Us
 ## HTTP request
 
 ```http
-GET /planner/plans_v2
-GET /me/planner/plans_v2
+GET /planner/plans_v2?$filter=container/containerType eq '{container-type}' and container/containerId eq '{container-id}'
 ```
 
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
+The `$filter` query parameter is required. Specify both `container/containerType` and `container/containerId`, combined with `and`, to identify the owning container. This endpoint isn't an unfiltered list of every plan.
 
 ## Request headers
 
@@ -59,7 +56,7 @@ If successful, this method returns a `200 OK` response code and a collection of 
 The following example shows a request.
 
 ```http
-GET https://graph.microsoft.com/beta/planner/plans_v2
+GET https://graph.microsoft.com/beta/planner/plans_v2?$filter=container/containerType eq 'group' and container/containerId eq '5d5a917d-aef4-4fdc-bc99-6048a39aa329'
 ```
 
 ### Response
@@ -77,41 +74,10 @@ Content-Type: application/json
     {
       "@odata.type": "#microsoft.graph.plan",
       "id": "da037802-c736-af41-ff32-789862c95bd9",
-      "displayName": "String",
+      "displayName": "Product launch",
       "container": {
-        "@odata.type": "microsoft.graph.planContainer"
-      },
-      "calendar": {
-        "@odata.type": "microsoft.graph.planCalendar"
-      },
-      "creationInfo": {
-        "@odata.type": "microsoft.graph.creationInfo"
-      },
-      "lastModifiedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "lastModifiedDateTime": "String (timestamp)",
-      "archivalInfo": {
-        "@odata.type": "microsoft.graph.plannerArchivalInfo"
-      },
-      "planView": {
-        "@odata.type": "microsoft.graph.planView"
-      },
-      "contentSensitivityLabelAssignment": {
-        "@odata.type": "microsoft.graph.contentSensitivityLabelAssignment"
-      },
-      "hasChat": "Boolean",
-      "duration": "Integer",
-      "sharedWithContainers": [
-        {
-          "@odata.type": "microsoft.graph.plannerSharedWithContainer"
-        }
-      ],
-      "capabilities": {
-        "@odata.type": "microsoft.graph.planCapability"
-      },
-      "extensions": {
-        "@odata.type": "microsoft.graph.extensionFieldCollection"
+        "containerId": "5d5a917d-aef4-4fdc-bc99-6048a39aa329",
+        "containerType": "group"
       }
     }
   ]

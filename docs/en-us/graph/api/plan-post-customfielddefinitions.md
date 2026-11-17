@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-post-customfielddefinitions?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Create customFieldDefinition
+# customFieldDefinition resource type \(planner\)
 
 Namespace: microsoft.graph
 
@@ -9,85 +9,49 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Create a new customFieldDefinition object.
+A custom field defined on a [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta), used to capture structured, plan-specific data on [tasks](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta). Choice options for single-choice and multiple-choice fields are contained under `choiceOptions`; values are set per task via [customFieldValue](https://learn.microsoft.com/en-us/graph/api/customfieldvalue?view=graph-rest-beta).
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/plan-list-customfielddefinitions?view=graph-rest-beta) | [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/customfielddefinition?view=graph-rest-beta) collection | Get a list of the customFieldDefinition objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/customfielddefinition-get?view=graph-rest-beta) | [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/customfielddefinition?view=graph-rest-beta) | Read the properties and relationships of [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/customfielddefinition?view=graph-rest-beta) object. |
+| [List choiceOptions](https://learn.microsoft.com/en-us/graph/customfielddefinition-list-choiceoptions?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) collection | Get a list of the customChoiceOption objects and their properties. |
 
-## HTTP request
-
-```http
-POST /me/planner/plans_v2/{planId}/customFieldDefinitions
-POST /users/{usersId}/planner/plans_v2/{planId}/customFieldDefinitions
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply a JSON representation of the [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/customfielddefinition?view=graph-rest-beta) object.
-
-You can specify the following properties when creating a **customFieldDefinition**.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| planId | String | ID of the plan the custom field is defined on. Required, and immutable after creation. Required. |
-| displayName | String | Name of the custom field. Required. |
-| valueType | customFieldValueType | Data type of the custom field's values.. The possible values are: `text`, `date`, `utcDateTime`, `number`, `decimal`, `flag`, `singleChoiceText`, `multipleChoiceText`, `unknownFutureValue`. Optional. |
-| rollupType | customFieldRollupType | How values of this custom field are rolled up across tasks. The possible values are: `noRollup`, `max`, `min`, `sum`, `average`, `unknownFutureValue`. Optional. |
-| archivalInfo | [plannerArchivalInfo](https://learn.microsoft.com/en-us/graph/api/resources/plannerarchivalinfo?view=graph-rest-beta) | Information about whether the entity is archived, and when it was archived. Optional. |
+| archivalInfo | [plannerArchivalInfo](https://learn.microsoft.com/en-us/graph/api/plannerarchivalinfo?view=graph-rest-beta) | Information about whether the entity is archived, and when it was archived. |
+| createdBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who created the entity. Read-only. |
+| createdDateTime | DateTimeOffset | Date and time the entity was created. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
+| deletedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user who deleted the custom field definition, if it was deleted. Read-only. |
+| deletedDateTime | DateTimeOffset | Date and time the custom field definition was deleted, if applicable. Read-only. |
+| displayName | String | Name of the custom field. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who last modified the entity. Read-only. |
+| lastModifiedDateTime | DateTimeOffset | Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
+| planId | String | ID of the plan the custom field is defined on. Required, and immutable after creation. |
+| rollupType | customFieldRollupType | How values of this custom field are rolled up across tasks. The possible values are: `noRollup`, `max`, `min`, `sum`, `average`, `unknownFutureValue`. |
+| valueType | customFieldValueType | Data type of the custom field's values. Immutable after creation. The possible values are: `text`, `date`, `utcDateTime`, `number`, `decimal`, `flag`, `singleChoiceText`, `multipleChoiceText`, `unknownFutureValue`. The values `utcDateTime`, `decimal`, and `multipleChoiceText` can occur on existing fields; they aren't supported types for new field definitions. |
 
-## Response
+## Relationships
 
-If successful, this method returns a `201 Created` response code and a [customFieldDefinition](https://learn.microsoft.com/en-us/graph/api/resources/customfielddefinition?view=graph-rest-beta) object in the response body.
+| Relationship | Type | Description |
+| :--- | :--- | :--- |
+| choiceOptions | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/customchoiceoption?view=graph-rest-beta) collection | The collection of selectable choice options for a single-choice or multiple-choice custom field. Read-only. Nullable. |
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-POST https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/customFieldDefinitions
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.customFieldDefinition",
-  "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
-  "displayName": "Budget",
-  "valueType": "number",
-  "rollupType": "sum",
-  "archivalInfo": {
-    "@odata.type": "microsoft.graph.plannerArchivalInfo"
-  }
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.customFieldDefinition",
-  "id": "590f4e29-112d-432c-491b-21a16ed31803",
+  "id": "String (identifier)",
   "planId": "String",
   "displayName": "String",
   "valueType": "String",

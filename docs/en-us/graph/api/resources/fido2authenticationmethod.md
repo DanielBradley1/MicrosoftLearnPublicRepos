@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-06-03 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # fido2AuthenticationMethod resource type
 
@@ -33,6 +33,7 @@ This resource has a [known issue](https://learn.microsoft.com/en-us/graph/known-
 | createdDateTime | DateTimeOffset | The timestamp when this key was registered to the user. Inherited from [authenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethod?view=graph-rest-1.0). |
 | displayName | String | The display name of the key as given by the user. |
 | id | String | The authentication method identifier. |
+| lastUsedDateTime | DateTimeOffset | The date and time of the authentication method's latest successful use, when usage data is available. Read-only. Nullable. Inherited from [authenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethod?view=graph-rest-1.0). See the base resource for best-effort population and unavailable-usage behavior. |
 | model | String | The manufacturer-assigned model of the FIDO2 passkey. |
 | passkeyType | passkeyType | The type of passkey. The possible values are: `deviceBound`, `synced`, `unknownFutureValue`. |
 | publicKeyCredential | [webauthnPublicKeyCredential](https://learn.microsoft.com/en-us/graph/api/resources/webauthnpublickeycredential?view=graph-rest-1.0) | Contains the WebAuthn public key credential information being registered. This property is used only for write requests and isn't returned on read operations. |
@@ -56,6 +57,7 @@ The following JSON representation shows the resource type.
   "createdDateTime": "String (timestamp)",
   "displayName": "String",
   "id": "String (identifier)",
+  "lastUsedDateTime": "String (timestamp)",
   "model": "String",
   "passkeyType": "String",
   "publicKeyCredential": {

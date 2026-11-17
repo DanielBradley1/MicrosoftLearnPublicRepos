@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/userassignment-update?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Update userAssignment
+# userAssignment resource type
 
 Namespace: microsoft.graph
 
@@ -9,83 +9,41 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Update the properties of a userAssignment object.
+Represents the assignment of a user to a [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta). The assignee identity \(`user`\) is returned by default; `assignedBy` and `assignedDateTime` require $select.
 
-## Permissions
+To assign users when creating a task, supply **userAssignments** in the [Create task](https://learn.microsoft.com/en-us/graph/planner-post-tasks_v2?view=graph-rest-beta) request. The service supplies the assignment audit fields.
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+## Methods
+
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/task-list-userassignments?view=graph-rest-beta) | [userAssignment](https://learn.microsoft.com/en-us/graph/api/userassignment?view=graph-rest-beta) collection | Get a list of the userAssignment objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/userassignment-get?view=graph-rest-beta) | [userAssignment](https://learn.microsoft.com/en-us/graph/api/userassignment?view=graph-rest-beta) | Read the properties and relationships of [userAssignment](https://learn.microsoft.com/en-us/graph/api/userassignment?view=graph-rest-beta) object. |
 
-## HTTP request
-
-```http
-PATCH /me/planner/plans_v2/{planId}/tasks/{taskId}/userAssignments/{userAssignmentId}
-PATCH /users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/userAssignments/{userAssignmentId}
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply *only* the values for properties to update. Existing properties that aren't included in the request body maintain their previous values or are recalculated based on changes to other property values.
-
-The following table specifies the properties that can be updated.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| user | [identity](https://learn.microsoft.com/en-us/graph/api/resources/identity?view=graph-rest-beta) | Identity of the user assigned to the task. Required. |
-| assignedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset?view=graph-rest-beta) | Identity of the user \(or application\) that made the assignment. Optional. |
-| assignedDateTime | DateTimeOffset | Date and time the assignment was made. Optional. |
+| assignedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) that made the assignment. Read-only. |
+| assignedDateTime | DateTimeOffset | Date and time the assignment was made. Read-only. |
+| capabilities | [userAssignmentCapability](https://learn.microsoft.com/en-us/graph/api/userassignmentcapability?view=graph-rest-beta) | Server-computed, read-only capability flags indicating which optional features are enabled for the entity. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| user | [identity](https://learn.microsoft.com/en-us/graph/api/identity?view=graph-rest-beta) | Identity of the user assigned to the task. |
 
-## Response
+## Relationships
 
-If successful, this method returns a `200 OK` response code and an updated [userAssignment](https://learn.microsoft.com/en-us/graph/api/resources/userassignment?view=graph-rest-beta) object in the response body.
+None.
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-PATCH https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/tasks/{taskId}/userAssignments/{userAssignmentId}
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.userAssignment",
-  "user": {
-    "@odata.type": "microsoft.graph.identity"
-  },
-  "assignedBy": {
-    "@odata.type": "microsoft.graph.identitySet"
-  },
-  "assignedDateTime": "2026-06-10T08:00:00Z"
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.userAssignment",
-  "id": "aec6cd49-aa47-7b42-5079-0a5b5197edd1",
+  "id": "String (identifier)",
   "user": {
     "@odata.type": "microsoft.graph.identity"
   },

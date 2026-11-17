@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/customfielddefinition-get?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Get customFieldDefinition for a plan
+# Get custom field definition
 
 Namespace: microsoft.graph
 
@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /me/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}
 GET /users/{usersId}/planner/plans_v2/{planId}/customFieldDefinitions/{customFieldDefinitionId}
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -67,28 +63,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.graph.customFieldDefinition",
-    "id": "590f4e29-112d-432c-491b-21a16ed31803",
-    "planId": "String",
-    "displayName": "String",
-    "valueType": "String",
-    "rollupType": "String",
-    "createdBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "createdDateTime": "String (timestamp)",
-    "lastModifiedBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "lastModifiedDateTime": "String (timestamp)",
-    "deletedBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "deletedDateTime": "String (timestamp)",
-    "archivalInfo": {
-      "@odata.type": "microsoft.graph.plannerArchivalInfo"
-    }
-  }
+  "@odata.type": "#microsoft.graph.customFieldDefinition",
+  "id": "590f4e29-112d-432c-491b-21a16ed31803",
+  "displayName": "Product launch"
 }
 ```

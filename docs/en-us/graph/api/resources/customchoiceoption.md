@@ -18,10 +18,7 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/customfielddefinition-list-choiceoptions?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) collection | Get a list of the customChoiceOption objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/customfielddefinition-post-choiceoptions?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) | Create a new customChoiceOption object. |
 | [Get](https://learn.microsoft.com/en-us/graph/api/customchoiceoption-get?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) | Read the properties and relationships of [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/customchoiceoption-update?view=graph-rest-beta) | [customChoiceOption](https://learn.microsoft.com/en-us/graph/api/resources/customchoiceoption?view=graph-rest-beta) | Update the properties of a customChoiceOption object. |
-| [Delete](https://learn.microsoft.com/en-us/graph/api/customfielddefinition-delete-choiceoptions?view=graph-rest-beta) | None | Delete a customChoiceOption object. |
 
 ## Properties
 

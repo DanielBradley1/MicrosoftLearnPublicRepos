@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-delete-historyitems?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Delete historyItem
+# historyItem resource type
 
 Namespace: microsoft.graph
 
@@ -9,55 +9,54 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Delete a historyItem object.
+An audit or activity record for a change made to a [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta) or its child entities. `entityId`, `entityType`, `eventType`, and `occurredDateTime` \(the primary sort key\) are returned by default; the acting identity and before/after state are opt-in via $select.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+## Methods
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+History items are service-generated audit records. The API doesn't expose standalone create, update, or delete operations for these records.
+
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/plan-list-historyitems?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/historyitem?view=graph-rest-beta) collection | Get a list of the historyItem objects and their properties. |
+| [Get](https://learn.microsoft.com/en-us/graph/historyitem-get?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/historyitem?view=graph-rest-beta) | Read the properties and relationships of [historyItem](https://learn.microsoft.com/en-us/graph/api/historyitem?view=graph-rest-beta) object. |
 
-## HTTP request
+## Properties
 
-```http
-DELETE /me/planner/plans_v2/{planId}/historyItems/{historyItemId}/$ref
-DELETE /users/{usersId}/planner/plans_v2/{planId}/historyItems/{historyItemId}/$ref
-```
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| actor | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) that performed the change. |
+| entityId | String | ID of the entity the history item describes. |
+| entityType | historyEntityType | Type of the entity the history item describes. The possible values are: `task`, `unknownFutureValue`. |
+| eventType | historyEventType | Type of the change event that occurred. The possible values are: `created`, `updated`, `deleted`, `undeleted`, `moved`, `unknownFutureValue`. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| newData | String | Serialized representation of the entity state after the change. |
+| occurredDateTime | DateTimeOffset | Date and time the change occurred. Read-only. |
+| oldData | String | Serialized representation of the entity state before the change. |
+| planId | String | ID of the plan the change occurred in. |
 
-## Request headers
+## Relationships
 
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
+None.
 
-## Request body
+## JSON representation
 
-Don't supply a request body for this method.
+The following JSON representation shows the resource type.
 
-## Response
-
-If successful, this method returns a `204 No Content` response code.
-
-## Examples
-
-### Request
-
-The following example shows a request.
-
-```http
-DELETE https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/historyItems/{historyItemId}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 204 No Content
+```json
+{
+  "@odata.type": "#microsoft.graph.historyItem",
+  "id": "String (identifier)",
+  "planId": "String",
+  "entityId": "String",
+  "entityType": "String",
+  "eventType": "String",
+  "occurredDateTime": "String (timestamp)",
+  "actor": {
+    "@odata.type": "microsoft.graph.identitySet"
+  },
+  "oldData": "String",
+  "newData": "String"
+}
 ```

@@ -15,13 +15,12 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 
 ## Methods
 
+History items are service-generated audit records. The API doesn't expose standalone create, update, or delete operations for these records.
+
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/plan-list-historyitems?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/resources/historyitem?view=graph-rest-beta) collection | Get a list of the historyItem objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/plan-post-historyitems?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/resources/historyitem?view=graph-rest-beta) | Create a new historyItem object. |
 | [Get](https://learn.microsoft.com/en-us/graph/api/historyitem-get?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/resources/historyitem?view=graph-rest-beta) | Read the properties and relationships of [historyItem](https://learn.microsoft.com/en-us/graph/api/resources/historyitem?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/historyitem-update?view=graph-rest-beta) | [historyItem](https://learn.microsoft.com/en-us/graph/api/resources/historyitem?view=graph-rest-beta) | Update the properties of a historyItem object. |
-| [Delete](https://learn.microsoft.com/en-us/graph/api/plan-delete-historyitems?view=graph-rest-beta) | None | Delete a historyItem object. |
 
 ## Properties
 

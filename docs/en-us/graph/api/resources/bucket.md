@@ -9,7 +9,7 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-A Planner V4 bucket \(a custom column used to group [tasks](https://learn.microsoft.com/en-us/graph/api/resources/task?view=graph-rest-beta) within a [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta)\). A bucket has no defaults beyond the universal property set \(`id`, `displayName`, `createdBy`, `createdDateTime`, `lastModifiedBy`, `lastModifiedDateTime`\); it doesn't carry `archivalInfo`.
+Represents a bucket in the Planner Unified plans Graph API, a custom column used to group [tasks](https://learn.microsoft.com/en-us/graph/api/resources/task?view=graph-rest-beta) within a [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta). Creation metadata is exposed through **creationInfo**, not top-level **createdBy** and **createdDateTime** properties. Buckets don't have an **archivalInfo** property.
 
 Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resources/plannerdelta?view=graph-rest-beta).
 

@@ -17,11 +17,7 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 
 | Method | Return type | Description |
 | :--- | :--- | :--- |
-| [List](https://learn.microsoft.com/en-us/graph/api/planview-list-categories?view=graph-rest-beta) | [categoryDefinition](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) collection | Get a list of the categoryDefinition objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/planview-post-categories?view=graph-rest-beta) | [categoryDefinition](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) | Create a new categoryDefinition object. |
-| [Get](https://learn.microsoft.com/en-us/graph/api/categorydefinition-get?view=graph-rest-beta) | [categoryDefinition](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) | Read the properties and relationships of [categoryDefinition](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/categorydefinition-update?view=graph-rest-beta) | [categoryDefinition](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) | Update the properties of a categoryDefinition object. |
-| [Delete](https://learn.microsoft.com/en-us/graph/api/planview-delete-categories?view=graph-rest-beta) | None | Delete a categoryDefinition object. |
+| [Read plan categories](https://learn.microsoft.com/en-us/graph/api/planview-list-categories?view=graph-rest-beta) | [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) | Read a plan with its category definitions expanded. |
 
 ## Properties
 

@@ -24,8 +24,7 @@ Choose the permission or permissions marked as least privileged for this API. Us
 ## HTTP request
 
 ```http
-POST /me/planner/plans_v2/{planId}/buckets
-POST /users/{usersId}/planner/plans_v2/{planId}/buckets
+POST /planner/plans_v2/{planId}/buckets
 ```
 
 ## Request headers
@@ -44,7 +43,7 @@ You can specify the following properties when creating a **bucket**.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | displayName | String | Title of the bucket. Required. |
-| planId | String | ID of the plan that contains the bucket. Immutable after creation. Optional. |
+| planId | String | ID of the plan that contains the bucket. Required. Must match `planId` in the URL. Immutable after creation. |
 | extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. Optional. |
 
 ## Response
@@ -58,16 +57,13 @@ If successful, this method returns a `201 Created` response code and a [bucket](
 The following example shows a request.
 
 ```http
-POST https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/buckets
+POST https://graph.microsoft.com/beta/planner/plans_v2/b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31/buckets
 Content-Type: application/json
 
 {
   "@odata.type": "#microsoft.graph.bucket",
   "displayName": "In progress",
-  "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection"
-  }
+  "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31"
 }
 ```
 
@@ -84,20 +80,6 @@ Content-Type: application/json
 {
   "@odata.type": "#microsoft.graph.bucket",
   "id": "206ac2f7-b3e0-e350-a95d-d7fe9091c22f",
-  "displayName": "String",
-  "planId": "String",
-  "creationInfo": {
-    "@odata.type": "microsoft.graph.creationInfo"
-  },
-  "lastModifiedBy": {
-    "@odata.type": "microsoft.graph.identitySet"
-  },
-  "lastModifiedDateTime": "String (timestamp)",
-  "capabilities": {
-    "@odata.type": "microsoft.graph.bucketCapability"
-  },
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection"
-  }
+  "displayName": "In progress"
 }
 ```

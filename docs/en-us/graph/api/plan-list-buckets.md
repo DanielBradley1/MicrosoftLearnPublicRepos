@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-list-buckets?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# List bucket objects
+# List buckets
 
 Namespace: microsoft.graph
 
@@ -15,22 +15,17 @@ Get a list of the bucket objects and their properties.
 
 Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
+| Delegated \(work or school account\) | Tasks.Read | Tasks.ReadWrite |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| Application | Tasks.Read.All | Tasks.ReadWrite.All |
 
 ## HTTP request
 
 ```http
-GET /me/planner/plans_v2/{planId}/buckets
-GET /users/{usersId}/planner/plans_v2/{planId}/buckets
+GET /planner/plans_v2/{planId}/buckets
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -53,7 +48,7 @@ If successful, this method returns a `200 OK` response code and a collection of 
 The following example shows a request.
 
 ```http
-GET https://graph.microsoft.com/beta/me/planner/plans_v2/{planId}/buckets
+GET https://graph.microsoft.com/beta/planner/plans_v2/{planId}/buckets
 ```
 
 ### Response
@@ -71,21 +66,7 @@ Content-Type: application/json
     {
       "@odata.type": "#microsoft.graph.bucket",
       "id": "206ac2f7-b3e0-e350-a95d-d7fe9091c22f",
-      "displayName": "String",
-      "planId": "String",
-      "creationInfo": {
-        "@odata.type": "microsoft.graph.creationInfo"
-      },
-      "lastModifiedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "lastModifiedDateTime": "String (timestamp)",
-      "capabilities": {
-        "@odata.type": "microsoft.graph.bucketCapability"
-      },
-      "extensions": {
-        "@odata.type": "microsoft.graph.extensionFieldCollection"
-      }
+      "displayName": "Product launch"
     }
   ]
 }

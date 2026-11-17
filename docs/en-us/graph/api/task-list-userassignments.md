@@ -27,10 +27,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 GET /users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/userAssignments
 ```
 
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
-
 ## Request headers
 
 | Name | Description |
@@ -69,17 +65,7 @@ Content-Type: application/json
   "value": [
     {
       "@odata.type": "#microsoft.graph.userAssignment",
-      "id": "aec6cd49-aa47-7b42-5079-0a5b5197edd1",
-      "user": {
-        "@odata.type": "microsoft.graph.identity"
-      },
-      "assignedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "assignedDateTime": "String (timestamp)",
-      "capabilities": {
-        "@odata.type": "microsoft.graph.userAssignmentCapability"
-      }
+      "id": "aec6cd49-aa47-7b42-5079-0a5b5197edd1"
     }
   ]
 }

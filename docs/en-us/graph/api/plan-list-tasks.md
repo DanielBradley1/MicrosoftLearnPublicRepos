@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-list-tasks?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # List task objects
 
@@ -23,20 +23,15 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 | Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Tasks.Read | Not available. |
+| Delegated \(work or school account\) | Tasks.Read | Tasks.ReadWrite |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Tasks.Read.All | Not available. |
+| Application | Tasks.Read.All | Tasks.ReadWrite.All |
 
 ## HTTP request
 
 ```http
-GET /planner/tasks_v2
-GET /me/planner/tasks_v2
+GET /planner/plans_v2/{planId}/tasks
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -59,7 +54,7 @@ If successful, this method returns a `200 OK` response code and a collection of 
 The following example shows a request.
 
 ```http
-GET https://graph.microsoft.com/beta/planner/tasks_v2
+GET https://graph.microsoft.com/beta/planner/plans_v2/{planId}/tasks
 ```
 
 ### Response
@@ -77,60 +72,10 @@ Content-Type: application/json
     {
       "@odata.type": "#microsoft.graph.task",
       "id": "86d64a5b-109d-39c9-dd43-d7fffb6a1670",
-      "displayName": "String",
-      "planId": "String",
-      "bucketId": "String",
-      "goalIds": [
-        "String"
-      ],
-      "status": "String",
-      "priority": "Integer",
-      "percentComplete": "Integer",
-      "startDateTime": {
-        "@odata.type": "microsoft.graph.dateWithOptionalTime"
-      },
-      "dueDateTime": {
-        "@odata.type": "microsoft.graph.dateWithOptionalTime"
-      },
-      "finishDateTime": {
-        "@odata.type": "microsoft.graph.dateWithOptionalTime"
-      },
-      "notes": {
-        "@odata.type": "microsoft.graph.itemBody"
-      },
-      "creationInfo": {
-        "@odata.type": "microsoft.graph.creationInfo"
-      },
-      "lastModifiedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "lastModifiedDateTime": "String (timestamp)",
-      "completedBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "completedDateTime": "String (timestamp)",
-      "recurrence": {
-        "@odata.type": "microsoft.graph.plannerTaskRecurrence"
-      },
-      "archivalInfo": {
-        "@odata.type": "microsoft.graph.plannerArchivalInfo"
-      },
-      "planView": {
-        "@odata.type": "microsoft.graph.taskPlanView"
-      },
-      "personalView": {
-        "@odata.type": "microsoft.graph.taskPersonalView"
-      },
-      "parentTaskId": "String",
-      "hasChildren": "Boolean",
-      "isCritical": "Boolean",
-      "hasChat": "Boolean",
-      "capabilities": {
-        "@odata.type": "microsoft.graph.taskCapability"
-      },
-      "extensions": {
-        "@odata.type": "microsoft.graph.extensionFieldCollection"
-      }
+      "displayName": "Product launch",
+      "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
+      "bucketId": "9c9c7a3d-5b7f-45e9-9df9-9f8b0f7edc9a",
+      "status": "notStarted"
     }
   ]
 }

@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 The **planView** property of the [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) resource uses this type.
 
-Plan-scoped view metadata for a [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta), including the plan's category definitions.
+Plan-scoped view metadata for a [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta), including the plan's category definitions. To [read categories](https://learn.microsoft.com/en-us/graph/api/planview-list-categories?view=graph-rest-beta), expand **planView** and its **categories** relationship on the owning plan.
 
 ## Properties
 

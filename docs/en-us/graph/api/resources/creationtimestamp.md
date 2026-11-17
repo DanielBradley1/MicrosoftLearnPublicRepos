@@ -11,7 +11,7 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 The **users** property of the [chatReaction](https://learn.microsoft.com/en-us/graph/api/resources/chatreaction?view=graph-rest-beta) resource uses this type.
 
-Identifies who performed an action and when, reused across Planner V4 types that need a lightweight actor-plus-timestamp pair \(for example, a [chatReaction](https://learn.microsoft.com/en-us/graph/api/resources/chatreaction?view=graph-rest-beta) author\).
+Identifies who performed an action and when, reused across types in the Planner Unified plans Graph API that need a lightweight actor-plus-timestamp pair \(for example, a [chatReaction](https://learn.microsoft.com/en-us/graph/api/resources/chatreaction?view=graph-rest-beta) author\).
 
 ## Properties
 

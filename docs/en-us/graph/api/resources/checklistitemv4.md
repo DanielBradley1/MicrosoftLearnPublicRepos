@@ -15,12 +15,12 @@ Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/resourc
 
 ## Methods
 
+To create checklist items with a task, use a [deep insert](https://learn.microsoft.com/en-us/graph/api/planner-post-tasks_v2?view=graph-rest-beta). This resource doesn't expose a standalone create or update operation.
+
 | Method | Return type | Description |
 | :--- | :--- | :--- |
 | [List](https://learn.microsoft.com/en-us/graph/api/task-list-checklist?view=graph-rest-beta) | [checklistItemV4](https://learn.microsoft.com/en-us/graph/api/resources/checklistitemv4?view=graph-rest-beta) collection | Get a list of the checklistItemV4 objects and their properties. |
-| [Create](https://learn.microsoft.com/en-us/graph/api/task-post-checklist?view=graph-rest-beta) | [checklistItemV4](https://learn.microsoft.com/en-us/graph/api/resources/checklistitemv4?view=graph-rest-beta) | Create a new checklistItemV4 object. |
 | [Get](https://learn.microsoft.com/en-us/graph/api/checklistitemv4-get?view=graph-rest-beta) | [checklistItemV4](https://learn.microsoft.com/en-us/graph/api/resources/checklistitemv4?view=graph-rest-beta) | Read the properties and relationships of [checklistItemV4](https://learn.microsoft.com/en-us/graph/api/resources/checklistitemv4?view=graph-rest-beta) object. |
-| [Update](https://learn.microsoft.com/en-us/graph/api/checklistitemv4-update?view=graph-rest-beta) | [checklistItemV4](https://learn.microsoft.com/en-us/graph/api/resources/checklistitemv4?view=graph-rest-beta) | Update the properties of a checklistItemV4 object. |
 
 ## Properties
 

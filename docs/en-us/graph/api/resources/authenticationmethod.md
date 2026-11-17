@@ -38,6 +38,9 @@ Listing users' authentication methods only returns methods supported on this API
 | :--- | :--- | :--- |
 | createdDateTime | DateTimeOffset | Represents the date and time when an entity was created. Read-only. |
 | id | String | The identifier of this instance of an authentication method registered to this user. Read-only. |
+| lastUsedDateTime | DateTimeOffset | The date and time of the authentication method's latest successful use, when usage data is available. Read-only. Nullable. The timestamp uses ISO 8601 format and is always in UTC. For example, `2026-10-28T15:30:00Z`. |
+
+The **lastUsedDateTime** value is populated on a best-effort basis and isn't guaranteed to reflect usage in real time. It can be `null` or absent when usage data is unavailable or the authentication method doesn't support usage tracking. A `null` or absent value doesn't mean that the method was never used. Failure to retrieve usage data doesn't cause the authentication-method request to fail.
 
 ## Relationships
 
@@ -51,6 +54,7 @@ The following JSON representation shows the resource type.
 {
   "@odata.type": "#microsoft.graph.authenticationMethod",
   "id": "String (identifier)",
-  "createdDateTime": "String (timestamp)"
+  "createdDateTime": "String (timestamp)",
+  "lastUsedDateTime": "String (timestamp)"
 }
 ```

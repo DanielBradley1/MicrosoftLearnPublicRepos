@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/task-list-messages?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# List plannerChatMessages for a task
+# List messages
 
 Namespace: microsoft.graph
 
@@ -24,12 +24,8 @@ Choose the permission or permissions marked as least privileged for this API. Us
 ## HTTP request
 
 ```http
-GET /users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/messages
+GET /planner/tasks_v2/{taskId}/messages
 ```
-
-## Optional query parameters
-
-This method supports some of the OData query parameters to help customize the response. For general information, see [OData query parameters](https://learn.microsoft.com/en-us/graph/query-parameters).
 
 ## Request headers
 
@@ -52,7 +48,7 @@ If successful, this method returns a `200 OK` response code and a collection of 
 The following example shows a request.
 
 ```http
-GET https://graph.microsoft.com/beta/users/{usersId}/planner/plans_v2/{planId}/tasks/{taskId}/messages
+GET https://graph.microsoft.com/beta/planner/tasks_v2/{taskId}/messages
 ```
 
 ### Response
@@ -69,22 +65,7 @@ Content-Type: application/json
   "value": [
     {
       "@odata.type": "#microsoft.graph.plannerChatMessage",
-      "id": "260e1d70-6d06-3014-ceb0-4b020aa33c89",
-      "messageType": "String",
-      "content": "String",
-      "properties": {
-        "@odata.type": "microsoft.graph.chatMessageProperties"
-      },
-      "createdBy": {
-        "@odata.type": "microsoft.graph.identitySet"
-      },
-      "createdDateTime": "String (timestamp)",
-      "threadType": "String",
-      "parentEntityId": "String",
-      "isDeleted": "Boolean",
-      "deletedTime": "String (timestamp)",
-      "isEdited": "Boolean",
-      "editedTime": "String (timestamp)"
+      "id": "260e1d70-6d06-3014-ceb0-4b020aa33c89"
     }
   ]
 }

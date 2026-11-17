@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/planneruser-post-tasks_v2?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-10-15 -->
 
-# Add task to a user
+# task resource type
 
 Namespace: microsoft.graph
 
@@ -9,149 +9,77 @@ Important
 
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-Add tasks\_v2 by posting to the tasks\_v2 collection.
+A task in the Planner Unified plans Graph API. `planId` routes the task back to its parent [plan](https://learn.microsoft.com/en-us/graph/api/plan?view=graph-rest-beta). Unlike the **plannerTask**/**plannerTaskDetails** split in the Planner Basic plans Graph API, a task in the Planner Unified plans Graph API has no separate details object - description, notes, checklist, assignments, and links are properties and sub-collections directly on the task.
 
-## Permissions
+Inherits from [plannerDelta](https://learn.microsoft.com/en-us/graph/api/plannerdelta?view=graph-rest-beta).
 
-Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
+Use the listed methods to create, read, update, and delete tasks. You can create supported related objects in the same request as a task by using a [deep insert](https://learn.microsoft.com/en-us/graph/planner-post-tasks_v2?view=graph-rest-beta). This doesn't imply standalone CRUD support for every related type, or that sending an array in a PATCH request replaces the collection.
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+## Methods
+
+| Method | Return type | Description |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| [List](https://learn.microsoft.com/en-us/graph/plan-list-tasks?view=graph-rest-beta) | [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) collection | Get a list of the task objects and their properties. |
+| [Create](https://learn.microsoft.com/en-us/graph/planner-post-tasks_v2?view=graph-rest-beta) | [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) | Create a new task object. |
+| [Get](https://learn.microsoft.com/en-us/graph/task-get?view=graph-rest-beta) | [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) | Read the properties and relationships of [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) object. |
+| [Update](https://learn.microsoft.com/en-us/graph/task-update?view=graph-rest-beta) | [task](https://learn.microsoft.com/en-us/graph/api/task?view=graph-rest-beta) | Update the properties of a task object. |
+| [Delete](https://learn.microsoft.com/en-us/graph/plan-delete-tasks?view=graph-rest-beta) | None | Delete a task object. |
+| [List checklist](https://learn.microsoft.com/en-us/graph/task-list-checklist?view=graph-rest-beta) | [checklistItemV4](https://learn.microsoft.com/en-us/graph/api/checklistitemv4?view=graph-rest-beta) collection | Get a list of the checklistItemV4 objects and their properties. |
+| [List customFieldValues](https://learn.microsoft.com/en-us/graph/task-list-customfieldvalues?view=graph-rest-beta) | [customFieldValue](https://learn.microsoft.com/en-us/graph/api/customfieldvalue?view=graph-rest-beta) collection | Get a list of the customFieldValue objects and their properties. |
+| [List links](https://learn.microsoft.com/en-us/graph/task-list-links?view=graph-rest-beta) | [contentLink](https://learn.microsoft.com/en-us/graph/api/contentlink?view=graph-rest-beta) collection | Get a list of the contentLink objects and their properties. |
+| [List messages](https://learn.microsoft.com/en-us/graph/task-list-messages?view=graph-rest-beta) | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/plannerchatmessage?view=graph-rest-beta) collection | Get a list of the plannerChatMessage objects and their properties. |
+| [List userAssignments](https://learn.microsoft.com/en-us/graph/task-list-userassignments?view=graph-rest-beta) | [userAssignment](https://learn.microsoft.com/en-us/graph/api/userassignment?view=graph-rest-beta) collection | Get a list of the userAssignment objects and their properties. |
 
-## HTTP request
-
-```http
-POST /users/{usersId}/planner/tasks_v2/$ref
-```
-
-## Request headers
-
-| Name | Description |
-| :--- | :--- |
-| Authorization | Bearer {token}. Required. Learn more about [authentication and authorization](https://learn.microsoft.com/en-us/graph/auth/auth-concepts). |
-| Content-Type | application/json. Required. |
-
-## Request body
-
-In the request body, supply a JSON representation of the [task](https://learn.microsoft.com/en-us/graph/api/resources/task?view=graph-rest-beta) object.
-
-You can specify the following properties when creating a **task**.
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| displayName | String | Title of the task. Required. |
-| planId | String | ID of the plan that contains the task. Immutable after creation. Optional. |
-| bucketId | String | ID of the bucket that the task belongs to. Optional. |
-| goalIds | String collection | IDs of the goals that the task is associated with. Optional. |
-| status | plannerTaskStatus | Indicates progress on the task. The possible values are: `notStarted`, `inProgress`, `completed`, `blocked`, `unknownFutureValue`. Optional. |
-| priority | Int32 | Priority of the task. Supported values range from 0 \(urgent\) to 10 \(low\). Required. |
-| percentComplete | Int32 | Percentage of the task's completion, ranging from 0 to 100. Required. |
-| startDateTime | [dateWithOptionalTime](https://learn.microsoft.com/en-us/graph/api/resources/datewithoptionaltime?view=graph-rest-beta) | Date and, optionally, time the task is scheduled to start. Optional. |
-| dueDateTime | [dateWithOptionalTime](https://learn.microsoft.com/en-us/graph/api/resources/datewithoptionaltime?view=graph-rest-beta) | Date and, optionally, time the task is due. Optional. |
-| finishDateTime | [dateWithOptionalTime](https://learn.microsoft.com/en-us/graph/api/resources/datewithoptionaltime?view=graph-rest-beta) | Date and, optionally, time the task was finished. Optional. |
-| notes | [itemBody](https://learn.microsoft.com/en-us/graph/api/resources/itembody?view=graph-rest-beta) | Additional details or notes about the task. Optional. |
-| recurrence | [plannerTaskRecurrence](https://learn.microsoft.com/en-us/graph/api/resources/plannertaskrecurrence?view=graph-rest-beta) | Recurrence pattern for the task, if it repeats. Optional. |
-| planView | [taskPlanView](https://learn.microsoft.com/en-us/graph/api/resources/taskplanview?view=graph-rest-beta) | Task view settings scoped to the plan, such as applied category IDs. Optional. |
-| personalView | [taskPersonalView](https://learn.microsoft.com/en-us/graph/api/resources/taskpersonalview?view=graph-rest-beta) | Per-user personal view settings for the task, such as My Day membership. Optional. |
-| parentTaskId | String | ID of the parent task, if this task is a subtask. Optional. |
-| hasChildren | Boolean | Indicates whether the task has subtasks. Optional. |
-| isCritical | Boolean | Indicates whether the task is on the critical path, as computed from its dependencies. Optional. |
-| hasChat | Boolean | Indicates whether the task has an associated chat. Optional. |
-| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/resources/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. Optional. |
+| archivalInfo | [plannerArchivalInfo](https://learn.microsoft.com/en-us/graph/api/plannerarchivalinfo?view=graph-rest-beta) | Service-populated information about whether the entity is archived, and when it was archived. Read-only. |
+| bucketId | String | ID of the bucket that the task belongs to. |
+| capabilities | [taskCapability](https://learn.microsoft.com/en-us/graph/api/taskcapability?view=graph-rest-beta) | Server-computed, read-only capability flags indicating which optional features are enabled for the entity. |
+| completedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user who marked the task complete. Read-only. |
+| completedDateTime | DateTimeOffset | Date and time the task was completed. Read-only. |
+| creationInfo | [creationInfo](https://learn.microsoft.com/en-us/graph/api/creationinfo?view=graph-rest-beta) | Read-only creation metadata for the entity. |
+| displayName | String | Title of the task. |
+| dueDateTime | [dateWithOptionalTime](https://learn.microsoft.com/en-us/graph/api/datewithoptionaltime?view=graph-rest-beta) | Date and, optionally, time the task is due. |
+| extensions | [extensionFieldCollection](https://learn.microsoft.com/en-us/graph/api/extensionfieldcollection?view=graph-rest-beta) | Custom extension field values set on the entity. Supports $select. |
+| finishDateTime | [dateWithOptionalTime](https://learn.microsoft.com/en-us/graph/api/datewithoptionaltime?view=graph-rest-beta) | Date and, optionally, time the task was finished. |
+| goalIds | String collection | IDs of the goals that the task is associated with. |
+| hasChat | Boolean | Indicates whether the task has an associated chat. Read-only. |
+| hasChildren | Boolean | Indicates whether the task has subtasks. Read-only. |
+| id | String | The unique identifier of the entity. Read-only. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/entity?view=graph-rest-beta) |
+| isCritical | Boolean | Indicates whether the task is on the critical path, as computed from its dependencies. Read-only. |
+| lastModifiedBy | [identitySet](https://learn.microsoft.com/en-us/graph/api/identityset?view=graph-rest-beta) | Identity of the user \(or application\) who last modified the entity. Read-only. |
+| lastModifiedDateTime | DateTimeOffset | Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only. |
+| notes | [itemBody](https://learn.microsoft.com/en-us/graph/api/itembody?view=graph-rest-beta) | Additional details or notes about the task. |
+| parentTaskId | String | ID of the parent task, if this task is a subtask. |
+| percentComplete | Int32 | Percentage of the task's completion, ranging from 0 to 100. |
+| personalView | [taskPersonalView](https://learn.microsoft.com/en-us/graph/api/taskpersonalview?view=graph-rest-beta) | Per-user personal view settings for the task, such as My Day membership. |
+| planId | String | ID of the plan that contains the task. Immutable after creation. |
+| planView | [taskPlanView](https://learn.microsoft.com/en-us/graph/api/taskplanview?view=graph-rest-beta) | Task view settings scoped to the plan, such as applied category IDs. |
+| priority | Int32 | Priority of the task. Supported values range from 0 \(urgent\) to 10 \(low\). |
+| recurrence | [plannerTaskRecurrence](https://learn.microsoft.com/en-us/graph/api/plannertaskrecurrence?view=graph-rest-beta) | Recurrence pattern for the task, if it repeats. |
+| startDateTime | [dateWithOptionalTime](https://learn.microsoft.com/en-us/graph/api/datewithoptionaltime?view=graph-rest-beta) | Date and, optionally, time the task is scheduled to start. |
+| status | plannerTaskStatus | Indicates progress on the task. The possible values are: `notStarted`, `inProgress`, `completed`, `blocked`, `unknownFutureValue`. |
 
-## Response
+## Relationships
 
-If successful, this method returns a `204 No Content` response code and a [task](https://learn.microsoft.com/en-us/graph/api/resources/task?view=graph-rest-beta) object in the response body.
+| Relationship | Type | Description |
+| :--- | :--- | :--- |
+| checklist | [checklistItemV4](https://learn.microsoft.com/en-us/graph/api/checklistitemv4?view=graph-rest-beta) collection | Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable. |
+| customFieldValues | [customFieldValue](https://learn.microsoft.com/en-us/graph/api/customfieldvalue?view=graph-rest-beta) collection | The collection of custom field values set on the task. Read-only. Nullable. |
+| links | [contentLink](https://learn.microsoft.com/en-us/graph/api/contentlink?view=graph-rest-beta) collection | Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable. |
+| messages | [plannerChatMessage](https://learn.microsoft.com/en-us/graph/api/plannerchatmessage?view=graph-rest-beta) collection | The collection of chat messages associated with the task. Read-only. Nullable. |
+| userAssignments | [userAssignment](https://learn.microsoft.com/en-us/graph/api/userassignment?view=graph-rest-beta) collection | User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable. |
 
-## Examples
+## JSON representation
 
-### Request
+The following JSON representation shows the resource type.
 
-The following example shows a request.
-
-```http
-POST https://graph.microsoft.com/beta/users/{usersId}/planner/tasks_v2/$ref
-Content-Type: application/json
-
+```json
 {
   "@odata.type": "#microsoft.graph.task",
-  "displayName": "Prepare quarterly report",
-  "planId": "b3d9f9a2-3e14-4a4b-9b2b-6b6d9e6a2f31",
-  "bucketId": "9c9c7a3d-5b7f-45e9-9df9-9f8b0f7edc9a",
-  "goalIds": [
-    "3f8a1c9d-6b42-4e7a-9d31-8c2f6b9a4e17"
-  ],
-  "status": "notStarted",
-  "priority": 5,
-  "percentComplete": 0,
-  "startDateTime": {
-    "@odata.type": "microsoft.graph.dateWithOptionalTime",
-    "date": "2026-06-01",
-    "isTimeSpecified": false
-  },
-  "dueDateTime": {
-    "@odata.type": "microsoft.graph.dateWithOptionalTime",
-    "date": "2026-06-15",
-    "isTimeSpecified": false
-  },
-  "notes": {
-    "@odata.type": "microsoft.graph.itemBody",
-    "content": "Compile Q2 sales figures and prepare summary slides.",
-    "contentType": "text"
-  },
-  "recurrence": {
-    "@odata.type": "microsoft.graph.plannerTaskRecurrence",
-    "schedule": {
-      "@odata.type": "microsoft.graph.plannerRecurrenceSchedule",
-      "patternStartDateTime": "2026-06-01T00:00:00Z",
-      "pattern": {
-        "@odata.type": "microsoft.graph.recurrencePattern",
-        "type": "weekly",
-        "interval": 1,
-        "daysOfWeek": [
-          "monday"
-        ],
-        "firstDayOfWeek": "sunday"
-      }
-    }
-  },
-  "planView": {
-    "@odata.type": "microsoft.graph.taskPlanView",
-    "appliedCategoryIds": [
-      "e4f8a3c6-9d21-4b7a-8e42-6c1f9a3d5b28"
-    ]
-  },
-  "personalView": {
-    "@odata.type": "microsoft.graph.taskPersonalView",
-    "isOnMyDay": true
-  },
-  "parentTaskId": "2c8f4b6a-9d31-4e7c-8a52-3f6b9d2e4c81",
-  "hasChildren": false,
-  "isCritical": false,
-  "hasChat": false,
-  "extensions": {
-    "@odata.type": "microsoft.graph.extensionFieldCollection",
-    "projectCode": "PRJ-4521"
-  }
-}
-```
-
-### Response
-
-The following example shows the response.
-
-> **Note:** The response object shown here might be shortened for readability.
-
-```http
-HTTP/1.1 204 No Content
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.task",
-  "id": "86d64a5b-109d-39c9-dd43-d7fffb6a1670",
+  "id": "String (identifier)",
   "displayName": "String",
   "planId": "String",
   "bucketId": "String",
@@ -159,8 +87,8 @@ Content-Type: application/json
     "String"
   ],
   "status": "String",
-  "priority": "Integer",
-  "percentComplete": "Integer",
+  "priority": "Int32",
+  "percentComplete": "Int32",
   "startDateTime": {
     "@odata.type": "microsoft.graph.dateWithOptionalTime"
   },

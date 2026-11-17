@@ -15,11 +15,11 @@ Update a [webFilteringPolicyLink](https://learn.microsoft.com/en-us/graph/api/re
 
 Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
 
-| Permission type | Least privileged permission | Higher privileged permissions |
+| Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Not supported. | Not supported. |
+| Delegated \(work or school account\) | NetworkAccess.ReadWrite.All | Not available. |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| Application | NetworkAccess.ReadWrite.All | Not available. |
 
 Important
 
