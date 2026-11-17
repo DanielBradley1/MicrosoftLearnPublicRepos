@@ -57,6 +57,12 @@ After you create your device configuration policy, Intune provides reporting dat
    - **Pending**: The device hasn't checked in with Intune to receive the policy yet.
    - **Not applicable**: The device can't receive the policy. For example, the policy updates a setting specific to iOS 11.1, but the device is using iOS 10.
 
+
+   Note
+
+
+   The Android Enterprise setting **Require users to authenticate with a Google Workspace account** reports **Error** until the user completes authentication. This setting's noncompliance doesn't change the device's overall compliance state. Before troubleshooting a deployment failure, check whether the user has completed the prompt. For more information, see [Require Google Workspace authentication on Android Enterprise devices](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/require-google-workspace-authentication-android).
+
 3. Select **Device assignment status**:
 
    ![Screenshot that shows the device assignment status report in Microsoft Intune and Intune admin center.](https://learn.microsoft.com/en-us/intune/device-configuration/media/monitor-device-profile/device-assignment-status.png)

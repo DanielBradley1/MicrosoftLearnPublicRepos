@@ -702,6 +702,25 @@ Note
 
 #### Users and Accounts
 
+- **Require users to authenticate with a Google Workspace account**: Set to **True** to require users to authenticate with a managed Google Account from your organization's Google Workspace domain. After authentication, the managed Google Account replaces the device's managed Google Play account. The Microsoft Entra account associated with the device doesn't change.
+
+  Applies to:
+
+  - Android Enterprise corporate-owned devices with a work profile \(COPE\)
+  - Android Enterprise corporate owned fully managed \(COBO\)
+
+
+  For personally owned devices with a work profile, you must use a device configuration template to require Google Workspace authentication.
+
+
+  Dedicated devices aren't supported. The enterprise must use a managed Google domain enterprise, with a verified Google Workspace domain and managed Google Accounts for the users.
+
+
+  Until the user completes authentication, the setting reports **Error**, and the Gmail app, if present, is disabled. This setting's noncompliance doesn't change the device's overall compliance state.
+
+
+  For prerequisites, configuration steps, and the user experience, see [Require Google Workspace authentication on Android Enterprise devices](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/require-google-workspace-authentication-android).
+
 - **Block account changes**: If **True**, prevents users from updating or changing accounts when in kiosk mode. If **False**, Intune doesn't change or update this setting. By default, the OS might allow users to update user accounts on the device.
 
   Applies to:

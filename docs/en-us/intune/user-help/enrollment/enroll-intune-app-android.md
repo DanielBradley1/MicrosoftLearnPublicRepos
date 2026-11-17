@@ -68,6 +68,15 @@ Enter your company-provided token.
 5. On the **Scan or enter code** screen, type in the code that your organization gave you. Then select **Next**.
 6. Return to [Enroll device](#enroll-device) step 4 to continue setup.
 
+## Sign in with your Google Workspace account
+
+Your organization might also require Google Workspace authentication on a corporate-owned fully managed device, a corporate-owned device with a work profile, or a personally owned device with a work profile. This is separate from the Microsoft work or school account sign-in during enrollment.
+
+1. Open the **Sign in with your work account** prompt on your device.
+2. Add your managed Google Account from your organization's Google Workspace domain, and complete authentication.
+
+Until you complete authentication, the Gmail app, if installed, is disabled. If you don't know which Google Workspace account to use, contact your IT support person.
+
 ## Next steps
 
 Still need help? Contact your IT support person. Check the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) or app for your organization's contact information.

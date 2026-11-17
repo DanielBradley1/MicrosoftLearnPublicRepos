@@ -219,6 +219,7 @@ Intune supports the following OEMConfig apps:
 | imotion | com.iwaylink.oemconfig |  |
 | Inventus | com.inventus.oemconfig.gen |  |
 | Janam | com.oemconfig.janam |  |
+| KEYENCE | com.keyence.autoid.oemconfig.release |  |
 | Kyocera | jp.kyocera.enterprisedeviceconfig |  |
 | Lenovo | com.lenovo.oemconfig.rel |  |
 | LG | com.lge.android.oemconfig |  |

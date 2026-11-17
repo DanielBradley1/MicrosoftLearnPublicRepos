@@ -11,6 +11,7 @@ For more information on the settings catalog, and what it is, go to [Use the set
 
 This feature applies to:
 
+- Android Enterprise
 - iOS/iPadOS
 - macOS
 - Windows
@@ -29,6 +30,18 @@ These web browser settings are built in, and can be configured & deployed to you
 Previously, to configure Google Chrome settings on Windows devices, you created a custom OMA-URI device configuration policy.
 
 For a sample Microsoft Edge scenario, see [Create a Microsoft Edge policy](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/configure-edge).
+
+## Require Google Workspace authentication on Android devices
+
+This feature applies to:
+
+- Android Enterprise corporate-owned fully managed devices
+- Android Enterprise corporate-owned devices with a work profile
+- Android Enterprise personally owned devices with a work profile \(using a device configuration template\)
+
+For corporate-owned devices, use the settings catalog to require users to authenticate with a managed Google Account from your organization's Google Workspace domain. For personally owned devices with a work profile, use a device configuration template.
+
+For prerequisites and steps, see [Require Google Workspace authentication on Android Enterprise devices](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/require-google-workspace-authentication-android).
 
 ## Manage AI features on Android devices
 

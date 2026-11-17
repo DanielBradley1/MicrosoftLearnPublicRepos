@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/install/release-notes -->
-<!-- Sitemap-Last-Modified: 2026-09-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Release notes for Configuration Manager
 
@@ -48,6 +48,74 @@ Error: InstallSMSObjectAndCounterKeySettingsIntoRegistry() could not get the "HK
 Perfsetup can also exit with code `1000`. The affected component name in the registry path can vary.
 
 To resolve this issue, install the [update rollup for Configuration Manager version 2603 \(KB39169655\)](https://learn.microsoft.com/en-us/intune/configmgr/hotfix/2603/39169655) or update to Configuration Manager version 2609, which also includes this fix.
+
+## OS deployment
+
+### Task sequence status messages fail in the full OS with CNG/KSP boot media certificates
+
+*Applies to: version 2609*
+
+After you upgrade to Configuration Manager version 2609, task sequences that use boot media with an imported public key infrastructure \(PKI\) certificate backed by a Cryptography Next Generation \(CNG\) key storage provider \(KSP\) might fail to send status messages after restarting from Windows PE into the full Windows OS.
+
+**smsts.log** records error `0x80072f9a` \(`ERROR_WINHTTP_CLIENT_CERT_NO_ACCESS_PRIVATE_KEY`\). Each failed attempt to send a status message is retried, adding delays to OS deployment. The Windows PE phase isn't affected.
+
+To work around this issue, import the certificate's private key into a legacy cryptographic service provider \(CSP\), export the certificate and private key to a new Personal Information Exchange \(PFX\) file, and recreate the bootable media.
+
+Use an RSA certificate with an exportable private key. Protect the PFX files and their passwords from unauthorized access.
+
+1. Open a Command Prompt window in the folder that contains the original PFX file. Run the following command to import the certificate into the current user's **Personal** certificate store by using the **Microsoft Enhanced RSA and AES Cryptographic Provider**:
+
+   ```console
+   certutil -user -csp "Microsoft Enhanced RSA and AES Cryptographic Provider" -p "<pfxpassword>" -importPFX My boot-media-original.pfx
+   ```
+
+
+   Replace `<pfxpassword>` with the original PFX file's password and `boot-media-original.pfx` with its file name.
+
+2. Run `certmgr.msc` to open the certificate management console for the current user. Expand **Personal**, and then select **Certificates**.
+3. Right-click the imported certificate, select **All Tasks**, and then select **Export**. In the Certificate Export Wizard, select **Next**.
+4. Select **Yes, export the private key**, and then select **Next**. Select **Personal Information Exchange - PKCS #12 \(.PFX\)** and **Include all certificates in the certification path if possible**, and then select **Next**.
+5. Select **Password**, enter and confirm a strong password, and then select **Next**. Specify a new file name, such as `boot-media-legacy-csp.pfx`, select **Next**, and then select **Finish**.
+6. Verify the exported PFX file by running the following command. Replace `<pfxpassword>` with the new PFX file's password:
+
+   ```console
+   certutil -p "<pfxpassword>" -dump boot-media-legacy-csp.pfx
+   ```
+
+
+   Verify that the provider is **Microsoft Enhanced RSA and AES Cryptographic Provider** before you use the certificate to create media.
+
+7. [Create new bootable media](https://learn.microsoft.com/en-us/intune/configmgr/osd/deploy-use/create-bootable-media#process). On the **Security** page of the Create Task Sequence Media Wizard, select **Import PKI certificate** and specify the new PFX file `boot-media-legacy-csp.pfx` and its password. Use the new media for subsequent deployments.
+
+For more information, see [certutil](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil) and [Export a certificate with its private key](https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/export-certificate-private-key).
+
+## Content management
+
+### Content downloads fail with HTTP 403.7 from PKI HTTPS distribution points
+
+*Applies to: version 2609*
+
+After you upgrade to Configuration Manager version 2609, clients and pull-distribution points might fail to download content from HTTPS distribution points that use public key infrastructure \(PKI\) certificates. Downloads can fail even when the downloading client or pull-distribution point has a valid client certificate.
+
+The source distribution point's IIS log records HTTP status `403.7`. **DataTransferService.log** and, for pull-distribution points, **PullDP.log** can record error `0x80190193`. Not all downloads are affected; connections that have already negotiated a valid client certificate might succeed.
+
+To identify whether a failed content download is affected by this issue, update the SSL settings on the affected distribution point and retry the download:
+
+Important
+
+This procedure briefly changes client certificate enforcement. Don't leave **Client certificates** set to **Accept**.
+
+1. On the affected distribution point server, open **Internet Information Services \(IIS\) Manager** as an administrator.
+2. In the **Connections** pane, expand the server, expand **Sites**, and then expand the website that hosts the distribution point virtual directories. Select **SMS\_DP\_SMSPKG$**.
+3. In **Features View**, double-click **SSL Settings**.
+4. On the **SSL Settings** page, verify that **Require SSL** is selected. Under **Client certificates**, select **Accept**, and then select **Apply** in the **Actions** pane.
+5. Under **Client certificates**, select **Require**, and then select **Apply** in the **Actions** pane. Keep **Require SSL** selected.
+6. Select the **SMS\_DP\_SMSSIG$** virtual directory and repeat steps 3 through 5.
+7. Retry the previously failed content download from the same distribution point. If the download succeeds after you apply these settings, this result confirms the issue described in this release note.
+
+This change isn't permanent. Configuration Manager reapplies the affected settings every 48 hours and when the distribution point is reconfigured or upgraded.
+
+For more information, see [Configure client certificates in IIS](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/configuring-step-4-configure-application-security#client-certificates).
 
 ## Client authentication and registration
 
@@ -131,14 +199,52 @@ Removing SUP role in Admin Console doesn't reset the superseding age property in
 
 ## Cloud services
 
-### CMG update to version 2609 fails when Azure permissions or resource provider registration are missing
+### CMG shared key access changes
 
 *Applies to: version 2609 updates with an existing cloud management gateway*
 
-Starting in version 2609, Configuration Manager automatically disables shared-key access for cloud management gateway \(CMG\) storage. Existing CMGs that previously used shared-key access also require Azure role-assignment permissions and resource provider registration for this transition. A successful deployment on an earlier version doesn't confirm that these prerequisites are met.
+Version 2609 automatically disables shared key access for CMG storage. The [CMG enhanced security](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2409#cmg-enhanced-security-option) workflow prepares the Azure prerequisites and configures the content uploader to use Microsoft Entra authentication instead of shared key authentication.
 
-If the CMG server application's service principal can't create the required storage role assignments, the CMG deployment update can fail. **CloudMgr.log** can report HTTP `403`, `DeploymentFailed`, and a denied `Microsoft.Authorization/roleAssignments/write` action. Missing **Microsoft.Maintenance** resource provider registration can also cause the deployment update to fail.
+Before updating, consider enabling **CMG enhanced security** with an authorized Azure administrator. For a running virtual machine scale set CMG, use the following steps when the action is available:
 
-Before updating, verify the CMG server application's effective permissions at each CMG resource group. The **Contributor** role alone doesn't grant storage role-assignment permissions, and the signed-in administrator's permissions don't establish that the CMG application has access. Use the constrained role-assignment configuration described in [Configure Azure RBAC permissions for the server app](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-rbac-permissions-for-the-server-app), rather than granting unrestricted administrator permissions.
+1. In the Configuration Manager console, go to the **Administration** workspace, expand **Cloud Services**, and select **Cloud Management Gateway**.
+2. Select the CMG, then select **CMG enhanced security**. For more information, see [CMG enhanced security option](https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/changes/whats-new-in-version-2409#cmg-enhanced-security-option).
+3. Select the appropriate tenant and sign in with an Azure account authorized to assign the required roles at the CMG resource group and register resource providers in the subscription. Select **Update** and verify that the workflow completes successfully.
+4. Allow any resulting CMG deployment work and permission propagation to complete. Verify the server application's [Azure RBAC permissions](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-rbac-permissions-for-the-server-app) and the [required resource provider registration](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-resource-providers).
 
-Also verify that **Microsoft.Maintenance** is registered in every Azure subscription that hosts a CMG. Registration in a staging subscription doesn't register the provider in a different production subscription. For instructions, see [Configure Azure resource providers](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-resource-providers).
+If you don't enable enhanced security before updating, the transition away from shared key access can result in either of the following scenarios. Use the symptoms and logs to identify the applicable guidance.
+
+#### CMG update to version 2609 fails when Azure permissions or resource provider registration are missing
+
+Existing CMG deployment updates can fail if Azure permissions or resource provider registration required for the transition are missing.
+
+To address this failure, verify both prerequisites, even if you've run the **CMG enhanced security** workflow:
+
+- **Azure role-assignment permissions:** **CloudMgr.log** can report HTTP `403`, `DeploymentFailed`, and a denied `Microsoft.Authorization/roleAssignments/write` action. Configure the server application's permissions as described in [Configure Azure RBAC permissions for the server app](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-rbac-permissions-for-the-server-app). **Contributor** alone doesn't grant role-assignment permissions.
+- **Microsoft.Maintenance registration:** Verify that this resource provider is **Registered** in each subscription that hosts a CMG. Have an authorized Azure administrator complete any missing registration. For instructions, see [Configure Azure resource providers](https://learn.microsoft.com/en-us/intune/configmgr/core/clients/manage/cmg/configure-azure-ad#configure-azure-resource-providers).
+
+Allow permission changes and registration to complete, then verify the CMG deployment update and client communication. See [Verify CMG deployment and client communication](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/checklist-for-installing-update-2609#verify-cmg-deployment-and-client-communication).
+
+#### Content uploads to existing CMGs fail after updating to version 2609
+
+Packages and applications might fail to upload to an existing content-enabled CMG or repeatedly retry. This scenario can affect CMGs created before version 2409 that haven't had enhanced security enabled. The site-side content uploader can continue using shared key authentication after the Azure storage account has disabled it.
+
+Unlike the deployment update failure, content uploads can fail even when the CMG deployment update completes and the Azure prerequisites are met. Previously uploaded content isn't necessarily unavailable to clients.
+
+**PkgXferMgr.log** can record storage account key retrieval followed by errors similar to the following:
+
+```text
+Resource Manager - Key retrieved for storage service 
+Getting container Ids for StorageAccount: ...
+CheckServiceStatus() failed
+Failed to distribute content to the cloud DP.
+Sending failed. Failure count = ...
+```
+
+The preferred workaround for an affected, running virtual machine scale set CMG is to enable **CMG enhanced security**, when the action is available, by using the procedure earlier in this section. After the workflow and any resulting deployment work complete, retry content distribution and verify successful package uploads.
+
+Important
+
+This workflow is expected to correct the authentication setting, but recovery hasn't been validated for every affected configuration. The action might be unavailable, including when the CMG is in an error state. If it isn't available or doesn't restore content uploads, contact Microsoft Support for recovery guidance. Don't directly modify the Configuration Manager database or re-enable shared key access in Azure.
+
+Verify recovery through **PkgXferMgr.log** and [Monitor content you distribute](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed).

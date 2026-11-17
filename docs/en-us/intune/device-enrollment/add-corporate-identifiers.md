@@ -3,22 +3,24 @@
 
 # Identify devices as corporate-owned
 
-Ensure that corporate devices are marked as *corporate-owned* as soon as they enroll by adding their corporate identifiers ahead of time in the Microsoft Intune admin center. The benefit of managing corporate devices is that they enable more device management capabilities than personal devices. For example, Microsoft Intune can collect full phone number and app inventory from a corporate device, but can only collect partial phone number and app inventory for personal devices. To add corporate identifiers to Microsoft Intune, you can upload a file of corporate identifiers in the admin center or enter each identifier separately.
+Ensure that corporate devices are marked as *corporate-owned* as soon as they enroll by adding their corporate identifiers ahead of time in the Microsoft Intune admin center. The benefit of managing corporate devices is that they enable more device management capabilities than personal devices.
 
-It isn't necessary to add corporate identifiers for all deployments. During enrollment, Intune automatically assigns corporate-owned status to devices that join to Microsoft Entra via:
+For example, Microsoft Intune can collect full phone number and app inventory from a corporate device, but can only collect partial phone number and app inventory for personal devices. To add corporate identifiers to Microsoft Intune, you can upload a file of corporate identifiers in the admin center or enter each identifier separately.
+
+It isn't necessary to add corporate identifiers for all deployments. During enrollment, Intune automatically assigns corporate-owned status to devices that join to Microsoft Entra by using:
 
 - [Device enrollment manager](https://learn.microsoft.com/en-us/intune/device-enrollment/setup-enrollment-manager) account \(all platforms\)
 - An Apple device enrollment program such as [Apple School Manager](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/school-manager), Apple Business, or [Apple Configurator](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-configurator-ios) \(iOS/iPadOS only\)
 - [Windows Autopilot](https://learn.microsoft.com/en-us/autopilot/windows-autopilot)
 - Co-management with Microsoft Intune and group policy \(GPO\)
 - Azure Virtual Desktop
-- Automatic mobile device management \(MDM\) enrollment via provisioning package
+- Automatic mobile device management \(MDM\) enrollment by using provisioning package
 - [Knox Mobile Enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/android/setup-samsung-knox-mobile)
 - Android Enterprise management:
 
-  - [Coporate-owned devices with work profile](https://learn.microsoft.com/en-us/intune/device-enrollment/android/setup-corporate-work-profile)
+  - [Corporate-owned devices with work profile](https://learn.microsoft.com/en-us/intune/device-enrollment/android/setup-corporate-work-profile)
   - [Fully managed devices](https://learn.microsoft.com/en-us/intune/device-enrollment/android/setup-fully-managed)
-  - [Dedicated devices](https://learn.microsoft.com/en-us/intune/device-enrollment/android/setup-dedicated).
+  - [Dedicated devices](https://learn.microsoft.com/en-us/intune/device-enrollment/android/setup-dedicated)
 
 - Android Open Source Project \(AOSP\) management:
 
@@ -43,7 +45,7 @@ Microsoft Intune marks devices that register with Microsoft Entra as personal.
 > To add corporate identifiers, you must be assigned one of these roles:
 > 
 > - **Policy and Profile Manager**, a Microsoft Intune built-in role
-> - [**Intune Administrator**](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator), a Microsoft Entra built-in role
+> - [Intune Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator), a Microsoft Entra built-in role
 
 Important
 
@@ -57,7 +59,7 @@ These roles can *read*, *delete*, *create*, and *update* corporate device identi
 - Intune Administrator
 
 | Permission | Description |
-| --- | --- |
+| :--- | :--- |
 | Read | View the IMEI or serial numbers used as corporate device identifiers. |
 | Delete | Delete IMEI or serial numbers used as corporate device identifiers. |
 | Create | Create new corporate device identifiers or import a CSV file containing a list of corporate device identifiers. |
@@ -78,7 +80,7 @@ Before you begin, determine the type of corporate identifiers you want to add. Y
 The following table shows the identifiers supported for each platform. When a device with a matching identifier enrolls, Intune marks it as *corporate*.
 
 | Platform | IMEI number | Serial number | Serial number, model, manufacturer |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | Windows 11 | Not supported | Not supported | ✔️  <br>  <br>Supported with Windows 11, version 22H2 and later with [KB5035942 \(OS Builds 22621.3374 and 22631.3374\)](https://support.microsoft.com/topic/march-26-2024-kb5035942-os-builds-22621-3374-and-22631-3374-preview-3ad9affc-1a91-4fcb-8f98-1fe3be91d8df). |
 | Windows 10 | Not supported | Not supported | ✔️  <br>  <br>Supported with Windows 10, version 22H2 and later with [KB5039299 \(OS Build 19045.4598\)](https://support.microsoft.com/topic/june-25-2024-kb5039299-os-build-19045-4598-preview-d4e3e815-fdd8-465e-8144-42afa165efed). |
 | iOS/iPadOS | ✔️  <br>  <br>Supported in some cases. For more information, see [Add Android, iOS corporate identifiers](#add-android-ios-corporate-identifiers). | ✔️  <br>  <br>We recommend using a serial number for iOS/iPadOS identification when possible. | Not supported |
@@ -98,14 +100,14 @@ Remember, only add one type of corporate identifier per CSV file.
 
 To add corporate identifiers for Android and iOS/iPadOS platforms, list one IMEI or serial number per line as shown in the following example.
 
-```
+```csv
 01234567890123,device details
 02234567890123,device details
 ```
 
 Remove all periods, if applicable, from the serial number before you add it to the file. You can add device details after each corporate identifier. Details are limited to 128 characters and are for administrative use only. They don't appear on the device.
 
-Android and iOS/iPadOS devices can have multiple IMEI numbers. Intune reads and records one IMEI per enrolled device. If you import an IMEI that's different from the one already in Intune, Intune will mark the device as personal. If you import multiple IMEI numbers for the same device, the identifiers that haven't been inventoried appear with an *unknown* enrollment status.
+Android and iOS/iPadOS devices can have multiple IMEI numbers. Intune reads and records one IMEI per enrolled device. If you import an IMEI that's different from the one already in Intune, Intune marks the device as personal. If you import multiple IMEI numbers for the same device, the identifiers that aren't inventoried appear with an *unknown* enrollment status.
 
 Android serial numbers aren't guaranteed to be unique or present. Check with your device supplier to find out if the serial number is a reliable device ID. Serial numbers reported by the device to Intune might not match the ID shown on the device in Android settings or Android device information. Verify the type of serial number reported by the device manufacturer.
 
@@ -113,18 +115,18 @@ Android serial numbers aren't guaranteed to be unique or present. Check with you
 
 Important
 
-Windows corporate identifiers only apply at enrollment time. They don't determine ownership type in Intune after enrollment. Corporate identifiers are supported for devices running Windows 10 KB5039299 \(with OS Build 19045.4598\) and later. If you're enrolling Windows 10 devices with an earlier build, do not use the corporate identifier feature.
+Windows corporate identifiers only apply at enrollment time. They don't determine ownership type in Intune after enrollment. Corporate identifiers are supported for devices that run Windows 10 KB5039299 \(with OS Build 19045.4598\) and later. If you're enrolling Windows 10 devices with an earlier build, don't use the corporate identifier feature.
 
 To add corporate identifiers for corporate devices running Windows 11, list the manufacturer, model, and serial number for each device as shown in the following example.
 
-```
+```csv
 Microsoft,surface 5,01234567890123
 Lenovo,thinkpad t14,02234567890123
 ```
 
 Remove all periods, if applicable, from the serial number before you add it to the file.
 
-After you add Windows corporate identifiers, Intune marks devices that match all three identifiers as corporate-owned, and marks all other enrolling devices in your tenant as personal. This means that anything you exclude from the Windows corporate identifiers is marked personal, but only at enrollment time. Existing Windows logic determines the final state in Intune. For more information, see the table in this section. To change the ownership type in Intune, you have to manually adjust it in the admin center.
+After you add Windows corporate identifiers, Intune marks devices that match all three identifiers as corporate-owned, and marks all other enrolling devices in your tenant as personal. This means that anything you exclude from the Windows corporate identifiers is marked personal, but only at enrollment time. Existing Windows logic determines the final state in Intune. For more information, see the table in this section. To change the ownership type in Intune, manually adjust it in the admin center.
 
 ![Screenshot of selecting and adding corporate identifiers.](https://learn.microsoft.com/en-us/intune/device-enrollment/media/add-corporate-identifiers/device-enrollment-add-identifiers.png)
 
@@ -132,10 +134,10 @@ The following table lists the type of ownership given to devices when they enrol
 
 Tip
 
-As a reminder, corporate identifiers only change the device state at enrollment time. This means that after the device enrolls, the device state matches what you see in the **Without corporate identifiers** column in the table.
+Corporate identifiers only change the device state at enrollment time. This fact means that after the device enrolls, the device state matches what you see in the **Without corporate identifiers** column in the table.
 
 | Windows enrollment types | Without corporate identifiers | With corporate identifiers |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | The device enrolls through [Windows Autopilot](https://learn.microsoft.com/en-us/autopilot/enrollment-autopilot) | Corporate | Corporate |
 | The device enrolls through GPO, or [automatic enrollment from Configuration Manager for co-management](https://learn.microsoft.com/en-us/configmgr/comanage/quickstart-paths) | Corporate | Corporate |
 | The device enrolls through a [bulk provisioning package](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/create-bulk-package) | Corporate | Corporate |
@@ -143,14 +145,14 @@ As a reminder, corporate identifiers only change the device state at enrollment 
 | The device enrolls through Azure Virtual desktop \(non-hybrid\) | Corporate | Corporate |
 | [Automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm) with [Microsoft Entra join during Windows setup](https://learn.microsoft.com/en-us/azure/active-directory/device-management-azuread-joined-devices-frx) | Corporate, but will be blocked by personal enrollment restriction | Personal, unless defined by corporate identifiers |
 | [Automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm) with [Microsoft Entra join from Windows Settings](https://learn.microsoft.com/en-us/azure/active-directory/device-management-azuread-joined-devices-frx) | Corporate, but will be blocked by personal enrollment restriction | Personal, unless defined by corporate identifiers |
-| [Automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm) with Microsoft Entra join or hybrid Entra join via [Windows Autopilot for existing devices](https://learn.microsoft.com/en-us/autopilot/existing-devices) | Corporate, but will be blocked by personal enrollment restriction | Personal, unless defined by corporate identifiers |
+| [Automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm) with Microsoft Entra join or hybrid Entra join by using [Windows Autopilot for existing devices](https://learn.microsoft.com/en-us/autopilot/existing-devices) | Corporate, but will be blocked by personal enrollment restriction | Personal, unless defined by corporate identifiers |
 | [Windows Autopilot device preparation profile](https://learn.microsoft.com/en-us/autopilot/device-preparation/tutorial/user-driven/entra-join-workflow#windows-autopilot-device-preparation-user-driven-microsoft-entra-join-process) | Corporate, but will be blocked by personal enrollment restriction | Personal, unless defined by corporate identifiers |
 | [Automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm) with [Add Work Account from Windows Settings](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-register-device-on-network) | Personal | Personal, unless defined by corporate identifiers |
 | [MDM enrollment only](https://learn.microsoft.com/en-us/windows/client-management/mdm/mdm-enrollment-of-windows-devices) option from Windows Settings | Personal | Personal, unless defined by corporate identifiers |
 | [Enrollment using the Intune Company Portal app](https://learn.microsoft.com/en-us/intune/user-help/enrollment/enroll-windows) | Personal | Personal, unless defined by corporate identifiers |
-| Enrollment via a Microsoft 365 app, which occurs when users select the **Allow my organization to manage my device** option during app sign-in | Personal | Personal, unless defined by corporate identifiers |
+| Enrollment by using a Microsoft 365 app, which occurs when users select the **Allow my organization to manage my device** option during app sign-in | Personal | Personal, unless defined by corporate identifiers |
 
-Windows corporate identifiers can only change ownership type if someone adds them to Microsoft Intune. If you don't have corporate identifiers for Windows in Intune, or if you remove them, devices that are Microsoft Entra domain joined are marked as corporate-owned at enrollment time. This includes devices enrolled via [automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm#enable-windows-automatic-enrollment) with:
+Windows corporate identifiers can only change ownership type if someone adds them to Microsoft Intune. If you don't have corporate identifiers for Windows in Intune, or if you remove them, devices that are Microsoft Entra domain joined are marked as corporate-owned at enrollment time. These devices include devices enrolled by using [automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm#enable-windows-automatic-enrollment) with:
 
 - [Microsoft Entra join during Windows setup](https://learn.microsoft.com/en-us/azure/active-directory/device-management-azuread-joined-devices-frx).
 - [Microsoft Entra join from Windows settings](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-join-device-on-network).
@@ -183,7 +185,7 @@ Upload the CSV file you created in [Step 1: Create CSV file](#step-1-create-csv-
 
    Note
 
-   A pop-up window prompting you to review duplicate identifiers appears if the CSV file contains corporate identifiers that are already in Intune but have different device details. To resolve the duplicates, select the identifiers that you want to overwrite in Intune. Then select **Ok** to add the identifiers. Intune only compares the first duplicate of each identifier.
+   A dialog box prompts you to review duplicate identifiers if the CSV file contains corporate identifiers that are already in Intune but have different device details. To resolve the duplicates, select the identifiers that you want to overwrite in Intune. Then select **Ok** to add the identifiers. Intune only compares the first duplicate of each identifier.
 
 ### Manually enter corporate identifiers
 
@@ -199,19 +201,19 @@ Manually add corporate identifiers in the Microsoft Intune admin center.
    - **IMEI**
    - **Serial**
 
-5. Enter the corporate identifier and details. When you're done entering identifiers, select **Add**.
+5. Enter the corporate identifier and details. When you finish entering identifiers, select **Add**.
 6. Select **Refresh** to reload your list. The corporate identifiers you added should now be visible.
 
    Note
 
-   A pop-up window prompting you to review duplicate identifiers appears if your entries contain corporate identifiers that are already in Intune but have different device details. To resolve the duplicates, select the identifiers that you want to overwrite. Then select **Ok** to add the identifiers. Intune only compares the first duplicate of each identifier.
+   A dialog box prompts you to review duplicate identifiers if your entries contain corporate identifiers that are already in Intune but have different device details. To resolve the duplicates, select the identifiers that you want to overwrite. Then select **Ok** to add the identifiers. Intune only compares the first duplicate of each identifier.
 
 ### Check enrollment status
 
 Follow up on imported devices to ensure that they enroll in Intune. After you add corporate identifiers, you can see the status of the devices in the admin center:
 
 - **Enrolled**: The device completed enrollment.
-- **Not contacted**: The device hasn't made contact with the Microsoft Intune service.
+- **Not contacted**: The device didn't contact the Microsoft Intune service.
 - **Not applicable**
 - **Failed**: The device didn't complete enrollment.
 
@@ -247,7 +249,7 @@ To confirm the reason for an enrollment failure, go to **Devices** > **Enrollmen
 
 ## Known issues and limitations
 
-- Windows corporate device identifiers only apply at enrollment time. This means that when a device with corporate identifiers enrolls using the *Add Work Account from Windows Settings* option, it's marked as corporate-owned only at enrollment time. Microsoft Intune treats it as a corporate device for the enrollment restriction evaluation, but then after that the device appears as a personal device in the admin center. See the table under [Add Windows corporate identifiers](#add-windows-corporate-identifiers) to help you determine the ownership type. Look to the **Without corporate identifiers** column to learn which devices remain corporate or personal in your tenant for the long-term.
+- Windows corporate device identifiers only apply at enrollment time. When a device with corporate identifiers enrolls by using the *Add Work Account from Windows Settings* option, it's marked as corporate-owned only at enrollment time. Microsoft Intune treats it as a corporate device for the enrollment restriction evaluation, but then after that the device appears as a personal device in the admin center. To help you determine the ownership type, see the table under [Add Windows corporate identifiers](#add-windows-corporate-identifiers). Check the **Without corporate identifiers** column to learn which devices remain corporate or personal in your tenant for the long term.
 - Windows corporate device identifiers are only supported for devices running:
 
   - Windows 10 version 22H2 \(OS build 19045.4598\) or later.
@@ -263,7 +265,7 @@ To confirm the reason for an enrollment failure, go to **Devices** > **Enrollmen
 
 ## Resources
 
-For details about International Mobile Equipment Identifiers, see [3GGPP TS 23.003](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=729).
+For details about International Mobile Equipment Identifiers, see [3GPP TS 23.003](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=729).
 
 You can use the following script to get the device details required for Windows corporate identifiers:
 

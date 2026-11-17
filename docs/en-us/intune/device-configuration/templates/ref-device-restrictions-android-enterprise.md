@@ -18,6 +18,10 @@ This article applies to:
 
 ## Before you begin
 
+To require Google Workspace authentication on corporate-owned fully managed devices or corporate-owned devices with a work profile, use the [Google Workspace authentication setting in the settings catalog](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/require-google-workspace-authentication-android). This policy is separate from the account-addition settings in this template.
+
+For personally owned devices with a work profile, you must use a device configuration template instead of the settings catalog to require Google Workspace authentication.
+
 - Create a [device restrictions profile](https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-device-restrictions) in the [Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431). When you create the profile, select the following options:
 
   - **Platform**: Select **Android Enterprise** or **Android \(AOSP\)**.
