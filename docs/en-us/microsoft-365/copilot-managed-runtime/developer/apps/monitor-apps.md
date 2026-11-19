@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/monitor-apps?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
-# Monitor apps \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Monitor apps
 
 Apps provide visibility at three levels:
 
@@ -58,7 +56,7 @@ The app captures telemetry only after it loads successfully. Startup failures, s
    });
    ```
 
-5. If Content Security Policy \(CSP\) is enforced in your environment, the default policy blocks telemetry from reaching Application Insights, because `connect-src` allows only your app's own origin. Have an administrator add the Application Insights ingestion origins to `connect-src`. See [Configure Content Security Policy \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide) to identify the blocked origins and update the directive.
+5. If Content Security Policy \(CSP\) is enforced in your environment, the default policy blocks telemetry from reaching Application Insights, because `connect-src` allows only your app's own origin. Have an administrator add the Application Insights ingestion origins to `connect-src`. See [Configure Content Security Policy](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide) to identify the blocked origins and update the directive.
 
 ### View the data
 
@@ -115,4 +113,11 @@ Every build the platform runs produces a record you can inspect from the CLI. Us
 ms app build-status --app <name> --commit <sha>
 ```
 
-If a build failed, the output includes the reason, so you can fix the code and push again. Because each deploy is backed by a build, this is also how you trace what's currently live and roll back to a known-good commit.
+If a build failed, the output includes the reason, so you can fix the code and push again. Build status describes that build, not what's currently live, and it doesn't perform a rollback. A successful build isn't proof that its commit is deployed.
+
+Use [`ms app info`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-info) to inspect current server-side app state, including the deployed commit abbreviated to seven characters.
+
+To restore a known-good version, use the deployment command for your app's repository mode:
+
+- **Git-backed app:** Redeploy a known-good, pushed commit with `ms app deploy --commit <sha>`. See [Revert to a previous version](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide#revert-to-a-previous-version).
+- **External-artifact app:** Redeploy a retained known-good build artifact with `ms app deploy --artifact <path>`. These apps don't support `--commit`. External artifact deployment requires the relevant [environment setting](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).

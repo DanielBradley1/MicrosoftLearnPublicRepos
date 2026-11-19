@@ -1,54 +1,94 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# What is Copilot Managed Runtime \(preview\)
+# Microsoft Copilot Managed Runtime
 
-\[This article is prerelease documentation and is subject to change.\]
+Microsoft Copilot Managed Runtime is an IT-governed, enterprise-grade platform for running code inside your Microsoft 365 tenant, with built-in sharing, live data connections, and easy app access.
 
-Important
+## Explore Copilot Managed Runtime
 
-- This is a preview feature.
-- These features are subject to [supplemental terms of use](https://go.microsoft.com/fwlink/?LinkId=2373139), and are available before an official release so that customers can get early access and provide feedback.
+### Overview
 
-Copilot Managed Runtime hosts Microsoft 365 line-of-business applications that automatically inherit organizational governance, security, and compliance controls from the moment they're created. Whether you build an app through Copilot Cowork, Microsoft Copilot Studio, Copilot Code, or the Copilot Managed Runtime SDK, the resulting app runs in a Microsoft-hosted environment, uses Microsoft Entra authentication, follows tenant governance policies, and is visible to admins in the Microsoft 365 admin center for monitoring and management.
+- [What is Copilot Managed Runtime?](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/overview?view=o365-worldwide)
 
-Copilot Managed Runtime provides a unified experience for makers, developers, admins, and users. Organizations can accelerate app creation while maintaining centralized oversight, security, lifecycle management, and compliance controls.
+### Concept
 
-This article explains the entry points where you can **create** apps, the unified location where you can **find and run** apps already available to you, and further resources for Copilot Managed Runtime users, makers, developers, and administrators.
+- [Managed runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/architecture?view=o365-worldwide)
+- [Managed host security and governance](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/managed-runtime-security-governance?view=o365-worldwide)
 
-## Four ways to create an app
+## Create and publish apps
 
-| Entry point | Who it's for | How it works |
-| --- | --- | --- |
-| **Build apps in Cowork** | Business users who want to describe an app in a chat and keep working | From a Cowork session, ask for an app \(or use the **App builder** skill\). Cowork builds the app, lets you preview it, and helps you publish and share it. Requires enrollment in the [Frontier program](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork#build-apps-with-the-app-skill-frontier). |
-| **Create apps in Microsoft Copilot Studio** | Makers who want more control over the build, preview, and publish steps | Sign in to Copilot Studio, turn on the **Preview** experience, and select **Apps** in the navigation. Describe the app in natural language or start from existing data; Copilot Studio proposes a plan, generates a draft, and lets you refine it in an interactive preview before you publish and share. More information: [Create an app in Microsoft Copilot Studio \(preview\)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/create-app). |
-| **Build apps with Copilot Code** | Business users and professional developers who want to build and publish an app with an AI coding agent | Start a cloud session for a maker experience similar to Cowork, or use Copilot Code locally for a more code-oriented workflow. More information: [Build and publish apps to Copilot Managed Runtime](https://learn.microsoft.com/en-us/copilot/code/use-code#build-and-publish-apps-to-copilot-managed-runtime). |
-| **Develop with the Copilot Managed Runtime SDK and CLI** | Professional developers who want a code-first workflow | Install the `ms` CLI \(`@microsoft/managed-apps-cli`\) and the `@microsoft/managed-apps` SDK to scaffold, build, and deploy an app from the command line, manually or with the coding agent plugin. More information: [Copilot Managed Runtime SDK overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide). |
+### Overview
 
-All four paths produce the same kind of artifact: an app that runs in Copilot Managed Runtime, inherits your tenant's default governance policy \(approved connectors, sharing rules, content security policy\), and shows up in the admin inventory described below.
+- [Create with Microsoft 365 Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/index?toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+- [Create with Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/apps-overview?toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
 
-## One place to find and run your apps
+### How-To Guide
 
-Regardless of how an app was created, people go to one place to see the apps they have access to and open them: the **Copilot Managed Runtime portal** at [`https://managedapps.cloud.microsoft`](https://managedapps.cloud.microsoft/). This portal is the day-to-day landing page for app users, separate from the developer tools used to build an app and separate from the admin center used to govern it.
+- [Build apps with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork?toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json#build-apps-with-app-builder-frontier)
+- [Publish and share an app with Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/publish-share-app?toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+- [Build and publish apps with Copilot Code](https://learn.microsoft.com/en-us/copilot/code/use-code?toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json#build-and-publish-apps-to-copilot-managed-runtime)
+- [Publish a Lovable app](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/publish-from-lovable?view=o365-worldwide)
 
-## How the pieces fit together
+## Develop with the SDK
 
-The following table summarizes the roles and Microsoft surfaces involved in creating, developing, using, and governing apps in Copilot Managed Runtime.
+### Overview
 
-| Role | Where they work | What they do |
-| --- | --- | --- |
-| **User** | [managedapps.cloud.microsoft](https://managedapps.cloud.microsoft/) | Finds and opens the apps they can access. |
-| **Maker/business user** | [Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork#build-apps-with-app-builder-frontier) or [Copilot Code cloud sessions](https://learn.microsoft.com/en-us/copilot/code/use-code#build-and-publish-apps-to-copilot-managed-runtime) | Describes an app in chat and lets the coding agent create it. |
-| **[Maker](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/apps-overview)** | Microsoft Copilot Studio | Uses the **Create apps** tile to build an app from natural language or existing data, then previews, publishes, and shares it. |
-| [**Professional developer**](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide) | CLI/SDK \(`ms` CLI, `@microsoft/managed-apps`\) | Scaffolds, codes, and deploys an app, optionally with an AI coding agent. |
-| **[Admin](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide)** | Microsoft 365 admin center \(**Apps > All apps**\) | Sees every app built with Copilot Managed Runtime across the tenant, reviews governance defaults, monitors health, and manages security and compliance - no matter which surface built the app. |
+- [Copilot Managed Runtime SDK overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide)
 
-For the full picture of concepts, governance, and administration, start with [Copilot Managed Runtime overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide), which provides further technical details for admins and developers.
+### Quickstart
 
-## Related information
+- [Create an app with the CLI](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide)
+- [Build an app with GitHub Copilot or Claude Code](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide)
 
-- [Copilot Managed Runtime overview and key concepts for admins \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide)
-- [Copilot Managed Runtime SDK overview \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide)
-- [Build apps with app builder \(Frontier\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork#build-apps-with-app-builder-frontier)
-- [Create an app in Microsoft Copilot Studio \(preview\)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/create-app)
-- [Build and publish apps to Copilot Managed Runtime with Copilot Code](https://learn.microsoft.com/en-us/copilot/code/use-code#build-and-publish-apps-to-copilot-managed-runtime)
+### How-To Guide
+
+- [Connect an app to data](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/connect-to-data?view=o365-worldwide)
+- [Build, preview, and deploy apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide)
+
+### Reference
+
+- [CLI reference](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide)
+
+## Manage
+
+### Overview
+
+- [Administration overview](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide&toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+
+### Concept
+
+- [Roles and responsibilities](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/roles-responsibilities?view=o365-worldwide&toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+- [Environment routing for Copilot Managed Runtime](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing-copilot-managed-runtime?toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+
+### How-To Guide
+
+- [Manage licensing and Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/licensing-credits?view=o365-worldwide&toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+- [View and oversee apps across your tenant](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/inventory?view=o365-worldwide&toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+
+## Secure and monitor
+
+### How-To Guide
+
+- [Review and customize default settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide&toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+- [Manage security and compliance](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/security-compliance?view=o365-worldwide&toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+- [Monitor operational health](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/visibility-monitoring?view=o365-worldwide&toc=/microsoft-365/copilot-managed-runtime/toc.json&bc=/microsoft-365/breadcrumb/TOC.json)
+- [Configure app telemetry](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/monitor-apps?view=o365-worldwide)
+- [Configure Content Security Policy](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide)
+
+## Integrate your app-building platform
+
+### Overview
+
+- [Partner integration overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/?view=o365-worldwide)
+
+### Concept
+
+- [Plan your integration](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/integration?view=o365-worldwide)
+
+### How-To Guide
+
+- [Prerequisites and authentication](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/prerequisites?view=o365-worldwide)
+- [Deploy an app](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/deploy-app?view=o365-worldwide)
+- [Connect apps to data](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/connect-to-data?view=o365-worldwide)
+- [Test the integration](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/test?view=o365-worldwide)

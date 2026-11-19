@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/tool-reference -->
-<!-- Sitemap-Last-Modified: 2026-10-26 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Work IQ MCP tool reference
 
@@ -9,7 +9,9 @@ Work IQ MCP uses Microsoft Entra authentication and the signed-in user's Microso
 
 ## Entity tools
 
-Entity tools provide CRUD operations and actions on Microsoft 365 resources. These tools operate on relative resource paths that map to [Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview) endpoints.
+Entity tools provide CRUD operations and actions on Microsoft 365 resources and connected enterprise sources. These tools operate on relative resource paths; Microsoft 365 resource paths map to [Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview) endpoints.
+
+For connected data sources, connector paths use `call_function` for reads and `do_action` for writes, rather than `fetch`, `create_entity`, `update_entity`, or `delete_entity`.
 
 ### fetch
 
@@ -385,7 +387,7 @@ A successful response contains a `statusCode` property set to 204 in the `struct
 
 ### do\_action
 
-Runs a side-effect action such as sending mail, copying, or moving items.
+Runs a side-effect action such as sending mail, copying, or moving items, or a connector write operation.
 
 #### Parameters
 
@@ -434,13 +436,14 @@ A successful response contains an object in the `structuredContent` property wit
 
 ### call\_function
 
-Calls a Microsoft Graph function to compute derived data such as schedules, deltas, or search results.
+Calls a Microsoft Graph function to compute derived data such as schedules, deltas, or search results, or runs a connector read operation.
 
 #### Parameters
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | `functionUrl` | string | Yes | The relative path for the function \(for example, `/me/calendarview`\). |
+| `jsonBody` | object or string | No | The JSON body for the function, if required. Supply as a JSON object or JSON-encoded string. |
 | `agentId` | string | No | Reserved for future use. |
 
 #### Response
@@ -520,6 +523,8 @@ Copilot tools provide natural-language intelligence by invoking Microsoft 365 Co
 
 Asks Microsoft 365 Copilot \(or a specific agent\) a natural-language question about your data. When you provide an `agentId`, the request goes to that specific agent. When you omit it, the request goes to the built-in Microsoft 365 Copilot agent.
 
+Answers can include content from Copilot connectors for data sources connected in Copilot Chat.
+
 #### Parameters
 
 | Parameter | Type | Required | Description |
@@ -570,7 +575,7 @@ A successful response contains a JSON string in the `text` property of a [TextCo
 
 ### retrieve
 
-Searches Microsoft 365 data and connected enterprise sources that the signed-in user can access. The tool returns model-friendly grounding Markdown with inline citations and structured metadata for each cited source. The `grounding` strategy is the default.
+Searches Microsoft 365 data and Copilot connector sources connected in Copilot Chat that the signed-in user can access. The tool returns model-friendly grounding Markdown with inline citations and structured metadata for each cited source. The `grounding` strategy is the default.
 
 Important
 
@@ -669,7 +674,7 @@ Retrieves the OpenAPI schema for a specific operation, identified by path and op
 
 Note
 
-Currently, only Microsoft Graph v1.0 schemas are available.
+For Microsoft Graph, only v1.0 schemas are currently available. Schemas are also available for connector tools exposed by data sources connected in Copilot Chat.
 
 #### Parameters
 
@@ -734,7 +739,7 @@ Searches available API paths by prefix or regex filter. Use this tool to discove
 
 Note
 
-Currently, only Microsoft Graph v1.0 paths are available.
+For Microsoft Graph, only v1.0 paths are currently available. Paths are also available for connector tools exposed by data sources connected in Copilot Chat.
 
 #### Parameters
 
@@ -751,7 +756,7 @@ A successful response contains a `paths` property in the `structuredContent` fie
 | Property | Type | Description |
 | --- | --- | --- |
 | `path` | string | The relative API path. |
-| `operations` | string array | The supported operations for the path. Valid values are `fetch`, `create`, and `update`. |
+| `operations` | string array | The supported operations for the path. Valid values are `fetch`, `create`, `update`, `function`, and `action`. |
 
 #### Example
 
@@ -800,7 +805,7 @@ A successful response contains a `paths` property in the `structuredContent` fie
 
 ## Allowed resource paths
 
-Entity tools work with relative resource paths. By default, the following path prefixes are allowed:
+Entity tools work with relative resource paths. For Microsoft Graph resources, the following path prefixes are allowed by default:
 
 - `/me/`
 - `/users/`
@@ -814,6 +819,8 @@ The following path segments are blocked:
 Note
 
 The complete list of allowed and blocked paths depends on per-tenant policy configuration and might vary.
+
+Connector paths are discovered through `search_paths` and inspected with `get_schema`.
 
 ## Error handling
 

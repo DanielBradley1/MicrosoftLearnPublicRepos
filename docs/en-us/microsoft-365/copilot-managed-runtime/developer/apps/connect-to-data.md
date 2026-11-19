@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/connect-to-data?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# Connect an app to data \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Connect an app to data
 
 Microsoft Copilot Managed Runtime apps connect to data through connectors. See the [full list of available connectors](https://learn.microsoft.com/en-us/connectors/connector-reference/). You discover, add, and manage connectors from the Copilot Managed Runtime CLI \(`ms`\). You call them from your app code through strongly typed models and services that the CLI generates for you.
 
@@ -39,6 +37,8 @@ ms connector list [--search <term>]
 ```
 
 The output includes each connector's ID, whether it supports tabular data, and its governance status \(DLP and ACP\). Use `--search` to filter by a substring of the connector name or ID, for example, [`ms connector list`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-connector-list) `--search sql`.
+
+Discovery includes blocked connectors by default. Pass `--only-allowed` to list only connectors allowed by policy.
 
 To see the operations a specific connector exposes, including the DLP status of each one, use [`ms connector list-actions`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-connector-list-actions):
 
@@ -120,7 +120,7 @@ Omit `--name` to refresh everything you added, or pass it \(alias `-n`\) to refr
 
 ## Remove a data source
 
-Removal commands prompt for confirmation unless you pass `--force`.
+In interactive mode, removal commands prompt for confirmation unless you pass `--force`. In non-interactive mode, removal proceeds without confirmation even when you omit `--force`.
 
 ```bash
 ms app remove data-source --name <name> [--force]

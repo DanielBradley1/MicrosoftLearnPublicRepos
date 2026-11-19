@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/shared-connections?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# Use shared connections in an app \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Use shared connections in an app
 
 A shared connection lets users access a common data source through a Microsoft Copilot Managed Runtime app without creating their own connections to that source. You create the connection once and choose what the app can do with it.
 

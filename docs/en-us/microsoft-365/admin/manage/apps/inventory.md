@@ -1,16 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/inventory?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-09-25 -->
 
-# View and oversee apps in Copilot Managed Runtime across your tenant \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# View and oversee apps in Copilot Managed Runtime across your tenant
 
 Copilot Managed Runtime lets people across your organization build and ship solutions quickly, but that growth can leave administrators without a clear view of what exists, who owns it, and whether it's healthy. The **All apps** page in the Microsoft 365 admin center closes that gap, giving tenant administrators a single, centralized view of every app built with Copilot Managed Runtime across the organization. Instead of chasing down app owners or piecing together information from multiple tools, admins get the full picture in one table and can act on it immediately.
-
-Important
-
-- This is a preview feature.
-- These features are subject to [supplemental terms of use](https://go.microsoft.com/fwlink/?LinkId=2373139), and are available before an official release so that customers can get early access and provide feedback.
 
 By using the **All apps** page, you can:
 
@@ -37,18 +30,9 @@ When your tenant opts in to Copilot Managed Runtime, an **Integrated apps** tab 
 
 ## Required roles
 
-Entra role assignments control access to the **All apps** page in the Microsoft 365 admin center. Access is per tab: the **Copilot Managed Runtime** and **Integrated apps** tabs each use their own roles, and a tab appears only if your role grants access to it.
+Microsoft Entra roles control access to the **All apps** page in the Microsoft 365 admin center, and each tab appears only if your role grants access to it. On the **Copilot Managed Runtime** tab, read-only roles can view apps, and Manage roles can also block, unblock, and delete them. For which roles have each kind of access, see [Roles and responsibilities](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/roles-responsibilities?view=o365-worldwide).
 
-| Role | Copilot Managed Runtime | Integrated apps tab |
-| --- | --- | --- |
-| [Global Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-administrator) | Full: view, delete, block | Full: all integrated app types |
-| [Power Platform Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#power-platform-administrator) | Full: view, delete, block | Not shown |
-| [AI Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#ai-administrator) | Read-only | Copilot agents only |
-| [AI Reader](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#ai-reader) | Read-only | Not shown |
-| [Global Reader](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-reader) | Read-only | Read-only: all types |
-| [Exchange Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#exchange-administrator) | Not shown | Outlook and Office add-ins they deployed |
-
-Read-only roles can view apps but can't take actions like delete or block. The **Integrated apps** tab respects the same roles integrated apps use today, so a role that can't manage integrated apps today still can't here.
+The **Integrated apps** tab uses the same roles as integrated apps do today, so a role that can't manage integrated apps today still can't here. For details, see [Manage integrated apps in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-addins-in-the-admin-center).
 
 ## App inventory
 

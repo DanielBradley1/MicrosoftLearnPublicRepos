@@ -66,8 +66,8 @@ Before you can lock or delete your billing account, it must meet specific eligib
 You can lock your billing account if all of the following conditions are true:
 
 - Your account uses a direct purchase context \(not a reseller, partner, or indirect relationship\).
-- Your account is a business account.
-- Your account isn't an Enterprise Agreement \(EA\) enrollment.
+- You created your account through a self-service or MCA online purchase.
+- Your account isn't an Enterprise enrollment or MCA-E.
 - Your account doesn't have active government contracts.
 - Your account isn't affiliated with a Cloud Solution Provider \(CSP\) partner.
 
@@ -76,8 +76,8 @@ The following table lists conditions that make a billing account **ineligible** 
 | Scenario | Eligibility |
 | --- | --- |
 | Partner affiliation \(CSP, distributor, or reseller\) | Not eligible for self-service |
-| Government contract \(GCC, GCC High, DOD\) | Not eligible for self-service |
-| Enterprise Agreement \(EA\) enrollment | Not eligible for self-service |
+| Government contract | Not eligible for self-service |
+| Enterprise enrollment or MCA-E | Not eligible for self-service |
 | Trade restriction | Resolve trade compliance restrictions before locking |
 | Non-payment suspension | Pay any outstanding invoices to remove the suspension, then lock the account |
 

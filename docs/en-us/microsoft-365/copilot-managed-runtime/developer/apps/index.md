@@ -1,14 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-12 -->
 
-# Microsoft Copilot Managed Runtime SDK overview \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
-
-Important
-
-- This is a preview feature.
-- These features are subject to [supplemental terms of use](https://go.microsoft.com/fwlink/?LinkId=2373139), and are available before an official release so that customers can get early access and provide feedback.
+# Microsoft Copilot Managed Runtime SDK overview
 
 The Copilot Managed Runtime SDK accelerates the development of internal line-of-business apps that automatically comply with IT governance policies. Apps built with the SDK are hosted with Copilot Managed Runtime, include built-in Microsoft Entra authentication without requiring custom code, and can securely connect to more than 1,500 data sources such as Microsoft Graph, SQL, and SharePoint.
 
@@ -34,7 +27,7 @@ Apps require a few developer tools available on the command line and appropriate
 
 Use these tools to build apps locally:
 
-- Your IDE of choice. For example, [Visual Studio Code](https://code.visualstudio.com/).
+- Your preferred IDE. For example, [Visual Studio Code](https://code.visualstudio.com/).
 - [Node.js](https://nodejs.org/) \(LTS version\) >= v24.11.0.
 - [Git](https://git-scm.com/) >= v2.27.0.
 - [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager). If you install Git on Windows, you might already have GCM installed and can skip this step. Run `git credential-manager --version` to verify.
@@ -77,16 +70,19 @@ You can edit code in any IDE. There's no required editor and no required templat
 
 ## Repository options
 
-Every app has a repository associated with it. You choose the repository type when you create the app, and you can't change the choice later.
+Every app uses one of three repository modes, including a mode with no repository binding. You choose the mode when you create the app, and you can't change the choice later.
 
 | Option | Description |
 | --- | --- |
 | Platform-managed Git \(default\) | The platform provisions a managed Git repository when you create an app - no extra setup required. |
 | Bring your own GitHub repository | Bind an app to one of your repos at create or init time by passing `--repo <url>`. The platform builds, scans, and deploys from your repository, and your existing branch policies and pull request reviews continue to apply. |
+| No repository binding | Pass `--repo none` to build artifacts externally and upload them for deployment instead of using a Git-backed platform build. See [Deploy apps with GitHub Actions](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/deploy-managed-apps-github-actions?view=o365-worldwide). |
+
+External artifact deployment requires the relevant environment setting and is disallowed by default. See [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
 
 Note
 
-The repository must be owned by an organization on GitHub Enterprise Cloud. Repositories can use a `github.com` host or a `*.ghe.com` data-residency host. GitHub Enterprise Server, repositories owned by personal accounts, organizations that aren't on GitHub Enterprise Cloud, and other providers such as Azure DevOps aren't supported. Repository URLs must use a full `https://` scheme.
+For the bring-your-own-GitHub option, the repository must be owned by an organization on GitHub Enterprise Cloud. Repositories can use a `github.com` host or a `*.ghe.com` data-residency host. GitHub Enterprise Server, repositories owned by personal accounts, organizations that aren't on GitHub Enterprise Cloud, and other providers such as Azure DevOps aren't supported. Repository URLs must use a full `https://` scheme.
 
 Configure repository visibility and other repository management policies in GitHub Enterprise Cloud. For more information, see [Enforcing repository management policies in your enterprise](https://docs.github.com/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#about-policies-for-repository-management-in-your-enterprise).
 
@@ -110,8 +106,12 @@ If you find an existing issue or enhancement that applies to you, upvote or comm
 
 Check the **Closed** tab in **Issues** to see how other customers solved problems or requested enhancements. Closed issues are a great way to learn from real-world scenarios and confirm whether a fix or feature you need is already available.
 
+## Limitations
+
+Copilot Managed Runtime uses a platform-managed service worker for app loading and secure access to platform services. Browsers allow only one service worker to control a page, so custom service workers that take control of the app aren't currently supported and can cause loading or connectivity failures. If your framework or PWA tooling automatically registers a service worker, disable that registration when deploying to Copilot Managed Runtime.
+
 ## Next steps
 
-[Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide)
+[Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide)
 
-[Quickstart: Create an app with the Copilot Managed Runtime SDK \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide)
+[Quickstart: Create an app with the Copilot Managed Runtime SDK](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide)

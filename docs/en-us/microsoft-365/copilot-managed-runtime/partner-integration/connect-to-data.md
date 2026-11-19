@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/connect-to-data?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Connect Copilot Managed Runtime partner apps to data \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Connect Copilot Managed Runtime partner apps to data
 
 This article shows how to connect Copilot Managed Runtime partner apps to organizational data. When an app maker adds organizational data, the partner experience must help them discover governed connectors, bind the appropriate connection and data source, and generate typed clients for app code. The integration must surface policy decisions and actionable errors throughout that flow.
 
@@ -28,15 +26,15 @@ List only connectors allowed by tenant policy:
 ```bash
 ms connector list \
   --search "office" \
+  --only-allowed \
   --json
 ```
 
-Include blocked connectors and their governance status, use a separate discovery call:
+To include blocked connectors and their governance status, omit the filter:
 
 ```bash
 ms connector list \
   --search "office" \
-  --include-blocked \
   --json
 ```
 

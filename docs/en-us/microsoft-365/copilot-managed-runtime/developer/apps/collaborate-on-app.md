@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/collaborate-on-app?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
-# Collaborate on an app \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Collaborate on an app
 
 Use the Copilot Managed Runtime CLI to collaborate on an existing app, including an app created in Copilot Cowork or Microsoft Copilot Studio. Apps created in these experiences are backed by Git. After the app owner grants you edit access, you can find the app, clone its repository, and continue development in your preferred code editor.
 
@@ -14,7 +12,7 @@ Before you begin, make sure you have:
 - The Copilot Managed Runtime CLI and [Node.js](https://nodejs.org/) installed.
 - [Git](https://git-scm.com/downloads) installed with Git Credential Manager configured.
 - Access to the tenant that contains the app.
-- Edit access to the app. The app owner must grant this access before you can find and clone the app. For more information, see [Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide).
+- Edit access to the app. The app owner must grant this access before you can find and clone the app. For more information, see [Share a Microsoft Copilot Managed Runtime app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide).
 
 Sign in to the Copilot Managed Runtime CLI with [`ms auth login`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-auth-login):
 
@@ -80,11 +78,11 @@ git commit -m "Describe the change"
 git push
 ```
 
-The pushed commit updates the app's source repository. It doesn't update the live app. To build, preview, and deploy the changes, see [Build, preview, and deploy Microsoft Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide).
+The pushed commit updates the app's source repository. It doesn't update the live app. To build, preview, and deploy the changes, see [Build, preview, and deploy Microsoft Copilot Managed Runtime apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide).
 
 ## Related information
 
-- [Build, preview, and deploy Microsoft Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide)
-- [Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide)
-- [Copilot Managed Runtime architecture \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide)
-- [Copilot Managed Runtime CLI command reference \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide)
+- [Build, preview, and deploy Microsoft Copilot Managed Runtime apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide)
+- [Share a Microsoft Copilot Managed Runtime app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide)
+- [Copilot Managed Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/architecture?view=o365-worldwide)
+- [Copilot Managed Runtime CLI command reference](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide)

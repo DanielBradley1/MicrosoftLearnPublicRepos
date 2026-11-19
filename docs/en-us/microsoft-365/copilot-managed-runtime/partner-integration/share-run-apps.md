@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/share-run-apps?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Share and run Copilot Managed Runtime partner apps \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Share and run Copilot Managed Runtime partner apps
 
 This article explains how to run, discover, and share Copilot Managed Runtime partner apps after deployment. The Copilot Managed Runtime portal gives app users a stable way to discover, open, and access apps by default, while partners can optionally surface open and share actions inline when that feature improves the app maker's workflow.
 

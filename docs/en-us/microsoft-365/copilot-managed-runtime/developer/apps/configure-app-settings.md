@@ -1,13 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/configure-app-settings?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# Configure app settings \(preview\)
+# Configure app settings
 
-Use the Copilot Managed Runtime CLI to view and configure settings for an app. The CLI stores configured settings in the app's `ms.config.json` file.
+Use the Copilot Managed Runtime CLI to view and configure settings for an app. The CLI stores configured settings in the app's `ms.config.json` file. You can also [add a custom app icon](#add-an-app-icon) by updating this file.
 
 ## Available app settings
 
-The following app setting is currently available:
+The following app setting is available through `ms app get-settings` and `ms app set-setting`. To configure an app icon, see [Add an app icon](#add-an-app-icon).
 
 | Setting | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -73,3 +73,26 @@ The resulting configuration includes the following setting:
 ```
 
 Configured settings take effect the next time you run [`ms app dev`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-dev) or [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy).
+
+## Add an app icon
+
+Add a custom icon to help users identify your app in the [Copilot Managed Runtime portal](https://managedapps.cloud.microsoft/). Configure the icon by adding `iconPath` to `ms.config.json`. There's no separate CLI command or flag for this setting.
+
+1. Add a PNG or JPG image to your project. For example, place an image named `custom-icon.png` in the `public` folder at the project root. Its path relative to the project root is `public/custom-icon.png`. You can use a different folder or file name; update `iconPath` in the next step to match.
+2. In `ms.config.json`, add `iconPath` as a top-level property, alongside the existing configuration:
+
+   ```json
+   {
+     "iconPath": "public/custom-icon.png"
+   }
+   ```
+
+
+   The example shows only the property to add. Keep the other properties in your file.
+
+
+   Specify the path relative to the project root, which is the directory that contains `ms.config.json`. Use forward slashes \(`/`\) for compatibility with local and cloud builds.
+
+3. Commit and push the image and updated `ms.config.json`, then deploy the app by using your existing release workflow. For more information, see [Build, preview, and deploy apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide).
+
+After you deploy the update, the icon appears with your app in the [Copilot Managed Runtime portal](https://managedapps.cloud.microsoft/). If you don't specify `iconPath`, the app uses the platform's default icon.

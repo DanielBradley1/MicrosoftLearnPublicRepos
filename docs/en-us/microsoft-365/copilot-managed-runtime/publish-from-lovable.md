@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/publish-from-lovable?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# Publish a Lovable app to Microsoft Copilot Managed Runtime \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Publish a Lovable app to Microsoft Copilot Managed Runtime
 
 You can build an internal line-of-business app in [Lovable](https://lovable.dev/) and publish it to Microsoft Copilot Managed Runtime. The published app runs in a Microsoft-hosted environment, requires Microsoft Entra sign-in, and follows your organization's governance policies. Administrators can discover and manage it with other Copilot Managed Runtime apps.
 
@@ -123,7 +121,7 @@ People you share with open the app by using their Microsoft work account. They c
 
 ## Related information
 
-- [What is Microsoft Copilot Managed Runtime?](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide)
+- [What is Microsoft Copilot Managed Runtime?](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/overview?view=o365-worldwide)
 - [Set up Microsoft Copilot Managed Runtime for Lovable](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/configure-lovable?view=o365-worldwide)
 - [Build and publish apps to Microsoft Copilot Managed Runtime](https://docs.lovable.dev/integrations/microsoft-copilot-managed-runtime) \(Lovable documentation\)
 - [Copilot Managed Runtime overview and key concepts for admins](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide)

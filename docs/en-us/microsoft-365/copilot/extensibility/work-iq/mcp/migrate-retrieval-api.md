@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/migrate-retrieval-api -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Migrate agentic retrieval workflows to Work IQ MCP
 
@@ -165,6 +165,8 @@ Additional filter support is on the roadmap. Until the filters required by your 
 ### Add sources that weren't available through the retrieval API
 
 Use capability objects to constrain email, meetings, Teams messages, people, or currently available connectors.
+
+Copilot connectors participate in retrieval only for data sources connected in Copilot Chat.
 
 Use `copilot` for `GraphConnectors`. Dataverse and Power BI are roadmap sources, not currently supported retrieval sources.
 

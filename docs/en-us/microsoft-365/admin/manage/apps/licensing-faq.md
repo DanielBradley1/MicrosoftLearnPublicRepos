@@ -1,17 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/licensing-faq?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
-# Copilot Managed Runtime licensing FAQ \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Copilot Managed Runtime licensing FAQ
 
 Microsoft Copilot Managed Runtime hosts internal line-of-business apps that comply with your organization's governance policies from the moment they're created. This article answers common questions about the licenses and Copilot Credits that makers, developers, and users need to build and run these apps, and where administrators manage them.
 
 For setup guidance, see [Manage licensing and Copilot Credits for apps on Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/licensing-credits?view=o365-worldwide).
-
-Important
-
-This is a preview feature. These features are subject to supplemental terms of use, and are available before an official release so that customers can get early access and provide feedback.
 
 ## Licensing at a glance
 
@@ -27,7 +21,7 @@ This is a preview feature. These features are subject to supplemental terms of u
 
 ### Do administrators need to buy or enable anything for Copilot Managed Runtime to be available in the tenant?
 
-No. Eligible tenants in the commercial cloud get Copilot Managed Runtime automatically without a separate installation. Each app creation path has its own enablement default. For example, Copilot Studio app creation is on by default, while CLI app creation is off by default. For details, see [Enable Copilot Managed Runtime for your tenant](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide#enable-copilot-managed-runtime-for-your-tenant).
+No. Eligible tenants in the commercial cloud get Copilot Managed Runtime automatically without a separate installation. Each app creation path has its own enablement default. For example, Copilot Studio app creation is on by default, while CLI app creation is off by default. For details, see [app building options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/?view=o365-worldwide#app-building-options).
 
 ### Are build costs and runtime costs billed together?
 
@@ -54,9 +48,9 @@ It depends on the tool:
 
 Yes, but only to run an app locally. Other CLI development activities, such as creating, building, and deploying an app, don't require a license. To run an app locally, developers need the same coverage as any other user: a Power Apps Premium license or inclusion in a spending policy that includes Copilot Managed Runtime.
 
-### Do makers need a Power Apps Premium license because their personal developer environment is a managed environment?
+### Do makers need a Power Apps Premium license because their personal environment is a managed environment?
 
-No. Personal developer environments created for Copilot Managed Runtime are managed environments. However, license auto-claiming doesn't apply to makers who use these environments only to create apps hosted on Copilot Managed Runtime. These makers don't need a premium license. If makers also build Power Apps or Power Automate flows in the same personal developer environment, license auto-claiming applies, and they might need a premium license. For more information, see [Environment routing for Copilot Managed Runtime](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing-copilot-managed-runtime).
+No. Personal environments created for Copilot Managed Runtime are managed environments. However, license auto-claiming doesn't apply to makers who use these environments only to create apps hosted on Copilot Managed Runtime. These makers don't need a premium license. If makers also build Power Apps or Power Automate flows in the same personal environment, license auto-claiming applies, and they might need a premium license. For more information, see [Environment routing for Copilot Managed Runtime](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing-copilot-managed-runtime).
 
 ## Running apps
 
@@ -142,7 +136,7 @@ If a user is in more than one policy for the same service, the policy with the h
 
 ### Which admin roles can manage spending policies?
 
-In the Microsoft 365 admin center, Global Administrators and Billing Administrators can turn on usage-based billing and create spending policies. AI Administrators and License Administrators can edit existing policies, limits, and alerts, but can't create policies. Reader roles, such as AI Reader and Global Reader, can view consumption. To manage Copilot Studio capacity in the Power Platform admin center, you need the Power Platform Administrator or Global Administrator role.
+Managing Copilot Credits uses different roles from managing apps. For the roles that can turn on usage-based billing, create and edit spending policies, view consumption, and manage Copilot Studio capacity, see [Roles for licensing and Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/roles-responsibilities?view=o365-worldwide#roles-for-licensing-and-copilot-credits).
 
 ### Where do administrators manage credits for building apps?
 
@@ -162,7 +156,7 @@ No. Apps can't be selected individually in a spending policy. Cover the users wh
 ## Related content
 
 - [Manage licensing and Copilot Credits for apps on Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/licensing-credits?view=o365-worldwide)
-- [Copilot Managed Runtime overview and key concepts for admins \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/)
+- [Copilot Managed Runtime overview and key concepts for admins](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/)
 - [Set up usage-based billing for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-copilot-credits-setup)
 - [Managing AI experiences enabled by usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)
 - [Manage costs for agents powered by the Microsoft Copilot harness](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness)

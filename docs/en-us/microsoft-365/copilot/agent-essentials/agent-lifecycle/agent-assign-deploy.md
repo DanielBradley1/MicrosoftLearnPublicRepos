@@ -1,43 +1,66 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-assign-deploy -->
 <!-- Sitemap-Last-Modified: 2026-09-09 -->
 
-# Assign and deploy agents for Microsoft Copilot
+# Manage agents in the Microsoft 365 admin center
 
-As an admin, you can manage the lifecycle of each agent available in your tenant by using actions. These agent actions include publishing, deploying, removing, and blocking. In addition, you can assign agents and deploy agents as separate actions. You can also manage the agents that members of your organization request to publish to your organizational catalog.
+Important
 
-### Understand agent installation
+- This article is intended for IT administrators.
+- The capability is enabled by default in all Microsoft Copilot licensed tenants.
 
-There are specific Copilot agents that are preinstalled by Microsoft, however most agents are available to install by either the members of your organization, or by admins with appropriate rights.
+Microsoft Copilot combines the power of large language models with your data and apps in Microsoft 365. It captures natural language commands to produce content and analyze data. It enables access to and use of other apps, such as Jira, [Dynamics 365](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-business-applications), or Bing Web Search.
 
-#### Microsoft installed agents
+You can manage agents for Copilot by using the [Microsoft 365 admin center](https://admin.microsoft.com/). You can enable, disable, assign, block, or remove agents for your organization, and manage Copilot capabilities.
 
-Certain Microsoft agents, such as Researcher and Analyst, are preinstalled and pinned to the light on the right within Microsoft Copilot. [Pinned agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-pinning-agents?toc=%2Fcopilot%2Fmicrosoft-365%2Ftoc.json&bc=%2Fcopilot%2Fmicrosoft-365%2Fbreadcrumb%2Ftoc.json) ensure that those agents are visible and accessible to members of your organization. In addition, you can determine how these agents are [managed](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps), [assigned](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-availability), and [deployed](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-deploy) by using Copilot controls in Microsoft 365 admin center. For related information, see [Microsoft-installed agents and features](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-install#microsoft-installed-agents-and-features).
+Note
 
-#### Admin installed agents
+Researcher and Analyst are first-party Microsoft experiences built on the same foundation as Microsoft Copilot, operating entirely within the Microsoft 365 commercial data processing boundary. These tools inherit all existing security, privacy, and compliance commitments that apply across the suite of Microsoft 365 products. These tools are available in Microsoft Copilot Chat under **Tools** and can be invoked by the user anytime. While Researcher and Analyst coexist with agents and abide by all the agent-related governance capabilities, Researcher and Analyst are part of the core Copilot chat experience and will not fall under any agent-related settings. For related information, see [Agent settings in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-settings).
 
-As the administrator, you manage the lifecycle of the agents you make available at your organization. You can install agents by using Copilot controls in Microsoft 365 admin center. You can upload custom agents, assign existing agents, and deploy agents as well. You can also prevent oversharing by removing and blocking agents that are unneeded by your organization. For related information, see [Admin-installed agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-install#admin-installed-agents).
+Microsoft Agent 365 is the control plane for AI agents, empowering your organization to confidently deploy, govern, and manage all your agents at scale, regardless of where these agents are built or acquired. For more information, see [Overview of Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/overview) and [Microsoft Agent 365 documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/).
 
-#### User installed agents
+## Overview
 
-Members of your organization can install agents from the [Agent Store](https://devblogs.microsoft.com/microsoft365dev/introducing-the-agent-store-build-publish-and-discover-agents-in-microsoft-365-copilot/). Given the tools and capability, they can also create agents using Copilot Studio, Agent Builder, and SharePoint. For related information, see [User-installed agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-install#user-installed-agents).
+Agents enhance the functionality of Copilot by adding search capabilities, custom actions, connectors, and APIs. Agents are custom versions of Microsoft Copilot that combine instructions, knowledge, and skills to perform specific tasks or scenarios. For more information about using agents with Copilot, see [Get started with agents in the Microsoft Copilot app](https://support.microsoft.com/topic/169469d7-328d-4d37-9090-bfc2058a39bd).
 
-#### Publish agents
+The members of your organization can find and add agents from the [Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store) within the Microsoft Copilot app. However, before users can access these agents, each agent must undergo a streamlined process of submission and approval. Agents are managed in the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-registry-overview) of Microsoft 365 admin center. As part of agent management, you can review [agent requests](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-requests) and determine whether to publish the agent to the store or reject the agent submission. For more information, see [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-365-overview). Members of your organization can only access the agents that you have allowed.
 
-Members of your organization can use Copilot Studio to create and publish agents. They can publish agents to multiple channels, such as live websites, mobile apps, Microsoft Copilot or messaging platforms like Teams and Facebook.
+## Agent types you can manage
 
-When members of your organization publish an agent to your organization using the Microsoft Teams and Microsoft Copilot channel, the agent becomes available as a requested agent in Copilot controls in Microsoft 365 admin center. You can then approve the agent to make it available to users or groups within your organization. After you review and publish the agent there, you can show it in the Teams app store so users can find and install it.
+You can manage several types of agents in Microsoft Copilot, each serving different purposes:
 
-For more information, see [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams), [Manage requested agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-copilot-studio-requested), and [Publish agents](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-requests#requested-agents-pending-review).
+- **Published by your organization**: Built with predefined instructions and actions. These agents follow structured logic and are best for predictable, rule-based tasks. Before you make these agents available to members of your organization, these agents go through an admin approval to ensure compliance and readiness. For more information, see [Manage agent requests in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-requests).
 
-### Review available agents
+  Note
 
-Agents are listed in the agent inventory. The Agent inventory allows you to view a variety of details about each agent. For example, you can view the availability of an agent, view which apps the agent is supported in within your organization, and view the publisher of the agent. When you select an individual agent from the agent list, you can view and set additional details. For more information, see [Agent inventory](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps).
+  Publishing agents to the organization is supported in Microsoft 365 Government Community Cloud High \(GCCH\) and Government Community Cloud Moderate \(GCCM\) environments.
+- **Shared by creator**: Shared agents are custom versions of Microsoft Copilot that combine instructions, knowledge, and skills to perform specific tasks or scenarios. Creators can create and share these agents through multiple channels, such as Microsoft Copilot Studio, Microsoft Copilot Agent Builder, and more. Shared agents enhance the functionality of Copilot by adding search capabilities, custom actions, connectors, and APIs. For more information, see [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots).
 
-To view details about an individual agent:
+  As an admin, you can view shared agents on the **Agents** page in the Microsoft 365 admin center. You can see a list of all shared agents in the **Agent Registry**, including details such as the agent's name, creator, creation date, host products, and availability status. You can search for specific agents and manage their lifecycle, including blocking agents that are deemed unsafe or noncompliant.
 
-1. Open Copilot controls within [Microsoft 365 admin center](https://admin.microsoft.com/) in your browser.
-2. Select **Agents** > **All agents**. You'll see the **Agent inventory** tab is selected.
+  For your users, shared agents are available through Copilot on different surfaces. Users can interact with these agents to perform specific tasks or get assistance based on the agent's capabilities.
+- **Microsoft agents**: Developed by Microsoft and integrated with Microsoft 365 services.
+- **External partner agents**: Created by external developers or vendors. You can control their availability and permissions.
+- **Frontier agents**: Experimental or advanced agents that use new capabilities or integrations. These agents might be in early stages of development or testing and could require more oversight or limited rollout.
 
-   [![Screenshot of your agent inventory in Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/m365-agents-admin-guide/agent-inventory.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/m365-agents-admin-guide/agent-inventory.png#lightbox)
-3. Select an agent from the list.
-4. Review the agent's details, security, and compliance before to help determine whether an agent should be assigned to or available to users within your organization. a. Select the **Data & tools** tab to review the **Capabilities**, **Knowledge**, and **Actions**. b. Select the **Security & compliance** tab to review the agent's overall certification.
+  - **App Builder agent**: A type of Frontier agent developed by Microsoft that can be managed as part of Microsoft Copilot. You can also manage App Builder using [Power Platform admin center](https://admin.powerplatform.microsoft.com).
+  - **Workflows agent**: A type of Frontier agent developed by Microsoft that can be managed as part of Microsoft Copilot. Flows created in Copilot are saved to the default environment unless [environment routing](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing?tabs=new#turn-on-environment-routing-in-the-admin-center) is enabled for Copilot Studio. You can also manage flows using the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
+
+Note
+
+The same Copilot Studio agent \(declarative or custom engine\) can appear more than once in the admin center with different publisher states, such as **Shared by creator** and **Published by your organization**. Depending on the publishing lifecycle and the actions that creators and admins take, these duplicate-looking entries can represent separate lifecycle and publisher records for the same underlying agent. They're expected and by design, not an error.
+
+For lifecycle details and available admin actions, see [How one agent can appear as multiple entries](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-registry-overview#how-one-agent-can-appear-as-multiple-entries).
+
+## Get started
+
+To get started managing agents within Microsoft 365 admin center, see [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-365-overview). You will learn about agent management roles and permissions, as well as agent inventory, lifecycle, tools, and settings.
+
+Important
+
+Use roles with the fewest permissions. Accounts with lower permissions help improve security for your organization. Global Administrator is a highly privileged role. Limit its use to emergency scenarios when you can't use an existing role. For more information, see [About admin roles in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles).
+
+[![Screenshot showing the Agents & connectors page in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/media/agents/get-started.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/media/agents/get-started.png#lightbox)
+
+## Related articles
+
+- [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-lifecycle/agent-365-overview).

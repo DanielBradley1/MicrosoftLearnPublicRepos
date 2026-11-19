@@ -1,15 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/integration?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Plan your partner integration with Copilot Managed Runtime \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Plan your partner integration with Copilot Managed Runtime
 
 This article helps you plan a partner integration with Copilot Managed Runtime. It covers the partner journey, personas, core concepts, and required integration scenarios. Copilot Managed Runtime doesn't replace a partner's app creation product: partners retain the authoring experience, while Copilot Managed Runtime supplies the enterprise runtime and lifecycle boundary.
 
 ## High-level partner integration journey
 
-For product-level concepts and terminology, see the [Copilot Managed Runtime overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide). This page focuses on partner-specific integration.
+For product-level concepts and terminology, see the [Copilot Managed Runtime overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/overview?view=o365-worldwide). This page focuses on partner-specific integration.
 
 Agree on the initial scenario with Microsoft before you implement customer onboarding. Partner application approval, resource permissions, and preview-host approval require coordination. Review the [prerequisites](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/prerequisites?view=o365-worldwide) and [preview requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/local-preview?view=o365-worldwide) to understand what to prepare. Use the [integration contact](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/?view=o365-worldwide#questions-and-support) to get started.
 

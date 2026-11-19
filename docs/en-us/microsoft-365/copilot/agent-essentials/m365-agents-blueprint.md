@@ -1,47 +1,66 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/m365-agents-blueprint -->
 <!-- Sitemap-Last-Modified: 2026-08-18 -->
 
-# Agents deployment blueprint for Microsoft 365
+# Manage agents in the Microsoft 365 admin center
 
-This deployment blueprint helps you enable agents in [Microsoft Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview) at scale, while ensuring data security and governance, managing access and costs, and measuring adoption and impact.
+Important
+
+- This article is intended for IT administrators.
+- The capability is enabled by default in all Microsoft Copilot licensed tenants.
+
+Microsoft Copilot combines the power of large language models with your data and apps in Microsoft 365. It captures natural language commands to produce content and analyze data. It enables access to and use of other apps, such as Jira, [Dynamics 365](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-business-applications), or Bing Web Search.
+
+You can manage agents for Copilot by using the [Microsoft 365 admin center](https://admin.microsoft.com/). You can enable, disable, assign, block, or remove agents for your organization, and manage Copilot capabilities.
 
 Note
 
-This blueprint is scoped primarily to agents created in the [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-experience) experience using the Microsoft Copilot app.
+Researcher and Analyst are first-party Microsoft experiences built on the same foundation as Microsoft Copilot, operating entirely within the Microsoft 365 commercial data processing boundary. These tools inherit all existing security, privacy, and compliance commitments that apply across the suite of Microsoft 365 products. These tools are available in Microsoft Copilot Chat under **Tools** and can be invoked by the user anytime. While Researcher and Analyst coexist with agents and abide by all the agent-related governance capabilities, Researcher and Analyst are part of the core Copilot chat experience and will not fall under any agent-related settings. For related information, see [Agent settings in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-settings).
 
-The primary challenges when enabling agents in Microsoft 365 include the following:
+Microsoft Agent 365 is the control plane for AI agents, empowering your organization to confidently deploy, govern, and manage all your agents at scale, regardless of where these agents are built or acquired. For more information, see [Overview of Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/copilot/overview) and [Microsoft Agent 365 documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/).
 
-- **Security and governance concerns** - Your organization can address oversharing, data protection, and compliance risks by implementing robust security and governance controls to safely enable agents in Microsoft Copilot.
-- **Deployment complexity** - Agents in Microsoft Copilot introduce new admin tools and processes. This guidance can help address user enablement and cost management complexity.
-- **Visibility and impact gaps** - By reviewing and acting on agent data, you can better measure success. Agent data can also provide usage to manage costs and help assess business value.
+## Overview
 
-By addressing these challenges, you can better drive innovation while maintaining security, control, and visibility. This blueprint can help, by providing shorter, actionable, and prescriptive guidance.
+Agents enhance the functionality of Copilot by adding search capabilities, custom actions, connectors, and APIs. Agents are custom versions of Microsoft Copilot that combine instructions, knowledge, and skills to perform specific tasks or scenarios. For more information about using agents with Copilot, see [Get started with agents in the Microsoft Copilot app](https://support.microsoft.com/topic/169469d7-328d-4d37-9090-bfc2058a39bd).
 
-In this deployment blueprint, we provide a recommended approach to address concerns throughout a Microsoft Copilot agent deployment. The blueprint breaks the deployment into three phases:
+The members of your organization can find and add agents from the [Agent Store](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-agent-store) within the Microsoft Copilot app. However, before users can access these agents, each agent must undergo a streamlined process of submission and approval. Agents are managed in the [Agent Registry](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-registry-overview) of Microsoft 365 admin center. As part of agent management, you can review [agent requests](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-requests) and determine whether to publish the agent to the store or reject the agent submission. For more information, see [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-365-overview). Members of your organization can only access the agents that you have allowed.
 
-- **Prepare** - Set the foundation before enabling agents.
-- **Deploy** - Enable agents in a controlled manner.
-- **Manage** - Ongoing operation, governance, and optimization.
+## Agent types you can manage
 
-The blueprint provides these phases for each of the following areas:
+You can manage several types of agents in Microsoft Copilot, each serving different purposes:
 
-- Security and governance
-- Management controls
-- Measurement and reporting
+- **Published by your organization**: Built with predefined instructions and actions. These agents follow structured logic and are best for predictable, rule-based tasks. Before you make these agents available to members of your organization, these agents go through an admin approval to ensure compliance and readiness. For more information, see [Manage agent requests in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-requests).
 
-[![Diagram that shows the agents deployment blueprint for Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/m365-agents-blue-print/m365-agents-blue-print.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/m365-agents-blue-print/m365-agents-blue-print.png#lightbox)
+  Note
 
-## Download the blueprint and documentation
+  Publishing agents to the organization is supported in Microsoft 365 Government Community Cloud High \(GCCH\) and Government Community Cloud Moderate \(GCCM\) environments.
+- **Shared by creator**: Shared agents are custom versions of Microsoft Copilot that combine instructions, knowledge, and skills to perform specific tasks or scenarios. Creators can create and share these agents through multiple channels, such as Microsoft Copilot Studio, Microsoft Copilot Agent Builder, and more. Shared agents enhance the functionality of Copilot by adding search capabilities, custom actions, connectors, and APIs. For more information, see [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots).
 
-| Deployment model | Description |
-| --- | --- |
-| ![Enable agents in Microsoft Copilot.](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/m365-agents-blue-print/m365-agents-blue-print.png) | Use this deployment model to assist organizations with agent security, governance, management controls, measurement, and reporting.  <br>  <br>**This model includes**  <br><br><br>- Blueprint with high level activities and presentation [PDF](https://aka.ms/AgentsDeployBlueprintPDF) \| [PowerPoint](https://aka.ms/AgentsDeployBlueprintPPT) |
+  As an admin, you can view shared agents on the **Agents** page in the Microsoft 365 admin center. You can see a list of all shared agents in the **Agent Registry**, including details such as the agent's name, creator, creation date, host products, and availability status. You can search for specific agents and manage their lifecycle, including blocking agents that are deemed unsafe or noncompliant.
 
-### Documentation resources
+  For your users, shared agents are available through Copilot on different surfaces. Users can interact with these agents to perform specific tasks or get assistance based on the agent's capabilities.
+- **Microsoft agents**: Developed by Microsoft and integrated with Microsoft 365 services.
+- **External partner agents**: Created by external developers or vendors. You can control their availability and permissions.
+- **Frontier agents**: Experimental or advanced agents that use new capabilities or integrations. These agents might be in early stages of development or testing and could require more oversight or limited rollout.
 
-- [Governance and security best practices overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/sec-gov-intro)
-- [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps)
+  - **App Builder agent**: A type of Frontier agent developed by Microsoft that can be managed as part of Microsoft Copilot. You can also manage App Builder using [Power Platform admin center](https://admin.powerplatform.microsoft.com).
+  - **Workflows agent**: A type of Frontier agent developed by Microsoft that can be managed as part of Microsoft Copilot. Flows created in Copilot are saved to the default environment unless [environment routing](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing?tabs=new#turn-on-environment-routing-in-the-admin-center) is enabled for Copilot Studio. You can also manage flows using the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
 
-## Related content
+Note
 
-- [Microsoft Purview blueprint: Secure by default](https://learn.microsoft.com/en-us/purview/deploymentmodels/depmod-securebydefault-intro)
+The same Copilot Studio agent \(declarative or custom engine\) can appear more than once in the admin center with different publisher states, such as **Shared by creator** and **Published by your organization**. Depending on the publishing lifecycle and the actions that creators and admins take, these duplicate-looking entries can represent separate lifecycle and publisher records for the same underlying agent. They're expected and by design, not an error.
+
+For lifecycle details and available admin actions, see [How one agent can appear as multiple entries](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-registry-overview#how-one-agent-can-appear-as-multiple-entries).
+
+## Get started
+
+To get started managing agents within Microsoft 365 admin center, see [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-365-overview). You will learn about agent management roles and permissions, as well as agent inventory, lifecycle, tools, and settings.
+
+Important
+
+Use roles with the fewest permissions. Accounts with lower permissions help improve security for your organization. Global Administrator is a highly privileged role. Limit its use to emergency scenarios when you can't use an existing role. For more information, see [About admin roles in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles).
+
+[![Screenshot showing the Agents & connectors page in the Microsoft 365 admin center.](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/agents/get-started.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/media/agents/get-started.png#lightbox)
+
+## Related articles
+
+- [Agent management in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/agent-365-overview).

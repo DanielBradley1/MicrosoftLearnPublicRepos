@@ -11,6 +11,8 @@ One user's raw, billable-flagged consumption of Copilot Credits over a required 
 
 This resource is distinct from [costManagementUserUsageRecord](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementuserusagerecord). A user usage record is a processed, date-bounded report for one completed UTC day that can be ranked across users. A user usage detail is raw, timestamp-bounded, and read for one user at a time. The `sessionCount` values of the two resources aren't guaranteed to be equal.
 
+Its [service details](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementuserusageservicedetail) and [session details](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementuserusagesessiondetail) are breakdowns of this user's raw activity, not separate tenant-wide reports. For shared time-window and paging guidance, see [Usage reports](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/usage-reports-overview).
+
 Note
 
 The parent collection `GET /copilot/costManagement/usageReports/userUsageDetails` isn't listable and returns a `404` response. Read a detail by the user's identifier instead.

@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Copilot Managed Runtime partner integration overview \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Copilot Managed Runtime partner integration overview
 
 This guide helps engineers integrate an app-building product with Copilot Managed Runtime. It explains the platform's integration surfaces and how it compares with Power Platform and Azure. For an example of a partner integration, see [Publish a Lovable app](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/publish-from-lovable?view=o365-worldwide).
 
@@ -11,11 +9,11 @@ This guide helps engineers integrate an app-building product with Copilot Manage
 
 Copilot Managed Runtime provides a platform for creating and operating intelligent internal applications in the context of a Microsoft Entra tenant. It offers a fast path for generated or hand-written web apps to access organizational data and intelligence with automatic hosting, governance, and security.
 
-For product concepts and capabilities, see the [Copilot Managed Runtime overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide).
+For product concepts and capabilities, see the [Copilot Managed Runtime overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/overview?view=o365-worldwide).
 
-Copilot Managed Runtime supports both AI-assisted makers and professional developers. The primary integration surfaces are the `ms` command-line interface, the Copilot Managed Runtime SDK \(`@microsoft/managed-apps`\), and the Copilot Managed Runtime app host.
+Copilot Managed Runtime supports both AI-assisted makers and professional developers. The primary integration surfaces are the `ms` command-line interface, the Copilot Managed Runtime SDK \(`@microsoft/cmr-apps`\), and the Copilot Managed Runtime app host.
 
-For deeper detail on how these pieces fit together, see [Copilot Managed Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide).
+For deeper detail on how these pieces fit together, see [Copilot Managed Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/architecture?view=o365-worldwide).
 
 ## Copilot Managed Runtime vs. other products
 

@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/overview -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Work IQ MCP overview
 
-The Work IQ MCP server exposes Microsoft 365 intelligence capabilities to AI agents through the [Model Context Protocol \(MCP\)](https://modelcontextprotocol.io). It provides tools that enable agents to read, create, update, and delete Microsoft 365 entities, invoke Microsoft 365 Copilot for natural-language reasoning, retrieve grounding content, and discover API schemas - all through a single MCP endpoint.
+The Work IQ MCP server exposes Microsoft 365 intelligence capabilities and connected enterprise sources to AI agents through the [Model Context Protocol \(MCP\)](https://modelcontextprotocol.io). It provides tools that enable agents to read, create, update, and delete entities across Microsoft 365 and connected enterprise systems, invoke Microsoft 365 Copilot for natural-language reasoning, retrieve grounding content, and discover API schemas and connected Copilot Connector tools, all through a single MCP endpoint.
 
 Note
 
@@ -27,7 +27,7 @@ The tools are organized into four categories:
 
 | Category | Tools | Description |
 | --- | --- | --- |
-| Entity tools | `fetch`, `fetch_blob`, `create_entity`, `update_entity`, `delete_entity`, `do_action`, `call_function` | CRUD operations and actions on Microsoft 365 resources |
+| Entity tools | `fetch`, `fetch_blob`, `create_entity`, `update_entity`, `delete_entity`, `do_action`, `call_function` | CRUD operations and actions on Microsoft 365 resources and connected enterprise sources |
 | Copilot tools | `ask`, `retrieve`, `list_agents` | Invoke Microsoft 365 Copilot, retrieve grounding content, and discover available agents |
 | Schema tools | `get_schema`, `search_paths` | Discover available API paths and retrieve OpenAPI schemas at runtime |
 

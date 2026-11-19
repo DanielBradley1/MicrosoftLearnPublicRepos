@@ -43,6 +43,7 @@ Work IQ can reason over:
 - People and organizational context
 - Microsoft Planner plans
 - Enterprise search results
+- Data from connected enterprise systems through Copilot Connectors
 
 ## Choose a protocol
 

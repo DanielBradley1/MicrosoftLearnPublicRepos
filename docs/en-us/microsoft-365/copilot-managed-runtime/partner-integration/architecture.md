@@ -1,11 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/architecture?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Partner integration architecture for Copilot Managed Runtime \(preview\)
+# Partner integration architecture for Copilot Managed Runtime
 
-\[This article is prerelease documentation and is subject to change.\]
-
-This article explains the partner integration architecture for Copilot Managed Runtime, including the boundary between partner-owned and Microsoft-operated components. For the fuller product architecture, see the [Copilot Managed Runtime architecture reference](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide).
+This article explains the partner integration architecture for Copilot Managed Runtime, including the boundary between partner-owned and Microsoft-operated components. For the fuller product architecture, see the [Copilot Managed Runtime architecture reference](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/architecture?view=o365-worldwide).
 
 ## Copilot Managed Runtime app components
 

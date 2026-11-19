@@ -39,6 +39,15 @@ GET https://graph.microsoft.com/v1.0/copilot/admin/catalog/packages/{id}
 GET https://graph.microsoft.com/beta/copilot/admin/catalog/packages/{id}
 ```
 
+## Optional query parameters
+
+This method supports the `$select` [OData query parameter](https://learn.microsoft.com/en-us/graph/query-parameters) to help customize the response.
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `$select` | String | Use the exact selection `id,requestMetadata` to return only the package ID and request metadata. Use the package's exact title ID; this selection doesn't resolve an alternate staged ID. |
+| `version` | String | Select the exact package/title version. Omit to retain versionless lookup, not to select "latest". Some pending first-publication titles require an explicit version to resolve. |
+
 ## Request headers
 
 | Name | Description |
@@ -53,7 +62,9 @@ Don't supply a request body for this method.
 
 If successful, this method returns a `200 OK` response code and a [copilotPackageDetail](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/copilotpackagedetail) object in the response body.
 
-### Example
+## Examples
+
+### Example 1: Get package details
 
 #### Request
 
@@ -69,14 +80,13 @@ GET https://graph.microsoft.com/beta/copilot/admin/catalog/packages/abc
 
 #### Response
 
-The following example shows the response.
+The following example shows the response to the package detail request. The response object shown here might be shortened for readability.
 
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#copilot/admin/catalog/packages/$entity",
   "id": "P_19ae1zz1-56bc-505a-3d42-156df75a4xxy",
   "displayName": "Contoso Sales Agent",
   "type": "custom",
@@ -139,5 +149,63 @@ Content-Type: application/json
       ]
     }
   ]
+}
+```
+
+### Example 2: Select request metadata
+
+#### Request
+
+The following example shows a request to get a package's request metadata. For field meanings and availability, see [copilotPackageRequestMetadata](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/copilotpackagerequestmetadata).
+
+```http
+GET https://graph.microsoft.com/beta/copilot/admin/catalog/packages/T_87654321-4321-4321-4321-210987654321?$select=id,requestMetadata
+```
+
+#### Response
+
+The first entry in the `requests` property illustrates a publication request: `requestedBy` is the resolved requester's display contact and `assignees` is empty. The second entry illustrates a different request: `requestedBy` is the first explicit assignee, while `assignees` preserves all explicit members in order. A null contact isn't proof that no request exists. See [copilotPackageRequestInfo](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/package/resources/copilotpackagerequestinfo) for field meanings.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "T_87654321-4321-4321-4321-210987654321",
+  "requestMetadata": {
+    "requests": [
+      {
+        "identifier": "request-publish",
+        "assignees": [],
+        "requestedBy": {
+          "name": "Alex Example",
+          "address": "alex@example.com"
+        },
+        "requestedDateTime": "2026-10-01T12:00:00Z"
+      },
+      {
+        "identifier": "request-access",
+        "assignees": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "displayName": "Jordan Example",
+            "userPrincipalName": "jordan@example.com",
+            "principalType": "user"
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "displayName": "Example Team",
+            "userPrincipalName": null,
+            "principalType": "group"
+          }
+        ],
+        "requestedBy": {
+          "name": "Jordan Example",
+          "address": "jordan@example.com"
+        },
+        "requestedDateTime": "2026-10-01T13:00:00Z"
+      }
+    ]
+  }
 }
 ```

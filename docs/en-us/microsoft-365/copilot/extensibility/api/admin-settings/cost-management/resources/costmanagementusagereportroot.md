@@ -7,7 +7,9 @@ Important
 
 APIs under the `/beta` version are subject to change. Use of these APIs in production applications is not supported.
 
-The Copilot Cost Management usage reporting root, contained by [costManagementRoot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementroot) at `/copilot/costManagement/usageReports`. It's the containment parent for the usage report collections, which report consumption of Copilot Credits by user, security group, governed service, and funding class, and for raw per-user usage detail. Every usage report requires a time selector query parameter. For details, see [Usage report time selectors and paging](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview#usage-report-time-selectors-and-paging).
+The Copilot Cost Management usage reporting root, contained by [costManagementRoot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementroot) at `/copilot/costManagement/usageReports`. It's the containment parent for the usage report collections, which report consumption of Copilot Credits by user, security group, governed service, and funding class, and for raw per-user usage detail.
+
+To choose a report and learn about required time selectors, paging, filtering, and ordering, see the [Usage reports overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/usage-reports-overview). This page describes the root resource's methods, properties, and relationships.
 
 Note
 

@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/prerequisites?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Prepare a partner integration with Copilot Managed Runtime \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Prepare a partner integration with Copilot Managed Runtime
 
 Before you build a partner integration with Copilot Managed Runtime, set up the required packages and development environment. Then register a multitenant Microsoft Entra application, configure delegated permissions, get customer admin consent, and authenticate the CLI for local or hosted use.
 
@@ -11,9 +9,9 @@ Before you build a partner integration with Copilot Managed Runtime, set up the 
 
 | Package | Purpose | Install location |
 | --- | --- | --- |
-| [`@microsoft/managed-apps-cli`](https://www.npmjs.com/package/@microsoft/managed-apps-cli) | The `ms` app lifecycle and integration CLI | Partner development container or developer machine |
-| [`@microsoft/managed-apps`](https://www.npmjs.com/package/@microsoft/managed-apps) | Runtime SDK used by app code | App production dependencies |
-| [`@microsoft/managed-apps-vite-plugin`](https://www.npmjs.com/package/@microsoft/managed-apps-vite-plugin) | Local config and Local Play integration for Vite | App development dependencies |
+| [`@microsoft/cmr-cli`](https://www.npmjs.com/package/@microsoft/cmr-cli) | The `ms` app lifecycle and integration CLI | Partner development container or developer machine |
+| [`@microsoft/cmr-apps`](https://www.npmjs.com/package/@microsoft/cmr-apps) | Runtime SDK used by app code | App production dependencies |
+| [`@microsoft/cmr-apps-vite-plugin`](https://www.npmjs.com/package/@microsoft/cmr-apps-vite-plugin) | Local config and Local Play integration for Vite | App development dependencies |
 
 For current supported developer tools and packages see the [developer overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide).
 
@@ -28,7 +26,7 @@ For current supported developer tools and packages see the [developer overview](
 Install the CLI in the development environment:
 
 ```bash
-npm install --global @microsoft/managed-apps-cli
+npm install --global @microsoft/cmr-cli
 ms --version
 ```
 

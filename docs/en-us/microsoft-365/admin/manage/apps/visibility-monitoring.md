@@ -1,18 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/visibility-monitoring?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-09-25 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
-# Monitor the health of apps in Copilot Managed Runtime \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Monitor the health of apps in Copilot Managed Runtime
 
 To measure and improve operational health metrics for apps in Copilot Managed Runtime for your organization, go to the **Monitor** page under **Apps** in the [Microsoft 365 admin center](https://admin.microsoft.com/AdminPortal/Home#/homepage).
 
-Important
-
-- This is a preview feature.
-- These features are subject to [supplemental terms of use](https://go.microsoft.com/fwlink/?LinkId=2373139), and are available before an official release so that customers can get early access and provide feedback.
-
-The following roles can access the **Monitor** experience: AI admin, AI reader, Global admin, Global reader, and Power Platform admin. All roles can use this experience to understand the aggregate operational health of apps in Copilot Managed Runtime that are created in their tenant. Global admin and Power Platform admin can create and manage alerts and see metrics. AI admin, AI reader, and Global reader can see metrics, but can only view alert rules and triggered alert details. They can't create and manage alert rules. Metrics are calculated by aggregating daily or hourly event logs from runtime activity. They're not real-time. For more information about which roles can manage apps and which roles are read-only, see [Roles and responsibilities](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/roles-responsibilities?view=o365-worldwide).
+Both Manage and read-only roles can access the **Monitor** experience and use it to understand the aggregate operational health of apps in Copilot Managed Runtime that are created in their tenant. Manage roles can see metrics and create and manage alerts. Read-only roles can see metrics and view alert rules and triggered alert details, but they can't create or manage alert rules. Metrics are calculated by aggregating daily or hourly event logs from runtime activity. They're not real-time. For more information about which roles can manage apps and which roles are read-only, see [Roles and responsibilities](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/roles-responsibilities?view=o365-worldwide).
 
 This article helps you understand the apps inventory and monitor application health.
 
@@ -46,82 +39,7 @@ The **Monitor** experience provides the following operational health metrics for
 
 ## Create alerts for your apps
 
-Admins can use *alerts* to track the operational health of their apps. Admins set up custom thresholds and get notifications when metrics for their apps pass specific thresholds. Create alerts on any metrics in the **Monitor** area of the Microsoft 365 admin center.
-
-Best practices when setting up alerts for health metrics:
-
-- The system evaluates alerts after it produces new metrics. Metrics are either 24-hour or 1-hour aggregates. This condition means an alert rule in the **Monitor** area is evaluated every 24 hours after the newest 24-hour aggregates are produced or every 1 hour after the newest 1-hour aggregate is produced.
-- In the alert configuration panel, you can change whether an alert considers the last 24 hours or last 1 hour worth of data by selecting 1 hour or 24 hours in the **Data review period** dropdown.
-- Alert rules are alerts that admins create to monitor their apps. You can edit, delete, and turn an alert rule on or off. You can place alert rules on a specific app.
-- A *triggered alert* occurs when an app passes the admin defined threshold of the alert rule that monitors it. You can select the triggered alert to learn which app triggered the alert rule and the value of its metric that triggered the rule.
-
-### When to use alerts
-
-- Admins use alerts to find apps that are used more than expected. For example, an admin creates an alert to know if an app exceeds 50 launches a day.
-- Admins use alerts to find apps with degraded health, and work with their makers to fix issues.
-- For operations, admins create alerts to know if apps are slow to open for users.
-
-### Prerequisites
-
-- You must be a Global admin or Power Platform admin to create and manage alert rules, and view triggered alert details. AI admin, AI reader, and Global reader can view alert rules and triggered alert details, but they can't create or manage alert rules.
-
-### Create an alert for an app
-
-You can create an alert for a specific app from either the **Monitor** page or the **All apps** page.
-
-### Option 1: Create an alert from the Monitor page
-
-1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
-2. In the navigation pane, select **Apps**, and then select the **Monitor** tab.
-3. Select **+ New alert** to open the alert configuration panel.
-4. In the **Alert rule name**, enter a name for the alert.
-5. Select **Select resource**, and then select the app that you want to monitor.
-6. In the **Metric** list, select the metric for the custom threshold. The available metrics are listed earlier in this article.
-7. In the **Operator** list, select **Is Under**, **Is Over**, or **Equals**.
-8. In the **Select value** use the arrows to set the threshold value.
-9. **Data review period**: Specifies how far back the alert evaluates data.
-
-   - **24 hours**: Evaluates data from the previous 24 hours.
-   - **1 hour**: Evaluates data from the previous hour and enables hourly aggregation for the metric.
-   - In the **Monitor** tab within the details pane of an app, you can view charts for both 24-hour and 1-hour aggregations on an app's metric if an alert was configured with the 1-hour data review period on that metric for that app. For example, if you configured an alert with a 1-hour data review period on an app's Time to Interactive metric, you could see 24-hour and 1-hour aggregations on the chart for the Time to Interactive metric for that app. Use the **Review period** list above the chart to switch between views.
-
-10. In the **Severity** list, select **Low**, **Medium**, or **High**.
-11. In the **Notification type** list, select one of the following options:
-
-    - **None**: No email is sent. Return to the Monitor area to check the alert status.
-    - **Email**: You can specify up to 5 users \(including security groups\) to receive an email when the alert triggers. The email comes from **microsoft-noreply@microsoft.com** for alerts with a 24 hour review period and **azure-noreply@microsoft** for alerts with a 1 hour review period.
-
-12. Select **Save**.
-
-### Option 2: Create an alert from the All apps page
-
-1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
-2. In the navigation pane, select **Apps**, and then select the **All apps** tab.
-3. Select the app that you want to create an alert on. In the details pane, select the **Monitor** tab.
-4. In the upper-left corner of the **Monitor** tab, select **+ New alert rule** .
-5. When you select the **+ New alert rule** link to create an alert, the admin center autofills the information for the **Resource** field so you can create an alert on that specific app.
-6. Fill in the information for the alert rule as listed in the **Create an alert from the Monitor page** section.
-
-### When an alert triggers
-
-If you select to receive email notifications when any app triggers an alert, the user and/or groups you specified under the email notification option will get an email when the alert fires.
-
-In the **Monitor** experience, the **Triggered alerts** tab shows you a list of all the alerts in your tenant that triggered. The **Last triggered** column updates to the latest time that the alert triggered. Selecting a triggered alert shows you information about the alert rule configuration and what app triggered that alert. If an alert configured with a data review period of 1 hour didn't trigger for more than 24 hours, the triggered alert disappears from the *Triggered alerts* list. If an alert was configured with a data review period of 24 hours and didn't trigger for more than 48 hours, the triggered alert disappears from the list.
-
-### How to manage alert rules
-
-You can manage your alert rules by going to **Monitor** and then selecting the **Alert rules** tab. You can turn your alert rules on or off and edit and delete them. To edit or delete, select the menu option and select the desired action.
-
-### Tips and best practices
-
-Follow these best practices:
-
-- **Start small**: Create a few high-value rules first, such as performance-open times, error rates, and usage spikes.
-- **Name consistently**: Use clear names like **Prod – Copilot Managed Runtime – Availability < 90**.
-- **Set appropriate severity**: Use **High** for production-impacting metrics and **Medium** or **Low** for trend monitoring.
-- **Manage the 10-rule limit**: Delete obsolete rules.
-- **Choose data review period wisely**: Use the 1-hour option for mission-critical applications where you need to know as soon as possible when operational health degrades. Notifications for these alerts are sent out much more frequently compared to the 24-hour option.
-- **Validate email routing**: Ensure recipients can receive emails from **azure-noreply@microsoft.com** and **microsoft-noreply@microsoft.com**.
+Admins can use *alerts* to track the operational health of their apps. Admins set up custom thresholds and get notifications when metrics for their apps pass specific thresholds. Create alerts on any metrics in the **Monitor** area of the Microsoft 365 admin center. See [Create alerts for your apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/alerts?view=o365-worldwide) for more details
 
 ## FAQs
 
@@ -142,50 +60,14 @@ Metrics aggregate at a point in time, according to their aggregation rate. The d
 
 ### How far back can I view metric data?
 
-You can view metric data for up to 28 days.
+You can view metric data for up to 28 days for 24 hour aggregates.
 
 ### How are time-based metrics calculated? For example, what percentile is used?
 
 Time-based metrics report out the 75th percentile.
 
-### How many alert rules can I turn on at one time?
-
-A tenant can have up to 10 alert rules at a time \(including both active and disabled rules\). This limit encourages a focused set of high-value alerts. Over time, review and retire alert rules as underlying issues are resolved. If you reach this limit, consider cleaning up or consolidating existing rules.
-
-### What's the difference between an alert rule and a triggered alert?
-
-An *alert rule* is a monitoring rule you configure, including the metric, threshold, severity, and notification.
-
-A *triggered alert* is an instance when an app meets the rule's condition. For example, the **Is under 90% for app open success rate** condition is met.
-
-### Who can create and manage alerts?
-
-You must be a Global admin or Power Platform admin to create and manage alerts.
-
-### Does the severity level affect how alerts are processed?
-
-The **Severity**, such as **Low**, **Medium**, or **High**, is a classification label for triage and reporting. It doesn't change evaluation frequency or email notification behavior.
-
-### I created an hourly alert rule, why can't I see any data or alert triggering right after?
-
-The first check runs after the first full hour, once there is at least one data point.
-
-### Why are there gaps in the hourly chart?
-
-An hour with no activity has no data point
-
-### Will I get an email every hour while the problem lasts?
-
-You'll get an email as soon as a low-latency alert fires, then a reminder every 4 hours while the issue continues. Reminders stop when the issue resolves or after 7 days, whichever comes first. If the issue comes back after it resolves, you'll get a new notification.
-
-### Can I see more the 24 hour, or export hourly data?
-
-No, the hourly chart covers the last 24 hours only and Monitor's data export feature only covers daily metric aggregates.
-
-### Can hourly alerts be opted into the 'When an alert fires' trigger on the Power Platform for Admins V2 Connector?
-
-At the moment, no, only alerts that have a 24-hour data review period can be opted in. Learn more: [Route alert notifications to any connector backed destination \(preview\)](https://learn.microsoft.com/en-us/power-platform/admin/monitoring/alerts#route-alert-notifications-to-any-connector-backed-destination-preview)
-
 ## Related content
 
-[Overview of integration with Application Insights](https://learn.microsoft.com/en-us/power-platform/admin/overview-integration-application-insights)
+- [Overview of integration with Application Insights](https://learn.microsoft.com/en-us/power-platform/admin/overview-integration-application-insights)
+- [Create alerts for your apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/alerts?view=o365-worldwide)
+- [Export Monitor metrics with the Power Platform API \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/monitor-export-metrics?view=o365-worldwide)

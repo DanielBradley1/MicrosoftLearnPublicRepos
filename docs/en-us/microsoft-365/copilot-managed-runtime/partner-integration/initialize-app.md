@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/initialize-app?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Initialize an app in a Copilot Managed Runtime partner integration \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Initialize an app in a Copilot Managed Runtime partner integration
 
 A partner integrating an app-creation experience must register each generated or existing project with Copilot Managed Runtime before it can be previewed or deployed. Initialization selects the source or artifact model, saves the app configuration, and connects the runtime SDK and build integration.
 
@@ -79,30 +77,28 @@ Use a full commit SHA for build and deploy automation.
 
 `ms app create` and `ms app init` write `ms.config.json` in the app root. Commit or otherwise persist it with the project. It contains identifiers and build settings, not user credentials.
 
-```bash
-ms app show --json
-```
+Inspect `ms.config.json` directly to verify the local configuration. Use `ms app info --json` to inspect server-side app state.
 
 Don't reuse one app's config file to register another app. Never persist the CLI's user token cache with app source.
 
 ## Add the runtime SDK
 
 ```bash
-npm install @microsoft/managed-apps
+npm install @microsoft/cmr-apps
 ```
 
 The package exposes subpath imports rather than a root import:
 
 ```ts
-import { getContext } from "@microsoft/managed-apps/app";
-import { getUser } from "@microsoft/managed-apps/auth";
-import { getClient } from "@microsoft/managed-apps/data";
+import { getContext } from "@microsoft/cmr-apps/app";
+import { getUser } from "@microsoft/cmr-apps/auth";
+import { getClient } from "@microsoft/cmr-apps/data";
 ```
 
 ## Configure Vite
 
 ```bash
-npm install --save-dev @microsoft/managed-apps-vite-plugin
+npm install --save-dev @microsoft/cmr-apps-vite-plugin
 ```
 
 Add the plugin to `vite.config.ts`:
@@ -110,9 +106,9 @@ Add the plugin to `vite.config.ts`:
 ```ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { managedApps } from "@microsoft/managed-apps-vite-plugin";
+import { copilotManagedRuntime } from "@microsoft/cmr-apps-vite-plugin";
 
 export default defineConfig({
-  plugins: [react(), managedApps()],
+  plugins: [react(), copilotManagedRuntime()],
 });
 ```

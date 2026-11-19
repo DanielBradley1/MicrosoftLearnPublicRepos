@@ -7,7 +7,9 @@ Important
 
 APIs under the `/beta` version are subject to change. Use of these APIs in production applications is not supported.
 
-Per-service balance and enforcement-selection diagnosis for a user. Keyed by `serviceId`; a user holds at most one balance per service.
+Per-service balance and enforcement-selection diagnosis for a user. Contained by [costManagementUserBalance](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementuserbalance) through its `serviceBalances` relationship and keyed by `serviceId`; a user holds at most one balance per service.
+
+Use `isConsumptionAllowed` and `accessDecisionReason` to understand the access decision, and `spendingPolicyId` to identify the selected [spending policy](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicy). For historical consumption by service rather than a user's current balance, see [Usage reports](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/usage-reports-overview).
 
 ## Methods
 

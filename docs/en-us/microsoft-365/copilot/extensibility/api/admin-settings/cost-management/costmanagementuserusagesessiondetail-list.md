@@ -19,7 +19,9 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | :--- | :--- | :--- |
 | Delegated \(work or school account\) | CopilotCostManagement-UserData.Read.All | CopilotCostManagement.Read.All |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | Not supported. | Not supported. |
+| Application | CopilotCostManagement-UserData.Read.All | CopilotCostManagement.Read.All |
+
+This table describes the Graph permission model. See [permission availability and authorization](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview#permission-availability-and-authorization) for deployment requirements.
 
 ## HTTP request
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicy -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-11-05 -->
 
 # spendingPolicy resource type
 
@@ -14,9 +14,26 @@ A policy that governs Copilot Credits consumption for an audience. This is an ab
 
 The audience type can't be changed by updating a policy. Changing the audience type requires deleting and recreating the policy, which creates a new identifier and resets the new policy's consumption accounting.
 
-Policies are created `disabled`. For a group-scoped policy, link at least one group before the service can enable it. Read `status` to observe provisioning; clients don't write this property, and at least one service must remain enabled. Read `serviceSettings`, `emailThresholdSettings`, and group assignments through their own endpoints; these relationships aren't expandable.
+Policies are created `disabled`. For a group-scoped policy, link at least one group before the service can enable it. Read `status` to observe the policy lifecycle, not billing resource provisioning; clients don't write this property, and at least one service must remain enabled. Read `serviceSettings`, `emailThresholdSettings`, and group assignments through their own endpoints; these relationships aren't expandable.
+
+For pay-as-you-go funding, the optional `billingInstrument` describes the complete Azure provisioning target and its resource lifecycle. Read `billingInstrument.provisioningStatus` independently of the policy's `status`. A successfully provisioned billing resource doesn't mean that the policy is enabled.
 
 Updates, deletion, and changes to child settings or references use the parent policy's ETag through `If-Match`. Read a fresh policy before a mutation and use the returned ETag for the next mutation. Updates aren't permitted while a policy is provisioning, provisioning has failed, or the service has disabled it because of subscription or linked-resource state.
+
+## Related settings and audience
+
+A spending policy brings together an audience, consumption limits, service settings, and optional alerts. Use the following resources and operations with the policy:
+
+| Task | Resource or operation |
+| :--- | :--- |
+| Apply limits to every user in the tenant | [allUsersSpendingPolicy](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/allusersspendingpolicy) |
+| Apply limits to selected security groups | [selectedGroupsSpendingPolicy](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/selectedgroupsspendingpolicy); [list](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/selectedgroupsspendingpolicy-list-assignedgroups), [add](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/selectedgroupsspendingpolicy-post-assignedgroups), or [remove](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/selectedgroupsspendingpolicy-delete-assignedgroups) assigned groups |
+| Configure the services governed by the policy | [spendingPolicyServiceSetting](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicyservicesetting) |
+| Supply an Azure billing target and read resource provisioning state | [costManagementBillingInstrument](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementbillinginstrument), through the existing policy create, update, and get operations |
+| Configure notify-only thresholds and recipients | [costManagementAlertSetting](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementalertsetting) |
+| Diagnose which policy governs a user's service access | [costManagementUserServiceBalance](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementuserservicebalance), including `spendingPolicyId` and `accessDecisionReason` |
+
+For consumption reports rather than policy configuration, see [Usage reports](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/usage-reports-overview).
 
 ## Methods
 
@@ -32,6 +49,7 @@ Updates, deletion, and changes to child settings or references use the parent po
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
+| `billingInstrument` | [costManagementBillingInstrument](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementbillinginstrument) | The Azure billing target for pay-as-you-go funding. Optional in a create request: you can create a policy without supplying Azure provisioning coordinates. To specify an explicit target, supply all three writable coordinates. Required when an update changes stored non-pay-as-you-go funding to include `payAsYouGo`. Doesn't support nested partial updates or replacement of an already-pay-as-you-go instrument. Supports `$select`, including nested properties; doesn't support `$filter` or `$orderby`. |
 | `billingMethods` | [costManagementBillingMethods](#costmanagementbillingmethods-enumeration) | How consumption under this policy is funded. This is a flags value, so combined values such as `prepaidCredits,payAsYouGo` are valid. Optional at creation and updatable with `PATCH`. When omitted at creation, the value is `notSpecified`. |
 | `createdBy` | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset) | The identity that created the policy. An identity detail that isn't available is returned as `null`. Read-only. |
 | `createdDateTime` | DateTimeOffset | When the policy was created. Read-only. Supports `$filter` \(`eq`, `ne`\) and `$orderby`. |
@@ -80,6 +98,9 @@ The following JSON representation shows the resource type.
 ```json
 {
   "@odata.type": "#microsoft.graph.spendingPolicy",
+  "billingInstrument": {
+    "@odata.type": "microsoft.graph.costManagementBillingInstrument"
+  },
   "billingMethods": "String",
   "createdBy": {
     "@odata.type": "microsoft.graph.identitySet"

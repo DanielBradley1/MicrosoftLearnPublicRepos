@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/managed-runtime-security-governance?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# Security and governance in the Copilot Managed Runtime \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Security and governance in the Copilot Managed Runtime
 
 The Copilot Managed Runtime helps you secure and govern AI-built apps at enterprise scale. This article explains its built-in protections and the administrative controls IT can use to manage sharing, data access, and oversight. Apps on the Copilot Managed Runtime help organizations innovate with protections already in place and controls that IT can adapt to their requirements.
 
@@ -12,12 +10,7 @@ Regardless of where apps are created, including Copilot Cowork, Microsoft Copilo
 - **The managed host** provides the foundation for developers to build and run apps, enforcing authentication, data request boundaries, and governed access to business services.
 - **Administrative controls** let IT admins review and adapt the policies that control app sharing, data source availability, and permitted operations.
 
-This article explains how those protections work together and links to the guidance for reviewing or configuring each feature. For app creation options, see [What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide).
-
-Important
-
-- This feature is in preview.
-- These features are subject to [supplemental terms of use](https://go.microsoft.com/fwlink/?LinkId=2373139) and are available before an official release so that customers can get early access and provide feedback.
+This article explains how those protections work together and links to the guidance for reviewing or configuring each feature. For app creation options, see [What is Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/overview?view=o365-worldwide).
 
 ## Built-in protections for app builders
 
@@ -29,7 +22,7 @@ Knowing an app's address isn't enough to open it. The platform delivers app cont
 
 Users sign in with Microsoft Entra ID, Microsoft's identity service for organizational accounts, so developers don't need to configure a separate identity integration. By default, the app remains private to its owners until shared.
 
-For the host's authentication responsibilities, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide). To grant or revoke app access, see [Share an app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide).
+For the host's authentication responsibilities, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/architecture?view=o365-worldwide). To grant or revoke app access, see [Share an app with users and groups](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide).
 
 ### App code runs within enforced boundaries
 
@@ -46,7 +39,7 @@ These controls apply to different communication paths.
 
 Browser requests are subject to CSP, while connector requests pass through the platform's authentication, authorization, and connector policy checks. Allowing a connector doesn't require adding the connected service's address to the app's CSP allow list.
 
-For more information, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide) and [How CSP applies to apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide#how-csp-applies-to-copilot-managed-runtime-apps).
+For more information, see [Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/architecture?view=o365-worldwide) and [How CSP applies to apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide#how-csp-applies-to-copilot-managed-runtime-apps).
 
 ### Content Security Policy governs browser activity
 
@@ -78,7 +71,7 @@ Connector requests pass through the SDK and managed host, where authentication a
 The Microsoft-curated default policy provides a starting configuration at both levels:
 
 - **Selected connectors are permitted.** These connectors include SharePoint, OneDrive for Business, Microsoft Teams, Outlook, Excel Online, and Dataverse. Selection criteria include Microsoft publication, general availability, Microsoft Entra ID authentication, and connections that keep data within the organization's tenant or use Microsoft-managed services. The default allow list excludes third-party and custom connectors, along with infrastructure and administrative connector categories.
-- **Specified higher-risk actions remain blocked.** Even within approved connectors, the default policy blocks specified actions that construct arbitrary HTTP requests, execute scripts or freeform queries, or invoke arbitrary custom platform APIs.
+- **Specified higher-risk actions remain blocked.** Even within approved connectors, the default policy blocks specified actions that construct arbitrary HTTP requests, execute arbitrary scripts, or invoke arbitrary custom platform APIs.
 
 The default policy also governs Model Context Protocol \(MCP\) servers, which expose tools and services to AI capabilities.
 

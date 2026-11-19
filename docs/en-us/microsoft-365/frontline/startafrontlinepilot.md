@@ -7,7 +7,7 @@
 
 Note
 
-This feature is in public preview. For the latest updates, see the [Microsoft AI at Work Roadmap](https://www.microsoft.com/Microsoft-365/roadmap?id=498226), formerly known as the Microsoft 365 Roadmap.
+This feature is in public preview. For the latest updates, see the [Microsoft Copilot Roadmap](https://www.microsoft.com/Microsoft-365/roadmap?id=498226), formerly known as the Microsoft 365 Roadmap and AI at Work Roadmap.
 
 Start simple and validate the value Microsoft Teams can offer your frontline workers by quickly launching a pilot from the Teams admin center. Pilots allow you to pin and configure Teams capabilities for a subset of users before rolling out to your broader frontline workforce. Capabilities include Chat, Channels, Shifts, Tasks \(Planner\), Walkie Talkie, Connections - Home and Engage Communities.
 

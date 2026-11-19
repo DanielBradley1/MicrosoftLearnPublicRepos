@@ -1,15 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/share-app?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# Share a Microsoft Copilot Managed Runtime app with users and groups \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Share a Microsoft Copilot Managed Runtime app with users and groups
 
 A Copilot Managed Runtime app is private to its owners until you share it. You can share an app in two fully revocable ways: directly with specific users or groups, or through a *People in your organization* share link that any member of your organization can redeem. You manage both sharing methods from the `ms` CLI.
 
 Run the sharing commands from the directory that contains your app. Each command acts on that app automatically.
 
-When a user has access, they can find and launch the app from the app portal at [https://managedapps.cloud.microsoft/](https://managedapps.cloud.microsoft/). For the end-user experience, see [What are Copilot Managed Runtime apps \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide).
+When a user has access, they can find and launch the app from the app portal at [https://managedapps.cloud.microsoft/](https://managedapps.cloud.microsoft/). For the end-user experience, see [What are Copilot Managed Runtime apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/overview?view=o365-worldwide).
 
 ## Access levels
 
@@ -18,9 +16,11 @@ When you share an app, choose one of two access levels:
 | Access | What it grants |
 | --- | --- |
 | **Play** \(default\) | Run the app. This access level is right for end users. |
-| **Edit** | Modify the app's source. This access level is for collaborators who develop the app with you. |
+| **Edit** | Contribute to the app. For platform-managed Git, this includes repository access. For external GitHub repositories, grant source access separately in GitHub. |
 
 The two levels are independent, and granting or revoking one doesn't affect the other.
+
+For GitHub-backed apps, collaborators need both the applicable app permissions and access to the external repository. Grant and revoke repository access separately in GitHub; app sharing commands don't manage GitHub permissions.
 
 ## Grant access to users or groups
 

@@ -3,13 +3,13 @@
 
 # Work IQ MCP entity model
 
-Work IQ MCP uses a path-based entity model. Instead of exposing a separate tool for every Microsoft 365 entity or action, Work IQ MCP exposes a small set of generic tools that operate on resource paths.
+Work IQ MCP uses a path-based entity model. Instead of exposing a separate tool for every Microsoft 365 entity or connector operation, Work IQ MCP exposes a small set of generic tools that operate on resource paths.
 
-A resource path identifies the target Microsoft 365 resource or supported operation. The selected tool indicates what the agent wants to do with that path.
+A resource path identifies a resource or supported operation in Microsoft 365 or a connected source. The selected tool indicates what the agent wants to do with that path.
 
 ## What is an entity?
 
-In Work IQ MCP, an entity is a Microsoft 365 resource that an agent can read or act on through a resource path. Examples of entity categories include:
+In Work IQ MCP, an entity is a resource that an agent can read or act on through a resource path. Microsoft 365 entity categories include:
 
 - Mail
 - Calendar
@@ -25,6 +25,8 @@ The entity model is agent-oriented. Agents often use natural language first, suc
 
 Resource paths provide consistent addresses across Microsoft 365 workloads. They're relative paths, such as `/me/messages` or `/me/events`, that identify the target resource for a tool call.
 
+Copilot connector operations also use resource paths, discovered through `search_paths` and inspected with `get_schema`. Only data sources connected in Copilot Chat participate; available paths depend on those connections.
+
 The same tool can work with different resources by changing the path.
 
 | Tool | Example path | Purpose |
@@ -39,7 +41,7 @@ This model keeps the tool surface small. New supported resources are added as pa
 
 ## Entity operation tools
 
-Work IQ MCP entity tools map to common operation types.
+For Microsoft 365 resources, Work IQ MCP entity tools map to common operation types.
 
 | Operation | Tools | Description |
 | --- | --- | --- |
@@ -49,6 +51,8 @@ Work IQ MCP entity tools map to common operation types.
 | Delete | `delete_entity` | Deletes an entity at a resource path. |
 | Action | `do_action` | Performs a side-effecting action, such as sending mail. |
 | Function | `call_function` | Calls an operation that returns computed or derived results. |
+
+Connector paths use `call_function` for reads and `do_action` for writes, rather than `fetch`, `create_entity`, `update_entity`, or `delete_entity`.
 
 For parameter details and examples, see [Work IQ MCP tool reference](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/tool-reference).
 
@@ -69,7 +73,7 @@ For more information, see [Rego policy for Work IQ MCP governance](https://learn
 
 ## Key points
 
-- Work IQ MCP uses resource paths to identify Microsoft 365 entities and operations.
+- Work IQ MCP uses resource paths to identify Microsoft 365 entities and connector operations.
 - Generic tools define the operation to perform on a path.
 - The model is designed for agents, so entity access can complement natural-language reasoning from `ask`.
 - Agents discover supported paths and schemas at runtime.

@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/deploy-app?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-11 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
-# Deploy an app from a Copilot Managed Runtime partner integration \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Deploy an app from a Copilot Managed Runtime partner integration
 
 After you validate an app from a partner integration, deploy it through Copilot Managed Runtime and provide a path for creators and users to open it. The deployment flow supports Git-backed builds and partner-provided artifacts while keeping live promotion explicit.
 

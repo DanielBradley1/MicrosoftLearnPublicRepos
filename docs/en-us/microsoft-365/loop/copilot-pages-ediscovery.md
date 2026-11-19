@@ -76,6 +76,12 @@ Important
 
 Selecting a user's OneDrive as a data source doesn't include their Copilot Pages or Copilot Notebooks. Include the user's SharePoint Embedded container as a separate data source.
 
+We have made updates to the flow that enables collection of Copilot Pages via Microsoft Purview. If you don't see them yet, they may be rolling out to your tenant.
+
+<iframe src="https://learn-video.azurefd.net/vod/player?id=25cf7cd9-14a4-477d-b4d2-55952141fde1" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
+
+Alternatively, use the instructions below.
+
 ## Locate the user's container
 
 1. Sign in to the [SharePoint admin center](https://go.microsoft.com/fwlink/?linkid=2185219) with the [SharePoint Embedded administrator role](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/concepts/admin-exp/adminrole).
@@ -93,7 +99,11 @@ The container URL identifies the location for Microsoft Purview. It doesn't gran
 3. Select the user's SharePoint Embedded container as a data source. If the container isn't available in the custodian data source picker, add the container URL as a site data source.
 4. Apply a hold if the case requires content preservation. For instructions, see [Create an eDiscovery hold](https://learn.microsoft.com/en-us/purview/ediscovery-create-holds).
 
-Legal holds are supported for Copilot Pages and Copilot Notebooks. Held content is retained in the [Preservation Hold Library](https://learn.microsoft.com/en-us/sharepoint/governance/ediscovery-and-in-place-holds-in-sharepoint-server).
+Legal holds are supported for Copilot Pages and Copilot Notebooks. Held content can be retained in the [Preservation Hold Library](https://learn.microsoft.com/en-us/sharepoint/governance/ediscovery-and-in-place-holds-in-sharepoint-server).
+
+Here is a helpful video to demonstrate how to put SPE containers on hold.
+
+<iframe src="https://learn-video.azurefd.net/vod/player?id=38d570be-3810-4e11-8644-cdaa80ca8dc6" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
 ## Search and collect content
 

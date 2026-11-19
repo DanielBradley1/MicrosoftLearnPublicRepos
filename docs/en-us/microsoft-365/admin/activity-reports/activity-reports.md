@@ -98,7 +98,7 @@ Depending on your subscription, the following reports are available in all envir
 | [Visio activity](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/visio-activity?view=o365-worldwide) | Yes | Yes | N/A<sup>1</sup> | N/A<sup>1</sup> | N/A<sup>2</sup> |
 | [Viva Goals activity](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/viva-goals-activity?view=o365-worldwide) | Yes | N/A<sup>2</sup> | N/A<sup>2</sup> | N/A<sup>2</sup> | N/A<sup>2</sup> |
 
-N/A<sup>1</sup>: The report will be released in the future. The [Microsoft 365 Roadmap](https://www.microsoft.com/microsoft-365/roadmap?filters=) will be updated before the release.
+N/A<sup>1</sup>: The report will be released in the future. The [Microsoft Copilot Roadmap](https://www.microsoft.com/microsoft-365/roadmap?filters=) will be updated before the release.
 
 N/A<sup>2</sup>: The service isn't available in the environment; hence, there's no plan to release the report.
 

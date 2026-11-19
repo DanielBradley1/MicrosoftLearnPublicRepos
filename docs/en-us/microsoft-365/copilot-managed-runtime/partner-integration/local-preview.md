@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/local-preview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-11 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
-# Preview an app in a Copilot Managed Runtime partner integration \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Preview an app in a Copilot Managed Runtime partner integration
 
 This article shows how to preview a locally running app in a Copilot Managed Runtime partner integration, inside the same app host boundary used after deployment. The local-preview flow wraps the partner dev server in Local Play, confirms nested-iframe readiness, and prepares the required embedding-domain and Content Security Policy \(CSP\) configuration.
 

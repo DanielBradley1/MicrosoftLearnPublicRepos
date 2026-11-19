@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
-# Copilot Managed Runtime CLI command reference \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Copilot Managed Runtime CLI command reference
 
 This article describes every Copilot Managed Runtime CLI command, with syntax and parameters, to help you build, deploy, and share apps from the command line. The Copilot Managed Runtime CLI is published as [`@microsoft/cmr-cli`](https://www.npmjs.com/package/@microsoft/cmr-cli) and invoked as `ms`.
 
@@ -23,6 +21,7 @@ This reference groups every command by typical developer workflow tasks:
 | [Create an app](#create-an-app) | [`ms app init`](#ms-app-init) | Register an existing web project as an app. |
 | [Discover connectors](#discover-connectors) | [`ms connector list`](#ms-connector-list) | List connectors available in an environment. |
 | [Discover connectors](#discover-connectors) | [`ms connector list-actions`](#ms-connector-list-actions) | List operations exposed by a connector. |
+| [Manage app resources](#manage-app-resources) | [`ms app add backend`](#ms-app-add-backend) | Add a Fabric database backend to the app. |
 | [Manage app resources](#manage-app-resources) | [`ms app add data-source`](#ms-app-add-data-source) | Add a connector to the app as a table or action data source. |
 | [Manage app resources](#manage-app-resources) | [`ms app remove data-source`](#ms-app-remove-data-source) | Remove a previously added data source \(table or action\) from the app. |
 | [Manage app resources](#manage-app-resources) | [`ms app refresh data-source`](#ms-app-refresh-data-source) | Re-fetch schema and regenerate TypeScript for bound data sources. |
@@ -39,7 +38,6 @@ This reference groups every command by typical developer workflow tasks:
 | [Share](#share) | [`ms app share link list`](#ms-app-share-link-list) | List share links issued for the app. |
 | [Share](#share) | [`ms app share link revoke`](#ms-app-share-link-revoke) | Revoke a share link by ID. |
 | [Inspect and manage](#inspect-and-manage) | [`ms app list`](#ms-app-list) | List apps in the environment that you can access. |
-| [Inspect and manage](#inspect-and-manage) | [`ms app show`](#ms-app-show) | Show local app configuration and bound resources. |
 | [Inspect and manage](#inspect-and-manage) | [`ms app info`](#ms-app-info) | Show the server-side state of the app. |
 | [Inspect and manage](#inspect-and-manage) | [`ms app get-settings`](#ms-app-get-settings) | Show all app settings and their current values. |
 | [Inspect and manage](#inspect-and-manage) | [`ms app set-setting`](#ms-app-set-setting) | Update one or more app settings. |
@@ -54,6 +52,7 @@ The following table lists the commands alphabetically:
 
 | Command | Group | Description |
 | --- | --- | --- |
+| [`ms app add backend`](#ms-app-add-backend) | [Manage app resources](#manage-app-resources) | Add a Fabric database backend to the app. |
 | [`ms app add data-source`](#ms-app-add-data-source) | [Manage app resources](#manage-app-resources) | Add a connector to the app as a table or action data source. |
 | [`ms app build`](#ms-app-build) | [Build and deploy](#build-and-deploy) | Trigger a platform build for a specific commit. |
 | [`ms app build-status`](#ms-app-build-status) | [Build and deploy](#build-and-deploy) | Check the status of a build. |
@@ -76,7 +75,6 @@ The following table lists the commands alphabetically:
 | [`ms app share link create`](#ms-app-share-link-create) | [Share](#share) | Create a tenant-wide share link for the app. |
 | [`ms app share link list`](#ms-app-share-link-list) | [Share](#share) | List share links issued for the app. |
 | [`ms app share link revoke`](#ms-app-share-link-revoke) | [Share](#share) | Revoke a share link by ID. |
-| [`ms app show`](#ms-app-show) | [Inspect and manage](#inspect-and-manage) | Show local app configuration and bound resources. |
 | [`ms app unshare`](#ms-app-unshare) | [Share](#share) | Revoke previously granted access. |
 | [`ms auth login`](#ms-auth-login) | [Authentication](#authentication) | Sign in to Microsoft Entra ID via the browser. |
 | [`ms auth logout`](#ms-auth-logout) | [Authentication](#authentication) | Clear cached credentials and remove the active account pointer. |
@@ -198,7 +196,7 @@ ms app create --display-name <name> [directory] [options]
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
 | `--display-name <name>` | -n | Yes | Display name for the app. |
-| `[directory]` |  | No | Target directory. Defaults to the current directory. Must be empty. |
+| `[directory]` |  | No | Target directory. It must be empty. When omitted, the CLI creates a directory named after the app's display name. Pass `.` explicitly to use the current directory. |
 | `--environment-id <id>` | -e | No | Target environment. When omitted, the CLI uses your developer environment, provisioning one on first run. |
 | `--description <text>` | -d | No | Free-text description stored on the app record. |
 | `--template <name>` | -t | No | GitHub repository or subpath to scaffold the app from \(for example, `github:owner/repo/subdir`\). Defaults to the built-in Vite template. Applies to every `--repo` mode. |
@@ -263,7 +261,7 @@ ms app clone --app <app-id> [directory]
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
 | `--app <app-id>` |  | Yes | App ID of an app that you have edit access to. Use `ms app list --permission edit` to find the app ID. |
-| `[directory]` |  | No | Target directory for the cloned repository. If omitted, the CLI uses the current directory, which must be empty. |
+| `[directory]` |  | No | Target directory. It must be empty. When omitted, the CLI creates a directory named after the app's display name. Pass `.` explicitly to use the current directory. |
 
 Note
 
@@ -278,10 +276,10 @@ Use these commands to find available connectors and inspect their operations bef
 List connectors available in an environment.
 
 ```bash
-ms connector list [--environment-id <id>] [--search <term>] [--include-blocked]
+ms connector list [--environment-id <id>] [--search <term>] [--only-allowed]
 ```
 
-The output includes the connector ID, authentication type, tabular support flag, and Data Loss Prevention \(DLP\) and Advanced Connector Policy \(ACP\) status. By seeing governance status at design time, you can avoid building against a connector that policy blocks at deploy or runtime.
+Discovery includes connectors blocked by policy unless you pass `--only-allowed`. The text table includes the connector ID, tabular support flag, and a unified policy status based on Data Loss Prevention \(DLP\) and Advanced Connector Policies \(ACP\). JSON output includes more detailed connector and policy fields.
 
 #### `ms connector list` parameters
 
@@ -289,7 +287,7 @@ The output includes the connector ID, authentication type, tabular support flag,
 | --- | --- | --- | --- |
 | `--environment-id <id>` | -e | No | Environment to query. Defaults from `ms.config.json` when present. |
 | `--search <term>` | -s | No | Filter by substring match on connector display name or ID \(case-insensitive\). |
-| `--include-blocked` |  | No | Also list connectors blocked by tenant policy. By default only allowed connectors are shown. |
+| `--only-allowed` |  | No | List only connectors allowed by policy. By default, discovery includes blocked connectors. |
 
 ---
 
@@ -319,7 +317,25 @@ Use these commands to add, remove, and refresh the data sources your app depends
 
 ### Add app resources
 
-Run all `add` commands from the directory that contains your app. By default, these commands generate TypeScript models and services under `generated/`.
+Run all `add` commands from the directory that contains your app. By default, `ms app add data-source` generates TypeScript models and services under `generated/`.
+
+---
+
+### `ms app add backend`
+
+Add a Fabric database backend to the app. An administrator must enable the Fabric integration for the environment before you run this command.
+
+```bash
+ms app add backend --provider fabric
+```
+
+#### `ms app add backend` parameters
+
+| Parameter | Alias | Required? | Description |
+| --- | --- | --- | --- |
+| `--provider <provider>` |  | Yes | Backend provider to add. Currently, the only valid value is `fabric`. |
+
+For prerequisites and details about the database backend, see [Fabric integration with Copilot Managed Runtime](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/backend-integration/fabric-integration?view=o365-worldwide).
 
 ---
 
@@ -351,7 +367,7 @@ Note
 
 ### Remove app resources
 
-Removal commands prompt for confirmation unless you pass `--force`.
+In interactive mode, removal commands prompt for confirmation unless you pass `--force`. In non-interactive mode, removal proceeds without confirmation even when you omit `--force`.
 
 ### `ms app remove data-source`
 
@@ -471,13 +487,14 @@ If the build failed, the output includes the reason so you can fix the code and 
 Promote a green build to the live app.
 
 ```bash
-ms app deploy [--app <name>] [--commit <sha>] [--artifact <path>] [--open-browser] [--force-reauth]
+ms app deploy [--app <name>] [--commit <sha>] [--artifact <path>] [--force] [--open-browser] [--force-reauth]
 ```
 
 Note
 
 - The command deploys to the environment associated with the app. It doesn't select a deployment environment.
-- For Git-backed apps, the CLI resolves the commit \(default `HEAD`\), warns about uncommitted local changes, queues a remote build, polls to completion, and deploys the resulting build.
+- For Git-backed apps, the CLI resolves the commit \(default local Git `HEAD`\), queues a remote build or reuses a cached build for that commit, waits for completion, and deploys that same commit. A failed or canceled build stops deployment; the CLI doesn't select an older successful build.
+- If the checkout has uncommitted changes or local commits ahead of the remote, preflight asks "Deploy anyway?" in interactive mode. In non-interactive or JSON mode, it stops with a usage error unless you pass `--force`. Commit and push intended changes before deploying. `--force` bypasses preflight; it doesn't upload uncommitted or unpushed source.
 - For apps with no source control \(`repoType: none`\), the CLI packs and uploads the local build, or uploads a pre-built `.zip` when `--artifact` is supplied.
 
 #### `ms app deploy` parameters
@@ -487,6 +504,7 @@ Note
 | `--app <name>` |  | No | App to deploy. Defaults from `ms.config.json`. |
 | `--commit <sha>` | -c | No | Commit to deploy \(Git-backed apps only\). Defaults to the current `HEAD`. Mutually exclusive with `--artifact`. |
 | `--artifact <path>` |  | No | Path to a local `.zip` build artifact to upload and deploy. Only valid for apps created with no source control \(`repoType: none`\); rejected on Git-backed apps. Mutually exclusive with `--commit`. |
+| `--force` |  | No | Bypass Git preflight confirmation or rejection for uncommitted changes or local commits ahead of the remote. Doesn't upload those changes. |
 | `--open-browser` |  | No | Best-effort launch the system browser if Device Code Flow re-authentication is needed. Has no effect with `--json`. |
 | `--force-reauth` |  | No | Bypass the stored GitHub mapping and force Device Code Flow. Only affects apps bound to an external GitHub repository. |
 
@@ -503,7 +521,7 @@ Use this command to open your app in live or preview mode.
 Open an app in the browser and print its launch URL.
 
 ```bash
-ms app play [--app <name>] [--mode live | preview] [--commit <sha>] [--no-browser]
+ms app play [--app <name>] [--mode live | preview] [--commit <sha> | --branch <name>] [--no-browser]
 ```
 
 #### `ms app play` parameters
@@ -511,13 +529,14 @@ ms app play [--app <name>] [--mode live | preview] [--commit <sha>] [--no-browse
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
 | `--app <name>` |  | No | App to open. Defaults from `ms.config.json`. |
-| `--mode <mode>` | -m | No | `live` opens the deployed app. `preview` opens the latest build on `main`, or a specific commit when combined with `--commit`. Defaults to `live`. |
-| `--commit <sha>` | -c | No | Open the preview at a specific commit. Valid only with `--mode preview`. If not supplied, uses the head of the current branch. |
+| `--mode <mode>` | -m | No | `live` opens the deployed app. `preview` opens the current Git branch by default, or the branch or commit you specify. Defaults to `live`. |
+| `--commit <sha>` | -c | No | Open the preview at a specific commit. Valid only with `--mode preview`. Mutually exclusive with `--branch`. |
+| `--branch <name>` |  | No | Open the preview for a specific branch. Valid only with `--mode preview`. Defaults to the current Git branch; if the CLI can't identify it, it warns and falls back to `main`. Mutually exclusive with `--commit`. |
 | `--no-browser` |  | No | Print the launch URL without opening the default browser. Useful for SSH sessions, CI, and scripts. |
 
 Note
 
-`--mode live` warns that the live build is a snapshot and doesn't auto-update. Re-run `ms app deploy` to refresh it. If you never deploy the app, `--mode live` fails with a usage error that points you to `ms app deploy`.
+`--mode live` warns that the live build is a snapshot and doesn't auto-update. Re-run `ms app deploy` to refresh it. If no play URL is available, the command fails. If a URL exists but the target has no deployed commit, the command warns and still prints and opens the URL.
 
 #### Preview build behavior
 
@@ -550,7 +569,7 @@ The command automatically looks up email addresses. It reports warnings for entr
 | --- | --- | --- | --- |
 | `<principals>` |  | Yes | Comma-separated list of email addresses or Microsoft Entra object IDs. |
 | `--app <name>` |  | No | App to share. Defaults from `ms.config.json`. |
-| `--access <level>` |  | No | Grant runtime access \(`play`, default\) or repository-edit access \(`edit`\). |
+| `--access <level>` |  | No | Grant runtime access \(`play`, default\) or contributor access \(`edit`\). Edit access includes repository permissions for platform-managed Git; external GitHub repository access must be granted separately in GitHub. |
 
 ---
 
@@ -564,13 +583,15 @@ ms app unshare <principals> [--app <name>] [--access play | edit]
 
 The `unshare` command only affects the requested access level. For example, `unshare --access edit` leaves `play` access intact. Principals without an existing role assignment at the requested level are no-ops.
 
+For GitHub-backed apps, revoke external repository access separately in GitHub. Unsharing the app doesn't remove independently granted GitHub permissions.
+
 #### `ms app unshare` parameters
 
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
 | `<principals>` |  | Yes | Comma-separated list of email addresses or Microsoft Entra object IDs. |
 | `--app <name>` |  | No | App to unshare. Defaults from `ms.config.json`. |
-| `--access <level>` |  | No | Revoke runtime access \(`play`, default\) or repository-edit access \(`edit`\). |
+| `--access <level>` |  | No | Revoke runtime access \(`play`, default\) or contributor access \(`edit`\). Edit access includes repository permissions for platform-managed Git, but not external GitHub repository permissions. |
 
 ---
 
@@ -586,7 +607,7 @@ ms app share list --access <level> [--app <name>] [--environment-id <id>]
 
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
-| `--access <level>` |  | Yes | Access level to list. Either `play` \(run the app\) or `edit` \(modify the underlying repository\). |
+| `--access <level>` |  | Yes | Access level to list. Either `play` \(run the app\) or `edit` \(contribute to the app\). For GitHub-backed apps, this list doesn't establish external repository access. |
 | `--app <name>` |  | No | App to inspect. Defaults from `ms.config.json`. |
 | `--environment-id <id>` | -e | No | Override the environment ID. Defaults from `ms.config.json` when present. |
 
@@ -655,26 +676,14 @@ List all apps you can access. By default, the command lists all apps in the tena
 ms app list [--environment-id <id>] [--permission <level>]
 ```
 
-Returns the display name, app ID, repository URL, and owners for each app.
+Returns app details such as the display name and app ID.
 
 #### `ms app list` parameters
 
 | Parameter | Alias | Required? | Description |
 | --- | --- | --- | --- |
 | `--environment-id <id>` | -e | No | Scope the listing to a single environment. When omitted, the command returns all apps you can access across the tenant. |
-| `--permission <level>` | -p | No | Permission filter. Use either `edit` \(apps you can contribute to; default\) or `play` \(apps you can play or view\). Case-insensitive. |
-
----
-
-### `ms app show`
-
-Show the local app configuration and all bound resources.
-
-```bash
-ms app show
-```
-
-Reads the local configuration of the app in the current directory.
+| `--permission <level>` | -p | No | Permission filter. Use either `edit` \(apps you can contribute to\) or `play` \(apps you can play or view\). Case-insensitive. |
 
 ---
 
@@ -686,7 +695,9 @@ Shows the server-side state of the app.
 ms app info [--app <name>] [--environment-id <id>]
 ```
 
-Returns display name, app ID, repository URL, owners, environment ID, last deployed commit, and the live and preview URLs.
+Returns the display name, optional description, environment ID, app ID, project ID, deployed commit abbreviated to seven characters, connectors, and optional repository details. It doesn't return owners or launch URLs.
+
+To get launch URLs without opening a browser, use `ms app play --no-browser` for live mode or `ms app play --mode preview --no-browser` for preview mode. Add `--json` for structured output. To inspect actual local configuration, open `ms.config.json`; `ms app info` reports server state.
 
 #### `ms app info` parameters
 

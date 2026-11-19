@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/configure-lovable?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-10-12 -->
 
-# Set up Microsoft Copilot Managed Runtime for Lovable \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Set up Microsoft Copilot Managed Runtime for Lovable
 
 Before makers can publish Lovable projects to Microsoft Copilot Managed Runtime, configure access to Lovable in Microsoft Entra. In each approved environment, you must allow app creation through the Copilot Managed Runtime command-line interface \(CLI\) setting and allow externally built artifacts. You should also decide where apps are created and validate network access.
 
@@ -34,7 +32,7 @@ The published application, its Microsoft runtime identity, and its runtime conne
 To complete the Microsoft configuration, you need:
 
 - A Microsoft Entra role that can grant tenant-wide admin consent for the permissions requested by the Lovable enterprise application. For role requirements, see [Grant tenant-wide admin consent to an application](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent#prerequisites).
-- Global Administrator or Power Platform Administrator permissions to configure Copilot Managed Runtime and environment governance settings.
+- A Manage role for Copilot Managed Runtime, to configure Copilot Managed Runtime and environment governance settings. For details, see [Roles and responsibilities](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/roles-responsibilities?view=o365-worldwide).
 - Access to the [Power Platform admin center](https://admin.powerplatform.microsoft.com/).
 - A Lovable workspace administrator who can configure connector access in Lovable.
 

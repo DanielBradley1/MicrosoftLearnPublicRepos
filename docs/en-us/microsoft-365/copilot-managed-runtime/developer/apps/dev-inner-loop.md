@@ -1,13 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
-# Build, preview, and deploy Microsoft Copilot Managed Runtime apps \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Build, preview, and deploy Microsoft Copilot Managed Runtime apps
 
 The Copilot Managed Runtime apps *inner loop* is a fast, Git-native workflow for building, previewing, and deploying apps. Edit code in your IDE, commit and push it, and let the platform build the pushed commit for the preview endpoint. When you're ready to go live, deploy explicitly by using [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy).
 
-This article describes how each phase of the inner loop works, what the platform does behind the scenes, and where your work lives at each step. It complements [Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide) and [Quickstart: Create an app with the Copilot Managed Runtime SDK \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide), which walk through the same flow end-to-end with commands.
+This article describes how each phase of the inner loop works, what the platform does behind the scenes, and where your work lives at each step. It complements [Quickstart: Build a Microsoft Copilot Managed Runtime app with GitHub Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-github-copilot?view=o365-worldwide) and [Quickstart: Create an app with the Copilot Managed Runtime SDK](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide), which walk through the same flow end-to-end with commands.
 
 This article describes Command Line Interface \(CLI\) commands that you can enter in a command line based terminal window. Agents such as GitHub Copilot have similar skills and can also issue these commands as needed. For example, you can ask an agent to simply "deploy" and it runs the equivalent of `ms app deploy`. You don't need to learn all of these commands, but they're always here if you need them.
 
@@ -93,6 +91,8 @@ If you're using "bring your own build" mode, these commands might be different f
 
 When you save a commit to the platform, you and other contributors can play it directly. Enter the command [`ms app play --mode preview`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-play) to display the URL for the preview. Hold down the Ctrl key and select the URL, or copy and paste the URL into a browser.
 
+By default, preview selects the current Git branch. If the CLI can't identify the branch, it warns and falls back to `main`. Use `ms app play --mode preview --branch <name>` for a particular branch or `ms app play --mode preview --commit <sha>` for a particular commit. `--branch` and `--commit` are mutually exclusive.
+
 If you didn't play this version of the app before, the platform builds the app on demand. If a previous build exists, the platform plays that older build while you wait and asks you to refresh when it's done.
 
 All Git commits saved to the platform are runnable by any contributor, at any time. Use this feature to compare changes between versions with two separate browser windows. To access a particular commit, use these URLs:
@@ -114,11 +114,11 @@ The URL for the live production version of the app doesn't include a commit or b
 
 Initially, only owners of the app can play the deployed app. Use [`ms app share`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-share) to share with others. You can also manage users at [https://managedapps.cloud.microsoft](https://managedapps.cloud.microsoft) and generate shareable URLs.
 
-By default, with no switches, [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy) deploys the most recent local commit of the current branch and warns if there are uncommitted local changes. If local changes should be included, go through the [add, commit, and push](#save-to-source-control) flow before you can deploy them.
+For Git-backed apps, with no switches, [`ms app deploy`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy) selects the current local Git `HEAD`. If there are uncommitted changes or local commits ahead of the remote, the CLI asks for confirmation in interactive mode and stops with a usage error in non-interactive or JSON mode unless you pass `--force`. Go through the [add, commit, and push](#save-to-source-control) flow to include intended changes. `--force` only bypasses preflight; it doesn't upload uncommitted or unpushed source.
 
 Use [`ms app deploy --commit <commitSHA>`](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide#ms-app-deploy) to deploy a specific commit. Use this command to revert to a previous version of the app if there are problems with a new deployment.
 
-Deploying forces a build if one isn't already done for a preview. If the build fails, the deployment doesn't happen and the old deployed version remains as it was.
+Deployment reuses a cached build or submits a build for the selected commit and waits for completion. If that build fails or is canceled, deployment stops; it doesn't fall back to an older successful build. The old deployed version remains unchanged.
 
 ### Monitor health and usage
 

@@ -28,6 +28,7 @@ All properties are inherited from [spendingPolicy](https://learn.microsoft.com/e
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
+| `billingInstrument` | [costManagementBillingInstrument](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/costmanagementbillinginstrument) | Inherited from [spendingPolicy](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicy). The Azure billing target and its resource provisioning state. |
 | `billingMethods` | [costManagementBillingMethods](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicy#costmanagementbillingmethods-enumeration) | Inherited from [spendingPolicy](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicy). How consumption is funded. |
 | `createdBy` | [identitySet](https://learn.microsoft.com/en-us/graph/api/resources/identityset) | Inherited from [spendingPolicy](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicy). The identity that created the policy. Read-only. |
 | `createdDateTime` | DateTimeOffset | Inherited from [spendingPolicy](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/resources/spendingpolicy). When the policy was created. Read-only. |
@@ -54,6 +55,9 @@ The following JSON representation shows the resource type.
 ```json
 {
   "@odata.type": "#microsoft.graph.selectedGroupsSpendingPolicy",
+  "billingInstrument": {
+    "@odata.type": "microsoft.graph.costManagementBillingInstrument"
+  },
   "billingMethods": "String",
   "createdBy": {
     "@odata.type": "microsoft.graph.identitySet"

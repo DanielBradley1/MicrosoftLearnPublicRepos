@@ -3,7 +3,7 @@
 
 # Deploy Microsoft Copilot Managed Runtime apps with GitHub Actions
 
-You can deploy [Copilot Managed Runtime apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/?view=o365-worldwide) with GitHub Actions without going through the platform-managed build pipeline. Build each app with your own toolchain and deploy the external artifact directly through the Microsoft Copilot Managed Runtime CLI \(`ms`\).
+You can deploy Copilot Managed Runtime apps with GitHub Actions without going through the platform-managed build pipeline. Build each app with your own toolchain and deploy the external artifact directly through the Microsoft Copilot Managed Runtime CLI \(`ms`\).
 
 Three GitHub Actions in the [`microsoft/Copilot-Managed-Runtime`](https://github.com/microsoft/Copilot-Managed-Runtime) repository \(under the `github-actions/` path\) do the work:
 

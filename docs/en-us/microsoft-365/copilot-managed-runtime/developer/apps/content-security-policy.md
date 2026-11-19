@@ -1,9 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide -->
 <!-- Sitemap-Last-Modified: 2026-11-06 -->
 
-# Configure Content Security Policy \(preview\)
-
-\[This article is prerelease documentation and is subject to change.\]
+# Configure Content Security Policy
 
 [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) \(CSP\) is a browser security standard that limits where an app can load scripts, styles, images, and other resources from, and which sites can frame it. A well-formed CSP is one of the strongest defenses against cross-site scripting \(XSS\), clickjacking, and data-injection attacks.
 
@@ -106,6 +104,6 @@ An administrator can configure a **reporting endpoint** - a URL the browser send
 
 ## Related articles
 
-- [Connect an app to data \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/connect-to-data?view=o365-worldwide)
-- [Copilot Managed Runtime architecture \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/architecture?view=o365-worldwide)
+- [Connect an app to data](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/connect-to-data?view=o365-worldwide)
+- [Copilot Managed Runtime architecture](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/architecture?view=o365-worldwide)
 - [Content Security Policy reference \(MDN\)](https://developer.mozilla.org/docs/Web/HTTP/CSP)

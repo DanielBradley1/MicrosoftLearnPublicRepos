@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/agentregistration-update -->
-<!-- Sitemap-Last-Modified: 2026-04-30 -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Update agentRegistration
 
@@ -42,6 +42,8 @@ PATCH https://graph.microsoft.com/beta/copilot/agentRegistrations/{id}
 
 In the request body, supply a JSON representation of the properties to update on the [agentRegistration](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/resources/agentregistration) object.
 
+Properties that you don't include in the request retain their existing values.
+
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | `a2aAuthorization` | [a2aAuthorization](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/resources/a2aauthorization) | Authorization configuration used to invoke an Agent2Agent server. Optional. When supplied, the `type` property is required. |
@@ -54,7 +56,7 @@ In the request body, supply a JSON representation of the properties to update on
 | `managedByAppId` | String | Application identifier managing this agent. Optional. |
 | `originatingStore` | String | Name of the store or system where the agent originated. Optional. |
 | `ownerIds` | String collection | List of owner identifiers for the agent. Optional. |
-| `sourceAgentId` | String | Original agent identifier from source system. Optional. |
+| `sourceAgentId` | String | Original agent identifier from the source system. Optional. Omitting this property or supplying `null` preserves the stored value. Supplying an empty string updates the stored value to an empty string. |
 | `sourceLastModifiedDateTime` | DateTimeOffset | The date and time when the agent instance was last modified from source. Optional. |
 
 ## Response
