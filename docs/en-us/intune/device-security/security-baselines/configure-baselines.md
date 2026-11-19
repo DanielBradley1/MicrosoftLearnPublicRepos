@@ -7,6 +7,8 @@ To help protect your users and Windows devices, you can configure and deploy dis
 
 For a list of available security baselines, see [Security baselines overview](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview#available-security-baselines).
 
+This article covers baselines that configure and enforce settings. Audit-only baselines have separate prerequisites and procedures. See [Center for Internet Security \(CIS\) auditing \(preview\)](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/cis-audit-baseline) or [Security Technical Implementation Guide \(STIG\) auditing](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/stig-audit-baseline) to assess configurations without changing them.
+
 This feature applies to:
 
 - Windows 11
@@ -69,7 +71,7 @@ The least privileged built-in Intune role that supports managing security baseli
 
 ## Create a profile for a security baseline
 
-The following guidance can be used anytime you create a new security baseline profile.
+Use the following guidance to create a configuration baseline profile. For an audit-only profile, follow the CIS or STIG auditing guide.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Endpoint security** > **Security baselines** to view the list of available baselines.

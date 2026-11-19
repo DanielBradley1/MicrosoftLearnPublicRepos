@@ -11,7 +11,7 @@ You can add an Android store app to Intune from the portal by doing the followin
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Apps** > **All Apps** > **Create**.
-3. In the **Select app type** pane, under the available **Store app** types, select **Android store app**.
+3. In the **Select app type** pane, select **Android** for **Platform**, **Store app** for **Category**, and **Android Store app** for **App type**.
 4. Click **Select**.  
    The **Add app** steps are displayed.
 5. To configure the **App information** for the Android app, navigate to the [Google Play store](https://play.google.com/store) and search for the app you want to deploy. Display the app page and make a note of the app details.

@@ -5,6 +5,8 @@
 
 You can enroll both personal and organization-owned devices in Intune. After enrollment, devices receive the policies and profiles you create.
 
+For nonproduction evaluation on eligible Windows Server Insider Preview devices, use [Get started with Windows Server management \(Insider preview\)](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started). Windows client enrollment options aren't automatically applicable to Windows Server.
+
 You have the following options for enrolling Windows devices:
 
 - [Windows automatic enrollment](#windows-automatic-enrollment)
@@ -41,7 +43,7 @@ You can use this enrollment option to:
 
 | Feature | Use this enrollment option when |
 | --- | --- |
-| You use Windows client. | ✅  <br>  <br>Configuration Manager supports Windows Server. |
+| You use Windows client. | ✅  <br>  <br>Configuration Manager supports released Windows Server versions. For eligible Insider Preview devices, see [Windows Server enrollment guidance](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started#phase-2---enroll-a-test-server). |
 | You have Microsoft Entra ID P1 or P2 | ✅ |
 | You use Conditional Access \(CA\) on devices enrolled using [bulk enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/create-bulk-package) with a provisioning package. | ✅ On Windows, CA is available for Windows devices enrolled using bulk enrollment. |
 | You have remote workers. | ✅ |

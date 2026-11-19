@@ -13,6 +13,7 @@ Find the endpoint security policies for firewalls under *Manage* in the **Endpoi
 
 - Windows
 - Windows Server 2012 R2 or later *\(through the [Microsoft Defender for Endpoint Security settings management](https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/security-settings-management) scenario\)*
+- Eligible Windows Server Insider Preview devices enrolled in Intune, for nonproduction evaluation only. See [Get started with Windows Server management \(Insider preview\)](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started) for requirements, supported profiles, and limitations.
 - Any supported version of macOS
 
 Important
@@ -51,7 +52,7 @@ Note
 
 Beginning on April 5, 2022, the *Windows 10 and later* platform was replaced by the *Windows* platform.
 
-The *Windows* platform supports devices communicating through Microsoft Intune or Microsoft Defender for Endpoint. These profiles also add support for the Windows Server platform which is not supported through Microsoft Intune natively.
+The *Windows* platform supports devices communicating through Microsoft Intune or Microsoft Defender for Endpoint. For Windows Server, native Intune management is limited to eligible Insider Preview devices for nonproduction evaluation. See [Windows Server preview configuration](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started#phase-5---apply-device-configuration) for supported profiles and limitations.
 
 Profiles for this new platform use the settings format as found in the Settings Catalog. Each new profile template for this new platform includes the same settings as the older profile template it replaces. With this change you can no longer create new versions of the old profiles. Your existing instances of the old profile remain available to use and edit.
 

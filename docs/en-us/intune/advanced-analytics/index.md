@@ -39,7 +39,7 @@ Advanced Analytics enhances endpoint analytics with the following reports and ca
 
 ## Prerequisites
 
-To use Advanced Analytics features, devices must meet the [endpoint analytics prerequisites](https://learn.microsoft.com/en-us/intune/endpoint-analytics/#prerequisites) and you must [configure endpoint analytics](https://learn.microsoft.com/en-us/intune/endpoint-analytics/configure) in your tenant.
+To use Advanced Analytics features in endpoint analytics, devices must meet the [endpoint analytics prerequisites](https://learn.microsoft.com/en-us/intune/endpoint-analytics/#prerequisites) and you must [configure endpoint analytics](https://learn.microsoft.com/en-us/intune/endpoint-analytics/configure) in your tenant.
 
 This section details **additional prerequisites** specific to Advanced Analytics. Certain features may have their own additional prerequisites; see the individual feature articles for more information.
 
@@ -86,7 +86,7 @@ Note
 
 It might take up to 48 hours after you buy licenses or start a trial to see Advanced Analytics features in your tenant.
 
-For the extra reports and capabilities on Windows devices:
+For the endpoint analytics reports and capabilities on Windows devices:
 
 - Devices must be enrolled in Intune and onboarded to endpoint analytics.
 - [Device query for multiple devices](https://learn.microsoft.com/en-us/intune/advanced-analytics/device-query-multiple-devices) requires a properties catalog policy to be configured and deployed.
@@ -113,6 +113,7 @@ Advanced Analytics is built into Microsoft Intune and appears in the **Reports**
 
   - [Device query for multiple devices](https://learn.microsoft.com/en-us/intune/advanced-analytics/device-query-multiple-devices) under the **Devices** node in the Intune admin center
   - [STIG audit baseline](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/stig-audit-baseline) to assess Windows device compliance against Department of Defense \(DoD\) Security Technical Implementation Guide requirements
+  - [CIS audit baseline \(preview\)](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/cis-audit-baseline) to assess Windows 11 device configurations against the Center for Internet Security \(CIS\) benchmark
 
 ### Integrate Advanced Analytics into business processes
 

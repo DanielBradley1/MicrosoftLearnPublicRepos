@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-management/tools/management-extension-windows -->
-<!-- Sitemap-Last-Modified: 2026-04-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-24 -->
 
 # Intune Management Extension for Windows
 
@@ -12,6 +12,9 @@ For details about PowerShell scripts, see [Use PowerShell scripts on Windows dev
 This feature applies to:
 
 - [Supported Windows versions](https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms) \(excluding Windows Home and Windows devices running in S mode\).
+- Eligible Windows Server Insider Preview devices for Win32 app deployment in nonproduction environments. See [Get started with Windows Server management \(Insider preview\)](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started) for requirements and limitations.
+
+For Windows Server, follow the enrollment and Win32 app guidance in the preview guide. Don't assume that every Windows client enrollment method or feature that uses the Intune management extension is included in the Server preview.
 
 Note
 

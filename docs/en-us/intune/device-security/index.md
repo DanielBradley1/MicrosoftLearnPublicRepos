@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-security/ -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-07 -->
 
 # Device security
 
@@ -48,6 +48,7 @@ Protect organizational data and devices by managing compliance, security baselin
 ### How-To Guide
 
 - [Configure security baseline policies](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/configure-baselines)
+- [Audit Windows devices against CIS benchmarks \(preview\)](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/cis-audit-baseline)
 
 ### Reference
 

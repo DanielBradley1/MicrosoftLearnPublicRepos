@@ -152,6 +152,23 @@ Important
 
 Devices joined by Workplace Join could be blocked from enrolling if they were ever previously Microsoft Entra joined to the tenant. To avoid being blocked, deregister and remove the device's associated object in Microsoft Entra ID before attempting to join the device by Workplace Join.
 
+## Blocking server devices
+
+Note
+
+Only [Windows Server Insider preview builds](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) can be enrolled in Microsoft Intune. Server enrollment is not supported in production Intune environments.
+
+This is prerelease software. Windows Server Insider Preview builds may be substantially modified before they are commercially released. These builds are for testing purposes only, and not for production use. Microsoft is not obligated to provide any support services for this preview software.
+
+By default, server devices are blocked from enrolling in Intune. Intune blocks enrolling server devices by checking the operating system SKU.
+
+If you allow server devices but block personally owned devices, [Automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm#enable-windows-automatic-enrollment) with [Add Work Account from Windows Server Settings](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-register-device-on-network) is blocked.
+
+To allow server enrollment, allow server devices in the enrollment restrictions profile and use one of the following options:
+
+- Also allow personally owned devices in the enrollment restrictions profile, and use an assignment filter rule based on the `deviceOwnership` property to block personally owned Windows devices.
+- Configure corporate identifiers for the servers before enrollment. For more information, see [Supported corporate identifiers](https://learn.microsoft.com/en-us/intune/device-enrollment/add-corporate-identifiers#supported-corporate-identifiers).
+
 ## Limitations
 
 - Enrollment restrictions are applied to enrollments that are user-driven. For enrollment scenarios that **aren't** user-driven, Intune enforces the default policy. For example, the following enrollment scenarios use the default policy because they **aren't** user-driven:

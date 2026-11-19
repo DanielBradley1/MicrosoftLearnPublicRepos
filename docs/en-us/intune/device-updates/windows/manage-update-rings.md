@@ -34,6 +34,7 @@ When devices are managed through Windows Autopatch, update rings may be created 
 > - Enterprise
 > - Education
 > - Windows IoT Enterprise
+> - Eligible Windows Server Insider Preview devices, for nonproduction evaluation only. See [Get started with Windows Server management \(Insider preview\)](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started#phase-4---configure-windows-server-updates) for requirements and update limitations.
 > - Windows Team - for Surface Hub devices
 > - Windows Holographic for Business - Supports a suset of settings for Windows updates, including:
 > 

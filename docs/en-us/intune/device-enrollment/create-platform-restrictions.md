@@ -46,6 +46,25 @@ Important
 
 Android device administrator \(DA\) management is deprecated and no longer available for devices with access to Google Mobile Services \(GMS\). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
+## Best practice - Windows Server platform restrictions
+
+Note
+
+Only [Windows Server Insider preview builds](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) can be enrolled in Microsoft Intune. Server enrollment is not supported in production Intune environments.
+
+This is prerelease software. Windows Server Insider Preview builds may be substantially modified before they are commercially released. These builds are for testing purposes only, and not for production use. Microsoft is not obligated to provide any support services for this preview software.
+
+Servers are blocked from enrollment by default. [Automatic MDM enrollment](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm#enable-windows-automatic-enrollment) through [Add Work Account from Windows Server Settings](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-register-device-on-network) requires both **server devices** and **personally owned devices** to be allowed.
+
+**Allow servers and personally owned Windows devices:** Allow both settings in the enrollment restrictions profile.
+
+**Allow servers but block personally owned Windows devices:** Allow server devices, then choose one option:
+
+- Block personally owned devices and configure corporate identifiers for the servers before enrollment. See [Supported corporate identifiers](https://learn.microsoft.com/en-us/intune/device-enrollment/add-corporate-identifiers#supported-corporate-identifiers).
+- Allow personally owned devices and use an assignment filter based on `deviceOwnership` to block personally owned Windows devices from enrolling.
+
+For more information, see [Blocking server devices](https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions#blocking-server-devices).
+
 ## Create a device platform restriction
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Devices**.

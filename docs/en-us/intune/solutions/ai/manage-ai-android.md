@@ -355,7 +355,7 @@ Gemini Nano is Google's on-device foundation model and processes AI interactions
 Use the following steps to disable the AICore system app.
 
 1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Apps > Android > Create**.
-2. In **Select app type**, select **Other > Android Enterprise system app**, and then choose **Select**.
+2. In the **Select app type** pane, select **Android** for **Platform**, **Referenced app** for **Category**, and **Android Enterprise system app** for **App type**, and then choose **Select**.
 3. In **App information**, configure the following properties, and then select **Next**:
 
    - **Name**: Enter `AICore`.

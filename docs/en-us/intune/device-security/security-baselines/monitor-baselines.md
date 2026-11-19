@@ -13,6 +13,8 @@ You can also view the [Device configuration report](https://learn.microsoft.com/
 
 For more information about the feature, see [Security baselines in Intune](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview).
 
+This article covers configuration baseline reports. Audit-only profiles use **Audit report** instead of standard configuration reports. See [Center for Internet Security \(CIS\) audit results \(preview\)](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/cis-audit-baseline#review-cis-audit-results) or [Security Technical Implementation Guide \(STIG\) audit results](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/stig-audit-baseline#review-stig-audit-results) for audit-report procedures.
+
 Note
 
 In May 2023, Intune began rollout of a new security baseline format that applies to new baseline types, like Microsoft 365 Apps, and to the newer versions of existing baselines, like Microsoft Edge baseline version 112. The new format updates the baseline settings to directly take their name and configuration options from the configuration service provider \(CSP\) that the baseline setting manages.

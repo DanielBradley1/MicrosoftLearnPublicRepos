@@ -22,8 +22,9 @@ You can enroll devices running on the following platforms. For a list of support
 - Linux
 - macOS
 - Windows
+- Windows Server Insider Preview \(nonproduction testing only\)
 
-Enrollment is enabled for all platforms by default, but you can restrict specific platforms from enrolling by using an Intune [enrollment restriction policy](https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions).
+Enrollment is enabled for these platforms by default, except Windows Server, which is blocked by default. You can restrict specific platforms from enrolling by using an Intune [enrollment restriction policy](https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions).
 
 This article describes the supported device scenarios and enrollment prerequisites, has information about using other MDM providers, and includes links to platform-specific enrollment guidance.
 
@@ -110,6 +111,7 @@ There's an enrollment guide for every platform. Choose your scenario, and get st
 - [Linux](https://learn.microsoft.com/en-us/intune/device-enrollment/guide-linux)
 - [macOS](https://learn.microsoft.com/en-us/intune/device-enrollment/apple/guide-macos)
 - [Windows](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/guide)
+- [Windows Server Insider Preview \(nonproduction testing only\)](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started#phase-2---enroll-a-test-server)
 
 ## Download the visual enrollment guide
 

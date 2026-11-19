@@ -13,7 +13,7 @@ For information about Enterprise App Catalog apps, see [Add an Enterprise App Ca
 
 To use Win32 app management, be sure you meet the following criteria:
 
-- Use a [supported Windows version](https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms) \(Enterprise, Pro, and Education versions\).
+- Use a [supported Windows version](https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms) \(Enterprise, Pro, and Education versions\), or an eligible Windows Server Insider Preview device for nonproduction evaluation. For Server-specific requirements and limitations, see [Get started with Windows Server management \(Insider preview\)](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started).
 - Devices must be joined or registered to Microsoft Entra ID and be auto-enrolled. The Intune management extension supports devices that are Microsoft Entra joined, Microsoft Entra registered, hybrid domain joined, or group policy enrolled. For Intune management extension prerequisites and version requirements, see [Intune Management Extension for Windows](https://learn.microsoft.com/en-us/intune/device-management/tools/management-extension-windows#prerequisites).
 
   Note

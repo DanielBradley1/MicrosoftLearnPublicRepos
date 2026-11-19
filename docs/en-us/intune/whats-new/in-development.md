@@ -169,18 +169,6 @@ Applies to the following when you use the *Windows* platform:
 
 When this change takes effect, devices that are assigned this policy while managed by Defender for Endpoint but not enrolled with Intune, will now apply the settings from the policy. Check your policy to make sure only the devices you intend to receive this policy will get it.
 
-## Monitor and troubleshoot
-
-### Share device diagnostics during Remote Help sessions on Windows
-
-Helpdesk agents will be able to request device diagnostics during an attended Remote Help session on Windows. After the person receiving help consents, the agent will be able to review diagnostic information, such as system details and resource usage, to investigate the issue with less back-and-forth.
-
-The person receiving help will be able to view the shared data and stop sharing during the session. Declining the diagnostic request will leave the Remote Help session available, so assistance can continue without sharing these additional details.
-
-Applies to:
-
-- Windows
-
 ## Tenant administration
 
 ### JIT registration reminder during Apple MDM push certificate renewal for iOS and iPadOS

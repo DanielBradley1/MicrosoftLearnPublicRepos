@@ -7,6 +7,8 @@ This guide describes how to protect and manage Windows apps and endpoints using 
 
 For each section in this guide, review the associated tasks. Some tasks are required and some, like setting up Microsoft Entra Conditional Access, are optional. Select the provided links in each section to go to our recommended help docs on Microsoft Learn, where you can find more detailed information and how-to instructions.
 
+For nonproduction evaluation on eligible Windows Server Insider Preview devices, use [Get started with Windows Server management \(Insider preview\)](https://learn.microsoft.com/en-us/intune/solutions/end-to-end-guides/windows-server-endpoints-get-started). Windows client workflows aren't automatically applicable to Windows Server.
+
 ## Step 1: Prerequisites
 
 Complete the following prerequisites to enable your tenant's endpoint management capabilities:

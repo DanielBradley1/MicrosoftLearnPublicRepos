@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/prerequisites -->
-<!-- Sitemap-Last-Modified: 2026-09-03 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # Prerequisites for the Microsoft Tunnel in Intune
 
@@ -219,6 +219,20 @@ Details on how to implement auditing depend on the Linux platform you use:
   Typically, the *auditd* package is available from the default repository of each Ubuntu version.
 
   For more information about using system auditing on Ubuntu, see [How to setup and Install Auditd on Ubuntu](https://dev.to/ajaykdl/how-to-setup-auditd-on-ubuntu-jfk), an article that is available on the dev.to website that was originally published at kubefront.com.
+
+### Validate logging prerequisites
+
+After Microsoft Tunnel is installed, use `mst-cli diagnose` on the Tunnel host to check known prerequisites, including those required for logging. The logging checks show pass or fail status, the expected result, and fixes for some common failures. Checks and corrective steps vary by operating system and installation. For instructions, see [Run diagnostics on the Tunnel server](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/monitor#run-diagnostics-on-the-tunnel-server).
+
+Use [mst-readiness](#run-the-readiness-tool) before installation to check readiness, and `mst-cli diagnose` on the installed Tunnel server to investigate its configuration.
+
+For log collection and upload, review the following requirements and guidance:
+
+- **Local logging**: Use the diagnostic results to identify unmet logging prerequisites. See [View Microsoft Tunnel logs](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/monitor#view-microsoft-tunnel-logs) to check for expected entries.
+- **Upload connectivity**: Allow access to the security token service and storage endpoints listed in [Firewall](#firewall), and review [Proxy](#proxy) if your server uses a proxy.
+- **Rootless Podman**: Review the [additional prerequisites for rootless Podman containers](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/install#additional-prerequisites-for-rootless-podman-containers) for that installation type.
+
+Diagnostics check known requirements, not every effect of a customized or hardened operating system. Passing the logging checks doesn't confirm that an upload completed. To verify collection and upload, see [Troubleshoot missing logs or failed uploads](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/monitor#troubleshoot-missing-logs-or-failed-uploads).
 
 ## Network
 

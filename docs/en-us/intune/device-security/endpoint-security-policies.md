@@ -44,7 +44,9 @@ This consolidated device view provides security admins with a single location to
 
 Security baselines provide preconfigured groups of Windows settings with defaults recommended by Microsoft security teams. These baselines enable you to quickly establish a comprehensive security posture aligned with industry best practices and security frameworks. Intune supports multiple security baselines, including Windows devices, Defender for Endpoint, Microsoft Edge, and more.
 
-Each baseline contains Microsoft-recommended settings organized by functional area. You can deploy baselines with default settings or customize them to meet your organization's requirements. For more information, see [Use security baselines to configure Windows devices in Intune](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview).
+Configuration baselines contain Microsoft-recommended settings organized by functional area. You can deploy them with default settings or customize them to meet your organization's requirements. For more information, see [Use security baselines to configure Windows devices in Intune](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview).
+
+For assessment without configuration changes, use the [CIS audit baseline \(preview\)](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/cis-audit-baseline). It checks Windows 11 device configurations against the Center for Internet Security \(CIS\) benchmark and reports findings without enforcing settings or remediating them.
 
 ### Security tasks
 
@@ -128,7 +130,7 @@ Intune offers multiple ways to configure device security. Understanding when to 
 | Policy type | Best for | Scope | Management complexity | Ongoing management |
 | --- | --- | --- | --- | --- |
 | **Endpoint security policies** | Targeted security configurations \(antivirus, firewall, disk encryption, and more\) | Specific security features | Low: Targeted settings only | Configure once, adjust as needed |
-| **Security baselines** | Establishing comprehensive best-practice security posture | Broad Windows security settings | Medium: Preconfigured groups of settings | Review and deploy updated baselines when they become available |
+| **Security baselines \(configuration\)** | Establishing comprehensive best-practice security posture | Broad Windows security settings | Medium: Preconfigured groups of settings | Review and deploy updated baselines when they become available |
 | **Device configuration profiles** | General device settings and configurations | All device settings including non-security | High: Large number of settings | Configure as business needs change |
 | **Compliance policies** | Defining minimum security requirements for access | Device and user requirements | Low: Rules-based evaluation | Configure once, adjust for new threats |
 | **App protection policies** | Protecting company data in apps on unmanaged devices | Apps and data, not device settings | Medium: App-specific policies | Configure for each protected app |
@@ -145,9 +147,10 @@ Intune offers multiple ways to configure device security. Understanding when to 
 **Use Security baselines when:**
 
 - You're setting up newly managed devices and want Microsoft-recommended configurations.
-- You need to align with security frameworks like CIS or NIST.
 - You want to quickly establish comprehensive security posture.
 - You prefer to accept Microsoft's best-practice defaults and customize minimally.
+
+To audit against the supported CIS benchmark rather than configure devices with Microsoft's recommendations, use the [CIS audit baseline \(preview\)](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/cis-audit-baseline).
 
 **Use Device configuration profiles when:**
 

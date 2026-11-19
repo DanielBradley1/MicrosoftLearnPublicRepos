@@ -32,7 +32,7 @@ This section lists the hardware details exposed by the device, divided into the 
 | Intune device ID | A GUID that uniquely identifies the device in Intune. | All |
 | Registered in Microsoft Entra | If **Yes**, the device is registered in Microsoft Entra. | All |
 | Microsoft Entra device ID | A GUID that uniquely identifies the device in Microsoft Entra. | All |
-| Serial number | The device's serial number from the manufacturer. | All |
+| Serial number | The device's serial number from the manufacturer. | Windows, iOS, macOS, Android |
 | Last check-in | The date and time that the device last connected to Intune. | All |
 
 Note
