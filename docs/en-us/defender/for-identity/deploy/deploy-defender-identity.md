@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity -->
-<!-- Sitemap-Last-Modified: 2026-09-10 -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Microsoft Defender for Identity deployment overview
 
-Microsoft Defender for Identity sensors collect signals from your on-premises identity infrastructure. Defender for Identity uses these signals to detect threats such as privilege escalation and high-risk lateral movement. It also reports identity security issues, such as unconstrained Kerberos delegation, so your security team can correct them.
+Microsoft Defender for Identity sensors collect signals from your on-premises identity infrastructure. Microsoft Defender uses these signals to detect threats such as privilege escalation and high-risk lateral movement. It also reports identity security issues, such as unconstrained Kerberos delegation, so your security team can correct them.
 
 Install Defender for Identity sensors on all domain controllers, including read-only domain controllers \(RODCs\). Also install sensors on Active Directory Federation Services \(AD FS\), Active Directory Certificate Services \(AD CS\), and Microsoft Entra Connect servers that aren't domain controllers. Use the table in this article to select the sensor version.
 
@@ -20,7 +20,7 @@ Eligible domain controllers, AD FS, AD CS, and Microsoft Entra Connect servers r
 | Any supported server type | Windows Server 2019 or later with the September 2026 or later cumulative update | [Defender for Identity sensor v3.x](https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3) | For servers onboarded to Defender for Endpoint, activate sensor v3.x directly. Otherwise, use the sensor v3.x onboarding package. |
 | Any supported server type | Windows Server 2016 or earlier | [Defender for Identity sensor v2.x](https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites-sensor-version-2) | [Install the sensor v2.x package](https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor). |
 
-Defender for Identity supports sensor v3.x and sensor v2.x in the same workspace. For example, you might deploy sensor v3.x on servers running Windows Server 2019 or later and sensor v2.x on servers running Windows Server 2016 or earlier.
+Microsoft Defender for Identity supports sensor v3.x and sensor v2.x in the same workspace. For example, you might deploy sensor v3.x on servers running Windows Server 2019 or later and sensor v2.x on servers running Windows Server 2016 or earlier.
 
 If your organization requires [VPN integration](https://learn.microsoft.com/en-us/defender-for-identity/vpn-integration) or [syslog notifications](https://learn.microsoft.com/en-us/defender-for-identity/notifications#configure-syslog-notifications), use the v2.x sensor on the applicable domain controllers. These features aren't supported by the v3.x sensor.
 

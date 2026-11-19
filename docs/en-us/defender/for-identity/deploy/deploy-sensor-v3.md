@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-sensor-v3 -->
-<!-- Sitemap-Last-Modified: 2026-10-14 -->
+<!-- Sitemap-Last-Modified: 2026-10-19 -->
 
 # Deploy the Microsoft Defender for Identity sensor v3.x
 
@@ -103,7 +103,7 @@ The Defender for Identity sensor interacts with Active Directory in two ways:
 
 The v3.x sensor uses the local system identity of the server for both purposes. It doesn't use Directory Service Accounts \(DSA\) or group Managed Service Accounts \(gMSA\). LocalSystem is the only supported identity for v3.x.
 
-Before migrating from sensor v2.x, select **Automatically use the sensor's local system account** in the Microsoft Defender portal \(**Settings** > **Identities** > **Microsoft Defender for Identity** > **Manage action accounts**\). Migration doesn't change this [action account setting](https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts) automatically. The v3.x sensors don't use gMSA accounts configured for v2.x sensors.
+Before migrating from sensor v2.x, select **Automatically use the sensor's local system account** in the Microsoft Defender portal \(**Settings** > **Identities** > **Manage action accounts**\). Migration doesn't change this [action account setting](https://learn.microsoft.com/en-us/defender-for-identity/deploy/manage-action-accounts) automatically. The v3.x sensors don't use gMSA accounts configured for v2.x sensors.
 
 Important
 
@@ -111,7 +111,7 @@ If any of your sensors are v3.x, select **Automatically use the sensor's local s
 
 #### DSA and gMSA health alerts in environments with both v2.x and v3.x sensors
 
-If your workspace still has a Directory Service Account \(DSA\) or group Managed Service Account \(gMSA\) configured because v2.x sensors on AD FS, AD CS, or Entra Connect servers still require it, DSA and gMSA credentials continue to be validated on all sensors in the workspace, including v3.x sensors. If DSA or gMSA credential validation fails, the **Directory services user credentials are incorrect** health alert appears. Workspace-level validation of DSA and gMSA credentials on all sensors is by design. Defender for Identity validates DSA and gMSA credentials at the workspace level for all sensors as long as those accounts exist, regardless of whether individual sensors use them for auditing or response actions.
+If your workspace still has a Directory Service Account \(DSA\) or group Managed Service Account \(gMSA\) configured because v2.x sensors on AD FS, AD CS, or Entra Connect servers still require it, DSA and gMSA credentials continue to be validated on all sensors in the workspace, including v3.x sensors. If DSA or gMSA credential validation fails, the **Directory services user credentials are incorrect** health alert appears. Workspace-level validation of DSA and gMSA credentials on all sensors is by design. Microsoft Defender validates DSA and gMSA credentials at the workspace level for all sensors as long as those accounts exist, regardless of whether individual sensors use them for auditing or response actions.
 
 Defender for Identity v3.x sensors ignore the DSA and gMSA for auditing and response actions, but they're still included in workspace-level credential validation. Migration doesn't remove the workspace-level DSA or gMSA configuration automatically. To stop receiving this health alert on v3.x sensors, manually remove the configuration after all sensors are fully migrated to v3.x and no v2.x sensors require it. Removing the workspace configuration doesn't delete the gMSA account in Active Directory.
 
@@ -131,7 +131,7 @@ Complete these configuration steps after the sensor is activated and running.
 
 ### Configure Windows event auditing
 
-Defender for Identity relies on Windows event logs for many detections. For v3.x sensors, [enable automatic auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-defender-for-identity-to-collect-windows-events-automatically) to configure supported auditing settings. Complete the additional steps for [AD FS](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-auditing-on-an-ad-fs-server) or [AD CS](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-auditing-on-an-ad-cs-server), as applicable.
+Identity security in Microsoft Defender relies on Windows event logs for many detections. For v3.x sensors, [enable automatic auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-defender-for-identity-to-collect-windows-events-automatically) to configure supported auditing settings. Complete the additional steps for [AD FS](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-auditing-on-an-ad-fs-server) or [AD CS](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-auditing-on-an-ad-cs-server), as applicable.
 
 If automatic auditing isn't available or you opted out, [configure auditing manually](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-windows-event-collection-manually) or [configure Windows event collection using PowerShell](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection#configure-windows-event-collection-using-powershell).
 

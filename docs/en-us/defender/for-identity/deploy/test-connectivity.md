@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/test-connectivity -->
-<!-- Sitemap-Last-Modified: 2026-08-11 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Test Microsoft Defender for Identity connectivity
 
@@ -11,7 +11,7 @@ For more information, see [v2.x required ports](https://learn.microsoft.com/en-u
 
 Note
 
-To get the name and other important details about your Defender for Identity workspace, see the [About page](https://learn.microsoft.com/en-us/defender-for-identity/settings-about) in the [Microsoft Defender XDR](https://security.microsoft.com/) portal.
+To get the name and other important details about your Defender for Identity workspace, see the [About page](https://learn.microsoft.com/en-us/defender-for-identity/settings-about) in the [Microsoft Defender portal](https://security.microsoft.com/).
 
 ## Test connectivity using a browser
 

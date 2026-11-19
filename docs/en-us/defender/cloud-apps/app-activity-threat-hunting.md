@@ -7,11 +7,11 @@ Apps can be a valuable entry point for attackers, so we recommend monitoring ano
 
 Using app governance and advanced hunting capabilities, you can get complete visibility into activities done by the apps and the resources the app has accessed.
 
-This article describes how you can simplify app-based threat hunting using app governance in Microsoft Defender for Cloud Apps.
+Simplify app-based threat hunting with app governance, a SaaS security capability in Microsoft Defender.
 
 ## Step 1: Find the app in app governance
 
-The Defender for Cloud Apps **App governance** page lists [all Microsoft Entra ID OAuth apps](https://security.microsoft.com/cloudapps/app-governance?viewid=allApps).
+The Defender **App governance** page lists [all Microsoft Entra ID OAuth apps](https://security.microsoft.com/cloudapps/app-governance?viewid=allApps).
 
 If you're looking to get more details on the data accessed by a specific app, search for that app on the app list in app governance. Alternatively, use the **Data usage** or **Services accessed** filters to view apps that have accessed data on one or more of the supported Microsoft 365 services.
 

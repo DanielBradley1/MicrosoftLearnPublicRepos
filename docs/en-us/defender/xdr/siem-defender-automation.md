@@ -1,17 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/siem-defender-automation -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Automation with ISOC in Microsoft Defender \(preview\)
+# Automation with ISOC in Microsoft Defender
 
 Use automation with Integrated Security Operations Center \(ISOC\) in Microsoft Defender to streamline security operations workflows and automate response actions.
 
 Automation includes automation rules, Logic Apps-based playbooks, Playbook Generator, integration profiles, and enhanced alert trigger support.
 
 This article describes the automation capabilities available with [ISOC](https://learn.microsoft.com/en-us/defender-xdr/isoc-overview), the requirements that apply, and the current limitations.
-
-Note
-
-This feature is in preview. Capabilities and availability might change during the preview period.
 
 [![Screenshot showing the Automation page with integration profiles, automation rules, playbooks, and the AI-generated playbooks banner.](https://learn.microsoft.com/en-us/defender-xdr/media/siem-defender-automation/automation-ai-generated-playbooks.png)](https://learn.microsoft.com/en-us/defender-xdr/media/siem-defender-automation/automation-ai-generated-playbooks.png#lightbox)
 

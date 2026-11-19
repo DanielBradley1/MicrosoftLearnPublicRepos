@@ -110,7 +110,7 @@ Error Code: 0x0
 
 QRadar enables event collection via an agent. If the data is gathered using an agent, the time format is gathered without millisecond data.
 
-Because Defender for Identity needs millisecond data, you must first configure QRadar to use agentless Windows event collection. For more information, see [QRadar: Agentless Windows Events Collection using the MSRPC Protocol](https://www.ibm.com/support/pages/qradar-agentless-windows-events-collection-using-msrpc-protocol-msrpc-faq).
+Because identity security detections in Microsoft Defender require millisecond data, first configure QRadar to use agentless Windows event collection. For more information, see [QRadar: Agentless Windows Events Collection using the MSRPC Protocol](https://www.ibm.com/support/pages/qradar-agentless-windows-events-collection-using-msrpc-protocol-msrpc-faq).
 
 The following example shows a complete QRadar syslog message for Windows Security event 4776, collected agentlessly to preserve millisecond timestamp fidelity. Use this message syntax to configure your standalone sensor to listen for QRadar events:
 

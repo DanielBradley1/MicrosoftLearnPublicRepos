@@ -22,7 +22,7 @@ For more information see:
 
 ## General steps to investigate app governance threat detection alerts
 
-Use the following steps to locate and investigate app governance threat detection alerts in Microsoft Defender XDR.
+Use the following steps to locate and investigate app governance threat detection alerts in Microsoft Defender.
 
 ### Find app governance-related alerts
 

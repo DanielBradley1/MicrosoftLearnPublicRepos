@@ -3,11 +3,11 @@
 
 # Microsoft Defender for Identity multi-forest considerations
 
-Microsoft Defender for Identity supports organizations with multiple Active Directory forests, giving you the ability to easily monitor activity and profile users across forests.
+For identity security, Microsoft Defender supports organizations with multiple Active Directory forests, so you can monitor activity and profile users in multiple forests.
 
 Enterprise organizations typically have several Active Directory forests - often used for different purposes, including legacy infrastructure from corporate mergers and acquisitions, geographical distribution, and security boundaries \(red forests\).
 
-Securing your multiple Active Directory forests with Defender for Identity provides the following advantages:
+Securing your multiple Active Directory forests with Microsoft Defender provides the following advantages:
 
 - **View and investigate** activities performed by users across multiple forests from a single location
 - **Gain improved detection** and reduce false positives with advanced Active Directory integration and account resolution
@@ -32,7 +32,7 @@ For more information, see [Microsoft Defender for Identity Directory Service acc
 
 ## Network traffic impact for multi-forest support
 
-When Defender for Identity maps your forests, it uses the following process:
+Microsoft Defender maps your forests using the following process:
 
 1. After the Defender for Identity sensor starts running, the sensor queries the remote Active Directory forests and retrieves a list of users and machine data for profile creation.
 2. Every 5 minutes, each Defender for Identity sensor queries one domain controller from each domain, from each forest, to map all the forests in the network.

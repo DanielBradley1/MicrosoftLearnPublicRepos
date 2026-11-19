@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/manage-incident-case-merging -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Merge and split incident cases in the Microsoft Defender portal \(preview\)
+# Merge and split incident cases in the Microsoft Defender portal
 
 Incident cases in the Microsoft Defender portal help security operations teams investigate and respond to related alerts in a single case management workflow. As an investigation develops, you might need to merge related incident cases or move alerts between incident cases to keep the investigation scope accurate.
 
@@ -9,7 +9,7 @@ Use merging and alert movement to reduce duplicate work, group related investiga
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available.
 
 For an overview of incident cases, see [Case management in the Microsoft Defender portal](https://learn.microsoft.com/en-us/defender-xdr/siem-defender-case-management).
 

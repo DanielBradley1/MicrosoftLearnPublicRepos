@@ -1,13 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/siem-defender-create-automation-rules -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Create automation rules with ISOC in Microsoft Defender \(preview\)
+# Create automation rules with ISOC in Microsoft Defender
 
 Use automation rules with Integrated Security Operations Center \(ISOC\) in Microsoft Defender to trigger automated response actions. Automation rules help standardize response workflows, reduce repetitive work, and run supported actions when alert or incident conditions are met.
-
-Note
-
-This feature is in preview. Capabilities and availability might change during the preview period.
 
 ## Prerequisites
 

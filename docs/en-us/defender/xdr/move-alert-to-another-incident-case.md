@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/move-alert-to-another-incident-case -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Move alerts from one incident case to another in the Microsoft Defender portal \(preview\)
+# Move alerts from one incident case to another in the Microsoft Defender portal
 
 Incident cases use alert correlation to group related alerts into a single incident case. If an alert is correlated to the wrong incident case, you can move the alert to another incident case so that analysts investigate and respond with the correct context.
 
@@ -9,7 +9,7 @@ When you move an alert, you must add a comment that explains the change. You can
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available.
 
 ## Prerequisites
 

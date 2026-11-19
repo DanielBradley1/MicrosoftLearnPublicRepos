@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/security-posture-assessments/accounts -->
 <!-- Sitemap-Last-Modified: 2026-08-18 -->
 
-# Accounts security posture assessments
+# Account security posture assessments
 
 Note
 

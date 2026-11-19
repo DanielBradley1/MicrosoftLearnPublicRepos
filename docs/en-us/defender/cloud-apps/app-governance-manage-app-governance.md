@@ -13,7 +13,7 @@ To understand the potential risks and stop these types of attacks, you need clea
 
 ## App governance features
 
-App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions.
+App governance provides SaaS security capabilities in Microsoft Defender to monitor and govern OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions.
 
 App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts.
 
@@ -26,14 +26,14 @@ App governance insights enable you to make informed decisions around blocking or
 
 ## Share data between Microsoft services
 
-View app governance data together with other Defender for Cloud Apps data and Microsoft Entra data to aggregate information and jump between views.
+View app governance data together with other Defender data and Microsoft Entra data to aggregate information and jump between views.
 
 For example:
 
 - On the **App governance** page, view app details and aggregated data and permission usage. Select an app to view details in a side pane, and select **View in Entra ID** to view more details in the Microsoft Entra admin center.
-- On other **Cloud apps** pages in Microsoft Defender XDR, view API usage levels and aggregate data transfer. From there, select links to go to the app governance **OAuth apps** page for more details.
+- On other **Cloud apps** pages in Microsoft Defender, view API usage levels and aggregate data transfer. From there, select links to go to the app governance **OAuth apps** page for more details.
 
-App governance alerts show up in the Microsoft Defender XDR alerts list as alerts with the **Detection source** field set to *App Governance*.
+App governance alerts show up in the Defender alerts list as alerts with the **Detection source** field set to *App Governance*.
 
 ## Next steps
 

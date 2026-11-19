@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/security-posture-assessments/group-policy -->
 <!-- Sitemap-Last-Modified: 2026-10-14 -->
 
-# Group policy security assessments
+# Group Policy security posture assessments
 
-Group policy security assessments identify Group Policy Objects \(GPOs\) that grant excessive access or expose credentials in your Active Directory environment.
+Group Policy security posture assessments identify Group Policy Objects \(GPOs\) that grant excessive access or expose credentials in your Active Directory environment.
 
 ## GPO assigns unprivileged identities to local groups with elevated privileges
 

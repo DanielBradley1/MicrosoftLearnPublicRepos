@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/audit-retain-case-data -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Audit and retain case data in Log Analytics \(preview\)
+# Audit and retain case data in Log Analytics
 
 Case management activity from the Microsoft Defender portal is automatically synced to the `SecurityCaseEvent` table in Log Analytics when your tenant has a connected primary Microsoft Sentinel workspace. You can use KQL to review case activity, investigate changes, create visualizations and dashboards, and retain case history beyond the default 180-day retention period in Defender.
 
@@ -114,7 +114,7 @@ The **Tables** page also provides Table insights to help you review ingestion vo
 For more information, see:
 
 - [Configure table settings in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/manage-table-tiers-retention)
-- [Manage data tiers and retention in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/manage-data-overview#how-data-tiers-and-retention-work)
+- [How data tiers and retention work](https://learn.microsoft.com/en-us/azure/sentinel/manage-table-tiers-retention#how-data-tiers-and-retention-work)
 - [Plan costs and understand pricing and billing for Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/billing?tabs=simplified%2Ccommitment-tiers)
 
 ## Related content
@@ -123,5 +123,5 @@ For more information, see:
 - [SecurityCaseEvent](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/securitycaseevent)
 - [Log Analytics tutorial](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial)
 - [Configure table settings in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/manage-table-tiers-retention)
-- [Manage data tiers and retention in Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/manage-data-overview#how-data-tiers-and-retention-work)
+- [How data tiers and retention work](https://learn.microsoft.com/en-us/azure/sentinel/manage-table-tiers-retention#how-data-tiers-and-retention-work)
 - [Plan costs and understand pricing and billing for Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/billing?tabs=simplified%2Ccommitment-tiers)

@@ -3,11 +3,11 @@
 
 # Microsoft Defender for Identity monitored activities
 
-Microsoft Defender for Identity monitors information generated from your organization's Active Directory, network activities and event activities to detect suspicious activity. The monitored activity information enables Defender for Identity to help you determine the validity of each potential threat and correctly triage and respond.
+Microsoft Defender uses identity security capabilities to monitor information generated from your organization's Active Directory, network activities and event activities to detect suspicious activity. The monitored activity information enables Defender to help you determine the validity of each potential threat and correctly triage and respond.
 
-In the case of a valid threat, or **true positive**, Defender for Identity enables you to discover the scope of the breach for each incident, investigate which entities are involved, and determine how to remediate them.
+In the case of a valid threat, or **true positive**, Defender enables you to discover the scope of the breach for each incident, investigate which entities are involved, and determine how to remediate them.
 
-The information monitored by Defender for Identity is presented in the form of activities. Defender for Identity currently supports monitoring of the following activity types:
+The information monitored by Defender is presented in the form of activities. Defender currently supports monitoring of the following activity types:
 
 Note
 
@@ -17,7 +17,7 @@ Note
 
 Tip
 
-For detailed information on all supported event types \(`ActionType` values\) in Advanced Hunting Identity-related tables, use the built-in schema reference available in Microsoft Defender XDR.
+For detailed information on all supported event types \(`ActionType` values\) in Advanced Hunting Identity-related tables, use the built-in schema reference available in the Microsoft Defender portal.
 
 ## Monitored user activities: User account AD attribute changes
 

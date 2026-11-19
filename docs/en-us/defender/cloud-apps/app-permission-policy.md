@@ -3,7 +3,7 @@
 
 # Create policies to control OAuth apps
 
-In Microsoft Defender for Cloud Apps, you can create app permission policies to monitor and control OAuth app behavior. Use these policies to get automated notifications when apps meet specific criteria, investigate requested permissions, and mark permissions as approved or banned.
+With the SaaS security capabilities in Microsoft Defender, you can create app permission policies to monitor and control OAuth app behavior. Use these policies to get automated notifications when apps meet specific criteria, investigate requested permissions, and mark permissions as approved or banned.
 
 ## Create OAuth app policies
 

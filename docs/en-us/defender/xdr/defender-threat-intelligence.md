@@ -11,7 +11,7 @@ Threat intelligence in the Microsoft Defender portal brings together Microsoft t
 
 ## Threat intelligence with ISOC
 
-For Integrated Security Operations Center \(ISOC\) customers, an [ISOC workspace](https://learn.microsoft.com/en-us/defender-xdr/onboard-isoc-workspace) is required to use threat intelligence capabilities available in preview.
+For Integrated Security Operations Center \(ISOC\) customers, an [ISOC workspace](https://learn.microsoft.com/en-us/defender-xdr/onboard-isoc-workspace) is required to use threat intelligence capabilities.
 
 For ISOC eligibility requirements, see [ISOC in Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/isoc-overview).
 

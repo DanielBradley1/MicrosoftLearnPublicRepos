@@ -127,7 +127,7 @@ For more information, see [Manage Microsoft Defender Antivirus updates and apply
 
 ## What's new in the latest release
 
-To learn what’s new in endpoint security, see the latest updates in [What's new in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint).
+To learn what's new in endpoint security, see the latest updates in [What's new in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint).
 
 To learn about the latest Windows updates, see [What's new in Microsoft Defender for Endpoint on Windows](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#windows-releases).
 

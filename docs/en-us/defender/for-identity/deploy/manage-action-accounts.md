@@ -29,7 +29,7 @@ Using a dedicated gMSA as an action account is optional. We recommend that you u
 
 ## Best practices for action accounts
 
-We recommend that you avoid using the same gMSA account you configured for Defender for Identity managed actions on servers other than domain controllers. If you use the same account on another server and that server is compromised, an attacker could retrieve the password for the account and gain the ability to change passwords and disable accounts.
+Avoid using the same gMSA account you configured for managed actions on servers other than domain controllers. If you use the same account on another server and that server is compromised, an attacker could retrieve the password for the account and gain the ability to change passwords and disable accounts.
 
 We also recommend that you avoid using the same account as both the Directory Service account and the Manage Action account. Separating these roles is important because the Directory Service account requires only read-only permissions to Active Directory, and the Manage Action account needs write permissions on user accounts.
 

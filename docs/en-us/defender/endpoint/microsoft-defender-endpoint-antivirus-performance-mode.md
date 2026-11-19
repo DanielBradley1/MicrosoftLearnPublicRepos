@@ -126,6 +126,10 @@ To verify that Dev Drive and Defender Performance Mode is enabled, follow these 
    | `D:` | Dev Drive is enabled but Defender Performance mode isn't enabled. |
    | `F:` | Dev Drive is enabled, and Defender Performance mode is enabled. |
 
+Note
+
+`Get-MpPreference` reports `PerformanceModeStatus` as `1` when performance mode is enabled and `0` when it's disabled, the reverse of the [Intune values](#intune). To check whether performance mode is on for a volume, use **See volumes** in the Windows Security app.
+
 ## Related content
 
 - [Set up a Dev Drive on Windows 11](https://learn.microsoft.com/en-us/windows/dev-drive)

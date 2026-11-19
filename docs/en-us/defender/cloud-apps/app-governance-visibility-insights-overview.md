@@ -53,7 +53,7 @@ Your sign-in account must have one of the [required app governance administrator
 
 For example:
 
-[![Screenshot of the App governance overview page in Microsoft Defender XDR.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-get-started/overview.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-get-started/overview.png#lightbox)
+[![Screenshot of the App governance overview page in the Microsoft Defender portal.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-get-started/overview.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-visibility-insights-get-started/overview.png#lightbox)
 
 ### What's available on the Overview tab
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/investigate-users -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-11-09 -->
 
 # Investigate an identity
 
@@ -55,7 +55,7 @@ The Entity details panel summarizes key identity information and investigation s
 
 Other details appear depending on enabled services and features. For example:
 
-- Environments with Microsoft Defender for Identity can see:
+- Environments with identity security capabilities in Microsoft Defender can see:
 
   - Active Directory account control flags, such as password‑never‑expires or account lock status
   - An organization tree that shows the identity’s position in the reporting hierarchy.
@@ -115,7 +115,7 @@ Identity risk in Microsoft Defender uses automated decay logic to allow SOC prio
 
 ## Timeline tab
 
-The **Timeline** tab provides a chronological, identity-centric view of activity and alerts correlated to the identity across your environment: on-premises Active Directory, Microsoft Entra ID, IAM and other identity providers, SaaS applications, cloud, and endpoints. It aggregates data from integrated Microsoft security products, such as Microsoft Defender for Identity, Microsoft Defender for Endpoint, Microsoft Defender for Cloud Apps, and Microsoft Sentinel.
+The **Timeline** tab provides a chronological, identity-centric view of activity and alerts correlated to the identity across your environment: on-premises Active Directory, Microsoft Entra ID, IAM and other identity providers, SaaS applications, cloud, and endpoints. It aggregates data from integrated Microsoft security tools in Microsoft Defender, including identity security, endpoint security, SaaS security, and Microsoft Sentinel.
 
 The timeline brings together sign-ins, audit events, risk signals, applied controls, and Conditional Access evaluations alongside all workload activity, so you can reconstruct sequences of activity and correlate events during an investigation. Because activity is correlated at the identity level, the timeline includes events where the identity is the actor or the target. It covers every account linked to the identity, including manually and policy-based \(custom\) correlated accounts. Duplicate events are removed so the same activity isn't shown twice; for example, when a sign-in appears in both the Entra ID and cloud app data, the timeline favors the Entra ID source.
 
@@ -183,7 +183,7 @@ Select an event in the timeline to open a side pane with the event details. The 
 
 ## Security recommendations tab
 
-The **Security recommendations** tab displays identity related posture assessments identified through Identity Security Posture Management \(ISPM\). These recommendations highlight misconfigurations or risky settings across the identity’s accounts, and selecting a recommendation opens the details in Microsoft Secure Score for remediation guidance.
+The **Security recommendations** tab displays identity-related posture assessments identified through Identity Security Posture Management \(ISPM\). These recommendations highlight misconfigurations or risky settings across the identity’s accounts, and selecting a recommendation opens the details in Microsoft Secure Score for remediation guidance.
 
 [![Screenshot of the Security recommendations tab on the Identity page in Microsoft Defender.](https://learn.microsoft.com/en-us/defender-xdr/media/investigate-users/identity-posture-recommendations.png)](https://learn.microsoft.com/en-us/defender-xdr/media/investigate-users/identity-posture-recommendations.png#lightbox)
 
@@ -197,7 +197,7 @@ The **Policies** tab displays identity‑related security policies that are rele
 
 This view provides investigation context by showing which policies apply to the identity and how they influence access or risk evaluation. Policies are managed elsewhere; this tab helps analysts correlate policy enforcement with sign‑ins, alerts, and investigation findings.
 
-## Identity Explorer tab \(Preview\)
+## Identity Explorer tab
 
 Note
 

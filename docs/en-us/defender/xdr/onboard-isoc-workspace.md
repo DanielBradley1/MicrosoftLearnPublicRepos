@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/onboard-isoc-workspace -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-26 -->
 
-# Create an ISOC workspace in the Microsoft Defender portal \(preview\)
+# Create an ISOC workspace in the Microsoft Defender portal
 
 Use this procedure to create an Integrated Security Operations Center \(ISOC\) workspace in the Microsoft Defender portal for capabilities that require a workspace.
 
@@ -29,9 +29,9 @@ Before you begin, make sure the following requirements are met:
 1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com/).
 2. Go to **Setup & configuration** > **Settings** > **Microsoft Sentinel** > **SIEM workspaces**.
 3. Select **+ Create workspace**.
-4. In **Subscription**, select the Azure subscription where you want to create the workspace.
+4. In **Subscriptions**, select the Azure subscription where you want to create the workspace.
 
-   [![Screenshot of the Connect Microsoft Sentinel to Defender dialog in the Microsoft Defender portal, where you select an Azure subscription to create and connect an ISOC workspace.](https://learn.microsoft.com/en-us/defender-xdr/media/onboard-isoc-workspace/connect-microsoft-sentinel-to-defender.png)](https://learn.microsoft.com/en-us/defender-xdr/media/onboard-isoc-workspace/connect-microsoft-sentinel-to-defender.png#lightbox)
+   [![Screenshot of the Set up your connected workspace dialog showing the subscription and workspace details for an ISOC workspace.](https://learn.microsoft.com/en-us/defender-xdr/media/onboard-isoc-workspace/connect-microsoft-sentinel-to-defender.png)](https://learn.microsoft.com/en-us/defender-xdr/media/onboard-isoc-workspace/connect-microsoft-sentinel-to-defender.png#lightbox)
 
    The portal checks whether you have the required permissions on the selected subscription.
 5. After the permissions check succeeds, review the workspace details.

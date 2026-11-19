@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites-standalone -->
-<!-- Sitemap-Last-Modified: 2024-11-27 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Microsoft Defender for Identity standalone sensor prerequisites
 
@@ -65,7 +65,7 @@ The following table lists the extra ports that the Defender for Identity standal
 
 ## Windows event log requirements
 
-Defender for Identity detection relies on specific [Windows Event logs](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection) that the sensor parses from your domain controllers. For the correct events to be audited and included in the Windows Event log, your domain controllers require accurate Windows Advanced Audit Policy settings.
+Identity security detection in Microsoft Defender relies on specific [Windows Event logs](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection) that the sensor parses from your domain controllers. For the correct events to be audited and included in the Windows Event log, your domain controllers require accurate Windows Advanced Audit Policy settings.
 
 For more information, see [Advanced audit policy check](https://learn.microsoft.com/en-us/defender-for-identity/configure-windows-event-collection) and [Advanced security audit policies](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/advanced-security-auditing) in the Windows documentation.
 

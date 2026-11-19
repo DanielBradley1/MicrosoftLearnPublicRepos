@@ -134,9 +134,9 @@ When running as a virtual machine, all memory must be allocated to the virtual m
 
 ## Configure Windows event auditing
 
-Defender for Identity detections rely on specific Windows event log entries to enhance detections and provide extra information about the users performing specific actions, such as NTLM sign-ins and security group modifications.
+Identity security detections in Microsoft Defender rely on specific Windows event log entries to enhance detections and provide extra information about the users performing specific actions, such as NTLM sign-ins and security group modifications.
 
-[Configure Windows event auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection) on your domain controller to support Defender for Identity detections in the Defender portal or using PowerShell.
+[Configure Windows event auditing](https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-windows-event-collection) on your domain controller to support identity security detections in Microsoft Defender, using the portal or PowerShell.
 
 ## Test your prerequisites
 

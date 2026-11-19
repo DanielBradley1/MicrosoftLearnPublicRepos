@@ -15,9 +15,9 @@ For example, the following OAuth app consent page might look legitimate to the a
 
 ![OAuth phishing google.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/oauth-phishing.png)
 
-As a security admin, you need visibility and control over the apps in your environment and that includes the permissions they have. You need the ability to prevent use of apps that require permission to resources you wish to revoke. Therefore, Microsoft Defender for Cloud Apps provides you with the ability to investigate and monitor the app permissions your users granted. This article is dedicated to helping you investigate the OAuth apps in your organization, and focus on the apps that are more likely to be suspicious.
+As a security admin, you need visibility and control over the apps in your environment and that includes the permissions they have. You need the ability to prevent use of apps that require permission to resources you wish to revoke. Therefore, Microsoft Defender provides SaaS security capabilities to investigate and monitor the app permissions your users granted. This article is dedicated to helping you investigate the OAuth apps in your organization, and focus on the apps that are more likely to be suspicious.
 
-Our recommended approach is to investigate the apps by using the abilities and information provided in Defender for Cloud Apps to filter out apps with a low chance of being risky, and focus on the suspicious apps.
+Our recommended approach is to investigate the apps by using the abilities and information provided in Defender to filter out apps with a low chance of being risky, and focus on the suspicious apps.
 
 In this tutorial, you'll learn how to:
 
@@ -88,7 +88,7 @@ After you determine that an app is suspicious and you want to investigate it, we
 
 ## How to remediate suspicious OAuth apps
 
-After you determine that an OAuth app is risky, Defender for Cloud Apps provides the following remediation options:
+After you determine that an OAuth app is risky, Defender provides the following remediation options:
 
 - **Manual remediation**: You can easily [ban or revoke an app from the OAuth apps page](https://learn.microsoft.com/en-us/defender-cloud-apps/manage-app-permissions#ban-or-approve-an-app)
 - **Automatic remediation**: You can create a policy that [automatically revokes an app or revokes a specific user from an app](https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy).

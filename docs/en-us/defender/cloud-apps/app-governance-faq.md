@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-faq -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-29 -->
 
 # Frequently asked questions about app governance
 
@@ -7,7 +7,7 @@ Read this article to quickly get answers to your app governance questions.
 
 ## What is app governance?
 
-App governance is a feature in Microsoft Defender for Cloud Apps. It provides expanded visibility and control over apps that access your Microsoft 365 data. For more information, see [App governance in Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance).
+App governance is part of the SaaS security capabilities in Microsoft Defender. It provides expanded visibility and control over apps that access your Microsoft 365 data. For more information, see [App governance in Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance).
 
 ## What types of apps does app governance secure?
 
@@ -15,11 +15,11 @@ App governance tracks non-Microsoft apps that use OAuth to authenticate to Micro
 
 These apps represent modern apps that can access various resources, including Microsoft 365 data in mailboxes, OneDrive folders, SharePoint sites, and Teams. End users regularly introduce these apps and can give them consent to access data.
 
-While Defender for Cloud Apps also tracks apps that use OAuth to access Microsoft 365, app governance provides extra out-of-box detections and highly customizable policies that track various app attributes and behaviors.
+Within Microsoft Defender, app governance provides additional out-of-box detections for apps that use OAuth to access Microsoft 365. It also provides highly customizable policies that track app attributes and behaviors.
 
 ## How can I get app governance?
 
-App governance is a feature in Defender for Cloud Apps. To use app governance, Defender for Cloud Apps must be present in your account either as a standalone product or as part of a license package. If you have the appropriate administrator role and satisfy all the prerequisites, you can navigate to [Microsoft Defender XDR settings](https://security.microsoft.com/cloudapps/settings?tabid=activateAppG) page and turn on app governance.
+App governance is a feature in Defender for Cloud Apps. To use app governance, Defender for Cloud Apps must be present in your account either as a standalone product or as part of a license package. If you have the appropriate administrator role and satisfy all the prerequisites, you can navigate to [Microsoft Defender settings](https://security.microsoft.com/cloudapps/settings?tabid=activateAppG) page and turn on app governance.
 
 ## What can app governance detect?
 
@@ -39,9 +39,9 @@ App governance can deactivate apps that match either user-defined or predefined 
 
 You can create policies by combining conditions that track various app attributes and behaviors. When these conditions are met, policies trigger alerts and take the action you've specified. App governance also provides predefined policies that you switch on or off. You can also set the action on predefined policies. [Learn about app governance policies](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-app-policies-create)
 
-## Is app governance integrated with Microsoft Defender XDR?
+## How does Microsoft Defender correlate app governance alerts?
 
-App governance alerts and related incidents are available in the Microsoft Defender XDR queue. Microsoft Defender XDR correlates the alerts with signals from other solutions, such as Defender for Endpoint, to associate related attack activities and identify security incidents. App governance alerts and incidents are also integrated with Microsoft Sentinel.
+App governance alerts and related incidents are available in the Microsoft Defender queue. Defender's extended detection and response \(XDR\) capabilities correlate app governance alerts with signals from other capabilities, such as endpoint security. This correlation associates related attack activities and identifies security incidents. App governance alerts and incidents are also integrated with Microsoft Sentinel.
 
 ## What roles do I need to activate app governance
 
@@ -61,7 +61,7 @@ It can take up to 10 hours to fully prepare app governance and retrieve data aft
 
 ## How does app governance integrate with Microsoft Sentinel?
 
-App governance is integrated with Microsoft Defender XDR for a unified alert experience. The Microsoft Defender XDR connector for Microsoft Sentinel \(preview\) sends all Microsoft Defender XDR incidents and alerts information to Microsoft Sentinel and keeps the incidents synchronized.
+App governance alerts are available in the unified alert experience in Microsoft Defender. The Microsoft Defender XDR connector for Microsoft Sentinel \(preview\) sends all Microsoft Defender XDR incidents and alerts information to Microsoft Sentinel and keeps the incidents synchronized.
 
 The Microsoft Defender XDR connector enables you to automatically detect, triage, investigate and remediate app governance incidents and alerts on Microsoft Sentinel. For more information, see [Microsoft Defender XDR integration with Microsoft Sentinel](https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-365-defender-integration-with-azure-sentinel) and [Connect data from Microsoft Defender XDR to Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/connect-microsoft-365-defender)
 

@@ -3,7 +3,7 @@
 
 # Turn on app governance for Microsoft Defender for Cloud Apps
 
-This article describes how to turn on Microsoft Defender for Cloud Apps app governance.
+Use app governance, a SaaS security capability in Microsoft Defender, to monitor and govern OAuth-enabled apps. Before you begin, review the prerequisites for licensing, administrator roles, and supported billing regions.
 
 ## Prerequisites
 
@@ -23,9 +23,9 @@ Learn how to [connect to the Microsoft 365 connector](https://learn.microsoft.co
 
 ## Turn on app governance
 
-If your organization satisfies the [app governance prerequisites](#prerequisites), go to [Microsoft Defender XDR > Settings > Cloud Apps > App governance](https://security.microsoft.com/cloudapps/settings) and select **Use app governance**. For example:
+If your organization satisfies the [app governance prerequisites](#prerequisites), go to [Microsoft Defender > Settings > Cloud Apps > App governance](https://security.microsoft.com/cloudapps/settings) and select **Use app governance**. For example:
 
-[![Screenshot of the App governance toggle in Microsoft Defender XDR.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-get-started/app-governance-service-status2.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-get-started/app-governance-service-status2.png#lightbox)
+[![Screenshot of the App governance toggle in the Microsoft Defender portal.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-get-started/app-governance-service-status2.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance-get-started/app-governance-service-status2.png#lightbox)
 
 After signing up for app governance, you'll need to wait up to 10 hours to see and use the product.
 

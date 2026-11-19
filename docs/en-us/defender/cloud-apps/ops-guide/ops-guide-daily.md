@@ -151,7 +151,7 @@ For more information, see:
 
 We recommend that you check your list of OAuth-enabled apps daily, together with relevant app metadata and usage data. Select an app to view deeper insights and information.
 
-App governance uses machine learning-based detection algorithms to detect anomalous app behavior in your Microsoft Defender XDR tenant, and generates alerts that you can see, investigate, and resolve. Beyond this built-in detection capability, you can use a set of default policy templates or create your own app policies that generate other alerts.
+App governance uses machine learning-based detection algorithms to detect anomalous app behavior in your Microsoft Defender tenant, and generates alerts that you can see, investigate, and resolve. Beyond this built-in detection capability, you can use a set of default policy templates or create your own app policies that generate other alerts.
 
 For more information, see:
 

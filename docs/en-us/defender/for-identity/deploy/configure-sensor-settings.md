@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/configure-sensor-settings -->
-<!-- Sitemap-Last-Modified: 2026-07-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Configure Microsoft Defender for Identity sensor settings
 
@@ -9,11 +9,11 @@ Configure Microsoft Defender for Identity v2.x sensor settings to collect data a
 
 After installing a v2.x sensor, follow these steps to view and configure its settings:
 
-1. In [Microsoft Defender XDR](https://security.microsoft.com), go to **Settings** > **Identities** > **Sensors**. For example:
+1. In the [Microsoft Defender portal](https://security.microsoft.com), go to **Settings** > **Identities** > **On-premises** > **Sensor Management**. For example:
 
-![Screenshot that shows the sensor page in the Microsoft Defender portal.](https://learn.microsoft.com/en-us/defender-for-identity/media/download-sensor/sensor-page.png)
+![Screenshot of Sensor Management showing deployed sensors and their health status in Microsoft Defender.](https://learn.microsoft.com/en-us/defender-for-identity/media/download-sensor/sensor-page.png)
 
-The **Sensors** page displays all of your Defender for Identity sensors, listing the following details per sensor:
+The **Sensor Management** tab displays all of your Defender for Identity sensors, listing the following details per sensor:
 
 - Sensor name
 - Sensor domain membership
@@ -39,7 +39,7 @@ For more information, see [Sensor details](https://learn.microsoft.com/en-us/def
 
    [![Screenshot of a sensor details pane showing health status and configuration.](https://learn.microsoft.com/en-us/defender-for-identity/media/sensor-details.png)](https://learn.microsoft.com/en-us/defender-for-identity/media/sensor-details.png#lightbox)
 
-4. Scroll down and select **Manage sensor** to show a pane where you can configure sensor details. For example:
+4. Open the v2.x sensor's row actions menu and select **Settings** to show a pane where you can configure sensor details. For example:
 
    [![Screenshot of the Sensors page with the Manage sensor option selected to open sensor configuration settings.](https://learn.microsoft.com/en-us/defender-for-identity/media/manage-sensor.png)](https://learn.microsoft.com/en-us/defender-for-identity/media/manage-sensor.png#lightbox)
 5. Configure the following sensor details:
@@ -48,7 +48,7 @@ For more information, see [Sensor details](https://learn.microsoft.com/en-us/def
    | **Description** | Optional. Enter a description for the Defender for Identity sensor. |
    | **Domain Controllers \(FQDN\)** | Required for the Defender for Identity [standalone sensors](https://learn.microsoft.com/en-us/defender-for-identity/deploy/prerequisites-standalone) and [sensors installed on AD FS / AD CS servers](https://learn.microsoft.com/en-us/defender-for-identity/deploy/active-directory-federation-services), and can't be modified for the Defender for Identity sensor.  <br>  <br>Enter the complete FQDN of your domain controller and select the plus sign to add it to the list. For example, **DC1.domain1.test.local**.  <br>  <br>For any servers you define in the **Domain Controllers** list:  <br>  <br>- All domain controllers whose traffic is being monitored via port mirroring by the Defender for Identity standalone sensor must be listed in the **Domain Controllers** list. If a domain controller isn't listed in the **Domain Controllers** list, detection of suspicious activities might not function as expected.  <br>  <br>- At least one domain controller in the list should be a global catalog. This enables Defender for Identity to resolve computer and user objects in other domains in the forest. |
    | **Capture Network adapters** | Required.  <br>  <br>- For Defender for Identity sensors, all network adapters that are used for communication with other computers in your organization.  <br>  <br>- For Defender for Identity standalone sensor on a dedicated server, select the network adapters that are configured as the destination mirror port. These network adapters receive the mirrored domain controller traffic. |
-6. On the **Sensors** page, select **Export** to export a list of your sensors to a **.csv** file. For example:
+6. On the **Sensor Management** tab, select **Export** to export a list of your sensors to a **.csv** file. For example:
 
    [![Screenshot of the Sensors page with the Export option for downloading the sensor list as a CSV file.](https://learn.microsoft.com/en-us/defender-for-identity/media/export-sensors.png)](https://learn.microsoft.com/en-us/defender-for-identity/media/export-sensors.png#lightbox)
 

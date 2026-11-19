@@ -95,7 +95,7 @@ The **On-premises identities** card shows identities from on-premises Active Dir
 
 Note
 
-The **Coverage and maturity** page lists all servers that don't have a Defender for Identity sensor. Sensor version 3 requires Defender for Endpoint. If a server has Defender for Endpoint, you can install sensor version 3 from the **Sensor activation** page \(**Settings** > **Identities** > **Sensors**\). If a server doesn't have Defender for Endpoint, it won't appear on the Sensor activation page. For those servers, deploy [sensor version 2](https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor) instead.
+The **Coverage and maturity** page lists all servers that don't have an MDI sensor. Sensor version 3 requires Defender for Endpoint. If a server has Defender for Endpoint, you can install sensor version 3 from the **Sensor activation** page \(**Settings** > **Identities** > **Sensors**\). If a server doesn't have Defender for Endpoint, it won't appear on the Sensor activation page. For those servers, deploy [sensor version 2](https://learn.microsoft.com/en-us/defender-for-identity/deploy/install-sensor) instead.
 
 ### Review the SaaS identities card
 

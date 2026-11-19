@@ -5,7 +5,7 @@
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview. This article provides incident response workflow guidance that applies to both incident cases and the legacy incident experience.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available. This article provides incident response workflow guidance that applies to both incident cases and the legacy incident experience.
 
 In the Microsoft Defender portal, security incidents bring together related alerts and investigation context to help your security operations team understand, manage, and respond to potential attacks.
 

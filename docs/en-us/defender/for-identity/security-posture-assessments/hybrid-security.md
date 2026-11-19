@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/security-posture-assessments/hybrid-security -->
 <!-- Sitemap-Last-Modified: 2026-08-18 -->
 
-# Remediate hybrid security posture assessments in Defender for Identity
+# Remediate hybrid security posture assessments
 
-This article lists all hybrid security posture assessments for Microsoft Defender for Identity.
+This article lists all hybrid security posture assessments.
 
 Note
 

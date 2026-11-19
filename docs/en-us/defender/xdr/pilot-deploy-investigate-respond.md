@@ -554,7 +554,7 @@ Custom detections will run the query according to the frequency you set, and the
    [![A screenshot of the Scope page in the Microsoft Defender portal.](https://learn.microsoft.com/en-us/defender-xdr/media/pilot-deploy-investigate-respond/fig26.png)](https://learn.microsoft.com/en-us/defender-xdr/media/pilot-deploy-investigate-respond/fig26.png#lightbox)
 
    For this Microsoft Defender XDR pilot deployment, you might want to limit this rule to a subset of testing devices in your production environment.
-6. Select **Create**. Then, select **Custom detection rules** from the navigation panel.
+6. Select **Create**. Then, select **Investigation & response** > **Detection** > **Custom detection rules** from the navigation panel.
 
    [![A screenshot of the Custom detection rules option in the Microsoft Defender portal.](https://learn.microsoft.com/en-us/defender-xdr/media/pilot-deploy-investigate-respond/fig27a.png)](https://learn.microsoft.com/en-us/defender-xdr/media/pilot-deploy-investigate-respond/fig27a.png#lightbox)
 

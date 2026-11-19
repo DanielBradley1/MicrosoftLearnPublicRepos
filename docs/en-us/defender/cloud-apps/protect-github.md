@@ -13,6 +13,7 @@ Use this app connector to access SaaS Security Posture Management \(SSPM\) featu
 
 The main threats to GitHub Enterprise Cloud environments include:
 
+- Device code phishing and related OAuth token abuse
 - Compromised accounts and insider threats
 - Data leakage
 - Insufficient security awareness
@@ -49,18 +50,33 @@ Review Defender for Cloud Apps best practices for [securing and collaborating wi
 
 ## Connect GitHub Enterprise Cloud to Microsoft Defender for Cloud Apps
 
-Use the following steps to connect Microsoft Defender for Cloud Apps to your existing GitHub Enterprise Cloud organization using the App Connector APIs. This connection gives you visibility into and control over your organization's GitHub Enterprise Cloud use. For more information about how Defender for Cloud Apps protects GitHub Enterprise Cloud, see [Protect GitHub Enterprise](https://learn.microsoft.com/en-us/defender-cloud-apps/protect-github).
+Use the following steps to connect Microsoft Defender for Cloud Apps to your existing GitHub Enterprise Cloud organization using the App Connector APIs. This connection gives you visibility into and control over your organization's GitHub Enterprise Cloud use. You can connect at either the **Organization** level or the **Enterprise** level. For more information about how Defender for Cloud Apps protects GitHub Enterprise Cloud, see [Protect GitHub Enterprise](https://learn.microsoft.com/en-us/defender-cloud-apps/protect-github).
 
 Use this app connector to access SaaS Security Posture Management \(SSPM\) features, via security controls reflected in Microsoft Secure Score. [Learn more](https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score).
+
+## Choose a connection level
+
+Use the following guidance to choose how to connect GitHub Enterprise Cloud.
+
+| Connection level | Best for | Coverage | Administrative model | Recommendation |
+| --- | --- | --- | --- | --- |
+| **Enterprise level** | Enterprises with one or more organizations | All organizations in the enterprise | Single connector | **Recommended** and it also provides advanced detection and disruption capabilities |
+| Organization level | Single organization onboarding | One organization is covered | One connector per organization | Supported |
+
+Important
+
+If you connect GitHub at the **Enterprise level**, existing **Organization-level** connectors for organizations in that enterprise are automatically disabled to prevent duplicate event ingestion.
 
 ### Prerequisites
 
 Before you connect GitHub Enterprise Cloud to Defender for Cloud Apps, make sure the following prerequisites are met:
 
 - Your organization must have a **GitHub Enterprise Cloud** license.
-- The GitHub account used for connecting to Defender for Cloud Apps must have Owner permissions for your organization.
-- For SSPM capabilities, the provided account must be the owner of the enterprise account.
+- Decide which connection level you'll use: **Organization** or **Enterprise**.
+- For **Organization-level** connection, the GitHub account used for connecting to Defender for Cloud Apps must have Owner permissions for your organization. For SSPM capabilities, the provided account must be the owner of the enterprise account.
+- For **Enterprise-level** connection, the GitHub account used for connecting to Defender for Cloud Apps must have Enterprise owner permissions on the enterprise.
 - To verify owners of your organization, browse to your organization's page, select **People**, and then filter by *Owner*.
+- To verify owners of your enterprise, browse to your enterprise page, select **People**, and then filter by *Owner*.
 
 ### Verify your GitHub domains
 
@@ -77,13 +93,27 @@ Domain verification is optional and separate from the GitHub Enterprise Cloud ap
 
 ### Configure GitHub Enterprise Cloud
 
-1. Copy your organization's sign-in name. You'll need the organization's sign-in name later.
+1. Copy your enterprise slug. You'll need it later during configuration. The **enterprise slug**, also known as the enterprise name, is used for SSPM for Organization-level connections and is needed for connecting at Enterprise-level.
+
+   Select the **GitHub Profile picture** -> **your enterprises**.
+
+   To find the **enterprise slug**:
+
+   1. Select **your enterprise account** and choose the account you want to connect to Microsoft Defender for Cloud Apps.
+   2. Confirm that the URL contains the enterprise slug. For instance, `https://github.com/enterprises/testEnterprise`.
+   3. Enter only the enterprise slug, not the entire URL. In this example, *testEnterprise* is the enterprise slug.
+
+2. Copy your organization's sign-in name. You'll need the organization's sign-in name later if you connect at the **Organization** level.
 
    Note
 
    The page will have a URL like `https://github.com/<your-organization>`. For example, if your organization's page is `https://github.com/sample-organization`, the organization's sign-in name is *sample-organization*.
-2. Create an OAuth App for Defender for Cloud Apps to connect your GitHub organization.
-3. Fill out the **Register a new OAuth app** details and then select **Register application**.
+3. Create an OAuth App for Defender for Cloud Apps:
+
+   - For **Organization-level** connection, create the OAuth app under the organization you want to connect.
+   - For **Enterprise-level** connection, create the OAuth app at the user level or under any organization in that enterprise.
+
+4. Fill out the **Register a new OAuth app** details and then select **Register application**.
 
    - In the **Application name** box, enter a name for the app.
    - In the **Homepage URL** box, enter the URL for the app's homepage.
@@ -97,33 +127,52 @@ Domain verification is optional and separate from the GitHub Enterprise Cloud ap
    - For US Government GCC High customers, enter the following value: `https://portal.cloudappsecurity.us/api/oauth/connect`
    - Apps owned by an organization have access to the organization's apps. For more information, see [About OAuth App access restrictions](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-oauth-app-access-restrictions).
 
-4. Select the OAuth App you created, and copy the **Client ID** and **Client Secret**.
+5. Select the OAuth App you created, and copy the **Client ID** and **Client Secret**.
 
 ### Configure Defender for Cloud Apps
 
 1. In the Microsoft Defender Portal, select **Settings**. Then choose **Cloud Apps**. Under **Connected apps**, select **App Connectors**.
 2. In the **App connectors** page, select **+Connect an app**, followed by **GitHub**.
 3. In the **Instance name** window, give the connector a descriptive name, and then select **Next**.
-4. In the **Enter details** window, fill out the **Client ID** and **Client Secret** from the OAuth app and the **Organization Login Name** you copied when configuring GitHub Enterprise Cloud.
+4. In the setup flow, choose the connection level:
 
-   ![Connect GitHub.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/connect-github-connect-app.png)
+   - **Organization**
+   - **Enterprise**
 
-   The **Enterprise slug**, also known as the enterprise name, is needed for supporting SSPM capabilities. To find the **Enterprise slug**:
+5. In the **Enter details** window, fill out the **Client ID** and **Client Secret** from the OAuth app and the **Organization Login Name**, **Enterprise slug** you copied when configuring GitHub Enterprise Cloud.
 
-   1. Select the **GitHub Profile picture** -> **your enterprises**.
-   2. Select **your enterprise account** and choose the account you want to connect to Microsoft Defender for Cloud Apps.
-   3. Confirm that the URL contains the enterprise slug. For instance, `https://github.com/enterprises/testEnterprise`
-   4. Enter only the enterprise slug, not the entire URL. In this example, *testEnterprise* is the enterprise slug.
+   [![Screenshot of the GitHub connector Enter details screen for Enterprise-level connection, showing Client ID, Client Secret, and Enterprise slug.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/connect-github-enterprise-level.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/connect-github-enterprise-level.png#lightbox)
 
-5. Select **Connect GitHub**.
+   If you choose **Enterprise** as the connection level, enter **Client ID**, **Client Secret**, and **Enterprise slug**.
+
+   [![Screenshot of the GitHub connector Enter details screen for Organization-level connection, showing Client ID, Client Secret, Organization Login Name, and Enterprise slug.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/connect-github-organization-level.png)](https://learn.microsoft.com/en-us/defender-cloud-apps/media/connect-github-organization-level.png#lightbox)
+
+   If you choose **Organization** as the connection level, enter **Client ID**, **Client Secret**, **Organization Login Name**, and **Enterprise slug**.
+6. Select **Connect GitHub**.
 
    If necessary, enter your GitHub administrator credentials to allow Defender for Cloud Apps access to your team's GitHub Enterprise Cloud instance.
-6. Request organization access and authorize the app to give Defender for Cloud Apps access to your GitHub organization. Defender for Cloud Apps requires the following OAuth scopes:
+7. Request access and authorize the app. Defender for Cloud Apps requires different OAuth scopes by connection level:
+
+   **Enterprise-level connection**
+
+   - **read:user** and **user:email** - required for synchronizing your organization's members
+   - **read:enterprise** - required for SSPM capabilities. The provided user must be the owner of the enterprise account.
+   - **read:audit\_log** - required for reading enterprise-level audit logs
+
+
+   Note
+
+
+   The enterprise-level permissions listed above are read-only.
+
+
+   **Organization-level connection**
+
 
    - **admin:org** - required for synchronizing your organization's audit log
    - **read:user** and **user:email** - required for synchronizing your organization's members
    - **repo:status** - required for synchronizing repository-related events in the audit log
-   - **read:enterprise** - required for SSPM capabilities. The provided user must be the owner of the enterprise account.
+   - **read:enterprise** - required for SSPM capabilities
 
 
    For more information about OAuth scopes, see [Understanding scopes for OAuth Apps](https://docs.github.com/developers/apps/building-oauth-apps/scopes-for-oauth-apps).
@@ -131,12 +180,18 @@ Domain verification is optional and separate from the GitHub Enterprise Cloud ap
 
    Back in the Defender for Cloud Apps console, you should receive a message that GitHub was successfully connected.
 
-7. Work with your GitHub organization owner to grant organization access to the OAuth app created under the GitHub **Third-party access** settings. For more information, see [Enabling OAuth app access restrictions for your organization](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/enabling-oauth-app-access-restrictions-for-your-organization).
+8. Work with your GitHub organization owner to grant organization access to the OAuth app created under the GitHub **Third-party access** settings, if your organization enforces OAuth app access restrictions. For more information, see [Enabling OAuth app access restrictions for your organization](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/enabling-oauth-app-access-restrictions-for-your-organization).
 
    The organization owner will find the request from the OAuth app only after connecting GitHub to Defender for Cloud Apps.
-8. In the Microsoft Defender Portal, select **Settings**. Then choose **Cloud Apps**. Under **Connected apps**, select **App Connectors**. Make sure the status of the connected App Connector is **Connected**.
+9. In the Microsoft Defender Portal, select **Settings**. Then choose **Cloud Apps**. Under **Connected apps**, select **App Connectors**. Make sure the status of the connected App Connector is **Connected**.
 
 After connecting GitHub Enterprise Cloud, you'll receive events for 7 days prior to connection.
+
+### Advanced threat detection and disruption
+
+For advanced detections and disruption for device code phishing scenarios against GitHub Copilot CLI, connect GitHub at the **Enterprise** level.
+
+For details, see [Protect AI agents from trusted-identity attacks \(Preview\)](https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/protect-ai-agents-from-trusted-identity-attacks).
 
 ## Next steps
 

@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/manage-incident-case-tasks -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Manage incident case tasks in the Microsoft Defender portal \(preview\)
+# Manage incident case tasks in the Microsoft Defender portal
 
 Use tasks in the Microsoft Defender portal to break incident response work into actionable items, assign ownership, track progress, and document outcomes.
 
@@ -9,7 +9,7 @@ Incident case tasks help security operations teams coordinate investigation, res
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available.
 
 For an overview of case management, see [Case management in the Microsoft Defender portal](https://learn.microsoft.com/en-us/defender-xdr/siem-defender-case-management).
 

@@ -20,7 +20,7 @@ For more information, see [App governance roles](https://learn.microsoft.com/en-
 
 ## View policies
 
-To see your list of current app policies, go to **Microsoft Defender XDR > App governance** and select **Policies**. This shows a list of all your policies in app governance.
+To see your list of current app policies, go to **Microsoft Defender > App governance** and select **Policies**. This shows a list of all your policies in app governance.
 
 For example:
 
@@ -74,18 +74,18 @@ App governance contains a set of out-of-the-box policies to detect anomalous app
 
 ### Work with predefined policies
 
-- To view available predefined policies, go to **Microsoft Defender XDR** > **App governance** > **Overview** and select **View predefined policies** in the **Predefined policies** section.
+- To view available predefined policies, go to **Microsoft Defender** > **App governance** > **Overview** and select **View predefined policies** in the **Predefined policies** section.
 
   ![Screenshot that shows how to view predefined policies.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance/predefined-policies.png)
 
-- Alternatively, go to **Microsoft Defender XDR** > **App governance** > **Policies** and filter for **Source: Predefined** to see the list of available predefined policies.
+- Alternatively, go to **Microsoft Defender** > **App governance** > **Policies** and filter for **Source: Predefined** to see the list of available predefined policies.
 
   ![Screenshot that shows how to filter for predefined policies.](https://learn.microsoft.com/en-us/defender-cloud-apps/media/app-governance/source-predefined.png)
 
 - To view the description of the policy, select the policy to see the policy summary and description in the detailed policy window.
 - To change the status of a policy \(deactivate/activate\), select the policy and select **Deactivate** in the detailed policy window.
 - By default, predefined policies trigger alerts when the conditions are met. You can choose to automatically disable the app when the policy triggers. Use caution when applying these actions because a policy might affect users and legitimate app use. To disable the app, mark the **Disable app** box under **Policy action** in the summary section and select **Save**.
-- Alerts generated from predefined policies are listed as app governance policy alerts in the Microsoft Defender XDR alerts queue.
+- Alerts generated from predefined policies are listed as app governance policy alerts in the Microsoft Defender alerts queue.
 
 ## Next step
 

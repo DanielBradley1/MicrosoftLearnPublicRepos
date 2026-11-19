@@ -22,7 +22,7 @@ To purchase, deploy, and use agents from Security Store, you need:
 
 To discover and deploy agents in the Microsoft Defender portal:
 
-1. Select **Security Copilot > Security Store**.
+1. Select **Content management > Security Store**.
 2. Browse or search for the agent you want to deploy.
 3. Select the agent to view its details, including its capabilities, requirements, and setup instructions.
 4. To purchase and deploy the agent:

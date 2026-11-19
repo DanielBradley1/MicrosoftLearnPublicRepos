@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/case-sla-policies -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# SLA policies for cases in the Microsoft Defender portal \(preview\)
+# SLA policies for cases in the Microsoft Defender portal
 
 Service-level agreement \(SLA\) policies help security operations teams define and track response-time expectations for cases in the Microsoft Defender portal.
 
@@ -11,7 +11,7 @@ SLA policies apply to supported case types, including incident cases, generic ca
 
 Note
 
-During this preview, SLA policies are supported only in the single-tenant Microsoft Defender portal. They aren't supported in multitenant organization environments.
+SLA policies are supported only in the single-tenant Microsoft Defender portal. They aren't supported in multitenant organization environments.
 
 For information about configuring SLA policies, see [Configure case templates in the Microsoft Defender portal](https://learn.microsoft.com/en-us/defender-xdr/manage-case-templates).
 

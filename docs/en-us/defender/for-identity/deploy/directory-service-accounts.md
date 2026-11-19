@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/directory-service-accounts -->
-<!-- Sitemap-Last-Modified: 2026-09-29 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Directory Service Accounts for Microsoft Defender for Identity
 
@@ -31,7 +31,7 @@ One sensor in each domain acts as the *domain synchronizer* and tracks changes t
 
 Note
 
-By default, Defender for Identity supports up to 30 credentials. To add more credentials, contact Defender for Identity support.
+By default, you can configure up to 30 credentials. To add more credentials, contact Microsoft Defender for Identity support.
 
 ## Supported DSA account options
 
@@ -101,7 +101,7 @@ If a sensor isn't able to successfully authenticate via LDAP to the Active Direc
 
 The DSA requires read only permissions on **all** the objects in Active Directory, including the **Deleted Objects Container**.
 
-The read-only permissions on the **Deleted Objects** container allows Defender for Identity to detect user deletions from your Active Directory.
+The read-only permissions on the **Deleted Objects** container allow Microsoft Defender to detect user deletions from your Active Directory.
 
 Use the following code sample to help you grant the required read permissions on the **Deleted Objects** container, whether or not you're using a gMSA account.
 

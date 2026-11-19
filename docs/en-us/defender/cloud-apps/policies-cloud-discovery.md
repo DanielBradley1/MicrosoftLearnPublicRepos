@@ -26,7 +26,7 @@ Perform the following steps to create a policy for detecting new high-volume or 
 
 Note
 
-An alert is generated once for each new app that wasn't discovered in the last 90 days.
+An alert is generated once for each new app that wasn't discovered in the last 180 days.
 
 ## Detect new risky or non-compliant app use
 

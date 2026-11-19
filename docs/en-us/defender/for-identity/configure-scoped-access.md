@@ -53,18 +53,32 @@ Note
 | Defender for Identity experience | Scoping by OU's | Scoping by AD domain |
 | --- | --- | --- |
 | MDI alerts and incidents | Available | Available |
-| Hunting tables: AlertEvidence+Info, IdentityInfo, IdentityDirectoryEvents, IdentityLogonEvents, IdentityQueryEvents | Available | Available |
+| Hunting tables: AlertEvidence+Info, IdentityInfo, AccountInfo, IdentityDirectoryEvents, IdentityLogonEvents, IdentityQueryEvents | Available | Available |
 | User page and user global search | Available | Available |
 | MDI alerts based on XDR detection platform \(detection source is XDR and service source is MDI\) | Available | Available |
 | Health issues | Unavailable | Available |
 | Identities inventory and service accounts discovery page | Available | Available |
 | Identities settings: manual tagging | Available | Available |
-| Identities settings: sensors page, health issues notifications | Unavailable | Available |
+| Identities settings: On-premises > Sensor management \* | Unavailable | Available |
+| Identities settings: Health issues notifications \* | Unavailable | Available |
 | Defender XDR Incident email notifications | Available | Unavailable |
+| Domain page | Available | Available |
+| Dashboard and Coverage & Maturity | Unavailable | Unavailable |
+| Identity reports | Unavailable | Unavailable |
 | ISPMs and exposure management | Unavailable | Unavailable |
+| Identity Explorer | Unavailable | Unavailable |
+| Password protection - 3 out of 4 tabs hidden \(Password hygiene, Leaked credentials, and Exposed passwords\) | Unavailable | Unavailable |
 | Download scheduled reports and Graph API | Unavailable | Unavailable |
 | Device and group global search and entity page | Available | Available |
-| Alert tuning and critical asset management | Unavailable | Unavailable |
+| Alert tuning | Available | Available |
+| Critical asset management | Unavailable | Unavailable |
+
+Note
+
+\* For AD domain-scoped users, the following behavior applies under **Settings > Identities**:
+
+- **On-premises > Sensor management**: You see only sensors and servers in your assigned domains. Your device group permissions also affect whether you can onboard a device to Defender for Identity. See [Manage sensors](https://learn.microsoft.com/en-us/defender-for-identity/sensor-settings).
+- **Health issues notifications**: You see entries that include at least one assigned domain, and entries with no domain scope. Entries for other domains only are hidden. In visible entries, domain names outside your scope appear as **Not in scope**. See [Configure email notifications](https://learn.microsoft.com/en-us/defender-for-identity/notifications#configure-email-notifications).
 
 ### Related articles
 

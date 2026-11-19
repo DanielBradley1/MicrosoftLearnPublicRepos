@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/siem-defender-automation-integrations -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Automation integrations with ISOC in Microsoft Defender \(preview\)
+# Automation integrations with ISOC in Microsoft Defender
 
 Use automation integrations with Integrated Security Operations Center \(ISOC\) in Microsoft Defender to connect automated workflows to Microsoft and third-party services.
 
@@ -10,10 +10,6 @@ Automation integrations provide a centralized catalog of prebuilt integrations. 
 An integration profile stores the provider, authentication method, and connection details used by supported playbooks or automation workflows to connect to external services.
 
 Automation integrations reduce manual setup work for SOC engineers, automation administrators, and advanced security analysts who build or maintain automated response workflows.
-
-Note
-
-This feature is in preview. Capabilities and availability might change during the preview period.
 
 ## How automation integrations work
 

@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/defender-copilot-workbooks -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Create and edit workbooks with Copilot for ISOC in Microsoft Defender \(preview\)
+# Create and edit workbooks with Copilot for ISOC in Microsoft Defender
 
 Use Copilot for Workbooks with Integrated Security Operations Center \(ISOC\) in Microsoft Defender to create and edit workbooks by using natural-language prompts. Describe the dashboard you want, and Copilot generates the KQL, panels, parameters, and layout.
 
@@ -17,7 +17,7 @@ Before you begin, make sure the following requirements are met:
 
 Note
 
-During this preview, Copilot for Workbooks supports Advanced Hunting tables as the data source. Log Analytics data isn't supported.
+Copilot for Workbooks supports Advanced Hunting tables as the data source. Log Analytics data isn't supported.
 
 ## Create a workbook with Copilot
 

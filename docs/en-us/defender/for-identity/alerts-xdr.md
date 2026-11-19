@@ -3,9 +3,9 @@
 
 # Microsoft Defender for Identity alerts in Microsoft Defender format
 
-This article lists all Defender for Identity security alerts in the Defender format. Defender for Identity sends these alerts to the Microsoft Defender portal.
+Use this reference to review identity security alerts in the Defender format in the Microsoft Defender portal.
 
-Defender for Identity generates alerts in both the Defender format and the [classic format](https://learn.microsoft.com/en-us/defender-for-identity/alerts-overview). The Defender format provides an alert structure that's consistent with other Microsoft Defender products. Both formats are based on the same underlying detections from Defender for Identity sensors, but they differ in structure, naming, and categorization. To identify the format of each alert, check the **Detection source** field on the security alerts page.
+Identity security alerts in Defender use both the Defender format and the [classic format](https://learn.microsoft.com/en-us/defender-for-identity/alerts-overview). The Defender format provides an alert structure that's consistent with other alerts in Defender. Both formats are based on the same underlying detections from Defender for Identity sensors, but they differ in structure, naming, and categorization. To identify the format of each alert, check the **Detection source** field on the security alerts page.
 
 Note
 
@@ -19,7 +19,7 @@ For more information, see [Security alerts in Microsoft Defender](https://learn.
 
 ## Alerts by category
 
-Defender for Identity XDR security alerts are divided by category, or phase, as seen in a typical cyber-attack kill chain.
+Identity security alerts in the Defender format are divided by category, or phase, as seen in a typical cyber-attack kill chain.
 
 Use the following links to jump directly to the relevant category and review the available alerts:
 

@@ -40,7 +40,7 @@ An overprivileged app has permissions that exceed what it needs for its intended
 
 Note
 
-As part of our continuous efforts to enhance Defender for Cloud apps alert accuracy, we have disabled this policy. The Increase in data usage by an overprivileged or highly privileged app policy remains visible in the Defender portal in a disabled state. If you want to continue using this policy, in the Defender portal, go to **App Governance**, and then the **Policies** page. Select the policy, and then select **Activate**.
+As part of our continuous efforts to enhance Microsoft Defender alert accuracy, we have disabled this policy. The Increase in data usage by an overprivileged or highly privileged app policy remains visible in the Defender portal in a disabled state. If you want to continue using this policy, in the Defender portal, go to **App Governance**, and then the **Policies** page. Select the policy, and then select **Activate**.
 
 **Severity**: Medium
 
@@ -59,11 +59,11 @@ To determine if the alert is a true positive \(TP\) or a false positive \(FP\), 
 
 ### Unusual activity from an app with priority account consent
 
-A priority account is a high-value account, such as an executive or service administrator, that you tag in Microsoft Defender for Cloud Apps. This alert triggers when an app that a priority account has consented to exhibits unusual activity.
+A priority account is a high-value account, such as an executive or service administrator, that you tag in Defender. This alert triggers when an app that a priority account has consented to exhibits unusual activity.
 
 Note
 
-As part of our continuous efforts to enhance Defender for Cloud apps alert accuracy, we have disabled this policy. The Unusual activity from an app with priority account consent policy remains visible in the Defender portal in a disabled state. If you want to continue using this policy, in the Defender portal, go to **App Governance**, and then the **Policies** page. Select the policy, and then select **Activate**.
+As part of our continuous efforts to enhance Defender alert accuracy, we have disabled this policy. The Unusual activity from an app with priority account consent policy remains visible in the Defender portal in a disabled state. If you want to continue using this policy, in the Defender portal, go to **App Governance**, and then the **Policies** page. Select the policy, and then select **Activate**.
 
 **Severity**: Medium
 
@@ -222,7 +222,7 @@ This alert detects apps that access sensitive data in ways that might indicate r
 
 Note
 
-As part of our continuous efforts to enhance Defender for Cloud apps alert accuracy, we have disabled this policy. The Access to sensitive data policy remains visible in the Defender portal in a disabled state. If you want to continue using this policy, in the Defender portal, go to **App Governance**, and then the **Policies** page. Select the policy, and then select **Activate**.
+As part of our continuous efforts to enhance Defender alert accuracy, we have disabled this policy. The Access to sensitive data policy remains visible in the Defender portal in a disabled state. If you want to continue using this policy, in the Defender portal, go to **App Governance**, and then the **Policies** page. Select the policy, and then select **Activate**.
 
 **Severity**: Medium
 

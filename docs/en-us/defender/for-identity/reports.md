@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/reports -->
 <!-- Sitemap-Last-Modified: 2026-08-08 -->
 
-# Download and schedule Defender for Identity reports in Microsoft Defender XDR \(Preview\)
+# Download and schedule Defender for Identity reports in Microsoft Defender XDR
 
 ## Overview
 

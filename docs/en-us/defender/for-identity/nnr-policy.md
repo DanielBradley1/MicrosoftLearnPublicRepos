@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/nnr-policy -->
 <!-- Sitemap-Last-Modified: 2026-04-29 -->
 
-# Network Name Resolution \(NNR\) in Microsoft Defender for Identity
+# Network name resolution for identity security in Microsoft Defender
 
-Network Name Resolution \(NNR\) is a key component of Microsoft Defender for Identity functionality. Defender for Identity captures activities based on network traffic, Windows events, and ETW. These activities normally contain IP data.
+Network Name Resolution \(NNR\) is a key component of identity security in Microsoft Defender. Microsoft Defender captures activities based on network traffic, Windows events, and ETW. These activities normally contain IP data.
 
-By using NNR, Defender for Identity can correlate raw activities that contain IP addresses with the relevant computers involved in each activity. Based on the raw activities, Defender for Identity profiles entities, including computers, and generates security alerts for suspicious activities.
+By using NNR, Microsoft Defender can correlate raw activities that contain IP addresses with the relevant computers involved in each activity. Based on the raw activities, Microsoft Defender profiles entities, including computers, and generates security alerts for suspicious activities.
 
 ## NNR with the Defender for Identity sensor v3.x
 
@@ -34,7 +34,7 @@ Note
 
 No authentication is performed on any of the ports.
 
-Defender for Identity evaluates and determines the device operating system based on network traffic. After retrieving the computer name, the Defender for Identity sensor checks Active Directory and uses TCP fingerprints to see if there's a correlated computer object with the same computer name. Using TCP fingerprints helps identify unregistered and non-Windows devices, aiding in your investigation process. When the Defender for Identity sensor finds the correlation, the sensor associates the IP to the computer object.
+Microsoft Defender evaluates and determines the device operating system based on network traffic. After retrieving the computer name, the Defender for Identity sensor checks Active Directory and uses TCP fingerprints to see if there's a correlated computer object with the same computer name. Using TCP fingerprints helps identify unregistered and non-Windows devices, aiding in your investigation process. When the Defender for Identity sensor finds the correlation, the sensor associates the IP to the computer object.
 
 In cases where no name is retrieved, an **unresolved computer profile by IP** is created with the IP and the relevant detected activity.
 
@@ -44,7 +44,7 @@ NNR data is crucial for detecting the following threats:
 - Suspected DCSync attack \(replication of directory services\)
 - Network-mapping reconnaissance \(DNS\)
 
-To improve your ability to determine if an alert is a **True Positive \(TP\)** or **False Positive \(FP\)**, Defender for Identity includes the degree of certainty of computer naming resolving into the evidence of each security alert.
+To improve your ability to determine if an alert is a **True Positive \(TP\)** or **False Positive \(FP\)**, Microsoft Defender includes the degree of certainty of computer name resolution in the evidence of each security alert.
 
 For example, when computer names are resolved with **high certainty** it increases the confidence in the resulting security alert as a **True Positive** or **TP**.
 
@@ -89,15 +89,15 @@ The evidence includes the time, IP, and computer name the IP was resolved to. Wh
 
 ## Health issues
 
-To ensure Defender for Identity works correctly and the environment is configured properly, Defender for Identity checks the resolution status of each sensor. It generates a health alert for each method and provides a list of the Defender for Identity sensors with a low success rate of active name resolution for each method.
+To help keep your identity security environment configured correctly, Microsoft Defender checks the resolution status of each sensor. It generates a health alert for each method and provides a list of the Defender for Identity sensors with a low success rate of active name resolution for each method.
 
-When an observed IP address can't resolve to a computer name, Microsoft Defender for Identity records it as an unresolved computer entity. If these unresolved entities accumulate over time, the sensor’s active name resolution success rate decreases. This might trigger a low success rate of active name resolution health alert. This alert indicates reduced enrichment of network activity with device identity which might lower confidence in some detections. It doesn't indicate a sensor failure.
+When an observed IP address can't resolve to a computer name, Microsoft Defender records it as an unresolved computer entity. If these unresolved entities accumulate over time, the sensor’s active name resolution success rate decreases. This might trigger a low success rate of active name resolution health alert. This alert indicates reduced enrichment of network activity with device identity which might lower confidence in some detections. It doesn't indicate a sensor failure.
 
 Each health alert provides specific details of the method, sensors, the problematic policy, and configuration recommendations. For more information about health issues, see [Microsoft Defender for Identity sensor health issues](https://learn.microsoft.com/en-us/defender-for-identity/health-alerts).
 
 Note
 
-To disable an optional NNR method in Defender for Identity to fit the needs of your environment, open a support case.
+To disable an optional NNR method for identity security in Microsoft Defender to fit the needs of your environment, open a support case.
 
 ## See Also
 

@@ -15,6 +15,18 @@ For more information on what's new with other Microsoft Defender security produc
 
 For news about earlier releases, see [Archive of past updates for Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/release-note-archive).
 
+## November 2026
+
+### GitHub connector enhancements \(Preview\)
+
+The GitHub connector in Microsoft Defender for Cloud Apps now supports both **Organization-level** and **Enterprise-level** connections. This update helps security teams centralize onboarding and improve visibility across GitHub Enterprise environments.
+
+We strongly recommend creating a **new connector instance** and connecting at the **Enterprise level**. With a single enterprise connection, all organizations in that enterprise are covered, eliminating per-organization connector setup, reducing administrative overhead, and giving defenders full visibility into enterprise-wide GitHub activity.
+
+If you connect at the **Enterprise level**, you also gain stronger protection against identity-driven attacks in developer workflows, including device code phishing scenarios targeting GitHub Copilot CLI.
+
+For setup guidance, see [Protect your GitHub Enterprise environment](https://learn.microsoft.com/en-us/defender-cloud-apps/protect-github). For detection and disruption coverage, see [Protect AI agents from trusted-identity attacks \(Preview\)](https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/protect-ai-agents-from-trusted-identity-attacks).
+
 ## October 2026
 
 ### Automatic enablement of SaaS accounts integration with Identity inventory

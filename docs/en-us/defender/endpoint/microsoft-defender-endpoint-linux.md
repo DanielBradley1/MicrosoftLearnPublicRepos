@@ -104,7 +104,7 @@ Microsoft Defender integrates with existing security tools and workflows through
 
 To learn about what's new in Endpoint security, see the latest updates in [What's new in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint).
 
-Microsoft includes security fixes in monthly releases. However, the release notes don’t always list these fixes under a separate Security patch section. For more information, see [What's new in Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#linux-releases).
+Microsoft includes security fixes in monthly releases. However, the release notes don't always list these fixes under a separate Security patch section. For more information, see [What's new in Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#linux-releases).
 
 ## Related content
 

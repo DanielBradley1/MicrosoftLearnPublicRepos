@@ -35,6 +35,7 @@ This table includes supported releases for all supported platforms in the past s
 | Linux | 101.26081.0010 | September 2026 | - Release version: 30.126081.0010.0  <br>- Engine version: 1.1.26090.3000  <br>- Signature version: 1.459.287.0 | [Release details and updates](#linux--september-2026--101260810010) |
 | iOS | 1.1.81140101 | Sep 2026 | - Build: 1.1.81140101  <br>- Release: Sep 15, 2026 | [Release details and updates](#ios--sep-2026--platform-version-1181140101) |
 | iOS | 1.1.81120108 | Sep 2026 | - Build: 1.1.81120108  <br>- Release: Sep 14, 2026 | [Release details and updates](#ios--sep-2026--platform-version-1181120108) |
+| Linux | 101.26072.0005 | September 2026 | - Release version: 30.126072.0005.0  <br>- Engine version: 1.1.26070.5001  <br>- Signature version: 1.459.239.0 | [Release details and updates](#linux--september-2026--101260720005) |
 | Android | 1.0.9309.0102 | Sep 2026 | - Build: 1.0.9309.0102  <br>- Release: Sep 11, 2026 | [Release details and updates](#android--sep-2026--platform-1093090102) |
 | macOS | 101.26072.0017 | September 2026 | - Release version: 20.126072.17.0  <br>- Engine version: 1.1.26060.12000  <br>- Signature version: 1.459.146.0 | [Release details and updates](#macos--september-2026--101260720017) |
 | iOS | 1.1.80270104 | Sep 2026 | - Build: 1.1.80270104  <br>- Release: Sep 7, 2026 | [Release details and updates](#ios--sep-2026--platform-version-1180270104) |
@@ -640,6 +641,10 @@ Starting with version `101.24082.0004`, Defender for Endpoint on Linux no longer
 
 - **Intermittent issue during process scanning**: In version `101.26072.0004`, `wdavdaemon` might restart in rare cases while scanning running processes. The process recovers automatically, and no action is required. A fix will be available in an upcoming release. **Resolution**: Upgrade to platform version 101.26072.0005 or later.
 
+### Linux \| November 12, 2026 \| Update for version 101.26091.0003: new package dependencies
+
+Starting with version [101.26091.0003](#linux--october-2026--101260910003), Defender for Endpoint on Linux packages require `iptables`, which device isolation uses. RPM packages also require `libacl`. The installer script and the Defender deployment tool install these dependencies automatically. If you install directly with `rpm` or `dpkg`, install these dependencies first; otherwise, the installation or upgrade fails. For more information, see [Prerequisites for Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/mde-linux-prerequisites).
+
 ### Linux \| November 2026 \| 101.26101.0000
 
 #### Release details
@@ -969,7 +974,7 @@ Fixed in platform version 101.26052.0011 and later. FIPS-enabled RHEL 8/9 device
 
 | Feature area | Update summary |
 | --- | --- |
-| Device management | Fixed issue to generate unique machine identifiers for each onboarded deviceâ€”especially useful when deploying Microsoft Defender via Golden image. |
+| Device management | Fixed issue to generate unique machine identifiers for each onboarded deviceâ€"especially useful when deploying Microsoft Defender via Golden image. |
 | General | Other stability enhancements and bug fixes. |
 
 ### Linux \| August 2025 \| Platform: 101.25062.0003
@@ -1644,7 +1649,7 @@ For more information about Microsoft Defender Antivirus updates, see [Microsoft 
 
 ### Enhancements and features
 
-- Fixed an issue where Windows could incorrectly display a notification stating that “Microsoft Defender Antivirus is turned off” when Windows started or intermittently afterward, even though Defender Antivirus remained active and functioning correctly. For more information, see [Incorrect notifications that Microsoft Defender Antivirus is turned off](https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#4956msgdesc).
+- Fixed an issue where Windows could incorrectly display a notification stating that "Microsoft Defender Antivirus is turned off" when Windows started or intermittently afterward, even though Defender Antivirus remained active and functioning correctly. For more information, see [Incorrect notifications that Microsoft Defender Antivirus is turned off](https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#4956msgdesc).
 
 ### Windows Antivirus \| August 2026 \| Platform 4.18.26080.3 \| Engine 1.1.26080.3
 

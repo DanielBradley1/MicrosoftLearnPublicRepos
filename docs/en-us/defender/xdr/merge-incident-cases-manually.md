@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/merge-incident-cases-manually -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Merge incident cases manually in the Microsoft Defender portal \(preview\)
+# Merge incident cases manually in the Microsoft Defender portal
 
 Incident cases are automatically created and correlated in the Microsoft Defender portal when suspicious activity is detected. Sometimes, related incident cases aren't merged automatically, or you might decide that multiple incident cases should be investigated as a single case.
 
@@ -9,7 +9,7 @@ Use manual merge to combine related incident cases. When incident cases are merg
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available.
 
 Note
 

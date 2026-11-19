@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/prioritize-incident-cases -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Prioritize incident cases in the Microsoft Defender portal \(preview\)
+# Prioritize incident cases in the Microsoft Defender portal
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available.
 
 Use the incident cases list to triage and prioritize incident cases in the Microsoft Defender portal. The incident cases list helps analysts identify which cases need immediate attention by using priority score, severity, investigation state, impacted assets, alerts, tags, ownership, due date, and other case details.
 

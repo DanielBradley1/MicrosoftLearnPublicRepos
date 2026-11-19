@@ -32,7 +32,7 @@ Customer data stored by integrated services might also be stored in the followin
 
 Microsoft Defender data is retained for 180 days, and is visible across the Microsoft Defender portal during that time, except for in **Advanced hunting** queries. Cases are an exception and are not deleted.
 
-In the Microsoft Defender portal's **Advanced hunting** page, data is accessible via queries for only 30 days, unless it's streamed through [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/microsoft-365-defender-sentinel-integration?toc=%2Fdefender-xdr%2Ftoc.json&bc=%2Fdefender-xdr%2Fbreadcrumb%2Ftoc.json&tabs=defender-portal), where retention periods may be longer.
+In the Microsoft Defender portal's **Advanced hunting** page, Microsoft 365 E5 customers can query supported Microsoft Defender XDR data for up to 90 days. If Defender XDR data is streamed to [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/microsoft-365-defender-sentinel-integration?toc=%2Fdefender-xdr%2Ftoc.json&bc=%2Fdefender-xdr%2Fbreadcrumb%2Ftoc.json&tabs=defender-portal), the available query period can be longer depending on the configured retention period.
 
 Data continues to be retained and visible, even when a license is under a grace period or in suspended mode. At the end of any grace period or suspension, and no later than 180 days from a contract termination or expiration, data is deleted from Microsoft's systems and is unrecoverable.
 

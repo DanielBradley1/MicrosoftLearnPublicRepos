@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/investigate-incident-cases -->
-<!-- Sitemap-Last-Modified: 2026-09-23 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Investigate incident cases in the Microsoft Defender portal
 
@@ -9,7 +9,7 @@ For case management tasks, such as assigning ownership, updating status, adding 
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available.
 
 ## Prerequisites
 

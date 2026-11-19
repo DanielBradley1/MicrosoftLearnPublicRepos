@@ -3,20 +3,20 @@
 
 # Configure Defender for Identity detection exclusions in Microsoft Defender
 
-This article explains how to configure [Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity) detection exclusions in [Microsoft Defender](https://learn.microsoft.com/en-us/microsoft-365/security/defender/overview-security-center).
+Configure [identity security](https://learn.microsoft.com/en-us/defender-for-identity) detection exclusions in [Microsoft Defender](https://learn.microsoft.com/en-us/microsoft-365/security/defender/overview-security-center).
 
-Microsoft Defender for Identity enables the exclusion of specific IP addresses, computers, domains, or users from a number of detections.
+You can exclude specific IP addresses, computers, domains, or users from a number of identity security detections.
 
-For example, a **DNS Reconnaissance** alert could be triggered by a security scanner that uses DNS as a scanning mechanism. Creating an exclusion helps Microsoft Defender for Identity ignore such scanners and reduce false positives.
+For example, a **DNS Reconnaissance** alert could be triggered by a security scanner that uses DNS as a scanning mechanism. Creating an exclusion helps Defender ignore such scanners and reduce false positives.
 
 Note
 
-- We recommend that you [tune an alert in Microsoft Defender XDR](https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-alerts#tune-an-alert) instead of using exclusions. Alert tuning rules allow more granular conditions than exclusions, and allow you to review the alerts, which were tuned.
+- We recommend that you [tune an alert in Microsoft Defender](https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-alerts#tune-an-alert) instead of using exclusions. Alert tuning rules allow more granular conditions than exclusions, and allow you to review the alerts, which were tuned.
 - Among the most common domains with [Suspicious communication over DNS](https://learn.microsoft.com/en-us/defender-for-identity/other-alerts#suspicious-communication-over-dns-external-id-2031) alerts, we observed the domains that were most frequently excluded from the alert. These domains are added to the exclusions list by default, but you have the option to remove them.
 
 Important
 
-As Defender for Identity detections move to the Microsoft Defender XDR detection engine, existing detection exclusions don't automatically carry over. After a detection moves, previously configured exclusions stop applying, and alerts that were previously suppressed can reappear. To preserve your tuning, re-create equivalent tuning by using [alert tuning rules](https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-alerts#tune-an-alert) in the Microsoft Defender portal.
+As Defender for Identity detections move to the Defender extended detection and response \(XDR\) engine, existing detection exclusions don't automatically carry over. After a detection moves, previously configured exclusions stop applying, and alerts that were previously suppressed can reappear. To preserve your tuning, re-create equivalent tuning by using [alert tuning rules](https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-alerts#tune-an-alert) in the Microsoft Defender portal.
 
 ## How to add detection exclusions
 

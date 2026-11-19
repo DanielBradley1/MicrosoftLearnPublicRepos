@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/manage-incident-cases -->
 <!-- Sitemap-Last-Modified: 2026-09-23 -->
 
-# Manage incident cases in the Microsoft Defender portal \(preview\)
+# Manage incident cases in the Microsoft Defender portal
 
 Use incident cases to track incident ownership, severity, status, classification, tasks, comments, activity history, custom fields, and resolution details.
 
@@ -9,7 +9,7 @@ Use incident cases to track incident ownership, severity, status, classification
 
 Note
 
-Incident cases are in preview and are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available during this preview.
+Incident cases are the recommended experience for managing incidents in the Microsoft Defender portal. The legacy incident experience remains available.
 
 For an overview of Case Management, see [Case management in the Microsoft Defender portal](https://learn.microsoft.com/en-us/defender-xdr/siem-defender-case-management).
 
@@ -42,7 +42,7 @@ To access the **Manage case** pane:
 1. Update the fields you need.
 2. Select **Save**.
 
-Available fields can vary by tenant configuration and preview scope.
+Available fields can vary by tenant configuration.
 
 ## Assign an incident case to an owner
 

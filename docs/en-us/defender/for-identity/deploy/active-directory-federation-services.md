@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/deploy/active-directory-federation-services -->
-<!-- Sitemap-Last-Modified: 2026-08-31 -->
+<!-- Sitemap-Last-Modified: 2026-10-18 -->
 
 # Configure sensors for AD FS, AD CS, and Microsoft Entra Connect
 
@@ -149,8 +149,8 @@ $SQLConnection.Close()
 
 During the sensor installation on an AD FS, AD CS, or Microsoft Entra Connect server, the closest domain controller is automatically selected. Use the following steps to check or modify the selected domain controller:
 
-1. In [Microsoft Defender XDR](https://security.microsoft.com), go to **Settings** > **Identities** > **Sensors** to view all of your Defender for Identity sensors.
-2. Locate and select the sensor that you installed on the server.
+1. In the [Microsoft Defender portal](https://security.microsoft.com), go to **Settings** > **Identities** > **On-premises** > **Sensor Management** to view all of your Defender for Identity sensors.
+2. Locate the sensor that you installed on the server, open its row actions menu, and select **Settings**.
 3. On the pane that opens, in the **Domain controller \(FQDN\)** box, enter the fully qualified domain name \(FQDN\) of the resolver domain controllers. Select **+ Add** to add the FQDN, and then select **Save**.
 
    ![Screenshot of Defender for Identity sensor settings pane showing the Domain controller \(FQDN\) field where you enter the resolver domain controller for an AD FS sensor.](https://learn.microsoft.com/en-us/defender-for-identity/media/sensor-config-adfs-resolver.png)
@@ -163,7 +163,7 @@ To validate that you successfully deployed a Defender for Identity sensor on an 
 
 1. Check that the **Azure Advanced Threat Protection sensor** service is running. After you save the Defender for Identity sensor settings, it might take a few seconds for the service to start.
 2. If the service doesn't start, review the `Microsoft.Tri.sensor-Errors.log` file, located by default at `%programfiles%\Azure Advanced Threat Protection sensor\Version X\Logs`.
-3. Use AD FS or AD CS to authenticate a user to any application, and then verify that Defender for Identity observed the authentication.
+3. Use AD FS or AD CS to authenticate a user to any application, and then verify that Microsoft Defender observed the authentication.
 
    For example, select **Hunting** > **Advanced Hunting**. On the **Query** pane, enter and run one of the following queries:
 

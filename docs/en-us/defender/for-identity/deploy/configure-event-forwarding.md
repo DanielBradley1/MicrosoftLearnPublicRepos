@@ -74,7 +74,7 @@ You can create a group policy for these settings and apply the group policy to e
 
 ## Step 3: Create and select a subscription on your sensor
 
-This procedure describes how to create a subscription for use with Defender for Identity and then select the subscription from your standalone sensor.
+This procedure describes how to create a subscription for identity security event collection in Microsoft Defender and then select the subscription from your standalone sensor.
 
 1. Open an elevated command prompt and enter
 

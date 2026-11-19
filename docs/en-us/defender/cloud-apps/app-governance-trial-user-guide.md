@@ -3,9 +3,9 @@
 
 # Get started with app governance in Defender for Cloud Apps
 
-App governance solutions require a deep understanding of app behavior within an environment to identify and address activities that fall within a tolerance level that requires more review to assess malicious intent. When layered over Defender for Cloud Apps, app governance gives you in-depth governance against risky app behavior in your environment.
+App governance provides SaaS security capabilities in Microsoft Defender to help you identify and respond to risky OAuth app behavior.
 
-Use this quickstart to begin using app governance features in Microsoft Defender for Cloud Apps.
+Use this quickstart to assess apps, create policies, and respond to threats in the Defender portal.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ Use this quickstart to begin using app governance features in Microsoft Defender
 
 Start by using the following steps to get visibility and insights about your apps:
 
-1. **Sign in**: In your browser, go to the **Microsoft Defender XDR > Cloud Apps > [App governance](https://aka.ms/appgovernance)** page.
+1. **Sign in**: In your browser, go to the **Microsoft Defender > Cloud Apps > [App governance](https://aka.ms/appgovernance)** page.
 2. **[Determine security posture](https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-visibility-insights-security-posture)**: Use the data on the **App governance > Overview** tab to assess the security posture of your apps and incidents in your tenant. View details like how many overprivileged apps are in your tenant, the number of active incidents, the total Graph API data access, and more.
 
    Tip
@@ -47,7 +47,7 @@ App governance supports the following types of policies:
 | **Predefined policies** | App governance is equipped with a set of predefined policies tailored to your environment. Predefined policies allow you to start monitoring your apps even before you set up any policies. Use predefined policies to ensure that you're notified of any app anomalies early on. |
 | **User defined policies** | In addition to predefined policies, admins can also use the available conditions to create their custom policies or pick from the available recommended policies. |
 
-To see your list of current app governance policies, go to the **Microsoft Defender XDR > Cloud apps > App governance > Policies** tab.
+To see your list of current app governance policies, go to the **Microsoft Defender > Cloud apps > App governance > Policies** tab.
 
 Note
 

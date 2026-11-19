@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint -->
-<!-- Sitemap-Last-Modified: 2026-10-16 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # New features in Microsoft Defender for Endpoint
 
@@ -13,6 +13,8 @@ Learn more about [Preview features](https://learn.microsoft.com/en-us/defender-x
 
 | Type | Feature | Preview/GA | Description |
 | --- | --- | --- | --- |
+| Feature | Preview features page | Preview | Turn certain Defender for Endpoint public preview features on or off per feature. For more information, see [Manage individual preview features in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/manage-preview-features). |
+| Feature | Embedded offboarding with the Defender deployment tool for Windows | Preview | As with embedded onboarding, a key is required to run the tool, you can set an expiry date for the package, and you can download the package as an .exe or .zip file. Track the offboarding packages you create on the **Deployment packages** page. For more information, see [Offboard devices by using the Defender deployment tool](https://learn.microsoft.com/en-us/defender-endpoint/defender-deployment-tool-windows#offboard-by-using-embedded-offboarding-preview). |
 | Release - macOS | Build 101.26092.0012 | GA | Release version 20.126092.12.0 released: See [enhancements and features for this release](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-releases#macos--november-2026--101260920012). |
 
 ## October 2026

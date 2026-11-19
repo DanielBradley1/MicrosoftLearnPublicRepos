@@ -5,7 +5,7 @@
 
 Many third-party productivity apps that might be installed by business users in your organization request permission to access user information and data and sign in on behalf of the user in other cloud apps, such as Microsoft 365, Google Workspace and Salesforce. When users install these apps, they often click accept without closely reviewing the details in the prompt, including granting permissions to the app. This lack of permission review is compounded by the fact that IT may not have enough insight to weigh the security risk of an application against the productivity benefit that it provides. Because accepting third-party app permissions is a potential security risk to your organization, monitoring the app permissions your users' grant gives you the necessary visibility and control to protect your users and your applications.
 
-The Microsoft Defender for Cloud Apps app permissions enable you to see which user-installed OAuth applications have access to Microsoft 365 data, Google Workspace data, and Salesforce data. Defender for Cloud Apps tells you what permissions the apps have and which users granted these apps access to their Microsoft 365, Google Workspace, and Salesforce accounts. App permissions help you decide which apps you allow your users to access and which ones you want to ban.
+The SaaS security capabilities in Microsoft Defender let you review which user-installed OAuth applications have access to Microsoft 365 data, Google Workspace data, and Salesforce data. Defender tells you what permissions the apps have and which users granted these apps access to their Microsoft 365, Google Workspace, and Salesforce accounts. App permissions help you decide which apps you allow your users to access and which ones you want to ban.
 
 For more information, see [Investigate risky OAuth apps](https://learn.microsoft.com/en-us/defender-cloud-apps/investigate-risky-oauth).
 
@@ -87,7 +87,7 @@ You can query OAuth apps in either the **Basic** view or the **Advanced** view. 
 
 ## OAuth app auditing
 
-Defender for Cloud Apps audits all OAuth authorization activities to provide you with comprehensive monitoring and investigation of activities performed. You can also export the details of users that authorized a specific OAuth app, providing you with additional information on the users, which you can then use for further analysis.
+Defender audits all OAuth authorization activities to provide you with comprehensive monitoring and investigation of activities performed. You can also export the details of users that authorized a specific OAuth app, providing you with additional information on the users, which you can then use for further analysis.
 
 To export the log, perform the following steps:
 
@@ -98,7 +98,7 @@ To export the log, perform the following steps:
 
 ## Send feedback about an OAuth app
 
-If there's an OAuth app discovered in your organization that seems malicious, you can send the Defender for Cloud Apps team feedback to let us know. This feature enables you to be part of our security community and enhance OAuth app risk score and analysis.
+If there's an OAuth app discovered in your organization that seems malicious, you can send the Defender team feedback to let us know. This feature enables you to be part of our security community and enhance OAuth app risk score and analysis.
 
 1. On the **Google** or **Salesforce** tabs on the **App governance** page, select the three dots at the end of the app row and select **Report app**.
 

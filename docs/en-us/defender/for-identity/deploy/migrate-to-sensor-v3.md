@@ -26,9 +26,9 @@ For the full list of v3.x requirements, see [Defender for Identity sensor v3.x p
 
 ## Start the migration
 
-Servers that meet all prerequisites appear as **Ready for migration** on the **Sensors** page.
+Servers that meet all prerequisites appear as **Ready for migration** on the **Sensor Management** tab.
 
-1. In the [Microsoft Defender portal](https://security.microsoft.com), go to **Settings** > **Identities** > **On-premises** > **Sensors**.
+1. In the [Microsoft Defender portal](https://security.microsoft.com), go to **Settings** > **Identities** > **On-premises** > **Sensor Management**.
 2. Select one or more servers marked as **Ready for migration** and select **Migrate**.
 3. In the confirmation prompt, review the details and confirm to start the migration.
 
@@ -38,7 +38,7 @@ The migration typically takes up to 20 minutes. During this time, the v2.x senso
 
 ### Understand migration states
 
-The **Migration state** column on the **Sensors** page shows the current status of each server:
+The **Migration state** column on the **Sensor Management** tab shows the current status of each server:
 
 | State | Description |
 | --- | --- |
@@ -63,7 +63,7 @@ The v3.x sensor updates through Windows Update as part of the server's operating
 
 ## Troubleshoot "Not ready for migration" status
 
-When a server is marked **Not ready for migration**, hover over the status on the **Sensors** page to see a tooltip that lists the reasons the server doesn't meet the migration prerequisites.
+When a server is marked **Not ready for migration**, hover over the status on the **Sensor Management** tab to see a tooltip that lists the reasons the server doesn't meet the migration prerequisites.
 
 The following table lists each reason that can appear in the tooltip, how to verify it, and how to resolve it:
 
