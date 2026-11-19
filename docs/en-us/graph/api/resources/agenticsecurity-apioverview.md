@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/agenticsecurity-apioverview?view=graph-rest-beta -->
 <!-- Sitemap-Last-Modified: 2026-11-10 -->
 
-# Use Project Perception in Microsoft Graph
+# Use Perception in Microsoft Graph
 
-[Project Perception](https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system) is Microsoft's agentic security system. It brings specialized AI agents into security workflows to support proactive defense, while keeping critical decisions under human control.
+[Perception](https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system) is Microsoft's agentic security system. It brings specialized AI agents into security workflows to support proactive defense, while keeping critical decisions under human control.
 
 Use the agentic security APIs in Microsoft Graph to run supported security playbooks from your applications and workflows. Discover [playbook definitions](https://learn.microsoft.com/en-us/graph/api/resources/playbookdefinition?view=graph-rest-beta), create an [agentic session](https://learn.microsoft.com/en-us/graph/api/resources/investigationsession?view=graph-rest-beta) with the required inputs, monitor its progress, and retrieve [outputs](https://learn.microsoft.com/en-us/graph/api/resources/investigationoutput?view=graph-rest-beta).
 

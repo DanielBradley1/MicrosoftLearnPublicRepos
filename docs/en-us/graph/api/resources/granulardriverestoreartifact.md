@@ -21,6 +21,7 @@ Inherits from [granularRestoreArtifactBase](https://learn.microsoft.com/en-us/gr
 | :--- | :--- | :--- |
 | browseSessionId | String | The unique identifier of the [browseSession](https://learn.microsoft.com/en-us/graph/api/resources/browsesessionbase?view=graph-rest-1.0). Inherited from [granularRestoreArtifactBase](https://learn.microsoft.com/en-us/graph/api/resources/granularrestoreartifactbase?view=graph-rest-1.0). |
 | completionDateTime | DateTimeOffset | Date time when the artifact's restoration completes. Inherited from [granularRestoreArtifactBase](https://learn.microsoft.com/en-us/graph/api/resources/granularrestoreartifactbase?view=graph-rest-1.0). |
+| destinationType | [destinationType](https://learn.microsoft.com/en-us/graph/api/resources/driverestoreartifact?view=graph-rest-1.0#destinationtype-values) | The restoration destination. The possible values are: `new`, `inPlace`, `unknownFutureValue`. Nullable. Use `inPlace` to restore to the original location. Inherited from [granularRestoreArtifactBase](https://learn.microsoft.com/en-us/graph/api/resources/granularrestoreartifactbase?view=graph-rest-1.0). |
 | directoryObjectId | String | Id of the drive in which artifact is present. |
 | error | [publicError](https://learn.microsoft.com/en-us/graph/api/resources/publicerror?view=graph-rest-1.0) | Contains error details if the restoration fails or completes with an error. Inherited from [granularRestoreArtifactBase](https://learn.microsoft.com/en-us/graph/api/resources/granularrestoreartifactbase?view=graph-rest-1.0). |
 | id | String | The unique identifier for the artifact. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-1.0). |
@@ -56,6 +57,7 @@ The following JSON representation shows the resource type.
     "@odata.type": "microsoft.graph.publicError"
   },
   "completionDateTime": "String (timestamp)",
+  "destinationType": "String",
   "directoryObjectId": "String"
 }
 ```

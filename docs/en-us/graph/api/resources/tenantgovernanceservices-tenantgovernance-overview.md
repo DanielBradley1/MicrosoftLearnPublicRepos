@@ -15,6 +15,8 @@ The tenant governance APIs in Microsoft Graph enable IT administrators to progra
 - Provision and manage multi-tenant applications across governed tenants.
 - Define governance policy templates to enforce consistent governance.
 
+For policy-as-code guardrails that help prevent noncompliant resource changes, see [Microsoft Entra resource policy \(preview\)](https://learn.microsoft.com/en-us/graph/api/resources/entra-resource-policy-overview). Resource policy APIs are available only through the Microsoft Graph beta endpoint, not v1.0.
+
 ## Discover related tenants
 
 A *related tenant* is a Microsoft Entra tenant that demonstrates a verifiable connection to your tenant based on observable discovery signals. These signals are derived from real configuration and activity data, including:

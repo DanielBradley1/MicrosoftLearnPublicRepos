@@ -17,6 +17,7 @@ Inherits from [entity](https://learn.microsoft.com/en-us/graph/api/resources/ent
 | :--- | :--- | :--- |
 | browseSessionId | String | The unique identifier of the [browseSession](https://learn.microsoft.com/en-us/graph/api/resources/browsesessionbase?view=graph-rest-1.0) |
 | completionDateTime | DateTimeOffset | Date time when the artifact's restoration completes. |
+| destinationType | [destinationType](https://learn.microsoft.com/en-us/graph/api/resources/driverestoreartifact?view=graph-rest-1.0#destinationtype-values) | The restoration destination. The possible values are: `new`, `inPlace`, `unknownFutureValue`. Nullable. Use `inPlace` to restore to the original location. |
 | error | [publicError](https://learn.microsoft.com/en-us/graph/api/resources/publicerror?view=graph-rest-1.0) | Contains error details if the restoration fails or completes with an error. |
 | id | String | The unique identifier for the artifact. Inherited from [entity](https://learn.microsoft.com/en-us/graph/api/resources/entity?view=graph-rest-1.0). |
 | restoredItemKey | String | The unique identifier for the restored artifact. |
@@ -50,6 +51,7 @@ The following JSON representation shows the resource type.
   "error": {
     "@odata.type": "microsoft.graph.publicError"
   },
-  "completionDateTime": "String (timestamp)"
+  "completionDateTime": "String (timestamp)",
+  "destinationType": "String"
 }
 ```
