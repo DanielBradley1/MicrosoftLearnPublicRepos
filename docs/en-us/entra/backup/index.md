@@ -13,6 +13,8 @@ Learn how to use Microsoft Entra Backup and Recovery to protect your tenant from
 
 ### Concept
 
+- [Standard and Premium plans](https://learn.microsoft.com/en-us/entra/backup/backup-recovery-plans)
+- [Premium pricing](https://learn.microsoft.com/en-us/entra/backup/backup-recovery-premium-pricing)
 - [Backup, difference report, and recovery model](https://learn.microsoft.com/en-us/entra/backup/backup-difference-report-recovery-model)
 - [Supported objects and recoverable properties](https://learn.microsoft.com/en-us/entra/backup/scope-supported-objects-limitations)
 - [Soft deletion](https://learn.microsoft.com/en-us/entra/backup/soft-deletion)

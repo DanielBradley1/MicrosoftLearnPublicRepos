@@ -73,6 +73,22 @@ Administrators and group owners can manage groups through the Groups experience 
     [![Screenshot of where to configure the setting for add assignments.](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/pim-for-groups/pim-group-5.png)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/pim-for-groups/pim-group-5.png#lightbox)
 13. Select **Assign**.
 
+## Convert active membership or ownership assignments to eligible assignments \(preview\)
+
+Use the enhanced **Assignments** experience to change selected active group membership or ownership assignments to eligible assignments. This experience is in preview and is rolling out.
+
+The [required permissions](#permissions) and [PIM for Groups licensing requirements](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals#privileged-identity-management) still apply.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the [required permissions](#permissions).
+2. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
+3. Select the group you want to manage.
+4. Open **Assignments**, and then select **Active assignments**.
+5. Select the membership or ownership assignments you want to convert, and then select **Manage Assignments**.
+6. Change the assignment type to **Eligible**, and save your changes.
+7. Review **Eligible assignments** to confirm that the selected membership or ownership assignments are eligible.
+
+Users must [activate their eligible group membership or ownership](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-activate-roles) when they need to use it.
+
 ## Update or remove an existing role assignment
 
 Follow these steps to update or remove an existing role assignment.

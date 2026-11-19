@@ -125,6 +125,6 @@ For more information, see [Create a custom authentication extension for account 
 ## Related content
 
 - Learn more about [custom claims providers](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-overview)
-- [Create custom authentication extensions for attribute collection start and submit events](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-attribute-collection) with a sample OpenID Connect application
-- [Configure a custom email provider for one time passcode send events](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-email-otp-get-started)
+- [Create a custom authentication extension for OnAttributeCollectionStart and OnAttributeCollectionSubmit events](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-attribute-collection) with a sample OpenID Connect application
+- [Configure a custom email provider for the OnOtpSend event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-email-otp-get-started)
 - [Create a custom authentication extension for account recovery claim validation](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-custom-authentication-extension-account-recovery)

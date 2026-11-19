@@ -146,6 +146,8 @@ In this section, you'll create the representation of the agent in Microsoft Entr
 6. Change to the **Overview \(Preview\)** tab, and record the blueprint app ID and blueprint principal object ID.
 7. Change to the **Linked agent identities \(Preview\)** tab, select the agent identity. Record the object ID.
 
+For identifier meanings, see [Record the identifiers for your scenario](https://learn.microsoft.com/en-us/entra/agent-id/key-concepts#record-the-identifiers-for-your-scenario).
+
 For more information on other options for how agent identities are created in Microsoft Entra, see [How are agent identities created?](https://learn.microsoft.com/en-us/entra/agent-id/agent-id-creation-channels).
 
 ## Authorize the agent identity using Microsoft Entra entitlement management

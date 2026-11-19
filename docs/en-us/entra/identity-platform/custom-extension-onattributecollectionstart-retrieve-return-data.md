@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data -->
 <!-- Sitemap-Last-Modified: 2025-09-16 -->
 
-# Retrieve and return data from an OnAttributeCollectionStart event
+# OnAttributeCollectionStart event reference
 
 **Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 

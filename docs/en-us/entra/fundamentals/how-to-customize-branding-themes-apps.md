@@ -11,6 +11,10 @@ Important
 
 For external tenants, branding themes is generally available. For Microsoft Entra ID tenants, branding themes is in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+Important
+
+The modern authentication experience, new customization capabilities, and redesigned branding themes experience for Microsoft Entra External ID are scheduled to become available in public preview on December 7, 2026. For more information, see the [Microsoft Entra External ID customization overview](https://learn.microsoft.com/en-us/entra/external-id/customization-overview).
+
 ## Prerequisites
 
 - For external tenants, there isn't a license requirement. For Microsoft Entra ID tenants, you must have an [Microsoft Entra ID P1 or P2 license](https://www.microsoft.com/security/business/microsoft-entra-pricing).

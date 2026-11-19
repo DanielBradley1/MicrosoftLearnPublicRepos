@@ -180,7 +180,7 @@ Now any end user that was made eligible for the group in PIM can get JIT access 
 
 - If the user is unable to access the necessary group in AWS, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
 - You can create alerts for failures using [Azure Monitor](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-log-analytics).
-- Deactivation is done during the regular incremental cycle. It isn't processed immediately through on-demand provisioning.
+- If a user manually ends an active PIM group membership before its scheduled expiry, accelerated deprovisioning isn't triggered. The membership removal can be processed during the next regular provisioning synchronization cycle, which can take up to about 40 minutes. This early-termination delay doesn't apply when the activation reaches its scheduled expiry.
 
 <iframe src="https://www.youtube-nocookie.com/embed/aXp2CUFe7vk" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 

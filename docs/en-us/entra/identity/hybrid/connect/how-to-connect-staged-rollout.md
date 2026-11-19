@@ -60,13 +60,14 @@ The following scenarios are supported for Staged Rollout. The feature works only
 - There's no limit on the number of users in a group. However, you can use a maximum of 10 groups per feature, 10 groups each for password hash sync, pass-through authentication, and seamless SSO.
 - Windows 10 Hybrid Join or Microsoft Entra join primary refresh token acquisition without line-of-sight to the federation server for Windows 10 version 1903 and newer, when user's UPN is routable and domain suffix is verified in Microsoft Entra ID.
 - Autopilot enrollment is supported in Staged Rollout with Windows 10 version 1909 or later.
+- Self-service password reset \(SSPR\) with password writeback to an on-premises domain for users in password hash synchronization \(PHS\) staged rollout. To use this scenario, [enable password writeback with Microsoft Entra Cloud Sync](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback).
 
 ## Unsupported scenarios
 
 The following scenarios aren't supported for Staged Rollout:
 
 - Legacy authentication such as POP3 and SMTP aren't supported.
-- Self-service password reset \(SSPR\) with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
+- SSPR with password writeback through Microsoft Entra Connect Sync.
 - Certain applications send the "domain\_hint" query parameter to Microsoft Entra ID during authentication. These flows continue, and users who are enabled for Staged Rollout continue to use federation for authentication.
 - Admins can roll out cloud authentication by using security groups. To avoid sync latency when you're using on-premises Active Directory security groups, we recommend that you use cloud security groups. The following conditions apply:
 

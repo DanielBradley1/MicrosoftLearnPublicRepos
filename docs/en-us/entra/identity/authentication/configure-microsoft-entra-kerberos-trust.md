@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/configure-microsoft-entra-kerberos-trust -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-10-21 -->
 
 # Configure Microsoft Entra Kerberos trust
 
@@ -43,7 +43,7 @@ You only need to set up the Trusted Domain Object once per domain. If you alread
    6. Installs the Azure AD Hybrid Authentication Management PowerShell module.
 
 
-   The Azure AD Hybrid Authentication Management PowerShell module uses the AzureADPreview module, which provides advanced Microsoft Entra management features. To prevent unnecessary installation conflicts with the Azure AD PowerShell module, the installation command includes the `-AllowClobber` parameter.
+   Use the Azure AD Hybrid Authentication Management PowerShell module to configure Microsoft Entra Kerberos. For installation and version requirements, see [Install the AzureADHybridAuthenticationManagement module](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-security-key-on-premises#install-the-azureadhybridauthenticationmanagement-module).
 
 
    ```powershell

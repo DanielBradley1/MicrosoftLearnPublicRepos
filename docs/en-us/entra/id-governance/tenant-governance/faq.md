@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/faq -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Frequently asked questions for Microsoft Entra Tenant Governance
 
@@ -55,7 +55,15 @@ Yes. A governed tenant can always terminate the governance relationship. Adminis
 
 ### Does Tenant Governance support multi-tier relationships?
 
-No. Multi-tier relationships aren't currently supported. For example, you can't set up a governance relationship where Tenant A governs Tenant B and Tenant B governs Tenant C. A tenant can't be both a governing and a governed tenant. If the system detects that a relationship setup would break this rule, API calls fail.
+Yes, in preview. A tenant can be governed by another tenant while governing downstream tenants. Each direct relationship has its own approval, permissions, and lifecycle. If A governs B and B governs C, A doesn't automatically gain access to C. See [Set up multi-tier governance relationships](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-set-up-multi-tier-governance).
+
+### Can governance relationships expire?
+
+Yes, in preview. Optionally set a lifetime from 1 to 730 days in the governance policy template. The governed tenant approves the lifetime, and renewal requires its approval before expiration. A pending renewal doesn't pause expiration. See [Manage relationship expiration and renewal](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-manage-relationship-expiration).
+
+### Does switching to a governed tenant grant new access?
+
+No. The preview's Governed tenants view under Manage tenants discovers tenants using active governance relationships and active delegated-role group membership. Switching uses existing permissions and doesn't create relationships or guest accounts. See [Switch between governed tenants](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-switch-governed-tenants).
 
 ### Do governance relationships support PIM?
 
@@ -117,4 +125,4 @@ When a user in your organization creates a new tenant through the secure add-on 
 
 ### Can add-on tenants be created from governed tenants?
 
-Yes. Although multi-tier governance relationships aren't supported, an exception exists for new tenant creation. If your tenant is governed by another tenant, you can still create add-on tenants. Those add-on tenants are then governed by your tenant.
+Yes. If your tenant is governed by another tenant, you can still create add-on tenants. Those add-on tenants are then governed by your tenant. Multi-tier governance also supports separately approved relationships with existing tenants in preview. See [Set up multi-tier governance relationships](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-set-up-multi-tier-governance).

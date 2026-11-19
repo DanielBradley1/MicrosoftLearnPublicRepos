@@ -1,62 +1,72 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/agent-id/autonomous-agent-authentication-authorization-flow -->
 <!-- Sitemap-Last-Modified: 2026-06-15 -->
 
-# Authenticate and acquire tokens for autonomous agents
+# Call a custom API as an agent with ASP.NET Core
 
-Autonomous agents perform operations using their own identity rather than acting as a delegate of a user. To operate securely, an autonomous agent must authenticate with Microsoft Entra ID, obtain access tokens, and be granted the appropriate permissions. This article walks you through the end-to-end flow:
+Use app-only access when your cloud agent calls a custom API with its own permissions, not the signed-in user's access. In this walkthrough, an authorized user triggers the agent, and Microsoft.Identity.Web gets an app-only token for the downstream call.
 
-1. Configure client credentials.
-2. Request a token for the agent identity blueprint.
-3. Request an agent identity token.
-4. Grant application permissions \(admin consent\).
-5. \(Optional\) Create and authenticate as an agent's user account for resources that require a user identity.
-
-Note
-
-This article covers autonomous agents that operate with their own identity. If your agent needs to act on behalf of a signed-in user, see [Authenticate users and acquire tokens for interactive agents](https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow).
+You'll configure the credential, grant access, and verify a protected API response. The user's permission to invoke the agent and the agent's permission to call the downstream API are separate checks.
 
 ## Prerequisites
 
-Before implementing agent token authentication, ensure you have:
+- An existing ASP.NET Core web API project and the .NET SDK for its target framework. The examples were tested with .NET 10 and Microsoft.Identity.Web 4.17.0; these are tested versions, not minimum supported versions.
+- Completion of [Create an identity for your agent](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent), including tenant enablement, administrator approvals, and the recorded client and object IDs.
+- A credential registered on the blueprint: a certificate for local testing, or a managed identity federated credential for an Azure host.
+- A custom API that exposes an application permission \(app role\), plus its application ID URI and HTTPS endpoint. The API must validate access tokens and enforce that role.
+- An administrator to [grant the downstream application permission](#grant-application-permissions). For standard tenant-wide consent to a custom API, **Cloud Application Administrator**, **Application Administrator**, or **AI Administrator** can grant consent. Microsoft Graph application permissions instead require **Privileged Role Administrator**. Confirm the applicable role for this preview with your Microsoft representative. See [Grant tenant-wide admin consent](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent).
+- An authorized Microsoft Graph management client with `Application.Read.All` to verify the assignment. For delegated access, the signed-in user also needs a supported role, such as **Directory Readers**. This read permission doesn't grant runtime access.
+- A caller configured through [Authenticate users to the agent API](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-authenticate-users), with `Agent.User` configured, verified, and assigned through [Control access to agents](https://learn.microsoft.com/en-us/entra/agent-id/control-user-access-agents#define-app-roles). Complete both role-definition steps in that procedure. The sample retains `RequireRole("Agent.User")`; downstream consent doesn't authorize the caller.
 
-- [An agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/create-blueprint).
-- [An agent identity](https://learn.microsoft.com/en-us/entra/agent-id/create-delete-agent-identities). You need the agent identity client ID.
-- Understanding of [OAuth protocols in Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/agent-oauth-protocols).
+## Install the packages
 
-For admin authorization, you also need:
+If you don't have an existing project, create one with `dotnet new webapi --framework net10.0 --name AgentApi`, then run `cd AgentApi`. Keep your existing target framework when adding this guidance to an existing project.
 
-- Administrator privileges in your Microsoft Entra ID tenant.
-- Understanding of the specific permissions your agent requires.
+Run the following command from the directory containing your web API's project file:
 
-For agent's user account authentication, you also need:
+```dotnetcli
+dotnet add package Microsoft.Identity.Web --version 4.17.0
+```
 
-- Understanding of [agents' user accounts in Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/agent-users).
+## Configure the blueprint credential
 
-## Configure your client credentials
+Use the configuration for where you run the API. Configure one credential source, not both.
 
-Get your client credential details. This could be your client secret, a certificate, or a managed identity that you're using as a federated identity credential.
+- [Local workstation](#tabpanel_1_local)
+- [Azure host](#tabpanel_1_azure)
 
-Warning
+### Configure a local development credential
 
-Client secrets shouldn't be used as client credentials in production environments for agent identity blueprints due to security risks. Instead, use more secure authentication methods such as [federated identity credentials \(FIC\) with managed identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity) or client certificates. These methods provide enhanced security by eliminating the need to store sensitive secrets directly within your application configuration.
+In the agent project's `appsettings.json`, set `AzureAd:Instance` to `https://login.microsoftonline.com/`, `AzureAd:TenantId` to your tenant ID, and `AzureAd:ClientId` to the client ID recorded during setup.
 
-- [Microsoft Graph API](#tabpanel_1_Microsoft-graph-api)
-- [Microsoft.Identity.Web](#tabpanel_1_microsoft-identity-web)
+Use the [certificate registered during setup](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent#add-a-certificate-for-confidential-clients). You need the corresponding PFX containing the private key, not just the public certificate uploaded to Microsoft Graph.
 
-Gather the credential you configured on your agent identity blueprint. You need one of the following:
+In `appsettings.Development.json`, use this `ClientCredentials` array. Don't append a managed identity credential or commit the PFX file.
 
-- **Managed identity** \(recommended\): The managed identity client ID and a token from the Azure Instance Metadata Service \(IMDS\).
-- **Certificate**: The certificate thumbprint or PFX file.
-- **Client secret** \(development only\): The secret value.
+```json
+{
+  "AzureAd": {
+    "ClientCredentials": [
+      {
+        "SourceType": "Path",
+        "CertificateDiskPath": "<absolute-path-to-local-pfx>"
+      }
+    ]
+  }
+}
+```
 
-Configure *Microsoft.Identity.Web* to authenticate your agent identity blueprint using a federated identity credential. For production, use a managed identity as the federated identity credential:
+In the PowerShell terminal that starts the app, set `$env:ASPNETCORE_ENVIRONMENT = "Development"` and set `$env:AzureAd__ClientCredentials__0__CertificatePassword = Read-Host "PFX password" -MaskInput`. Use PowerShell 7 for `-MaskInput`. The environment variable supplies the password without placing it in the JSON file or shell history. Clear it with `Remove-Item Env:\AzureAd__ClientCredentials__0__CertificatePassword` after stopping the app. Don't use this local file configuration in production.
+
+Use this configuration on an Azure host with the specified user-assigned managed identity assigned and its federated credential configured on the blueprint. It doesn't provide a workstation credential.
+
+Set `ClientId` to the client ID recorded during setup in `appsettings.json`:
 
 ```json
 {
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
-    "TenantId": "<your-tenant-id>",
-    "ClientId": "<agent-blueprint-client-id>",
+    "TenantId": "<tenant-id>",
+    "ClientId": "<agent-client-id>",
     "ClientCredentials": [
       {
         "SourceType": "SignedAssertionFromManagedIdentity",
@@ -67,454 +77,146 @@ Configure *Microsoft.Identity.Web* to authenticate your agent identity blueprint
 }
 ```
 
-For local development and testing only, you can use a client secret instead:
+Warning
 
-```json
-{
-  "AzureAd": {
-    "Instance": "https://login.microsoftonline.com/",
-    "TenantId": "<your-tenant-id>",
-    "ClientId": "<agent-blueprint-client-id>",
-    "ClientCredentials": [
-      {
-        "SourceType": "ClientSecret",
-        "ClientSecret": "your-client-secret"
-      }
-    ]
-  }
-}
-```
-
-## Request a token for the agent identity blueprint
-
-When requesting the token for the agent identity blueprint, provide the agent identity's client ID in the `fmi_path` \(Federated Managed Identity path\) parameter. This parameter tells Microsoft Entra ID which agent identity the blueprint is acting on behalf of.
-
-When using a client secret during local development, provide the `client_secret` parameter. For certificates and managed identities, use `client_assertion` and `client_assertion_type` instead.
-
-- [Microsoft Graph API](#tabpanel_2_Microsoft-graph-api)
-- [Microsoft.Identity.Web](#tabpanel_2_microsoft-identity-web)
-
-Use the following token request to obtain a token for the agent identity blueprint:
-
-```http
-POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
-Content-Type: application/x-www-form-urlencoded
-
-client_id=<agent-blueprint-client-id>
-&scope=api://AzureADTokenExchange/.default
-&grant_type=client_credentials
-&client_secret=<client-secret>
-&fmi_path=<agent-identity-client-id>
-```
-
-With *Microsoft.Identity.Web*, you don't need to explicitly request a token for the agent identity blueprint. *Microsoft.Identity.Web* does it for you.
-
-```bash
-dotnet add package Microsoft.Identity.Web
-dotnet add package Microsoft.Identity.Web.AgentIdentities
-```
-
-## Request an agent identity token
-
-- [Microsoft Graph API](#tabpanel_3_Microsoft-graph-api)
-- [Microsoft.Identity.Web](#tabpanel_3_microsoft-identity-web)
-
-Once you have the agent identity blueprint token \(T1\), use it to request the agent identity token.
-
-```http
-POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
-Content-Type: application/x-www-form-urlencoded
-
-client_id=<agent-identity-client-id>
-&scope=https://graph.microsoft.com/.default
-&grant_type=client_credentials
-&client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
-&client_assertion=<agent-blueprint-token-T1>
-```
-
-*Microsoft.Identity.Web* handles the details of token acquisition protocol for you, provided you use the new `services.AddAgentIdentities()` in your service collection at the initialization of the application.
-
-Initialize the application:
-
-```csharp
-// Program.cs
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.Identity.Abstractions;
-using Microsoft.Identity.Web;
-using Microsoft.Identity.Web.Resource;
-using Microsoft.Identity.Web.TokenCacheProviders.InMemory;
-
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration);
-builder.Services.AddAgentIdentities();
-builder.Services.AddInMemoryTokenCaches();
-```
-
-Use the `.WithAgentIdentity()` pattern to request access tokens:
-
-```csharp
-// In an API endpoint or service method where HttpContext is available
-app.MapGet("/call-api", async (HttpContext httpContext) =>
-{
-    IAuthorizationHeaderProvider authorizationHeaderProvider =
-        httpContext.RequestServices.GetRequiredService<IAuthorizationHeaderProvider>();
-
-    AuthorizationHeaderProviderOptions options =
-        new AuthorizationHeaderProviderOptions().WithAgentIdentity("<agent-identity-client-id>");
-
-    // Request agent identity tokens
-    string authorizationHeader = await authorizationHeaderProvider
-        .CreateAuthorizationHeaderForAppAsync("https://graph.microsoft.com/.default", options);
-
-    // The authHeader contains "Bearer " + the access token
-    return Results.Ok(authorizationHeader);
-});
-```
+Client secrets shouldn't be used as client credentials in production environments for agent identity blueprints due to security risks. Instead, use more secure authentication methods such as [federated identity credentials \(FIC\) with managed identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity) or client certificates. These methods provide enhanced security by eliminating the need to store sensitive secrets directly within your application configuration.
 
 ## Grant application permissions
 
-Agents often need to take actions in Microsoft Graph and other web services that require a Microsoft Entra ID application permission \(represented as app roles\). Autonomous agents need to request these permissions from a Microsoft Entra ID administrator.
+Declare the API's app role in the blueprint's `requiredResourceAccess`, as described in the creation procedure. Declaring a permission doesn't grant it.
 
-There are two ways to grant application permissions to an autonomous agent:
+Use the custom API's configured application ID URI followed by `/.default` in both the consent request and the token request. The default URI format is `api://<custom-api-client-id>`, but a custom URI must be used instead if the API defines one.
 
-- An admin can create an *appRoleAssignment* by using Microsoft Graph APIs or PowerShell.
-- The agent can direct the admin to a consent page using an admin consent URL.
-
-### Create an app role assignment via APIs
-
-Use the following steps to get an app role assignment.
-
-1. [Request an agent identity token](#request-an-agent-identity-token) with the application permissions `Application.Read.All` and `AppRoleAssignment.ReadWrite.All`.
-2. Get the object ID of the resource service principal that you're trying to access. For example, to find the Microsoft Graph service principal object ID:
-
-   1. Go to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-   2. Navigate to **Entra ID** --> **Enterprise Applications**
-   3. Filter by Application type == Microsoft Applications
-   4. Search for **Microsoft Graph**.
-
-3. Get the unique ID of the app role you want to assign from the [Microsoft Graph permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
-4. Create the app role assignment:
-
-   - [Microsoft Graph API](#tabpanel_4_microsoft-graph-api)
-   - [Microsoft Graph PowerShell](#tabpanel_4_microsoft-graph-powershell)
-
+1. Have the administrator open the following URL in a browser, sign in, and review the requested permissions. Replace the placeholders, URL-encode the query parameter values, and join the lines into one URL. Use a `web` redirect URI registered on the blueprint, even when the agent only runs unattended. Generate a unique `state` value and retain it to validate the callback.
 
    ```http
-   POST https://graph.microsoft.com/v1.0/servicePrincipals/<agent-identity-id>/appRoleAssignments
-   Authorization: Bearer <token>
-   Content-Type: application/json
+   GET https://login.microsoftonline.com/<tenant-id>/v2.0/adminconsent
+       ?client_id=<agent-client-id>
+       &scope=<custom-api-application-id-uri>/.default
+       &redirect_uri=<registered-web-redirect-uri>
+       &state=<state>
+   ```
 
-   {
-     "principalId": "<agent-identity-id>",
-     "resourceId": "<microsoft-graph-sp-object-id>",
-     "appRoleId": "<app-role-id>"
-   }
+2. Match the returned `state` to the value you sent. Confirm that `admin_consent=True` is present and no `error` parameter is returned. Error callbacks also include `admin_consent=True`. Check the expected tenant, but don't use the callback's tenant value to authenticate or authorize a caller. For the response formats, see [Admin consent on the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/v2-admin-consent).
+3. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in to the same tenant with the authorized management account. Use **Modify permissions** to request `Application.Read.All`, and have an authorized administrator grant consent if required. Select **GET** and **v1.0**, then run the following request. Graph Explorer supplies its management access token; don't use the agent's downstream token.
+
+   ```http
+   GET https://graph.microsoft.com/v1.0/servicePrincipals/<agent-identity-object-id>/appRoleAssignments
    ```
 
 
-   ```powershell
-   Connect-MgGraph -Scopes "Application.Read.All AppRoleAssignment.ReadWrite.All" -TenantId <your-tenant-id>
+   Use the agent identity's `id` recorded during creation for `<agent-identity-object-id>`, not its shared OAuth client ID or the blueprint's object ID. Follow any `@odata.nextLink` values. Confirm that `principalId` is the agent identity's object ID, `resourceId` is the custom API's service principal object ID, and `appRoleId` is the intended role. For the required read permissions and delegated-user roles, see [List appRoleAssignments](https://learn.microsoft.com/en-us/graph/api/serviceprincipal-list-approleassignments).
 
-   # Get the service principal for Microsoft Graph (well-known app ID)
-   $graphSp = Get-MgServicePrincipal -Filter "appId eq '00000003-0000-0000-c000-000000000000'"
+Allow time for a new assignment to become visible. If it remains missing, confirm the approved permission and tenant before requesting a token.
 
-   # Get your application's service principal (replace with your app's client ID)
-   $agentId = "<agent-identity-id>"
+## Configure ASP.NET Core
 
-   # Find the App Role ID for "User.ReadBasic.All"
-   $userReadBasicRole = $graphSp.AppRoles | Where-Object {
-       $_.Value -eq "User.ReadBasic.All" -and $_.AllowedMemberTypes -contains "Application"
-   }
-
-   # Assign the app role
-   New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $agentId `
-       -PrincipalId $agentId `
-       -ResourceId $graphSp.Id `
-       -AppRoleId $userReadBasicRole.Id
-   ```
-
----
-
-### Request authorization from a tenant administrator
-
-To grant application permissions, construct the authorization URL that is used to prompt the administrator. The role parameter is used to specify the requested application permissions.
-
-Be sure to use the agent identity client ID in the following request.
-
-```bash
-https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
-?client_id=<agent-identity-client-id>
-&role=https://graph.microsoft.com/User.Read.All
-&redirect_uri=https://entra.microsoft.com/TokenAuthorize
-&state=xyz123
-```
-
-Agent implementations might redirect the admin to this URL in various ways, such as including it in a message sent to the admin in a chat window. When the admin is redirected to this URL, they're asked to sign in and grant consent to the permissions specified in the scope parameter. At the moment you must use the redirect URI listed, which directs the admin to a blank page after granting consent.
-
-Note
-
-Configure a redirect URI on your blueprint and include a `state` parameter in the consent request. When consent is granted, the user is sent to the redirect URI where you can display confirmation. Your endpoint can use the `state` parameter to track that permission was granted. For single-tenant agents, you can alternatively retry token requests until consent is granted because the tenant ID is already known.
-
-After you grant your agent identity blueprint the required permissions, request a new agent access token for the permissions to take effect.
-
-## Authenticate as an agent's user account
-
-In addition to operating with app-only tokens, autonomous agents can authenticate as an agent's user account. Agents' user accounts are a special type of user account in Microsoft Entra purpose-built for use by agents. They're most commonly used when an agent needs to connect to systems that require the existence of a user account, for instance, a mailbox, Teams channel, or other user-specific resources.
-
-Each agent identity can only have a single associated agent's user account, and each agent's user account can only be associated with a single agent identity.
-
-### Get authorization to create agents' user accounts
-
-To create agents' user accounts, your agent identity blueprint must be granted the application permission `AgentIdUser.ReadWrite.IdentityParentedBy` in the tenant. You can obtain authorization in one of two ways:
-
-- [Request authorization from a tenant administrator](#request-authorization-from-a-tenant-administrator). Be sure to use your agent identity blueprint as the `client_id`, not the agent identity.
-- [Create an app role assignment via APIs](#create-an-app-role-assignment-via-apis) in the tenant. Use the service principal object ID of the agent identity blueprint as the `principalId` value, not its application \(client\) ID.
-
-If you wish to use a different client, not the agent identity blueprint, to create agents' user accounts, that client needs to obtain the `AgentIdUser.ReadWrite.All` delegated or application permission instead.
-
-### Create an agent's user account
-
-Create an agent's user account using your agent identity blueprint or other approved client. The recommended way to create an agent's user account is using your agent identity blueprint. You need to [get an access token using the agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/create-delete-agent-identities#get-an-access-token-using-agent-identity-blueprint) to create an agent's user account.
-
-- [REST](#tabpanel_5_rest)
-- [Microsoft.Identity.Web](#tabpanel_5_msidweb)
-
-Once you have an access token with the necessary permission, make the following request:
-
-```http
-POST https://graph.microsoft.com/beta/users
-OData-Version: 4.0
-Content-Type: application/json
-Authorization: Bearer <token>
-
-{
-  "@odata.type": "microsoft.graph.agentUser",
-  "displayName": "New Agent User",
-  "userPrincipalName": "agentuserupn@tenant.onmicrosoft.com",
-  "identityParentId": "{agent-identity-id}",
-  "mailNickname": "agentuserupn",
-  "accountEnabled": true
-}
-```
-
-To use `Microsoft.Identity.Web` to create an agent's user account, follow these steps:
-
-1. Add the following to your config file:
-
-   ```json
-   {
-     "AzureAd": {
-       "Instance": "https://login.microsoftonline.com/",
-       "TenantId": "<your-tenant-id>",
-       "ClientId": "<my-agent-blueprint-id>",
-       "Scopes": "access_agent",
-       "ClientCredentials": [
-         {
-           "SourceType": "SignedAssertionFromManagedIdentity",
-           "ManagedIdentityClientId": "managed-identity-client-id"  // Omit for system-assigned
-         }
-       ]
-     },
-
-     "DownstreamApis": {
-       "agent-identity": {
-         "BaseUrl": "https://graph.microsoft.com",
-         "RelativePath": "/v1.0/users",
-         "Scopes": ["00000003-0000-0000-c000-000000000000/.default"],
-         "RequestAppToken": true
-       }
-     }
-   }
-   ```
-
-2. Add required packages
-
-   ```bash
-   dotnet add package Microsoft.Identity.Web
-   dotnet add package Microsoft.Identity.Web.AgentIdentities
-   ```
-
-3. Configure services.
-
-   ```csharp
-   using Microsoft.Identity.Abstractions;
-   using Microsoft.Identity.Web;
-   using Microsoft.Identity.Web.Resource;
-   using Microsoft.IdentityModel.S2S.Extensions.AspNetCore;
-
-   var builder = WebApplication.CreateBuilder(args);
-
-   // Add services to the container.
-   builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
-       .EnableTokenAcquisitionToCallDownstreamApi();
-   builder.Services.AddAgentIdentities();
-   builder.Services.AddInMemoryTokenCaches();
-
-   var app = builder.Build();
-   app.UseHttpsRedirection();
-   app.UseAuthentication();
-   app.UseAuthorization();
-   app.Run();
-   ```
-
-4. Create the agent's user account creation endpoint.
-
-   ```csharp
-   app.MapPost("/create-agent-id-user", async (HttpContext httpContext) =>
-   {
-       try
-       {
-           // Get the service to call the downstream API (preconfigured in the appsettings.json file)
-           IDownstreamApi downstreamApi = httpContext.RequestServices.GetRequiredService<IDownstreamApi>();
-
-           var requestBody = new AgentIdUser
-           {
-               displayName = "my-agent-name",
-               mailNickname = "my-agent-alias",
-               userPrincipalName = "my-agent-email-address",
-               accountEnabled = true,
-               identityParentId = "<associated-agent-identity-id>"
-           };
-
-           // Call the downstream API (Graph) with a POST request to create an agent's user account
-           var jsonResult = await downstreamApi.PostForAppAsync<AgentIdUser, AgentIdUser>(
-               "agent-identity",
-               requestBody
-           );
-
-           return Results.Json(jsonResult);
-       }
-       catch (Exception ex)
-       {
-           return ex.Message;
-       }
-   })
-   ```
-
-Once you have your agent's user account created, you don't need to configure anything else. These accounts don't have any credentials and can only be authenticated using the protocol described in the next sections.
-
-### Grant consent to agent identity
-
-Agents' user accounts behave like any other user account. Before you can request tokens using your agent's user account, you need to authorize the agent identity to act on its behalf. You can authorize the agent identity by [requesting authorization from a tenant administrator](#request-authorization-from-a-tenant-administrator) or manually create an `oAuth2PermissionGrant` using Microsoft Graph or Microsoft Graph PowerShell.
-
-For Microsoft Graph, your request is as shown in the following snippet:
-
-```http
-POST https://graph.microsoft.com/v1.0/oauth2PermissionGrants
-Authorization: Bearer {token}
-Content-Type: application/json
-
-{
-  "clientId": "{agent-identity-id}",
-  "consentType": "Principal",
-  "principalId": "{agent-id-user-object-id}",
-  "resourceId": "{ms-graph-service-principal-object-id}",
-  "scope": "Mail.Read"
-}
-```
-
-For Microsoft Graph PowerShell, use the following script:
-
-```powershell
-Connect-MgGraph -Scopes "DelegatedPermissionGrant.ReadWrite.All" -TenantId <your-tenant-id>
-
-# Get the service principal for Microsoft Graph
-$graphSp = Get-MgServicePrincipal -Filter "appId eq '00000003-0000-0000-c000-000000000000'"
-
-# Get the service principal for your client app
-$clientSp = Get-MgServicePrincipal -Filter "appId eq '{agent-identity-id}'"
-
-# Create the delegated permission grant
-New-MgOauth2PermissionGrant -BodyParameter @{
-    clientId    = $clientSp.Id
-    consentType = "Principal"
-    principalId = "{agent-id-user-object-id}"
-    resourceId  = $graphSp.Id
-    scope       = "Mail.Read"
-}
-```
-
-### Request an agent's user account token
-
-To authenticate an agent's user account, you need to follow a three-step process:
-
-1. Get a token as the agent identity blueprint.
-2. Use that token to get another token as the agent identity.
-3. Use both previous tokens to get another token as the agent's user account.
-
-- [REST](#tabpanel_6_rest)
-- [Microsoft.Identity.Web](#tabpanel_6_msidweb)
-
-First, request a token as the agent identity blueprint, as described in [Request a token for the agent identity blueprint](#request-a-token-for-the-agent-identity-blueprint). Once you have the agent identity blueprint token, use the agent identity blueprint token to request a Federated Identity Credential \(FIC\) for your agent identity:
-
-```http
-POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
-Content-Type: application/x-www-form-urlencoded
-
-client_id=<agent-identity-id>
-&scope=api://AzureADTokenExchange/.default
-&grant_type=client_credentials
-&client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
-&client_assertion=<agent-blueprint-token>
-```
-
-This returns an exchange token \(T2\) for the agent identity. Use it in the next request to obtain a delegated token for the agent's user account:
-
-```http
-POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
-Content-Type: application/x-www-form-urlencoded
-
-client_id=<agent-identity-id>
-&scope=https://graph.microsoft.com/.default
-&grant_type=user_fic
-&client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
-&client_assertion=<agent-blueprint-token>
-&user_id=<agent-user-object-id>
-&user_federated_identity_credential=<agent-identity-token>
-```
-
-This gives you a delegated access token you can use to call Microsoft Graph as your agent's user account. You can use `user_id=<user-object-id>` instead of `username=<UPN>` for the user identifier.
-
-*Microsoft.Identity.Web* handles the token acquisition for you. Use the `.WithAgentUserIdentity()` pattern to request access tokens.
+In `Program.cs`, register Microsoft.Identity.Web, an HTTP client, and the inbound `AgentUser` authorization policy. This path uses ordinary confidential-client token acquisition, without `AddAgentIdentities` or `WithAgentIdentity`. The incoming caller's token is for the agent API; the downstream app-only token is for the custom API.
 
 ```csharp
-// In an API endpoint or service method where HttpContext is available
-app.MapGet("/agent-user-token", async (HttpContext httpContext) =>
+using System.Net.Http.Headers;
+using Microsoft.Identity.Abstractions;
+using Microsoft.Identity.Web;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services
+    .AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
+    .EnableTokenAcquisitionToCallDownstreamApi()
+    .AddInMemoryTokenCaches();
+
+builder.Services.AddHttpClient();
+builder.Services.AddAuthorization(options =>
 {
-    IAuthorizationHeaderProvider authorizationHeaderProvider =
-        httpContext.RequestServices.GetRequiredService<IAuthorizationHeaderProvider>();
-
-    // Configure options for the agent's user account identity
-    string agentIdentity = "agent-identity-id";
-    string userId = "<user-object-id>";
-    var options = new AuthorizationHeaderProviderOptions()
-        .WithAgentUserIdentity(agentIdentity, userId);
-
-    // Create a ClaimsPrincipal to enable token caching
-    ClaimsPrincipal user = new ClaimsPrincipal();
-
-    // Acquire a user token
-    string authHeader = await authorizationHeaderProvider
-        .CreateAuthorizationHeaderForUserAsync(
-            scopes: ["https://graph.microsoft.com/.default"],
-            options: options,
-            user: user);
-
-    return Results.Ok(authHeader);
+    options.AddPolicy(
+        "AgentUser",
+        policy => policy.RequireRole("Agent.User"));
 });
+
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+// Map the custom API endpoint before app.Run().
+app.Run();
 ```
 
-You can also use the agent's user account principal name instead of the object ID.
+## Call the API
+
+Use `IAuthorizationHeaderProvider.CreateAuthorizationHeaderForAppAsync`. Pass the custom API's `.default` scope as a string. Replace `<custom-api-application-id-uri>` with the same URI you used for consent, and replace `https://api.contoso.com/data` with the API endpoint. The provider uses the configured client ID and credential directly.
+
+Insert the following endpoint at the comment in `Program.cs`, before `app.Run()`. The required `using` directives are already at the top of the file. The endpoint gets an app-only authorization header and sends it to the custom API:
+
+```csharp
+app.MapGet("/custom-api", async (
+    IAuthorizationHeaderProvider authorizationHeaderProvider,
+    IHttpClientFactory httpClientFactory) =>
+{
+    string authorizationHeader = await authorizationHeaderProvider
+        .CreateAuthorizationHeaderForAppAsync(
+            "<custom-api-application-id-uri>/.default");
+
+    HttpClient client = httpClientFactory.CreateClient();
+    client.DefaultRequestHeaders.Authorization =
+        AuthenticationHeaderValue.Parse(authorizationHeader);
+
+    using HttpResponseMessage response =
+        await client.GetAsync("https://api.contoso.com/data");
+    response.EnsureSuccessStatusCode();
+
+    return Results.Content(
+        await response.Content.ReadAsStringAsync(),
+        response.Content.Headers.ContentType?.ToString());
+})
+.RequireAuthorization("AgentUser");
+```
+
+The returned authorization header includes the `Bearer` scheme. Don't return tokens or authorization headers from a production endpoint.
+
+The sample requires an authenticated caller with the `Agent.User` role. Configure that assignment through the [agent's inbound access policy](https://learn.microsoft.com/en-us/entra/agent-id/control-user-access-agents) before allowing the caller to trigger an app-only operation.
+
+Request only the application permissions required by the endpoint. For guidance on defining and granting app roles, see [application roles](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps).
+
+## Verify API access
+
+A successful token response doesn't establish authorization at the API.
+
+1. Run the project from its project directory in an environment where the configured blueprint credential is available. The managed identity configuration requires an Azure host with the specified managed identity and federation configured; it doesn't provide a local workstation credential.
+
+   ```dotnetcli
+   dotnet run --urls https://localhost:5001
+   ```
+
+
+   For a workstation, complete [Configure a local development credential](#configure-a-local-development-credential) first. Trust the ASP.NET Core development certificate if necessary with `dotnet dev-certs https --trust`; this can require interactive confirmation. Don't disable certificate validation. For an unattended local smoke test of the unauthenticated `401` response only, you can instead start with `dotnet run --urls http://localhost:5001` and call that HTTP URL without a token. Don't send access tokens over HTTP.
+
+2. Use the upstream client from [Authenticate users to the agent API](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-authenticate-users) to obtain an access token **for the agent API**, with the required delegated scope and `Agent.User` role. Request a new token after changing assignments. Make it available as the `AGENT_API_ACCESS_TOKEN` environment variable in your test shell without recording it in source control or shell history. Don't substitute an ID token, Graph management token, or downstream custom API token.
+3. In a separate PowerShell terminal, call the agent endpoint:
+
+   ```powershell
+   $response = Invoke-WebRequest `
+       -Uri "https://localhost:5001/custom-api" `
+       -Headers @{ Authorization = "Bearer $env:AGENT_API_ACCESS_TOKEN" }
+   $response.StatusCode
+   $response.Content
+   ```
+
+
+   For an API endpoint that returns `200 OK`, expect `200` and its response body. The agent calls the custom API as itself, not as the inbound user. A downstream non-success status causes `EnsureSuccessStatusCode` to fail; this sample doesn't translate downstream errors into matching inbound status codes.
+
+4. Repeat the request without an authorization header: expect `401 Unauthorized` from the agent. With an otherwise valid agent API token that lacks `Agent.User`, expect `403 Forbidden` if the tenant issues that token. When assignment is required, the tenant might reject token issuance first.
+5. At the downstream API, confirm signature, issuer, audience, lifetime, and the required app role are validated. Compare the validated token's `oid` with the agent identity object ID, not the blueprint object ID, and check its `roles` claim. See [Validate Agent ID tokens in a downstream API](https://learn.microsoft.com/en-us/entra/agent-id/how-to-validate-agent-tokens-downstream-api). A successful token response alone doesn't prove these checks.
+6. Test the downstream API's rejection of a token without its required role, using a separate test identity or fixture rather than removing production grants. Expect rejection at that API; don't infer its status from the agent's exception response.
+
+Don't log access tokens, certificate assertions, or private keys. Record correlation IDs and request times when troubleshooting.
+
+## Next step
+
+[Validate Agent ID tokens in a downstream API](https://learn.microsoft.com/en-us/entra/agent-id/how-to-validate-agent-tokens-downstream-api)
 
 ## Related content
 
-- [Agent identity access token claims](https://learn.microsoft.com/en-us/entra/agent-id/agent-token-claims)
-- [Call Microsoft Graph API](https://learn.microsoft.com/en-us/entra/agent-id/call-api-microsoft-graph)
-- [Call custom APIs](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom)
-- [Call Azure services](https://learn.microsoft.com/en-us/entra/agent-id/call-api-azure-services)
-- [Acquire token using Microsoft Entra ID Auth SDK \(sidecar\)](https://learn.microsoft.com/en-us/entra/agent-id/microsoft-entra-sdk-for-agent-identities)
-- [Microsoft Graph permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference)
-- [Permissions and consent in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview)
-- [Agent's user account flow in agents](https://learn.microsoft.com/en-us/entra/agent-id/agent-user-oauth-flow)
-- [Agents' user accounts](https://learn.microsoft.com/en-us/entra/agent-id/agent-users)
+- [Build a platform that hosts an agent fleet](https://learn.microsoft.com/en-us/entra/agent-id/plan-agent-fleet)
+- [Call a custom API as a user](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-call-custom-api-as-user)
+- [Agent ID best practices](https://learn.microsoft.com/en-us/entra/agent-id/best-practices-agent-id)

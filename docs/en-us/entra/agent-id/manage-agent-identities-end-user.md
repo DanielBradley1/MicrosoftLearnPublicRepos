@@ -28,7 +28,11 @@ This article is for agent identity owners and sponsors. The **Manage agents** me
 ## Enable or disable an agent
 
 1. To disable an agent, select it from the list and choose **Disable agent**. This blocks users from being able to access it and prevents it from being issued tokens. This has the same effect as disabling the agent from the admin center.
-2. To re-enable, select the agent that is disabled and choose **Enable agent**. This allows users to access it, and allows it to be issued tokens. Note that sponsors can't re-enable agents. They will need an owner or admin's help if one of their agents needs to be re-enabled.
+
+   Note
+
+   Sponsors can't re-enable agents. Ask an owner or administrator to re-enable an agent that a sponsor disabled.
+2. To re-enable an agent, an owner or administrator selects the disabled agent and chooses **Enable agent**. This allows users to access the agent and allows it to be issued tokens.
 
 ## Request an access package on behalf of an agent identity
 
@@ -44,5 +48,5 @@ As the owner or sponsor of an agent identity, you can request an access package 
 
 - [Manage agent identities in your organization](https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-admin) - Full agent management overview including roles, security, and governance.
 - [View and filter agent identities in your tenant](https://learn.microsoft.com/en-us/entra/agent-id/agent-lists) - For organization-wide agent viewing, filtering, and search.
-- If an agent needs other access packages, [Request an access package on behalf of an agent identity](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity)
+- If an agent needs other access packages, [Request an access package on behalf of an agent identity](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf#scenarios-for-requesting-on-behalf-of-agent-identities)
 - [Governing Agent Identities](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview) - Understand sponsor responsibilities and access package governance.

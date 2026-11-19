@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-session-lifetime -->
-<!-- Sitemap-Last-Modified: 2026-04-08 -->
+<!-- Sitemap-Last-Modified: 2026-11-02 -->
 
 # Conditional Access adaptive session lifetime policies
 
@@ -19,6 +19,10 @@ Before exploring how to configure the policy, examine the default configuration.
 ## User sign-in frequency
 
 Sign-in frequency specifies how long a user can access a resource before being asked to sign in again.
+
+Note
+
+Microsoft Entra External ID supports sign-in frequency for both Microsoft-hosted and native authentication. For native authentication, the policy prevents token issuance during refresh token grants when reauthentication is required. Your app must handle the failed token refresh and prompt the user to sign in again. For external tenant feature scope, see [Supported Conditional Access features](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#conditional-access).
 
 The Microsoft Entra ID default configuration for user sign-in frequency is a rolling window of 90 days. It might seem sensible to ask users for credentials often, but this approach can backfire. Users who habitually enter credentials without thinking might unintentionally provide them to malicious prompts.
 

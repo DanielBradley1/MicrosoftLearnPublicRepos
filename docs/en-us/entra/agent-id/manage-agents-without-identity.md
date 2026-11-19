@@ -5,9 +5,9 @@
 
 As an admin, you want to have a 360-degree view of your agents for both security and operational efficiency. Some agents will be represented in Microsoft Entra with an agent identity blueprint principal and agent identities, or as a service principal. It isn't uncommon to also have agents that are registered in the agent registry but don't have an associated Microsoft Entra agent identity. These agents are referred to as registry-only agents. They might be in the process of being onboarded or they may have registered in the registry without needing to use Microsoft Entra Agent ID as the agent's identity provider.
 
-## Prerequisite
+## Registry information
 
-Agents only appear in the registry after you [publish your agent to the agent registry](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/publish-agents-to-registry).
+For current information about the agent registry and its convergence under Microsoft Agent 365, see [Agent Registry convergence with Microsoft Agent 365](https://learn.microsoft.com/en-us/entra/agent-id/agent-registry-convergence).
 
 ## Navigate to your agent without an agent identity
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/phone-providers-faq -->
-<!-- Sitemap-Last-Modified: 2026-11-02 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Frequently asked questions
 
@@ -19,6 +19,10 @@ This FAQ covers:
 ### When is CYOT available?
 
 CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure.
+
+### Can I purchase a telephony provider offer in my country or region?
+
+Check [Microsoft Marketplace geographic availability](https://learn.microsoft.com/en-us/partner-center/marketplace-offers/marketplace-geo-availability-currencies) for purchase availability in your billing country or region. If Marketplace purchasing is unavailable, contact your Microsoft field team to discuss Bring Your Own Telephony \(BYOT\).
 
 ### Which telephony providers can I use?
 
@@ -126,7 +130,7 @@ You can deploy the integration across multiple Azure regions, review your provid
 - [Choose your own telephony provider for SMS and voice authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers).
 - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 - [Troubleshoot SMS and voice with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
-- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
+- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-protection).
 - [Plan for resiliency and high availability](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
 - [Estimate provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
 - [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement).

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/ -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft Entra tenant governance documentation
 
@@ -29,9 +29,17 @@ Microsoft Entra tenant governance helps organizations discover and govern tenant
 
 - [Enable tenant discovery](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-enable-tenant-discovery)
 - [Set up a governance relationship](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-set-up-governance-relationship)
+- [Manage expiration and renewal \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-manage-relationship-expiration)
+- [Set up multi-tier relationships \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-set-up-multi-tier-governance)
+- [Switch between governed tenants \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-switch-governed-tenants)
 - [Use delegated administration and monitor activity](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-delegated-administration)
 - [Configuration management](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-management)
 - [Create a tenant](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-create-tenant)
+
+## Resource policy guides \(preview\)
+
+### How-To Guide
+
 - [Safely deploy resource policy assignments](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-safe-deployment)
 - [Manage resource policies in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-manage-portal)
 - [Analyze resource policy evaluation audit logs](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/resource-policy-logs)

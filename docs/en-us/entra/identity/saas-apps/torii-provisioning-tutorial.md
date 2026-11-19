@@ -49,7 +49,10 @@ The scenario outlined in this article assumes that you already have the followin
 
    ![Screenshot of Copy API Key.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/torii-provisioning-tutorial/copy-key.png)
 
-10. **Torii Tenant Url:** `https://api.toriihq.com/v1.0/scim/v2` is entered in the **Tenant URL** field in the Provisioning tab of your Torii application.
+10. In the **Tenant URL** field in the Provisioning tab of your Torii application, enter the URL for your Torii region:
+
+    - US: `https://api.toriihq.com/v1.0/scim/v2`.
+    - EU: `https://api.euc.toriihq.com/v1.0/scim/v2`.
 
 ## Step 3: Add Torii from the Microsoft Entra application gallery
 

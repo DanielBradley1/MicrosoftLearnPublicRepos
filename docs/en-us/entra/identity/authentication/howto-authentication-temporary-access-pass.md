@@ -3,12 +3,16 @@
 
 # Configure Temporary Access Pass to register passwordless authentication methods
 
-Passwordless authentication methods like a passkey \(FIDO2\) let users sign in securely without a password. Users can bootstrap passwordless methods in one of two ways:
+Passwordless authentication methods like a passkey \(FIDO2\) let users sign in securely without a password. Common ways to bootstrap passwordless methods include:
 
 - Use existing Microsoft Entra multifactor authentication methods
 - Use a Temporary Access Pass
 
 A Temporary Access Pass \(TAP\) is a time-limited passcode that can be configured for single use or multiple sign-ins. Users can sign in with a TAP to onboard other passwordless authentication methods. A TAP also makes recovery easier when a user loses or forgets a strong authentication method.
+
+Note
+
+For identity-verified onboarding \(preview\), use Microsoft Entra Lifecycle Workflows to orchestrate identity verification before credential bootstrap. See the [high assurance onboarding overview](https://learn.microsoft.com/en-us/entra/verified-id/high-assurance#supported-journeys) and [Create and manage identity verification profiles](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id#create-and-manage-identity-verification-profiles). This journey requires separate configuration; issuing a TAP alone doesn't enable identity-verified onboarding.
 
 This article shows you how to enable and use a TAP using the [Microsoft Entra admin center](https://entra.microsoft.com). You can also perform these actions using REST APIs.
 

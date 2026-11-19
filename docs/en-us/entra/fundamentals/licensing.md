@@ -82,6 +82,38 @@ Microsoft 365 E7 includes the Microsoft Entra Suite, which provides all Microsof
 | Self-service password reset \(SSPR\) | ✅ | ✅ | ✅ | ✅ | ✅ |
 | SSPR with writeback |  |  |  | ✅ | ✅ |
 
+## Identity verification
+
+Review the licensing requirements for each capability in your identity verification journey:
+
+- [Authentication](https://learn.microsoft.com/en-us/entra/fundamentals/licensing#authentication) for authentication methods and account recovery.
+- [Conditional Access](https://learn.microsoft.com/en-us/entra/fundamentals/licensing#microsoft-entra-conditional-access) for policies that require identity verification.
+- [Microsoft Entra ID Protection](https://learn.microsoft.com/en-us/entra/fundamentals/licensing#microsoft-entra-id-protection) for risk-based policies and remediation.
+- [Microsoft Entra ID Governance](https://learn.microsoft.com/en-us/entra/fundamentals/licensing#microsoft-entra-id-governance) for Lifecycle Workflows and entitlement management.
+- [Microsoft Entra Verified ID](https://learn.microsoft.com/en-us/entra/fundamentals/licensing#microsoft-entra-verified-id) for credential issuance, verification, and Face Check.
+
+### Features by license
+
+The following table shows identity verification features by license. A check mark indicates that the feature is included, and **Add-on** indicates a separate purchase. Blank cells indicate that the feature isn't included.
+
+| Feature \*\* | Free | Microsoft Entra ID P1 | Microsoft Entra ID P2 | Microsoft Entra ID Governance | Microsoft Entra Suite | Microsoft 365 E7 |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Core Verified ID credential issuance and verification | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Face Check | Add-on | Add-on | Add-on | Add-on | ✅ | ✅ |
+| Account recovery |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Identity verification profiles |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Integrated onboarding with Lifecycle Workflows |  |  |  | ✅ | ✅ | ✅ |
+| Identity verification for resource access through Conditional Access |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Risk-based identity verification and remediation |  |  | ✅ | ✅ | ✅ | ✅ |
+| Identity verification status, history, and credential provenance reporting |  |  | ✅ |  | ✅ | ✅ |
+| Overwrite identity verification events |  |  |  |  | ✅ | ✅ |
+| Credential provenance overwrite |  |  |  |  | ✅ | ✅ |
+| Self-service Verified ID issuance in My Account | ✅ \* | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+\* Free includes self-service issuance of Employee ID only.
+
+\*\* If your scenario uses an identity verification provider, purchase the provider's services separately through the [Microsoft Security Store](https://securitystore.microsoft.com/). These services aren't included in the Microsoft Entra licenses listed in the table.
+
 ## Managed identities
 
 There are no licensing requirements for using Managed identities for Azure resources. Managed identities for Azure resources provide an automatically managed identity for applications to use when connecting to resources that support Microsoft Entra authentication. One of the benefits of using managed identities is that you don't need to manage credentials, and they can be used at no extra cost. For more information, see [What is managed identities for Azure resources?](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview).

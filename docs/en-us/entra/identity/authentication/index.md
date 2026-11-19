@@ -1,16 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/ -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Microsoft Entra authentication documentation
 
 Learn how to manage and deploy Microsoft Entra self-service password reset, multifactor authentication, custom banned password list, and smart lockout.
-
-## About authentication
-
-### Overview
-
-- [What is authentication?](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)
-- [Authentication methods in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)
 
 ## Deploy phishing-resistant authentication
 
@@ -31,17 +24,33 @@ Learn how to manage and deploy Microsoft Entra self-service password reset, mult
 - [Enable passkeys \(FIDO2\) for your organization](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2)
 - [Enable certificate-based authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-certificate-based-authentication)
 
-## Microsoft Entra account recovery
+## About authentication
+
+### Overview
+
+- [What is authentication?](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)
+- [Authentication methods in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)
+
+## High assurance \(preview\)
+
+### Overview
+
+- [Microsoft Entra High Assurance overview](https://learn.microsoft.com/en-us/entra/verified-id/high-assurance)
 
 ### Concept
 
 - [What is Microsoft Entra account recovery?](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-account-recovery-overview)
 - [FAQs about Microsoft Entra account recovery](https://learn.microsoft.com/en-us/entra/identity/authentication/self-service-account-recovery)
+- [Passkeys \(FIDO2\)](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2)
 
 ### How-To Guide
 
 - [Configure Microsoft Entra account recovery](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-enable)
 - [How users can recover their accounts](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users)
+- [Configure identity verification profiles](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id#create-and-manage-identity-verification-profiles)
+- [Plan identity-verified onboarding](https://learn.microsoft.com/en-us/entra/verified-id/high-assurance#deployment-sequence)
+- [Require identity verification with Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-require-identity-verification)
+- [Configure risk policies](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies)
 
 ## Enable Microsoft Entra multifactor authentication
 

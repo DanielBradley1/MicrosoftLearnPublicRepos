@@ -102,17 +102,17 @@ On the **Requests** tab, you create the first policy to specify who can request 
 
 ![Screenshot that shows the Requests tab for a new access package.](https://learn.microsoft.com/en-us/entra/id-governance/media/entitlement-management-access-package-create/requests.png)
 
-Depending on which identities you want to be able to request this access package, perform the steps in one of the following sections [Allow users, service principals, and agent identities in your directory to request the access package](#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package), [Allow identities not in your directory to request the access package](#allow-identities-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for identities who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
+Depending on which identities you want to be able to request this access package, perform the steps in one of the following sections [Allow users, agent users, service principals, and agent identities in your directory to request the access package](#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package), [Allow identities not in your directory to request the access package](#allow-identities-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for identities who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
 
-## Allow users, service principals, and agent identities in your directory to request the access package
+## Allow users, agent users \(preview\), service principals, and agent identities in your directory to request the access package
 
 Use the following steps if you want to allow identities in your directory to be able to request this access package. When you're defining the request policy, you can specify individual identities or \(more commonly\) groups of identities. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for identities who can request access, any member of that group can then request access.
 
-1. In the **Who can get access** section, select **For users, service principals, and agent identities in your directory**.
+1. In the **Who can get access** section, select **For users, agent users \(preview\), service principals, and agent identities in your directory**.
 
    When you select this option, new options appear so you can refine who in your directory can request this access package.
 
-   ![Screenshot that shows the option for allowing users and groups in the directory to request an access package.](https://learn.microsoft.com/en-us/entra/includes/media/entitlement-management-request-policy/for-users-in-your-directory.png)
+   ![Screenshot that shows who can get access to an access package, including the All agent users \(Preview\) option.](https://learn.microsoft.com/en-us/entra/includes/media/entitlement-management-request-policy/for-users-in-your-directory.png)
 
 2. Select one of the following options:
    | Option | Description |
@@ -120,6 +120,7 @@ Use the following steps if you want to allow identities in your directory to be 
    | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
    | **All members \(excluding guests\)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
    | **All users \(including guests\)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
+   | **All agent users \(preview\)** | Choose this option if you want all agent users in your directory to be able to have access assigned to them. |
    | **All Service principals** | Choose this option if you want all service principals in your directory to be able to request this access package. |
    | **All agents** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 

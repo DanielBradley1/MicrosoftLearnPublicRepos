@@ -223,5 +223,5 @@ One of the most common issues is that your custom claims provider API doesn't re
 
 ## See also
 
-- [Create a REST API with a token issuance start event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-setup)
-- [Custom claims provider reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference) article.
+- [Create a REST API for the OnTokenIssuanceStart event in Azure Functions](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-setup)
+- [OnTokenIssuanceStart event reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference) article.

@@ -84,5 +84,5 @@ To view the complete inventory of agents in your organization:
 ## Related content
 
 - [What is Microsoft Entra Agent ID?](https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id)
-- [What is the Microsoft Entra Agent Registry?](https://learn.microsoft.com/en-us/entra/agent-id/what-is-agent-registry)
+- [Agent registry in Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
 - [Microsoft Agent 365 overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview)

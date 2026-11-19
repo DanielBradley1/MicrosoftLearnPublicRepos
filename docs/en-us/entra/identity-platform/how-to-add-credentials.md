@@ -9,6 +9,8 @@ When building confidential client applications, managing credentials effectively
 
 [Quickstart: Register an app in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app).
 
+In Microsoft Entra External ID external tenants, app owners, including invited users, should be assigned the Application Developer role to manage credentials and other properties of owned app registrations. The Application Administrator and Cloud Application Administrator roles provide broader application-management permissions, regardless of ownership. For details about default permissions and application-management roles, see [Default user permissions in external tenants](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-user-permissions#default-permissions).
+
 ## Add a credential to your application
 
 When you create credentials for a confidential client application:

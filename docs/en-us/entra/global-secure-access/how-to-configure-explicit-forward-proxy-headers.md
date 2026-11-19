@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-explicit-forward-proxy-headers -->
-<!-- Sitemap-Last-Modified: 2026-05-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-23 -->
 
-# Configure HTTP header session management \(preview\)
+# Configure HTTP header session management for Explicit Forward Proxy \(preview\)
 
 You can configure Explicit Forward Proxy \(preview\) to rely on the private IP addresses of devices on your network to associate authenticated users with their devices. To use HTTP header session management with Explicit Forward Proxy, you need to securely communicate the private IP address of the device to the Explicit Forward Proxy feature.
 

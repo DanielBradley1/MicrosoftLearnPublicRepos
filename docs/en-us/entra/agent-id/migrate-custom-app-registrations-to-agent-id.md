@@ -12,7 +12,7 @@ This article shows you how to migrate agents where you own the code and the iden
 - An existing AI agent that uses an app registration or service principal for authentication.
 - **Agent ID Developer** or **Agent ID Administrator** role to create blueprints and agent identities.
 - **Privileged Role Administrator** role to grant Microsoft Graph application permissions.
-- Access to the Microsoft Graph v1.0 API.
+- Access to the Microsoft Graph v1.0 API and the beta agent identity endpoint used in Step 2.
 - Familiarity with Agent ID key concepts. For more information, see [Agent identity concepts](https://learn.microsoft.com/en-us/entra/agent-id/key-concepts).
 
 ### Licensing requirements
@@ -82,7 +82,7 @@ You can pull most of the configuration details programmatically by using Microso
 
 ### Identify agents through log and permission analysis
 
-For service principals that don't have tags, use behavioral and configuration signals to identify likely agent identities. No single signal is definitive. Weight them in combination to produce a confidence score.
+For service principals that don't have tags, use behavioral and configuration signals to identify likely agent identities. No single signal is definitive. Review signals together and document the evidence for each candidate. Don't assign a numeric confidence score unless your organization defines and validates a scoring method.
 
 | Signal category | What to look for | Why it indicates an agent |
 | --- | --- | --- |
@@ -114,7 +114,7 @@ For tenants with large numbers of app registrations, publish the migration inven
 Run these methods in order:
 
 1. **Tag-based scan:** Automatically identify all tagged agents. These agents are confirmed candidates.
-2. **Heuristic analysis:** Scan remaining untagged service principals for behavioral signals. Flag high-confidence matches as probable candidates.
+2. **Heuristic analysis:** Scan remaining untagged service principals for behavioral signals. Flag candidates with multiple supporting signals for review.
 3. **CMDB reconciliation:** Match remaining service principals against your asset inventory to catch agents registered under non-obvious names.
 4. **Developer attestation:** Publish the residual unmatched list to application owners for final classification.
 
@@ -137,6 +137,8 @@ This phase covers the technical migration steps for agents whose identity was cr
 Important
 
 There's no in-place conversion that transforms an existing app registration or service principal into an agent identity. Migration requires creating a new agent identity alongside your existing identity, then transitioning your agent to use it.
+
+The blueprint and per-agent provisioning steps below follow the fleet pattern. If your deployment runs one agent with one configured identity, use [Create a single-instance agent](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent) for identity setup and then follow the single-instance API tutorials. For a shared runtime that selects among agent identities, keep the fleet setup and per-request identity selection together. Record the old and new identifiers separately by using [Record the identifiers for your scenario](https://learn.microsoft.com/en-us/entra/agent-id/key-concepts#record-the-identifiers-for-your-scenario).
 
 ### Step 1: Create an agent identity blueprint
 
@@ -240,7 +242,7 @@ To replicate Microsoft Graph application permissions, grant the same `appRoles` 
 
 #### Configure OBO support \(interactive agents only\)
 
-If your agent uses the on-behalf-of \(OBO\) flow to act on behalf of a user, you need to add a custom scope to the blueprint so that front-end applications can request tokens for it. After adding the scope, update your front-end application to request a token for the blueprint's resource instead of the previous resource. For the complete OBO configuration walkthrough, see [Interactive agent authentication and authorization flow](https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow).
+If your fleet uses the on-behalf-of \(OBO\) flow to act on behalf of a user, expose the inbound scope on the blueprint and update the front-end application to request that scope instead of the previous resource's scope. Then [authenticate and route user requests](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-fleet-authenticate-users) and [call APIs as the user with the routed agent's identity](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-fleet-call-apis-as-user). For the single-instance path, follow [Call a custom API as a user with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-call-custom-api-as-user) instead of copying the fleet's blueprint-audience configuration.
 
 If your original app registration had Azure RBAC role assignments, assign the same roles to the new agent identity's service principal so it can access the required Azure resources at runtime:
 
@@ -255,8 +257,10 @@ New-AzRoleAssignment `
 
 Agent ID uses a two-stage token acquisition model. Your agent first acquires a bootstrap token by using the blueprint's credential, then exchanges it for an agent-specific token. For more information on updating your code, see these scenarios:
 
-- [Autonomous agent authentication and authorization flow](https://learn.microsoft.com/en-us/entra/agent-id/autonomous-agent-authentication-authorization-flow) for the complete token acquisition walkthrough.
-- [Interactive agent authentication and authorization flow](https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow) for interactive agents guidance, code samples, and token configuration. The token flow in these agents adds an OBO exchange where a user token is exchanged for an agent token with user context.
+- [Call a custom API as an agent with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom) for the complete app-only token acquisition walkthrough.
+- [Call a custom API as a user with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-call-custom-api-as-user) for interactive agent guidance, code samples, and token configuration. The token flow in these agents adds an OBO exchange where a user token is exchanged for an agent token with user context.
+
+These two tutorials use one configured agent identity. For a fleet, use [Call APIs as an agent in a fleet](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-fleet-call-apis-as-agent) or [Call APIs as a user in a fleet](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-fleet-call-apis-as-user) so each operation selects the correct agent identity from the runtime's directory.
 
 ## Phase 4: Validate and decommission
 
@@ -277,9 +281,9 @@ After migrating an agent identity, validate that the new Agent ID works correctl
 For agents with high usage, run the old and new identities side by side before switching over:
 
 1. Deploy a parallel instance of your agent configured with the new Agent ID.
-2. Route a percentage of traffic to the new instance \(start with 5–10%\).
+2. Route a small, measured share of traffic to the new instance. Choose the initial share based on the workload's risk and rollback capacity.
 3. Monitor both instances for errors, latency differences, and permission issues.
-4. Gradually increase traffic to the new instance over one to two weeks.
+4. Gradually increase traffic after reviewing telemetry and meeting your rollout criteria. Set observation periods based on the workload.
 5. Once 100% of traffic runs on the new identity, proceed to decommission.
 
 Use feature flags or traffic-splitting infrastructure to control the rollout. This approach lets you revert to the old identity instantly if issues arise.
@@ -289,7 +293,7 @@ Use feature flags or traffic-splitting infrastructure to control the rollout. Th
 After you validate the new Agent ID and it carries production traffic, decommission the old identity. Follow these safeguards to minimize risk:
 
 - **Pre-deletion snapshot:** Export the service principal's metadata, permissions, and audit history before deletion. This export provides a rollback reference if anything was missed during validation.
-- **Phased batches:** If you're decommissioning multiple identities, delete in small batches \(20-50 service principals per wave\) rather than bulk-deleting all at once.
+- **Phased batches:** If you're decommissioning multiple identities, delete in small, reviewable waves. Set each wave size based on tested rollback capacity rather than an assumed platform limit.
 - **Soft-delete first:** Use Microsoft Entra's soft-delete capability \(30-day recycle bin for applications\) before hard deletion. This step gives you a recovery window.
 
 ### Decommission the original app registration

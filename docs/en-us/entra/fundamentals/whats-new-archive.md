@@ -1011,7 +1011,7 @@ Today we’re announcing that Platform SSO for macOS is Generally Available with
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** Developer Experience
 
-Build sign-in, sign-up, and sign-out experiences for single page applications in Microsoft Entra External ID with the new native authentication [JavaScript SDK](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in).
+Build sign-in, sign-up, and sign-out experiences for single page applications in Microsoft Entra External ID with the new native authentication [JavaScript SDK](https://learn.microsoft.com/en-us/javascript/api/overview/msal-overview?view=msal-js-latest&preserve-view=true).
 
 ---
 

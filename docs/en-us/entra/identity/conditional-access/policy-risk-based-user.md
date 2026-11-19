@@ -54,6 +54,18 @@ This risk remediation policy covers both password-based and passwordless users.
 
 After confirming your settings using [policy impact or report-only mode](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-report-only#reviewing-results), move the **Enable policy** toggle from **Report-only** to **On**.
 
+## Remediate risk with identity verification
+
+Identity verification provides a separate risk-remediation path. Before configuring the policy, [create an identity verification profile](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id#create-and-manage-identity-verification-profiles) with **Profile purpose** set to **All** or **Verification** and a provider and credential type that support your risk scenario. For tenant-issued credentials, select **Verification**. Use [Configure risk policies](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies) to configure the policy, test the user journey, and check the remediation outcome.
+
+Review [Identity verification licensing](https://learn.microsoft.com/en-us/entra/fundamentals/licensing#identity-verification) for the requirements that apply to this remediation path. Don't assume that the user-risk policy license requirement above covers every identity verification capability.
+
+Don't substitute the **Require risk remediation** steps above for identity verification configuration. That control covers password-based and passwordless users and doesn't automatically use identity verification.
+
+Use the risk conditions supported for identity verification in your tenant. Resource-access verification and risk remediation are different outcomes: check both the verification result and the applicable risk outcome in your pilot. Don't assume that every successful identity verification clears every risk state.
+
+Preserve emergency access and approved user exclusions when configuring identity verification for risk remediation. Report-only mode evaluates which policies could apply without triggering identity verification. Don't interpret report-only results as actual identity verification or cleared risk. Conduct enforcement and remediation tests separately with approved pilot users before expanding scope.
+
 ## Related content
 
 - [Require reauthentication every time](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-session-lifetime#require-reauthentication-every-time)

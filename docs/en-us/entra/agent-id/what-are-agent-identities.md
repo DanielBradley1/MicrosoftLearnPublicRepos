@@ -54,7 +54,7 @@ Agent identities provide the foundation for secure, scalable AI agent deployment
 
 Several Microsoft products already use agent identities for authenticating AI agents. Two examples include:
 
-- [**Entra conditional access optimization agent**](https://learn.microsoft.com/en-us/entra/identity/conditional-access/agent-optimization): When this agent is enabled in your tenant, it's given an agent identity. The Microsoft Entra conditional access optimization agent then uses its agent identity to query Microsoft Entra systems and inspect the tenant's configuration. All queries made by the agent are recorded as having been performed by an AI agent. The agent's activity is subject to any security policies enforced for agent identities. You can view the agent's identity in the Microsoft Entra admin center in the **Agent identities** tab.
+- [**Microsoft Entra Conditional Access Optimization Agent**](https://learn.microsoft.com/en-us/entra/security-copilot/conditional-access-agent-optimization): When this agent is enabled in your tenant, it's given an agent identity. The Microsoft Entra conditional access optimization agent then uses its agent identity to query Microsoft Entra systems and inspect the tenant's configuration. All queries made by the agent are recorded as having been performed by an AI agent. The agent's activity is subject to any security policies enforced for agent identities. You can view the agent's identity in the Microsoft Entra admin center in the **Agent identities** tab.
 - [**Agents built in Copilot Studio**](https://learn.microsoft.com/en-us/copilot/security/agents-overview): In organizations that use Copilot Studio, users can quickly create AI agents using Copilot Studio's low-code tools. Each time an AI agent is created, the agent gets an agent identity in the Microsoft Entra tenant. The user who created the agent is recorded as its sponsor. The agent can then use its agent identity to send/receive chat messages to users, and connect to various systems like SharePoint or Dataverse. Any authentication performed by these agents is logged in Microsoft Entra ID as AI agents and viewable through the Microsoft Entra admin center.
 
 ## How to get started
@@ -64,6 +64,8 @@ Microsoft Entra Agent ID is a product within Microsoft Entra that provides the p
 [Microsoft Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview) enables agents to operate across Microsoft 365 services and enterprise workflows, which requires a **Microsoft Agent 365** license for each user. For pricing details, see [Microsoft Agent 365 plans and pricing](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing).
 
 Extending Microsoft Entra security features to agents requires Microsoft Agent 365. Agent 365 is included with Microsoft 365 E7 and is available as an add-on to Microsoft E5/A5/Business Premium \(or Microsoft Defender Suite + Microsoft Purview Suite\). See our latest [Agent 365 product terms for more details](https://www.microsoft.com/licensing/terms/productoffering/Agent365/EAEAS#clause-2755-h3-1).
+
+To add authentication to an agent, [choose an integration path](https://learn.microsoft.com/en-us/entra/agent-id/choose-agent-integration-path) for your platform and hosting environment. To manage identities that already exist in your tenant, see [Manage agent identities](https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-admin).
 
 ## Related content
 

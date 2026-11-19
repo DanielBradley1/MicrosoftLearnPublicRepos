@@ -41,7 +41,7 @@ Workforce and external tenants have different capabilities and limitations. Choo
 
 ## Getting started
 
-Choose your preferred [application scenario](https://learn.microsoft.com/en-us/entra/identity-platform/authentication-flows-app-scenarios). Each of these scenario paths has an overview and links to a quickstart to help you get started:
+Choose your preferred [application scenario](https://learn.microsoft.com/en-us/entra/identity-platform/authentication-flows-app-scenarios). Use the following guides to get started:
 
 Browser based authentication \(Workforce and External tenants\):
 
@@ -54,10 +54,9 @@ Browser based authentication \(Workforce and External tenants\):
 
 Native authentication \(External tenants only\):
 
-- [React Single-page app \(SPA\)](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in)
-- [Android app](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-android-sign-in)
-- [iOS app](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-ios-sign-in)
-- [macOS app](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-macos-sign-in)
+- [React Next.js single-page app \(SPA\)](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication).
+- [Android SDK and sample guidance](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-migrate-native-authentication-v1-v2#android-migration).
+- [iOS and macOS SDK guidance](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-migrate-native-authentication-v1-v2#ios-migration).
 
 For a more in-depth look at building applications using the Microsoft identity platform, see our multipart tutorial series for the following applications:
 
@@ -66,12 +65,6 @@ Browser based authentication \(Workforce and External tenants\):
 - [React Single-page app \(SPA\)](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-single-page-app-react-prepare-app)
 - [ASP.NET Core Web app](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-web-app-dotnet-prepare-app)
 - [ASP.NET Core API](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-web-api-dotnet-register-app)
-
-Native authentication \(External tenants only\):
-
-- [React Single-page app \(SPA\)](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up)
-- [Android Kotlin app](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-prepare-android-app)
-- [iOS/macOS Switch app](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app)
 
 As you work with the Microsoft identity platform to integrate authentication and authorization in your apps, you can refer to this image that outlines the most common app scenarios and their identity components. Select the image to view it full-size.
 

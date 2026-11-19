@@ -43,6 +43,8 @@ Creating a workflow via the Microsoft Entra admin center requires the use of a t
 
 The template, depending on its category, defines which tasks are available to be used, and then guides you through the creation of the workflow. The template provides input for basic description, execution conditions, and task information.
 
+For the identity-verification onboarding templates \(preview\), select an ID verification profile with purpose `all` or `onboarding`. These templates add a **Select identity verification profile** step between scope configuration and task review. This profile-selection step is specific to the identity-verification templates. For configuration, registration paths, and constraints, see [Onboard users with identity verification \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/how-to-onboard-users-with-identity-verification).
+
 Note
 
 Depending on the template you select, the options that will be available may vary. The images in this document use the [**Onboarding pre-hire employee**](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-templates#onboard-pre-hire-employee) template to illustrate the parts of a workflow.
@@ -120,14 +122,14 @@ The supported scheduled triggers are:
 
 - Attribute changes
 - Group membership change
-- Time based
+- Time based attribute
 - Sign-in inactivity
 
 The type of workflow you choose determines which trigger you use.
 
 Important
 
-Relative time-based comparisons expand the time-based attribute trigger and are in public preview. During public preview, the Microsoft Entra admin center temporarily shows **Time based attribute** and **Time based attribute V2 \(Preview\)** as separate choices. Both choices represent the same time-based trigger capability, and the V2 choice can also reproduce the standard time-based behavior. At general availability, customers will see only one time-based trigger choice that includes relative comparisons. For supported comparisons and configuration details, see [Time based attribute trigger](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-execution-conditions#time-based-attribute-trigger). For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+The **Time based attribute** trigger supports exact day offsets and relative time ranges. For supported comparisons and configuration details, see [Time based attribute trigger](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-execution-conditions#time-based-attribute-trigger).
 
 ## Scope
 
@@ -152,7 +154,7 @@ Once scheduling is enabled, the workflow is evaluated based on the interval that
 
 Note
 
-The standard time based attribute choice processes a user at a specific point in time based on the workflow configuration \(e.g., seven days before the user’s hire date\) and user account configuration. For reliable workflow execution, the user account must be configured with all relevant details \(e.g., trigger and scoping attributes\) in advance of the scheduled workflow execution. Once the designated time arrives, the next scheduled workflow run will process the user if it meets the execution conditions. If the workflow or user account is configured after the intended processing time \(e.g., due to a delay in the HR system\), Lifecycle Workflows will still attempt to process the user—provided the necessary setup is completed within three days of the original processing time. This catch-up behavior doesn't apply when you select **Time based attribute V2 \(Preview\)** during public preview.
+The **Time based attribute** trigger processes users whose date attribute meets the configured **Equal to**, **Between**, or **Within** comparison and whose accounts meet the scope rules. Configure the relevant trigger and scoping attributes before users need to meet the execution conditions. New workflows that use the updated trigger don't have an automatic three-day catch-up window. Existing workflows aren't affected by this change and retain their current catch-up behavior. To allow for delays in user data updates in new workflows, configure a relative time range with **Between** or **Within**. For details and examples, see [Time based attribute trigger](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-execution-conditions#time-based-attribute-trigger).
 
 To view a detailed guide on customizing the schedule of a workflow, see: [Customize the schedule of workflows](https://learn.microsoft.com/en-us/entra/id-governance/customize-workflow-schedule).
 

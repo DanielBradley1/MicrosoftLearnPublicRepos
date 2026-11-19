@@ -53,7 +53,9 @@ For detailed instructions, see [View and manage agent identity blueprints in you
 
 ## Configure inheritable permissions for blueprints
 
-Inheritable permissions let agent identities automatically inherit OAuth 2.0 delegated permission scopes from their parent blueprint. When you configure inheritable permissions on a blueprint, newly created agent identities receive a base set of scopes without requiring interactive user or admin consent prompts.
+Inheritable permissions can make permissions granted to a blueprint principal available to its agent identities. The current Microsoft Graph beta reference documents delegated scope inheritance through `inheritableScopes`. The broader Agent ID permission model also describes application-role inheritance, but the public Graph reference doesn't define an application-role property or payload. Confirm Graph support before relying on application-role inheritance.
+
+Inheritance requires both a resource app to be configured as inheritable and the permission to be granted to the blueprint principal. Required resource access declares requested permissions for consent review; it doesn't grant access by itself. For static consent, include the permission in required resource access. For dynamic consent, explicitly request the permission. For details, see [Inheritable permissions and required resource access](https://learn.microsoft.com/en-us/entra/agent-id/concept-inheritable-permissions) and the [Microsoft Graph `inheritablePermission` resource](https://learn.microsoft.com/en-us/graph/api/resources/inheritablepermission?view=graph-rest-beta&preserve-view=true).
 
 Two inheritance patterns are supported per resource app:
 
@@ -64,11 +66,7 @@ Two inheritance patterns are supported per resource app:
 
 Start with enumerated scopes using only essential permissions, then expand as needed. This approach follows the principle of least privilege and makes it easier to audit which permissions agents actually use.
 
-Key limits:
-
-- Maximum of 10 resource apps per blueprint.
-- For enumerated scopes, maximum of 40 scopes per resource app.
-- Some high-privilege scopes are blocked by platform policy and can't be inherited.
+For current API constraints and platform restrictions, see [Inheritable permissions limitations](https://learn.microsoft.com/en-us/entra/agent-id/configure-inheritable-permissions-blueprints#inheritable-permissions-limitations).
 
 Inheritable permissions are configured via the `inheritablePermissions` navigation property on the `agentIdentityBlueprint` application resource using Microsoft Graph. For step-by-step API examples \(add, update, delete\), see [Configure inheritable permissions for agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/configure-inheritable-permissions-blueprints).
 
@@ -107,7 +105,7 @@ To view agent sign-in logs:
    - **Agent type**: Choose from **Agent ID user**, **Agent Identity**, **Agent Identity Blueprint**, or **Not Agentic**.
    - **Is Agent**: Choose from **No** or **Yes**.
 
-You can also retrieve agent sign-in events using Microsoft Graph:
+This Microsoft Graph example retrieves only service principal sign-in events for agent identities. It doesn't return every sign-in type associated with agents; see [Microsoft Entra Agent ID logs](https://learn.microsoft.com/en-us/entra/agent-id/sign-in-audit-logs-agents) for the other log types and filtering options.
 
 ```http
 GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=signInEventTypes/any(t: t eq 'servicePrincipal') and agent/agentType eq 'AgentIdentity'

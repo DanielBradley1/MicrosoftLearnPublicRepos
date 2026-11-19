@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-email-otp-get-started -->
 <!-- Sitemap-Last-Modified: 2025-06-25 -->
 
-# Configure a custom email provider for one time passcode send events
+# Configure a custom email provider for the OnOtpSend event
 
 **Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 
@@ -810,6 +810,7 @@ PATCH https://graph.microsoft.com/beta/identity/authenticationEventListeners/{cu
 
 ## See also
 
-- [Configure a custom claim provider for a token issuance event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-configuration)
-- [Create a custom authentication extension for attribute collection start and submit events](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-attribute-collection)
-- [Custom claims provider reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference)
+- [OnOtpSend event reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-email-otp-send-data)
+- [Configure a custom claims provider for the OnTokenIssuanceStart event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-configuration)
+- [Create a custom authentication extension for OnAttributeCollectionStart and OnAttributeCollectionSubmit events](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-attribute-collection)
+- [OnTokenIssuanceStart event reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference)

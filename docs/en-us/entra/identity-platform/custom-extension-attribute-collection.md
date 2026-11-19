@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-attribute-collection -->
 <!-- Sitemap-Last-Modified: 2025-09-16 -->
 
-# Create a custom authentication extension for attribute collection start and submit events
+# Create a custom authentication extension for OnAttributeCollectionStart and OnAttributeCollectionSubmit events
 
 **Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 
@@ -721,5 +721,5 @@ To test your custom authentication extension, follow these steps:
 
 ## Next steps
 
-- [OnAttributeCollectionStart reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data)
-- [OnAttributeCollectionSubmit reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data)
+- [OnAttributeCollectionStart event reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data)
+- [OnAttributeCollectionSubmit event reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data)

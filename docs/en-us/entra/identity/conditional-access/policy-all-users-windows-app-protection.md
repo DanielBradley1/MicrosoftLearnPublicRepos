@@ -9,9 +9,11 @@ App protection policies apply [mobile application management \(MAM\)](https://le
 
 :: ![Screenshot of a browser requiring the user to sign in to their Microsoft Edge profile to access an application.](https://learn.microsoft.com/en-us/entra/identity/conditional-access/media/policy-all-users-windows-app-protection/browser-sign-in-with-edge-profile.png)
 
+\[!IMPORTANT\] Windows App support for Windows MAM and app protection policies is in preview. Availability and supported environments can differ from generally available scenarios. For more information about the Windows App on Windows public preview, including configuration requirements and supported scenarios, see [Require local client device security compliance](https://learn.microsoft.com/en-us/windows-app/require-device-security-compliance-intune.md).
+
 ## Prerequisites
 
-- Policy can be applied to the Microsoft Edge browser on devices running Windows 11 and Windows 10 version 20H2 and higher with KB5031445.
+- Policy can be applied to the Microsoft Edge browser on devices running Windows 11 and Windows 10 version 20H2 and higher with KB5031445 and the Windows App desktop client in preview.
 - Set up an app protection policy targeting Windows devices. For details, see [Configured app protection policy targeting Windows devices](https://learn.microsoft.com/en-us/mem/intune/apps/app-protection-policy-settings-windows).
 - Sovereign clouds aren't supported.
 
@@ -63,6 +65,7 @@ App protection policies \(MAM\) support unmanaged devices:
    2. **Client apps** set **Configure** to **Yes**.
 
       1. Select **Browser** only.
+      2. For Windows App preview, select **Mobile apps and desktop clients**. For more information about the Windows App and MAM on Windows preview, including configuration requirements and supported scenarios, see [Require local client device security compliance](https://learn.microsoft.com/en-us/windows-app/require-device-security-compliance-intune.md).
 
 8. Under **Access controls** > **Grant**, select **Grant access**.
 

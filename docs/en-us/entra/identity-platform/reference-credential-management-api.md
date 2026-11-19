@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/reference-credential-management-api -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-12 -->
 
 # Microsoft Entra External ID credential management API reference
 
@@ -68,7 +68,7 @@ Acquire the delegated token through the Microsoft Entra sign-in flow that applie
 
 Note
 
-Access tokens acquired through [native authentication](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api) are currently supported by this API only for web apps. Mobile apps can use MSAL's browser-based sign-in to acquire tokens to [list authentication methods](#list-user-credential-methods), [delete passkeys](#delete-a-credential-method), and [update passwords](#update-a-password).
+Access tokens acquired through [native authentication](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1) are currently supported by this API only for web apps. Mobile apps can use MSAL's browser-based sign-in to acquire tokens to [list authentication methods](#list-user-credential-methods), [delete passkeys](#delete-a-credential-method), and [update passwords](#update-a-password).
 
 Native passkey registration with Microsoft Entra External ID isn't currently supported on mobile platforms. Use the system browser to register passkeys.
 
@@ -674,7 +674,7 @@ This endpoint can return `400`, `401`, or `403`. For the shared envelope and cal
 
 This flow updates the signed-in user's existing password. Use this flow when the user knows their current password and chooses to change it in your application's credential-management experience.
 
-This flow isn't a forgotten-password recovery flow. For password recovery in native authentication, see [Self-service password reset](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api#self-service-password-reset-sspr).
+This flow isn't a forgotten-password recovery flow. For password recovery in native authentication, see [Self-service password reset](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#self-service-password-reset-sspr).
 
 Password updates require polling to confirm completion. The following flowchart shows the two-step update flow.
 

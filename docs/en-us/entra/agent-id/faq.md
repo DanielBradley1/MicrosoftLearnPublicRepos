@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/agent-id/faq -->
-<!-- Sitemap-Last-Modified: 2026-10-01 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Frequently asked questions about Microsoft Entra Agent ID
 
@@ -13,7 +13,9 @@ Microsoft Graph APIs that support relationships involving agent identities such 
 
 ### What happens to an agent's user account when an agent identity or blueprint is deleted?
 
-When an agent identity blueprint or agent identity is deleted, any associated agents' user accounts remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. Delete orphaned agents' user accounts manually using Microsoft Graph API or Microsoft Entra PowerShell.
+Deleting a blueprint or its blueprint principal starts asynchronous cascade cleanup of child agent identities and their dedicated user accounts. These are soft deletions with a 30-day recovery window. See [Agent identity deletion](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-identity-deletion) and [Delete and restore agent identity objects](https://learn.microsoft.com/en-us/entra/agent-id/howto-delete-agent-identity).
+
+Don't assume that deleting one child agent identity has the same cascade behavior as deleting its parent blueprint. Check its paired user account separately. If an account remains and is no longer needed, follow the [agent-user deletion procedure](https://learn.microsoft.com/en-us/entra/agent-id/create-delete-agent-user-account).
 
 ### Why do sequential Microsoft Graph API requests sometimes fail when creating agent identity objects?
 
@@ -31,7 +33,7 @@ The following limits apply to agent identity blueprints:
 
 - Non-Microsoft management platforms using app-only permissions are limited to 250 agent identities per blueprint. Delegated calls and Microsoft-owned platforms \(Foundry, Copilot Studio\) aren't subject to this cap.
 - Non-admin users are subject to the preexisting 250-owned-objects limit in Microsoft Entra ID, which applies across all Microsoft Entra resource types.
-- Blueprints can take up no more than 95% of the tenant's overall resource quota. For more information, see the **Resources** row in [Microsoft Entra service limits and restrictions](https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions).
+- By default, blueprints can take up no more than 80% of the tenant's overall resource quota. For more information, see the **Resources** row in [Microsoft Entra service limits and restrictions](https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions).
 
 ### How do I know when an admin approves my agent identity blueprint in their tenant?
 
@@ -115,10 +117,12 @@ Join with Microsoft Entra sign-in logs to determine the entity type.
 
 The SDK you use depends on your scenario:
 
-Microsoft Agent 365 CLI and SDK are the recommended starting point for most developers. The CLI handles agent identity provisioning, blueprint creation, and permission wiring in a single command. The SDK handles token acquisition at runtime. For more information, see [Microsoft Entra Agent 365 SDK documentation](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/overview).
+Start with [Choose an integration path](https://learn.microsoft.com/en-us/entra/agent-id/choose-agent-integration-path) for your platform, language, and hosting model. You don't need a fleet or a dedicated agent-user account just to call an API.
 
-Microsoft.Identity.Web provides higher-level APIs for acquiring tokens for agent identities in .NET applications. Use the [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md) package to simplify managing agent identities.
+For a cloud ASP.NET Core agent, use the standard Microsoft.Identity.Web APIs in the [cloud tutorials](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom). For a hosting platform with a fleet, use Microsoft.Identity.Web.AgentIdentities and explicit child-identity selection in the [fleet tutorials](https://learn.microsoft.com/en-us/entra/agent-id/plan-agent-fleet). For a local public client, use [MSAL](https://learn.microsoft.com/en-us/entra/agent-id/authenticate-local-agent) without a client credential.
 
 The Microsoft Entra ID Auth SDK \(sidecar\) provides Microsoft Entra authentication and token-management capabilities as a containerized web service that runs alongside your application. Use it when your agent runs in a containerized environment \(such as Kubernetes, Docker, or Azure container services\), or when the agent isn't built in .NET and you want a language-agnostic HTTP interface. For .NET applications, Microsoft.Identity.Web provides the equivalent in-process integration. For more information, see [Microsoft Entra ID Auth SDK \(sidecar\)](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/overview).
 
 Microsoft Graph APIs provide agent identity management when the other options don't fit your scenario. For more information, see [Microsoft Graph API for agent identity blueprints](https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint).
+
+For agents that need Microsoft 365 channels and services, see the [Microsoft Agent 365 developer documentation](https://learn.microsoft.com/en-us/microsoft-agent-365/developer/). Its provisioning and runtime integration are separate from the Auth SDK sidecar.

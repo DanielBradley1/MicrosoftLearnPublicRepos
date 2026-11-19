@@ -96,5 +96,6 @@ After running your workflow on-demand and checking that everything is working fi
 
 ## Next steps
 
+- [Onboard users with identity verification \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/how-to-onboard-users-with-identity-verification)
 - [Tutorial: Preparing user accounts for Lifecycle workflows](https://learn.microsoft.com/en-us/entra/id-governance/tutorial-prepare-user-accounts)
 - [Automate employee onboarding tasks before their first day of work using Lifecycle Workflows APIs](https://learn.microsoft.com/en-us/graph/tutorial-lifecycle-workflows-onboard-custom-workflow)

@@ -11,22 +11,22 @@ For step-by-step decision guidance on how many blueprints and agent identities t
 
 ## Key concepts
 
-The following components are the foundation of Microsoft Entra Agent ID. If you're new to them, start with [Microsoft Entra Agent ID key concepts](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/key-concepts) before continuing with this article.
+The following components are the foundation of Microsoft Entra Agent ID. If you're new to them, start with [Microsoft Entra Agent ID key concepts](https://learn.microsoft.com/en-us/entra/agent-id/key-concepts) before continuing with this article.
 
 ### Identity constructs
 
 The following identity constructs are used throughout the patterns described in this article:
 
-- **[Agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint)**: The template and authentication foundation for one or more agent identities. It holds credentials and policies that apply to all agent identities created from it.
-- **[Agent identity blueprint principal](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint#agent-identity-blueprint-principals)**: The Microsoft Entra object created when a blueprint is added to a tenant. It's what actually acquires tokens, creates agent identities, and appears in audit logs on behalf of the blueprint.
-- **[Agent identity](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-identities)**: The runtime identity for a specific AI agent, with its own permissions on downstream resources.
-- **[Agent's user account](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-users)**: An optional 1:1 account paired with an agent identity, needed only when the agent must access systems that require a user object.
+- **[Agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint)**: The template and authentication foundation for one or more agent identities. It holds credentials and policies that apply to all agent identities created from it.
+- **[Agent identity blueprint principal](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint#agent-identity-blueprint-principals)**: The Microsoft Entra object created when a multi-instance blueprint is added to a tenant. It acquires tokens, creates agent identities, and appears in audit logs on behalf of the blueprint. Single-instance blueprints don't have this principal.
+- **[Agent identity](https://learn.microsoft.com/en-us/entra/agent-id/agent-identities)**: The runtime identity for a specific AI agent, with its own permissions on downstream resources.
+- **[Agent's user account](https://learn.microsoft.com/en-us/entra/agent-id/agent-users)**: An optional 1:1 account paired with an agent identity, needed only when the agent must access systems that require a user object.
 
 ### Permissions models
 
 Blueprint-level permissions and agent identity-level permissions serve different purposes:
 
-- **Blueprint permissions** represent the minimum permissions shared across all agent identities created from the blueprint. Use inheritable permissions on the blueprint when you want all agent identities to start with a common baseline.
+- **Fleet blueprint permissions** can provide a common baseline through explicitly configured inheritance and consent. Single-instance agents don't have a blueprint principal and receive permissions directly.
 - **Agent identity permissions** represent differentiated permissions for a specific agent. Use these permissions when different agents in the same system need different access to downstream resources.
 
 For more information, see [Configure inheritable permissions for blueprints](https://learn.microsoft.com/en-us/entra/agent-id/configure-inheritable-permissions-blueprints) and [Authorization in Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/authorization-agent-id).
@@ -46,6 +46,8 @@ The following patterns are based on real-world agent deployments. Each describes
 A single agent that assists with a specific task, commonly built on a low-code or no-code platform like Microsoft Copilot Studio. The agent either always acts on behalf of a signed-in user \(interactive\) or always acts as itself \(autonomous\).
 
 **Structure:** One blueprint → one agent identity
+
+This deployment pattern doesn't by itself select the blueprint's [instance mode](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint#instance-modes-preview). A single-instance blueprint and a multi-instance blueprint with one child identity both have one Agent ID, but their client IDs, token acquisition, and permission inheritance differ.
 
 Although a blueprint with a single agent identity might seem redundant, the blueprint gives the agent consistent Conditional Access policies, monitoring, governance, and audit entries — the same infrastructure you need for multi-agent systems, with minimal setup.
 
@@ -111,7 +113,7 @@ Each digital worker requires its own agent's user account. The 1:1 relationship 
 
 *Example: An AI sales representative with a real mailbox, listed in the Global Address List, that responds to email and is assigned a human manager in the org chart.*
 
-**Permissions:** Grant the agent's user account the specific Exchange, Teams, and OneDrive permissions it needs. Grant the agent identity application-level permissions for systems that don't require a user object. For more information, see [Grant agent access to Microsoft 365](https://learn.microsoft.com/en-us/entra/agent-id/grant-agent-access-microsoft-365).
+**Permissions:** Grant the agent's user account the specific Exchange, Teams, and OneDrive permissions it needs. For delegated access, see [Request consent for delegated permissions](https://learn.microsoft.com/en-us/entra/agent-id/grant-agent-access-microsoft-365). For application access, see [Permissions and consent in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview).
 
 **Agent's user account:** Required. Create one agent's user account per digital worker agent identity.
 
@@ -131,8 +133,8 @@ Creating one agent identity per meeting, per document, or per ephemeral object a
 
 ## Related content
 
-- [Agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint)
-- [Agent identities](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-identities)
-- [Agent's user accounts](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-users)
+- [Agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint)
+- [Agent identities](https://learn.microsoft.com/en-us/entra/agent-id/agent-identities)
+- [Agent's user accounts](https://learn.microsoft.com/en-us/entra/agent-id/agent-users)
 - [Plan your agent identity architecture](https://learn.microsoft.com/en-us/entra/agent-id/how-to-plan-agent-identity-architecture)
 - [Configure inheritable permissions for blueprints](https://learn.microsoft.com/en-us/entra/agent-id/configure-inheritable-permissions-blueprints)

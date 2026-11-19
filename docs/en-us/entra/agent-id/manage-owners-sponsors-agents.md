@@ -9,10 +9,10 @@ This article walks you through adding and removing owners and sponsors using the
 
 ## Prerequisites
 
-To manage owners and sponsors, you must:
+To manage owners and sponsors, you must be either:
 
-- Have the [Agent ID Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) role.
-- Be an existing owner of the agent identity blueprint or agent identity you want to manage.
+- An [Agent ID Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator); or
+- An existing owner of the agent identity blueprint or agent identity you want to manage.
 
 ## Add an owner or sponsor to an agent blueprint
 

@@ -1,378 +1,225 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow -->
 <!-- Sitemap-Last-Modified: 2026-06-15 -->
 
-# Authenticate users and acquire tokens for interactive agents
+# Call a custom API as a user with ASP.NET Core
 
-Interactive agents take actions on behalf of users. To act on behalf of users securely, the agent authenticates the user, gets consent for required permissions, and acquires access tokens for downstream APIs. This article walks you through the end-to-end authentication and token acquisition flow for your interactive agent:
+Call your custom API with the signed-in user's access, rather than the agent's application permissions. This article uses the OAuth On-Behalf-Of \(OBO\) flow: a client signs in the user, calls your agent, and the agent gets a token for the downstream API.
 
-1. Grant permissions through inheritable permissions or consent.
-2. Authenticate the user and obtain an access token.
-3. Validate the token and extract user claims.
-4. Acquire tokens for downstream APIs using the On-Behalf-Of \(OBO\) flow.
-
-Note
-
-This article covers interactive agents that act **on behalf of** signed-in users using the OBO flow. If your agent needs its own user-like identity \(a digital worker scenario\), see [Agent's user accounts](https://learn.microsoft.com/en-us/entra/agent-id/agent-users) and [Agent's user account OAuth flow](https://learn.microsoft.com/en-us/entra/agent-id/agent-user-oauth-flow).
+You'll extend the agent API from the authentication walkthrough and test the complete call with the same client. You can use an existing protected API or the local test API below. The agent doesn't start another interactive sign-in.
 
 ## Prerequisites
 
-Before you begin, ensure you have:
+- Complete [Authenticate users to an ASP.NET Core agent API](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-authenticate-users).
+- A credential on the agent identity blueprint. For local testing, use the [certificate registered during provisioning](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent#add-a-certificate-for-confidential-clients) and the [local certificate configuration](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom#configure-a-local-development-credential). For production, configure a [managed identity federated credential](https://learn.microsoft.com/en-us/entra/agent-id/create-blueprint#configure-credentials-for-the-agent-identity-blueprint).
+- An existing custom API's delegated scope, HTTPS endpoint, and user authorization requirements, or permission to [set up the local test API](#prepare-a-downstream-api).
+- The management client and consent permissions from the authentication walkthrough, to grant the test user's downstream access.
+- An app role assigned to the user if the agent uses [app roles to control access](https://learn.microsoft.com/en-us/entra/agent-id/control-user-access-agents).
 
-- An [agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint). Record the agent identity blueprint app ID \(client ID\).
-- An [agent identity](https://learn.microsoft.com/en-us/entra/agent-id/create-delete-agent-identities).
-- A client application registered in Microsoft Entra to handle user authentication.
-- Familiarity with the [OAuth 2.0 authorization code flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow).
-- The ability to run an ASP.NET Core web API if you plan to use the token validation and OBO samples in this article.
+The authentication walkthrough establishes client-to-agent consent. You also need agent-to-API consent; one grant doesn't replace the other.
 
-For admin authorization, you also need:
+## Prepare a downstream API
 
-- [Administrator access to grant consent](https://learn.microsoft.com/en-us/entra/agent-id/grant-agent-access-microsoft-365) for application permissions.
+For an existing API, ask its owner for the application \(client\) ID, enterprise application object ID, fully qualified delegated scope, HTTPS endpoint, and test user's access requirements. Skip the local API steps only when that API is ready to validate and authorize delegated requests.
 
-## Permissions and consent
+To create an isolated local API:
 
-Before the agent can act on behalf of a user, the user or an administrator must consent to the required permissions. There are two approaches to granting permissions:
+1. [Register a single-tenant application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) named **Agent downstream test API**.
+2. [Expose a delegated permission](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-expose-web-apis) with application ID URI `api://<custom-api-client-id>` and scope value `read_data`. Record the scope's GUID. In the app manifest, set `api.requestedAccessTokenVersion` to `2`.
+3. Record the corresponding enterprise application's **Object ID** for consent. Don't use its client ID in place of this object ID.
+4. Create a web API project in a separate directory:
 
-- **Inheritable permissions**: Preauthorize permissions on the blueprint so agent identities inherit them automatically.
-- **Request consent**: Register a redirect URI and prompt users or administrators to grant consent through an OAuth request or use the admin consent endpoint.
+   ```dotnetcli
+   dotnet new webapi --framework net10.0 --name DownstreamApi
+   cd DownstreamApi
+   dotnet add package Microsoft.Identity.Web --version 4.17.0
+   ```
 
-### Use inheritable permissions
+5. Configure `AzureAd` in this project's `appsettings.json` with `Instance` set to `https://login.microsoftonline.com/`, your `TenantId`, and `ClientId` set to the **downstream API's** client ID. This resource API validates tokens and doesn't need a client credential.
+6. Replace this project's `Program.cs` with:
 
-Configure inheritable permissions on the agent identity blueprint to preauthorize a base set of delegated scopes and application roles. Agent identities created from the blueprint automatically inherit those permissions without interactive consent prompts. For more information, see [Configure inheritable permissions for agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/configure-inheritable-permissions-blueprints).
+   ```csharp
+   using Microsoft.Identity.Web;
+   using Microsoft.Identity.Web.Resource;
 
-### Request consent
+   var builder = WebApplication.CreateBuilder(args);
+   builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration);
+   builder.Services.AddAuthorization();
+   var app = builder.Build();
+   app.UseAuthentication();
+   app.UseAuthorization();
 
-To request consent through an OAuth flow, your agent identity blueprint must first be configured with a redirect URI. For blueprints, the redirect URI must be a **web application** type. Unlike redirect URIs on app registrations, a redirect URI on a blueprint can't be used to obtain delegated permission tokens. Only `response_type=none` is supported in the OAuth2 request, which means the request records consent only and no tokens are returned.
+   app.MapGet("/user-data", (HttpContext context) =>
+   {
+       context.VerifyUserHasAnyAcceptedScope("read_data");
+       return Results.Ok(new
+       {
+           objectId = context.User.GetObjectId(),
+           tenantId = context.User.GetTenantId()
+       });
+   }).RequireAuthorization();
 
-#### Register a redirect URI
+   app.Run();
+   ```
 
-- [Microsoft Graph API](#tabpanel_1_microsoft-graph-api)
-- [Microsoft Graph PowerShell](#tabpanel_1_microsoft-graph-powershell)
+7. Run `dotnet run --urls https://localhost:5002` and leave this terminal open. Use the trusted development certificate from the authentication walkthrough.
 
-To update the redirect URI on the agent identity blueprint, you first need to obtain an access token with the delegated permission `AgentIdentityBlueprint.ReadWrite.All`. Then send a PATCH request to the application object for the agent identity blueprint:
+The test endpoint returns only the authenticated caller's identity. For real data, enforce the user's access to each requested resource as well as the delegated scope. A scope alone doesn't authorize access to another user's records.
+
+## Grant downstream access
+
+Declare the API's delegated scope on the blueprint using [Declare the API permissions](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent#declare-the-api-permissions). Use the downstream API's client ID for `resourceAppId` and its scope GUID with `"type": "Scope"`. A declaration isn't consent.
+
+Through the authorized management client, check for an existing grant:
 
 ```http
-PATCH https://graph.microsoft.com/beta/applications/<agent-blueprint-id>
-OData-Version: 4.0
+GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq '<agent-identity-object-id>' and resourceId eq '<custom-api-service-principal-object-id>'
+```
+
+Follow pagination. If an applicable grant already includes the scope, reuse it. If a grant for this user lacks the scope, [update the OAuth2 permission grant](https://learn.microsoft.com/en-us/graph/api/oauth2permissiongrant-update) with the union of existing and required scopes. Otherwise, grant access for the same user who signs in through the test client:
+
+```http
+POST https://graph.microsoft.com/v1.0/oauth2PermissionGrants
 Content-Type: application/json
-Authorization: Bearer <token>
 
 {
-  "web": {
-    "redirectUris": [
-      "https://myagentapp.com/authorize"
+  "clientId": "<agent-identity-object-id>",
+  "resourceId": "<custom-api-service-principal-object-id>",
+  "consentType": "Principal",
+  "principalId": "<user-object-id>",
+  "scope": "read_data"
+}
+```
+
+Expect `201 Created` and save the grant's `id` for cleanup. For an existing API, replace `read_data` with its scope value, without the `api://` prefix. For other consent options, see [Grant delegated permissions to an agent identity](https://learn.microsoft.com/en-us/entra/agent-id/grant-agent-access-microsoft-365).
+
+## Configure the blueprint credential
+
+Keep the agent API's existing `AzureAd` settings from the authentication walkthrough. Add the credential for where you run the API.
+
+- [Local workstation](#tabpanel_1_local)
+- [Azure host](#tabpanel_1_azure)
+
+Follow [Configure a local development credential](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom#configure-a-local-development-credential) to add the registered certificate in `appsettings.Development.json` and supply its password through the environment.
+
+Keep the tenant ID and agent client ID from the authentication walkthrough. Don't use the downstream API's client ID for the agent, and don't add a managed identity credential to the local configuration.
+
+Use the following `appsettings.json` configuration only on an Azure host with the specified managed identity assigned and its federated credential configured on the blueprint. Signing in to Azure CLI on your workstation doesn't make this configuration work locally.
+
+```json
+{
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "TenantId": "<tenant-id>",
+    "ClientId": "<agent-client-id>",
+    "ClientCredentials": [
+      {
+        "SourceType": "SignedAssertionFromManagedIdentity",
+        "ManagedIdentityClientId": "<managed-identity-client-id>"
+      }
     ]
   }
 }
 ```
 
-Use Microsoft Graph PowerShell to update the agent identity blueprint with the redirect URI.
+Warning
 
-```powershell
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.ReadWrite.All" -TenantId <your-tenant-id>
+Client secrets shouldn't be used as client credentials in production environments for agent identity blueprints due to security risks. Instead, use more secure authentication methods such as [federated identity credentials \(FIC\) with managed identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity) or client certificates. These methods provide enhanced security by eliminating the need to store sensitive secrets directly within your application configuration.
 
-$applicationId = "<agent-blueprint-id>"
-$web = @{
-    redirectUris= @(
-        "https://myagentapp.com/authorize"
-    )
-}
+## Configure token validation and OBO
 
-$body = @{
-    web   =  $web
-}
-
-Invoke-MgGraphRequest -Method PATCH `
-        -Uri "https://graph.microsoft.com/beta/applications/$applicationId" `
-        -Headers @{ "OData-Version" = "4.0" } `
-        -Body ($body | ConvertTo-Json)
-```
-
-#### Request user consent
-
-Before the agent can act on behalf of a user, the user must consent to the required permissions. The user consent request doesn't return a token. Instead, it records that the user granted the agent permission to act on their behalf. Token acquisition happens in [Authenticate the user and request a token](#authenticate-the-user-and-request-a-token).
-
-Important
-
-Use the **agent identity** client ID in the `client_id` parameter, not the agent identity blueprint ID.
-
-To prompt a user for consent, construct an authorization URL and redirect the user to it. The agent can present this URL in different ways, for example, as a link in a chat message.
-
-```text
-https://login.microsoftonline.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?
-  client_id=<agent-identity-id>
-  &response_type=none
-  &redirect_uri=https%3A%2F%2Fmyagentapp.com%2Fauthorize
-  &response_mode=query
-  &scope=User.Read
-  &state=xyz123
-```
-
-When the user opens this URL, Microsoft Entra ID prompts them to sign in and grant consent. After consent, the user is sent back to the redirect URI.
-
-The key parameters in the user consent authorization URL are:
-
-- `client_id`: The agent identity client ID \(not the agent identity blueprint client ID\).
-- `response_type`: Set to `none` because this request records consent only. Token acquisition uses `response_type=code` in [Authenticate the user and request a token](#authenticate-the-user-and-request-a-token).
-- `redirect_uri`: Must match exactly the redirect URI configured on the agent identity blueprint.
-- `scope`: Specify the delegated permissions you need \(for example, `User.Read`\).
-- `state`: Optional parameter for maintaining state between the request and callback.
-
-For more information on OAuth authorization concepts, see [Permissions and consent in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview).
-
-#### Request admin consent for all users
-
-Agents can also request authorization from a Microsoft Entra ID administrator, who can grant consent to the agent for all users in their tenant. Admin consent might be required depending on the consent settings configured in the tenant.
-
-To grant tenant-wide admin consent, direct an administrator to the following URL. Use the agent identity ID in the `client_id` parameter.
-
-```text
-https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
-?client_id=<agent-identity-id>
-&scope=User.Read
-&redirect_uri=<redirect-uri>
-&state=xyz123
-```
-
-After the administrator grants consent, the permissions apply to the whole tenant. Users don't need to consent again.
-
-Note
-
-Configure a redirect URI on your blueprint and include a `state` parameter in the consent request. When consent is granted, the user is sent to the redirect URI where you can display confirmation. Your endpoint can use the `state` parameter to track that permission was granted. For single-tenant agents, you can alternatively retry token requests until consent is granted because the tenant ID is already known.
-
-## Authenticate the user and request a token
-
-After consent is granted, the client app \(such as a frontend or mobile app\) initiates an OAuth 2.0 authorization code request to obtain a token where the audience is the agent identity blueprint. In this step, `client_id` refers to the client app's own registered application ID, not the agent identity or agent identity blueprint.
-
-Note
-
-The `redirect_uri` in this request belongs to the **client app's** registration, not the blueprint's redirect URI configured in the previous consent step.
-
-1. Redirect the user to the Microsoft Entra ID authorization endpoint with the following parameters:
-
-   ```http
-   GET https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/authorize?client_id=<client-app-id>
-   &response_type=code
-   &redirect_uri=<redirect_uri>
-   &response_mode=query
-   &scope=api://<agent-blueprint-id>/access_agent
-   &state=abc123
-   ```
-
-2. After the user signs in, your app receives an authorization code at the redirect URI. Exchange the authorization code for an access token:
-
-   ```http
-   POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
-   Content-Type: application/x-www-form-urlencoded
-
-   client_id=<client-app-id>
-   &grant_type=authorization_code
-   &code=<authorization_code>
-   &redirect_uri=<redirect_uri>
-   &scope=api://<agent-blueprint-id>/access_agent
-   &client_secret=<client-secret>
-   ```
-
-
-   Include the `client_secret` parameter only if using a confidential client.
-
-
-   The JSON response contains an access token that can be used to access the agent's API.
-
-## Validate the access token
-
-The web API must validate the incoming access token before the agent can act. Always use an approved library to validate tokens. Don't write your own token validation code.
-
-1. Install the `Microsoft.Identity.Web` NuGet package:
-
-   ```bash
-   dotnet add package Microsoft.Identity.Web
-   ```
-
-2. In your ASP.NET Core web API project, implement Microsoft Entra ID authentication:
-
-   ```csharp
-   // Program.cs
-   using Microsoft.AspNetCore.Authentication.JwtBearer;
-   using Microsoft.Identity.Web;
-
-   var builder = WebApplication.CreateBuilder(args);
-
-   builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-       .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
-
-   var app = builder.Build();
-
-   app.UseAuthentication();
-   app.UseAuthorization();
-   ```
-
-3. Configure authentication credentials in the `appsettings.json` file:
-
-   Warning
-
-   Client secrets shouldn't be used as client credentials in production environments for agent identity blueprints due to security risks. Instead, use more secure authentication methods such as [federated identity credentials \(FIC\) with managed identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity) or client certificates. These methods provide enhanced security by eliminating the need to store sensitive secrets directly within your application configuration.
-
-   ```json
-   "AzureAd": {
-       "Instance": "https://login.microsoftonline.com/",
-       "TenantId": "<your-tenant-id>",
-       "ClientId": "<agent-blueprint-id>",
-       "Audience": "<agent-blueprint-id>",
-       "ClientCredentials": [
-           {
-               "SourceType": "ClientSecret",
-               "ClientSecret": "your-client-secret"
-           }
-       ]
-   }
-   ```
-
-For more information about Microsoft.Identity.Web, see [Microsoft.Identity.Web documentation](https://learn.microsoft.com/en-us/entra/msal/dotnet/microsoft-identity-web/).
-
-## Validate user claims
-
-After access token validation, the agent can identify the user and perform authorization checks. The following example API route extracts user claims from the access token and returns them in the API response:
+Replace the agent API's `Program.cs` from the authentication walkthrough with the following code and the endpoint in **Call the API**, in that order. Don't append a second application builder or a second `app.Run()`. This version adds token acquisition and uses an in-memory token cache for the local test.
 
 ```csharp
-app.MapGet("/hello-agent", (HttpContext httpContext) =>
-{   
-    var claims = httpContext.User.Claims.Select(c => new
-    {
-        Type = c.Type,
-        Value = c.Value
-    });
+using System.Net.Http.Headers;
+using Microsoft.Identity.Abstractions;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.Resource;
 
-    return Results.Ok(claims);
-})
-.RequireAuthorization();
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services
+    .AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
+    .EnableTokenAcquisitionToCallDownstreamApi()
+    .AddInMemoryTokenCaches();
+
+builder.Services.AddHttpClient();
+builder.Services.AddAuthorization();
+
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapGet("/whoami", (HttpContext context) =>
+{
+    context.VerifyUserHasAnyAcceptedScope("access_agent");
+    return Results.Ok(new
+    {
+        objectId = context.User.GetObjectId(),
+        tenantId = context.User.GetTenantId()
+    });
+}).RequireAuthorization();
 ```
 
-## Acquire tokens for downstream APIs
+## Call the API
 
-After an interactive agent validates the user's token, it can request access tokens to call downstream APIs on behalf of the user. The On-Behalf-Of \(OBO\) flow allows the agent to:
+Use `CreateAuthorizationHeaderForUserAsync` with the authenticated `HttpContext.User`. Microsoft.Identity.Web uses the validated incoming access token as the OBO assertion and authenticates with the configured shared client ID and blueprint credential.
 
-- Receive an access token from a client.
-- Exchange it for a new access token for a downstream API like Microsoft Graph.
-- Use that new token to access protected resources on behalf of the original user.
+Append this endpoint after the `/whoami` mapping in the previous block. Keep `/whoami` so you can compare the inbound and downstream identities. Replace the client ID, scope value, and URL with your API's values. For the local test API, use `read_data` and `https://localhost:5002/user-data`.
 
-- [Use Microsoft Identity Web](#tabpanel_2_identity-web-tokens)
-- [Use Microsoft Graph SDK](#tabpanel_2_graph-sdk-tokens)
+```csharp
+app.MapGet("/custom-api-for-user", async (
+    HttpContext context,
+    IAuthorizationHeaderProvider authorizationHeaderProvider,
+    IHttpClientFactory httpClientFactory) =>
+{
+    context.VerifyUserHasAnyAcceptedScope("access_agent");
 
-The `Microsoft.Identity.Web` library simplifies the OBO implementation by handling token exchange automatically, so you don't have to manually implement the flow by following the protocol.
+    string authorizationHeader = await authorizationHeaderProvider
+        .CreateAuthorizationHeaderForUserAsync(
+            ["api://<custom-api-client-id>/<delegated-scope>"],
+            claimsPrincipal: context.User);
 
-1. Install the required NuGet packages:
+    HttpClient client = httpClientFactory.CreateClient();
+    client.DefaultRequestHeaders.Authorization =
+        AuthenticationHeaderValue.Parse(authorizationHeader);
 
-   ```bash
-   dotnet add package Microsoft.Identity.Web
-   dotnet add package Microsoft.Identity.Web.AgentIdentities
-   ```
+    using HttpResponseMessage response =
+        await client.GetAsync("https://api.contoso.com/user-data");
+    response.EnsureSuccessStatusCode();
 
-2. In your ASP.NET Core web API project, update the Microsoft Entra ID authentication implementation:
+    return Results.Content(
+        await response.Content.ReadAsStringAsync(),
+        response.Content.Headers.ContentType?.ToString());
+})
+.RequireAuthorization();
 
-   ```csharp
-   // Program.cs
-   using Microsoft.AspNetCore.Authorization;
-   using Microsoft.Identity.Abstractions;
-   using Microsoft.Identity.Web;
-   using Microsoft.Identity.Web.Resource;
-   using Microsoft.Identity.Web.TokenCacheProviders.InMemory;
+app.Run();
+```
 
-   var builder = WebApplication.CreateBuilder(args);
+The returned authorization header includes the `Bearer` scheme. Send it only to the intended custom API, and don't return or log it.
 
-   builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
-       .EnableTokenAcquisitionToCallDownstreamApi();
-   builder.Services.AddAgentIdentities();
-   builder.Services.AddInMemoryTokenCaches();
+The custom API must validate the token and enforce both the delegated scope and resource-level access for the user. For protocol details, see [OAuth protocols in Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/agent-oauth-protocols#hosted-agent-that-acts-for-a-signed-in-user) and the [OAuth 2.0 On-Behalf-Of flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
 
-   var app = builder.Build();
+## Verify delegated access
 
-   app.UseAuthentication();
-   app.UseAuthorization();
+1. If the downstream API isn't already running, start it at `https://localhost:5002`. Leave it running while you start the agent API in its own terminal with `dotnet run --urls https://localhost:5001`.
+2. In the [test client](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-authenticate-users#run-the-test-client), change only the request URL from `https://localhost:5001/whoami` to `https://localhost:5001/custom-api-for-user`. Keep the requested scope as `api://<agent-client-id>/access_agent`, not the downstream scope.
+3. Run the test client and sign in as the user in both consent grants. Expect `HTTP 200`. For the local API, the response must contain the same user and tenant IDs returned by `/whoami`.
+4. Call the agent endpoint without a bearer token. Expect `401`. A token issued for the agent must also be rejected if sent directly to the downstream API because its audience is wrong.
+5. For an existing API, test a resource the signed-in user isn't allowed to access. The local identity-only endpoint doesn't expose another user's records, so this resource-level test doesn't apply to it.
 
-   app.Run();
-   ```
+If either API exposes another delegated scope, you can also run a scope-negative test against it. For a direct call from the test client, declare and grant that client the alternate scope on the target API. Request only that scope, then send the resulting token directly to that API's endpoint and confirm rejection. The token must have the target API's audience but lack the endpoint's required scope. If you instead test a downstream token acquired through OBO, the alternate downstream grant belongs to the agent identity, not the upstream test client. The minimal local setup doesn't define alternate scopes, so these tests are optional. Don't treat the wrong-audience test as a substitute.
 
-3. In the agent API, exchange the incoming user access token for a new access token for the agent identity. `Microsoft.Identity.Web` validates the incoming access token and handles the on-behalf-of token exchange:
+If OBO reports missing consent, check front-end access to the agent separately from the agent's downstream permission. OBO can't display an interactive consent prompt. Record correlation IDs for failures, not tokens or assertions.
 
-   ```csharp
-   app.MapGet("/agent-obo-user", async (HttpContext httpContext) =>
-   {
-       string agentIdentity = "<your-agent-identity>";
-       IAuthorizationHeaderProvider authorizationHeaderProvider = httpContext.RequestServices.GetService<IAuthorizationHeaderProvider>()!;
-       AuthorizationHeaderProviderOptions options = new AuthorizationHeaderProviderOptions().WithAgentIdentity(agentIdentity);
+## Clean up the local test
 
-       string authorizationHeaderWithUserToken = await authorizationHeaderProvider.CreateAuthorizationHeaderForUserAsync(["https://graph.microsoft.com/.default"], options);
-
-       var response = new { header = authorizationHeaderWithUserToken };
-       return Results.Json(response);
-   })
-   .RequireAuthorization();
-   ```
-
-If you're using the Microsoft Graph SDK, you can authenticate to Microsoft Graph using the `GraphServiceClient`.
-
-1. Install the required NuGet packages:
-
-   ```bash
-   dotnet add package Microsoft.Identity.Web
-   dotnet add package Microsoft.Identity.Web.AgentIdentities
-   dotnet add package Microsoft.Identity.Web.GraphServiceClient
-   ```
-
-2. In your ASP.NET Core web API project, configure authentication and add support for Microsoft Graph:
-
-   ```csharp
-   // Program.cs
-   using Microsoft.AspNetCore.Authorization;
-   using Microsoft.Identity.Web;
-   using Microsoft.Identity.Web.TokenCacheProviders.InMemory;
-
-   var builder = WebApplication.CreateBuilder(args);
-
-   builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
-       .EnableTokenAcquisitionToCallDownstreamApi();
-   builder.Services.AddAgentIdentities();
-   builder.Services.AddInMemoryTokenCaches();
-   builder.Services.AddMicrosoftGraph();
-
-   var app = builder.Build();
-
-   app.UseAuthentication();
-   app.UseAuthorization();
-
-   app.Run();
-   ```
-
-3. Get a `GraphServiceClient` from the service provider and call Microsoft Graph APIs with the agent identity:
-
-   ```csharp
-   app.MapGet("/agent-obo-user", async (HttpContext httpContext) =>
-   {
-       string agentIdentity = "<your-agent-identity>";
-
-       GraphServiceClient graphServiceClient = httpContext.RequestServices.GetService<GraphServiceClient>()!;
-       var me = await graphServiceClient.Me.GetAsync(r => r.Options.WithAuthenticationOptions(
-           o =>
-           {
-               o.WithAgentIdentity(agentIdentity);
-           }));
-       return me.UserPrincipalName;
-   })
-   .RequireAuthorization();
-   ```
-
-Under the hood, the OBO flow involves two token exchanges: first, the agent identity blueprint obtains an exchange token using its client credential, and then the agent identity exchanges that token along with the user's access token for a downstream API token. For the full protocol walkthrough, including HTTP request formats and token validation details, see [On-behalf-of flow in agents](https://learn.microsoft.com/en-us/entra/agent-id/agent-on-behalf-of-oauth-flow).
+Stop the three projects. Through the management client, delete test-only grants with `DELETE https://graph.microsoft.com/v1.0/oauth2PermissionGrants/<grant-id>` before deleting their client or resource registrations. Delete the test client's and downstream API's app registrations only if you created them for this test. For a test-only agent, follow [Delete agent identity objects](https://learn.microsoft.com/en-us/entra/agent-id/howto-delete-agent-identity). Don't delete shared registrations, scopes, or grants.
 
 ## Related content
 
-Learn more about agent tokens and related APIs:
-
-- [Token claims reference](https://learn.microsoft.com/en-us/entra/agent-id/agent-token-claims)
-- [On-behalf-of flow in agents](https://learn.microsoft.com/en-us/entra/agent-id/agent-on-behalf-of-oauth-flow)
-- [Call Microsoft Graph API](https://learn.microsoft.com/en-us/entra/agent-id/call-api-microsoft-graph)
-- [Call custom APIs](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom)
-- [Call Azure services](https://learn.microsoft.com/en-us/entra/agent-id/call-api-azure-services)
-- [Agent users](https://learn.microsoft.com/en-us/entra/agent-id/agent-users)
-- [Authenticate and acquire tokens for autonomous agents](https://learn.microsoft.com/en-us/entra/agent-id/autonomous-agent-authentication-authorization-flow)
-- [Permissions and consent in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview)
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow)
+- [Call APIs for users of an agent fleet](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-fleet-call-apis-as-user)
+- [Validate Agent ID tokens in a downstream API](https://learn.microsoft.com/en-us/entra/agent-id/how-to-validate-agent-tokens-downstream-api)
+- [Protected web API: verify scopes and app roles](https://learn.microsoft.com/en-us/entra/identity-platform/scenario-protected-web-api-verification-scope-app-roles)
+- [Call a custom API as an agent](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom)

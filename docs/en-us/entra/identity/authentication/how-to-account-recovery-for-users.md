@@ -5,11 +5,17 @@
 
 Users can recover their accounts in a few simple steps. This article describes how users discover and start the account recovery process and what to expect during identity verification through an organization's configured provider.
 
+## Prerequisites
+
+Before you begin, install Microsoft Authenticator version 6.2610.7075 or later for Android, or version 6.8.58 or later for iOS.
+
 ## Video: Recover your work or school account in Microsoft Entra ID
 
 <iframe src="https://www.youtube-nocookie.com/embed/5ivST2bw7uQ" allowfullscreen="true" data-linktype="external" frameborder="0"></iframe>
 
 ## User steps
+
+These steps describe the default Temporary Access Pass \(TAP\)-based experience. If your organization explicitly enables registration without a TAP, complete the identity verification and account-validation prompts. Then follow [Complete registration without a TAP](#complete-registration-without-a-tap) instead of the TAP sign-in steps.
 
 1. Start by attempting to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
 2. You're presented with an initial authentication method to sign in with.
@@ -41,6 +47,29 @@ Users can recover their accounts in a few simple steps. This article describes h
 18. Finally, you're redirected to [Security info](https://mysignins.microsoft.com/security-info), where you can register a new authentication method and fully regain access.
 
     [![Screenshot that shows how to create a passkey for account recovery.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/how-to-account-recovery-for-users/create-passkey.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/how-to-account-recovery-for-users/create-passkey.png#lightbox)
+
+## Complete registration without a TAP
+
+This path applies only when your organization explicitly enables the preview option to stop issuing a TAP. TAP issuance is on by default. If you receive a TAP, follow the user steps above; the absence of a TAP isn't enough to determine that the TAP-free path is enabled.
+
+Note
+
+When your organization requires passkey attestation, registration without a TAP is supported only on Android. On iOS, you continue to receive a TAP, even when your organization's TAP issuance setting is off, because the TAP-free registration path doesn't support attestation on iOS. Follow the TAP-based steps above.
+
+The provider's identity verification steps can still vary. Complete account validation first, then continue to authentication method registration in the same recovery session without receiving a TAP.
+
+1. Complete your organization's identity verification and account-validation prompts.
+2. On a supported device, continue to My Sign-ins when the recovery experience directs you there.
+3. Complete the passkey registration prompts for your organization's supported method.
+4. If registration can't complete, contact your organization's support team rather than assuming identity verification alone restored account access.
+
+Ask your support team to confirm the supported device and registration path; successful identity verification alone doesn't guarantee that registration can complete.
+
+### Distinguish expected behavior from an error
+
+An evaluation-mode result doesn't restore your account. In the TAP-based experience, a missing TAP can indicate an account-matching or TAP policy problem, as described below. In the TAP-free experience, not receiving a TAP is expected only after successful validation and a supported transition to registration.
+
+If you aren't sure which experience your organization enabled, ask your support team. TAP-free session expiration and retry instructions still need verification; don't apply the TAP-expiration instructions to that session.
 
 ## Troubleshooting
 

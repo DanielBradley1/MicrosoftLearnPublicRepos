@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/global-secure-access/reference-current-known-limitations -->
-<!-- Sitemap-Last-Modified: 2026-09-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Known limitations for Global Secure Access
 
@@ -306,6 +306,7 @@ Known limitations for Internet Access include:
 - An admin can create up to 256 security profiles per tenant, up to 1,000 policies per tenant, and up to 1,000 rules per tenant.
 - An admin can configure 8,000 total destinations \(which can be any combination of IP, FQDN, URL, or web category\) in each tenant. For example, within a single tenant can create up to two policies targeting 4,000 domains each *or* up to 1,000 policies with eight domains each.
 - TLS inspection supports up to 100 TLS inspection policies, 1,000 rules, and 8,000 destinations.
+- Cloud firewall supports up to 1,000 rules per tenant and a combined total of 500 sources and destinations per rule.
 - The platform assumes standard ports for HTTP/S traffic \(ports 80 and 443\).
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic and transfers IPv6 traffic directly to the network. To make sure that all traffic routes to Global Secure Access, set the network adapter properties to [IPv4 preferred](https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check#ipv4-preferred).
 - UDP isn't supported on this platform yet.

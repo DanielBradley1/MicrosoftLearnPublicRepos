@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/ -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Privileged Identity Management documentation
 
@@ -32,6 +32,8 @@ Privileged Identity Management \(PIM\) in Microsoft Entra ID enables you to limi
 
 - [Activate my Microsoft Entra roles](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role)
 - [Activate my Azure resource roles](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles)
+- [Connect to an Azure Virtual Machine from the My Access portal](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-connect-virtual-machine-my-access)
+- [My Access portal \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview#activate-eligible-role-assignments)
 
 ## Assign roles
 
@@ -39,6 +41,8 @@ Privileged Identity Management \(PIM\) in Microsoft Entra ID enables you to limi
 
 - [Assign Microsoft Entra roles](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user)
 - [Assign Azure resource roles](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-assign-roles)
+- [Assign eligibility for groups](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-assign-member-owner)
+- [Assign app roles \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/app-roles-assign)
 
 ## Approve requests
 
@@ -53,3 +57,4 @@ Privileged Identity Management \(PIM\) in Microsoft Entra ID enables you to limi
 
 - [Configure Microsoft Entra role settings](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings)
 - [Configure Azure resource role settings](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings)
+- [Configure PIM for Groups settings](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-role-settings)

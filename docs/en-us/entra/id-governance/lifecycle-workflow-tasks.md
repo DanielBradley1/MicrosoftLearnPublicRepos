@@ -19,6 +19,9 @@ Lifecycle Workflows currently support the following tasks:
 | --- | --- | --- | --- |
 | [Send welcome email to new hire](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#send-welcome-email-to-new-hire) | 70b29d51-b59a-4773-9280-8841dfd3f2ea | Joiner |  |
 | [Send onboarding reminder email](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#send-onboarding-reminder-email) | 3C860712-2D37-42A4-928F-5C93935D26A1 | Joiner |  |
+| [Select verification profile for identity verification \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#select-verification-profile-for-identity-verification-preview) | `9ed82537-8442-467a-8eef-9351fb7a1f9c` | Joiner |  |
+| [Send manager verification status email \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#send-manager-verification-status-email-preview) | `c7a1f3e5-4b2d-4e8a-9f6c-3d5a7b1e2c4f` | Joiner |  |
+| [Select verification for Verified ID presentation \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#select-verification-for-verified-id-presentation-preview) | `8314685b-de26-4c90-b086-bfa0e7a263f3` | Joiner |  |
 | [Generate Temporary Access Pass and send via email to user's manager](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) | 1b555e50-7f65-41d5-b514-5894a026d10d | Joiner |  |
 | [Send email to notify manager of user move](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#send-email-to-notify-manager-of-user-move) | aab41899-9972-422a-9d97-f626014578b7 | Mover |  |
 | [Request user access package assignment](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#request-user-access-package-assignment) | c1ec1e76-f374-4375-aaa6-0bb6bd4c60be | Joiner, Mover |  |
@@ -238,9 +241,238 @@ Example of usage within the workflow:
 }
 ```
 
+### Select verification profile for identity verification \(Preview\)
+
+This task selects an identity verification profile and sends the user an identity verification email during pre-hire onboarding. It's included in the [Pre-hire identity verification initiation \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-templates#pre-hire-identity-verification-initiation-preview) template.
+
+You can customize the task name and description in the Microsoft Entra admin center. The task shows the **Verified ID Profile** selected for the workflow. To select or change that profile, use the workflow's **Select identity verification profile** page.
+
+[![Screenshot of the pre-hire identity verification task settings, with User as the recipient and otherMails as the recipient email address property.](https://learn.microsoft.com/en-us/entra/id-governance/media/lifecycle-workflow-task/identity-verification-profile-task.png)](https://learn.microsoft.com/en-us/entra/id-governance/media/lifecycle-workflow-task/identity-verification-profile-task.png#lightbox)
+
+The prerequisites to run the **Select verification profile for identity verification \(Preview\)** task are:
+
+- An ID verification profile with purpose set to `all` or `onboarding`, selected for the workflow. For profile configuration, see [Create an ID verification profile](https://learn.microsoft.com/en-us/entra/verified-id/how-to-create-id-verification-profile).
+- A populated `otherMails` attribute for the user, containing an email address the user can access.
+
+The default email settings are **User \(default\)** for **To recipient** and **otherMails** for **To recipient email address property**. You can also select **CC recipients**.
+
+Important
+
+Access to the pre-hire identity verification link sent to the user's `otherMails` address is secured with an email one-time passcode \(OTP\). In the current release, `otherMails` is the only supported and recommended recipient email address property for this task. Other custom extension attributes can appear in **To recipient email address property**, but email OTP protection isn't supported for those attributes. Use `otherMails` rather than a custom extension attribute.
+
+Note
+
+You can customize the email subject, message body, and language under **Email Customization**. For details, see [Common email task parameters](#common-email-task-parameters) and [Customize emails sent from workflow tasks](https://learn.microsoft.com/en-us/entra/id-governance/customize-workflow-email).
+
+This task is available only in Microsoft Graph `/beta`, not `/v1.0`. See [Lifecycle Workflows overview \(beta\)](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecycleworkflows-overview?view=graph-rest-beta&preserve-view=true).
+
+For Microsoft Graph, the parameters for the **Select verification profile for identity verification \(Preview\)** task are as follows:
+
+| Parameter | Definition |
+| --- | --- |
+| **category** | `joiner` |
+| **displayName** | Select verification profile for identity verification \(Preview\) \(Customizable by user\) |
+| **description** | Select an identity verification profile and send the verification email to the user \(Customizable by user\) |
+| **taskDefinitionId** | `9ed82537-8442-467a-8eef-9351fb7a1f9c` |
+| **arguments** | `verifiedIdProfileId`, `to`, and the common email parameters `cc`, `customSubject`, `customBody`, and `locale`. See the argument descriptions below and [Common email task parameters](#common-email-task-parameters). |
+
+All argument values are strings.
+
+| Argument | Definition |
+| --- | --- |
+| **verifiedIdProfileId** | The ID of the ID verification profile selected for the workflow. |
+| **to** | `User/otherMails`. Sends the verification link to the user's `otherMails` address. |
+| **cc** | A user ID or comma-separated list of user IDs to copy on the email. |
+| **customSubject** | A custom email subject. |
+| **customBody** | A custom email message body. |
+| **locale** | A language value that overrides the recipient's language setting. |
+
+JSON template for a workflow task:
+
+Replace `<id-verification-profile-id>` with the selected profile's ID. The example uses `User/otherMails` to select the user as the recipient and `otherMails` as the email address property, and `en-us` as the email language.
+
+```json
+{
+    "category": "joiner",
+    "continueOnError": false,
+    "description": "Select an identity verification profile and send the verification email to the user",
+    "displayName": "Select verification profile for identity verification (Preview)",
+    "isEnabled": true,
+    "taskDefinitionId": "9ed82537-8442-467a-8eef-9351fb7a1f9c",
+    "arguments": [
+        {
+            "name": "verifiedIdProfileId",
+            "value": "<id-verification-profile-id>"
+        },
+        {
+            "name": "to",
+            "value": "User/otherMails"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
+### Send manager verification status email \(Preview\)
+
+This task sends the user's manager an email about the employee's verification status. It's included in both the [Pre-hire identity verification initiation \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-templates#pre-hire-identity-verification-initiation-preview) and [New Hire employee onboarding with identity verification \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-templates#new-hire-employee-onboarding-with-identity-verification-preview) templates.
+
+You can customize the task name and description in the Microsoft Entra admin center. The task shows the **Verified ID Profile** selected for the workflow. To select or change that profile, use the workflow's **Select identity verification profile** page.
+
+[![Screenshot of the manager verification status email task settings, with Manager as the recipient and mail as the recipient email address property.](https://learn.microsoft.com/en-us/entra/id-governance/media/lifecycle-workflow-task/manager-verification-status-email-task.png)](https://learn.microsoft.com/en-us/entra/id-governance/media/lifecycle-workflow-task/manager-verification-status-email-task.png#lightbox)
+
+The prerequisites to run the **Send manager verification status email \(Preview\)** task are:
+
+- An ID verification profile with purpose set to `all` or `onboarding`, selected for the workflow.
+- For the default manager recipient, a populated `manager` attribute for the user and a populated `mail` attribute for that manager.
+
+The default email settings are **Manager \(default\)** for **To recipient** and **mail** for **To recipient email address property**. You can also select **CC recipients**.
+
+Note
+
+You can customize the email subject, message body, and language under **Email Customization**. For details, see [Common email task parameters](#common-email-task-parameters) and [Customize emails sent from workflow tasks](https://learn.microsoft.com/en-us/entra/id-governance/customize-workflow-email).
+
+This task is available only in Microsoft Graph `/beta`, not `/v1.0`. See [Lifecycle Workflows overview \(beta\)](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecycleworkflows-overview?view=graph-rest-beta&preserve-view=true).
+
+For Microsoft Graph, the parameters for the **Send manager verification status email \(Preview\)** task are as follows:
+
+| Parameter | Definition |
+| --- | --- |
+| **category** | `joiner` |
+| **displayName** | Send manager verification status email \(Preview\) \(Customizable by user\) |
+| **description** | Send manager notification email about employee verification status \(Customizable by user\) |
+| **taskDefinitionId** | `c7a1f3e5-4b2d-4e8a-9f6c-3d5a7b1e2c4f` |
+| **arguments** | `verifiedIdProfileId`, `to`, and the common email parameters `cc`, `customSubject`, `customBody`, and `locale`. See the argument descriptions below and [Common email task parameters](#common-email-task-parameters). |
+
+All argument values are strings.
+
+| Argument | Definition |
+| --- | --- |
+| **verifiedIdProfileId** | The ID of the ID verification profile selected for the workflow. |
+| **to** | `User`, `Manager`, `Sponsors`, or a specific user's ID \(`{UserId}` in the task definition\). The example uses `Manager`, matching the admin center's default recipient. |
+| **cc** | A user ID or comma-separated list of user IDs to copy on the email. |
+| **customSubject** | A custom email subject. |
+| **customBody** | A custom email message body. |
+| **locale** | A language value that overrides the recipient's language setting. |
+
+JSON template for a workflow task:
+
+Replace `<id-verification-profile-id>` with the selected profile's ID. The example uses `Manager` as the recipient and `en-us` as the email language.
+
+```json
+{
+    "category": "joiner",
+    "continueOnError": false,
+    "description": "Send manager notification email about employee verification status",
+    "displayName": "Send manager verification status email (Preview)",
+    "isEnabled": true,
+    "taskDefinitionId": "c7a1f3e5-4b2d-4e8a-9f6c-3d5a7b1e2c4f",
+    "arguments": [
+        {
+            "name": "verifiedIdProfileId",
+            "value": "<id-verification-profile-id>"
+        },
+        {
+            "name": "to",
+            "value": "Manager"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
+### Select verification for Verified ID presentation \(Preview\)
+
+This task sends the user a link to present a Verified ID based on government ID verification completed through a security partner. It's included in the [New Hire employee onboarding with identity verification \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-templates#new-hire-employee-onboarding-with-identity-verification-preview) template.
+
+Inline passkey registration through this task isn't supported on iOS when the applicable passkey profile has **Enforce attestation** enabled, or for Android work-profile passkey registration. On Android, the inline flow uses the Verified ID in Microsoft Authenticator's personal profile and registers the passkey in that profile, not the work profile. For eligible accounts, use the existing TAP task instead, with recommended Conditional Access protection for registration. See [Choose a Day 1 registration path](https://learn.microsoft.com/en-us/entra/id-governance/how-to-onboard-users-with-identity-verification#choose-a-day-1-registration-path).
+
+Inline passkey registration isn't supported for internal or external guest accounts. The current preview doesn't change this [passkey guest restriction](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2#guest-users).
+
+You can customize the task name and description in the Microsoft Entra admin center. The task shows the **Verified ID Profile** selected for the workflow. To select or change that profile, use the workflow's **Select identity verification profile** page.
+
+[![Screenshot of the Verified ID presentation task settings, with User as the recipient and otherMails as the recipient email address property.](https://learn.microsoft.com/en-us/entra/id-governance/media/lifecycle-workflow-task/verified-id-presentation-task.png)](https://learn.microsoft.com/en-us/entra/id-governance/media/lifecycle-workflow-task/verified-id-presentation-task.png#lightbox)
+
+The prerequisites to run the **Select verification for Verified ID presentation \(Preview\)** task are:
+
+- An ID verification profile with purpose set to `all` or `onboarding`, selected for the workflow. For profile configuration, see [Create an ID verification profile](https://learn.microsoft.com/en-us/entra/verified-id/how-to-create-id-verification-profile).
+- A populated `otherMails` attribute for the user, containing an email address the user can access.
+
+The default email settings are **User \(default\)** for **To recipient** and **otherMails** for **To recipient email address property**. You can also select **CC recipients**.
+
+Important
+
+Access to the Verified ID presentation link sent to the user's `otherMails` address is secured with an email one-time passcode \(OTP\). In the current release, `otherMails` is the only supported and recommended recipient email address property for this task. Other custom extension attributes can appear in **To recipient email address property**, but email OTP protection isn't supported for those attributes. Use `otherMails` rather than a custom extension attribute.
+
+Note
+
+You can customize the email subject, message body, and language under **Email Customization**. For details, see [Common email task parameters](#common-email-task-parameters) and [Customize emails sent from workflow tasks](https://learn.microsoft.com/en-us/entra/id-governance/customize-workflow-email).
+
+This task is available only in Microsoft Graph `/beta`, not `/v1.0`. See [Lifecycle Workflows overview \(beta\)](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecycleworkflows-overview?view=graph-rest-beta&preserve-view=true).
+
+For Microsoft Graph, the parameters for the **Select verification for Verified ID presentation \(Preview\)** task are as follows:
+
+| Parameter | Definition |
+| --- | --- |
+| **category** | `joiner` |
+| **displayName** | Select verification for Verified ID presentation \(Preview\) \(Customizable by user\) |
+| **description** | Send link to prompt a Verified ID presentation request based on Government ID verification done via the Security Partner \(Customizable by user\) |
+| **taskDefinitionId** | `8314685b-de26-4c90-b086-bfa0e7a263f3` |
+| **arguments** | `verifiedIdProfileId`, `to`, and the common email parameters `cc`, `customSubject`, `customBody`, and `locale`. See the argument descriptions below and [Common email task parameters](#common-email-task-parameters). |
+
+All argument values are strings.
+
+| Argument | Definition |
+| --- | --- |
+| **verifiedIdProfileId** | The ID of the ID verification profile selected for the workflow. |
+| **to** | `User/otherMails`. Sends the verification link to the user's `otherMails` address. |
+| **cc** | A user ID or comma-separated list of user IDs to copy on the email. |
+| **customSubject** | A custom email subject. |
+| **customBody** | A custom email message body. |
+| **locale** | A language value that overrides the recipient's language setting. |
+
+JSON template for a workflow task:
+
+Replace `<id-verification-profile-id>` with the selected profile's ID. The example uses `User/otherMails` to select the user as the recipient and `otherMails` as the email address property, and `en-us` as the email language.
+
+```json
+{
+    "category": "joiner",
+    "continueOnError": false,
+    "description": "Send link to prompt a Verified ID presentation request based on Government ID verification done via the Security Partner",
+    "displayName": "Select verification for Verified ID presentation (Preview)",
+    "isEnabled": true,
+    "taskDefinitionId": "8314685b-de26-4c90-b086-bfa0e7a263f3",
+    "arguments": [
+        {
+            "name": "verifiedIdProfileId",
+            "value": "<id-verification-profile-id>"
+        },
+        {
+            "name": "to",
+            "value": "User/otherMails"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
 ### Generate Temporary Access Pass and send via email to user's manager
 
-Microsoft Entra allows you to use a [Temporary Access Pass \(TAP\)](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass) to set up password-less credentials for users. You can also use [Microsoft Entra self-service password reset](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks) to set a regular password. With this task, Lifecycle workflows allow you to automatically generate a Temporary Access Pass \(TAP\), and have it sent to the new user's manager. You're also able to customize the email that is sent to the user's manager.
+Microsoft Entra allows you to use a [Temporary Access Pass \(TAP\)](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass) to set up password-less credentials for users. You can also use [Microsoft Entra self-service password reset](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks) to set a regular password. With this task, Lifecycle Workflows can automatically generate a TAP and email it to the selected recipient. The task catalog name refers to manager delivery, but you can also select the user as the recipient.
+
+To send the TAP to the user, under **Basics**, set **To recipient** to **User** and **To recipient email address property** to **otherMails**. The user's `otherMails` attribute must contain an email address the user can access. Update **Task description** to reflect delivery to the user, for example, "Generate a Temporary Access Pass and email it to the user." You can customize the email under **Email Customization**.
+
+For the employee Day 1 alternative to inline passkey registration, see [Configure TAP with identity-verification-protected registration](https://learn.microsoft.com/en-us/entra/id-governance/how-to-onboard-users-with-identity-verification#configure-tap-with-identity-verification-protected-registration). The recommended configuration uses a Conditional Access policy for **Register security information** with **Require identity verification**. This policy isn't required to use the TAP alternative; sending a TAP alone doesn't establish identity verification.
 
 Note
 
@@ -253,13 +485,18 @@ With this task in the Microsoft Entra admin center, you're able to give the task
 
 The Microsoft Entra prerequisites to run the **Generate Temporary Access Pass and send via email to user's manager** task are:
 
-- A populated manager attribute for the user.
-- A populated manager's mail attribute for the user.
+- For delivery to the manager, a populated `manager` relationship for the user and a populated `mail` attribute for the manager.
+- For delivery to `User/otherMails` with the default email body, a populated `manager` relationship for the user. The manager's `mail` attribute isn't required.
+- For delivery to `User/otherMails` with a custom email body, the default-body requirement for a populated `manager` relationship doesn't apply.
 - The TAP tenant policy must be enabled and the selected values for activation duration and one time use must be within the allowed range of the policy. For more information, see [Enable the Temporary Access Pass policy](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass#enable-the-temporary-access-pass-policy)
 
 Important
 
 A user having this task run for them in a workflow must also not have any other authentication methods, sign-ins, or Microsoft Entra role assignments for this task to work for them.
+
+TAP account-type restrictions apply independently of email delivery. Internal guest accounts can be issued a TAP, but external guest accounts can't be issued one in the resource tenant. See [TAP guest access](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass#guest-access) for the account-type and home-tenant sign-in requirements.
+
+For eligible internal guests, use the existing TAP flow separately from the employee passkey-registration paths. [Passkey \(FIDO2\) registration isn't supported for internal or external guests](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2#guest-users); TAP support doesn't remove this restriction, and the current preview doesn't add an exception.
 
 For Microsoft Graph, the parameters for the **Generate Temporary Access Pass and send via email to user's manager** task are as follows:
 

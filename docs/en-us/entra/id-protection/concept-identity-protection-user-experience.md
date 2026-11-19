@@ -41,6 +41,25 @@ The adaptive risk remediation policy accommodates all authentication methods, in
 
 When a user is required to remediate risk with this policy turned on, users must sign in immediately after their sessions are revoked. If the user just signed in but they're at risk, they'll be prompted to sign in again. The risk is remediated after the user successfully signed in the second time.
 
+### Identity verification for risk
+
+When a risk-based Conditional Access policy uses **Require Identity Verification \(preview\)**, users who meet the configured user-risk or sign-in-risk condition complete an identity verification challenge. An eligible [identity verification profile](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id#create-and-manage-identity-verification-profiles), provider, and credential type are prerequisites. A recovery profile isn't automatically eligible for risk remediation.
+
+The following illustrative example shows the **Additional verification required** interrupt. Use the credential type supported by your scenario's profile.
+
+[![Illustrative identity verification interrupt for john.doe@contoso.com, prompting the user to continue in Microsoft Authenticator.](https://learn.microsoft.com/en-us/entra/id-protection/media/concept-identity-protection-user-experience/conditional-access-identity-verification-prompt.png)](https://learn.microsoft.com/en-us/entra/id-protection/media/concept-identity-protection-user-experience/conditional-access-identity-verification-prompt.png#lightbox)
+
+This journey is independent of the adaptive **Require risk remediation** flow. Don't assume that the verification challenge revokes sessions or requires the same reauthentication sequence as adaptive remediation.
+
+To validate the journey with an approved test user:
+
+1. Confirm that the expected risk policy applies and presents the intended verification challenge.
+2. Complete the requested credential presentation and verification. If you need a credential, follow the supported issuance path for that credential type. Credential issuance alone isn't completion of verification.
+3. Return to, or restart, the original access attempt as directed by the journey. Test cancellation, verification failure, and missing or unavailable credentials separately.
+4. Check the access decision and verification result independently. If you can't complete verification, use your organization's support path.
+
+Successful verification remediates user risk or sign-in risk, depending on the risk condition in the triggering policy. Failed verification doesn't remediate risk. Administrators [check the targeted risk record separately](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock#validate-identity-verification-remediation); access or verification success doesn't establish that every risk was cleared.
+
 ### Risky sign-in administrator unblock
 
 Administrators might block users upon sign-in depending on their risk level. To get unblocked, users must contact their IT staff or try signing in from a familiar location or device. Self-remediation isn't an option in this case.

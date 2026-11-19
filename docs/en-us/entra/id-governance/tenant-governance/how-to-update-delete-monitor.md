@@ -47,7 +47,6 @@ To delete a configuration monitor:
 3. Find the monitor you want to delete.
 4. Select the checkbox next to the monitor's name, then select **Delete** in the command bar. Alternatively, hover over the monitor name and select the delete icon that appears.
 5. In the confirmation dialog, select **Delete**.
-6. Select a monitor to enable **Delete** in the command bar.
 
 [![Screenshot of a selected monitor with the Delete command enabled in the command bar.](https://learn.microsoft.com/en-us/entra/id-governance/media/tenant-governance-configuration-management/selected-monitor.png)](https://learn.microsoft.com/en-us/entra/id-governance/media/tenant-governance-configuration-management/selected-monitor.png#lightbox)
 

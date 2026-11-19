@@ -24,6 +24,7 @@ Before you can set up a governance relationship, you must create a governance po
 
    - **Delegated administration**: Select one or more Microsoft Entra built-in roles and assign them to a role assignable security group in the governing tenant. Members of this group can use their governing tenant credentials to sign in to the governed tenant without needing an account in the governed tenant. Each group can have multiple role assignments, and each policy template can have multiple groups defined.
    - **Multitenant application management**: Select a custom, multitenant application. The governed tenant creates a service principal with the same permissions when you establish the relationship.
+   - **Relationship lifetime \(Preview\)**: Optionally set a whole number from 1 to 730 days. The governed tenant reviews and approves the lifetime with the request. Leaving it unset creates a non-expiring relationship. For details, see [Manage relationship expiration and renewal](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-manage-relationship-expiration).
 
 ## Set up a governance relationship using a three-step handshake
 
@@ -101,6 +102,8 @@ When you successfully create a governance relationship, Tenant Governance provis
 
 ## Related content
 
+- [Manage relationship expiration and renewal](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-manage-relationship-expiration)
+- [Set up multi-tier governance relationships](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-set-up-multi-tier-governance)
 - [Update a governance relationship](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-update-governance-relationship)
 - [Terminate a governance relationship](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-terminate-governance-relationship)
 - [Use delegated administration](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-delegated-administration)

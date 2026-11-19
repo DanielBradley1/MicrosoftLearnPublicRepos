@@ -5,6 +5,8 @@
 
 After you create an agent identity blueprint, the next step is to create one or more [agent identities](https://learn.microsoft.com/en-us/entra/agent-id/agent-identities) that represent AI agents in your tenant. Agent identity creation is typically performed when provisioning a new AI agent.
 
+This procedure uses a multi-instance blueprint to provision child identities. If your blueprint uses single-instance mode, follow [Create a single-instance agent identity](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent#provision-the-agent-identity) instead. Its identity shares the blueprint's client ID and doesn't use the blueprint principal provisioning path below.
+
 You can create agent identities in two ways:
 
 - **Microsoft Entra admin center** — Use the admin center wizard for quick, individual identity creation.
@@ -18,6 +20,8 @@ To create agent identities, you need:
 
 - An [agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/create-blueprint). Record the agent identity blueprint app ID from the creation process.
 - A web service or application \(running locally or deployed to Azure\) that hosts the agent identity creation logic. This prerequisite applies only if you're creating agent identities programmatically.
+
+Use the blueprint app ID as `client_id` in the token request. Save the agent identity `id` returned by the create call for the delete request. For identifier meanings, see [Record the identifiers for your scenario](https://learn.microsoft.com/en-us/entra/agent-id/key-concepts#record-the-identifiers-for-your-scenario).
 
 ## Use the Microsoft Entra admin center
 
@@ -97,7 +101,7 @@ Using the access token acquired in the previous step, you can now create agent i
 Always include the OData-Version header when using @odata.type.
 
 ```
-POST https://graph.microsoft.com/beta/serviceprincipals/Microsoft.Graph.AgentIdentity
+POST https://graph.microsoft.com/beta/servicePrincipals/microsoft.graph.agentIdentity
 OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -139,7 +143,7 @@ Client secrets shouldn't be used as client credentials in production environment
   "DownstreamApis": {
 	"agent-identity": {
 	  "BaseUrl": "https://graph.microsoft.com",
-	  "RelativePath": "/beta/serviceprincipals/Microsoft.Graph.AgentIdentity",
+	  "RelativePath": "/beta/servicePrincipals/microsoft.graph.agentIdentity",
 	  "Scopes": ["00000003-0000-0000-c000-000000000000/.default"],
 	  "RequestAppToken": true
 	}
@@ -147,21 +151,20 @@ Client secrets shouldn't be used as client credentials in production environment
 }
 ```
 
-The code for the ASP.NET Core app \(*Program.cs*\) is the following example:
+The code for the ASP.NET Core app \(*Program.cs*\) is the following example. The mutation endpoints require an authenticated caller. Configure an authorization policy that limits access to the intended administrators or owners before exposing these endpoints; the exact policy depends on your application.
 
 ```csharp
 using System.Text.Json.Serialization;
 using Microsoft.Identity.Abstractions;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.Resource;
-using Microsoft.IdentityModel.S2S.Extensions.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
-    .EnableTokenAcquisitionToCallDownstreamApi();
-builder.Services.AddInMemoryTokenCaches();
+    .EnableTokenAcquisitionToCallDownstreamApi()
+    .AddInMemoryTokenCaches();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
@@ -169,7 +172,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Create an Agent identity
-app.MapGet("/create-agent-identity", async (HttpContext httpContext) =>
+app.MapPost("/agent-identities", async (HttpContext httpContext) =>
 {
     try
     {
@@ -191,7 +194,7 @@ app.MapGet("/create-agent-identity", async (HttpContext httpContext) =>
     {
         return ex.Message;
     }
-});
+}).RequireAuthorization();
 
 app.Run();
 
@@ -226,7 +229,7 @@ When an agent is deallocated or destroyed, your service should also delete the a
 - [Microsoft.Identity.Web](#tabpanel_3_microsoft-identity-web)
 
 ```http
-DELETE https://graph.microsoft.com/beta/serviceprincipals/<agent-identity-id>
+DELETE https://graph.microsoft.com/beta/servicePrincipals/<agent-identity-id>/microsoft.graph.agentIdentity
 OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -234,7 +237,7 @@ Authorization: Bearer <token>
 
 ```csharp
 // Delete an Agent identity
-app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) =>
+app.MapDelete("/agent-identities/{id}", async (HttpContext httpContext, string id) =>
 {
 	// Get the service to call the downstream API (preconfigured in the appsettings.json file)
 	IDownstreamApi downstreamApi = httpContext.RequestServices.GetRequiredService<IDownstreamApi>();
@@ -248,13 +251,14 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 			options.RelativePath += $"/{id}"; // Specify the ID of the agent identity to delete
 		});
 	return jsonResult;
-});
+}).RequireAuthorization();
 ```
 
 ## Related content
 
+- [Plan an agent fleet on a shared runtime](https://learn.microsoft.com/en-us/entra/agent-id/plan-agent-fleet)
 - [Configure inheritable permissions for blueprints](https://learn.microsoft.com/en-us/entra/agent-id/configure-inheritable-permissions-blueprints)
-- [Authenticate and acquire tokens for autonomous agents](https://learn.microsoft.com/en-us/entra/agent-id/autonomous-agent-authentication-authorization-flow)
-- [Authenticate users and acquire tokens for interactive agents](https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow)
+- [Call a custom API as an agent with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom)
+- [Call a custom API as a user with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-call-custom-api-as-user)
 - [Manage owners and sponsors](https://learn.microsoft.com/en-us/entra/agent-id/manage-owners-sponsors-agents)
 - [Agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint)

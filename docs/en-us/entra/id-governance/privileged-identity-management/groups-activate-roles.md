@@ -3,11 +3,13 @@
 
 # Activate your group membership or ownership in Privileged Identity Management
 
-## Overview
-
 You can use Privileged Identity Management \(PIM\) in Microsoft Entra ID to have just-in-time membership in the group or just-in-time ownership of the group.
 
 This article is for eligible members or owners who want to activate their group membership or ownership in PIM.
+
+Choose the portal you use to activate your group membership or ownership.
+
+## Understand activation and deactivation
 
 Important
 
@@ -20,6 +22,30 @@ An application might provide access to users based on their group membership. In
 Microsoft Entra ID doesn't allow you to remove the last \(active\) owner of a group. For example, consider a group that has active owner A and eligible owner B. If user B activates their ownership with PIM and then later user A is removed from the group or from the tenant, deactivation of user B's ownership won't succeed.
 
 PIM will try to deactivate user B's ownership for up to 30 days. If another active owner C is added to the group, the deactivation will succeed. If deactivation is unsuccessful after 30 days, PIM will stop trying to deactivate user B's ownership and user B will continue to be an active owner.
+
+## Activate group membership or ownership in My Access portal
+
+Use [**Roles**](https://aka.ms/pim/roles) under **My Access** in the [My Access portal](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview) to activate your eligible group membership or ownership.
+
+Group membership and ownership activation through the My Access portal is in preview. You activate an existing eligible assignment to obtain temporary membership or ownership for your signed-in identity.
+
+1. Sign in to the [My Access portal](https://myaccess.microsoft.com) in the tenant where you have an eligible group assignment.
+2. Under **My Access**, select [**Roles**](https://aka.ms/pim/roles), and then select **Groups**.
+3. Find the group and select the eligible membership or ownership assignment you need for your task.
+
+   [![Screenshot of My Access Groups showing an eligible group membership assignment and its Activate action.](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/groups-activate-roles/my-access-groups.png)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/groups-activate-roles/my-access-groups.png#lightbox)
+4. Review the activation details and complete the activation requirements shown for your membership or ownership assignment.
+5. Select **Activate** to submit your activation request. If approval is required, wait for approval before using the group access.
+
+The [ownership deactivation restriction](#pim-for-groups-and-ownership-deactivation) also applies when you activate ownership through the [My Access portal](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview).
+
+## View and cancel a pending request in My Access
+
+If you no longer need a pending membership or ownership activation, cancel the request in the My Access portal.
+
+1. Under **My Access**, select [**Roles**](https://aka.ms/pim/roles), and then select **Groups**.
+2. In the **Assignment status** dropdown, select **Pending**.
+3. Find the membership or ownership request you no longer need, and select **Cancel**.
 
 ## Activate a role
 
@@ -42,7 +68,7 @@ When you need to take on a group membership or ownership, you can request activa
    [![Screenshot of where to provide a justification in the Reason box.](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/pim-for-groups/pim-group-7.png)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/pim-for-groups/pim-group-7.png#lightbox)
 8. Select **Activate**.
 
-If the [role requires approval](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-approval-workflow) to activate, an Azure notification appears in the upper right corner of your browser informing you the request is pending approval.
+If the [role requires approval](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-approval-workflow) to activate, an Azure notification appears in the upper right corner of your browser informing you the request is pending approval.
 
 ## View the status of your requests
 

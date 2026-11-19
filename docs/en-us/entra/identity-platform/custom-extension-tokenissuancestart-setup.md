@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-setup -->
 <!-- Sitemap-Last-Modified: 2025-05-04 -->
 
-# Create a REST API for a token issuance start event in Azure Functions
+# Create a REST API for the OnTokenIssuanceStart event in Azure Functions
 
 This article describes how to create a REST API with a [token issuance start event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-overview#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You create an Azure Function app and an HTTP trigger function which can return extra claims for your token.
 
@@ -426,4 +426,8 @@ By default, the code has been set up for authentication in the Azure portal usin
 
 ## Next step
 
-[Configure a custom claims provider token issuance event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-configuration)
+[Configure a custom claims provider for the OnTokenIssuanceStart event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-configuration)
+
+## See also
+
+- [OnTokenIssuanceStart event reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference)

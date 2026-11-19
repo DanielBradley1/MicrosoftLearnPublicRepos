@@ -33,18 +33,21 @@ Learn more about managing [customer accounts](https://learn.microsoft.com/en-us/
 
 ## Add customized sign-in
 
-External ID is intended for businesses that want to make applications available to their customers using the Microsoft Entra platform for identity and access.
+For customer apps in external tenants, choose where the authentication interface runs and how it integrates with your app. See [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach) for selection criteria and the [authentication support matrix](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#authentication-approach-supportability) for availability.
 
-- **Add sign-up and sign-in pages to your apps.** Quickly add intuitive, user-friendly sign-up and sign-in experiences for your customer apps. With a single identity, a customer can securely access all the applications you want them to use.
-- **Add single sign-on \(SSO\) with social and enterprise identities.** Customers can choose a social, enterprise, or managed identity to sign in with a username and password, email, or one-time passcode.
-- **Add your company branding to the sign-up page.** Customize the look and feel of your sign-up and sign-in experiences, including both the default experience and the experience for specific browser languages.
+- **Microsoft-hosted authentication.** Configure Microsoft-managed sign-up and sign-in pages with company branding, including browser-language variations, or application-specific branding themes.
+- **Embedded native authentication.** Integrate authentication screens with your app using a supported SDK or the Native Authentication API. See the [native authentication overview](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication) for platform and integration requirements.
+- **Bring Your Own UX \(BYO UX\).** Use a separately hosted authentication website within a browser-based authorization flow. The website can serve one or several applications.
+
+Configure the tenant capabilities your integration requires:
+
+- **Add single sign-on \(SSO\) with social and enterprise identities.** Customers can choose a social, enterprise, or managed identity to sign in with a username and password, email, or one-time passcode. With a single identity, a customer can securely access all the applications you want them to use.
 - **Easily customize and extend your sign-up flows.** Tailor your identity user flows to your needs. Choose the attributes you want to collect from a customer during sign-up, or add your own custom attributes. If the information your app needs is contained in an external system, create custom authentication extensions to collect and add data to authentication tokens.
 - **Integrate multiple app languages and platforms.** With Microsoft Entra, you can quickly set up and deliver secure, branded authentication flows for multiple app types, platforms, and languages.
-- **Use native authentication for your apps.** Create seamless authentication experiences for mobile and desktop applications using the Microsoft Authentication Library \(MSAL\) for iOS and Android.
 - **Provide self-service account management.** Customers can register for your online services by themselves, manage their profile, delete their account, enroll in a multifactor authentication \(MFA\) method, or reset their password with no admin or help desk assistance.
 - **Consent to your terms of use and privacy policies.** You can prompt users to accept your terms and conditions during sign-up. By using customer user attributes, you can add checkboxes to your sign-up form and include links to your terms of use and privacy policies.
 
-Learn more about [planning your integration](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-planning-your-solution), [choosing an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach), and [customizing the sign-in look and feel](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-branding-customers).
+Learn more about [planning your integration](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-planning-your-solution) and [customizing the sign-in look and feel](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-branding-customers).
 
 ## Design user flows for self-service sign-up
 

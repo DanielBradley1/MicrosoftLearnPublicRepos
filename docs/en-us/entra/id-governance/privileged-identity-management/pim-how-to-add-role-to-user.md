@@ -5,7 +5,7 @@
 
 ## Overview
 
-With Microsoft Entra ID, a Global Administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference) or using [PowerShell commands](https://learn.microsoft.com/en-us/powershell/module/azuread/#directory_roles).
+With Microsoft Entra ID, a Global Administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](https://entra.microsoft.com) or using [PowerShell commands](https://learn.microsoft.com/en-us/powershell/module/azuread/#directory_roles).
 
 The Microsoft Entra Privileged Identity Management \(PIM\) service also allows Privileged Role Administrators to make permanent admin role assignments. Additionally, Privileged Role Administrators can make users **eligible** for Microsoft Entra admin roles. An eligible administrator can activate the role when they need it, and then their permissions expire once they're done.
 
@@ -60,6 +60,23 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 9. After the role is assigned, an assignment status notification is displayed.
 
    ![Screenshot showing a new assignment notification.](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/pim-how-to-add-role-to-user/assignment-notification.png)
+
+## Convert active role assignments to eligible role assignments \(preview\)
+
+Use the enhanced **Assignments** experience to change selected active Microsoft Entra role assignments to eligible role assignments. This experience is in preview and is rolling out.
+
+Existing PIM licensing requirements apply. For more information, see [License requirements to use Privileged Identity Management](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals#privileged-identity-management).
+
+Before converting Global Administrator assignments, review the [Global Administrator safeguards](#update-or-remove-an-existing-role-assignment) and [emergency access account guidance](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access).
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
+2. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
+3. Open **Assignments**, and then select **Active assignments**.
+4. Select the role assignments you want to convert, and then select **Manage Assignments**.
+5. Change the assignment type to **Eligible**, and save your changes.
+6. Review **Eligible assignments** to confirm that the selected assignments are eligible.
+
+Users must [activate their eligible Microsoft Entra role assignments](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role) when they need to use the roles.
 
 ## Assign a role with restricted scope
 
@@ -232,7 +249,8 @@ This example shows the response. The response object shown here might be shorten
 
 ## Update or remove an existing role assignment
 
-Follow these steps to update or remove an existing role assignment.  
+Follow these steps to update or remove an existing role assignment.
+
 You can't remove the last active role assignment for Global Administrators. Consider having an emergency access account with active permanent role assignment for Global Administrator role. For more information, see [emergency access accounts](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access).  
 You can't remove the eligible role assignment for Global Administrators if there would be no assigned role assignments for the Global Administrator role left. This is done to minimize risks of administrators locking themselves out of the tenant inadvertently.
 

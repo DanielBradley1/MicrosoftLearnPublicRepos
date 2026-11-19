@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference -->
 <!-- Sitemap-Last-Modified: 2025-05-25 -->
 
-# Custom claims provider reference
+# OnTokenIssuanceStart event reference
 
 In this how-to guide, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
 

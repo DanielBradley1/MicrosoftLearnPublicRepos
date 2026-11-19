@@ -92,6 +92,8 @@ For organizations that adopt [passwordless authentication methods](https://learn
 
 ## Related content
 
+- [Create an identity verification profile](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id#create-and-manage-identity-verification-profiles) with **Profile purpose** set to **All** or **Verification** before configuring identity verification for risk remediation. For tenant-issued credentials, select **Verification**.
+- [Configure risk policies](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies).
 - [Require reauthentication every time](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-session-lifetime#require-reauthentication-every-time)
 - [Remediate risks and unblock users](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock)
 - [Conditional Access common policies](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common)

@@ -1,194 +1,125 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/agent-id/configure-third-party-agents -->
 <!-- Sitemap-Last-Modified: 2026-05-01 -->
 
-# Integrate third-party agents with Microsoft Entra Agent ID
+# Choose an integration path for an agent
 
-Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra ID Auth SDK \(sidecar\) and federation - for platforms such as Amazon Web Service \(AWS\) Bedrock and n8n.
+Choose an integration path based on where the agent runs and what it needs to do. Agents built on common platforms often have a built-in Microsoft Entra integration. Local agents run on end-user devices and can't store a credential, so they use OAuth public client flows. Cloud agents run in hosted environments and can protect a credential.
 
-## Prerequisites
+Start with your scenario. Each tutorial prescribes the identity setup for that task; you don't need to choose an identity configuration first.
 
-Before you start, make sure you have:
+## Start with your scenario
 
-- **Microsoft Entra tenant** with agent identity capabilities enabled.
-- **Azure subscription**, required for some deployment options.
-- **Docker** and **Docker Compose** for the sidecar pattern.
-- **Credentials or federation setup**, depending on the pattern you choose.
-- **PowerShell 7.5 or later** with the Microsoft Graph PowerShell module.
-- **Global Administrator** role, required only for initial setup. Use [Privileged Identity Management \(PIM\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
-- **Cloud Application Administrator** or **Application Administrator** role to grant Microsoft Graph delegated permissions for agent management operations.
+Follow the path that describes what you're building. Multiple replicas of the same agent still use the cloud-agent path.
 
-To verify your environment is ready:
+| What you're building | Start here |
+| --- | --- |
+| An agent on Foundry, Copilot Studio, or another supported platform. | [Use your platform's integration](#common-agent-platforms). |
+| A cloud agent that calls APIs as itself or for signed-in users. | [Build a cloud agent](#cloud-agents), using ASP.NET Core or the Auth SDK sidecar. |
+| A platform that hosts separate agents for teams or customers, each with its own identity and permissions. | [Build an agent fleet](#agent-fleets). |
+| An agent installed on an end-user device. | [Build a local agent](#local-agents). |
 
-1. Confirm you have the permissions to create applications and service principals in your Microsoft Entra tenant.
-2. If you're deploying to Azure, confirm your subscription and resource group.
-3. Review the documentation for your agent platform, such as AWS Bedrock or n8n.
+For an agent you provision yourself, the tutorial identifies the required administrator approvals and registration outputs. Arrange that handoff before coding, and [record the identifiers your scenario uses](https://learn.microsoft.com/en-us/entra/agent-id/key-concepts#record-the-identifiers-for-your-scenario) during setup.
 
-## Why you need third-party agent integration
+## Common agent platforms
 
-Organizations use AI agents from multiple platforms, such as AWS Bedrock, n8n, and others. These agents often need to:
+Use this path when the agent is built on a platform with a documented Microsoft Entra Agent ID integration. The platform handles most of the authentication implementation, so prefer it over the other paths when one is available. Supported flows and setup steps vary by platform.
 
-- Call Microsoft APIs such as Microsoft Graph and Azure services.
-- Access your internal APIs and resources.
-- Authenticate securely without storing secrets in code or configuration.
+| Integration path | When to use it | Authenticate users | Call APIs as agent | Call APIs as signed-in user | Call APIs as agent's user account | Guidance |
+| --- | --- | :---: | :---: | :---: | :---: | --- |
+| Microsoft Foundry | The agent is built with the current Foundry agent model. Foundry creates and manages the agent identity. | Yes | Yes | Yes | No | [Use Agent ID with Microsoft Foundry](https://learn.microsoft.com/en-us/entra/agent-id/integrate-microsoft-foundry-agent) |
+| Copilot Studio | The agent is built in Copilot Studio. Copilot Studio creates and manages the agent identity. | Yes | Yes | Yes | No | [Use Agent ID with Copilot Studio](https://learn.microsoft.com/en-us/entra/agent-id/integrate-copilot-studio-agent) |
+| Amazon Bedrock | The agent runs in a container on Amazon Bedrock and uses the Auth SDK sidecar. | Yes | Yes | Yes | No | [Secure an Amazon Bedrock agent](https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent) |
+| Amazon Web Services | The agent runs on AWS and uses an AWS workload identity for app-only access. | No | Yes | No | No | [Use an AWS workload identity](https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-agent) |
+| Google Cloud Platform | The agent runs on Google Cloud and uses a Google service account for app-only access. | No | Yes | No | No | [Use a Google Cloud workload identity](https://learn.microsoft.com/en-us/entra/agent-id/integrate-google-cloud-agent) |
+| n8n | The agent is built as an n8n workflow and uses the Agent ID community node. | Yes | Yes | Yes | Yes | [Secure an n8n agent](https://learn.microsoft.com/en-us/entra/agent-id/integrate-n8n-agent) |
 
-Microsoft Entra Agent ID provides a centralized, secure identity service that third-party agents can use to acquire tokens on demand, without managing secrets or certificates directly. By using Microsoft Entra Agent ID, you can:
+## Local agents
 
-- Remove the need for agents to handle credentials directly.
-- Use workload identity federation for agents running outside Azure.
-- Support multiple authentication patterns, including client credentials, federated identity, and on-behalf-of.
-- Integrate with third-party agent platforms by using the Microsoft Entra ID Auth SDK \(sidecar\).
+A local agent runs on an endpoint device and can't securely store a client credential. Use this path when your agent signs in users through a browser and calls APIs on their behalf.
 
-## Integration patterns for third-party agents
+| Integration path | When to use it | Authenticate users | Call APIs as agent | Call APIs as signed-in user | Call APIs as agent's user account | Guidance |
+| --- | --- | :---: | :---: | :---: | :---: | --- |
+| MSAL.NET | The agent is built with C# and .NET and signs in users on an endpoint device. | Yes | No | Yes | No | [Sign in users from a local agent](https://learn.microsoft.com/en-us/entra/agent-id/authenticate-local-agent) |
+| Microsoft Entra Client ID Metadata Document \(CIMD\) support \(preview\) | The client is distributed or connects to independently operated servers where pre-registration isn't practical. | Yes | No | Yes | No | [Configure a CIMD client](https://learn.microsoft.com/en-us/entra/agent-id/configure-client-id-metadata-document) |
 
-To integrate third-party agents with Microsoft Entra Agent ID, choose from the following patterns:
+### Sign in users with MSAL.NET
 
-### Use the Microsoft Entra ID Auth SDK \(sidecar\)
+Use *Microsoft.Identity.Client* for agents built with C# and .NET that run on endpoint devices. MSAL handles authorization code flow with PKCE, opens the system browser for sign-in, and caches the account and tokens.
 
-The **sidecar pattern** runs the Microsoft Entra ID Auth SDK \(sidecar\) as a companion container alongside your agent. The agent calls the sidecar to request tokens for API calls. The agent never handles credentials directly; instead, it delegates token acquisition to the sidecar.
+Start with [Sign in users from a local agent](https://learn.microsoft.com/en-us/entra/agent-id/authenticate-local-agent), then follow the local agent guidance to call APIs as the signed-in user.
 
-**Best for:**
+### Use a Client ID Metadata Document
 
+A Client ID Metadata Document \(CIMD\) lets a client use a public HTTPS URL as its `client_id` instead of a registered client ID. Use it when the same distributed client connects to independently operated authorization servers and pre-registration with each isn't practical—for example, an MCP client that connects to third-party MCP servers.
+
+The client publishes a JSON document at a stable HTTPS URL. Microsoft Entra ID retrieves the document and uses its redirect URIs and settings in place of a registered application. CIMD supports authorization code flow with PKCE only. CIMD clients can't use client credentials to obtain app-only tokens.
+
+For metadata requirements and protocol steps, see [Configure a client to use a Client ID Metadata Document](https://learn.microsoft.com/en-us/entra/agent-id/configure-client-id-metadata-document).
+
+## Cloud agents
+
+A cloud agent runs in a hosted environment. Choose a path based on the language and hosting environment, then follow the task for the kind of API call you need. Choose ASP.NET Core for a C# application or the sidecar for another language in a containerized environment.
+
+If you're building a platform that hosts separate agents for different teams or customers, use the [agent fleet paths](#agent-fleets). Running multiple replicas of the same agent doesn't by itself require a fleet.
+
+| Integration path | When to use it | Authenticate users | Call APIs as agent | Call APIs as signed-in user | Call APIs as agent's user account | Guidance |
+| --- | --- | :---: | :---: | :---: | :---: | --- |
+| ASP.NET Core \(Microsoft.Identity.Web\) | The agent is built with C# and ASP.NET Core. | Yes | Yes | Yes | No | [Call an API as an agent](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom) or [call a custom API as a signed-in user](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-call-custom-api-as-user) |
+| Microsoft Entra ID Auth SDK sidecar | The agent uses another language and runs in a containerized environment. | Yes | Yes | Yes | No | [Authentication with the Auth SDK sidecar](https://learn.microsoft.com/en-us/entra/agent-id/authentication-with-auth-sdk-sidecar) |
+| Workload identity federation | The agent runs in a supported cloud environment and needs app-only access without an SDK or stored credential. | No | Yes | No | No | [Workload identity federation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation) |
+| Agent 365 SDK | The agent needs deeper integration with Microsoft 365 channels and services. | Yes | Yes | Yes | Yes | [Agent 365 SDK documentation](https://learn.microsoft.com/en-us/microsoft-agent-365/developer/) |
+
+### Use ASP.NET Core with Microsoft.Identity.Web
+
+Use *Microsoft.Identity.Web* for agents built with C# and ASP.NET Core. It validates incoming access tokens and gets tokens to call APIs as the agent or on behalf of signed-in users. For a signed-in user's request to a custom API, start with [Call a custom API as a user with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-call-custom-api-as-user). For an app-only call, see [Call a custom API as an agent with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom).
+
+### Use the Microsoft Entra ID Auth SDK sidecar
+
+The sidecar pattern runs the Microsoft Entra ID Auth SDK as a companion container next to the agent. The agent calls the sidecar to validate incoming tokens or request authorization headers for API calls. The sidecar holds the Microsoft Entra credential and handles token acquisition.
+
+Use the sidecar for:
+
+- Agents built in languages other than C# and .NET.
 - Containerized agents on Docker or Kubernetes.
-- AWS Bedrock agents running in your own orchestration.
-- Local development with Docker Compose.
-- Organizations already using container infrastructure.
+- Cloud or on-premises environments that can run a companion container.
+- Teams that want to keep Microsoft Entra credentials and token handling out of the agent code.
 
-**Supported platforms:**
+The sidecar requires a containerized environment and adds a second service to deploy and manage. For architecture, a diagram, and security guidance, see [Authentication with the Microsoft Entra ID Auth SDK sidecar](https://learn.microsoft.com/en-us/entra/agent-id/authentication-with-auth-sdk-sidecar).
 
-- AWS Bedrock, including Claude and other foundation models.
-- Local Large Language Models \(LLMs\) such as Ollama with LangChain.
-- Any containerized agent.
+### Use workload identity federation
 
-**Advantages:**
+Workload identity federation exchanges a token from an external identity provider for a Microsoft Entra token. Use it when an agent runs in a supported cloud environment, can't run the sidecar, and needs to call APIs as the agent.
 
-- Credential-free agent code.
-- Works with any containerized agent.
-- Easy local development with Docker Compose.
-- Can be deployed to Azure Container Apps, Kubernetes, or on-premises.
+This path:
 
-**Consideration:**
+- Doesn't require an authentication SDK or stored client credential.
+- Requires a federated identity credential in Microsoft Entra.
+- Requires a platform that can issue a supported OpenID Connect \(OIDC\) token.
+- Supports app-only access. It doesn't authenticate users or support calls as a signed-in user or an agent's user account.
 
-- Requires managing a second container.
+The following diagram shows an agent exchanging a token from its cloud identity provider for a Microsoft Entra access token.
 
-The following diagram shows the sidecar architecture. An agent container and a sidecar container run together in the same orchestration environment. The agent requests tokens from the sidecar, which communicates with Microsoft Entra Agent ID to acquire access tokens.
+[![Diagram that shows a third-party platform agent exchanging an OpenID Connect token through Microsoft Entra Agent ID to access an API.](https://learn.microsoft.com/en-us/entra/agent-id/media/configure-third-party-agents/federation-pattern-token-exchange.png)](https://learn.microsoft.com/en-us/entra/agent-id/media/configure-third-party-agents/federation-pattern-token-exchange.png#lightbox)
 
-[![Diagram that shows the sidecar pattern architecture with an agent and sidecar container running in the same orchestration environment, where the sidecar requests tokens from Microsoft Entra Agent ID.](https://learn.microsoft.com/en-us/entra/agent-id/media/configure-third-party-agents/sidecar-pattern-architecture.png)](https://learn.microsoft.com/en-us/entra/agent-id/media/configure-third-party-agents/sidecar-pattern-architecture.png#lightbox)
+For supported issuers and configuration steps, see [workload identity federation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation).
 
-### Use Workload Identity Federation \(direct identity exchange\)
+### Use the Agent 365 SDK
 
-The **federation pattern** uses Workload Identity Federation to exchange credentials from external identity providers such as AWS Security Token Service \(STS\) directly for Microsoft Entra tokens. This pattern doesn't need a sidecar.
+Use the Agent 365 SDK to extend agents with identity, notifications, security, and governed access to Microsoft 365 data. The SDK supports all Agent ID authentication flows. For supported languages, channels, and authentication options, see the [Agent 365 SDK documentation](https://learn.microsoft.com/en-us/microsoft-agent-365/developer/).
 
-**Best for:**
+## Agent fleets
 
-- AWS agents that use STS and OIDC.
-- Organizations that already have federation infrastructure.
-- Agents that can't run containers.
+An agent fleet is a set of agents hosted on a shared cloud runtime, such as a platform where teams or customers deploy their own agents. Choose this path when each agent needs its own identity and access to resources.
 
-**Supported platforms:**
+Use the advanced fleet paths when your runtime hosts agents that are added and removed over time, or your scenario needs an agent's dedicated user account. For the design and setup choices, see [Plan an agent fleet on a shared runtime](https://learn.microsoft.com/en-us/entra/agent-id/plan-agent-fleet).
 
-- GCP Workload Identity → Microsoft Entra Agent ID.
-- AWS STS → Microsoft Entra Agent ID.
+| Integration path | When to use it | Authenticate users | Call APIs as agent | Call APIs as signed-in user | Call APIs as agent's user account | Guidance |
+| --- | --- | :---: | :---: | :---: | :---: | --- |
+| ASP.NET Core \(Microsoft.Identity.Web\) | The runtime is built with C# and ASP.NET Core. | Yes | Yes | Yes | Yes | [Provision agent identities with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-fleet-provision-agent-identities) |
+| Microsoft Entra ID Auth SDK sidecar | The runtime uses another language and runs in a containerized environment. | Yes | Yes | Yes | Yes | [Provision agent identities with the Auth SDK sidecar](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-fleet-provision-agent-identities) |
 
-**Advantages:**
+## Use OAuth protocols directly
 
-- No sidecar required.
-- Uses existing infrastructure in AWS, and other platforms.
-- Direct token exchange at the identity layer.
+Implement OAuth protocols directly only when no supported platform integration or Microsoft SDK meets the requirements. Direct implementations require expertise in token validation, credential protection, token caching, and OAuth security.
 
-**Requirements:**
-
-- A preconfigured Federated Identity Credential in Microsoft Entra.
-- An agent platform that supports OIDC or STS.
-
-The following diagram shows the federation flow. An agent on a third-party platform authenticates through its native workload identity provider, exchanges the resulting OIDC token for a Microsoft Entra token, and then calls your APIs.
-
-[![Diagram that shows the federation pattern flow where a third-party platform agent exchanges an OIDC token through Microsoft Entra Agent ID to access your APIs or Microsoft APIs.](https://learn.microsoft.com/en-us/entra/agent-id/media/configure-third-party-agents/federation-pattern-token-exchange.png)](https://learn.microsoft.com/en-us/entra/agent-id/media/configure-third-party-agents/federation-pattern-token-exchange.png#lightbox)
-
-## Understand the token flow
-
-Both patterns follow the same core token flow:
-
-1. **Agent requests a token.** The agent, or the sidecar on the agent's behalf, calls Microsoft Entra Agent ID with authentication credentials.
-2. **Microsoft Entra validates the identity.** Microsoft Entra verifies the agent's identity through client credentials, a federated credential, or another supported method.
-3. **Microsoft Entra returns a token.** The agent receives a Microsoft Entra access token.
-4. **Agent calls the API.** The agent uses the token to authenticate to Microsoft or custom APIs.
-5. **API validates the token.** The API checks the token signature and claims, then grants access.
-
-## Common integration scenarios
-
-### AWS Bedrock agent calling Microsoft Graph
-
-An AWS Bedrock agent, such as Claude, needs to query Microsoft 365 data or manage resources through Microsoft Graph. The sidecar pattern is ideal for this scenario. To integrate an AWS Bedrock agent with the sidecar pattern:
-
-1. Deploy the agent and sidecar to AWS or your own infrastructure.
-2. Configure an Agent Identity in Microsoft Entra with permissions to Microsoft Graph.
-3. The agent calls the sidecar for a token.
-4. The sidecar acquires a token from Microsoft Entra Agent ID.
-5. The agent uses the token to call Microsoft Graph.
-
-For step-by-step instructions, see [Secure an Amazon Bedrock agent with Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent).
-
-### n8n agent calling Microsoft Graph and MCP Server for Enterprise
-
-An n8n agent needs to access Microsoft 365 data through Microsoft Graph or the Microsoft Graph MCP Server for Enterprise. This scenario uses the n8n-nodes-entraagentid community node to manage token acquisition directly within n8n workflows. To integrate an n8n agent:
-
-1. Deploy n8n to Azure Container Apps by using the Azure Developer CLI \(`azd`\).
-2. Configure an Agent Identity in Microsoft Entra with permissions to Microsoft Graph.
-3. The n8n workflow uses the community node to acquire a token from Microsoft Entra Agent ID.
-4. The agent uses the token to call Microsoft Graph or the MCP Server for Enterprise.
-
-For step-by-step instructions, see [Secure an n8n agent with Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/integrate-n8n-agent).
-
-### Local development with Ollama
-
-You're developing with a local LLM like Ollama and want to test authentication before deploying. Use the sidecar pattern with Docker Compose. To test locally:
-
-1. Run the agent and sidecar in Docker Compose.
-2. The agent calls `localhost:7000/token` to request a token from the sidecar.
-3. The sidecar acquires a token from Microsoft Entra Agent ID.
-4. Test agent behavior locally before deploying.
-
-For step-by-step instructions, see [Run the sidecar for local development](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-local-development).
-
-## High-level roadmap
-
-Use the following table to identify the steps for your chosen pattern:
-
-| Step | Pattern | Task |
-| --- | --- | --- |
-| 1 | Both | Set up Agent Identity and permissions in Microsoft Entra. |
-| 2 | Both | Choose an integration pattern: sidecar or federation. |
-| 3 | Sidecar | Deploy agent and sidecar containers, then test locally. |
-| 4 | Sidecar | Deploy to production on Azure Container Apps, Kubernetes, or another platform. |
-| 5 | Federation | Configure federated identity credentials in Microsoft Entra. |
-| 6 | Federation | Deploy the agent to the target platform. |
-
-## Security best practices
-
-When you integrate third-party agents, follow these security principles:
-
-- **Never embed credentials in agent code.** Use Microsoft Entra Agent ID to acquire tokens dynamically.
-- **Use least privilege.** Grant Agent Identities only the permissions they need through roles or scopes.
-- **Validate token audience and issuer.** Always verify that tokens come from your Microsoft Entra tenant.
-- **Rotate credentials regularly.** If you use client secrets, rotate them on a schedule. Consider federated credentials instead.
-- **Monitor token usage.** Use Microsoft Entra logs to track which agents access which APIs.
-- **Keep the Microsoft Entra ID Auth SDK \(sidecar\) updated.** Security and compatibility updates are released regularly.
-
-## Troubleshoot common issues
-
-If you run into problems during integration, use the following guidance to identify the cause and resolution:
-
-| Issue | Cause | Solution |
-| --- | --- | --- |
-| Agent can't reach sidecar | Network configuration issue or sidecar not running | Verify the sidecar is running, check DNS and networking, and confirm port binding. The default port is 7000. |
-| Sidecar fails to acquire token | Microsoft Entra authentication failed | Verify Agent Identity credentials, check Microsoft Entra permissions, and review the tenant ID and client ID. |
-| Token request returns 401 | Invalid Microsoft Entra credentials or federated credential not configured | Confirm credentials are correct and verify the federated identity credential is set up if you're using the federation pattern. |
-| API rejects token | Token lacks the required scope or permission | Add required API permissions to the Agent Identity and request a token with the correct scope. |
-
-## Related content
-
-- [Configure Microsoft Entra ID Auth SDK \(sidecar\) for agent identities](https://learn.microsoft.com/en-us/entra/agent-id/microsoft-entra-sdk-for-agent-identities)
-- [Call Microsoft Graph API](https://learn.microsoft.com/en-us/entra/agent-id/call-api-microsoft-graph)
-- [Call custom APIs](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom)
-- [Call Azure services](https://learn.microsoft.com/en-us/entra/agent-id/call-api-azure-services)
-- [Best practices for Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/best-practices-agent-id)
+Use a supported OAuth or OpenID Connect library instead of constructing protocol requests by hand. For flow selection and protocol references, see [Choose an authentication protocol for an agent](https://learn.microsoft.com/en-us/entra/agent-id/agent-oauth-protocols).

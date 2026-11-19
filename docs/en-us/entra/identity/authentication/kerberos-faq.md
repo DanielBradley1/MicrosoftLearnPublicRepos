@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/kerberos-faq -->
-<!-- Sitemap-Last-Modified: 2026-08-24 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Microsoft Entra Kerberos FAQ
 
@@ -52,7 +52,7 @@ Ensure the user signed in with a key-based method \(WHfB/FIDO2\) and the device 
 
 ## Why is Partial TGT \(referral\) missing in hybrid scenarios?
 
-Validate that the AzureADKerberos object \(trusted domain object\) is created and healthy; confirm line-of-sight to DCs during the first interactive sign-in.
+Validate that the AzureADKerberos Kerberos server object is present and correctly configured in Active Directory. If cloud trust is configured, separately verify the Trusted Domain Object \(TDO\) created during cloud trust setup. Confirm line-of-sight to DCs during the first interactive sign-in.
 
 ## How can I inspect Entra Kerberos traffic for deep diagnostics?
 
@@ -60,7 +60,7 @@ Use the Kerberos.NET Fiddler extension to decrypt Key Distribution Center proxy 
 
 ## Can I enforce Conditional Access and MFA for legacy apps via Entra Kerberos?
 
-Yes, authentication goes through Entra ID first, so you can apply Conditional Access, then rely on Kerberos tickets for app access.
+Conditional Access can apply at multiple points in supported Microsoft Entra Kerberos flows, including during Kerberos service-ticket issuance. MFA and authentication-strength requirements can cause service-ticket issuance to fail if the required authentication conditions aren't satisfied. Support varies by workload, so review the Conditional Access requirements and limitations for the target resource.
 
 ## Can Cloud Kerberos Trust coexist with WHfB certificate trust?
 
@@ -90,17 +90,23 @@ ConsistencyLevel: eventual
 
 ## How do I find cloud group SIDs for a cloud only user?
 
+Use the user's transitiveMemberOf relationship to retrieve the groups the user is a member of, including memberships through nested groups. For cloud groups, use the securityIdentifier property to identify the group's SID.
+
 ```msgraph
-GET https://graph.microsoft.com/v1.0/groups?$filter=securityEnabled eq true&$select=id,displayName,securityIdentifier
-ConsistencyLevel: eventual
+GET https://graph.microsoft.com/v1.0/users/{user-id}/transitiveMemberOf/microsoft.graph.group?$select=id,displayName,securityIdentifier
 ```
+
+The groups returned by Microsoft Graph represent the user's directory memberships. They don't necessarily represent the final set of group SIDs included in the Kerberos ticket. Applicable Kerberos authorization and group-filtering rules are evaluated separately when the ticket is issued.
 
 ## How do I find on-premises group SIDs for a Hybrid user?
 
+For a hybrid user, use the user's group memberships rather than querying all groups in the tenant. For synchronized on-premises groups, use onPremisesSecurityIdentifier to identify the corresponding on-premises group SID.
+
 ```msgraph
-GET https://graph.microsoft.com/v1.0/groups?$filter=securityEnabled eq true&$select=id,displayName,onPremisesSecurityIdentifier
-ConsistencyLevel: eventual
+GET https://graph.microsoft.com/v1.0/users/{user-id-or-UPN}/transitiveMemberOf/microsoft.graph.group?$select=id,displayName,onPremisesSecurityIdentifier
 ```
+
+The groups returned by Microsoft Graph represent the user's directory memberships. They don't necessarily represent the final set of group SIDs included in the Kerberos ticket. Applicable Kerberos authorization and group-filtering rules are evaluated separately when the ticket is issued.
 
 ## Related content
 

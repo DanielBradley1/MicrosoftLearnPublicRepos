@@ -21,7 +21,7 @@ Warning
 
 Password sync catch-up can take an extended period of time after disabling staging mode. **Do not restart the sync services during catch-up** — stopping the service can cause PHS to resume from an earlier watermark when it starts again, which increases the time to become current.
 
-A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. In staging mode, you can still force an export by using the synchronization service manager.
+When the synchronization cycle is enabled, a server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID. It can quickly take over the responsibilities of another server in the event of a failure. Although you can manually force an export by using **Synchronization Service Manager**, exporting changes from a staging server isn't supported. Having more than one active Microsoft Entra Connect Sync server for the same Microsoft Entra tenant also isn't supported.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
 

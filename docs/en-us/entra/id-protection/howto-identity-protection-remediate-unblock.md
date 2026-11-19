@@ -42,6 +42,21 @@ When risk-based Conditional Access policies are configured, remediating user ris
 - [Require multifactor authentication for all users](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-mfa-strength)
 - [Implement password hash sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-password-hash-synchronization)
 
+For identity verification-based remediation, [create an eligible identity verification profile](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id#create-and-manage-identity-verification-profiles) that supports your risk scenario before [configuring the risk policy](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies#configure-identity-verification-for-risk). Use **Require Identity Verification \(preview\)** with either user risk or sign-in risk. This control is independent of **Require risk remediation**; the adaptive control doesn't automatically require identity verification.
+
+### Validate identity verification remediation
+
+Successful identity verification remediates user risk or sign-in risk, depending on the risk condition in the triggering policy. Failed verification doesn't remediate risk. Finish your test by checking remediation evidence rather than treating credential issuance or access as proof that risk was cleared.
+
+1. Review the applicable policy and sign-in result for the tested access attempt. Confirm the expected policy applied and presented the intended verification challenge.
+2. Confirm the user completed the [credential presentation and verification journey](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience#identity-verification-for-risk). Keep issuance, verification, and credential registration outcomes separate.
+3. Review the available [verification evidence during investigation](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-investigate-risk#investigate-identity-verification-outcomes) and the resulting access decision independently.
+4. Check the relevant user-risk or sign-in-risk record for the expected remediation outcome. Don't assume verification automatically clears every risk.
+5. If verification succeeds but risk remains, preserve that distinction in the test result and continue investigating. Don't dismiss risk merely to make the test pass.
+6. For failed verification, missing credentials, or unsupported remediation cases, use the existing investigation and administrator-assisted remediation process in this article.
+
+Record whether policy targeting, verification, access, and risk remediation each met their success criteria. Before expanding the policy, confirm credential eligibility, permissions, licensing, and the supported remediation outcome. Don't assume this control uses the session revocation or reauthentication behavior of the adaptive **Require risk remediation** control.
+
 ### Self-remediation of sign-in risk
 
 If a user's sign-in risk reaches the level set by your risk-based policy, the user is prompted to perform multifactor authentication \(MFA\) to remediate sign-in risk. If they successfully complete the MFA challenge, the sign-in risk is remediated. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:

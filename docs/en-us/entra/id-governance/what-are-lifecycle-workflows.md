@@ -49,6 +49,7 @@ Those capabilities can help ensure a holistic experience by allowing you to remo
 You can use lifecycle workflows to address any of the following conditions:
 
 - **Automating and extending user orientation and HR provisioning**: Use lifecycle workflows when you want to extend your HR provisioning scenarios by automating tasks such as generating temporary passwords and emailing managers. If you currently have a manual process for orientation, use lifecycle workflows as part of an automated process.
+- **Identity verification during onboarding \(preview\)**: Use the identity-verification templates and tasks to initiate pre-hire verification and configure new-hire credential registration with Verified ID and FaceCheck. For registration paths, device constraints, and account eligibility considerations, see [Onboard users with identity verification \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/how-to-onboard-users-with-identity-verification).
 - **Automating dynamic group memberships**: When groups in your organization are well defined, you can automate user membership in those groups. Benefits and differences from dynamic group memberships include:
 
   - Lifecycle workflows manage static groups, where you don't need a dynamic group rule.
@@ -76,4 +77,5 @@ With Lifecycle Workflows, you can:
 
 - [Create a custom workflow by using the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/id-governance/tutorial-onboard-custom-workflow-portal)
 - [Create a lifecycle workflow](https://learn.microsoft.com/en-us/entra/id-governance/create-lifecycle-workflow)
+- [Onboard users with identity verification \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/how-to-onboard-users-with-identity-verification)
 - [Manage lifecycle workflows with Microsoft Security Copilot](https://learn.microsoft.com/en-us/entra/security-copilot/entra-lifecycle-workflows)

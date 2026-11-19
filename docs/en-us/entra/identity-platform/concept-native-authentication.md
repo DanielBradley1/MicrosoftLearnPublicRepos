@@ -1,83 +1,98 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication -->
 <!-- Sitemap-Last-Modified: 2026-06-22 -->
 
-# Native authentication in Microsoft Entra External ID
+# Native authentication overview
 
 **Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 
-Microsoft Entra’s native authentication allows you to have full control over the design of your mobile and desktop application sign-in experience. Unlike browser-based solutions, native authentication allows you to create visually appealing, pixel-perfect authentication screens that seamlessly blend into your app's interface. With this approach, you can fully customize the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look.
+**Authentication approach:** Embedded native authentication.
 
-The standard app sign-in process, which relies on browser-delegated authentication, often results in a disruptive transition during authentication. Users are temporarily redirected to a system browser for authentication, only to be brought back to the app once the sign-in is complete.
+Embedded native authentication is an authentication approach that lets your application present sign-up, sign-in, and password reset while Microsoft Entra External ID validates credentials and enforces authentication requirements. Your app controls the interface and handles the actions, available methods, and links returned by the Native Authentication API.
 
-While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on \(SSO\), it offers limited UI customization options.
+## API version boundaries
 
-## When to use native authentication
+Important
 
-When it comes to implementing authentication for mobile and desktop apps on External ID, you have two options:
+The Native Authentication API V2 is in preview. The [Native Authentication API V1](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1) remains generally available. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to preview features.
 
-- Microsoft-hosted browser-delegated authentication.
-- Fully custom SDK based native authentication.
+The primary references describe the response-driven Native Authentication API, with native routes such as `/api/v2.0`. Follow service-returned links without rewriting their versions or paths. The `/oauth2/v2.0` OAuth endpoint path is also used by V1 integrations.
 
-The approach you choose depends on your app's specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra External ID supports both of them.
+Existing V1 integrations can continue to use the [V1 API reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1) and its [SDK library references](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#sdk-references). The legacy V1 guides and tutorials have been removed from this documentation. This documentation change doesn't announce retirement of V1 or its SDKs. See [SDK compatibility and migration](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-migrate-native-authentication-v1-v2#sdk-compatibility) for platform and package requirements.
 
-For a side-by-side comparison of the two approaches, including feature availability, supported languages and frameworks, user experience, customization, and security trade-offs, see [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach).
+## Application-owned experience, service-controlled authentication
 
-## How to enable native authentication
+With Embedded native authentication, a mobile, desktop, or single-page application \(SPA\) can present authentication within its own interface. Your application controls layout, interaction, and validation feedback. Microsoft Entra External ID validates credentials, enforces authentication requirements, and issues tokens.
 
-First, review the guidelines on [when to use native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication#when-to-use-native-authentication). Then, have an internal discussion with your application's business owner, designer, and development team to determine if native authentication is necessary.
+Tenant and Conditional Access policies and the application's user flow apply to Microsoft-hosted authentication, Embedded native authentication, and Bring Your Own UX \(BYO UX\). Presentation and integration responsibilities differ. With Embedded native authentication, your app handles the required interactions, such as a second-factor challenge after password verification or more attribute collection after email verification.
 
-If your team determines that native authentication is necessary for your application, follow these steps to enable native authentication in the Microsoft Entra admin center:
+Microsoft-hosted authentication presents pages on behalf of your app. Choose Embedded native authentication when your team needs control of the interface and can implement response handling and security responsibilities. See [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach) for the broader comparison.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-2. Browse to **App registrations** and select the app registration for which you want to enable public client and native authentication flows.
-3. Under **Manage**, select **Authentication**.
-4. On the **Redirect URI configuration** tab, allow public client flows:
+## Customer journeys
 
-   1. For **Enable the following mobile and desktop flows** select **Yes**.
-   2. For **Enable native authentication**, select **Yes**.
+The same authorization transaction surrounds each journey. Your app starts authorization, completes the returned authentication interactions, resumes authorization, and exchanges the authorization code for tokens.
 
-5. Select the **Save** button.
+| Journey | Behavior |
+| --- | --- |
+| **Sign-up** | Create an email-with-password or passwordless email one-time passcode \(OTP\) account. Collect the attributes and complete the verification steps requested by the user flow. |
+| **Sign-in** | Submit the customer's identifier and complete password or email one-time-passcode verification using an offered method. Username-with-password sign-in is also available for configured local accounts. |
+| **Password reset** | Verify an offered email or SMS one-time passcode, submit a replacement password, and follow the password-update polling responses. Recovery can start before sign-in discovery or through a password method's `recover` link. |
+| **Multifactor authentication \(MFA\) and inline registration** | Complete email or SMS verification when policy requires MFA. If registration is required, handle the returned `enroll` and `activate` operations. Email OTP first-factor accounts use a different second factor, such as SMS. |
+| **Policy requirements after sign-up or password reset** | Continue handling required authentication, including MFA and Conditional Access, before requesting tokens. Completing account creation or a password update doesn't bypass policy. |
 
-## Update your configuration code
+Select journeys and methods from those available in the current transaction. Your application can present a choice or apply its flow logic within those options.
 
-After enabling the native authentication APIs in the admin center, you still need to update your application's configuration code to support native authentication flows for Android or iOS/macOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types in [Native authentication challenge types](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication-challenge-types). If the configuration isn't updated to integrate native authentication components, the native authentication SDKs and APIs aren't usable.
+The Native Authentication API doesn't support federation, phone numbers as a first factor, time-based one-time passwords \(TOTP\), passkeys, push authentication, or external MFA methods. Later-operation step-up and using native-issued tokens with profile or credential-management APIs aren't supported. See the [method and integration matrices](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#methods-and-journeys-by-approach) for the comparison with Microsoft-hosted authentication and BYO UX.
 
-## Security considerations for native authentication
+For supported custom authentication extension events, see the [approach comparison](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#custom-authentication-extension-applicability). For configuration, see [Custom authentication extensions](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-custom-extensions).
 
-Native authentication gives your development team full control over the authentication experience. With this control comes the responsibility to follow security best practices in your app's implementation, such as secure token handling and transport security \(HTTPS\).
+## Integration responsibilities
 
-## Single sign-on \(SSO\)
+Use the configuration guide and API references for a direct integration, or use a documented JavaScript, Android, or Apple SDK. The [SDK quickstart](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication) configures a React Next.js sample. SDK entry points and supported continuation interfaces are specific to the package and platform.
 
-Native authentication supports single sign-on \(SSO\) for embedded web views. This allows users to sign in once through the native app's UI and then access web resources hosted in an embedded web view \(for example, `WKWebView` on iOS or `WebView` on Android\) without encountering a second login prompt.
+| Responsibility | What your application implements |
+| --- | --- |
+| **Response handling** | Use the latest `state`, `action`, and links to select an allowed operation through user choice or application flow logic. |
+| **Method selection** | Select from the returned methods, use masked hints where needed, and follow the selected method's links. |
+| **Attribute collection** | Collect values according to the returned field requirements and validation metadata. Don't require page-grouping metadata. |
+| **Transaction continuity** | Keep the latest continuation token in memory and use it only with links from the same response. |
+| **Authorization** | Request the needed scopes initially and exchange the final authorization code for tokens. |
+| **Recovery** | Handle validation failures, throttling, expiration, unsupported interactions, and cancellation without replaying credentials automatically. A separately configured browser sign-in starts a new authentication attempt; it doesn't resume native progress. |
 
-The app achieves this by retrieving an access token using the Native Auth SDK or the [native authentication API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api) and injecting it into the web view's HTTP request via the `Authorization` header. The web resource validates the token and establishes a session, providing a seamless transition from the native experience to web content.
+SPAs with Embedded native authentication and BYO UX websites need a proxy or edge cross-origin resource sharing \(CORS\) policy for cross-origin browser API calls. Android and iOS apps using native HTTP transports don't need CORS or a CORS proxy. See [Native authentication CORS concepts](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-cors).
 
-For implementation steps, see [Implement single sign-on from native apps to embedded web views](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-webview-sso).
+The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as SPAs, to help protect against cross-site request forgery \(CSRF\). Non-browser clients, such as Android and iOS apps using native HTTP transports, don't require a custom domain. An embedded browser or webview isn't a native HTTP transport. BYO UX websites still require a tenant-verified custom domain. Configure the service authority before starting a journey; see [Configure the API authority](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-configure-app#configure-the-api-authority).
 
-Note
+## Security boundaries
 
-Cross-app SSO through system browsers isn't supported with native authentication.
+Your application handles credentials, so protect passwords, one-time passcodes, continuation tokens, authorization codes, and issued tokens. Use HTTPS, don't log authentication bodies, and don't cache credential responses. Validate returned URL authorities before sending transaction data.
 
-## How to use native authentication
+Use client-side validation to help customers correct their input. The service validates authentication requests.
 
-You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library \(MSAL\) SDK for Android, iOS, macOS, and web applications. Whenever possible, we recommend using MSAL to add native authentication to your apps.
+## Session boundaries
 
-For more information on native authentication samples and tutorials, see the following table:
+Embedded native authentication supports single sign-on \(SSO\) for embedded webviews. A signed-in native app requests an access token for the web resource and includes it in the webview request's `Authorization` header. The resource validates the token and establishes a session, allowing access without another sign-in prompt. See [Authenticate an embedded webview from a native app](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-webview-sso).
 
-| Language/  <br>Platform | Quickstart | Build and integrate guide |
-| --- | --- | --- |
-| Android \(Kotlin\) | • [Sign in users](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-run-native-authentication-sample-android-app) | • [Sign in users](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-native-authentication-prepare-android-app) |
-| iOS \(Swift\) | • [Sign in users](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app) | • [Sign in users](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app) |
-| macOS \(Swift\) | • [Sign in users](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-run-native-authentication-sample-macos-app) | • [Sign in users](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app) |
-| React \(Next.js\) | • [Quickstart](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in) | • [Tutorials](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-up) |
-| Angular | • [Quickstart](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in) | • [Tutorials](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-native-authentication-single-page-app-angular-sign-up) |
+Signing out of your native app doesn't terminate other application or browser sessions. Clear each application's session separately when your sign-out experience requires it.
 
-If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, see [Native authentication API reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api).
+## Existing V1 application configuration
+
+For existing V1 applications, [enable public client and native authentication flows](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#enable-public-client-and-native-authentication-flows), then update your platform configuration. The [V1 API reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#v1-challenge-types-and-capabilities) describes challenge types and capabilities. For a response-driven integration, follow [Configure an application](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-configure-app) to select and configure the V2 entry points.
+
+## Conditional Access and sign-in frequency
+
+Microsoft Entra External ID supports the Conditional Access [sign-in frequency \(SIF\)](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-session-lifetime#user-sign-in-frequency) session control for both Microsoft-hosted and native authentication.
+
+For native authentication, when reauthentication is required by the policy, Microsoft Entra External ID prevents token issuance during refresh token grants \(`grant_type=refresh_token`\). Your app must handle the failed token refresh and prompt the user to sign in again before it can acquire new tokens. The policy doesn't display the sign-in UI for your app.
+
+## Next steps
+
+- [Run the SDK sign-in quickstart](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication).
+- [Configure an application for native authentication](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-configure-app).
+- [Implement the Native Authentication API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication).
+- [Review SDK compatibility and migration](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-migrate-native-authentication-v1-v2).
 
 ## Related content
 
-- [Android native authentication tutorials](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-run-native-authentication-sample-android-app).
-- [iOS native authentication tutorials](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app).
-- [Native authentication in React SPA tutorial](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in).
-- [Native authentication in Angular SPA tutorial](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in).
-- [Native authentication API documentation](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api).
+- [Native authentication flow](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-flow).
+- [Native authentication user attributes](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-user-attributes).
+- [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach).

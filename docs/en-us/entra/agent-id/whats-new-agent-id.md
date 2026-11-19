@@ -7,6 +7,26 @@ Microsoft Entra Agent ID is now generally available. This release brings first-c
 
 This article summarizes the key capabilities and documentation currently available.
 
+## Local agent authentication \(preview\)
+
+Microsoft Entra Agent ID now supports local agents as OAuth public clients. An agent running on an endpoint device can sign in a Microsoft Entra user and request delegated access to protected services by using the authorization code flow with PKCE, without storing or presenting a client credential.
+
+- [Authenticate a local agent with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/agent-id/authenticate-local-agent) - Register a public-client Agent ID, configure MSAL, or use a CIMD URL as the client ID.
+
+## Agent identity blueprint instance modes \(preview\)
+
+Agent identity blueprints can be configured for one Agent ID or multiple Agent IDs per tenant. A single-instance blueprint uses the same OAuth client ID for the blueprint and its one Agent ID in every tenant. A multi-instance blueprint can create a fleet of Agent IDs with distinct client IDs.
+
+- [Agent identity blueprint instance modes](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint#instance-modes-preview) - Compare the two topologies and configure the immutable `isSingleInstance` setting.
+
+## Client ID Metadata Document support \(preview\)
+
+Microsoft Entra ID now supports Client ID Metadata Documents \(CIMD\). CIMD lets an OAuth client use a public HTTPS metadata URL as its client ID. This model enables MCP clients to connect to Entra-protected MCP servers without requiring every client to be registered with Microsoft Entra ID in advance.
+
+- [Client ID Metadata Documents in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/agent-id/client-id-metadata-documents) - Learn how CIMD works, when to use it, and which limitations apply.
+- [Configure a client to use a Client ID Metadata Document](https://learn.microsoft.com/en-us/entra/agent-id/configure-client-id-metadata-document) - Publish client metadata and request delegated access tokens.
+- [Manage CIMD clients in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/agent-id/manage-client-id-metadata-document-clients) - Add, approve, monitor, disable, and remove CIMD-backed agent identities.
+
 ## Manage AI agents at scale
 
 Microsoft Entra Agent ID introduces new identity constructs and authentication protocols designed specifically for AI agents. Notable updates include:
@@ -23,7 +43,6 @@ Microsoft Entra Agent ID introduces new identity constructs and authentication p
 - [Configure Microsoft Entra ID Auth SDK \(sidecar\) for agent identities](https://learn.microsoft.com/en-us/entra/agent-id/microsoft-entra-sdk-for-agent-identities) - SDK configuration for token acquisition.
 - [Run the sidecar for local development](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-local-development) \(New\) - Local development setup for the Auth SDK.
 - [Validate agent tokens in a downstream API](https://learn.microsoft.com/en-us/entra/agent-id/how-to-validate-agent-tokens-downstream-api) \(New\) - Token validation guidance for APIs that receive agent tokens.
-- [Configure non-Microsoft agents with Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/configure-third-party-agents) \(New\) - Integration patterns \(sidecar and federation\) for platforms like AWS, GCP, and n8n.
 - [Secure an Amazon Bedrock agent](https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent) \(New\) - Step-by-step guide for securing Bedrock agents with Agent ID.
 - [Secure an n8n agent](https://learn.microsoft.com/en-us/entra/agent-id/integrate-n8n-agent) \(New\) - Deploy n8n on Azure with Agent ID integration.
 - [Migrate custom app registrations](https://learn.microsoft.com/en-us/entra/agent-id/migrate-custom-app-registrations-to-agent-id) \(New\) - Move agents using standard app registrations to Agent ID.

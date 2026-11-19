@@ -111,7 +111,7 @@ The following steps help create a Conditional Access policy to block issuance of
    2. Select **Select**.
 
 8. Confirm your settings and set **Enable policy** to **Report-only**.
-9. Select **Create** to create to enable your policy.
+9. Select **Create** to create the policy.
 
 Example JSON for creating the **Block agent identity authentication** policy with the Microsoft Graph APIs:
 
@@ -168,7 +168,7 @@ The following steps help create a Conditional Access policy to block issuance of
    2. Select **Select**.
 
 8. Confirm your settings and set **Enable policy** to **Report-only**.
-9. Select **Create** to create to enable your policy.
+9. Select **Create** to create the policy.
 
 Example JSON for creating the **Block agent's user account authentication** policy with the Microsoft Graph APIs:
 
@@ -225,7 +225,7 @@ The following steps help create a Conditional Access policy to block issuance of
    2. Select **Select**.
 
 8. Confirm your settings and set **Enable policy** to **Report-only**.
-9. Select **Create** to create to enable your policy.
+9. Select **Create** to create the policy.
 
 Example JSON for creating the **Block users signing into agents** policy with the Microsoft Graph APIs:
 

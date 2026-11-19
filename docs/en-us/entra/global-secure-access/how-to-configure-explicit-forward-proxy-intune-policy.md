@@ -3,6 +3,10 @@
 
 # Configure Microsoft Edge with Explicit Forward Proxy by using an Intune application management policy
 
+Important
+
+For new deployments, use [secure enterprise browser \(preview\)](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-global-secure-access-browser-settings) for native integration between Microsoft Edge and Global Secure Access.
+
 You can automatically deliver proxy settings and certificate authority trust settings in Microsoft Edge by using an Intune mobile application management \(MAM\) policy. The policy can take advantage of the Explicit Forward Proxy feature of Global Secure Access.
 
 ## Prerequisites

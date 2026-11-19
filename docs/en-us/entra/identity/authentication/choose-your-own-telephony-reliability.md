@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Plan for resiliency and high availability
 
@@ -78,7 +78,7 @@ To monitor each region and provider, see [Monitor and troubleshoot SMS and voice
 - [Configure multiple phone providers](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/MULTI-PROVIDER-IMPLEMENTATION.md).
 - [Reliability in Azure Functions](https://learn.microsoft.com/en-us/azure/reliability/reliability-functions).
 - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
-- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
+- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-protection).
 - [Troubleshoot SMS and voice with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Documentation](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/tree/epp-packages-193-1/docs).
 - [Azure Front Door multi-region deployment](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/docs/FRONTDOOR.md).

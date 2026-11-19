@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/external-identities-overview -->
-<!-- Sitemap-Last-Modified: 2026-04-24 -->
+<!-- Sitemap-Last-Modified: 2026-09-02 -->
 
 # Introduction to Microsoft Entra External ID
 
@@ -23,10 +23,12 @@ External ID is a flexible solution for both:
 
 Organizations and developers can use [External ID in an external tenant](https://learn.microsoft.com/en-us/entra/external-id/customers/overview-customers-ciam) as their CIAM solution when publishing their apps to consumers and business customers.
 
-You can create a separate Microsoft Entra tenant in an external configuration to manage your apps and user accounts separately from your workforce. Within this tenant, you can configure custom-branded sign-up experiences and user management features:
+You can create a separate Microsoft Entra tenant in an external configuration to manage your apps and user accounts separately from your workforce. For customer-app authentication, choose Microsoft-hosted authentication, Embedded native authentication, or Bring Your Own UX \(BYO UX\). See [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach) for selection criteria and current availability.
+
+Within this tenant, configure authentication experiences and user management for your apps:
 
 - Set up self-service registration flows that define the sign-up steps that customers follow and the sign-in methods that they can use. These methods include email and password, one-time passcodes, or social accounts from Google or Facebook.
-- Create a custom experience for users who sign in to your apps by configuring branding settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text for sign-ins across your apps.
+- For Microsoft-hosted authentication, customize sign-in pages by configuring company branding for your tenant. Add your own background images, colors, company logos, and text for sign-ins across your apps.
 - Collect information from customers during sign-up by selecting from built-in user attributes or adding your own custom attributes.
 - Analyze user activity and engagement data to uncover valuable insights that can aid strategic decisions and drive business growth.
 
@@ -69,7 +71,7 @@ The following table compares the scenarios that you can enable with External ID.
 | Intended for | Collaborating with business partners from external organizations like suppliers, partners, and vendors. These users might or might not have Microsoft Entra ID or managed IT. | Consumers and business customers of your app. These users are managed in a Microsoft Entra tenant that's configured for external apps and users. |
 | User management | You manage B2B collaboration users in the same workforce tenant as employees but typically annotate them as guest users. You can manage guest users the same way as employees and add them to the same groups. You can use [cross-tenant access settings](https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-overview) to determine which users have access to B2B collaboration. | You manage app users in an external tenant that you create for consumers of your application. Users in an external tenant have different [default permissions](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-user-permissions) than users in a workforce tenant. The external tenant is separate from the organization's employee directory. |
 | Single sign-on \(SSO\) | SSO to all Microsoft Entra-connected apps is supported. For example, you can provide access to Microsoft 365 or on-premises apps, and to other SaaS apps such as Salesforce or Workday. | SSO to apps registered in the external tenant is supported. SSO to Microsoft 365 or to other Microsoft SaaS apps isn't supported. |
-| Company branding | The default state for the authentication experience is a Microsoft design. Administrators can customize the guest sign-in experience with their company branding. | The default branding for the external tenant is neutral and doesn't include any existing Microsoft branding. Administrators can customize the branding for the organization or per application. [Learn more](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-branding-customers). |
+| Company branding | The default state for the authentication experience is a Microsoft design. Administrators can customize the guest sign-in experience with their company branding. | For Microsoft-hosted authentication, the default branding is neutral and doesn't include any existing Microsoft branding. Administrators can customize the branding for the organization or per application. [Learn more](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-branding-customers). |
 | Microsoft cloud settings | [Supported](https://learn.microsoft.com/en-us/entra/external-id/cross-cloud-settings). | Not applicable. |
 | Entitlement management | [Supported](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview). | Not applicable. |
 

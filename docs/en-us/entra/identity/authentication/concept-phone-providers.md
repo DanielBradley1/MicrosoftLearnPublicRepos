@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Choose your own telephony provider for SMS and voice authentication
 
@@ -71,7 +71,7 @@ Before moving production authentication traffic to CYOT, consider fraud protecti
 
 Work with your telephony provider to configure the fraud protection, destination, usage, and spending controls appropriate for your organization's traffic and risk requirements.
 
-See [Prevent telephony fraud when using your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
+See [Prevent telephony fraud when using your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-protection).
 
 ### Plan for resiliency
 
@@ -101,7 +101,7 @@ See [Troubleshoot SMS and voice with your own telephony provider](https://learn.
 ## Related content
 
 - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
-- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
+- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-protection).
 - [Plan for resiliency and high availability](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
 - [Troubleshoot SMS and voice with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Frequently asked questions](https://learn.microsoft.com/en-us/entra/identity/authentication/phone-providers-faq#how-much-does-choose-your-own-telephony-provider-cost).

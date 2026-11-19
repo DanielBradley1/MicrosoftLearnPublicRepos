@@ -1,92 +1,142 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/agent-id/microsoft-entra-sdk-for-agent-identities -->
 <!-- Sitemap-Last-Modified: 2026-08-13 -->
 
-# Acquire tokens and call downstream APIs with Microsoft Entra ID Auth SDK \(sidecar\)
+# Configure the Microsoft Entra ID Auth SDK sidecar
 
-The Microsoft Entra ID Auth SDK \(sidecar\) is a containerized web service that handles token acquisition, validation, and downstream API calls for agents. This SDK communicates with your application through HTTP APIs, providing consistent integration patterns regardless of your technology stack. Instead of embedding identity logic directly in your application code, the Microsoft Entra ID Auth SDK \(sidecar\) manages token acquisition, validation, and API calls through standard HTTP requests.
+The Microsoft Entra ID Auth SDK sidecar is a companion service that handles authentication and token acquisition for your agent. It lets your cloud agent call APIs as itself or on behalf of signed-in users.
+
+In this article, you configure the sidecar container, its blueprint credential, and downstream API access.
 
 ## Prerequisites
 
-Before you begin, ensure you have:
+- Completion of [Create an identity for your agent](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent), including tenant enablement, administrator approvals, and the recorded client and object IDs.
+- A credential configured on the blueprint.
+- Permissions granted to the Agent ID for each downstream API.
+- A shared network namespace for the agent and sidecar, such as containers in the same pod.
 
-- [Set up the Microsoft Entra ID Auth SDK \(sidecar\)](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/installation)
-- [An agent identity](https://learn.microsoft.com/en-us/entra/agent-id/create-delete-agent-identities). Record the agent identity client ID.
-- [An agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/create-blueprint). Record the agent identity blueprint client ID.
-- Necessary [permissions configured in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/agent-id/grant-agent-access-microsoft-365)
+## Add the sidecar container
 
-## Deploy your containerized service
+Run the agent and sidecar in the same network namespace and call the sidecar through `localhost`. Production sidecar builds restrict callers to loopback; a private Docker bridge and a `sidecar` DNS name aren't sufficient. Containers in the same Kubernetes pod or Azure Container Apps app share this boundary. In Docker Compose, use `network_mode: "service:sidecar"` on the agent. Don't publish the sidecar port.
 
-Deploy the Microsoft Entra ID Auth SDK \(sidecar\) as a containerized service in your environment. Follow the instructions in the [Set up the Microsoft Entra ID Auth SDK \(sidecar\)](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/installation) guide to configure the service with your agent identity details.
+Use the credential configuration for where you run the container:
 
-## Configure your Microsoft Entra ID Auth SDK \(sidecar\) settings
+- **Local workstation:** Follow [Run the sidecar for local development](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-local-development) for the sample container startup and development credential. Apply the network boundary above and the API profiles and override settings below.
+- **Azure host:** Use the following configuration after assigning the managed identity to the host and configuring its federated credential on the blueprint. It doesn't provide a workstation credential.
 
-Follow these steps to configure your Microsoft Entra ID Auth SDK \(sidecar\) settings:
+The Docker Compose fragment illustrates the shared network layout and uses a user-assigned managed identity as the credential:
 
-Warning
+Set `AzureAd:ClientCredentials:0:SourceType` to `SignedAssertionFromManagedIdentity` and `AzureAd:ClientCredentials:0:ManagedIdentityClientId` to the user-assigned managed identity's client ID. This is a different value from the shared agent client ID in `AzureAd:ClientId`. Container environment variables use `__` in place of `:` in these configuration paths.
 
-Client secrets shouldn't be used as client credentials in production environments for agent identity blueprints due to security risks. Instead, use more secure authentication methods such as [federated identity credentials \(FIC\) with managed identities](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity) or client certificates. These methods provide enhanced security by eliminating the need to store sensitive secrets directly within your application configuration.
+Record the tenant, blueprint, Agent ID, and API identifiers for your scenario in the [scenario identifier worksheet](https://learn.microsoft.com/en-us/entra/agent-id/key-concepts#record-the-identifiers-for-your-scenario) before configuring these values.
 
-1. Set up the necessary components in Microsoft Entra ID. Ensure you register your application in the Microsoft Entra ID tenant.
-2. Configure your client credentials. This credential can be a client secret, a certificate, or a managed identity that you're using as a federated identity credential.
-3. If you're calling a downstream API, ensure that the necessary permissions are granted. Calling a custom web API requires you to provide the API registration details in the SDK configuration.
+```yml
+services:
+  sidecar:
+    image: mcr.microsoft.com/entra-sdk/auth-sidecar:1.1.3-azurelinux3.0-distroless
+    environment:
+      AzureAd__Instance: https://login.microsoftonline.com/
+      AzureAd__TenantId: <tenant-id>
+      AzureAd__ClientId: <agent-client-id>
+      AzureAd__ClientCredentials__0__SourceType: SignedAssertionFromManagedIdentity
+      AzureAd__ClientCredentials__0__ManagedIdentityClientId: <managed-identity-client-id>
+      ASPNETCORE_URLS: http://localhost:5000
 
-For more information, see [Configure your Microsoft Entra ID Auth SDK \(sidecar\) settings](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/configuration).
+  agent:
+    image: <agent-image>
+    network_mode: "service:sidecar"
+    environment:
+      SIDECAR_URL: http://localhost:5000
+```
 
-## Acquire tokens using the Microsoft Entra ID Auth SDK \(sidecar\)
+Replace `<agent-image>` with your agent's image. This example pins the Linux sidecar to `1.1.3-azurelinux3.0-distroless`. For Windows, use the matching Windows tag from [Auth SDK sidecar container image tags](https://mcr.microsoft.com/v2/entra-sdk/auth-sidecar/tags/list).
 
-These are the steps to acquire tokens using the Microsoft Entra ID Auth SDK \(sidecar\):
+Use `SignedAssertionFilePath` instead when the container receives a workload identity token from its orchestrator. Use `ClientSecret` only for local development. Don't place the blueprint credential in the agent container.
 
-1. Acquire token using the Microsoft Entra ID Auth SDK \(sidecar\). This varies based on whether the agent is operating autonomously or on behalf of a user. There are three scenarios to consider:
+For other credential sources, see [Microsoft.Identity.Web credential descriptions](https://aka.ms/ms-id-web/credential-description).
 
-   - Autonomous agents: Agents operating on their own behalf using service principals created for agents \(autonomous\).
-   - Autonomous agent's user account: Agents operating on their own behalf using user principals created specifically for agents \(for instance agents having their own mailbox\).
-   - Interactive agents: Agents operating on behalf of human users.
+## Configure a downstream API
 
+Give each downstream API a short name. Configure its base URL, scopes, and token type. For example, this profile requests app-only tokens for Microsoft Graph:
 
-   Specify the downstream API by including its name in the request URL based on your Microsoft Entra ID Auth SDK \(sidecar\) configuration. The authorization header endpoint takes the format `/AuthorizationHeader/{serviceName}` where `serviceName` is the name of the downstream API configured in the SDK settings.
+```json
+{
+  "DownstreamApis": {
+    "graph-app": {
+      "BaseUrl": "https://graph.microsoft.com/v1.0/",
+      "Scopes": [
+        "https://graph.microsoft.com/.default"
+      ],
+      "RequestAppToken": true
+    }
+  }
+}
+```
 
-2. To acquire an app-only \(client credentials\) token for an autonomous agent, you provide the agent identity client ID in the request.
+The name becomes the `{apiName}` route value. This example uses `graph-app`, so the agent requests `/AuthorizationHeaderUnauthenticated/graph-app`.
 
-   ```bash
-   GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>
-   Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
-   ```
+The resource-specific articles provide the configuration for each API. To configure the container with environment variables, replace each `:` in the JSON path with `__`. For example:
 
-3. To acquire token for an autonomous agent's user account, provide either the user object ID or User Principal Name but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both causes a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request fails with a validation error.
+```yml
+environment:
+  DownstreamApis__graph-app__BaseUrl: https://graph.microsoft.com/v1.0/
+  DownstreamApis__graph-app__Scopes__0: https://graph.microsoft.com/.default
+  DownstreamApis__graph-app__RequestAppToken: "true"
+```
 
-   ```bash
-   GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>&AgentUserId=<agent-user-object-id>
-   Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
-   ```
+## Keep identity overrides disabled
 
+Use the client ID recorded during setup directly. Don't pass `AgentIdentity`, `AgentUserId`, or `AgentUsername`: these select a different identity flow, not the cloud-agent setup in this article.
 
-   ```bash
-   GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>&AgentUsername=<agent-user-principal-name>
-   Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
-   ```
+Keep overrides disabled on the endpoints used by the agent:
 
-4. For interactive agents, use the on-behalf-of \(OBO\) flow. The agent first validates the user token granted to it before acquiring the resource token to call the downstream API.
+```json
+{
+  "Sidecar": {
+    "AllowOverrides": {
+      "GetAuthorizationHeader": false,
+      "GetAuthorizationHeaderUnauthenticated": false,
+      "CallDownstreamApi": false,
+      "CallDownstreamApiUnauthenticated": false
+    }
+  }
+}
+```
 
-   Agent web API receives user token from the calling application and validates the token via the Microsoft Entra ID Auth SDK \(sidecar\) `/Validate` endpoint Acquire token for downstream APIs by calling `/AuthorizationHeader` with only the `AgentIdentity` and the incoming authorization header
+Keep the sidecar accessible only through the shared loopback boundary even when overrides are disabled. The unauthenticated endpoints can acquire app-only tokens with the configured credential.
 
-   ```bash
-   # Step 1: Validate incoming user token
-   GET /Validate
-   Authorization: Bearer <user-token>
+## Verify the sidecar
 
-   # Step 2: Get authorization header on behalf of the user
-   GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>
-   Authorization: Bearer <user-token>
-   ```
+From the agent container in the shared network namespace, request `http://localhost:5000/healthz`:
 
-## Call an API
+```http
+GET /healthz
+```
 
-When obtaining the authorization header for calling a downstream API, the Microsoft Entra ID Auth SDK \(sidecar\) returns the `Authorization` header value that can be used directly in your API calls.
+The endpoint reports whether the sidecar is accepting requests. It doesn't verify the credential, consent, or downstream API access. Test token acquisition and a downstream call separately. Don't expose it as a public health endpoint.
 
-You can use this header to call the downstream API. The web API should validate the token by calling the `/Validate` endpoint of the Microsoft Entra ID Auth SDK \(sidecar\). This endpoint returns token claims for further authorization decisions.
+## Choose an endpoint
 
-## Related content
+| Operation | Endpoint |
+| --- | --- |
+| Validate an inbound access token and return its claims | `GET /Validate` |
+| Get an authorization header using an inbound user token | `GET /AuthorizationHeader/{apiName}` |
+| Get an authorization header without an inbound user token | `GET /AuthorizationHeaderUnauthenticated/{apiName}` |
+| Have the sidecar call a configured downstream API | `POST /DownstreamApi/{apiName}` |
+| Have the sidecar call a configured downstream API without an inbound user token | `POST /DownstreamApiUnauthenticated/{apiName}` |
 
-- [Python implementation of Microsoft Entra ID Auth SDK \(sidecar\)](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/scenarios/using-from-python)
-- [TypeScript implementation of Microsoft Entra ID Auth SDK \(sidecar\)](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/scenarios/using-from-typescript)
-- [Call a downstream API - Microsoft Entra ID Auth SDK \(sidecar\) docs](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/scenarios/call-downstream-api)
+Use the named downstream API profile without identity query parameters. For example, request `/AuthorizationHeaderUnauthenticated/graph-app` for app-only access or `/AuthorizationHeader/graph` with an inbound user token for OBO.
+
+The authorization-header endpoints return an `authorizationHeader` value. Treat it as a credential and don't log it.
+
+The profile name in the endpoint must match a name under `DownstreamApis`. The configuration above defines `graph-app`, so `/AuthorizationHeaderUnauthenticated/graph-app` is valid. It doesn't define a `graph` profile. To use `/AuthorizationHeader/graph` for OBO, configure a separate delegated `graph` profile as shown in [Call Microsoft Graph as a user](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-call-graph-as-user). The endpoint path selects which identity supplies the token; the profile name selects the API configuration.
+
+For complete request and response details, see the [Auth SDK sidecar endpoint reference](https://learn.microsoft.com/en-us/entra/msidweb/agent-id-sdk/endpoints). An unconfigured profile name returns `400 Bad Request`; correct the route name or add the matching `DownstreamApis` entry.
+
+## Next steps
+
+- [Run the sidecar for local development](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-local-development).
+- [Call a custom API as the agent](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-call-custom-api-as-agent).
+- [Authenticate users](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-authenticate-users).
+- [Review the sidecar source code](https://github.com/AzureAD/microsoft-identity-web/tree/master/src/Microsoft.Identity.Web.Sidecar).
+- [Explore the official sidecar samples](https://github.com/microsoft/entra-agentid-samples/tree/dev/sidecar).
+- [Build a platform that hosts an agent fleet](https://learn.microsoft.com/en-us/entra/agent-id/sidecar-fleet-provision-agent-identities).

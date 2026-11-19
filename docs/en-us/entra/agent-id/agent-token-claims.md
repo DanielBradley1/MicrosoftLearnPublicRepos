@@ -7,6 +7,8 @@ Agents use specialized token claims to identify different entity types and their
 
 Clients using agent identities are expected to treat the access tokens issued to them to use at resource servers as opaque, and not try to parse them. However, resource servers that receive access tokens issued to agents need to parse the tokens to validate them and extract claims for authorization purposes.
 
+Resource servers must validate the signature, issuer, audience, and lifetime before using any claims. Agent identity claims describe the caller and its relationships; they don't replace the delegated scope or application role required by an operation. For implementation guidance, see [Validate Agent ID tokens in a downstream API](https://learn.microsoft.com/en-us/entra/agent-id/how-to-validate-agent-tokens-downstream-api).
+
 ## Core token claim types
 
 Tokens issued for identities used for resource access include claims that you'd normally expect to see in access tokens that Microsoft Entra issues. For more information, see [access token claim reference](https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference). The following example shows a sample access token issued to an agent acting autonomously.
@@ -113,11 +115,11 @@ Here are the relevant values for these claims. These claims are multivalued, mea
 | `11` | AgentIdentity |
 | `13` | AgentIDUser |
 
-You should ignore any values that aren't relevant to your scenario or validation logic. Ignore the values that aren't relevant to your application. Don't assume any order of the values in these claims.
+Ignore values that aren't relevant to your scenario or validation logic. Don't assume any order of the values in these claims.
 
 ## xms\_par\_app\_azp
 
-The `xms_par_app_azp` claim is used to identify the parent application of the authorized party \(`azp` or `appid`\). It's a GUID, when included. You can use the claim to determine the parent
+The `xms_par_app_azp` claim identifies the parent application of the authorized party \(`azp` or `appid`\). When included, its GUID identifies the agent identity blueprint associated with the acting agent identity.
 
 Log the parent application ID for auditing purposes. Microsoft Entra ID sign-in logs always includes the parent ID if available, so resource server should do the same. It isn't recommended to use the parent application ID for authorization decisions, as it would result in widespread access by many agents.
 

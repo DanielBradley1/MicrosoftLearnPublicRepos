@@ -3,9 +3,9 @@
 
 # How to delete and restore agent identity objects
 
-When you delete an agent identity blueprint, Microsoft Entra automatically cleans up all associated child agent identities and agents' user accounts. All deletions are soft deletions — deleted objects move to the recycle bin and can be restored within 30 days.
+Microsoft Graph documents soft deletion and recovery for application and agent identity objects. Its public delete API references don't specify whether deleting a blueprint or blueprint principal also deletes child agent identities or associated agent user accounts. Don't rely on a cascade unless Microsoft confirms the behavior for your scenario.
 
-For a conceptual overview of how cascade cleanup works and quota considerations, see [Agent identity deletion works](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-identity-deletion).
+For details on documented behavior and unresolved related-object behavior, see [Agent identity deletion](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-identity-deletion).
 
 ## Prerequisites
 
@@ -13,30 +13,32 @@ To delete and restore agent identity objects, you need:
 
 - [Agent ID Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) to view and manage agent identity objects.
 - [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) to delete the blueprint application and its service principal.
-- The `Application.ReadWrite.All` permission for Microsoft Graph API or Microsoft Entra PowerShell operations.
-- The `AgentIdentity.ReadWrite.All` permission to permanently delete soft-deleted agent identities.
-- Owners of an agent identity blueprint can delete agent identity objects associated with that blueprint without these roles.
+- The `Application.ReadWrite.All` permission for Microsoft Graph operations on blueprint applications and service principals.
+- The `AgentIdentity.DeleteRestore.All` permission for Microsoft Graph delete and restore operations on agent identities.
+- The `AgentIdentity.ReadWrite.All` permission for permanent deletion of soft-deleted agent identities, or `AgentIdentityBlueprintPrincipal.ReadWrite.All` to permanently delete a soft-deleted blueprint principal.
+- The `AgentIdentityBlueprintPrincipal.DeleteRestore.All` permission to restore a soft-deleted blueprint principal.
+- The `AgentIdUser.ReadWrite.IdentityParentedBy` permission to delete or restore an associated agent user.
 
 ## Delete a blueprint
 
 Deleting agent identity objects isn't supported in the Microsoft Entra admin center. Use Microsoft Graph API or Microsoft Entra PowerShell to delete blueprints and agent identities.
 
-You can delete the agent identity blueprint and blueprint principal separately. Deleting the app registration also deletes the principal. Deleting only the principal leaves the app registration in place.
+The blueprint application and blueprint principal are separate directory objects with separate delete endpoints. Use the endpoint for the object you intend to delete, then check the other object and related agent identities independently.
 
 Note
 
-Standard deletion is always soft deletion. Objects are moved to the recycle bin, but not immediately removed. Permanent deletion happens automatically after 30 days, or you can force it using the standard hard-delete process described in [Deleting and recovering applications FAQ](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/delete-recover-faq).
+Deleting an application moves it to the deleted items container, where it can be restored within 30 days. The [agentIdentity delete API](https://learn.microsoft.com/en-us/graph/api/agentidentity-delete?view=graph-rest-beta&preserve-view=true) documents the same recovery period for an agent identity. The Graph delete API references don't specify whether deleting a blueprint application or principal also deletes child agent identities or associated agent user accounts.
 
 - [Microsoft Graph API](#tabpanel_1_microsoft-graph-api)
 - [Microsoft Entra PowerShell](#tabpanel_1_microsoft-entra-powershell)
 
-To delete the blueprint application \(which also deletes the principal\):
+To delete the blueprint application:
 
 ```http
 DELETE https://graph.microsoft.com/v1.0/applications/{blueprint-app-object-id}
 ```
 
-To delete only the blueprint principal:
+To delete the blueprint principal:
 
 ```http
 DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{blueprint-principal-object-id}
@@ -44,31 +46,41 @@ DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{blueprint-principal-o
 
 Note
 
-Explicit hard deletion of a blueprint principal \(`permanentDelete`\) is blocked. Use the standard delete endpoint shown above.
+For permissions and current behavior, see the Microsoft Graph [delete application](https://learn.microsoft.com/en-us/graph/api/application-delete) and [delete servicePrincipal](https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delete) references.
 
-To delete the blueprint application \(which also deletes the principal\):
+To delete the blueprint application:
 
 ```powershell
 Connect-Entra -Scopes 'Application.ReadWrite.All'
-Remove-EntraApplication -ObjectId <blueprint-app-object-id>
+Remove-EntraApplication -ObjectId '<blueprint-app-object-id>'
 ```
 
 To delete only the blueprint principal:
 
 ```powershell
 Connect-Entra -Scopes 'Application.ReadWrite.All'
-Remove-EntraServicePrincipal -ObjectId <blueprint-principal-object-id>
+Remove-EntraServicePrincipal -ObjectId '<blueprint-principal-object-id>'
 ```
 
-After you delete the blueprint or its principal, Microsoft Entra automatically soft deletes all associated child agent identities and agents' user accounts. For more information on this process, see [Agent identity deletion](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-identity-deletion).
+The public Graph API references describe deletion of the addressed object, but don't specify cascade behavior for child agent identities or associated agent user accounts. Record their object IDs before deletion and check their states independently afterward. For more information, see [Agent identity deletion](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-identity-deletion).
 
 Important
 
-If you restore the blueprint principal before the cascade cleanup runs, child agent identities aren't affected. After the cleanup runs, each child identity must be restored individually. Restoring the blueprint principal doesn't reverse cascade deletions that already occurred.
+Don't assume that restoring a blueprint application or principal restores related objects. If a child agent identity or associated user account was soft deleted, restore or manage that object separately.
+
+## Delete an agent identity
+
+Use the agentIdentity-specific Graph operation to delete one agent identity. The API moves the object to a temporary container, where it can be restored within 30 days.
+
+```http
+DELETE https://graph.microsoft.com/beta/servicePrincipals/{agent-identity-object-id}/microsoft.graph.agentIdentity
+```
+
+For the API's permissions and current behavior, see [Delete agentIdentity](https://learn.microsoft.com/en-us/graph/api/agentidentity-delete?view=graph-rest-beta&preserve-view=true).
 
 ## Restore a blueprint principal
 
-You can restore a soft-deleted blueprint principal within 30 days. Restoring agent identity objects isn't supported in the Microsoft Entra admin center. Use Microsoft Graph API or Microsoft Entra PowerShell.
+You can restore a soft-deleted blueprint principal within 30 days. Restoring an application doesn't automatically restore its associated service principal, so restore the blueprint principal separately. Restoring agent identity objects isn't supported in the Microsoft Entra admin center. Use Microsoft Graph API or Microsoft Entra PowerShell. For details, see [Restore deleted items](https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-restore).
 
 - [Microsoft Graph API](#tabpanel_2_microsoft-graph-api)
 - [Microsoft Entra PowerShell](#tabpanel_2_microsoft-entra-powershell)
@@ -78,13 +90,13 @@ POST https://graph.microsoft.com/v1.0/directory/deletedItems/{blueprint-principa
 ```
 
 ```powershell
-Connect-Entra -Scopes 'Application.ReadWrite.All'
-Restore-EntraDeletedDirectoryObject -Id <blueprint-principal-object-id>
+Connect-Entra -Scopes 'AgentIdentityBlueprintPrincipal.DeleteRestore.All'
+Restore-EntraDeletedDirectoryObject -Id '<blueprint-principal-object-id>'
 ```
 
 ## Restore child agent identities
 
-If the cascade cleanup already ran and child agent identities were soft deleted, restore each one individually.
+If an agent identity is soft deleted, restore it by its own object ID.
 
 Note
 
@@ -112,12 +124,12 @@ Connect-Entra -Scopes 'Application.ReadWrite.All'
 Get-EntraDeletedServicePrincipal
 
 # Restore each agent identity individually
-Restore-EntraDeletedDirectoryObject -Id <agent-identity-object-id>
+Restore-EntraDeletedDirectoryObject -Id '<agent-identity-object-id>'
 ```
 
 ## Permanently delete agent identity objects
 
-Soft-deleted objects continue to count toward [directory quota](https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions) until they're permanently deleted. If you're at the 250 agent identity limit for a blueprint using app-only permissions, you might need to force permanent deletion to free up quota immediately rather than waiting for the 30-day retention period to expire. Permanent deletion of an agent identity blueprint principal is blocked. To permanently free quota used by a blueprint principal, wait for the 30-day retention period to expire.
+The Graph API references don't specify an agent identity-specific quota or when quota becomes available after deletion. Check current Microsoft Entra service limits before capacity planning.
 
 Caution
 
@@ -132,6 +144,12 @@ Permanently delete a soft-deleted agent identity:
 DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{agent-identity-object-id}
 ```
 
+Permanently delete a soft-deleted blueprint principal:
+
+```http
+DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{blueprint-principal-object-id}
+```
+
 Permanently delete a soft-deleted blueprint application:
 
 ```http
@@ -142,30 +160,39 @@ Permanently delete a soft-deleted agent identity:
 
 ```powershell
 Connect-Entra -Scopes 'AgentIdentity.ReadWrite.All'
-Remove-EntraDeletedDirectoryObject -DirectoryObjectId <agent-identity-object-id>
+Remove-EntraDeletedDirectoryObject -DirectoryObjectId '<agent-identity-object-id>'
+```
+
+Permanently delete a soft-deleted blueprint principal:
+
+```powershell
+Connect-Entra -Scopes 'AgentIdentityBlueprintPrincipal.ReadWrite.All'
+Remove-EntraDeletedDirectoryObject -DirectoryObjectId '<blueprint-principal-object-id>'
 ```
 
 Permanently delete a soft-deleted blueprint application:
 
 ```powershell
 Connect-Entra -Scopes 'Application.ReadWrite.All'
-Remove-EntraDeletedDirectoryObject -DirectoryObjectId <blueprint-app-object-id>
+Remove-EntraDeletedDirectoryObject -DirectoryObjectId '<blueprint-app-object-id>'
 ```
 
 ## Agents' user accounts
 
-Agents' user accounts are paired 1:1 with agent identities. If agents' user accounts aren't automatically cleaned up as part of cascade deletion, delete them manually.
+The agentIdentity delete API doesn't specify what happens to an associated agent user's account. Check the user object independently. If you confirm that the account is no longer needed, delete it separately:
 
 - [Microsoft Graph API](#tabpanel_5_microsoft-graph-api)
 - [Microsoft Entra PowerShell](#tabpanel_5_microsoft-entra-powershell)
 
 ```http
-DELETE https://graph.microsoft.com/v1.0/users/{agent-user-object-id}
+DELETE https://graph.microsoft.com/beta/users/microsoft.graph.agentUser/{agent-user-object-id}
 ```
 
+For the API's permissions and current behavior, see [Delete agentUser](https://learn.microsoft.com/en-us/graph/api/agentuser-delete?view=graph-rest-beta&preserve-view=true).
+
 ```powershell
-Connect-Entra -Scopes 'User.ReadWrite.All'
-Remove-EntraUser -UserId <agent-user-object-id>
+Connect-Entra -Scopes 'AgentIdUser.ReadWrite.IdentityParentedBy'
+Remove-EntraUser -UserId '<agent-user-object-id>'
 ```
 
 ## Related content

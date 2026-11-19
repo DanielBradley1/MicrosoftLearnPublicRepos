@@ -167,7 +167,7 @@ The following table lists all the supported operators and their syntax for a sin
 
 Caution
 
-For best results, minimize the use of `Match` or `Contains` as much as possible. The article [Create simpler, more efficient rules for dynamic membership groups](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient) provides guidance on how to create rules that result in better dynamic group processing times. The [`memberOf`](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-member-of) operator is in preview and has some limitations, so use it with caution.
+For best results, minimize the use of `Match` or `Contains` as much as possible. The article [Create simpler, more efficient rules for dynamic membership groups](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient) provides guidance on how to create rules that result in better dynamic group processing times. The earlier [`memberOf` preview](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-member-of) was deprecated. For current capabilities and migration guidance, see [MemberOf Next and Transitive Reports To](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-advanced).
 
 | Operator | Syntax |
 | --- | --- |

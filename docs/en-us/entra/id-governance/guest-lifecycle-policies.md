@@ -1,11 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/guest-lifecycle-policies -->
 <!-- Sitemap-Last-Modified: 2026-10-01 -->
 
-# Guest lifecycle policies in Lifecycle Workflows \(preview\)
-
-Important
-
-Guest lifecycle policies are currently in preview. Preview features are provided without a service-level agreement and aren't recommended for production workloads. Certain features might not be supported or might have limited capabilities. This preview is available in the public cloud.
+# Guest lifecycle policies in Lifecycle Workflows
 
 Guest lifecycle policies in Lifecycle Workflows help you govern external collaboration at scale. You can define which Microsoft Entra guest users are covered, configure rules that evaluate guest lifecycle signals, notify sponsors or guests, and automatically disable or delete accounts that no longer meet policy requirements.
 
@@ -45,7 +41,7 @@ You need one of the following roles to manage guest lifecycle policies:
 
 - Policies apply to users whose Microsoft Entra `userType` property is set to `Guest`, regardless of how the guest account was created or invited.
 - Creation-date scope uses the guest object's `createdDateTime` property and can include guests created through first-party applications or other invitation sources.
-- Attribute-based rules can use supported standard user properties, on-premises extension attributes 1 through 15, directory extensions, and custom security attributes, subject to the attributes exposed in the preview experience.
+- Attribute-based rules can use supported standard user properties, on-premises extension attributes 1 through 15, directory extensions, and custom security attributes supported by guest lifecycle policies.
 - Group inclusion and exclusion use direct membership. Nested groups aren't evaluated.
 - Access-based conditions depend on access package assignment data.
 
@@ -67,7 +63,7 @@ The following procedure explains how to create a guest lifecycle policy, define 
 2. Browse to **ID Governance** > **Lifecycle Workflows** > **Lifecycle Policies** > **Guest Lifecycle Policies** > **Create policy**.
 3. Enter a unique policy name and a description that identifies the intended guest population and purpose.
 4. Configure the policy scope and rules.
-5. Choose the policy action and, if desired, the grace period.
+5. Choose the policy action and configure remediation grace periods for applicable rules.
 6. Review the notification behavior.
 7. Set the policy priority if other guest lifecycle policies exist.
 8. Review the configuration, create the policy, and enable it when you're ready for evaluation and enforcement.
@@ -91,7 +87,7 @@ Use exclusions carefully. A guest who is excluded from one policy might still ma
 
 ## Configure policy rules
 
-A policy can contain multiple rules. A rule determines whether a guest remains compliant or becomes eligible for enforcement. Confirm the final rule-combination behavior in a test environment before you enable the policy in production.
+A policy can contain multiple rules. A rule determines whether a guest remains compliant or becomes eligible for enforcement. You can configure a separate remediation grace period for each lifecycle rule. This gives guests or sponsors time to resolve a specific issue without delaying enforcement of another rule whose grace period has expired. Confirm the rule-combination behavior in a test environment before you enable the policy in production.
 
 | Policy rule | Default | Configuration range | Purpose |
 | --- | --- | --- | --- |
@@ -110,7 +106,7 @@ Choose the action to take when a guest doesn't satisfy the policy by the enforce
 - **Delete:** Delete the guest account.
 - **Disable:** Disable the guest account.
 - **Disable, then delete:** Immediately disable the account, and then automatically delete it after a grace period from 7 through 90 days. The default is 30 days.
-- **Grace period:** If a guest becomes noncompliant with any policy rule, delay the policy action by configuring a grace period of at least one day. The default is seven days.
+- **Rule-specific remediation grace periods:** Configure a separate grace period for each lifecycle rule. A grace period for one rule doesn't delay enforcement of another rule whose grace period has expired.
 
 ### Notifications
 
@@ -119,6 +115,8 @@ Lifecycle Workflows can send up to three notifications during enforcement. The n
 - **Pre-action notification:** When a guest becomes noncompliant and a grace period is configured, Lifecycle Workflows notifies the guest and sponsor before enforcement.
 - **Disable notification:** Lifecycle Workflows immediately notifies the sponsor when the guest account is disabled and access is revoked.
 - **Delete notification:** Lifecycle Workflows immediately notifies the sponsor when the guest account is deleted and access is revoked.
+
+You can configure a fallback recipient to receive notifications when Lifecycle Workflows can't resolve the intended recipient.
 
 ### Multiple policies and precedence
 
@@ -134,6 +132,10 @@ A tenant can have up to 20 guest lifecycle policies.
 
 ## Monitor and manage policies
 
+### Review guest posture insights
+
+The Lifecycle Workflows overview page shows counts of guests who aren't under a policy, guests without sponsors, and guests with unredeemed invitations. Use these insights to assess your guest population and identify opportunities to apply lifecycle governance.
+
 ### View policy processing and scope
 
 For each policy, you can view:
@@ -143,6 +145,14 @@ For each policy, you can view:
 - Each guest's compliance state, such as **Compliant**, **Noncompliant**, or **Not evaluated**.
 - The policy being enforced for a selected guest.
 
+### Review privileged guests and blocked actions
+
+Policy reporting identifies guests whose role assignments or membership in a restricted administrative unit prevent automatic disablement or deletion. Any Microsoft Entra role assignment prevents Lifecycle Workflows from performing lifecycle actions on a guest. Review the report to identify blocked actions and resolve the role assignment or restricted administrative unit membership.
+
+### View policy version history
+
+On the policy's **Policy Overview** page, view previous versions to understand how the policy configuration changed over time.
+
 ### Delete and restore a policy
 
 Deleted policies are soft-deleted and can be restored. A restored policy is disabled regardless of its previous state and is placed at the lowest priority. Review its scope, rules, notifications, action, and precedence before you enable it again.
@@ -151,7 +161,7 @@ Deleted policies are soft-deleted and can be restored. A restored policy is disa
 
 1. **Scope evaluation:** Lifecycle Workflows identifies guest users who match the policy's inclusion rules and don't match its exclusions.
 2. **Condition evaluation:** Lifecycle Workflows evaluates the policy rules for each guest to determine whether the guest is compliant or noncompliant.
-3. **Enforcement:** If the guest is noncompliant, Lifecycle Workflows performs the configured action. If a grace period is enabled, enforcement occurs when the grace period ends.
+3. **Enforcement:** If the guest is noncompliant, Lifecycle Workflows performs the configured action when the grace period for that rule ends.
 4. **Notification:** Lifecycle Workflows sends the applicable notifications to the sponsor and guest.
 5. **Status update:** Lifecycle Workflows updates policy processing and guest compliance information in the management experience.
 

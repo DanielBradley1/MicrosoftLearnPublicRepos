@@ -28,6 +28,8 @@ The following table describes the default permissions assigned to a user in an e
 | Users and contacts | - Read and update their own profile through the app profile management experience<br>- Change their own password<br>- Sign in with a local or social account |
 | Applications | - Access applications<br>- Revoke consent to applications |
 
+App ownership is supported, but default permissions differ from workforce tenants. Owners, including invited users, should be assigned the Application Developer role to manage credentials and other properties of owned app registrations. The Application Administrator and Cloud Application Administrator roles provide broader application-management permissions, regardless of ownership. For users who need to manage only app registrations they own, Application Developer is the least-privileged built-in role.
+
 ## Microsoft Graph APIs and permissions
 
 The following table indicates the API operations that enable customers to manage their profile information. The user ID or userPrincipalName is always the signed-in user's.

@@ -31,7 +31,7 @@ For many organizations, identity lifecycle for employees and other workers is ti
 In Microsoft Entra ID Governance, you can [automate the identity lifecycle](https://youtu.be/NxSu3JEsxmY?si=fuY8nV4Fg5DbMArd) for these individuals using:
 
 - [inbound provisioning from your organization's HR sources](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/plan-cloud-hr-provision), including retrieving from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID.
-- [lifecycle workflows](https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
+- [lifecycle workflows](https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day. The identity-verification onboarding templates \(preview\) also support [pre-hire verification and new-hire credential registration](https://learn.microsoft.com/en-us/entra/id-governance/how-to-onboard-users-with-identity-verification).
 - [automatic assignment policies in entitlement management](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-auto-assignment-policy) to add and remove a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes.
 - [user provisioning](https://learn.microsoft.com/en-us/entra/id-governance/what-is-provisioning) to create, update, and remove user accounts in other applications, with connectors to [hundreds of cloud and on-premises applications](https://learn.microsoft.com/en-us/entra/id-governance/apps) via SCIM, LDAP and SQL.
 
@@ -67,6 +67,10 @@ Governing privileged access is a key part of modern Identity Governance especial
 ![Privileged access lifecycle](https://learn.microsoft.com/en-us/entra/id-governance/media/identity-governance-overview/privileged-access-lifecycle.png)
 
 [Microsoft Entra Privileged Identity Management \(PIM\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) provides additional controls tailored to securing access rights for resources, across Microsoft Entra, Azure, other Microsoft Online Services and other applications. The just-in-time access, and role change alerting capabilities provided by Microsoft Entra PIM, in addition to multifactor authentication and Conditional Access, provide a comprehensive set of governance controls to help secure your organization's resources \(directory roles, Microsoft 365 roles, Azure resource roles and group memberships\). As with other forms of access, organizations can use access reviews to configure recurring access re-certification for all identities in privileged administrator roles.
+
+PIM capabilities also extend just-in-time Azure resource access to [agents and agent identities \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-assign-roles#eligible-assignments-for-agents-preview). Users can activate eligible roles and connect to Azure virtual machines or supported Azure Arc-enabled Linux servers through the My Access portal. For more information, see [Virtual machine connections in My Access \(preview\)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-connect-virtual-machine-my-access).
+
+For administrators, session analytics show role lifecycle and Azure Bastion connection activity. Session recordings let you review supported recorded connections when Azure Bastion recording is configured. Session management lets you disconnect selected active Bastion sessions. For more information, see [Privileged access capabilities in preview](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure#privileged-access-capabilities-in-preview).
 
 ## License requirements
 
@@ -106,6 +110,9 @@ Once you've started using these identity governance features, you can easily aut
 | Provisioning users into on-premises and cloud applications that have their own directories or databases | [Configure automatic user provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning) with user assignments or [scoping filters](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts) |
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-automation) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module |
 | Discover orphan or local accounts in your applications | [Discover existing](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/how-to-account-discovery) users in your applications. |
+| Agent permission assignment | [Assigning access to agent identities](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview#assigning-access-to-agent-identities) |
+| Agent identity lifecycle | [Entra Agent ID lifecycle policies](https://learn.microsoft.com/en-us/entra/id-governance/agent-lifecycle-policies) |
+| Discover overpermissioned agent non-human identities in applications | [Detection and remediation of overprivileged agent identities \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/dynamic-permissions-overview) |
 
 ## Identity governance for agent identities
 
@@ -115,7 +122,9 @@ Every agent identity requires a human [sponsor](https://learn.microsoft.com/en-u
 
 Access assignments to agent identities can be governed through the same [entitlement management](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire.
 
-For more information, see [Governing agent identities](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview).
+Microsoft Entra can also discover the agent non-human identities in an application that have excessive privileges. For more information, see [Detection and remediation of overprivileged agent identities \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/dynamic-permissions-overview).
+
+For more information, see [Governing agent identities and access](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview).
 
 ## Next steps
 

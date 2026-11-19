@@ -3,9 +3,9 @@
 
 # Sign in with an alias or username
 
-**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
-
 You can allow users who sign in with an email address and password also sign up or sign in with a username and password. A username, also called an alternate sign-in identifier, can be a customer ID, account number, or another identifier that you choose.
+
+**Applies to external tenants:** Feature support varies by authentication approach and API or SDK version. Compare Microsoft-hosted authentication, Embedded native authentication, and Bring Your Own UX \(BYO UX\) in the [authentication approach overview](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach). Check feature availability in the [authentication support matrix](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#authentication-approach-supportability).
 
 ![Screenshot of the username sign-in option.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/how-to-sign-in-alias/username-login-option.png)
 

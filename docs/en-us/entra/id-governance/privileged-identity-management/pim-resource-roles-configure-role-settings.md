@@ -35,6 +35,22 @@ This section discusses options for role settings.
 
 Use the **Activation maximum duration** slider to set the maximum time, in hours, that an activation request for a role assignment remains active before it expires. This value can be from 1 to 24 hours.
 
+### Allow least-privilege role activation \(Preview\)
+
+**Allow least-privilege role activation** lets an eligible user choose an available lower-privileged Azure resource role. The lower-privileged role's permissions must be a subset of the permissions of the role the user is eligible for. Configure this setting on the policy for the role the user is eligible for.
+
+The eligible role's policy governs approval, authentication, justification, and activation maximum duration, even when the user selects a lower-privileged role. The selected role's policy doesn't replace these controls for this activation.
+
+For example, a user eligible for **Contributor** on a resource group can select **Reader** at that scope. If the Contributor policy requires approval, authentication, and justification and limits activation to two hours, those controls still apply to the Reader activation.
+
+1. [Open role settings](#open-role-settings) for the Azure resource role that users are eligible for and select **Edit**.
+2. On the **Activation** tab, select **Allow least-privilege role activation**.
+3. Review the remaining activation controls, and select **Update** to save the policy.
+
+[![Screenshot of the Activation tab for an Azure resource role with Allow least-privilege role activation enabled.](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/pim-resource-roles-configure-role-settings/allow-least-privilege-role-activation.png)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/media/pim-resource-roles-configure-role-settings/allow-least-privilege-role-activation.png#lightbox)
+
+In the [My Access portal](https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview), users can then [select a lower-privileged role](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles?pivots=my-access#activate-an-azure-resource-role-in-my-access). Manual selection doesn't require Microsoft Security Copilot. If Security Copilot is available to the user, they can optionally request a role recommendation before submitting the activation request.
+
 ### On activation, require multifactor authentication
 
 You can require users who are eligible for a role to prove who they are by using the multifactor authentication feature in Microsoft Entra ID before they can activate. Multifactor authentication helps safeguard access to data and applications. It provides another layer of security by using a second form of authentication.
@@ -145,3 +161,4 @@ One event in Privileged Identity Management can generate email notifications to 
 
 - [Assign Azure resource roles in Privileged Identity Management](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-assign-roles)
 - [Configure security alerts for Azure resource roles in Privileged Identity Management](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts)
+- [Configure PIM-only mode for Azure resources](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-enable-pim-only-mode)

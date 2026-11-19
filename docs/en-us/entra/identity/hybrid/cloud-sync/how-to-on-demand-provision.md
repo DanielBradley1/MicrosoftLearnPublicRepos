@@ -17,6 +17,10 @@ For additional information and an example see the following video.
 
 ## Validate a user
 
+Note
+
+On-demand provisioning from Active Directory to Microsoft Entra ID supports only user objects. Group objects aren't supported.
+
 To use on-demand provisioning, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator).

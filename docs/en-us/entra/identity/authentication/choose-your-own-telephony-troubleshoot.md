@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Troubleshoot SMS and voice with your own telephony provider
 
@@ -104,7 +104,7 @@ When a request times out, check your provider's records before you try again. Yo
 
 - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
 - [Plan for resiliency and high availability](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
-- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs).
+- [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-protection).
 - [What are Microsoft Entra audit logs?](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs).
 - [What are Microsoft Entra sign-in logs?](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins).
 - [Monitor Microsoft Entra ID sign-ins](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/docs/SIGN-IN-MONITORING.md).

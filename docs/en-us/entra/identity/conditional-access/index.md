@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/conditional-access/ -->
-<!-- Sitemap-Last-Modified: 2026-10-02 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Microsoft Entra Conditional Access documentation
 
@@ -43,6 +43,7 @@ Learn how to configure and test Microsoft Entra Conditional Access
 - [Require trusted location for MFA registration](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-security-info-registration)
 - [Block access by location](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-by-location)
 - [Require compliant device](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa)
+- [Require identity verification \(preview\)](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-require-identity-verification)
 
 ## Conditional Access optimization agent
 

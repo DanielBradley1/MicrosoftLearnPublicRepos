@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/governance-policy-templates -->
-<!-- Sitemap-Last-Modified: 2026-07-28 -->
+<!-- Sitemap-Last-Modified: 2026-10-12 -->
 
 # Governance policy templates
 
@@ -21,6 +21,14 @@ After you create a template, you can use it to establish multiple governance rel
 When you create a governance relationship, Tenant Governance captures and stores a policy snapshot with the relationship. This snapshot represents the roles and permissions that applied at the time you established or last updated the relationship.
 
 Updating a governance policy template doesn't automatically update relationships that you created using that template. This design ensures that the governed tenant always has the opportunity to review desired permission changes for the relationship. To apply permission updates to an active relationship, you must repeat the request and approval process.
+
+## Relationship lifetime \(Preview\)
+
+You can optionally set **Relationship lifetime** to a whole number from 1 to 730 days. The governed tenant reviews the lifetime with the permissions in the governance request. On acceptance, the relationship stores the approved lifetime and calculates its expiration.
+
+An unset lifetime creates a non-expiring relationship. Editing a template doesn't automatically change an active relationship's lifetime. To apply new terms, send a new **Initial** request using the same template ID and have the governed tenant approve it.
+
+Renewal uses the lifetime and permissions already stored in the relationship's policy snapshot, not a newer version of the template. See [Manage relationship expiration and renewal](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-manage-relationship-expiration).
 
 ## Cross-tenant delegated administration configuration
 
@@ -47,6 +55,8 @@ The default policy template has these characteristics:
 
 - **Unique identifier**: Instead of a GUID, the default policy template has an ID of "default."
 - **Configuration required**: You must configure the default policy template before you can use it.
+
+Relationships created automatically during add-on tenant creation are excluded from relationship expiration. Setting a lifetime on the default template doesn't by itself schedule expiration for those automatically created relationships.
 
 ## Limitations
 

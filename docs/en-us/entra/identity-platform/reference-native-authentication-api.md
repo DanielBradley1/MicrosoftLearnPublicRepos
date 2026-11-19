@@ -1,25 +1,43 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api -->
 <!-- Sitemap-Last-Modified: 2026-03-06 -->
 
-# Native authentication API reference
+# Native Authentication API V1 reference
 
 **Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 
-Microsoft Entra's [native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication) enables you to host the user interface of your app in the client application instead of delegating authentication to browsers, resulting in a natively integrated authentication experience. As a developer, you have full control over the look and feel of the sign-in interface.
+**Authentication approach:** Embedded native authentication.
 
-This API reference article describes details required only when you manually make raw HTTP requests to execute the flow. However, we don't recommend this approach. So, when possible, use a Microsoft-built and supported authentication SDK. Learn more about [native authentication SDKs](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication). When a call to the API endpoints is successful, you receive both an [ID token](https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens) for user identification and an [access token](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) to call protected APIs. All responses from the API are in a JSON format.
+This reference documents the V1 contract for existing integrations. For library-specific interfaces, use the [SDK references](#sdk-references).
 
-Microsoft Entra's native authentication API supports sign-up and sign-in for two authentication flows:
+With [Embedded native authentication](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication), your application presents the authentication interface. You control its layout and interactions while Microsoft Entra External ID validates authentication requests.
+
+This V1 API reference describes raw HTTP requests for maintained integrations. For an existing library integration, see the [SDK library references](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#sdk-references).
+
+Journey responses carry the information needed for the next operation. Token responses can include an [ID token](https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens) for user identification and an [access token](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) for a protected API, according to the request and endpoint contract.
+
+The Native Authentication API supports sign-up and sign-in for two authentication flows:
 
 - Email with password, which supports sign-up and sign-in with an email and password, and self-service password reset \(SSPR\).
 
-  - Users who sign in with an email address and password to also [sign in with a username and password](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias).
+  - Users who sign in with an email address and password can also [sign in with a username and password](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias).
 
 - Email one-time passcode, which supports sign-up and sign-in with email one-time passcode.
 
+## Browser CORS requirements
+
 Note
 
-Currently, the native authentication API endpoints don't support [Cross-Origin Resource Sharing \(CORS\)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+The Native Authentication API V1 endpoints don't support direct cross-origin browser access through [Cross-Origin Resource Sharing \(CORS\)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Existing browser integrations need a proxy. Android and iOS apps using native HTTP transports don't need CORS or a CORS proxy.
+
+Configure the proxy for the V1 endpoint paths used by your client.
+
+## SDK references
+
+Use the library reference that matches your installed package. The linked documentation can also describe newer SDK interfaces; this article defines the V1 HTTP contract.
+
+- **Android:** [MSAL Android library](https://github.com/AzureAD/microsoft-authentication-library-for-android) and [`INativeAuthPublicClientApplication` interface](https://github.com/AzureAD/microsoft-authentication-library-for-android/blob/dev/msal/src/main/java/com/microsoft/identity/nativeauth/INativeAuthPublicClientApplication.kt).
+- **iOS and macOS:** [MSAL iOS/macOS library](https://github.com/AzureAD/microsoft-authentication-library-for-objc) and [SDK API reference](https://azuread.github.io/microsoft-authentication-library-for-objc/).
+- **JavaScript:** [MSAL JavaScript library](https://github.com/AzureAD/microsoft-authentication-library-for-js) and [SDK API reference](https://learn.microsoft.com/en-us/javascript/api/overview/msal-overview?view=msal-js-latest&preserve-view=true).
 
 ## Prerequisites
 
@@ -28,7 +46,7 @@ Currently, the native authentication API endpoints don't support [Cross-Origin R
 
    - Record the **Application \(client\) ID** and **Directory \(tenant\) ID** for later use.
    - [Grant admin consent](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#grant-admin-consent-external-tenants-only) to the application.
-   - [Enable public client and native authentication flows](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication-android-sign-in#enable-public-client-and-native-authentication-flows).
+   - [Enable public client and native authentication flows](#enable-public-client-and-native-authentication-flows).
 
 3. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required as these attributes are the ones that Microsoft Entra expects your app to submit.
 4. [Associate your app registration with the user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-add-application).
@@ -37,13 +55,61 @@ Currently, the native authentication API endpoints don't support [Cross-Origin R
 7. If you want to allow users who sign in with an email address and password to also sign in with a username and password, use the steps in [Sign in with an alias or username](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias) article:
 
    1. [Enable username in sign-in](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#enable-username-in-sign-in-identifier-policy).
-   2. [Create users with username in the admin center](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username) or [update existing users to by adding a username](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username). Alternatively, you can also [automate user creation and updating in your app by using the Microsoft Graph API](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username).
+   2. [Create users with username in the admin center](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username) or [update existing users by adding a username](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username). Alternatively, you can also [automate user creation and updating in your app by using the Microsoft Graph API](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username).
 
 8. To enforce multifactor authentication \(MFA\) for your customers, use the steps in [Add multifactor authentication \(MFA\) to an app](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-multifactor-authentication-customers) to add MFA to your sign-in flow. Native authentication supports email one-time passcode and SMS as a second factor for MFA.
 
 ## Continuation token
 
 Whenever you call a sign-in, sign-up, or SSPR endpoint, the response includes a *continuation token*. This token uniquely identifies the current flow and lets Microsoft Entra ID maintain state across its endpoints. Include the token in every subsequent request in that flow. It's valid only for a limited time and can only be used for the subsequent requests within the same flow.
+
+## V1 challenge types and capabilities
+
+V1 clients advertise authentication methods through `challenge_type` and additional UI and flow support through `capabilities`.
+
+| Challenge type | Description |
+| --- | --- |
+| *password* | This challenge type indicates that the app supports collecting a password credential from the user. |
+| *oob* | This challenge type indicates that the application supports using one-time password or passcode \(OTP\) codes sent to the user using a secondary channel. Currently, the API supports only email and SMS OTP. |
+| *redirect* | This challenge type indicates that the application supports falling back to the browser-delegated authentication, also known as web fallback. All native authentication compliant apps must support this capability. This requirement means that in every call the app makes to the Native Authentication API, it must include this challenge type. If the client app fails to include this challenge type, the request fails. |
+
+| Authentication method | Sign-up | Sign-in | Self-service password reset |
+| --- | --- | --- | --- |
+| Email with password | `oob password redirect` | `oob password redirect` | `oob redirect` |
+| Email one-time passcode | `oob redirect` | `oob redirect` | Not applicable. |
+
+Direct API clients include `redirect` when declaring challenge types. The V1 Android, iOS, and JavaScript SDKs include it automatically.
+
+| Capability | Meaning |
+| --- | --- |
+| `mfa_required` | The client can handle inline MFA, including the `/introspect`, `/challenge`, and `/token` sequence and the corresponding UI. This includes authentication-context-driven MFA when the tenant policy requires it. |
+| `registration_required` | The client can call the strong authentication method registration APIs and display registration UI. |
+
+An unsupported challenge type or capability makes the request invalid. If the client omits a required challenge type, the service requires web fallback. If the client omits an MFA or registration capability, the flow can proceed only when that capability isn't required by the service; otherwise, web fallback is required.
+
+V1 web fallback switches to browser-delegated authentication. For example, an email-with-password sign-up flow needs both `oob` and `password`. An app that advertises only `oob` uses browser fallback for that flow. Use the [SDK references](#sdk-references) for platform error checks and interactive library entry points. Browser fallback starts a separate authentication attempt rather than resuming native progress.
+
+### Enable public client and native authentication flows
+
+For an existing V1 application registration that you're authorized to manage:
+
+Use application ownership or delegated [application-management permissions](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles) for the registration. Authentication settings don't require a tenant-wide administrator assignment solely for this task; consent and policy changes have separate permission requirements.
+
+1. Open the application registration in the Microsoft Entra admin center.
+2. Under **Manage**, select **Authentication**.
+3. Under **Advanced settings**, set **Enable the following mobile and desktop flows** and **Enable native authentication** to **Yes**.
+4. Select **Save**.
+
+### V1 username sign-in
+
+You can allow users who sign in with an email address and password to also sign in with a username and password. The username also called an alternate sign-in identifier, can be a customer ID, account number, or another identifier that you choose to use as a username.
+
+You can assign usernames to the user account manually via the Microsoft Entra admin center or automate it in your app via the Microsoft Graph API.
+
+Use the steps in [Sign in with an alias or username](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias) article to allow your users to sign-in using a username in your application:
+
+1. [Enable username in sign-in](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#enable-username-in-sign-in-identifier-policy).
+2. [Create users with username in the admin center](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username) or [update existing users to by adding a username](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username). Alternatively, you can also [automate user creation and updating in your app by using the Microsoft Graph API](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-sign-in-alias#create-and-update-users-with-username).
 
 ## API reference for sign-up
 
@@ -62,7 +128,7 @@ To complete a user sign-up flow for either authentication method, your app inter
 
 The API allows the client app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in the app's request. This parameter holds predefined values, which represent different authentication methods.
 
-Learn more about challenge types in the [native authentication challenge types](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication-challenge-types). This article explains the challenge type values you should use for an authentication method.
+Learn more about challenge types in the [native authentication challenge types](#v1-challenge-types-and-capabilities). This article explains the challenge type values you should use for an authentication method.
 
 ### Sign-up flow protocol details
 
@@ -110,7 +176,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `challenge_type` | Yes | A space-separated list of authorization challenge type strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` or `oob password redirect` for email with password authentication method. |
 | `password` | No | The password value that the app collects from the customer user. You can submit a user's password via the `/signup/v1.0/start` or later in the `/signup/v1.0/continue` endpoint. Replace `{secure_password}` with the password value that the app collects from the customer user. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra's password policies](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-combined-policy).  <br>**This parameter is only applicable for email with password authentication method**. |
 | `attributes` | No | The user attributes values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are [programmable name](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-user-attributes#built-in-user-attributes) of user attributes. These attributes can be built in or custom, and required or optional. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra admin center. You can submit some or all user attributes via the `/signup/v1.0/start` endpoint or later in the `/signup/v1.0/continue` endpoint. If you submit all the required attributes via the `/signup/v1.0/start` endpoint, you don't need to submit any attributes in the `/signup/v1.0/continue` endpoint. However, if you submit some required attributes via `/signup/v1.0/start` endpoint, you can submit the remaining required attributes later in the `/signup/v1.0/continue` endpoint. Replace `{given_name}`, `{user_age}` and `{postal_code}` with the name, age and postal code values respectively that the app collects from the customer user. **Microsoft Entra ignores any attributes that you submit, which don't exist**. |
-| `capabilities` | No | Space-separated flags that describe the client app's capabilities. While `challenge_type` defines what methods can be challenged, `capabilities` tell the native authentication API which extra flows the client app can handle and which UIs it can show to the user. For example, `mfa_required` means another `/challenge` and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If a required capability isn’t advertised by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-challenge-types). |
+| `capabilities` | No | Space-separated flags that describe the client app's capabilities. While `challenge_type` defines what methods can be challenged, `capabilities` tell the Native Authentication API which extra flows the client app can handle and which UIs it can show to the user. For example, `mfa_required` means another `/challenge` and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If a required capability isn’t advertised by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](#v1-challenge-types-and-capabilities). |
 
 #### Success response
 
@@ -123,7 +189,7 @@ Content-Type: application/json
 
 ```json
 {
-    "continuation_token": "AQABAAEAAA…",
+    "continuation_token": "AQABAAEAAA…"
 }
 ```
 
@@ -538,7 +604,7 @@ Content-Type: application/json
               "regex":"^[1-9][0-9]*$"
             }
         }
-    ],
+    ]
 }
 ```
 
@@ -800,11 +866,11 @@ Learn more about user attributes input types in [Custom user attributes input ty
 
 ### How to reference user attributes
 
-When you [create a sign-up user-flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center are different from how you reference them in the native authentication API.
+When you [create a sign-up user-flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center are different from how you reference them in the Native Authentication API.
 
 For example, *Display Name* in the Microsoft Entra admin center is referenced as *displayName* in the API.
 
-Use the [User profile attributes](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-user-attributes) article to learn how to reference both built-in and custom user attributes in the native authentication API.
+Use the [User profile attributes](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-user-attributes) article to learn how to reference both built-in and custom user attributes in the Native Authentication API.
 
 ## API reference for sign-in flow
 
@@ -827,7 +893,7 @@ The API allows the app to advertise the authentication methods it supports, when
 
 For a given authentication method, the challenge type values an app sends to Microsoft Entra during sign-up flow are same to when the app signs in. For example, the email with password authentication method uses *oob*, *password* and *redirect* challenge type values for both sign-up and sign-in flows.
 
-Learn more about challenge types in the [native authentication challenge types](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication-challenge-types) article.
+Learn more about challenge types in the [native authentication challenge types](#v1-challenge-types-and-capabilities) article.
 
 ### Sign-in flow protocol details
 
@@ -877,7 +943,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id` | Yes | The Application \(client\) ID of the app you registered in the Microsoft Entra admin center. |
 | `username` | Yes | Email of the customer user such as *contoso-consumer@contoso.com*. |
 | `challenge_type` | Yes | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password. |
-| `capabilities` | No | Space-separated flags that describe the client app’s "how" readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the native authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means `/introspect`, `/challenge`, and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If the needed capability isn't included by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-challenge-types). |
+| `capabilities` | No | Space-separated flags that describe the client app’s "how" readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the Native Authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means `/introspect`, `/challenge`, and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If the needed capability isn't included by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](#v1-challenge-types-and-capabilities). |
 
 #### Success response
 
@@ -1163,8 +1229,8 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | --- | --- | --- |
 | `tenant_subdomain` | Yes | The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory \(tenant\) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details). |
 | `client_id` | Yes | The Application \(client\) ID of the app you registered in the Microsoft Entra admin center. |
-| `continuation_token` | Yes | [Continuation token](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api#continuation-token) that Microsoft Entra returned in the previous request. |
-| `grant_type` | Yes | The grant type. When you call the token endpoint, this value must be:  <br>- *password* for email with password authentication method in a sign-in flow to verify the user's first factor authentication.  <br>- *oob* for email one-time passcode authentication method in a sign-in flow.  <br>- *continuation\_token* for automatic sign-in after a sign-up flow.  <br>- *continuation\_token* for automatic sign-in after self-service password reset flow.  <br>- *continuation\_token* after a [strong authentication method registration flow](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api#register-a-strong-authentication-method-api-reference).  <br>- *mfa\_oob* when verifying the user's second factor authentication. |
+| `continuation_token` | Yes | [Continuation token](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#continuation-token) that Microsoft Entra returned in the previous request. |
+| `grant_type` | Yes | The grant type. When you call the token endpoint, this value must be:  <br>- *password* for email with password authentication method in a sign-in flow to verify the user's first factor authentication.  <br>- *oob* for email one-time passcode authentication method in a sign-in flow.  <br>- *continuation\_token* for automatic sign-in after a sign-up flow.  <br>- *continuation\_token* for automatic sign-in after self-service password reset flow.  <br>- *continuation\_token* after a [strong authentication method registration flow](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#register-a-strong-authentication-method-api-reference).  <br>- *mfa\_oob* when verifying the user's second factor authentication. |
 | `scope` | Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect \(OIDC\) scopes, such as *profile*, *openid*, and *email*. The app needs to include *openid* scope for Microsoft Entra to issue an ID token. The app needs to include *offline\_access* scope for Microsoft Entra to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview). |
 | `password` | No | The password value that the app collects from the user. Replace `{secure_password}` with the password value that the app collects from the user. This parameter is **required** if the authentication method is email with password. |
 | `oob` | No | The one-time passcode the user receives by email. Required if:  <br>- The primary authentication method is email one-time passcode.  <br>- The app is submitting the email one-time passcode to satisfy an MFA challenge when the primary authentication method is email with password.  <br>To resend a one-time passcode, call the `/challenge` endpoint again. |
@@ -1247,8 +1313,8 @@ If the error parameter has a value of *invalid\_grant*, Microsoft Entra includes
 | Suberror value | Description |
 | --- | --- |
 | `invalid_oob_value` | The value of one-time passcode that the app submits is invalid. |
-| `mfa_required` | MFA is required. The response includes a [continuation token](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api#continuation-token). Call the `oauth2/v2.0/introspect` endpoint to get the user's registered strong authentication methods. **This suberror only occurs when the user's primary authentication method is email with password.** See how to [get a user's registered strong authentication methods](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api#get-user-registered-strong-authentication-methods).  <br>  <br>**Note**: In some cases MFA is required but native authentication doesn't return `mfa_required`. or example, if a [strong authentication method registration](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api#register-a-strong-authentication-method-api-reference) flow precedes a call to the `/oauth2/v2.0/token` and the only available method \(email\) was already verified during that flow. |
-| `registration_required` | The user must complete an MFA challenge but has no registered strong authentication method. Prompt the user to register one. **This error occurs when the user's primary authentication method is email with password.** Learn how to [register a strong authentication method](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api#register-a-strong-authentication-method-api-reference). |
+| `mfa_required` | MFA is required. The response includes a [continuation token](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#continuation-token). Call the `oauth2/v2.0/introspect` endpoint to get the user's registered strong authentication methods. **This suberror only occurs when the user's primary authentication method is email with password.** See how to [get a user's registered strong authentication methods](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#get-user-registered-strong-authentication-methods).  <br>  <br>**Note**: In some cases MFA is required but native authentication doesn't return `mfa_required`. or example, if a [strong authentication method registration](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#register-a-strong-authentication-method-api-reference) flow precedes a call to the `/oauth2/v2.0/token` and the only available method \(email\) was already verified during that flow. |
+| `registration_required` | The user must complete an MFA challenge but has no registered strong authentication method. Prompt the user to register one. **This error occurs when the user's primary authentication method is email with password.** Learn how to [register a strong authentication method](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#register-a-strong-authentication-method-api-reference). |
 
 #### Redirect response
 
@@ -1311,12 +1377,12 @@ Content-Type: application/json
             "challenge_channel":"email",
             "login_hint":"c***r@co**o**o.com"
         },
-        {  
-          "id": "1b1b1b1b-2222-cccc-3333-4d4d4d4d4d4d",  
-          "challenge_type": "oob",  
-          "challenge_channel": "sms",  
-          "login_hint": "+1********6"
-        }
+        {
+          "id": "1b1b1b1b-2222-cccc-3333-4d4d4d4d4d4d",
+          "challenge_type": "oob",
+          "challenge_channel": "sms",
+          "login_hint": "+1********6"
+        }
     ]
 }
 ```
@@ -1486,11 +1552,11 @@ Content-Type: application/json
             "challenge_channel":"email",
             "login_hint":"caseyjensen@contoso.com"
         },
-        {  
-          "id": "sms",  
-          "challenge_type": "oob",  
-          "challenge_channel": "sms"
-        }
+        {
+          "id": "sms",
+          "challenge_type": "oob",
+          "challenge_channel": "sms"
+        }
     ]
 }
 ```
@@ -1567,7 +1633,7 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 | --- | --- | --- |
 | `tenant_subdomain` | Yes | The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory \(tenant\) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details). |
 | `client_id` | Yes | The Application \(client\) ID of the app you registered in the Microsoft Entra admin center. |
-| `continuation_token` | Yes | The [Continuation token](#continuation-token) that Microsoft Entra returns from the `/register/v1.0/introspect ` endpoint |
+| `continuation_token` | Yes | The [Continuation token](#continuation-token) that Microsoft Entra returns from the `/register/v1.0/introspect` endpoint |
 | `challenge_type` | Yes | The challenge type of the authentication method. Current type is *oob*. |
 | `challenge_target` | Yes | The email or phone number that the user wants to register. |
 | `challenge_channel` | No | The channel to send the challenge on. Supported challenge channel values: *email, sms*. |
@@ -1585,18 +1651,18 @@ Content-Type: application/json
 
 ```json
 {
-  "continuation_token": "uY29tL2F1dGhlbnRpY...",
-  "challenge_type": "oob",
-  "binding_method": "prompt",
-  "challenge_target": "contoso-consumer@contoso.com",
-  "challenge_channel": "email",
-  "code_length": 8
+  "continuation_token": "uY29tL2F1dGhlbnRpY...",
+  "challenge_type": "oob",
+  "binding_method": "prompt",
+  "challenge_target": "contoso-consumer@contoso.com",
+  "challenge_channel": "email",
+  "code_length": 8
 }
 ```
 
 Example 2:
 
-If the sign-up flow precedes the strong authentication method registration flow and the email submitted to the `/register/v1.0/challenge` endpoint matches the one verified in the sign-up flow, the native authentication API registers the method without sending a challenge to the user. In this case, the response will look similar to the following snippet:
+If the sign-up flow precedes the strong authentication method registration flow and the email submitted to the `/register/v1.0/challenge` endpoint matches the one verified in the sign-up flow, the Native Authentication API registers the method without sending a challenge to the user. In this case, the response will look similar to the following snippet:
 
 ```http
 HTTP/1.1 200 OK
@@ -1618,7 +1684,7 @@ Content-Type: application/json
 | `challenge_channel` | The type of the channel through which the one-time passcode was sent. Supported values *email, sms*. Returned if strong authentication method is not preverified. |
 | `code_length` | The length of the one-time passcode if `binding_method` is prompt. Returned if strong authentication method is not preverified. |
 | `challenge_target` | The target the challenge was sent to. This is the same as the input provided in the request. Returned if strong authentication method is not preverified. |
-| `interval` | The interval \(in seconds\) the client should wait between polling of /register/continue. Only Returned if `prompt=none` and the strong authentication method is not preverified. Clients should double the interval every time they receive a `HTTP 429` from the native authentication API. |
+| `interval` | The interval \(in seconds\) the client should wait between polling of /register/continue. Only Returned if `prompt=none` and the strong authentication method is not preverified. Clients should double the interval every time they receive a `HTTP 429` from the Native Authentication API. |
 
 #### Error response
 
@@ -1671,7 +1737,7 @@ Content-Type: application/json
 
 ```json
 {
-  "continuation_token": "uY29tL2F1dGhlbnRpY..."
+  "continuation_token": "uY29tL2F1dGhlbnRpY..."
 }
 ```
 
@@ -1747,7 +1813,7 @@ The API allows the app to advertise the authentication methods it supports, when
 
 For the SSPR flow, the challenge type values are *oob*, and *redirect*.
 
-Learn more about challenge types in the [native authentication challenge types](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication-challenge-types).
+Learn more about challenge types in the [native authentication challenge types](#v1-challenge-types-and-capabilities).
 
 ### Self-service password reset flow protocol details
 
@@ -1777,7 +1843,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id` | Yes | The Application \(client\) ID of the app you registered in the Microsoft Entra admin center. |
 | `username` | Yes | Email of the customer user such as *contoso-consumer@contoso.com*. |
 | `challenge_type` | Yes | A space-separated list of authorization [challenge type](#self-service-password-reset-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`. |
-| `capabilities` | No | Space-separated flags that describe the client app’s “how” readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the native authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means another `/challenge` and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If a required capability isn’t advertised by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-challenge-types). |
+| `capabilities` | No | Space-separated flags that describe the client app’s “how” readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the Native Authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means another `/challenge` and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If a required capability isn’t advertised by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](#v1-challenge-types-and-capabilities). |
 
 #### Success response
 
@@ -2011,7 +2077,7 @@ Content-Type: application/json
 ```json
 {
     "expires_in": 600,
-    "continuation_token": "czZCaGRSa3F0MzpnW...",
+    "continuation_token": "czZCaGRSa3F0MzpnW..."
 }
 ```
 

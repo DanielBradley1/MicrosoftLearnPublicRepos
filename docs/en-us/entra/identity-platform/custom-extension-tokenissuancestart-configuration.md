@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-tokenissuancestart-configuration -->
 <!-- Sitemap-Last-Modified: 2025-05-04 -->
 
-# Configure a custom claim provider for a token issuance event
+# Configure a custom claims provider for the OnTokenIssuanceStart event
 
 This article describes how to configure a custom claims provider for a [token issuance start event](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-overview#token-issuance-start-event-listener). Using an existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
@@ -462,5 +462,5 @@ To test your custom claims provider, follow these steps:
 
 ## See also
 
-- [Custom claims provider reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference)
+- [OnTokenIssuanceStart event reference](https://learn.microsoft.com/en-us/entra/identity-platform/custom-claims-provider-reference)
 - [Troubleshoot your custom authentication extensions API](https://learn.microsoft.com/en-us/entra/identity-platform/custom-extension-troubleshoot)

@@ -15,7 +15,7 @@ Organizations are deploying AI agents for increasingly diverse tasks, and each d
 
 ### Interactive agents
 
-Interactive agents perform specific tasks on demand on behalf of a signed-in user, often through a chat interface. Tasks include analyzing customer data for sales recommendations or answering support questions with escalation to human representatives. These agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users using the on-behalf-of \(OBO\) authentication flow. Common scenarios include customer support assistants, research helpers, and real-time collaboration agents.
+Interactive agents perform tasks on behalf of a signed-in user, often through a chat interface. Examples include analyzing customer data or answering support questions. Delegated permissions limit access to the permissions granted to the client and the user's own access. A local public client uses authorization code flow with PKCE. A hosted agent API receiving a user token uses the on-behalf-of \(OBO\) flow to call a downstream API as that user.
 
 ### Autonomous agents
 
@@ -63,10 +63,10 @@ AI agents require purpose-built identity constructs that differ from traditional
 Microsoft Entra Agent ID enables organizations to:
 
 - **Register and manage agents**: Create and manage agent identity blueprints as templates and agent identities as individual instances with parent-child relationships, enabling centralized metadata management and automatic organization into security collections.
-- **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-is-agent-id-platform) enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols. It provides agent-to-agent discovery and authorization based on standard protocols such as Model Context Protocol \(MCP\) and agent-to-agent \(A2A\).
-- **Log and monitor agent activity**: All authentication and actions performed by agents are logged in Microsoft Entra ID and viewable through the Microsoft Entra admin center for compliance and audit purposes.
+- **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](https://learn.microsoft.com/en-us/entra/agent-id/what-is-agent-id-platform) provides the authentication and authorization foundation for agents. The [Microsoft Agent 365 registry](https://learn.microsoft.com/en-us/entra/agent-id/agent-registry-convergence) provides the broader agent inventory and metadata experience.
+- **Log and monitor identity activity**: Use Microsoft Entra sign-in and directory audit logs to investigate authentication and identity-management operations. Instrument the agent and its downstream services separately to observe application actions and results. See [Sign-in and audit logs for agents](https://learn.microsoft.com/en-us/entra/agent-id/sign-in-audit-logs-agents).
 
-For more information about agent identities as identity constructs, including how they differ from application and user identities, see [What are agent identities?](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-are-agent-identities).
+For more information about agent identities as identity constructs, including how they differ from application and user identities, see [What are agent identities?](https://learn.microsoft.com/en-us/entra/agent-id/what-are-agent-identities).
 
 ## Control AI access with Zero Trust
 
@@ -99,7 +99,7 @@ As organizations deploy more AI agents, identity governance becomes critical to 
 - Govern agent identities at scale, from deployment to expiration.
 - Ensure sponsors and owners are assigned and maintained for each agent identity, preventing orphaned agent identities.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
-- Apply Conditional Access rules, permissions, and governance controls at the [blueprint level](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint) so all current and future agent instances inherit them automatically, with the ability to disable an entire class of agents in a single operation.
+- Apply supported policy and governance controls at the [blueprint level](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint). API permission inheritance is separate: fleets require consent and [explicit inheritance configuration](https://learn.microsoft.com/en-us/entra/agent-id/concept-inheritable-permissions), while single-instance agents receive grants directly.
 - Maintain a complete inventory of all agent identities through centralized discovery and management in the Microsoft Entra admin center and [Microsoft Graph](https://learn.microsoft.com/en-us/graph/api/resources/agentidentity), preventing shadow AI and enabling organizations to track agents across the full lifecycle — from registration and credential management through deactivation and decommissioning.
 
 For more information, see [Identity governance for agents](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview).
@@ -129,4 +129,4 @@ For more information, see [Secure Web and AI Gateway for agents](https://learn.m
 ## Related content
 
 - [What is Microsoft Entra Agent ID?](https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id)
-- [What is the Microsoft Entra Agent identity platform?](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-is-agent-id-platform)
+- [What is the Microsoft Entra Agent identity platform?](https://learn.microsoft.com/en-us/entra/agent-id/what-is-agent-id-platform)

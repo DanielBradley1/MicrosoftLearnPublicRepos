@@ -1,180 +1,98 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-third-party-bot-protection-native-api-sign-up -->
 <!-- Sitemap-Last-Modified: 2026-03-23 -->
 
-# Tutorial: Integrate third-party bot protection with Native API sign-up flows
+# Native authentication overview
 
-**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
+**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 
-This tutorial guides you through integrating third-party bot protection providers with Native API sign-up flows in Microsoft Entra External ID. By using a Web Application Firewall \(WAF\) to intercept sign-up requests, you can implement risk-based challenge mechanisms during user registration to protect against automated bot attacks and fake account creation.
+**Authentication approach:** Embedded native authentication.
 
-Note
+Embedded native authentication is an authentication approach that lets your application present sign-up, sign-in, and password reset while Microsoft Entra External ID validates credentials and enforces authentication requirements. Your app controls the interface and handles the actions, available methods, and links returned by the Native Authentication API.
 
-This integration applies to native authentication API flows only. The WAF intercepts the native authentication `/start` endpoint to evaluate the request before user registration proceeds. Browser-delegated \(web-hosted\) sign-up flows aren't covered by this tutorial and use a different integration model.
-
-Note
-
-This tutorial assumes you manually make raw HTTP requests to execute the sign-up flow. When possible, use a Microsoft-built and supported authentication SDK. See [Tutorial: Prepare your Android mobile app for native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-native-authentication-prepare-android-app) and [Tutorial: Prepare your iOS/macOS mobile app for native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app).
-
-## Prerequisites
-
-- An external tenant. If you don't already have one, [create an external tenant](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-create-external-tenant-portal).
-- A [registered application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) in the Microsoft Entra admin center with the following configuration:
-
-  - Application \(client\) ID and Directory \(tenant\) ID recorded.
-  - [Admin consent granted](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#grant-admin-consent-external-tenants-only).
-  - [Public client and native authentication flows enabled](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication#how-to-enable-native-authentication).
-
-- A [user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers) created in the Microsoft Entra admin center and [associated with your application](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-add-application).
-- A [custom domain](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-custom-url-domain) associated with your external tenant.
-- A third-party bot protection provider account \(this tutorial uses HUMAN Security as an example\) with the following configuration values:
-
-  - Enforcer API credentials
-  - SDK integration details
-
-- A WAF platform account \(this tutorial uses Cloudflare\) with domain administrator privileges.
-
-## How bot protection works
-
-When a user attempts to sign up using Native Authentication, the sign-up request flows through a Web Application Firewall \(WAF\) that intercepts the /start endpoint. The WAF evaluates the request with your third-party bot protection provider using their detection APIs. If the request is flagged as suspicious based on device fingerprinting, behavioral analysis, or bot signatures, the WAF can block the request or present a challenge to verify the user is human.
-
-This approach allows you to apply bot protection during the native sign-up flow without requiring browser-based redirects, maintaining the native app user experience while protecting against automated account creation and bot attacks.
-
-## Architecture components
-
-This integration involves several key components working together to provide bot protection:
-
-- **External tenant:** A dedicated Microsoft Entra ID instance for managing external identities and customer access.
-- **Native application:** A mobile or desktop application that uses Microsoft Entra External ID \(native authentication\) to sign users up and sign them in.
-- **Native APIs:** Service endpoints that enable mobile and desktop apps to perform sign-up, sign-in, and self-service password reset \(SSPR\) flows in-app, without a browser redirect.
-- **Web Application Firewall \(WAF\):** A firewall that inspects incoming and outgoing HTTP traffic, intercepts sign-up requests, and coordinates with the third-party provider for bot detection.
-- **Third-party bot protection provider:** A third-party provider that delivers bot detection, device fingerprinting, and risk-assessment services to identify automated attacks.
-
-[![Diagram of risk-based authentication flow showing native app, WAF, third-party provider, and OTP-based MFA steps.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/native-app-sign-up-flow-waf.png)](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/native-app-sign-up-flow-waf.png#lightbox)
-
-## Configuration steps
-
-1. Create a sign-up flow for your external tenant.
-2. Create a WAF configuration.
-3. Update the WAF layer to intercept specific API requests during sign-up flow.
-4. Update the native app sign-up API call flow.
-
-## Create a sign-up flow for your external tenant
-
-Before integrating bot protection, ensure you have a working sign-up flow configured. If you've already completed this setup as part of the prerequisites, you can skip to the next section.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-2. If you haven't already done so, [register an application in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app). Make sure to:
-
-   - Record the **Application \(client\) ID** and **Directory \(tenant\) ID** for later use.
-   - [Grant admin consent](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#grant-admin-consent-external-tenants-only) to the application.
-   - [Enable public client and native authentication flows](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication#how-to-enable-native-authentication).
-
-3. If you haven't already done so, [create a user flow in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required. These attributes are the ones that Microsoft Entra expects your app to submit.
-4. [Associate your app registration with the user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-user-flow-add-application).
-5. Test the sign-up flow by [registering a customer user](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-manage-customer-accounts#create-a-customer-account). Alternatively, you can test after completing the integration.
-
-## Configure WAF to intercept sign-up requests
-
-Configure a WAF to intercept sign-up requests for bot detection. This tutorial uses Cloudflare as an example, but you can use any WAF that supports request interception and custom logic execution.
+## API version boundaries
 
 Important
 
-A custom domain must be associated with your external tenant before configuring WAF. Without a custom domain, the WAF can't intercept sign-up requests.
+The Native Authentication API V2 is in preview. The [Native Authentication API V1](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-native-authentication-api-v1) remains generally available. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to preview features.
 
-For detailed Cloudflare WAF setup instructions, see [Configure Cloudflare WAF with Microsoft Entra External ID](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-configure-waf-integration).
+The primary references describe the response-driven Native Authentication API, with native routes such as `/api/v2.0`. Follow service-returned links without rewriting their versions or paths. The `/oauth2/v2.0` OAuth endpoint path is also used by V1 integrations.
 
-## Configure WAF worker for bot detection
+Existing V1 integrations can continue to use the [V1 API reference](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-native-authentication-api-v1) and its [SDK library references](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-native-authentication-api-v1#sdk-references). The legacy V1 guides and tutorials have been removed from this documentation. This documentation change doesn't announce retirement of V1 or its SDKs. See [SDK compatibility and migration](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-migrate-native-authentication-v1-v2#sdk-compatibility) for platform and package requirements.
 
-This section configures the WAF to intercept sign-up /start requests and perform bot detection with your third-party provider.
+## Application-owned experience, service-controlled authentication
 
-### Update the WAF layer to intercept specific API requests during sign-up flow
+With Embedded native authentication, a mobile, desktop, or single-page application \(SPA\) can present authentication within its own interface. Your application controls layout, interaction, and validation feedback. Microsoft Entra External ID validates credentials, enforces authentication requirements, and issues tokens.
 
-Use the Cloudflare WAF that you created in the previous section.
+Tenant and Conditional Access policies and the application's user flow apply to Microsoft-hosted authentication, Embedded native authentication, and Bring Your Own UX \(BYO UX\). Presentation and integration responsibilities differ. With Embedded native authentication, your app handles the required interactions, such as a second-factor challenge after password verification or more attribute collection after email verification.
 
-1. Sign in to the **Cloudflare account** for the external domain \(mentioned in the Create a WAF configuration step\) associated with the external tenant with at least **Domain Administrator** privilege.
-2. Go to **Workers Routes**, and select **Create application**.
+Microsoft-hosted authentication presents pages on behalf of your app. Choose Embedded native authentication when your team needs control of the interface and can implement response handling and security responsibilities. See [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/external-id/customers/concept-choose-authentication-approach) for the broader comparison.
 
-   ![Screenshot showing the Workers Routes page in Cloudflare.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/workers-pages-create-application.png)
+## Customer journeys
 
-   ![Screenshot of Cloudflare dashboard sidebar with Workers Routes selected, showing Access, Speed, Caching, Rules, and Error Pages menu options.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/workers-routes-page.png)
-3. Select **Start with Hello World**.
+The same authorization transaction surrounds each journey. Your app starts authorization, completes the returned authentication interactions, resumes authorization, and exchanges the authorization code for tokens.
 
-   [![Screenshot showing the Start with Hello World template option.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/create-application-template.png)](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/create-application-template.png#lightbox)
-4. Name the worker and select **Deploy**.
+| Journey | Behavior |
+| --- | --- |
+| **Sign-up** | Create an email-with-password or passwordless email one-time passcode \(OTP\) account. Collect the attributes and complete the verification steps requested by the user flow. |
+| **Sign-in** | Submit the customer's identifier and complete password or email one-time-passcode verification using an offered method. Username-with-password sign-in is also available for configured local accounts. |
+| **Password reset** | Verify an offered email or SMS one-time passcode, submit a replacement password, and follow the password-update polling responses. Recovery can start before sign-in discovery or through a password method's `recover` link. |
+| **Multifactor authentication \(MFA\) and inline registration** | Complete email or SMS verification when policy requires MFA. If registration is required, handle the returned `enroll` and `activate` operations. Email OTP first-factor accounts use a different second factor, such as SMS. |
+| **Policy requirements after sign-up or password reset** | Continue handling required authentication, including MFA and Conditional Access, before requesting tokens. Completing account creation or a password update doesn't bypass policy. |
 
-   [![Screenshot of Cloudflare Workers deployment screen showing worker name, code preview, and Deploy button.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/deploy-hello-world-worker.png)](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/deploy-hello-world-worker.png#lightbox)
-5. Once the worker is deployed, select the **Settings** tab. Select **+Add** in **Domains & Routes**.
+Select journeys and methods from those available in the current transaction. Your application can present a choice or apply its flow logic within those options.
 
-   [![Screenshot of the Settings tab with Domains & Routes section and Add button for configuring worker routes.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/settings-domains-routes.png)](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/settings-domains-routes.png#lightbox)
-6. Select **Route**.
+The Native Authentication API doesn't support federation, phone numbers as a first factor, time-based one-time passwords \(TOTP\), passkeys, push authentication, or external MFA methods. Later-operation step-up and using native-issued tokens with profile or credential-management APIs aren't supported. See the [method and integration matrices](https://learn.microsoft.com/en-us/entra/external-id/external-id/customers/concept-supported-features-customers#methods-and-journeys-by-approach) for the comparison with Microsoft-hosted authentication and BYO UX.
 
-   [![Screenshot showing the Route option.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/domains-routes-settings.png)](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/domains-routes-settings.png#lightbox)
-7. Select the domain from **Zone**. Add the following in the **Route** field:
+For supported custom authentication extension events, see the [approach comparison](https://learn.microsoft.com/en-us/entra/external-id/external-id/customers/concept-supported-features-customers#custom-authentication-extension-applicability). For configuration, see [Custom authentication extensions](https://learn.microsoft.com/en-us/entra/external-id/external-id/customers/concept-custom-extensions).
 
-   `*<custom_domain>/<external_tenant_id(guid)>/*signup/v1.0/start*`
+## Integration responsibilities
 
-   Select **Fail Closed** for failure mode.
+Use the configuration guide and API references for a direct integration, or use a documented JavaScript, Android, or Apple SDK. The [SDK quickstart](https://learn.microsoft.com/en-us/entra/external-id/customers/quickstart-native-authentication) configures a React Next.js sample. SDK entry points and supported continuation interfaces are specific to the package and platform.
 
-   [![Screenshot showing the Route configuration with Zone and Route fields.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/route-configuration-screen.png)](https://learn.microsoft.com/en-us/entra/external-id/customers/media/tutorial-third-party-bot-protection-native-api-sign-up/route-configuration-screen.png#lightbox)
-8. Select **Add Route**.
+| Responsibility | What your application implements |
+| --- | --- |
+| **Response handling** | Use the latest `state`, `action`, and links to select an allowed operation through user choice or application flow logic. |
+| **Method selection** | Select from the returned methods, use masked hints where needed, and follow the selected method's links. |
+| **Attribute collection** | Collect values according to the returned field requirements and validation metadata. Don't require page-grouping metadata. |
+| **Transaction continuity** | Keep the latest continuation token in memory and use it only with links from the same response. |
+| **Authorization** | Request the needed scopes initially and exchange the final authorization code for tokens. |
+| **Recovery** | Handle validation failures, throttling, expiration, unsupported interactions, and cancellation without replaying credentials automatically. A separately configured browser sign-in starts a new authentication attempt; it doesn't resume native progress. |
 
-If the WAF setup was configured properly, all requests to the external tenant /start endpoint are intercepted by the worker.
+SPAs with Embedded native authentication and BYO UX websites need a proxy or edge cross-origin resource sharing \(CORS\) policy for cross-origin browser API calls. Android and iOS apps using native HTTP transports don't need CORS or a CORS proxy. See [Native authentication CORS concepts](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication-cors).
 
-### Configure worker logic for bot detection
+The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as SPAs, to help protect against cross-site request forgery \(CSRF\). Non-browser clients, such as Android and iOS apps using native HTTP transports, don't require a custom domain. An embedded browser or webview isn't a native HTTP transport. BYO UX websites still require a tenant-verified custom domain. Configure the service authority before starting a journey; see [Configure the API authority](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-native-authentication-configure-app#configure-the-api-authority).
 
-The worker logic must be configured to:
+## Security boundaries
 
-- Extract relevant information from the sign-up request \(device fingerprint, IP address, user agent, behavioral data\).
-- Send this data to your third-party bot protection provider's detection API.
-- Evaluate the bot detection score returned by the provider.
-- If the request is identified as a bot based on your threshold, block the request or present a challenge.
-- If the request appears legitimate, forward it to the Microsoft Entra /start endpoint.
+Your application handles credentials, so protect passwords, one-time passcodes, continuation tokens, authorization codes, and issued tokens. Use HTTPS, don't log authentication bodies, and don't cache credential responses. Validate returned URL authorities before sending transaction data.
 
-#### Third-party provider integration
+Use client-side validation to help customers correct their input. The service validates authentication requests.
 
-This tutorial uses [HUMAN Security](https://docs.humansecurity.com/home) as the third-party bot protection provider. The Enforcer API provided by HUMAN Security is used for bot detection. Refer to the following HUMAN Security documentation:
+## Session boundaries
 
-- [Enforce an HTTP request \| HUMAN Documentation](https://docs.humansecurity.com/applications/reference/request)
-- SDK documentation: [Overview \| HUMAN Documentation](https://docs.humansecurity.com/applications/mobile-sdk-intro)
+Embedded native authentication supports single sign-on \(SSO\) for embedded webviews. A signed-in native app requests an access token for the web resource and includes it in the webview request's `Authorization` header. The resource validates the token and establishes a session, allowing access without another sign-in prompt. See [Authenticate an embedded webview from a native app](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-native-authentication-webview-sso).
 
-Note
+Signing out of your native app doesn't terminate other application or browser sessions. Clear each application's session separately when your sign-out experience requires it.
 
-The worker code implementation is specific to your chosen bot protection provider's API and your detection thresholds. Contact Microsoft support for guidance on implementing the worker logic for your specific provider.
+## Existing V1 application configuration
 
-## Update the native app sign-up API call flow
+For existing V1 applications, [enable public client and native authentication flows](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-native-authentication-api-v1#enable-public-client-and-native-authentication-flows), then update your platform configuration. The [V1 API reference](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-native-authentication-api-v1#v1-challenge-types-and-capabilities) describes challenge types and capabilities. For a response-driven integration, follow [Configure an application](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-native-authentication-configure-app) to select and configure the V2 entry points.
 
-The standard sign-up flow using Native API endpoints is described in the [Native authentication API reference documentation](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api?tabs=emailOtp#api-reference-for-sign-up). With bot protection enabled, your native app's sign-up flow interacts with the WAF layer transparently.
+## Conditional Access and sign-in frequency
 
-### Sign-up flow with bot protection
+Microsoft Entra External ID supports the Conditional Access [sign-in frequency \(SIF\)](https://learn.microsoft.com/en-us/entra/external-id/identity/conditional-access/concept-session-lifetime#user-sign-in-frequency) session control for both Microsoft-hosted and native authentication.
 
-When the WAF intercepts a `/start` request and determines it's from a bot, it can either block the request entirely or present a challenge. The flow works as follows:
-
-1. **App initiates sign-up:** The native app calls the `/start` endpoint to begin the sign-up flow.
-2. **WAF intercepts request:** The WAF receives the request and extracts device and behavioral signals.
-3. **Bot detection evaluation:** The WAF sends the signals to the bot protection provider for analysis.
-4. **Decision point:**
-
-   - If legitimate: Request is forwarded to Microsoft Entra `/start` endpoint.
-   - If suspicious: Request is blocked or challenged based on your configuration.
-
-5. **Sign-up continues:** If allowed, the standard sign-up flow proceeds with `/challenge`, `/continue`, and other endpoints.
-
-Tip
-
-To enhance bot detection accuracy, integrate your provider's SDK into your native app to collect device fingerprinting and behavioral signals. Pass these signals to the WAF through custom headers or request parameters.
-
-Tip
-
-For a complete Android SDK implementation example using WAF-based bot protection, see the [HUMAN Security bot protection sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/tree/feature/integrate-human-signup-bot-protection).
+For native authentication, when reauthentication is required by the policy, Microsoft Entra External ID prevents token issuance during refresh token grants \(`grant_type=refresh_token`\). Your app must handle the failed token refresh and prompt the user to sign in again before it can acquire new tokens. The policy doesn't display the sign-in UI for your app.
 
 ## Next steps
 
-Now that you've integrated bot protection with Native Authentication sign-up, explore these related resources:
+- [Run the SDK sign-in quickstart](https://learn.microsoft.com/en-us/entra/external-id/customers/quickstart-native-authentication).
+- [Configure an application for native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-native-authentication-configure-app).
+- [Implement the Native Authentication API](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-native-authentication).
+- [Review SDK compatibility and migration](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-migrate-native-authentication-v1-v2).
 
-- [Native authentication API reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api)
-- [Tutorial: Prepare your Android mobile app for native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-native-authentication-prepare-android-app)
-- [Tutorial: Prepare your iOS/macOS mobile app for native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)
-- [Enable custom URL domains for apps in external tenants](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-custom-url-domain)
-- [Configure Cloudflare WAF with Microsoft Entra External ID](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-configure-waf-integration)
-- [HUMAN Security Enforcer API documentation](https://docs.humansecurity.com/applications/reference/request)
-- [HUMAN Security bot protection sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/tree/feature/integrate-human-signup-bot-protection)
+## Related content
+
+- [Native authentication flow](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication-flow).
+- [Native authentication user attributes](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication-user-attributes).
+- [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/external-id/customers/concept-choose-authentication-approach).

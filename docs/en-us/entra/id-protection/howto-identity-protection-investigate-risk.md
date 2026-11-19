@@ -69,6 +69,24 @@ Once the risk is contained, more investigation might be required to mark the ris
 4. Depending on the results of the investigation, mark the user or sign-in as confirmed compromised, confirmed safe, or dismiss the risk. You can confirm compromise in the Microsoft Entra admin center or [programmatically using Microsoft Graph](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-simulate-risk#confirm-compromise-using-microsoft-graph).
 5. [Set up risk-based Conditional Access policies](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies#enable-policies) to prevent similar attacks or to address any gaps in coverage.
 
+## Investigate identity verification outcomes
+
+For a risk-based policy using **Require Identity Verification \(preview\)**, investigate verification completion, the policy's access decision, and the relevant risk record as separate outcomes. An issued credential, successful access attempt, or registered passkey alone isn't evidence that the risk was remediated.
+
+To view users' verification status and history, enable verification data collection as described in the [Verified ID authentication method prerequisites](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id#prerequisites).
+
+Note
+
+Creating an identity verification profile automatically enables **Collect identity verification history**; otherwise, enable it in the authentication methods policy under **Authentication Methods** > **Policies** > **Verified ID** > **Configure** > **Data collection**.
+
+1. Review the applicable risk condition, policy, and sign-in result for the tested access attempt.
+2. Review available [identity verification status and history](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage#identity-verification-status-and-history). Distinguish credential issuance and presentation from a completed verification outcome.
+3. Check the relevant user-risk or sign-in-risk record for the expected remediation outcome. Successful verification can remediate risk in supported scenarios, but isn't proof that every risk was cleared.
+4. If verification succeeds but risk remains, continue the investigation and record both outcomes. Don't dismiss risk solely because verification succeeded.
+5. Record cancellation, failed verification, missing or unavailable credentials, and the return to the original access attempt as separate test outcomes. Use the [existing remediation process](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock#validate-identity-verification-remediation) when self-remediation doesn't complete.
+
+If you review [credential provenance](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2#credential-provenance), remember that during preview it applies only to passkeys. It isn't a substitute for verification history or the risk record. Collect only approved diagnostic evidence.
+
 ## Investigate specific detections
 
 Certain risk detections require specific investigation steps. The following sections outline some of the most common risk detections and recommended actions.

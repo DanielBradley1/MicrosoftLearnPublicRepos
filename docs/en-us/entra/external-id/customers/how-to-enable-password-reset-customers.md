@@ -3,15 +3,15 @@
 
 # Enable self-service password reset
 
-**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
-
 Self-service password reset \(SSPR\) in Microsoft Entra External ID gives customers the ability to change or reset their password, with no administrator or help desk involvement. If a customer's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work.
+
+**Applies to external tenants:** Feature support varies by authentication approach and API or SDK version. Compare Microsoft-hosted authentication, Embedded native authentication, and Bring Your Own UX \(BYO UX\) in the [authentication approach overview](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach). Check feature availability in the [authentication support matrix](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#authentication-approach-supportability).
 
 ## How the password reset process works
 
-Self-service password reset \(SSPR\) supports two authentication methods: email one-time passcode \(Email OTP\) and SMS. When SSPR is enabled, users who forget their password can verify their identity using either Email OTP or SMS. With one-time passcode authentication, a passcode is sent by email or SMS. After entering the passcode, the user is prompted to create a new password.
+For Microsoft-hosted authentication, self-service password reset \(SSPR\) supports email one-time passcode \(Email OTP\) and SMS. When SSPR is enabled, users who forget their password can verify their identity using a configured recovery method. After entering the passcode, the user is prompted to create a new password. Password-recovery availability through the Native Authentication API or SDK is scoped separately in the comparison.
 
-The process works as follows:
+The Microsoft-hosted password-reset process works as follows:
 
 1. From the app, the user selects **Sign in**.
 2. On the sign-in page, they enter their email address and choose **Next**.

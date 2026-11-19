@@ -5,6 +5,8 @@
 
 This article shows how to register a passkey in Microsoft Authenticator on your iOS or Android device.
 
+If you're preparing to enable passkey registration for identity-verified onboarding or recovery \(preview\), first review [Passkey registration during identity-verified onboarding and recovery \(preview\)](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-authenticator-passkey#passkey-registration-during-identity-verified-onboarding-and-recovery-preview). That section covers the additional Authenticator app, passkey-provider, and Android work-profile requirements for those journeys.
+
 - [**iOS**](#tabpanel_1_iOS)
 - [**Android**](#tabpanel_1_Android)
 

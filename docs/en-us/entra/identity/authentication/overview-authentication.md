@@ -56,9 +56,9 @@ The following phishing-resistant authentication methods are available in Microso
 
 Verified ID is an identity verification capability in Microsoft Entra ID — not a traditional authentication method. It can't be used to satisfy authentication requirements like sign-in, MFA, or SSPR. Instead, Verified ID provides cryptographic proof of a user's verified identity for scenarios where trust must be re-established, such as account recovery when all authentication methods are lost.
 
-Identity verification profiles control which users can participate in Verified ID flows, which provider performs verification, and how identity claims are validated. Admins configure profiles through the Account Recovery setup wizard in the Microsoft Entra admin center, and the Verified ID policy page provides visibility into profile assignments and global exclusions.
+Identity verification profiles control which users can participate in Verified ID flows, which provider performs verification, and how identity claims are validated. Profiles support recovery, onboarding, and verification for access. Manage shared profiles under **Verified ID** > **ID verification profiles** in the Microsoft Entra admin center. The Account Recovery setup wizard remains the entry point for recovery-specific configuration, and the Verified ID policy page provides visibility into profile assignments and global exclusions.
 
-For more information, see [Verified ID identity verification overview](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id).
+For profile setup and credential support, see [Verified ID identity verification overview](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-verified-id). For user-level records, see [Manage user authentication methods](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage) and [Passkeys \(FIDO2\)](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2).
 
 ## High-assurance account recovery
 

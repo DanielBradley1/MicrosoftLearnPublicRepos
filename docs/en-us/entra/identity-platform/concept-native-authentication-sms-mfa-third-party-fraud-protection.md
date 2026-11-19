@@ -1,68 +1,98 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection -->
 <!-- Sitemap-Last-Modified: 2026-03-06 -->
 
-# Secure SMS MFA in native authentication with third‑party fraud protection
+# Native authentication overview
 
-Native authentication allows you to have full control over the design of your mobile and desktop application sign-in experience. While this model provides flexibility and control over the user experience, it also introduces fraud prevention risks, especially for SMS-based multifactor authentication \(MFA\).
+**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
 
-This article explains the fraud risks associated with native authentication, then provides guidance for integrating third-party fraud protection solutions to secure native authentication applications.
+**Authentication approach:** Embedded native authentication.
 
-## Prerequisites
+Embedded native authentication is an authentication approach that lets your application present sign-up, sign-in, and password reset while Microsoft Entra External ID validates credentials and enforces authentication requirements. Your app controls the interface and handles the actions, available methods, and links returned by the Native Authentication API.
 
-- Your native application integrates with a third‑party fraud protection provider to securely evaluate risk signals before issuing an SMS one‑time passcode \(OTP\).
-- You deploy a customer‑managed web application firewall \(WAF\) to enforce fraud decisions and to support any increase in SMS throttling limits.
-- You enable [regional opt‑in for SMS‑based MFA in supported geographies by using Microsoft Graph](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-region-code-opt-in).
-- Your native application has the required [permissions to access Microsoft Graph on behalf of a signed‑in user](https://learn.microsoft.com/en-us/graph/auth-v2-service?tabs=http).
+## API version boundaries
 
-## Fraud risk in native authentication
+Important
 
-Microsoft Entra External ID provides baseline fraud protections for native authentication application, including:
+The Native Authentication API V2 is in preview. The [Native Authentication API V1](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1) remains generally available. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to preview features.
 
-- Regional blocking for known high‑fraud regions
-- Basic throttling of SMS one‑time passcode \(OTP\) requests
-- A phone number reputation signal
+The primary references describe the response-driven Native Authentication API, with native routes such as `/api/v2.0`. Follow service-returned links without rewriting their versions or paths. The `/oauth2/v2.0` OAuth endpoint path is also used by V1 integrations.
 
-Native authentication applications that use SMS‑based MFA remain exposed to extra risks, including:
+Existing V1 integrations can continue to use the [V1 API reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1) and its [SDK library references](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#sdk-references). The legacy V1 guides and tutorials have been removed from this documentation. This documentation change doesn't announce retirement of V1 or its SDKs. See [SDK compatibility and migration](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-migrate-native-authentication-v1-v2#sdk-compatibility) for platform and package requirements.
 
-- **International Revenue Share Fraud \(IRSF\)** which occurs when attackers artificially inflate SMS traffic to premium‑rate international destinations in order to extract revenue through telecom termination and revenue‑sharing mechanisms.
-- **Account takeover \(ATO\)** is a common attack pattern in which attackers use automated, scripted techniques to attempt sign‑ins with compromised or valid‑looking credentials. Although ATO is not specific to SMS or MFA, in environments where SMS verification is enabled these attempts can result in SMS challenges being issued as if the activity were legitimate.
+## Application-owned experience, service-controlled authentication
 
-In browser‑delegated authentication flows, Microsoft Entra External ID mitigates these risks by using rich device telemetry and CAPTCHA challenges. Native authentication applications don't use the Microsoft‑hosted, browser‑delegated sign‑in experience, so the risk profiling doesn't benefit from rich device telemetry. Because of this, native authentication scenarios that use SMS by default are less protected by extensive risk profiling than browser-delegated flows. Customers are therefore recommended to set up extra risk detection and protection using third party providers.
+With Embedded native authentication, a mobile, desktop, or single-page application \(SPA\) can present authentication within its own interface. Your application controls layout, interaction, and validation feedback. Microsoft Entra External ID validates credentials, enforces authentication requirements, and issues tokens.
 
-To effectively, mitigate fraud in native authentication scenarios that use SMS:
+Tenant and Conditional Access policies and the application's user flow apply to Microsoft-hosted authentication, Embedded native authentication, and Bring Your Own UX \(BYO UX\). Presentation and integration responsibilities differ. With Embedded native authentication, your app handles the required interactions, such as a second-factor challenge after password verification or more attribute collection after email verification.
 
-- Native authentication applications owners need to implement extra fraud detection and mitigation
-- Fraud decisions must occur before SMS one‑time passcodes \(OTPs\) are sent
-- Third‑party fraud providers assess risk using device, behavioral, and network signals collected outside of Microsoft Entra External ID
+Microsoft-hosted authentication presents pages on behalf of your app. Choose Embedded native authentication when your team needs control of the interface and can implement response handling and security responsibilities. See [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach) for the broader comparison.
 
-## Recommended fraud prevention architecture
+## Customer journeys
 
-Microsoft recommends a high-level architecture for securing native authentication applications that user SMS-based MFA consisting of the native authentication applications, third-party fraud protection provider, web application firewall \(WAF\), and Microsoft Entra External ID.
+The same authorization transaction surrounds each journey. Your app starts authorization, completes the returned authentication interactions, resumes authorization, and exchanges the authorization code for tokens.
 
-The third-party fraud protection provider evaluates risk before an SMS MFA challenge is issued. By incorporating external risk signals, such as device intelligence and phone number reputation, the system can block high-risk sign-in attempts earlier and reduce exposure to fraud.
-
-| Component | Notes |
+| Journey | Behavior |
 | --- | --- |
-| **Native applications** | The native application integrates a third-party fraud detection SDK. The applications collect limited, privacy‑preserving device and behavioral signals using the third‑party provider’s tooling and associate those signals with the current authentication session |
-| **Third‑party fraud protection provider** | The third‑party fraud provider evaluates the signals collected from the native application and determines the risk level of the authentication attempt. Based on the evaluation, one of the following outcomes occurs:  <br>- **Low or acceptable risk**: The authentication flow proceeds, and Microsoft Entra External ID is triggered to issue the SMS one-time passcode \(OTP\).  <br>- **High risk requiring extra verification**: Device possession is verified before allowing the flow to continue.  <br>- **High risk with failed evaluation**: The sign-in attempt is blocked immediately, and no SMS challenge is sent.  <br>You can use third‑party fraud providers such as [Human security](https://www.humansecurity.com/) and [Prove](https://www.prove.com/). |
-| **Web application firewall \(WAF\)** | The WAF is a customer‑managed enforcement layer that sits in front of Microsoft Entra External ID endpoints. The WAF consumes the fraud decision from the third‑party provider and enforces it consistently. Microsoft doesn't configure or operate the WAF; its behavior, including fail‑open or fail‑closed policies, is owned by the customer. |
-| **Microsoft Entra External ID** | Microsoft Entra External ID processes only those requests that have passed upstream fraud checks. It doesn't receive raw device telemetry or third‑party risk scores. It issues SMS OTPs only after upstream approval and relies on its built‑in controls, such as throttling, regional restrictions, and phone number reputation signals to provide protection. |
+| **Sign-up** | Create an email-with-password or passwordless email one-time passcode \(OTP\) account. Collect the attributes and complete the verification steps requested by the user flow. |
+| **Sign-in** | Submit the customer's identifier and complete password or email one-time-passcode verification using an offered method. Username-with-password sign-in is also available for configured local accounts. |
+| **Password reset** | Verify an offered email or SMS one-time passcode, submit a replacement password, and follow the password-update polling responses. Recovery can start before sign-in discovery or through a password method's `recover` link. |
+| **Multifactor authentication \(MFA\) and inline registration** | Complete email or SMS verification when policy requires MFA. If registration is required, handle the returned `enroll` and `activate` operations. Email OTP first-factor accounts use a different second factor, such as SMS. |
+| **Policy requirements after sign-up or password reset** | Continue handling required authentication, including MFA and Conditional Access, before requesting tokens. Completing account creation or a password update doesn't bypass policy. |
 
-### Sign-in flow protection example
+Select journeys and methods from those available in the current transaction. Your application can present a choice or apply its flow logic within those options.
 
-This diagram shows how a native application integrates third‑party fraud protection into an SMS‑based MFA sign‑in flow. The native app coordinates with Microsoft Entra External ID, a web application firewall \(WAF\), and an external fraud provider to evaluate risk before an SMS OTP is sent. By gating SMS MFA on real‑time risk signals, the flow helps block high‑risk sign‑in attempts while allowing legitimate users to complete authentication.
+The Native Authentication API doesn't support federation, phone numbers as a first factor, time-based one-time passwords \(TOTP\), passkeys, push authentication, or external MFA methods. Later-operation step-up and using native-issued tokens with profile or credential-management APIs aren't supported. See the [method and integration matrices](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#methods-and-journeys-by-approach) for the comparison with Microsoft-hosted authentication and BYO UX.
 
-![Diagram of End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked.](https://learn.microsoft.com/en-us/entra/identity-platform/media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.svg)
+For supported custom authentication extension events, see the [approach comparison](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#custom-authentication-extension-applicability). For configuration, see [Custom authentication extensions](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-custom-extensions).
 
-In native authentication flows that use SMS‑based MFA, the application evaluates fraud risk before Microsoft Entra External ID sends an SMS one‑time passcode \(OTP\). The native app initializes a third‑party fraud protection SDK early in the sign‑in process using provider‑specific mechanisms.
+## Integration responsibilities
 
-Microsoft Entra External ID drives the authentication state and determines when MFA is required. When SMS MFA is triggered, the native app performs a real‑time risk evaluation through the third‑party provider. As part of this evaluation, the app retrieves the user’s registered phone number from Microsoft Graph to validate it with the fraud provider to assess reputation and abuse signals.
+Use the configuration guide and API references for a direct integration, or use a documented JavaScript, Android, or Apple SDK. The [SDK quickstart](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication) configures a React Next.js sample. SDK entry points and supported continuation interfaces are specific to the package and platform.
 
-A customer‑managed web application firewall \(WAF\) enforces the fraud decision returned by the third‑party provider. If the provider allows the request, the WAF forwards it to Microsoft Entra External ID, which issues the SMS OTP and completes authentication after the user submits the code. If Microsoft detects high risk for the SMS challenge, the service blocks the request. The sign-in attempt stops, and Microsoft doesn’t send an SMS. If the provider requires additional verification, the app completes the provider‑specific challenge before allowing the flow to continue.
+| Responsibility | What your application implements |
+| --- | --- |
+| **Response handling** | Use the latest `state`, `action`, and links to select an allowed operation through user choice or application flow logic. |
+| **Method selection** | Select from the returned methods, use masked hints where needed, and follow the selected method's links. |
+| **Attribute collection** | Collect values according to the returned field requirements and validation metadata. Don't require page-grouping metadata. |
+| **Transaction continuity** | Keep the latest continuation token in memory and use it only with links from the same response. |
+| **Authorization** | Request the needed scopes initially and exchange the final authorization code for tokens. |
+| **Recovery** | Handle validation failures, throttling, expiration, unsupported interactions, and cancellation without replaying credentials automatically. A separately configured browser sign-in starts a new authentication attempt; it doesn't resume native progress. |
 
-By gating SMS MFA on upstream risk evaluation, this flow reduces exposure to telephony fraud, account takeover and other related threats while allowing legitimate users to complete authentication.
+SPAs with Embedded native authentication and BYO UX websites need a proxy or edge cross-origin resource sharing \(CORS\) policy for cross-origin browser API calls. Android and iOS apps using native HTTP transports don't need CORS or a CORS proxy. See [Native authentication CORS concepts](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-cors).
+
+The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as SPAs, to help protect against cross-site request forgery \(CSRF\). Non-browser clients, such as Android and iOS apps using native HTTP transports, don't require a custom domain. An embedded browser or webview isn't a native HTTP transport. BYO UX websites still require a tenant-verified custom domain. Configure the service authority before starting a journey; see [Configure the API authority](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-configure-app#configure-the-api-authority).
+
+## Security boundaries
+
+Your application handles credentials, so protect passwords, one-time passcodes, continuation tokens, authorization codes, and issued tokens. Use HTTPS, don't log authentication bodies, and don't cache credential responses. Validate returned URL authorities before sending transaction data.
+
+Use client-side validation to help customers correct their input. The service validates authentication requests.
+
+## Session boundaries
+
+Embedded native authentication supports single sign-on \(SSO\) for embedded webviews. A signed-in native app requests an access token for the web resource and includes it in the webview request's `Authorization` header. The resource validates the token and establishes a session, allowing access without another sign-in prompt. See [Authenticate an embedded webview from a native app](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-webview-sso).
+
+Signing out of your native app doesn't terminate other application or browser sessions. Clear each application's session separately when your sign-out experience requires it.
+
+## Existing V1 application configuration
+
+For existing V1 applications, [enable public client and native authentication flows](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#enable-public-client-and-native-authentication-flows), then update your platform configuration. The [V1 API reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api-v1#v1-challenge-types-and-capabilities) describes challenge types and capabilities. For a response-driven integration, follow [Configure an application](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-configure-app) to select and configure the V2 entry points.
+
+## Conditional Access and sign-in frequency
+
+Microsoft Entra External ID supports the Conditional Access [sign-in frequency \(SIF\)](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-session-lifetime#user-sign-in-frequency) session control for both Microsoft-hosted and native authentication.
+
+For native authentication, when reauthentication is required by the policy, Microsoft Entra External ID prevents token issuance during refresh token grants \(`grant_type=refresh_token`\). Your app must handle the failed token refresh and prompt the user to sign in again before it can acquire new tokens. The policy doesn't display the sign-in UI for your app.
+
+## Next steps
+
+- [Run the SDK sign-in quickstart](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-native-authentication).
+- [Configure an application for native authentication](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-native-authentication-configure-app).
+- [Implement the Native Authentication API](https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication).
+- [Review SDK compatibility and migration](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-migrate-native-authentication-v1-v2).
 
 ## Related content
 
-- [Native authentication overview](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication)
-- [SMS throttling limits enforced by Microsoft Entra External ID](https://learn.microsoft.com/en-us/entra/external-id/customers/reference-service-limits#telephony-throttling-limits).
+- [Native authentication flow](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-flow).
+- [Native authentication user attributes](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-user-attributes).
+- [Choose an authentication approach](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach).

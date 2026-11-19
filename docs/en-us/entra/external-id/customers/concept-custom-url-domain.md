@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/external-id/customers/concept-custom-url-domain -->
 <!-- Sitemap-Last-Modified: 2025-09-16 -->
 
-# Custom URL domains in external tenants
+# Custom URL domains in Microsoft Entra External ID
 
-**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
+A custom URL domain lets you use your own authentication endpoint names in Microsoft Entra External ID.
 
-A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
+**Applies to external tenants:** Feature support varies by authentication approach and API or SDK version. Compare Microsoft-hosted authentication, Embedded native authentication, and Bring Your Own UX \(BYO UX\) in the [authentication approach overview](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach). Check feature availability in the [authentication support matrix](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#authentication-approach-supportability).
+
+The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as single-page applications \(SPAs\), to help protect against cross-site request forgery \(CSRF\). Non-browser clients, such as iOS and Android apps using native HTTP transports, don't require a custom domain. Bring Your Own UX \(BYO UX\) remains browser-based and requires a tenant-verified custom domain for its service API calls. Verify and configure the domain before integrating a browser-based approach. Microsoft-hosted authentication can also use a custom URL domain for a consistent sign-in address.
 
 [![Screenshot demonstrates an External ID custom URL domain user experience.](https://learn.microsoft.com/en-us/entra/external-id/customers/media/concept-custom-url-domain/custom-domain-user-experience-small.png)](https://learn.microsoft.com/en-us/entra/external-id/customers/media/concept-custom-url-domain/custom-domain-user-experience.png#lightbox)
 

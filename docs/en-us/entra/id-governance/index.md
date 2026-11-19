@@ -1,9 +1,9 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/ -->
-<!-- Sitemap-Last-Modified: 2026-08-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Microsoft Entra ID Governance documentation
 
-Microsoft Entra ID Governance helps you to protect, monitor, and audit access to critical assets while ensuring employee productivity.
+Microsoft Entra ID Governance helps you to protect, monitor, and audit access to critical assets.
 
 ## About ID Governance
 
@@ -19,7 +19,7 @@ Microsoft Entra ID Governance helps you to protect, monitor, and audit access to
 ### Reference
 
 - [Microsoft Entra ID Governance licensing fundamentals](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals)
-- [Identity Governance dashboard \(Preview\)](https://learn.microsoft.com/en-us/entra/id-governance/governance-dashboard)
+- [Identity Governance dashboard](https://learn.microsoft.com/en-us/entra/id-governance/governance-dashboard)
 - [Identity Governance service limits](https://learn.microsoft.com/en-us/entra/id-governance/governance-service-limits)
 
 ## Scenarios
@@ -30,6 +30,7 @@ Microsoft Entra ID Governance helps you to protect, monitor, and audit access to
 - [Govern the employee and guest lifecycle](https://learn.microsoft.com/en-us/entra/id-governance/scenarios/govern-the-employee-lifecycle)
 - [Planning new governance scenarios for business partners and external users](https://learn.microsoft.com/en-us/entra/id-governance/scenarios/govern-guest-lifecycle-new-project)
 - [Govern access for applications in your environment](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-applications-prepare)
+- [Govern agent identities and their access](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview)
 
 ## Govern the lifecycle of access to groups, apps, and sites
 
@@ -46,7 +47,7 @@ Microsoft Entra ID Governance helps you to protect, monitor, and audit access to
 
 - [Delegation and roles](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-delegate)
 
-## Recertify access to groups, apps, and privileged roles
+## Recertify app access, group and role memberships
 
 ### Overview
 
@@ -57,7 +58,7 @@ Microsoft Entra ID Governance helps you to protect, monitor, and audit access to
 - [Create an access review to ensure users do not retain excessive access](https://learn.microsoft.com/en-us/entra/id-governance/create-access-review)
 - [Review access to group or apps](https://learn.microsoft.com/en-us/entra/id-governance/perform-access-review)
 
-## Govern the lifecycle of users as they join, move within, and leave organizations
+## Govern the lifecycle of users as they join, move within, and leave the organization
 
 ### Overview
 

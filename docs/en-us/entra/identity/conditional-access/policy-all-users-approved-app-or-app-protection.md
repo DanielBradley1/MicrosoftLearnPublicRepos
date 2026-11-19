@@ -11,7 +11,7 @@ With Conditional Access, organizations can restrict access to [approved \(modern
 
 Warning
 
-App protection policies are supported on iOS and Android where applications meet specific requirements. **App protection policies are supported on Windows in preview for the Microsoft Edge browser only.** Not all applications that are supported as approved applications or support application protection policies. For a list of some common client apps, see [App protection policy requirement](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-grant#require-app-protection-policy). If your application is not listed there, contact the application developer. To require approved client apps or to enforce app protection policies for iOS and Android devices, these devices must first register in Microsoft Entra ID.
+App protection policies are supported on iOS and Android where applications meet specific requirements. **App protection policies are supported on Windows in preview for the Microsoft Edge browser and Windows App desktop client only.** Not all applications that are supported as approved applications or support application protection policies. For a list of some common client apps, see [App protection policy requirement](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-grant#require-app-protection-policy). If your application is not listed there, contact the application developer. To require approved client apps or to enforce app protection policies for iOS and Android devices, these devices must first register in Microsoft Entra ID.
 
 Note
 

@@ -22,12 +22,15 @@ Before you can update a governance relationship, you must first modify the gover
 
    - **Delegated administration roles**: Add or change the Microsoft Entra built-in roles assigned to security groups in the governing tenant. These roles determine the access level that users in those groups have when they sign in to the governed tenant.
    - **Multitenant application management**: Add or update custom, multitenant applications. When you update the relationship, Tenant Governance creates or updates a service principal with the corresponding permissions in the governed tenant.
+   - **Relationship lifetime \(Preview\)**: Add or change the lifetime for an active relationship. Use the same template ID in the new **Initial** request to update that relationship rather than create a separate one.
 
 4. Save the updated governance policy template. The version number of the template increments by one.
 
 Note
 
 Updating the governance policy template doesn't automatically update the governance relationship. The tenant admins must complete the governance request and approval process described in the sections that follow for the policy template changes to take effect.
+
+Renewing a time-bound relationship is different from updating its terms. **Request renewal** preserves the existing policy snapshot and lifetime; it doesn't apply template edits. See [Manage relationship expiration and renewal](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/how-to-manage-relationship-expiration).
 
 ## Send a new governance request with the updated template
 
@@ -52,6 +55,7 @@ When the governed tenant accepts the governance request, these changes take effe
 - Tenant Governance updates the policy snapshot of the existing governance relationship to reflect the latest version of the policy template.
 - If you updated delegated administration roles, Tenant Governance updates the GDAP role assignments in the governed tenant accordingly.
 - If you updated multitenant application management, Tenant Governance updates the corresponding service principal and its permissions in the governed tenant.
+- If you updated the relationship lifetime, Tenant Governance updates the existing relationship's policy snapshot and expiration after acceptance.
 
 ## Related content
 

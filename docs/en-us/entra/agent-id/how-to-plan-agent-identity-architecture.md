@@ -3,14 +3,21 @@
 
 # Plan your agent identity architecture
 
-Before you integrate your AI agent with Microsoft Entra Agent ID, you need to make a series of design decisions. This guide walks you through each decision in order:
+Use this guide when you're designing identity boundaries for a platform or several separately managed agents. If you want to build a cloud or local agent, start with [Choose an integration path](https://learn.microsoft.com/en-us/entra/agent-id/choose-agent-integration-path). Its tutorials include the required identity setup; this planning guide isn't a prerequisite.
 
-1. **Which identity type** your agent needs.
-2. **Which operation pattern** your agent uses, including how it acquires tokens and what context it acts in.
-3. **How many blueprints** your system requires.
-4. **How many agent identities** to create per blueprint.
+The guide helps you choose the identity type, operation pattern, and blueprint structure that match your access and lifecycle requirements.
 
-Work through these decisions in order, because earlier choices shape later ones. Some single-agent deployments might only need the first two steps. For examples of how these decisions map to real-world agent architectures, see [Agent ID design patterns](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-id-design-patterns).
+## Plan the identity boundaries
+
+For architecture planning, consider:
+
+- **Which identity type** your agent needs.
+- **Which operation pattern** your agent uses, including how it acquires tokens and what context it acts in.
+- **How many blueprints** your system requires.
+- **How many agent identities** to create per blueprint.
+- **Which instance mode** matches that identity relationship.
+
+Earlier choices shape later ones. The selected tutorial sets the instance mode during provisioning; it isn't a separate operating mode your users need to choose. For architecture examples, see [Agent ID design patterns](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-id-design-patterns).
 
 ## Step 1: Choose an identity type
 
@@ -32,7 +39,7 @@ Service principals are designed for deterministic, static workloads. Microsoft E
 - Blueprint-managed credentials and lifecycle: you create, rotate, and delete agent identities through their parent blueprint, not individually.
 - Support for ephemeral agent identities that are created at runtime with inheritable permissions already granted through the blueprint, and deleted when the task completes.
 
-For a detailed comparison, see [Agent identities, service principals, and applications](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-service-principals).
+For a detailed comparison, see [Agent identities, service principals, and applications](https://learn.microsoft.com/en-us/entra/agent-id/agent-service-principals).
 
 ### Why not a regular user account?
 
@@ -43,19 +50,19 @@ Don't use a regular Microsoft Entra user account for an AI agent. User accounts 
 - **Identity governance** processes such as joiner-mover-leaver workflows, access packages, and access reviews aren't designed for agent lifecycle patterns and might incorrectly remove agent access.
 - Your agents would appear in the Global Address List, Teams, and SharePoint alongside human employees, making it harder to distinguish AI agents from people.
 
-### Don't register an app for your agent
+### Use an Agent ID for the agent's runtime identity
 
-If you're used to creating workload identities, your instinct might be to create an app registration or service principal for your agent — for example, by running `az ad app create`, `New-MgApplication`, `New-AzADApplication`, or a `POST /applications` Microsoft Graph request. Don't do this for AI agents. An identity created this way is a standard application: it has no sponsor, no agent-specific audit entries, and no blueprint-managed lifecycle. Microsoft Entra doesn't govern it as an agent, and labeling it an "agent identity" doesn't make it one.
+An ordinary app registration isn't an Agent ID. Use the supported Agent ID provisioning procedure rather than creating a standard application and labeling it an agent. Some supported blueprint requests use `/applications` with a derived `@odata.type`; the endpoint alone doesn't determine the object type. Preserve the request type and headers shown in your tutorial.
 
-Instead, create an agent identity blueprint and then create agent identities from it. Agent identities are a distinct Microsoft Entra object type \(`#Microsoft.Graph.AgentIdentity`\) created through the blueprint, not through the application registration APIs.
+The agent identity is a distinct Microsoft Entra object type \(`#Microsoft.Graph.AgentIdentity`\) associated with a blueprint. Separate management clients, front-end sign-in clients, and downstream APIs can still use ordinary app registrations. Don't replace those objects with the agent's runtime identity.
 
 | Instead of this \(standard app registration\) | Do this \(agent identity\) |
 | --- | --- |
 | `az ad app create` | Create an [agent identity blueprint](https://learn.microsoft.com/en-us/entra/agent-id/create-blueprint), then create agent identities from it |
 | `New-MgApplication` or `New-AzADApplication` | Use a supported [creation channel](https://learn.microsoft.com/en-us/entra/agent-id/agent-id-creation-channels) with the **Agent ID Developer** or **Agent ID Administrator** role |
-| `POST https://graph.microsoft.com/v1.0/applications` | Grant `AgentIdentityBlueprint.Create`, then [create the blueprint and agent identities](https://learn.microsoft.com/en-us/entra/agent-id/create-delete-agent-identities) |
+| An ordinary application creation request | Follow the typed blueprint request in your [scenario tutorial](https://learn.microsoft.com/en-us/entra/agent-id/choose-agent-integration-path), with that procedure's management permissions. |
 
-In .NET, use the `Microsoft.Identity.Web.AgentIdentities` package: call `builder.Services.AddAgentIdentities()`, then acquire tokens with `WithAgentIdentity(...)`. See [Call custom APIs from an agent](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom).
+For a cloud ASP.NET Core agent, use the standard `Microsoft.Identity.Web` client APIs in [Call a custom API as an agent](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom). For a hosting platform with a fleet, use `Microsoft.Identity.Web.AgentIdentities` and explicit child-identity selection in the [fleet tutorials](https://learn.microsoft.com/en-us/entra/agent-id/plan-agent-fleet). For a local public client, use [MSAL](https://learn.microsoft.com/en-us/entra/agent-id/authenticate-local-agent) without a client credential.
 
 For a full comparison, see [Agent identities, service principals, and applications](https://learn.microsoft.com/en-us/entra/agent-id/agent-service-principals).
 
@@ -70,7 +77,7 @@ An agent's operation pattern determines how it acquires tokens and what context 
 | **Consent model** | Admin consent required | User or admin consent |
 | **Token subject** | Agent identity | User \(with agent as actor\) |
 | **Common scenarios** | Background processing, scheduled tasks, system-to-system | Chat assistants, user-facing copilots, agents acting on user data |
-| **Access scope** | Broad, tenant-wide access | Scoped to the signed-in user's data |
+| **Access scope** | Permissions granted to the agent, further constrained by the resource's authorization model. | Delegated permissions and the signed-in user's access, further constrained by the resource's authorization model. |
 
 Choose **autonomous** when your agent:
 
@@ -86,12 +93,12 @@ Choose **interactive** when your agent:
 
 Some agents need both. For example, an agent might run a nightly background sync using the autonomous pattern and also respond to user chat messages using the interactive pattern. In this case, implement both OAuth flows and select the appropriate token based on the operation.
 
-- For autonomous agents, see [Request agent tokens for autonomous agents](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/autonomous-agent-request-tokens).
-- For interactive agents, see [Authenticate users in interactive agents](https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow).
+- For autonomous agents, see [Call a custom API as an agent with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/call-api-custom).
+- For interactive agents, see [Call a custom API as a user with ASP.NET Core](https://learn.microsoft.com/en-us/entra/agent-id/aspnet-core-call-custom-api-as-user).
 
 ## Step 3: Decide how many agent identity blueprints
 
-An agent identity blueprint manages authentication for all the agent identities created from it. The blueprint holds the credentials used to acquire tokens on behalf of those agent identities. Because of this capability, a blueprint compromise can affect every agent identity under it. Choose your agent identity blueprint count based on your security boundaries.
+An agent identity blueprint defines authentication settings for its agent identities and holds credentials for confidential clients. A multi-instance blueprint uses those credentials to impersonate its child identities. A compromise of shared credentials can affect every identity that uses them. Choose your agent identity blueprint count based on your security boundaries.
 
 **Default: use one blueprint per trust boundary.**
 
@@ -109,7 +116,7 @@ The following factors are *not* reasons to add more blueprints:
 - **Scale-out or replicas**: Running multiple instances of the same agent doesn't require multiple blueprints.
 - **Memory or context separation**: Agent memory is typically a shared data store filtered by session ID at retrieval time, which doesn't require separate blueprints.
 
-For more information about blueprints, see [Agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint).
+For more information about blueprints, see [Agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint).
 
 ## Step 4: Decide how many agent identities per blueprint
 
@@ -128,8 +135,16 @@ The following factors are *not* reasons to add more agent identities:
 
 Multi-agent architectures where multiple agent identities are appropriate can include sequential pipelines with distinct agent roles and concurrent orchestrations with specialized domain workers. For more information, see [AI agent orchestration patterns](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns).
 
+## Step 5: Choose the instance mode
+
+Choose the blueprint's mode before creating it. Single-instance mode represents one Agent ID per tenant, with the same OAuth client ID as the blueprint and no blueprint principal. Multi-instance mode supports separate child Agent IDs with distinct client IDs.
+
+Registered public-client agents must use single-instance mode. Confidential agents can also use it when one identity is appropriate. If the blueprint needs to provision identities with independent permissions or lifecycles, use multi-instance mode.
+
+Having only one child identity doesn't make an existing multi-instance blueprint single-instance. The setting is fixed at creation. For details, see [Blueprint instance modes](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint#instance-modes-preview) and [Create a single-instance agent identity](https://learn.microsoft.com/en-us/entra/agent-id/create-single-instance-agent).
+
 ## Related content
 
 - [Agent ID design patterns](https://learn.microsoft.com/en-us/entra/agent-id/concept-agent-id-design-patterns)
-- [Agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint)
-- [Agent identities, service principals, and applications](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-service-principals)
+- [Agent identity blueprints](https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint)
+- [Agent identities, service principals, and applications](https://learn.microsoft.com/en-us/entra/agent-id/agent-service-principals)

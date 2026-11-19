@@ -3,11 +3,11 @@
 
 # Sign in with passkeys in Microsoft Entra External ID
 
-**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to external tenants.](https://learn.microsoft.com/en-us/entra/external-id/media/common/applies-to-yes.png) External tenants \([learn more](https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations)\)
-
 Passkeys give customers a phishing-resistant way to sign in to consumer applications built on Microsoft Entra External ID. Customers can use face, fingerprint, PIN, or a security key instead of remembering passwords or entering one-time codes.
 
-In an external tenant, you can use passkeys in two ways:
+**Applies to external tenants:** Feature support varies by authentication approach and API or SDK version. Compare Microsoft-hosted authentication, Embedded native authentication, and Bring Your Own UX \(BYO UX\) in the [authentication approach overview](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-choose-authentication-approach). Check feature availability in the [authentication support matrix](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers#authentication-approach-supportability).
+
+For Microsoft-hosted authentication in an external tenant, you can use passkeys in two ways:
 
 - **Passwordless sign-in.** The user enters their email or username. If a passkey is available, they're prompted to sign in with face, fingerprint, PIN, or a security key. The passkey completes first-factor authentication and also satisfies multifactor authentication \(MFA\) requirements.
 - **Passkey for MFA.** The user signs in with their email or username and password. If a passkey is registered, they complete MFA with the passkey — a phishing-resistant alternative to traditional verification methods. For more about MFA options, see [MFA in external tenants](https://learn.microsoft.com/en-us/entra/external-id/customers/concept-multifactor-authentication-customers).

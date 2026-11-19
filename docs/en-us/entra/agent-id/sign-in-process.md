@@ -3,7 +3,9 @@
 
 # Microsoft Entra Agent ID sign-in process
 
-This article is intended for nontechnical users who want to learn more about the Microsoft Entra Agent ID sign-in process. When signing in to an agent, product, or service that uses Microsoft Entra Agent ID for authentication and data access, you might see a consent page like the following:
+When you sign in to an AI agent that uses Microsoft Entra Agent ID, a consent page explains the permissions the agent requests. Review the publisher and requested access before you approve.
+
+This article explains how to assess that request, decide whether to approve it, and get help if the agent looks suspicious. The following image shows an example consent page:
 
 ![Screenshot of a sample consent page for signing in to an AI agent.](https://learn.microsoft.com/en-us/entra/agent-id/media/sign-in-process/consent-page.png)
 
@@ -20,10 +22,10 @@ An Agent ID allows the AI agent to:
 
 ## Consent pages
 
-You see consent pages because agents need permissions before they can operate in your organization. This process has two steps:
+Agents need permissions before they can access your organization's data. Depending on your organization's policies and previous approvals, you might see requests to:
 
-1. Add this agent to your organization. This allows the agent to participate as a member of your organization. This page is only shown the first time someone in your organization logs in to the agent.
-2. Allow agent to access this data. This shows the specific types of information or actions the agent is requesting \(for example, reading your profile or email\). You choose to allow or deny.
+- **Add this agent to your organization.** This makes the agent available in your organization. If the agent is already added, you don't need to add it again.
+- **Allow the agent to access data.** This request lists the information or actions the agent needs, such as reading your profile or email. You can allow or deny the request. Your organization might require administrator approval.
 
 This page gives you control over how AI agents use your accounts and data you have access to.
 
@@ -36,7 +38,7 @@ The consent page includes information to help you assess the trustworthiness of 
 - The organization that published the agent
 - Whether the agent is built by Microsoft
 
-For more information about the details of the consent page, [view this article](https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience).
+For details about the consent page, see [Application consent experience](https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience).
 
 **If you did not intentionally sign-in to this agent, always deny access. Never sign-in to apps or agents you're unfamiliar with.**
 
@@ -44,9 +46,7 @@ For more information about the details of the consent page, [view this article](
 
 AI agents can't participate in your organization unless a member approves them. When you add an agent to your organization, the agent becomes available to you and other employees or members to use. The agent is able to sign-in other members and request access to their data and information.
 
-Adding an agent to your organization also allows it to create agent accounts. Like human users, AI agents can have accounts in your organization. These accounts can be used to give AI agents access to access apps, tools, files, and systems in your organization. They also help track what actions an AI agent takes.
-
-When you add an agent, the agent gains the ability to create its own accounts in your organization and use them for access. The agent's accounts are always limited to the permissions and access granted by you or an administrator.
+An agent might also use a dedicated agent account to access resources that require a user account, such as a mailbox. Adding the agent doesn't give it unlimited permission to create accounts or access resources. Account creation and resource access remain subject to the permissions and policies approved by your administrator. For more information, see [Agent's user accounts](https://learn.microsoft.com/en-us/entra/agent-id/agent-users).
 
 **If you're uncertain whether to add an agent to your organization, pause and contact your administrator.**
 
@@ -63,7 +63,7 @@ It doesn't give the agent unlimited access. It only gets the specific items show
 
 ## Disable an agent or its permissions
 
-You \(or an administrator\) can remove or disable the agent or its permissions. For more information, see [manage agents in end user experience](https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-end-user). For global removal, administrators can delete the agent identity using Microsoft Graph API or Microsoft Entra PowerShell.
+You \(or an administrator\) can remove or disable the agent or its permissions. For more information, see [Manage agents in the end-user experience](https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-end-user). For global removal, administrators can delete the agent identity using Microsoft Graph API or Microsoft Entra PowerShell.
 
 ## Criteria to report a suspicious agent
 

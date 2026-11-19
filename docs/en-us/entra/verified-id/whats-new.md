@@ -7,6 +7,13 @@
 
 This article summarizes the latest features, improvements, and service changes for Microsoft Entra Verified ID. Use it to understand new capabilities and plan updates to issuer or verifier implementations.
 
+## November 2026
+
+- **ID verification profiles**: Learn how to [create and manage ID verification profiles](https://learn.microsoft.com/en-us/entra/verified-id/how-to-create-id-verification-profile) for account recovery, onboarding, and verification at sign-in.
+- **My Account Verified ID issuance**: Learn how to [get your Microsoft Entra Verified ID from My Account](https://learn.microsoft.com/en-us/entra/verified-id/how-to-get-verified-id-my-account), including profile-based self-service issuance.
+- **Identity verification \(IDV\) partner gallery: two new Security Store integrations**: Added [Entrust](https://securitystore.microsoft.com/solutions/entrustdatacard.entrust_identity_verification_prod) and [Persona](https://securitystore.microsoft.com/solutions/persona-identities.persona_idv) as [Security Store integration partners](https://learn.microsoft.com/en-us/entra/verified-id/idv-partners#security-store-integration-partners).
+- **High assurance overview \(preview\)**: Read the [Microsoft Entra high assurance overview](https://learn.microsoft.com/en-us/entra/verified-id/high-assurance) for guidance on identity-verified onboarding, resource access, risk remediation, and account recovery.
+
 ## October 2026
 
 - **IDV partner gallery update**: Added [HYPR](https://www.hypr.com/integrations/microsoft-verified-id) as a new partner in the [Verified ID API-based integration partners](https://learn.microsoft.com/en-us/entra/verified-id/idv-partners#verified-id-api-based-integration-partners) section.

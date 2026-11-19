@@ -176,7 +176,7 @@ Review these limitations carefully before enabling HSC mode. They apply in addit
 
 **Security and fraud prevention**
 
-- Third-party fraud protection integration for web-hosted \(browser-based\) sign-in and sign-up flows isn't supported in HSC mode. Native authentication API flows can integrate with third-party fraud protection by using a web application firewall \(WAF\) in front of the native authentication endpoints. For implementation guidance, see [Integrate third-party bot protection with native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-third-party-bot-protection-native-api-sign-up) and [Integrate third-party account takeover protection with native authentication](https://learn.microsoft.com/en-us/entra/external-id/customers/tutorial-third-party-account-take-over-protection-native-api).
+- Third-party fraud protection integration for web-hosted \(browser-based\) sign-in and sign-up flows isn't supported in HSC mode.
 
 **User experience and compliance**
 

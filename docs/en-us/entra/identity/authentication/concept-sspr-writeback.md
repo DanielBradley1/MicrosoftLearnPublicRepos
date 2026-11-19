@@ -19,7 +19,7 @@ Password writeback is supported in environments that use the following hybrid id
 
 Note
 
-SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
+SSPR with password writeback is supported for users in [password hash synchronization \(PHS\) staged rollout](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-staged-rollout#supported-scenarios) when you use [Microsoft Entra Cloud Sync](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback). Password writeback through Microsoft Entra Connect Sync isn't supported for users in staged rollout.
 
 Password writeback provides the following features:
 

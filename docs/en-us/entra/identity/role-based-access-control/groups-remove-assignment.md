@@ -15,7 +15,7 @@ If you have a Microsoft Entra ID P2 license and [Privileged Identity Management 
 | --- | --- |
 | Microsoft Entra admin center | [Update or remove an existing role assignment in PIM](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user#update-or-remove-an-existing-role-assignment) |
 | Microsoft Graph PowerShell | [Remove an eligible assignment](https://learn.microsoft.com/en-us/powershell/microsoftgraph/tutorial-pim#step-6-admin-removes-an-eligible-assignment) |
-| Microsoft Graph API | [Manage Microsoft Entra role assignments using PIM APIs](https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview)  <br>[Remove eligible assignment via Microsoft Graph API](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user#remove-eligible-assignment-via-microsoft-graph-api) |
+| Microsoft Graph API | [Manage Microsoft Entra role assignments using PIM APIs](https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview)  <br>[Remove eligible assignment via Microsoft Graph API](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user?pivots=api#remove-eligible-assignment-via-microsoft-graph-api) |
 
 ## Prerequisites
 

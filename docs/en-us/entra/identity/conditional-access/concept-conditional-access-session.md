@@ -14,6 +14,8 @@ In a Microsoft Entra External ID [external tenant](https://learn.microsoft.com/e
 - Sign-in frequency
 - Persistent browser session
 
+Sign-in frequency applies to both Microsoft-hosted and native authentication. For native authentication, the policy prevents token issuance during refresh token grants when reauthentication is required. Your app must handle the failed token refresh and prompt the user to sign in again. Persistent browser session controls apply to browser-based sessions. For more information, see [Conditional Access and sign-in frequency](https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication#conditional-access-and-sign-in-frequency).
+
 ## Application enforced restrictions
 
 Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience. When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited if the device isn't managed or compliant, and full if the device is managed and compliant.
