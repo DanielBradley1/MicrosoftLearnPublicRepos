@@ -3,24 +3,26 @@
 
 # Configure Windows Hello for Business on devices when they enroll with Intune
 
-With Microsoft Intune, you can create a tenant-wide policy that configures use of Windows Hello for Business on devices at the time those devices enroll with Intune. This policy targets your entire organization and supports the Windows Autopilot out-of-box-experience \(OOBE\).
+By using Microsoft Intune, you can create a tenant-wide policy that configures use of Windows Hello for Business on devices at the time those devices enroll with Intune. This policy targets your entire organization and supports the Windows Autopilot out-of-box-experience \(OOBE\).
 
 For Windows devices, use of [Windows Hello for Business](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-overview) replaces the use of passwords with strong two-factor authentication on devices. This authentication consists of a user credential that's tied to a device and uses a biometric or PIN.
 
 After device enrollment, or when you choose not to use the tenant-wide enrollment policy, Intune supports the following methods to manage Windows Hello on discrete groups of devices:
 
-- [**Endpoint security Account protection policy**](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/account-protection): To manage settings for Windows Hello on devices after they have enrolled with Intune, use the Intune *Account protection* profile, which is part of endpoint security Account protection policy.
-- [**Security baselines**](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview): Some settings for Windows Hello can be managed by security baselines like the baselines for *Microsoft Defender for Endpoint security* or *Security Baseline for Windows 10 and later*.
-- [**Settings catalog**](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/): The settings from endpoint security Account protection profiles are available in the Intune settings catalog.
+- [Endpoint security Account protection policy](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/account-protection): To manage settings for Windows Hello on devices after they enroll with Intune, use the Intune *Account protection* profile, which is part of endpoint security Account protection policy.
+- [Security baselines](https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview): Some settings for Windows Hello can be managed by security baselines like the baselines for *Microsoft Defender for Endpoint security* or *Security Baseline for Windows 10 and later*.
+- [Settings catalog](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/): The settings from endpoint security Account protection profiles are available in the Intune settings catalog.
 
 Important
 
-Prior to the Anniversary Update \(Windows version 1607\), you could set two different PINS that could be used to authenticate to resources:
+Before the Anniversary Update \(Windows version 1607\), you could set two different PINs that you could use to authenticate to resources:
 
-- The device PIN could be used to unlock the device and connect to cloud resources.
-- The work PIN was used to access Microsoft Entra resources on a user's personal device \(BYOD\).
+- Use the device PIN to unlock the device and connect to cloud resources.
+- Use the work PIN to access Microsoft Entra resources on a user's personal device \(BYOD\).
 
-In the Anniversary Update, these two PINS were merged into one single device PIN. Any Intune configuration policies you set to control the device PIN, and additionally, any Windows Hello for Business policies you configured, now both set this new PIN value. If you have set both policy types to control the PIN, the Windows Hello for Business policy is applied. To ensure policy conflicts are resolved and that the PIN policy is applied correctly, update your Windows Hello for Business Policy to match the settings in your configuration policy, and ask your users to sync their devices in the Company Portal app.
+In the Anniversary Update, these two PINs merged into one single device PIN. Any Intune configuration policies you set to control the device PIN, and also, any Windows Hello for Business policies you configured, now both set this new PIN value. If you set both policy types to control the PIN, the Windows Hello for Business policy is applied.
+
+To ensure policy conflicts are resolved and that the PIN policy is applied correctly, update your Windows Hello for Business Policy to match the settings in your configuration policy. Ask your users to sync their devices in the Company Portal app.
 
 ## Role-based access control
 
@@ -55,7 +57,7 @@ You must be an Intune Service Administrator to create or edit a Windows Hello fo
 
      - **Allowed**: Users can use the character type in their PIN, but it isn't mandatory.
      - **Required**: Users must include at least one of the character types in their PIN. For example, it's common practice to require at least one uppercase letter and one special character.
-     - **Not allowed** \(default\): Users must not use these character types in their PIN. \(This is also the behavior if the setting isn't configured.\)
+     - **Not allowed** \(default\): Users must not use these character types in their PIN. This is also the behavior if the setting isn't configured.
 
        Special characters include: **! " # $ % & ' \( \) \* + , - . / : ; < = > ? @ \[ \\ \] ^ \_ ` { \| } ~**
 
@@ -64,13 +66,13 @@ You must be an Intune Service Administrator to create or edit a Windows Hello fo
      It's a good practice to specify an expiration period for a PIN, after which users must change it. The default is 41 days.
    - **Remember PIN history**:
 
-     Restricts the reuse of previously used PINs. By default, the last 5 PINs can't be reused.
+     Restricts the reuse of previously used PINs. By default, the last five PINs can't be reused.
    - **Allow biometric authentication**:
 
      Enables biometric authentication, such as facial recognition or fingerprint, as an alternative to a PIN for Windows Hello for Business. Users must still configure a work PIN in case biometric authentication fails. Choose from:
 
      - **Yes**. Windows Hello for Business allows biometric authentication.
-     - **No**. Windows Hello for Business prevents biometric authentication \(for all account types\).
+     - **No**. Windows Hello for Business prevents biometric authentication for all account types.
 
    - **Use enhanced anti-spoofing, when available**:
 
@@ -80,7 +82,7 @@ You must be an Intune Service Administrator to create or edit a Windows Hello fo
    - **Allow phone sign-in**:
 
      If this option is set to **Yes**, users can use a remote passport to serve as a portable companion device for desktop computer authentication. The desktop computer must be Microsoft Entra joined, and the companion device must be configured with a Windows Hello for Business PIN.
-   - **Enable enhanced sign in security**:
+   - **Enable enhanced sign-in security**:
 
      Configure [Windows Hello Enhanced Sign-in Security](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/windows-hello-enhanced-sign-in-security) on devices with capable hardware. Your options:
 
@@ -104,9 +106,7 @@ Windows Holographic for Business supports the following settings for Windows Hel
 - PIN expiration \(days\)
 - Remember PIN history
 
-## Next steps
-
-Learn more about Windows Hello from the following subjects in the Windows documentation:
+## Related content
 
 - [Planning a Windows Hello for Business deployment](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-planning-guide)
 - [Windows Hello for Business Deployment Prerequisite Overview](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-identity-verification)

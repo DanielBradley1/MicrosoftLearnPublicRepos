@@ -65,7 +65,7 @@ The following example shows the output of the sample script for Windows:
 
 Note
 
-On Linux, discovery scripts run in the user's context. They can't check for system-level settings that require elevation. An example of this limitation is the `state/hash` of the `/etc/sudoers` file.
+On Linux, discovery scripts run in your user context. They can't check for system-level settings that require elevation. An example of this limitation is the `state/hash` of the `/etc/sudoers` file.
 
 Discovery scripts for Linux can call any interpreter that meets your requirements. Ensure that the chosen interpreter is properly installed and configured on the target device before deploying the script. To specify the interpreter for a script, include a shebang line at the top of the script, indicating the path to the interpreter binary.
 
@@ -79,11 +79,11 @@ Tip
 
 To handle interrupts or cancellation signals, implement graceful termination mechanisms in your scripts. When a script handles these signals, it can perform cleanup tasks and exit gracefully, ensuring resources are released correctly. For example, catch signals like SIGINT \(interrupt signal\) or SIGTERM \(termination signal\) and define custom actions to run when they're received. These actions can include closing open files, releasing acquired locks, or cleaning up temporary resources.
 
-For more information, see the [Intune Linux Custom Compliance Samples](https://github.com/microsoft/shell-intune-samples/tree/master/Linux) guide.
+For more information, see [Intune Linux Custom Compliance Samples](https://github.com/microsoft/shell-intune-samples/tree/master/Linux).
 
 ## Sample discovery script for macOS
 
-Discovery scripts for macOS use Bash and must include a valid shebang line \(for example, `#!/bin/bash`\). Scripts must be UTF-8 encoded without BOM, and must return exit code 0 for success and a non-zero exit code for failure.
+Discovery scripts for macOS use Bash and must include a valid shebang line, such as `#!/bin/bash`. Scripts must be UTF-8 encoded without BOM, and must return exit code 0 for success and a non-zero exit code for failure.
 
 The following example returns the version of the Microsoft Intune Agent app installed on the device:
 
@@ -103,31 +103,34 @@ fi
 
 ## Add a discovery script to Intune
 
-Before deploying your script in production, test it in an isolated environment to ensure the syntax you use behaves as expected.
+Before you deploy your script in production, test it in an isolated environment to ensure the syntax you use behaves as expected.
 
-1. Sign into [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Endpoint security** > **Device compliance** > **Scripts** > **Add** > *\(choose your platform\)*.
+1. Sign in to [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Endpoint security** > **Device compliance** > **Scripts** > **Add** > *\(choose your platform\)*.
 2. On **Basics**, provide a **Name**.
 3. On **Settings**, add your script to **Detection script**. Review your script carefully. Intune doesn’t validate the script for syntax or programmatic errors.
 4. ***For macOS*** - On **Settings**, configure the following behavior for the Bash script:
 
-   - **Run this script using the logged on credentials** – Set this value to **Yes** to run the script in the context of the logged-on user.
-   - **Enforce script signature check** – Set this value to **Yes** to require a valid signature on the script.
-   - **Hide script notifications on devices** – Set this value to **Yes** to hide notifications from the script on the device.
+   - **Run this script using the logged on credentials**. Set this value to **Yes** to run the script in the context of the logged-on user.
+   - **Enforce script signature check**. Set this value to **Yes** to require a valid signature on the script.
+   - **Hide script notifications on devices**. Set this value to **Yes** to hide notifications from the script on the device.
 
 
-   ***For Windows only*** - On **Settings**, configure the following behavior for the PowerShell script:
+   ***For Windows only***: On **Settings**, configure the following behavior for the PowerShell script:
 
-Note
 
-The script upload workflow doesn't support scope tags. You must be assigned the default scope tag to create, edit, or view custom compliance discovery scripts.
+   Note
 
-- **Run this script using the logged on credentials** – By default, the script runs in the System context on the device. Set this value to **Yes** to have it run in the context of the logged-on user. If the user isn't logged in, the script defaults back to the System context.
-- **Enforce script signature check** – For more information, see [about\_Signing](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.1&preserve-view=true) in the PowerShell documentation.
-- **Run script in 64 bit PowerShell Host** – By default, the script runs using the 32-bit PowerShell host. Set this value to **Yes** to force the script to run using the 64-bit host instead.
+
+   The script upload workflow doesn't support scope tags. You must be assigned the default scope tag to create, edit, or view custom compliance discovery scripts.
+
+
+   - **Run this script using the logged on credentials**. By default, the script runs in the System context on the device. Set this value to **Yes** to have it run in the context of the logged-on user. If the user isn't logged in, the script defaults back to the System context.
+   - **Enforce script signature check**. For more information, see [about\_Signing](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.1&preserve-view=true).
+   - **Run script in 64 bit PowerShell Host**. By default, the script runs using the 32-bit PowerShell host. Set this value to **Yes** to force the script to run using the 64-bit host instead.
 
 5. Complete the script creation process. The script appears in the **Scripts** pane and is available to select when configuring compliance policies.
 
-## Next steps
+## Related content
 
 - [Use custom compliance settings](https://learn.microsoft.com/en-us/intune/device-security/compliance/custom-settings)
 - [Create a JSON for custom compliance](https://learn.microsoft.com/en-us/intune/device-security/compliance/create-custom-json)
