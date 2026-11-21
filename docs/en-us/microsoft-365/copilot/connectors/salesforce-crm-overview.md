@@ -3,6 +3,10 @@
 
 # Salesforce CRM connector overview
 
+Note
+
+To set up Copilotforce, the Salesforce federated connector, see [Salesforce connector \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/salesforce-admin-published-federated-connector).
+
 The Salesforce CRM Microsoft 365 Copilot connector integrates Salesforce data into Microsoft 365. This integration enables Copilot, Copilot Search, and Microsoft Search to surface CRM records directly within apps like Teams, Outlook, and SharePoint.
 
 When you configure the Salesforce CRM connector for your organization and index data from Salesforce, users can search for contacts, opportunities, leads, cases, and accounts in Microsoft Search, Microsoft 365 Copilot, and Copilot Search. The connector bridges the gap between CRM data and daily productivity tools, delivering faster pipeline reviews, improved customer context, and streamlined cross-team collaboration.

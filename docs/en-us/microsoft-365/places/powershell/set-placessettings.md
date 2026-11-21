@@ -49,7 +49,7 @@ It can take up to 12 hours for settings changes to propagate and take effect acr
 
 This parameter controls whether users can see buildings in Work plans, Workplace presence, Places finder, and other parts of the Microsoft Places experience.
 
-Starting August 1, 2026, this is ON by default for newly onboarded tenants. For all other tenants, this setting is OFF by default. When this setting is on, it only has an effect if you've [configured buildings and floors](https://learn.microsoft.com/en-us/microsoft-365/places/get-started/quick-setup-buildings-floors).
+Places Finder and building experiences are not automatically enabled for newly onboarded tenants. When this setting is on, it only has an effect if you've [configured buildings and floors](https://learn.microsoft.com/en-us/microsoft-365/places/get-started/quick-setup-buildings-floors).
 
 When this setting is on, users can set their work location to a specific building and filter by building in Places Finder. When off, users can only set their location to "in office" or "remote" and they won't be able to use Places finder.
 
@@ -67,9 +67,9 @@ By default, this is ON for all users in your tenant.
 
 This parameter controls whether users can access Places finder and book individual desks.
 
-Starting August 1, 2026, this is ON by default for newly onboarded tenants. For existing tenants that already have Room Lists configured, there are no behavior changes and this remains OFF by default, so you can continue to manage the transition from Room finder to Places finder.
+Places Finder and building experiences are not automatically enabled for newly onboarded tenants.
 
-For newly onboarded tenants, Places finder is opt-out. To turn it off for everyone in your tenant, run:
+To turn it off for everyone in your tenant, run:
 
 ```powershell
 Set-PlacesSettings -PlacesFinderEnabled 'Default:false'

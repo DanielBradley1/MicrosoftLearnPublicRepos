@@ -56,7 +56,7 @@ The following examples show prompts that users can use to retrieve information f
   - Find Jira issues that mention "mobile app performance" and share with the team.
   - Show unresolved issues in the customer support project.
 
-## Jira Cloud connector capabilities and limitations
+## Capabilities
 
 The Jira Cloud connector provides the following capabilities:
 
@@ -65,8 +65,12 @@ The Jira Cloud connector provides the following capabilities:
 - Support incremental and full crawls for data freshness.
 - Provide customizable schema for properties like title, description, status, and assignee.
 
+## Limitations
+
 The Jira Cloud connector has the following limitations:
 
+- The connector doesn't support Jira Server or Jira Data Center.
+- Attachments aren't indexed.
 - The connector doesn't support the **Any user logged in** application role for granting issue access.
 
 ## Data types indexed from Jira Cloud

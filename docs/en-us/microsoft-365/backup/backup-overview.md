@@ -3,7 +3,7 @@
 
 # Overview of Microsoft 365 Backup
 
-Microsoft 365 Backup is designed to ensure your organization's data is always protected and easily recoverable. With the ability to back up all or select SharePoint sites, OneDrive accounts, and Exchange mailboxes, Microsoft 365 Backup provides comprehensive coverage for your critical data.
+Microsoft 365 Backup is designed to ensure your organization's data is always protected and easily recoverable. With the ability to back up all or select SharePoint sites, OneDrive accounts, Exchange mailboxes, and Entra directory objects, Microsoft 365 Backup provides comprehensive coverage for your critical data.
 
 Note
 
@@ -25,17 +25,17 @@ To summarize, applications built on top of the Microsoft 365 Backup Storage plat
 
 ## Feature summary
 
-| Feature | OneDrive | SharePoint | Exchange Online |
-| --- | --- | --- | --- |
-| **Recovery window** | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, 1 year, or 2 years. Existing policies and artifacts default to 1 year. |
-| **Recovery points** | For full account restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | For full site restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | 10 minutes for prior 52 weeks |
-| **Backup granularity** | OneDrive account | SharePoint site | Exchange user account |
-| **Restore granularity** | Full OneDrive accounts through the configured recovery window  <br>  <br>Selected files and folders from recovery points within the most recent 14 days only | Full SharePoint sites through the configured recovery window  <br>  <br>Selected files and folders from recovery points within the most recent 14 days only | Mail/Contacts/Calendar/Task items |
-| **Restore options** | **Location**: Same or new URL  <br>  <br>**OneDrive** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new URL  <br>  <br>**Full site** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new folder within user's mailbox  <br>  <br>**Full and item level mailbox** restores only modified/deleted items from prior point in time |
-| **Restore speeds \(RTO\)** | Up to 1,000 average-sized OneDrive accounts at a median rate of up to 1-3 TiB per hour depending on site item counts and the size of the site. High speed restores come when using the express restore points, not necessarily the ad-hoc restore points. | Up to 1,000 average-sized sites at a median rate of up to 1-3TiB per hour depending on site item counts and the size of the site. High speed restores come when using an express restore point, not necessarily with ad-hoc restore points. | Up to 1,000 average-sized mailboxes at a median rate of up to 1-3 TiB per hour depending on the item counts and sizes in the mailbox. Actual performance will range between 100-500 items/mailbox/min. |
-| **Auditability** | Actions fully auditable | Actions fully auditable | Actions fully auditable |
-| **Geographic residency** | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements |
-| **Billing model** | $0.15 per GiB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GiB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GiB per month for all data protected by Backup  <br>  <br>Restores are free |
+| Feature | OneDrive | SharePoint | Exchange Online | Entra |
+| --- | --- | --- | --- | --- |
+| **Recovery window** | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, 1 year, or 2 years. Existing policies and artifacts default to 1 year. | Fixed recovery window of 30 days |
+| **Recovery points** | For full account restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | For full site restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | 10 minutes for prior 52 weeks | One snapshot every day for 30 days |
+| **Backup granularity** | OneDrive account | SharePoint site | Exchange user account | Full tenant \(Supported object types only\) |
+| **Restore granularity** | OneDrive accounts  <br>  <br>Files restorable via versions \(coming soon\) | SharePoint sites  <br>  <br>Files restorable via versions \(coming soon\) | Mail/Contacts/Calendar/Task items | Entra objects and links |
+| **Restore options** | **Location**: Same or new URL  <br>  <br>**OneDrive** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new URL  <br>  <br>**Full site** restore rolls back to the state of the site at the prior point in time, overwriting all content and metadata since that prior point in time  <br>  <br>**File version** restore rolls forward the file to the state at the prior point in time, but retains prior versions | **Location**: Same or new folder within user's mailbox  <br>  <br>**Full and item level mailbox** restores only modified/deleted items from prior point in time | Object level recovery |
+| **Restore speeds \(RTO\)** | Up to 1,000 average-sized OneDrive accounts at a median rate of up to 1-3 TB per hour depending on site item counts and the size of the site. High speed restores come when using the express restore points, not necessarily the ad-hoc restore points. | Up to 1,000 average-sized sites at a median rate of up to 1-3TB per hour depending on site item counts and the size of the site. High speed restores come when using an express restore point, not necessarily with ad-hoc restore points. | Up to 1,000 average-sized mailboxes at a median rate of up to 1-3 TB per hour depending on the item counts and sizes in the mailbox. Actual performance will range between 100-500 items/mailbox/min. | Recovery performance depends on the number of changes to be recovered. Recovering 500,000 changes can take up to 30 hours |
+| **Auditability** | Actions fully auditable | Actions fully auditable | Actions fully auditable | Actions fully auditable |
+| **Geographic residency** | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements | Physically redundant & geographically replicated  <br>  <br>Honors tenant's geographic residency requirements | https://learn.microsoft.com/entra/fundamentals/data-residency |
+| **Billing model** | $0.15 per GB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GB per month for all data protected by Backup  <br>  <br>Restores are free | $0.15 per GB per month for all data protected by Backup  <br>  <br>Restores are free | $0.025 USD per protected Microsoft Entra object per month  <br>  <br>Restores are free |
 
 ## Architectural overview and performance expectations
 
@@ -52,6 +52,7 @@ Key architectural takeaways:
 - Data never leaves the Microsoft 365 data trust boundary and honors the geographic locations of your current data residency. Limited metadata \(for example, tenantID and siteIDs\) sent to Azure for billing purposes only.
 - The backups are immutable unless expressly deleted by the Backup tool admin via product offboarding.
 - OneDrive, SharePoint, and Exchange have multiple physically redundant copies of your data to mitigate the impact of physical disasters.
+- Microsoft Entra backup data resides in the same geographic location as the Microsoft Entra tenant, in accordance with Microsoft Entra data residency requirements. Tenant administrators can’t modify or delete Microsoft Entra backups. Microsoft Entra ID replicates directory data across geographically distributed datacenters to provide resilience against datacenter failures
 
   ![Diagram showing the Microsoft 365 data trust boundaries.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-boundaries-diagram.png?view=o365-worldwide)
 
@@ -73,8 +74,8 @@ All restore points and restores to new URLs are relatively fast, but same URL re
 
 We have a number of restore capabilities depending on the scenario, each optimized for that scenario. The restore is not dependent on the amount of data, rather the number of sites and the type of restore point chosen.
 
-1. Single or subsite file restore needed: Use the granular folder/file restore option for recovery points within the most recent 14 days. These restores should take only a couple of mins on average.
-2. Small site restore: Use one of the ~daily express restore points recommended in the UI. This will restore full sites smaller than ~1TiB in under 20 mins.
+1. Single or subsite file restore needed: Use the granular folder/file restore option. These restores should take only a couple of mins on average.
+2. Small site restore: Use one of the ~daily express restore points recommended in the UI. This will restore full sites smaller than ~1TB in under 20 mins.
 3. Large many site restores: Use our fast or standard restore points. It may take a few hours to "warm up," but will then execute very quickly. Overall, this will be very fast as per our performance outline in the perf table below.
 
 The following table summarizes expected *median* performance for a normally distributed tenant, including tenants of large size and scale.
@@ -87,13 +88,13 @@ The following table summarizes expected *median* performance for a normally dist
 | 50 | 3 hours \(with express restore point\) | 2.5 hours |
 | 250 | 4 hours \(with exrpress restore point\) | 3 hours |
 | 1,000+ | Up to 250 protection units per hour \(with express restore point\) | 4 hours |
-| 1,000+ | Up to 250 protection units/hour  <br>Up to 2 TiB/hour\* with express restore point  <br>at the median depending on the number of items in the site | 250+ protection units/hour  <br>Up to 2 TiB/hour\*  <br>at the median depending on the number of items in the mailbox, at roughly 100-500 items/mailbox/min |
+| 1,000+ | Up to 250 protection units/hour  <br>Up to 2 TB/hour\* with express restore point  <br>at the median depending on the number of items in the site | 250+ protection units/hour  <br>Up to 2 TB/hour\*  <br>at the median depending on the number of items in the mailbox, at roughly 100-500 items/mailbox/min |
 
 <sup>**Important Restore performance notes:**</sup>
 
 <sup>\*Single protection unit OneDrive and SharePoint restores using express restore points can take on average between 10 minutes and 120 minutes, depending on site size.</sup> <sup>For mailboxes, restore times typically fall in the 100 - 500 item/minute range at the median.</sup>
 
-<sup>\*1,000+ protection unit restore speeds published here are based on internal benchmarking where SharePoint sites have an average of 12GiB of stored content per site, Exchange Online mailboxes have an average of 26K items and an aggregate size of 10 GiB. Those bulk recoveries use the in-place restore option, which is typical for large scale attack recovery scenarios. Actual times will depend on the number and size of the items in each site/mailbox.</sup>
+<sup>\*1,000+ protection unit restore speeds published here are based on internal benchmarking where SharePoint sites have an average of 12GB of stored content per site, Exchange Online mailboxes have an average of 26K items and an aggregate size of 10 GB. Those bulk recoveries use the in-place restore option, which is typical for large scale attack recovery scenarios. Actual times will depend on the number and size of the items in each site/mailbox.</sup>
 
 ### Backup scale limits
 

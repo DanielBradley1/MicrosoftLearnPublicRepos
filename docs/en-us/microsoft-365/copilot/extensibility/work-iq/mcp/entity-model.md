@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/entity-model -->
-<!-- Sitemap-Last-Modified: 2026-06-17 -->
+<!-- Sitemap-Last-Modified: 2026-11-18 -->
 
 # Work IQ MCP entity model
 
@@ -16,6 +16,9 @@ In Work IQ MCP, an entity is a resource that an agent can read or act on through
 - Teams chats and messages
 - Files in OneDrive and SharePoint
 - People and profile data
+- SharePoint content and workflows
+- Office documents
+- Viva Engage communities
 
 Supported entity categories will expand as more Microsoft 365 workloads are added to Work IQ MCP.
 

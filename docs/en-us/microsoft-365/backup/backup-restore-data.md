@@ -7,7 +7,7 @@ Once you back up your data, you might need to restore the data if there was an a
 
 As part of restoring data from backup, admin needs to choose a *restore point* manually or from a tool-recommended OneDrive or SharePoint *express restore point*. A restore point is a prior point in time from which you can restore a healthy version of your content or metadata. For Exchange Online, if the data from a prior point in time is identical to the present state of your data, then there will be no items restored, including Restore to a new folder.
 
-Currently, you can restore accounts, SharePoint sites, and Exchange mailbox content from specific prior points in time from the backups.
+Currently, you can restore OneDrive accounts, SharePoint sites, Exchange mailbox content, and Entra directory objects from specific prior points in time from the backups.
 
 Important
 
@@ -29,7 +29,8 @@ The restore point frequency, also known as the [recovery point objective](https:
 | --- | --- | --- |
 | Full OneDrive account and full SharePoint site restore | 10 minutes | One week, through the configured recovery window of up to 10 years |
 | Exchange Online | 10 minutes | 10 minutes |
-| File and folder restore in SharePoint and OneDrive | \(Roughly\) Daily | Not available |
+| File and folder restore in SharePoint and OneDrive | \(Roughly\) Daily | One week |
+| Entra | One day | One day \(up to 30 days only\) |
 
 For full OneDrive account and SharePoint site restores, available recovery points depend on the configured recovery window and the backup history accumulated since protection began. Increasing the recovery window doesn't create older recovery points or recover points that have already expired. For configuration options, see [Configure the backup recovery window](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#configure-the-backup-recovery-window).
 
@@ -44,13 +45,14 @@ You can also use PowerShell cmdlets to perform these operations by following the
 3. Install the Microsoft.Graph.BackupRestore module as shown in the example.
 4. Run the provided PowerShell command in an Admin PowerShell session to execute the desired action.
 
-## Restore data from backup for OneDrive, SharePoint, and Exchange
+## Restore data from backup for OneDrive, SharePoint, Exchange, and Entra
 
-Select the **OneDrive**, **SharePoint**, or **Exchange** tab for steps to restore data from backup for that product.
+Select the **OneDrive**, **SharePoint**, **Exchange**, or **Entra** tab for steps to restore data from backup for that product.
 
 - [OneDrive](#tabpanel_1_onedrive)
 - [SharePoint](#tabpanel_1_sharepoint)
 - [Exchange](#tabpanel_1_exchange)
+- [Entra](#tabpanel_1_entra)
 
 ### Option 1: Full OneDrive account restore
 
@@ -285,6 +287,34 @@ Follow these steps to restore data backed up for Exchange.
 4. On the **Review and Finish** page, review and finish all your choices. If everything looks as you want it, select **Restore user mailboxes**.
 5. Track the progress of your newly created task on the **Restoration tasks** tab.
 
+Microsoft 365 Backup restores deleted or modified Entra directory objects to a previously known-good state. It includes restoring, soft-deleting, and updating supported objects and attributes.
+
+Key details:
+
+- A recovery ID identifies the recovery job.
+- Recovery window is 30 days only.
+- Backups are created automatically once per day. Only retained backups are available for recovery and for generating difference reports.
+- Only one recovery runs at a time. If another job \(recovery job or difference report\) is already running, you must wait for it to complete or cancel it before starting a new one.
+- **Recovery History** retains recovery details for 30 days after the recovery completion date.
+- Audit logs record all recovery actions.
+- Hard deleted Entra objects cannot be recovered by this approach. A separate functionality of [hard delete protection](https://learn.microsoft.com/en-us/entra/backup/configure-hard-deletion-protection) has been released \(preview\) to prevent hard deletion of the Entra objects.
+
+Follow these steps to restore data backed up for Exchange.
+
+1. In the Microsoft 365 admin center, on the **Microsoft 365 Backup** page, in the **Entra** section, select **Restore**.
+
+   ![Screenshot of the Microsoft 365 Backup page.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-restore-data/image.png?view=o365-worldwide)
+2. You will be redirected to the **Backup and recovery** page in the [Microsoft Entra admin center](https://entra.microsoft.com/).
+
+   ![Screenshot of the backup and Recovery page.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-restore-data/image1.png?view=o365-worldwide)
+3. Use the following options to perform the recovery:
+
+   1. **Difference Reports**: Create and review reports that compare a backup with the current tenant state. Initiate a recovery operation based on the difference report. You may optionally choose to recover directly as well but it is highly recommended to use the difference reports to view changes prior to initiating the recovery operation.
+   2. **Recovery History**: View completed and in-progress recovery operations for your tenant.
+
+4. [Create and review difference reports](https://learn.microsoft.com/en-us/entra/backup/create-review-difference-reports) and [Recover objects](https://learn.microsoft.com/en-us/entra/backup/recover-objects) cover detailed steps to create difference reports and perform recovery.
+5. [Difference reports](https://learn.microsoft.com/en-us/entra/backup/backup-difference-report-recovery-model) and [Recovery scope](https://learn.microsoft.com/en-us/entra/backup/scope-supported-objects-limitations) cover all the concepts and details about the difference reports, recovery scope, recovery model, recovery limitations and recoverable properties.
+
 ## Multi-geo environments
 
 Microsoft 365 Backup supports restoring sites and user accounts from both central and satellite locations if the multi-geo feature is enabled on your tenant. This lets you:
@@ -337,18 +367,19 @@ After a multi-geo move, a OneDrive account and SharePoint site will only be able
     - Megan then adds a user’s mailbox to the policy on February 1, 2024, at 11:00 AM PST. Megan has the option of restoring modified or deleted items from that user's mailbox to any 10-minute period during the entire recovery window.
 
   - Users whose Microsoft Entra ID has been deleted will be displayed as blank lines in the restore picker experience for OneDrive and Exchange Online since those users no longer exist in the environment. Rest assured, their historical backups still exist in the Backup tool, but some [special handling is needed to restore them](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-faq?view=o365-worldwide#what-is-the-service-recovery-point-objective).
-  - To restore a OneDrive account and Exchange mailbox for a user who is deleted from Microsoft Entra ID, use this instruction:
 
-    Note
+    - To restore a OneDrive account and Exchange mailbox for a user who is deleted from Microsoft Entra ID, use this instruction:
 
-    Deleted users appear as "–" in the user interface because the user doesn't exist in the tenancy. However, the backups and associated restore points are retained for the full recovery window from when a given restore point was originally created.
+      Note
 
-    If the user has been deleted within the past 30 days, the best option is to restore the user based on instructions found at [Restore a user in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user). Once the user is reconstituted, the name reappears in the Backup tool restore experience, and the rest of the experience will work as normal.
+      Deleted users appear as "–" in the user interface because the user doesn't exist in the tenancy. However, the backups and associated restore points are retained for the full recovery window from when a given restore point was originally created.
 
-    If the user was deleted within the past 30 days, the user is in a soft-deleted state. The best option is to recover the user based on instructions found at [Restore a user in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user). Once the user is recovered, the rest of the restore experience will work as normal.
+      If the user has been deleted within the past 30 days, the best option is to restore the user based on instructions found at [Restore a user in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user). Once the user is reconstituted, the name reappears in the Backup tool restore experience, and the rest of the experience will work as normal.
 
-    For OneDrive, you can restore the OneDrive to the original URL or a new URL. At that time, the OneDrive is in an "orphaned" state. To connect the OneDrive to a user, see [Fix site user ID mismatch in SharePoint or OneDrive](https://learn.microsoft.com/en-us/sharepoint/troubleshoot/sharing-and-permissions/fix-site-user-id-mismatch).
+      If the user was deleted within the past 30 days, the user is in a soft-deleted state. The best option is to recover the user based on instructions found at [Restore a user in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user). Once the user is recovered, the rest of the restore experience will work as normal.
 
-    For Exchange, if the user account is permanently/hard deleted, Microsoft 365 Backup retains the inactive mailbox while the backup policy remains in effect. To recover the inactive mailbox, follow the guidance at [Recover an inactive mailbox](https://learn.microsoft.com/en-us/purview/recover-an-inactive-mailbox) to convert the inactive mailbox to a new, active mailbox. Once the inactive mailbox is recovered, add the new user to the backup policy to access backups from the recovered mailbox. The original, now deleted user can then be removed from the backup policy. Only the [Recover an inactive mailbox](https://learn.microsoft.com/en-us/purview/recover-an-inactive-mailbox) process is supported. The [Restore an inactive mailbox](https://learn.microsoft.com/en-us/purview/restore-an-inactive-mailbox) process does not preserve the backup data from the old mailbox.
+      For OneDrive, you can restore the OneDrive to the original URL or a new URL. At that time, the OneDrive is in an "orphaned" state. To connect the OneDrive to a user, see [Fix site user ID mismatch in SharePoint or OneDrive](https://learn.microsoft.com/en-us/sharepoint/troubleshoot/sharing-and-permissions/fix-site-user-id-mismatch).
 
-    If you receive an error stating "The ExternalDirectoryObjectID of this inactive mailbox still exists," the user was deleted less than 30 days ago. In this case, restore the user based on instructions found at [Restore a user in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user).
+      For Exchange, if the user account is permanently/hard deleted, Microsoft 365 Backup retains the inactive mailbox while the backup policy remains in effect. To recover the inactive mailbox, follow the guidance at [Recover an inactive mailbox](https://learn.microsoft.com/en-us/purview/recover-an-inactive-mailbox) to convert the inactive mailbox to a new, active mailbox. Once the inactive mailbox is recovered, add the new user to the backup policy to access backups from the recovered mailbox. The original, now deleted user can then be removed from the backup policy. Only the [Recover an inactive mailbox](https://learn.microsoft.com/en-us/purview/recover-an-inactive-mailbox) process is supported. The [Restore an inactive mailbox](https://learn.microsoft.com/en-us/purview/restore-an-inactive-mailbox) process does not preserve the backup data from the old mailbox.
+
+      If you receive an error stating "The ExternalDirectoryObjectID of this inactive mailbox still exists," the user was deleted less than 30 days ago. In this case, restore the user based on instructions found at [Restore a user in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user).

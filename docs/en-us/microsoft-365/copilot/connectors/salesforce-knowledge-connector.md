@@ -3,6 +3,10 @@
 
 # Salesforce Knowledge Copilot connector
 
+Note
+
+To set up Copilotforce, the Salesforce federated connector, see [Salesforce connector \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/salesforce-admin-published-federated-connector).
+
 The Salesforce Knowledge Copilot connector allows your organization to index articles from Salesforce Knowledge. After you configure the connector, end users can search for Knowledge articles from Salesforce in Microsoft 365 Copilot and from any Microsoft Search client.
 
 ## Capabilities

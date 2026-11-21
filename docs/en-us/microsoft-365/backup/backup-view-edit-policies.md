@@ -5,11 +5,13 @@
 
 ## Create backup policies
 
-To use Microsoft 365 Backup for SharePoint, Exchange, or OneDrive, you need to create a backup policy for each product. A *policy* represents the backup plan defined by admins for protecting the Microsoft 365 data of an organization.
+To use Microsoft 365 Backup for SharePoint, Exchange, OneDrive or Entra, you need to create a backup policy for each product. A *policy* represents the backup plan defined by admins for protecting the Microsoft 365 data of an organization.
 
-A policy contains details of what data \(SharePoint sites, Exchange mailboxes, and OneDrive accounts\) to protect. You can set the **Recovery window** when you create a policy and change it later on an active policy. The backup frequency isn't currently variable or modifiable. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
+A policy contains details of what data \(SharePoint sites, Exchange mailboxes, OneDrive accounts, and Entra objects\) to protect. You can set the **Recovery window** when you create a policy and change it later on an active policy. The backup frequency isn't currently variable or modifiable. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
 
 You can create more than one backup policy for each product \(SharePoint, Exchange, and OneDrive\) with a limit of 100 policies per product, and each backup policy can protect up to 100,000 items. This allows you to segregate your data by logical partitions such as department, geography, and so on for ease of management and administration. Note that any SharePoint site, Exchange mailbox, or OneDrive account can be part of one backup policy only. For more information about capacity limits, see [Backup scale limits](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide#backup-scale-limits).
+
+Entra backup supports single policy paradigm and full tenant backup. You can back up all the [supported Entra objects](https://learn.microsoft.com/en-us/entra/backup/scope-supported-objects-limitations) in your tenant via a single policy for Entra backup. There is no provision to create more than one policy. There is no limit on the number of objects that can be backed up within the single policy. The recovery window is fixed at 30 days and there is no option to configure this recovery window. Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authentication method policy, and authorization policy \(selected properties\). The solution also supports Agent ID because it consists of user and service principal objects with distinct types and characteristics.
 
 Tip
 
@@ -32,7 +34,7 @@ You can also use PowerShell cmdlets to perform these operations by following the
   
 
 
-Expand each section for steps to create a backup policy for SharePoint, Exchange, or OneDrive.
+Select the **SharePoint**, **Exchange**, **OneDrive**, or **Entra** tab for steps to create a backup policy for that product.
 
 <details>
 <summary>**SharePoint**</summary>
@@ -50,43 +52,38 @@ Follow these steps to set up a backup policy for SharePoint sites using Microsof
    ![Screenshot of the Overview page for SharePoint.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-overview-page-sharepoint.png?view=o365-worldwide)
 6. On the **Choose selection method** page, you can set up SharePoint sites using any of the available methods. A protection scope is the scope of SharePoint sites that you want to protect with Microsoft 365 Backup.
 
-   ![Select user accounts](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/select-user-accounts.png?view=o365-worldwide)
-
+   ![Select user accounts.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/select-user-accounts.png?view=o365-worldwide)
 
    a. Under **Upload a list of sites in a CSV file**, you can upload a list of accounts to back up via a CSV file.
 
-
    The CSV upload feature for bulk addition of sites or user accounts in the backup policy creation workflow can accommodate a maximum of 50,000 entries per CSV file.
-
 
    b. Under **Back up sites that match specific filters**, you can select **Site name or URL contains** or **Site last modified**, or both.
 
-
    The rule-based feature for bulk addition of sites in the backup policy creation workflow allows you to add up to 10 site names or URLs at a time. Each keyword can have a minimum of three characters and maximum of 255 characters.
 
+   ```
 
-   Note
-
-
-   The site filters are in preview.
-
-
-   c. Under **Select sites individually**, you can search and select sites you want to add to a backup policy.
+      > [!NOTE]
+   > The site filters are in preview.
+   ```
 
 
-   Note
+   ```
+    c. Under **Select sites individually**, you can search and select sites you want to add to a backup policy.
+   ```
 
 
-   Some legacy SharePoint site templates are not supported by Microsoft 365 Backup. Please view the [FAQ page](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-faq) to learn more.
+   ```
 
+   > [!NOTE]
+   > Some legacy SharePoint site templates are not supported by Microsoft 365 Backup.  Please view the [FAQ page](/microsoft-365/backup/backup-faq) to learn more.
 
-   d. Under **Back up all SharePoint sites**, you can create the [full workload backup](#full-workload-backup) policy for SharePoint to automatically protect all SharePoint sites not already included in other backup policies.
+      d. Under **Back up all SharePoint sites**, you can create the [full workload backup](#full-workload-backup) policy for SharePoint to automatically protect all SharePoint sites not already included in other backup policies.
 
-
-   Note
-
-
-   The full workload backup feature is in preview.
+      > [!NOTE]
+   > The full workload backup feature is in preview.
+   ```
 
 7. Select **Next** to move to the **Backup Settings** page, where you can provide a name for your policy and set the **Recovery window**. For SharePoint, choose 3 months, 6 months, or any whole number of years from 1 through 10. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
 8. On the **Review SharePoint backup policy** page, review the information to make sure it's how you want it, and then select **Create policy** \(or **Update policy** if it's an update\).
@@ -157,9 +154,9 @@ Follow these steps to set up a backup policy for OneDrive accounts using Microso
    ![Screenshot of the Overview page for OneDrive.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-overview-page-onedrive.png?view=o365-worldwide)
 6. On the **Choose selection method** page, you can select OneDrive user accounts using any of the available methods. A protection scope is the scope of user accounts within OneDrive that you want to protect with Microsoft 365 Backup.
 
-   ![Select user accounts odb](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/select-user-accounts-odb.png?view=o365-worldwide)
+   ![Select user accounts odb.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/select-user-accounts-odb.png?view=o365-worldwide)
 
-
+   ```
    a. Under **Upload a list of accounts in a CSV file**, you can upload a list of accounts to back up via a CSV file.
 
 
@@ -170,6 +167,7 @@ Follow these steps to set up a backup policy for OneDrive accounts using Microso
 
 
    For example, if a user is added to a distribution list included in the dynamic rule, that user is included in the backup policy within a day. After that, Microsoft 365 Backup will create restore points for that user. If a user that was previously in the included distribution list is removed from that list, then they're removed from the backup policy within 24 hours. The user's existing backups remain restorable until they expire based on their recovery window. However, new backups aren't taken until the user is re-added to the included distribution list or manually re-added through a static addition.
+   ```
 
 
    Note
@@ -178,16 +176,15 @@ Follow these steps to set up a backup policy for OneDrive accounts using Microso
    The dynamic rule feature is in preview.
 
 
-   c. Under **Using filters**, you can select **Distribution lists** or **Security groups**, or both. The distribution list and security group are flattened when added, meaning the policy doesn't update dynamically if the groups or distribution list members are updated later.
+   ```
+      c. Under **Using filters**, you can select **Distribution lists** or **Security groups**, or both. The distribution list and security group are flattened when added, meaning the policy doesn't update dynamically if the groups or distribution list members are updated later.
 
+      The rule-based feature for bulk addition of user accounts via security groups or distribution lists can accommodate a maximum of three groups at a time. These rules are static and applied one time only. That is, the security groups or distribution lists are flattened at the time of adding to the backup configuration policy. For example, groups or lists aren't dynamically updated in the system if users are added or removed from the original security group.
 
-   The rule-based feature for bulk addition of user accounts via security groups or distribution lists can accommodate a maximum of three groups at a time. These rules are static and applied one time only. That is, the security groups or distribution lists are flattened at the time of adding to the backup configuration policy. For example, groups or lists aren't dynamically updated in the system if users are added or removed from the original security group.
+      d. Under **Select accounts individually**, you can search and select accounts you want to add to a backup policy.
 
-
-   d. Under **Select accounts individually**, you can search and select accounts you want to add to a backup policy.
-
-
-   e. Under **Back up all OneDrive accounts**, you can create the [full workload backup](#full-workload-backup) policy for OneDrive to automatically protect all OneDrive accounts not already included in other backup policies.
+      e. Under **Back up all OneDrive accounts**, you can create the [full workload backup](#full-workload-backup) policy for OneDrive to automatically protect all OneDrive accounts not already included in other backup policies.
+   ```
 
 
    Note
@@ -195,7 +192,7 @@ Follow these steps to set up a backup policy for OneDrive accounts using Microso
 
    The full workload backup feature is in preview.
 
-7. Select **Next** to move to the **Backup Settings** page, where you can provide a name for your policy and set the **Recovery window**. For OneDrive, choose 3 months, 6 months, or any whole number of years from 1 through 10. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
+7. Select **Next** to move to the **Backup Settings** page, where you can provide a name for your policy.
 8. On the **Review OneDrive backup policy** page, review the information to make sure it's how you want it, and then select **Create policy** \(or **Update policy** if it's an update\).
 9. The backup policy for OneDrive is created.
 
@@ -204,11 +201,38 @@ Follow these steps to set up a backup policy for OneDrive accounts using Microso
    Once the sites are added to a backup policy, it might take 15 to 25 minutes per 1,000 sites for restore points to become available for restore.
 </details>
 
+<details>
+<summary>**Entra**</summary>
+
+Follow these steps to set up a backup policy for Entra objects using Microsoft 365 Backup.
+
+1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home).
+2. Select **Settings**.
+3. Select **Microsoft 365 Backup** from the list of products.
+4. On the **Microsoft 365 Backup** page, in the **Entra** section, select **Set up policy**.
+
+![Screenshot showing the Entra backup policy setup page in Microsoft 365 Backup.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/image.png?view=o365-worldwide)
+
+5. On the **Overview** page, review the backup policy attributes for Entra, and then select **Next**.
+
+![Screenshot showing the overview page for creating an Entra backup policy.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/image1.png?view=o365-worldwide)
+
+6. Select **Next** to move to the **Policy Settings** page, where you can provide a name for your policy.
+
+![Screenshot showing the policy settings page for Entra backup.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/image2.png?view=o365-worldwide)
+
+7. On the **Review Entra backup policy** page, review the information to make sure it's how you want it, and then select **Create policy** \(or **Update policy** if it's an update\).
+
+![Screenshot showing the review page for an Entra backup policy.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/image3.png?view=o365-worldwide)
+
+8. The backup policy for Entra is created.
+</details>
+
 ---
 
 ## Configure the backup recovery window
 
-The **Recovery window** determines how long Microsoft 365 Backup keeps recovery points for the artifacts in a backup policy. You set the recovery window on a policy, and it applies to every artifact in that policy. Existing policies and artifacts default to a 1-year recovery window.
+The **Recovery window** determines how long Microsoft 365 Backup keeps recovery points for the artifacts in a backup policy. You set the recovery window on a policy, and it applies to every artifact in that policy. For SharePoint, OneDrive, and Exchange Online, existing policies and artifacts default to a 1-year recovery window. Microsoft Entra ID backup uses a fixed 30-day recovery window.
 
 You can set the recovery window to one of the following values, depending on the workload:
 
@@ -227,9 +251,9 @@ When you remove an artifact from a policy, it keeps the last recovery window tha
 
 ## View and edit backup policies
 
-You can edit the scope of OneDrive accounts, SharePoint sites, and Exchange mailboxes associated with a backup policy. As part of edit, you can either add new accounts, sites, or mailboxes to or remove them from backup. Removing accounts, sites, and mailboxes from Microsoft 365 Backup doesn't mean existing backups aren't deleted, rather it means additional backups aren't taken.
+You can edit the scope of OneDrive accounts, SharePoint sites, and Exchange mailboxes associated with a backup policy. As part of edit, you can either add new accounts, sites, or mailboxes to or remove them from backup. Removing accounts, sites, and mailboxes from Microsoft 365 Backup doesn't mean existing backups aren't deleted, rather it means additional backups aren't taken. Please note that you cannot edit the scope of Entra objects associated with a backup policy, you may only either rename the policy or pause/activate backups.
 
-Expand each section for steps to view and edit backup policies for SharePoint, Exchange, or OneDrive.
+Expand each section for steps to view and edit backup policies for SharePoint, Exchange, OneDrive, or Entra.
 
 <details>
 <summary>**SharePoint**</summary>
@@ -332,6 +356,16 @@ Follow these steps to view and edit backup policies for OneDrive.
    Removing accounts from backup policy means no future backups are taken for those removed accounts. Existing backups for those accounts aren't deleted and will be charged.
 </details>
 
+<details>
+<summary>**Entra**</summary>
+
+Follow these steps to view and edit backup policies for Entra.
+
+1. In the Microsoft 365 admin center, on the **Microsoft 365 Backup** page, select the **Backup policies** tab to view the list of all backup policies created in your organization. You can filter the list of policies by **Entra** **Service** to view the list of all Entra backup policies created in your organization. To edit any specific policy, select that policy and then select **View details**.  
+   ![Screenshot showing the Entra backup policy details in Microsoft 365 Backup.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/image4.png?view=o365-worldwide)
+2. On the policy specific panel, on the **Policy details** tab, you can view the policy **Scope, Policy settings** and **Activity**. You can view the list of supported Entra object types in the **Supported Object Types** tab. Please note that you cannot edit the policy to remove items from this policy. You may either rename the policy or pause/activate backups.
+</details>
+
 ---
 
 ## Rename a policy
@@ -363,10 +397,10 @@ Full Workload Backup works alongside your custom backup policies to provide comp
 
 The setup experience is the same for SharePoint, OneDrive, and Exchange. The following example uses SharePoint.
 
-1. On **Microsoft 365 Backup** dashboard, select **Back up sites**, and then choose **All sites**. Alternatively, on the **Choose selection method** step, select **Back up all SharePoint sites**. ![Day 0 \_ Backup policies](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/day-0---backup-policies.png?view=o365-worldwide)
+1. On **Microsoft 365 Backup** dashboard, select **Back up sites**, and then choose **All sites**. Alternatively, on the **Choose selection method** step, select **Back up all SharePoint sites**.  ![Day 0 \_ Backup policies.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/day-0---backup-policies.png?view=o365-worldwide)
 2. On the **Overview page**, review the information about the Full Workload Backup policy, and then select the checkbox to continue.
 3. On the **Exclude sites** page, select **No** if you want to protect all SharePoint sites. If you want to exclude specific sites from protection, continue to the next step.
-4. \(Optional\) Upload a CSV file to exclude specific sites from Full Workload Backup protection. ![Exclusion while policy creation](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/exclusion-while-policy-creation.png?view=o365-worldwide)
+4. \(Optional\) Upload a CSV file to exclude specific sites from Full Workload Backup protection.  ![Exclusion while policy creation.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/exclusion-while-policy-creation.png?view=o365-worldwide)
 5. On the **Review and finish** page, review the configuration, and then select **Next** to create the **Full SharePoint Backup** policy.
 
 ### Exclusion List
@@ -387,7 +421,7 @@ When you remove a protection unit from the exclusion list, it returns to the Ful
 
 3. Open the **Excluded** tab.
 
-4. Select **Exclude more**. ![Exclude more sites](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/exclude-more-sites.png?view=o365-worldwide)
+4. Select **Exclude more**.  ![Exclude more sites.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/exclude-more-sites.png?view=o365-worldwide)
 
 5. Upload a CSV file containing the protection units that you want to exclude.
 
@@ -413,8 +447,7 @@ When you remove a protection unit from the Full Workload Backup policy, it's add
 1. On the **Backup policies** page, select the **Full Workload Backup** policy for the workload.
 2. Select **Turn off Full Workload Backup** either from the command bar or the policy details pane.
 
-   ![disable full workload backup](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/disable-full-workload-backup.png?view=o365-worldwide)
-
+   ![Disable full workload backup.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/disable-full-workload-backup.png?view=o365-worldwide)
 3. Review the information on the confirmation page, and then select **Confirm**.
 
    After Full Workload Backup is turned off:

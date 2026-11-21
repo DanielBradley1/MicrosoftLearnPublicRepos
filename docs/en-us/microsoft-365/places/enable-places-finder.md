@@ -11,9 +11,7 @@ Room finder and Places finder use different browsing models. Room finder browses
 
 Places finder and Room finder rely on the same meeting rooms and workspaces data configured in Exchange Online, but Places finder also uses building and floor hierarchical data. Rooms and workspaces will automatically show up in Places finder **as long as you've properly configured your building and floor hierarchy** as described in [Configure buildings and floors](https://learn.microsoft.com/en-us/microsoft-365/places/get-started/quick-setup-buildings-floors).
 
-Starting August 1, 2026, Places finder is enabled by default for newly onboarded tenants.
-
-For newly onboarded tenants, building experiences are also enabled by default through `-EnableBuildings`.
+Places Finder and building experiences are not automatically enabled for newly onboarded tenants. Administrators can enable these experiences for their organization by following the configuration steps below.
 
 In addition, Places finder will show a much richer experience for conference rooms and workplaces once you've added metadata. Check out [Set-PlaceV3](https://learn.microsoft.com/en-us/microsoft-365/places/powershell/set-placev3) for the full list.
 
@@ -21,13 +19,7 @@ In addition, Places finder will show a much richer experience for conference roo
 
 ## Enable Places finder
 
-For tenants onboarded before August 1, 2026 that already have Room Lists configured, Places finder remains opt-in. You might want to start by turning it on for a subset of users to validate the experience, before enabling it for everyone. You'll use the [Set-PlacesSettings](https://learn.microsoft.com/en-us/microsoft-365/places/powershell/set-placessettings) PowerShell cmdlet to enable Places finder. For example, here's how to enable it for users in a specific mail-enabled security group:
-
-For tenants onboarded on or after August 1, 2026, Places finder is opt-out and enabled by default. To turn it off, use the [Set-PlacesSettings](https://learn.microsoft.com/en-us/microsoft-365/places/powershell/set-placessettings) PowerShell cmdlet to disable Places finder.
-
-```powershell
-Set-PlacesSettings -PlacesFinderEnabled 'Default:false'
-```
+You might want to start by turning it on for a subset of users to validate the experience, before enabling it for everyone. You'll use the [Set-PlacesSettings](https://learn.microsoft.com/en-us/microsoft-365/places/powershell/set-placessettings) PowerShell cmdlet to enable Places finder. For example, here's how to enable it for users in a specific mail-enabled security group:
 
 Important
 
@@ -41,6 +33,12 @@ And here's how to enable it for everyone in your tenant:
 
 ```powershell
 Set-PlacesSettings -PlacesFinderEnabled 'Default:true'
+```
+
+To turn it off in your tenant:
+
+```powershell
+Set-PlacesSettings -PlacesFinderEnabled 'Default:false'
 ```
 
 See [Set-PlacesSettings](https://learn.microsoft.com/en-us/microsoft-365/places/powershell/set-placessettings) for more details.
@@ -96,9 +94,9 @@ Make sure that the buildings and floors hierarchy is correctly set up for all ro
 
 #### Who should be enabled for Places finder?
 
-For tenants onboarded before August 1, 2026 that already have Room Lists configured, you might want to start by enabling the new experience for a small set of users before turning it on for everyone.
+For tenants that already have Room Lists configured, you might want to start by enabling the new experience for a small set of users before turning it on for everyone.
 
-For tenants onboarded on or after August 1, 2026, Places finder is enabled by default. We recommend adopting Places finder broadly to reduce future migration costs as Room finder deprecation is being evaluated.
+For newly onboarded tenants, we recommend adopting Places finder broadly to reduce future migration costs as Room finder deprecation is being evaluated.
 
 #### How do I keep Room finder and Places finder data consistent?
 

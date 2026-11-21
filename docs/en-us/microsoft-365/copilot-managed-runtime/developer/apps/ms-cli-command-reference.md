@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/ms-cli-command-reference?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-13 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # Copilot Managed Runtime CLI command reference
 
@@ -42,6 +42,8 @@ This reference groups every command by typical developer workflow tasks:
 | [Inspect and manage](#inspect-and-manage) | [`ms app get-settings`](#ms-app-get-settings) | Show all app settings and their current values. |
 | [Inspect and manage](#inspect-and-manage) | [`ms app set-setting`](#ms-app-set-setting) | Update one or more app settings. |
 | [Inspect and manage](#inspect-and-manage) | [`ms app delete`](#ms-app-delete) | Delete the app from the environment. |
+| [Administration](#administration) | [`ms admin add owner`](#ms-admin-add-owner) | Add one or more app owners. |
+| [Administration](#administration) | [`ms admin remove owner`](#ms-admin-remove-owner) | Remove one or more app owners. |
 | [Telemetry](#telemetry) | [`ms telemetry enable`](#ms-telemetry-enable) | Turn on telemetry collection. |
 | [Telemetry](#telemetry) | [`ms telemetry disable`](#ms-telemetry-disable) | Turn off telemetry collection. |
 | [Telemetry](#telemetry) | [`ms telemetry status`](#ms-telemetry-status) | Show current telemetry settings. |
@@ -52,6 +54,8 @@ The following table lists the commands alphabetically:
 
 | Command | Group | Description |
 | --- | --- | --- |
+| [`ms admin add owner`](#ms-admin-add-owner) | [Administration](#administration) | Add one or more app owners. |
+| [`ms admin remove owner`](#ms-admin-remove-owner) | [Administration](#administration) | Remove one or more app owners. |
 | [`ms app add backend`](#ms-app-add-backend) | [Manage app resources](#manage-app-resources) | Add a Fabric database backend to the app. |
 | [`ms app add data-source`](#ms-app-add-data-source) | [Manage app resources](#manage-app-resources) | Add a connector to the app as a table or action data source. |
 | [`ms app build`](#ms-app-build) | [Build and deploy](#build-and-deploy) | Trigger a platform build for a specific commit. |
@@ -758,6 +762,82 @@ If the app doesn't exist, the command exits cleanly without an error.
 | `--app <name>` |  | No | App to delete. Defaults from `ms.config.json`. |
 | `--environment-id <id>` | -e | No | Override the environment ID. When omitted, the environment is resolved automatically from the app. Useful for deleting an app from outside its scaffolded directory. |
 | `--force` | -f | No | Skips the confirmation prompt. |
+
+## Administration
+
+Use these commands to add or remove app owners. For a step-by-step procedure, see [Reassign app owners](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/reassign-app-owners?view=o365-worldwide).
+
+Note
+
+These commands require a platform-managed Git repository and Power Platform Administrator or Global Administrator permissions.
+
+### `ms admin add owner`
+
+Add one or more app owners without removing existing owners or changing other role assignments.
+
+```bash
+ms admin add owner <principals...> --app <app-id> [--force]
+```
+
+#### `ms admin add owner` parameters
+
+| Parameter | Alias | Required? | Description |
+| --- | --- | --- | --- |
+| `<principals...>` |  | Yes | One or more email addresses or Microsoft Entra object IDs, separated by spaces or commas. For a service principal, use its object ID. Accepts up to 100 unique principals. |
+| `--app <app-id>` |  | Yes | App ID in GUID format. Must be supplied explicitly; isn't read from local configuration. The CLI discovers the app's environment automatically. |
+| `--force` | -f | No | Skip the confirmation prompt. Not required when adding owners in JSON or non-interactive mode. |
+
+In interactive mode, the command asks for confirmation unless you specify `--force`. In JSON or non-interactive mode, it runs without prompting.
+
+For example, to add a second owner:
+
+```bash
+ms admin add owner newowner@contoso.com --app <app-id>
+```
+
+To add multiple owners without prompting:
+
+```bash
+ms admin add owner newowner@contoso.com backupowner@contoso.com --app <app-id> --force --json
+```
+
+---
+
+### `ms admin remove owner`
+
+Remove matching app owner assignments without automatically assigning a lesser role. Other role assignments, such as contributor access, remain unchanged, so the person might retain access through another role.
+
+```bash
+ms admin remove owner <principals...> --app <app-id> [--force]
+```
+
+#### `ms admin remove owner` parameters
+
+| Parameter | Alias | Required? | Description |
+| --- | --- | --- | --- |
+| `<principals...>` |  | Yes | One or more email addresses or Microsoft Entra object IDs, separated by spaces or commas. For a service principal, use its object ID. Accepts up to 100 unique principals. |
+| `--app <app-id>` |  | Yes | App ID in GUID format. Must be supplied explicitly; isn't read from local configuration. The CLI discovers the app's environment automatically. |
+| `--force` | -f | Conditional | Skip the confirmation prompt. Required with `--json` or `--non-interactive`. Doesn't bypass authorization or last-owner protection. |
+
+In interactive mode, the command asks for confirmation unless you specify `--force`. If no matching owner assignment is found, the command succeeds without removing anything. If matching by email doesn't find the assignment, retry with the person's Microsoft Entra object ID.
+
+For example, to remove an owner:
+
+```bash
+ms admin remove owner formerowner@contoso.com --app <app-id>
+```
+
+To remove an owner in automation:
+
+```bash
+ms admin remove owner <object-id> --app <app-id> --force --json
+```
+
+Important
+
+Before removing an owner, verify that another owner can maintain the app. When reassigning ownership, add and verify the replacement owner first. The platform prevents you from removing the app's last owner; `--force` only skips confirmation.
+
+The result reports removed assignments, unmatched principals, and skipped assignments. Review the result rather than assuming every requested owner was removed. If a request fails, check the current assignments before retrying because some changes might already have taken effect.
 
 ## Telemetry
 

@@ -31,6 +31,34 @@ Microsoft 365 Backup charges you based on the size of the following content once
 - Deleted or versioned content held in the recycle bin or in the mailboxes will expire from the backups once the configured backup recovery window lapses \(for example, 365 days after the backup is taken when the recovery window is one year\). Once deleted or versioned content expires from the backups, they're no longer counted in the backup consumption equation and therefore no longer contribute to the cost. For example, if you have a site under protection with a one-year recovery window that is currently 1 GiB for the first month, you're charged for 1 GiB of Microsoft 365 Backup usage. If you delete content in that site such that it's now only 0.5 GiB, your next monthly bill will still be for 1 GiB since the backup tool is retaining that deleted content for a year. After a year when the backup of that deleted content expires, the 0.5 GiB being retained for backup purposes will no longer be charged for backup.
 - If you're using a partner \(ISV\) solution built on the Microsoft 365 Backup Storage platform, you'll be charged solely by them for their application. You won't receive a separate bill or charge directly from Microsoft for the Backup Storage consumption.
 
+## Microsoft Entra Backup Pricing
+
+Microsoft Entra Backup and Recovery Premium uses consumption-based pricing. The price is $0.025 USD per protected Microsoft Entra object per month.
+
+Use the pricing formula and example in this article to estimate your monthly cost. The estimate helps with planning, but your actual charges depend on billed usage.
+
+## Pricing Model
+
+Estimate the monthly cost by multiplying the number of protected Microsoft Entra objects by the monthly price per object:
+
+`Estimated monthly cost = number of protected objects x $0.025 USD`
+
+The estimate uses the number of protected objects as its input. For commerce billing, protected-object usage is represented as GB-based billing units. These units don't indicate the amount of backup storage consumed.
+
+## Pricing Example
+
+The following examples estimate the cost for a full month when the protected-object count remains constant.
+
+| Protected objects | Calculation | Estimated monthly cost |
+| --- | --- | ---: |
+| 10,000 | 10,000 x $0.025 USD | $250 USD |
+| 50,000 | 50,000 x $0.025 USD | $1,250 USD |
+| 100,000 | 100,000 x $0.025 USD | $2,500 USD |
+| 500,000 | 500,000 x $0.025 USD | $12,500 USD |
+| 1,000,000 | 1,000,000 x $0.025 USD | $25,000 USD |
+
+When purchased through Microsoft 365 Backup, usage is converted into GB-based billing units for billing purposes. The conversion doesn't change the $2,500 USD monthly estimate.
+
 ## Pricing calculator
 
 The Microsoft 365 Backup pricing calculator is a tool that helps you estimate the amount of backup storage and the costs that you incur to protect and back up your Microsoft 365 data.

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/local-preview?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-13 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # Preview an app in a Copilot Managed Runtime partner integration
 
@@ -19,7 +19,7 @@ After integration, the partner product loads the Copilot Managed Runtime app hos
 
 For the standard edit, run, commit, and preview cycle around this integration, see [Build, preview, and deploy apps](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/dev-inner-loop?view=o365-worldwide#the-inner-loop).
 
-## Start Local Play
+## Start local play
 
 Let the CLI start the app dev script and config server:
 
@@ -41,7 +41,7 @@ For complete command and option details, see [`ms app dev`](https://learn.micros
 
 ## Embed Local Play
 
-Embed the exact URL printed by the CLI:
+Embed the exact URL that the CLI prints:
 
 ```html
 <iframe
@@ -51,9 +51,9 @@ Embed the exact URL printed by the CLI:
 ></iframe>
 ```
 
-Local Play loads from a public HTTPS host while reaching the app on localhost, so Chrome and Microsoft Edge require `local-network-access` for embedded scenarios. Partners must delegate this permission on the Local Play iframe they own, as shown above. For browser and enterprise-policy guidance, see [Build and run the app locally](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide#build-and-run-the-app-locally).
+Local Play loads from a public HTTPS host while reaching the app on localhost, so Chrome and Microsoft Edge require `local-network-access` for embedded scenarios. Partners must delegate this permission on the Local Play iframe they own, as shown in the preceding section. For browser and enterprise-policy guidance, see [Build and run the app locally](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/quickstart-managed-apps-cli?view=o365-worldwide#build-and-run-the-app-locally).
 
-An example of the Local Play URL currently emitted by the CLI is:
+An example of the Local Play URL that the CLI currently emits is:
 
 ```text
 https://play.managedapps.cloud.microsoft/apps/dev?ms_appUrl={urlEncodedAppDevServerUrl}&ms_appConfigUrl={urlEncodedAppConfigUrl}
@@ -61,14 +61,14 @@ https://play.managedapps.cloud.microsoft/apps/dev?ms_appUrl={urlEncodedAppDevSer
 
 Note
 
-`/apps/dev` is the dedicated local-preview route; `dev` is not a registered app ID. Use the exact URL emitted by the CLI rather than substituting an app ID or constructing the URL yourself.
+`/apps/dev` is the dedicated local-preview route; `dev` isn't a registered app ID. Use the exact URL emitted by the CLI rather than substituting an app ID or constructing the URL yourself.
 
 The play-host origin and URL shape can vary by cloud and release. Always use the value emitted by the CLI instead of constructing or rewriting it in production.
 
 The app dev server and config server must both be reachable by the creator's browser. In a remote development container, don't assume the container's localhost is the maker's localhost; exposing only the app endpoint isn't sufficient. Wait for the nested app iframe before reporting that preview is ready, and don't fall back to the bare dev-server URL if host startup fails.
 
-## Request domain allowlisting for Local Play
+## Request domain allow listing for Local Play
 
-The Local Play host at the origin emitted by the CLI must allow the partner's domain to embed its URLs. Partners should contact [CMRIntegration@microsoft.com](mailto:CMRIntegration@microsoft.com) to allowlist their embedding domain for the applicable play-host origin during integration planning.
+The Local Play host at the origin that the CLI emits must allow the partner editor's hostname to embed its URLs. The editor and generated app must use [different hostnames](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/architecture?view=o365-worldwide#copilot-managed-runtime-app-host). Partners should contact [CMRIntegration@microsoft.com](mailto:CMRIntegration@microsoft.com) to allow list the editor's embedding hostname for the applicable play-host origin during integration planning.
 
-This service-side play-host allowlisting is distinct from app CSP `frame-ancestors`, which controls where the app itself may be framed. See [Allow your app to be embedded](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide#allow-your-app-to-be-embedded) when configuring app CSP.
+This service-side play-host allow listing is distinct from app CSP `frame-ancestors`, which controls where the app itself can be framed. See [Allow your app to be embedded](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/content-security-policy?view=o365-worldwide#allow-your-app-to-be-embedded) when configuring app CSP.

@@ -3,6 +3,10 @@
 
 # Deploy the Salesforce CRM connector
 
+Note
+
+To set up Copilotforce, the Salesforce federated connector, see [Salesforce connector \(preview\)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/salesforce-admin-published-federated-connector).
+
 The Salesforce CRM Microsoft 365 Copilot connector enables your organization to index Salesforce records, including Accounts, Contacts, Leads, Opportunities, Cases, Events, Tasks, Campaigns, Comments, and Attachments, making this content discoverable through Microsoft 365 Copilot and Microsoft Search.
 
 This article describes the steps to deploy and customize the Salesforce CRM connector.

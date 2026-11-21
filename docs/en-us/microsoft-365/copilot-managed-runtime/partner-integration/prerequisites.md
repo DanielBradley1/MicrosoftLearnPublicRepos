@@ -1,9 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/prerequisites?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-11 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # Prepare a partner integration with Copilot Managed Runtime
 
 Before you build a partner integration with Copilot Managed Runtime, set up the required packages and development environment. Then register a multitenant Microsoft Entra application, configure delegated permissions, get customer admin consent, and authenticate the CLI for local or hosted use.
+
+Host your partner editor and generated apps on [different hostnames](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/architecture?view=o365-worldwide#copilot-managed-runtime-app-host).
 
 ## Required packages
 
@@ -13,7 +15,7 @@ Before you build a partner integration with Copilot Managed Runtime, set up the 
 | [`@microsoft/cmr-apps`](https://www.npmjs.com/package/@microsoft/cmr-apps) | Runtime SDK used by app code | App production dependencies |
 | [`@microsoft/cmr-apps-vite-plugin`](https://www.npmjs.com/package/@microsoft/cmr-apps-vite-plugin) | Local config and Local Play integration for Vite | App development dependencies |
 
-For current supported developer tools and packages see the [developer overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide).
+For current supported developer tools and packages, see the [developer overview](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/?view=o365-worldwide).
 
 ## Set up the development environment
 
@@ -34,14 +36,14 @@ For the basic setup and authentication flow, see the [CLI quickstart](https://le
 
 ## Register a Microsoft Entra application
 
-Register an application with the [Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) for your product integration and configure it as **Accounts in any Microsoft Entra directory**. This creates a [multitenant application](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps) that app makers from customer tenants can use with their organizational identity.
+Register an application with the [Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) for your product integration and configure it as **Accounts in any Microsoft Entra directory**. This step creates a [multitenant application](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps) that app makers from customer tenants can use with their organizational identity.
 
 After creating the application:
 
-1. Retain its application \(client\) ID for customer consent, Microsoft allowlisting, and integration configuration.
-2. Add the required delegated permissions listed below.
-3. **Recommended:** [Mark the application as publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/mark-app-as-publisher-verified) so customer administrators can verify the publisher in the consent dialog. Publisher verification is required if the application is later submitted as a multitenant OpenID Connect application for gallery publication.
-4. Provide the application \(client\) ID to Microsoft for allowlisting. Microsoft must allowlist the application before it can be used for the Copilot Managed Runtime partner integration.
+1. Keep its application \(client\) ID for customer consent, Microsoft allowlisting, and integration configuration.
+2. Add the required delegated permissions listed in the next section.
+3. **Recommended:** [Mark the application as publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/mark-app-as-publisher-verified) so customer administrators can verify the publisher in the consent dialog. Publisher verification is required if you later submit the application as a multitenant OpenID Connect application for gallery publication.
+4. Provide the application \(client\) ID to Microsoft for allowlisting. Microsoft must allowlist the application before you can use it for the Copilot Managed Runtime partner integration.
 
 ### Required delegated permissions
 
@@ -97,7 +99,7 @@ ms auth login --account creator@contoso.com
 ms auth status --json
 ```
 
-Multiple accounts can be cached. Verify or switch the active account before an app mutation:
+You can cache multiple accounts. Verify or switch the active account before an app mutation:
 
 ```bash
 ms auth switch --account creator@contoso.com
@@ -118,7 +120,7 @@ This pattern lets an untrusted or ephemeral container run without a persistent C
 3. The container receives only forward-mode configuration and, when used, a gateway hop token injected at runtime.
 4. The CLI sends requests to the gateway. The gateway validates the hop, acquires a token for the requested upstream audience, forwards the request, and relays the response.
 
-This avoids storing the CLI's MSAL token cache in the container. It doesn't make the container secret-free: a forward hop token or secret-bearing custom header must be protected like any other credential.
+This pattern avoids storing the CLI's MSAL token cache in the container. It doesn't make the container secret-free: you must protect a forward hop token or secret-bearing custom header like any other credential.
 
 Enable HTTP Forward Mode by setting these environment variables before running CLI commands:
 
@@ -148,7 +150,7 @@ For hosted partner integrations, set this environment variable where the CLI pro
 export MS_CLI_ENABLE_CONNECTOR_USER_CONSENT=true
 ```
 
-The flag enables the CLI to request authorization for your application to use the signed-in app maker's connector connection. It is off by default while the consent endpoint rolls out. When unset, the CLI skips this request.
+The flag enables the CLI to request authorization for your application to use the signed-in app maker's connector connection. It's off by default while the consent endpoint rolls out. When unset, the CLI skips this request.
 
 The flag doesn't replace the [`Connectivity.Connections.UserConsent` delegated permission](#required-delegated-permissions) or [customer tenant administrator consent](#add-the-application-to-a-customer-tenant). For the data-source workflow, see [Connect partner apps to data](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/partner-integration/connect-to-data?view=o365-worldwide).
 

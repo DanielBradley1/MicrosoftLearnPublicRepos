@@ -53,6 +53,16 @@ Microsoft 365 Archive allows you to keep data in place in SharePoint, providing 
 - Admin search indexes remain intact.
 - Sites are archived and rehydrated without loss of metadata, security versioning, and more.
 
+#### Does Microsoft 365 Archive store content in my Azure subscription?
+
+No. SharePoint stores archived files and sites in its cold storage tier. Microsoft 365 Archive uses your linked Azure subscription and resource group only for pay-as-you-go billing. Neither stores your archived SharePoint content. Azure billing records can include metadata such as your tenant ID.
+
+#### Does archiving change where SharePoint stores my content?
+
+No. Geo residency is fully honored, the same as with active SharePoint content. In a Microsoft 365 Multi-Geo tenant, archiving doesn't move content out of its site's geography. The region you select for billing doesn't determine where SharePoint stores archived content.
+
+For details, see [Data residency in Microsoft 365 Archive](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-privacy-security?view=o365-worldwide#data-residency) and [Compliance features in Microsoft 365 Archive](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-compliance?view=o365-worldwide).
+
 #### What happens to versions for archived files?
 
 Archived files retain all versions. When an archived file is reactivated, all existing versions are restored. Versions can't be archived independently of the file they belong to.

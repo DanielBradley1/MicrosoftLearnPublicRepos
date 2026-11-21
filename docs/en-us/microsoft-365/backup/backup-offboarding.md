@@ -45,6 +45,8 @@ If offboarding from Microsoft 365 Backup starts because of either an explicit re
 
 ![Screenshot of a data table showing the offboarding undo periods.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-offboarding-time.png?view=o365-worldwide)
 
+For Microsoft Entra Backup, the grace period is restricted to 30 days only. During this period, new backups are stopped, existing backups are billed, restores are allowed, backups are visible if re-enabled. After the 30-day grace period, billing stops, restores are disabled, all existing backups are deleted, and re-enablement is not possible.
+
 If you bring your billing back to a healthy state or ask support to reverse the offboarding, you can use the tool again and you don't lose any backups.
 
 Tip

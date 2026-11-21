@@ -82,7 +82,7 @@ Now that Microsoft 365 Backup is enabled for your organization, follow through t
 3. Select **Microsoft 365 Backup** from the list of products.
 
    ![Screenshot of the Microsoft 365 admin center panel showing Settings and Microsoft 365 Backup.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-setup-admin-center-panel.png?view=o365-worldwide)
-4. [Create backup policies for OneDrive, SharePoint, or Exchange](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#create-backup-policies).
+4. [Create backup policies for OneDrive, SharePoint, Exchange, or Entra](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#create-backup-policies).
 
 ## Enable email notifications
 
@@ -134,16 +134,17 @@ We highly recommend enabling multi-admin notifications, at a minimum, for potent
 
 Only tenant-level admins can create and manage backups using Microsoft 365 Backup for their users. End users don't have the ability to enable backup or restores for their user account, distribution lists, mailboxes, or sites. It's important to note that your admin role determines which products you can manage with Microsoft 365 Backup. We have also introduced a new dedicated role for this tool, the Microsoft 365 Backup Administrator, that can control the entire tool. For more information about this role, see [Microsoft 365 Backup Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#microsoft-365-backup-administrator).
 
-| Admin role | OneDrive | SharePoint | Exchange |
-| --- | --- | --- | --- |
-| Global Administrator | ✓ | ✓ | ✓ |
-| SharePoint Administrator | ✓ | ✓ |  |
-| Exchange Administrator |  |  | ✓ |
-| Microsoft 365 Backup Administrator | ✓ | ✓ | ✓ |
+| Admin role | OneDrive | SharePoint | Exchange | Entra |
+| --- | --- | --- | --- | --- |
+| Global Administrator | ✓ | ✓ | ✓ | ✓ |
+| SharePoint Administrator | ✓ | ✓ |  |  |
+| Exchange Administrator |  |  | ✓ |  |
+| Microsoft Entra Backup Administrator |  |  |  | ✓ |
+| Microsoft 365 Backup Administrator | ✓ | ✓ | ✓ |  |
 
 ## Glossary
 
-- **Protection units** - SharePoint sites, OneDrive accounts, or Exchange Online mailboxes backed up by the Microsoft 365 Backup tool.
+- **Protection units** - SharePoint sites, OneDrive accounts, Exchange Online mailboxes, or supported Microsoft Entra ID directory objects backed up by the Microsoft 365 Backup tool.
 - **Restore point** - A prior point in time from which you can restore a version of your content and metadata. If the protection unit from a prior point in time is identical to the present state of your data, then a restore from that point has no effect on your current data.
 - **RPO** - Recovery point objective, or how close in time the most recent restore point is to an impacting event.
 - **RTO** - Recovery time objective, or how fast a restore to a prior point in time might complete.

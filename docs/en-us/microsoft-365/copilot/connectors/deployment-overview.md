@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview -->
-<!-- Sitemap-Last-Modified: 2026-04-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-26 -->
 
 # Deploy connectors in the Microsoft 365 admin center
 
@@ -150,16 +150,6 @@ Configure crawl frequency and timing:
 
 If you leave fields blank, the system sets the optimal crawl times by default.
 
-### IP firewall rules
-
-To secure access, configure your firewall to allow Copilot connector service IP ranges.
-
-| Region | Microsoft 365 Enterprise | Microsoft 365 Government |
-| --- | --- | --- |
-| NAM | 52.250.92.252/30, 52.224.250.216/30 | 52.245.230.216/30, 20.141.117.64/30 |
-| EUR | 20.54.41.208/30, 51.105.159.88/30 | NA |
-| APC | 52.139.188.212/30, 20.43.146.44/30 | NA |
-
 ## Connector setting guidelines
 
 ### Content property
@@ -215,7 +205,7 @@ Copilot connectors support the following search schema attributes.
 
 For all connectors except the File share Copilot connector, you must manually configure custom types. To enable search capabilities, map the search schema to a set of properties. The connection configuration assistant selects a default schema based on the source properties you choose, but you can modify it by selecting the appropriate attributes for each property on the search schema page.
 
-[![Screenshot that shows how the schema for a connector can be customized.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/deployment-overview/manageschema.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/deployment-overview/manageschema.png#lightbox)
+[![Screenshot that shows how the schema for a connector can be customized.](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/deployment-overview/manage-schema.png)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/media/deployment-overview/manage-schema.png#lightbox)
 
 ### Restrictions and recommendations for search schema settings
 
@@ -254,7 +244,7 @@ To customize the value of a schema property:
 6. Select **Save changes** at the bottom of the side panel.
 7. Select **Preview data** at the top of the **Content** tab and scroll to the customized property to validate the expression.
 
-**Example**
+#### Example
 
 Assume that a ServiceNow knowledge article URL in your organization looks like this:
 
@@ -302,7 +292,7 @@ Note
 - If an item matches multiple rules, the first rule in the list is applied.
 - URL changes take effect in Copilot results after the next scheduled full crawl.
 
-**Example**
+#### Example rule
 
 To apply a different URL expression for ServiceNow knowledge articles in the **IT** and **HR Policy** knowledge bases, set **KbKnowledgeBase** as the filter, specify `IT, HR Policy` as the value, and use an expression such as:
 
@@ -357,11 +347,24 @@ Also consider the following:
 
 If your data source uses IP firewall rules, allow access to the Copilot connectors service by permitting the following IP ranges.
 
-| Region | Microsoft 365 Enterprise | Microsoft 365 Government |
-| --- | --- | --- |
-| NAM | 52.250.92.252/30, 52.224.250.216/30 | 52.245.230.216/30, 20.141.117.64/30 |
-| EUR | 20.54.41.208/30, 51.105.159.88/30 | N/A |
-| APC | 52.139.188.212/30, 20.43.146.44/30 | N/A |
+| Region | IPv4 ranges \(count\) | IPv4 total | IPv6 ranges \(count\) | IPv6 total |
+| --- | --- | --- | --- | --- |
+| Southeast Asia | 4.146.109.64/26 \(64\) 57.155.170.128/29 \(8\) | **72** | 2603:1040:5:25::480/122 \(64\) | **64** |
+| Australia East | 172.146.5.0/26 \(64\) 172.146.5.64/27 \(32\) 172.146.3.48/29 \(8\) | **104** | 2603:1010:6:1b::780/122 \(64\) | **64** |
+| Japan East | 4.215.35.192/26 \(64\) | **64** | 2603:1040:407:18::7c0/122 \(64\) | **64** |
+| West Europe | 74.144.181.64/26 \(64\) 48.209.198.16/29 \(8\) | **72** | 2603:1020:206:37::40/122 \(64\) | **64** |
+| South Africa North | 4.221.240.128/26 \(64\) | **64** | 2603:1000:104:12::540/122 \(64\) | **64** |
+| North Europe | 172.129.196.192/26 \(64\) 72.145.53.72/29 \(8\) | **72** | 2603:1020:5:2d::480/122 \(64\) 2603:1020:5:2d::500/121 \(128\) 2603:1020:5:2d::460/123 \(32\) 2603:1020:5:2d::4c0/124 \(16\) | **240** |
+| Switzerland North | 172.161.116.192/26 \(64\) | **64** | 2603:1020:a04:12::700/122 \(64\) | **64** |
+| Italy North | 172.133.12.64/26 \(64\) | **64** | 2603:1020:1204:f::6c0/122 \(64\) | **64** |
+| West US 2 | 172.140.135.64/26 \(64\) 72.154.58.80/28 \(16\) 72.154.58.96/29 \(8\) | **88** | 2603:1030:c06:35::3c0/122 \(64\) | **64** |
+| East US | 172.143.13.192/26 \(64\) 72.152.143.80/28 \(16\) | **80** | 2603:1030:210:4a::640/122 \(64\) | **64** |
+| usgovarizona | 51.55.254.64/26 \(64\) | **64** | 2001:489a:3604:d::4c0/122 \(64\) | **64** |
+| usgovtexas | 57.17.75.0/26 \(64\) | **64** | 2001:489a:3403:d::480/122 \(64\) | **64** |
+| usgovvirginia | 57.17.106.192/26 \(64\) | **64** | 2001:489a:3103:f::2c0/122 \(64\) | **64** |
+| usdodcentral | 57.17.40.192/26 \(64\) | **64** | 2001:489a:3203:7::540/122 \(64\) | **64** |
+| usdodeast | 52.181.74.64/26 \(64\) | **64** | 2001:489a:3303:7::400/122 \(64\) | **64** |
+| **Total** |  | **1,064** |  | **1,136** |
 
 ## Related content
 

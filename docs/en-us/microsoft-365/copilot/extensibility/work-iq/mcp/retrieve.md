@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/retrieve -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Use the `retrieve` tool in Work IQ MCP
 
@@ -48,7 +48,7 @@ The `GraphConnectors` capability isn't supported with `grounding`. Use `copilot`
 
 Note
 
-Dataverse and Power BI are roadmap sources, not currently supported retrieval sources. Dataverse needs further evaluation before it can be described as supported, and it isn't a near-term priority. No delivery timeline is committed.
+Dataverse and Power BI are roadmap sources, not currently supported retrieval sources.
 
 ## Run a basic retrieval
 
@@ -97,7 +97,7 @@ Supported capability names are:
 - `TeamsMessages`
 - `GraphConnectors`
 
-The schema also includes a `Dataverse` capability name, but Dataverse isn't currently a supported retrieval source. Don't use it to imply current support.
+The schema also includes a `Dataverse` capability name, but Dataverse isn't currently a supported retrieval source.
 
 ### Search a SharePoint site, SharePoint Embedded container, or OneDrive location
 
