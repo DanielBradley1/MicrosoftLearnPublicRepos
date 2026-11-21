@@ -111,8 +111,8 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 4. From the Toolbox, drag and drop four Assign activities inside your Sequence activity and set these values:
 
 ```
-selRangeTable.item(0).PARAMETER = "USERNAME" 
-selRangeTable.item(0).SIGN = "I" selRangeTable.item(0).OPTION = "GT" selRangeTable.item(0).LOW = ""   
+selRangeTable.item(0).PARAMETER = "USERNAME"
+selRangeTable.item(0).SIGN = "I" selRangeTable.item(0).OPTION = "GT" selRangeTable.item(0).LOW = ""
 ```
 
 These parameters used to call the BAPI\_USER\_GETLIST function and to implement pagination.

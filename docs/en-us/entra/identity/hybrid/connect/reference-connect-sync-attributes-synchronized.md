@@ -3,13 +3,11 @@
 
 # Microsoft Entra Connect Sync: Attributes synchronized to Microsoft Entra ID
 
-This topic lists the attributes that are synchronized by Microsoft Entra Connect Sync.  
-The attributes are grouped by the related Microsoft Entra app.
+This topic lists the attributes that are synchronized by Microsoft Entra Connect Sync. The attributes are grouped by the related Microsoft Entra app.
 
 ## Attributes to synchronize
 
-A common question is *what is the list of minimum attributes to synchronize*. The default and recommended approach is to keep the default attributes so a full GAL \(Global Address List\) can be constructed in the cloud and to get all features in Microsoft 365 workloads. In some cases, there are some attributes that your organization does not want synchronized to the cloud since these attributes contain sensitive personal data, like in this example:  
-![bad attributes](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/reference-connect-sync-attributes-synchronized/badextensionattribute.png)
+A common question is *what is the list of minimum attributes to synchronize*. The default and recommended approach is to keep the default attributes so a full GAL \(Global Address List\) can be constructed in the cloud and to get all features in Microsoft 365 workloads. In some cases, there are some attributes that your organization does not want synchronized to the cloud since these attributes contain sensitive personal data, like in this example: ![bad attributes](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/reference-connect-sync-attributes-synchronized/badextensionattribute.png)
 
 In this case, start with the list of attributes in this topic and identify those attributes that would contain personal data and cannot be synchronized. Then deselect those attributes during installation using [Microsoft Entra app and attribute filtering](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-custom#azure-ad-app-and-attribute-filtering).
 

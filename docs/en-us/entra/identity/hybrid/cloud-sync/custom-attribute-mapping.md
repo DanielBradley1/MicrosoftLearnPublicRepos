@@ -116,7 +116,7 @@ You need to create an [application](https://learn.microsoft.com/en-us/graph/api/
    Content-type: application/json
 
    {
-   "appId": 
+   "appId":
    "<application appId>"
    }
    ```
@@ -137,7 +137,7 @@ You need to create an [application](https://learn.microsoft.com/en-us/graph/api/
      "targetObjects": [
          "Group"
      ]
-   }    
+   }
    ```
 
 You can create directory extensions in Microsoft Entra ID in several different ways, as described in the following table:

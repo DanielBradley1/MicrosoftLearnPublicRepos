@@ -44,13 +44,13 @@ You can also copy the file **C:\\Program Files\\Microsoft Azure Active Directory
 To start using the ADSyncConfig you need to load the module in a Windows PowerShell window:
 
 ```powershell
-Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncConfig\AdSyncConfig.psm1" 
+Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncConfig\AdSyncConfig.psm1"
 ```
 
 To check all the cmdlets included in this module you can type:
 
 ```powershell
-Get-Command -Module AdSyncConfig  
+Get-Command -Module AdSyncConfig
 ```
 
 ![Check](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/how-to-connect-configure-ad-ds-connector-account/configure3.png)
@@ -84,7 +84,7 @@ Exceptions to these common parameters are the `Set-ADSyncRestrictedPermissions` 
 In case Microsoft Entra Connect is already installed and you want to check what is the AD DS Connector Account currently in use by Microsoft Entra Connect, you can execute the cmdlet:
 
 ```powershell
-Get-ADSyncADConnectorAccount 
+Get-ADSyncADConnectorAccount
 ```
 
 ### Locate AD DS objects with permission inheritance disabled
@@ -92,13 +92,13 @@ Get-ADSyncADConnectorAccount
 In case you want to check if there's any AD DS object with permission inheritance disabled, you can run:
 
 ```powershell
-Get-ADSyncObjectsWithInheritanceDisabled -SearchBase '<DistinguishedName>' 
+Get-ADSyncObjectsWithInheritanceDisabled -SearchBase '<DistinguishedName>'
 ```
 
 By default, this cmdlet only looks for OUs with disabled inheritance, but you can specify other AD DS object classes in `-ObjectClass` parameter or use ‘\*’ for all object classes, as follows:
 
 ```powershell
-Get-ADSyncObjectsWithInheritanceDisabled -SearchBase '<DistinguishedName>' -ObjectClass * 
+Get-ADSyncObjectsWithInheritanceDisabled -SearchBase '<DistinguishedName>' -ObjectClass *
 ```
 
 ### View AD DS permissions of an object
@@ -106,7 +106,7 @@ Get-ADSyncObjectsWithInheritanceDisabled -SearchBase '<DistinguishedName>' -Obje
 You can use the cmdlet that follows to view the list of permissions currently set on an Active Directory object by providing its DistinguishedName:
 
 ```powershell
-Show-ADSyncADObjectPermissions -ADobjectDN '<DistinguishedName>' 
+Show-ADSyncADObjectPermissions -ADobjectDN '<DistinguishedName>'
 ```
 
 ## Configure AD DS Connector Account Permissions
@@ -116,13 +116,13 @@ Show-ADSyncADObjectPermissions -ADobjectDN '<DistinguishedName>'
 To set basic read-only permissions for the AD DS Connector account when not using any Microsoft Entra Connect feature, run:
 
 ```powershell
-Set-ADSyncBasicReadPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncBasicReadPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>]
 ```
 
 Or;
 
 ```powershell
-Set-ADSyncBasicReadPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>] 
+Set-ADSyncBasicReadPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
 ```
 
 This cmdlet sets the following permissions:
@@ -143,13 +143,13 @@ This cmdlet sets the following permissions:
 To set permissions for the AD DS Connector account when using the ms-Ds-Consistency-Guid attribute as the source anchor \(also known as “Let Azure manage the source anchor for me” option\), run:
 
 ```powershell
-Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>]
 ```
 
 Or;
 
 ```powershell
-Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>] 
+Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
 ```
 
 This cmdlet sets the following permissions:
@@ -163,13 +163,13 @@ This cmdlet sets the following permissions:
 To set permissions for the AD DS Connector account when using Password Hash Synchronization, run:
 
 ```powershell
-Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [<CommonParameters>] 
+Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [<CommonParameters>]
 ```
 
 Or;
 
 ```powershell
-Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN <String> [<CommonParameters>] 
+Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN <String> [<CommonParameters>]
 ```
 
 This cmdlet sets the following permissions:
@@ -184,13 +184,13 @@ This cmdlet sets the following permissions:
 To set permissions for the AD DS Connector account when using Password Writeback, run:
 
 ```powershell
-Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>]
 ```
 
 Or;
 
 ```powershell
-Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>] 
+Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
 ```
 
 This cmdlet sets the following permissions:
@@ -206,7 +206,7 @@ This cmdlet sets the following permissions:
 To set permissions for the AD DS Connector account when using Group Writeback, run:
 
 ```powershell
-Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>]
 ```
 
 Or;
@@ -228,13 +228,13 @@ This cmdlet sets the following permissions:
 To set permissions for the AD DS Connector account when using Exchange Hybrid deployment, run:
 
 ```powershell
-Set-ADSyncExchangeHybridPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncExchangeHybridPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>]
 ```
 
 Or;
 
 ```powershell
-Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>] 
+Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
 ```
 
 This cmdlet sets the following permissions:
@@ -251,13 +251,13 @@ This cmdlet sets the following permissions:
 To set permissions for the AD DS Connector account when using Exchange Mail Public Folders feature, run:
 
 ```powershell
-Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-IncludeAdminSdHolders] [<CommonParameters>]
 ```
 
 Or;
 
 ```powershell
-Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>] 
+Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
 ```
 
 This cmdlet sets the following permissions:
@@ -276,14 +276,14 @@ This PowerShell script tightens permissions for the AD Connector Account provide
   The `-ADConnectorAccountDN` parameter is the AD account whose permissions need to be tightened. This is typically the MSOL\_nnnnnnnnnnnn domain account that is configured in the AD DS Connector \(see [Determine your AD DS Connector Account](#determine-your-ad-ds-connector-account)\). The `-Credential` parameter is necessary to specify the Administrator account that has the necessary privileges to restrict Active Directory permissions on the target AD object \(this account must be different from the ADConnectorAccountDN account\). This is typically the Enterprise or Domain Administrator.
 
 ```powershell
-Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <PSCredential> [-DisableCredentialValidation] [-WhatIf] [-Confirm] [<CommonParameters>] 
+Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <PSCredential> [-DisableCredentialValidation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 For Example:
 
 ```powershell
-$credential = Get-Credential 
-Set-ADSyncRestrictedPermissions -ADConnectorAccountDN 'CN=ADConnectorAccount,OU=Users,DC=Contoso,DC=com' -Credential $credential  
+$credential = Get-Credential
+Set-ADSyncRestrictedPermissions -ADConnectorAccountDN 'CN=ADConnectorAccount,OU=Users,DC=Contoso,DC=com' -Credential $credential
 ```
 
 This cmdlet sets the following permissions:

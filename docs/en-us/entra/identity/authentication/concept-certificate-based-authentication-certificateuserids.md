@@ -71,7 +71,7 @@ Get-EntraUserCBAAuthorizationInfo helps retrieve authorization information for a
 **Example 1: Get authorization information for a user by User Principal Name**
 
 ```powershell
-Connect-Entra -Scopes 'User.Read.All' 
+Connect-Entra -Scopes 'User.Read.All'
 Get-EntraUserCBAAuthorizationInfo -UserId ‘user@contoso.com'
 ```
 
@@ -153,7 +153,7 @@ This example shows how to get all possible certificate mappings as an object.
 **Example 2: Retrieve certificate object from a certificate path and certificate mapping**
 
 ```powershell
-Get-EntraUserCertificateUserIdsFromCertificate -Path 'C:\path\to\certificate.cer' -CertificateMapping 'Subject' 
+Get-EntraUserCertificateUserIdsFromCertificate -Path 'C:\path\to\certificate.cer' -CertificateMapping 'Subject'
 ```
 
 **Response:** `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`
@@ -309,7 +309,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](https://learn.m
      $params = @{
            authorizationInfo = @{
                  certificateUserIds = @(
-                 "X509:<SKI>gH4iJ5kL6mN7oP8qR9sT0uV1wX", 
+                 "X509:<SKI>gH4iJ5kL6mN7oP8qR9sT0uV1wX",
                  "X509:<PN>user@contoso.com"
                  )
            }
@@ -334,7 +334,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](https://learn.m
 2. Update the certificateUserIds attribute of the user object.
 
    ```powershell
-      $user.AuthorizationInfo.certificateUserIds = @("X509:<SKI>iJ5kL6mN7oP8qR9sT0uV1wX2yZ", "X509:<PN>user1@contoso.com") 
+      $user.AuthorizationInfo.certificateUserIds = @("X509:<SKI>iJ5kL6mN7oP8qR9sT0uV1wX2yZ", "X509:<PN>user1@contoso.com")
       Update-MgUser -UserId $userObjectId -AuthorizationInfo $user.AuthorizationInfo
    ```
 

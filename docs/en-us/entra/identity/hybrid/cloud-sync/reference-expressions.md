@@ -89,16 +89,13 @@ Takes a source string value and appends the suffix to the end of it.
 
 ### BitAnd
 
-**Description:**  
-The BitAnd function sets specified bits on a value.
+**Description:** The BitAnd function sets specified bits on a value.
 
-**Syntax:**  
-`num BitAnd(num value1, num value2)`
+**Syntax:** `num BitAnd(num value1, num value2)`
 
 - value1, value2: numeric values that should be AND’ed together
 
-**Remarks:**  
-This function converts both parameters to the binary representation and sets a bit to:
+**Remarks:** This function converts both parameters to the binary representation and sets a bit to:
 
 - 0 - if one or both of the corresponding bits in *value1* and *value2* are 0
 - 1 - if both of the corresponding bits are 1.
@@ -114,17 +111,13 @@ Returns 7 because hexadecimal "F" AND "F7" evaluate to this value.
 
 ### CBool
 
-**Description:**  
-The CBool function returns a Boolean based on the evaluated expression
+**Description:** The CBool function returns a Boolean based on the evaluated expression
 
-**Syntax:**  
-`bool CBool(exp Expression)`
+**Syntax:** `bool CBool(exp Expression)`
 
-**Remarks:**  
-If the expression evaluates to a non-zero value, then CBool returns True, else it returns False.
+**Remarks:** If the expression evaluates to a non-zero value, then CBool returns True, else it returns False.
 
-**Example:**  
-`CBool([attrib1] = [attrib2])`
+**Example:** `CBool([attrib1] = [attrib2])`
 
 Returns True if both attributes have the same value.
 
@@ -132,19 +125,14 @@ Returns True if both attributes have the same value.
 
 ### ConvertFromBase64
 
-**Description:**  
-The ConvertFromBase64 function converts the specified base64 encoded value to a regular string.
+**Description:** The ConvertFromBase64 function converts the specified base64 encoded value to a regular string.
 
-**Syntax:**  
-`str ConvertFromBase64(str source)` - assumes Unicode for encoding  
-`str ConvertFromBase64(str source, enum Encoding)`
+**Syntax:** `str ConvertFromBase64(str source)` - assumes Unicode for encoding `str ConvertFromBase64(str source, enum Encoding)`
 
 - source: Base64 encoded string
 - Encoding: Unicode, ASCII, UTF8
 
-**Example**  
-`ConvertFromBase64("SABlAGwAbABvACAAdwBvAHIAbABkACEA")`  
-`ConvertFromBase64("SGVsbG8gd29ybGQh", UTF8)`
+**Example** `ConvertFromBase64("SABlAGwAbABvACAAdwBvAHIAbABkACEA")` `ConvertFromBase64("SGVsbG8gd29ybGQh", UTF8)`
 
 Both examples return "*Hello world!*"
 
@@ -152,107 +140,76 @@ Both examples return "*Hello world!*"
 
 ### ConvertToBase64
 
-**Description:**  
-The ConvertToBase64 function converts a string to a Unicode base64 string.  
-Converts the value of an array of integers to its equivalent string representation that is encoded with base-64 digits.
+**Description:** The ConvertToBase64 function converts a string to a Unicode base64 string. Converts the value of an array of integers to its equivalent string representation that is encoded with base-64 digits.
 
-**Syntax:**  
-`str ConvertToBase64(str source)`
+**Syntax:** `str ConvertToBase64(str source)`
 
-**Example:**  
-`ConvertToBase64("Hello world!")`  
-Returns "SABlAGwAbABvACAAdwBvAHIAbABkACEA"
+**Example:** `ConvertToBase64("Hello world!")` Returns "SABlAGwAbABvACAAdwBvAHIAbABkACEA"
 
 ---
 
 ### ConvertToUTF8Hex
 
-**Description:**  
-The ConvertToUTF8Hex function converts a string to a UTF8 Hex encoded value.
+**Description:** The ConvertToUTF8Hex function converts a string to a UTF8 Hex encoded value.
 
-**Syntax:**  
-`str ConvertToUTF8Hex(str source)`
+**Syntax:** `str ConvertToUTF8Hex(str source)`
 
-**Remarks:**  
-The output format of this function is used by Microsoft Entra ID as DN attribute format.
+**Remarks:** The output format of this function is used by Microsoft Entra ID as DN attribute format.
 
-**Example:**  
-`ConvertToUTF8Hex("Hello world!")`  
-Returns 48656C6C6F20776F726C6421
+**Example:** `ConvertToUTF8Hex("Hello world!")` Returns 48656C6C6F20776F726C6421
 
 ---
 
 ### Count
 
-**Description:**  
-The Count function returns the number of elements in a multi-valued attribute
+**Description:** The Count function returns the number of elements in a multi-valued attribute
 
-**Syntax:**  
-`num Count(mvstr attribute)`
+**Syntax:** `num Count(mvstr attribute)`
 
 ---
 
 ### CStr
 
-**Description:**  
-The CStr function converts to a string data type.
+**Description:** The CStr function converts to a string data type.
 
-**Syntax:**  
-`str CStr(num value)`  
-`str CStr(ref value)`  
-`str CStr(bool value)`
+**Syntax:** `str CStr(num value)` `str CStr(ref value)` `str CStr(bool value)`
 
 - value: Can be a numeric value, reference attribute, or Boolean.
 
-**Example:**  
-`CStr([dn])`  
-Could return "cn=Joe,dc=contoso,dc=com"
+**Example:** `CStr([dn])` Could return "cn=Joe,dc=contoso,dc=com"
 
 ---
 
 ### DateFromNum
 
-**Description:**  
-The DateFromNum function converts a value in AD’s date format to a DateTime type.
+**Description:** The DateFromNum function converts a value in AD’s date format to a DateTime type.
 
-**Syntax:**  
-`dt DateFromNum(num value)`
+**Syntax:** `dt DateFromNum(num value)`
 
-**Example:**  
-`DateFromNum([lastLogonTimestamp])`  
-`DateFromNum(129699324000000000)`  
-Returns a DateTime representing 2012-01-01 23:00:00
+**Example:** `DateFromNum([lastLogonTimestamp])` `DateFromNum(129699324000000000)` Returns a DateTime representing 2012-01-01 23:00:00
 
 ---
 
 ### DNComponent
 
-**Description:**  
-The DNComponent function returns the value of a specified DN component going from left.
+**Description:** The DNComponent function returns the value of a specified DN component going from left.
 
-**Syntax:**  
-`str DNComponent(ref dn, num ComponentNumber)`
+**Syntax:** `str DNComponent(ref dn, num ComponentNumber)`
 
 - dn: the reference attribute to interpret
 - ComponentNumber: The component in the DN to return
 
-**Example:**  
-`DNComponent(CRef([dn]),1)`  
-If dn is "cn=Joe,ou=…," it returns Joe
+**Example:** `DNComponent(CRef([dn]),1)` If dn is "cn=Joe,ou=…," it returns Joe
 
 ---
 
 ### Error
 
-**Description:**  
-The Error function is used to return a custom error.
+**Description:** The Error function is used to return a custom error.
 
-**Syntax:**  
-`void Error(str ErrorMessage)`
+**Syntax:** `void Error(str ErrorMessage)`
 
-**Example:**  
-`IIF(IsPresent([accountName]),[accountName],Error("AccountName is required"))`  
-If the attribute accountName is not present, throw an error on the object.
+**Example:** `IIF(IsPresent([accountName]),[accountName],Error("AccountName is required"))` If the attribute accountName is not present, throw an error on the object.
 
 ---
 
@@ -277,143 +234,107 @@ Takes a date string from one format and converts it into a different format.
 
 ### Guid
 
-**Description:**  
-The function Guid generates a new random GUID
+**Description:** The function Guid generates a new random GUID
 
-**Syntax:**  
-`str Guid()`
+**Syntax:** `str Guid()`
 
 ---
 
 ### IIF
 
-**Description:**  
-The IIF function returns one of a set of possible values based on a specified condition.
+**Description:** The IIF function returns one of a set of possible values based on a specified condition.
 
-**Syntax:**  
-`var IIF(exp condition, var valueIfTrue, var valueIfFalse)`
+**Syntax:** `var IIF(exp condition, var valueIfTrue, var valueIfFalse)`
 
 - condition: any value or expression that can be evaluated to true or false.
 - valueIfTrue: If the condition evaluates to true, the returned value.
 - valueIfFalse: If the condition evaluates to false, the returned value.
 
-**Example:**  
-`IIF([employeeType]="Intern","t-" & [alias],[alias])`  
-If the user is an intern, returns the alias of a user with "t-" added to the beginning of it, else returns the user’s alias as is.
+**Example:** `IIF([employeeType]="Intern","t-" & [alias],[alias])` If the user is an intern, returns the alias of a user with "t-" added to the beginning of it, else returns the user’s alias as is.
 
 ---
 
 ### InStr
 
-**Description:**  
-The InStr function finds the first occurrence of a substring in a string
+**Description:** The InStr function finds the first occurrence of a substring in a string
 
 **Syntax:**
 
-`num InStr(str stringcheck, str stringmatch)`  
-`num InStr(str stringcheck, str stringmatch, num start)`  
-`num InStr(str stringcheck, str stringmatch, num start, enum compare)`
+`num InStr(str stringcheck, str stringmatch)` `num InStr(str stringcheck, str stringmatch, num start)` `num InStr(str stringcheck, str stringmatch, num start, enum compare)`
 
 - stringcheck: string to be searched
 - stringmatch: string to be found
 - start: starting position to find the substring
 - compare: vbTextCompare or vbBinaryCompare
 
-**Remarks:**  
-Returns the position where the substring was found or 0 if not found.
+**Remarks:** Returns the position where the substring was found or 0 if not found.
 
-**Example:**  
-`InStr("The quick brown fox","quick")`  
-Evaluates to 5
+**Example:** `InStr("The quick brown fox","quick")` Evaluates to 5
 
-`InStr("repEated","e",3,vbBinaryCompare)`  
-Evaluates to 7
+`InStr("repEated","e",3,vbBinaryCompare)` Evaluates to 7
 
 ---
 
 ### IsNull
 
-**Description:**  
-If the expression evaluates to Null, then the IsNull function returns true.
+**Description:** If the expression evaluates to Null, then the IsNull function returns true.
 
-**Syntax:**  
-`bool IsNull(var Expression)`
+**Syntax:** `bool IsNull(var Expression)`
 
-**Remarks:**  
-For an attribute, a Null is expressed by the absence of the attribute.
+**Remarks:** For an attribute, a Null is expressed by the absence of the attribute.
 
-**Example:**  
-`IsNull([displayName])`  
-Returns True if the attribute is not present in the CS or MV.
+**Example:** `IsNull([displayName])` Returns True if the attribute is not present in the CS or MV.
 
 ---
 
 ### IsNullOrEmpty
 
-**Description:**  
-If the expression is null or an empty string, then the IsNullOrEmpty function returns true.
+**Description:** If the expression is null or an empty string, then the IsNullOrEmpty function returns true.
 
-**Syntax:**  
-`bool IsNullOrEmpty(var Expression)`
+**Syntax:** `bool IsNullOrEmpty(var Expression)`
 
-**Remarks:**  
-For an attribute, this would evaluate to True if the attribute is absent or is present but is an empty string.  
-The inverse of this function is named IsPresent.
+**Remarks:** For an attribute, this would evaluate to True if the attribute is absent or is present but is an empty string. The inverse of this function is named IsPresent.
 
-**Example:**  
-`IsNullOrEmpty([displayName])`  
-Returns True if the attribute is not present or is an empty string in the CS or MV.
+**Example:** `IsNullOrEmpty([displayName])` Returns True if the attribute is not present or is an empty string in the CS or MV.
 
 ---
 
 ### IsPresent
 
-**Description:**  
-If the expression evaluates to a string that is not Null and is not empty, then the IsPresent function returns true.
+**Description:** If the expression evaluates to a string that is not Null and is not empty, then the IsPresent function returns true.
 
-**Syntax:**  
-`bool IsPresent(var expression)`
+**Syntax:** `bool IsPresent(var expression)`
 
-**Remarks:**  
-The inverse of this function is named IsNullOrEmpty.
+**Remarks:** The inverse of this function is named IsNullOrEmpty.
 
-**Example:**  
-`Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
+**Example:** `Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
 
 ---
 
 ### Item
 
-**Description:**  
-The Item function returns one item from a multi-valued string/attribute.
+**Description:** The Item function returns one item from a multi-valued string/attribute.
 
-**Syntax:**  
-`var Item(mvstr attribute, num index)`
+**Syntax:** `var Item(mvstr attribute, num index)`
 
 - attribute: multi-valued attribute
 - index: index to an item in the multi-valued string.
 
-**Remarks:**  
-The Item function is useful together with the Contains function since the latter function returns the index to an item in the multi-valued attribute.
+**Remarks:** The Item function is useful together with the Contains function since the latter function returns the index to an item in the multi-valued attribute.
 
 Throws an error if index is out of bounds.
 
-**Example:**  
-`Mid(Item([proxyAddresses],Contains([proxyAddresses], "SMTP:")),6)`  
-Returns the primary email address.
+**Example:** `Mid(Item([proxyAddresses],Contains([proxyAddresses], "SMTP:")),6)` Returns the primary email address.
 
 ---
 
 ### IsString
 
-**Description:**  
-If the expression can be evaluated to a string type, then the IsString function evaluates to True.
+**Description:** If the expression can be evaluated to a string type, then the IsString function evaluates to True.
 
-**Syntax:**  
-`bool IsString(var expression)`
+**Syntax:** `bool IsString(var expression)`
 
-**Remarks:**  
-Used to determine if CStr\(\) can be successful to parse the expression.
+**Remarks:** Used to determine if CStr\(\) can be successful to parse the expression.
 
 ---
 
@@ -439,17 +360,14 @@ If one of the source values is a multi-value attribute, then every value in that
 
 ### Left
 
-**Description:**  
-The Left function returns a specified number of characters from the left of a string.
+**Description:** The Left function returns a specified number of characters from the left of a string.
 
-**Syntax:**  
-`str Left(str string, num NumChars)`
+**Syntax:** `str Left(str string, num NumChars)`
 
 - string: the string to return characters from
 - NumChars: a number identifying the number of characters to return from the beginning \(left\) of string
 
-**Remarks:**  
-A string containing the first numChars characters in string:
+**Remarks:** A string containing the first numChars characters in string:
 
 - If numChars = 0, return empty string.
 - If numChars < 0, return input string.
@@ -457,9 +375,7 @@ A string containing the first numChars characters in string:
 
 If string contains fewer characters than the number specified in numChars, a string identical to string \(that is, containing all characters in parameter 1\) is returned.
 
-**Example:**  
-`Left("John Doe", 3)`  
-Returns `Joh`.
+**Example:** `Left("John Doe", 3)` Returns `Joh`.
 
 ---
 
@@ -518,15 +434,11 @@ Flips the boolean value of the **source**. If **source** value is "*True*", retu
 
 ### RemoveDuplicates
 
-**Description:**  
-The RemoveDuplicates function takes a multi-valued string and make sure each value is unique.
+**Description:** The RemoveDuplicates function takes a multi-valued string and make sure each value is unique.
 
-**Syntax:**  
-`mvstr RemoveDuplicates(mvstr attribute)`
+**Syntax:** `mvstr RemoveDuplicates(mvstr attribute)`
 
-**Example:**  
-`RemoveDuplicates([proxyAddresses])`  
-Returns a sanitized proxyAddress attribute where all duplicate values have been removed.
+**Example:** `RemoveDuplicates([proxyAddresses])` Returns a sanitized proxyAddress attribute where all duplicate values have been removed.
 
 ---
 
@@ -635,11 +547,9 @@ Splits a string into a multi-valued array, using the specified delimiter charact
 
 ### StringFromSid
 
-**Description:**  
-The StringFromSid function converts a byte array containing a security identifier to a string.
+**Description:** The StringFromSid function converts a byte array containing a security identifier to a string.
 
-**Syntax:**  
-`str StringFromSid(bin ObjectSID)`
+**Syntax:** `str StringFromSid(bin ObjectSID)`
 
 ---
 
@@ -718,47 +628,36 @@ Takes a *source* string value and converts it to upper case using the culture ru
 
 ### Trim
 
-**Description:**  
-The Trim function removes leading and trailing white spaces from a string.
+**Description:** The Trim function removes leading and trailing white spaces from a string.
 
-**Syntax:**  
-`str Trim(str value)`
+**Syntax:** `str Trim(str value)`
 
-**Example:**  
-`Trim(" Test ")`  
-Returns "Test".
+**Example:** `Trim(" Test ")` Returns "Test".
 
-`Trim([proxyAddresses])`  
-Removes leading and trailing spaces for each value in the proxyAddress attribute.
+`Trim([proxyAddresses])` Removes leading and trailing spaces for each value in the proxyAddress attribute.
 
 ---
 
 ### Word
 
-**Description:**  
-The Word function returns a word contained within a string, based on parameters describing the delimiters to use and the word number to return.
+**Description:** The Word function returns a word contained within a string, based on parameters describing the delimiters to use and the word number to return.
 
-**Syntax:**  
-`str Word(str string, num WordNumber, str delimiters)`
+**Syntax:** `str Word(str string, num WordNumber, str delimiters)`
 
 - string: the string to return a word from.
 - WordNumber: a number identifying which word number should return.
 - delimiters: a string representing the delimiter\(s\) that should be used to identify words
 
-**Remarks:**  
-Each string of characters in string separated by the one of the characters in delimiters are identified as words:
+**Remarks:** Each string of characters in string separated by the one of the characters in delimiters are identified as words:
 
 - If number < 1, returns empty string.
 - If string is null, returns empty string.
 
 If string contains less than number words, or string does not contain any words identified by delimiters, an empty string is returned.
 
-**Example:**  
-`Word("The quick brown fox",3," ")`  
-Returns "brown"
+**Example:** `Word("The quick brown fox",3," ")` Returns "brown"
 
-`Word("This,string!has&many separators",3,",!&#")`  
-Would return "has"
+`Word("This,string!has&many separators",3,",!&#")` Would return "has"
 
 ## Examples
 
@@ -891,8 +790,8 @@ Based on the user's first name, middle name and last name, you need to generate 
 
 
 ```ad-attr-mapping-expr
-    SelectUniqueValue( 
-        Join("@", NormalizeDiacritics(StripSpaces(Join(".",  [PreferredFirstName], [PreferredLastName]))), "contoso.com"), 
+    SelectUniqueValue(
+        Join("@", NormalizeDiacritics(StripSpaces(Join(".",  [PreferredFirstName], [PreferredLastName]))), "contoso.com"),
         Join("@", NormalizeDiacritics(StripSpaces(Join(".",  Mid([PreferredFirstName], 1, 1), [PreferredLastName]))), "contoso.com"),
         Join("@", NormalizeDiacritics(StripSpaces(Join(".",  Mid([PreferredFirstName], 1, 2), [PreferredLastName]))), "contoso.com")
     )

@@ -44,7 +44,7 @@ $VHDPath = 'D:\VM\DC1\DC1.vhdx'
 $VHDSize = '64424509440'
 
 #Create New Virtual Machine
-New-VM -Name $VMName -MemoryStartupBytes 16GB -BootDevice VHD -Path $Path -NewVHDPath $VHDPath -NewVHDSizeBytes $VHDSize -Generation 2 -Switch $Switch 
+New-VM -Name $VMName -MemoryStartupBytes 16GB -BootDevice VHD -Path $Path -NewVHDPath $VHDPath -NewVHDSizeBytes $VHDSize -Generation 2 -Switch $Switch
 
 #Set the memory to be non-dynamic
 Set-VMMemory $VMName -DynamicMemoryEnabled $false
@@ -56,7 +56,7 @@ Add-VMDvdDrive -VMName $VMName -ControllerNumber 0 -ControllerLocation 1 -Path $
 $DVDDrive = Get-VMDvdDrive -VMName $VMName
 
 #Configure Virtual Machine to Boot from DVD
-Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive 
+Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 ```
 
 ## Complete the operating system deployment
@@ -83,31 +83,31 @@ Now that you have a virtual machine up, you need to do a few things prior to ins
 
 ```powershell
 #Declare variables
-$ipaddress = "10.0.1.117" 
-$ipprefix = "24" 
-$ipgw = "10.0.1.1" 
+$ipaddress = "10.0.1.117"
+$ipprefix = "24"
+$ipgw = "10.0.1.1"
 $ipdns = "10.0.1.117"
-$ipdns2 = "8.8.8.8" 
-$ipif = (Get-NetAdapter).ifIndex 
-$featureLogPath = "c:\poshlog\featurelog.txt" 
+$ipdns2 = "8.8.8.8"
+$ipif = (Get-NetAdapter).ifIndex
+$featureLogPath = "c:\poshlog\featurelog.txt"
 $newname = "DC1"
-$addsTools = "RSAT-AD-Tools" 
+$addsTools = "RSAT-AD-Tools"
 
 #Set static IP address
-New-NetIPAddress -IPAddress $ipaddress -PrefixLength $ipprefix -InterfaceIndex $ipif -DefaultGateway $ipgw 
+New-NetIPAddress -IPAddress $ipaddress -PrefixLength $ipprefix -InterfaceIndex $ipif -DefaultGateway $ipgw
 
 # Set the DNS servers
 Set-DnsClientServerAddress -InterfaceIndex $ipif -ServerAddresses ($ipdns, $ipdns2)
 
-#Rename the computer 
-Rename-Computer -NewName $newname -force 
+#Rename the computer
+Rename-Computer -NewName $newname -force
 
-#Install features 
-New-Item $featureLogPath -ItemType file -Force 
-Add-WindowsFeature $addsTools 
-Get-WindowsFeature | Where installed >>$featureLogPath 
+#Install features
+New-Item $featureLogPath -ItemType file -Force
+Add-WindowsFeature $addsTools
+Get-WindowsFeature | Where installed >>$featureLogPath
 
-#Restart the computer 
+#Restart the computer
 Restart-Computer
 ```
 
@@ -127,16 +127,16 @@ $DomainNetBIOSName = "CONTOSO"
 $ForestMode = "WinThreshold"
 $LogPath = "c:\windows\NTDS"
 $SysVolPath = "c:\windows\SYSVOL"
-$featureLogPath = "c:\poshlog\featurelog.txt" 
+$featureLogPath = "c:\poshlog\featurelog.txt"
 $Password = "Pass1w0rd"
 $SecureString = ConvertTo-SecureString $Password -AsPlainText -Force
 
-#Install AD DS, DNS and GPMC 
-start-job -Name addFeature -ScriptBlock { 
-Add-WindowsFeature -Name "ad-domain-services" -IncludeAllSubFeature -IncludeManagementTools 
-Add-WindowsFeature -Name "dns" -IncludeAllSubFeature -IncludeManagementTools 
-Add-WindowsFeature -Name "gpmc" -IncludeAllSubFeature -IncludeManagementTools } 
-Wait-Job -Name addFeature 
+#Install AD DS, DNS and GPMC
+start-job -Name addFeature -ScriptBlock {
+Add-WindowsFeature -Name "ad-domain-services" -IncludeAllSubFeature -IncludeManagementTools
+Add-WindowsFeature -Name "dns" -IncludeAllSubFeature -IncludeManagementTools
+Add-WindowsFeature -Name "gpmc" -IncludeAllSubFeature -IncludeManagementTools }
+Wait-Job -Name addFeature
 Get-WindowsFeature | Where installed >>$featureLogPath
 
 #Create New AD Forest
@@ -156,11 +156,11 @@ Now that you have our Active Directory environment, you need to create a test ac
 #       the Azure AD Connect password hash sync tutorial.
 #
 # DISCLAIMER:
-# Copyright (c) Microsoft Corporation. All rights reserved. This 
-# script is made available to you without any express, implied or 
-# statutory warranty, not even the implied warranty of 
-# merchantability or fitness for a particular purpose, or the 
-# warranty of title or non-infringement. The entire risk of the 
+# Copyright (c) Microsoft Corporation. All rights reserved. This
+# script is made available to you without any express, implied or
+# statutory warranty, not even the implied warranty of
+# merchantability or fitness for a particular purpose, or the
+# warranty of title or non-infringement. The entire risk of the
 # use or the results from the use of this script remains with you.
 #
 #
@@ -238,7 +238,7 @@ $VHDPath = 'D:\VM\CP1\CP1.vhdx'
 $VHDSize = '64424509440'
 
 #Create New Virtual Machine
-New-VM -Name $VMName -MemoryStartupBytes 16GB -BootDevice VHD -Path $Path -NewVHDPath $VHDPath -NewVHDSizeBytes $VHDSize -Generation 2 -Switch $Switch 
+New-VM -Name $VMName -MemoryStartupBytes 16GB -BootDevice VHD -Path $Path -NewVHDPath $VHDPath -NewVHDSizeBytes $VHDSize -Generation 2 -Switch $Switch
 
 #Set the memory to be non-dynamic
 Set-VMMemory $VMName -DynamicMemoryEnabled $false
@@ -281,42 +281,42 @@ Now that you have a virtual machine up, you need to do a few things before insta
 #       the Azure AD Connect password hash sync tutorial.
 #
 # DISCLAIMER:
-# Copyright (c) Microsoft Corporation. All rights reserved. This 
-# script is made available to you without any express, implied or 
-# statutory warranty, not even the implied warranty of 
-# merchantability or fitness for a particular purpose, or the 
-# warranty of title or non-infringement. The entire risk of the 
+# Copyright (c) Microsoft Corporation. All rights reserved. This
+# script is made available to you without any express, implied or
+# statutory warranty, not even the implied warranty of
+# merchantability or fitness for a particular purpose, or the
+# warranty of title or non-infringement. The entire risk of the
 # use or the results from the use of this script remains with you.
 #
 #
 #
 #
 #Declare variables
-$ipaddress = "10.0.1.118" 
-$ipprefix = "24" 
-$ipgw = "10.0.1.1" 
+$ipaddress = "10.0.1.118"
+$ipprefix = "24"
+$ipgw = "10.0.1.1"
 $ipdns = "10.0.1.118"
-$ipdns2 = "8.8.8.8" 
-$ipif = (Get-NetAdapter).ifIndex 
-$featureLogPath = "c:\poshlog\featurelog.txt" 
+$ipdns2 = "8.8.8.8"
+$ipif = (Get-NetAdapter).ifIndex
+$featureLogPath = "c:\poshlog\featurelog.txt"
 $newname = "CP1"
-$addsTools = "RSAT-AD-Tools" 
+$addsTools = "RSAT-AD-Tools"
 
 #Set static IP address
-New-NetIPAddress -IPAddress $ipaddress -PrefixLength $ipprefix -InterfaceIndex $ipif -DefaultGateway $ipgw 
+New-NetIPAddress -IPAddress $ipaddress -PrefixLength $ipprefix -InterfaceIndex $ipif -DefaultGateway $ipgw
 
 #Set the DNS servers
 Set-DnsClientServerAddress -InterfaceIndex $ipif -ServerAddresses ($ipdns, $ipdns2)
 
-#Rename the computer 
-Rename-Computer -NewName $newname -force 
+#Rename the computer
+Rename-Computer -NewName $newname -force
 
-#Install features 
-New-Item $featureLogPath -ItemType file -Force 
-Add-WindowsFeature $addsTools 
-Get-WindowsFeature | Where installed >>$featureLogPath 
+#Install features
+New-Item $featureLogPath -ItemType file -Force
+Add-WindowsFeature $addsTools
+Get-WindowsFeature | Where installed >>$featureLogPath
 
-#Restart the computer 
+#Restart the computer
 Restart-Computer
 ```
 
@@ -333,11 +333,11 @@ Now that you've created and renamed the VM, and it has a static IP address, you'
 #       the Azure AD Connect password hash sync tutorial.
 #
 # DISCLAIMER:
-# Copyright (c) Microsoft Corporation. All rights reserved. This 
-# script is made available to you without any express, implied or 
-# statutory warranty, not even the implied warranty of 
-# merchantability or fitness for a particular purpose, or the 
-# warranty of title or non-infringement. The entire risk of the 
+# Copyright (c) Microsoft Corporation. All rights reserved. This
+# script is made available to you without any express, implied or
+# statutory warranty, not even the implied warranty of
+# merchantability or fitness for a particular purpose, or the
+# warranty of title or non-infringement. The entire risk of the
 # use or the results from the use of this script remains with you.
 #
 #
@@ -347,20 +347,20 @@ Now that you've created and renamed the VM, and it has a static IP address, you'
 $DatabasePath = "c:\windows\NTDS"
 $DomainMode = "WinThreshold"
 $DomainName = "fabrikam.com"
-$DomaninNetBIOSName = "FABRIKAM"
+$DomainNetBIOSName = "FABRIKAM"
 $ForestMode = "WinThreshold"
 $LogPath = "c:\windows\NTDS"
 $SysVolPath = "c:\windows\SYSVOL"
-$featureLogPath = "c:\poshlog\featurelog.txt" 
+$featureLogPath = "c:\poshlog\featurelog.txt"
 $Password = "Pass1w0rd"
 $SecureString = ConvertTo-SecureString $Password -AsPlainText -Force
 
-#Install AD DS, DNS and GPMC 
-start-job -Name addFeature -ScriptBlock { 
-Add-WindowsFeature -Name "ad-domain-services" -IncludeAllSubFeature -IncludeManagementTools 
-Add-WindowsFeature -Name "dns" -IncludeAllSubFeature -IncludeManagementTools 
-Add-WindowsFeature -Name "gpmc" -IncludeAllSubFeature -IncludeManagementTools } 
-Wait-Job -Name addFeature 
+#Install AD DS, DNS and GPMC
+start-job -Name addFeature -ScriptBlock {
+Add-WindowsFeature -Name "ad-domain-services" -IncludeAllSubFeature -IncludeManagementTools
+Add-WindowsFeature -Name "dns" -IncludeAllSubFeature -IncludeManagementTools
+Add-WindowsFeature -Name "gpmc" -IncludeAllSubFeature -IncludeManagementTools }
+Wait-Job -Name addFeature
 Get-WindowsFeature | Where installed >>$featureLogPath
 
 #Create New AD Forest
@@ -380,11 +380,11 @@ Now that you have our Active Directory environment, you need to a test account. 
 #       the Azure AD Connect password hash sync tutorial.
 #
 # DISCLAIMER:
-# Copyright (c) Microsoft Corporation. All rights reserved. This 
-# script is made available to you without any express, implied or 
-# statutory warranty, not even the implied warranty of 
-# merchantability or fitness for a particular purpose, or the 
-# warranty of title or non-infringement. The entire risk of the 
+# Copyright (c) Microsoft Corporation. All rights reserved. This
+# script is made available to you without any express, implied or
+# statutory warranty, not even the implied warranty of
+# merchantability or fitness for a particular purpose, or the
+# warranty of title or non-infringement. The entire risk of the
 # use or the results from the use of this script remains with you.
 #
 #

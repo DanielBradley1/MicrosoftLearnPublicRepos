@@ -67,11 +67,9 @@ It's also possible to get a result that isn't an UpgradeResult, that is, *AADHea
 
 Then, make sure you allow the required URLs in your proxy or firewall. Automatic update is using Microsoft Entra Connect Health as described in the [overview](#overview). If you use a proxy, make sure Health is configured to use a [proxy server](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-health-agent-install#configure-azure-ad-connect-health-agents-to-use-http-proxy). Also test the [Health connectivity](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-health-agent-install#test-connectivity-to-azure-ad-connect-health-service) to Microsoft Entra ID.
 
-With the connectivity to Microsoft Entra ID verified, it's time to look into the eventlogs. Start the event viewer and look in the **Application** eventlog. Add an eventlog filter for the source **Microsoft Entra Connect Upgrade** and the event ID range **300-399**.  
-![Screenshot that shows the "Filter Current Log" window with "Event sources" and the "Include/Exclude" Event IDs box highlighted.](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/how-to-connect-install-automatic-upgrade/eventlogfilter.png)
+With the connectivity to Microsoft Entra ID verified, it's time to look into the eventlogs. Start the event viewer and look in the **Application** eventlog. Add an eventlog filter for the source **Microsoft Entra Connect Upgrade** and the event ID range **300-399**. ![Screenshot that shows the "Filter Current Log" window with "Event sources" and the "Include/Exclude" Event IDs box highlighted.](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/how-to-connect-install-automatic-upgrade/eventlogfilter.png)
 
-You can now see the eventlogs associated with the status for automatic upgrade.  
-![Eventlog filter for automatic upgrade](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/how-to-connect-install-automatic-upgrade/eventlogresult.png)
+You can now see the eventlogs associated with the status for automatic upgrade. ![Eventlog filter for automatic upgrade](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/media/how-to-connect-install-automatic-upgrade/eventlogresult.png)
 
 The result code has a prefix with an overview of the state.
 

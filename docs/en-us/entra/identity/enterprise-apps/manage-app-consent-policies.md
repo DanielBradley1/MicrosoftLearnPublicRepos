@@ -82,7 +82,7 @@ Similarly, a user or service principal can be given the ability to grant consent
   - A custom directory role with the necessary [permissions to manage app consent policies](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-consent-permissions#managing-app-consent-policies)
   - The Microsoft Graph app role \(application permission\) `Policy.ReadWrite.PermissionGrant` when connecting as an app or a service
 
-- Familiarize yourself with \(Permission grant condition sets\)\[/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0\]
+- Familiarize yourself with [Permission grant condition sets](https://learn.microsoft.com/en-us/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0)
 
 To manage app consent policies for applications with Microsoft Graph PowerShell, connect to [Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true).
 

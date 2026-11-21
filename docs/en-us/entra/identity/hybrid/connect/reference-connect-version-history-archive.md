@@ -598,7 +598,7 @@ $credential.UserName should be in FQDN\\username format. Example: contoso.com\\a
 ##### Example:
 
 ```powershell
-Set-ADSyncRestrictedPermissions -ObjectDN "CN=TestAccount1,CN=Users,DC=bvtadwbackdc,DC=com" -Credential $credential 
+Set-ADSyncRestrictedPermissions -ObjectDN "CN=TestAccount1,CN=Users,DC=bvtadwbackdc,DC=com" -Credential $credential
 ```
 
 ### Was this vulnerability used to gain unauthorized access?

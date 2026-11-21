@@ -124,7 +124,7 @@ To use *password writeback* and enable the self-service password reset \(SSPR\) 
 To use *password writeback* and enable the self-service password reset \(SSPR\) service to detect the cloud sync agent, use the `Set-AADCloudSyncPasswordWritebackConfiguration` cmdlet and the tenant’s Global Administrator credentials:
 
 ```
- Import-Module "C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll" 
+ Import-Module "C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll"
  Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-Credential)
 ```
 

@@ -52,7 +52,7 @@ Follow these steps to install the agent for the Azure Government cloud:
 
 
    ```
-   MicrosoftEntraPrivateNetworkConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment" 
+   MicrosoftEntraPrivateNetworkConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment"
    ```
 
 ## Single sign-on
