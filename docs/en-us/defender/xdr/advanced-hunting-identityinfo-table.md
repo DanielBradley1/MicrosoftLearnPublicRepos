@@ -19,8 +19,9 @@ This advanced hunting table is populated by records from Microsoft Defender for 
 
 | Column name | Data type | Description |
 | --- | --- | --- |
-| `Timestamp` [\*](#mdi-only) | `datetime` | The date and time that the line was written to the database.  <br>  <br>This is used when there are multiple lines for each identity, such as when a change is detected, or if 24 hours have passed since the last database line was added. |
+| `Timestamp` [\*](#mdi-only) | `datetime` | Date and time when the record was generated |
 | `ReportId` [\*](#mdi-only) | `string` | Unique identifier for the event |
+| `IdentityId` | `string` | Unique identifier for the identity |
 | `AccountObjectId` | `string` | Unique identifier for the account in Microsoft Entra ID |
 | `AccountUpn` | `string` | User principal name \(UPN\) of the account |
 | `OnPremSid` | `string` | On-premises security identifier \(SID\) of the account |
@@ -29,7 +30,7 @@ This advanced hunting table is populated by records from Microsoft Defender for 
 | `AccountDomain` [\*](#mdi-only) | `string` | Domain of the account |
 | `CriticalityLevel` | `int` | The criticality score of the account |
 | `Type` [\*](#mdi-only) | `string` | Type of identity; possible values: User, ServiceAccount |
-| `DistinguishedName` [\*](#mdi-only) | string | The user's [distinguished name](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ldap/distinguished-names) |
+| `DistinguishedName` [\*](#mdi-only) | `string` | The user's [distinguished name](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ldap/distinguished-names) |
 | `CloudSid` | `string` | Cloud security identifier of the account |
 | `GivenName` | `string` | Given name or first name of the account user |
 | `Surname` | `string` | Surname, family name, or last name of the account user |
@@ -44,24 +45,28 @@ This advanced hunting table is populated by records from Microsoft Defender for 
 | `Manager` [\*](#mdi-only) | `string` | The listed manager of the account user |
 | `Phone` [\*](#mdi-only) | `string` | The listed phone number of the account user |
 | `CreatedDateTime` [\*](#mdi-only) | `datetime` | Date and time when the account user was created |
+| `SourceProvider` | `string` | Primary identity provider of the account user |
 | `ChangeSource` [\*](#mdi-only) | `string` | Identifies which identity provider or process triggered the addition of the new row. For example, the `System-UserPersistence` value is used for any rows added by an automated process. |
 | `BlastRadius` [\*\*](#sentinel) | `string` | A calculation based on the position of the user in the org tree and the user's Microsoft Entra roles and permissions; possible values: Low, Medium, High |
 | `CompanyName` [\*\*](#sentinel) | `string` | Name of the company for which the user works |
 | `DeletedDateTime` [\*\*](#sentinel) | `datetime` | Date and time when the user account was deleted |
 | `EmployeeId` [\*\*](#sentinel) | `string` | Employee identifier assigned to the user by the organization |
 | `OtherMailAddresses` [\*\*](#sentinel) | `dynamic` | Additional email addresses of the user account |
+| `RiskScore` | `int` | Risk score of the identity as calculated by Microsoft Defender |
+| `RiskScoreUpdateTime` | `datetime` | Date and time Microsoft Defender last updated the risk score of the identity |
 | `RiskLevel` | `string` | Microsoft Entra ID risk level of the user account; possible values: Low, Medium, High |
 | `RiskLevelDetails` | `string` | Details regarding the Microsoft Entra ID risk level |
-| `State` [\*\*](#sentinel) | `string` | State where the sign-in occurred, if available |
+| `State` [\*\*](#sentinel) | `string` | Geographical state of the user account as defined in Microsoft Entra ID |
 | `Tags` [\*](#mdi-only) | `dynamic` | Tags assigned to the account user by Defender for Identity |
 | `AssignedRoles` [\*](#mdi-only) | `dynamic` | For identities from Microsoft Entra-only, the roles assigned to the account user |
 | `PrivilegedEntraPimRoles` \(Preview\) [\*\*\*](#mdi) | `dynamic` | A snapshot of privileged role assignment schedules and eligibility schedules for the account as maintained by Microsoft Entra Privileged Identity Management \(excluding activated assignments\) |
 | `TenantId` | `string` | Unique identifier representing your organization's instance of Microsoft Entra ID |
 | `SourceSystem` [\*](#mdi-only) | `string` | The source system for the record |
+| `TimeGenerated` | `datetime` | Time when the event was generated \(UTC\) |
 | `OnPremObjectId` | `string` | Active Directory object ID of the user |
 | `TenantMembershipType` | `string` | User type in Microsoft Entra ID; possible values: Guest, Member |
 | `RiskStatus` [\*\*](#sentinel) | `string` | Status of the user's risk; possible values: None, ConfirmedSafe, Remediated, Dismissed, AtRisk, ConfirmedCompromised, UnknownFutureValue |
-| `UserAccountControl` | `string` | Security attributes of the user account in the Active Directory domain |
+| `UserAccountControl` | `dynamic` | Security attributes of the user account in the Active Directory domain |
 | `IdentityEnvironment` | `string` | Environment where the identity is used; possible values: CloudOnly, Hybrid, On-premises |
 | `SourceProviders` | `dynamic` | Source providers of the accounts for the identity; possible values: ActiveDirectory, EntraID, Okta |
 | `GroupMembership` [\*\*](#sentinel) | `dynamic` | Microsoft Entra ID groups where the user account is a member |

@@ -65,7 +65,9 @@ For local PowerShell and organization-wide Microsoft Intune configuration option
 
 ### Prompt evidence collection
 
-Prompt evidence collection is a device setting for AI agent runtime protection. When collection is enabled and runtime protection is enabled in **Audit** or **Block** mode, Defender exposes prompt snippets exchanged between the user and the agent to support deeper analysis of agent-related alerts. These snippets include only the portions of user prompts or agent responses identified as suspicious and relevant to security classification.
+Prompt evidence collection is a device setting for AI agent runtime protection.
+
+When prompt evidence collection is enabled, Defender sends prompt data and tool calls, including their arguments, to the cloud to help detect threats and investigate suspicious agent activity. This content is sent in its original form, without redaction. Captured content can also appear in security alerts. Disabling collection stops this content from being sent to the cloud, which limits detections that rely on analyzing it.
 
 Note
 
@@ -73,9 +75,9 @@ An upcoming Microsoft Defender Antivirus platform release will enable prompt evi
 
 Important
 
-Sensitive data and secrets **aren't redacted** from prompt snippets shown in alerts. These snippets can contain users' conversations, sensitive data, and secrets. Review your organization's privacy and data-handling requirements before you enable collection. Evidence included in security alerts is retained according to the [Microsoft Defender XDR data retention policy](https://learn.microsoft.com/en-us/defender-xdr/data-privacy).
+Review your organization's privacy and data-handling requirements before you enable collection. Evidence included in security alerts is retained according to the [Microsoft Defender XDR data retention policy](https://learn.microsoft.com/en-us/defender-xdr/data-privacy).
 
-Disabling device-level collection doesn't disable runtime protection. Content associated with activity that Defender blocks can still appear in the associated security alert.
+Disabling device-level collection doesn't disable runtime protection.
 
 Configure device collection through PowerShell or the policy template. For prerequisites, commands, and deployment steps, see [Configure prompt evidence collection](https://learn.microsoft.com/en-us/defender-endpoint/configure-ai-agent-runtime-protection#configure-prompt-evidence-collection).
 

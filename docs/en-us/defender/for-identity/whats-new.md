@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-for-identity/whats-new -->
-<!-- Sitemap-Last-Modified: 2026-10-20 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # What's new in Microsoft Defender for Identity
 
@@ -16,6 +16,12 @@ For more information, see also:
 - [What's new in Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/cloud-app-security/release-notes)
 
 For updates about versions and features released six months ago or earlier, see the [What's new archive for Microsoft Defender for Identity](https://learn.microsoft.com/en-us/defender-for-identity/whats-new-archive).
+
+## November 2026
+
+### Sensor v3.x activation without Defender for Endpoint is now supported in government clouds
+
+The known limitation announced in the October 2026 update is now resolved for government cloud environments. For more information, see [Activate the Defender for Identity sensor](https://learn.microsoft.com/en-us/defender-for-identity/deploy/activate-sensor#onboard-a-server-without-defender-for-endpoint-deployment).
 
 ## October 2026
 

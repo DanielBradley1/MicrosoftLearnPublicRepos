@@ -149,7 +149,7 @@ On the **Configuration settings** page, configure the settings you need:
 
 Important
 
-Sensitive data and secrets **aren't redacted** from prompt snippets shown in alerts. During preview, the help text in the Intune template is being finalized. For current details about **Prompt Evidence Collection**, see [Prompt evidence collection](https://learn.microsoft.com/en-us/defender-endpoint/ai-agent-runtime-protection-overview#prompt-evidence-collection).
+When prompt evidence collection is enabled, prompt data and tool calls, including their arguments, are sent to the cloud in their original form, without redaction. During preview, the help text in the Intune template is being finalized. For current details about **Prompt Evidence Collection**, see [Prompt evidence collection](https://learn.microsoft.com/en-us/defender-endpoint/ai-agent-runtime-protection-overview#prompt-evidence-collection).
 
 For each inspection method, **Audit** detects and reports prompt injection while allowing the action to continue, and **Block** blocks detected threats at supported inspection points. Leave a method disabled if you don't need it. You can enable either inspection method or both.
 
