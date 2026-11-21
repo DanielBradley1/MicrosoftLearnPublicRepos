@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/crosstenantmigrationjob-cancel?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # crossTenantMigrationJob: cancel
 
 Namespace: microsoft.graph
 
 Cancel a [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0). All tasks within the job that were in a `Sync` state are canceled. If the job can't be canceled, a `409 Conflict` response is returned and the migrations continue. This response happens when a migration is already in progress or is in a terminal state.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

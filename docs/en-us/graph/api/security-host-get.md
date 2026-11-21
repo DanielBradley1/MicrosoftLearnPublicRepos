@@ -14,6 +14,8 @@ Read the properties and relationships of a [host](https://learn.microsoft.com/en
 - [hostname](https://learn.microsoft.com/en-us/graph/api/resources/security-hostname?view=graph-rest-1.0)
 - [ipAddress](https://learn.microsoft.com/en-us/graph/api/resources/security-ipaddress?view=graph-rest-1.0)
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

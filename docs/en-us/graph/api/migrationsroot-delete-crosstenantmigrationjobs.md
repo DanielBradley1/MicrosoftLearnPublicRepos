@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/migrationsroot-delete-crosstenantmigrationjobs?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Delete crossTenantMigrationJob
 
@@ -8,6 +8,8 @@ Namespace: microsoft.graph
 Delete a [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) object. Delete requests are long-running and finish within 48 hours.
 
 A [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) that is currently in progress can't be deleted. You can perform the deletion only after the [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) reaches a final state. If a [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) isn't in a final state, a `409 Conflict` response is returned.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

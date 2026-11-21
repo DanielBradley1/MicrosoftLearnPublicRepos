@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-governancerequest-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # Get governanceRequest
 
 Namespace: microsoft.graph
 
 Read the properties of a [governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) object.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

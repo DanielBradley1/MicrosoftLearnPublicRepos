@@ -1,17 +1,17 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-disableonlyenforcementaction?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-disableonlyenforcementaction?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # disableOnlyEnforcementAction resource type
 
 Namespace: microsoft.graph.identityGovernance
 
-Important
+Represents an enforcement action that disables a non-compliant identity. This type is configured in the **enforcementAction** property of a [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-1.0).
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+Inherits from [lifecyclePolicyEnforcementAction](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyenforcementaction?view=graph-rest-1.0).
 
-Represents an enforcement action that disables a non-compliant identity. This type is configured in the **enforcementAction** property of a [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-beta).
+## Methods
 
-Inherits from [lifecyclePolicyEnforcementAction](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyenforcementaction?view=graph-rest-beta).
+None.
 
 ## Properties
 

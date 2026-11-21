@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
 # List childFolders
 
@@ -8,6 +8,8 @@ Namespace: microsoft.graph
 Get the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) collection under the specified [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) in a mailbox.
 
 By default, hidden child folders aren't returned. To include them, specify `includeHiddenFolders=true`.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plannergroup-list-plans_v2?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # List plans\_v2 for a group
 
@@ -10,6 +10,8 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Get a list of the [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) objects owned by the group.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

@@ -7,6 +7,8 @@ Namespace: microsoft.graph
 
 Update a [SharePoint protection policy](https://learn.microsoft.com/en-us/graph/api/resources/sharepointprotectionpolicy?view=graph-rest-1.0). This method updates retention settings or adds a [siteProtectionUnit](https://learn.microsoft.com/en-us/graph/api/resources/siteprotectionunit?view=graph-rest-1.0) to or removes it from the protection policy.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

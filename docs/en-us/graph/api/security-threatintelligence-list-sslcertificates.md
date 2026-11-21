@@ -11,6 +11,8 @@ The Microsoft Threat Intelligence APIs are available to all customers with a Mic
 
 Get a list of [sslCertificate](https://learn.microsoft.com/en-us/graph/api/resources/security-sslcertificate?view=graph-rest-1.0) objects and their properties.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

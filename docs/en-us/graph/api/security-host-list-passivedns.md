@@ -13,6 +13,8 @@ Get a list of [passiveDnsRecord](https://learn.microsoft.com/en-us/graph/api/res
 
 This method is a forward DNS lookup that queries the IP address of the specified host using its hostname.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

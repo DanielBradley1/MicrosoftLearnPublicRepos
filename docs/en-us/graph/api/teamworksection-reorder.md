@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Reorder the sections in a user's teamwork. The **sectionsOrder** collection must contain every section ID returned by [List sections](https://learn.microsoft.com/en-us/graph/api/userteamwork-list-sections?view=graph-rest-beta), exactly once. If the collection contains the *QuickViews* system section, that section must be first.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

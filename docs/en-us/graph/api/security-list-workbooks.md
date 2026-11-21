@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-list-workbooks?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # List workbook objects
 
@@ -12,6 +12,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 Get the [workbooks](https://learn.microsoft.com/en-us/graph/api/resources/security-workbook?view=graph-rest-beta) in the tenant.
 
 The response omits **content** by default. To retrieve workbook documents in the collection response, explicitly select **content**, for example, `$select=id,name,content`.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

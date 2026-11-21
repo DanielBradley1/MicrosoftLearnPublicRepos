@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 List catalog entries that are applicable to devices targeted by a Windows Autopatch policy.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

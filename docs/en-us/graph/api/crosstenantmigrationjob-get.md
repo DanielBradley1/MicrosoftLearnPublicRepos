@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/crosstenantmigrationjob-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Get crossTenantMigrationJob
 
 Namespace: microsoft.graph
 
 Read the properties and relationships of a [crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) object. This API provides details about the [migration job](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0), but not about the individual [crossTenantMigrationTasks](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationtask?view=graph-rest-1.0) objects associated with the [migration job](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0).
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

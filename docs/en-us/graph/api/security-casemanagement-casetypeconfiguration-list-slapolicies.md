@@ -13,6 +13,8 @@ Get the [slaPolicyDefinition](https://learn.microsoft.com/en-us/graph/api/resour
 
 To review policies across the tenant, issue a separate request for each case type: `incidentCase`, `genericCase`, and `exposureCase`.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

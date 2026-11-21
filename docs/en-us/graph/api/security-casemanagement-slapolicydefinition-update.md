@@ -13,6 +13,8 @@ Update the properties of an [slaPolicyDefinition](https://learn.microsoft.com/en
 
 Updating **timers** replaces the entire collection. Individual timers don't have their own update endpoint.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

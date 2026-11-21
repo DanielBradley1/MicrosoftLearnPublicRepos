@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/privilegedaccessroot-list-customextensions?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # List roleManagementCustomCalloutExtensions
 
 Namespace: microsoft.graph
 
 Get a list of roleManagementCustomCalloutExtension objects configured for Privileged Identity Management \(PIM\).
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

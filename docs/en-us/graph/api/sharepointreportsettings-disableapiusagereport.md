@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Disable a [SharePoint API usage report metric](https://learn.microsoft.com/en-us/graph/api/resources/apiusagereportenablementstatus?view=graph-rest-beta) for the tenant. After you disable a metric, SharePoint stops collecting and reporting data for that specific usage metric.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

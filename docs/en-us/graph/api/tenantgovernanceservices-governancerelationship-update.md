@@ -12,6 +12,8 @@ Update the **status** property of a [governanceRelationship](https://learn.micro
 
 When the governed tenant updates the `status` to `terminated` in either model, the resources that were provisioned in the governed tenant upon relationship creation are deleted.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/privilegedaccessroot-delete-customextensions?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-24 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Delete roleManagementCustomCalloutExtension
 
@@ -10,6 +10,8 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Delete a [roleManagementCustomCalloutExtension](https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension?view=graph-rest-beta) object.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

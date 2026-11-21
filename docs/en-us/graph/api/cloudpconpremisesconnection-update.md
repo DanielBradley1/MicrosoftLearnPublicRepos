@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Update cloudPcOnPremisesConnection
 
@@ -10,6 +10,8 @@ Update the properties of a [cloudPcOnPremisesConnection](https://learn.microsoft
 Important
 
 **On-premises network connection** has been renamed as **Azure network connection**. **cloudPcOnPremisesConnection** objects here are equivalent to **Azure network connection** for the Cloud PC product.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/networkaccess-webfilteringpolicylink-delete?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-11-13 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # Delete webFilteringPolicyLink
 
@@ -10,6 +10,14 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Delete a [webFilteringPolicyLink](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-webfilteringpolicylink?view=graph-rest-beta).
+
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ❌ |
 
 ## Permissions
 

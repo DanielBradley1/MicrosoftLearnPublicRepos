@@ -9,6 +9,8 @@ Get a list of the [restorePoint](https://learn.microsoft.com/en-us/graph/api/res
 
 > **Note:** This API returns a maximum of five **restorePoint** objects. If you don't include the `orderBy` parameter, the five most recent restore points are returned.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/calendar-delta?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # calendar: delta
 
@@ -8,6 +8,8 @@ Namespace: microsoft.graph
 Get a set of [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-1.0) resources added, updated, or deleted in a user's mailbox.
 
 Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes \(additions, deletions, or updates\). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

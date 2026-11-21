@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Get a [driverUpdateDeviceStatus](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatedevicestatus?view=graph-rest-beta) resource for a driver or firmware update.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

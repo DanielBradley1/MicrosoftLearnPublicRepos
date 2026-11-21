@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/windowshelloforbusinessauthenticationmethod?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-01-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # windowsHelloForBusinessAuthenticationMethod resource type
 
@@ -25,6 +25,7 @@ This is a derived type that inherits from the [authenticationMethod](https://lea
 | displayName | String | The name of the device on which Windows Hello for Business is registered |
 | id | String | A unique identifier for this authentication method. Inherited from [authenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethod?view=graph-rest-1.0) |
 | keyStrength | authenticationMethodKeyStrength | Key strength of this Windows Hello for Business key. The possible values are: `normal`, `weak`, `unknown`. |
+| lastUsedDateTime | DateTimeOffset | The date and time of the authentication method's latest successful use, when usage data is available. Read-only. Nullable. Inherited from [authenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethod?view=graph-rest-1.0). See the base resource for best-effort population and unavailable-usage behavior. |
 
 ## Relationships
 
@@ -40,6 +41,7 @@ The following JSON representation shows the resource type. The following is a JS
   "displayName": "String",
   "createdDateTime": "String",
   "id": "String (Identifier)",
-  "keyStrength": {"@odata.type": "microsoft.graph.authenticationMethodKeyStrength"}
+  "keyStrength": {"@odata.type": "microsoft.graph.authenticationMethodKeyStrength"},
+  "lastUsedDateTime": "String (timestamp)"
 }
 ```

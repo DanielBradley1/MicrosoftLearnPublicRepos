@@ -7,6 +7,8 @@ Namespace: microsoft.graph
 
 Process [content](https://learn.microsoft.com/en-us/graph/api/resources/processcontentrequest?view=graph-rest-1.0) against data protection policies in the context of the current, or specified, user.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

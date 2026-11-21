@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-03 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
 # Create mailboxFolder
 
 Namespace: microsoft.graph
 
 Create a new [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) or child **mailboxFolder** in a user's mailbox.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

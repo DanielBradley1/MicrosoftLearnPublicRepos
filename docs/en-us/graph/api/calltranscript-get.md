@@ -17,6 +17,8 @@ For online meetings:
 - This API works differently in one or more national clouds. For details, see [Implementation differences in national clouds](https://learn.microsoft.com/en-us/graph/teamwork-national-cloud-differences).
 - If you want to retrieve meeting transcripts, use the [Create event](https://learn.microsoft.com/en-us/graph/api/user-post-events?view=graph-rest-1.0) API instead.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

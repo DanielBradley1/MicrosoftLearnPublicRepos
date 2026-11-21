@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Process content from an agent interaction against tenant data protection policies. The protected agent is identified in **protectedAppMetadata.applicationLocation**, and the other parties in the interaction are identified in **activityMetadata.participants**.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/contentmanagementroot-list-repositories?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-11-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # List repositories
 
@@ -10,6 +10,14 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 List the [contentManagementRepository](https://learn.microsoft.com/en-us/graph/api/resources/security-contentmanagement-contentmanagementrepository?view=graph-rest-beta) connections in the tenant. An empty tenant returns an empty collection.
+
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

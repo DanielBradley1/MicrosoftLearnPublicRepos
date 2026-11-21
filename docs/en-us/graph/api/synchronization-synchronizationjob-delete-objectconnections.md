@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/synchronization-synchronizationjob-delete-objectconnections?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Delete objectConnection
 
@@ -12,6 +12,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 Delete an [objectConnection](https://learn.microsoft.com/en-us/graph/api/resources/synchronization-objectconnection?view=graph-rest-beta) to clear the cached linkage record for an object in a [synchronizationJob](https://learn.microsoft.com/en-us/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-beta).
 
 The service clears the corresponding connector data store cache entry so the object is re-evaluated during a later synchronization cycle. This operation clears the linkage record; it doesn't delete the source or target directory object.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

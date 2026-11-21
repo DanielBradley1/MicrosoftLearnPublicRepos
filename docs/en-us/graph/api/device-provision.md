@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/device-provision?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # device: provision
 
@@ -10,6 +10,8 @@ Provision a [device](https://learn.microsoft.com/en-us/graph/api/resources/devic
 This action wraps the Zero Touch Deployment \(ZTD\) protocol to create a device in a pending state in the customer's directory. The device can't be used for authentication until it completes its registration. The created device is stamped with a system label that identifies the approved VDI provider.
 
 Only VDI applications on Microsoft's approved list of VDI providers can successfully call this action. Calls from other applications are blocked even when the application is granted the required permission.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

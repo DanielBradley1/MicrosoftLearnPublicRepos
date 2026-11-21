@@ -13,6 +13,8 @@ Get a collection of [passiveDnsRecord](https://learn.microsoft.com/en-us/graph/a
 
 A reverse DNS lookup queries the hostname of a [host](https://learn.microsoft.com/en-us/graph/api/resources/security-host?view=graph-rest-1.0) using an IP address.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

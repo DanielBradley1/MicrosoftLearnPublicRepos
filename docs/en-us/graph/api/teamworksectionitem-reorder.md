@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-reorder?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # teamworkSectionItem: reorder
 
@@ -10,6 +10,8 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Reorder the items in a user-defined section in a user's teamwork. The section must have **sortType** set to `userDefinedCustomOrder`, and the **itemsOrder** collection must contain every item ID returned by [List items](https://learn.microsoft.com/en-us/graph/api/teamworksection-list-items?view=graph-rest-beta), exactly once.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

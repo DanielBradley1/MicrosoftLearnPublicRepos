@@ -15,6 +15,8 @@ Supply a GUID in the request URL. Without a conditional header, this method crea
 
 The **content** value replaces the complete JSON document. It isn't a partial update or a nested merge.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

@@ -1,15 +1,13 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicysubjectreference?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicysubjectreference?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # lifecyclePolicySubjectReference resource type
 
 Namespace: microsoft.graph.identityGovernance
 
-Important
+An abstract type that identifies a subject represented in lifecycle policy reporting. Returned in the **subject** property of a [lifecyclePolicySubjectReport](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicysubjectreport?view=graph-rest-1.0).
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-An abstract type that identifies a subject represented in lifecycle policy reporting. Returned in the **subject** property of a [lifecyclePolicySubjectReport](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicysubjectreport?view=graph-rest-beta).
+This abstract type can't be instantiated directly. Its derived types are [lifecyclePolicyUserSubjectReference](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyusersubjectreference?view=graph-rest-1.0) and [lifecyclePolicyAgentIdentitySubjectReference](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyagentidentitysubjectreference?view=graph-rest-1.0). Use the `@odata.type` property to distinguish between these concrete types.
 
 ## Methods
 

@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/rolemanagementcustomcalloutextension-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Update roleManagementCustomCalloutExtension
 
 Namespace: microsoft.graph
 
 Update the properties of a roleManagementCustomCalloutExtension object.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

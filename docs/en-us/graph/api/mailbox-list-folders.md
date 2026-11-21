@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-08 -->
+<!-- Sitemap-Last-Modified: 2026-11-10 -->
 
 # List folders
 
@@ -8,6 +8,8 @@ Namespace: microsoft.graph
 Get all the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder?view=graph-rest-1.0) objects in the specified mailbox, including any search folders.
 
 By default, hidden folders aren't returned. To include them, specify `includeHiddenFolders=true`.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

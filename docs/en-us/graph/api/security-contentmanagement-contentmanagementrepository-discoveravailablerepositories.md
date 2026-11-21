@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-contentmanagement-contentmanagementrepository-discoveravailablerepositories?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-11-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # contentManagementRepository: discoverAvailableRepositories
 
@@ -10,6 +10,14 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Discover source-control repositories accessible through a supplied write-only **accessCredential**. The result contains up to 200 transient candidates and isn't paged.
+
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

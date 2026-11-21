@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-workbook-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Get workbook
 
@@ -10,6 +10,8 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Get a [workbook](https://learn.microsoft.com/en-us/graph/api/resources/security-workbook?view=graph-rest-beta) by its ID.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

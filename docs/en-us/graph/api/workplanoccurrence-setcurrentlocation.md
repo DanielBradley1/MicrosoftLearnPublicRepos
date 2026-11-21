@@ -7,6 +7,8 @@ Namespace: microsoft.graph
 
 Update a user's [work](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) location for the current day or current active segment. This action quickly updates the user's work location without modifying individual occurrences.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

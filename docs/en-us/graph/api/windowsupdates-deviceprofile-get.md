@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/windowsupdates-deviceprofile-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Get device profile
 
@@ -10,6 +10,8 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Get a [deviceProfile](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-deviceprofile?view=graph-rest-beta) resource and its Windows servicing information.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

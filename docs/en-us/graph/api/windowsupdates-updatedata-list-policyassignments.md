@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Get a list of [policyAssignment](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policyassignment?view=graph-rest-beta) resources that associate Windows Autopatch policies with devices.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

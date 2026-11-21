@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2025-07-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-30 -->
 
 # Create cloudPcOnPremisesConnection
 
@@ -10,6 +10,8 @@ Create a new [cloudPcOnPremisesConnection](https://learn.microsoft.com/en-us/gra
 Important
 
 **On-premises network connection** has been renamed as **Azure network connection**. **cloudPcOnPremisesConnection** objects here are equivalent to **Azure network connection** for the Cloud PC product.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

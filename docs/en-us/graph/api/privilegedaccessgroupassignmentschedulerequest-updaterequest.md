@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/privilegedaccessgroupassignmentschedulerequest-updaterequest?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-24 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # privilegedAccessGroupAssignmentScheduleRequest: updateRequest
 
 Namespace: microsoft.graph
 
 Update a privilegedAccessGroupAssignmentScheduleRequest object with the result of a custom extension evaluation. This action is used to submit the result of a custom extension evaluation for a role assignment request.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

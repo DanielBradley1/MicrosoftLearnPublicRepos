@@ -11,6 +11,8 @@ The Microsoft Threat Intelligence APIs are available to all customers with a Mic
 
 Get the list of [hostPair](https://learn.microsoft.com/en-us/graph/api/resources/security-hostpair?view=graph-rest-1.0) resources associated with a host, where that host is *either* the *parent* or the *child*.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

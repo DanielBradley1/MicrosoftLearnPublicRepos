@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization's router and the Microsoft gateway. This information is vital for configuring your router \(customer premise equipment\) after creating a [deviceLink](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-devicelink?view=graph-rest-beta). Refer to [Configure customer premises equipment for Global Secure Access](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-customer-premises-equipment?tabs=microsoft-entra-admin-center) to understand how to use this information to set up your router.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

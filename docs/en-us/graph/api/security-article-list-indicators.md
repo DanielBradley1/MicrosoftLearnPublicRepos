@@ -11,6 +11,8 @@ The Microsoft Threat Intelligence APIs are available to all customers with a Mic
 
 Get a list of [articleIndicator](https://learn.microsoft.com/en-us/graph/api/resources/security-articleindicator?view=graph-rest-1.0) objects that represent indicators of threat or compromise related to the contents of an [article](https://learn.microsoft.com/en-us/graph/api/resources/security-article?view=graph-rest-1.0).
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

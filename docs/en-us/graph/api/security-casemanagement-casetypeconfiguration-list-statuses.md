@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Get the [statusDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-statusdefinition?view=graph-rest-beta) objects that make up the allowed status tree for a [caseTypeConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-casetypeconfiguration?view=graph-rest-beta). Each top-level status carries its inline custom statuses in the **customStatuses** property.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

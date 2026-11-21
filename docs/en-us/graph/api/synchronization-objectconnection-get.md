@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/synchronization-objectconnection-get?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Get objectConnection
 
@@ -12,6 +12,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 Get the [objectConnection](https://learn.microsoft.com/en-us/graph/api/resources/synchronization-objectconnection?view=graph-rest-beta) cached linkage record for a known object in a [synchronizationJob](https://learn.microsoft.com/en-us/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-beta).
 
 During public preview, you must specify a known **objectId**. Collection listing isn't supported; a GET request to the **objectConnections** collection returns `400 Bad Request`.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

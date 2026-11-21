@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/plan-list-tasks?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # List task objects
 
@@ -10,6 +10,8 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Get a list of the task objects and their properties.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

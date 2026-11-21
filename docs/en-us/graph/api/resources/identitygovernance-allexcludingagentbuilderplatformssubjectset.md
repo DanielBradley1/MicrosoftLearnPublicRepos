@@ -1,15 +1,11 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-allexcludingagentbuilderplatformssubjectset?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-allexcludingagentbuilderplatformssubjectset?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # allExcludingAgentBuilderPlatformsSubjectSet resource type
 
 Namespace: microsoft.graph.identityGovernance
 
-Important
-
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Represents all agent identities except those created through the specified agent builder platforms. Use this type in the **scope** property of an [agentIdentityLifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-agentidentitylifecyclepolicy?view=graph-rest-beta). Inherits from [microsoft.graph.subjectSet](https://learn.microsoft.com/en-us/graph/api/resources/subjectset?view=graph-rest-beta).
+Represents all agent identities except those created through the specified agent builder platforms. Use this type in the **scope** property of an [agentIdentityLifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-agentidentitylifecyclepolicy?view=graph-rest-1.0). Inherits from [microsoft.graph.subjectSet](https://learn.microsoft.com/en-us/graph/api/resources/subjectset?view=graph-rest-1.0).
 
 ## Methods
 

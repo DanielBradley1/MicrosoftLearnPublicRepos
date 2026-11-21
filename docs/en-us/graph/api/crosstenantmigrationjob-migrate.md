@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/crosstenantmigrationjob-migrate?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # crossTenantMigrationJob: migrate
 
@@ -8,6 +8,8 @@ Namespace: microsoft.graph
 Migrate a [cross-tenant migration job](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) asynchronously. The job must pass validation before migration can start. After a job is created by using the [Create crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/migrationsroot-post-crosstenantmigrationjobs?view=graph-rest-1.0) method and validated by using the [validate](https://learn.microsoft.com/en-us/graph/api/crosstenantmigrationjob-validate?view=graph-rest-1.0) action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the **migrate** API.
 
 This action is asynchronous. After you call the **migrate** API, poll the [Get crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/crosstenantmigrationjob-get?view=graph-rest-1.0) endpoint to check for a terminal status of `completed`, `completedWithErrors`, or `failed`.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

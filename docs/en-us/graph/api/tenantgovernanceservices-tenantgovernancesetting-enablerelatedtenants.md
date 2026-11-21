@@ -11,6 +11,8 @@ Important
 
 This action must be called before using any related tenant APIs. Related tenant APIs won't run successfully unless this feature is explicitly enabled.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

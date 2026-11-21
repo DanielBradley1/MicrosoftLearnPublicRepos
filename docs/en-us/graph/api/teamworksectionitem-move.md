@@ -15,6 +15,8 @@ Note
 
 To move an item to a different user-defined section, we recommend that you use the [Add teamworkSectionItem](https://learn.microsoft.com/en-us/graph/api/teamworksection-post-items?view=graph-rest-beta) API. The **add** request moves the item if it's in another user-defined section.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

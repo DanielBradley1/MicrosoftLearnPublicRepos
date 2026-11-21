@@ -9,6 +9,14 @@ List the agent runs owned by an agentic session. This operation uses the [agentR
 
 Use this method to inspect individual agents contributing to a session. To monitor the overall playbook execution, [get the session](https://learn.microsoft.com/en-us/graph/api/investigationsession-get?view=graph-rest-beta) and inspect its status instead of inferring the session state from one agent run.
 
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
+
 ## Permissions
 
 Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).

@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-contentmanagement-contentmanagementrepository-disconnect?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-11-12 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # contentManagementRepository: disconnect
 
@@ -10,6 +10,14 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Disconnect a [contentManagementRepository](https://learn.microsoft.com/en-us/graph/api/resources/security-contentmanagement-contentmanagementrepository?view=graph-rest-beta). The provider **accessCredential** is optional: without it, the connection is still removed but repository-side artifacts may remain and are reported in **warning**. Remove the deployment identity to stop further pushes.
+
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

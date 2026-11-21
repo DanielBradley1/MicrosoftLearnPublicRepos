@@ -7,6 +7,8 @@ Namespace: microsoft.graph
 
 Create a new [governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) to establish a governance relationship with a governed tenant. The governed tenant can then accept or reject the request.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

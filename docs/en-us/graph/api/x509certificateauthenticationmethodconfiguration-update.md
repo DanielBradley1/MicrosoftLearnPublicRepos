@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/x509certificateauthenticationmethodconfiguration-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-05-12 -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # Update x509CertificateAuthenticationMethodConfiguration
 
 Namespace: microsoft.graph
 
 Update the properties of the [X.509 certificate authentication method](https://learn.microsoft.com/en-us/graph/api/resources/x509certificateauthenticationmethodconfiguration?view=graph-rest-1.0).
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

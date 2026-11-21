@@ -11,6 +11,8 @@ The Microsoft Threat Intelligence APIs are available to all customers with a Mic
 
 Read the properties and relationships of a [hostCookie](https://learn.microsoft.com/en-us/graph/api/resources/security-hostcookie?view=graph-rest-1.0) object.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

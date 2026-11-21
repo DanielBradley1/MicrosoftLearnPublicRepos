@@ -11,6 +11,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 
 Get a list of [deviceProfile](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-deviceprofile?view=graph-rest-beta) resources and their Windows servicing information.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

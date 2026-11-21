@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-03-25 -->
+<!-- Sitemap-Last-Modified: 2026-10-15 -->
 
 # List fido2AuthenticationMethod
 
 Namespace: microsoft.graph
 
 Retrieve a list of a user's [passkey \(FIDO2\) authentication method](https://learn.microsoft.com/en-us/graph/api/resources/fido2authenticationmethod?view=graph-rest-1.0) objects and their properties.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

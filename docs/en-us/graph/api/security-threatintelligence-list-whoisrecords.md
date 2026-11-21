@@ -13,6 +13,8 @@ Get a list of [whoisRecord](https://learn.microsoft.com/en-us/graph/api/resource
 
 > **Note:** You must include the `$search` query parameter in the request URL for this API.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

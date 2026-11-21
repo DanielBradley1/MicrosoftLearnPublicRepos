@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # billedAggregatedUsage: export
 
@@ -10,6 +10,8 @@ Note
 This API is available for Cloud Solution Provider \(CSP\) partners only to access their billed and unbilled reconciliation data for a tenant. To learn more about the CSP program, see [Microsoft Cloud Solution Provider](https://learn.microsoft.com/en-us/partner-center/csp-overview).
 
 Export billed aggregated Azure usage data for a specific invoice from a [billedAggregatedUsage](https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage?view=graph-rest-1.0) resource.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

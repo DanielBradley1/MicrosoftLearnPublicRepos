@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-11-13 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # What's new in Microsoft Graph
 
@@ -22,6 +22,11 @@ Features in *preview* status are subject to change without notice, and might not
 - Added the **error** property to the [granularRestoreArtifactBase](https://learn.microsoft.com/en-us/graph/api/resources/granularrestoreartifactbase) resource and its derived types. Use this property to get error details when a granular restore operation for an individual artifact fails or completes with an error.
 - Added audit metadata to the [browseQueryResponseItem](https://learn.microsoft.com/en-us/graph/api/resources/browsequeryresponseitem) resource. Use this metadata to identify when a file or folder was created or last modified and who made the change when you select items for granular restore.
 - Added support for tracking backup retention periods and pending retention changes on [protectionUnitBase](https://learn.microsoft.com/en-us/graph/api/resources/protectionunitbase). Use the **backupRetentionPeriodInDays** and **pendingRetentionPeriodChange** properties to monitor protection units as they move between policies with different retention periods.
+
+### Device and app management \| Cloud printing
+
+- Added the [pullPrintPrinter](https://learn.microsoft.com/en-us/graph/api/resources/pullprintprinter) resource type and related methods to create and manage virtual printers. Users can submit print jobs to a pull print printer and release them at a member printer.
+- Added support for secure release of print jobs. Set **holdJobsForSecureRelease** on a [printerShare](https://learn.microsoft.com/en-us/graph/api/resources/printershare) to hold submitted jobs, then use [release](https://learn.microsoft.com/en-us/graph/api/printjob-release) to release a job at a printer.
 
 ### Identity and access \| Directory management
 
@@ -70,6 +75,10 @@ Features in *preview* status are subject to change without notice, and might not
 
 - Added request guidance and examples for using **retentionSettings** when you create or update [Exchange](https://learn.microsoft.com/en-us/graph/api/resources/exchangeprotectionpolicy?view=graph-rest-beta&preserve-view=true), [OneDrive for Business](https://learn.microsoft.com/en-us/graph/api/resources/onedriveforbusinessprotectionpolicy?view=graph-rest-beta&preserve-view=true), and [SharePoint](https://learn.microsoft.com/en-us/graph/api/resources/sharepointprotectionpolicy?view=graph-rest-beta&preserve-view=true) protection policies to configure how long backups are retained.
 
+### Calendars
+
+Added the **sharingLevel** property to the [calendar](https://learn.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-beta&preserve-view=true) resource. Use this property to get the effective level of calendar event information visible to the current share recipient, separately from edit or delegate rights.
+
 ### Device and app management \| Cloud PC
 
 - Added the [retrieveFlexCloudPcAccessConfiguration](https://learn.microsoft.com/en-us/graph/api/cloudpc-retrieveflexcloudpcaccessconfiguration?view=graph-rest-beta&preserve-view=true) and [retrieveFlexCloudPcConfigurationDetail](https://learn.microsoft.com/en-us/graph/api/cloudpc-retrieveflexcloudpcconfigurationdetail?view=graph-rest-beta&preserve-view=true) functions on the [cloudPC](https://learn.microsoft.com/en-us/graph/api/resources/cloudpc?view=graph-rest-beta&preserve-view=true) resource to retrieve live Windows 365 Flex access state and Flex license availability.
@@ -79,8 +88,14 @@ Features in *preview* status are subject to change without notice, and might not
 - Added the [cloudPcUserProfileSnapshot](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcuserprofilesnapshot?view=graph-rest-beta&preserve-view=true) resource type and related methods for creating, exporting, and restoring user settings persistence cloud profile snapshots.
 - Deprecated the **userSettingsPersistenceStorageSizeCategory** property on the [cloudPcUserSettingsPersistenceConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcusersettingspersistenceconfiguration?view=graph-rest-beta&preserve-view=true) resource type. After December 11, 2026, use the **allocatedStorageSizeCategory** property on the [cloudPcStorageConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcstorageconfiguration?view=graph-rest-beta&preserve-view=true) resource type instead.
 
+### Device and app management \| Cloud printing
+
+- Added the [pullPrintPrinter](https://learn.microsoft.com/en-us/graph/api/resources/pullprintprinter?view=graph-rest-beta&preserve-view=true) resource type and related methods to create and manage virtual printers. Users can submit print jobs to a pull print printer and release them at a member printer.
+- Added support for secure release of print jobs. Set **holdJobsForSecureRelease** on a [printerShare](https://learn.microsoft.com/en-us/graph/api/resources/printershare?view=graph-rest-beta&preserve-view=true) to hold submitted jobs, then use [release](https://learn.microsoft.com/en-us/graph/api/printjob-release?view=graph-rest-beta&preserve-view=true) to release a job at a printer.
+
 ### Identity and access \| Directory management
 
+- Added the **clientIdMetadataDocumentUrl** and read-only **hasClientIdMetadataDocument** properties to the [agentIdentity](https://learn.microsoft.com/en-us/graph/api/resources/agentidentity?view=graph-rest-beta&preserve-view=true) resource type. Use them to create agent identities backed by a client ID metadata document \(CIMD\), read their immutable document URLs, and find CIMD-backed identities with `$filter`.
 - Added the **lifecyclePolicyComplianceState**, **lifecyclePolicyComplianceStateLastModifiedDateTime**, **lifecyclePolicyComplianceStateReason**, and **lifecyclePolicyNonComplianceDisablementDateTime** properties to the [agentIdentity](https://learn.microsoft.com/en-us/graph/api/resources/agentidentity?view=graph-rest-beta&preserve-view=true) and [agentIdentityBlueprintPrincipal](https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprintprincipal?view=graph-rest-beta&preserve-view=true) resources to report lifecycle policy compliance status, context, and enforcement timestamps.
 - Added the **lifecyclePolicyComplianceState** enumeration type to represent lifecycle policy compliance states.
 - Added the **isSingleInstance** property to the [application](https://learn.microsoft.com/en-us/graph/api/resources/application?view=graph-rest-beta&preserve-view=true) resource, inherited by [agentIdentityBlueprint](https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true). Set it when creating a blueprint to support at most one active agent identity per tenant without an agent identity blueprint principal.
@@ -118,6 +133,10 @@ Features in *preview* status are subject to change without notice, and might not
 ### Security \| Data security and compliance
 
 Added the [classificationGradingJobResponse](https://learn.microsoft.com/en-us/graph/api/resources/classificationgradingjobresponse?view=graph-rest-beta&preserve-view=true) resource type and [classificationGradingContentLocation](https://learn.microsoft.com/en-us/graph/api/resources/classificationgradingcontentlocation?view=graph-rest-beta&preserve-view=true) complex type to return matched text and surrounding context through the optional **contextText** property in classification grading results.
+
+### Reports \| Identity and access reports
+
+- Added the [resourcePolicyEvaluationEvent](https://learn.microsoft.com/en-us/graph/api/resources/resourcepolicyevaluationevent?view=graph-rest-beta&preserve-view=true) resource type and related read-only methods to audit Entra Resource Policy evaluations for Microsoft Graph requests. Use it to inspect net policy decisions and opt in to per-policy evaluation results for troubleshooting.
 
 ### Teamwork and communications \| Messaging
 
@@ -276,6 +295,10 @@ Added the **isHardDeleteProtectionEnabled** property to the [user](https://learn
 ### Mail
 
 Added the [importMime](https://learn.microsoft.com/en-us/graph/api/mailfolder-importmime?view=graph-rest-beta&preserve-view=true) method to the [mailFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailfolder?view=graph-rest-beta&preserve-view=true) resource to create a non-draft message in a mail folder directly from MIME content. Unlike [creating a message](https://learn.microsoft.com/en-us/graph/api/mailfolder-post-messages?view=graph-rest-beta&preserve-view=true), which always creates a draft, this method creates the message in a final, non-draft state. The message appears in the destination folder as if it was delivered; however, it doesn't go through transport, isn't stamped as sent, and never appears in the *Sent Items* folder. The action preserves the full MIME content, including internet message headers, body parts, and attachments. Use the **importMime** API to import existing mail into a mailbox, such as to migrate messages from another system.
+
+### Identity and access \| Monitoring & health
+
+- Added Agent ID autonomous and interactive sign-in failure monitoring to the [health monitoring alert](https://learn.microsoft.com/en-us/graph/api/resources/healthmonitoring-alert?view=graph-rest-beta&preserve-view=true) resource. Use the `agentId` scenario with the `agentIdAutonomousSignInFailure` and `agentIdInteractiveSignInFailure` alert types to monitor Agent ID sign-in health.
 
 ### Mail \| Message trace
 

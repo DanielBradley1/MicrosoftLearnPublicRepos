@@ -13,6 +13,8 @@ Create a new [ring](https://learn.microsoft.com/en-us/graph/api/resources/window
 
 You can use this method with the following child object types: [driverUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatering?view=graph-rest-beta), [featureUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatering?view=graph-rest-beta), and [qualityUpdateRing](https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-qualityupdatering?view=graph-rest-beta).
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

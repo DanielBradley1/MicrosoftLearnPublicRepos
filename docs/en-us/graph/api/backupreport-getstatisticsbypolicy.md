@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # backupReport: getStatisticsByPolicy
 
 Namespace: microsoft.graph
 
 Get the statistics that correspond to the specified policy ID of a [backupPolicyReport](https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyreport?view=graph-rest-1.0).
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

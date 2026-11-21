@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-list-governanceinvitations?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # List governanceInvitations
 
 Namespace: microsoft.graph
 
 Get a list of the [governanceInvitation](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governanceinvitation?view=graph-rest-1.0) objects and their properties. This API method returns all governance invitations where the calling tenant is either the governing tenant or the governed tenant.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

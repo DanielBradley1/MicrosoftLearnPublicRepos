@@ -7,6 +7,8 @@ Namespace: microsoft.graph
 
 Update the **canReceiveInvitations** property of the [tenantGovernanceSetting](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-tenantgovernancesetting?view=graph-rest-1.0) singleton. This property controls whether the tenant can receive governance invitations.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

@@ -1,11 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-list-governancerequests?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-13 -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # List governanceRequests
 
 Namespace: microsoft.graph
 
 Get a list of the [governanceRequest](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerequest?view=graph-rest-1.0) objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

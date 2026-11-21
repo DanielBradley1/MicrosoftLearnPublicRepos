@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-post-workbooks?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Create workbook
 
@@ -12,6 +12,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 Create a [workbook](https://learn.microsoft.com/en-us/graph/api/resources/security-workbook?view=graph-rest-beta) with a server-generated ID.
 
 To deploy a workbook with a stable, client-selected GUID, use [Update workbook](https://learn.microsoft.com/en-us/graph/api/security-workbook-update?view=graph-rest-beta) instead.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

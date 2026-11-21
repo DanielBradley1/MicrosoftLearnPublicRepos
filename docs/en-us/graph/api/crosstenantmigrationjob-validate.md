@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/crosstenantmigrationjob-validate?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # crossTenantMigrationJob: validate
 
@@ -8,6 +8,8 @@ Namespace: microsoft.graph
 Validate the configuration of a [cross-tenant migration job](https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob?view=graph-rest-1.0) asynchronously. This action doesn't migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a `submitted` or `validateFailed` status before you can call this action.
 
 This action is asynchronous. After you call the **validate** API, poll the [Get crossTenantMigrationJob](https://learn.microsoft.com/en-us/graph/api/crosstenantmigrationjob-get?view=graph-rest-1.0) endpoint to check for a terminal status of `validatePassed` or `validateFailed`.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

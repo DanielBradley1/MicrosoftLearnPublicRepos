@@ -9,6 +9,8 @@ Create a new [sharePointRestoreSession](https://learn.microsoft.com/en-us/graph/
 
 If no payload is provided when you create the restore session, the request creates an empty `standard` restore session by default.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

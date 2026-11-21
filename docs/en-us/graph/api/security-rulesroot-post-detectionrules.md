@@ -1,11 +1,19 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-rulesroot-post-detectionrules?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-03 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # Create detectionRule
 
 Namespace: microsoft.graph.security
 
 Create a new [detectionRule](https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule?view=graph-rest-1.0) object.
+
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

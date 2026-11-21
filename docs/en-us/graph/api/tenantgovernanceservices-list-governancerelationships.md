@@ -7,6 +7,8 @@ Namespace: microsoft.graph
 
 Get a list of the [governanceRelationship](https://learn.microsoft.com/en-us/graph/api/resources/tenantgovernanceservices-governancerelationship?view=graph-rest-1.0) objects and their properties. This API method returns all governance relationships where the calling tenant is either the governing tenant or the governed tenant.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

@@ -9,6 +9,14 @@ Read the properties and relationships of a [detectionRule](https://learn.microso
 
 With custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in your organization's network. Custom detection rules, which are written in [Kusto query language \(KQL\)](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/), automatically trigger [alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) and automated actions when events occur that match a KQL query.
 
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
+
 ## Permissions
 
 Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).

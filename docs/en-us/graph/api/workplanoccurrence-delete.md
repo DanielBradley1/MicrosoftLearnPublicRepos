@@ -7,6 +7,8 @@ Namespace: microsoft.graph
 
 Delete a [workPlanOccurrence](https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence?view=graph-rest-1.0) object from a user's work plan. Only time-off occurrences can be deleted. Occurrences generated from recurrences can't be deleted.
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |

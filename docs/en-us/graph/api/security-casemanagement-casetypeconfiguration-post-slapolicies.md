@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/security-casemanagement-casetypeconfiguration-post-slapolicies?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-03 -->
 
 # Create slaPolicyDefinition
 
@@ -12,6 +12,8 @@ APIs under the `/beta` version in Microsoft Graph are subject to change. Use of 
 Create an [slaPolicyDefinition](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-slapolicydefinition?view=graph-rest-beta) for a single case type.
 
 The owning case type is determined by the URL. A tenant can have up to 30 SLA policies across its case types.
+
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 

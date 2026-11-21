@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/planview-list-categories?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # List categories
 
@@ -10,6 +10,14 @@ Important
 APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
 Read a [plan](https://learn.microsoft.com/en-us/graph/api/resources/plan?view=graph-rest-beta) with its [category definitions](https://learn.microsoft.com/en-us/graph/api/resources/categorydefinition?view=graph-rest-beta) expanded through **planView**. Categories belong to a plan; `/planView/categories` isn't a standalone root collection. To locate one category, find its ID in the returned **planView.categories** array.
+
+## API availability
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 

@@ -14,6 +14,8 @@ Create a new [filteringRule](https://learn.microsoft.com/en-us/graph/api/resourc
 - [fqdnFilteringRule](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-fqdnfilteringrule?view=graph-rest-beta)
 - [webCategoryFilteringRule](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-webcategoryfilteringrule?view=graph-rest-beta)
 
+## API availability
+
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
