@@ -3,6 +3,10 @@
 
 # Offboarding in Microsoft 365 Backup
 
+Note
+
+The item-level offboarding and grace-period procedures in this article apply to OneDrive, SharePoint, and Exchange Online. Microsoft Entra Backup and Recovery Premium follows the separate retention and Standard-plan fallback behavior described in [Microsoft Entra Backup and Recovery Premium](#microsoft-entra-backup-and-recovery-premium).
+
 To stop using the Microsoft 365 Backup tool, you must offboard usage. This action includes pausing and deleting all active policies and deleting all of the backed-up data. You can initiate offboarding in two ways:
 
 - Disable the tool in the pay-as-you-go billing setup panel where you first enabled the tool.
@@ -45,13 +49,20 @@ If offboarding from Microsoft 365 Backup starts because of either an explicit re
 
 ![Screenshot of a data table showing the offboarding undo periods.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-backup/backup-offboarding-time.png?view=o365-worldwide)
 
-For Microsoft Entra Backup, the grace period is restricted to 30 days only. During this period, new backups are stopped, existing backups are billed, restores are allowed, backups are visible if re-enabled. After the 30-day grace period, billing stops, restores are disabled, all existing backups are deleted, and re-enablement is not possible.
-
 If you bring your billing back to a healthy state or ask support to reverse the offboarding, you can use the tool again and you don't lose any backups.
 
 Tip
 
 If you need to permanently delete specific offboarded items sooner, you can shorten their grace period to seven days. Because shortening a grace period accelerates permanent deletion, this action requires approval from a second admin. For more information, see [Backup critical action approval](#backup-critical-action-approval).
+
+## Microsoft Entra Backup and Recovery Premium
+
+When Microsoft Entra Backup and Recovery Premium is turned off, either by an administrator or because of a billing issue, the service stops creating new Premium backups. Existing Premium backups continue to be billed and remain available for difference reports and recovery until each backup expires under its rolling 30-day retention window. Stopping Premium doesn't extend a backup's retention or start a new 30-day retention period. Expired backups can't be recovered.
+
+- **Tenants with Microsoft Entra ID P1 or P2:** New Standard backups begin accumulating after Premium stops and are retained for up to seven days. Retained Premium backups and new Standard backups can appear together in the Microsoft Entra admin center.
+- **Tenants without Microsoft Entra ID P1 or P2:** No new Standard backups are created. Recovery remains available from retained Premium backups until those backups expire.
+
+This behavior is different from the offboarding grace period for OneDrive, SharePoint, and Exchange Online. For plan details and how to identify each backup's plan, see [Microsoft Entra Backup and Recovery plans](https://learn.microsoft.com/en-us/entra/backup/backup-recovery-plans).
 
 ## Backup critical action approval
 

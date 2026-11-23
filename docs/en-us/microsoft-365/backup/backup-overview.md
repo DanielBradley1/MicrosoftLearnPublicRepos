@@ -3,6 +3,10 @@
 
 # Overview of Microsoft 365 Backup
 
+Note
+
+**Microsoft Entra Backup and Recovery Premium is in public preview.** You can review a [more detailed and consolidated overview of Microsoft Entra Backup and Recovery, including the Premium plan](https://learn.microsoft.com/en-us/entra/backup/overview) in the separate Microsoft Entra documentation. For Premium pricing, see [Microsoft Entra Backup and Recovery Premium pricing](https://learn.microsoft.com/en-us/entra/backup/backup-recovery-premium-pricing).
+
 Microsoft 365 Backup is designed to ensure your organization's data is always protected and easily recoverable. With the ability to back up all or select SharePoint sites, OneDrive accounts, Exchange mailboxes, and Entra directory objects, Microsoft 365 Backup provides comprehensive coverage for your critical data.
 
 Note
@@ -25,7 +29,11 @@ To summarize, applications built on top of the Microsoft 365 Backup Storage plat
 
 ## Feature summary
 
-| Feature | OneDrive | SharePoint | Exchange Online | Entra |
+Note
+
+The Microsoft Entra capabilities described in this article apply to **Microsoft Entra Backup and Recovery Premium \(preview\)**, enabled through Microsoft 365 Backup. Premium retains up to 30 days of daily backups. The Standard plan, included with Microsoft Entra ID P1 or P2, retains up to seven days. Premium backup history accumulates after each daily backup cycle; enabling Premium doesn't immediately provide 30 days of history. For plan differences and what happens when Premium stops, see [Microsoft Entra Backup and Recovery plans](https://learn.microsoft.com/en-us/entra/backup/backup-recovery-plans).
+
+| Feature | OneDrive | SharePoint | Exchange Online | Entra Premium \(preview\) |
 | --- | --- | --- | --- | --- |
 | **Recovery window** | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, or any whole number of years from 1 through 10. Existing policies and artifacts default to 1 year. | Configurable on a backup policy: 3 months, 6 months, 1 year, or 2 years. Existing policies and artifacts default to 1 year. | Fixed recovery window of 30 days |
 | **Recovery points** | For full account restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | For full site restores: 10 minutes for two weeks prior  <br>  <br>Weekly snapshots beyond two weeks, through the configured recovery window of up to 10 years. | 10 minutes for prior 52 weeks | One snapshot every day for 30 days |
@@ -128,7 +136,7 @@ Microsoft 365 Backup supports the backup of sites and user accounts from both th
 2. Microsoft 365 Backup follows that definition except for disallowing deletion. Backup uses append-only storage to prevent nondeletion modifications or alterations of existing restore point data. This protects against service or malware overwrites of the backup data.
 3. Deletion of the backups isn't blocked, giving customers the option to offboard if needed or desired. There are a couple of defenses against undesired deletions built into the tool to approximate full immutability without some of the related drawbacks \(for example, lack of GDPR control\). These additional features include:
 
-   a. A fixed 90-day existing backup recovery [grace period](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding), similar to a soft-delete recycle bin within the Backup tool, that allows the customer to recover their backups up to 90 days after offboarding.
+   a. For OneDrive, SharePoint, and Exchange Online, a fixed 90-day existing backup recovery [grace period](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding), similar to a soft-delete recycle bin within the Backup tool, allows the customer to recover their backups up to 90 days after offboarding. Microsoft Entra Premium backups instead expire under their rolling 30-day retention window; see [Microsoft Entra Premium offboarding](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding?view=o365-worldwide#microsoft-entra-backup-and-recovery-premium).
 
    b. Retention and deletion policies \(for example, from Purview\) don't affect the backup recovery window, which remains fully isolated from those policies.
 

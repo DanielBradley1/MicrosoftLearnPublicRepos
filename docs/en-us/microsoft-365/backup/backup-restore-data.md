@@ -30,7 +30,7 @@ The restore point frequency, also known as the [recovery point objective](https:
 | Full OneDrive account and full SharePoint site restore | 10 minutes | One week, through the configured recovery window of up to 10 years |
 | Exchange Online | 10 minutes | 10 minutes |
 | File and folder restore in SharePoint and OneDrive | \(Roughly\) Daily | One week |
-| Entra | One day | One day \(up to 30 days only\) |
+| Entra Premium \(preview\) | One day | One day \(up to 30 days\) |
 
 For full OneDrive account and SharePoint site restores, available recovery points depend on the configured recovery window and the backup history accumulated since protection began. Increasing the recovery window doesn't create older recovery points or recover points that have already expired. For configuration options, see [Configure the backup recovery window](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide#configure-the-backup-recovery-window).
 
@@ -287,15 +287,15 @@ Follow these steps to restore data backed up for Exchange.
 4. On the **Review and Finish** page, review and finish all your choices. If everything looks as you want it, select **Restore user mailboxes**.
 5. Track the progress of your newly created task on the **Restoration tasks** tab.
 
-Microsoft 365 Backup restores deleted or modified Entra directory objects to a previously known-good state. It includes restoring, soft-deleting, and updating supported objects and attributes.
+Microsoft Entra Backup and Recovery Premium \(preview\), enabled through Microsoft 365 Backup, restores deleted or modified Entra directory objects to a previously known-good state. It includes restoring, soft-deleting, and updating supported objects and attributes.
 
 Key details:
 
 - A recovery ID identifies the recovery job.
-- Recovery window is 30 days only.
+- Premium retains up to 30 days of daily backups. Backup history accumulates after each daily backup cycle. The Standard plan, included with Microsoft Entra ID P1 or P2, retains up to seven days. For plan differences and what happens when Premium stops, see [Microsoft Entra Backup and Recovery plans](https://learn.microsoft.com/en-us/entra/backup/backup-recovery-plans).
 - Backups are created automatically once per day. Only retained backups are available for recovery and for generating difference reports.
 - Only one recovery runs at a time. If another job \(recovery job or difference report\) is already running, you must wait for it to complete or cancel it before starting a new one.
-- **Recovery History** retains recovery details for 30 days after the recovery completion date.
+- **Recovery History** shows completed and in-progress recovery jobs. Recovery-job history retention is separate from the retention of backups and isn't determined by Premium's 30-day backup recovery window. For current recovery-history retention and detailed instructions, see [Recover objects using Microsoft Entra Backup and Recovery](https://learn.microsoft.com/en-us/entra/backup/recover-objects).
 - Audit logs record all recovery actions.
 - Hard deleted Entra objects cannot be recovered by this approach. A separate functionality of [hard delete protection](https://learn.microsoft.com/en-us/entra/backup/configure-hard-deletion-protection) has been released \(preview\) to prevent hard deletion of the Entra objects.
 

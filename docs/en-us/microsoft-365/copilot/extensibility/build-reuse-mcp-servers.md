@@ -1,0 +1,90 @@
+<!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-mcp-servers -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
+
+# Build or reuse MCP servers
+
+Use the MCP server decision from your component plan to provide remotely hosted tools or resources. The running MCP server remains separate from the plugin package, so you must implement or confirm both the remote runtime and the supported connection to the target Microsoft experience.
+
+## Reuse an MCP server
+
+Before you build a server:
+
+1. Identify an approved MCP server that exposes the required tools or resources.
+2. Review its tool definitions, inputs, outputs, errors, annotations, and confirmation behavior.
+3. Confirm that its transport, authentication model, and protocol features are supported by the target Microsoft experience.
+4. Confirm the server owner, endpoint, version, availability, data handling, support, and change process.
+5. Obtain access and configure the development or test connection.
+6. Test representative discovery, authentication, invocation, and failure scenarios.
+
+Referencing an MCP server doesn't transfer responsibility for operating it. Record the service owner and support agreement before you reuse it.
+
+## Build and operate an MCP server
+
+Build a new MCP server when no approved server meets the requirement.
+
+1. Implement only the tools and resources required by the component plan.
+2. Define clear names, descriptions, inputs, outputs, errors, and safety annotations.
+3. Implement authentication, authorization, data access, and least-privilege behavior.
+4. Configure hosting, networking, secrets, logging, monitoring, scaling, and incident response.
+5. Version the protocol behavior and document compatibility expectations.
+6. Test the server independently before connecting it to a Microsoft experience.
+
+GitHub Copilot can assist with server code, schemas, tests, and repository changes. It doesn't provide the MCP runtime, hosting, authentication, or Microsoft 365 connection by itself.
+
+## Connect the server
+
+Use the integration supported by the selected development tool and target experience.
+
+Note
+
+Use WIQD to create a plugin that references a remote MCP server. For manual configuration through the `agentConnectors` array in the Microsoft 365 app manifest, see [Configure remote MCP servers for Microsoft 365 Copilot plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers). This configuration differs from the MCP plugin manifest used for declarative-agent actions. Support depends on the target experience.
+
+| Development approach | Start with |
+| --- | --- |
+| Work IQ Dev Tools \(recommended for supported pro-code scenarios\) | [Build a plugin with Work IQ Dev Tools](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/); for an agent action, use the [WIQD agent action workflow](https://microsoft.github.io/wiqd/cli/reference/#wiqd-agent-add-action) |
+| Existing declarative-agent project using Agents Toolkit | [Toolkit-based MCP integration walkthrough](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins) |
+| Copilot Studio | [Microsoft Copilot Studio documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/) |
+| Interactive MCP response | [Add MCP apps to declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps) |
+| BYO remote MCP server registration with Agent 365 CLI | [Register a remote MCP server in Agent Tools](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-for-agent?context=/microsoft-365/copilot/extensibility/context#register-a-remote-mcp-server) |
+
+Important
+
+The Agent 365 CLI BYO MCP route is in preview and uses a separate registration and administration model from an MCP plugin packaged for a Microsoft 365 declarative agent. The documented supported clients are Copilot Studio, Visual Studio Code, Claude Code, and GitHub Copilot CLI. Microsoft 365 declarative agents aren't supported by this route. Administrators use Agent Tools to review, approve, consent to, block, and monitor the registered server.
+
+### Work IQ Dev Tools
+
+The `wiqd plugin add connector` command adds a remote MCP connector to a WIQD plugin package. The documented server requirements include:
+
+- HTTPS with TLS 1.2 or later.
+- Streamable HTTP transport using JSON-RPC 2.0.
+- Support for `tools/list` and `tools/call`.
+- Tool calls that complete in less than 30 seconds.
+
+WIQD scaffolds against manifest version 1.29, where `mcpToolDescription` is optional. If you include a tool-description file, pass its path relative to `appPackage` with `wiqd plugin add connector --tool-description <relative-file-path>` alongside the required connector options. The referenced file must be included in the ZIP. For current Cowork discovery behavior and package requirements, see [Build plugins for Copilot Cowork](https://learn.microsoft.com/en-us/copilot/cowork/cowork-plugin-development).
+
+For OAuth or API-key authentication, register the credential first and add only its reference identifier to the package. Don't put client secrets, API keys, or tokens in the manifest. See the [WIQD plugin authoring reference](https://microsoft.github.io/wiqd/getting-started/plugin-reference/#connector--remote-mcp-server-requirements).
+
+For the WIQD plugin-package route, configure [authentication and tool discovery in the Microsoft 365 app manifest](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers). If you instead add the server as an MCP action to a declarative agent, use [agent action authentication](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication) and [dynamic discovery or pinned tools for the agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-dynamic-tool-discovery). Follow the selected integration's requirements rather than copying configuration between manifest models.
+
+## Confirm that the MCP capability is working
+
+The MCP server and its connection are ready for integration when:
+
+- The endpoint is available from the development or test environment.
+- Required tools or resources can be discovered by the target experience.
+- Representative operations return the expected structured results.
+- Authentication, authorization, consent, and permissions work as intended.
+- Confirmation, timeout, unavailable-service, invalid-input, and partial-failure behavior is understandable.
+- Logs and monitoring provide enough information to diagnose failures.
+- The server owner, version, endpoint, hosting, dependencies, limitations, and test evidence are recorded.
+
+Use [local MCP and API debugging](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-debug-local) when the server isn't publicly reachable during development.
+
+Continue with any other components in the plan. When they are complete, [integrate and test your components](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/integrate-test-plugin-components).
+
+## Related content
+
+- [MCP servers as plugin capabilities](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers)
+- [Build or reuse capabilities for your plugin](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-plugin)
+- [MCP apps UX guidelines](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps-ui-guidelines)
+- [Troubleshoot MCP apps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps-troubleshooting)

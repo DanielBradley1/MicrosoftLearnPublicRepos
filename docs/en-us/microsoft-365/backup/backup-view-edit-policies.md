@@ -7,11 +7,11 @@
 
 To use Microsoft 365 Backup for SharePoint, Exchange, OneDrive or Entra, you need to create a backup policy for each product. A *policy* represents the backup plan defined by admins for protecting the Microsoft 365 data of an organization.
 
-A policy contains details of what data \(SharePoint sites, Exchange mailboxes, OneDrive accounts, and Entra objects\) to protect. You can set the **Recovery window** when you create a policy and change it later on an active policy. The backup frequency isn't currently variable or modifiable. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
+A policy contains details of what data \(SharePoint sites, Exchange mailboxes, OneDrive accounts, and Entra objects\) to protect. For SharePoint, Exchange, and OneDrive, you can set the **Recovery window** when you create a policy and change it later on an active policy. The backup frequency isn't currently variable or modifiable. For more information, see [Configure the backup recovery window](#configure-the-backup-recovery-window).
 
 You can create more than one backup policy for each product \(SharePoint, Exchange, and OneDrive\) with a limit of 100 policies per product, and each backup policy can protect up to 100,000 items. This allows you to segregate your data by logical partitions such as department, geography, and so on for ease of management and administration. Note that any SharePoint site, Exchange mailbox, or OneDrive account can be part of one backup policy only. For more information about capacity limits, see [Backup scale limits](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide#backup-scale-limits).
 
-Entra backup supports single policy paradigm and full tenant backup. You can back up all the [supported Entra objects](https://learn.microsoft.com/en-us/entra/backup/scope-supported-objects-limitations) in your tenant via a single policy for Entra backup. There is no provision to create more than one policy. There is no limit on the number of objects that can be backed up within the single policy. The recovery window is fixed at 30 days and there is no option to configure this recovery window. Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authentication method policy, and authorization policy \(selected properties\). The solution also supports Agent ID because it consists of user and service principal objects with distinct types and characteristics.
+Microsoft Entra Backup and Recovery Premium \(preview\), enabled through Microsoft 365 Backup, supports a single policy and full tenant backup. You can back up all the [supported Entra objects](https://learn.microsoft.com/en-us/entra/backup/scope-supported-objects-limitations) in your tenant via a single policy for Entra backup. There is no provision to create more than one policy. There is no limit on the number of objects that can be backed up within the single policy. Premium's backup recovery window is fixed at 30 days and isn't configurable. Available backup history accumulates after each daily backup cycle. The Standard plan, included with Microsoft Entra ID P1 or P2, retains up to seven days. For plan differences and what happens when Premium stops, see [Microsoft Entra Backup and Recovery plans](https://learn.microsoft.com/en-us/entra/backup/backup-recovery-plans). Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authentication method policy, and authorization policy \(selected properties\). The solution also supports Agent ID because it consists of user and service principal objects with distinct types and characteristics.
 
 Tip
 
@@ -204,7 +204,7 @@ Follow these steps to set up a backup policy for OneDrive accounts using Microso
 <details>
 <summary>**Entra**</summary>
 
-Follow these steps to set up a backup policy for Entra objects using Microsoft 365 Backup.
+Follow these steps to set up Microsoft Entra Backup and Recovery Premium \(preview\) using Microsoft 365 Backup.
 
 1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home).
 2. Select **Settings**.
@@ -232,7 +232,7 @@ Follow these steps to set up a backup policy for Entra objects using Microsoft 3
 
 ## Configure the backup recovery window
 
-The **Recovery window** determines how long Microsoft 365 Backup keeps recovery points for the artifacts in a backup policy. You set the recovery window on a policy, and it applies to every artifact in that policy. For SharePoint, OneDrive, and Exchange Online, existing policies and artifacts default to a 1-year recovery window. Microsoft Entra ID backup uses a fixed 30-day recovery window.
+The **Recovery window** determines how long Microsoft 365 Backup keeps recovery points for the artifacts in a backup policy. You set the recovery window on a policy, and it applies to every artifact in that policy. For SharePoint, OneDrive, and Exchange Online, existing policies and artifacts default to a 1-year recovery window. Microsoft Entra Backup and Recovery Premium uses a fixed 30-day backup recovery window; this setting doesn't apply to the Standard plan's seven-day retention.
 
 You can set the recovery window to one of the following values, depending on the workload:
 
@@ -359,7 +359,7 @@ Follow these steps to view and edit backup policies for OneDrive.
 <details>
 <summary>**Entra**</summary>
 
-Follow these steps to view and edit backup policies for Entra.
+Follow these steps to view and edit the Microsoft Entra Backup and Recovery Premium policy. For what happens when Premium is turned off, see [Microsoft Entra Premium offboarding](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding?view=o365-worldwide#microsoft-entra-backup-and-recovery-premium).
 
 1. In the Microsoft 365 admin center, on the **Microsoft 365 Backup** page, select the **Backup policies** tab to view the list of all backup policies created in your organization. You can filter the list of policies by **Entra** **Service** to view the list of all Entra backup policies created in your organization. To edit any specific policy, select that policy and then select **View details**.  
    ![Screenshot showing the Entra backup policy details in Microsoft 365 Backup.](https://learn.microsoft.com/en-us/microsoft-365/backup/media/backup-view-edit-policies/image4.png?view=o365-worldwide)
