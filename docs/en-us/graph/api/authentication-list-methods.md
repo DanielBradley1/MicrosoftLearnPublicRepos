@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/authentication-list-methods?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Sitemap-Last-Modified: 2025-07-23 -->
 
 # List methods
 
@@ -8,8 +8,6 @@ Namespace: microsoft.graph
 Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the [authenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethod?view=graph-rest-1.0) resource type, and only the methods supported on this API version. See [Microsoft Entra authentication methods API overview](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethods-overview?view=graph-rest-1.0) for a list of currently supported methods.
 
 We don't recommend using the authentication methods APIs for scenarios where you need to iterate over your entire user population for auditing or security check purposes. For these types of scenarios, we recommend using the [authentication method registration and usage reporting APIs](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethods-usage-insights-overview).
-
-## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -84,8 +82,6 @@ Don't supply a request body for this method.
 ## Response
 
 If successful, this method returns a `200 OK` response code and a collection of [authenticationMethod](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethod?view=graph-rest-1.0) objects in the response body.
-
-The **lastUsedDateTime** property is read-only and populated on a best-effort basis. It can be `null` or absent when usage data is unavailable or the method doesn't support usage tracking. A `null` or absent value doesn't mean that the method was never used.
 
 ## Examples
 
@@ -217,8 +213,7 @@ Content-type: application/json
       "attestationCertificates": [
           "dbe793efdf1945e2df25d93653a1e8a3268a9075"
       ],
-      "attestationLevel": "attested",
-      "lastUsedDateTime": null
+      "attestationLevel": "attested"
     },
     {
     "@odata.type": "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod",

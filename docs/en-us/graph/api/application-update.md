@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/application-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-14 -->
+<!-- Sitemap-Last-Modified: 2026-04-17 -->
 
 # Update application
 
@@ -23,9 +23,9 @@ Choose the permission or permissions marked as least privileged for this API. Us
 
 | Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | Application.ReadWrite.All | HardDeletionSetting.ReadWrite.Enable |
+| Delegated \(work or school account\) | Application.ReadWrite.All | Not available. |
 | Delegated \(personal Microsoft account\) | Application.ReadWrite.All | Not available. |
-| Application | Application.ReadWrite.OwnedBy | Application.ReadWrite.All, HardDeletionSetting.ReadWrite.Enable |
+| Application | Application.ReadWrite.OwnedBy | Application.ReadWrite.All |
 
 Important
 

@@ -1,11 +1,21 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/user-removeselfassponsor?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/user-removeselfassponsor?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-10-28 -->
 
 # user: removeSelfAsSponsor
 
 Namespace: microsoft.graph.identityGovernance
 
-Remove the signed-in [user](https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0) as a sponsor of a guest user.
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Remove the signed-in [user](https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-beta) as a sponsor of a guest user.
+
+This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
+
+| Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
+| --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | ✅ |
 
 ## Permissions
 
@@ -16,10 +26,6 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | Delegated \(work or school account\) | Not required. | None. |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
 | Application | Not supported. | Not supported. |
-
-This action supports delegated access for work or school accounts only. Personal Microsoft accounts aren't supported. Application calls are rejected with `400 Bad Request`. The lifecycle workflows action doesn't check an additional named Graph scope or admin role.
-
-The signed-in caller must exist and must not be a guest. The target must exist and must be a guest. The action removes only the signed-in caller's sponsorship; it doesn't remove any other sponsor.
 
 ## HTTP request
 
@@ -46,7 +52,7 @@ If successful, this action returns a `204 No Content` response code. It doesn't 
 ### Request
 
 ```http
-POST https://graph.microsoft.com/v1.0/users/e4f5d67a-5a10-4c40-9734-0c5f2d83a1bf/microsoft.graph.identityGovernance.removeSelfAsSponsor
+POST https://graph.microsoft.com/beta/users/e4f5d67a-5a10-4c40-9734-0c5f2d83a1bf/microsoft.graph.identityGovernance.removeSelfAsSponsor
 ```
 
 ### Response

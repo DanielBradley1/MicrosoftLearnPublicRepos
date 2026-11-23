@@ -1,13 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Sitemap-Last-Modified: 2024-04-05 -->
 
 # reportRoot: getGroupArchivedPrintJobs
 
 Namespace: microsoft.graph
 
 Get a list of archived print jobs for a particular group.
-
-## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -35,11 +33,11 @@ GET /reports/getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{start
 
 In the request URL, provide the following function parameters with values:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| groupId | String | Required. The ID of the group to return data for. |
-| startDateTime | DateTimeOffset | Optional. The start date \(inclusive\) for the time period to include data from. |
-| endDateTime | DateTimeOffset | Optional. The end date \(inclusive\) for the time period to include data from. |
+| Parameter | Type | Required? | Description |
+| --- | --- | --- | --- |
+| `groupId` | `Edm.String` | Yes | The ID of the group to return data for. |
+| `startDateTime` | `Edm.DateTimeOffset` | No | The start date \(inclusive\) for the time period to include data from. |
+| `endDateTime` | `Edm.DateTimeOffset` | No | The end date \(inclusive\) for the time period to include data from. |
 
 > **Note:** If a value is not required, pass the parameter with null value.
 

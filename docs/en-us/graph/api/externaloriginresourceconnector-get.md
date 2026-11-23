@@ -1,13 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/externaloriginresourceconnector-get?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-14 -->
+<!-- Sitemap-Last-Modified: 2026-09-05 -->
 
 # Get externalOriginResourceConnector
 
 Namespace: microsoft.graph
 
 Read the properties and relationships of an [externalOriginResourceConnector](https://learn.microsoft.com/en-us/graph/api/resources/externaloriginresourceconnector?view=graph-rest-1.0) object.
-
-## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -51,9 +49,7 @@ If successful, this method returns a `200 OK` response code and an [externalOrig
 
 ## Examples
 
-### Example 1: Get an SAP IAG connector
-
-#### Request
+### Request
 
 The following example shows a request.
 
@@ -148,7 +144,7 @@ result = await graph_client.identity_governance.entitlement_management.external_
 
 > For details about how to [add the SDK](https://learn.microsoft.com/en-us/graph/sdks/sdk-installation) to your project and [create an authProvider](https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview).
 
-#### Response
+### Response
 
 The following example shows the response.
 
@@ -178,45 +174,5 @@ Content-Type: application/json
   "createdDateTime": "2026-02-23T10:15:30Z",
   "modifiedBy": null,
   "modifiedDateTime": null
-}
-```
-
-### Example 2: Get an SAP AC connector
-
-The following example illustrates the SAP AC connection and concrete authentication types in a shortened response.
-
-#### Request
-
-```http
-GET https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/externalOriginResourceConnectors/22222222-2222-4222-8222-222222222222
-```
-
-#### Response
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "@odata.type": "#microsoft.graph.externalOriginResourceConnector",
-  "id": "22222222-2222-4222-8222-222222222222",
-  "displayName": "SAP AC connector",
-  "description": "Access governance for the SAP AC system",
-  "connectorType": "sapAc",
-  "connectionInfo": {
-    "@odata.type": "#microsoft.graph.externalSapAcConnectionInfo",
-    "url": "https://sap-ac.contoso.com/http/",
-    "subscriptionId": "11111111-1111-4111-8111-111111111111",
-    "resourceGroup": "sap-ac-governance",
-    "keyVaultName": "contoso-sap-ac",
-    "systemId": "AC1CLNT100",
-    "userIdentifier": "email",
-    "authenticationInfo": {
-      "@odata.type": "#microsoft.graph.clientCredentialAuthenticationInfo",
-      "clientId": "33333333-3333-4333-8333-333333333333",
-      "secretName": "sap-ac-client-secret",
-      "accessTokenUrl": "https://sap-ac-auth.contoso.com/oauth/token"
-    }
-  }
 }
 ```

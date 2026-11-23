@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/connectioninfo?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-14 -->
+<!-- Sitemap-Last-Modified: 2026-08-20 -->
 
 # connectionInfo resource type
 
@@ -9,7 +9,6 @@ The connectionInfo object defines the resource locator that is used to communica
 
 The following types are derived from connectionInfo:
 
-- [externalSapAcConnectionInfo](https://learn.microsoft.com/en-us/graph/api/resources/externalsapacconnectioninfo?view=graph-rest-1.0)
 - [externalTokenBasedSapIagConnectionInfo](https://learn.microsoft.com/en-us/graph/api/resources/externaltokenbasedsapiagconnectioninfo?view=graph-rest-1.0)
 
 In entitlement management, this object is configured in the following properties and relationships:

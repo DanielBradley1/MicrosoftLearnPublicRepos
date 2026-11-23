@@ -1,24 +1,24 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyscopeprocessing?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyscopeprocessing?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-10-07 -->
 
 # lifecyclePolicyScopeProcessing resource type
 
 Namespace: microsoft.graph.identityGovernance
 
-Represents current and latest retained scope-processing information for a lifecycle policy. Returned in the **scopeProcessing** property of a [lifecyclePolicyReport](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyreport?view=graph-rest-1.0).
+Important
 
-## Methods
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
 
-None.
+Represents current and latest retained scope-processing information for a lifecycle policy. Returned in the **scopeProcessing** property of a [lifecyclePolicyReport](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyreport?view=graph-rest-beta).
 
 ## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | currentStartedDateTime | DateTimeOffset | The date and time when the current scope-processing operation started. |
-| currentStatus | microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingStatus | The current scope-processing status. The possible values are: `idle`, `notStarted`, `evaluating`, `processing`, `unknownFutureValue`. |
+| currentStatus | [microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingStatus](https://learn.microsoft.com/en-us/graph/api/resources/enums-identitygovernance?view=graph-rest-beta#lifecyclepolicyscopeprocessingstatus-values) | The current scope-processing status. The possible values are: `idle`, `notStarted`, `evaluating`, `processing`, `unknownFutureValue`. |
 | lastSuccessfulProcessingDateTime | DateTimeOffset | The date and time when scope processing last completed successfully. |
-| latestAttempt | [microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttempt](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyscopeprocessingattempt?view=graph-rest-1.0) | The latest retained scope-processing attempt. |
+| latestAttempt | [microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttempt](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyscopeprocessingattempt?view=graph-rest-beta) | The latest retained scope-processing attempt. |
 
 ## Relationships
 
