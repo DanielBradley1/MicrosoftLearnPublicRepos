@@ -20,6 +20,7 @@ You can also get product updates and important notifications through the [messag
 ## November 2026
 
 - **Expanded identity activity visibility in advanced hunting**: Advanced hunting now includes additional Active Directory activity in identity event tables. Use `IdentityDirectoryEvents` for DRSR and GPO update events, `IdentityQueryEvents` for LDAP search and LDAP ping events, and `IdentityLogonEvents` for Kerberos and LDAP bind extended events. For more information, see [Advanced hunting schema tables](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-schema-tables).
+- \(Preview\) **Alert grouping for custom detection rules**: Starting November 17, 2026, configure a time frame and matching criteria to combine related alerts from the same rule into a single incident. For configuration options and limits, see [Alert grouping](https://learn.microsoft.com/en-us/defender-xdr/custom-detection-rules#alert-grouping-preview).
 - \(Preview\) **Protect AI assets from trusted-identity attacks**: Microsoft Defender XDR now includes new security-for-AI coverage to help protect AI assets from identity compromise patterns that can be used to weaponize trusted agents. This preview focuses on detections and disruption for device code phishing scenarios targeting GitHub Copilot CLI in Microsoft Defender. For best coverage, connect the GitHub connector at the **Enterprise level**. For connector setup guidance, see [Protect your GitHub Enterprise environment](https://learn.microsoft.com/en-us/defender-cloud-apps/protect-github). For details, see [Protect AI agents from trusted-identity attacks \(Preview\)](https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/protect-ai-agents-from-trusted-identity-attacks).
 - \(Preview\) **New navigation**: The reorganized Microsoft Defender portal navigation brings security operations together in one integrated experience. Microsoft Sentinel pages move from a separate Sentinel section into the areas where they're used. Moved and newly added items are marked **New**.
 
@@ -41,6 +42,8 @@ You can also get product updates and important notifications through the [messag
 
 
   For an overview of the portal, see [Microsoft Defender XDR in the Microsoft Defender portal](https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender-portal).
+
+- \(Preview\) **Entity mapping enhancements for custom detection rules**: Starting November 17, 2026, map up to four identifiers to each entity and add the same entity type more than once. Additional identifiers are supported for existing entity types in **Impacted Assets** and **Related Evidence**. For configuration steps and the new identifiers, see [Expanded entity mapping](https://learn.microsoft.com/en-us/defender-xdr/custom-detection-rules#expanded-entity-mapping).
 
 ## September 2026
 
