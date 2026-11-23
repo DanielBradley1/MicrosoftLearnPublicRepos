@@ -1,11 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/id-governance/manage-sponsored-guests-my-access -->
 <!-- Sitemap-Last-Modified: 2026-10-01 -->
 
-# Manage sponsored guests in My Account \(preview\)
-
-Important
-
-Sponsored guest management in My Account is currently in preview. Preview features are provided without a service-level agreement and aren't recommended for production workloads. Certain features might not be supported or might have limited capabilities.
+# Manage sponsored guests in My Account
 
 A sponsor helps manage a Microsoft Entra guest user's lifecycle and continued access to organizational resources. Sponsors are typically familiar with why a guest collaborates with the organization and whether that access is still needed.
 
