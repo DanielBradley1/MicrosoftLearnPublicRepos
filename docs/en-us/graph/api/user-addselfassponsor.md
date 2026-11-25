@@ -1,21 +1,19 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/user-addselfassponsor?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-22 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/user-addselfassponsor?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # user: addSelfAsSponsor
 
 Namespace: microsoft.graph.identityGovernance
 
-Important
+Add the signed-in [user](https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0) as a sponsor of a sponsorless guest user. The signed-in user must be a member user. This action is idempotent and returns `204 No Content` if the signed-in user is already a sponsor.
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
-
-Add the signed-in [user](https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-beta) as a sponsor of a sponsorless guest user. The signed-in user must be a member user. This action is idempotent and returns `204 No Content` if the signed-in user is already a sponsor.
+## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
 | Global service | US Government L4 | US Government L5 \(DOD\) | China operated by 21Vianet |
 | --- | --- | --- | --- |
-| ✅ | ✅ | ✅ | ✅ |
+| ✅ | ❌ | ❌ | ❌ |
 
 ## Permissions
 
@@ -26,6 +24,10 @@ Choose the permission or permissions marked as least privileged for this API. Us
 | Delegated \(work or school account\) | Not required. | None. |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
 | Application | Not supported. | Not supported. |
+
+This action supports delegated access for work or school accounts only. Personal Microsoft accounts aren't supported. Application calls are rejected with `400 Bad Request`. The lifecycle workflows action doesn't check an additional named Graph scope or admin role.
+
+The signed-in caller must exist and must not be a guest. The target must exist and must be a guest. Adding a sponsor is allowed only when the target has no sponsors, except that a caller who already sponsors the target receives a successful response.
 
 ## HTTP request
 
@@ -52,7 +54,7 @@ If successful, this action returns a `204 No Content` response code. It doesn't 
 ### Request
 
 ```http
-POST https://graph.microsoft.com/beta/users/e4f5d67a-5a10-4c40-9734-0c5f2d83a1bf/microsoft.graph.identityGovernance.addSelfAsSponsor
+POST https://graph.microsoft.com/v1.0/users/e4f5d67a-5a10-4c40-9734-0c5f2d83a1bf/microsoft.graph.identityGovernance.addSelfAsSponsor
 ```
 
 ### Response

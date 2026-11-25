@@ -64,6 +64,10 @@ Features in *preview* status are subject to change without notice, and might not
 - Added the **isHidden** property to the [mailboxFolder](https://learn.microsoft.com/en-us/graph/api/resources/mailboxfolder) resource to identify hidden mailbox folders.
 - Use the existing **includeHiddenFolders** query parameter for [listing folders](https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders) and [listing child folders](https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders). Set it to `true` to include both hidden and nonhidden folders.
 
+### Microsoft MCP Server for IT Admins
+
+- Updated the [Microsoft MCP Server for IT Admins](https://learn.microsoft.com/en-us/graph/mcp-server/overview) documentation. Microsoft MCP Server for Enterprise is now Microsoft MCP Server for IT Admins at `https://mcp.svc.cloud.microsoft/admin`, and the `/enterprise` endpoint is deprecated. AI agents can now create, update, and delete Microsoft Entra data after the user confirms each change, and read Microsoft Intune data. Setup takes an app registration with Microsoft Graph delegated permissions, and no longer requires provisioning the MCP server or granting its `MCP.*` scopes.
+
 ### Security \| Data security and compliance
 
 - Applications can now supply one or more sensitivity labels with file content submitted to the [processContent](https://learn.microsoft.com/en-us/graph/api/userdatasecurityandgovernance-processcontent) API by using the **sensitivityLabels** property of [processContentMetadataBase](https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase).
@@ -104,6 +108,7 @@ Added the **sharingLevel** property to the [calendar](https://learn.microsoft.co
 
 ### Identity and access \| Governance
 
+- Added the **resourceRoleRiskAnalysisResults** property to the [accessPackageAssignmentRequest](https://learn.microsoft.com/en-us/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-beta&preserve-view=true) resource to read separation of duties \(SoD\) findings for requested resource roles. Use eligible [caller-specific request views](https://learn.microsoft.com/en-us/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta&preserve-view=true) to retrieve findings, subject to caller authorization and feature availability.
 - Added three predefined tasks to the [Lifecycle Workflows task catalog](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecycleworkflows-overview?view=graph-rest-beta&preserve-view=true) to send identity-verification links, request Verified ID presentation, and email verification status to a manager.
 - Added the **Pre-hire identity verification initiation \(Preview\)** and **New Hire employee onboarding with identity verification \(Preview\)** Joiner templates to the [Lifecycle Workflows template catalog](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true).
 
@@ -116,6 +121,11 @@ Added the **sharingLevel** property to the [calendar](https://learn.microsoft.co
 
 - Added the [webFilteringPolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-webfilteringpolicy?view=graph-rest-beta&preserve-view=true) resource type and related methods for configuring how Global Secure Access allows or blocks web traffic based on source sessions, URLs, web categories, and HTTP request methods.
 
+### Mail
+
+- [Use the mailbox import and export APIs with archive mailboxes](https://learn.microsoft.com/en-us/graph/work-with-archive-mailboxes). Learn how to discover an archive mailbox, manage its folders, and export and import archive mailbox items by using Microsoft Graph.
+- [Use mail APIs with Exchange archive mailboxes](https://learn.microsoft.com/en-us/graph/archive-mailbox-mail-api). Learn how to access Exchange archive folders and messages, follow redirects, create folders, and synchronize changes with Microsoft Graph beta mail APIs.
+
 ### Security
 
 - Added the **lookback** property to the [ruleSchedule](https://learn.microsoft.com/en-us/graph/api/resources/security-ruleschedule?view=graph-rest-beta&preserve-view=true) resource to control the time window evaluated by each scheduled custom detection rule run.
@@ -124,10 +134,12 @@ Added the **sharingLevel** property to the [calendar](https://learn.microsoft.co
 
 ### Security \| Case management
 
+- Added the **description** property to the [incidentCase](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-incidentcase?view=graph-rest-beta&preserve-view=true) resource. Use it to read and update incident case descriptions.
 - Removed support for the `$skip` query parameter in the [case management APIs](https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagementroot?view=graph-rest-beta&preserve-view=true). Update affected requests to omit `$skip`.
 
 ### Security \| Content management
 
+- Added support for browsing the security content catalog and managing installed content packages in a tenant by using the [contentPackage](https://learn.microsoft.com/en-us/graph/api/resources/security-contentmanagement-contentpackage?view=graph-rest-beta&preserve-view=true) resource.
 - Added support for connecting and managing source-control repositories that deploy security content as code by using the [contentManagementRepository](https://learn.microsoft.com/en-us/graph/api/resources/security-contentmanagement-contentmanagementrepository?view=graph-rest-beta&preserve-view=true) resource.
 
 ### Security \| Data security and compliance

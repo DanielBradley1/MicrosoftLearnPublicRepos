@@ -1,17 +1,17 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-selectedobjectssubjectset?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-selectedobjectssubjectset?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # selectedObjectsSubjectSet resource type
 
 Namespace: microsoft.graph.identityGovernance
 
-Important
+Represents a scope that includes only the selected directory objects. This type is used in the **scope** property of a [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-1.0) to target specific objects for policy evaluation.
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+Inherits from [subjectSet](https://learn.microsoft.com/en-us/graph/api/resources/subjectset?view=graph-rest-1.0).
 
-Represents a scope that includes only the selected directory objects. This type is used in the **scope** property of a [lifecyclePolicy](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-beta) to target specific objects for policy evaluation.
+## Methods
 
-Inherits from [subjectSet](https://learn.microsoft.com/en-us/graph/api/resources/subjectset?view=graph-rest-beta).
+None.
 
 ## Properties
 
@@ -21,7 +21,7 @@ None.
 
 | Relationship | Type | Description |
 | :--- | :--- | :--- |
-| inScopeObjects | [directoryObject](https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-beta) collection | The directory objects that are included in the policy scope. |
+| inScopeObjects | [directoryObject](https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0) collection | The directory objects that are included in the policy scope. |
 
 ## JSON representation
 

@@ -1,15 +1,15 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyreference?view=graph-rest-beta -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyreference?view=graph-rest-1.0 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # lifecyclePolicyReference resource type
 
 Namespace: microsoft.graph.identityGovernance
 
-Important
+Provides a lightweight reference to a lifecycle policy version. Returned in the **effectivePolicy** property of a [lifecyclePolicySubjectReport](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicysubjectreport?view=graph-rest-1.0).
 
-APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+## Methods
 
-Provides a lightweight reference to a lifecycle policy version. Returned in the **effectivePolicy** property of a [lifecyclePolicySubjectReport](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicysubjectreport?view=graph-rest-beta).
+None.
 
 ## Properties
 
@@ -30,6 +30,6 @@ The following JSON representation shows the resource type.
 {
   "@odata.type": "#microsoft.graph.identityGovernance.lifecyclePolicyReference",
   "id": "String",
-  "version": "Integer"
+  "version": "Int32"
 }
 ```
