@@ -301,6 +301,23 @@ Guest and external accounts enable collaboration, but their security posture may
 4. Replace persistent privileged access with time-bound and governed access where possible.
 5. Monitor guest and external accounts that retain sensitive access.
 
+## Ensure non-admin accounts cannot reset passwords for sensitive groups
+
+**Description**
+
+This report identifies accounts that aren't members of admin groups but have permissions to reset passwords for accounts in sensitive or privileged groups.
+
+**User impact**
+
+Allowing non-admin accounts to reset passwords for privileged accounts creates a critical privilege escalation risk. Non-admin users can take over privileged accounts, which can lead to a full compromise of the Active Directory environment. These permissions are often caused by misconfigured delegation and can be difficult to detect when access is indirect. Restricting password reset permissions to approved admin roles supports least privilege and helps protect privileged identities.
+
+**Implementation**
+
+1. Review accounts with password reset permissions for accounts in sensitive groups.
+2. Validate whether the access is required.
+3. Remove password reset permissions from non-admin accounts for all account types.
+4. Ensure that only approved admin roles or groups can reset passwords for privileged accounts.
+
 ## Ensure non-admin identities cannot have WriteDACL permissions on sensitive groups
 
 **Description**

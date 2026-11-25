@@ -17,6 +17,8 @@ This table includes supported releases for all supported platforms in the past s
 
 | OS | Build | Month released | Details | Learn more |
 | --- | --- | --- | --- | --- |
+| Android | 1.0.9511.0102 | Nov 2026 | - Build: 1.0.9511.0102  <br>- Release: Nov 13, 2026 | [Release details and updates](#android--nov-2026--platform-1095110102) |
+| iOS | 1.1.83150101 | Nov 2026 | - Build: 1.1.83150101  <br>- Release: Nov 18, 2026 | [Release details and updates](#ios--nov-2026--platform-version-1183150101) |
 | iOS | 1.1.82260102 | Nov 2026 | - Build: 1.1.82260102  <br>- Release: Nov 3, 2026 | [Release details and updates](#ios--nov-2026--platform-version-1182260102) |
 | Android | 1.0.9428.0102 | Oct 2026 | - Build: 1.0.9428.0102  <br>- Release: Oct 30, 2026 | [Release details and updates](#android--oct-2026--platform-1094280102) |
 | macOS | 101.26092.0012 | November 2026 | - Release version: 20.126092.12.0  <br>- Engine version: 1.1.26100.3000  <br>- Signature version: 1.463.110.0 | [Release details and updates](#macos--november-2026--101260920012) |
@@ -999,6 +1001,21 @@ Fixed in platform version 101.26052.0011 and later. FIPS-enabled RHEL 8/9 device
 
 See the full list of [Android UX improvements](https://learn.microsoft.com/en-us/defender-endpoint/android-new-ux).
 
+### Android \| Nov 2026 \| Platform: 1.0.9511.0102
+
+#### Release details
+
+| Platform version | Release Date |
+| --- | --- |
+| Android | Nov 13, 2026 |
+
+#### Enhancements and features
+
+| Feature Area | Update Summary |
+| --- | --- |
+| General | Performance improvements and general bug fixes. |
+| Network Protection | Improved Network Protection on Android by adding support for Android's Nearby Devices permission , allowing users who grant this permission to benefit from improved wi-fi threat detection. |
+
 ### Android \| Oct 2026 \| Platform: 1.0.9428.0102
 
 #### Release details
@@ -1325,6 +1342,20 @@ See the full list of [Android UX improvements](https://learn.microsoft.com/en-us
 ## iOS releases
 
 For the latest UX improvements, see [iOS UX improvements](https://learn.microsoft.com/en-us/defender-endpoint/ios-new-ux).
+
+### iOS \| Nov 2026 \| Platform Version: 1.1.83150101
+
+#### Release details
+
+| Platform version | Release Date |
+| --- | --- |
+| 1.1.83150101 | Nov 18, 2026 |
+
+#### Enhancements and features
+
+| Feature Area | Update Summary |
+| --- | --- |
+| Improvements | Performance improvements and general bug fixes. |
 
 ### iOS \| Nov 2026 \| Platform Version: 1.1.82260102
 

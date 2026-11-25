@@ -32,7 +32,7 @@ To compare the security capabilities included with Microsoft 365 enterprise plan
 
 Starting November 15, 2026, eligible customers receive up to 90 days of included retention for supported Microsoft Defender data.
 
-The retention benefit applies at the workload level. As additional supported tables become available for an included workload, they'll also be included in the retention benefit.
+The retention benefit applies at the workload level, except for the tables listed in [Retention exceptions](#retention-exceptions). As additional supported tables become available for an included workload, they're also included in the retention benefit unless otherwise noted.
 
 The following tables and data sources are currently included:
 
@@ -67,13 +67,10 @@ The following tables and data sources are currently included:
 - **Microsoft Defender for Endpoint**
 
   - `DeviceEvents`
-  - `DeviceFileCertificateInfo`
   - `DeviceFileEvents`
   - `DeviceImageLoadEvents`
-  - `DeviceInfo`
   - `DeviceLogonEvents`
   - `DeviceNetworkEvents`
-  - `DeviceNetworkInfo`
   - `DeviceProcessEvents`
   - `DeviceRegistryEvents`
   - `DisruptionAndResponseEvents`
@@ -107,19 +104,32 @@ The following tables and data sources are currently included:
 
 ### Extend Microsoft Defender data retention
 
-You can extend retention for supported Microsoft Defender data up to a maximum of 180 days.
+When you enable streaming for supported Microsoft Defender data, the retention period starts at 180 days.
 
 Extended retention applies to new data after you enable it. Data that was collected before you enabled extended retention isn't backfilled.
 
 Additional charges apply when you extend retention beyond the retention included with ISOC.
 
+### Retention exceptions
+
+The following tables don't receive the 90-day included retention benefit. They're stored in XDR for 30 days. As with other supported tables, extended retention starts at 180 days.
+
+| Table | Retention in XDR | Extended retention starts at |
+| --- | --- | --- |
+| `AgentsInfo` | 30 days. | 180 days. |
+| `IdentityAccountInfo` | 30 days. | 180 days. |
+
 ## Additional Microsoft and non-Microsoft security data
 
 An ISOC workspace is required to ingest additional Microsoft and non-Microsoft security data through [more than 500 data connectors](https://learn.microsoft.com/en-us/azure/sentinel/data-connectors-reference).
 
-Additional Microsoft and non-Microsoft security data is billed separately from the Microsoft security data included with the ISOC benefit. Ingested data can be retained for up to 90 days as part of the ISOC ingestion experience.
+Except for [threat intelligence ingestion](#threat-intelligence-ingestion), additional Microsoft and non-Microsoft security data is billed separately from the Microsoft security data included with the ISOC benefit. Ingested data can be retained for up to 90 days as part of the ISOC ingestion experience.
 
 Additional ingestion and retention charges will apply depending on the data you ingest and how long you retain it.
+
+## Threat intelligence ingestion
+
+Threat intelligence ingestion is free for ISOC customers through all ingestion methods, including TAXII, upload APIs, STIX APIs, and threat intelligence vendor connectors.
 
 ## Choose a retention option
 

@@ -11,6 +11,10 @@ Note
 
 Real-time protection policies currently support Microsoft Foundry agents, Microsoft Copilot Studio agents, and Agent 365 Tooling Servers \(WorkIQ and Custom MCP\) only. Support for additional agent types is not yet available.
 
+Important
+
+**Action required by December 23, 2026 to keep real-time protection for Copilot Studio agents enabled** If you set up Microsoft Defender real-time protection for Copilot Studio through the existing onboarding experience, your blocking settings won’t migrate when that experience retires on December 23, 2026. To keep blocking enabled, first disable the existing onboarding under **Settings > Security for AI > Get started > Copilot Studio**, then re-create and enable your blocking rules before December 23. See **Configure real-time protection rules** on this page. Automatic tenant-level onboarding begins rolling out in public preview on November 22, 2026, for supported Copilot Studio agents in tenants with Security for AI agents enabled. After retirement, agents without an enabled blocking rule operate in audit mode, which generates security alerts without blocking actions.
+
 ## Prerequisites
 
 - Enable security for AI agents, including the Microsoft 365 app connector. See [Enable security for AI agents using Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/get-started-defender-security-for-ai).

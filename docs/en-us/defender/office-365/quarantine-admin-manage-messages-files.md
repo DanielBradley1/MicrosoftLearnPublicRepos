@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-office-365/quarantine-admin-manage-messages-files -->
-<!-- Sitemap-Last-Modified: 2026-10-07 -->
+<!-- Sitemap-Last-Modified: 2026-10-20 -->
 
 # Manage quarantined messages and files as an admin
 
@@ -417,7 +417,10 @@ After you select the message, use either of the following methods to preview it:
 - **On the Email tab**: Select ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-preview-message.png) **Preview message**.
 - **In the details flyout of the selected message**: Select ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-more-actions.png) **More options** > ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-preview-message.png) **Preview message**.
 
-In the flyout that opens, the **Source** tab shows the HTML version of the message body with all links disabled.
+In the flyout that opens, choose one of the following tabs:
+
+- **Source**: Shows the HTML version of the message body with all links disabled.
+- **Plain text**: Shows the message body in plain text.
 
 #### View email message headers
 
@@ -902,7 +905,10 @@ After you select the Teams message, use either of the following methods to previ
 - **On the Teams messages tab**: Select ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-preview-message.png) **Preview message**.
 - **In the details flyout of the selected message**: Select ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-more-actions.png) ![](https://learn.microsoft.com/en-us/defender-office-365/media/defender-portal-icon-preview-message.png) **Preview message**.
 
-In the flyout that opens, the **Source** tab shows the HTML version of the message body with all links disabled.
+In the flyout that opens, choose one of the following tabs:
+
+- **Source**: Shows the HTML version of the message body with all links disabled.
+- **Plain text**: Shows the message body in plain text.
 
 #### Submit Teams messages to Microsoft for review from quarantine
 
