@@ -153,6 +153,42 @@ Note
 
 For more information on Microsoft Copilot metrics \(*available in Viva Insights*\) and how those metrics are calculated, see the [metric definitions](https://learn.microsoft.com/en-us/viva/insights/advanced/reference/metrics) and [glossary](https://learn.microsoft.com/en-us/viva/insights/advanced/reference/glossary).
 
+## AI FinOps
+
+AI FinOps helps organizations plan, control, and monitor usage-based AI spending across supported Microsoft Copilot experiences and agents. It connects consumption visibility, spending controls, and budget ownership so customers can scale AI adoption with greater cost transparency.
+
+FastTrack assistance for AI FinOps helps customers prepare for consumption billing, configure spending policies, and use available reporting to understand Copilot Credit usage.
+
+FastTrack provides remote guidance and best practices for:
+
+- **Readiness and planning:**
+
+  - Explaining Copilot Credits, usage-based billing, and how consumption billing complements subscription licensing.
+  - Reviewing required licenses, administrator roles, permissions, and billing prerequisites for the selected services.
+  - Identifying customer-owned billing, budget, and reporting responsibilities, and reviewing available estimation resources for initial consumption planning.
+
+- **Cost management and controls:**
+
+  - Guiding customer-led activation of usage-based billing and selection of an existing supported billing method in the Microsoft 365 admin center.
+  - Configuring spending policies for supported services, including tenant and group scope, per-user limits, and resource-based policies where applicable.
+  - Setting available monthly spending limits, usage-alert thresholds, and notification recipients.
+  - Reviewing service access, credit requests, and whether newly supported services should automatically be included in spending policies.
+  - Explaining relevant Microsoft 365 admin center, Power Platform admin center, and Azure billing dependencies for the selected configuration.
+
+- **Consumption monitoring:**
+
+  - Using built-in consumption dashboards and reports to review credit usage, spending-policy coverage, funding sources, and available service, group, and user breakdowns.
+  - Helping customers identify changes in consumption and policies approaching their limits and review available controls before expanding access.
+
+### Out of scope
+
+- Providing project management or performing implementation, tenant administration, policy changes, or data exports on behalf of the customer.
+- Creating Azure subscriptions or configuring Azure infrastructure beyond the billing dependencies of supported Copilot services.
+- Purchasing licenses or credits, negotiating commercial agreements, recommending purchasing commitments, or resolving invoice disputes.
+- Creating custom reports, dashboards, financial models, API integrations, scripts or automated approval workflows.
+- Operating ongoing consumption monitoring, approving credit requests, maintaining spending policies, or managing customer budgets.
+- Providing data governance assessments, building or optimizing customer-specific agents, implementing adoption and change management plans, or providing end-user training.
+
 ### Microsoft advanced deployment guides
 
 Microsoft provides customers with technology and guidance to assist with deploying your Microsoft 365, Microsoft Viva, and security services. We encourage our customers to start their deployment journey with [these](https://go.microsoft.com/fwlink/?linkid=2226341) offerings.

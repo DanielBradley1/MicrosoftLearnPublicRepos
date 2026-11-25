@@ -26,8 +26,6 @@ This article describes *Data Residency* for Microsoft 365 services. Dynamics 365
 
 Data in processing refers to data that is actively being used, computed, or transformed by a service—as opposed to data sitting in storage. While *Data at Rest* focuses on where data is stored, data in processing addresses where computational operations occur.
 
-For example, Microsoft 365 Copilot processes prompts and generates responses. With the appropriate configuration, this processing occurs within the same geographic boundary as your stored data, helping organizations meet data handling requirements that extend beyond storage.
-
 Note
 
 Detailed documentation for data in processing is coming soon.

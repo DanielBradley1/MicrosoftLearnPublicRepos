@@ -79,6 +79,16 @@ Admin-level search and Purview-based search operate like normal. End-user search
 
 Standard GCC rollout times apply.
 
+#### What storage purchasing setup should I consider for active and inactive SharePoint content?
+
+For eligible commercial tenants, consider combining Microsoft 365 SharePoint Storage with Microsoft 365 Archive. Microsoft 365 SharePoint Storage provides pay-as-you-go billing for active storage above your tenant quota. Microsoft 365 Archive provides a lower-cost storage tier for inactive SharePoint files and sites. This combination lets you respond to storage growth without purchasing fixed storage packs for every increase. Compare your expected usage and pricing before choosing between pay-as-you-go storage and additional storage packs.
+
+Microsoft 365 SharePoint Storage is in public preview. It isn't currently available to education, GCC, or Microsoft 365 operated by 21Vianet customers. For eligibility and setup, see [Add Microsoft 365 SharePoint Storage](https://learn.microsoft.com/en-us/microsoft-365/commerce/add-storage-space?view=o365-worldwide#add-microsoft-365-sharepoint-storage). To enable Archive, see [Set up Microsoft 365 Archive](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-setup?view=o365-worldwide).
+
+You incur Archive storage charges only when combined active and archived SharePoint storage exceeds your tenant's standard storage quota. Enabling pay-as-you-go billing doesn't archive content automatically. For billing details and exceptions, see [Pricing model for Microsoft 365 Archive](https://learn.microsoft.com/en-us/microsoft-365/archive/archive-pricing?view=o365-worldwide).
+
+Set budgets and alerts to monitor spending. While enrolled in Microsoft 365 SharePoint Storage, you won't receive quota-related emails or SharePoint admin center banner notifications. See [Create a budget for pay-as-you-go billing](https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-budget?view=o365-worldwide).
+
 #### If I purchase additional standard storage packs, will I get reimbursed for the cost difference?
 
 No, if you purchase additional storage packs you won't get reimbursed for any unused additional standard storage.

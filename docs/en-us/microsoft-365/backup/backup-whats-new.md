@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/backup/backup-whats-new?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-04 -->
+<!-- Sitemap-Last-Modified: 2026-11-06 -->
 
 # What's new in Microsoft 365 Backup
 
@@ -15,6 +15,14 @@ Developer API changes are tracked separately in [What's new for Microsoft 365 Ba
 <summary>**New capabilities** - Launched within the last three months</summary>
 
 ## New capabilities
+
+### Protect Microsoft Entra directory objects with Premium backup \(preview\)
+
+**November 20, 2026**
+
+Microsoft Entra Backup and Recovery Premium is in public preview and can be enabled through Microsoft 365 Backup. A single policy protects all supported directory objects in the tenant, with no documented object-count limit. Supported objects include users, groups, applications, service principals, Conditional Access policies, named locations, authentication method policy, and selected authorization policy properties. Agent ID is supported through its user and service principal objects. Premium creates daily backups and retains up to 30 days; history accumulates after each daily backup cycle, so enabling Premium doesn't immediately provide 30 days of history. The recovery window isn't configurable. Global Administrators and Microsoft Entra Backup Administrators can manage Entra backup; the Microsoft 365 Backup Administrator role alone doesn't grant Entra management privileges.
+
+For more information, see [Overview of Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide), [Create and manage backup policies](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide), [Set up Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-setup?view=o365-worldwide).
 
 ### Extend SharePoint and OneDrive recovery windows up to 10 years
 
@@ -184,6 +192,30 @@ For more information, see [Offboard specific sites, mailboxes, or users](https:/
 
 ## FAQ updates
 
+### Where are Microsoft Entra backups stored, and can tenant administrators delete them?
+
+**November 21, 2026**
+
+Microsoft Entra backup data resides in the same geographic location as the Microsoft Entra tenant, in accordance with Microsoft Entra data residency requirements. Tenant administrators can't modify or delete Microsoft Entra backups. This differs from the OneDrive, SharePoint, and Exchange Online item-deletion procedures. Turning off Microsoft Entra Backup and Recovery Premium stops new Premium backups but doesn't delete retained backups immediately; each retained Premium backup expires under its rolling 30-day retention window.
+
+For more information, see [Overview of Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide), [Offboarding in Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding?view=o365-worldwide).
+
+### How do Microsoft Entra Premium recovery and backup history work?
+
+**November 20, 2026**
+
+Microsoft Entra Backup and Recovery Premium remains in preview. Start Restore from the Entra section of Microsoft 365 Backup to open Backup and recovery in the Microsoft Entra admin center. Review a difference report comparing a retained backup with the current tenant state before recovering supported deleted or modified objects and attributes. Hard-deleted Entra objects can't be recovered by this approach. Only retained backups are available for difference reports or recovery. Premium retains up to 30 days of daily backups; the Standard plan, included with Microsoft Entra ID P1 or P2, retains up to seven days. Backup history accumulates over time. If a recovery job or difference report is already running, wait for it to complete or cancel it before starting another. Recovery-job history retention is separate from backup retention and isn't determined by Premium's 30-day recovery window. Recovery performance depends on the number of changes to be recovered; recovering 500,000 changes can take up to 30 hours.
+
+For more information, see [Restore data from backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide), [Overview of Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide).
+
+### How is Microsoft Entra Backup and Recovery Premium priced?
+
+**November 20, 2026**
+
+Microsoft Entra Backup and Recovery Premium uses consumption-based pricing of $0.025 USD per protected Microsoft Entra object per month; restores are free. For planning, multiply the protected-object count by $0.025 USD. For example, 100,000 protected objects held constant for a full month yield an estimated cost of $2,500 USD. Actual charges depend on billed usage. Commerce billing represents protected-object usage as GB-based billing units; those units don't measure backup storage consumed and don't change the per-object pricing estimate.
+
+For more information, see [Microsoft 365 Backup pricing](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-pricing?view=o365-worldwide), [Overview of Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide).
+
 ### How do recovery-window changes apply to policies and removed items?
 
 **November 4, 2026**
@@ -285,6 +317,14 @@ For more information, see [Create Exchange backup policies](https://learn.micros
 <summary>**Important notices** - Active limitations and administrator actions</summary>
 
 ## Important notices
+
+### Turning off Microsoft Entra Premium stops new backups but not retained-backup billing
+
+**November 20, 2026**
+
+When Microsoft Entra Backup and Recovery Premium is turned off by an administrator or because of a billing issue, new Premium backups stop. Existing Premium backups continue to be billed and remain available for difference reports and recovery until each expires under its rolling 30-day retention window. Turning off Premium doesn't extend retention or start a new 30-day period, and expired backups can't be recovered. For tenants with Microsoft Entra ID P1 or P2, new Standard backups begin accumulating and are retained for up to seven days; retained Premium and new Standard backups can appear together in the Microsoft Entra admin center. Without P1 or P2, no new Standard backups are created. The OneDrive, SharePoint, and Exchange Online offboarding grace-period and item-deletion procedures don't apply to Entra Premium.
+
+For more information, see [Offboarding in Microsoft 365 Backup](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-offboarding?view=o365-worldwide).
 
 ### Review a shorter recovery window before the grace period ends
 

@@ -4319,10 +4319,10 @@ Commit history: [https://github.com/microsoft/json-schemas/commits/live/teams/vD
 https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json
 ```
 
-### October 2026
+### November 2026
 
-- Added [`ConnectionVault`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-agent-connectors-tool-source-local-mcp-server-authorization?view=m365-app-prev&branch=Dev-Preview-Oct2026&tabs=syntax&preserve-view=true) as an authorization type for MCP server agent connectors. Configure `authorization.type` as `ConnectionVault` and provide the connection’s `referenceId`. For details, see [`ConnectionVault`](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers#use-connection-vault-authentication).
-- Discontinued support for `supportsSessions` property.
+- Added [`openApiConnector`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-agent-connectors-tool-source-open-api-connector?view=m365-app-1.30) support for OpenAPI-based connectors backed by HTTP APIs described by OpenAPI. The OpenAPI description is resolved at runtime using the connector identity in the authorization `referenceId`.
+- Added new property [`displayName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-activities-activity-types?view=m365-app-1.30#displayname) for supporting activity display name guidance. Use `displayName` for a concise, localized noun label in sentence case, without host commands or ending punctuation.
 
 ## Previous preview releases
 
@@ -4331,6 +4331,11 @@ https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.sc
 
 <details>
 <summary>**2026**</summary>
+
+### October 2026
+
+- Added [`ConnectionVault`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-agent-connectors-tool-source-local-mcp-server-authorization?view=m365-app-1.30) as an authorization type for MCP server agent connectors. Configure `authorization.type` as `ConnectionVault` and provide the connection’s `referenceId`. For details, see [`ConnectionVault`](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/configure-plugin-mcp-servers#use-connection-vault-authentication).
+- Discontinued support for `supportsSessions` property.
 
 ### September 2026
 

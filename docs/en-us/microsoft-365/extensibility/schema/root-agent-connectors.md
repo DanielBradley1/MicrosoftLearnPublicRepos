@@ -30,6 +30,9 @@ Properties that reference this object type:
     },
     "localMcpServer": {
       localMcpServer object
+    },
+    "openApiConnector": {
+      openApiConnector object
     }
   }
 }
@@ -218,6 +221,39 @@ Properties that reference this object type:
           },
           "required": [
             "mcpServerIdentifier"
+          ]
+        },
+        "openApiConnector": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Adds support for connectors backed by an HTTP API described by an OpenAPI description, such as a Power Platform connector. The OpenAPI description is not carried in the app package; it is resolved at runtime from the connector identity supplied in the authorization referenceId.",
+          "properties": {
+            "authorization": {
+              "type": "object",
+              "description": "Authorization configuration for connecting to the connector backend.",
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ConnectionVault"
+                  ],
+                  "description": "The type of authorization required to invoke the connector. Supported value: \u0027ConnectionVault\u0027 (connector-managed connection referenced by referenceId)."
+                },
+                "referenceId": {
+                  "type": "string",
+                  "maxLength": 128,
+                  "description": "A reference identifier. For a Power Platform connector this is the connector logical name, which identifies the connector whose OpenAPI description is resolved at runtime. The referenceId value is acquired independently when providing the necessary authorization configuration values. This mechanism exists to prevent the need for storing secret values in the manifest."
+                }
+              },
+              "required": [
+                "type",
+                "referenceId"
+              ]
+            }
+          },
+          "required": [
+            "authorization"
           ]
         }
       },

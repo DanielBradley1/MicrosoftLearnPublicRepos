@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/archive/archive-pricing?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-04-23 -->
+<!-- Sitemap-Last-Modified: 2026-10-22 -->
 
 # Pricing model for Microsoft 365 Archive
 
@@ -63,10 +63,10 @@ Your charges for Microsoft 365 Archive depend on your tenant's standard storage 
 
 | Scenario | Description | Additional costs |
 | :---: | --- | --- |
-| **A** | Tenant hasn't archived any data and exceeds the standard storage quota by 200 GB. | Purchase 200 GB of additional standard storage packs. |
+| **A** | Tenant hasn't archived any data and exceeds the standard storage quota by 200 GB. | Purchase 200 GB of additional standard storage packs, or use [pay-as-you-go standard SharePoint storage](https://learn.microsoft.com/en-us/microsoft-365/commerce/add-storage-space?view=o365-worldwide#add-microsoft-365-sharepoint-storage) for eligible tenants. |
 | **B** | Tenant has archived the 200 GB of data that exceeded their standard storage quota. | Pay at $0.05/GB/month for 200 GB of archive storage. |
 | **C** | Tenant has archived more storage than exceeded their standard storage quota. | Pay only for the 200 GB of archived data that exceeds the standard storage quota. |
-| **D** | Tenant has archived some, but not all, of the data that exceeds their standard storage quota. | Purchase additional standard storage packs and pay $0.05/GB/month for approximately 100 GB of archived data. |
+| **D** | Tenant has archived some, but not all, of the data that exceeds their standard storage quota. | Pay $0.05/GB/month for approximately 100 GB of archived data. Cover 100 GB of excess standard storage with storage packs or [pay-as-you-go standard SharePoint storage](https://learn.microsoft.com/en-us/microsoft-365/commerce/add-storage-space?view=o365-worldwide#add-microsoft-365-sharepoint-storage), where available. |
 | **E** | Tenant's total data \(standard + archive\) is less than their standard storage quota. | No additional costs. |
 
 [![Diagram showing comparisons for five archive billing scenarios.](https://learn.microsoft.com/en-us/microsoft-365/media/m365-archive/archive-billing-scenarios-diagram2.png?view=o365-worldwide)](https://learn.microsoft.com/en-us/microsoft-365/media/m365-archive/archive-billing-scenarios-diagram2.png?view=o365-worldwide#lightbox)

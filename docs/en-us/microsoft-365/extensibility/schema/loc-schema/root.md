@@ -36,6 +36,7 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
   "composeExtensions.commands.taskInfo.title": "{string}",
   "activities.activityTypes.description": "{string}",
   "activities.activityTypes.templateText": "{string}",
+  "activities.activityTypes.displayName": "{string}",
   "meetingExtensionDefinition.scenes.name": "{string}",
   "meetingExtensionDefinition.videoFilters.name": "{string}",
   "extensions.audienceClaimUrl": "{string}",
@@ -173,6 +174,12 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
     "^activities.activityTypes\\[\\b([0-9]|[1-8][0-9]|9[0-9]|1[01][0-9]|12[0-7])\\b]\\.templateText$": {
       "type": "string",
       "maxLength": 128
+    },
+    "^activities.activityTypes\\[\\b([0-9]|[1-8][0-9]|9[0-9]|1[01][0-9]|12[0-7])\\b]\\.displayName$": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "\\S"
     },
     "^meetingExtensionDefinition.scenes\\[[0-9]\\]\\.name$": {
       "type": "string",
@@ -4451,6 +4458,22 @@ Maximum string length: 128.
 
 **Supported values**  
 
+
+#### activities.activityTypes.displayName
+
+This property specifies a localized value for the [activities.activityTypes.displayName](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-activities-activity-types?view=m365-app-1.30#displayName-property) property. The property name should be a JSON path expression in the following form: `activities.activityTypes[0-127].displayName`.
+
+**Type**  
+string
+
+**Required**  
+—
+
+**Constraints**  
+Minimum string length: 1. Maximum string length: 128.
+
+**Supported values**  
+The string must match the following regular expression: `\S`.
 
 #### meetingExtensionDefinition.scenes.name
 
