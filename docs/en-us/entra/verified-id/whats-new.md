@@ -9,6 +9,7 @@ This article summarizes the latest features, improvements, and service changes f
 
 ## November 2026
 
+- **Azure Key Vault permission models for advanced setup**: [Advanced setup](https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant#create-a-key-vault) now supports Azure Key Vault with either Azure role-based access control \(RBAC\) or vault access policies.
 - **ID verification profiles**: Learn how to [create and manage ID verification profiles](https://learn.microsoft.com/en-us/entra/verified-id/how-to-create-id-verification-profile) for account recovery, onboarding, and verification at sign-in.
 - **My Account Verified ID issuance**: Learn how to [get your Microsoft Entra Verified ID from My Account](https://learn.microsoft.com/en-us/entra/verified-id/how-to-get-verified-id-my-account), including profile-based self-service issuance.
 - **Identity verification \(IDV\) partner gallery: two new Security Store integrations**: Added [Entrust](https://securitystore.microsoft.com/solutions/entrustdatacard.entrust_identity_verification_prod) and [Persona](https://securitystore.microsoft.com/solutions/persona-identities.persona_idv) as [Security Store integration partners](https://learn.microsoft.com/en-us/entra/verified-id/idv-partners#security-store-integration-partners).

@@ -24,7 +24,7 @@ Before you follow the steps in this article, enable passkeys and create a passke
   Note
 
 
-  On iOS, users can only register attested passkeys directly in the Authenticator app. On Android, users can register attested passkeys directly in the Authenticator app and by using a cross-device registration flow.
+  Users can't use cross-device registration if you enable attestation.
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-fido2-compatibility).
 
@@ -81,7 +81,7 @@ Note
 
 For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
 
-On iOS, users can only register attested passkeys directly in the Authenticator app. On Android, users can register attested passkeys directly in the Authenticator app and by using a cross-device registration flow.
+Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows don't support registration of attested passkeys.
 
 ## Authenticator AAGUIDs
 
@@ -195,7 +195,7 @@ Here are some workarounds:
 
   Note
 
-  The Microsoft Authenticator Credential Registration resource will be available at the end of November 2026. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
+  The Microsoft Authenticator Credential Registration resource will be available in Jan 2027. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
 
   1. As a **Cloud Application Administrator** or **Application Administrator**, manually provision the **Microsoft Authenticator Credential Registration** app by using one of the [supported methods for creating an enterprise application from a multitenant app](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=ms-graph). Use the following details:
 

@@ -1,7 +1,7 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up -->
 <!-- Sitemap-Last-Modified: 2026-11-11 -->
 
-# Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center
+# Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center \(CYOT\)
 
 Use Choose Your Own Telephony Provider \(CYOT\) to deliver SMS and voice authentication through your organization's telephony provider. With CYOT, you purchase a supported provider offer through [Microsoft Security Store](https://securitystore.microsoft.com/), deploy the integration in your Azure subscription, and configure Microsoft Entra to route SMS or voice authentication through your provider.
 
@@ -47,7 +47,7 @@ Before purchasing a telephony provider offer, check [Microsoft Marketplace geogr
 2. Go to **Entra ID** > **Authentication methods** > **Policies** and select **Add telecom profile**. The **Set up an SMS or voice provider** page guides you through subscription, integration, and profile setup.
 
    [![Redacted screenshot of the Set up an SMS or voice provider page and its three setup tasks.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/setup-overview.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/setup-overview.png#lightbox)
-3. Select **Subscribe to an SMS or voice provider** and choose a supported telephony provider. Use **Get solution** to open its offer in [Microsoft Security Store](https://securitystore.microsoft.com/), or select an existing subscription with **Select details**. See [Available telephony providers](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers#available-telephony-providers).
+3. Select **Subscribe to an SMS or voice provider** and choose a supported telephony provider. Use **Get solution** to open its offer in [Microsoft Security Store](https://securitystore.microsoft.com/), or select an existing subscription with **Select details**. See [Available telephony providers](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-telephony-providers#available-telephony-providers).
 
    [![Redacted screenshot of the telephony provider selection pane. Demo pricing and offer details are obscured.](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png)](https://learn.microsoft.com/en-us/entra/identity/authentication/media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png#lightbox)
 4. Purchase your provider's offer. For detailed purchasing instructions, see [Purchase and deploy a SaaS solution from Security Store](https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution).
@@ -75,7 +75,7 @@ After you approve, the script creates the Microsoft Entra application, deploys a
 
 Important
 
-The integration runs on Azure resources in your subscription, billed based on your configuration and usage. To plan your budget, see [Estimate telephony-provider and Azure hosting costs](https://learn.microsoft.com/en-us/entra/identity/authentication/phone-providers-faq#how-much-does-choose-your-own-telephony-provider-cost) before you deploy.
+The integration runs on Azure resources in your subscription, billed based on your configuration and usage. To plan your budget, see [Estimate telephony-provider and Azure hosting costs](https://learn.microsoft.com/en-us/entra/identity/authentication/telephony-providers-faq#how-much-does-choose-your-own-telephony-provider-cost) before you deploy.
 
 ### Run the setup script
 

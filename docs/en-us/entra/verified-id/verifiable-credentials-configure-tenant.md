@@ -31,17 +31,13 @@ The following diagram illustrates the Verified ID architecture and the component
 
 ## Create a key vault
 
-Note
-
-The Azure Key Vault that you use to set up the Verified ID service must have [Key Vault Access Policy](https://learn.microsoft.com/en-us/azure/key-vault/general/assign-access-policy) for its Permission model. There's currently a limitation if the Key Vault has Azure role-based access control.
-
 [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts) is a cloud service that enables the secure storage and access management of secrets and keys. The Verified ID service stores public and private keys in Azure Key Vault. These keys are used to sign and verify credentials.
 
-If you don't have an Azure Key Vault instance available, follow [these steps](https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-portal) to create a key vault using the Azure portal. The Azure Key Vault that you use to set up the Verified ID service must have [Key Vault Access Policy](https://learn.microsoft.com/en-us/azure/key-vault/general/assign-access-policy) for its Permission model instead of Azure role-based access control.
+If you don't have an Azure Key Vault instance available, follow [these steps](https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-portal) to create a key vault using the Azure portal.
 
 Note
 
-By default, the vault's creator account is the only one with access. The Verified ID service needs access to the key vault. You must [authenticate your key vault](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts), allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
+The Verified ID service needs [access to the key vault](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts). The vault's creator account requires permissions to create and delete keys. It also requires permission to sign so that it can create the domain binding for Verified ID.
 
 ### Manage access to the key vault
 
@@ -66,7 +62,7 @@ To set up Verified ID, follow these steps:
 
       Important
 
-      The domain can't be a redirect. Otherwise, the DID and domain can't be linked. Make sure to use HTTPS for the domain. For example: `https://did.woodgrove.com`. Also ensure that the Key Vault's Permission Model is set to Vault Access Policy.
+      The domain can't be a redirect. Otherwise, the DID and domain can't be linked. Make sure to use HTTPS for the domain. For example: `https://did.woodgrove.com`.
    3. **Key vault**: Select the key vault that you created earlier.
 
 6. Select **Save**.

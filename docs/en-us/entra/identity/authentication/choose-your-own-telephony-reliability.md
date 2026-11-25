@@ -5,7 +5,7 @@
 
 SMS and voice authentication sit on the critical path to your applications. When users rely on a phone code for multifactor authentication \(MFA\) or self-service password reset \(SSPR\), the availability of that code determines whether they can sign in.
 
-With Choose Your Own Telephony Provider \(CYOT\), the delivery path includes components your organization owns: the Azure Function in your subscription and your telephony provider. Design these components for resiliency so authentication stays available through regional outages and provider incidents.
+With Choose Your Own Telephony Provider \(CYOT\) or Bring Your Own Telephony \(BYOT\), the delivery path includes components your organization owns: the Azure Function in your subscription and your telephony provider. Design these components for resiliency so authentication stays available through regional outages and provider incidents.
 
 ## Understand your delivery path
 
@@ -15,7 +15,7 @@ With Choose Your Own Telephony Provider \(CYOT\), the delivery path includes com
 | Endpoint and Azure Function | Your organization | Receives the request in your Azure subscription and sends it to your provider. |
 | Telephony provider | Your provider | Delivers the SMS message or voice call to the user's phone. |
 
-The guided setup creates one Azure Function in a single region, connected to one telephony provider. This setup works well for evaluation and many production workloads. To protect against a regional outage or a provider incident, extend it with the options in this article.
+The CYOT guided setup creates one Azure Function in a single region, connected to one telephony provider. This setup works well for evaluation and many production workloads. For BYOT, follow your provider's published integration package for deployment details. To protect against a regional outage or a provider incident, consider the options in this article.
 
 Important
 
@@ -23,7 +23,7 @@ Your organization manages the availability and recovery of the Azure resources a
 
 Note
 
-The multi-region and secondary-provider designs in this article are sample-only guidance. They aren't part of the standard deployment. Your organization is responsible for validating and maintaining these customizations.
+The multi-region and secondary-provider designs in this article are optional, sample-only guidance for CYOT and BYOT. They aren't part of the standard CYOT deployment or guaranteed features of a BYOT provider's package. Your organization is responsible for validating and maintaining these customizations.
 
 ## Choose a resiliency approach
 
@@ -31,7 +31,7 @@ Start with your requirements: which disruptions you must withstand, how quickly 
 
 | Approach | Protects against | When to use it |
 | --- | --- | --- |
-| Single region, one provider \(default setup\) | Function App instance failures within the region | Evaluation, and production workloads that can tolerate a regional outage |
+| Single region, one provider \(default CYOT setup\) | Function App instance failures within the region | Evaluation, and production workloads that can tolerate a regional outage |
 | Multi-region with Azure Front Door | Regional outages | Production workloads that require authentication during a regional disruption |
 | Secondary telephony provider | Provider-specific incidents | When your primary provider alone doesn't meet your availability or coverage requirements |
 | Multi-region and secondary provider | Regional outages and provider incidents | Organizations with the highest availability requirements |
@@ -77,7 +77,8 @@ To monitor each region and provider, see [Monitor and troubleshoot SMS and voice
 - [Azure Front Door multi-region deployment](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/FRONTDOOR.md).
 - [Configure multiple phone providers](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/MULTI-PROVIDER-IMPLEMENTATION.md).
 - [Reliability in Azure Functions](https://learn.microsoft.com/en-us/azure/reliability/reliability-functions).
-- [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
+- [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center \(CYOT\)](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
+- [Set up SMS and voice with your own telephony provider by using APIs \(BYOT\)](https://learn.microsoft.com/en-us/entra/identity/authentication/bring-your-own-telephony-set-up).
 - [Protect against telephony fraud with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-protection).
 - [Troubleshoot SMS and voice with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Documentation](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/tree/epp-packages-193-1/docs).

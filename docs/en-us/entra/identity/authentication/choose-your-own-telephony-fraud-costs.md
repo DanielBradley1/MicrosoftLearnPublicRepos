@@ -1,13 +1,13 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs -->
-<!-- Sitemap-Last-Modified: 2026-10-30 -->
+<!-- Sitemap-Last-Modified: 2026-11-11 -->
 
 # Protect against telephony fraud with your own telephony provider
 
-With Choose Your Own Telephony Provider \(CYOT\), SMS and voice traffic runs through your own telephony provider account. You control the fraud protections, allowed destinations, and spending limits that match your organization's traffic and risk profile.
+With Choose Your Own Telephony Provider \(CYOT\) or Bring Your Own Telephony \(BYOT\), SMS and voice traffic runs through your own telephony provider account. You control the fraud protections, allowed destinations, and spending limits that match your organization's traffic and risk profile. The guidance in this article applies to both options; available controls depend on your provider.
 
 Important
 
-Set up your provider's fraud and spending controls before you move production traffic to CYOT.
+Set up your provider's fraud and spending controls before you move production traffic to CYOT or BYOT.
 
 ## Shared responsibility
 
@@ -52,13 +52,14 @@ Review SMS and voice volume in your provider's usage reports. A sudden increase 
 
 | Issue | Contact |
 | --- | --- |
-| Fraud, provider account restrictions, delivery, or charges | Your telephony provider. Find contact details in the provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing. |
+| Fraud, provider account restrictions, delivery, or charges | Your telephony provider. For CYOT, find contact details in the provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing. For BYOT, use the support details supplied directly by your provider. |
 | Microsoft Entra authentication, code validation, or the handoff to your endpoint | Microsoft Support. See [Find help and get support for Microsoft Entra](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-get-support). |
 
 ## Related content
 
-- [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
+- [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center \(CYOT\)](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-set-up).
+- [Set up SMS and voice with your own telephony provider by using APIs \(BYOT\)](https://learn.microsoft.com/en-us/entra/identity/authentication/bring-your-own-telephony-set-up).
 - [Troubleshoot SMS and voice with your own telephony provider](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-troubleshoot#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Plan for resiliency and high availability](https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability).
-- [Frequently asked questions](https://learn.microsoft.com/en-us/entra/identity/authentication/phone-providers-faq#how-much-does-choose-your-own-telephony-provider-cost).
+- [Frequently asked questions](https://learn.microsoft.com/en-us/entra/identity/authentication/telephony-providers-faq#how-much-does-choose-your-own-telephony-provider-cost).
 - [What is Microsoft Security Store?](https://learn.microsoft.com/en-us/security/store/what-is-security-store).

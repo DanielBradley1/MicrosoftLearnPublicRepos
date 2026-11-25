@@ -93,7 +93,9 @@ With the logic app configured for communication with Microsoft Entra, you can no
 
    Note
 
-   For an example of the body action see: [HTTP action example](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-dynamic-approval#http-action-example).
+   The callback can return the person for whom access is requested, also known as the assignee or target, as an approver, allowing them to approve their own request. Entitlement management prevents self-approval with its built-in approval options. However, this extensibility pattern gives you full flexibility to determine approvers and doesn't enforce this protection. You are responsible for ensuring that your business logic excludes the person receiving access from the approvers returned in the callback if you want to prevent self-approval.
+
+   For an example of the HTTP request body, see [HTTP action example](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-dynamic-approval#http-action-example).
 4. When finished adding your business logic, select **save**.
 
 ## Verify the extension worked

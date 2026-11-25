@@ -62,7 +62,7 @@ Organizations can use Intune to manage these policies using [Custom OMA-URI Sett
 - Adding Microsoft Entra groups through the policy requires the group's security identifier \(SID\) that can be obtained by executing the [Microsoft Graph API for Groups](https://learn.microsoft.com/en-us/graph/api/resources/group). The SID equates to the property `securityIdentifier` in the API response.
 - Administrator privileges using this policy are evaluated only for the following well-known groups on a Windows 10 or newer device - Administrators, Users, Guests, Power Users, Remote Desktop Users, and Remote Management Users.
 - Managing local administrators using Microsoft Entra groups isn't applicable to Microsoft Entra hybrid joined or Microsoft Entra registered devices.
-- Microsoft Entra groups deployed to a device with this policy don't apply to remote desktop connections. To control remote desktop permissions for Microsoft Entra joined devices, you need to add the individual user's SID to the appropriate group.
+- Microsoft Entra groups deployed to a device with this policy don't apply to remote desktop connections or Server Message Block \(SMB\) access to administrative shares, such as `\\<device>\C$` or `\\<device>\Admin$`. To grant these permissions on Microsoft Entra joined devices, add the individual user's SID to the appropriate local group. For administrative shares, add the user to the local Administrators group.
 
 Important
 
