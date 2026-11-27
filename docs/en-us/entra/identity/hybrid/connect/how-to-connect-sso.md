@@ -67,6 +67,7 @@ Microsoft Edge legacy is no longer supported
 
 ## Next steps
 
+- [Enable channel binding for Kerberos sign-in](https://learn.microsoft.com/en-us/entra/identity/authentication/kerberos-channel-binding) - Prepare your clients and network, and configure enforcement.
 - [**Quick Start**](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-quick-start) - Get up and running Microsoft Entra seamless SSO.
 - [**Deployment Plan**](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment) - Step-by-step deployment plan.
 - [**Technical Deep Dive**](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-how-it-works) - Understand how this feature works.

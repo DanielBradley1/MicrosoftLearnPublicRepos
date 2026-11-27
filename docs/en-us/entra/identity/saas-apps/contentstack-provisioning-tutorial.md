@@ -1,109 +1,40 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/contentstack-provisioning-tutorial -->
 <!-- Sitemap-Last-Modified: 2026-04-27 -->
 
-# Configure Contentstack for automatic user provisioning with Microsoft Entra ID
+# SaaS App configuration guides for Microsoft Entra ID
 
-This article describes the steps you need to perform in both Contentstack and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Contentstack](https://www.contentstack.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning).
+To help integrate your cloud-enabled [software as a service \(SaaS\)](https://azure.microsoft.com/overview/what-is-saas/) and on-premises applications with Microsoft Entra ID, we have developed a collection of articles that walk you through configuration.
 
-## Supported capabilities
+For a list of all SaaS apps that have been preintegrated into Microsoft Entra ID, see the [Microsoft Entra Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=entra-id-apps). For a list of applications that can be integrated with Microsoft Entra ID Governance, see [Microsoft Entra ID Governance integrations](https://learn.microsoft.com/en-us/entra/id-governance/apps).
 
-- Create users in Contentstack.
-- Remove users in Contentstack when they don't require access anymore.
-- Keep user attributes synchronized between Microsoft Entra ID and Contentstack.
-- [Single sign-on](https://learn.microsoft.com/en-us/entra/identity/saas-apps/contentstack-tutorial) to Contentstack \(recommended\).
+Microsoft Entra can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an application that isn't listed, and it's a SaaS, then use the [application network portal](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/v2-howto-app-gallery-listing) to request a [SCIM](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/use-scim-to-provision-users-and-groups) enabled application to be added to the gallery for automatic provisioning or a SAML / OIDC enabled application to be added to the gallery for SSO. For integration with other applications, see [integrating applications with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-applications-integrate).
 
-## Prerequisites
+## Quick links
 
-The scenario outlined in this article assumes that you already have the following prerequisites:
+Some of the popular integrations include the applications in the following table.
 
-- [A Microsoft Entra tenant](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant)
-- One of the following roles: [Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-- A user account in Contentstack with at least User Admin permissions.
+| Logo | Application article for single sign-on | Application article for user provisioning |
+| :--- | :--- | :--- |
+| ![logo-Atlassian Cloud](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-atlassian-cloud-tutorial.png) | [Atlassian Cloud](https://learn.microsoft.com/en-us/entra/identity/saas-apps/atlassian-cloud-tutorial) | [Atlassian Cloud - User Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/atlassian-cloud-provisioning-tutorial) |
+| ![logo-ServiceNow](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-servicenow-tutorial.png) | [ServiceNow](https://learn.microsoft.com/en-us/entra/identity/saas-apps/servicenow-tutorial) | [ServiceNow - User Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/servicenow-provisioning-tutorial) |
+| ![logo-Slack](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-slack-tutorial.png) | [Slack](https://learn.microsoft.com/en-us/entra/identity/saas-apps/slack-tutorial) | [Slack - User Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/slack-provisioning-tutorial) |
+| ![logo-SuccessFactors](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-successfactors-tutorial.png) | [SuccessFactors](https://learn.microsoft.com/en-us/entra/identity/saas-apps/successfactors-tutorial) | [SuccessFactors - User Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial) |
+| ![logo-Workday](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-workday-tutorial.png) | [Workday](https://learn.microsoft.com/en-us/entra/identity/saas-apps/workday-tutorial) | [Workday - inbound provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/workday-inbound-tutorial) |
 
-## Plan your provisioning deployment
+To find more articles for SaaS apps, use the table of contents on the left. The list is divided into single sign on and provisioning articles.
 
-- Learn about [how the provisioning service works](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning).
-- Determine who's in [scope for provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts).
-- Determine what data to [map between Microsoft Entra ID and Contentstack](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/customize-application-attributes).
+## Cloud provider integrations
 
-## Configure Contentstack to support provisioning with Microsoft Entra ID
+Some of the popular integrations with infrastructure providers include those in the following table.
 
-Contact [Contentstack support](https://Contentstack.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Contentstack to support provisioning with Microsoft Entra ID. Ensure to provide the Contentstack network domain \(such as acme.Contentstack.com\) you want to enable user provisioning for. You then get provided with the Tenant URL and Secret Token for authorization.
-
-## Contentstack from the Microsoft Entra application gallery
-
-Add Contentstack from the Microsoft Entra application gallery to start managing provisioning to Contentstack. If you have previously setup Contentstack for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal).
-
-## Define who is in scope for provisioning
-
-The Microsoft Entra provisioning service allows you to scope who is provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who is provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal). If you choose to scope who is provisioned based solely on attributes of the user or group, you can [use a scoping filter](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts).
-
-- Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts).
-- If you need extra roles, you can [update the application manifest](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps) to add new roles.
-
-## Configure automatic user provisioning to Contentstack
-
-This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Contentstack based on user assignments in Microsoft Entra ID.
-
-### To configure automatic user provisioning for Contentstack in Microsoft Entra ID:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
-2. Browse to **Entra ID** > **Enterprise apps**
-
-   ![Screenshot of Enterprise applications blade.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/enterprise-applications.png)
-
-3. In the applications list, select **Contentstack**.
-
-   ![Screenshot of the Contentstack link in the Applications list.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/all-applications.png)
-
-4. Select the **Provisioning** tab.
-
-   ![Screenshot of Provisioning tab.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/provisioning.png)
-
-5. Select **+ New configuration**.
-
-   ![Screenshot of Provisioning tab automatic.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/application-provisioning.png)
-
-6. In the **Tenant URL** field, enter your Contentstack Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Contentstack. If the connection fails, ensure your Contentstack account has the required admin permissions and try again.
-
-   ![Screenshot of Provisioning test connection.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/provisioning-test-connection.png)
-
-7. Select **Create** to create your configuration.
-8. Select **Properties** on the **Overview** page.
-9. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
-
-   ![Screenshot of Provisioning properties.](https://learn.microsoft.com/en-us/entra/identity/saas-apps/common/provisioning-properties.png)
-
-10. Select **Attribute Mapping** in the left panel and select **users**.
-11. Review the user attributes that are synchronized from Microsoft Entra ID to Contentstack in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Contentstack for update operations. If you choose to change the [matching target attribute](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/customize-application-attributes), you need to ensure that the Contentstack API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
-    | Attribute | Type | Supported for filtering | Required by Contentstack |
-    | --- | --- | --- | --- |
-    | userName | String | ✓ | ✓ |
-    | name.givenName | String |  |  |
-    | name.familyName | String |  |  |
-    | active | Boolean |  |  |
-12. Review the group attributes that are synchronized from Microsoft Entra ID to Contentstack in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Contentstack for update operations. Select the **Save** button to commit any changes.
-    | Attribute | Type | Supported for filtering | Required by Contentstack |
-    | --- | --- | --- | --- |
-    | displayName | String | ✓ | ✓ |
-    | members | Reference |  |  |
-13. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts).
-14. Use [on-demand provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/provision-on-demand) to validate sync with a small number of users before deploying more broadly in your organization.
-15. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
-
-## Monitor your deployment
-
-Once you configure provisioning, use the following resources to monitor your deployment:
-
-1. Use the [provisioning logs](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs) to determine which users are provisioned successfully or unsuccessfully
-2. Check the [progress bar](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) to see the status of the provisioning cycle and how close it's to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states the [application provisioning quarantine status](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-quarantine-status) article.
-
-## More resources
-
-- [Managing user account provisioning for Enterprise Apps](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/configure-automatic-user-provisioning-portal)
-- [What is application access and single sign-on with Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on)
+| Logo | Application article for single sign-on | Application article for user provisioning |
+| :--- | :--- | :--- |
+| ![logo-Amazon Web Services \(AWS\) Console](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-amazon-web-service-tutorial.png) | [Amazon Web Services \(AWS\) Console](https://learn.microsoft.com/en-us/entra/identity/saas-apps/amazon-web-service-tutorial) | [Amazon Web Services \(AWS\) Console - Role Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/amazon-web-service-tutorial#configure-azure-ad-sso) |
+| ![logo-Alibaba Cloud Service \(Role based SSO\)](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-alibaba-tutorial.png) | [Alibaba Cloud Service \(Role based SSO\)](https://learn.microsoft.com/en-us/entra/identity/saas-apps/alibaba-cloud-service-role-based-sso-tutorial) |  |
+| ![logo-Google Cloud Platform](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-google-apps-tutorial.png) | [Google Cloud Platform](https://learn.microsoft.com/en-us/entra/identity/saas-apps/google-apps-tutorial) | [Google Cloud Platform - User Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/g-suite-provisioning-tutorial) |
+| ![logo-Salesforce](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-salesforce-tutorial.png) | [Salesforce](https://learn.microsoft.com/en-us/entra/identity/saas-apps/salesforce-tutorial) | [Salesforce - User Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/salesforce-provisioning-tutorial) |
+| ![logo-SAP Cloud Identity Services](https://learn.microsoft.com/en-us/entra/identity/saas-apps/media/tutorial-list/entra-saas-sapboc-tutorial.png) | [SAP Cloud Identity Services](https://learn.microsoft.com/en-us/entra/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial) | [SAP Cloud Identity Services - Provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial) |
 
 ## Related content
 
-- [Learn how to review logs and get reports on provisioning activity](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/check-status-user-account-provisioning)
+To learn more about application management, see [What is application management](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-application-management).

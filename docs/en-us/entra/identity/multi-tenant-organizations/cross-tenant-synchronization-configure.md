@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure -->
-<!-- Sitemap-Last-Modified: 2026-08-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-04 -->
 
 # Configure cross-tenant synchronization
 
@@ -611,15 +611,17 @@ You must have Microsoft Entra ID P1 or P2 to configure trust settings.
 
 ### Symptom - Recently deleted user in the target tenant is not restored
 
-After soft deleting a synchronized user in the target tenant, the user isn't restored during the next synchronization cycle. If you try to soft delete a user with on-demand provisioning and then restore the user, it can result in duplicate users.
+After soft deleting a synchronized user in the target tenant, the user isn't restored during the next synchronization cycle.
 
 **Cause**
 
-Restoring a previously soft-deleted user in the target tenant isn't supported.
+Incremental synchronization cycles process changes in the source tenant. A deletion made only in the target tenant doesn't necessarily cause the user to be reprocessed.
 
 **Solution**
 
-Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/users-restore).
+For same-cloud synchronization, run on-demand provisioning for the affected user from the source tenant to restore the soft-deleted user in the target tenant. Follow [Step 11: Test provision on demand](#step-11-test-provision-on-demand), selecting the affected user instead of a test user. The user must still be in scope for provisioning.
+
+You can also manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/users-restore).
 
 ### Symptom - Users are skipped because SMS sign-in is enabled on the user
 
