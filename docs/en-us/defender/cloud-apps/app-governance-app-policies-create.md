@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-app-policies-create -->
-<!-- Sitemap-Last-Modified: 2026-09-28 -->
+<!-- Sitemap-Last-Modified: 2026-11-16 -->
 
 # Create and manage OAuth app policies
 
@@ -18,6 +18,10 @@ This article shows you how to create and configure OAuth app policies in app gov
 ## Create OAuth app policies for Microsoft Entra ID
 
 For apps connected to Microsoft Entra ID, create app policies from provided templates that can be customized, or create your own custom app policy.
+
+Note
+
+You temporarily can't create app governance policies that use the **Last used** condition. Evaluation of existing policies that use this condition is also paused, so affected policies don't generate alerts or execute governance actions. Existing policy configurations remain unchanged, and policy evaluation will resume when normal operation is restored.
 
 1. To create a new app policy for Microsoft 365 apps, go to **Microsoft Defender** > **App governance** > **Policies** > **Microsoft 365**.
 
@@ -47,7 +51,7 @@ The following table lists the app governance templates supported to generate ale
 
 | Template name | Description |
 | --- | --- |
-| **Unused app** | Find apps that have not authenticated recently. This policy checks the following conditions:<br><br>- Last used: More than 90 days \(customizable\) |
+| **Unused app** | Temporarily unavailable. Find apps that have not authenticated recently. This policy checks the following conditions:<br><br>- Last used: More than 90 days \(customizable\) |
 | **New app with high data usage** | Find newly registered apps that have uploaded or downloaded large amounts of data using Microsoft Graph and EWS APIs. This policy checks the following conditions:<br><br>- Registration age: Seven days or less \(customizable\)<br>- Data usage: Greater than 1 GB in one day \(customizable\) |
 | **Increase in users** | Find apps with a sizable increase in the number of users. This policy checks the following conditions:<br><br>- Time range: Last 90 days<br>- Increase in consenting users: At least 50% \(customizable\) |
 
@@ -129,7 +133,7 @@ Use a custom app policy when you need to do something not already done by one of
    | **Sensitivity labels accessed** | Select one or more sensitivity labels from the list | Apps that accessed data with specific sensitivity labels in the last 30 days. |  |
    | **Services accessed** \(Graph only\) | Exchange and/or OneDrive and/or SharePoint and/or Teams | Apps that have accessed OneDrive, SharePoint, or Exchange Online using Microsoft Graph and EWS APIs | Multiple selections allowed. |
    | **Error rate** \(Graph only\) | Error rate is greater than X% in the last seven days | Apps whose Graph API error rates in the last seven days are greater than a specified percentage |  |
-   | **Last used** | Within last X days | Apps that have not authenticated within a specified period from the current date |  |
+   | **Last used** | Within last X days | Temporarily unavailable. Apps that have not authenticated within a specified period from the current date |  |
    | **App origin** | External or Internal | Apps that originated within the tenant or registered in an external tenant |  |
 
 

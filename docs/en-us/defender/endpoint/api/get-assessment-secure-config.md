@@ -174,6 +174,8 @@ GET https://api.security.microsoft.com/api/machines/SecureConfigurationsAssessme
 
 ## 2. Export secure configuration assessment \(via files\)
 
+For the download workflow, including asynchronous copy-status checks and retries, see [Download assessment export files](https://learn.microsoft.com/en-us/defender-endpoint/api/download-assessment-export-files).
+
 ### 2.1 API method description
 
 This API response contains the Secure Configuration Assessment on your exposed devices, and returns an entry for every unique combination of DeviceId, ConfigurationId.

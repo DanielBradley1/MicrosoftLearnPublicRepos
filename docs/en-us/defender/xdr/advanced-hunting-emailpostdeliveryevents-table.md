@@ -25,6 +25,7 @@ Some information relates to prereleased product which may be substantially modif
 | `Action` | `string` | Action taken on the entity |
 | `ActionType` | `string` | Type of activity that triggered the event: Manual remediation, Phish ZAP, Malware ZAP |
 | `ActionTrigger` | `string` | Indicates whether an action was triggered by an administrator \(manually or through approval of a pending automated action\), or by some special mechanism, such as a ZAP or Dynamic Delivery |
+| `ApproverUpn` | `string` | User principal name \(UPN\) of the person who approved the remediation action |
 | `ActionResult` | `string` | Result of the action |
 | `RecipientEmailAddress` | `string` | Email address of the recipient, or email address of the recipient after distribution list expansion |
 | `DeliveryLocation` | `string` | Location where the email was delivered: Inbox/Folder, On-premises/External, Junk, Quarantine, Failed, Dropped, Deleted items |

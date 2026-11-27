@@ -113,6 +113,21 @@ Note
 
 For the Microsoft Defender portal to start enforcing the permissions and assignments configured in your new or imported roles, you need to activate the new Microsoft Defender unified RBAC model. For more information, see [Activate Microsoft Defender unified RBAC](https://learn.microsoft.com/en-us/defender-xdr/activate-defender-rbac).
 
+## Control access to Microsoft Threat Intelligence alerts
+
+Use the **Microsoft Threat Intelligence** data source to control access to Nation-State Notification \(NSN\) alerts in the Microsoft Defender portal.
+
+When you create or edit a role assignment, select **Microsoft Threat Intelligence** from **Data sources**. The role's permissions determine what assigned users can do:
+
+- **Security data basics** \(Read\): View NSN alerts.
+- **Alerts** \(Manage\): Manage NSN alerts.
+
+For existing assignments that require NSN alert access, add **Microsoft Threat Intelligence** if it isn't already included. Assignments with **Include future data sources automatically** selected automatically include newly supported data sources.
+
+This selection scopes the current role assignment. It doesn't remove access granted through other role assignments or Microsoft Entra roles.
+
+For more information about these alerts, see [Alert sources and threat detection](https://learn.microsoft.com/en-us/defender-xdr/incidents-overview#alert-sources-and-threat-detection).
+
 ## Configure scoped roles for Microsoft Defender for Identity
 
 You can configure scoped access using Microsoft Defender Unified RBAC \(URBAC\) model for identities managed by Microsoft Defender for Identity \(MDI\). This allows you to restrict access and visibility to specific Active Directory domains or Organizational units, helping align with team responsibilities and reduce unnecessary data exposure.

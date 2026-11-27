@@ -27,6 +27,10 @@ App governance allows you to sort and filter on app last used date, credential u
 
 App governance provides customizable policies for unused apps, apps with unused credentials, and apps with expiring credentials.
 
+Note
+
+You temporarily can't create app governance policies that use the **Last used** condition. Evaluation of existing policies that use this condition is also paused, so affected policies don't generate alerts or execute governance actions. Existing policy configurations remain unchanged, and policy evaluation will resume when normal operation is restored.
+
 For example, create a policy to automatically disable any app that hasn’t been used in the past 90 days, has high privilege permissions, and can access [priority accounts in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/setup/priority-accounts). Like all app governance alerts, these alerts are aggregated into incidents in your Defender alerts queue and flow to Advanced hunting and Microsoft Sentinel.
 
 The following image shows an example of policy conditions for an app hygiene policy:

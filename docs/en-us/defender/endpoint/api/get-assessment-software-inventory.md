@@ -179,6 +179,8 @@ GET https://api.security.microsoft.com/api/machines/SoftwareInventoryByMachine?p
 
 ## 2. Export software inventory assessment \(via files\)
 
+For the download workflow, including asynchronous copy-status checks and retries, see [Download assessment export files](https://learn.microsoft.com/en-us/defender-endpoint/api/download-assessment-export-files).
+
 ### 2.1 API method description
 
 This API response contains all the data of installed software per device. Returns a table with an entry for every unique combination of DeviceId, SoftwareVendor, SoftwareName, SoftwareVersion.

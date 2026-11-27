@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/ai-agent-real-time-protection -->
-<!-- Sitemap-Last-Modified: 2026-10-15 -->
+<!-- Sitemap-Last-Modified: 2026-11-19 -->
 
 # Protect AI agents in real time using Microsoft Defender
 
@@ -27,6 +27,10 @@ Real-time protection inspects AI agent activity throughout the agentic loop and 
 - **Agent 365 Tooling Servers \(GA\)**: Defender integrates with [Work IQ MCP](https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview) to evaluate tool invocations and responses, including invocations of customer MCP tools [onboarded to Agent 365](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-for-agent).
 - **Foundry agents \(Preview\):** Protection evaluates user requests, agent responses, tool invocations and responses.
 - **Copilot Studio agents \(Preview\)**: Protection currently evaluates tool invocations only.
+
+Note
+
+Real-time protection for Copilot Studio agents is supported only for agents built using the standard agent harness.
 
 There are two types of real-time protection rules:
 
