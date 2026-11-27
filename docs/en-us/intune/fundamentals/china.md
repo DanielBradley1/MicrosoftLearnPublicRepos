@@ -11,36 +11,75 @@ Note
 
 If you're interested in viewing or deleting personal data, see the [Azure Data Subject Requests for the GDPR](https://learn.microsoft.com/en-us/microsoft-365/compliance/gdpr-dsr-azure) article. If you're looking for general info about GDPR, see the [GDPR section of the Service Trust portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-## Feature differences in Intune operated by 21Vianet
+## Features differences in Intune operated by 21Vianet
 
-Because the China services are operated by a partner from inside China, there are some feature differences with Intune.
+The following features are available in Intune operated by 21Vianet. The table describes differences from the commercial service.
 
-- Intune operated by 21Vianet only supports standalone deployments. Customers can use co-management to attach their existing Configuration Manager deployment to the Microsoft Intune cloud.
-- Migrations from public clouds to sovereign clouds aren't supported. Customers interested in moving to Intune operated by 21Vianet must migrate manually.
-- The tenant attach feature \(syncing devices to Intune without enrollment to support cloud console scenarios\) isn't currently supported.
-- Derived Credentials aren't supported with Intune operated by 21Vianet.
-- Windows device management is supported using the modern MDM channel.
-- Intune operated by 21Vianet doesn't support on-premises Exchange Connector.
-- Intune operated by 21Vianet doesn't support [Microsoft Store for Business](https://learn.microsoft.com/en-us/lifecycle/announcements/microsoft-store-for-business-education-retiring).
-- [Windows Autopilot](https://learn.microsoft.com/en-us/autopilot/overview) features, including Autopilot with co-management, aren't supported with Intune operated by 21Vianet. [Windows Autopilot Device Preparation](https://learn.microsoft.com/en-us/autopilot/device-preparation/overview) is available on Intune operated by 21Vianet in China cloud.
+| Feature | Availability |
+| --- | --- |
+| **Deployments and co-management** | Only standalone Intune deployments are supported. You can use co-management to attach an existing Configuration Manager deployment to Intune.  <br>  <br>For more information, see [Co-management for Windows devices](https://learn.microsoft.com/en-us/intune/configmgr/comanage/overview). |
+| **Windows device management** | Supported through the modern mobile device management \(MDM\) channel.  <br>  <br>For more information, see [Windows enrollment methods](https://learn.microsoft.com/en-us/intune/device-enrollment/windows/guide). |
+| **Company Portal for Windows** | Supported. Use WinGet to download the Company Portal package and dependencies, then deploy it as a line-of-business app through Intune.  <br>  <br>For more information, see [Use the WinGet tool to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/). |
+| **Company Portal for Android** | The app uses Google Mobile Services \(GMS\) to communicate with Intune. Because Google Play services are unavailable in China, some tasks can take up to 8 hours to finish.  <br>  <br>For more information, see [Limitations of Intune management when GMS is unavailable](https://learn.microsoft.com/en-us/intune/app-management/manage-without-gms#limitations-of-intune-management-when-gms-is-unavailable). |
+| **Company Portal client experience** | The client experience can differ in China to meet local regulations and provide improved functionality.  <br>  <br>For more information, see [Install Company Portal in People's Republic of China](https://learn.microsoft.com/en-us/intune/user-help/company-portal/install-android-china). |
+| **Mobile Application Management \(MAM\)** | Availability depends on whether the apps are available in People's Republic of China.  <br>  <br>For more information, see [Microsoft Intune protected apps](https://learn.microsoft.com/en-us/intune/app-management/ref-protected-apps). |
+| **Mobile Threat Defense \(MTD\)** | Connectors for Android and iOS/iPadOS devices are supported when the MTD partner also supports the 21Vianet environment. Sign in to your 21Vianet tenant to view the available connectors.  <br>  <br>For more information, see [Mobile Threat Defense integration with Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-security/mobile-threat-defense/overview). |
 
-  To learn more about the differences, see [Compare Autopilot solutions](https://learn.microsoft.com/en-us/autopilot/device-preparation/compare).
-- Intune operated by 21Vianet supports the Company Portal for Windows app. Use WinGet to download the Company portal package and dependencies and then deploy as a Line-of-Business app using Intune. [Use the WinGet tool to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
-- Microsoft Intune Endpoint Analytics and Log Analytics features aren't currently available.
-- Azure Virtual Desktop Windows multi-session isn't currently supported for 21Vianet.
-- Because Google Mobile Services isn't available in China, customers in Intune operated by 21Vianet can't use features that require Google Mobile Services. These features include:
+## Intune features not available in Intune operated by 21Vianet
 
-  - Google Play Protect capabilities such as Play integrity verdict.
-  - Managing apps from the Google Play Store.
-  - Android Enterprise capabilities. For more information, see this [Google documentation](https://support.google.com/work/android/answer/6270910?hl=en).
+The following features are not available in Intune operated by 21Vianet. Windows Autopilot device preparation is listed separately in the [planned features](#intune-features-planned-for-intune-operated-by-21vianet) section.
 
-- The Intune Company Portal app for Android uses Google Mobile Services \(GMS\) to communicate with the Microsoft Intune service. Because Google Play services isn't available in China, some tasks can require up to 8 hours to finish. For more information, see [Limitations of Intune management when GMS is unavailable](https://learn.microsoft.com/en-us/intune/app-management/manage-without-gms#limitations-of-intune-management-when-gms-is-unavailable).
-- To follow local regulations and provide improved functionality, the Intune client experience \(Company Portal app\) may differ in China.
-- Fencing isn't available.
-- Mobile Application Management \(MAM\) availability is conditional on those apps being available in People's Republic of China.
-- Mobile Threat Defense \(MTD\) connectors for Android and iOS/iPadOS devices are supported for the MTD partners that also support the 21Vianet environment. When you sign in to a 21Vianet tenant, you can see the connectors that are available in that environment.
-- Intune operated by 21Vianet doesn't support Android \(AOSP\) management for corporate devices.
-- Intune operated by 21Vianet doesn't support partner device management integration with Jamf for macOS devices.
+| Feature | Availability |
+| --- | --- |
+| **[App and driver compatibility reports for Windows updates](https://learn.microsoft.com/en-us/intune/device-updates/windows/monitor-compatibility)** | Not available. |
+| **[Apple Managed account federation](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-apple-federation-customers)** | Not available. |
+| **[Chrome Enterprise Connector](https://learn.microsoft.com/en-us/intune/device-enrollment/configure-chrome-enterprise-connector)** | Not available. |
+| **[eSIM cellular support on Windows](https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-esim-download-server)** | Not available. |
+| **[Intune Power BI connector for Data Warehouse](https://learn.microsoft.com/en-us/intune/developer/data-warehouse/connect-power-bi)** | Not available. |
+| **[Microsoft Connected Cache for Enterprise and Education](https://learn.microsoft.com/en-us/windows/deployment/do/mcc-ent-edu-overview)** | Not available. |
+| **[Microsoft Store for Business](https://learn.microsoft.com/en-us/lifecycle/announcements/microsoft-store-for-business-education-retiring)** | Not available. |
+| **On-premises Exchange Connector** | Not available. |
+| **[Remediations](https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations)** | Not available. |
+| **[Reports for feature update policies](https://learn.microsoft.com/en-us/intune/device-updates/windows/monitor-feature-updates)** | Not available. |
+| **[ServiceNow connector](https://learn.microsoft.com/en-us/intune/device-management/tools/setup-servicenow)** | Not available. |
+| **[TeamViewer connector \(legacy\)](https://learn.microsoft.com/en-us/intune/device-management/tools/teamviewer-legacy) and [TeamViewer integration](https://learn.microsoft.com/en-us/intune/device-management/tools/setup-teamviewer)** | Not available. |
+| **[Windows Autopilot](https://learn.microsoft.com/en-us/autopilot/overview)** | Not available, including Windows Autopilot with co-management. |
+| **[Windows Backup for Organizations](https://learn.microsoft.com/en-us/windows/configuration/windows-backup/?tabs=intune)** | Not available. |
+| **[Windows Diagnostic Data processor configuration](https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enable-windows-diagnostic-data-processor-configuration)** | Not available. |
+| **[Azure Virtual Desktop Windows Enterprise multi-session](https://learn.microsoft.com/en-us/intune/solutions/azure-virtual-desktop-multi-session)** | Not available. |
+| **[Windows Subscription Activation](https://learn.microsoft.com/en-us/windows/deployment/windows-subscription-activation?pivots=windows-11)** | Not available. |
+| **[Migration from public clouds to sovereign clouds](https://learn.microsoft.com/en-us/intune/fundamentals/setup-migration)** | Built-in migration is not supported. To move to Intune operated by 21Vianet, you must migrate manually. |
+| **[Tenant attach](https://learn.microsoft.com/en-us/intune/configmgr/tenant-attach/device-sync-actions)** | Syncing devices to Intune without enrollment to support cloud console scenarios is not supported. |
+| **[Derived credentials](https://learn.microsoft.com/en-us/intune/device-security/certificates/derived-credentials)** | Not available. |
+| **[Log Analytics](https://learn.microsoft.com/en-us/intune/governance/integrate-azure-monitor)** | Not available. |
+| **[Google Play Protect capabilities](https://learn.microsoft.com/en-us/intune/app-management/manage-without-gms#unavailable-intune-features)** | Not available, including Play integrity verdict, because GMS is unavailable in China. |
+| **[Google Play Store app management](https://learn.microsoft.com/en-us/intune/app-management/manage-without-gms#unavailable-intune-features)** | Not available because GMS is unavailable in China. |
+| **[Android Enterprise](https://learn.microsoft.com/en-us/intune/device-enrollment/android/guide)** | Not available because GMS is unavailable in China. |
+| **Fencing** | Not available. |
+| **[Android Open Source Project \(AOSP\) management](https://learn.microsoft.com/en-us/intune/device-enrollment/android/setup-aosp-corporate-userless)** | Not supported for corporate devices. |
+| **[Jamf partner device management integration](https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/configure-jamf-cloud-connector)** | Not supported for macOS devices. |
+| **[Microsoft Intune advanced capabilities](https://learn.microsoft.com/en-us/intune/fundamentals/advanced-capabilities)** | None of the following advanced capabilities are available:  <br>  <br>- [Firmware Over-the-Air updates](https://learn.microsoft.com/en-us/intune/device-updates/android/manage-fota)  <br>- [Specialty device management](https://learn.microsoft.com/en-us/intune/device-management/specialty-devices)  <br>- [Microsoft Tunnel for MAM](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/mam)  <br>- [Advanced Analytics](https://learn.microsoft.com/en-us/intune/advanced-analytics/)  <br>- [Remote Help](https://learn.microsoft.com/en-us/intune/remote-help/)  <br>- [Microsoft Cloud PKI](https://learn.microsoft.com/en-us/intune/cloud-pki/)  <br>- [Endpoint Privilege Management](https://learn.microsoft.com/en-us/intune/epm/overview)  <br>- [Enterprise Application Management](https://learn.microsoft.com/en-us/intune/app-management/deployment/enterprise-app-management) |
+| **Autopatch and updates** | [Windows Autopatch](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview) |
+|  | [Feature updates for Windows in Intune](https://learn.microsoft.com/en-us/intune/device-updates/windows/manage-feature-updates) |
+|  | [Quality updates for Windows in Intune](https://learn.microsoft.com/en-us/intune/device-updates/windows/manage-quality-updates) |
+|  | [Expedite updates for Windows in Intune](https://learn.microsoft.com/en-us/intune/device-updates/windows/configure-expedite-policy) |
+|  | [Driver updates for Windows in Intune](https://learn.microsoft.com/en-us/intune/device-updates/windows/configure-driver-update-policy) |
+|  | [Delivery Optimization for Win32 Apps](https://learn.microsoft.com/en-us/windows/deployment/do/waas-delivery-optimization) |
+| **[Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot)** | Not available. |
+
+## Intune features planned for Intune operated by 21Vianet
+
+The following features are currently not available and aren't supported in in Intune operated by 21Vianet. This list is not comprehensive and is provided as directional guidance into key planned investments. Plans, target dates, and capabilities are subject to change. As features become generally available, or are cancelled or postponed, information will be removed from this list.
+
+| Feature | Feature documentation |
+| --- | --- |
+| **[Windows Autopilot device preparation](https://learn.microsoft.com/en-us/autopilot/device-preparation/overview)** | Customize out-of-box experience \(OOBE\) and rename devices during provisioning based on organizational structure |
+|  | Self-deploying and pre-provisioning mode |
+|  | More admin-specified configurations delivered before allowing desktop access |
+|  | Enhanced optional desktop onboarding experience inside the Windows Company Portal app |
+|  | The ability to associate a device with a tenant. Provisioning modes which require Windows Autopilot registration are not supported. |
+| **[App inventory](https://learn.microsoft.com/en-us/intune/app-management/deployment/enhanced-app-inventory)** | Collect detailed application data from Windows devices. |
+| **[Properties catalog](https://learn.microsoft.com/en-us/intune/device-configuration/collect-device-properties)** | Collect device properties from Windows devices. |
 
 ## You control customer data
 
