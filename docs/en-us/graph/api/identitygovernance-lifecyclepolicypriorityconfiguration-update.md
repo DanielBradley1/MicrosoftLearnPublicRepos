@@ -1,37 +1,25 @@
-<!-- Source: https://learn.microsoft.com/en-us/graph/api/identitygovernance-lifecyclepolicypriorityconfiguration-update?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Source: https://learn.microsoft.com/en-us/graph/api/identitygovernance-lifecyclepolicypriorityconfiguration-update?view=graph-rest-beta -->
+<!-- Sitemap-Last-Modified: 2026-10-08 -->
 
 # Update lifecyclePolicyPriorityConfiguration
 
 Namespace: microsoft.graph.identityGovernance
 
-Update the properties of a [lifecyclePolicyPriorityConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicypriorityconfiguration?view=graph-rest-1.0) object to reorder the evaluation priority of lifecycle policies for a subject type.
+Important
+
+APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Update the properties of a [lifecyclePolicyPriorityConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicypriorityconfiguration?view=graph-rest-beta) object to reorder the evaluation priority of lifecycle policies for a subject type.
 
 ## Permissions
 
 Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions [only if your app requires it](https://learn.microsoft.com/en-us/graph/permissions-overview#best-practices-for-using-microsoft-graph-permissions). For details about delegated and application permissions, see [Permission types](https://learn.microsoft.com/en-us/graph/permissions-overview#permission-types). To learn more about these permissions, see the [permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
 
-### Agent identity policies
-
 | Permission type | Least privileged permissions | Higher privileged permissions |
 | :--- | :--- | :--- |
-| Delegated \(work or school account\) | LifecyclePolicies-AgentId.ReadWrite.All | Not available. |
+| Delegated \(work or school account\) | LifecyclePolicies-AgentId.ReadWrite.All | LifecyclePolicies-Guests.ReadWrite.All |
 | Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | LifecyclePolicies-AgentId.ReadWrite.All | Not available. |
-
-### Guest policies
-
-| Permission type | Least privileged permissions | Higher privileged permissions |
-| :--- | :--- | :--- |
-| Delegated \(work or school account\) | LifecyclePolicies-Guests.ReadWrite.All | Not available. |
-| Delegated \(personal Microsoft account\) | Not supported. | Not supported. |
-| Application | LifecyclePolicies-Guests.ReadWrite.All | Not available. |
-
-Important
-
-For guest lifecycle policy writes, delegated access requires both the `LifecyclePolicies-Guests.ReadWrite.All` scope and a supported [Microsoft Entra role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference?toc=%2Fgraph%2Ftoc.json). *Lifecycle Workflows Administrator* is the least privileged role supported for this operation. Scope alone or role alone is insufficient.
-
-Application access requires the `LifecyclePolicies-Guests.ReadWrite.All` application permission, without an additional user directory-role requirement. These requirements apply to creating, updating, deleting, restoring, and permanently deleting guest policies, and to changing guest policy priority. They don't describe authorization for agent policies or guest user attestation.
+| Application | LifecyclePolicies-AgentId.ReadWrite.All | LifecyclePolicies-Guests.ReadWrite.All |
 
 ## HTTP request
 
@@ -68,7 +56,7 @@ If successful, this method returns a `204 No Content` response code.
 The following example shows a request.
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/lifecyclePolicyPriorityConfigurations/agentIdentity
+PATCH https://graph.microsoft.com/beta/identityGovernance/lifecycleWorkflows/lifecyclePolicyPriorityConfigurations/agentIdentity
 Content-Type: application/json
 If-Match: W/"JzEtVGFncCc="
 

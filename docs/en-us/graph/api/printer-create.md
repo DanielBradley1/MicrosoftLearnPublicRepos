@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/printer-create?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Sitemap-Last-Modified: 2024-04-05 -->
 
 # printer: create
 
@@ -8,8 +8,6 @@ Namespace: microsoft.graph
 Create \(register\) a printer with the Universal Print service. This is a long-running operation and as such, it returns a [printerCreateOperation](https://learn.microsoft.com/en-us/graph/api/resources/printercreateoperation?view=graph-rest-1.0) that can be used to track and verify the registration of the printer.
 
 For help creating the required Certificate Signing Request \(CSR\) for creating printer, see the [CSR generation code sample](https://learn.microsoft.com/en-us/universal-print/hardware/universal-print-oem-certificate-signing-request).
-
-## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -46,15 +44,15 @@ In the request body, supply a JSON representation of the parameters.
 
 The following table shows the parameters that can be used with this action.
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| displayName | String | Required. The display name to assign to the printer. |
-| manufacturer | String | Required. The manufacturer of the printer. |
-| model | String | Required. The model of the printer. |
-| physicalDeviceId | String | Optional. The physical device UUID of the printer. Required if the **hasPhysicalDevice** property is `true`. |
-| hasPhysicalDevice | Boolean | Optional. `true` if the printer has a physical output device; otherwise, `false`. If omitted, the default value is `true`. |
-| certificateSigningRequest | [printCertificateSigningRequest](https://learn.microsoft.com/en-us/graph/api/resources/printcertificatesigningrequest?view=graph-rest-1.0) | Required. The X.509 Certificate Signing Request \(CSR\) for the certificate created and used by the printer to identify itself. |
-| connectorId | String | Optional. ID of the connector acting as a proxy to the printer. |
+| Parameter | Type | Description | Required? |
+| :--- | :--- | :--- | :--- |
+| displayName | String | The display name to assign to the printer. | Yes |
+| manufacturer | String | The manufacturer of the printer. | Yes |
+| model | String | The model of the printer. | Yes |
+| physicalDeviceId | String | The physical device UUID of the printer. Required if the `hasPhysicalDevice` property is true. | No |
+| hasPhysicalDevice | Boolean | True if the printer has physical output device, false otherwise. If omitted, the default value is true. | No |
+| certificateSigningRequest | [printCertificateSigningRequest](https://learn.microsoft.com/en-us/graph/api/resources/printcertificatesigningrequest?view=graph-rest-1.0) | The X.509 Certificate Signing Request \(CSR\) for the certificate created and used by the printer to identify itself. | Yes |
+| connectorId | String | ID of the connector acting as proxy to the printer. | No |
 
 ## Response
 

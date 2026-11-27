@@ -1,5 +1,5 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/whats-new-overview -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Sitemap-Last-Modified: 2026-11-13 -->
 
 # What's new in Microsoft Graph
 
@@ -116,9 +116,11 @@ Added the **sharingLevel** property to the [calendar](https://learn.microsoft.co
 
 - Added the `aiElevatedAccountRisk` member to the [riskDetail](https://learn.microsoft.com/en-us/graph/api/resources/riskdetail?view=graph-rest-beta&preserve-view=true) enumeration to indicate that the user completed Microsoft-managed remediation to address their risk.
 - Added the `userPassedVerifiedIdDrivenByRiskBasedPolicy` member to the [riskDetail](https://learn.microsoft.com/en-us/graph/api/resources/riskdetail?view=graph-rest-beta&preserve-view=true) enumeration to indicate that the user remediated their risk by completing Verified ID verification under a risk-based Conditional Access policy.
+- Added the `verifiedID` member to the **conditionalAccessGrantControl** enumeration type to require identity verification through Microsoft Entra Verified ID. Use this control in the **builtInControls** property of [conditionalAccessGrantControls](https://learn.microsoft.com/en-us/graph/api/resources/conditionalaccessgrantcontrols?view=graph-rest-beta&preserve-view=true).
 
 ### Identity and access \| Network access
 
+- Added the `entra` member to the **trafficForwardingType** enumeration used by [forwardingProfile](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-forwardingprofile?view=graph-rest-beta&preserve-view=true) and [forwardingPolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-forwardingpolicy?view=graph-rest-beta&preserve-view=true).
 - Added the [webFilteringPolicy](https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-webfilteringpolicy?view=graph-rest-beta&preserve-view=true) resource type and related methods for configuring how Global Secure Access allows or blocks web traffic based on source sessions, URLs, web categories, and HTTP request methods.
 
 ### Mail
@@ -155,6 +157,8 @@ Added the [classificationGradingJobResponse](https://learn.microsoft.com/en-us/g
 - Removed the `If-Match` header from [create section](https://learn.microsoft.com/en-us/graph/api/userteamwork-post-sections?view=graph-rest-beta&preserve-view=true), [update section](https://learn.microsoft.com/en-us/graph/api/teamworksection-update?view=graph-rest-beta&preserve-view=true), [delete section](https://learn.microsoft.com/en-us/graph/api/teamworksection-delete?view=graph-rest-beta&preserve-view=true), [reorder sections](https://learn.microsoft.com/en-us/graph/api/teamworksection-reorder?view=graph-rest-beta&preserve-view=true), [create section item](https://learn.microsoft.com/en-us/graph/api/teamworksection-post-items?view=graph-rest-beta&preserve-view=true), [move section item](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-move?view=graph-rest-beta&preserve-view=true), [reorder section items](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-reorder?view=graph-rest-beta&preserve-view=true), and [delete section item](https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-delete?view=graph-rest-beta&preserve-view=true) methods of the [teamworkSection](https://learn.microsoft.com/en-us/graph/api/resources/teamworksection?view=graph-rest-beta&preserve-view=true) and [teamworkSectionItem](https://learn.microsoft.com/en-us/graph/api/resources/teamworksectionitem?view=graph-rest-beta&preserve-view=true) resources. These operations now return a `409 Conflict` response code for concurrent changes, and no longer return `412 Precondition Failed` or `428 Precondition Required`.
 - Updated the [add teamworkSectionItem](https://learn.microsoft.com/en-us/graph/api/teamworksection-post-items?view=graph-rest-beta&preserve-view=true) method to move an item from another user-defined section.
 - Added the [teamworkChannelTag](https://learn.microsoft.com/en-us/graph/api/resources/teamworkchanneltag?view=graph-rest-beta&preserve-view=true) resource type and associated methods for managing tags owned by a Microsoft Teams channel. Use channel tags to group users within a channel and manage their tag assignments.
+- Added the [channelJoinRequest](https://learn.microsoft.com/en-us/graph/api/resources/channeljoinrequest?view=graph-rest-beta&preserve-view=true) resource type and related methods for channel owners to manage pending requests to join a private or shared channel.
+- Added the [teamJoinRequest](https://learn.microsoft.com/en-us/graph/api/resources/teamjoinrequest?view=graph-rest-beta&preserve-view=true) resource type and related methods for team owners to manage pending requests to join a team.
 
 ### Tenants \| Configuration management
 
@@ -261,6 +265,10 @@ The [Place update](https://learn.microsoft.com/en-us/graph/api/place-update?view
 - Use the [retrieveManagedLicenseOperation](https://learn.microsoft.com/en-us/graph/api/cloudpcmanagedlicense-retrievemanagedlicenseoperation?view=graph-rest-beta&preserve-view=true) operation to retrieve the status and per-user results of a submitted operation.
 - Added the [setDeviceName](https://learn.microsoft.com/en-us/graph/api/cloudpc-setdevicename?view=graph-rest-beta&preserve-view=true) action to set a Cloud PC's operating system device name without changing its display name.
 - Added the [cloudPcBulkSetDeviceName](https://learn.microsoft.com/en-us/graph/api/resources/cloudpcbulksetdevicename?view=graph-rest-beta&preserve-view=true) resource type to set device names for multiple Cloud PCs by using a naming template.
+
+### Device and app management \| Device configuration
+
+- Added the `windowsServer` member to the [deviceManagementConfigurationWindowsSkus](https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationwindowsskus?view=graph-rest-beta&preserve-view=true) enumeration type to identify settings that apply to the Windows Server SKU family. Use the `Prefer: include-unknown-enum-members` request header to retrieve this value.
 
 ### Device and app management \| Device updates
 

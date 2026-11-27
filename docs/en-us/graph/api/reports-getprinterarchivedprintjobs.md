@@ -1,13 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-1.0 -->
-<!-- Sitemap-Last-Modified: 2026-11-17 -->
+<!-- Sitemap-Last-Modified: 2025-07-23 -->
 
 # reportRoot: getPrinterArchivedPrintJobs
 
 Namespace: microsoft.graph
 
 Get a list of archived print jobs that were queued for particular [printer](https://learn.microsoft.com/en-us/graph/api/resources/printer?view=graph-rest-1.0).
-
-## API availability
 
 This API is available in the following [national cloud deployments](https://learn.microsoft.com/en-us/graph/deployments).
 
@@ -35,11 +33,11 @@ GET /reports/getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime='
 
 In the request URL, provide the following function parameters with values:
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| printerId | String | Required. The ID of the printer to return data for. |
-| startDateTime | DateTimeOffset | Optional. The start date \(inclusive\) for the time period to include data from. |
-| endDateTime | DateTimeOffset | Optional. The end date \(inclusive\) for the time period to include data from. |
+| Parameter | Type | Required? | Description |
+| --- | --- | --- | --- |
+| `printerId` | `Edm.String` | Yes | The ID of the printer to return data for. |
+| `startDateTime` | `Edm.DateTimeOffset` | No | The start date \(inclusive\) for the time period to include data from. |
+| `endDateTime` | `Edm.DateTimeOffset` | No | The end date \(inclusive\) for the time period to include data from. |
 
 > **Note:** If a value is not required, pass the parameter with null value.
 
