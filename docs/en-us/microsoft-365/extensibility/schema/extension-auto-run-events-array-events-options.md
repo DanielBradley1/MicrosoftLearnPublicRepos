@@ -174,6 +174,22 @@ Allowed values: `promptUser`, `softBlock`, `block`.
 
 #### sendMode
 
+Specifies the actions to take during a mail send action. For more information, see [available send mode options](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/onmessagesend-onappointmentsend-events#available-send-mode-options).
+
+**Type**  
+string
+
+**Required**  
+—
+
+**Constraints**  
+
+
+**Supported values**  
+Allowed values: `promptUser`, `softBlock`, `block`, ``.
+
+#### sendMode
+
 Specifies the actions to take during a mail send action. For more information, see [available send mode options](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/smart-alerts-onmessagesend-walkthrough?tabs=jsonmanifest#available-send-mode-options).
 
 **Type**  
@@ -219,6 +235,22 @@ string
 
 **Supported values**  
 
+
+#### headerName
+
+Specifies the internet header name used to identify a message during a decryption event. Follows email header name constraints. For more information, see [Create an encryption Outlook add-in](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/encryption-decryption).
+
+**Type**  
+string
+
+**Required**  
+—
+
+**Constraints**  
+
+
+**Supported values**  
+The string must match the following regular expression: `^[A-Za-z0-9][A-Za-z0-9-]*$`.
 
 #### headerName
 

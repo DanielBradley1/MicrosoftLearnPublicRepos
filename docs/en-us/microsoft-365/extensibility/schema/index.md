@@ -7,7 +7,26 @@ The app manifest for Microsoft 365 is a JSON file that describes the functionali
 
 The app manifest is part of the unified Microsoft 365 app package: a simple zip folder that includes app manifest, icons, and optional Copilot agent manifest definitions. Using a common packaging format, you can submit Microsoft 365 Copilot agents, Teams apps, SharePoint Framework apps, Graph connectors, and Office Add-ins to the [Microsoft 365 and Copilot program](https://learn.microsoft.com/en-us/partner-center/marketplace-offers/add-in-submission-guide) in Microsoft Partner Center as a Store offer, or submit directly to your organization's app catalog. Microsoft 365 apps are centrally deployed and managed from the [Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) portal of Microsoft 365 admin center.
 
-## What's new in manifest version 1.30
+## What's new in manifest version 1.31
+
+November 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.31/MicrosoftTeams.schema.json
+```
+
+- Added [`openApiConnector`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-agent-connectors-tool-source-open-api-connector?view=m365-app-1.30) support for OpenAPI-based connectors backed by HTTP APIs described by OpenAPI. The OpenAPI description is resolved at runtime using the connector identity in the authorization `referenceId`.
+- Added new property [`displayName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-activities-activity-types?view=m365-app-1.30#displayname) for supporting activity display name guidance. Use `displayName` for a concise, localized noun label in sentence case, without host commands or ending punctuation.
+
+## All generally available versions
+
+  
+
+
+<details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
 
 August 2026
 
@@ -16,8 +35,7 @@ https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.j
 ```
 
 Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
-
-## All generally available versions
+</details>
 
   
 
@@ -382,6 +400,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.j
 
 
 <details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
+
+  
+
+
+<details>
 <summary>**Version 1.29**</summary>
 
 ### Version 1.29
@@ -740,6 +775,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.j
 
 
 <details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
+
+  
+
+
+<details>
 <summary>**Version 1.29**</summary>
 
 ### Version 1.29
@@ -1093,6 +1145,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.27/MicrosoftTeams.schema.j
 - Added a new command [type](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-bots-command-lists-commands) and a new property [prompt](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-bots-command-lists-commands) under bots commands.
 
 ## All generally available versions
+
+  
+
+
+<details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
 
   
 
@@ -1457,6 +1526,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.26/MicrosoftTeams.schema.j
 
 
 <details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
+
+  
+
+
+<details>
 <summary>**Version 1.29**</summary>
 
 ### Version 1.29
@@ -1811,6 +1897,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.25/MicrosoftTeams.schema.j
 - Enhanced support for Excel custom functions, including [customFunctions.enum](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/enum?view=m365-app-1.30) to provide [autocomplete options for custom functions](https://learn.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-custom-enums) and additional [function properties](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-function?view=m365-app-1.30#properties) and datatypes from [CustomFunctionsRuntime 1.5](https://learn.microsoft.com/en-us/javascript/api/requirement-sets/excel/custom-functions-requirement-sets).
 
 ## All generally available versions
+
+  
+
+
+<details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
 
   
 
@@ -2176,6 +2279,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.24/MicrosoftTeams.schema.j
 
 
 <details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
+
+  
+
+
+<details>
 <summary>**Version 1.29**</summary>
 
 ### Version 1.29
@@ -2530,6 +2650,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.23/MicrosoftTeams.schema.j
 - Improved description for [`spamReportingOptions`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog?view=m365-app-1.30#spamReportingOptions-property)
 
 ## All generally available versions
+
+  
+
+
+<details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
 
   
 
@@ -2894,6 +3031,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.22/MicrosoftTeams.schema.j
 
 
 <details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
+
+  
+
+
+<details>
 <summary>**Version 1.29**</summary>
 
 ### Version 1.29
@@ -3248,6 +3402,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.21/MicrosoftTeams.schema.j
 - Added [`backgroundLoadConfiguration`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-background-load-configuration?view=m365-app-1.30) object to enable tab apps to [opt in to precaching](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/app-caching#enable-precaching-for-tab-app) for a faster initial load experience.
 
 ## All generally available versions
+
+  
+
+
+<details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
 
   
 
@@ -3612,6 +3783,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.20/MicrosoftTeams.schema.j
 
 
 <details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
+
+  
+
+
+<details>
 <summary>**Version 1.29**</summary>
 
 ### Version 1.29
@@ -3965,6 +4153,23 @@ https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.j
 - Added [`defaultLanguageFile`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-localization-info?view=m365-app-1.30#defaultlanguagefile), a new required property for [Copilot agents that support multiple languages](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/localize-agents).
 
 ## All generally available versions
+
+  
+
+
+<details>
+<summary>**Version 1.30**</summary>
+
+### Version 1.30
+
+August 2026
+
+```http
+https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json
+```
+
+Added support for Encryption-Decryption feature for Outlook Add-ins using the new [`headerName`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#headername) and [`sendMode`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options?view=m365-app-1.30#sendmode) properties.
+</details>
 
   
 

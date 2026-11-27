@@ -1,11 +1,11 @@
 <!-- Source: https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/managed-runtime-security-governance?view=o365-worldwide -->
-<!-- Sitemap-Last-Modified: 2026-11-06 -->
+<!-- Sitemap-Last-Modified: 2026-11-17 -->
 
 # Security and governance in the Copilot Managed Runtime
 
 The Copilot Managed Runtime helps you secure and govern AI-built apps at enterprise scale. This article explains its built-in protections and the administrative controls IT can use to manage sharing, data access, and oversight. Apps on the Copilot Managed Runtime help organizations innovate with protections already in place and controls that IT can adapt to their requirements.
 
-Regardless of where apps are created, including Copilot Cowork, Microsoft Copilot Studio, the CLI, or other creation surfaces, those protections come from two complementary parts of the platform:
+Regardless of where you create apps, including Copilot Cowork, Microsoft Copilot Studio, the CLI, or other creation surfaces, you get those protections from two complementary parts of the platform:
 
 - **The managed host** provides the foundation for developers to build and run apps, enforcing authentication, data request boundaries, and governed access to business services.
 - **Administrative controls** let IT admins review and adapt the policies that control app sharing, data source availability, and permitted operations.
@@ -93,6 +93,20 @@ Developers can also use a supported external GitHub repository. The build protec
 
 Administrators can separately allow externally built artifacts. These artifacts bypass the Microsoft-managed build system, so your organization is responsible for validating them and securing their build pipeline. For this control, see [External artifact deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#external-artifact-deployment).
 
+### Secret scanning blocks credentials before they reach source control
+
+Credentials committed to source code, such as keys, passwords, tokens, and connection strings, can be exposed to anyone who can read the repository or its history. To help prevent this exposure, the platform scans each push to a platform-managed Git repository for credentials before it accepts the update.
+
+The scan checks the files that a push adds or changes. If the scan detects a credential, the platform rejects the update to that branch, so the credential doesn't become part of the branch's history. The rejection message identifies the credential type, the pattern that detected it, and the file and line where it appears. Developers can then rotate the credential, remove it from the commits in the push, and push again.
+
+Some findings are false positives, such as sample values, test fixtures, or documentation placeholders. Developers can allow a specific pattern in a specific file by adding an exception to an allow list file that's stored in the repository. Because the allow list is part of the source, changes to it are tracked in Git history like any other code change, and reviewers can examine them before they're merged.
+
+For instructions on handling a rejected push and adding exceptions, see [Manage secret scanning exceptions](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/developer/apps/secret-scanning?view=o365-worldwide).
+
+Important
+
+Secret scanning applies only to apps that use platform-managed Git repositories. It doesn't scan pushes to external GitHub repositories. If your app uses an external GitHub repository, use the secret scanning and push protection features available for that repository. For more information, see [About secret scanning](https://docs.github.com/code-security/secret-scanning/introduction/about-secret-scanning).
+
 ## Administrative controls for your organization
 
 The hosting platform enforces protections, while administrators determine the configuration that's appropriate for their organization. IT can review where apps are created, how they're shared, and which additional browser destinations or connector capabilities to permit.
@@ -123,19 +137,19 @@ For administrative controls, see [Sharing settings](https://learn.microsoft.com/
 
 ### Configure CSP for approved browser activity
 
-When an app requires an additional external destination, script source, or embedding location, administrators can review the business need and configure the applicable CSP settings for an environment group or specific environment. These settings allow IT to approve specific sources rather than grant unrestricted browser access.
+When an app requires an external destination, script source, or embedding location, administrators can review the business need and configure the applicable CSP settings for an environment group or specific environment. These settings allow IT to approve specific sources rather than grant unrestricted browser access.
 
 For example, an app might need to retrieve shipping estimates from an external logistics API that the company trusts. An administrator can allow that API's specific origin in the applicable `connect-src` directive while continuing to restrict requests to other external destinations.
 
-Administrators can also configure violation reporting to understand attempted activity. Report-only mode helps assess a policy's impact before enforcing it. It records what the policy would block without interrupting those activities. For example, IT can use it to identify app dependencies that a proposed restriction would affect and determine whether an exception is appropriate.
+Administrators can also configure violation reporting to understand attempted activity. Use report-only mode to assess a policy's impact before enforcing it. It records what the policy would block without interrupting those activities. For example, IT can use it to identify app dependencies that a proposed restriction would affect and determine whether an exception is appropriate.
 
 For policy values and configuration instructions, see [Content security policy](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#content-security-policy) and [Customize the default settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#customize-the-default-settings).
 
 ### Configure permitted connectors, actions, and MCP servers
 
-Administrators can review the default advanced connector policy \(ACP\) configuration and customize it for business scenarios that require additional connectors, actions, or MCP servers. A request for another connector should include a review of the actions the app needs. Administrators can permit the required operations without enabling every action available through that connector.
+Administrators can review the default advanced connector policy \(ACP\) configuration and customize it for business scenarios that require extra connectors, actions, or MCP servers. A request for another connector should include a review of the actions the app needs. Administrators can permit the required operations without enabling every action available through that connector.
 
-For example, an inventory app might need to retrieve records from the company's SQL Server database. Because the Microsoft-curated default policy doesn't include the SQL Server connector, an administrator needs to configure an applicable policy for that app's environment that permits it. The policy can allow the actions needed to read records while keeping unnecessary write or delete actions blocked. Changes apply within the relevant environment scope. This approach lets IT enable additional capabilities where needed without making them available throughout the organization.
+For example, an inventory app might need to retrieve records from the company's SQL Server database. Because the Microsoft-curated default policy doesn't include the SQL Server connector, an administrator needs to configure an applicable policy for that app's environment that permits it. The policy can allow the actions needed to read records while keeping unnecessary write or delete actions blocked. Changes apply within the relevant environment scope. This approach lets IT enable extra capabilities where needed without making them available throughout the organization.
 
 For configuration instructions, see [Customize connector settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#connectors-and-mcp-servers-1) and [Taking full control](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/apps/governance?view=o365-worldwide#taking-full-control).
 

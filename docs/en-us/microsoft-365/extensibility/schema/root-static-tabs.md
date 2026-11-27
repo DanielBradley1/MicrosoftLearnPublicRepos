@@ -133,6 +133,99 @@ Properties that reference this object type:
   "entityId": "{string}",
   "name": "{string}",
   "contentUrl": "{string}",
+  "websiteUrl": "{string}",
+  "searchUrl": "{string}",
+  "scopes": [
+    "team | personal | groupChat"
+  ],
+  "context": [
+    "personalTab | channelTab | privateChatTab | meetingChatTab | meetingDetailsTab | meetingSidePanel | meetingStage | teamLevelApp"
+  ],
+  "requirementSet": {
+    "hostMustSupportFunctionalities": [
+      {
+        hostFunctionality object
+      }
+    ]
+  }
+}
+```
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "entityId": {
+      "type": "string",
+      "description": "A unique identifier for the entity which the tab displays.",
+      "maxLength": 64
+    },
+    "name": {
+      "type": "string",
+      "description": "The display name of the tab.",
+      "maxLength": 128
+    },
+    "contentUrl": {
+      "$ref": "#/definitions/anyHttpUrl",
+      "description": "The url which points to the entity UI to be displayed in the canvas."
+    },
+    "websiteUrl": {
+      "$ref": "#/definitions/anyHttpUrl",
+      "description": "The url to point at if a user opts to view in a browser."
+    },
+    "searchUrl": {
+      "$ref": "#/definitions/anyHttpUrl",
+      "description": "The url to direct a user\u0027s search queries."
+    },
+    "scopes": {
+      "type": "array",
+      "description": "Specifies whether the tab offers an experience in the context of a channel in a team, or an experience scoped to an individual user alone or group chat. These options are non-exclusive. Currently static tabs are only supported in the \u0027personal\u0027 scope.",
+      "maxItems": 3,
+      "items": {
+        "enum": [
+          "team",
+          "personal",
+          "groupChat"
+        ]
+      }
+    },
+    "context": {
+      "type": "array",
+      "description": "The set of contextItem scopes that a tab belong to",
+      "maxItems": 8,
+      "items": {
+        "enum": [
+          "personalTab",
+          "channelTab",
+          "privateChatTab",
+          "meetingChatTab",
+          "meetingDetailsTab",
+          "meetingSidePanel",
+          "meetingStage",
+          "teamLevelApp"
+        ]
+      }
+    },
+    "requirementSet": {
+      "$ref": "#/definitions/elementRequirementSet"
+    }
+  },
+  "required": [
+    "entityId",
+    "scopes"
+  ]
+}
+```
+
+- [Syntax](#tabpanel_3_syntax)
+- [Schema](#tabpanel_3_schema)
+
+```json
+{
+  "entityId": "{string}",
+  "name": "{string}",
+  "contentUrl": "{string}",
   "contentBotId": "{string}",
   "websiteUrl": "{string}",
   "searchUrl": "{string}",
@@ -223,8 +316,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_3_syntax)
-- [Schema](#tabpanel_3_schema)
+- [Syntax](#tabpanel_4_syntax)
+- [Schema](#tabpanel_4_schema)
 
 ```json
 {
@@ -321,8 +414,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_4_syntax)
-- [Schema](#tabpanel_4_schema)
+- [Syntax](#tabpanel_5_syntax)
+- [Schema](#tabpanel_5_schema)
 
 ```json
 {

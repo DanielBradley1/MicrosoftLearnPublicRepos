@@ -110,6 +110,98 @@ Properties that reference this object type:
     "file": "{string}"
   },
   "authorization": {
+    "type": "None | OAuthPluginVault | ApiKeyPluginVault | DynamicClientRegistration | AzureKeyVault | ConnectionVault",
+    "referenceId": "{string}"
+  }
+}
+```
+
+```json
+{
+  "type": "object",
+  "description": "Configuration details for a connector that provides tools via a remote MCP server.",
+  "additionalProperties": false,
+  "properties": {
+    "mcpServerUrl": {
+      "$ref": "#/definitions/secureHttpUrl",
+      "description": "The URL of the remote MCP Server."
+    },
+    "mcpToolDescription": {
+      "type": "object",
+      "description": "Configuration for MCP tool descriptions by file reference.",
+      "properties": {
+        "file": {
+          "$ref": "#/definitions/relativePath",
+          "description": "The relative path to the MCP tool description file within the app package."
+        }
+      },
+      "required": [
+        "file"
+      ],
+      "additionalProperties": false
+    },
+    "authorization": {
+      "type": "object",
+      "description": "Authorization configuration for connecting to the local MCP server. The design mirrors that of Plugin Manifests https://spec-hub.azurewebsites.net/specifications/PluginManifest-2.3.html",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "None",
+            "OAuthPluginVault",
+            "ApiKeyPluginVault",
+            "DynamicClientRegistration",
+            "AzureKeyVault",
+            "ConnectionVault"
+          ],
+          "description": "The type of authorization required to invoke the MCP server. Supported values are: \u0027None\u0027 (anonymous access), \u0027OAuthPluginVault\u0027 (OAuth flow with referenceId), \u0027ApiKeyPluginVault\u0027 (API Key with referenceId), \u0027DynamicClientRegistration\u0027 (dynamic client registration with referenceId), \u0027AzureKeyVault\u0027 (Azure Key Vault URI with referenceId), \u0027ConnectionVault\u0027 (Power Platform connector-managed connection referenced by referenceId)."
+        },
+        "referenceId": {
+          "type": "string",
+          "maxLength": 128,
+          "description": "A reference identifier used when type is OAuthPluginVault, ApiKeyPluginVault, DynamicClientRegistration, AzureKeyVault, or ConnectionVault. The referenceId value is acquired independently when providing the necessary authorization configuration values. This mechanism exists to prevent the need for storing secret values in the plugin manifest."
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "OAuthPluginVault",
+              "ApiKeyPluginVault",
+              "DynamicClientRegistration",
+              "AzureKeyVault",
+              "ConnectionVault"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "referenceId"
+        ]
+      }
+    }
+  },
+  "required": [
+    "mcpServerUrl"
+  ]
+}
+```
+
+- [Syntax](#tabpanel_3_syntax)
+- [Schema](#tabpanel_3_schema)
+
+```json
+{
+  "mcpServerUrl": "{string}",
+  "mcpToolDescription": {
+    "file": "{string}"
+  },
+  "authorization": {
     "type": "None | OAuthPluginVault | ApiKeyPluginVault | DynamicClientRegistration | AzureKeyVault",
     "referenceId": "{string}"
   }
@@ -190,8 +282,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_3_syntax)
-- [Schema](#tabpanel_3_schema)
+- [Syntax](#tabpanel_4_syntax)
+- [Schema](#tabpanel_4_schema)
 
 ```json
 {
@@ -279,8 +371,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_4_syntax)
-- [Schema](#tabpanel_4_schema)
+- [Syntax](#tabpanel_5_syntax)
+- [Schema](#tabpanel_5_schema)
 
 ```json
 {

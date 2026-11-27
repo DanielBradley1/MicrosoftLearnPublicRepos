@@ -123,6 +123,108 @@ Properties that reference this object type:
       "type": "{string}",
       "description": "{string}",
       "templateText": "{string}",
+      "displayName": "{string}",
+      "allowedIconIds": [
+        "{string}"
+      ]
+    }
+  ],
+  "activityIcons": [
+    {
+      "id": "{string}",
+      "iconFile": "{string}"
+    }
+  ]
+}
+```
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "activityTypes": {
+      "type": "array",
+      "description": "Specify the types of activites that your app can post to a users activity feed",
+      "maxItems": 128,
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "templateText": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "\\S",
+            "description": "The localized, user-visible display name of this activity type. Author a concise standalone noun label using sentence casing appropriate for the locale; do not include surrounding host commands such as \u0022Turn off\u0022 or ending punctuation. Consumers must preserve the resolved value exactly, must not transform its casing, and must not use it as identity; type remains the stable identifier."
+          },
+          "allowedIconIds": {
+            "type": "array",
+            "description": "An array containing valid icon IDs per activity type.",
+            "maxItems": 50,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "description",
+          "templateText"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "activityIcons": {
+      "type": "array",
+      "description": "Specify the customized icons that your app can post to a users activity feed",
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "Represents the unique icon ID."
+          },
+          "iconFile": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "Represents the relative path to the icon image. Image should be size 32x32."
+          }
+        },
+        "required": [
+          "id",
+          "iconFile"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+- [Syntax](#tabpanel_3_syntax)
+- [Schema](#tabpanel_3_schema)
+
+```json
+{
+  "activityTypes": [
+    {
+      "type": "{string}",
+      "description": "{string}",
+      "templateText": "{string}",
       "allowedIconIds": [
         "{string}"
       ]
@@ -207,8 +309,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_3_syntax)
-- [Schema](#tabpanel_3_schema)
+- [Syntax](#tabpanel_4_syntax)
+- [Schema](#tabpanel_4_schema)
 
 ```json
 {

@@ -343,6 +343,131 @@ Properties that reference this object type:
                     "OAuthPluginVault",
                     "ApiKeyPluginVault",
                     "DynamicClientRegistration",
+                    "AzureKeyVault",
+                    "ConnectionVault"
+                  ],
+                  "description": "The type of authorization required to invoke the MCP server. Supported values are: \u0027None\u0027 (anonymous access), \u0027OAuthPluginVault\u0027 (OAuth flow with referenceId), \u0027ApiKeyPluginVault\u0027 (API Key with referenceId), \u0027DynamicClientRegistration\u0027 (dynamic client registration with referenceId), \u0027AzureKeyVault\u0027 (Azure Key Vault URI with referenceId), \u0027ConnectionVault\u0027 (Power Platform connector-managed connection referenced by referenceId)."
+                },
+                "referenceId": {
+                  "type": "string",
+                  "maxLength": 128,
+                  "description": "A reference identifier used when type is OAuthPluginVault, ApiKeyPluginVault, DynamicClientRegistration, AzureKeyVault, or ConnectionVault. The referenceId value is acquired independently when providing the necessary authorization configuration values. This mechanism exists to prevent the need for storing secret values in the plugin manifest."
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "OAuthPluginVault",
+                      "ApiKeyPluginVault",
+                      "DynamicClientRegistration",
+                      "AzureKeyVault",
+                      "ConnectionVault"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "referenceId"
+                ]
+              }
+            }
+          },
+          "required": [
+            "mcpServerUrl"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "displayName"
+  ],
+  "additionalProperties": false
+}
+```
+
+- [Syntax](#tabpanel_3_syntax)
+- [Schema](#tabpanel_3_schema)
+
+```json
+{
+  "id": "{string}",
+  "displayName": "{string}",
+  "description": "{string}",
+  "toolSource": {
+    "remoteMcpServer": {
+      remoteMcpServer object
+    }
+  }
+}
+```
+
+```json
+{
+  "type": "object",
+  "description": "An agent connector represents a mechanism to enable agents to access information from systems outside of Microsoft 365, often via an MCP Server. Other mechanisms include using OpenAPI descriptions for calling external HTTP APIs. The role of the agent connector is to provide the necessary configuration information to agents or other M365 applications to connect to these external systems. An agent connector can be provided for use by other elements described within the same Unified App Manifest, or as a standalone resource that can be referenced in the Unified App Manifest of other M365 applications.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the agent connector",
+      "maxLength": 64
+    },
+    "displayName": {
+      "type": "string",
+      "description": "A user-friendly name for the connector, which can be displayed in UIs.",
+      "maxLength": 128
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the connector\u0027s purpose and functionality.",
+      "maxLength": 4000
+    },
+    "toolSource": {
+      "type": "object",
+      "description": "Configuration details for connectors that provide tools for agents via a remote MCP server.",
+      "properties": {
+        "remoteMcpServer": {
+          "type": "object",
+          "description": "Configuration details for a connector that provides tools via a remote MCP server.",
+          "additionalProperties": false,
+          "properties": {
+            "mcpServerUrl": {
+              "$ref": "#/definitions/secureHttpUrl",
+              "description": "The URL of the remote MCP Server."
+            },
+            "mcpToolDescription": {
+              "type": "object",
+              "description": "Configuration for MCP tool descriptions by file reference.",
+              "properties": {
+                "file": {
+                  "$ref": "#/definitions/relativePath",
+                  "description": "The relative path to the MCP tool description file within the app package."
+                }
+              },
+              "required": [
+                "file"
+              ],
+              "additionalProperties": false
+            },
+            "authorization": {
+              "type": "object",
+              "description": "Authorization configuration for connecting to the local MCP server. The design mirrors that of Plugin Manifests https://spec-hub.azurewebsites.net/specifications/PluginManifest-2.3.html",
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "None",
+                    "OAuthPluginVault",
+                    "ApiKeyPluginVault",
+                    "DynamicClientRegistration",
                     "AzureKeyVault"
                   ],
                   "description": "The type of authorization required to invoke the MCP server. Supported values are: \u0027None\u0027 (anonymous access), \u0027OAuthPluginVault\u0027 (OAuth flow with referenceId), \u0027ApiKeyPluginVault\u0027 (API Key with referenceId), \u0027DynamicClientRegistration\u0027 (dynamic client registration with referenceId)."
@@ -391,8 +516,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_3_syntax)
-- [Schema](#tabpanel_3_schema)
+- [Syntax](#tabpanel_4_syntax)
+- [Schema](#tabpanel_4_schema)
 
 ```json
 {
@@ -513,8 +638,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_4_syntax)
-- [Schema](#tabpanel_4_schema)
+- [Syntax](#tabpanel_5_syntax)
+- [Schema](#tabpanel_5_schema)
 
 ```json
 {

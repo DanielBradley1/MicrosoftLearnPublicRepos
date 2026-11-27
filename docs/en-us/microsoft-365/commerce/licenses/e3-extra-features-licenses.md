@@ -18,7 +18,7 @@ The new Microsoft 365 E3 or E5 Extra Features product is now included in this li
 
 ## What's provided by Microsoft 365 E3 or E5 Extra Features?
 
-Microsoft 365 E3 or E5 Extra Features provides additional features for your users. Some features are only available for E5 subscriptions. The following table indicates which features are available in Microsoft 365 E3 Extra Features and Microsoft 365 E5 Extra Features subscriptions.
+Microsoft 365 E3 or E5 Extra Features provides additional features for your users. Some features are only available for E5 subscriptions. The following table indicates which features are available in Microsoft 365 E3 Extra Features and Microsoft 365 E5 Extra Features subscriptions:
 
 | Feature | Microsoft 365 E3 Extra Features | Microsoft 365 E5 Extra Features |
 | --- | --- | --- |
@@ -40,9 +40,9 @@ Microsoft 365 E3 or E5 Extra Features provides additional features for your user
 
 ## Assign the Microsoft 365 E3 or E5 Extra Features license to users
 
-To use any of the features provided by Microsoft 365 E3 or E5 Extra Features, you must assign a license for it to your Microsoft 365 E3 or E5 users. We recommend that you assign the license to your users as soon as possible, so that they can use the features and improve their Microsoft 365 experience.
+To use any of the features provided by Microsoft 365 E3 or E5 Extra Features, you must assign a license for it to your Microsoft 365 E3 or E5 users. We recommend that you assign the license to your users as soon as possible so that they can use the features and improve their Microsoft 365 experience.
 
-You can use any of the following ways to assign the licenses.
+You can use any of the following ways to assign the licenses:
 
 - [Assign licenses to users in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide)
 - [Assign Microsoft 365 licenses to user accounts with PowerShell](https://learn.microsoft.com/en-us/microsoft-365/enterprise/assign-licenses-to-user-accounts-with-microsoft-365-powershell?view=o365-worldwide)

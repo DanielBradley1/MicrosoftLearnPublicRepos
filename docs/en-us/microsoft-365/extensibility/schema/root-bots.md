@@ -346,7 +346,7 @@ Properties that reference this object type:
   "properties": {
     "botId": {
       "$ref": "#/definitions/guid",
-      "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)."
+      "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)"
     },
     "configuration": {
       "type": "object",
@@ -559,8 +559,12 @@ Properties that reference this object type:
   "scopes": [
     "team | personal | groupChat | copilot"
   ],
+  "supportsTargetedMessages": {boolean},
   "commandLists": [
     {
+      "triggers": [
+        "mention | slash"
+      ],
       "scopes": [
         "team | personal | groupChat | copilot"
       ],
@@ -655,6 +659,11 @@ Properties that reference this object type:
         ]
       }
     },
+    "supportsTargetedMessages": {
+      "type": "boolean",
+      "description": "When true, the bot is enabled to receive targeted messages and appears in the / slash commands list. Required for slash command support. Developers can optionally add triggers: [\u0022slash\u0022] on commandLists entries to surface specific commands.",
+      "default": false
+    },
     "commandLists": {
       "type": "array",
       "maxItems": 3,
@@ -663,6 +672,21 @@ Properties that reference this object type:
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "triggers": {
+            "type": "array",
+            "maxItems": 2,
+            "items": {
+              "type": "string",
+              "enum": [
+                "mention",
+                "slash"
+              ]
+            },
+            "default": [
+              "mention"
+            ],
+            "description": "Controls where the commands in this commandLists entry are surfaced. \u0022mention\u0022 = @mention trigger (current behavior). \u0022slash\u0022 = slash commands list (targeted messages)."
+          },
           "scopes": {
             "type": "array",
             "description": "Specifies the scopes for which the command list is valid",
@@ -920,6 +944,234 @@ Properties that reference this object type:
                   "type": "string",
                   "description": "A simple text description or an example of the command syntax and its arguments.",
                   "maxLength": 4000
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "basic",
+                    "prompt"
+                  ],
+                  "description": "Type of the command. Default is basic",
+                  "default": "basic"
+                },
+                "prompt": {
+                  "type": "string",
+                  "maxLength": 4000,
+                  "description": "The prompt text to be used by Teams when user initiates the command from one of the entry points"
+                }
+              },
+              "required": [
+                "title"
+              ]
+            }
+          }
+        },
+        "required": [
+          "scopes",
+          "commands"
+        ]
+      }
+    },
+    "requirementSet": {
+      "$ref": "#/definitions/elementRequirementSet"
+    },
+    "registrationInfo": {
+      "description": "System\u2011generated metadata. This information is maintained by Microsoft services and must not be modified manually.",
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "microsoftCopilotStudio",
+            "onedriveSharepoint"
+          ],
+          "description": "The partner source through which the bot is registered. System\u2011generated metadata. This information is maintained by Microsoft services and must not be modified manually."
+        },
+        "environment": {
+          "type": "string",
+          "description": "A Power Platform environment that serves as a container for building apps under a Microsoft 365 tenant and can only be accessed by users within that tenant. System\u2011generated metadata. This information is maintained by Microsoft services and must not be modified manually.",
+          "maxLength": 128
+        },
+        "schemaName": {
+          "type": "string",
+          "description": "The Copilot Studio copilot schema name. System\u2011generated metadata. This information is maintained by Microsoft services and must not be modified manually.",
+          "maxLength": 128
+        },
+        "clusterCategory": {
+          "type": "string",
+          "description": "The core services cluster category for Copilot Studio copilots. System\u2011generated metadata. This information is maintained by Microsoft services and must not be modified manually.",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "botId",
+    "scopes"
+  ]
+}
+```
+
+- [Syntax](#tabpanel_5_syntax)
+- [Schema](#tabpanel_5_schema)
+
+```json
+{
+  "botId": "{string}",
+  "configuration": {
+    "team": {
+      team object
+    },
+    "groupChat": {
+      groupChat object
+    }
+  },
+  "needsChannelSelector": {boolean},
+  "isNotificationOnly": {boolean},
+  "supportsFiles": {boolean},
+  "supportsCalling": {boolean},
+  "supportsVideo": {boolean},
+  "scopes": [
+    "team | personal | groupChat | copilot"
+  ],
+  "commandLists": [
+    {
+      "scopes": [
+        "team | personal | groupChat | copilot"
+      ],
+      "commands": [
+        {
+          commands object
+        }
+      ]
+    }
+  ],
+  "requirementSet": {
+    "hostMustSupportFunctionalities": [
+      {
+        hostFunctionality object
+      }
+    ]
+  },
+  "registrationInfo": {
+    "source": "standard | microsoftCopilotStudio | onedriveSharepoint",
+    "environment": "{string}",
+    "schemaName": "{string}",
+    "clusterCategory": "{string}"
+  }
+}
+```
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "botId": {
+      "$ref": "#/definitions/guid",
+      "description": "The Microsoft App ID specified for the bot in the Bot Framework portal (https://dev.botframework.com/bots)."
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "team": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "fetchTask": {
+              "$ref": "#/properties/composeExtensions/items/properties/commands/items/properties/fetchTask"
+            },
+            "taskInfo": {
+              "$ref": "#/properties/composeExtensions/items/properties/commands/items/properties/taskInfo"
+            }
+          }
+        },
+        "groupChat": {
+          "$ref": "#/properties/bots/items/properties/configuration/properties/team"
+        }
+      }
+    },
+    "needsChannelSelector": {
+      "type": "boolean",
+      "description": "This value describes whether or not the bot utilizes a user hint to add the bot to a specific channel.",
+      "default": false
+    },
+    "isNotificationOnly": {
+      "type": "boolean",
+      "description": "A value indicating whether or not the bot is a one-way notification only bot, as opposed to a conversational bot.",
+      "default": false
+    },
+    "supportsFiles": {
+      "type": "boolean",
+      "description": "A value indicating whether the bot supports uploading/downloading of files.",
+      "default": false
+    },
+    "supportsCalling": {
+      "type": "boolean",
+      "description": "A value indicating whether the bot supports audio calling.",
+      "default": false
+    },
+    "supportsVideo": {
+      "type": "boolean",
+      "description": "A value indicating whether the bot supports video calling.",
+      "default": false
+    },
+    "scopes": {
+      "type": "array",
+      "description": "Specifies whether the bot offers an experience in the context of a channel in a team, in a group chat (groupChat), an experience scoped to an individual user alone (personal) OR within Copilot surfaces. These options are non-exclusive.",
+      "maxItems": 4,
+      "items": {
+        "enum": [
+          "team",
+          "personal",
+          "groupChat",
+          "copilot"
+        ]
+      }
+    },
+    "commandLists": {
+      "type": "array",
+      "maxItems": 3,
+      "description": "The list of commands that the bot supplies, including their usage, description, and the scope for which the commands are valid. A separate command list should be used for each scope.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scopes": {
+            "type": "array",
+            "description": "Specifies the scopes for which the command list is valid",
+            "maxItems": 4,
+            "items": {
+              "enum": [
+                "team",
+                "personal",
+                "groupChat",
+                "copilot"
+              ]
+            }
+          },
+          "commands": {
+            "type": "array",
+            "maxItems": 12,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "The bot command name",
+                  "maxLength": 128
+                },
+                "description": {
+                  "type": "string",
+                  "description": "A simple text description or an example of the command syntax and its arguments.",
+                  "maxLength": 4000
                 }
               },
               "required": [
@@ -980,8 +1232,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_5_syntax)
-- [Schema](#tabpanel_5_schema)
+- [Syntax](#tabpanel_6_syntax)
+- [Schema](#tabpanel_6_schema)
 
 ```json
 {
@@ -1195,8 +1447,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_6_syntax)
-- [Schema](#tabpanel_6_schema)
+- [Syntax](#tabpanel_7_syntax)
+- [Schema](#tabpanel_7_schema)
 
 ```json
 {
@@ -1370,8 +1622,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_7_syntax)
-- [Schema](#tabpanel_7_schema)
+- [Syntax](#tabpanel_8_syntax)
+- [Schema](#tabpanel_8_schema)
 
 ```json
 {
@@ -1543,8 +1795,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_8_syntax)
-- [Schema](#tabpanel_8_schema)
+- [Syntax](#tabpanel_9_syntax)
+- [Schema](#tabpanel_9_schema)
 
 ```json
 {

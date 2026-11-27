@@ -411,6 +411,454 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
   "composeExtensions.commands.taskInfo.title": "{string}",
   "activities.activityTypes.description": "{string}",
   "activities.activityTypes.templateText": "{string}",
+  "activities.activityTypes.displayName": "{string}",
+  "meetingExtensionDefinition.scenes.name": "{string}",
+  "extensions.audienceClaimUrl": "{string}",
+  "extensions.ribbons.tabs.label": "{string}",
+  "extensions.ribbons.tabs.customMobileRibbonGroups.label": "{string}",
+  "extensions.ribbons.tabs.customMobileRibbonGroups.controls.icons.url": "{string}",
+  "extensions.ribbons.tabs.customMobileRibbonGroups.controls.label": "{string}",
+  "extensions.ribbons.tabs.groups.icons.url": "{string}",
+  "extensions.ribbons.tabs.groups.label": "{string}",
+  "extensions.ribbons.tabs.groups.controls.icons.url": "{string}",
+  "extensions.ribbons.tabs.groups.controls.label": "{string}",
+  "extensions.ribbons.tabs.groups.controls.supertip.title": "{string}",
+  "extensions.ribbons.tabs.groups.controls.supertip.description": "{string}",
+  "extensions.ribbons.tabs.groups.controls.items.icons.url": "{string}",
+  "extensions.ribbons.tabs.groups.controls.items.label": "{string}",
+  "extensions.ribbons.tabs.groups.controls.items.supertip.title": "{string}",
+  "extensions.ribbons.tabs.groups.controls.items.supertip.description": "{string}",
+  "extensions.ribbons.fixedControls.label": "{string}",
+  "extensions.ribbons.fixedControls.supertip.title": "{string}",
+  "extensions.ribbons.fixedControls.supertip.description": "{string}",
+  "extensions.ribbons.spamPreProcessingDialog.title": "{string}",
+  "extensions.ribbons.spamPreProcessingDialog.description": "{string}",
+  "extensions.ribbons.spamPreProcessingDialog.spamFreeTextSectionTitle": "{string}",
+  "extensions.ribbons.spamPreProcessingDialog.spamReportingOptions.title": "{string}",
+  "extensions.ribbons.spamPreProcessingDialog.spamReportingOptions.options": "{string}",
+  "extensions.ribbons.spamPreProcessingDialog.spamMoreInfo.text": "{string}",
+  "extensions.ribbons.spamPreProcessingDialog.spamMoreInfo.url": "{string}",
+  "extensions.runtimes.code.page": "{string}",
+  "extensions.runtimes.code.script": "{string}",
+  "extensions.runtimes.actions.displayName": "{string}",
+  "extensions.runtimes.customFunctions.metadataUrl": "{string}",
+  "extensions.runtimes.customFunctions.functions.name": "{string}",
+  "extensions.runtimes.customFunctions.functions.description": "{string}",
+  "extensions.runtimes.customFunctions.functions.parameters.name": "{string}",
+  "extensions.runtimes.customFunctions.functions.parameters.description": "{string}",
+  "extensions.runtimes.customFunctions.enums.values.name": "{string}",
+  "extensions.runtimes.customFunctions.enums.values.tooltip": "{string}",
+  "extensions.runtimes.customFunctions.namespace.name": "{string}",
+  "extensions.keyboardShortcuts.shortcuts.key.default": "{string}",
+  "extensions.keyboardShortcuts.shortcuts.key.mac": "{string}",
+  "extensions.keyboardShortcuts.shortcuts.key.web": "{string}",
+  "extensions.keyboardShortcuts.shortcuts.key.windows": "{string}",
+  "extensions.alternates.alternateIcons.icon.url": "{string}",
+  "extensions.alternates.alternateIcons.highResolutionIcon.url": "{string}",
+  "extensions.getStartedMessages.title": "{string}",
+  "extensions.getStartedMessages.description": "{string}",
+  "extensions.getStartedMessages.learnMoreUrl": "{string}",
+  "extensions.contentRuntimes.code.page": "{string}",
+  "extensions.contextMenus.menus.controls.icons.url": "{string}",
+  "extensions.contextMenus.menus.controls.label": "{string}",
+  "extensions.contextMenus.menus.controls.supertip.title": "{string}",
+  "extensions.contextMenus.menus.controls.supertip.description": "{string}",
+  "extensions.contextMenus.menus.controls.items.icons.url": "{string}",
+  "extensions.contextMenus.menus.controls.items.label": "{string}",
+  "extensions.contextMenus.menus.controls.items.supertip.title": "{string}",
+  "extensions.contextMenus.menus.controls.items.supertip.description": "{string}",
+  "copilotAgents.customEngineAgents.disclaimer.text": "{string}",
+  "agentConnectors.displayName": "{string}",
+  "agentConnectors.description": "{string}",
+  "description.features.title": "{string}",
+  "description.features.description": "{string}"
+}
+```
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "name.short": {
+      "type": "string",
+      "maxLength": 30,
+      "$ref": "#/definitions/nonEmptyString"
+    },
+    "name.full": {
+      "type": "string",
+      "maxLength": 100,
+      "$ref": "#/definitions/nonEmptyString"
+    },
+    "description.short": {
+      "type": "string",
+      "maxLength": 80,
+      "$ref": "#/definitions/nonEmptyString"
+    },
+    "description.full": {
+      "type": "string",
+      "maxLength": 4000,
+      "$ref": "#/definitions/nonEmptyString"
+    },
+    "localizationKeys": {
+      "type": "object",
+      "patternProperties": {
+        "^\\[\\[[a-zA-Z_][a-zA-Z0-9_]*\\]\\]$": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "patternProperties": {
+    "^staticTabs\\[([0-9]|1[0-5])\\]\\.name$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^bots\\[0\\]\\.commandLists\\[[0-2]\\]\\.commands\\[([0-9]|1[0-1])\\]\\.title$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^bots\\[0\\]\\.commandLists\\[[0-2]\\]\\.commands\\[([0-9]|1[0-1])\\]\\.description$": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "^bots\\[0\\]\\.commandLists\\[[0-2]\\]\\.commands\\[([0-9]|1[0-1])\\]\\.prompt$": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.title$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.description$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.parameters\\[[0-4]\\]\\.title$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.parameters\\[[0-4]\\]\\.description$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.parameters\\[[0-4]\\]\\.value$": {
+      "type": "string",
+      "maxLength": 512
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.parameters\\[[0-4]\\]\\.choices\\[[0-9]\\]\\.title$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.samplePrompts\\[[0-4]\\]\\.text$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^composeExtensions\\[0\\]\\.commands\\[[0-9]\\]\\.taskInfo\\.title$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^activities.activityTypes\\[\\b([0-9]|[1-8][0-9]|9[0-9]|1[01][0-9]|12[0-7])\\b]\\.description$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^activities.activityTypes\\[\\b([0-9]|[1-8][0-9]|9[0-9]|1[01][0-9]|12[0-7])\\b]\\.templateText$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^activities.activityTypes\\[\\b([0-9]|[1-8][0-9]|9[0-9]|1[01][0-9]|12[0-7])\\b]\\.displayName$": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "\\S"
+    },
+    "^meetingExtensionDefinition.scenes\\[[0-9]\\]\\.name$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.audienceClaimUrl$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.label$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.customMobileRibbonGroups\\[[0-9]\\]\\.label$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.customMobileRibbonGroups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.icons\\[[0-8]\\]\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.customMobileRibbonGroups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.label$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.icons\\[[0-7]\\]\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.label$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.icons\\[[0-7]\\]\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.label$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.supertip\\.title$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.supertip\\.description$": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.icons\\[[0-7]\\]\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.label$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.supertip\\.title$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.tabs\\[[1]?[0-9]\\]\\.groups\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.supertip\\.description$": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.fixedControls\\[[1]?[0-9]\\]\\.label$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.fixedControls\\[[1]?[0-9]\\]\\.supertip\\.title$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.fixedControls\\[[1]?[0-9]\\]\\.supertip\\.description$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.spamPreProcessingDialog\\.title$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.spamPreProcessingDialog\\.description$": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.spamPreProcessingDialog\\.spamFreeTextSectionTitle$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.spamPreProcessingDialog\\.spamReportingOptions\\.title$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.spamPreProcessingDialog\\.spamReportingOptions\\.options\\[[0-4]\\]$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.spamPreProcessingDialog\\.spamMoreInfo\\.text$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.ribbons\\[[0-9]\\]\\.spamPreProcessingDialog\\.spamMoreInfo\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.code\\.page$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.code\\.script$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.actions\\[(1[0-4][0-9]|[1-9]?[0-9])\\]\\.displayName$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.metadataUrl$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.functions\\[[0-9]\\]\\.name$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.functions\\[[0-9]\\]\\.description$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.functions\\[[0-9]\\]\\.parameters\\[[0-9]\\]\\.name$": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.functions\\[[0-9]\\]\\.parameters\\[[0-9]\\]\\.description$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.enums\\[[0-9]\\]\\.values\\[[0-9]\\]\\.name$": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.enums\\[[0-9]\\]\\.values\\[[0-9]\\]\\.tooltip$": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "^extensions\\[[0]\\]\\.runtimes\\[[1]?[0-9]\\]\\.customFunctions\\.namespace\\.name$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^extensions\\[[0]\\]\\.keyboardShortcuts\\[[0-9]\\]\\.shortcuts\\[[0-9]\\]\\.key\\.default$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^extensions\\[[0]\\]\\.keyboardShortcuts\\[[0-9]\\]\\.shortcuts\\[[0-9]\\]\\.key\\.mac$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^extensions\\[[0]\\]\\.keyboardShortcuts\\[[0-9]\\]\\.shortcuts\\[[0-9]\\]\\.key\\.web$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^extensions\\[[0]\\]\\.keyboardShortcuts\\[[0-9]\\]\\.shortcuts\\[[0-9]\\]\\.key\\.windows$": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "^extensions\\[[0]\\]\\.alternates\\[[0-9]\\]\\.alternateIcons\\.icon\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.alternates\\[[0-9]\\]\\.alternateIcons\\.highResolutionIcon\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.getStartedMessages\\[[0-2]\\]\\.title$": {
+      "type": "string",
+      "maxLength": 125
+    },
+    "^extensions\\[[0]\\]\\.getStartedMessages\\[[0-2]\\]\\.description$": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "^extensions\\[[0]\\]\\.getStartedMessages\\[[0-2]\\]\\.learnMoreUrl$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.contentRuntimes\\[[1]?[0-9]\\]\\.code\\.page$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.icons\\[[0-7]\\]\\.url$": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.label": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.supertip\\.title": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.supertip\\.description": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.icons\\[[0-7]\\]\\.url": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.label": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.supertip\\.title": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "^extensions\\[[0]\\]\\.contextMenus\\[[0-9]\\]\\.menus\\[[0-9]\\]\\.controls\\[[1]?[0-9]\\]\\.items\\[[1]?[0-9]\\]\\.supertip\\.description": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "^copilotAgents.customEngineAgents\\[0\\]\\.disclaimer.text$": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "^agentConnectors\\[[0-9]\\]\\.displayName$": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "^agentConnectors\\[[0-9]\\]\\.description$": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "^description\\.features\\[[0-2]\u002B\\]\\.title$": {
+      "type": "string",
+      "maxLength": 45
+    },
+    "^description\\.features\\[[0-2]\u002B\\]\\.description$": {
+      "type": "string",
+      "maxLength": 120
+    }
+  },
+  "required": [
+    "name.short",
+    "description.short",
+    "description.full"
+  ],
+  "definitions": {
+    "nonEmptyString": {
+      "type": "string",
+      "pattern": "^(?![nN][uU][lL]{2}$)\\s*\\S.*"
+    }
+  }
+}
+```
+
+- [Syntax](#tabpanel_3_syntax)
+- [Schema](#tabpanel_3_schema)
+
+```json
+{
+  "$schema": "{string}",
+  "name.short": "{string}",
+  "name.full": "{string}",
+  "description.short": "{string}",
+  "description.full": "{string}",
+  "localizationKeys": {
+    "^\[\[[a-zA-Z_][a-zA-Z0-9_]*\]\]$": "{string}"
+  },
+  "staticTabs.name": "{string}",
+  "bots.commandLists.commands.title": "{string}",
+  "bots.commandLists.commands.description": "{string}",
+  "bots.commandLists.commands.prompt": "{string}",
+  "composeExtensions.commands.title": "{string}",
+  "composeExtensions.commands.description": "{string}",
+  "composeExtensions.commands.parameters.title": "{string}",
+  "composeExtensions.commands.parameters.description": "{string}",
+  "composeExtensions.commands.parameters.value": "{string}",
+  "composeExtensions.commands.parameters.choices.title": "{string}",
+  "composeExtensions.commands.samplePrompts.text": "{string}",
+  "composeExtensions.commands.taskInfo.title": "{string}",
+  "activities.activityTypes.description": "{string}",
+  "activities.activityTypes.templateText": "{string}",
   "meetingExtensionDefinition.scenes.name": "{string}",
   "extensions.audienceClaimUrl": "{string}",
   "extensions.ribbons.tabs.label": "{string}",
@@ -825,8 +1273,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_3_syntax)
-- [Schema](#tabpanel_3_schema)
+- [Syntax](#tabpanel_4_syntax)
+- [Schema](#tabpanel_4_schema)
 
 ```json
 {
@@ -1266,8 +1714,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_4_syntax)
-- [Schema](#tabpanel_4_schema)
+- [Syntax](#tabpanel_5_syntax)
+- [Schema](#tabpanel_5_schema)
 
 ```json
 {
@@ -1692,8 +2140,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_5_syntax)
-- [Schema](#tabpanel_5_schema)
+- [Syntax](#tabpanel_6_syntax)
+- [Schema](#tabpanel_6_schema)
 
 ```json
 {
@@ -2108,8 +2556,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_6_syntax)
-- [Schema](#tabpanel_6_schema)
+- [Syntax](#tabpanel_7_syntax)
+- [Schema](#tabpanel_7_schema)
 
 ```json
 {
@@ -2514,8 +2962,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_7_syntax)
-- [Schema](#tabpanel_7_schema)
+- [Syntax](#tabpanel_8_syntax)
+- [Schema](#tabpanel_8_schema)
 
 ```json
 {
@@ -2915,8 +3363,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_8_syntax)
-- [Schema](#tabpanel_8_schema)
+- [Syntax](#tabpanel_9_syntax)
+- [Schema](#tabpanel_9_schema)
 
 ```json
 {
@@ -3211,8 +3659,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_9_syntax)
-- [Schema](#tabpanel_9_schema)
+- [Syntax](#tabpanel_10_syntax)
+- [Schema](#tabpanel_10_schema)
 
 ```json
 {
@@ -3502,8 +3950,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_10_syntax)
-- [Schema](#tabpanel_10_schema)
+- [Syntax](#tabpanel_11_syntax)
+- [Schema](#tabpanel_11_schema)
 
 ```json
 {
@@ -3784,8 +4232,8 @@ In the manifest schema, the [`localizationInfo`](https://learn.microsoft.com/en-
 }
 ```
 
-- [Syntax](#tabpanel_11_syntax)
-- [Schema](#tabpanel_11_schema)
+- [Syntax](#tabpanel_12_syntax)
+- [Schema](#tabpanel_12_schema)
 
 ```json
 {
@@ -5546,6 +5994,22 @@ Maximum string length: 128.
 
 **Supported values**  
 
+
+#### activities.activityTypes.displayName
+
+This property specifies a localized value for the [activities.activityTypes.displayName](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/root-activities-activity-types?view=m365-app-1.30#displayName-property) property. The property name should be a JSON path expression in the following form: `activities.activityTypes[0-127].displayName`.
+
+**Type**  
+string
+
+**Required**  
+—
+
+**Constraints**  
+Minimum string length: 1. Maximum string length: 128.
+
+**Supported values**  
+The string must match the following regular expression: `\S`.
 
 #### extensions.ribbons.tabs.customMobileRibbonGroups.controls.label
 

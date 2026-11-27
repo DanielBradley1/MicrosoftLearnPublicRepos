@@ -826,6 +826,22 @@ For future use. We are working on a system that will enable Office Add-ins that 
 
 #### alternateIcons
 
+For future use. We are working on a system that will enable Office Add-ins that use the unified manifest for Microsoft 365 to be installable on older or non-subscription Office versions or platforms that do not directly support the unified manifest. That system will use this object to specify the icons that represent the add-in Office Add-in in the add-in insertion UX and the vertical task pane tab bar. For more information, see [Office Add-ins with the unified app manifest for Microsoft 365 - Client and platform support](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/unified-manifest-overview#client-and-platform-support).
+
+**Type**  
+[alternateIcons](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-alternate-versions-array-alternate-icons?view=m365-app-1.30)
+
+**Required**  
+—
+
+**Constraints**  
+
+
+**Supported values**  
+
+
+#### alternateIcons
+
 For future use. We are working on a system that will make Office Add-ins that use the unified manifest for Microsoft 365 installable on older or non-subscription Office versions or platforms that do not directly support the unified manifest. That system will use this object to specify the icons that represent the add-in Office Add-in in the add-in insertion UX and the vertical task pane tab bar. For more information, see [Office Add-ins with the unified app manifest for Microsoft 365 - Client and platform support](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/unified-manifest-overview#client-and-platform-support).
 
 **Type**  

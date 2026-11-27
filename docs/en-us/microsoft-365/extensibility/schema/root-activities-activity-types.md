@@ -75,6 +75,62 @@ Properties that reference this object type:
   "type": "{string}",
   "description": "{string}",
   "templateText": "{string}",
+  "displayName": "{string}",
+  "allowedIconIds": [
+    "{string}"
+  ]
+}
+```
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "templateText": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "\\S",
+      "description": "The localized, user-visible display name of this activity type. Author a concise standalone noun label using sentence casing appropriate for the locale; do not include surrounding host commands such as \u0022Turn off\u0022 or ending punctuation. Consumers must preserve the resolved value exactly, must not transform its casing, and must not use it as identity; type remains the stable identifier."
+    },
+    "allowedIconIds": {
+      "type": "array",
+      "description": "An array containing valid icon IDs per activity type.",
+      "maxItems": 50,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "type",
+    "description",
+    "templateText"
+  ],
+  "additionalProperties": false
+}
+```
+
+- [Syntax](#tabpanel_3_syntax)
+- [Schema](#tabpanel_3_schema)
+
+```json
+{
+  "type": "{string}",
+  "description": "{string}",
+  "templateText": "{string}",
   "allowedIconIds": [
     "{string}"
   ]
@@ -115,8 +171,8 @@ Properties that reference this object type:
 }
 ```
 
-- [Syntax](#tabpanel_3_syntax)
-- [Schema](#tabpanel_3_schema)
+- [Syntax](#tabpanel_4_syntax)
+- [Schema](#tabpanel_4_schema)
 
 ```json
 {
@@ -255,6 +311,24 @@ Maximum array items: 50.
 
 **Supported values**  
 
+
+#### displayName
+
+The localized, user-visible display name of this activity type. Author a concise standalone noun label using sentence casing appropriate for the locale; do not include surrounding host commands such as "Turn off" or ending punctuation. Consumers must preserve the resolved value exactly, must not transform its casing, and must not use it as identity; type remains the stable identifier.
+
+This property is localizable. For more information, see the [localization schema](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/loc-schema/root?view=m365-app-1.30).
+
+**Type**  
+string
+
+**Required**  
+—
+
+**Constraints**  
+Minimum string length: 1. Maximum string length: 128.
+
+**Supported values**  
+The string must match the following regular expression: `\S`.
 
 ## Examples
 

@@ -3,17 +3,17 @@
 
 # Maintain Microsoft 365 Business Premium
 
-Maintaining your Microsoft 35 Business Premium environment includes managing user accounts, managing devices, and keeping things up to date and working correctly. Admin tasks are typically performed by global administrators and tenant administrators. [Learn more about admin roles](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide).
+Maintaining your Microsoft 365 Business Premium environment includes managing user accounts, managing devices, and keeping things up to date and working correctly. Admin tasks are typically performed by global administrators and tenant administrators. [Learn more about admin roles](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide).
 
 Important
 
-Microsoft recommends that you use roles with the fewest permissions. Using lower permissioned accounts helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
+Microsoft recommends that you use roles with the fewest permissions. Using lower-permissioned accounts helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
 
 If you're new to Microsoft 365, take a moment to get an [Overview of the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview?view=o365-worldwide).
 
 Tip
 
-An operations guide for security tasks in Business Premium is available at zzz.
+An operations guide for security tasks in Business Premium is available at [Monitor Microsoft 365 Business Premium and Defender for Business](https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/m365bp-security-monitor?view=o365-worldwide) and [Maintain Microsoft 365 Business Premium](https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365bp-mdb-maintain-environment?view=o365-worldwide).
 
 ## Admin center tasks
 
@@ -21,7 +21,7 @@ An operations guide for security tasks in Business Premium is available at zzz.
 | --- | --- |
 | Get started using the Microsoft 365 admin center | [Overview of the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview?view=o365-worldwide) |
 | Learn about new features in the Microsoft 365 admin center | [What's new in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/whats-new-in-preview?view=o365-worldwide) |
-| Find out about new product updates and features so you can help prepare users | [Stay on top of Microsoft 365 product and feature changes](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates?view=o365-worldwide) |
+| Find out about new product updates and features so that you can help prepare users | [Stay on top of Microsoft 365 product and feature changes](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates?view=o365-worldwide) |
 | View usage reports to see how people are using Microsoft 365 | [Microsoft 365 Reports in the admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide) |
 | Open a technical support ticket | [Get support for Microsoft 365 for business](https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support?view=o365-worldwide) |
 
@@ -33,7 +33,7 @@ An operations guide for security tasks in Business Premium is available at zzz.
 | Assign or unassign licenses for users | [Assign or unassign licenses for users in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide)  <br>  <br>[Assign Microsoft 365 licenses to user accounts by using PowerShell](https://learn.microsoft.com/en-us/microsoft-365/enterprise/assign-licenses-to-user-accounts-with-microsoft-365-powershell?view=o365-worldwide) |
 | Assign admin roles to people who need admin permissions | [Assign admin roles in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles?view=o365-worldwide)  <br>  <br>[Assign admin roles to Microsoft 365 user accounts with PowerShell](https://learn.microsoft.com/en-us/microsoft-365/enterprise/assign-roles-to-user-accounts-with-microsoft-365-powershell?view=o365-worldwide) |
 | Remove licenses from users | [Assign or unassign licenses for users in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide)  <br>  <br>[Remove Microsoft 365 licenses from user accounts with PowerShell](https://learn.microsoft.com/en-us/microsoft-365/enterprise/remove-licenses-from-user-accounts-with-microsoft-365-powershell?view=o365-worldwide) |
-| Turn pronouns on or off | [Turn pronouns on or off for your organization in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/turn-pronouns-on-or-off?view=o365-worldwide) |
+| Turn on or turn off pronouns | [Turn pronouns on or off for your organization in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/turn-pronouns-on-or-off?view=o365-worldwide) |
 | Determine whether to allow guest access to groups for their whole organization or for individual groups  <br>\(*applies to Microsoft 365 Business Premium*\) | [Guest users in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-guest-users?view=o365-worldwide) |
 | Remove a user account when someone leaves your organization | [Overview: Remove a former employee and secure data](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/remove-former-employee?view=o365-worldwide) |
 | Reset passwords for user accounts | [Reset passwords in Microsoft 365 for business](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/reset-passwords?view=o365-worldwide) |
@@ -46,7 +46,7 @@ An operations guide for security tasks in Business Premium is available at zzz.
 | Add an email signature, legal disclaimer, or disclosure statement to email messages that come in or go out | [Create organization-wide signatures and disclaimers](https://learn.microsoft.com/en-us/microsoft-365/admin/setup/create-signatures-and-disclaimers?view=o365-worldwide) |
 | Set up, edit, or delete a security group | [Create, edit, or delete a security group in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-edit-or-delete-a-security-group?view=o365-worldwide) |
 | Add users to a distribution group | [Add a user or contact to a Microsoft 365 distribution group](https://learn.microsoft.com/en-us/microsoft-365/admin/email/add-user-or-contact-to-distribution-list?view=o365-worldwide) |
-| Set up a shared mailbox so people can monitor and send email from a common email addresses, like `info@contoso.com` | [Create a shared mailbox](https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide) |
+| Set up a shared mailbox so that people can monitor and send email from a common email addresses, like `info@contoso.com` | [Create a shared mailbox](https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide) |
 
 ## Devices
 
